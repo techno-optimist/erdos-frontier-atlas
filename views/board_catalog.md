@@ -12,7 +12,7 @@ move the record — a WALL for us can still be a fair market-maker board.
 
 | erdős # | problem | frontier | lane | beatable | P42 board |
 |---|---|---|---|---|---|
-| [1](https://www.erdosproblems.com/1) | distinct subset sums, min largest element (A276661) | 220 < a(10) ≤ 309 (Conway–Guy set, Bohman 1996) — max < 309 **refutes Conway–Guy at n=10** | exact-backtracking | MOVABLE | `distinct-subset-sums-a10` |
+| [1](https://www.erdosproblems.com/1) | distinct subset sums, min largest element (A276661) | **a(10)=309 CLOSED (Dyson, Oct 2025)** — live target a(11) ∈ [310, 594] (upper: Conway–Guy 11-set; lower: Dyson + drop-largest lemma) | exact-backtracking | MOVABLE | `distinct-subset-sums-a11` |
 | [20](https://www.erdosproblems.com/20) | sunflower-free family records | Sun(4,3) ≥ 55 (1972) · Sun(3,4) ≥ 39 (1992) · Sun(3,5) ≥ 89 (1974) — static 30–50 yr | witness-local-search | MOVABLE | — |
 | [21](https://www.erdosproblems.com/21) | q(6), min-edge 6-uniform intersecting hypergraph, τ=6 | 14 ≤ q(6) ≤ 18 (Sivashankar 2026 / Barát 2021) — m ≤ 17 witness wins | SAT+DRAT-nonexistence | MOVABLE | `q6-intersecting-hypergraph` |
 | [41](https://www.erdosproblems.com/41) | a(11), shortest 11-mark B₃ ruler (A227358) | a(11) ≤ 445 (Tromp 2013), suspected < 440; optimality open | SAT+DRAT-nonexistence | MOVABLE | `b3-ruler-11-marks` |
@@ -56,7 +56,7 @@ line and is classed HEAVY below.*
 | slug | erdős # | seed frontier | DA class |
 |---|---|---|---|
 | `q6-intersecting-hypergraph` | 21 | 18/1 (PG(2,5) 18-line family) | on-chain (< 64 KB) |
-| `distinct-subset-sums-a10` | 1 | 309/1 (Conway–Guy) | on-chain |
+| `distinct-subset-sums-a11` | 1 | 594/1 (Conway–Guy 11-set; a(10)=309 closed by Dyson 2025) | on-chain |
 | `b3-ruler-11-marks` | 41 | 445/1 (Tromp 2013) | on-chain |
 | `b3-subset-first-jump-9` | 241 | 376/1 (best known 9-element containment) | on-chain |
 | `edp-c3-longest-sequence` | 67 | length race from the Konev–Lisitsa era frontier | on-chain |

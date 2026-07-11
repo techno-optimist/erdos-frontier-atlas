@@ -57,7 +57,7 @@ everyone.
 Five READY entries are already full P42 packages (pinned exact verifiers,
 hostile fixtures, lying-claim tests) in the P42 Prizes repository:
 
-`q6-intersecting-hypergraph` (#21) · `distinct-subset-sums-a10` (#1) ·
+`q6-intersecting-hypergraph` (#21) · `distinct-subset-sums-a11` (#1; a(10)=309 was closed exactly by Dyson in Oct 2025 — the board targets the open a(11) ∈ [310,594]) ·
 `b3-ruler-11-marks` (#41) · `b3-subset-first-jump-9` (#241) ·
 `edp-c3-longest-sequence` (#67)
 
