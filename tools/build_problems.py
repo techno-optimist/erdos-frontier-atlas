@@ -1,0 +1,230 @@
+#!/usr/bin/env python3
+"""Build atlas/problems.json from the 51 deep audits (res_20260711_erdos_machinery_audit).
+
+Board-class rule (documented in atlas/schema.json and README):
+
+  READY  := (R1) the witness check is exact integer/rational arithmetic, a-priori
+            bounded on a byte-capped witness, <= ~1 s per candidate;
+            (R2) the record contains a concrete OPEN numeric frontier that a single
+            submitted finite witness would strictly improve;
+            (R3) the witness conditions are discrete or open/robust (strict
+            inequalities), so integer/rational witnesses are lossless;
+            (R4) one board per finite frontier object (duplicate audit entries
+            cross-reference the carrier entry).
+  HEAVY  := exact adjudication exists but fails R1 timing (a long MIS/SAT run per
+            candidate) or the movable claim is certificate-shaped (DRAT chain,
+            exhaustion receipt, SDP dual) rather than a small witness.
+  NONE   := no exact poly-time verifier in any movable direction, or witness not
+            finitely representable, or no open finite frontier at all
+            (asymptotic-only / solved / duplicate object).
+"""
+import json
+import re
+import sys
+from pathlib import Path
+
+# Source audits live in the cultural-soliton-observatory research session;
+# pass an alternative path as argv[1] if that checkout is elsewhere.
+_DEFAULT_SRC = (
+    "/Users/nivek/Desktop/cultural-soliton-observatory/research_sessions/"
+    "res_20260711_erdos_machinery_audit/audits.json"
+)
+SRC = Path(sys.argv[1] if len(sys.argv) > 1 else _DEFAULT_SRC)
+OUT = Path(__file__).resolve().parents[1] / "atlas" / "problems.json"
+
+READY = {21, 41, 1, 67, 241, 552, 20, 166, 159, 138, 140, 52, 86, 1029, 107, 183, 564}
+HEAVY = {582, 165, 139, 13, 30, 39, 64, 687, 720, 19, 712}
+
+LANE = {}
+for i in (21, 41, 552, 86, 107, 720, 19):
+    LANE[i] = "SAT+DRAT-nonexistence"
+for i in (1, 241, 52, 139, 13, 30, 39, 64, 687):
+    LANE[i] = "exact-backtracking"
+for i in (67, 20, 166, 159, 138, 140, 1029, 183, 564, 582, 165):
+    LANE[i] = "witness-local-search"
+LANE[712] = "LP/SDP-certificate"
+
+P42_SLUG = {
+    21: "q6-intersecting-hypergraph",
+    1: "distinct-subset-sums-a10",
+    41: "b3-ruler-11-marks",
+    241: "b3-subset-first-jump-9",
+    67: "edp-c3-longest-sequence",
+}
+
+FRONTIER = {
+    21: "14 <= q(6) <= 18 (lower: Sivashankar arXiv:2606.24878 Thm 1; upper: Barat arXiv:2011.04444, PG(2,5) 18-line family)",
+    41: "a(11) <= 445 (Tromp 2013, A227358); optimality open, suspected < 440",
+    1: "220 < a(10) <= 309 (Conway-Guy set, Bohman 1996; A276661)",
+    67: "C=3 general witness ~ 13,000-14,000, static since Konev-Lisitsa 2014; C=2 tight at 1160",
+    241: "A387704 b-file to a(150)=8 (Kesarwani, Dec 2025); first jump to 9 elements open (N >= 151)",
+    552: "A006672 a(11) = R(C4,K_{1,11}) = 16 (Jun 2026); a(12) open",
+    20: "Sun(3,3)=21 proven; Sun(4,3) >= 55 (1972), Sun(3,4) >= 39 (1992), Sun(3,5) >= 89 (1974) - construction records static 30-50 yr",
+    166: "R(4,6) in [36,40] (lower 36 = Exoo 2012)",
+    159: "39 <= R(C4,K11) <= 44 (Lange-Radziszowski-Xu 2014/2016)",
+    138: "W(2,7) >= 3703 (Ahmed et al. 2014); W(2,6)=1132 exact (Kouril-Paul 2008)",
+    140: "r_3(211)=43 exact (A003002, Cariboni); r_3(212) in {43,44} - 44-set witness would settle it",
+    52: "A263996 small-case table (smallest |A+A u AA| over n-sets); contest-set records",
+    86: "ex(Q7,C4) >= 304, ex(Q8,C4) >= 680 (SA, arXiv:2603.29127, May 2026); exact values open past ex(Q6,C4)=132",
+    1029: "R(5,5) in [43,46]; best public K43 colorings have exactly 2 monochromatic K5s (a 0-defect witness proves R(5,5) >= 44)",
+    107: "33 <= f(7) <= 127 (a 33-point general-position set with no convex 7-gon would refute Erdos-Szekeres at n=7)",
+    183: "R_4(3) in [51,62] (Chung 1973 lower), R_5(3) in [162,307] (Exoo)",
+    564: "R_3(4,5;3) >= 35 (SAT class-decomposition record)",
+    582: "21 <= Fe(3,3;4) <= 786 (Lange-Radziszowski-Xu 2012); Graham's $100 for a K4-free graph <= 100 vertices arrowing (3,3)",
+    165: "R(3,10) in [40,41] (R(3,9)=36, McKay-Zhang ~1990s)",
+    139: "exact r_k(N) tables beyond r_3: certificate-tier (exhaustion receipts); r_3 frontier object carried by #140",
+    13: "f(N) exact small-N table uncharted (Bedert arXiv:2301.07065 proved the theorem; threshold ineffective) - certified table = new OEIS sequence",
+    30: "OGR-28 (length 585) proven optimal Nov 2022 by distributed.net after 8.5 yr; next move (OGR-29) is an exhaustion claim",
+    39: "Sidon/Golomb optimality beyond OGR-28: exhaustion-certificate tier; asymptotic headline (Ruzsa exponent ~0.4142) untouchable",
+    64: "no counterexample: verified for all cubic graphs <= 28 vertices (Royle-Markstrom ~2004); extension = exhaustive-generation certificate",
+    687: "A048670 exact to a(64) (Bozek 2021, Google-Cloud pruned exhaustion); next term = pruned-exhaustion certificate claim",
+    720: "size-Ramsey exact small values (r-hat(P5,P5)=11, ...); each upper-bound move = one host + one DRAT UNSAT certificate",
+    19: "EFL fully verified n <= 12; the n=13 bucket is a whole-family DRAT-certificate claim (pigeonhole-hard CDCL)",
+    712: "5/9 <= pi(K_4^3) <= 0.561666 (Razborov flag-algebra SDP 2010); movable claim = a better SDP dual certificate",
+}
+
+BOARD_REASON_NONE = {
+    142: "asymptotic formula; the prize headline explicitly 'cannot be resolved by finite computation'; the finite r_k table object is carried by #140",
+    77: "asymptotic limit only; the finite R(5,5) frontier object is carried by #1029 (R4 dedupe)",
+    548: "no finite search space (n unbounded) and no numeric record; positive direction has no finite certificate",
+    128: "verifier is NP-hard (Sparsest-k-Subgraph); meaningful regime is flag-algebra SDP blowups, not finite witnesses",
+    161: "no numeric record exists - the frontier is a growth rate, not a value",
+    500: "finite lower bound is a closed-form construction (A140462) believed exact, not an open tracked frontier; density side carried by #712",
+    2: "witness not representable: a min-modulus-40+ covering system already has > 10^50 recursively-defined congruences; no flat poly-time check",
+    146: "no poly-time exact verifier for the asymptotic claim; small-n ex(n;H0) values are disconnected from the conjecture",
+    114: "transcendental objective (elliptic-integral arc length); no exact/DRAT verifier exists; Tao proved the conjecture for large n (Dec 2025)",
+    97: "existence bounty with no numeric frontier, and the defining condition (4 equidistant points) is equality-constrained real geometry (R3 fails: rational restriction lossy)",
+    707: "headline DISPROVED, Lean-verified (Alexeev-Mixon, PNAS 2025); nothing movable remains",
+    708: "no tracked record, and the upper-bound direction quantifies over unbounded sets with no finite verifier",
+    43: "problem DISPROVED (both questions resolved negatively); no movable number",
+    27: "headline DISPROVED (Filaseta-Ford-Konyagin-Pomerance-Yu 2007); extremal witnesses not finitely representable",
+    92: "headline disproved with #90; exact-value direction has no finite verifier; equality-constrained coordinates (R3 fails)",
+    703: "extremal witness has size ~2^(n-1) - not representable at any n where the answer is unknown",
+    1135: "exhaustion claim (2^71 sieve) has no certificate - adjudication = full recompute at GPU-supercomputer scale; cycle-witness side is an existence bounty with no frontier",
+    182: "'contains a k-regular subgraph' is NP-complete for k >= 3: no poly-time exact verifier",
+    83: "proved theorem (Ahlswede-Khachatrian 1997); a MIS solve certifies nothing new",
+    90: "exact-value verifier is ExistsR-hard (unit-distance realizability); witness side requires algebraic coordinates - equality constraint makes the rational restriction lossy (R3 fails)",
+    101: "collinearity is an equality constraint: optimal configurations may require irrational coordinates (ExistsR realizability gap), so a rational-witness board is not lossless (R3 fails); nonexistence side has no DRAT route",
+    211: "same ExistsR/collinearity obstruction as #101 - orchard-type equality-constrained geometry (R3 fails)",
+    588: "same ExistsR/collinearity obstruction as #101 (R3 fails); the continuous search is unconstrained by the verifier",
+}
+
+BOARD_REASON_READY = {
+    21: "witness = <= 64 six-sets; pairwise-intersect + complete 5-cover branch-and-bound <= 9,331 nodes, ms-exact; open bracket 14..18 witness-improvable (m <= 17 wins)",
+    41: "witness = 11 integers; 286 triple-sum distinctness checks, exact, microseconds; open frontier 445 witness-improvable",
+    1: "witness = 10 integers; 1024 subset sums, exact, microseconds; bracket 220 < a(10) <= 309 witness-improvable (max < 309 refutes Conway-Guy at n=10)",
+    67: "witness = +-1 sequence; O(N log N) integer prefix-sum scan; frontier ~14,000 witness-extendable",
+    241: "witness = subset of {1..N}; O(k^3) triple-sum distinctness, exact; first-jump frontier witness-improvable",
+    552: "witness = C4-free graph with bounded independence; codegree check O(m^3), exact, cheap; a(12) lower bound witness-improvable",
+    20: "witness = sunflower-free family; s=3 core-bucketed triple scan, exact, seconds; construction records (Sun(4,3) >= 55 etc.) witness-improvable",
+    166: "witness = 2-coloring on <= ~40 vertices; K4/K6 clique scans trivial; R(4,6) >= 37 witness-improvable",
+    159: "witness = C4-free graph on 39+ vertices with alpha <= 10; both checks cheap-exact at this n; R(C4,K11) >= 40 witness-improvable",
+    138: "witness = 2-coloring of [N]; O(N^2/k) mono-AP scan, exact; W(2,7) > 3703 witness-improvable",
+    140: "witness = 44-subset of [1,212] with no 3-AP; O(|S|^2) midpoint test, trivial; would settle r_3(212)=44 (witness side only - the UNSAT side is a named wall)",
+    52: "witness = integer n-set; |A+A u AA| dedupe, exact bignum, microseconds; per-n table records witness-improvable",
+    86: "witness = edge subset of Q7; scan the 672 4-cycles, exact, microseconds; ex(Q7,C4) >= 305 witness-improvable",
+    1029: "witness = 2-coloring of K43; mono-K5 count, exact, cheap (our R(5,5) verifier); a 0-defect coloring proves R(5,5) >= 44 - EinsteinArena-style market board",
+    107: "witness = integer-coordinate point set; convexity/general position are strict-inequality (orientation) predicates so integer witnesses are lossless; C(33,7) ~ 4.3M exact determinant checks, cheap",
+    183: "witness = k-edge-coloring; per-color triangle scan O(k n^3), exact; R_4(3) >= 52 witness-improvable",
+    564: "witness = 2-coloring of triples on 35+ vertices; O(m^5) scan of 4-/5-subsets, exact, cheap; R_3(4,5;3) >= 36 witness-improvable",
+}
+
+BOARD_REASON_HEAVY = {
+    582: "witness (K4-free) is cheap, but adjudicating 'G arrows (3,3)' costs one large CDCL UNSAT + DRAT check per candidate - optimistic-oracle tier (R1 fails)",
+    165: "lower-bound witness needs an independence-number <= 9 verification: ~8.5e8 subset scan / MIS run per candidate - minutes, not seconds (R1 fails)",
+    139: "movable content is the exact-table certificate side (exhaustion receipts for r_k, k >= 4); the r_3(212) witness object is carried by #140",
+    13: "no defended record to beat (uncharted table); the boardable product is a certified exact-value table - ILP/SAT certificate claims, not single witnesses (R2 fails)",
+    30: "frontier is proven-optimal (OGR-28); the next move is an optimality/exhaustion claim adjudicated by receipts, not a witness",
+    39: "optimality claims (branch-and-bound nonexistence receipts) are the movable half; witness side has no open tracked value",
+    64: "movable claim = exhaustive-generation certificate ('no cubic counterexample <= 30 vertices'); a counterexample itself would be witness-cheap but is believed nonexistent (existence bounty, no frontier)",
+    687: "next A048670 term requires the upper-bound side: certified nonexistence over all residue choices - pruned-exhaustion receipt, not a witness",
+    720: "each exact-value move = host graph + DRAT UNSAT certificate (upper) + enumeration receipt (lower) - certificate-tier adjudication",
+    19: "the movable n=13 step is a whole-bucket DRAT certificate (pigeonhole-hard, resolution-exponential); coloring witnesses certify nothing new",
+    712: "movable claim = an improved flag-algebra SDP dual certificate - exact-rational certificate check, heavy and specialist (LP/SDP lane)",
+}
+
+OEIS_RE = re.compile(r"\bA\d{6}\b")
+ARXIV_RE = re.compile(r"arXiv[: ]?(\d{4}\.\d{4,5})", re.IGNORECASE)
+
+# A391599 was cited on the erdosproblems.com #21 page but has been deleted from
+# OEIS as AI-generated; the audit flags it as spurious. Keep it out of links.
+OEIS_EXCLUDE = {21: {"A391599"}}
+# The corrected q(6) lower bound comes from the Phase-A literature verification
+# (phase_a_literature.json), which post-dates the audit blob text.
+ARXIV_ADD = {21: ["2606.24878"]}
+
+
+def main() -> None:
+    audits = json.loads(SRC.read_text())
+    entries = []
+    for a in sorted(audits, key=lambda x: x["id"]):
+        pid = a["id"]
+        board = "READY" if pid in READY else ("HEAVY" if pid in HEAVY else "NONE")
+        lane = LANE.get(pid, "wall")
+        blob = " ".join(
+            str(a.get(k, "")) for k in ("statement", "current_record", "verifier", "attack_sketch")
+        )
+        oeis = sorted(set(OEIS_RE.findall(blob)) - OEIS_EXCLUDE.get(pid, set()))
+        arxiv = sorted(
+            set(m.group(1) for m in ARXIV_RE.finditer(blob)) | set(ARXIV_ADD.get(pid, []))
+        )
+        if board == "READY":
+            reason = BOARD_REASON_READY[pid]
+        elif board == "HEAVY":
+            reason = BOARD_REASON_HEAVY[pid]
+        else:
+            reason = BOARD_REASON_NONE[pid]
+        entry = {
+            "id": pid,
+            "title": a["short_title"],
+            "prize": a.get("prize"),
+            "statement": a["statement"],
+            "finite_object": a["finite_object"],
+            "current_record": a["current_record"],
+            "frontier": FRONTIER.get(pid),
+            "beatable": a["beatable"],
+            "beatable_reason": a["beatable_reason"],
+            "fit_score": a["fit_score"],
+            "impact_score": a["impact_score"],
+            "impact_reason": a["impact_reason"],
+            "verifier": a["verifier"],
+            "attack": a["attack_sketch"],
+            "our_edge": a["our_edge"],
+            "verdict": a["verdict"],
+            "lane": lane,
+            "board_class": board,
+            "board_class_reason": reason,
+            "wall_reason": reason if board == "NONE" else None,
+            "p42_slug": P42_SLUG.get(pid),
+            "erdos_url": f"https://www.erdosproblems.com/{pid}",
+            "links": {"oeis": oeis, "arxiv": arxiv},
+        }
+        entries.append(entry)
+
+    doc = {
+        "atlas_version": "0.1.0",
+        "generated": "2026-07-11",
+        "source": "research_sessions/res_20260711_erdos_machinery_audit (cultural-soliton-observatory), 51 deep audits over 95 triaged Erdos prize problems",
+        "board_class_rule": {
+            "READY": "R1: exact integer/rational witness check, a-priori bounded on a byte-capped witness, <= ~1 s per candidate. R2: a concrete OPEN numeric frontier that a single submitted finite witness strictly improves. R3: witness conditions discrete or open/robust (strict inequalities) so integer/rational witnesses are lossless. R4: one board per finite frontier object (duplicates cross-reference the carrier).",
+            "HEAVY": "Exact adjudication exists but fails R1 timing (long MIS/SAT run per candidate) or the movable claim is certificate-shaped (DRAT chain, exhaustion receipt, SDP dual) rather than a small witness. Optimistic-oracle tier.",
+            "NONE": "No exact poly-time verifier in any movable direction, or witness not finitely representable, or no open finite frontier (asymptotic-only / solved / duplicate object). Do not board; usually also a do-not-enter wall (see atlas/walls.md).",
+        },
+        "counts": {
+            "total": len(entries),
+            "READY": sum(1 for e in entries if e["board_class"] == "READY"),
+            "HEAVY": sum(1 for e in entries if e["board_class"] == "HEAVY"),
+            "NONE": sum(1 for e in entries if e["board_class"] == "NONE"),
+        },
+        "problems": entries,
+    }
+    OUT.write_text(json.dumps(doc, indent=2, ensure_ascii=False) + "\n")
+    lanes = {}
+    for e in entries:
+        lanes[e["lane"]] = lanes.get(e["lane"], 0) + 1
+    print("counts:", doc["counts"])
+    print("lanes:", lanes)
+
+
+if __name__ == "__main__":
+    main()

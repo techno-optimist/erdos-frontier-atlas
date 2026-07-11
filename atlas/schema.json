@@ -1,0 +1,101 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/techno-optimist/erdos-frontier-atlas/atlas/schema.json",
+  "title": "Erdos Frontier Atlas entry",
+  "description": "One machine-readable frontier record per audited Erdos problem. board_class is RECOMPUTED from the verifier and frontier fields by the R1-R4 rule below; it is not copied from any upstream triage. READY := (R1) exact integer/rational witness check, a-priori bounded on a byte-capped witness, <= ~1 s per candidate; (R2) a concrete OPEN numeric frontier that a single submitted finite witness strictly improves; (R3) witness conditions discrete or open/robust (strict inequalities), so integer/rational witnesses are lossless; (R4) one board per finite frontier object (duplicate entries cross-reference the carrier). HEAVY := exact adjudication exists but fails R1 timing (long MIS/SAT run per candidate) or the movable claim is certificate-shaped (DRAT chain, exhaustion receipt, SDP dual) - optimistic-oracle tier. NONE := no exact poly-time verifier in any movable direction, or witness not finitely representable, or no open finite frontier (asymptotic-only / solved / duplicate object).",
+  "type": "object",
+  "required": [
+    "id", "title", "statement", "finite_object", "current_record",
+    "beatable", "fit_score", "impact_score", "verifier", "attack",
+    "lane", "board_class", "board_class_reason", "erdos_url", "links"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "erdosproblems.com problem number (canonical index)"
+    },
+    "title": { "type": "string", "minLength": 1 },
+    "prize": {
+      "type": ["string", "null"],
+      "description": "Erdos prize headline and its status. NOTE: no Erdos prize in this atlas is claimable by finite computation; this field records history, not a payout."
+    },
+    "statement": { "type": "string" },
+    "finite_object": {
+      "type": "string",
+      "description": "The concrete finite object (if any) whose record moves"
+    },
+    "current_record": {
+      "type": "string",
+      "description": "Current frontier: values, holders, years, methods, with sources"
+    },
+    "frontier": {
+      "type": ["string", "null"],
+      "description": "One-line frontier summary for boardable entries (READY/HEAVY); null for NONE"
+    },
+    "beatable": {
+      "type": "string",
+      "enum": ["MOVABLE", "UNKNOWN", "WALL"],
+      "description": "Audit verdict on whether OUR farm can move the record. Independent of board_class: a WALL for us can still be a READY market-maker board for someone else's construction."
+    },
+    "beatable_reason": { "type": "string" },
+    "fit_score": { "type": "integer", "minimum": 0, "maximum": 10 },
+    "impact_score": { "type": "integer", "minimum": 0, "maximum": 10 },
+    "impact_reason": { "type": "string" },
+    "verifier": {
+      "type": "string",
+      "description": "Exact-verifier spec: what is checked, arithmetic class, per-candidate cost"
+    },
+    "attack": { "type": "string", "description": "Attack sketch from the deep audit" },
+    "our_edge": { "type": "string" },
+    "verdict": { "type": "string", "description": "Full audit verdict paragraph" },
+    "lane": {
+      "type": "string",
+      "enum": [
+        "SAT+DRAT-nonexistence",
+        "exact-backtracking",
+        "witness-local-search",
+        "LP/SDP-certificate",
+        "wall"
+      ],
+      "description": "Primary solver lane (shared infrastructure; see atlas/lanes.md)"
+    },
+    "board_class": {
+      "type": "string",
+      "enum": ["READY", "HEAVY", "NONE"],
+      "description": "Recomputed by the R1-R4 rule in this schema's description"
+    },
+    "board_class_reason": {
+      "type": "string",
+      "description": "Which rule conjuncts pass/fail and why, per entry"
+    },
+    "wall_reason": {
+      "type": ["string", "null"],
+      "description": "For board_class NONE: the do-not-enter reason (mirrors atlas/walls.md)"
+    },
+    "p42_slug": {
+      "type": ["string", "null"],
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Slug of the packaged P42 board under p42-prizes/problems/, if one exists"
+    },
+    "erdos_url": {
+      "type": "string",
+      "pattern": "^https://www\\.erdosproblems\\.com/\\d+$"
+    },
+    "links": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "oeis": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^A\\d{6}$" }
+        },
+        "arxiv": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^\\d{4}\\.\\d{4,5}$" }
+        }
+      }
+    }
+  }
+}

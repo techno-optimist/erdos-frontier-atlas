@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this atlas, please cite it as below."
+title: "The Erdős Frontier Atlas: a machine-readable map of the computational frontier around the Erdős prize problems"
+type: dataset
+authors:
+  - family-names: "Russell"
+    given-names: "Kevin"
+version: "0.1.0"
+date-released: "2026-07-11"
+doi: "TBD"
+license: MIT
+keywords:
+  - "Erdős problems"
+  - "combinatorics"
+  - "computational frontier"
+  - "SAT"
+  - "DRAT certificates"
+  - "exact verification"
+  - "bounty boards"
+abstract: >-
+  Machine-readable frontier records for 51 deep-audited Erdős prize problems
+  (of 95 triaged): finite object, exact-verifier specification, current record
+  with sources, solver lane, and a recomputed board classification
+  (17 BOARD-READY, 11 BOARD-HEAVY, 23 named walls). Includes a compiler that
+  turns any boardable entry into a pinned-verifier bounty package. No Erdős
+  prize is claimable by finite computation; the atlas maps the computational
+  frontier around the problems. Canonical problem index and credit:
+  erdosproblems.com (Thomas Bloom).
+references:
+  - type: data
+    title: "erdosproblems.com — the canonical index of Erdős problems"
+    url: "https://www.erdosproblems.com"
+  - type: dataset
+    title: "Structural rigidity at the R(5,5) lower-bound frontier"
+    doi: "10.5281/zenodo.21305022"
+  - type: dataset
+    title: "Antipodal kissing bounds"
+    doi: "10.5281/zenodo.21285878"
