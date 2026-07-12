@@ -63,11 +63,25 @@ hostile fixtures, lying-claim tests) in the P42 Prizes repository:
 
 These are independent computational-frontier bounties on Erdős problems —
 **not** Erdős's own historical prizes, which are administered separately and
-attach to asymptotic statements. The flagship campaign target is **q(6)**
-(Erdős #21): bracket 14 ≤ q(6) ≤ 18, incumbent record set by an exhaustive
-search abandoned at a 2014 4-core storage wall, and the whole bracket
-resolvable by the same SAT+CEGAR+DRAT pipeline that produced our R(5,5)
-certificates.
+attach to asymptotic statements.
+
+**q(6) (Erdős #21) — a recorded negative, and why it matters.** Our first
+flagship pick was q(6): bracket 14 ≤ q(6) ≤ 18, incumbent record set by a
+search abandoned at a 2014 4-core storage wall. We attacked it with the exact
+SAT+DRAT pipeline that produced our R(5,5) certificates — and it **failed**.
+q(r) is τ-critical: valid families are vanishingly rare among candidates and
+the τ≥r constraint is a C(V,r−1) encoding blowup whose resolution proofs
+explode. Reproducing even the *known* q(5)≥13 by SAT timed out (3600 s / 6.4 GB);
+the target D(6,14) could not be decided at any proven vertex count. R(5,5)
+worked because its constraints are **local** (SAT-friendly); q(r)'s are
+**global and rare** (SAT-hostile). The right tool is **orderly generation**
+(canonical augmentation — what Barát used), not SAT. So q(6) stays as a
+**market-maker board**: the exact verifier works, the frontier is real and
+movable — by generation or cluster cube-and-conquer, by someone whose tool
+fits. This is the atlas doing its actual job: **routing the right method to
+each problem, and recording where a method does not fit** is as valuable as
+recording where it does. (Full arc + vertex bounds for the generation attack
+in the campaign notes; entry #21 `campaign_finding`.)
 
 ## Honest scope
 

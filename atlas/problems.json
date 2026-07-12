@@ -183,7 +183,7 @@
     "holder": "Sivashankar 3r-4 (lower, arXiv:2606.24878 Jun 2026); Bar\u00e1t m(6)=18 unique PG(2,5) construction (upper, arXiv:2011.04444)",
     "year": 2026
    },
-   "beatable": "MOVABLE",
+   "beatable": "MOVABLE-by-generation-not-SAT",
    "beatable_reason": "The record was set by PURE EXHAUSTIVE search on 4-core 2014 consumer hardware, and the authors state plainly the blocker was hardware, not theory: \"At the end it was the storage capacity that made our further searches impossible... all searches were exhaustive. We plan to implement some randomized searches in a different project.\" That is an incomplete search abandoned at a storage wall, not a feasibility wall. The bracket is narrow (only m=13,14,15,16,17 to resolve), the objects are tiny (6-uniform, \u226418 edges, ~20 vertices), and the whole problem reduces to a per-m SAT decision with a trivial exact verifier and DRAT-certifiable UNSAT \u2014 precisely our R(5,5) machinery on a much smaller object. Adversarial caveat (medium confidence, not high): the conjectured answer is near 18 (q(r)\u22483r), so the decisive instances are the m=16,17 UNSAT proofs, which could sit at the hard edge; if the true q(6)=18 those nonexistence certs are the crux and might resist. But nothing here is a theorem-only wall. [ATLAS UPDATE 2026-07-11: lower bound improved to 14 (Sivashankar Jun 2026); campaign decides m in {14..18}.]",
    "fit_score": 8,
    "impact_score": 4,
@@ -192,8 +192,8 @@
    "attack": "Per-m SAT + CEGAR + DRAT, ascending m from 13. Variables: incidence x_{v,e}, v\u22081..N (N bounded ~2r\u20133r, escalated if a bounded-N UNSAT needs confirming), e\u22081..m. Clauses: exactly-6 per edge (sequential counter); pairwise-intersection aux vars; lex symmetry-breaking over edges and vertices to kill isomorphs (nauty/canonical augmentation as an alternative orderly-generation route); Bar\u00e1t\u2013Wanless degree/structure lemmas as extra pruning. \u03c4=6 enforced by CEGAR: solve, extract model, run exact 5-cover check; if a 5-cover exists, add its blocking clause and re-solve \u2014 loop until intersecting model with \u03c4=6 (SAT \u21d2 witness) or UNSAT. q(6)=least SAT m; chain of DRAT-certified UNSATs (drat-trim) for the smaller m pins it. Portfolio (kissat/cadical/cryptominisat) + cube-and-conquer on the boundary m across a ~100-core farm. Rough compute: small m UNSAT in minutes; boundary m=16,17 hours\u2013days each under cube-and-conquer; witness search cheap once feasible. Total order 10\u00b3\u201310\u2074 core-hours worst case \u2014 days on 100 cores, well under $500 CPU; DRAT archive published like the R(5,5) certs. Optional stretch: same pipeline attacks q(7).",
    "our_edge": "Direct reuse of the R(5,5) verifier-first SAT+DRAT nonexistence pipeline and the kissing witness-search harness on a strictly smaller object; plus the concrete tell that the incumbent record was storage-bound on 4-core 2014 hardware with an explicitly incomplete exhaustive search \u2014 modern kissat + CEGAR cover-checking + nauty symmetry breaking on 100 cores is ~100\u20131000\u00d7 their reach.",
    "verdict": "STRONG \u2014 reduces to a finite object beating a concrete bracketed record (q(6) \u2208 [13,18]) with a trivial poly-time exact verifier and DRAT-certifiable nonexistence; the frontier is a NUMBER compute can push and needs no new asymptotic theorem. Cleanly in our verifier-first SAT/CEGAR/DRAT lane, and the incumbent record was an incomplete exhaustive search abandoned at a 2014 storage wall. High fit, MOVABLE (medium confidence \u2014 the m=16/17 UNSAT proofs are the crux and could sit near the hard edge), low impact (no prize, niche table extension).",
-   "lane": "SAT+DRAT-nonexistence",
-   "board_class": "READY",
+   "lane": "orderly-generation (SAT-hostile \u2014 see campaign_finding)",
+   "board_class": "READY-marketmaker",
    "board_class_reason": "witness = <= 64 six-sets; pairwise-intersect + complete 5-cover branch-and-bound <= 9,331 nodes, ms-exact; open bracket 14..18 witness-improvable (m <= 17 wins)",
    "wall_reason": null,
    "p42_slug": "q6-intersecting-hypergraph",
@@ -205,7 +205,8 @@
      "2503.14918",
      "2606.24878"
     ]
-   }
+   },
+   "campaign_finding": "2026-07-12: we attempted q(6) with our SAT+DRAT pipeline (the R(5,5) method). It FAILED: q(r) is tau-critical, valid objects are vanishingly rare among m-edge intersecting families, and the tau>=r encoding is a C(V,r-1) blowup whose resolution proofs explode. D(5,12) (proving the KNOWN q(5)>=13) timed out at 3600s/6.4GB; D(6,14) timed out at every proven vertex count V in [21,29] (up to 8.4M clauses) \u2014 kissat could not even decide it. R(5,5) worked because its constraints are LOCAL (SAT-friendly); q(r)'s are GLOBAL/rare (SAT-hostile). The correct tool is ORDERLY GENERATION (canonical augmentation + tau-deficiency prune), which is what Barat used. The P42 board STAYS (the exact verifier works fine) as a MARKET-MAKER board: the frontier is movable, but by generation or cluster cube-and-conquer, not by our SAT machinery. Vertex bounds for the generation attack: Barat Lemma 6.4 (e=14 => V<=29), Obs 6.1/6.2 degree caps; Sivashankar q(6)>=14 means a single 14-edge witness would give q(6)=14 exactly."
   },
   {
    "id": 27,
