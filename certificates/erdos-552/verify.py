@@ -12,6 +12,8 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 WITNESSES = HERE / "witnesses.json"
+EXPECTED_CLAIM = "R(C4,K1,n) = n + ceil(sqrt(n)) + 1 for 12 <= n <= 16"
+EXPECTED_UPPER_BOUND = "Parsons (1975): R(C4,K1,n) <= n + ceil(sqrt(n)) + 1"
 
 
 def ceil_sqrt(n: int) -> int:
@@ -84,6 +86,10 @@ def main() -> None:
     document = json.loads(raw)
     if document.get("schema") != "erdos-552-c4-star-witness-set/v1":
         raise ValueError("unexpected witness-set schema")
+    if document.get("claim") != EXPECTED_CLAIM:
+        raise ValueError("witness-set claim does not match the verified theorem")
+    if document.get("upper_bound") != EXPECTED_UPPER_BOUND:
+        raise ValueError("witness-set upper-bound citation contract changed")
     witnesses = document.get("witnesses")
     if not isinstance(witnesses, list) or len(witnesses) != 5:
         raise ValueError("expected exactly five witnesses")
@@ -92,7 +98,7 @@ def main() -> None:
         raise ValueError("witnesses must cover n=12..16 in order")
     report = {
         "certificate_sha256": hashlib.sha256(raw).hexdigest(),
-        "claim": document["claim"],
+        "claim": EXPECTED_CLAIM,
         "results": results,
         "valid": True,
     }

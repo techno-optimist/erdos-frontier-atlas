@@ -67,10 +67,11 @@
     "evidence": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["status", "checked_at", "artifact_path", "artifact_sha256", "verifier_path", "verifier_sha256", "claims"],
+      "required": ["status", "checked_at", "digest", "artifact_path", "artifact_sha256", "verifier_path", "verifier_sha256", "claims"],
       "properties": {
         "status": { "type": "string", "enum": ["verified", "provisional", "superseded"] },
         "checked_at": { "type": "string", "format": "date-time" },
+        "digest": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
         "artifact_path": { "type": "string", "minLength": 1 },
         "artifact_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
         "verifier_path": { "type": "string", "minLength": 1 },
@@ -82,8 +83,9 @@
     "compute": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["status", "method", "solver", "hardware", "parameter_region", "result"],
+      "required": ["schema", "status", "method", "solver", "hardware", "parameter_region", "coverage", "result"],
       "properties": {
+        "schema": { "const": "p42-atlas-compute-v1" },
         "status": { "type": "string", "enum": ["completed", "active", "stopped", "unknown"] },
         "method": { "type": "string", "minLength": 1 },
         "solver": { "type": "string", "minLength": 1 },
@@ -91,6 +93,23 @@
         "parameter_region": {
           "type": "object",
           "additionalProperties": { "type": ["integer", "number", "string", "boolean", "null"] }
+        },
+        "coverage": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["axis", "start", "end", "status", "result"],
+            "properties": {
+              "axis": { "type": "string", "pattern": "^[A-Za-z][A-Za-z0-9_.-]*$" },
+              "start": { "type": "integer" },
+              "end": { "type": "integer" },
+              "status": { "type": "string", "enum": ["CERTIFIED", "EXCLUDED", "UNKNOWN", "ACTIVE"] },
+              "result": { "type": "string", "minLength": 1 },
+              "artifact_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+            }
+          }
         },
         "result": { "type": "string", "minLength": 1 },
         "limits": { "type": "string" }

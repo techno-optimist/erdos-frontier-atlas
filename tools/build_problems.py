@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Build atlas/problems.json from the 51 deep audits (res_20260711_erdos_machinery_audit).
+"""Archive-only bootstrap from the original 51 deep audits.
+
+This is not the release snapshot generator. The published Atlas contains later
+curation, evidence, and campaign corrections that the source audit cannot
+reproduce. Running this tool therefore requires an explicit destructive
+bootstrap flag.
 
 Board-class rule (documented in atlas/schema.json and README):
 
@@ -29,7 +34,12 @@ _DEFAULT_SRC = (
     "/Users/nivek/Desktop/cultural-soliton-observatory/research_sessions/"
     "res_20260711_erdos_machinery_audit/audits.json"
 )
-SRC = Path(sys.argv[1] if len(sys.argv) > 1 else _DEFAULT_SRC)
+if len(sys.argv) < 2 or sys.argv[1] != "--bootstrap-from-audits":
+    raise SystemExit(
+        "refusing to overwrite the curated Atlas; pass --bootstrap-from-audits "
+        "only when intentionally rebuilding from the archival audit source"
+    )
+SRC = Path(sys.argv[2] if len(sys.argv) > 2 else _DEFAULT_SRC)
 OUT = Path(__file__).resolve().parents[1] / "atlas" / "problems.json"
 
 READY = {21, 41, 1, 67, 241, 552, 166, 138, 140, 86, 1029, 183, 564}
@@ -179,19 +189,32 @@ ENTRY_OVERRIDE = {
         "evidence": {
             "status": "verified",
             "checked_at": "2026-07-13T06:20:00Z",
+            "digest": "sha256:3ecdf116fb1eb0cc397ebcce8273899c008dec16c19a582425529662a8f7deda",
             "artifact_path": "certificates/erdos-552/witnesses.json",
             "artifact_sha256": "3ecdf116fb1eb0cc397ebcce8273899c008dec16c19a582425529662a8f7deda",
             "verifier_path": "certificates/erdos-552/verify.py",
-            "verifier_sha256": "87bc9f8972238f8df5e9f73c2661c5f11b14bc54bee547574bd251358ebdc476",
+            "verifier_sha256": "cbcdf4b4c2127a77de27f21dc6fe8fdeb6f88addaa97f1408c6f38bd3fe51103",
             "claims": [f"R(C4,K1,{n})={n + (4 if n <= 16 else 5) + 1}" for n in range(12, 17)],
             "independent_review": "CHRONOS hostile-referee replay passed n=12; the bundled verifier checks all five graphs identically.",
         },
         "compute": {
+            "schema": "p42-atlas-compute-v1",
             "status": "completed",
             "method": "edge SAT with exact C4 clauses and sequential-counter minimum-degree constraints",
             "solver": "PySAT 1.9.dev5 / CaDiCaL 1.9.5",
             "hardware": "local Apple workstation; single solver process",
             "parameter_region": {"n_min": 12, "n_max": 17, "top_endpoint_only": True},
+            "coverage": [
+                {
+                    "axis": "n", "start": 12, "end": 16, "status": "CERTIFIED",
+                    "result": "Exact values 17,18,19,20,21",
+                    "artifact_sha256": "3ecdf116fb1eb0cc397ebcce8273899c008dec16c19a582425529662a8f7deda",
+                },
+                {
+                    "axis": "n", "start": 17, "end": 17, "status": "UNKNOWN",
+                    "result": "Top endpoint m=22 undecided after bounded conflict budget",
+                },
+            ],
             "result": "SAT witnesses closed n=12..16; n=17,m=22 remained UNKNOWN",
             "limits": "n=17 endpoint used a 1,000,000-conflict budget; UNKNOWN is not an exclusion.",
         },

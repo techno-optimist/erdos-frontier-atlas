@@ -1213,19 +1213,25 @@
    "evidence": {
     "status": "verified",
     "checked_at": "2026-07-13T06:20:00Z",
+    "digest": "sha256:3ecdf116fb1eb0cc397ebcce8273899c008dec16c19a582425529662a8f7deda",
     "artifact_path": "certificates/erdos-552/witnesses.json",
     "artifact_sha256": "3ecdf116fb1eb0cc397ebcce8273899c008dec16c19a582425529662a8f7deda",
     "verifier_path": "certificates/erdos-552/verify.py",
-    "verifier_sha256": "87bc9f8972238f8df5e9f73c2661c5f11b14bc54bee547574bd251358ebdc476",
+    "verifier_sha256": "cbcdf4b4c2127a77de27f21dc6fe8fdeb6f88addaa97f1408c6f38bd3fe51103",
     "claims": ["R(C4,K1,12)=17", "R(C4,K1,13)=18", "R(C4,K1,14)=19", "R(C4,K1,15)=20", "R(C4,K1,16)=21"],
     "independent_review": "CHRONOS hostile-referee replay passed n=12; the bundled verifier checks all five graphs identically."
    },
    "compute": {
+    "schema": "p42-atlas-compute-v1",
     "status": "completed",
     "method": "edge SAT with exact C4 clauses and sequential-counter minimum-degree constraints",
     "solver": "PySAT 1.9.dev5 / CaDiCaL 1.9.5",
     "hardware": "local Apple workstation; single solver process",
     "parameter_region": {"n_min": 12, "n_max": 17, "top_endpoint_only": true},
+    "coverage": [
+     {"axis": "n", "start": 12, "end": 16, "status": "CERTIFIED", "result": "Exact values 17,18,19,20,21", "artifact_sha256": "3ecdf116fb1eb0cc397ebcce8273899c008dec16c19a582425529662a8f7deda"},
+     {"axis": "n", "start": 17, "end": 17, "status": "UNKNOWN", "result": "Top endpoint m=22 undecided after bounded conflict budget"}
+    ],
     "result": "SAT witnesses closed n=12..16; n=17,m=22 remained UNKNOWN",
     "limits": "n=17 endpoint used a 1,000,000-conflict budget; UNKNOWN is not an exclusion."
    },

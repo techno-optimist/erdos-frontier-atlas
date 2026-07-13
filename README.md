@@ -31,10 +31,12 @@ starts from a map instead of a blank page.
 | [`atlas/lanes.md`](atlas/lanes.md) | the 4 shared solver lanes (SAT+DRAT nonexistence · exact backtracking · witness local search · LP/SDP certificates) and which problems each covers |
 | [`views/board_catalog.md`](views/board_catalog.md) | human table of the 13 READY + 14 HEAVY boards with frontiers |
 | [`tools/atlas2p42.py`](tools/atlas2p42.py) | compiler: atlas entry → P42 bounty-board skeleton (problem.yaml, SPEC, solution schema, verifier stub, hostile-fixture tests) |
-| [`tools/build_problems.py`](tools/build_problems.py) | regenerates `problems.json` from the source audits (classification tables inline) |
+| [`tools/build_problems.py`](tools/build_problems.py) | destructive archive-only bootstrap from the original audits; not the release snapshot generator |
 | [`certificates/erdos-552`](certificates/erdos-552) | exact graph witnesses and a dependency-free verifier closing A006672 terms n=12…16 |
 
-Before publishing a snapshot, run `python tools/validate_atlas.py`. The check
+Install the pinned release-check dependency with
+`python -m pip install -r requirements-dev.lock`. Before publishing a snapshot,
+run `python tools/validate_atlas.py`. The check
 locks the release counts and rejects known stale routing facts, duplicate IDs,
 display-field HTML entities, and drift between the JSON and generated views.
 

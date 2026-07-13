@@ -4,8 +4,11 @@
 import json
 import hashlib
 import sys
+import subprocess
 from collections import Counter
 from pathlib import Path
+
+from jsonschema import Draft202012Validator, FormatChecker
 
 ROOT = Path(__file__).resolve().parents[1]
 ATLAS = ROOT / "atlas" / "problems.json"
@@ -17,6 +20,7 @@ def fail(message: str) -> None:
 
 def main() -> None:
     document = json.loads(ATLAS.read_text(encoding="utf-8"))
+    schema = json.loads((ROOT / "atlas" / "schema.json").read_text(encoding="utf-8"))
     problems = document.get("problems")
     if not isinstance(problems, list) or len(problems) != 51:
         fail("problems must contain exactly 51 entries")
@@ -33,6 +37,14 @@ def main() -> None:
         fail("declared counts do not match the release contract")
 
     by_id = {entry["id"]: entry for entry in problems}
+    validator = Draft202012Validator(schema, format_checker=FormatChecker())
+    schema_errors = [
+        f"{entry['id']}: {error.message}"
+        for entry in problems
+        for error in validator.iter_errors(entry)
+    ]
+    if schema_errors:
+        fail(f"entry schema validation failed: {schema_errors[0]}")
     if by_id[1].get("p42_slug") != "distinct-subset-sums-a11":
         fail("Erdos #1 must target the open a(11) board")
     if "130,000" not in json.dumps(by_id[67], ensure_ascii=False):
@@ -59,6 +71,21 @@ def main() -> None:
         digest = hashlib.sha256(artifact.read_bytes()).hexdigest()
         if digest != evidence.get(digest_key):
             fail(f"C4-vs-star evidence digest mismatch: {digest_key}")
+    replay = subprocess.run(
+        [sys.executable, str(ROOT / evidence["verifier_path"])],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+    )
+    if replay.returncode != 0:
+        fail(f"C4-vs-star certificate replay failed: {replay.stderr.strip()}")
+    try:
+        replay_report = json.loads(replay.stdout)
+    except json.JSONDecodeError as exc:
+        fail(f"C4-vs-star verifier emitted invalid JSON: {exc}")
+    if replay_report.get("valid") is not True or len(replay_report.get("results", [])) != 5:
+        fail("C4-vs-star certificate replay did not certify all five terms")
 
     for entry in problems:
         for field in ("title", "finite_object"):
