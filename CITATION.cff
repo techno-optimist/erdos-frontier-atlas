@@ -22,7 +22,7 @@ abstract: >-
   (of 95 triaged): finite object, exact-verifier specification, current record
   with sources, solver lane, and a recomputed board classification
   (13 BOARD-READY, 14 BOARD-HEAVY, 24 named walls). Includes a compiler that
-  turns any boardable entry into a pinned-verifier bounty package; five Atlas
+  turns any boardable entry into a pinned-verifier bounty package; six Atlas
   entries link to packaged P42 research boards. Exact certificates establish
   22 <= R(C4,K1,17) <= 23. No Erdős
   prize is claimable by finite computation; the atlas maps the computational

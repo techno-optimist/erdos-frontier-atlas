@@ -26,7 +26,7 @@ move the record — a WALL for us can still be a fair market-maker board.
 | [166](https://www.erdosproblems.com/166) | R(4,6) lower bound | R(4,6) ∈ [36,40] (Exoo 2012) | witness-local-search | WALL (for us) | — |
 | [183](https://www.erdosproblems.com/183) | multicolor triangle Ramsey R₄(3) lower bound | R₄(3) ∈ [51,62] (Chung 1973) · R₅(3) ∈ [162,307] | witness-local-search | WALL (for us) | — |
 | [241](https://www.erdosproblems.com/241) | B₃ subset table A387704, first jump to 9 | a(150)=8 (Dec 2025); least N with a 9-element B₃ subset open (N ≥ 151) | exact-backtracking | MOVABLE | `b3-subset-first-jump-9` |
-| [552](https://www.erdosproblems.com/552) | R(C₄, K₁,ₙ) next term (A006672) | repository-certified a(12…16)=17,18,19,20,21; a(17) ∈ [22,23] open | SAT+DRAT-nonexistence | MOVABLE | — |
+| [552](https://www.erdosproblems.com/552) | R(C₄, K₁,ₙ) next term (A006672) | repository-certified a(12…16)=17,18,19,20,21; a(17) ∈ [22,23] open | SAT+DRAT-nonexistence | MOVABLE | `c4-star-ramsey-a17` |
 | [564](https://www.erdosproblems.com/564) | R₃(4,5;3) lower bound | R₃(4,5;3) ≥ 35 | witness-local-search | WALL (for us) | — |
 | [1029](https://www.erdosproblems.com/1029) | R(5,5) ≥ 44 witness (zero-defect K₄₃) | R(5,5) ∈ [43,46]; best public K₄₃ colorings have exactly 2 mono K₅s ([our certs](https://doi.org/10.5281/zenodo.21305022)) | witness-local-search | WALL (for us) | — |
 
