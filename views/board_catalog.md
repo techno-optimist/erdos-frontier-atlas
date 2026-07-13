@@ -14,10 +14,10 @@ move the record — a WALL for us can still be a fair market-maker board.
 |---|---|---|---|---|---|
 | [1](https://www.erdosproblems.com/1) | distinct subset sums, min largest element (A276661) | **a(10)=309 CLOSED (Dyson, Oct 2025)** — live target a(11) ∈ [310, 594] (upper: Conway–Guy 11-set; lower: Dyson + drop-largest lemma) | exact-backtracking | MOVABLE | `distinct-subset-sums-a11` |
 | [20](https://www.erdosproblems.com/20) | sunflower-free family records | Sun(4,3) ≥ 55 (1972) · Sun(3,4) ≥ 39 (1992) · Sun(3,5) ≥ 89 (1974) — static 30–50 yr | witness-local-search | MOVABLE | — |
-| [21](https://www.erdosproblems.com/21) | q(6), min-edge 6-uniform intersecting hypergraph, τ=6 | 14 ≤ q(6) ≤ 18 (Sivashankar 2026 / Barát 2021) — m ≤ 17 witness wins | SAT+DRAT-nonexistence | MOVABLE | `q6-intersecting-hypergraph` |
+| [21](https://www.erdosproblems.com/21) | q(6), min-edge 6-uniform intersecting hypergraph, τ=6 | 14 ≤ q(6) ≤ 18 (Sivashankar 2026 / Barát 2021) — m ≤ 17 witness wins | exact-backtracking / orderly generation | MOVABLE | `q6-intersecting-hypergraph` |
 | [41](https://www.erdosproblems.com/41) | a(11), shortest 11-mark B₃ ruler (A227358) | a(11) ≤ 445 (Tromp 2013), suspected < 440; optimality open | SAT+DRAT-nonexistence | MOVABLE | `b3-ruler-11-marks` |
 | [52](https://www.erdosproblems.com/52) | sum-product small-case table (A263996) | contest-held per-n records | exact-backtracking | WALL (for us) | — |
-| [67](https://www.erdosproblems.com/67) | Erdős discrepancy, C=3 general witness | ≈13,000–14,000, static since Konev–Lisitsa 2014 | witness-local-search | MOVABLE (witness side) | `edp-c3-longest-sequence` |
+| [67](https://www.erdosproblems.com/67) | Erdős discrepancy, C=3 general witness | ≥130,000, Konev–Lisitsa unrestricted witness exactly re-verified by P42 | witness-local-search | MOVABLE (witness side) | `edp-c3-longest-sequence` |
 | [86](https://www.erdosproblems.com/86) | C₄-free subgraphs of Q₇ (extends A245762) | ex(Q₇,C₄) ≥ 304 (SA, May 2026); exact value open | SAT+DRAT-nonexistence | UNKNOWN | — |
 | [107](https://www.erdosproblems.com/107) | Happy Ending f(7) refutation witness | 33 ≤ f(7) ≤ 127 — a 33-point convex-7-gon-free set refutes Erdős–Szekeres at n=7 | SAT+DRAT-nonexistence | WALL (for us) | — |
 | [138](https://www.erdosproblems.com/138) | W(2,7) van der Waerden lower bound | W(2,7) ≥ 3703 (Ahmed et al. 2014) | witness-local-search | WALL (for us) | — |

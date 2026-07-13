@@ -1,0 +1,59 @@
+#!/usr/bin/env python3
+"""Fail-closed integrity checks for the published Atlas snapshot and views."""
+
+import json
+import sys
+from collections import Counter
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+ATLAS = ROOT / "atlas" / "problems.json"
+
+
+def fail(message: str) -> None:
+    raise SystemExit(f"atlas integrity error: {message}")
+
+
+def main() -> None:
+    document = json.loads(ATLAS.read_text(encoding="utf-8"))
+    problems = document.get("problems")
+    if not isinstance(problems, list) or len(problems) != 51:
+        fail("problems must contain exactly 51 entries")
+
+    ids = [entry.get("id") for entry in problems]
+    if len(set(ids)) != len(ids) or any(not isinstance(value, int) for value in ids):
+        fail("problem ids must be unique integers")
+
+    classes = Counter(entry.get("board_class") for entry in problems)
+    expected = {"READY": 17, "HEAVY": 11, "NONE": 23}
+    if dict(classes) != expected:
+        fail(f"board classes changed: {dict(classes)!r}")
+    if document.get("counts") != {"total": 51, **expected}:
+        fail("declared counts do not match the release contract")
+
+    by_id = {entry["id"]: entry for entry in problems}
+    if by_id[1].get("p42_slug") != "distinct-subset-sums-a11":
+        fail("Erdos #1 must target the open a(11) board")
+    if "130,000" not in json.dumps(by_id[67], ensure_ascii=False):
+        fail("Erdos #67 lost the exactly re-verified 130,000 frontier")
+    if by_id[21].get("lane") != "exact-backtracking":
+        fail("q(6) must route to orderly generation/exact backtracking")
+
+    for entry in problems:
+        for field in ("title", "finite_object"):
+            value = entry.get(field, "")
+            if "&lt;" in value or "&gt;" in value:
+                fail(f"HTML entity leaked into display field {entry['id']}:{field}")
+
+    catalog = (ROOT / "views" / "board_catalog.md").read_text(encoding="utf-8")
+    lanes = (ROOT / "atlas" / "lanes.md").read_text(encoding="utf-8")
+    if "≈13,000–14,000" in catalog or "past ~14,000" in lanes:
+        fail("generated views contain the obsolete EDP frontier")
+    if "| SAT+DRAT-nonexistence | MOVABLE | `q6-intersecting-hypergraph`" in catalog:
+        fail("board catalog contains the obsolete q(6) SAT route")
+
+    print("atlas integrity: 51 entries, counts and routing invariants verified")
+
+
+if __name__ == "__main__":
+    main()
