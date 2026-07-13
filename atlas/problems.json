@@ -522,7 +522,7 @@
    "board_class": "READY",
    "board_class_reason": "witness = edge subset of Q7; scan the 672 4-cycles, exact, microseconds; ex(Q7,C4) >= 305 witness-improvable",
    "wall_reason": null,
-   "p42_slug": null,
+   "p42_slug": "hypercube-q7-c4-free",
    "erdos_url": "https://www.erdosproblems.com/86",
    "links": {
     "oeis": [

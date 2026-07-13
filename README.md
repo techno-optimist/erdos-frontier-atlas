@@ -3,7 +3,7 @@
 **A machine-readable map of the computational frontier around the Erdős prize
 problems: 95 triaged, 51 deep-audited, 13 BOARD-READY, 14 BOARD-HEAVY, 24
 walls named with sources — plus a compiler that turns any boardable entry
-into a pinned-verifier bounty package (5 already packaged).**
+into a pinned-verifier bounty package (7 already packaged).**
 
 State it plainly, first: **no Erdős prize in this atlas is claimable by finite
 computation.** Every $100–$10,000 headline is asymptotic or analytic — a
@@ -65,14 +65,15 @@ witness…) where the honest play is market-making — host the board, pin the
 verifier, pay whoever's new construction wins. Walls for us are not walls for
 everyone.
 
-## The five packaged boards
+## The seven packaged boards
 
-Five READY entries are already full P42 packages (pinned exact verifiers,
+Seven READY entries are already full P42 packages (pinned exact verifiers,
 hostile fixtures, lying-claim tests) in the P42 Prizes repository:
 
 `q6-intersecting-hypergraph` (#21) · `distinct-subset-sums-a11` (#1; a(10)=309 was closed exactly by Dyson in Oct 2025 — the board targets the open a(11) ∈ [310,594]) ·
 `b3-ruler-11-marks` (#41) · `b3-subset-first-jump-9` (#241) ·
-`edp-c3-longest-sequence` (#67)
+`edp-c3-longest-sequence` (#67) · `c4-star-ramsey-a17` (#552) ·
+`hypercube-q7-c4-free` (#86)
 
 These are independent computational-frontier bounties on Erdős problems —
 **not** Erdős's own historical prizes, which are administered separately and
