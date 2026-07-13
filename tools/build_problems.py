@@ -36,9 +36,9 @@ READY = {21, 41, 1, 67, 241, 552, 20, 166, 159, 138, 140, 52, 86, 1029, 107, 183
 HEAVY = {582, 165, 139, 13, 30, 39, 64, 687, 720, 19, 712}
 
 LANE = {}
-for i in (21, 41, 552, 86, 107, 720, 19):
+for i in (41, 552, 86, 107, 720, 19):
     LANE[i] = "SAT+DRAT-nonexistence"
-for i in (1, 241, 52, 139, 13, 30, 39, 64, 687):
+for i in (1, 21, 241, 52, 139, 13, 30, 39, 64, 687):
     LANE[i] = "exact-backtracking"
 for i in (67, 20, 166, 159, 138, 140, 1029, 183, 564, 582, 165):
     LANE[i] = "witness-local-search"
@@ -46,7 +46,7 @@ LANE[712] = "LP/SDP-certificate"
 
 P42_SLUG = {
     21: "q6-intersecting-hypergraph",
-    1: "distinct-subset-sums-a10",
+    1: "distinct-subset-sums-a11",
     41: "b3-ruler-11-marks",
     241: "b3-subset-first-jump-9",
     67: "edp-c3-longest-sequence",
@@ -55,8 +55,8 @@ P42_SLUG = {
 FRONTIER = {
     21: "14 <= q(6) <= 18 (lower: Sivashankar arXiv:2606.24878 Thm 1; upper: Barat arXiv:2011.04444, PG(2,5) 18-line family)",
     41: "a(11) <= 445 (Tromp 2013, A227358); optimality open, suspected < 440",
-    1: "220 < a(10) <= 309 (Conway-Guy set, Bohman 1996; A276661)",
-    67: "C=3 general witness ~ 13,000-14,000, static since Konev-Lisitsa 2014; C=2 tight at 1160",
+    1: "310 <= a(11) <= 594 (upper: Conway-Guy 11-set; lower: Dyson a(10)=309 plus deletion)",
+    67: "C=3 general witness >= 130,000 (Konev-Lisitsa unrestricted witness, exactly re-verified by P42); C=2 tight at 1160",
     241: "A387704 b-file to a(150)=8 (Kesarwani, Dec 2025); first jump to 9 elements open (N >= 151)",
     552: "A006672 a(11) = R(C4,K_{1,11}) = 16 (Jun 2026); a(12) open",
     20: "Sun(3,3)=21 proven; Sun(4,3) >= 55 (1972), Sun(3,4) >= 39 (1992), Sun(3,5) >= 89 (1974) - construction records static 30-50 yr",
@@ -112,8 +112,8 @@ BOARD_REASON_NONE = {
 BOARD_REASON_READY = {
     21: "witness = <= 64 six-sets; pairwise-intersect + complete 5-cover branch-and-bound <= 9,331 nodes, ms-exact; open bracket 14..18 witness-improvable (m <= 17 wins)",
     41: "witness = 11 integers; 286 triple-sum distinctness checks, exact, microseconds; open frontier 445 witness-improvable",
-    1: "witness = 10 integers; 1024 subset sums, exact, microseconds; bracket 220 < a(10) <= 309 witness-improvable (max < 309 refutes Conway-Guy at n=10)",
-    67: "witness = +-1 sequence; O(N log N) integer prefix-sum scan; frontier ~14,000 witness-extendable",
+    1: "witness = 11 integers; 2048 subset sums, exact and fast; live bracket 310 <= a(11) <= 594",
+    67: "witness = +-1 sequence; O(N log N) integer prefix-sum scan; exactly re-verified 130,000-term frontier witness-extendable",
     241: "witness = subset of {1..N}; O(k^3) triple-sum distinctness, exact; first-jump frontier witness-improvable",
     552: "witness = C4-free graph with bounded independence; codegree check O(m^3), exact, cheap; a(12) lower bound witness-improvable",
     20: "witness = sunflower-free family; s=3 core-bucketed triple scan, exact, seconds; construction records (Sun(4,3) >= 55 etc.) witness-improvable",
@@ -152,6 +152,15 @@ OEIS_EXCLUDE = {21: {"A391599"}}
 # The corrected q(6) lower bound comes from the Phase-A literature verification
 # (phase_a_literature.json), which post-dates the audit blob text.
 ARXIV_ADD = {21: ["2606.24878"]}
+
+CAMPAIGN_FINDING = {
+    67: (
+        "2026-07-12 correction: the unrestricted Konev-Lisitsa length-130,000 witness was "
+        "recovered from the authors' archived result artifact and exactly re-verified by the P42 "
+        "verifier. Earlier ~14,000 frontier and search-cost prose in the originating audit is "
+        "superseded; new work must start above 130,000."
+    ),
+}
 
 
 def main() -> None:
@@ -199,6 +208,8 @@ def main() -> None:
             "erdos_url": f"https://www.erdosproblems.com/{pid}",
             "links": {"oeis": oeis, "arxiv": arxiv},
         }
+        if pid in CAMPAIGN_FINDING:
+            entry["campaign_finding"] = CAMPAIGN_FINDING[pid]
         entries.append(entry)
 
     doc = {

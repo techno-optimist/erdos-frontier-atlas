@@ -33,6 +33,10 @@ starts from a map instead of a blank page.
 | [`tools/atlas2p42.py`](tools/atlas2p42.py) | compiler: atlas entry → P42 bounty-board skeleton (problem.yaml, SPEC, solution schema, verifier stub, hostile-fixture tests) |
 | [`tools/build_problems.py`](tools/build_problems.py) | regenerates `problems.json` from the source audits (classification tables inline) |
 
+Before publishing a snapshot, run `python tools/validate_atlas.py`. The check
+locks the release counts and rejects known stale routing facts, duplicate IDs,
+display-field HTML entities, and drift between the JSON and generated views.
+
 ## The board classification (recomputed, not inherited)
 
 `board_class` is recomputed from the verifier and frontier fields by a

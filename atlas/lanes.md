@@ -49,7 +49,7 @@ leave the farm.*
 
 | # | problem | role |
 |---|---------|------|
-| 67 | EDP C=3 witness past ~14,000 | Kissat/YalSAT + streamliners; farm shakedown |
+| 67 | EDP C=3 witness past 130,000 | Kissat/YalSAT + streamliners; farm shakedown |
 | 20 | sunflower small cells | beat 30–50-year-old constructions (Sun(4,3) ≥ 55, …) |
 | 582 | Folkman Fe(3,3;4) ≤ 786 | verifier-in-the-loop minimization seeded by Mulrenin's Hermitian-unital candidates (arXiv:2506.14942); **LOW-PRIORITY WATCH** |
 | 1029 | R(5,5) ≥ 44 witness | market board; our campaign closed (walls.md) — the board stays open for others |
