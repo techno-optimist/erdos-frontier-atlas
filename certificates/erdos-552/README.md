@@ -25,6 +25,14 @@ Parsons' theorem; that theorem is the cited mathematical reduction. See
 upper bound to Parsons (1975), and [OEIS A006672](https://oeis.org/A006672)
 for the previously published terms through `n=11`.
 
-The next open cell in this snapshot is `n=17`, currently bracketed
-`21 <= R(C4,K1,17) <= 23`. A bounded SAT run at the top endpoint returned
-`UNKNOWN`; it is not a nonexistence result.
+The same certificate set also includes a 21-vertex witness for `n=17`, proving
+`R(C4,K1,17) >= 22`. Together with Parsons' upper bound, the current bracket is
+therefore
+
+```text
+22 <= R(C4,K1,17) <= 23.
+```
+
+The only unresolved cell is a 22-vertex C4-free graph of minimum degree 5. A
+bounded SAT run for that target returned `UNKNOWN`; it is not a nonexistence
+result.

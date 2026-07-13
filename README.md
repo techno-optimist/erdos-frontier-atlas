@@ -32,18 +32,19 @@ starts from a map instead of a blank page.
 | [`views/board_catalog.md`](views/board_catalog.md) | human table of the 13 READY + 14 HEAVY boards with frontiers |
 | [`tools/atlas2p42.py`](tools/atlas2p42.py) | compiler: atlas entry → P42 bounty-board skeleton (problem.yaml, SPEC, solution schema, verifier stub, hostile-fixture tests) |
 | [`tools/build_problems.py`](tools/build_problems.py) | destructive archive-only bootstrap from the original audits; not the release snapshot generator |
-| [`certificates/erdos-552`](certificates/erdos-552) | exact graph witnesses and a dependency-free verifier closing A006672 terms n=12…16 |
+| [`certificates/erdos-552`](certificates/erdos-552) | exact graph witnesses and a dependency-free verifier closing A006672 terms n=12…16 and proving a(17) >= 22 |
 
 Install the pinned release-check dependency with
-`python -m pip install -r requirements-dev.lock`. Before publishing a snapshot,
-run `python tools/validate_atlas.py`. The check
+`python3 -m pip install -r requirements-dev.lock`. Before publishing a snapshot,
+run `python3 tools/validate_atlas.py`. The check
 locks the release counts and rejects known stale routing facts, duplicate IDs,
 display-field HTML entities, and drift between the JSON and generated views.
 
 The newest certified movement is Erdős #552: five C₄-free graph witnesses meet
 Parsons' upper bound and establish `R(C4,K1,n) = n + ceil(sqrt(n)) + 1` for
-`12 <= n <= 16`. Re-run them with
-`python certificates/erdos-552/verify.py`; the next open table cell is `n=17`.
+`12 <= n <= 16`; a sixth proves `22 <= R(C4,K1,17) <= 23`. Re-run them with
+`python3 certificates/erdos-552/verify.py`; the sole live endpoint is a
+22-vertex witness for `n=17`.
 
 ## The board classification (recomputed, not inherited)
 

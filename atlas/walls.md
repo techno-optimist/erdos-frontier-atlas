@@ -97,8 +97,8 @@ walls below are walls for *spending our own search compute*.
 - **#708 — g(n) divisibility, #548 — Erdős–Sós, #64 — 2-power cycles,
   #552 — R(C₄,S_n):** unbounded or believed-empty witness branch — or, for
   #552, a table being pushed by the same SAT tools: repository certificates
-  close a(12)…a(16), so repeat compute on those cells is now a named wall;
-  only a(17) and later remain live.
+  close a(12)…a(16) and certify the a(17) lower endpoint, so repeat compute on
+  those cells is now a named wall; only n=17,m=22 and later remain live.
 
 ---
 

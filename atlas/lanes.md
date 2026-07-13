@@ -20,7 +20,7 @@ Proven at scale in
 | 41 | a(11) B₃ ruler | phase 2: optimality UNSAT chain (phase 1 is lane 3) |
 | 86 | ex(Q₇,C₄) = 304? | scoped probe: UNSAT at 305 edges ⟹ first exact term past n=6 |
 | 107 | Happy Ending f(7) | *named wall for us* (Heule pipeline already running) — lane listed for the market board's certificate form |
-| 552 | R(C₄, S_n) next terms | n=12…16 closed by exact witnesses; n=17 witness search, DRAT/LRAT for nonexistence |
+| 552 | R(C₄, S_n) next terms | n=12…16 closed; n=17,m=21 certified; search only m=22 or prove nonexistence with DRAT/LRAT |
 | 720 | size-Ramsey exact values | upper bound = one host + one DRAT UNSAT per claim (HEAVY tier) |
 | 19 | Erdős–Faber–Lovász n=13 | *named wall* — pigeonhole-hard; listed for completeness of the certificate form |
 

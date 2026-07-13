@@ -5,6 +5,7 @@ import json
 import hashlib
 import sys
 import subprocess
+import re
 from collections import Counter
 from pathlib import Path
 
@@ -35,6 +36,8 @@ def main() -> None:
         fail(f"board classes changed: {dict(classes)!r}")
     if document.get("counts") != {"total": 51, **expected}:
         fail("declared counts do not match the release contract")
+    if document.get("atlas_version") != "0.2.0" or document.get("generated") != "2026-07-13":
+        fail("Atlas release identity changed")
 
     by_id = {entry["id"]: entry for entry in problems}
     validator = Draft202012Validator(schema, format_checker=FormatChecker())
@@ -85,7 +88,52 @@ def main() -> None:
     except json.JSONDecodeError as exc:
         fail(f"C4-vs-star verifier emitted invalid JSON: {exc}")
     if replay_report.get("valid") is not True or len(replay_report.get("results", [])) != 5:
-        fail("C4-vs-star certificate replay did not certify all five terms")
+        fail("C4-vs-star certificate replay did not certify all five exact terms")
+    lower_bounds = replay_report.get("lower_bounds", [])
+    if len(lower_bounds) != 1 or lower_bounds[0].get("n") != 17 or lower_bounds[0].get("value") != 22:
+        fail("C4-vs-star certificate replay did not certify the n=17 lower bound")
+    artifact_sha256 = evidence.get("artifact_sha256")
+    if replay_report.get("certificate_sha256") != artifact_sha256:
+        fail("C4-vs-star replay is not bound to the declared artifact digest")
+    if evidence.get("digest") != f"sha256:{artifact_sha256}":
+        fail("C4-vs-star evidence digest is not bound to artifact_sha256")
+    expected_claims = [
+        f"R(C4,K1,{result['n']})={result['value']}"
+        for result in replay_report["results"]
+    ] + ["R(C4,K1,17)>=22"]
+    if evidence.get("claims") != expected_claims:
+        fail("C4-vs-star evidence claims do not match the certificate replay")
+    expected_frontier = (
+        "Repository-certified: a(12..16) = 17,18,19,20,21; "
+        "next open term 22 <= a(17) <= 23"
+    )
+    if erdos_552.get("frontier") != expected_frontier:
+        fail("C4-vs-star frontier does not match the certificate replay")
+    expected_current_record = (
+        "OEIS A006672 publishes {4,4,6,7,8,9,11,12,13,14,16} for n=1..11 "
+        "(a(11) from Alex Towell, Jun 2026). P42 exact certificates establish "
+        "a(12..16)={17,18,19,20,21}, meeting Parsons' upper bound, and a "
+        "21-vertex witness proves 22 <= a(17) <= 23."
+    )
+    if erdos_552.get("current_record") != expected_current_record:
+        fail("C4-vs-star current record does not match the certificate replay")
+    expected_coverage = [
+        {
+            "axis": "n", "start": 12, "end": 16, "status": "CERTIFIED",
+            "result": "Exact values 17,18,19,20,21",
+            "artifact_sha256": artifact_sha256,
+        },
+        {
+            "axis": "n", "start": 17, "end": 17, "status": "UNKNOWN",
+            "result": (
+                "Lower endpoint m=21 certified; top endpoint m=22 undecided "
+                "after bounded conflict budget"
+            ),
+            "artifact_sha256": artifact_sha256,
+        },
+    ]
+    if erdos_552.get("compute", {}).get("coverage") != expected_coverage:
+        fail("C4-vs-star compute coverage does not match the certificate replay")
 
     for entry in problems:
         for field in ("title", "finite_object"):
@@ -99,6 +147,32 @@ def main() -> None:
         fail("generated views contain the obsolete EDP frontier")
     if "| SAT+DRAT-nonexistence | MOVABLE | `q6-intersecting-hypergraph`" in catalog:
         fail("board catalog contains the obsolete q(6) SAT route")
+    if "a(17) ∈ [22,23]" not in catalog:
+        fail("board catalog lost the certified C4-star n=17 frontier")
+
+    linked_packages = sum(entry.get("p42_slug") is not None for entry in problems)
+    if linked_packages != 5:
+        fail("linked P42 package count changed")
+    zenodo = json.loads((ROOT / ".zenodo.json").read_text(encoding="utf-8"))
+    zenodo_description = zenodo.get("description", "")
+    required_release_facts = (
+        "13 BOARD-READY", "14 BOARD-HEAVY", "24 named walls",
+        "five boards", "22 &lt;= R(C4,K1,17) &lt;= 23",
+    )
+    if not all(fact in zenodo_description for fact in required_release_facts):
+        fail("Zenodo release metadata contains stale board counts")
+    citation = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
+    top_level = dict(re.findall(r'^([a-z][a-z-]*):\s*"?([^"\n]+)"?\s*$', citation, re.MULTILINE))
+    required_citation_facts = (
+        "13 BOARD-READY", "14 BOARD-HEAVY", "24 named walls",
+        "five Atlas", "22 <= R(C4,K1,17) <= 23",
+    )
+    if (
+        top_level.get("version") != document["atlas_version"]
+        or top_level.get("date-released") != document["generated"]
+        or not all(fact in citation for fact in required_citation_facts)
+    ):
+        fail("citation metadata is stale")
 
     print("atlas integrity: 51 entries, counts and routing invariants verified")
 
