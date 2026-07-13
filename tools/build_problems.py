@@ -32,8 +32,8 @@ _DEFAULT_SRC = (
 SRC = Path(sys.argv[1] if len(sys.argv) > 1 else _DEFAULT_SRC)
 OUT = Path(__file__).resolve().parents[1] / "atlas" / "problems.json"
 
-READY = {21, 41, 1, 67, 241, 552, 20, 166, 159, 138, 140, 52, 86, 1029, 107, 183, 564}
-HEAVY = {582, 165, 139, 13, 30, 39, 64, 687, 720, 19, 712}
+READY = {21, 41, 1, 67, 241, 552, 166, 138, 140, 86, 1029, 183, 564}
+HEAVY = {582, 165, 139, 13, 20, 30, 39, 64, 107, 159, 687, 720, 19, 712}
 
 LANE = {}
 for i in (41, 552, 86, 107, 720, 19):
@@ -84,6 +84,7 @@ FRONTIER = {
 }
 
 BOARD_REASON_NONE = {
+    52: "no concrete n, authoritative seed witness, or tracked per-n record is identified; the asymptotic headline is not advanced by an unscoped finite score (R2 fails)",
     142: "asymptotic formula; the prize headline explicitly 'cannot be resolved by finite computation'; the finite r_k table object is carried by #140",
     77: "asymptotic limit only; the finite R(5,5) frontier object is carried by #1029 (R4 dedupe)",
     548: "no finite search space (n unbounded) and no numeric record; positive direction has no finite certificate",
@@ -115,16 +116,12 @@ BOARD_REASON_READY = {
     1: "witness = 11 integers; 2048 subset sums, exact and fast; live bracket 310 <= a(11) <= 594",
     67: "witness = +-1 sequence; O(N log N) integer prefix-sum scan; exactly re-verified 130,000-term frontier witness-extendable",
     241: "witness = subset of {1..N}; O(k^3) triple-sum distinctness, exact; first-jump frontier witness-improvable",
-    552: "witness = C4-free graph with bounded independence; codegree check O(m^3), exact, cheap; a(12) lower bound witness-improvable",
-    20: "witness = sunflower-free family; s=3 core-bucketed triple scan, exact, seconds; construction records (Sun(4,3) >= 55 etc.) witness-improvable",
+    552: "witness = C4-free red graph with minimum degree >= m-n; codegree and degree checks are exact and cheap; a(12) lower bound is witness-improvable",
     166: "witness = 2-coloring on <= ~40 vertices; K4/K6 clique scans trivial; R(4,6) >= 37 witness-improvable",
-    159: "witness = C4-free graph on 39+ vertices with alpha <= 10; both checks cheap-exact at this n; R(C4,K11) >= 40 witness-improvable",
     138: "witness = 2-coloring of [N]; O(N^2/k) mono-AP scan, exact; W(2,7) > 3703 witness-improvable",
     140: "witness = 44-subset of [1,212] with no 3-AP; O(|S|^2) midpoint test, trivial; would settle r_3(212)=44 (witness side only - the UNSAT side is a named wall)",
-    52: "witness = integer n-set; |A+A u AA| dedupe, exact bignum, microseconds; per-n table records witness-improvable",
     86: "witness = edge subset of Q7; scan the 672 4-cycles, exact, microseconds; ex(Q7,C4) >= 305 witness-improvable",
     1029: "witness = 2-coloring of K43; mono-K5 count, exact, cheap (our R(5,5) verifier); a 0-defect coloring proves R(5,5) >= 44 - EinsteinArena-style market board",
-    107: "witness = integer-coordinate point set; convexity/general position are strict-inequality (orientation) predicates so integer witnesses are lossless; C(33,7) ~ 4.3M exact determinant checks, cheap",
     183: "witness = k-edge-coloring; per-color triangle scan O(k n^3), exact; R_4(3) >= 52 witness-improvable",
     564: "witness = 2-coloring of triples on 35+ vertices; O(m^5) scan of 4-/5-subsets, exact, cheap; R_3(4,5;3) >= 36 witness-improvable",
 }
@@ -134,9 +131,12 @@ BOARD_REASON_HEAVY = {
     165: "lower-bound witness needs an independence-number <= 9 verification: ~8.5e8 subset scan / MIS run per candidate - minutes, not seconds (R1 fails)",
     139: "movable content is the exact-table certificate side (exhaustion receipts for r_k, k >= 4); the r_3(212) witness object is carried by #140",
     13: "no defended record to beat (uncharted table); the boardable product is a certified exact-value table - ILP/SAT certificate claims, not single witnesses (R2 fails)",
+    20: "the survey entry combines several distinct (uniformity, sunflower-size) frontiers; split and seed one exact cell before admission (R4 fails)",
     30: "frontier is proven-optimal (OGR-28); the next move is an optimality/exhaustion claim adjudicated by receipts, not a witness",
     39: "optimality claims (branch-and-bound nonexistence receipts) are the movable half; witness side has no open tracked value",
     64: "movable claim = exhaustive-generation certificate ('no cubic counterexample <= 30 vertices'); a counterexample itself would be witness-cheap but is believed nonexistent (existence bounty, no frontier)",
+    107: "orientation checking is exact, but no a-priori coordinate bit bound is established; a byte-capped integer format could exclude valid order types (R1/R3 admission proof pending)",
+    159: "C4-freeness is cheap, but alpha <= 10 requires a measured and a-priori-bounded exact MIS adjudication; the survey does not establish the <=1 s R1 contract",
     687: "next A048670 term requires the upper-bound side: certified nonexistence over all residue choices - pruned-exhaustion receipt, not a witness",
     720: "each exact-value move = host graph + DRAT UNSAT certificate (upper) + enumeration receipt (lower) - certificate-tier adjudication",
     19: "the movable n=13 step is a whole-bucket DRAT certificate (pigeonhole-hard, resolution-exponential); coloring witnesses certify nothing new",
@@ -159,6 +159,15 @@ CAMPAIGN_FINDING = {
         "recovered from the authors' archived result artifact and exactly re-verified by the P42 "
         "verifier. Earlier ~14,000 frontier and search-cost prose in the originating audit is "
         "superseded; new work must start above 130,000."
+    ),
+}
+
+VERIFIER_OVERRIDE = {
+    552: (
+        "Represent the red graph. Check C_4-freeness by requiring every vertex pair to have "
+        "codegree <= 1. A blue S_n is absent exactly when every blue degree is <= n-1, "
+        "equivalently every red degree is >= m-n on an m-vertex complete graph. Both checks "
+        "are exact and tiny for m ~ 15-45."
     ),
 }
 
@@ -196,7 +205,7 @@ def main() -> None:
             "fit_score": a["fit_score"],
             "impact_score": a["impact_score"],
             "impact_reason": a["impact_reason"],
-            "verifier": a["verifier"],
+            "verifier": VERIFIER_OVERRIDE.get(pid, a["verifier"]),
             "attack": a["attack_sketch"],
             "our_edge": a["our_edge"],
             "verdict": a["verdict"],

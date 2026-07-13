@@ -25,7 +25,7 @@ def main() -> None:
         fail("problem ids must be unique integers")
 
     classes = Counter(entry.get("board_class") for entry in problems)
-    expected = {"READY": 17, "HEAVY": 11, "NONE": 23}
+    expected = {"READY": 13, "HEAVY": 14, "NONE": 24}
     if dict(classes) != expected:
         fail(f"board classes changed: {dict(classes)!r}")
     if document.get("counts") != {"total": 51, **expected}:
@@ -38,6 +38,12 @@ def main() -> None:
         fail("Erdos #67 lost the exactly re-verified 130,000 frontier")
     if by_id[21].get("lane") != "exact-backtracking":
         fail("q(6) must route to orderly generation/exact backtracking")
+    if by_id[20].get("board_class") == "READY":
+        fail("sunflower entry must be split into one finite frontier per board")
+    if by_id[52].get("board_class") == "READY":
+        fail("sum-product requires a concrete seeded finite frontier")
+    if "minimum degree" not in by_id[552].get("board_class_reason", ""):
+        fail("C4-vs-star routing must use the complementary degree condition")
 
     for entry in problems:
         for field in ("title", "finite_object"):
