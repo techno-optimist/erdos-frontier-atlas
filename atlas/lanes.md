@@ -32,7 +32,7 @@ receipt, weaker than DRAT but auditable.*
 
 | # | problem | role |
 |---|---------|------|
-| 1 | a(10) distinct subset sums | dedicated parallel backtracker (no clean CNF — **no DRAT moat**, receipts only) |
+| 1 | a(11) distinct subset sums | dedicated parallel backtracker (a(10)=309 closed by Dyson in 2025; no clean CNF — **no DRAT moat**, receipts only) |
 | 241 | A387704 B₃ table | C++ B&B vs a single-machine Mathematica incumbent |
 | 52 | sum-product A263996 table | contest-held records; opportunistic only |
 | 13 | Erdős–Sárközy exact f(N) | ILP per N; uncharted table (no defended record) |
