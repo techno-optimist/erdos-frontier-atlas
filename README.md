@@ -1,7 +1,7 @@
 # The Erdős Frontier Atlas
 
 **A machine-readable map of the computational frontier around the Erdős prize
-problems: 95 triaged, 51 deep-audited, 17 BOARD-READY, 11 BOARD-HEAVY, 23
+problems: 95 triaged, 51 deep-audited, 13 BOARD-READY, 14 BOARD-HEAVY, 24
 walls named with sources — plus a compiler that turns any boardable entry
 into a pinned-verifier bounty package (5 already packaged).**
 
@@ -27,30 +27,38 @@ starts from a map instead of a blank page.
 |---|---|
 | [`atlas/problems.json`](atlas/problems.json) | 51 machine-readable frontier records (id, finite object, verifier spec, current record, lane, board class, links) |
 | [`atlas/schema.json`](atlas/schema.json) | JSON Schema for the entries, including the full R1–R4 board-classification rule |
-| [`atlas/walls.md`](atlas/walls.md) | **the do-not-enter list** — 23 computational-looking dead ends, with the specific reason and source for each |
+| [`atlas/walls.md`](atlas/walls.md) | **the do-not-enter list** — 24 computational-looking dead ends, with the specific reason and source for each |
 | [`atlas/lanes.md`](atlas/lanes.md) | the 4 shared solver lanes (SAT+DRAT nonexistence · exact backtracking · witness local search · LP/SDP certificates) and which problems each covers |
-| [`views/board_catalog.md`](views/board_catalog.md) | human table of the 17 READY + 11 HEAVY boards with frontiers |
+| [`views/board_catalog.md`](views/board_catalog.md) | human table of the 13 READY + 14 HEAVY boards with frontiers |
 | [`tools/atlas2p42.py`](tools/atlas2p42.py) | compiler: atlas entry → P42 bounty-board skeleton (problem.yaml, SPEC, solution schema, verifier stub, hostile-fixture tests) |
-| [`tools/build_problems.py`](tools/build_problems.py) | regenerates `problems.json` from the source audits (classification tables inline) |
+| [`tools/build_problems.py`](tools/build_problems.py) | destructive archive-only bootstrap from the original audits; not the release snapshot generator |
+| [`certificates/erdos-552`](certificates/erdos-552) | exact graph witnesses and a dependency-free verifier closing A006672 terms n=12…16 |
 
-Before publishing a snapshot, run `python tools/validate_atlas.py`. The check
+Install the pinned release-check dependency with
+`python -m pip install -r requirements-dev.lock`. Before publishing a snapshot,
+run `python tools/validate_atlas.py`. The check
 locks the release counts and rejects known stale routing facts, duplicate IDs,
 display-field HTML entities, and drift between the JSON and generated views.
+
+The newest certified movement is Erdős #552: five C₄-free graph witnesses meet
+Parsons' upper bound and establish `R(C4,K1,n) = n + ceil(sqrt(n)) + 1` for
+`12 <= n <= 16`. Re-run them with
+`python certificates/erdos-552/verify.py`; the next open table cell is `n=17`.
 
 ## The board classification (recomputed, not inherited)
 
 `board_class` is recomputed from the verifier and frontier fields by a
 four-conjunct rule (full text in `atlas/schema.json`):
 
-- **READY (17)** — a submitted witness settles the claim in under a second of
+- **READY (13)** — a submitted witness settles the claim in under a second of
   exact integer arithmetic, against a concrete open frontier, with no lossy
   restriction on the witness space. These can be bounty boards *today*.
-- **HEAVY (11)** — exact adjudication exists but each claim costs a SAT run, a
+- **HEAVY (14)** — exact adjudication exists but each claim costs a SAT run, a
   DRAT check, or an exhaustion-receipt audit: optimistic-oracle tier.
-- **NONE (23)** — no exact poly-time verifier, or no representable witness, or
+- **NONE (24)** — no exact poly-time verifier, or no representable witness, or
   no open finite frontier. These are the walls.
 
-Crucially, `board_class` is independent of `beatable`: nine of the seventeen
+Crucially, `board_class` is independent of `beatable`: several of the thirteen
 READY boards are **walls for us** (Ramsey lower bounds, W(2,7), the r₃(212)
 witness…) where the honest play is market-making — host the board, pin the
 verifier, pay whoever's new construction wins. Walls for us are not walls for
