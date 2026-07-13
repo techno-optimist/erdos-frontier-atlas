@@ -2,6 +2,7 @@
 """Fail-closed integrity checks for the published Atlas snapshot and views."""
 
 import json
+import hashlib
 import sys
 from collections import Counter
 from pathlib import Path
@@ -44,6 +45,20 @@ def main() -> None:
         fail("sum-product requires a concrete seeded finite frontier")
     if "minimum degree" not in by_id[552].get("board_class_reason", ""):
         fail("C4-vs-star routing must use the complementary degree condition")
+    erdos_552 = by_id[552]
+    if "a(12..16)" not in erdos_552.get("frontier", ""):
+        fail("C4-vs-star certified frontier is stale")
+    evidence = erdos_552.get("evidence", {})
+    for path_key, digest_key in (
+        ("artifact_path", "artifact_sha256"),
+        ("verifier_path", "verifier_sha256"),
+    ):
+        artifact = ROOT / evidence.get(path_key, "")
+        if not artifact.is_file():
+            fail(f"C4-vs-star evidence file is missing: {path_key}")
+        digest = hashlib.sha256(artifact.read_bytes()).hexdigest()
+        if digest != evidence.get(digest_key):
+            fail(f"C4-vs-star evidence digest mismatch: {digest_key}")
 
     for entry in problems:
         for field in ("title", "finite_object"):

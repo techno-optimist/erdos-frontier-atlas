@@ -96,8 +96,9 @@ walls below are walls for *spending our own search compute*.
   Alexeev–Mixon PNAS 2025); no movable number remains.
 - **#708 — g(n) divisibility, #548 — Erdős–Sós, #64 — 2-power cycles,
   #552 — R(C₄,S_n):** unbounded or believed-empty witness branch — or, for
-  #552, a table already being pushed by an outside worker with our own tools
-  (a(11) added June 2026; the a(12) *witness* board stays fair).
+  #552, a table being pushed by the same SAT tools: repository certificates
+  close a(12)…a(16), so repeat compute on those cells is now a named wall;
+  only a(17) and later remain live.
 
 ---
 

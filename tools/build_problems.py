@@ -58,7 +58,7 @@ FRONTIER = {
     1: "310 <= a(11) <= 594 (upper: Conway-Guy 11-set; lower: Dyson a(10)=309 plus deletion)",
     67: "C=3 general witness >= 130,000 (Konev-Lisitsa unrestricted witness, exactly re-verified by P42); C=2 tight at 1160",
     241: "A387704 b-file to a(150)=8 (Kesarwani, Dec 2025); first jump to 9 elements open (N >= 151)",
-    552: "A006672 a(11) = R(C4,K_{1,11}) = 16 (Jun 2026); a(12) open",
+    552: "Repository-certified: a(12..16) = 17,18,19,20,21; next open term 21 <= a(17) <= 23",
     20: "Sun(3,3)=21 proven; Sun(4,3) >= 55 (1972), Sun(3,4) >= 39 (1992), Sun(3,5) >= 89 (1974) - construction records static 30-50 yr",
     166: "R(4,6) in [36,40] (lower 36 = Exoo 2012)",
     159: "39 <= R(C4,K11) <= 44 (Lange-Radziszowski-Xu 2014/2016)",
@@ -116,7 +116,7 @@ BOARD_REASON_READY = {
     1: "witness = 11 integers; 2048 subset sums, exact and fast; live bracket 310 <= a(11) <= 594",
     67: "witness = +-1 sequence; O(N log N) integer prefix-sum scan; exactly re-verified 130,000-term frontier witness-extendable",
     241: "witness = subset of {1..N}; O(k^3) triple-sum distinctness, exact; first-jump frontier witness-improvable",
-    552: "witness = C4-free red graph with minimum degree >= m-n; codegree and degree checks are exact and cheap; a(12) lower bound is witness-improvable",
+    552: "witness = C4-free red graph with minimum degree >= m-n; codegree and degree checks are exact and cheap; the next open cell a(17) is witness-improvable from the certified m=20 seed",
     166: "witness = 2-coloring on <= ~40 vertices; K4/K6 clique scans trivial; R(4,6) >= 37 witness-improvable",
     138: "witness = 2-coloring of [N]; O(N^2/k) mono-AP scan, exact; W(2,7) > 3703 witness-improvable",
     140: "witness = 44-subset of [1,212] with no 3-AP; O(|S|^2) midpoint test, trivial; would settle r_3(212)=44 (witness side only - the UNSAT side is a named wall)",
@@ -160,6 +160,42 @@ CAMPAIGN_FINDING = {
         "verifier. Earlier ~14,000 frontier and search-cost prose in the originating audit is "
         "superseded; new work must start above 130,000."
     ),
+    552: (
+        "2026-07-13: a local PySAT/CaDiCaL edge-SAT pass found exact lower-bound "
+        "witnesses meeting Parsons' upper bound for every n=12..16. The dependency-free "
+        "verifier recomputed all degrees and pair-codegrees; CHRONOS independently rechecked "
+        "n=12. A limited 1,000,000-conflict pass on n=17,m=22 returned UNKNOWN, not UNSAT. "
+        "Do not repeat n=12..16, and do not treat the n=17 timeout as a bound."
+    ),
+}
+
+ENTRY_OVERRIDE = {
+    552: {
+        "finite_object": "For fixed n, a simple red graph on m labeled vertices with no C4 and minimum degree at least m-n. Its complement then has no K1,n. Maximizing m improves the lower bound R(C4,K1,n) >= m+1.",
+        "current_record": "OEIS A006672 publishes {4,4,6,7,8,9,11,12,13,14,16} for n=1..11 (a(11) from Alex Towell, Jun 2026). P42 exact certificates establish a(12..16)={17,18,19,20,21}, meeting Parsons' upper bound. The next open term is a(17), bracketed 21 <= a(17) <= 23.",
+        "beatable_reason": "The n=12..16 endpoints are closed by exact witnesses. Route new compute to n=17, where the top endpoint is a C4-free graph on 22 vertices with minimum degree 5.",
+        "attack": "Start at n=17. Search m=21 or 22 with exact C4 clauses and minimum-degree constraints; m=22 reaches Parsons' upper bound. Require DRAT/LRAT for nonexistence.",
+        "verdict": "PARTIAL. The asymptotic prize headline remains analytic and is not claimed. Exact certificates close n=12..16; n=17 remains open in 21..23.",
+        "evidence": {
+            "status": "verified",
+            "checked_at": "2026-07-13T06:20:00Z",
+            "artifact_path": "certificates/erdos-552/witnesses.json",
+            "artifact_sha256": "3ecdf116fb1eb0cc397ebcce8273899c008dec16c19a582425529662a8f7deda",
+            "verifier_path": "certificates/erdos-552/verify.py",
+            "verifier_sha256": "87bc9f8972238f8df5e9f73c2661c5f11b14bc54bee547574bd251358ebdc476",
+            "claims": [f"R(C4,K1,{n})={n + (4 if n <= 16 else 5) + 1}" for n in range(12, 17)],
+            "independent_review": "CHRONOS hostile-referee replay passed n=12; the bundled verifier checks all five graphs identically.",
+        },
+        "compute": {
+            "status": "completed",
+            "method": "edge SAT with exact C4 clauses and sequential-counter minimum-degree constraints",
+            "solver": "PySAT 1.9.dev5 / CaDiCaL 1.9.5",
+            "hardware": "local Apple workstation; single solver process",
+            "parameter_region": {"n_min": 12, "n_max": 17, "top_endpoint_only": True},
+            "result": "SAT witnesses closed n=12..16; n=17,m=22 remained UNKNOWN",
+            "limits": "n=17 endpoint used a 1,000,000-conflict budget; UNKNOWN is not an exclusion.",
+        },
+    }
 }
 
 VERIFIER_OVERRIDE = {
@@ -219,11 +255,12 @@ def main() -> None:
         }
         if pid in CAMPAIGN_FINDING:
             entry["campaign_finding"] = CAMPAIGN_FINDING[pid]
+        entry.update(ENTRY_OVERRIDE.get(pid, {}))
         entries.append(entry)
 
     doc = {
-        "atlas_version": "0.1.0",
-        "generated": "2026-07-11",
+        "atlas_version": "0.2.0",
+        "generated": "2026-07-13",
         "source": "research_sessions/res_20260711_erdos_machinery_audit (cultural-soliton-observatory), 51 deep audits over 95 triaged Erdos prize problems",
         "board_class_rule": {
             "READY": "R1: exact integer/rational witness check, a-priori bounded on a byte-capped witness, <= ~1 s per candidate. R2: a concrete OPEN numeric frontier that a single submitted finite witness strictly improves. R3: witness conditions discrete or open/robust (strict inequalities) so integer/rational witnesses are lossless. R4: one board per finite frontier object (duplicates cross-reference the carrier).",

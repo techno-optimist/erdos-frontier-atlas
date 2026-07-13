@@ -64,6 +64,38 @@
     "attack": { "type": "string", "description": "Attack sketch from the deep audit" },
     "our_edge": { "type": "string" },
     "campaign_finding": { "type": "string", "description": "Dated empirical routing evidence from an attempted campaign; never changes board readiness by itself." },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "checked_at", "artifact_path", "artifact_sha256", "verifier_path", "verifier_sha256", "claims"],
+      "properties": {
+        "status": { "type": "string", "enum": ["verified", "provisional", "superseded"] },
+        "checked_at": { "type": "string", "format": "date-time" },
+        "artifact_path": { "type": "string", "minLength": 1 },
+        "artifact_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "verifier_path": { "type": "string", "minLength": 1 },
+        "verifier_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "claims": { "type": "array", "minItems": 1, "items": { "type": "string", "minLength": 1 } },
+        "independent_review": { "type": "string" }
+      }
+    },
+    "compute": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "method", "solver", "hardware", "parameter_region", "result"],
+      "properties": {
+        "status": { "type": "string", "enum": ["completed", "active", "stopped", "unknown"] },
+        "method": { "type": "string", "minLength": 1 },
+        "solver": { "type": "string", "minLength": 1 },
+        "hardware": { "type": "string", "minLength": 1 },
+        "parameter_region": {
+          "type": "object",
+          "additionalProperties": { "type": ["integer", "number", "string", "boolean", "null"] }
+        },
+        "result": { "type": "string", "minLength": 1 },
+        "limits": { "type": "string" }
+      }
+    },
     "verdict": { "type": "string", "description": "Full audit verdict paragraph" },
     "lane": {
       "type": "string",
