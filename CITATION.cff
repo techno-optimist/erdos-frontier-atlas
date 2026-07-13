@@ -5,8 +5,8 @@ type: dataset
 authors:
   - family-names: "Russell"
     given-names: "Kevin"
-version: "0.1.0"
-date-released: "2026-07-11"
+version: "0.2.0"
+date-released: "2026-07-13"
 doi: "TBD"
 license: MIT
 keywords:
@@ -21,8 +21,10 @@ abstract: >-
   Machine-readable frontier records for 51 deep-audited Erdős prize problems
   (of 95 triaged): finite object, exact-verifier specification, current record
   with sources, solver lane, and a recomputed board classification
-  (17 BOARD-READY, 11 BOARD-HEAVY, 23 named walls). Includes a compiler that
-  turns any boardable entry into a pinned-verifier bounty package. No Erdős
+  (13 BOARD-READY, 14 BOARD-HEAVY, 24 named walls). Includes a compiler that
+  turns any boardable entry into a pinned-verifier bounty package; five Atlas
+  entries link to packaged P42 research boards. Exact certificates establish
+  22 <= R(C4,K1,17) <= 23. No Erdős
   prize is claimable by finite computation; the atlas maps the computational
   frontier around the problems. Canonical problem index and credit:
   erdosproblems.com (Thomas Bloom).

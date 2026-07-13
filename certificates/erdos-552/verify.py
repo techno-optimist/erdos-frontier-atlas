@@ -21,15 +21,16 @@ def ceil_sqrt(n: int) -> int:
     return root if root * root == n else root + 1
 
 
-def verify_witness(witness: dict[str, object]) -> dict[str, object]:
+def verify_witness(
+    witness: dict[str, object], *, expected_vertices: int, exact: bool
+) -> dict[str, object]:
     n = witness.get("n")
     vertices = witness.get("vertices")
     raw_edges = witness.get("edges")
-    if isinstance(n, bool) or not isinstance(n, int) or not 12 <= n <= 16:
-        raise ValueError("n must be an integer in [12,16]")
+    if isinstance(n, bool) or not isinstance(n, int) or not 12 <= n <= 17:
+        raise ValueError("n must be an integer in [12,17]")
     if isinstance(vertices, bool) or not isinstance(vertices, int):
         raise ValueError(f"n={n}: vertices must be an integer")
-    expected_vertices = n + ceil_sqrt(n)
     if vertices != expected_vertices:
         raise ValueError(f"n={n}: expected {expected_vertices} vertices")
     if not isinstance(raw_edges, list):
@@ -69,7 +70,7 @@ def verify_witness(witness: dict[str, object]) -> dict[str, object]:
     # so it is a coloring of K_vertices avoiding red C4 and blue K1,n.
     lower_bound = vertices + 1
     parsons_upper_bound = n + ceil_sqrt(n) + 1
-    if lower_bound != parsons_upper_bound:
+    if exact and lower_bound != parsons_upper_bound:
         raise ValueError(f"n={n}: witness does not meet the cited upper bound")
     return {
         "n": n,
@@ -78,13 +79,15 @@ def verify_witness(witness: dict[str, object]) -> dict[str, object]:
         "edges": len(edges),
         "minimum_degree": min(degrees),
         "maximum_codegree": maximum_codegree,
+        "parsons_upper_bound": parsons_upper_bound,
+        "status": "EXACT" if exact else "LOWER_BOUND",
     }
 
 
 def main() -> None:
     raw = WITNESSES.read_bytes()
     document = json.loads(raw)
-    if document.get("schema") != "erdos-552-c4-star-witness-set/v1":
+    if document.get("schema") != "erdos-552-c4-star-witness-set/v2":
         raise ValueError("unexpected witness-set schema")
     if document.get("claim") != EXPECTED_CLAIM:
         raise ValueError("witness-set claim does not match the verified theorem")
@@ -93,13 +96,33 @@ def main() -> None:
     witnesses = document.get("witnesses")
     if not isinstance(witnesses, list) or len(witnesses) != 5:
         raise ValueError("expected exactly five witnesses")
-    results = [verify_witness(witness) for witness in witnesses]
+    results = [
+        verify_witness(
+            witness,
+            expected_vertices=n + ceil_sqrt(n),
+            exact=True,
+        )
+        for n, witness in zip(range(12, 17), witnesses, strict=True)
+    ]
     if [result["n"] for result in results] != list(range(12, 17)):
         raise ValueError("witnesses must cover n=12..16 in order")
+    lower_bound_witnesses = document.get("lower_bound_witnesses")
+    if not isinstance(lower_bound_witnesses, list) or len(lower_bound_witnesses) != 1:
+        raise ValueError("expected exactly one lower-bound witness")
+    lower_bounds = [
+        verify_witness(
+            lower_bound_witnesses[0],
+            expected_vertices=21,
+            exact=False,
+        )
+    ]
+    if lower_bounds[0]["n"] != 17 or lower_bounds[0]["value"] != 22:
+        raise ValueError("lower-bound witness must prove R(C4,K1,17) >= 22")
     report = {
         "certificate_sha256": hashlib.sha256(raw).hexdigest(),
         "claim": EXPECTED_CLAIM,
         "results": results,
+        "lower_bounds": lower_bounds,
         "valid": True,
     }
     print(json.dumps(report, sort_keys=True, separators=(",", ":")))
