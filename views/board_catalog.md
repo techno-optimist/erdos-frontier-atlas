@@ -16,7 +16,7 @@ move the record — a WALL for us can still be a fair market-maker board.
 | [21](https://www.erdosproblems.com/21) | q(6), min-edge 6-uniform intersecting hypergraph, τ=6 | 14 ≤ q(6) ≤ 18 (Sivashankar 2026 / Barát 2021) — m ≤ 17 witness wins | exact-backtracking / orderly generation | MOVABLE | `q6-intersecting-hypergraph` |
 | [41](https://www.erdosproblems.com/41) | a(11), shortest 11-mark B₃ ruler (A227358) | a(11) ≤ 445 (Tromp 2013), suspected < 440; optimality open | SAT+DRAT-nonexistence | MOVABLE | `b3-ruler-11-marks` |
 | [67](https://www.erdosproblems.com/67) | Erdős discrepancy, C=3 general witness | ≥130,000, Konev–Lisitsa unrestricted witness exactly re-verified by P42 | witness-local-search | MOVABLE (witness side) | `edp-c3-longest-sequence` |
-| [86](https://www.erdosproblems.com/86) | C₄-free subgraphs of Q₇ (extends A245762) | ex(Q₇,C₄) ≥ 304 (SA, May 2026); exact value open | SAT+DRAT-nonexistence | UNKNOWN | — |
+| [86](https://www.erdosproblems.com/86) | C₄-free subgraphs of Q₇ (extends A245762) | ex(Q₇,C₄) ≥ 304 (SA, May 2026); exact value open | SAT+DRAT-nonexistence | UNKNOWN | `hypercube-q7-c4-free` |
 | [138](https://www.erdosproblems.com/138) | W(2,7) van der Waerden lower bound | W(2,7) ≥ 3703 (Ahmed et al. 2014) | witness-local-search | WALL (for us) | — |
 | [140](https://www.erdosproblems.com/140) | r₃(212) witness (A003002) | r₃(211)=43 exact; 212 ∈ {43,44} — a 44-set settles it | witness-local-search | WALL (for us) | — |
 | [166](https://www.erdosproblems.com/166) | R(4,6) lower bound | R(4,6) ∈ [36,40] (Exoo 2012) | witness-local-search | WALL (for us) | — |
@@ -50,7 +50,7 @@ line and is classed HEAVY below.*
 | [712](https://www.erdosproblems.com/712) | Turán tetrahedron density upper bound | 5/9 ≤ π(K₄³) ≤ 0.561666 (Razborov 2010) | exact-rational SDP dual check | LP/SDP-certificate |
 | [720](https://www.erdosproblems.com/720) | size-Ramsey exact small values | r̂(P₅,P₅)=11, … | host + DRAT UNSAT per upper-bound claim | SAT+DRAT-nonexistence |
 
-## The 6 packaged P42 boards (Phase-A bridge, live in `p42-prizes/problems/`)
+## The 7 packaged P42 boards (Phase-A bridge, live in `p42-prizes/problems/`)
 
 | slug | erdős # | seed frontier | DA class |
 |---|---|---|---|
@@ -60,6 +60,7 @@ line and is classed HEAVY below.*
 | `b3-subset-first-jump-9` | 241 | 376/1 (best known 9-element containment) | on-chain |
 | `edp-c3-longest-sequence` | 67 | length race from the Konev–Lisitsa era frontier | on-chain |
 | `c4-star-ramsey-a17` | 552 | 21-vertex witness proves 22 ≤ a(17) ≤ 23 | on-chain |
+| `hypercube-q7-c4-free` | 86 | 304-edge primary-source Q7 witness; equality remains open | on-chain |
 
 Regenerate a skeleton for any boardable atlas entry with
 `tools/atlas2p42.py` (see `tools/README` header in the script).

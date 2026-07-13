@@ -54,6 +54,8 @@ def main() -> None:
         fail("Erdos #67 lost the exactly re-verified 130,000 frontier")
     if by_id[21].get("lane") != "exact-backtracking":
         fail("q(6) must route to orderly generation/exact backtracking")
+    if by_id[86].get("p42_slug") != "hypercube-q7-c4-free":
+        fail("C4-free Q7 must link to its packaged finite-frontier board")
     if by_id[20].get("board_class") == "READY":
         fail("sunflower entry must be split into one finite frontier per board")
     if by_id[52].get("board_class") == "READY":
@@ -175,13 +177,13 @@ def main() -> None:
         fail("board catalog lost the certified C4-star n=17 frontier")
 
     linked_packages = sum(entry.get("p42_slug") is not None for entry in problems)
-    if linked_packages != 6:
+    if linked_packages != 7:
         fail("linked P42 package count changed")
     zenodo = json.loads((ROOT / ".zenodo.json").read_text(encoding="utf-8"))
     zenodo_description = zenodo.get("description", "")
     required_release_facts = (
         "13 BOARD-READY", "14 BOARD-HEAVY", "24 named walls",
-        "six boards", "22 &lt;= R(C4,K1,17) &lt;= 23",
+        "seven boards", "22 &lt;= R(C4,K1,17) &lt;= 23",
     )
     if not all(fact in zenodo_description for fact in required_release_facts):
         fail("Zenodo release metadata contains stale board counts")
@@ -189,7 +191,7 @@ def main() -> None:
     top_level = dict(re.findall(r'^([a-z][a-z-]*):\s*"?([^"\n]+)"?\s*$', citation, re.MULTILINE))
     required_citation_facts = (
         "13 BOARD-READY", "14 BOARD-HEAVY", "24 named walls",
-        "six Atlas", "22 <= R(C4,K1,17) <= 23",
+        "seven Atlas", "22 <= R(C4,K1,17) <= 23",
     )
     if (
         top_level.get("version") != document["atlas_version"]
