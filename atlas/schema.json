@@ -31,8 +31,22 @@
       "description": "Current frontier: values, holders, years, methods, with sources"
     },
     "frontier": {
-      "type": ["string", "null"],
-      "description": "One-line frontier summary for boardable entries (READY/HEAVY); null for NONE"
+      "oneOf": [
+        { "type": "string" },
+        { "type": "null" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["value", "holder", "year"],
+          "properties": {
+            "value": { "type": "string", "minLength": 1 },
+            "holder": { "type": "string", "minLength": 1 },
+            "year": { "type": "integer", "minimum": 1900 },
+            "note": { "type": "string" }
+          }
+        }
+      ],
+      "description": "Frontier summary for boardable entries (READY/HEAVY); null for NONE"
     },
     "beatable": {
       "type": "string",
@@ -49,6 +63,7 @@
     },
     "attack": { "type": "string", "description": "Attack sketch from the deep audit" },
     "our_edge": { "type": "string" },
+    "campaign_finding": { "type": "string", "description": "Dated empirical routing evidence from an attempted campaign; never changes board readiness by itself." },
     "verdict": { "type": "string", "description": "Full audit verdict paragraph" },
     "lane": {
       "type": "string",
