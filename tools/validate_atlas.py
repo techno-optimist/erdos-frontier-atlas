@@ -146,6 +146,27 @@ def main() -> None:
 
     catalog = (ROOT / "views" / "board_catalog.md").read_text(encoding="utf-8")
     lanes = (ROOT / "atlas" / "lanes.md").read_text(encoding="utf-8")
+    section_pattern = re.compile(
+        r"^## BOARD-(READY|HEAVY) \((\d+)\).*?$(.*?)(?=^## |\Z)",
+        re.MULTILINE | re.DOTALL,
+    )
+    catalog_sections = {}
+    for label, declared_count, body in section_pattern.findall(catalog):
+        ids_in_view = [int(value) for value in re.findall(r"^\| \[(\d+)\]\(", body, re.MULTILINE)]
+        if int(declared_count) != len(ids_in_view):
+            fail(f"board catalog {label} heading count does not match its rows")
+        if len(ids_in_view) != len(set(ids_in_view)):
+            fail(f"board catalog {label} contains duplicate problem rows")
+        catalog_sections[label] = set(ids_in_view)
+    expected_catalog_sections = {
+        label: {entry["id"] for entry in problems if entry["board_class"] == label}
+        for label in ("READY", "HEAVY")
+    }
+    if catalog_sections != expected_catalog_sections:
+        fail(
+            "board catalog membership differs from atlas/problems.json: "
+            f"expected {expected_catalog_sections!r}, received {catalog_sections!r}"
+        )
     if "≈13,000–14,000" in catalog or "past ~14,000" in lanes:
         fail("generated views contain the obsolete EDP frontier")
     if "| SAT+DRAT-nonexistence | MOVABLE | `q6-intersecting-hypergraph`" in catalog:
