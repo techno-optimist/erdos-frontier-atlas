@@ -124,12 +124,15 @@ def main() -> None:
             "artifact_sha256": artifact_sha256,
         },
         {
-            "axis": "n", "start": 17, "end": 17, "status": "UNKNOWN",
-            "result": (
-                "Lower endpoint m=21 certified; top endpoint m=22 undecided "
-                "after bounded conflict budget"
-            ),
+            "axis": "m", "start": 21, "end": 21, "status": "CERTIFIED",
+            "result": "21-vertex witness proves R(C4,K1,17) >= 22",
             "artifact_sha256": artifact_sha256,
+            "where": {"n": 17},
+        },
+        {
+            "axis": "m", "start": 22, "end": 22, "status": "UNKNOWN",
+            "result": "Top endpoint m=22 undecided after bounded conflict budget",
+            "where": {"n": 17},
         },
     ]
     if erdos_552.get("compute", {}).get("coverage") != expected_coverage:
@@ -151,13 +154,13 @@ def main() -> None:
         fail("board catalog lost the certified C4-star n=17 frontier")
 
     linked_packages = sum(entry.get("p42_slug") is not None for entry in problems)
-    if linked_packages != 5:
+    if linked_packages != 6:
         fail("linked P42 package count changed")
     zenodo = json.loads((ROOT / ".zenodo.json").read_text(encoding="utf-8"))
     zenodo_description = zenodo.get("description", "")
     required_release_facts = (
         "13 BOARD-READY", "14 BOARD-HEAVY", "24 named walls",
-        "five boards", "22 &lt;= R(C4,K1,17) &lt;= 23",
+        "six boards", "22 &lt;= R(C4,K1,17) &lt;= 23",
     )
     if not all(fact in zenodo_description for fact in required_release_facts):
         fail("Zenodo release metadata contains stale board counts")
@@ -165,7 +168,7 @@ def main() -> None:
     top_level = dict(re.findall(r'^([a-z][a-z-]*):\s*"?([^"\n]+)"?\s*$', citation, re.MULTILINE))
     required_citation_facts = (
         "13 BOARD-READY", "14 BOARD-HEAVY", "24 named walls",
-        "five Atlas", "22 <= R(C4,K1,17) <= 23",
+        "six Atlas", "22 <= R(C4,K1,17) <= 23",
     )
     if (
         top_level.get("version") != document["atlas_version"]

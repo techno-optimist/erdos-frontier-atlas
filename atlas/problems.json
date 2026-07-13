@@ -1227,10 +1227,11 @@
     "method": "edge SAT with exact C4 clauses and sequential-counter minimum-degree constraints",
     "solver": "PySAT 1.9.dev5 / CaDiCaL 1.9.5",
     "hardware": "local Apple workstation; single solver process",
-    "parameter_region": {"n_min": 12, "n_max": 17, "top_endpoint_only": true},
+    "parameter_region": {"n_min": 12, "n_max": 17, "m_min": 16, "m_max": 22},
     "coverage": [
      {"axis": "n", "start": 12, "end": 16, "status": "CERTIFIED", "result": "Exact values 17,18,19,20,21", "artifact_sha256": "6fad85db5cc5925f5a5894446c56720433065652fecb284a1340262a70a914d3"},
-     {"axis": "n", "start": 17, "end": 17, "status": "UNKNOWN", "result": "Lower endpoint m=21 certified; top endpoint m=22 undecided after bounded conflict budget", "artifact_sha256": "6fad85db5cc5925f5a5894446c56720433065652fecb284a1340262a70a914d3"}
+     {"axis": "m", "start": 21, "end": 21, "status": "CERTIFIED", "result": "21-vertex witness proves R(C4,K1,17) >= 22", "artifact_sha256": "6fad85db5cc5925f5a5894446c56720433065652fecb284a1340262a70a914d3", "where": {"n": 17}},
+     {"axis": "m", "start": 22, "end": 22, "status": "UNKNOWN", "result": "Top endpoint m=22 undecided after bounded conflict budget", "where": {"n": 17}}
     ],
     "result": "SAT witnesses closed n=12..16 and improved n=17 to 22..23; n=17,m=22 remained UNKNOWN",
     "limits": "n=17 endpoint used a 1,000,000-conflict budget; UNKNOWN is not an exclusion."
@@ -1240,7 +1241,7 @@
    "board_class": "READY",
    "board_class_reason": "witness = C4-free red graph with minimum degree >= m-n; codegree and degree checks are exact and cheap; the next open cell a(17) is witness-improvable from the certified m=21 seed",
    "wall_reason": null,
-   "p42_slug": null,
+   "p42_slug": "c4-star-ramsey-a17",
    "erdos_url": "https://www.erdosproblems.com/552",
    "links": {
     "oeis": [
