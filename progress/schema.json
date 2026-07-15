@@ -25,6 +25,16 @@
       "enum": ["progress", "negative_result", "blocked"]
     },
     "evidence_class": { "const": "provisional" },
+    "frontier_consult": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["advice_digest", "executed", "outcome"],
+      "properties": {
+        "advice_digest": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+        "executed": { "type": "boolean" },
+        "outcome": { "type": "string", "minLength": 1 }
+      }
+    },
     "source": {
       "type": "object",
       "additionalProperties": false,

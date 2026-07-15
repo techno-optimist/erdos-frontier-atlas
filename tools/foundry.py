@@ -113,7 +113,7 @@ def build_receipt(source: Path, job_id: str, source_timezone: str = "America/Den
     occurred_at = parse_run_time(text, datetime.fromtimestamp(source.stat().st_mtime, timezone.utc), source_timezone)
     source_sha = sha(raw)
     occurrence = stable + b"\0" + occurred_at.encode() + b"\0" + job_id.encode() + b"\0" + source_sha.encode()
-    return {
+    receipt = {
         "schema": "p42-foundry-receipt-v1",
         "receipt_id": "sha256:" + sha(occurrence),
         "content_digest": "sha256:" + sha(stable),
@@ -123,6 +123,14 @@ def build_receipt(source: Path, job_id: str, source_timezone: str = "America/Den
         "evidence_class": "provisional",
         "source": {"job_id": job_id, "run_file": source.name, "sha256": source_sha},
     }
+    advice = re.search(r"Frontier advice:\s*(sha256:[a-f0-9]{64});\s*executed=(yes|no);\s*outcome=([^\n]+)", content["verified"], re.I)
+    if advice:
+        receipt["frontier_consult"] = {
+            "advice_digest": advice.group(1).lower(),
+            "executed": advice.group(2).lower() == "yes",
+            "outcome": advice.group(3).strip(),
+        }
+    return receipt
 
 
 def receipt_files() -> list[Path]:
@@ -132,13 +140,21 @@ def receipt_files() -> list[Path]:
 def validate_receipt(r: dict) -> list[str]:
     errors = []
     required = {"schema", "receipt_id", "content_digest", "occurred_at", "frontier", "action", "verified", "result", "next_gate", "boundary_held", "classification", "evidence_class", "source"}
-    extra = set(r) - required
+    optional = {"frontier_consult"}
+    extra = set(r) - required - optional
     missing = required - set(r)
     if missing: errors.append("missing fields: " + ", ".join(sorted(missing)))
     if extra: errors.append("extra fields: " + ", ".join(sorted(extra)))
     if r.get("schema") != "p42-foundry-receipt-v1": errors.append("bad schema")
     if r.get("classification") not in {"progress", "negative_result", "blocked"}: errors.append("bad classification")
     if r.get("evidence_class") != "provisional": errors.append("receipt must remain provisional")
+    consult = r.get("frontier_consult")
+    if consult is not None:
+        if set(consult) != {"advice_digest", "executed", "outcome"}: errors.append("bad frontier_consult fields")
+        if not re.fullmatch(r"sha256:[a-f0-9]{64}", str(consult.get("advice_digest", ""))): errors.append("bad frontier advice digest")
+        if not isinstance(consult.get("executed"), bool): errors.append("bad frontier advice executed flag")
+        if not isinstance(consult.get("outcome"), str) or not consult["outcome"].strip(): errors.append("empty frontier advice outcome")
+        elif any(pattern.search(consult["outcome"]) for pattern in FORBIDDEN_PUBLIC): errors.append("public membrane violation in frontier advice outcome")
     for key in ("frontier", "action", "verified", "result", "next_gate", "boundary_held"):
         if not isinstance(r.get(key), str) or not r[key].strip(): errors.append(f"empty {key}")
         elif any(pattern.search(r[key]) for pattern in FORBIDDEN_PUBLIC): errors.append(f"public membrane violation in {key}")
