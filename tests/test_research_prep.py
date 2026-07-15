@@ -10,6 +10,14 @@ SPEC.loader.exec_module(prep)
 
 
 class PrepTests(unittest.TestCase):
+    def test_trace_contract_renders_digest_and_both_typed_outcomes(self):
+        digest = "sha256:" + "d" * 64
+        contract = prep.trace_receipt_contract(digest)
+        self.assertEqual(contract["copy_digest_byte_for_byte"], digest)
+        self.assertIn(f"Frontier advice: {digest}; executed=yes;", contract["verified_line_if_executed"])
+        self.assertIn(f"Frontier advice: {digest}; executed=no;", contract["verified_line_if_not_executed"])
+        self.assertIsNone(prep.trace_receipt_contract(None))
+
     def test_focused_context_is_primary_and_broader_packet_is_conditional(self):
         instruction = prep.worker_instruction("Load context_packet.md, fill experiment.json, run one bounded action")
         self.assertIn("Read focused_context.md first", instruction)

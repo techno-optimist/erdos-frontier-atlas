@@ -59,6 +59,23 @@ def latest_quarantine_feedback(state_path: Path, frontier_id: str) -> dict | Non
     }
 
 
+def trace_receipt_contract(strategy_digest: str | None) -> dict | None:
+    if not strategy_digest:
+        return None
+    return {
+        "publication_gate": "hard_quarantine_on_missing_or_mismatched_trace",
+        "copy_digest_byte_for_byte": strategy_digest,
+        "verified_line_if_executed": (
+            f"Frontier advice: {strategy_digest}; executed=yes; "
+            "outcome=<replace with concise public-safe test result>"
+        ),
+        "verified_line_if_not_executed": (
+            f"Frontier advice: {strategy_digest}; executed=no; "
+            "outcome=<replace with concise public-safe blocker>"
+        ),
+    }
+
+
 def main() -> int:
     private_state = json.loads(BUDGET.read_text()) if BUDGET.exists() else {}
     pinned_frontier_id = (private_state.get("pending_advice") or {}).get("frontier_id")
@@ -164,9 +181,12 @@ def main() -> int:
             foundry.update(strategy_status="consult_failed", error=advice.stdout.strip().splitlines()[-1][:300] if advice.stdout.strip() else "unknown")
     summary["foundry"] = foundry
     summary["foundry"]["selection"] = selection
+    summary["foundry"]["receipt_contract"] = trace_receipt_contract(
+        foundry.get("strategy_digest")
+    )
     contract = json.loads(CONFIG.read_text()).get("semantic_contracts", {}).get(selected_frontier_id)
     summary["foundry"]["target_contract"] = contract
-    summary["next_instruction"] = worker_instruction(summary["next_instruction"]) + " Preserve the exact target quantity in foundry.target_contract; a related theorem or easier quantity is not evidence. Treat foundry.strategy_advice as provisional; execute and verify its smallest test when present. If advice is present, the Verified field must contain exactly: Frontier advice: <foundry.strategy_digest>; executed=yes|no; outcome=<public-safe result>."
+    summary["next_instruction"] = worker_instruction(summary["next_instruction"]) + " Preserve the exact target quantity in foundry.target_contract; a related theorem or easier quantity is not evidence. Treat foundry.strategy_advice as provisional; execute and verify its smallest test when present. If foundry.receipt_contract is present, copy its digest byte-for-byte into one typed Frontier advice line in Verified. Missing or mismatched trace is a hard publication quarantine."
     if foundry["quarantine_feedback"]:
         summary["next_instruction"] += " A prior receipt for this exact frontier was quarantined. Treat foundry.quarantine_feedback as a hard failed-publication counterexample: do not repeat or paraphrase the forbidden claim. Replay the bounded evidence before issuing a corrected receipt, state the smaller supported claim, and never imply the quarantined receipt was published."
     print(json.dumps(summary, ensure_ascii=False, indent=2))

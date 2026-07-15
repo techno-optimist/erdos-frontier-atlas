@@ -103,6 +103,42 @@ RuntimeError: Connection error.
             receipt = foundry.build_receipt(path, "50c8e4391849")
             self.assertEqual(foundry.validate_receipt(receipt), [])
 
+    def test_strategy_digest_requires_exact_typed_verified_trace(self):
+        digest = "sha256:" + "a" * 64
+        sample = '{"foundry":{"strategy_digest":"' + digest + '"}}\n' + SAMPLE
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "run.md"
+            path.write_text(sample)
+            receipt = foundry.build_receipt(path, "50c8e4391849")
+            errors = foundry.required_strategy_trace_errors(sample, receipt)
+            self.assertTrue(any("missing required typed frontier trace" in row for row in errors))
+
+            traced = sample.replace(
+                "Known-good and known-bad fixtures passed.",
+                "Known-good and known-bad fixtures passed.\n"
+                f"Frontier advice: {digest}; executed=yes; outcome=parameter test rejected route",
+            )
+            path.write_text(traced)
+            receipt = foundry.build_receipt(path, "50c8e4391849")
+            self.assertEqual(foundry.required_strategy_trace_errors(traced, receipt), [])
+            self.assertTrue(receipt["frontier_consult"]["executed"])
+
+    def test_strategy_trace_digest_mismatch_is_rejected(self):
+        required = "sha256:" + "b" * 64
+        actual = "sha256:" + "c" * 64
+        sample = '{"strategy_digest":"' + required + '"}\n' + SAMPLE.replace(
+            "Known-good and known-bad fixtures passed.",
+            f"Frontier advice: {actual}; executed=no; outcome=blocked",
+        )
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "run.md"
+            path.write_text(sample)
+            receipt = foundry.build_receipt(path, "50c8e4391849")
+        self.assertTrue(any(
+            "digest mismatch" in row
+            for row in foundry.required_strategy_trace_errors(sample, receipt)
+        ))
+
     def test_classification(self):
         self.assertEqual(foundry.classify("candidate survives", "built verifier"), "progress")
         self.assertEqual(foundry.classify("local-exhaustion", "checked route"), "negative_result")
