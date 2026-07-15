@@ -19,6 +19,10 @@ class DgxTickTests(unittest.TestCase):
             state = Path(tmp) / "state"
             state.mkdir()
             output = state / "foundry_efficiency_latest.json"
+            reviewed = Path(tmp) / "reviewed" / "SKILL.md"
+            installed = Path(tmp) / "installed" / "SKILL.md"
+            reviewed.parent.mkdir()
+            reviewed.write_text("reviewed skill\n")
 
             def fake_run(cmd, **kwargs):
                 if "foundry_efficiency.py" in " ".join(map(str, cmd)):
@@ -27,11 +31,15 @@ class DgxTickTests(unittest.TestCase):
 
             with (
                 mock.patch.object(tick, "STATE", state),
+                mock.patch.object(tick, "REVIEWED_SKILL", reviewed),
+                mock.patch.object(tick, "INSTALLED_SKILL", installed),
                 mock.patch.object(tick.subprocess, "run", side_effect=fake_run) as run,
             ):
                 self.assertEqual(tick.main(), 0)
             self.assertEqual(run.call_count, 2)
             self.assertEqual(output.stat().st_mode & 0o777, 0o600)
+            self.assertEqual(installed.read_text(), reviewed.read_text())
+            self.assertEqual(installed.stat().st_mode & 0o777, 0o644)
 
     def test_publication_failure_does_not_publish_stale_metrics(self):
         failed = mock.Mock(returncode=7, stdout="publication failed\n")

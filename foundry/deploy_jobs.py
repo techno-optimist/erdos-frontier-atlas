@@ -43,6 +43,21 @@ verify it before reporting. Never place secrets or local paths in the six
 labelled final receipt fields. Git publication is handled by a separate
 no-agent membrane; do not run git here.
 """.strip()
+TRACE_SUFFIX = """
+
+FOUNDRY TRACE (required): If `foundry.strategy_digest` is present in prep,
+the final **Verified** section must contain this exact typed line:
+`Frontier advice: <foundry.strategy_digest>; executed=yes|no;
+outcome=<public-safe result>`. This line is mandatory even when the same trace
+was recorded in a session artifact; only the six labelled receipt crosses the
+publication membrane.
+""".strip()
+
+
+def append_prompt_once(prompt: str, marker: str, suffix: str) -> str:
+    if marker in prompt:
+        return prompt
+    return prompt.rstrip() + "\n\n" + suffix
 
 
 def install_runtime_files() -> dict[str, str]:
@@ -105,8 +120,12 @@ def main() -> int:
             if job["id"] == "50c8e4391849":
                 job["schedule"] = {"kind": "interval", "minutes": 30, "display": "every 30m"}
                 job["schedule_display"] = "every 30m"
-            if "FOUNDRY RECURSION (operator-authorized)" not in job.get("prompt", ""):
-                job["prompt"] = job.get("prompt", "").rstrip() + "\n\n" + SUFFIX
+            job["prompt"] = append_prompt_once(
+                job.get("prompt", ""), "FOUNDRY RECURSION (operator-authorized)", SUFFIX
+            )
+            job["prompt"] = append_prompt_once(
+                job["prompt"], "FOUNDRY TRACE (required)", TRACE_SUFFIX
+            )
             changed.append(job["id"])
         if changed != sorted(TARGETS):
             raise SystemExit(f"expected jobs {sorted(TARGETS)}, found {sorted(changed)}")
