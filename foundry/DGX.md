@@ -139,6 +139,13 @@ migration under the Hermes cron lock. It writes a timestamped backup, pins both 
 local 35B provider, points auxiliary compression at the same local provider,
 replaces eager 100KB umbrella-skill injection with the compact `foundry` skill,
 and appends the recursion and typed frontier-trace instructions idempotently.
+It also sets Hermes `agent.api_max_retries=8`: the bounded exponential retry
+window covers the observed four-minute 35B cold reload while the SGLang
+watchdog replaces a wedged worker. Permanent failures still terminate and do
+not cross the publication membrane. The publisher rejects failed cron
+envelopes, repairs any older mistaken acceptance, reads rotated agent logs
+oldest-first, and atomically preserves the last valid efficiency report if a
+refresh cannot be adjudicated.
 Specialist skills remain available for adaptive loading after target selection.
 Hermes background review may propose skill mutations after a research turn, but
 they are not promotion-authorized: the no-agent publisher atomically restores

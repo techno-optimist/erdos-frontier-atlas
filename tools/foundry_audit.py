@@ -6,6 +6,7 @@ import argparse
 import difflib
 import hashlib
 import json
+import re
 import subprocess
 import sys
 from collections import Counter
@@ -32,6 +33,14 @@ def sha_file(path: Path) -> str:
 def parse_time(value: str | None) -> datetime | None:
     if not value: return None
     return datetime.fromisoformat(value.replace("Z", "+00:00")).astimezone(timezone.utc)
+
+
+def configured_api_retry_budget(path: Path) -> int:
+    try:
+        match = re.search(r"(?m)^\s*api_max_retries:\s*(\d+)\s*$", path.read_text())
+    except OSError:
+        return 0
+    return int(match.group(1)) if match else 0
 
 
 def norm(text: str) -> str:
@@ -251,6 +260,7 @@ def main() -> int:
     receipts = [json.loads(path.read_text()) for path in receipt_paths]
     incidents = [json.loads(path.read_text()) for path in (ROOT / "progress" / "incidents").glob("*.json")]
     ingest_state = json.loads(args.ingest_state.read_text()) if args.ingest_state.exists() else {"rejected": {}}
+    api_retry_budget = configured_api_retry_budget(HOME / ".hermes" / "config.yaml")
     by_id = {row["receipt_id"]: row for row in receipts}
     before = {name: sha_file(args.data_root / name) for name in ("atlas.db", "atlas2.db", "arena_atlas.db")}
 
@@ -346,6 +356,7 @@ def main() -> int:
         "sglang_active_enabled": active["chronos-sglang.service"] == "active" and enabled["chronos-sglang.service"] == "enabled",
         "gateway_active_enabled_linger": active["hermes-gateway.service"] == "active" and enabled["hermes-gateway.service"] == "enabled" and linger == "yes",
         "scheduler_ticker_healthy": cron_healthy,
+        "gateway_retry_budget_covers_cold_restart": api_retry_budget >= 8,
         "structured_tool_call": tool_ok,
         "scout_local_35b_30m_recent": scout.get("provider") == "foundry-qwen35b" and scout.get("model") == MODEL and scout.get("schedule", {}).get("minutes") == 30 and scout.get("last_status") == "ok" and (parse_time(scout.get("last_run_at")) or datetime.min.replace(tzinfo=timezone.utc)) >= recent_cutoff,
         "night_shift_local_35b": night.get("provider") == "foundry-qwen35b" and night.get("model") == MODEL and night.get("last_status") == "ok",
@@ -403,6 +414,7 @@ def main() -> int:
             "lane_aligned_executions": len(aligned_executions), "daily_call_counts": daily_counts,
             "tool_smoke": tool_evidence, "local_head": local_head, "remote_head": remote_head,
             "service_active": active, "service_enabled": enabled, "linger": linger,
+            "api_max_retries": api_retry_budget,
             "cron_status_tail": [line.strip() for line in cron_status.stdout.splitlines() if line.strip()][-4:],
             "frontier_state_mode": oct((args.state_root / "foundry_frontier_budget.json").stat().st_mode & 0o777),
             "runtime_hashes": runtime_hashes,

@@ -16,6 +16,14 @@ def row(classification, frontier="same route", result="same result", gate="same 
 
 
 class AuditTests(unittest.TestCase):
+    def test_retry_budget_parser_fails_closed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "config.yaml"
+            path.write_text("agent:\n  api_max_retries: 8\n")
+            self.assertEqual(audit.configured_api_retry_budget(path), 8)
+            path.write_text("agent: {}\n")
+            self.assertEqual(audit.configured_api_retry_budget(path), 0)
+
     def test_private_holdout_matches_public_commitment_without_disclosure(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp) / "private"
