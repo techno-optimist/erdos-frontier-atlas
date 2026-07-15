@@ -64,7 +64,13 @@ def parse_sections(text: str) -> dict[str, str]:
     sections: dict[str, str] = {}
     for i, match in enumerate(marks):
         end = marks[i + 1].start() if i + 1 < len(marks) else len(response)
-        sections[match.group(1)] = response[match.end():end].strip().strip("-").strip()
+        value = response[match.end():end]
+        if i + 1 == len(marks):
+            # Hermes may append non-agent mutation diagnostics after the final
+            # labelled field. The public contract is exactly the six fields;
+            # thematic-break/system postambles remain private raw provenance.
+            value = re.split(r"(?m)^\s*---\s*$|^⚠️ File-mutation verifier:", value, maxsplit=1)[0]
+        sections[match.group(1)] = value.strip().strip("-").strip()
     missing = [label for label in LABELS if not sections.get(label)]
     if missing:
         rows = {}
