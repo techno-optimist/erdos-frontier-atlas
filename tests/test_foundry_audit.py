@@ -1,4 +1,7 @@
 import importlib.util
+import hashlib
+import json
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -12,6 +15,37 @@ def row(classification, frontier="same route", result="same result", gate="same 
 
 
 class AuditTests(unittest.TestCase):
+    def test_private_holdout_matches_public_commitment_without_disclosure(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp) / "private"
+            root.mkdir(mode=0o700)
+            manifest_path = root / "private_suite.json"
+            commitment_path = Path(tmp) / "commitment.json"
+            manifest = {
+                "schema": "p42-foundry-private-eval-suite-v1",
+                "suite_version": "1.0.0", "atlas_version": "0.2.0",
+                "public_suite_version": "v1", "split_salt_hex": "11" * 32,
+                "tasks": [
+                    {"task_id": "opaque", "problem_id": 7, "family": "exact"},
+                ],
+            }
+            manifest_path.write_text(json.dumps(manifest)); manifest_path.chmod(0o600)
+            digest = hashlib.sha256(json.dumps(
+                manifest, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+            ).encode()).hexdigest()
+            commitment = {
+                "schema": "p42-foundry-private-suite-commitment-v1",
+                "suite_version": "1.0.0", "atlas_version": "0.2.0",
+                "public_suite_version": "v1", "manifest_sha256": "sha256:" + digest,
+                "task_count": 1, "family_counts": {"exact": 1},
+                "task_ids_or_problem_ids_disclosed": False,
+            }
+            commitment_path.write_text(json.dumps(commitment))
+            self.assertTrue(audit.private_holdout_committed(manifest_path, commitment_path))
+            commitment["problem_ids"] = [7]
+            commitment_path.write_text(json.dumps(commitment))
+            self.assertFalse(audit.private_holdout_committed(manifest_path, commitment_path))
+
     def test_repeated_terminal_route_is_certified_stall(self):
         self.assertTrue(audit.certified_stall([row("negative_result"), row("blocked")], 2))
 
