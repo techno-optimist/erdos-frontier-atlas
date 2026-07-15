@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:f416aea21f737d15094b7d40c6b58a9dca541fea1cb276d707380a1bcb7f80d9",
+  "content_digest": "sha256:634192f363309fceac7b8b41655f21d9680a29aa0a6417c2037bfe70292fe348",
+  "occurred_at": "2026-07-15T04:14:11Z",
+  "frontier": "Can a target-facing proof-producing exact-cover CNF encoding be decoded and verified through a SAT solver on known small Steiner system instances, establishing a baseline verifier pipeline for large Steiner system search?",
+  "action": "Constructed an S(2,3,7) Fano plane exact-cover CNF (35 variables, 231 clauses), ran Glucose 4.2.1, decoded the 7-triplet solution, verified all 21 pairs covered, and ran an UNSAT kill fixture (forbidding all triplets containing element 0).",
+  "verified": "SAT result: Glucose found solution, decoded 7 triplets: (0,1,3), (0,2,5), (0,4,6), (1,2,4), (1,5,6), (2,3,6), (3,4,5) — matches known Fano plane\n- Pair coverage: 21/21 verified\n- UNSAT kill: forbidding all 15 triplets containing element 0 correctly returns UNSAT\n- Script: `s237_fano_smoke.py` in research session artifact directory",
+  "result": "PASS on all 4 checks. This establishes a verified baseline verifier pipeline (encode → solve → decode → verify + kill fixture) for the fm_steiner_large lane. The lane remains rotated away from large-scale search; this validates the instrument, not the frontier.",
+  "next_gate": "Construct and run the same smoke test on S(2,3,13) (projective plane over GF(3)) and S(5,8,24) (Witt system) to stress-test the encoding/decode/verify pipeline on progressively larger known instances. If any instance fails, the CNF encoding mechanism is incorrect and requires revision before scaling to n<200.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. All work confined to session artifact directory. Glucose CLI only — no model training or external submissions.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-14_21-14-11.md",
+    "sha256": "76c5096b1aecfb33a8517674166d27ef5d74bdd1a87d5a1ea5c2b0e8f8952403"
+  },
+  "frontier_id": "fm_steiner_large"
+}
