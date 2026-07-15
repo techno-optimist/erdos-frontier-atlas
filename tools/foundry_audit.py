@@ -130,6 +130,16 @@ def main() -> int:
     packet = json.loads((args.sessions_root / latest_id / "context_packet.json").read_text())
     packet_ro = all(row.get("read_only_verified") is True and row.get("hash_before") == row.get("hash_after") for row in packet.get("databases", {}).values())
     after = {name: sha_file(args.data_root / name) for name in before}
+    runtime_pairs = {
+        "scout_prep": (ROOT / "foundry" / "dgx_research_prep.py", HOME / ".hermes" / "scripts" / "chronos_frontier_scout_prep.py"),
+        "night_prep": (ROOT / "foundry" / "dgx_research_prep.py", HOME / ".hermes" / "scripts" / "chronos_frontier_night_prep.py"),
+        "publisher_entrypoint": (ROOT / "foundry" / "dgx_tick.py", HOME / ".hermes" / "scripts" / "erdos_foundry_tick.py"),
+        "foundry_skill": (ROOT / "foundry" / "SKILL.md", HOME / ".hermes" / "skills" / "foundry" / "SKILL.md"),
+    }
+    runtime_hashes = {
+        name: {"source": sha_file(source), "installed": sha_file(installed) if installed.exists() else None}
+        for name, (source, installed) in runtime_pairs.items()
+    }
     traced = [row for row in receipts if row.get("frontier_consult")]
     executed = [row for row in traced if row["frontier_consult"].get("executed")]
     valid_calls = [row for row in call_evidence if row["lane_aligned"] and row["certified_stall"]]
@@ -149,6 +159,7 @@ def main() -> int:
         "publisher_30m_recent": publisher.get("schedule", {}).get("minutes") == 30 and publisher.get("last_status") == "ok" and (parse_time(publisher.get("last_run_at")) or datetime.min.replace(tzinfo=timezone.utc)) >= recent_cutoff,
         "foundry_and_atlas_validation": validate.returncode == 0,
         "automation_branch_current": bool(remote_head) and local_head == remote_head,
+        "installed_runtime_matches_repo": all(row["source"] == row["installed"] for row in runtime_hashes.values()),
         "frontier_call_incidents_acknowledged": bool(calls) and all(row["certified_stall"] or row["incident_acknowledged"] for row in call_evidence),
         "valid_frontier_call_lane_certified": bool(valid_calls),
         "frontier_budget_and_cooldown_held": daily_ok and cooldown_ok,
@@ -170,6 +181,7 @@ def main() -> int:
             "service_active": active, "service_enabled": enabled, "linger": linger,
             "cron_status_tail": [line.strip() for line in cron_status.stdout.splitlines() if line.strip()][-4:],
             "frontier_state_mode": oct((args.state_root / "foundry_frontier_budget.json").stat().st_mode & 0o777),
+            "runtime_hashes": runtime_hashes,
             "latest_session": latest_id, "protected_hashes_before": before, "protected_hashes_after": after,
             "validation_tail": validate.stdout.strip().splitlines()[-1] if validate.stdout.strip() else None,
         },
