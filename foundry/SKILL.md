@@ -33,7 +33,9 @@ model, deploy, or run git; deterministic publisher jobs own publication.
 
 ## Verify
 
-- Run known-good and known-bad fixtures when a verifier changes.
+- Run known-good and known-bad fixtures when a verifier changes. A kill fixture
+  counts only when it also asserts the intended rejection reason or branch;
+  matching the final valid/invalid boolean alone is not branch coverage.
 - Separate theorem/certificate, exact local result, heuristic observation,
   literature claim, and model speculation.
 - Recheck protected database hashes before and after the action.
