@@ -18,21 +18,29 @@ one bounded, falsifiable step. Fluency is not evidence.
    If `foundry.accepted_continuation` is present, its completed action is
    immutable prior state: continue from its next gate and do not repeat stale
    queue instructions.
-3. Register one hypothesis, falsifier, budget, and abort condition in the
+3. Read `foundry.milestone_contract`. It permits exactly one action primitive.
+   Its scope and deferred fields override stale queue text that chains stages.
+   Copy its `receipt_action_prefix` exactly as the first line under `Action`.
+4. Register one hypothesis, falsifier, budget, and abort condition in the
    current research session before expensive work.
-4. Load a large specialist skill only when the chosen action needs it:
+5. Load a large specialist skill only when the chosen action needs it:
    `frontiermath` for a FrontierMath workbench, `arena` for an Arena verifier,
    `aiwiki` for a literature closure audit. Do not eagerly load umbrella skills.
 
 ## Act
 
 The scheduler hard-stops this job after 16 model calls or 900 wall-clock
-seconds. Reserve the final two calls for the six-label receipt. After call 14,
-start no new implementation or search; replay final evidence and report the
-scoped result or blocker.
+seconds. Stop implementation by call 12, use call 13 only for final replay,
+and emit the six-label assistant response by call 14. Calls 15-16 are emergency
+headroom, not research budget. Do not write the final receipt to a file or make
+a tool call in place of the assistant response; either is publication failure.
 
 Choose exactly one: verifier construction, kill-test, bounded exact search,
 literature-claim audit, negative-result closure, or next-experiment design.
+With no accepted continuation, the only permitted first milestone is verifier
+construction plus branch-specific good/bad fixtures; defer search to Next gate.
+With a continuation, complete only the smallest independently replayable
+primitive from its next gate and defer all downstream work.
 Prefer an executable discriminating test over another prose analysis. Stop on
 the registered abort condition. Preserve a failed route as useful state. An
 expensive terminal action is any search, solver, or tool call budgeted above 30

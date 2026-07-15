@@ -232,6 +232,46 @@ def semantic_contract_errors(r: dict, config: dict) -> list[str]:
     return errors
 
 
+def required_milestone_contract_errors(text: str, receipt: dict, config: dict) -> list[str]:
+    """Bind the public Action field to the operator-generated prep contract."""
+    policy = config.get("milestone_policy")
+    if not isinstance(policy, dict) or str(receipt.get("occurred_at", "")) < str(
+        policy.get("effective_after", "")
+    ):
+        return []
+    pre_response = text.split("## Response", 1)[0]
+    encoded_prefixes = re.findall(
+        r'"receipt_action_prefix"\s*:\s*("(?:\\.|[^"\\])*")',
+        pre_response,
+    )
+    if not encoded_prefixes:
+        return ["missing operator milestone contract in prep envelope"]
+    try:
+        required = json.loads(encoded_prefixes[-1])
+    except ValueError:
+        return ["invalid operator milestone action prefix in prep envelope"]
+    match = re.fullmatch(
+        r"Milestone: ([a-z_]+); contract=(sha256:[a-f0-9]{64})", required
+    )
+    if not match:
+        return ["invalid operator milestone action prefix format"]
+    action_kind, digest = match.groups()
+    if action_kind not in policy.get("allowed_action_kinds", []):
+        return [f"operator milestone action kind is not allowed: {action_kind}"]
+    contract_digests = re.findall(
+        r'"contract_digest"\s*:\s*"(sha256:[a-f0-9]{64})"', pre_response
+    )
+    if not contract_digests or contract_digests[-1] != digest:
+        return ["operator milestone digest does not match prep envelope"]
+    action_lines = str(receipt.get("action", "")).splitlines()
+    actual = action_lines[0].strip() if action_lines else ""
+    if actual != required:
+        return [
+            "missing or mismatched milestone prefix in Action: expected " + required
+        ]
+    return []
+
+
 def required_strategy_trace_errors(text: str, receipt: dict) -> list[str]:
     """Bind a delivered private strategy digest to the six-field receipt."""
     pre_response = text.split("## Response", 1)[0]
@@ -264,6 +304,9 @@ def inspect_source(source: Path, job_id: str, config: dict) -> dict:
         errors = (
             validate_receipt(receipt)
             + semantic_contract_errors(receipt, config)
+            + required_milestone_contract_errors(
+                source.read_text(errors="replace"), receipt, config
+            )
             + required_strategy_trace_errors(source.read_text(errors="replace"), receipt)
         )
         summary = {
@@ -303,10 +346,13 @@ def ingest(source: Path, job_id: str, source_timezone: str = "America/Denver") -
     dest = RECEIPTS / receipt["occurred_at"][:4] / receipt["occurred_at"][5:7] / f"{timestamp}_{job_id}_{suffix}.json"
     if dest.exists():
         return dest, False
+    config = load_json(CONFIG)
+    source_text = source.read_text(errors="replace")
     errors = (
         validate_receipt(receipt)
-        + semantic_contract_errors(receipt, load_json(CONFIG))
-        + required_strategy_trace_errors(source.read_text(errors="replace"), receipt)
+        + semantic_contract_errors(receipt, config)
+        + required_milestone_contract_errors(source_text, receipt, config)
+        + required_strategy_trace_errors(source_text, receipt)
     )
     if errors: raise ValueError("; ".join(errors))
     atomic_json(dest, receipt)

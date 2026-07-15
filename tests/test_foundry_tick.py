@@ -115,6 +115,14 @@ class FoundryTickTests(unittest.TestCase):
                 second = foundry_tick.semantic_contract_digest(config)
         self.assertNotEqual(first, second)
 
+    def test_milestone_policy_change_invalidates_publication_policy_digest(self):
+        config = self.runtime_config()
+        config["milestone_policy"] = {"receipt_deadline_call": 14}
+        first = foundry_tick.semantic_contract_digest(config)
+        config["milestone_policy"]["receipt_deadline_call"] = 13
+        second = foundry_tick.semantic_contract_digest(config)
+        self.assertNotEqual(first, second)
+
     def test_exact_accepted_or_rejected_hash_is_skipped(self):
         state = {
             "accepted": {"job/accepted.md": "aaa"},
