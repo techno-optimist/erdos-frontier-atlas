@@ -105,6 +105,12 @@ def main() -> int:
 
     tool_ok, tool_evidence = tool_call_smoke()
     validate = run([sys.executable, str(ROOT / "tools" / "foundry.py"), "validate"])
+    cron_status = run([str(HOME / ".hermes" / "hermes-agent" / "venv" / "bin" / "hermes"), "cron", "status"])
+    cron_healthy = (
+        cron_status.returncode == 0
+        and "cron jobs will fire automatically" in cron_status.stdout
+        and "STALLED" not in cron_status.stdout
+    )
     local_head = run(["git", "rev-parse", "HEAD"]).stdout.strip()
     remote_line = run(["git", "ls-remote", "origin", "refs/heads/automation/frontier-scout"]).stdout.strip()
     remote_head = remote_line.split()[0] if remote_line else None
@@ -122,6 +128,7 @@ def main() -> int:
     checks = {
         "sglang_active_enabled": active["chronos-sglang.service"] == "active" and enabled["chronos-sglang.service"] == "enabled",
         "gateway_active_enabled_linger": active["hermes-gateway.service"] == "active" and enabled["hermes-gateway.service"] == "enabled" and linger == "yes",
+        "scheduler_ticker_healthy": cron_healthy,
         "structured_tool_call": tool_ok,
         "scout_local_35b_30m_recent": scout.get("provider") == "foundry-qwen35b" and scout.get("model") == MODEL and scout.get("schedule", {}).get("minutes") == 30 and scout.get("last_status") == "ok" and (parse_time(scout.get("last_run_at")) or datetime.min.replace(tzinfo=timezone.utc)) >= recent_cutoff,
         "night_shift_local_35b": night.get("provider") == "foundry-qwen35b" and night.get("model") == MODEL and night.get("last_status") == "ok",
@@ -130,6 +137,7 @@ def main() -> int:
         "automation_branch_current": bool(remote_head) and local_head == remote_head,
         "all_frontier_calls_certified_stalls": bool(calls) and all(call_stalls),
         "frontier_budget_and_cooldown_held": daily_ok and cooldown_ok,
+        "frontier_state_private": (args.state_root / "foundry_frontier_budget.json").stat().st_mode & 0o777 == 0o600,
         "frontier_advice_executed_trace": bool(executed),
         "latest_context_read_only": packet_ro,
         "protected_hashes_stable_during_audit": before == after,
@@ -144,6 +152,8 @@ def main() -> int:
             "frontier_calls": len(calls), "call_certified_stalls": call_stalls, "daily_call_counts": daily_counts,
             "tool_smoke": tool_evidence, "local_head": local_head, "remote_head": remote_head,
             "service_active": active, "service_enabled": enabled, "linger": linger,
+            "cron_status_tail": [line.strip() for line in cron_status.stdout.splitlines() if line.strip()][-4:],
+            "frontier_state_mode": oct((args.state_root / "foundry_frontier_budget.json").stat().st_mode & 0o777),
             "latest_session": latest_id, "protected_hashes_before": before, "protected_hashes_after": after,
             "validation_tail": validate.stdout.strip().splitlines()[-1] if validate.stdout.strip() else None,
         },
@@ -159,4 +169,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

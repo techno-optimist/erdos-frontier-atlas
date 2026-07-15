@@ -52,8 +52,8 @@ python3 ~/erdos-frontier-atlas/tools/foundry_audit.py \
   --output ~/.hermes/chronos_state/foundry_operational_audit.json
 ```
 
-It exits nonzero until every service, scheduler, publication, stall-budget,
-advice-execution, validation, and protected-hash check is green. Use
+It exits nonzero until every service, live scheduler ticker, publication,
+private stall-budget, advice-execution, validation, and protected-hash check is green. Use
 `--allow-incomplete` only for monitoring while the final trace is pending.
 
 Frontier advice is stored only in the private `foundry_frontier_budget.json`
