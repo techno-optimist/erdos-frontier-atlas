@@ -238,6 +238,42 @@ RuntimeError: Connection error.
         errors = foundry.semantic_contract_errors(receipt, config)
         self.assertTrue(any("quantity-conflation" in error for error in errors))
 
+    def test_r55_contract_rejects_mislabeled_circulant_density(self):
+        receipt = {
+            "frontier_id": "erdos_1029_r55",
+            "occurred_at": "2026-07-15T11:53:03Z",
+            "frontier": "Can a 42-vertex circulant avoid K5 in both colors?",
+            "action": "Ran a K5 verifier over 232 connection sets with sizes 19-21.",
+            "verified": "Every candidate was checked in the graph and complement.",
+            "result": (
+                "No witness was found among 232 tested connection sets of near "
+                "half-density (sizes 19-21); the bracket is unchanged."
+            ),
+            "next_gate": "Obtain a published witness and replay it.",
+        }
+        config = json.loads((ROOT / "foundry" / "config.json").read_text())
+        errors = foundry.semantic_contract_errors(receipt, config)
+        self.assertTrue(any("quantity-conflation" in error for error in errors))
+
+    def test_r55_contract_accepts_exactly_scoped_near_complete_control(self):
+        receipt = {
+            "frontier_id": "erdos_1029_r55",
+            "occurred_at": "2026-07-15T11:53:03Z",
+            "frontier": "Can a 42-vertex circulant avoid K5 in both colors?",
+            "action": (
+                "Ran a K5 verifier over 232 connection sets with |S|=19..21, "
+                "whose degrees are 37..41."
+            ),
+            "verified": "Every candidate was checked in the graph and complement.",
+            "result": (
+                "No witness was found in this near-complete control shard; it "
+                "does not test the half-density region and the bracket is unchanged."
+            ),
+            "next_gate": "Search |S| near 10 or 11, or replay a published witness.",
+        }
+        config = json.loads((ROOT / "foundry" / "config.json").read_text())
+        self.assertEqual(foundry.semantic_contract_errors(receipt, config), [])
+
     def test_q6_contract_rejects_lower_bound_inference_from_well_sharded_no_hit(self):
         receipt = {
             "frontier_id": "erdos_21_q6",
