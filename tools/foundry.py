@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import difflib
+import fcntl
 import hashlib
 import json
 import os
@@ -269,7 +270,7 @@ def stall_gate(state_path: Path, config: dict, frontier_id: str | None = None) -
     }
 
 
-def consult(question: str, state_path: Path, config: dict, frontier_id: str) -> str:
+def _consult_locked(question: str, state_path: Path, config: dict, frontier_id: str) -> str:
     gate = stall_gate(state_path, config, frontier_id)
     if not gate["frontier_call_allowed"]:
         raise RuntimeError("frontier consult denied: " + json.dumps(gate, sort_keys=True))
@@ -311,6 +312,16 @@ def consult(question: str, state_path: Path, config: dict, frontier_id: str) -> 
     atomic_json(state_path, state)
     state_path.chmod(0o600)
     return answer
+
+
+def consult(question: str, state_path: Path, config: dict, frontier_id: str) -> str:
+    """Serialize the gate-call-commit transaction across scout/night jobs."""
+    lock_path = state_path.with_suffix(state_path.suffix + ".consult.lock")
+    lock_path.parent.mkdir(parents=True, exist_ok=True)
+    with lock_path.open("a+") as lock:
+        lock_path.chmod(0o600)
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        return _consult_locked(question, state_path, config, frontier_id)
 
 
 def take_pending_advice(state_path: Path, frontier_id: str) -> dict:
