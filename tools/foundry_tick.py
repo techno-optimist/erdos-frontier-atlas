@@ -49,16 +49,29 @@ def main() -> int:
     ingest_tmp = args.ingest_state.with_suffix(args.ingest_state.suffix + ".tmp")
     ingest_tmp.write_text(json.dumps(ingest_state, indent=2) + "\n")
     os.replace(ingest_tmp, args.ingest_state)
-    gate = subprocess.run([sys.executable, str(tool), "gate", "--state", str(args.state)], cwd=args.repo, text=True, stdout=subprocess.PIPE, check=True)
+    frontier_ids = sorted({
+        row.get("frontier_id")
+        for path in (args.repo / "progress" / "receipts").glob("**/*.json")
+        for row in [json.loads(path.read_text())]
+        if row.get("frontier_id")
+    })
+    lane_gates = {}
+    for frontier_id in frontier_ids:
+        proc = subprocess.run(
+            [sys.executable, str(tool), "gate", "--state", str(args.state), "--frontier-id", frontier_id],
+            cwd=args.repo, text=True, stdout=subprocess.PIPE, check=True,
+        )
+        lane_gates[frontier_id] = json.loads(proc.stdout)
+    gate = {"schema": "p42-foundry-stall-summary-v1", "lanes": lane_gates}
     gate_path = args.state.with_name("foundry_stall_gate.json")
     gate_path.parent.mkdir(parents=True, exist_ok=True)
-    gate_path.write_text(gate.stdout)
+    gate_path.write_text(json.dumps(gate, indent=2) + "\n")
     publish_result = {"published": False, "reason": "no-push mode"}
     if not args.no_push:
         published = subprocess.run([sys.executable, str(tool), "publish"], cwd=args.repo, text=True, stdout=subprocess.PIPE, check=True)
         try: publish_result = json.loads(published.stdout.strip().splitlines()[-1])
         except Exception: publish_result = {"published": False, "reason": "unparseable publisher output"}
-    print(json.dumps({"ingested": created, "rejected": rejected, "gate": json.loads(gate.stdout), "publication": publish_result}, indent=2))
+    print(json.dumps({"ingested": created, "rejected": rejected, "gate": gate, "publication": publish_result}, indent=2))
     return 0
 
 

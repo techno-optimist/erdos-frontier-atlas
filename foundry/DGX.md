@@ -19,13 +19,17 @@ The DGX is the only runtime tier. The Mac checkout is for code and review.
 
 ## Scout instruction addition
 
-The scheduled agent should read the JSON written at
-`~/.hermes/chronos_state/foundry_stall_gate.json`. If
-`frontier_call_allowed` is true, it may run exactly one consultation:
+The scheduled agent uses only `foundry.gate` in its prep output for escalation
+authorization. Gate v2 filters receipts by the exact structured `frontier_id`;
+a stall in one lane cannot authorize a call in another. The publisher's
+`foundry_stall_gate.json` is a read-only per-lane monitoring summary, not an
+authorization token. If `frontier_call_allowed` is true, the worker may run
+exactly one consultation:
 
 ```bash
 python3 ~/erdos-frontier-atlas/tools/foundry.py consult \
   --state ~/.hermes/chronos_state/foundry_frontier_budget.json \
+  --frontier-id '<foundry.gate.frontier_id>' \
   "<public-safe frontier, failed routes, falsifier, and desired executable test>"
 ```
 
