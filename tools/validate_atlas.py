@@ -54,6 +54,13 @@ def main() -> None:
         fail("Erdos #67 lost the exactly re-verified 130,000 frontier")
     if by_id[21].get("lane") != "exact-backtracking":
         fail("q(6) must route to orderly generation/exact backtracking")
+    q6 = json.dumps(by_id[21], ensure_ascii=False).lower()
+    if "14 ≤ f(6) ≤ 18" not in by_id[21].get("statement", ""):
+        fail("q(6) statement lost the current 14..18 bracket")
+    if "orderly generation" not in by_id[21].get("attack", "").lower():
+        fail("q(6) attack lost the orderly-generation route")
+    if "per-m sat + cegar + drat" in q6 or "q(6) ∈ [13,18]" in by_id[21].get("verdict", ""):
+        fail("q(6) entry contains a stale bracket or obsolete SAT route")
     if by_id[86].get("p42_slug") != "hypercube-q7-c4-free":
         fail("C4-free Q7 must link to its packaged finite-frontier board")
     if by_id[20].get("board_class") == "READY":

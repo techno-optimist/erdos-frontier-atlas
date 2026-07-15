@@ -67,12 +67,13 @@ class FocusedRetrievalTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "problems.json"
             path.write_text(json.dumps({"problems": [
-                {"id": 21, "title": "q(6) intersecting hypergraph", "lane": "exact-backtracking", "verifier": "Check pairwise-intersecting edges and prove no 5-cover hitting set."},
+                {"id": 21, "title": "q(6) intersecting hypergraph", "lane": "exact-backtracking", "verifier": "Check pairwise-intersecting edges and prove no 5-cover hitting set.", "campaign_finding": "SAT failed; use orderly generation and canonical augmentation."},
                 {"id": 52, "title": "sum product", "lane": "exact-backtracking", "verifier": "Count sums and products."},
             ]}))
             rows = focused.public_atlas_rows(path, "q(6) pairwise-intersecting hypergraph exact 5-cover verifier", 3)
             self.assertEqual(rows[0]["id"], 21)
             self.assertIn("5-cover", rows[0]["focus_excerpt"]["text"])
+            self.assertIn("orderly generation", rows[0]["campaign_finding"])
 
 
 if __name__ == "__main__":
