@@ -290,7 +290,19 @@ def normalize_replay(result: dict, inventory: list[dict]) -> list[dict]:
         raise AdjudicationError("replay must be an array")
     if len(steps) > MAX_REPLAY_STEPS:
         raise AdjudicationError("too many replay steps")
-    return [_normalized_replay_step(step, inventory) for step in steps]
+    normalized = [_normalized_replay_step(step, inventory) for step in steps]
+    python_artifacts = {
+        row["path"] for row in inventory if Path(row["path"]).suffix == ".py"
+    }
+    replayed_python = {
+        row["argv"][1].removeprefix("/artifacts/") for row in normalized
+    }
+    missing = sorted(python_artifacts - replayed_python)
+    if missing:
+        raise AdjudicationError(
+            "every final Python artifact requires direct replay: " + ", ".join(missing)
+        )
+    return normalized
 
 
 def replay_sandbox_command(
