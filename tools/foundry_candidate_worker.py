@@ -333,6 +333,8 @@ def run_task(task_path: Path) -> int:
         "A negative_result must say only what its bounded replay establishes: use language such "
         "as 'no witness found within this bounded search; theorem and bracket unchanged.' Never "
         "turn a timeout, heuristic search, or finite sample into nonexistence or an exact value. "
+        "A successfully completed bounded negative search must exit zero on replay and print its "
+        "bounded outcome; reserve nonzero exit status for an execution or verifier-invariant failure. "
         "Finish with submit_result. The evaluator reserves the final two API calls for typed "
         "submission; when that gate appears, stop exploring and submit the strongest bounded "
         "result supported by the artifacts, including negative_result or blocked when appropriate."
@@ -352,7 +354,8 @@ def run_task(task_path: Path) -> int:
                     "bounded negative_result or blocked outcome if no strict frontier improvement "
                     "was established; do not spend another call exploring. A failed search means "
                     "only no witness found within the stated budget, never nonexistence, an upper "
-                    "bound, or an exact Ramsey value without a replayable proof certificate."
+                    "bound, or an exact Ramsey value without a replayable proof certificate. Ensure "
+                    "the submitted replay exits zero when that bounded negative experiment succeeds."
                 ),
             })
         response = unix_chat({

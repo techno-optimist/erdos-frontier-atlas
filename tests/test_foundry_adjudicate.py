@@ -207,6 +207,25 @@ class FoundryAdjudicationTests(unittest.TestCase):
             adjudication.semantic_contract_violations(result, packet),
         )
 
+    def test_unproved_hypothesis_is_not_conflated_with_bounded_552_claim(self):
+        packet = {"target": {"id": 552}}
+        result = {
+            "classification": "negative_result",
+            "hypothesis": (
+                "A witness exists and would prove R(C4,S17)>=23."
+            ),
+            "claim": (
+                "No C4-free graph was found via this construction within the bounded budget."
+            ),
+            "theorem_status": "theorem_unchanged",
+        }
+        self.assertEqual(adjudication.semantic_contract_violations(result, packet), [])
+        result["claim"] = "Therefore R(C4,S17)=22."
+        self.assertIn(
+            "erdos_552_nonexistence_claim_without_replayable_proof",
+            adjudication.semantic_contract_violations(result, packet),
+        )
+
     def test_replay_contract_rejects_shell_and_path_escape(self):
         inventory = [{"path": "check.py", "sha256": "sha256:x", "bytes": 1}]
         with self.assertRaisesRegex(adjudication.AdjudicationError, "frozen Python"):
