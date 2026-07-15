@@ -75,6 +75,11 @@ read-only IDF- and phrase-ranked matches from Atlas, Atlas2, Arena, and aiwiki.
 It records before/after database hashes and writes only compact session-local
 `focused_context` artifacts; failure of any read-only hash check fails prep.
 
+`foundry/shadow_policy.py` is an observe-only recursive-improvement layer. It
+scores lane evidence yield, exploration need, age, and repeated blocking, then
+writes `shadow_policy.json` into the session. It has no production selection
+authority; promotion requires accumulated, auditable outcome evidence.
+
 DGX cron renders wall-clock timestamps in fixed MST (`UTC-07:00`), so
 `foundry/config.json` uses `Etc/GMT+7`. Receipt construction cross-checks that
 offset against the raw run file's absolute mtime and fails over to the latter
