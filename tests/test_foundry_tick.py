@@ -240,6 +240,7 @@ class FoundryTickTests(unittest.TestCase):
         detail = foundry_tick.rejection_detail({
             "source_sha256": "a" * 64,
             "receipt": {},
+            "runtime_telemetry": {"status": "within_budget"},
             "errors": [
                 "milestone contract missing required verifier evidence line in Verified: Verifier domain:"
             ],
