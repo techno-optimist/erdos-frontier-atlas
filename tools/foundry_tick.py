@@ -13,6 +13,8 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
+PUBLIC_TEMPLATE_PLACEHOLDER = re.compile(r"<[^<>\n]{2,240}>")
+
 
 def source_is_watermarked(state: dict, key: str, source_sha: str) -> bool:
     """Return true only when this exact immutable source was already handled."""
@@ -78,24 +80,50 @@ def matching_receipt_paths(
     return sorted(matches)
 
 
-def quarantine_failed_accepted_sources(
+def template_receipt_reason(paths: list[Path]) -> str | None:
+    for path in paths:
+        try:
+            receipt = json.loads(path.read_text())
+        except (OSError, ValueError):
+            continue
+        for key in ("frontier", "action", "verified", "result", "next_gate", "boundary_held"):
+            value = receipt.get(key)
+            if isinstance(value, str) and PUBLIC_TEMPLATE_PLACEHOLDER.fullmatch(value.strip()):
+                return f"public receipt contains template placeholder in {key}"
+    return None
+
+
+def quarantine_invalid_accepted_sources(
     ingest_state: dict, cron_output: Path, repo: Path, tool: Path
 ) -> list[dict]:
-    """Repair any older acceptance produced from a scheduler failure report."""
+    """Repair older failed-envelope or template-placeholder acceptances."""
     revoked = []
     for key, source_sha in list(ingest_state.get("accepted", {}).items()):
         job_id, separator, filename = key.partition("/")
+        if not separator:
+            continue
         source = cron_output / job_id / filename
-        if not separator or not source.exists():
-            continue
-        raw = source.read_bytes()
-        if hashlib.sha256(raw).hexdigest() != source_sha:
-            continue
-        reason = failed_run_reason(raw.decode("utf-8", errors="replace"))
+        raw = source.read_bytes() if source.exists() else None
+        source_matches = raw is not None and hashlib.sha256(raw).hexdigest() == source_sha
+        removed = matching_receipt_paths(repo, job_id, filename, source_sha)
+        reason = (
+            failed_run_reason(raw.decode("utf-8", errors="replace"))
+            if source_matches and raw is not None else None
+        ) or template_receipt_reason(removed)
         if not reason:
             continue
-        inspection = inspect_run(tool, source, job_id, repo)
-        removed = matching_receipt_paths(repo, job_id, filename, source_sha)
+        if source_matches:
+            inspection = inspect_run(tool, source, job_id, repo)
+        else:
+            receipt = json.loads(removed[0].read_text()) if removed else {}
+            inspection = {
+                "source_sha256": source_sha,
+                "receipt": {
+                    field: receipt.get(field)
+                    for field in ("receipt_id", "frontier_id", "classification", "occurred_at")
+                },
+                "errors": [reason + "; raw source unavailable or hash-mismatched"],
+            }
         for path in removed:
             path.unlink()
         ingest_state["accepted"].pop(key, None)
@@ -136,7 +164,7 @@ def main() -> int:
     ingest_state.setdefault("accepted", {})
     ingest_state.setdefault("rejected", {})
     ingest_state.setdefault("rejected_details", {})
-    revoked = quarantine_failed_accepted_sources(
+    revoked = quarantine_invalid_accepted_sources(
         ingest_state, args.cron_output, args.repo, tool
     )
     if any(row["removed_receipts"] for row in revoked):
