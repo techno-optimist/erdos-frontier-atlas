@@ -142,6 +142,9 @@ class PrepTests(unittest.TestCase):
     def test_initial_milestone_is_verifier_only_and_hash_bound(self):
         policy = {
             "initial_action_kind": "verifier_construction",
+            "verifier_required_verified_prefixes": [
+                "Verifier domain:", "Verifier predicate:"
+            ],
             "initial_broad_context_policy": "gated_focused_only",
             "continuation_broad_context_policy": "conditional_recorded_falsifier_need",
             "max_action_primitives": 1,
@@ -154,6 +157,10 @@ class PrepTests(unittest.TestCase):
         self.assertEqual(contract["phase"], "initial_verifier")
         self.assertEqual(contract["action_kind"], "verifier_construction")
         self.assertEqual(contract["broad_context_policy"], "gated_focused_only")
+        self.assertEqual(
+            contract["verifier_evidence_contract"]["required_verified_prefixes"],
+            ["Verifier domain:", "Verifier predicate:"],
+        )
         self.assertIn("Do not run random/generated candidates", contract["deferred"])
         self.assertIn("Do not load a specialist skill", contract["specialist_skill_policy"])
         self.assertRegex(
@@ -164,6 +171,8 @@ class PrepTests(unittest.TestCase):
         self.assertIn("directly in the assistant response by call 14", instruction)
         self.assertIn("Do not write the final receipt to a file", instruction)
         self.assertIn("random or generated candidate testing counts as search", instruction)
+        self.assertIn("`Verifier domain: <evidence>`", instruction)
+        self.assertIn("`Verifier predicate: <evidence>`", instruction)
         self.assertIn(contract["receipt_action_prefix"], instruction)
 
     def test_continuation_milestone_selects_one_coarse_primitive(self):

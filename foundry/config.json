@@ -10,6 +10,7 @@
   "frontier_model": "aperture-frontier",
   "frontier_url": "http://127.0.0.1:8808/v1/chat/completions",
   "publication_branch": "automation/frontier-scout",
+  "accepted_contract_replay_after": "2026-07-15T16:00:00Z",
   "runtime_budget": {
     "effective_after": "2026-07-15T13:50:00Z",
     "scheduled_job_max_turns": 16,
@@ -41,6 +42,11 @@
       ]
     },
     "max_action_primitives": 1,
+    "verifier_evidence_effective_after": "2026-07-15T16:00:00Z",
+    "verifier_required_verified_prefixes": [
+      "Verifier domain:",
+      "Verifier predicate:"
+    ],
     "initial_broad_context_policy": "gated_focused_only",
     "continuation_broad_context_policy": "conditional_recorded_falsifier_need",
     "implementation_stop_call": 12,

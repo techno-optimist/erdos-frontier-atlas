@@ -272,15 +272,29 @@ def required_milestone_contract_errors(text: str, receipt: dict, config: dict) -
     claims = " ".join(
         str(receipt.get(key, "")) for key in ("action", "verified", "result")
     ).lower()
+    errors = []
     for pattern in policy.get("action_kind_forbidden_claim_patterns", {}).get(
         action_kind, []
     ):
         if re.search(pattern, claims, re.I):
-            return [
+            errors.append(
                 "milestone contract forbids downstream execution claim for "
                 f"{action_kind}: {pattern}"
-            ]
-    return []
+            )
+            break
+    if (
+        action_kind == "verifier_construction"
+        and str(receipt.get("occurred_at", ""))
+        >= str(policy.get("verifier_evidence_effective_after", "9999"))
+    ):
+        verified = str(receipt.get("verified", ""))
+        for prefix in policy.get("verifier_required_verified_prefixes", []):
+            if not re.search(rf"(?mi)^{re.escape(str(prefix))}\s*\S", verified):
+                errors.append(
+                    "milestone contract missing required verifier evidence line "
+                    f"in Verified: {prefix}"
+                )
+    return errors
 
 
 def required_strategy_trace_errors(text: str, receipt: dict) -> list[str]:

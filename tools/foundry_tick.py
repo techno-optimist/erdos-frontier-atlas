@@ -39,6 +39,9 @@ def semantic_contract_digest(config: dict) -> str:
         {
             "semantic_contracts": config.get("semantic_contracts", {}),
             "milestone_policy": config.get("milestone_policy", {}),
+            "accepted_contract_replay_after": config.get(
+                "accepted_contract_replay_after"
+            ),
             "runtime_budget": config.get("runtime_budget"),
             "runtime_telemetry_contract_digest": telemetry_contract_digest(config),
         },
@@ -190,6 +193,17 @@ def apply_runtime_budget(
     return inspection
 
 
+def accepted_runtime_evidence_is_current(evidence: dict | None, config: dict) -> bool:
+    """Reuse exact-source runtime evidence when only another contract changed."""
+    return bool(
+        isinstance(evidence, dict)
+        and evidence.get("status") == "within_budget"
+        and evidence.get("runtime_budget_digest") == runtime_budget_digest(config)
+        and evidence.get("telemetry_contract_digest")
+        == telemetry_contract_digest(config)
+    )
+
+
 def rejection_feedback_is_current(
     detail: dict, source_sha: str, contract_digest: str
 ) -> bool:
@@ -234,6 +248,10 @@ def rejection_detail(
         str(error).startswith(("milestone contract ", "missing operator milestone ", "invalid operator milestone "))
         for error in errors
     )
+    verifier_evidence_rejection = any(
+        "missing required verifier evidence line" in str(error)
+        for error in errors
+    )
     receipt_structure_rejection = any(
         "missing required receipt labels" in str(error)
         or "missing cron response boundary" in str(error)
@@ -254,7 +272,9 @@ def rejection_detail(
             else "shrink the action and context to the checked-in runtime budget, then rerun one bounded step; runtime rejection says nothing about the mathematical claim"
             if runtime_rejection
             else (
-                "complete only the admitted milestone, defer every downstream primitive, and emit the hash-bound Action prefix; never claim the quarantined receipt was published"
+                "complete only the admitted verifier milestone: separately replay an out-of-domain fixture and a target-predicate violation, emit both typed verifier evidence lines, and never claim the quarantined receipt was published"
+                if verifier_evidence_rejection
+                else "complete only the admitted milestone, defer every downstream primitive, and emit the hash-bound Action prefix; never claim the quarantined receipt was published"
                 if milestone_rejection
                 else "replay the bounded evidence, then correct scope; never claim the quarantined receipt was published"
             )
@@ -342,6 +362,7 @@ def quarantine_invalid_accepted_sources(
             path.unlink()
         ingest_state["accepted"].pop(key, None)
         ingest_state.setdefault("accepted_runtime", {}).pop(key, None)
+        ingest_state.setdefault("accepted_policy", {}).pop(key, None)
         ingest_state.setdefault("rejected", {})[key] = source_sha
         ingest_state.setdefault("rejected_details", {})[key] = rejection_detail(
             inspection, reason, contract_digest
@@ -379,6 +400,7 @@ def quarantine_invalid_accepted_sources(
         if accepted_sha == source_sha:
             ingest_state["accepted"].pop(key, None)
             ingest_state.setdefault("accepted_runtime", {}).pop(key, None)
+            ingest_state.setdefault("accepted_policy", {}).pop(key, None)
         inspection = {
             "source_sha256": source_sha,
             "receipt": {
@@ -396,6 +418,91 @@ def quarantine_invalid_accepted_sources(
             "run_file": filename,
             "reason": reason,
             "removed_receipts": [path.name],
+        })
+    return revoked
+
+
+def revalidate_stale_accepted_sources(
+    ingest_state: dict,
+    cron_output: Path,
+    repo: Path,
+    tool: Path,
+    efficiency: dict | None,
+    config: dict,
+    contract_digest: str,
+) -> list[dict]:
+    """Replay recent accepted raw hashes when publication policy changes."""
+    cutoff = parse_time(config.get("accepted_contract_replay_after"))
+    if cutoff is None:
+        return []
+    accepted_policy = ingest_state.setdefault("accepted_policy", {})
+    revoked = []
+    for key, source_sha in list(ingest_state.get("accepted", {}).items()):
+        if accepted_policy.get(key) == contract_digest:
+            continue
+        job_id, separator, filename = key.partition("/")
+        if not separator:
+            continue
+        receipt_paths = matching_receipt_paths(
+            repo, job_id, filename, source_sha
+        )
+        receipt = {}
+        if receipt_paths:
+            try:
+                receipt = json.loads(receipt_paths[0].read_text())
+            except (OSError, ValueError):
+                receipt = {}
+        occurred = parse_time(receipt.get("occurred_at"))
+        if occurred is not None and occurred < cutoff:
+            accepted_policy[key] = contract_digest
+            continue
+        source = cron_output / job_id / filename
+        source_matches = (
+            source.exists()
+            and hashlib.sha256(source.read_bytes()).hexdigest() == source_sha
+        )
+        if source_matches:
+            inspection = inspect_run(tool, source, job_id, repo)
+            prior_runtime = ingest_state.get("accepted_runtime", {}).get(key)
+            if accepted_runtime_evidence_is_current(prior_runtime, config):
+                inspection["runtime_telemetry"] = prior_runtime
+            else:
+                inspection = apply_runtime_budget(
+                    inspection, efficiency, config, job_id
+                )
+        else:
+            inspection = {
+                "source_sha256": source_sha,
+                "receipt": {
+                    field: receipt.get(field)
+                    for field in (
+                        "receipt_id", "frontier_id", "classification", "occurred_at"
+                    )
+                },
+                "errors": [
+                    "post-cutoff accepted source cannot be replayed from its exact raw hash"
+                ],
+            }
+        if inspection.get("valid"):
+            accepted_policy[key] = contract_digest
+            if inspection.get("runtime_telemetry") is not None:
+                ingest_state.setdefault("accepted_runtime", {})[key] = inspection[
+                    "runtime_telemetry"
+                ]
+            continue
+        for path in receipt_paths:
+            path.unlink()
+        ingest_state["accepted"].pop(key, None)
+        ingest_state.setdefault("accepted_runtime", {}).pop(key, None)
+        accepted_policy.pop(key, None)
+        ingest_state.setdefault("rejected", {})[key] = source_sha
+        ingest_state.setdefault("rejected_details", {})[key] = rejection_detail(
+            inspection, "accepted contract replay failed", contract_digest
+        )
+        revoked.append({
+            "run_file": filename,
+            "reason": "accepted contract replay failed",
+            "removed_receipts": [path.name for path in receipt_paths],
         })
     return revoked
 
@@ -431,9 +538,14 @@ def main() -> int:
     ingest_state.setdefault("rejected", {})
     ingest_state.setdefault("rejected_details", {})
     ingest_state.setdefault("accepted_runtime", {})
+    ingest_state.setdefault("accepted_policy", {})
     revoked = quarantine_invalid_accepted_sources(
         ingest_state, args.cron_output, args.repo, tool, contract_digest
     )
+    revoked.extend(revalidate_stale_accepted_sources(
+        ingest_state, args.cron_output, args.repo, tool, efficiency, config,
+        contract_digest,
+    ))
     if any(row["removed_receipts"] for row in revoked):
         subprocess.run(
             [sys.executable, str(tool), "rebuild-index"],
@@ -491,11 +603,13 @@ def main() -> int:
                 ingest_state["rejected_details"][key] = detail
                 ingest_state["accepted"].pop(key, None)
                 ingest_state["accepted_runtime"].pop(key, None)
+                ingest_state["accepted_policy"].pop(key, None)
                 continue
             proc = subprocess.run([sys.executable, str(tool), "ingest", str(source), "--job-id", job_id], cwd=args.repo, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             if proc.returncode == 0:
                 if json.loads(proc.stdout).get("created"): created.append(source.name)
                 ingest_state["accepted"][key] = source_sha
+                ingest_state["accepted_policy"][key] = contract_digest
                 if inspection.get("runtime_telemetry") is not None:
                     ingest_state["accepted_runtime"][key] = inspection["runtime_telemetry"]
                 ingest_state["rejected"].pop(key, None)
@@ -509,6 +623,7 @@ def main() -> int:
                 )
                 ingest_state["accepted"].pop(key, None)
                 ingest_state["accepted_runtime"].pop(key, None)
+                ingest_state["accepted_policy"].pop(key, None)
     args.ingest_state.parent.mkdir(parents=True, exist_ok=True)
     ingest_tmp = args.ingest_state.with_suffix(args.ingest_state.suffix + ".tmp")
     ingest_tmp.write_text(json.dumps(ingest_state, indent=2) + "\n")
