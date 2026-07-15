@@ -47,3 +47,9 @@ path outside `progress/`.
 `foundry/deploy_jobs.py` performs the one-time scheduler migration under the
 Hermes cron lock, writes a timestamped backup, pins both research jobs to the
 local 35B provider, and appends the recursion instruction idempotently.
+
+The checked-in `40-foundry-tool-parser.conf` preserves the live W19/MoE hooks
+while enabling SGLang's `qwen3_coder` tool-call parser. Install it as the
+highest-priority `chronos-sglang.service.d` drop-in, daemon-reload, restart, and
+require both `/health` and an actual parsed tool call before declaring the
+research agent live.
