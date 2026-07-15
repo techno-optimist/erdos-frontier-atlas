@@ -20,6 +20,23 @@ TARGETS = {"50c8e4391849", "e97056701b6d"}
 MODEL = "/home/chronos/models/qwen3.6-35b-a3b"
 AGENT = HOME / ".local" / "bin" / "chronos-agent"
 COMPACT_SKILLS = ["foundry"]
+API_MAX_RETRIES = 8
+SETTINGS = {
+    "agent.api_max_retries": str(API_MAX_RETRIES),
+    "providers.foundry-qwen35b.name": "foundry-qwen35b",
+    "providers.foundry-qwen35b.base_url": "http://127.0.0.1:30000/v1",
+    "providers.foundry-qwen35b.api_key": "local",
+    "providers.foundry-qwen35b.api_mode": "chat_completions",
+    "providers.foundry-qwen35b.model": MODEL,
+    "providers.foundry-qwen35b.context_length": "262144",
+    "providers.foundry-qwen35b.extra_body.chat_template_kwargs.enable_thinking": "false",
+    "auxiliary.compression.provider": "foundry-qwen35b",
+    "auxiliary.compression.model": MODEL,
+    "auxiliary.compression.base_url": "http://127.0.0.1:30000/v1",
+    "auxiliary.compression.api_key": "local",
+    "auxiliary.compression.timeout": "600",
+    "auxiliary.compression.extra_body.chat_template_kwargs.enable_thinking": "false",
+}
 INSTALLS = {
     ROOT / "foundry" / "dgx_research_prep.py": [
         HOME / ".hermes" / "scripts" / "chronos_frontier_scout_prep.py",
@@ -78,22 +95,7 @@ def install_runtime_files() -> dict[str, str]:
 
 def main() -> int:
     installed = install_runtime_files()
-    settings = {
-        "providers.foundry-qwen35b.name": "foundry-qwen35b",
-        "providers.foundry-qwen35b.base_url": "http://127.0.0.1:30000/v1",
-        "providers.foundry-qwen35b.api_key": "local",
-        "providers.foundry-qwen35b.api_mode": "chat_completions",
-        "providers.foundry-qwen35b.model": MODEL,
-        "providers.foundry-qwen35b.context_length": "262144",
-        "providers.foundry-qwen35b.extra_body.chat_template_kwargs.enable_thinking": "false",
-        "auxiliary.compression.provider": "foundry-qwen35b",
-        "auxiliary.compression.model": MODEL,
-        "auxiliary.compression.base_url": "http://127.0.0.1:30000/v1",
-        "auxiliary.compression.api_key": "local",
-        "auxiliary.compression.timeout": "600",
-        "auxiliary.compression.extra_body.chat_template_kwargs.enable_thinking": "false",
-    }
-    for key, value in settings.items():
+    for key, value in SETTINGS.items():
         subprocess.run([str(AGENT), "config", "set", key, value], check=True, stdout=subprocess.DEVNULL)
     LOCK.touch(exist_ok=True)
     with LOCK.open("r+") as lock:

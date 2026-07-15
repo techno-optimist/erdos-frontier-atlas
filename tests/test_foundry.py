@@ -53,6 +53,24 @@ class FoundryTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             foundry.parse_sections("**Frontier**\nOnly one field")
 
+    def test_failed_cron_prompt_template_cannot_become_a_receipt(self):
+        failed = """# Cron Job: scout (FAILED)
+## Prompt
+**Frontier**
+<one public-safe question/anchor>
+## Error
+RuntimeError: Connection error.
+"""
+        with self.assertRaisesRegex(ValueError, "failed cron run"):
+            foundry.parse_sections(failed)
+
+    def test_public_template_placeholder_is_rejected(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "run.md"
+            path.write_text(SAMPLE.replace("Can route X move?", "<frontier placeholder>"))
+            receipt = foundry.build_receipt(path, "50c8e4391849")
+        self.assertIn("template placeholder in frontier", foundry.validate_receipt(receipt))
+
     def test_inspection_returns_structured_semantic_rejection_without_writing(self):
         sample = (
             '{"frontier_id":"erdos_1029_r55"}\n'

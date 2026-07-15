@@ -1,6 +1,10 @@
 import importlib.util
+import hashlib
+import json
+import tempfile
 import unittest
 from pathlib import Path
+from unittest import mock
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -49,6 +53,38 @@ class FoundryTickTests(unittest.TestCase):
         self.assertEqual(detail["source_sha256"], "c" * 64)
         self.assertIsNone(detail["frontier_id"])
         self.assertIn("unavailable", detail["errors"][0])
+
+    def test_failed_accepted_source_is_quarantined_and_receipt_removed(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            job_id = "50c8e4391849"
+            source_dir = root / "cron" / job_id
+            source_dir.mkdir(parents=True)
+            source = source_dir / "failed.md"
+            source.write_text("# Cron Job: scout (FAILED)\n## Error\nconnection\n")
+            source_sha = hashlib.sha256(source.read_bytes()).hexdigest()
+            receipt_dir = root / "repo" / "progress" / "receipts" / "2026" / "07"
+            receipt_dir.mkdir(parents=True)
+            receipt_path = receipt_dir / "bad.json"
+            receipt_path.write_text(json.dumps({
+                "source": {"job_id": job_id, "run_file": source.name, "sha256": source_sha}
+            }))
+            state = {
+                "accepted": {f"{job_id}/{source.name}": source_sha},
+                "rejected": {}, "rejected_details": {},
+            }
+            inspection = {
+                "source_sha256": source_sha, "receipt": None,
+                "errors": ["failed cron run is not a mathematical receipt"],
+            }
+            with mock.patch.object(foundry_tick, "inspect_run", return_value=inspection):
+                revoked = foundry_tick.quarantine_failed_accepted_sources(
+                    state, root / "cron", root / "repo", root / "tool.py"
+                )
+            self.assertEqual(len(revoked), 1)
+            self.assertFalse(receipt_path.exists())
+            self.assertNotIn(f"{job_id}/{source.name}", state["accepted"])
+            self.assertEqual(state["rejected"][f"{job_id}/{source.name}"], source_sha)
 
 
 if __name__ == "__main__":
