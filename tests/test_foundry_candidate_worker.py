@@ -122,6 +122,52 @@ class CandidateWorkerTests(unittest.TestCase):
             self.assertIn("candidate replay preflight failed", response["message"])
             self.assertFalse((output / "result.json").exists())
 
+    def test_submission_reports_all_failed_replays_in_one_correction(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            output = root / "output"
+            task_path = root / "task.json"
+            (output / "artifacts").mkdir(parents=True)
+            (output / "artifacts" / "missing_args.py").write_text(
+                "print('x' * 300)\nprint('Usage: missing_args.py INPUT')\n"
+                "raise SystemExit(2)\n"
+            )
+            (output / "artifacts" / "negative_exit.py").write_text(
+                "print('y' * 300)\nprint('bounded search found no witness')\n"
+                "raise SystemExit(3)\n"
+            )
+            (output / "artifacts" / "late_failure.py").write_text(
+                "print('z' * 300)\nraise SystemExit(4)\n"
+            )
+            task_path.write_text(json.dumps({"evaluation_id": "opaque", "seed": 9}))
+            payload = {
+                "classification": "negative_result",
+                "hypothesis": "h",
+                "falsifier": "f",
+                "claim": "bounded search found no witness; theorem unchanged",
+                "evidence": ["e"],
+                "artifacts": [
+                    "missing_args.py",
+                    "negative_exit.py",
+                    "late_failure.py",
+                ],
+                "replay": [
+                    {"argv": ["python3", "missing_args.py"]},
+                    {"argv": ["python3", "negative_exit.py"]},
+                    {"argv": ["python3", "late_failure.py"]},
+                ],
+                "theorem_status": "theorem_unchanged",
+            }
+            with mock.patch.object(worker, "OUTPUT", output), mock.patch.object(
+                worker, "TASK_PATH", task_path
+            ):
+                response = json.loads(worker.execute_tool("submit_result", payload))
+            self.assertIn("missing_args.py: exit 2", response["message"])
+            self.assertIn("negative_exit.py: exit 3", response["message"])
+            self.assertIn("late_failure.py: exit 4", response["message"])
+            self.assertGreater(len(response["message"]), 500)
+            self.assertFalse((output / "result.json").exists())
+
     def test_submission_requires_replay_for_every_final_python_artifact(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
