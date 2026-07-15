@@ -1,9 +1,11 @@
 import importlib.util
 import io
 import json
+import os
 import tempfile
 import unittest
 from contextlib import redirect_stdout
+from datetime import datetime, timezone
 from pathlib import Path
 from types import SimpleNamespace
 from unittest import mock
@@ -37,9 +39,11 @@ class FoundryTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "2026-07-14_17-00-51.md"
             path.write_text(SAMPLE)
-            receipt = foundry.build_receipt(path, "50c8e4391849")
+            expected_epoch = datetime(2026, 7, 15, 0, 0, 51, tzinfo=timezone.utc).timestamp()
+            os.utime(path, (expected_epoch, expected_epoch))
+            receipt = foundry.build_receipt(path, "50c8e4391849", "Etc/GMT+7")
             self.assertEqual(receipt["classification"], "blocked")
-            self.assertEqual(receipt["occurred_at"], "2026-07-14T23:00:51Z")
+            self.assertEqual(receipt["occurred_at"], "2026-07-15T00:00:51Z")
             self.assertEqual(foundry.validate_receipt(receipt), [])
             self.assertTrue(receipt["receipt_id"].startswith("sha256:"))
             self.assertTrue(receipt["content_digest"].startswith("sha256:"))
@@ -52,6 +56,11 @@ class FoundryTests(unittest.TestCase):
         self.assertEqual(foundry.classify("candidate survives", "built verifier"), "progress")
         self.assertEqual(foundry.classify("local-exhaustion", "checked route"), "negative_result")
         self.assertEqual(foundry.classify("blocked by missing corpus", "audit"), "blocked")
+        self.assertEqual(foundry.classify("No mathematical progress; lane remains closed", "Negative-result consolidation"), "negative_result")
+
+    def test_ambiguous_wall_clock_falls_back_to_absolute_mtime(self):
+        fallback = datetime(2026, 7, 15, 0, 0, 51, tzinfo=timezone.utc)
+        self.assertEqual(foundry.parse_run_time(SAMPLE, fallback, "America/Denver"), "2026-07-15T00:00:51Z")
 
     def test_public_membrane_rejects_local_paths(self):
         with tempfile.TemporaryDirectory() as tmp:
