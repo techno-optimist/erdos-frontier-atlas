@@ -276,6 +276,8 @@ def consult(question: str, state_path: Path, config: dict) -> str:
 def take_pending_advice(state_path: Path) -> dict:
     """Deliver private advice until a public receipt proves it was executed."""
     state = load_json(state_path) if state_path.exists() else {"calls": []}
+    if state_path.exists():
+        state_path.chmod(0o600)
     pending = state.get("pending_advice")
     if not pending:
         return {"strategy_advice": None, "strategy_status": "none"}
