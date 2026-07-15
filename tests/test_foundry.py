@@ -69,6 +69,43 @@ class FoundryTests(unittest.TestCase):
             receipt = foundry.build_receipt(path, "50c8e4391849")
             self.assertIn("public membrane violation in verified", foundry.validate_receipt(receipt))
 
+    def test_semantic_contract_rejects_quantity_substitution(self):
+        receipt = {
+            "frontier_id": "fm_stretched_lr", "occurred_at": "2026-07-15T04:54:56Z",
+            "frontier": "Are stretched LR coefficients always non-negative?",
+            "action": "Evaluated LR values for t=1 through 8.",
+            "verified": "All evaluated values were non-negative.",
+            "result": "All stretched LR coefficients are non-negative. This confirms the Knutson-Tao saturation theorem.",
+            "next_gate": "Close the route.",
+        }
+        config = {
+            "semantic_contracts": {"fm_stretched_lr": {
+                "effective_after": "2026-07-15T04:40:00Z",
+                "target_quantity": "polynomial coefficient signs, not evaluated values",
+                "required_evidence_any": ["polynomial coefficient", "interpolation coefficients"],
+                "forbidden_claim_patterns": ["all stretched (littlewood[- ]richardson|lr) coefficients are non-negative"],
+            }}
+        }
+        errors = foundry.semantic_contract_errors(receipt, config)
+        self.assertTrue(any("missing target-quantity evidence" in error for error in errors))
+        self.assertTrue(any("quantity-conflation" in error for error in errors))
+
+    def test_semantic_contract_accepts_exact_target_evidence(self):
+        receipt = {
+            "frontier_id": "fm_stretched_lr", "occurred_at": "2026-07-15T05:00:00Z",
+            "frontier": "Can a stretching polynomial have a negative coefficient?",
+            "action": "Computed interpolation coefficients with a held-out value check.",
+            "verified": "Polynomial coefficient vector reproduced exactly.",
+            "result": "No negative polynomial coefficient in this bounded row.",
+            "next_gate": "Try a changed generator.",
+        }
+        config = {"semantic_contracts": {"fm_stretched_lr": {
+            "effective_after": "2026-07-15T04:40:00Z", "target_quantity": "polynomial coefficients",
+            "required_evidence_any": ["polynomial coefficient", "interpolation coefficients"],
+            "forbidden_claim_patterns": ["all stretched (littlewood[- ]richardson|lr) coefficients are non-negative"],
+        }}}
+        self.assertEqual(foundry.semantic_contract_errors(receipt, config), [])
+
     def test_cockpit_table_fallback(self):
         text = """## Response
 | Field | Value |

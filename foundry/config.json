@@ -9,5 +9,22 @@
   "frontier_cooldown_minutes": 360,
   "frontier_model": "aperture-frontier",
   "frontier_url": "http://127.0.0.1:8808/v1/chat/completions",
-  "publication_branch": "automation/frontier-scout"
+  "publication_branch": "automation/frontier-scout",
+  "semantic_contracts": {
+    "fm_stretched_lr": {
+      "effective_after": "2026-07-15T04:40:00Z",
+      "target_quantity": "signs of coefficients of the stretching polynomial t -> c^(t lambda)_(t mu,t nu), not nonnegativity of the evaluated LR values",
+      "required_evidence_any": [
+        "polynomial coefficient",
+        "coefficients of the stretching polynomial",
+        "coefficient signature",
+        "interpolation coefficients",
+        "finite-difference coefficients"
+      ],
+      "forbidden_claim_patterns": [
+        "all stretched (littlewood[- ]richardson|lr) coefficients are non-negative",
+        "confirms? the (horn/)?knutson-tao saturation theorem"
+      ]
+    }
+  }
 }
