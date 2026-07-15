@@ -85,12 +85,16 @@
     },
     "erdos_140_r3_212": {
       "effective_after": "2026-07-15T06:45:00Z",
-      "target_quantity": "the finite value r_3(212): a 44-element 3-AP-free witness improves the lower bound; exactness needs complete nonexistence evidence",
+      "target_quantity": "the finite value r_3(212): a 44-element 3-AP-free witness improves the lower bound; exactness needs complete nonexistence evidence. A bounded no-hit search certifies only the named implementation and seeded trials, not a numerical ceiling, route exclusion, construction necessity, or nonexistence. Repeated trials or equivalent state transitions are not independent strategies. An annealing claim requires seeded randomness and possible non-improving transitions; a cardinality-growth claim requires a move that can increase cardinality",
       "required_evidence_any": ["3-ap", "arithmetic progression", "r_3(212)"],
       "forbidden_claim_patterns": [
         "proves? r_3\\(212\\)\\s*=\\s*43",
         "(supports?|suggests?|confirms?)\\s+r_3\\(212\\)\\s*=\\s*43",
-        "settles? (erdos )?#?140"
+        "settles? (erdos )?#?140",
+        "(?:four|six|[0-9]+)\\s+independent\\s+(?:search\\s+)?(?:strategies|methods)",
+        "(?:(?:firm|firmly)\\s+(?:at\\s+)?(?:a\\s+)?(?:performance\\s+)?ceiling|(?:performance\\s+)?ceiling.{0,80}(?:firm|firmly)(?:\\s+at)?).{0,80}36\\s*(?:-|–|to)\\s*37",
+        "(?:ap[- ]density|density)\\s+barrier.{0,120}(?:blocks?\\s+all|unattainable|cannot)",
+        "(?:construction[- ]level approach|explicit construction).{0,80}(?:is\\s+)?(?:needed|required)"
       ]
     },
     "erdos_1_a11": {
