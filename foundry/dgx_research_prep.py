@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import hashlib
 import subprocess
 import sys
 from pathlib import Path
@@ -47,15 +48,19 @@ def main() -> int:
         ])
         advice = call([sys.executable, str(REPO / "tools" / "foundry.py"), "consult", "--state", str(STATE / "foundry_frontier_budget.json"), question])
         if advice.returncode == 0:
-            foundry.update(strategy_advice=advice.stdout.strip(), strategy_status="consulted")
+            advice_text = advice.stdout.strip()
+            foundry.update(
+                strategy_advice=advice_text,
+                strategy_digest="sha256:" + hashlib.sha256(advice_text.encode()).hexdigest(),
+                strategy_status="consulted",
+            )
         else:
             foundry.update(strategy_status="consult_failed", error=advice.stdout.strip().splitlines()[-1][:300] if advice.stdout.strip() else "unknown")
     summary["foundry"] = foundry
-    summary["next_instruction"] += " Treat foundry.strategy_advice as provisional; execute and verify its smallest test when present."
+    summary["next_instruction"] += " Treat foundry.strategy_advice as provisional; execute and verify its smallest test when present. If advice is present, the Verified field must contain exactly: Frontier advice: <foundry.strategy_digest>; executed=yes|no; outcome=<public-safe result>."
     print(json.dumps(summary, ensure_ascii=False, indent=2))
     return 0
 
 
 if __name__ == "__main__":
     raise SystemExit(main())
-

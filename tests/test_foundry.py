@@ -87,6 +87,19 @@ class FoundryTests(unittest.TestCase):
             with redirect_stdout(io.StringIO()): foundry.publish("automation/frontier-scout")
         self.assertIn(["git", "push", "origin", "HEAD:automation/frontier-scout"], calls)
 
+    def test_frontier_advice_trace_is_structured(self):
+        digest = "sha256:" + "a" * 64
+        sample = SAMPLE.replace(
+            "Known-good and known-bad fixtures passed.",
+            f"Known-good fixtures passed. Frontier advice: {digest}; executed=yes; outcome=kill-test rejected route A",
+        )
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "2026-07-14_17-00-51.md"
+            path.write_text(sample)
+            receipt = foundry.build_receipt(path, "50c8e4391849")
+            self.assertEqual(receipt["frontier_consult"], {"advice_digest": digest, "executed": True, "outcome": "kill-test rejected route A"})
+            self.assertEqual(foundry.validate_receipt(receipt), [])
+
 
 if __name__ == "__main__":
     unittest.main()
