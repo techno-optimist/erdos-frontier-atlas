@@ -110,6 +110,15 @@ class FoundryTests(unittest.TestCase):
             self.assertEqual(receipt["frontier_consult"], {"advice_digest": digest, "executed": True, "outcome": "kill-test rejected route A"})
             self.assertEqual(foundry.validate_receipt(receipt), [])
 
+    def test_script_output_frontier_id_is_structured(self):
+        sample = SAMPLE.replace("## Response", '"frontier_id": "fm_steiner_large"\n## Response')
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "run.md"
+            path.write_text(sample)
+            receipt = foundry.build_receipt(path, "50c8e4391849")
+            self.assertEqual(receipt["frontier_id"], "fm_steiner_large")
+            self.assertEqual(foundry.validate_receipt(receipt), [])
+
     def test_pending_advice_replays_then_retires_on_executed_receipt(self):
         digest = "sha256:" + "b" * 64
         with tempfile.TemporaryDirectory() as tmp:

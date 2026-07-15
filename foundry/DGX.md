@@ -61,6 +61,11 @@ state (mode `0600`) and replayed to later scheduled workers until a typed
 receipt proves that its smallest test was executed. Publication contains only
 the advice digest and public-safe outcome, never the private strategy text.
 
+Before each context build, `foundry/select_frontier.py` applies an auditable
+recency penalty and a smaller closed-lane penalty to the queue. Equal-priority
+closed lanes therefore rotate instead of repeatedly consuming scout cycles,
+while a lane with verified progress remains eligible for continued work.
+
 DGX cron renders wall-clock timestamps in fixed MST (`UTC-07:00`), so
 `foundry/config.json` uses `Etc/GMT+7`. Receipt construction cross-checks that
 offset against the raw run file's absolute mtime and fails over to the latter

@@ -129,6 +129,10 @@ def build_receipt(source: Path, job_id: str, source_timezone: str = "America/Den
         "evidence_class": "provisional",
         "source": {"job_id": job_id, "run_file": source.name, "sha256": source_sha},
     }
+    pre_response = text.split("## Response", 1)[0]
+    frontier_id = re.search(r'"frontier_id"\s*:\s*"([a-z0-9][a-z0-9._-]{1,127})"', pre_response, re.I)
+    if frontier_id:
+        receipt["frontier_id"] = frontier_id.group(1).lower()
     advice = re.search(r"Frontier advice:\s*(sha256:[a-f0-9]{64});\s*executed=(yes|no);\s*outcome=([^\n]+)", content["verified"], re.I)
     if advice:
         receipt["frontier_consult"] = {
@@ -146,7 +150,7 @@ def receipt_files() -> list[Path]:
 def validate_receipt(r: dict) -> list[str]:
     errors = []
     required = {"schema", "receipt_id", "content_digest", "occurred_at", "frontier", "action", "verified", "result", "next_gate", "boundary_held", "classification", "evidence_class", "source"}
-    optional = {"frontier_consult"}
+    optional = {"frontier_consult", "frontier_id"}
     extra = set(r) - required - optional
     missing = required - set(r)
     if missing: errors.append("missing fields: " + ", ".join(sorted(missing)))
@@ -156,6 +160,7 @@ def validate_receipt(r: dict) -> list[str]:
     expected_classification = classify(str(r.get("result", "")), str(r.get("action", "")))
     if r.get("classification") != expected_classification: errors.append(f"classification mismatch: expected {expected_classification}")
     if r.get("evidence_class") != "provisional": errors.append("receipt must remain provisional")
+    if "frontier_id" in r and not re.fullmatch(r"[a-z0-9][a-z0-9._-]{1,127}", str(r["frontier_id"])): errors.append("bad frontier_id")
     consult = r.get("frontier_consult")
     if consult is not None:
         if set(consult) != {"advice_digest", "executed", "outcome"}: errors.append("bad frontier_consult fields")
@@ -218,7 +223,8 @@ def stall_gate(state_path: Path, config: dict) -> dict:
     repeated_move = False
     if len(terminal) >= 2:
         a, b = terminal[-2:]
-        repeated_frontier = difflib.SequenceMatcher(None, norm(a["frontier"]), norm(b["frontier"])).ratio() >= 0.75
+        structured_match = bool(a.get("frontier_id") and a.get("frontier_id") == b.get("frontier_id"))
+        repeated_frontier = structured_match or difflib.SequenceMatcher(None, norm(a["frontier"]), norm(b["frontier"])).ratio() >= 0.75
         repeated_move = difflib.SequenceMatcher(None, norm(a["result"] + " " + a["next_gate"]), norm(b["result"] + " " + b["next_gate"])).ratio() >= 0.80
     stuck = len(terminal) >= int(config["stall_threshold"]) and (repeated_frontier or repeated_move)
     state = load_json(state_path) if state_path.exists() else {"calls": []}
