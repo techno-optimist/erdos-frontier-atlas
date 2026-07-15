@@ -70,6 +70,11 @@ recency penalty and a smaller closed-lane penalty to the queue. Equal-priority
 closed lanes therefore rotate instead of repeatedly consuming scout cycles,
 while a lane with verified progress remains eligible for continued work.
 
+`foundry/focused_retrieval.py` supplements the broad context builder with
+read-only IDF- and phrase-ranked matches from Atlas, Atlas2, Arena, and aiwiki.
+It records before/after database hashes and writes only compact session-local
+`focused_context` artifacts; failure of any read-only hash check fails prep.
+
 DGX cron renders wall-clock timestamps in fixed MST (`UTC-07:00`), so
 `foundry/config.json` uses `Etc/GMT+7`. Receipt construction cross-checks that
 offset against the raw run file's absolute mtime and fails over to the latter
