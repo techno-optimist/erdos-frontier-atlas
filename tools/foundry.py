@@ -40,6 +40,7 @@ FORBIDDEN_PUBLIC = (
     re.compile(r"\b(?:sk|ghp|github_pat)-[A-Za-z0-9_-]{8,}"),
     re.compile(r"\bBearer\s+[A-Za-z0-9._-]+", re.I),
 )
+PUBLIC_TEMPLATE_PLACEHOLDER = re.compile(r"<[^<>\n]{2,240}>")
 
 
 def utcnow() -> datetime:
@@ -65,8 +66,23 @@ def atomic_json(path: Path, value: dict) -> None:
     tmp.replace(path)
 
 
+def run_envelope_errors(text: str) -> list[str]:
+    """Reject scheduler failures before prompt text can enter the membrane."""
+    errors = []
+    if "## Response" not in text:
+        errors.append("missing cron response boundary")
+    if re.search(r"(?m)^# Cron Job: .*\(FAILED\)\s*$", text):
+        errors.append("failed cron run is not a mathematical receipt")
+    if re.search(r"(?mi)^\*\*Status:\*\*\s*(?:script failed|failed|error)\b", text):
+        errors.append("failed cron status is not a mathematical receipt")
+    return errors
+
+
 def parse_sections(text: str) -> dict[str, str]:
-    response = text.rsplit("## Response", 1)[-1]
+    envelope_errors = run_envelope_errors(text)
+    if envelope_errors:
+        raise ValueError("; ".join(envelope_errors))
+    response = text.rsplit("## Response", 1)[1]
     marks = list(re.finditer(r"(?m)^\*\*(Frontier|Action|Verified|Result|Next gate|Boundary held)\*\*\s*$", response))
     sections: dict[str, str] = {}
     for i, match in enumerate(marks):
@@ -183,6 +199,7 @@ def validate_receipt(r: dict) -> list[str]:
         elif any(pattern.search(consult["outcome"]) for pattern in FORBIDDEN_PUBLIC): errors.append("public membrane violation in frontier advice outcome")
     for key in ("frontier", "action", "verified", "result", "next_gate", "boundary_held"):
         if not isinstance(r.get(key), str) or not r[key].strip(): errors.append(f"empty {key}")
+        elif PUBLIC_TEMPLATE_PLACEHOLDER.fullmatch(r[key].strip()): errors.append(f"template placeholder in {key}")
         elif any(pattern.search(r[key]) for pattern in FORBIDDEN_PUBLIC): errors.append(f"public membrane violation in {key}")
     stable = json.dumps({key: r.get(key) for key in ("frontier", "action", "verified", "result", "next_gate", "boundary_held")}, ensure_ascii=False, sort_keys=True).encode()
     if r.get("content_digest") != "sha256:" + sha(stable): errors.append("content digest mismatch")
@@ -473,6 +490,7 @@ def main() -> int:
     p = sub.add_parser("pending"); p.add_argument("--state", type=Path, required=True); p.add_argument("--frontier-id", required=True)
     p = sub.add_parser("ack-incident"); p.add_argument("--state", type=Path, required=True); p.add_argument("--answer-sha256", required=True); p.add_argument("--consulted-frontier-id", required=True)
     sub.add_parser("validate")
+    sub.add_parser("rebuild-index")
     p = sub.add_parser("publish"); p.add_argument("--branch")
     args = parser.parse_args()
     config = load_json(args.config)
@@ -484,6 +502,7 @@ def main() -> int:
     elif args.command == "pending": print(json.dumps(take_pending_advice(args.state, args.frontier_id), ensure_ascii=False, indent=2))
     elif args.command == "ack-incident": print(json.dumps(acknowledge_call_incident(args.state, args.answer_sha256, args.consulted_frontier_id), indent=2))
     elif args.command == "validate": validate()
+    elif args.command == "rebuild-index": print(json.dumps(rebuild_index(), indent=2))
     elif args.command == "publish": publish(args.branch or config["publication_branch"])
     return 0
 

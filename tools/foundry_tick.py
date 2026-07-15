@@ -7,6 +7,7 @@ import fcntl
 import hashlib
 import json
 import os
+import re
 import subprocess
 import sys
 from datetime import datetime, timezone
@@ -51,6 +52,65 @@ def rejection_detail(inspection: dict, fallback_reason: str) -> dict:
     }
 
 
+def failed_run_reason(text: str) -> str | None:
+    if re.search(r"(?m)^# Cron Job: .*\(FAILED\)\s*$", text):
+        return "failed cron run is not a mathematical receipt"
+    if re.search(r"(?mi)^\*\*Status:\*\*\s*(?:script failed|failed|error)\b", text):
+        return "failed cron status is not a mathematical receipt"
+    return None
+
+
+def matching_receipt_paths(
+    repo: Path, job_id: str, run_file: str, source_sha: str
+) -> list[Path]:
+    matches = []
+    for path in (repo / "progress" / "receipts").glob("**/*.json"):
+        try:
+            source = json.loads(path.read_text()).get("source", {})
+        except (OSError, ValueError):
+            continue
+        if (
+            source.get("job_id") == job_id
+            and source.get("run_file") == run_file
+            and source.get("sha256") == source_sha
+        ):
+            matches.append(path)
+    return sorted(matches)
+
+
+def quarantine_failed_accepted_sources(
+    ingest_state: dict, cron_output: Path, repo: Path, tool: Path
+) -> list[dict]:
+    """Repair any older acceptance produced from a scheduler failure report."""
+    revoked = []
+    for key, source_sha in list(ingest_state.get("accepted", {}).items()):
+        job_id, separator, filename = key.partition("/")
+        source = cron_output / job_id / filename
+        if not separator or not source.exists():
+            continue
+        raw = source.read_bytes()
+        if hashlib.sha256(raw).hexdigest() != source_sha:
+            continue
+        reason = failed_run_reason(raw.decode("utf-8", errors="replace"))
+        if not reason:
+            continue
+        inspection = inspect_run(tool, source, job_id, repo)
+        removed = matching_receipt_paths(repo, job_id, filename, source_sha)
+        for path in removed:
+            path.unlink()
+        ingest_state["accepted"].pop(key, None)
+        ingest_state.setdefault("rejected", {})[key] = source_sha
+        ingest_state.setdefault("rejected_details", {})[key] = rejection_detail(
+            inspection, reason
+        )
+        revoked.append({
+            "run_file": filename,
+            "reason": reason,
+            "removed_receipts": [path.name for path in removed],
+        })
+    return revoked
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo", type=Path, required=True)
@@ -76,6 +136,15 @@ def main() -> int:
     ingest_state.setdefault("accepted", {})
     ingest_state.setdefault("rejected", {})
     ingest_state.setdefault("rejected_details", {})
+    revoked = quarantine_failed_accepted_sources(
+        ingest_state, args.cron_output, args.repo, tool
+    )
+    if any(row["removed_receipts"] for row in revoked):
+        subprocess.run(
+            [sys.executable, str(tool), "rebuild-index"],
+            cwd=args.repo, text=True, stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT, check=True,
+        )
     # Backfill structured feedback for old hash-only quarantines. If a current
     # contract now accepts an old source, clear its watermark so normal ingest
     # can reconsider it below.
@@ -160,7 +229,7 @@ def main() -> int:
         published = subprocess.run([sys.executable, str(tool), "publish"], cwd=args.repo, text=True, stdout=subprocess.PIPE, check=True)
         try: publish_result = json.loads(published.stdout.strip().splitlines()[-1])
         except Exception: publish_result = {"published": False, "reason": "unparseable publisher output"}
-    print(json.dumps({"ingested": created, "rejected": rejected, "gate": gate, "publication": publish_result}, indent=2))
+    print(json.dumps({"ingested": created, "rejected": rejected, "revoked": revoked, "gate": gate, "publication": publish_result}, indent=2))
     return 0
 
 

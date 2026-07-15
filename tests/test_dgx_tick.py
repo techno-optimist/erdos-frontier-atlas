@@ -1,5 +1,6 @@
 import importlib.util
 import io
+import os
 import tempfile
 import unittest
 from contextlib import redirect_stdout
@@ -26,7 +27,8 @@ class DgxTickTests(unittest.TestCase):
 
             def fake_run(cmd, **kwargs):
                 if "foundry_efficiency.py" in " ".join(map(str, cmd)):
-                    output.write_text("{}\n")
+                    target = Path(cmd[cmd.index("--output") + 1])
+                    target.write_text("{}\n")
                 return mock.Mock(returncode=0, stdout="")
 
             with (
@@ -42,11 +44,30 @@ class DgxTickTests(unittest.TestCase):
             self.assertEqual(installed.stat().st_mode & 0o777, 0o644)
 
     def test_publication_failure_does_not_publish_stale_metrics(self):
-        failed = mock.Mock(returncode=7, stdout="publication failed\n")
-        with mock.patch.object(tick.subprocess, "run", return_value=failed) as run:
-            with redirect_stdout(io.StringIO()):
-                self.assertEqual(tick.main(), 7)
-        self.assertEqual(run.call_count, 1)
+        with tempfile.TemporaryDirectory() as tmp:
+            reviewed = Path(tmp) / "reviewed" / "SKILL.md"
+            installed = Path(tmp) / "installed" / "SKILL.md"
+            reviewed.parent.mkdir(); reviewed.write_text("reviewed\n")
+            failed = mock.Mock(returncode=7, stdout="publication failed\n")
+            with (
+                mock.patch.object(tick, "REVIEWED_SKILL", reviewed),
+                mock.patch.object(tick, "INSTALLED_SKILL", installed),
+                mock.patch.object(tick.subprocess, "run", return_value=failed) as run,
+            ):
+                with redirect_stdout(io.StringIO()):
+                    self.assertEqual(tick.main(), 7)
+            self.assertEqual(run.call_count, 1)
+            self.assertEqual(installed.read_text(), reviewed.read_text())
+
+    def test_rotated_logs_are_supplied_oldest_first(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            current = Path(tmp) / "agent.log"
+            rotated = Path(tmp) / "agent.log.1"
+            rotated.write_text("old\n"); current.write_text("new\n")
+            os.utime(rotated, (1, 1)); os.utime(current, (2, 2))
+            with mock.patch.object(tick, "AGENT_LOG", current):
+                paths = tick.agent_log_paths()
+            self.assertEqual(paths, [rotated, current])
 
 
 if __name__ == "__main__":

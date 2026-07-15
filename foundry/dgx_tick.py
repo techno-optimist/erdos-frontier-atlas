@@ -30,41 +30,53 @@ def restore_reviewed_skill() -> str:
     return digest
 
 
+def agent_log_paths() -> list[Path]:
+    """Return rotated Hermes logs oldest-first so split turns reconstruct."""
+    paths = {path for path in AGENT_LOG.parent.glob(AGENT_LOG.name + "*") if path.is_file()}
+    return sorted(paths, key=lambda path: (path.stat().st_mtime_ns, path.name))
+
+
 def main() -> int:
-    proc = subprocess.run(
-        [sys.executable, str(REPO / "tools" / "foundry_tick.py"), "--repo", str(REPO)],
-        cwd=REPO,
-        text=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
-    )
-    if proc.returncode:
-        print(proc.stdout, end="")
-        return proc.returncode
-    efficiency_output = STATE / "foundry_efficiency_latest.json"
-    since = (datetime.now(timezone.utc) - timedelta(hours=24)).replace(
-        microsecond=0
-    ).isoformat().replace("+00:00", "Z")
-    metrics = subprocess.run(
-        [
-            sys.executable,
-            str(REPO / "tools" / "foundry_efficiency.py"),
-            str(AGENT_LOG),
-            "--since", since,
-            "--output", str(efficiency_output),
-        ],
-        cwd=REPO,
-        text=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
-    )
-    if metrics.returncode:
-        print(metrics.stdout, end="")
-        return metrics.returncode
-    efficiency_output.chmod(0o600)
-    restore_reviewed_skill()
-    # Successful routine ticks stay silent; cron emits only failures.
-    return 0
+    try:
+        proc = subprocess.run(
+            [sys.executable, str(REPO / "tools" / "foundry_tick.py"), "--repo", str(REPO)],
+            cwd=REPO,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+        )
+        if proc.returncode:
+            print(proc.stdout, end="")
+            return proc.returncode
+        efficiency_output = STATE / "foundry_efficiency_latest.json"
+        pending_output = efficiency_output.with_suffix(".json.pending")
+        pending_output.unlink(missing_ok=True)
+        since = (datetime.now(timezone.utc) - timedelta(hours=24)).replace(
+            microsecond=0
+        ).isoformat().replace("+00:00", "Z")
+        metrics = subprocess.run(
+            [
+                sys.executable,
+                str(REPO / "tools" / "foundry_efficiency.py"),
+                *[str(path) for path in agent_log_paths()],
+                "--since", since,
+                "--output", str(pending_output),
+            ],
+            cwd=REPO,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+        )
+        if metrics.returncode:
+            pending_output.unlink(missing_ok=True)
+            print(metrics.stdout, end="")
+            return metrics.returncode
+        os.replace(pending_output, efficiency_output)
+        efficiency_output.chmod(0o600)
+        # Successful routine ticks stay silent; cron emits only failures.
+        return 0
+    finally:
+        restore_reviewed_skill()
 
 
 if __name__ == "__main__":
