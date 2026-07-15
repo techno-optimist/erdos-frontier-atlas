@@ -87,6 +87,10 @@ quantity. Prep exposes the contract to the researcher, and publication fails
 closed if evidence addresses a related but easier quantity or repeats a known
 conflation claim. Rejected raw runs are hash-quarantined in private ingest state.
 
+The consultation gate, router call, and private-state commit are one
+cross-process locked transaction. Concurrent scout/night attempts serialize;
+the later attempt re-evaluates cooldown and daily budget after the first call.
+
 `foundry/materialize_frontiers.py` converts reviewed, provenance-tagged seeds
 from `foundry/frontier_seeds.json` into DGX queue items. It is dry-run by
 default; `--apply` creates a timestamped byte-for-byte backup and atomically

@@ -213,6 +213,17 @@ class FoundryTests(unittest.TestCase):
             self.assertEqual(second["strategy_status"], "consumed")
             self.assertNotIn("pending_advice", json.loads(state_path.read_text()))
 
+    def test_consult_uses_private_cross_job_lock(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            state = Path(tmp) / "budget.json"
+            state.write_text('{"calls": []}')
+            with mock.patch.object(foundry, "_consult_locked", return_value="advice") as inner:
+                self.assertEqual(foundry.consult("question", state, {}, "lane"), "advice")
+            inner.assert_called_once_with("question", state, {}, "lane")
+            lock = state.with_suffix(state.suffix + ".consult.lock")
+            self.assertTrue(lock.exists())
+            self.assertEqual(lock.stat().st_mode & 0o777, 0o600)
+
     def test_acknowledged_cross_frontier_call_is_explicit(self):
         with tempfile.TemporaryDirectory() as tmp:
             receipt_path = Path(tmp) / "receipt.json"
