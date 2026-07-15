@@ -14,6 +14,7 @@ from unittest import mock
 SPEC = importlib.util.spec_from_file_location("foundry", Path(__file__).parents[1] / "tools" / "foundry.py")
 foundry = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(foundry)
+ROOT = Path(__file__).parents[1]
 
 
 SAMPLE = """# Cron Job: scout
@@ -139,6 +140,31 @@ class FoundryTests(unittest.TestCase):
             "required_evidence_any": ["polynomial coefficient", "interpolation coefficients"],
             "forbidden_claim_patterns": ["all stretched (littlewood[- ]richardson|lr) coefficients are non-negative"],
         }}}
+        self.assertEqual(foundry.semantic_contract_errors(receipt, config), [])
+
+    def test_r55_contract_rejects_exhaustion_from_random_sampling(self):
+        receipt = {
+            "frontier_id": "erdos_1029_r55", "occurred_at": "2026-07-15T07:27:00Z",
+            "frontier": "Can random circulant sampling move the finite R(5,5) bracket?",
+            "action": "Ran a K5 and independent-set verifier over 4,000 samples.",
+            "verified": "Every sampled graph contained a 5-clique in one color.",
+            "result": "The circulant approach is exhausted and infeasible.",
+            "next_gate": "Close the route.",
+        }
+        config = json.loads((ROOT / "foundry" / "config.json").read_text())
+        errors = foundry.semantic_contract_errors(receipt, config)
+        self.assertTrue(any("quantity-conflation" in error for error in errors))
+
+    def test_r55_contract_accepts_bounded_negative_sample(self):
+        receipt = {
+            "frontier_id": "erdos_1029_r55", "occurred_at": "2026-07-15T07:27:00Z",
+            "frontier": "Can random circulant sampling move the finite R(5,5) bracket?",
+            "action": "Ran a K5 and independent-set verifier over 4,000 samples.",
+            "verified": "Every sampled graph contained a 5-clique in one color.",
+            "result": "No witness was found in this bounded random sample; the bracket is unchanged.",
+            "next_gate": "Use a structurally changed generator or rotate.",
+        }
+        config = json.loads((ROOT / "foundry" / "config.json").read_text())
         self.assertEqual(foundry.semantic_contract_errors(receipt, config), [])
 
     def test_cockpit_table_fallback(self):

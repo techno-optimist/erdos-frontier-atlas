@@ -55,7 +55,13 @@
       "effective_after": "2026-07-15T06:45:00Z",
       "target_quantity": "the finite diagonal Ramsey bracket 43 <= R(5,5) <= 46; a graph witness and a nonexistence certificate move opposite sides of the bracket",
       "required_evidence_any": ["k5", "5-clique", "clique verifier", "independent set of size 5"],
-      "forbidden_claim_patterns": ["settles? r\\(5,5\\)", "proves? the (erdos )?#?1029 (asymptotic )?conjecture"]
+      "forbidden_claim_patterns": [
+        "settles? r\\(5,5\\)",
+        "proves? the (erdos )?#?1029 (asymptotic )?conjecture",
+        "r\\(5,\\s*5\\)\\s*=\\s*43",
+        "(circulant|cyclic).{0,100}(exhausted|infeasible|ruled out|impossible|not the winning approach)",
+        "656 critical.{0,60}(full|complete) (set|catalog)"
+      ]
     },
     "erdos_552_c4_star_n17": {
       "effective_after": "2026-07-15T06:45:00Z",
