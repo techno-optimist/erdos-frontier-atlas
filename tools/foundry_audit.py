@@ -45,10 +45,23 @@ def configured_api_retry_budget(path: Path) -> int:
 
 def semantic_contract_digest(config: dict) -> str:
     canonical = json.dumps(
-        config.get("semantic_contracts", {}),
+        {
+            "semantic_contracts": config.get("semantic_contracts", {}),
+            "runtime_budget": config.get("runtime_budget"),
+        },
         ensure_ascii=False,
         sort_keys=True,
         separators=(",", ":"),
+    ).encode()
+    return "sha256:" + hashlib.sha256(canonical).hexdigest()
+
+
+def runtime_budget_digest(config: dict) -> str | None:
+    budget = config.get("runtime_budget")
+    if not isinstance(budget, dict):
+        return None
+    canonical = json.dumps(
+        budget, ensure_ascii=False, sort_keys=True, separators=(",", ":")
     ).encode()
     return "sha256:" + hashlib.sha256(canonical).hexdigest()
 
@@ -359,6 +372,19 @@ def main() -> int:
         name: {"source": sha_file(source), "installed": sha_file(installed) if installed.exists() else None}
         for name, (source, installed) in runtime_pairs.items()
     }
+    runtime_budget = config.get("runtime_budget", {})
+    scheduler_path = HOME / ".hermes" / "hermes-agent" / "cron" / "scheduler.py"
+    scheduler_text = scheduler_path.read_text() if scheduler_path.exists() else ""
+    runtime_budget_enforced = bool(
+        runtime_budget
+        and efficiency
+        and efficiency.get("runtime_budget_digest") == runtime_budget_digest(config)
+        and "FOUNDRY_JOB_MAX_TURNS_V1" in scheduler_text
+        and all(
+            job.get("max_turns") == runtime_budget.get("scheduled_job_max_turns")
+            for job in (scout, night)
+        )
+    )
     traced = [row for row in receipts if row.get("frontier_consult")]
     executed = [row for row in traced if row["frontier_consult"].get("executed")]
     valid_calls = [row for row in call_evidence if row["lane_aligned"] and row["certified_stall"]]
@@ -385,6 +411,7 @@ def main() -> int:
         ),
         "automation_branch_current": bool(remote_head) and local_head == remote_head,
         "installed_runtime_matches_repo": all(row["source"] == row["installed"] for row in runtime_hashes.values()),
+        "runtime_budget_membrane_enforced": runtime_budget_enforced,
         "frontier_call_incidents_acknowledged": bool(calls) and all(row["certified_stall"] or row["incident_acknowledged"] for row in call_evidence),
         "valid_frontier_call_lane_certified": bool(valid_calls),
         "frontier_budget_and_cooldown_held": daily_ok and cooldown_ok,
@@ -436,6 +463,11 @@ def main() -> int:
             "cron_status_tail": [line.strip() for line in cron_status.stdout.splitlines() if line.strip()][-4:],
             "frontier_state_mode": oct((args.state_root / "foundry_frontier_budget.json").stat().st_mode & 0o777),
             "runtime_hashes": runtime_hashes,
+            "runtime_budget": runtime_budget,
+            "runtime_budget_digest": runtime_budget_digest(config),
+            "efficiency_runtime_budget_digest": efficiency.get("runtime_budget_digest") if efficiency else None,
+            "scheduler_job_max_turns_marker": "FOUNDRY_JOB_MAX_TURNS_V1" in scheduler_text,
+            "scheduled_job_max_turns": {job["id"]: job.get("max_turns") for job in (scout, night)},
             "latest_session": latest_id, "focused_retrieval_present": focused_path.exists(),
             "focused_hit_counts": ({name: len(rows) for name, rows in focused.get("surfaces", {}).items()} if focused else {}),
             "shadow_policy_present": shadow_path.exists(),

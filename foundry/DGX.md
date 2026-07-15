@@ -88,6 +88,11 @@ authority; promotion requires accumulated, auditable outcome evidence.
 compute budget, public/private split, independent utility rubric, and promotion
 gate. `tools/foundry_efficiency.py` measures only the first Hermes conversation
 turn per cron session so background skill review cannot inflate research cost.
+It also extracts trusted terminal durations. The publisher generates this
+private report before ingest and hash-time-binds every post-policy source to a
+complete same-job turn. Runs above the checked-in API, context, wall-clock, or
+one-expensive-terminal budget are quarantined with structured replay feedback;
+the model cannot self-report around this gate.
 Receipt classifications remain telemetry and never become their own reward.
 The existing no-agent publisher refreshes that report every 30 minutes at
 `~/.hermes/chronos_state/foundry_efficiency_latest.json` with mode `0600`; the
@@ -137,6 +142,10 @@ source hash and emits a public old-to-new receipt-ID migration manifest.
 the publisher entrypoint, and compact skill, then performs the scheduler
 migration under the Hermes cron lock. It writes a timestamped backup, pins both research jobs to the
 local 35B provider, points auxiliary compression at the same local provider,
+pins the Foundry jobs to 18 turns, and installs an exact-source fail-closed
+Hermes scheduler hook that lets an operator-owned job lower, never raise, the
+shared gateway turn cap. Other cron and interactive jobs retain the global
+Hermes budget; restart the gateway when this hook is first installed.
 replaces eager 100KB umbrella-skill injection with the compact `foundry` skill,
 and appends the recursion and typed frontier-trace instructions idempotently.
 It also sets Hermes `agent.api_max_retries=8`: the bounded exponential retry
