@@ -56,6 +56,11 @@ It exits nonzero until every service, scheduler, publication, stall-budget,
 advice-execution, validation, and protected-hash check is green. Use
 `--allow-incomplete` only for monitoring while the final trace is pending.
 
+Frontier advice is stored only in the private `foundry_frontier_budget.json`
+state (mode `0600`) and replayed to later scheduled workers until a typed
+receipt proves that its smallest test was executed. Publication contains only
+the advice digest and public-safe outcome, never the private strategy text.
+
 `foundry/deploy_jobs.py` performs the one-time scheduler migration under the
 Hermes cron lock, writes a timestamped backup, pins both research jobs to the
 local 35B provider, points auxiliary compression at the same local provider,

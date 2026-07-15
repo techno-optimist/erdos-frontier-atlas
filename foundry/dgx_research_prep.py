@@ -33,8 +33,11 @@ def main() -> int:
     gate_proc = call([sys.executable, str(REPO / "tools" / "foundry.py"), "gate", "--state", str(STATE / "foundry_frontier_budget.json")])
     try: gate = json.loads(gate_proc.stdout)
     except Exception: gate = {"frontier_call_allowed": False, "reason": "gate unavailable"}
-    foundry = {"gate": gate, "strategy_advice": None, "strategy_status": "gate_closed"}
-    if gate.get("frontier_call_allowed"):
+    pending_proc = call([sys.executable, str(REPO / "tools" / "foundry.py"), "pending", "--state", str(STATE / "foundry_frontier_budget.json")])
+    try: pending = json.loads(pending_proc.stdout)
+    except Exception: pending = {"strategy_advice": None, "strategy_status": "pending_unavailable"}
+    foundry = {"gate": gate, **pending}
+    if not foundry.get("strategy_advice") and gate.get("frontier_call_allowed"):
         packet = json.loads(Path(summary["artifact_dir"]).joinpath("context_packet.json").read_text())
         item = packet.get("frontier", {})
         question = "\n".join([
@@ -53,6 +56,7 @@ def main() -> int:
                 strategy_advice=advice_text,
                 strategy_digest="sha256:" + hashlib.sha256(advice_text.encode()).hexdigest(),
                 strategy_status="consulted",
+                delivery_count=1,
             )
         else:
             foundry.update(strategy_status="consult_failed", error=advice.stdout.strip().splitlines()[-1][:300] if advice.stdout.strip() else "unknown")
