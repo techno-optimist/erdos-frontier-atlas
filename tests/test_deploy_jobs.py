@@ -1,4 +1,5 @@
 import importlib.util
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -14,6 +15,16 @@ class DeployTests(unittest.TestCase):
         self.assertEqual(deploy.API_MAX_RETRIES, 8)
         self.assertEqual(deploy.SETTINGS["agent.api_max_retries"], "8")
         self.assertEqual(deploy.FOUNDRY_MAX_TURNS, 18)
+        self.assertEqual(deploy.FOUNDRY_MAX_WALL_SECONDS, 900)
+        config = json.loads((Path(__file__).parents[1] / "foundry" / "config.json").read_text())
+        self.assertEqual(
+            deploy.FOUNDRY_MAX_TURNS,
+            config["runtime_budget"]["scheduled_job_max_turns"],
+        )
+        self.assertEqual(
+            deploy.FOUNDRY_MAX_WALL_SECONDS,
+            config["runtime_budget"]["max_wall_seconds"],
+        )
 
     def test_runtime_install_is_atomic_and_digest_verified(self):
         with tempfile.TemporaryDirectory() as tmp:

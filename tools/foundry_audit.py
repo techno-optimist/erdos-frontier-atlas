@@ -380,8 +380,10 @@ def main() -> int:
         and efficiency
         and efficiency.get("runtime_budget_digest") == runtime_budget_digest(config)
         and "FOUNDRY_JOB_MAX_TURNS_V1" in scheduler_text
+        and "FOUNDRY_JOB_MAX_WALL_SECONDS_V1" in scheduler_text
         and all(
             job.get("max_turns") == runtime_budget.get("scheduled_job_max_turns")
+            and job.get("max_wall_seconds") == runtime_budget.get("max_wall_seconds")
             for job in (scout, night)
         )
     )
@@ -467,7 +469,9 @@ def main() -> int:
             "runtime_budget_digest": runtime_budget_digest(config),
             "efficiency_runtime_budget_digest": efficiency.get("runtime_budget_digest") if efficiency else None,
             "scheduler_job_max_turns_marker": "FOUNDRY_JOB_MAX_TURNS_V1" in scheduler_text,
+            "scheduler_job_max_wall_marker": "FOUNDRY_JOB_MAX_WALL_SECONDS_V1" in scheduler_text,
             "scheduled_job_max_turns": {job["id"]: job.get("max_turns") for job in (scout, night)},
+            "scheduled_job_max_wall_seconds": {job["id"]: job.get("max_wall_seconds") for job in (scout, night)},
             "latest_session": latest_id, "focused_retrieval_present": focused_path.exists(),
             "focused_hit_counts": ({name: len(rows) for name, rows in focused.get("surfaces", {}).items()} if focused else {}),
             "shadow_policy_present": shadow_path.exists(),

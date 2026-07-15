@@ -142,11 +142,12 @@ source hash and emits a public old-to-new receipt-ID migration manifest.
 the publisher entrypoint, and compact skill, then performs the scheduler
 migration under the Hermes cron lock. It writes a timestamped backup, pins both research jobs to the
 local 35B provider, points auxiliary compression at the same local provider,
-pins the Foundry jobs to 18 turns, and installs an exact-source fail-closed
-Hermes scheduler hook that lets an operator-owned job lower, never raise, the
-shared gateway turn cap. Other cron and interactive jobs retain the global
-Hermes budget; restart the gateway when this hook is first installed.
-replaces eager 100KB umbrella-skill injection with the compact `foundry` skill,
+pins the Foundry jobs to 18 turns and 900 wall-clock seconds, and installs
+exact-source fail-closed Hermes scheduler hooks for both limits. An
+operator-owned job may lower, never raise, the shared gateway turn cap. Other
+cron and interactive jobs retain the global Hermes behavior; restart the
+gateway when these hooks are first installed.
+The deployment also replaces eager 100KB umbrella-skill injection with the compact `foundry` skill,
 and appends the recursion and typed frontier-trace instructions idempotently.
 It also sets Hermes `agent.api_max_retries=8`: the bounded exponential retry
 window covers the observed four-minute 35B cold reload while the SGLang
