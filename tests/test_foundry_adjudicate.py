@@ -226,6 +226,50 @@ class FoundryAdjudicationTests(unittest.TestCase):
             adjudication.semantic_contract_violations(result, packet),
         )
 
+    def test_552_witness_hypothesis_requires_correct_ramsey_implication(self):
+        packet = {"target": {"id": 552}}
+        base = {
+            "classification": "negative_result",
+            "claim": "No witness found in the bounded search.",
+            "theorem_status": "theorem_unchanged",
+        }
+        wrong = dict(base, hypothesis=(
+            "There exists a C4-free graph on 22 vertices, which would prove "
+            "R(C4,S17)<=22."
+        ))
+        self.assertIn(
+            "erdos_552_witness_implication_direction_or_threshold",
+            adjudication.semantic_contract_violations(wrong, packet),
+        )
+        correct = dict(base, hypothesis=(
+            "There exists a C4-free graph on 22 vertices, which would prove "
+            "R(C4,S17)>=23."
+        ))
+        self.assertEqual(adjudication.semantic_contract_violations(correct, packet), [])
+
+    def test_negative_552_replay_must_not_infer_a_bound(self):
+        packet = {"target": {"id": 552}}
+        result = {"classification": "negative_result"}
+        bad = [{"output_tail": "No witness found. This suggests R(C4,S17)>22."}]
+        self.assertEqual(
+            adjudication.semantic_replay_violations(result, packet, bad),
+            ["erdos_552_negative_replay_emits_bound_inference"],
+        )
+        good = [{"output_tail": "No witness found in this bounded route; bracket unchanged."}]
+        self.assertEqual(
+            adjudication.semantic_replay_violations(result, packet, good), []
+        )
+        hidden = [{
+            "_semantic_output": (
+                "This suggests R(C4,S17)>22.\n" + "bounded log\n" * 500
+            ),
+            "output_tail": "bounded log\n" * 10,
+        }]
+        self.assertEqual(
+            adjudication.semantic_replay_violations(result, packet, hidden),
+            ["erdos_552_negative_replay_emits_bound_inference"],
+        )
+
     def test_replay_contract_rejects_shell_and_path_escape(self):
         inventory = [{"path": "check.py", "sha256": "sha256:x", "bytes": 1}]
         with self.assertRaisesRegex(adjudication.AdjudicationError, "frozen Python"):
