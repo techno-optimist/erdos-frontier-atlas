@@ -25,6 +25,11 @@ API_MAX_RETRIES = 8
 FOUNDRY_MAX_TURNS = 16
 FOUNDRY_MAX_WALL_SECONDS = 900
 FOUNDRY_FINALIZE_NO_TOOLS_AFTER = 13
+# Soft wall deadline: force graceful no-tools finalization ~300s before the hard
+# max_wall_seconds kill, so a slow-but-active run (inference contention) still
+# emits its receipt instead of dying as a failed cron envelope. Must stay below
+# FOUNDRY_MAX_WALL_SECONDS with room for one or two slow finalization calls.
+FOUNDRY_FINALIZE_WALL_SECONDS = 600
 HERMES_SCHEDULER = HOME / ".hermes" / "hermes-agent" / "cron" / "scheduler.py"
 HERMES_CONVERSATION_LOOP = HOME / ".hermes" / "hermes-agent" / "agent" / "conversation_loop.py"
 SETTINGS = {
@@ -172,6 +177,7 @@ def main() -> int:
             job["max_turns"] = FOUNDRY_MAX_TURNS
             job["max_wall_seconds"] = FOUNDRY_MAX_WALL_SECONDS
             job["finalize_no_tools_after"] = FOUNDRY_FINALIZE_NO_TOOLS_AFTER
+            job["finalize_wall_seconds"] = FOUNDRY_FINALIZE_WALL_SECONDS
             job["prompt"] = job.get("prompt", "").replace(
                 "python3 ~/erdos-frontier-atlas/tools/foundry.py consult --state\n~/.hermes/chronos_state/foundry_frontier_budget.json '<public-safe frontier,",
                 "python3 ~/erdos-frontier-atlas/tools/foundry.py consult --state\n~/.hermes/chronos_state/foundry_frontier_budget.json --frontier-id\n'<foundry.gate.frontier_id>' '<public-safe frontier,",
@@ -203,7 +209,7 @@ def main() -> int:
         tmp = JOBS.with_suffix(".json.tmp")
         tmp.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n")
         os.replace(tmp, JOBS)
-    print(json.dumps({"updated": changed, "provider": "foundry-qwen35b", "model": MODEL, "max_turns": FOUNDRY_MAX_TURNS, "max_wall_seconds": FOUNDRY_MAX_WALL_SECONDS, "finalize_no_tools_after": FOUNDRY_FINALIZE_NO_TOOLS_AFTER, "scheduler_patch": scheduler_patch, "installed": installed}))
+    print(json.dumps({"updated": changed, "provider": "foundry-qwen35b", "model": MODEL, "max_turns": FOUNDRY_MAX_TURNS, "max_wall_seconds": FOUNDRY_MAX_WALL_SECONDS, "finalize_no_tools_after": FOUNDRY_FINALIZE_NO_TOOLS_AFTER, "finalize_wall_seconds": FOUNDRY_FINALIZE_WALL_SECONDS, "scheduler_patch": scheduler_patch, "installed": installed}))
     return 0
 
 

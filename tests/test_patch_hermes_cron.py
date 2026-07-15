@@ -70,6 +70,7 @@ class HermesCronPatchTests(unittest.TestCase):
         self.assertIn(patcher.MARKER, patched)
         self.assertIn(patcher.WALL_MARKER, patched)
         self.assertIn(patcher.FINALIZE_MARKER, patched)
+        self.assertIn(patcher.FINALIZE_WALL_MARKER, patched)
         self.assertIn("min(_global_max_iterations", patched)
         repeated, changed_again = patcher.patch_text(patched)
         self.assertFalse(changed_again)
@@ -185,6 +186,141 @@ class HermesCronPatchTests(unittest.TestCase):
             run(
                 {"max_turns": 16, "finalize_no_tools_after": 16},
                 {"agent": {"max_turns": 90}}, Agent(), Future(),
+            )
+
+    def test_wall_patch_installs_on_already_wall_capped_scheduler(self):
+        # DGX already carries WALL_MARKER; the new hunk must still apply.
+        source = self.scheduler_source()
+        wall_only = (
+            source.replace(patcher.OLD, patcher.NEW)
+            .replace(patcher.WALL_SETUP_OLD, patcher.WALL_SETUP_NEW)
+            .replace(patcher.WALL_LOOP_OLD, patcher.WALL_LOOP_NEW)
+        )
+        self.assertIn(patcher.WALL_MARKER, wall_only)
+        self.assertNotIn(patcher.FINALIZE_WALL_MARKER, wall_only)
+        patched, changed = patcher.patch_text(wall_only)
+        self.assertTrue(changed)
+        self.assertEqual(patched.count(patcher.WALL_MARKER), 1)
+        self.assertEqual(patched.count(patcher.FINALIZE_WALL_MARKER), 1)
+        repeated, changed_again = patcher.patch_text(patched)
+        self.assertFalse(changed_again)
+        self.assertEqual(repeated, patched)
+
+    def test_wall_finalization_is_opt_in_and_fires_on_elapsed_time(self):
+        import time
+
+        namespace = {}
+        patched, _ = patcher.patch_text(self.scheduler_source())
+        exec(compile(patched, "scheduler.py", "exec"), namespace)
+
+        class Agent:
+            step_callback = None
+            tools = [{"function": {"name": "terminal"}}]
+            valid_tool_names = {"terminal"}
+            _skill_nudge_interval = 5
+            _pending_steer_lock = None
+            _pending_steer = None
+
+        class Future:
+            def result(self):
+                return {"ok": True}
+
+        run = namespace["run"]
+
+        # A job without the field keeps the iteration-only finalizer untouched.
+        iteration_only = Agent()
+        run(
+            {"max_turns": 16, "finalize_no_tools_after": 13, "max_wall_seconds": 900},
+            {"agent": {"max_turns": 90}}, iteration_only, Future(),
+        )
+        self.assertFalse(hasattr(iteration_only, "_foundry_wall_finalize_deadline"))
+
+        gated = Agent()
+        run(
+            {
+                "max_turns": 16,
+                "finalize_no_tools_after": 13,
+                "max_wall_seconds": 900,
+                "finalize_wall_seconds": 600,
+            },
+            {"agent": {"max_turns": 90}}, gated, Future(),
+        )
+        self.assertEqual(gated._foundry_wall_finalize_deadline, 600.0)
+        self.assertFalse(gated._foundry_wall_finalize_triggered)
+
+        # Below the soft deadline and below the call threshold: tools intact.
+        gated._foundry_wall_finalize_started = time.monotonic()
+        gated.step_callback(3, [])
+        self.assertTrue(gated.tools)
+        self.assertFalse(gated._foundry_wall_finalize_triggered)
+
+        # Past the soft deadline but still below the call threshold: finalize.
+        gated._foundry_wall_finalize_started = time.monotonic() - 10_000
+        gated.step_callback(4, [])
+        self.assertEqual(gated.tools, [])
+        self.assertEqual(gated.valid_tool_names, set())
+        self.assertTrue(gated._foundry_wall_finalize_triggered)
+        self.assertIn("wall-clock finalization gate", gated._pending_steer)
+        self.assertIn("six markdown labels", gated._pending_steer)
+
+        # The steer is injected exactly once even on further slow calls.
+        gated._pending_steer = None
+        gated.step_callback(5, [])
+        self.assertIsNone(gated._pending_steer)
+        self.assertEqual(gated.tools, [])
+
+    def test_wall_finalization_validates_dependencies_and_bounds(self):
+        namespace = {}
+        patched, _ = patcher.patch_text(self.scheduler_source())
+        exec(compile(patched, "scheduler.py", "exec"), namespace)
+
+        class Agent:
+            step_callback = None
+            tools = [{"function": {"name": "terminal"}}]
+            valid_tool_names = {"terminal"}
+            _skill_nudge_interval = 5
+            _pending_steer_lock = None
+            _pending_steer = None
+
+        class Future:
+            def result(self):
+                return {"ok": True}
+
+        run = namespace["run"]
+        cfg = {"agent": {"max_turns": 90}}
+        with self.assertRaisesRegex(RuntimeError, "requires\\s+finalize_no_tools_after"):
+            run(
+                {"max_turns": 16, "max_wall_seconds": 900, "finalize_wall_seconds": 600},
+                cfg, Agent(), Future(),
+            )
+        with self.assertRaisesRegex(RuntimeError, "0 < finalize_wall_seconds"):
+            run(
+                {
+                    "max_turns": 16,
+                    "finalize_no_tools_after": 13,
+                    "max_wall_seconds": 900,
+                    "finalize_wall_seconds": 900,
+                },
+                cfg, Agent(), Future(),
+            )
+        with self.assertRaisesRegex(RuntimeError, "0 < finalize_wall_seconds"):
+            run(
+                {
+                    "max_turns": 16,
+                    "finalize_no_tools_after": 13,
+                    "finalize_wall_seconds": 600,
+                },
+                cfg, Agent(), Future(),
+            )
+        with self.assertRaisesRegex(RuntimeError, "invalid finalize_wall_seconds"):
+            run(
+                {
+                    "max_turns": 16,
+                    "finalize_no_tools_after": 13,
+                    "max_wall_seconds": 900,
+                    "finalize_wall_seconds": "soon",
+                },
+                cfg, Agent(), Future(),
             )
 
     def test_file_install_preserves_backup_and_mode(self):
