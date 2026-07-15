@@ -65,7 +65,11 @@ reserved for an execution or verifier-invariant failure, not for â€œno witness.â
 At typed submission the worker deletes scratch files omitted from the declared
 final artifact set. Every remaining Python artifact requires its own direct
 zero-exit replay step; a verifier mentioned as evidence cannot ride along
-unexecuted beside a replayed search script.
+unexecuted beside a replayed search script. The worker executes those declared
+steps once before accepting the submission, so a failed command is returned to
+the candidate during the two-call correction reserve. This preflight is only
+correction feedback: evaluator-owned replay remains independent and candidate
+preflight contributes zero utility.
 Task semantics cover the registered hypothesis and replay output as well as the
 final claim. For the #552 witness lane, a 22-vertex witness implies
 `R(C4,S17) >= 23`; reversed or off-by-one implications are hard failures, and
