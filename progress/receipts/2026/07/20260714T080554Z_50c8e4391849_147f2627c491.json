@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:147f2627c491ef6fccb57e26fd729782f6b65c1b9f148a79ef6755d55053d956",
+  "content_digest": "sha256:e57e447c05e10c36179fd8c1a84fc8f79fb32cb88be5a0e226d76ac8f2bfd2a5",
+  "occurred_at": "2026-07-14T08:05:54Z",
+  "frontier": "EinsteinArena scorer/verifier hardening — unchanged reselection during unattended scout.",
+  "action": "Read-only reaffirmation. Verified prior receipt lineage, counted changed conditions narrowly, recomputed protected DB hashes, and checked queue materialization. No Arena diagnostics rerun, no scorer/verifier client imported, no submission path exercised.",
+  "verified": "Prior lineage receipt valid (`pass`, zero changed conditions, matching hashes).\n- Current reaffirmation `result_verified.json` = `pass` / `current_tick_selector_repeat_reaffirmed_control_plane_only`.\n- Reproduction certificate: 9/9 checks pass (status, zero-changed-condition, boundaries, ledgers parse-valid, DB hash match).\n- Protected DBs (production atlas, staging atlas, arena atlas) SHA256-stable before and after the verification window.",
+  "result": "Zero changed conditions. This is a control-plane-only selector-repeat, not new evidence. The frontier row is already rotated out of the executable queue, so the pointer decay is a verified no-op (queue hash identical before/after). Local exhaustion recorded; no math/Arena performance claim.",
+  "next_gate": "Rotate away until one concrete reopener exists: authorized remote CI observation / push-or-PR, an explicit pre-commit wiring request, exactly one selected legacy submit-surface promotion, or scorer/static-gate source-test drift. Otherwise route to selector/materializer exact-receipt consumption or class-level skill curation — do not rerun Arena diagnostics.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training unless explicitly authorized.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-14_02-05-54.md",
+    "sha256": "6f6dfad111f60cd74cf0fc54e679dd4d3c578a175b5de8fc102659bc890ac766"
+  }
+}

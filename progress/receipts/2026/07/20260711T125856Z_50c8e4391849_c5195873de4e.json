@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:c5195873de4ed2b2b10b5aa9f57a6aa1236cb789678ce921c3e1734b1c50abc4",
+  "content_digest": "sha256:9e8d8869434a532efd90b7a992503a842d96f2d1a778819a768a251dae3cc3b9",
+  "occurred_at": "2026-07-11T12:58:56Z",
+  "frontier": "GNFS constant-factor ledger; unattended route remains closed.",
+  "action": "Ran a bounded eligibility and boundary check across the active frontier queue; did not execute a GNFS probe.",
+  "verified": "All five queued frontiers are presently rotation/control-plane gated. No alternate eligible seam was available; no factorization worker was running.",
+  "result": "**Negative result / blocked:** no evidenced changed condition or authorization supports reopening GNFS, and no safe alternate verifier-first action was admitted.",
+  "next_gate": "Concrete authorization or a verifiable changed runner, manifest, planned-row, fixture, lineage, receipt, or protected-hash condition. First reopening test: sealed no-factorer nonemission proof.",
+  "boundary_held": "No production data write, external submission, deployment, training, GNFS/factorer execution, relation collection, or baseline measurement.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-11_06-58-56.md",
+    "sha256": "43f05f36a28a165c047ee6e7e9aaeec02d6b1d16a24bff753f925304816df548"
+  }
+}

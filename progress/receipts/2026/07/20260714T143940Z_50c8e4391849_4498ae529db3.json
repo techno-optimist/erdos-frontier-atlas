@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:4498ae529db3069306001c700d1c1ca162a1c0fba444f0f0d9564b8f9eabeabe",
+  "content_digest": "sha256:a2e90aee0fb1e44d79ddca61aef7e64d40e5789fd4d3987cbcac25c73335427e",
+  "occurred_at": "2026-07-14T14:39:40Z",
+  "frontier": "Large Steiner systems (`fm_steiner_large`) — is there a concrete current-session target-facing proof-producing encoding or exact-iff primary lift map to execute?",
+  "action": "Repeated scheduled selection. Verified prior session (`res_20260714_022057`) closed with the same non-executable next gate. Counted admissible proof/lift artifact roots in the current session (candidate_artifacts, solver, checkpoints, proofs, encodings, lift_maps, inputs) — all absent. Materialized a bounded control-plane reaffirmation: captured protected DB hashes, updated queue pointers (single decay), wrote evidence/negative/result receipts, ran the reproduction gate.",
+  "verified": "Admissible proof/lift artifact count: **0**; affirmative changed-condition markers: **0**\n- Protected DB hashes stable across the verification window (atlas.db, atlas2.db, arena_atlas.db unchanged before/after)\n- Prior receipt lineage present\n- Queue priority 0.165 → 0.16 (single decay; `last_session_id` was the prior run, no double-decay); queue-after sha `abe433c9…f7dc9d`\n- `bash reproduce.sh` → **pass**, `[]` failures (db_window_stable, result_parity, next_gate_literal, absence_invariants, forbidden_roots_absent, queue_pointer_single_decay); replication certificate status **pass**",
+  "result": "`current_tick_target_artifact_absence_rotation_reaffirmed_control_plane_only` — the lane stays non-executable. No changed condition exists, so this is control-plane local-exhaustion, not mathematical or Arena progress. No solver, encoding, importer, or submission work was run.",
+  "next_gate": "`real_target_proof_or_exact_iff_lift_artifact_required_else_rotate` — reopen only on a concrete current-session target-facing proof-producing encoding (with import/parse + checker/decode/verifier smoke) or an exact-iff primary lift map. Otherwise rotate to another FrontierMath basin or selector/materializer receipt-consumption calibration. Do not rerun flat SAT caps, orbit membranes, CNF import/parse, or cube tranches unchanged as evidence.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training unless explicitly authorized.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-14_08-39-40.md",
+    "sha256": "e6297fb37448f9102ef4817b62cf43f999098ef7486672f92399870c1e274f65"
+  }
+}

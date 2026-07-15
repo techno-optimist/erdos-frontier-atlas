@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:d989b3a3002006a46aa9d97c745311460e896f3c03bd7b7b00e381abb7ed1de6",
+  "content_digest": "sha256:910ab38c44f06022db2da1bdb9f263d8645163717fa57e026c73e0d9f8c3963e",
+  "occurred_at": "2026-07-13T23:20:43Z",
+  "frontier": "Large Steiner systems (n>q>r>5, r<10, n<200) — does a concrete target-facing proof-producing encoding or exact-iff primary lift map exist this tick?",
+  "action": "Read-only reaffirmation under the target-artifact absence rotation gate: scanned the current session's narrow artifact roots (candidate_artifacts, solver, checkpoints, proofs, encodings, lift_maps, inputs), hashed the three protected DBs before/after, and checked the frontier queue for a matching row with a double-decay idempotency guard. No solver/importer/orbit/encoding work run.",
+  "verified": "Admissible target proof-producing encoding or exact-iff lift-map artifacts in-session: **0**\n- Protected DB hashes stable in-window: atlas.db `650d2cb2…`, atlas2.db `0a5b38c3…`, arena_atlas.db `df210a2a…` (before == after)\n- Queue: `fm_steiner_large` row not present in the active frontier queue → no mutation performed (no priority decay)\n- Local receipts written: result_verified.json, evidence + negative ledgers, next_gate.md; replication = pass",
+  "result": "`current_tick_target_artifact_absence_rotation_reaffirmed_control_plane_only`. No changed condition — the packet only restates reopener criteria at priority 0.17. This is control-plane local exhaustion of the exact lane, not mathematical progress. No candidate emitted, no capped-UNKNOWN reinterpreted as signal.",
+  "next_gate": "`real_target_proof_or_exact_iff_lift_artifact_required_else_rotate` — reopen only with a concrete current-session target-facing proof-producing encoding or an exact-iff primary lift map, then import/parse + proof/decode/verifier smoke before any solver tranche. Otherwise rotate to another FrontierMath basin or selector/materializer receipt-consumption calibration.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training unless explicitly authorized.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-13_17-20-43.md",
+    "sha256": "472f38420419b29eb62d55c93ba3b8cda545f6a55331f08c5ebc4980832b6e1a"
+  }
+}

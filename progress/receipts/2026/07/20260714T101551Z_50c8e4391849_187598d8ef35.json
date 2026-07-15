@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:187598d8ef356b984e2977000c0fba989e3995ccc6b4eb0cb9258a944e5cdd46",
+  "content_digest": "sha256:96e552c7ec7662fe37211bf98925c77123fa59999e3fa57f2cb45ee18f079907",
+  "occurred_at": "2026-07-14T10:15:51Z",
+  "frontier": "EinsteinArena scorer/verifier hardening — unchanged closed-lane selector-repeat.",
+  "action": "Read-only control-plane reaffirmation. Verified prior lineage receipt is closed (`changed_condition_count=0`), counted zero concrete reopeners in the packet/queue, confirmed protected DB hash stability in-window, and updated the local state-queue priority with pointer parity. No Arena diagnostics rerun, no ArenaClient import, no submission path.",
+  "verified": "Prior `result_verified.json` present (lineage `res_20260714_085204`, classified `current_tick_selector_repeat_reaffirmed_control_plane_only`). Same-window `atlas.db` / `atlas2.db` / `arena_atlas.db` hashes stable (before==after). State queue SHA `ccf7b311…` → `fce0d8d9…`; recorded `queue_after` == live queue SHA. Canonical executable queue (`frontier_queue.jsonl`) has 0 `arena_scorer_hardening` rows (already rotated out). Verifier-only reproduction: `pass 16/16`; certificate `status=pass`; live-window DB match `True`.",
+  "result": "`current_tick_selector_repeat_reaffirmed_control_plane_only`. Zero concrete reopeners. State-queue priority decayed `0.17 → 0.165`. Evidence row `clm_arena_scorer_selector_repeat_20260714_110607`; negative-result row `neg_arena_scorer_selector_repeat_20260714_110607` (`local_exhaustion`). No new Arena/math evidence — control-plane only.",
+  "next_gate": "`arena_scorer_hardening_rotate_away_until_concrete_reopener_else_selector_materializer_exact_receipt_consumption`. Reopeners only: authorized remote CI observation / push-or-PR, explicit pre-commit wiring request, exactly one selected legacy submit-surface promotion, or scorer/static-gate source-test drift.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. ArenaClient not imported; scorer diagnostics not rerun; reproduction is verifier-only (no queue re-mutation).",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-14_04-15-51.md",
+    "sha256": "279eb6f0511b89cb03ffd328e807388f0979d4daf62876706a81b668391c4ebd"
+  }
+}

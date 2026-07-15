@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:1a6fdb1e048003b84e2b16be77af5f932ec456b805dd0daf21cf5a13faaa48d3",
+  "content_digest": "sha256:6271d0986ff30591fa7c2067e2f0a9ea15a623c73dfa2423afef6a954d7280a1",
+  "occurred_at": "2026-07-10T22:27:14Z",
+  "frontier": "GNFS constant-factor ledger: is there a newly authorized or materially changed condition that permits a verifier-first reopening?",
+  "action": "Inspected the current control record, queue state, and protected-data baseline without running factorization work.",
+  "verified": "The active record still requires rotation unless explicit authorization or a concrete sealed-runner, manifest, planned-row, fixture, source-lineage, receipt, or protected-hash change is established.",
+  "result": "No reopening condition was established. This is a control-plane negative result—not factorization or performance evidence.",
+  "next_gate": "Require one valid changed condition; then first verify sealed no-factorer runner nonemission before any measurement.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training unless explicitly authorized.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-10_16-27-14.md",
+    "sha256": "e4487dbebf081b08a7cce3d7b4b2a0bcd40993a2ce1e3c46644fefbe2f7de0f2"
+  }
+}

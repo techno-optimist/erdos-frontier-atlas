@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:535a8e4763adeacb34e525778e41ee822d265e5b217d7a489a8f931681abb389",
+  "content_digest": "sha256:d4e3ff2eedc81583338764c2b15769c72dffa1924d9b0ddb8302523fb0b001e3",
+  "occurred_at": "2026-07-12T07:40:19Z",
+  "frontier": "EinsteinArena scorer/verifier hardening — closed selector-repeat seam.",
+  "action": "Ran one read-only receipt-lineage verifier and consolidated the unchanged selection as a `local_exhaustion` negative result. No diagnostic rerun or queue update.",
+  "verified": "All 11 lineage checks passed: current rotation rule, prior pass receipt, zero reopener markers, prior replication certificate, result-hash linkage, and durable queue pointers/status/gate all agreed.",
+  "result": "This tick adds control-plane basin knowledge only: the route remains closed without new scorer evidence. It makes **no** claim about live Arena correctness, remote CI, or benchmark performance.",
+  "next_gate": "Reopen only on an authorized remote-CI/push-or-PR observation, explicit pre-commit wiring request, one selected legacy submit-surface promotion, or scorer/static source-test drift. Otherwise rotate away.",
+  "boundary_held": "No Arena API call or submission; no scorer/static diagnostics; no database access or Atlas write; no queue mutation; no push/deploy, training, service control, or public post.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "e97056701b6d",
+    "run_file": "2026-07-12_01-40-19.md",
+    "sha256": "3aa8aa9a7ff582e2777b32800cfa8302c1698437d6bb4a84e9752f1366e1442f"
+  }
+}

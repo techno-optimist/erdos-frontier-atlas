@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:f153fcec2c4197780942e1613c5a6095858eb6ea2a7d82ee79ebcf2810c6d036",
+  "content_digest": "sha256:9948206a9582bdc57c627dfffc180a51c9f7333d909508ddea612cc892921709",
+  "occurred_at": "2026-07-10T18:18:57Z",
+  "frontier": "Prime factorization / GNFS constant-factor ledger.",
+  "action": "Read-only admission-gate audit; no GNFS computation was initiated.",
+  "verified": "The last checkpoint is `pass`; the queue remains rotation-only at priority 0.175, and protected research-store hashes still match the verified receipt.",
+  "result": "No qualifying authorization or changed sealed-runner/manifest/fixture/source-lineage condition is present in the control state. This frontier remains blocked from unattended measurement; no new mathematical-performance claim is made.",
+  "next_gate": "Reopen only with operator authorization or a concrete qualifying state change; first probe must prove sealed no-factorer-runner nonemission before any measurement.",
+  "boundary_held": "No production Atlas write, factorer/GNFS run, relation collection, baseline measurement, external submission, push/deploy, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-10_12-18-57.md",
+    "sha256": "93f0558a27a84c43a1b93e94e8c5fc6ae923e987884beedce2274fc08e74c3bc"
+  }
+}

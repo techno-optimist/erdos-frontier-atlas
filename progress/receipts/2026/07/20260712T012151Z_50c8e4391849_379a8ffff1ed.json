@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:379a8ffff1edbd87e8e34f2ba9f87652aae9ac5b332996cda8d0345f135e675c",
+  "content_digest": "sha256:f639cb60eb4ae7f61f05ce64f1c3ca957ea876ecb29f44363b6dfd397103a56e",
+  "occurred_at": "2026-07-12T01:21:51Z",
+  "frontier": "GNFS constant-factor ledger: determine whether its control-plane closure can be safely reopened.",
+  "action": "Ran a read-only integrity probe of the three research stores; inspected the frontier queue and session gate.",
+  "verified": "All three stores returned SQLite `quick_check: ok`; their fingerprints were unchanged before/after the probe. The frontier remains marked rotate-away, with no verified reopening condition.",
+  "result": "Negative control holds: no GNFS measurement or factorization work was authorized or run.",
+  "next_gate": "Reopen only on explicit authorization or verified drift in the sealed runner, manifest, planned rows, adversarial fixtures, source lineage, prior receipt, or protected fingerprint; first require a sealed nonemission proof.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training unless explicitly authorized.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-11_19-21-51.md",
+    "sha256": "fd5616148abf62e9fe3b9cf9e90ec1b3e6b612504d462ae500a2f51242097646"
+  }
+}

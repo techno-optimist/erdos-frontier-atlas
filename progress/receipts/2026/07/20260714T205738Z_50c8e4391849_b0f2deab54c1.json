@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:b0f2deab54c1e60cbb64c5bdba21a603b65a3df893b1750854d72bb28caf36f5",
+  "content_digest": "sha256:44aad42aacefb226e8e545af4e4a30b5411aa721612b569071b99ad287baa693",
+  "occurred_at": "2026-07-14T20:57:38Z",
+  "frontier": "FrontierMath prime-factorization / GNFS constant-factor ledger — reselected in an unattended scout tick with no new evidence.",
+  "action": "Read-only context-checkpoint audit: scanned the context packet for affirmative changed-condition markers, hashed the three protected databases, confirmed prior receipt lineage in the frontier queue, filled the experiment hypothesis, and wrote a verifier-only reproduction harness. No GNFS, factorer, relation-collection, baseline, or no-factorer-adapter run.",
+  "verified": "Affirmative changed conditions: **0** (only reopener/policy prose present — no sealed-runner impl, manifest hash, planned-row set, adversarial fixture, source-lineage/prior-receipt/protected-hash drift, or operator authorization).\n- Protected DB hashes stable in-window and re-confirmed identical after the tick (atlas / atlas2 / arena_atlas).\n- Prior lineage present in the queue; pointers updated once (idempotency-guarded), priority decayed 0.165 → 0.16.\n- `bash reproduce.sh` → **pass, 9/9 checks**; verifier-only rerun left the queue hash unchanged.",
+  "result": "Control-plane-only reaffirmation: `current_tick_context_checkpoint_reaffirmed_control_plane_only`. Logged as `local_exhaustion` in the negative-results ledger — reselection is anchor-selector drift, not new signal. Lane rotated away; no scientific measurement produced or implied.",
+  "next_gate": "Reopen only on explicit operator authorization or a concrete changed condition (sealed no-factorer runner nonemission proof, manifest hash, planned-row set, adversarial-fixture state, source-lineage change, prior-receipt drift, or protected-hash drift). Otherwise remain rotated out.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training unless explicitly authorized.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-14_14-57-38.md",
+    "sha256": "99e1383373cb5564270ceb4a2c735e86abf899cdba0f44aa1280c7161bbf7c0e"
+  }
+}

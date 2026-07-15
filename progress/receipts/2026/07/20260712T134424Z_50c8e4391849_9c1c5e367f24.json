@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:9c1c5e367f247f186d4fdbd2be500946352c5bd7081baa35a4b62c224e2ac45a",
+  "content_digest": "sha256:60c7c30eb24d8d143a7dafc23ea3455db14fbf67e43c7a49001495e4dc1421b0",
+  "occurred_at": "2026-07-12T13:44:24Z",
+  "frontier": "EinsteinArena scorer/verifier hardening: does the current selection contain a concrete reason to reopen diagnostics?",
+  "action": "Ran a read-only receipt-lineage verification across the registered experiment, current frontier state, prior verified control receipt, and its replication certificate.",
+  "verified": "All 8 checks passed: prior receipt and replication status are pass, required artifacts remain present, and the queue preserves the rotation gate.",
+  "result": "No concrete reopener was evidenced. This is an unchanged selector-repeat/local-exhaustion control result; Arena diagnostics were not rerun.",
+  "next_gate": "Reopen only for an authorized CI observation, explicit pre-commit request, one selected legacy submit-surface promotion, or scorer/static-gate source-test drift.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, deployments, service changes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-12_07-44-24.md",
+    "sha256": "735951cb11f043c848d1db698fa44cf8f9e076f237e7125c0f276b4a6d42443a"
+  }
+}

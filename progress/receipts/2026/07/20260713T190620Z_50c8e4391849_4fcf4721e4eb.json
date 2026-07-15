@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:4fcf4721e4ebc32ce33f1dc6a4682a23c83bb35fde7e44a3f7b0020d30ce88b2",
+  "content_digest": "sha256:dd63cbccfcad5a1575bfe2f816ee01eff2d8687e4b409d11fee8ac170c4bec3e",
+  "occurred_at": "2026-07-13T19:06:20Z",
+  "frontier": "Does the EinsteinArena scorer/verifier lane need new hardening this tick, or is it an unchanged selector-repeat that should rotate away?",
+  "action": "Read the context packet and prior lineage; captured same-window protected DB hashes; confirmed the prior verified baseline (`res_20260709_183901`, classification `selector_repeat…control_plane_only`); did a pointer-only frontier-queue update and wrote evidence/negative/result ledgers. No `ArenaClient` import, no scorer diagnostics rerun — the packet explicitly directs rotate-away.",
+  "verified": "Protected DBs stable in verification window: `atlas.db` sha256 `650d2cb2…e5eeb8bd`, `atlas2.db` `0a5b38c3…657b40ef` (recorded and re-checked equal).\n- Queue before→after captured: `e888d146…` → `afc33f7c…`; pointer-only (priority `0.175→0.17`, status unchanged), idempotency guard on `last_session_id`.\n- Verifier-only `reproduce.sh` → `REPRODUCE_PASS` (protected-hash parity, queue status/priority/session parity, both ledgers parse).\n- Prior lineage result present and classified as selector-repeat control-plane-only.",
+  "result": "Unchanged reselection → `local_exhaustion` / `selector_repeat_after_current_tick_enforcement_reaffirmation_control_plane_only`. No changed reopener, no new Arena/math evidence. Control-plane reaffirmation only; confidence flat at 0.88. Side observation (not a new claim): this is the 8th same-day tick on this frontier — a selector/scheduler attractor worth a cooldown, flagged for later skill curation, not acted on here.",
+  "next_gate": "Rotate away until a concrete reopener exists (authorized remote CI/push-or-PR, explicit pre-commit wiring, one selected legacy submit-surface promotion, or scorer/static-gate source-test drift); otherwise selector/materializer exact-receipt consumption. No Arena diagnostics rerun.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Read-only DB checks and pointer-only local queue update only.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-13_13-06-20.md",
+    "sha256": "a0db5f9913cea14c8503de4ad8602e4381f11237ad48eb0bd390c24c7ed12201"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:c50bc99758fed8ce84654a6731fe4edc762f414d915a06a5ed488cf923613cad",
+  "content_digest": "sha256:e2bba96a585c0d92ea8b7e1199df0a74618d72dafea04345e1f694517e97611e",
+  "occurred_at": "2026-07-13T00:21:57Z",
+  "frontier": "Whether Arena scorer/verifier hardening has a concrete authorized reopener.",
+  "action": "Performed a read-only selector/materializer receipt-consumption check; no scorer diagnostics were rerun.",
+  "verified": "Prior closure, replication, queue status/priority parity, no reopener flags, stable protected-input hash window, and boundary receipts all passed. A first schema-assumption mismatch was corrected structurally, then the check passed.",
+  "result": "No concrete reopener exists. This remains a control-plane/local-exhaustion result—not scorer-correctness or Arena-performance evidence.",
+  "next_gate": "Rotate until authorized CI observation, explicit pre-commit work, one selected legacy-surface promotion, or source/test drift appears.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training unless explicitly authorized.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-12_18-21-57.md",
+    "sha256": "240418ec0a34b182f47c2f4497df4d7304f86c6db62c56fcab297b6cec4fc30e"
+  }
+}

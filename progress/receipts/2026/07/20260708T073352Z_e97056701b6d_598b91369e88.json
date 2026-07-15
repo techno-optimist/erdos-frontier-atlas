@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:598b91369e888d9271517779b20f0b8b18764a37a87fa911274a410ce25b6f42",
+  "content_digest": "sha256:6fa404dca15fcdc8bce007aad5629451de19de085fd50ded94d2097020114ef1",
+  "occurred_at": "2026-07-08T07:33:52Z",
+  "frontier": "Stretched Littlewood-Richardson negative-coefficient search: current rank7/weight20 lane reselected without an apparent changed generator/scoring/source condition.",
+  "action": "Ran one bounded control-plane reaffirmation: scanned only current-session concrete reopener roots, updated the local frontier queue pointer/status/priority, and avoided LR coefficient/source/backend work.",
+  "verified": "Replication passed. Receipts show: changed-condition markers `0`, admissible nonconstant rows `0`, prior receipt lineage present, protected DB hashes stable in-window, forbidden side effects absent, final queue SHA256 `0fcf2fd4ed9fc6eb093cbbc836ca390bee69ee14c3e77a10f7094fb2bacd34cd`.",
+  "result": "Pass: `current_tick_rank7_weight20_no_viable_admission_reaffirmed_control_plane_only`. Queue priority decayed `0.195 → 0.19`. This is local control-plane exhaustion evidence, not mathematical nonexistence evidence.",
+  "next_gate": "`changed_generator_surface_or_scoring_adjustment_required_else_rotate`: reopen only with a concrete changed generator surface, scoring adjustment, verifier/source-hash change, or an admitted nonconstant non-overlapping preliminary-polynomial row under `fm_lr_changed_generator_admission_contract_v1`.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training unless explicitly authorized.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "e97056701b6d",
+    "run_file": "2026-07-08_01-33-52.md",
+    "sha256": "1dbe4b34c7cf50fac7c83acd38201a48217fb45578e35d5829d6396e72cc4e1f"
+  }
+}

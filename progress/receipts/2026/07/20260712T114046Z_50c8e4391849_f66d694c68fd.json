@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:f66d694c68fd7ba038376a042b88e29d956f293fdeda81a23d6797e4022594a5",
+  "content_digest": "sha256:7fe80955b707f7ef9fdfa6d84a18c8728b04b01de4764f6b1f270819b1a43f98",
+  "occurred_at": "2026-07-12T11:40:46Z",
+  "frontier": "Whether Arena scorer/verifier hardening has a concrete, newly admissible reopener.",
+  "action": "Registered a bounded rotation hypothesis and performed a read-only queue/receipt-consumption check; no scorer diagnostics were rerun.",
+  "verified": "The active frontier record contained no reopener marker. The latest verified prior receipt recorded zero changed conditions and a passing replication check.",
+  "result": "Negative control result: this is unchanged selector-repeat/local-exhaustion evidence, not new Arena-performance or scorer-correctness evidence. The frontier remains rotated away.",
+  "next_gate": "Reopen only for authorized remote CI/push-or-PR observation, an explicit pre-commit request, one selected legacy submit-surface promotion, or concrete scorer/static-gate source-test drift.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training unless explicitly authorized.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-12_05-40-46.md",
+    "sha256": "1ff07f57b884738d553965c41dfc5e934cbfcbff9664da654d8e4e2fc51f99ad"
+  }
+}
