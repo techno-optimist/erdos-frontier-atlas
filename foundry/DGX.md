@@ -84,6 +84,15 @@ scores lane evidence yield, exploration need, age, and repeated blocking, then
 writes `shadow_policy.json` into the session. It has no production selection
 authority; promotion requires accumulated, auditable outcome evidence.
 
+`foundry/RSI_PROTOCOL.md` freezes the outer-loop hypothesis, falsifier, equal
+compute budget, public/private split, independent utility rubric, and promotion
+gate. `tools/foundry_efficiency.py` measures only the first Hermes conversation
+turn per cron session so background skill review cannot inflate research cost.
+Receipt classifications remain telemetry and never become their own reward.
+The existing no-agent publisher refreshes that report every 30 minutes at
+`~/.hermes/chronos_state/foundry_efficiency_latest.json` with mode `0600`; the
+operational audit requires it to be fresh and explicitly authority-free.
+
 Per-frontier `semantic_contracts` in `foundry/config.json` pin the exact target
 quantity. Prep exposes the contract to the researcher, and publication fails
 closed if evidence addresses a related but easier quantity or repeats a known
