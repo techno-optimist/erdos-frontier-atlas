@@ -119,6 +119,24 @@ class FoundryTests(unittest.TestCase):
             self.assertEqual(receipt["frontier_id"], "fm_steiner_large")
             self.assertEqual(foundry.validate_receipt(receipt), [])
 
+    def test_lane_scoped_gate_ignores_other_frontier_stalls(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            paths = []
+            for index, frontier_id in enumerate(("lane_a", "lane_a")):
+                path = Path(tmp) / f"{index}.json"
+                path.write_text(json.dumps({
+                    "receipt_id": f"sha256:{index:064x}", "frontier_id": frontier_id,
+                    "frontier": "same", "classification": "blocked",
+                    "result": "same closure", "next_gate": "same gate",
+                }))
+                paths.append(path)
+            state = Path(tmp) / "state.json"
+            state.write_text('{"calls": []}')
+            config = {"stall_window": 3, "stall_threshold": 2, "frontier_cooldown_minutes": 360, "frontier_calls_per_utc_day": 2}
+            with mock.patch.object(foundry, "receipt_files", return_value=paths):
+                self.assertTrue(foundry.stall_gate(state, config, "lane_a")["stuck"])
+                self.assertFalse(foundry.stall_gate(state, config, "lane_b")["stuck"])
+
     def test_pending_advice_replays_then_retires_on_executed_receipt(self):
         digest = "sha256:" + "b" * 64
         with tempfile.TemporaryDirectory() as tmp:
@@ -128,23 +146,38 @@ class FoundryTests(unittest.TestCase):
                 "pending_advice": {
                     "advice": "Try the bounded parity kill-test.",
                     "advice_digest": digest,
+                    "frontier_id": "fm_test",
                     "created_at": "2026-07-15T00:00:00Z",
                     "gate_receipts": [],
                     "delivery_count": 0,
                 },
             }))
-            first = foundry.take_pending_advice(state_path)
+            first = foundry.take_pending_advice(state_path, "fm_test")
             self.assertEqual(first["strategy_status"], "pending")
             self.assertEqual(first["delivery_count"], 1)
             self.assertEqual(state_path.stat().st_mode & 0o777, 0o600)
+            self.assertEqual(foundry.take_pending_advice(state_path, "fm_other")["strategy_status"], "pinned_elsewhere")
             receipt_path = Path(tmp) / "receipt.json"
             receipt_path.write_text(json.dumps({
                 "frontier_consult": {"advice_digest": digest, "executed": True, "outcome": "route rejected"},
             }))
             with mock.patch.object(foundry, "receipt_files", return_value=[receipt_path]):
-                second = foundry.take_pending_advice(state_path)
+                second = foundry.take_pending_advice(state_path, "fm_test")
             self.assertEqual(second["strategy_status"], "consumed")
             self.assertNotIn("pending_advice", json.loads(state_path.read_text()))
+
+    def test_acknowledged_cross_frontier_call_is_explicit(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            receipt_path = Path(tmp) / "receipt.json"
+            receipt_path.write_text(json.dumps({"receipt_id": "sha256:" + "c" * 64, "frontier_id": "certified_lane"}))
+            state_path = Path(tmp) / "state.json"
+            state_path.write_text(json.dumps({"calls": [{
+                "answer_sha256": "d" * 64, "gate_receipts": ["sha256:" + "c" * 64],
+            }]}))
+            with mock.patch.object(foundry, "receipt_files", return_value=[receipt_path]):
+                incident = foundry.acknowledge_call_incident(state_path, "d" * 64, "consulted_lane")
+            self.assertEqual(incident["kind"], "cross_frontier_global_gate")
+            self.assertEqual(incident["gate_receipt_frontier_ids"], ["certified_lane"])
 
 
 if __name__ == "__main__":

@@ -20,12 +20,13 @@ AGENT = HOME / ".local" / "bin" / "chronos-agent"
 COMPACT_SKILLS = ["foundry"]
 SUFFIX = """
 
-FOUNDRY RECURSION (operator-authorized): Read
-~/.hermes/chronos_state/foundry_stall_gate.json before choosing the action. The
-primary researcher for this job is the local Qwen 35B. If and only if
+FOUNDRY RECURSION (operator-authorized): Use only the lane-scoped
+foundry.gate in the prep output for escalation authorization. The primary
+researcher for this job is the local Qwen 35B. If and only if
 frontier_call_allowed is true, make exactly one strategy consultation with:
 python3 ~/erdos-frontier-atlas/tools/foundry.py consult --state
-~/.hermes/chronos_state/foundry_frontier_budget.json '<public-safe frontier,
+~/.hermes/chronos_state/foundry_frontier_budget.json --frontier-id
+'<foundry.gate.frontier_id>' '<public-safe frontier,
 failed routes, falsifier, desired executable test>'. Treat its answer as
 provisional strategy, execute the smallest discriminating test locally, and
 verify it before reporting. Never place secrets or local paths in the six
@@ -66,6 +67,14 @@ def main() -> int:
             job["base_url"] = "http://127.0.0.1:30000/v1"
             job["skill"] = "foundry"
             job["skills"] = COMPACT_SKILLS
+            job["prompt"] = job.get("prompt", "").replace(
+                "python3 ~/erdos-frontier-atlas/tools/foundry.py consult --state\n~/.hermes/chronos_state/foundry_frontier_budget.json '<public-safe frontier,",
+                "python3 ~/erdos-frontier-atlas/tools/foundry.py consult --state\n~/.hermes/chronos_state/foundry_frontier_budget.json --frontier-id\n'<foundry.gate.frontier_id>' '<public-safe frontier,",
+            )
+            job["prompt"] = job["prompt"].replace(
+                "FOUNDRY RECURSION (operator-authorized): Read\n~/.hermes/chronos_state/foundry_stall_gate.json before choosing the action. The\nprimary researcher",
+                "FOUNDRY RECURSION (operator-authorized): Use only the lane-scoped\nfoundry.gate in the prep output for escalation authorization. The primary\nresearcher",
+            )
             if job["id"] == "50c8e4391849":
                 job["schedule"] = {"kind": "interval", "minutes": 30, "display": "every 30m"}
                 job["schedule_display"] = "every 30m"

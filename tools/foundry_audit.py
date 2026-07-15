@@ -92,10 +92,17 @@ def main() -> int:
     recent_cutoff = now - timedelta(minutes=90)
     budget = json.loads((args.state_root / "foundry_frontier_budget.json").read_text()) if (args.state_root / "foundry_frontier_budget.json").exists() else {"calls": []}
     calls = budget.get("calls", [])
-    call_stalls = []
+    call_evidence = []
     for call in calls:
         rows = [by_id[rid] for rid in call.get("gate_receipts", []) if rid in by_id]
-        call_stalls.append(bool(rows) and certified_stall(rows, int(config["stall_threshold"])))
+        frontier_id = call.get("frontier_id")
+        lane_aligned = bool(frontier_id and rows and all(row.get("frontier_id") == frontier_id for row in rows))
+        certified = bool(lane_aligned and certified_stall(rows, int(config["stall_threshold"])))
+        call_evidence.append({
+            "at": call.get("at"), "frontier_id": frontier_id, "lane_aligned": lane_aligned,
+            "certified_stall": certified, "incident_acknowledged": bool(call.get("incident")),
+            "answer_sha256": call.get("answer_sha256"),
+        })
     ordered_times = [parse_time(call.get("at")) for call in calls]
     cooldown = timedelta(minutes=int(config["frontier_cooldown_minutes"]))
     cooldown_ok = all(b - a >= cooldown for a, b in zip(ordered_times, ordered_times[1:]) if a and b)
@@ -125,6 +132,12 @@ def main() -> int:
     after = {name: sha_file(args.data_root / name) for name in before}
     traced = [row for row in receipts if row.get("frontier_consult")]
     executed = [row for row in traced if row["frontier_consult"].get("executed")]
+    valid_calls = [row for row in call_evidence if row["lane_aligned"] and row["certified_stall"]]
+    aligned_executions = [
+        receipt for receipt in executed for call in valid_calls
+        if receipt.get("frontier_id") == call["frontier_id"]
+        and receipt["frontier_consult"].get("advice_digest") == "sha256:" + str(call["answer_sha256"])
+    ]
 
     checks = {
         "sglang_active_enabled": active["chronos-sglang.service"] == "active" and enabled["chronos-sglang.service"] == "enabled",
@@ -136,10 +149,11 @@ def main() -> int:
         "publisher_30m_recent": publisher.get("schedule", {}).get("minutes") == 30 and publisher.get("last_status") == "ok" and (parse_time(publisher.get("last_run_at")) or datetime.min.replace(tzinfo=timezone.utc)) >= recent_cutoff,
         "foundry_and_atlas_validation": validate.returncode == 0,
         "automation_branch_current": bool(remote_head) and local_head == remote_head,
-        "all_frontier_calls_certified_stalls": bool(calls) and all(call_stalls),
+        "frontier_call_incidents_acknowledged": bool(calls) and all(row["certified_stall"] or row["incident_acknowledged"] for row in call_evidence),
+        "valid_frontier_call_lane_certified": bool(valid_calls),
         "frontier_budget_and_cooldown_held": daily_ok and cooldown_ok,
         "frontier_state_private": (args.state_root / "foundry_frontier_budget.json").stat().st_mode & 0o777 == 0o600,
-        "frontier_advice_executed_trace": bool(executed),
+        "lane_aligned_frontier_advice_executed_trace": bool(aligned_executions),
         "latest_context_read_only": packet_ro,
         "protected_hashes_stable_during_audit": before == after,
     }
@@ -150,7 +164,8 @@ def main() -> int:
         "checks": checks,
         "evidence": {
             "receipt_count": len(receipts), "traced_consults": len(traced), "executed_consults": len(executed),
-            "frontier_calls": len(calls), "call_certified_stalls": call_stalls, "daily_call_counts": daily_counts,
+            "frontier_calls": len(calls), "call_evidence": call_evidence, "valid_frontier_calls": len(valid_calls),
+            "lane_aligned_executions": len(aligned_executions), "daily_call_counts": daily_counts,
             "tool_smoke": tool_evidence, "local_head": local_head, "remote_head": remote_head,
             "service_active": active, "service_enabled": enabled, "linger": linger,
             "cron_status_tail": [line.strip() for line in cron_status.stdout.splitlines() if line.strip()][-4:],
