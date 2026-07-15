@@ -305,9 +305,45 @@ def required_strategy_trace_errors(text: str, receipt: dict) -> list[str]:
     return []
 
 
+def source_envelope_summary(source: Path, text: str, config: dict) -> dict:
+    """Recover operator-owned occurrence/lane metadata when labels do not parse."""
+    pre_response = text.split("## Response", 1)[0]
+    script_output = {}
+    for marker in ("## Script Output", "## Pre-command Output"):
+        if marker not in pre_response:
+            continue
+        region = pre_response.split(marker, 1)[1]
+        start = region.find("{")
+        if start < 0:
+            continue
+        try:
+            value, _ = json.JSONDecoder().raw_decode(region[start:])
+        except ValueError:
+            continue
+        if isinstance(value, dict):
+            script_output = value
+            break
+    frontier_id = script_output.get("frontier_id")
+    if not isinstance(frontier_id, str) or not re.fullmatch(
+        r"[a-z0-9][a-z0-9._-]{1,127}", frontier_id, re.I
+    ):
+        frontier_id = None
+    return {
+        "receipt_id": None,
+        "frontier_id": frontier_id.lower() if frontier_id else None,
+        "classification": None,
+        "occurred_at": parse_run_time(
+            text,
+            datetime.fromtimestamp(source.stat().st_mtime, timezone.utc),
+            config.get("source_timezone", "America/Denver"),
+        ),
+    }
+
+
 def inspect_source(source: Path, job_id: str, config: dict) -> dict:
     """Parse and validate a raw run without mutating the public progress tree."""
     source_sha = sha(source.read_bytes())
+    source_text = source.read_text(errors="replace")
     try:
         receipt = build_receipt(
             source, job_id, config.get("source_timezone", "America/Denver")
@@ -316,9 +352,9 @@ def inspect_source(source: Path, job_id: str, config: dict) -> dict:
             validate_receipt(receipt)
             + semantic_contract_errors(receipt, config)
             + required_milestone_contract_errors(
-                source.read_text(errors="replace"), receipt, config
+                source_text, receipt, config
             )
-            + required_strategy_trace_errors(source.read_text(errors="replace"), receipt)
+            + required_strategy_trace_errors(source_text, receipt)
         )
         summary = {
             key: receipt.get(key)
@@ -326,7 +362,7 @@ def inspect_source(source: Path, job_id: str, config: dict) -> dict:
         }
     except Exception as exc:
         errors = [type(exc).__name__ + ": " + str(exc)]
-        summary = None
+        summary = source_envelope_summary(source, source_text, config)
     return {
         "schema": "p42-foundry-inspection-v1",
         "inspected_at": iso(),

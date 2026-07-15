@@ -19,6 +19,7 @@ from pathlib import Path
 MARKER = "FOUNDRY_JOB_MAX_TURNS_V1"
 WALL_MARKER = "FOUNDRY_JOB_MAX_WALL_SECONDS_V1"
 FINALIZE_MARKER = "FOUNDRY_JOB_FINALIZE_NO_TOOLS_V1"
+LOOP_MARKER = "FOUNDRY_REQUIRED_RECEIPT_RETRY_V1"
 OLD = """        # Max iterations
         max_iterations = _cfg.get("agent", {}).get("max_turns") or _cfg.get("max_turns") or 90
 """
@@ -118,6 +119,15 @@ FINALIZE_NEW = """            session_db=_session_db,
         if _job_finalize_after is not None:
             _prior_step_callback = agent.step_callback
             _finalization_injected = False
+            agent._foundry_finalize_after = _job_finalize_after
+            agent._foundry_required_final_labels = (
+                "Frontier", "Action", "Verified", "Result", "Next gate",
+                "Boundary held",
+            )
+            agent._foundry_finalization_retry_limit = max(
+                0, max_iterations - _job_finalize_after - 1
+            )
+            agent._foundry_finalization_retries = 0
 
             def _foundry_finalize_step(iteration, previous_tools):
                 nonlocal _finalization_injected
@@ -159,6 +169,71 @@ FINALIZE_NEW = """            session_db=_session_db,
             agent.step_callback = _foundry_finalize_step
 """ + "        \n" + """        # Run the agent with an *inactivity*-based timeout: the job can run
 """
+LOOP_OLD = """                final_response = agent._strip_think_blocks(final_response).strip()
+""" + "                \n" + """                final_msg = agent._build_assistant_message(assistant_message, finish_reason)
+"""
+LOOP_NEW = """                final_response = agent._strip_think_blocks(final_response).strip()
+
+                # FOUNDRY_REQUIRED_RECEIPT_RETRY_V1: exact opt-in jobs can
+                # reject an intermediate tool-free answer and spend their
+                # reserved calls on the required public receipt. Other agents
+                # do not have these attributes and retain upstream behavior.
+                _foundry_labels = getattr(
+                    agent, "_foundry_required_final_labels", ()
+                )
+                _foundry_finalize_after = getattr(
+                    agent, "_foundry_finalize_after", None
+                )
+                if (
+                    _foundry_labels
+                    and _foundry_finalize_after is not None
+                    and api_call_count > _foundry_finalize_after
+                ):
+                    _missing_foundry_labels = [
+                        label for label in _foundry_labels
+                        if f"**{label}**" not in final_response
+                    ]
+                    _foundry_retries = int(getattr(
+                        agent, "_foundry_finalization_retries", 0
+                    ))
+                    _foundry_retry_limit = int(getattr(
+                        agent, "_foundry_finalization_retry_limit", 0
+                    ))
+                    if (
+                        _missing_foundry_labels
+                        and _foundry_retries < _foundry_retry_limit
+                        and api_call_count < agent.max_iterations
+                    ):
+                        agent._foundry_finalization_retries = _foundry_retries + 1
+                        interim_msg = agent._build_assistant_message(
+                            assistant_message, "receipt_labels_required"
+                        )
+                        interim_msg["_foundry_finalization_synthetic"] = True
+                        messages.append(interim_msg)
+                        messages.append({
+                            "role": "user",
+                            "content": (
+                                "Operator receipt gate: the prior response is "
+                                "not publishable. Reply now with all six required "
+                                "markdown labels and no preamble: "
+                                + ", ".join(_foundry_labels)
+                                + ". Missing from the prior response: "
+                                + ", ".join(_missing_foundry_labels)
+                                + ". Copy the hash-bound milestone Action prefix. "
+                                "Tool access remains disabled."
+                            ),
+                            "_foundry_finalization_synthetic": True,
+                        })
+                        agent._session_messages = messages
+                        logger.info(
+                            "Foundry receipt retry %s/%s at call %s; missing=%s",
+                            _foundry_retries + 1, _foundry_retry_limit,
+                            api_call_count, ",".join(_missing_foundry_labels),
+                        )
+                        continue
+
+                final_msg = agent._build_assistant_message(assistant_message, finish_reason)
+"""
 
 
 def patch_text(text: str) -> tuple[str, bool]:
@@ -186,6 +261,16 @@ def patch_text(text: str) -> tuple[str, bool]:
         text = text.replace(FINALIZE_OLD, FINALIZE_NEW)
         changed = True
     return text, changed
+
+
+def patch_loop_text(text: str) -> tuple[str, bool]:
+    if LOOP_MARKER in text:
+        return text, False
+    if text.count(LOOP_OLD) != 1:
+        raise RuntimeError(
+            "Hermes conversation loop source drifted; refusing unreviewed receipt-retry patch"
+        )
+    return text.replace(LOOP_OLD, LOOP_NEW), True
 
 
 def patch_file(path: Path) -> dict:
@@ -217,9 +302,37 @@ def patch_file(path: Path) -> dict:
     }
 
 
+def patch_loop_file(path: Path) -> dict:
+    original = path.read_text()
+    patched, changed = patch_loop_text(original)
+    compile(patched, str(path), "exec")
+    backup = path.with_name(path.name + ".pre-foundry-receipt-retry")
+    if changed:
+        if not backup.exists():
+            shutil.copy2(path, backup)
+        tmp = path.with_suffix(path.suffix + ".tmp")
+        tmp.write_text(patched)
+        tmp.chmod(path.stat().st_mode & 0o777)
+        os.replace(tmp, path)
+    installed = path.read_text()
+    compile(installed, str(path), "exec")
+    if LOOP_MARKER not in installed:
+        raise RuntimeError("Hermes Foundry receipt-retry marker missing after patch")
+    return {
+        "path": str(path),
+        "changed": changed,
+        "sha256": hashlib.sha256(installed.encode()).hexdigest(),
+        "backup": str(backup),
+        "markers": [LOOP_MARKER],
+    }
+
+
 def main() -> int:
-    path = Path.home() / ".hermes" / "hermes-agent" / "cron" / "scheduler.py"
-    print(patch_file(path))
+    root = Path.home() / ".hermes" / "hermes-agent"
+    print({
+        "scheduler": patch_file(root / "cron" / "scheduler.py"),
+        "conversation_loop": patch_loop_file(root / "agent" / "conversation_loop.py"),
+    })
     return 0
 
 

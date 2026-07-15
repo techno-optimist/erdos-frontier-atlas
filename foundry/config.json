@@ -41,6 +41,8 @@
       ]
     },
     "max_action_primitives": 1,
+    "initial_broad_context_policy": "gated_focused_only",
+    "continuation_broad_context_policy": "conditional_recorded_falsifier_need",
     "implementation_stop_call": 12,
     "final_replay_call": 13,
     "receipt_deadline_call": 14,
