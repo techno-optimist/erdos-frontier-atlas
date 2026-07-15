@@ -31,6 +31,11 @@ def first_allowed_stall(ranked: list[dict], gate_lookup) -> tuple[str | None, di
     return None, None
 
 
+def worker_instruction(original: str) -> str:
+    original = original.replace("Load context_packet.md, ", "")
+    return "Read focused_context.md first. Load context_packet.md only if the focused evidence cannot support the registered falsifier; record why broader context was needed. " + original
+
+
 def main() -> int:
     private_state = json.loads(BUDGET.read_text()) if BUDGET.exists() else {}
     pinned_frontier_id = (private_state.get("pending_advice") or {}).get("frontier_id")
@@ -135,7 +140,7 @@ def main() -> int:
     summary["foundry"]["selection"] = selection
     contract = json.loads(CONFIG.read_text()).get("semantic_contracts", {}).get(selected_frontier_id)
     summary["foundry"]["target_contract"] = contract
-    summary["next_instruction"] = "Read focused_context.md first, then context_packet.md. " + summary["next_instruction"] + " Preserve the exact target quantity in foundry.target_contract; a related theorem or easier quantity is not evidence. Treat foundry.strategy_advice as provisional; execute and verify its smallest test when present. If advice is present, the Verified field must contain exactly: Frontier advice: <foundry.strategy_digest>; executed=yes|no; outcome=<public-safe result>."
+    summary["next_instruction"] = worker_instruction(summary["next_instruction"]) + " Preserve the exact target quantity in foundry.target_contract; a related theorem or easier quantity is not evidence. Treat foundry.strategy_advice as provisional; execute and verify its smallest test when present. If advice is present, the Verified field must contain exactly: Frontier advice: <foundry.strategy_digest>; executed=yes|no; outcome=<public-safe result>."
     print(json.dumps(summary, ensure_ascii=False, indent=2))
     return 0
 
