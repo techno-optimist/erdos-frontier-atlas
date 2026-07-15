@@ -45,6 +45,13 @@ Each task-run is capped at:
 - 24 API calls and 1,200 wall-clock seconds;
 - zero frontier-model calls.
 
+The worker reserves the final two calls inside that unchanged 24-call budget
+for typed `submit_result` attempts. At the reserve boundary it stops exploration
+and forces the submission tool, so a bounded negative or blocked result is
+still emitted when no improvement was found. A missing or malformed result
+remains a failed run; the evaluator does not synthesize mathematical evidence
+on the candidate's behalf.
+
 The no-frontier-call rule isolates harness quality from purchased strategy.
 Consultation is evaluated separately after the local-only core passes.
 
@@ -160,9 +167,11 @@ verifier is registered. In particular, replay infrastructure being operational
 does not by itself open the Level 1 promotion gate.
 
 The same tool performs paired comparison. It refuses incomplete matrices,
-different task-packet hashes, or different fixed model/budget evidence; applies
-the frozen holdout win and bootstrap gates; and always leaves automatic
-production promotion disabled. Its `smoke` command is explicitly labelled
-synthetic boundary evidence and cannot count as RSI evidence. The complete
-machine-readable membrane is frozen in
+different task-packet hashes, or different fixed model/budget evidence. Every
+baseline and candidate output must also have completed fresh artifact replay;
+a pair with a missing or failed replay is telemetry, not operational paired
+evidence and cannot promote. The comparator applies the frozen holdout win and
+bootstrap gates and always leaves automatic production promotion disabled. Its
+`smoke` command is explicitly labelled synthetic boundary evidence and cannot
+count as RSI evidence. The complete machine-readable membrane is frozen in
 [`adjudication_protocol.json`](adjudication_protocol.json).

@@ -90,6 +90,13 @@ class FoundryTests(unittest.TestCase):
         self.assertEqual(foundry.classify("local-exhaustion", "checked route"), "negative_result")
         self.assertEqual(foundry.classify("blocked by missing corpus", "audit"), "blocked")
         self.assertEqual(foundry.classify("No mathematical progress; lane remains closed", "Negative-result consolidation"), "negative_result")
+        self.assertEqual(
+            foundry.classify(
+                "Inconclusive — no witness found in the bounded sample; the bracket is unchanged.",
+                "Built a verifier and ran 8,000 seeds.",
+            ),
+            "negative_result",
+        )
 
     def test_ambiguous_wall_clock_falls_back_to_absolute_mtime(self):
         fallback = datetime(2026, 7, 15, 0, 0, 51, tzinfo=timezone.utc)

@@ -187,6 +187,7 @@ def paired_evaluation_verified(report: dict | None, path: Path, cutoff: datetime
         and report.get("schema") == "p42-foundry-paired-evaluation-v1"
         and report.get("paired_runs", 0) > 0
         and report.get("fixed_budget_evidence_matched") is True
+        and report.get("all_replays_operational") is True
         and report.get("automatic_production_promotion") is False
         and report.get("promotion_authority") == "none_human_review_required"
         and report.get("claim_status") in {
@@ -194,6 +195,25 @@ def paired_evaluation_verified(report: dict | None, path: Path, cutoff: datetime
         }
         and private_mode
         and (parse_time(report.get("created_at")) or datetime.min.replace(tzinfo=timezone.utc)) >= cutoff
+    )
+
+
+def canonical_reward_boundary_locked(
+    protocol: dict | None, contracts: dict | None, verifier_path: Path
+) -> bool:
+    registered = {"1", "21", "138", "552"}
+    rows = contracts.get("contracts", {}) if contracts else {}
+    return bool(
+        protocol
+        and protocol.get("schema") == "p42-foundry-adjudication-protocol-v1"
+        and protocol.get("generic_replay_utility_cap") == 0
+        and protocol.get("paired_comparison", {}).get("automatic_production_promotion") is False
+        and protocol.get("paired_comparison", {}).get("human_review_required") is True
+        and contracts
+        and contracts.get("schema") == "p42-foundry-canonical-contract-registry-v1"
+        and set(rows) == registered
+        and all(rows[key].get("verifier_id") for key in registered)
+        and verifier_path.is_file()
     )
 
 
@@ -248,6 +268,11 @@ def main() -> int:
     replay_smoke = json.loads(replay_smoke_path.read_text()) if replay_smoke_path.exists() else None
     paired_eval_path = args.state_root / "foundry_eval" / "paired_evaluation_latest.json"
     paired_eval = json.loads(paired_eval_path.read_text()) if paired_eval_path.exists() else None
+    adjudication_protocol_path = ROOT / "foundry" / "adjudication_protocol.json"
+    adjudication_protocol = json.loads(adjudication_protocol_path.read_text()) if adjudication_protocol_path.exists() else None
+    canonical_contracts_path = ROOT / "foundry" / "eval" / "canonical_contracts.json"
+    canonical_contracts = json.loads(canonical_contracts_path.read_text()) if canonical_contracts_path.exists() else None
+    canonical_verifier_path = ROOT / "tools" / "foundry_canonical_verify.py"
     public_commitment_path = ROOT / "foundry" / "eval" / "private_suite.commitment.json"
     public_commitment = json.loads(public_commitment_path.read_text()) if public_commitment_path.exists() else None
     calls = budget.get("calls", [])
@@ -359,6 +384,9 @@ def main() -> int:
         "paired_fixed_budget_evaluation_executed": paired_evaluation_verified(
             paired_eval, paired_eval_path, now - timedelta(hours=24)
         ),
+        "canonical_verifier_reward_boundary_locked": canonical_reward_boundary_locked(
+            adjudication_protocol, canonical_contracts, canonical_verifier_path
+        ),
         "protected_hashes_stable_during_audit": before == after,
     }
     report = {
@@ -412,11 +440,18 @@ def main() -> int:
                     "schema", "created_at", "baseline_id", "candidate_id", "paired_runs",
                     "private_paired_runs", "public_paired_runs", "private_wins",
                     "bootstrap_lower_bound", "fixed_budget_evidence_matched",
+                    "all_replays_operational",
                     "promotion_eligible", "claim_status", "automatic_production_promotion",
                     "promotion_authority",
                 )
             } if paired_eval else None),
             "paired_evaluation_report_mode": oct(paired_eval_path.stat().st_mode & 0o777) if paired_eval_path.exists() else None,
+            "canonical_verifier_registry": {
+                "protocol_schema": adjudication_protocol.get("schema") if adjudication_protocol else None,
+                "generic_replay_utility_cap": adjudication_protocol.get("generic_replay_utility_cap") if adjudication_protocol else None,
+                "contract_count": len(canonical_contracts.get("contracts", {})) if canonical_contracts else 0,
+                "verifier_source_sha256": sha_file(canonical_verifier_path) if canonical_verifier_path.exists() else None,
+            },
             "protected_hashes_before": before, "protected_hashes_after": after,
             "validation_tail": validate.stdout.strip().splitlines()[-1] if validate.stdout.strip() else None,
         },
