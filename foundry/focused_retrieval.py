@@ -56,6 +56,31 @@ def query_features(query: str) -> list[tuple[str, float]]:
     return features[:20]
 
 
+def focus_excerpt(record: dict, text_cols: list[str], weighted: list[tuple[str, str, float]], max_chars: int = 900) -> dict | None:
+    candidates = []
+    for col in text_cols:
+        value = record.get(col)
+        if not isinstance(value, str):
+            continue
+        lowered = value.lower()
+        for feature, _, weight in weighted:
+            at = lowered.find(feature)
+            if at >= 0:
+                candidates.append((weight, len(feature), col, feature, at, value))
+    if not candidates:
+        return None
+    _, _, col, feature, at, value = max(candidates)
+    start = max(0, at - max_chars // 3)
+    end = min(len(value), start + max_chars)
+    start = max(0, end - max_chars)
+    excerpt = value[start:end]
+    if start:
+        excerpt = "…" + excerpt
+    if end < len(value):
+        excerpt += "…"
+    return {"column": col, "feature": feature, "text": excerpt}
+
+
 def focused_rows(path: Path, table: str, query: str, limit: int, preferred_cols: list[str]) -> list[dict]:
     if not path.exists():
         return []
@@ -92,9 +117,10 @@ def focused_rows(path: Path, table: str, query: str, limit: int, preferred_cols:
             text = " ".join(str(record.get(col, "")) for col in text_cols).lower()
             record["matched_features"] = [feature for feature, _, _ in weighted if feature in text]
             record["focus_score"] = round(float(record["focus_score"]), 4)
+            record["focus_excerpt"] = focus_excerpt(record, text_cols, weighted)
             for col in text_cols:
                 if isinstance(record.get(col), str):
-                    record[col] = record[col][:900]
+                    record[col] = record[col][:300]
             out.append(record)
         return out
     finally:
