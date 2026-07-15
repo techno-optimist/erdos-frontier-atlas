@@ -46,7 +46,11 @@ path outside `progress/`.
 
 `foundry/deploy_jobs.py` performs the one-time scheduler migration under the
 Hermes cron lock, writes a timestamped backup, pins both research jobs to the
-local 35B provider, and appends the recursion instruction idempotently.
+local 35B provider, points auxiliary compression at the same local provider,
+replaces eager 100KB umbrella-skill injection with the compact `foundry` skill,
+and appends the recursion instruction idempotently. Install `foundry/SKILL.md`
+under `~/.hermes/skills/foundry/` before running the migration; specialist
+skills remain available for adaptive loading after target selection.
 
 The checked-in `40-foundry-tool-parser.conf` preserves the live W19/MoE hooks
 while enabling SGLang's `qwen3_coder` tool-call parser. Install it as the

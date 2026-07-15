@@ -6,6 +6,7 @@ import fcntl
 import json
 import os
 import shutil
+import subprocess
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -15,6 +16,8 @@ JOBS = CRON / "jobs.json"
 LOCK = CRON / ".jobs.lock"
 TARGETS = {"50c8e4391849", "e97056701b6d"}
 MODEL = "/home/chronos/models/qwen3.6-35b-a3b"
+AGENT = HOME / ".local" / "bin" / "chronos-agent"
+COMPACT_SKILLS = ["foundry"]
 SUFFIX = """
 
 FOUNDRY RECURSION (operator-authorized): Read
@@ -32,6 +35,23 @@ no-agent membrane; do not run git here.
 
 
 def main() -> int:
+    settings = {
+        "providers.foundry-qwen35b.name": "foundry-qwen35b",
+        "providers.foundry-qwen35b.base_url": "http://127.0.0.1:30000/v1",
+        "providers.foundry-qwen35b.api_key": "local",
+        "providers.foundry-qwen35b.api_mode": "chat_completions",
+        "providers.foundry-qwen35b.model": MODEL,
+        "providers.foundry-qwen35b.context_length": "262144",
+        "providers.foundry-qwen35b.extra_body.chat_template_kwargs.enable_thinking": "false",
+        "auxiliary.compression.provider": "foundry-qwen35b",
+        "auxiliary.compression.model": MODEL,
+        "auxiliary.compression.base_url": "http://127.0.0.1:30000/v1",
+        "auxiliary.compression.api_key": "local",
+        "auxiliary.compression.timeout": "600",
+        "auxiliary.compression.extra_body.chat_template_kwargs.enable_thinking": "false",
+    }
+    for key, value in settings.items():
+        subprocess.run([str(AGENT), "config", "set", key, value], check=True, stdout=subprocess.DEVNULL)
     LOCK.touch(exist_ok=True)
     with LOCK.open("r+") as lock:
         fcntl.flock(lock, fcntl.LOCK_EX)
@@ -44,6 +64,8 @@ def main() -> int:
             job["provider"] = "foundry-qwen35b"
             job["model"] = MODEL
             job["base_url"] = "http://127.0.0.1:30000/v1"
+            job["skill"] = "foundry"
+            job["skills"] = COMPACT_SKILLS
             if "FOUNDRY RECURSION (operator-authorized)" not in job.get("prompt", ""):
                 job["prompt"] = job.get("prompt", "").rstrip() + "\n\n" + SUFFIX
             changed.append(job["id"])
@@ -60,4 +82,3 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
-
