@@ -1,0 +1,13 @@
+{
+  "schema": "p42-foundry-public-eval-suite-v1",
+  "suite_version": "2026-07-15.1",
+  "purpose": "Visible development and smoke suite only; results cannot authorize promotion.",
+  "tasks": [
+    {"problem_id": 1, "frontier_id": "eval_erdos_1", "family": "exact_witness_or_backtracking", "evaluation_only": true},
+    {"problem_id": 21, "frontier_id": "eval_erdos_21", "family": "exact_witness_or_backtracking", "evaluation_only": true},
+    {"problem_id": 107, "frontier_id": "eval_erdos_107", "family": "nonexistence_or_certificate", "evaluation_only": true},
+    {"problem_id": 552, "frontier_id": "eval_erdos_552", "family": "nonexistence_or_certificate", "evaluation_only": true},
+    {"problem_id": 138, "frontier_id": "eval_erdos_138", "family": "constructive_or_local_search", "evaluation_only": true},
+    {"problem_id": 582, "frontier_id": "eval_erdos_582", "family": "constructive_or_local_search", "evaluation_only": true}
+  ]
+}

@@ -108,6 +108,8 @@ def main() -> int:
     scout, night, publisher = (jobs[x] for x in ("50c8e4391849", "e97056701b6d", "d731670a1da7"))
     recent_cutoff = now - timedelta(minutes=90)
     budget = json.loads((args.state_root / "foundry_frontier_budget.json").read_text()) if (args.state_root / "foundry_frontier_budget.json").exists() else {"calls": []}
+    efficiency_path = args.state_root / "foundry_efficiency_latest.json"
+    efficiency = json.loads(efficiency_path.read_text()) if efficiency_path.exists() else None
     calls = budget.get("calls", [])
     call_evidence = []
     for call in calls:
@@ -196,6 +198,14 @@ def main() -> int:
         "latest_context_read_only": packet_ro,
         "latest_focused_retrieval_read_only": focused_ro,
         "latest_shadow_policy_observe_only": bool(shadow and shadow.get("policy_status") == "shadow_only_no_control_authority"),
+        "efficiency_metrics_fresh_private_no_authority": bool(
+            efficiency
+            and efficiency.get("schema") == "p42-foundry-efficiency-v1"
+            and efficiency.get("promotion_authority") == "none_metrics_only"
+            and efficiency.get("aggregate", {}).get("completed_sessions", 0) > 0
+            and (parse_time(efficiency.get("generated_at")) or datetime.min.replace(tzinfo=timezone.utc)) >= recent_cutoff
+            and efficiency_path.stat().st_mode & 0o777 == 0o600
+        ),
         "protected_hashes_stable_during_audit": before == after,
     }
     report = {
@@ -218,6 +228,10 @@ def main() -> int:
             "focused_hit_counts": ({name: len(rows) for name, rows in focused.get("surfaces", {}).items()} if focused else {}),
             "shadow_policy_present": shadow_path.exists(),
             "shadow_selected_frontier_id": shadow.get("shadow_selected_frontier_id") if shadow else None,
+            "efficiency_metrics_present": efficiency_path.exists(),
+            "efficiency_metrics_mode": oct(efficiency_path.stat().st_mode & 0o777) if efficiency_path.exists() else None,
+            "efficiency_metrics_generated_at": efficiency.get("generated_at") if efficiency else None,
+            "efficiency_metrics_aggregate": efficiency.get("aggregate") if efficiency else None,
             "protected_hashes_before": before, "protected_hashes_after": after,
             "validation_tail": validate.stdout.strip().splitlines()[-1] if validate.stdout.strip() else None,
         },
