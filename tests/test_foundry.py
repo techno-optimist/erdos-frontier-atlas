@@ -55,6 +55,22 @@ class FoundryTests(unittest.TestCase):
             receipt = foundry.build_receipt(path, "50c8e4391849")
             self.assertIn("public membrane violation in verified", foundry.validate_receipt(receipt))
 
+    def test_cockpit_table_fallback(self):
+        text = """## Response
+| Field | Value |
+|---|---|
+| **Lane** | `fm_hadamard_668` |
+| **Status** | `control_plane_only` |
+| **Changed conditions** | 0 |
+| **Reproduce verifier** | 9/10 pass |
+| **Action taken** | Checked source hashes |
+| **Blocked** | None |
+| **Next gate** | Await changed condition |
+"""
+        sections = foundry.parse_sections(text)
+        self.assertEqual(sections["Frontier"], "`fm_hadamard_668`")
+        self.assertIn("9/10 pass", sections["Verified"])
+
 
 if __name__ == "__main__":
     unittest.main()
