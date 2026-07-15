@@ -12,6 +12,11 @@ import sys
 from pathlib import Path
 
 
+def source_is_watermarked(state: dict, key: str, source_sha: str) -> bool:
+    """Return true only when this exact immutable source was already handled."""
+    return any(state.get(bucket, {}).get(key) == source_sha for bucket in ("accepted", "rejected"))
+
+
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo", type=Path, required=True)
@@ -23,6 +28,7 @@ def main() -> int:
     lock_path = args.state.with_name("foundry_tick.lock")
     lock_path.parent.mkdir(parents=True, exist_ok=True)
     lock_handle = lock_path.open("a+")
+    lock_path.chmod(0o600)
     try:
         fcntl.flock(lock_handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
     except BlockingIOError:
@@ -32,23 +38,31 @@ def main() -> int:
     tool = args.repo / "tools" / "foundry.py"
     created = []
     rejected = []
-    ingest_state = json.loads(args.ingest_state.read_text()) if args.ingest_state.exists() else {"rejected": {}}
+    ingest_state = json.loads(args.ingest_state.read_text()) if args.ingest_state.exists() else {}
+    ingest_state.setdefault("accepted", {})
+    ingest_state.setdefault("rejected", {})
     for job_id in config["source_job_ids"]:
         source_dir = args.cron_output / job_id
         if not source_dir.exists(): continue
         for source in sorted(source_dir.glob("*.md")):
             source_sha = hashlib.sha256(source.read_bytes()).hexdigest()
-            if ingest_state.get("rejected", {}).get(f"{job_id}/{source.name}") == source_sha:
+            key = f"{job_id}/{source.name}"
+            if source_is_watermarked(ingest_state, key, source_sha):
                 continue
             proc = subprocess.run([sys.executable, str(tool), "ingest", str(source), "--job-id", job_id], cwd=args.repo, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            if proc.returncode == 0 and json.loads(proc.stdout).get("created"): created.append(source.name)
+            if proc.returncode == 0:
+                if json.loads(proc.stdout).get("created"): created.append(source.name)
+                ingest_state["accepted"][key] = source_sha
+                ingest_state["rejected"].pop(key, None)
             elif proc.returncode != 0:
                 rejected.append({"run_file": source.name, "reason": proc.stderr.strip().splitlines()[-1][:240] if proc.stderr.strip() else "ingest failed"})
-                ingest_state.setdefault("rejected", {})[f"{job_id}/{source.name}"] = source_sha
+                ingest_state["rejected"][key] = source_sha
+                ingest_state["accepted"].pop(key, None)
     args.ingest_state.parent.mkdir(parents=True, exist_ok=True)
     ingest_tmp = args.ingest_state.with_suffix(args.ingest_state.suffix + ".tmp")
     ingest_tmp.write_text(json.dumps(ingest_state, indent=2) + "\n")
     os.replace(ingest_tmp, args.ingest_state)
+    args.ingest_state.chmod(0o600)
     frontier_ids = sorted({
         row.get("frontier_id")
         for path in (args.repo / "progress" / "receipts").glob("**/*.json")
