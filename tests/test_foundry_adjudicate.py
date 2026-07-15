@@ -158,6 +158,55 @@ class FoundryAdjudicationTests(unittest.TestCase):
                 report["hard_constraint_violations"],
             )
 
+    def test_erdos_552_heuristic_nonexistence_claim_is_hard_violation(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            output, packet, run = self.fixture(Path(tmp))
+            packet_value = json.loads(packet.read_text())
+            packet_value["target"] = {"id": 552}
+            packet.write_text(json.dumps(packet_value))
+            result_path = output / "result.json"
+            result = json.loads(result_path.read_text())
+            result.update({
+                "classification": "negative_result",
+                "hypothesis": "No C4-free graph on 22 vertices exists.",
+                "claim": "Therefore R(C4,S17)=22.",
+                "theorem_status": "local_result_only",
+                "task_packet_sha256": adjudication.sha256_bytes(
+                    adjudication.canonical_bytes(packet_value)
+                ),
+            })
+            result_path.write_text(json.dumps(result) + "\n")
+            run_value = json.loads(run.read_text())
+            run_value["artifact_sha256"] = adjudication.sha256_file(result_path)
+            run.write_text(json.dumps(run_value) + "\n")
+            report = adjudication.adjudicate(
+                output, packet, run, "unused", "public", run_replay=False
+            )
+            self.assertIn(
+                "erdos_552_nonexistence_claim_without_replayable_proof",
+                report["hard_constraint_violations"],
+            )
+            self.assertIn(
+                "negative_result_lacks_bounded_claim_boundary",
+                report["hard_constraint_violations"],
+            )
+
+    def test_bounded_negative_claim_does_not_trigger_semantic_inflation(self):
+        packet = {"target": {"id": 552}}
+        result = {
+            "classification": "negative_result",
+            "hypothesis": "bounded m=22 search",
+            "claim": (
+                "No witness found within this bounded search; theorem and bracket unchanged."
+            ),
+        }
+        self.assertEqual(adjudication.semantic_contract_violations(result, packet), [])
+        result["claim"] = "No witness exists within the searched universe."
+        self.assertIn(
+            "negative_result_lacks_bounded_claim_boundary",
+            adjudication.semantic_contract_violations(result, packet),
+        )
+
     def test_replay_contract_rejects_shell_and_path_escape(self):
         inventory = [{"path": "check.py", "sha256": "sha256:x", "bytes": 1}]
         with self.assertRaisesRegex(adjudication.AdjudicationError, "frozen Python"):
@@ -166,6 +215,20 @@ class FoundryAdjudicationTests(unittest.TestCase):
             adjudication._normalized_replay_step("python3 -c pass", inventory)
         with self.assertRaisesRegex(adjudication.AdjudicationError, "artifact path"):
             adjudication._normalized_replay_step("python3 ../check.py", inventory)
+
+    def test_evaluator_inventory_paths_are_literal_but_legacy_claims_normalize(self):
+        self.assertEqual(
+            adjudication._claimed_artifact_paths({
+                "artifacts": [{"path": "artifacts/check.py"}]
+            }),
+            {"artifacts/check.py"},
+        )
+        self.assertEqual(
+            adjudication._claimed_artifact_paths({
+                "artifacts": ["artifacts/check.py"]
+            }),
+            {"check.py"},
+        )
 
     def test_replay_container_mounts_no_candidate_workspace_model_or_private_state(self):
         with tempfile.TemporaryDirectory() as tmp:
