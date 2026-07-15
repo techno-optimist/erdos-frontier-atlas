@@ -20,6 +20,15 @@ def call(cmd: list[str]) -> subprocess.CompletedProcess:
     return subprocess.run(cmd, text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 
 
+def first_allowed_stall(ranked: list[dict], gate_lookup) -> tuple[str | None, dict | None]:
+    for candidate in ranked:
+        candidate_id = candidate.get("frontier_id")
+        gate = gate_lookup(candidate_id)
+        if gate and gate.get("frontier_call_allowed"):
+            return candidate_id, gate
+    return None, None
+
+
 def main() -> int:
     private_state = json.loads(BUDGET.read_text()) if BUDGET.exists() else {}
     pinned_frontier_id = (private_state.get("pending_advice") or {}).get("frontier_id")
@@ -34,6 +43,21 @@ def main() -> int:
         except Exception:
             print(selector_proc.stdout, end="")
             return selector_proc.returncode or 1
+    selected_gate = None
+    if not pinned_frontier_id:
+        def gate_lookup(candidate_id):
+            candidate_proc = call([sys.executable, str(REPO / "tools" / "foundry.py"), "gate", "--state", str(BUDGET), "--frontier-id", candidate_id])
+            try:
+                return json.loads(candidate_proc.stdout)
+            except Exception:
+                return None
+        override_id, selected_gate = first_allowed_stall(selection.get("ranked", []), gate_lookup)
+        if override_id:
+            selected_frontier_id = override_id
+            selection["escalation_override"] = {
+                "frontier_id": override_id,
+                "reason": "lane-certified stall with budget and cooldown available",
+            }
     context = call([
         sys.executable, str(HOME / ".hermes" / "scripts" / "chronos_frontier_context.py"),
         "--mode", MODE, "--limit", LIMIT, "--frontier-id", selected_frontier_id,
@@ -47,9 +71,12 @@ def main() -> int:
         print(json.dumps(summary, indent=2))
         return 0
 
-    gate_proc = call([sys.executable, str(REPO / "tools" / "foundry.py"), "gate", "--state", str(BUDGET), "--frontier-id", selected_frontier_id])
-    try: gate = json.loads(gate_proc.stdout)
-    except Exception: gate = {"frontier_call_allowed": False, "reason": "gate unavailable"}
+    if selected_gate is None:
+        gate_proc = call([sys.executable, str(REPO / "tools" / "foundry.py"), "gate", "--state", str(BUDGET), "--frontier-id", selected_frontier_id])
+        try: gate = json.loads(gate_proc.stdout)
+        except Exception: gate = {"frontier_call_allowed": False, "reason": "gate unavailable"}
+    else:
+        gate = selected_gate
     pending_proc = call([sys.executable, str(REPO / "tools" / "foundry.py"), "pending", "--state", str(BUDGET), "--frontier-id", selected_frontier_id])
     try: pending = json.loads(pending_proc.stdout)
     except Exception: pending = {"strategy_advice": None, "strategy_status": "pending_unavailable"}
