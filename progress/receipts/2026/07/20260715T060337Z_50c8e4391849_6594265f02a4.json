@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:6594265f02a4e2cc846363b02d2434cfd3886fac765462fda145e55581b916b3",
+  "content_digest": "sha256:58a84352e27eb0d6ef3e6760285e5e4595faa6e529ec494ba2d5a4f0ee681fe8",
+  "occurred_at": "2026-07-15T06:03:37Z",
+  "frontier": "GNFS constant-factor ledger: can a bivariate polynomial construction (d=5 line-kernel, 496 bits, N^{0.10–0.13} height) be extended to a working CurveNFS pipeline via function-field relation collection?",
+  "action": "Negative-result closure. Reviewed atlas/atlas2/aiwiki/arena evidence (19 hits across surfaces), confirmed 5 prior sessions reached identical conclusion, verified no changed sealed-runner/manifest/adversarial-fixture state, confirmed `frontier_call_allowed=false` and `strategy_advice=null`, recorded formal hypothesis/falsifier in experiment.json, wrote next_gate.md.",
+  "verified": "experiment.json: `sha256:4d11e05312b7ca606efad568e3d28e3787a415bbb0260a1d869cd2a4c40fc602`\n- next_gate.md: `sha256:87f06e9428a1d33cbffb60b3770d4c5b15b5c679c86be9923214933447c258c4`\n- Atlas read-only verified (71,369 thoughts), atlas2 read-only verified (51,645 thoughts), AIwiki read-only verified (22,418 docs)\n- No FrontierMath verifier construction possible within boundary (GNFS/factorers explicitly forbidden)\n- No Sage/Magma available for R3 (function-field relation extraction on genus-6 plane quintic)",
+  "result": "Route confirmed closed at probe scale. The d=5 construction (496 bits, N^{0.10–0.13} height, R0.5 enforced) is the best achievable result. The single remaining experiment (R3: Riemann-Roch relation extraction on validated d=5 curves) requires Sage/Magma. No measurable progress possible in current scout mode with available tools. Negative result preserved as basin knowledge.",
+  "next_gate": "When Sage/Magma environment or changed sealed-runner implementation becomes available: execute the R3 function-field NFS relation extraction test on the validated d=5 genus-6 plane quintic curves and measure whether divisor extraction preserves N^{0.10}-scale heights through relation collection.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. GNFS/factorers/relation collection/baselines explicitly not run. Read-only atlas/atlas2/aiwiki/arena inspection only.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-14_23-03-37.md",
+    "sha256": "7e85f144fb00d5ee3f5b62e25e87b8f59518eafb7d20cca8c20bb730b9958446"
+  },
+  "frontier_id": "fm_prime_factorization_gnfs"
+}
