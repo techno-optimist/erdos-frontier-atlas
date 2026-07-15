@@ -1,0 +1,25 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:2b1668a40c3950ad0a0c4269d3e631e1ef41dbaf13d69879972468cc6f345d5b",
+  "content_digest": "sha256:f87b5cc19fbbcb6bb4a489b4bde6e05af2d247746e9d8de651e9151ceb3cbddb",
+  "occurred_at": "2026-07-15T10:30:48Z",
+  "frontier": "Can a Hadamard matrix of order 668 be constructed via the tensor product H₄ ⊗ H₁₆₇, where H₁₆₇ is derived from a length-167 perfect difference set in the cyclic group Z₃₃₄?",
+  "action": "Executed the Foundry strategy advice (digest: sha256:f5798a90fe9e57f43c0e4818d6e2f11f9c704e0ad4fa25a7d9c07ca7cd6de2cb) as a bounded falsification: proved that (1) no perfect difference set of parameters (334, 167, λ) exists because λ = 27722/333 is not an integer, and (2) a Hadamard matrix of order 167 cannot exist because 167 mod 4 = 3, violating the necessary divisibility condition. No search or enumeration was required — two elementary necessary-condition proofs are conclusive.",
+  "verified": "Script: `scripts/test_z334_difference_set_167.py`; Result: `scripts/test_z334_difference_set_167_results.json`; Result file SHA-256: `sha256:10cd3ee8f457d5f636df2ec4796fb044a8c59c60035bc62344e324cd5d9d6684`; Replay confirmed identical output. Frontier advice line: `Frontier advice: sha256:f5798a90fe9e57f43c0e4818d6e2f11f9c704e0ad4fa25a7d9c07ca7cd6de2cb; executed=yes; outcome=route_killed_by_two_independent_necessary_condition_proofs`",
+  "result": "The tensor-product strategy route is provably impossible. This is a negative-result closure — a previously open strategy now firmly closed by elementary number theory (non-integral λ for PDS parameters) and the Hadamard order-divisibility theorem. No more cycles on this route needed.",
+  "next_gate": "Rotate away from `fm_hadamard_668` in unattended scout mode. The shadow policy's top frontiers (e.g., erdos_21_q6, score 0.924) offer significantly better expected returns. Reopen only if a genuinely different construction family is proposed (not already ruled out by order-necessary conditions) or a mathematical landscape change occurs.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Only local research-session artifacts and executable test scripts were produced. All atlas reads were read-only verified.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-15_03-30-48.md",
+    "sha256": "e46d8fc86e88a943aa598613553f069e896f0af1e9f3d60def490bfffcfa177a"
+  },
+  "frontier_id": "fm_hadamard_668",
+  "frontier_consult": {
+    "advice_digest": "sha256:f5798a90fe9e57f43c0e4818d6e2f11f9c704e0ad4fa25a7d9c07ca7cd6de2cb",
+    "executed": true,
+    "outcome": "route_killed_by_two_independent_necessary_condition_proofs`"
+  }
+}
