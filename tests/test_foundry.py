@@ -223,6 +223,35 @@ class FoundryTests(unittest.TestCase):
         config = json.loads((ROOT / "foundry" / "config.json").read_text())
         self.assertEqual(foundry.semantic_contract_errors(receipt, config), [])
 
+    def test_r3_212_contract_rejects_heuristic_support_for_exact_value(self):
+        receipt = {
+            "frontier_id": "erdos_140_r3_212",
+            "occurred_at": "2026-07-15T08:55:37Z",
+            "frontier": "Can a 44-element 3-AP-free subset of [1,212] be found?",
+            "action": "Ran a 3-AP verifier and bounded random search.",
+            "verified": "No 44-set was found; r_3(212) search was incomplete.",
+            "result": (
+                "The heuristic search supports r_3(212) = 43, but cannot certify it."
+            ),
+            "next_gate": "Obtain complete proof-producing nonexistence shards.",
+        }
+        config = json.loads((ROOT / "foundry" / "config.json").read_text())
+        errors = foundry.semantic_contract_errors(receipt, config)
+        self.assertTrue(any("quantity-conflation" in error for error in errors))
+
+    def test_r3_212_contract_accepts_bounded_no_witness_result(self):
+        receipt = {
+            "frontier_id": "erdos_140_r3_212",
+            "occurred_at": "2026-07-15T08:55:37Z",
+            "frontier": "Can a 44-element 3-AP-free subset of [1,212] be found?",
+            "action": "Ran a 3-AP verifier and bounded random search.",
+            "verified": "No 44-set was found; r_3(212) search was incomplete.",
+            "result": "No witness was found in the bounded search; bracket unchanged.",
+            "next_gate": "Use a changed exact search or complete certificate.",
+        }
+        config = json.loads((ROOT / "foundry" / "config.json").read_text())
+        self.assertEqual(foundry.semantic_contract_errors(receipt, config), [])
+
     def test_cockpit_table_fallback(self):
         text = """## Response
 | Field | Value |
