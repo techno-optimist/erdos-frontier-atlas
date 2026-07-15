@@ -35,7 +35,10 @@
       "public_manifest": "foundry/eval/public_suite.json",
       "private_manifest": "evaluator-owned and unavailable to candidate workers",
       "private_commitment_required": true,
-      "isolation_gate": "OS- or container-enforced evaluator isolation is required before held-out results can authorize promotion. Same-user path secrecy is insufficient."
+      "isolation_gate": "OS- or container-enforced evaluator isolation is required before held-out results can authorize promotion. Same-user path secrecy is insufficient.",
+      "isolation_controller": "tools/foundry_eval.py",
+      "isolation_runtime": "Docker read-only root, all capabilities dropped, no-new-privileges, no Docker socket, private manifest never mounted",
+      "model_transport_gate": "The full candidate runner must retain the filesystem boundary while exposing only the local Qwen model transport; sandbox-smoke alone does not authorize held-out scoring."
     }
   },
   "adjudication": {

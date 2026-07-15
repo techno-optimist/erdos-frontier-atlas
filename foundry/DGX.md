@@ -92,6 +92,11 @@ Receipt classifications remain telemetry and never become their own reward.
 The existing no-agent publisher refreshes that report every 30 minutes at
 `~/.hermes/chronos_state/foundry_efficiency_latest.json` with mode `0600`; the
 operational audit requires it to be fresh and explicitly authority-free.
+`tools/foundry_eval.py` owns the salt-keyed private-suite commitment, one-task
+packetization, and Docker isolation smoke. Candidate containers receive no
+private manifest, host home, Docker socket, capability, or network. This is a
+prerequisite boundary, not promotion evidence; the model-only transport and
+independent artifact adjudicator must also pass before held-out scores count.
 
 Per-frontier `semantic_contracts` in `foundry/config.json` pin the exact target
 quantity. Prep exposes the contract to the researcher, and publication fails

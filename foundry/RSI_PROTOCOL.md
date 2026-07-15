@@ -54,6 +54,14 @@ adequate secret because an agent with shell tools could read it. Until that
 isolation gate exists, all results are development telemetry and promotion is
 disabled.
 
+`tools/foundry_eval.py` creates a salt-keyed, family-balanced private split and
+publishes only its SHA-256 commitment. Its Docker smoke boundary uses a
+read-only root filesystem, no network, no capabilities, no Docker socket, and
+mounts exactly one task packet plus an output directory; the private manifest
+is never mounted. The full model runner still needs a model-only transport
+through this boundary. Until that transport passes the same smoke, held-out
+scoring remains disabled.
+
 ## Reward boundary
 
 The worker's `progress`, `negative_result`, and `blocked` labels are not the
