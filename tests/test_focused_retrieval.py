@@ -24,6 +24,20 @@ class FocusedRetrievalTests(unittest.TestCase):
             rows = focused.focused_rows(db, "thoughts", "stretched Littlewood Richardson coefficient polynomial negative partition verifier", 5, ["text", "anchor"])
             self.assertEqual(rows[0]["id"], "rare")
             self.assertIn("littlewood richardson", rows[0]["matched_features"])
+            self.assertIn("littlewood richardson", rows[0]["focus_excerpt"]["text"].lower())
+
+    def test_excerpt_centers_a_deep_phrase(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            db = Path(tmp) / "atlas.db"
+            con = sqlite3.connect(db)
+            con.execute("CREATE TABLE thoughts(id TEXT, text TEXT, anchor TEXT)")
+            con.execute("INSERT INTO thoughts VALUES(?,?,?)", (
+                "deep", "unrelated preface " * 100 + "Littlewood Richardson certificate" + " unrelated suffix" * 100, "representation theory",
+            ))
+            con.commit(); con.close()
+            row = focused.focused_rows(db, "thoughts", "Littlewood Richardson", 1, ["text", "anchor"])[0]
+            self.assertNotIn("littlewood richardson", row["text"].lower())
+            self.assertIn("littlewood richardson", row["focus_excerpt"]["text"].lower())
 
     def test_read_only_hashes_stay_stable(self):
         with tempfile.TemporaryDirectory() as tmp:
