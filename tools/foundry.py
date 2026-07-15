@@ -27,7 +27,7 @@ INDEX = PROGRESS / "index.json"
 CONFIG = ROOT / "foundry" / "config.json"
 LABELS = ("Frontier", "Action", "Verified", "Result", "Next gate", "Boundary held")
 BLOCKED = ("blocked", "no changed condition", "selector-repeat", "selector repeat", "cannot run", "unavailable")
-NEGATIVE = ("negative result", "local-exhaustion", "local exhaustion", "no disagreement", "prior verdict holds", "route closed", "no-signal", "no signal", "control_plane_only", "control-plane only")
+NEGATIVE = ("negative result", "negative-result", "local-exhaustion", "local exhaustion", "no disagreement", "prior verdict holds", "route closed", "lane remains closed", "no mathematical progress", "standing rotation", "no-signal", "no signal", "control_plane_only", "control-plane only")
 FORBIDDEN_PUBLIC = (
     re.compile(r"/(?:home|Users|private|tmp)/"),
     re.compile(r"\b(?:sk|ghp|github_pat)-[A-Za-z0-9_-]{8,}"),
@@ -98,7 +98,13 @@ def parse_run_time(text: str, fallback: datetime, source_timezone: str = "Americ
     if not match:
         return iso(fallback)
     local = datetime.strptime(match.group(1), "%Y-%m-%d %H:%M:%S").replace(tzinfo=ZoneInfo(source_timezone))
-    return iso(local.astimezone(timezone.utc))
+    candidate = local.astimezone(timezone.utc)
+    # Cron output carries no UTC offset. Fail over to the source file's absolute
+    # mtime when the configured wall-clock zone disagrees materially; this
+    # catches fixed-MST hosts accidentally interpreted as DST-aware Denver.
+    if abs((candidate - fallback.astimezone(timezone.utc)).total_seconds()) > 30 * 60:
+        return iso(fallback.astimezone(timezone.utc))
+    return iso(candidate)
 
 
 def build_receipt(source: Path, job_id: str, source_timezone: str = "America/Denver") -> dict:
@@ -147,6 +153,8 @@ def validate_receipt(r: dict) -> list[str]:
     if extra: errors.append("extra fields: " + ", ".join(sorted(extra)))
     if r.get("schema") != "p42-foundry-receipt-v1": errors.append("bad schema")
     if r.get("classification") not in {"progress", "negative_result", "blocked"}: errors.append("bad classification")
+    expected_classification = classify(str(r.get("result", "")), str(r.get("action", "")))
+    if r.get("classification") != expected_classification: errors.append(f"classification mismatch: expected {expected_classification}")
     if r.get("evidence_class") != "provisional": errors.append("receipt must remain provisional")
     consult = r.get("frontier_consult")
     if consult is not None:

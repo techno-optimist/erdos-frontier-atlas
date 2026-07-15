@@ -61,6 +61,13 @@ state (mode `0600`) and replayed to later scheduled workers until a typed
 receipt proves that its smallest test was executed. Publication contains only
 the advice digest and public-safe outcome, never the private strategy text.
 
+DGX cron renders wall-clock timestamps in fixed MST (`UTC-07:00`), so
+`foundry/config.json` uses `Etc/GMT+7`. Receipt construction cross-checks that
+offset against the raw run file's absolute mtime and fails over to the latter
+when they differ by more than 30 minutes. A one-time provenance repair can be
+previewed, then applied, with `tools/repair_receipts.py`; it verifies every raw
+source hash and emits a public old-to-new receipt-ID migration manifest.
+
 `foundry/deploy_jobs.py` performs the one-time scheduler migration under the
 Hermes cron lock, writes a timestamped backup, pins both research jobs to the
 local 35B provider, points auxiliary compression at the same local provider,
