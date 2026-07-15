@@ -64,6 +64,7 @@ def semantic_contract_digest(config: dict) -> str:
     canonical = json.dumps(
         {
             "semantic_contracts": config.get("semantic_contracts", {}),
+            "milestone_policy": config.get("milestone_policy", {}),
             "runtime_budget": config.get("runtime_budget"),
             "runtime_telemetry_contract_digest": telemetry_contract_digest(config),
         },
@@ -82,6 +83,25 @@ def runtime_budget_digest(config: dict) -> str | None:
         budget, ensure_ascii=False, sort_keys=True, separators=(",", ":")
     ).encode()
     return "sha256:" + hashlib.sha256(canonical).hexdigest()
+
+
+def scheduled_worker_policy_current(job: dict, config: dict) -> bool:
+    runtime = config.get("runtime_budget", {})
+    milestone = config.get("milestone_policy", {})
+    prompt = str(job.get("prompt", ""))
+    normalized = " ".join(prompt.split())
+    turns = runtime.get("scheduled_job_max_turns")
+    receipt_call = milestone.get("receipt_deadline_call")
+    return bool(
+        job.get("enabled") is True
+        and job.get("state") != "paused"
+        and prompt.count("FOUNDRY HARD RUNTIME BUDGET") == 1
+        and prompt.count("FOUNDRY MILESTONE CONTRACT") == 1
+        and f"at most {turns} model calls" in normalized
+        and f"rejects a run above {turns} calls" in normalized
+        and f"assistant response by call {receipt_call}" in normalized
+        and "Do not write the final receipt to a file" in normalized
+    )
 
 
 def norm(text: str) -> str:
@@ -421,9 +441,12 @@ def main() -> int:
         "scheduler_ticker_healthy": cron_healthy,
         "gateway_retry_budget_covers_cold_restart": api_retry_budget >= 8,
         "structured_tool_call": tool_ok,
-        "scout_local_35b_30m_recent": scout.get("provider") == "foundry-qwen35b" and scout.get("model") == MODEL and scout.get("schedule", {}).get("minutes") == 30 and scout.get("last_status") == "ok" and (parse_time(scout.get("last_run_at")) or datetime.min.replace(tzinfo=timezone.utc)) >= recent_cutoff,
-        "night_shift_local_35b": night.get("provider") == "foundry-qwen35b" and night.get("model") == MODEL and night.get("last_status") == "ok",
-        "publisher_30m_recent": publisher.get("schedule", {}).get("minutes") == 30 and publisher.get("last_status") == "ok" and (parse_time(publisher.get("last_run_at")) or datetime.min.replace(tzinfo=timezone.utc)) >= recent_cutoff,
+        "scout_local_35b_30m_recent": scout.get("enabled") is True and scout.get("state") != "paused" and scout.get("provider") == "foundry-qwen35b" and scout.get("model") == MODEL and scout.get("schedule", {}).get("minutes") == 30 and scout.get("last_status") == "ok" and (parse_time(scout.get("last_run_at")) or datetime.min.replace(tzinfo=timezone.utc)) >= recent_cutoff,
+        "night_shift_local_35b": night.get("enabled") is True and night.get("state") != "paused" and night.get("provider") == "foundry-qwen35b" and night.get("model") == MODEL and night.get("last_status") == "ok",
+        "publisher_30m_recent": publisher.get("enabled") is True and publisher.get("state") != "paused" and publisher.get("schedule", {}).get("minutes") == 30 and publisher.get("last_status") == "ok" and (parse_time(publisher.get("last_run_at")) or datetime.min.replace(tzinfo=timezone.utc)) >= recent_cutoff,
+        "scheduled_worker_policy_current": all(
+            scheduled_worker_policy_current(job, config) for job in (scout, night)
+        ),
         "foundry_and_atlas_validation": validate.returncode == 0,
         "semantic_target_contracts_active": bool(config.get("semantic_contracts")),
         "publication_quarantines_consistent": publication_quarantines_consistent(receipts, incidents, ingest_state),

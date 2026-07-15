@@ -76,13 +76,25 @@ publication membrane.
 RUNTIME_SUFFIX = """
 
 FOUNDRY HARD RUNTIME BUDGET (operator-enforced): This job has at most 16 model
-calls. Reserve the final two calls for the six-label receipt; after call 14,
-start no new implementation or search. Publication uses trusted Hermes logs
+calls. Stop implementation by call 12, use call 13 only for final replay, and
+emit the six labels directly by call 14. Calls 15-16 are emergency headroom.
+Publication uses trusted Hermes logs
 and rejects a run above 16 calls, 70,000 maximum input tokens, 45,000 context
 growth tokens, 900 wall seconds, or more than one terminal action longer than
 30 seconds.
 A timeout or budget rejection is a scoped blocker, never evidence about the
 mathematical frontier.
+""".strip()
+MILESTONE_SUFFIX = """
+
+FOUNDRY MILESTONE CONTRACT (operator-enforced): Obey the exact
+foundry.milestone_contract emitted by prep. It permits one action primitive.
+Stop implementation by call 12, use call 13 only for final replay, and emit the
+six labels directly in the assistant response by call 14. Calls 15-16 are
+emergency headroom, not research budget. Do not write the final receipt to a
+file or make a tool call in place of that response. Copy receipt_action_prefix
+exactly as the first line under Action; publication verifies it against the
+hash-bound prep contract.
 """.strip()
 
 
@@ -90,6 +102,20 @@ def append_prompt_once(prompt: str, marker: str, suffix: str) -> str:
     if marker in prompt:
         return prompt
     return prompt.rstrip() + "\n\n" + suffix
+
+
+def upsert_prompt_section(prompt: str, marker: str, suffix: str) -> str:
+    """Replace a managed FOUNDRY section so policy upgrades cannot stay stale."""
+    start = prompt.find(marker)
+    if start < 0:
+        return prompt.rstrip() + "\n\n" + suffix
+    section_start = prompt.rfind("\n\n", 0, start)
+    section_start = 0 if section_start < 0 else section_start + 2
+    next_section = prompt.find("\n\nFOUNDRY ", start + len(marker))
+    section_end = len(prompt) if next_section < 0 else next_section
+    before = prompt[:section_start].rstrip()
+    after = prompt[section_end:].lstrip()
+    return "\n\n".join(part for part in (before, suffix, after) if part)
 
 
 def patch_hermes_scheduler(path: Path) -> dict:
@@ -150,14 +176,17 @@ def main() -> int:
             if job["id"] == "50c8e4391849":
                 job["schedule"] = {"kind": "interval", "minutes": 30, "display": "every 30m"}
                 job["schedule_display"] = "every 30m"
-            job["prompt"] = append_prompt_once(
+            job["prompt"] = upsert_prompt_section(
                 job.get("prompt", ""), "FOUNDRY RECURSION (operator-authorized)", SUFFIX
             )
-            job["prompt"] = append_prompt_once(
+            job["prompt"] = upsert_prompt_section(
                 job["prompt"], "FOUNDRY TRACE (required)", TRACE_SUFFIX
             )
-            job["prompt"] = append_prompt_once(
+            job["prompt"] = upsert_prompt_section(
                 job["prompt"], "FOUNDRY HARD RUNTIME BUDGET", RUNTIME_SUFFIX
+            )
+            job["prompt"] = upsert_prompt_section(
+                job["prompt"], "FOUNDRY MILESTONE CONTRACT", MILESTONE_SUFFIX
             )
             changed.append(job["id"])
         if changed != sorted(TARGETS):
