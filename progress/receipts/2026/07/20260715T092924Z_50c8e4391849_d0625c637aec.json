@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:d0625c637aecb6b5e5e1c0afb8adb7ad4c8e85db3d8928b8912d5aa0ca7094dd",
+  "content_digest": "sha256:e3c726f242529d4c3a5912a1c33cf8711931b026cc8d82b1d9ae838564afbacf",
+  "occurred_at": "2026-07-15T09:29:24Z",
+  "frontier": "Hadamard matrix of order 668 — specifically, whether the proposed tensor-product route H₆₆₈ = H₄ ⊗ H₁₆₇ via a length-167 cyclic difference set in Z₃₃₄ can work.",
+  "action": "Ran the smallest discriminating test from the strategy advice: verified the fundamental difference set equation k(k-1) = λ(v-1) for parameters (v=334, k=167, λ=83).",
+  "verified": "Verifier: `test_z334_difference_set_167.py` — sha256:9a7a428445539ff4bc7fc45dcdc6e4f7277ed27402fa3a4102163536d7261924\n- k(k-1) = 27,722 ≠ λ(v-1) = 27,639; required λ = 83.249 (non-integer)\n- Secondary independent obstruction: 167 ≡ 3 (mod 4), so cyclic Hadamard of order 167 is impossible\n- Sanity fixture: known (7,3,1) Fano difference set passes\n- Negative result logged in results_registry: `fm-hadamard-668-tensor-route-closed`",
+  "result": "The strategy-proposed construction route is mathematically impossible with the stated parameters. This is a hard mathematical obstruction, not a resource failure. The negative result is now cataloged to prevent future re-walking of this dead path. The broader Hadamard conjecture for n=668 (668 divisible by 4) remains open — only this specific route is closed.",
+  "next_gate": "Reopen only with (a) an alternative construction family (Williamson, Goethals-Seidel, direct 668-element search) backed by a concrete source artifact, or (b) corrected difference-set parameters satisfying k(k-1)=λ(v-1) with 4λ Hadamard divisibility. Without a changed condition, rotate the frontier to another basin.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Only local session artifacts written and a results-registry negative-result entry.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-15_02-29-24.md",
+    "sha256": "0248d6b9b2b62c23f84098b036a51d31c14e0554a70d8f0a9b2318e404ba64ef"
+  },
+  "frontier_id": "fm_hadamard_668"
+}
