@@ -10,6 +10,17 @@
   "frontier_model": "aperture-frontier",
   "frontier_url": "http://127.0.0.1:8808/v1/chat/completions",
   "publication_branch": "automation/frontier-scout",
+  "runtime_budget": {
+    "effective_after": "2026-07-15T13:50:00Z",
+    "scheduled_job_max_turns": 18,
+    "max_api_calls": 18,
+    "max_input_tokens": 70000,
+    "max_context_growth_tokens": 45000,
+    "max_wall_seconds": 900,
+    "expensive_terminal_seconds": 30,
+    "max_expensive_terminal_calls": 1,
+    "receipt_match_window_seconds": 300
+  },
   "semantic_contracts": {
     "arena_scorer_hardening": {
       "effective_after": "2026-07-15T06:30:00Z",

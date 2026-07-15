@@ -13,6 +13,7 @@ class DeployTests(unittest.TestCase):
     def test_retry_budget_covers_observed_cold_model_restart(self):
         self.assertEqual(deploy.API_MAX_RETRIES, 8)
         self.assertEqual(deploy.SETTINGS["agent.api_max_retries"], "8")
+        self.assertEqual(deploy.FOUNDRY_MAX_TURNS, 18)
 
     def test_runtime_install_is_atomic_and_digest_verified(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -38,6 +39,10 @@ class DeployTests(unittest.TestCase):
         self.assertEqual(prompt, repeated)
         self.assertEqual(prompt.count("FOUNDRY TRACE (required)"), 1)
         self.assertIn("only the six labelled receipt crosses", prompt)
+        runtime = deploy.append_prompt_once(
+            prompt, "FOUNDRY HARD RUNTIME BUDGET", deploy.RUNTIME_SUFFIX
+        )
+        self.assertIn("more than one terminal action", runtime)
 
 
 if __name__ == "__main__":

@@ -51,6 +51,25 @@ class FoundryEfficiencyTests(unittest.TestCase):
         self.assertEqual(parsed[0]["api_call_count"], 1)
         self.assertEqual(parsed[0]["sum_total_tokens"], 120)
 
+    def test_terminal_durations_are_trusted_and_deduplicated(self):
+        expensive = line(
+            "2026-07-14 22:25:33,000", "agent.tool_executor",
+            "tool terminal completed (97.93s, 374 chars)",
+        )
+        rows = [
+            line("2026-07-14 22:25:30,000", "agent.turn_context", "conversation turn: session=x history=0"),
+            line("2026-07-14 22:25:31,637", "agent.conversation_loop", "API call #1: model=m provider=custom in=100 out=20 total=120 latency=3.9s"),
+            expensive,
+            expensive,
+            line("2026-07-14 22:25:34,000", "agent.tool_executor", "Tool terminal returned error (0.08s, 80 chars)"),
+            line("2026-07-14 22:25:35,000", "agent.conversation_loop", "Turn ended: reason=stop model=m api_calls=1/4 budget=1/4"),
+        ]
+        run = efficiency.parse_log_lines(rows, {JOB}, "Etc/GMT+7")[0]
+        self.assertEqual(run["terminal_call_count"], 2)
+        self.assertEqual(run["expensive_terminal_call_count"], 1)
+        self.assertEqual(run["expensive_terminal_calls"][0]["duration_seconds"], 97.93)
+        self.assertAlmostEqual(run["sum_terminal_seconds"], 98.01)
+
     def test_incomplete_turn_remains_visible(self):
         rows = [
             line("2026-07-14 23:02:12,100", "agent.turn_context", "conversation turn: session=x history=0"),

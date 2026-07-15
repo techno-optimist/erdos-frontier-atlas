@@ -23,6 +23,10 @@ one bounded, falsifiable step. Fluency is not evidence.
 
 ## Act
 
+The scheduler hard-stops this job after 18 model calls. Reserve the final two
+calls for the six-label receipt. After call 14, start no new implementation or
+search; replay final evidence and report the scoped result or blocker.
+
 Choose exactly one: verifier construction, kill-test, bounded exact search,
 literature-claim audit, negative-result closure, or next-experiment design.
 Prefer an executable discriminating test over another prose analysis. Stop on
@@ -62,6 +66,11 @@ model, deploy, or run git; deterministic publisher jobs own publication.
   exact implementation and trials executed; it establishes no numerical
   ceiling, route barrier, construction necessity, or nonexistence.
 - Recheck protected database hashes before and after the action.
+- Trusted runtime telemetry is part of publication eligibility. A receipt is
+  quarantined if the first turn exceeds 18 calls, 70,000 maximum input tokens,
+  45,000 context-growth tokens, 900 wall seconds, or more than one terminal
+  action over 30 seconds. Runtime rejection says nothing about the mathematical
+  claim.
 - A frontier consultation supplies strategy only; independently execute and
   verify its proposed test before crediting progress.
 - When prep supplies `foundry.strategy_digest`, preserve the trace in the final
