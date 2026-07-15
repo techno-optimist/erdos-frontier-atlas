@@ -55,6 +55,7 @@ def latest_quarantine_feedback(state_path: Path, frontier_id: str) -> dict | Non
         key: row.get(key) for key in (
             "schema", "recorded_at", "source_sha256", "receipt_id", "frontier_id",
             "classification", "occurred_at", "errors", "remediation",
+            "semantic_contract_digest",
         )
     }
 

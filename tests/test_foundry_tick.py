@@ -38,11 +38,34 @@ class FoundryTickTests(unittest.TestCase):
             },
             "errors": ["semantic contract quantity-conflation claim: cyclic exhausted"],
         }
-        detail = foundry_tick.rejection_detail(inspection, "fallback")
+        contract_digest = "sha256:" + "c" * 64
+        detail = foundry_tick.rejection_detail(
+            inspection, "fallback", contract_digest
+        )
         self.assertEqual(detail["schema"], "p42-foundry-quarantine-feedback-v1")
         self.assertEqual(detail["frontier_id"], "erdos_1029_r55")
         self.assertEqual(detail["source_sha256"], "a" * 64)
+        self.assertEqual(detail["semantic_contract_digest"], contract_digest)
         self.assertNotIn("run_file", detail)
+
+    def test_rejection_feedback_is_replayed_after_contract_change(self):
+        source_sha = "a" * 64
+        old_digest = "sha256:" + "b" * 64
+        new_digest = "sha256:" + "c" * 64
+        detail = {
+            "source_sha256": source_sha,
+            "semantic_contract_digest": old_digest,
+        }
+        self.assertTrue(
+            foundry_tick.rejection_feedback_is_current(
+                detail, source_sha, old_digest
+            )
+        )
+        self.assertFalse(
+            foundry_tick.rejection_feedback_is_current(
+                detail, source_sha, new_digest
+            )
+        )
 
     def test_legacy_hash_only_quarantine_can_be_tombstoned(self):
         detail = foundry_tick.rejection_detail({
