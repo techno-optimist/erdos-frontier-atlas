@@ -102,7 +102,14 @@ TOOLS = [
                     "falsifier": {"type": "string"},
                     "claim": {"type": "string"},
                     "evidence": {"type": "array", "items": {"type": "string"}},
-                    "artifacts": {"type": "array", "items": {"type": "string"}},
+                    "artifacts": {
+                        "type": "array",
+                        "items": {"type": "string"},
+                        "description": (
+                            "Final evidence artifacts only; unlisted scratch files are deleted. "
+                            "Every final Python artifact needs its own replay step."
+                        ),
+                    },
                     "replay": {
                         "type": "array",
                         "items": {
@@ -206,6 +213,31 @@ def _artifact_inventory() -> list[dict]:
     return rows
 
 
+def _finalize_artifacts(claimed: object) -> list[str]:
+    """Keep only the candidate-declared final artifact set, using canonical paths."""
+    if not isinstance(claimed, list) or not all(isinstance(row, str) for row in claimed):
+        raise ValueError("final artifacts must be a string array")
+    root = OUTPUT / "artifacts"
+    keep = set()
+    for raw in claimed:
+        path = _artifact_path(raw)
+        if path.is_symlink() or not path.is_file():
+            raise ValueError(f"final artifact is absent or unsafe: {raw}")
+        keep.add(path.relative_to(root).as_posix())
+    if root.exists():
+        for path in sorted(root.rglob("*"), reverse=True):
+            if path.is_symlink():
+                raise ValueError("artifact tree contains an unsafe path")
+            if path.is_file() and path.relative_to(root).as_posix() not in keep:
+                path.unlink()
+            elif path.is_dir():
+                try:
+                    path.rmdir()
+                except OSError:
+                    pass
+    return sorted(keep)
+
+
 def unix_chat(payload: dict, socket_path: Path = MODEL_SOCKET) -> dict:
     body = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode()
     request = (
@@ -290,7 +322,9 @@ def execute_tool(name: str, args: dict) -> str:
             result["task_packet_sha256"] = (
                 "sha256:" + hashlib.sha256(_canonical_bytes(task)).hexdigest()
             )
-            result["artifacts_claimed"] = result.pop("artifacts")
+            result["artifacts_claimed"] = _finalize_artifacts(
+                result.pop("artifacts")
+            )
             result["artifacts"] = _artifact_inventory()
             result["independent_replay_status"] = "pending"
             (OUTPUT / "result.json").write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
@@ -335,6 +369,8 @@ def run_task(task_path: Path) -> int:
         "turn a timeout, heuristic search, or finite sample into nonexistence or an exact value. "
         "A successfully completed bounded negative search must exit zero on replay and print its "
         "bounded outcome; reserve nonzero exit status for an execution or verifier-invariant failure. "
+        "Submit only final evidence artifacts; scratch files are deleted at submission. Every final "
+        "Python artifact must have its own zero-exit replay step, including verifier self-tests. "
         "Finish with submit_result. The evaluator reserves the final two API calls for typed "
         "submission; when that gate appears, stop exploring and submit the strongest bounded "
         "result supported by the artifacts, including negative_result or blocked when appropriate."

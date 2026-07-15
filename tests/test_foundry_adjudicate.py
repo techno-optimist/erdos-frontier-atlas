@@ -235,6 +235,25 @@ class FoundryAdjudicationTests(unittest.TestCase):
         with self.assertRaisesRegex(adjudication.AdjudicationError, "artifact path"):
             adjudication._normalized_replay_step("python3 ../check.py", inventory)
 
+    def test_every_final_python_artifact_requires_direct_replay(self):
+        inventory = [
+            {"path": "search.py", "sha256": "sha256:x", "bytes": 1},
+            {"path": "verify.py", "sha256": "sha256:y", "bytes": 1},
+        ]
+        with self.assertRaisesRegex(adjudication.AdjudicationError, "verify.py"):
+            adjudication.normalize_replay(
+                {"replay": [{"argv": ["python3", "artifacts/search.py"]}]},
+                inventory,
+            )
+        rows = adjudication.normalize_replay(
+            {"replay": [
+                {"argv": ["python3", "artifacts/search.py"]},
+                {"argv": ["python3", "artifacts/verify.py", "--self-test"]},
+            ]},
+            inventory,
+        )
+        self.assertEqual(len(rows), 2)
+
     def test_evaluator_inventory_paths_are_literal_but_legacy_claims_normalize(self):
         self.assertEqual(
             adjudication._claimed_artifact_paths({

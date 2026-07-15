@@ -62,6 +62,10 @@ Semantic adjudication evaluates the submitted claim separately from the
 registered hypothesis and accepts the typed `theorem_unchanged` boundary. A
 successfully reproduced bounded negative experiment exits zero; nonzero is
 reserved for an execution or verifier-invariant failure, not for “no witness.”
+At typed submission the worker deletes scratch files omitted from the declared
+final artifact set. Every remaining Python artifact requires its own direct
+zero-exit replay step; a verifier mentioned as evidence cannot ride along
+unexecuted beside a replayed search script.
 
 The no-frontier-call rule isolates harness quality from purchased strategy.
 Consultation is evaluated separately after the local-only core passes.
