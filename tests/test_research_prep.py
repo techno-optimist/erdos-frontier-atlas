@@ -53,6 +53,7 @@ class PrepTests(unittest.TestCase):
                     "errors": ["scope overclaim"],
                     "remediation": "replay and narrow",
                     "semantic_contract_digest": "sha256:" + "c" * 64,
+                    "runtime_telemetry": {"status": "over_budget"},
                 },
             }
         }
@@ -65,6 +66,80 @@ class PrepTests(unittest.TestCase):
         self.assertEqual(
             feedback["semantic_contract_digest"], "sha256:" + "c" * 64
         )
+        self.assertEqual(feedback["runtime_telemetry"]["status"], "over_budget")
+
+    def test_latest_continuation_requires_accepted_source_hash(self):
+        accepted_sha = "a" * 64
+        rejected_sha = "b" * 64
+        state = {
+            "accepted": {"job/accepted.md": accepted_sha},
+            "rejected": {"job/rejected.md": rejected_sha},
+        }
+        receipts = [
+            {
+                "receipt_id": "sha256:" + "1" * 64,
+                "frontier_id": "target",
+                "occurred_at": "2026-07-15T07:00:00Z",
+                "classification": "progress",
+                "action": "completed exact verifier",
+                "result": "bounded verifier result",
+                "next_gate": "implement one canonical augmentation primitive",
+                "source": {
+                    "job_id": "job",
+                    "run_file": "accepted.md",
+                    "sha256": accepted_sha,
+                },
+            },
+            {
+                "receipt_id": "sha256:" + "2" * 64,
+                "frontier_id": "target",
+                "occurred_at": "2026-07-15T08:00:00Z",
+                "classification": "progress",
+                "action": "unadmitted newer action",
+                "result": "must not cross",
+                "next_gate": "wrong gate",
+                "source": {
+                    "job_id": "job",
+                    "run_file": "rejected.md",
+                    "sha256": rejected_sha,
+                },
+            },
+        ]
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            receipts_root = root / "receipts"
+            receipts_root.mkdir()
+            for index, receipt in enumerate(receipts):
+                (receipts_root / f"{index}.json").write_text(json.dumps(receipt))
+            state_path = root / "state.json"
+            state_path.write_text(json.dumps(state))
+            continuation = prep.latest_accepted_continuation(
+                receipts_root, state_path, "target"
+            )
+        self.assertEqual(continuation["completed_action"], "completed exact verifier")
+        self.assertEqual(
+            continuation["next_gate"],
+            "implement one canonical augmentation primitive",
+        )
+        self.assertEqual(continuation["source"]["sha256"], accepted_sha)
+
+    def test_continuation_instruction_makes_prior_action_nonrepeatable(self):
+        instruction = prep.continuation_instruction({"receipt_id": "sha256:fixture"})
+        self.assertIn("not tasks to repeat", instruction)
+        self.assertIn("Continue from its next_gate", instruction)
+        self.assertIn("continuation wins", instruction)
+        self.assertEqual(prep.continuation_instruction(None), "")
+
+    def test_runtime_quarantine_shrinks_instead_of_replaying_route(self):
+        runtime = prep.quarantine_instruction(
+            {"runtime_telemetry": {"status": "over_budget"}}
+        )
+        semantic = prep.quarantine_instruction({"errors": ["scope overclaim"]})
+        self.assertIn("shrink the action and context", runtime)
+        self.assertIn("do not repeat the over-budget route", runtime)
+        self.assertNotIn("Replay the bounded evidence", runtime)
+        self.assertIn("Replay the bounded evidence", semantic)
+        self.assertEqual(prep.quarantine_instruction(None), "")
 
 
 if __name__ == "__main__":

@@ -38,7 +38,7 @@ TURN_END_RE = re.compile(
 FIRST_TURN_RE = re.compile(r"conversation turn:.*\bhistory=0\b")
 TERMINAL_RE = re.compile(
     r"(?:tool|Tool) terminal (?P<outcome>completed|returned error) "
-    r"\((?P<duration>[0-9.]+)s,"
+    r"\((?P<duration>[0-9.]+)s(?:,|\))"
 )
 
 
@@ -272,6 +272,23 @@ def runtime_budget_digest(config: dict) -> str | None:
     return "sha256:" + hashlib.sha256(canonical).hexdigest()
 
 
+def parser_source_digest() -> str:
+    return "sha256:" + hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
+
+
+def telemetry_contract_digest(config: dict) -> str:
+    canonical = json.dumps(
+        {
+            "runtime_budget": config.get("runtime_budget"),
+            "parser_source_sha256": parser_source_digest(),
+        },
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode()
+    return "sha256:" + hashlib.sha256(canonical).hexdigest()
+
+
 def atomic_json(path: Path, value: dict) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_suffix(path.suffix + ".tmp")
@@ -320,6 +337,8 @@ def main() -> int:
         "promotion_authority": "none_metrics_only",
         "runtime_budget": config.get("runtime_budget"),
         "runtime_budget_digest": runtime_budget_digest(config),
+        "parser_source_sha256": parser_source_digest(),
+        "telemetry_contract_digest": telemetry_contract_digest(config),
         "sessions": sessions,
         "aggregate": aggregate(sessions),
     }

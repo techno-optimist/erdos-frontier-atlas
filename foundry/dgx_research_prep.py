@@ -17,6 +17,7 @@ FOCUS_LIMIT = "12" if MODE == "deep" else "8"
 BUDGET = STATE / "foundry_frontier_budget.json"
 CONFIG = REPO / "foundry" / "config.json"
 INGEST_STATE = STATE / "foundry_ingest_state.json"
+RECEIPTS = REPO / "progress" / "receipts"
 
 
 def call(cmd: list[str]) -> subprocess.CompletedProcess:
@@ -55,9 +56,101 @@ def latest_quarantine_feedback(state_path: Path, frontier_id: str) -> dict | Non
         key: row.get(key) for key in (
             "schema", "recorded_at", "source_sha256", "receipt_id", "frontier_id",
             "classification", "occurred_at", "errors", "remediation",
-            "semantic_contract_digest",
+            "semantic_contract_digest", "runtime_telemetry",
         )
     }
+
+
+def latest_accepted_continuation(
+    receipts_root: Path, state_path: Path, frontier_id: str
+) -> dict | None:
+    """Return the latest public receipt still bound to an accepted source hash."""
+    try:
+        state = json.loads(state_path.read_text())
+    except (OSError, ValueError):
+        return None
+    accepted = state.get("accepted", {})
+    if not isinstance(accepted, dict):
+        return None
+    rows = []
+    for path in receipts_root.glob("**/*.json"):
+        try:
+            receipt = json.loads(path.read_text())
+        except (OSError, ValueError):
+            continue
+        if receipt.get("frontier_id") != frontier_id:
+            continue
+        source = receipt.get("source") or {}
+        job_id = source.get("job_id")
+        run_file = source.get("run_file")
+        source_sha = source.get("sha256")
+        if not all(isinstance(value, str) and value for value in (job_id, run_file, source_sha)):
+            continue
+        if accepted.get(f"{job_id}/{run_file}") != source_sha:
+            continue
+        rows.append(receipt)
+    if not rows:
+        return None
+    receipt = sorted(
+        rows,
+        key=lambda row: (row.get("occurred_at") or "", row.get("receipt_id") or ""),
+    )[-1]
+    source = receipt.get("source") or {}
+
+    def bounded(field: str) -> str | None:
+        value = receipt.get(field)
+        return value[:1600] if isinstance(value, str) and value else None
+
+    return {
+        "schema": "p42-foundry-accepted-continuation-v1",
+        "authority": "hash_admitted_public_receipt_not_theorem_closure",
+        "receipt_id": receipt.get("receipt_id"),
+        "frontier_id": frontier_id,
+        "occurred_at": receipt.get("occurred_at"),
+        "classification": receipt.get("classification"),
+        "completed_action": bounded("action"),
+        "scoped_result": bounded("result"),
+        "next_gate": bounded("next_gate"),
+        "source": {
+            "job_id": source.get("job_id"),
+            "run_file": source.get("run_file"),
+            "sha256": source.get("sha256"),
+        },
+    }
+
+
+def continuation_instruction(continuation: dict | None) -> str:
+    if not continuation:
+        return ""
+    return (
+        " foundry.accepted_continuation is the latest hash-admitted public "
+        "receipt for this exact frontier. Its completed_action and scoped_result "
+        "are completed state, not tasks to repeat. Continue from its next_gate. "
+        "Do not rebuild a verifier or rerun a route already recorded there unless "
+        "the new hypothesis explicitly falsifies that prior artifact. If stale "
+        "queue text conflicts with the accepted continuation, the continuation "
+        "wins. A receipt is progress state, not theorem closure."
+    )
+
+
+def quarantine_instruction(feedback: dict | None) -> str:
+    if not feedback:
+        return ""
+    if feedback.get("runtime_telemetry"):
+        return (
+            " A prior receipt for this exact frontier was rejected by the "
+            "operator-owned runtime membrane. Treat foundry.quarantine_feedback "
+            "as an operational counterexample: shrink the action and context, "
+            "do not infer any mathematical result from the rejection, and do "
+            "not repeat the over-budget route."
+        )
+    return (
+        " A prior receipt for this exact frontier was quarantined. Treat "
+        "foundry.quarantine_feedback as a hard failed-publication counterexample: "
+        "do not repeat or paraphrase the forbidden claim. Replay the bounded "
+        "evidence before issuing a corrected receipt, state the smaller supported "
+        "claim, and never imply the quarantined receipt was published."
+    )
 
 
 def trace_receipt_contract(strategy_digest: str | None) -> dict | None:
@@ -156,6 +249,9 @@ def main() -> int:
     try: pending = json.loads(pending_proc.stdout)
     except Exception: pending = {"strategy_advice": None, "strategy_status": "pending_unavailable"}
     foundry = {"gate": gate, **pending}
+    foundry["accepted_continuation"] = latest_accepted_continuation(
+        RECEIPTS, INGEST_STATE, selected_frontier_id
+    )
     foundry["quarantine_feedback"] = latest_quarantine_feedback(
         INGEST_STATE, selected_frontier_id
     )
@@ -188,8 +284,12 @@ def main() -> int:
     contract = json.loads(CONFIG.read_text()).get("semantic_contracts", {}).get(selected_frontier_id)
     summary["foundry"]["target_contract"] = contract
     summary["next_instruction"] = worker_instruction(summary["next_instruction"]) + " Preserve the exact target quantity in foundry.target_contract; a related theorem or easier quantity is not evidence. Treat foundry.strategy_advice as provisional; execute and verify its smallest test when present. If foundry.receipt_contract is present, copy its digest byte-for-byte into one typed Frontier advice line in Verified. Missing or mismatched trace is a hard publication quarantine."
-    if foundry["quarantine_feedback"]:
-        summary["next_instruction"] += " A prior receipt for this exact frontier was quarantined. Treat foundry.quarantine_feedback as a hard failed-publication counterexample: do not repeat or paraphrase the forbidden claim. Replay the bounded evidence before issuing a corrected receipt, state the smaller supported claim, and never imply the quarantined receipt was published."
+    summary["next_instruction"] += continuation_instruction(
+        foundry["accepted_continuation"]
+    )
+    summary["next_instruction"] += quarantine_instruction(
+        foundry["quarantine_feedback"]
+    )
     print(json.dumps(summary, ensure_ascii=False, indent=2))
     return 0
 

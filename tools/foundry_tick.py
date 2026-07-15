@@ -14,6 +14,24 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 PUBLIC_TEMPLATE_PLACEHOLDER = re.compile(r"<[^<>\n]{2,240}>")
+EFFICIENCY_PARSER = Path(__file__).with_name("foundry_efficiency.py")
+
+
+def parser_source_digest() -> str:
+    return "sha256:" + hashlib.sha256(EFFICIENCY_PARSER.read_bytes()).hexdigest()
+
+
+def telemetry_contract_digest(config: dict) -> str:
+    canonical = json.dumps(
+        {
+            "runtime_budget": config.get("runtime_budget"),
+            "parser_source_sha256": parser_source_digest(),
+        },
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode()
+    return "sha256:" + hashlib.sha256(canonical).hexdigest()
 
 
 def semantic_contract_digest(config: dict) -> str:
@@ -21,6 +39,7 @@ def semantic_contract_digest(config: dict) -> str:
         {
             "semantic_contracts": config.get("semantic_contracts", {}),
             "runtime_budget": config.get("runtime_budget"),
+            "runtime_telemetry_contract_digest": telemetry_contract_digest(config),
         },
         ensure_ascii=False,
         sort_keys=True,
@@ -49,7 +68,7 @@ def parse_time(value: str | None) -> datetime | None:
 
 
 def runtime_budget_assessment(
-    receipt: dict, efficiency: dict | None, config: dict
+    receipt: dict, efficiency: dict | None, config: dict, source_job_id: str | None = None
 ) -> tuple[list[str], dict | None]:
     """Bind a source occurrence to trusted first-turn resource telemetry."""
     budget = config.get("runtime_budget")
@@ -71,8 +90,20 @@ def runtime_budget_assessment(
             "expected_runtime_budget_digest": expected_digest,
             "observed_runtime_budget_digest": efficiency.get("runtime_budget_digest"),
         }
+    expected_telemetry_digest = telemetry_contract_digest(config)
+    if efficiency.get("telemetry_contract_digest") != expected_telemetry_digest:
+        return ["runtime telemetry parser contract does not match publisher policy"], {
+            "status": "telemetry_contract_mismatch",
+            "expected_telemetry_contract_digest": expected_telemetry_digest,
+            "observed_telemetry_contract_digest": efficiency.get(
+                "telemetry_contract_digest"
+            ),
+        }
 
-    job_id = receipt.get("source", {}).get("job_id")
+    # The raw six-label draft does not own source metadata. Bind to the
+    # operator-known cron directory/job argument; receipt source is only a
+    # compatibility fallback for already-ingested fixtures.
+    job_id = source_job_id or receipt.get("source", {}).get("job_id")
     window = int(budget.get("receipt_match_window_seconds", 300))
     candidates = []
     for session in efficiency.get("sessions", []):
@@ -131,6 +162,7 @@ def runtime_budget_assessment(
     evidence = {
         "status": "over_budget" if errors else "within_budget",
         "runtime_budget_digest": expected_digest,
+        "telemetry_contract_digest": expected_telemetry_digest,
         "session_id": session.get("session_id"),
         "source_end_delta_seconds": round(delta, 3),
         "observed": observed,
@@ -140,12 +172,13 @@ def runtime_budget_assessment(
 
 
 def apply_runtime_budget(
-    inspection: dict, efficiency: dict | None, config: dict
+    inspection: dict, efficiency: dict | None, config: dict,
+    source_job_id: str | None = None,
 ) -> dict:
     if not inspection.get("valid"):
         return inspection
     errors, evidence = runtime_budget_assessment(
-        inspection.get("receipt") or {}, efficiency, config
+        inspection.get("receipt") or {}, efficiency, config, source_job_id
     )
     if evidence is not None:
         inspection["runtime_telemetry"] = evidence
@@ -191,6 +224,10 @@ def rejection_detail(
 ) -> dict:
     receipt = inspection.get("receipt") or {}
     errors = [str(row)[:500] for row in inspection.get("errors", []) if str(row).strip()]
+    runtime_rejection = bool(inspection.get("runtime_telemetry")) or any(
+        str(error).startswith(("runtime ", "trusted runtime "))
+        for error in errors
+    )
     detail = {
         "schema": "p42-foundry-quarantine-feedback-v1",
         "recorded_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
@@ -200,7 +237,11 @@ def rejection_detail(
         "classification": receipt.get("classification"),
         "occurred_at": receipt.get("occurred_at"),
         "errors": errors or [fallback_reason[:500]],
-        "remediation": "replay the bounded evidence, then correct scope; never claim the quarantined receipt was published",
+        "remediation": (
+            "shrink the action and context to the checked-in runtime budget, then rerun one bounded step; runtime rejection says nothing about the mathematical claim"
+            if runtime_rejection
+            else "replay the bounded evidence, then correct scope; never claim the quarantined receipt was published"
+        ),
     }
     if contract_digest:
         detail["semantic_contract_digest"] = contract_digest
@@ -406,7 +447,7 @@ def main() -> int:
             }, "legacy raw source hash mismatch", contract_digest)
             continue
         inspection = apply_runtime_budget(
-            inspect_run(tool, source, job_id, args.repo), efficiency, config
+            inspect_run(tool, source, job_id, args.repo), efficiency, config, job_id
         )
         if inspection.get("valid"):
             ingest_state["rejected"].pop(key, None)
@@ -424,7 +465,7 @@ def main() -> int:
             if source_is_watermarked(ingest_state, key, source_sha):
                 continue
             inspection = apply_runtime_budget(
-                inspect_run(tool, source, job_id, args.repo), efficiency, config
+                inspect_run(tool, source, job_id, args.repo), efficiency, config, job_id
             )
             if not inspection.get("valid"):
                 detail = rejection_detail(inspection, "ingest failed", contract_digest)
