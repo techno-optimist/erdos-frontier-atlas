@@ -118,6 +118,7 @@ class FoundryTests(unittest.TestCase):
             first = foundry.take_pending_advice(state_path)
             self.assertEqual(first["strategy_status"], "pending")
             self.assertEqual(first["delivery_count"], 1)
+            self.assertEqual(state_path.stat().st_mode & 0o777, 0o600)
             receipt_path = Path(tmp) / "receipt.json"
             receipt_path.write_text(json.dumps({
                 "frontier_consult": {"advice_digest": digest, "executed": True, "outcome": "route rejected"},
