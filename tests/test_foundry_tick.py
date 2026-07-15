@@ -168,6 +168,17 @@ class FoundryTickTests(unittest.TestCase):
         self.assertIn("shrink the action", detail["remediation"])
         self.assertIn("says nothing", detail["remediation"])
 
+    def test_rejection_detail_stages_milestone_counterexample(self):
+        detail = foundry_tick.rejection_detail({
+            "source_sha256": "a" * 64,
+            "receipt": {},
+            "errors": [
+                "milestone contract forbids downstream execution claim for verifier_construction"
+            ],
+        }, "fallback")
+        self.assertIn("complete only the admitted milestone", detail["remediation"])
+        self.assertIn("defer every downstream", detail["remediation"])
+
     def test_rejection_feedback_is_replayed_after_contract_change(self):
         source_sha = "a" * 64
         old_digest = "sha256:" + "b" * 64

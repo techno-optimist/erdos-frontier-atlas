@@ -22,6 +22,10 @@ class HermesCronPatchTests(unittest.TestCase):
             "    if True:\n"
             + patcher.OLD
             + "        job_name = 'fixture'\n"
+            + "        def _make_agent(**kwargs): return agent\n"
+            + "        _session_db = None\n"
+            + "        agent = _make_agent(\n"
+            + patcher.FINALIZE_OLD
             + "        _cron_timeout = 600.0\n"
             + patcher.WALL_SETUP_OLD
             + "        try:\n"
@@ -45,6 +49,7 @@ class HermesCronPatchTests(unittest.TestCase):
         self.assertTrue(changed)
         self.assertIn(patcher.MARKER, patched)
         self.assertIn(patcher.WALL_MARKER, patched)
+        self.assertIn(patcher.FINALIZE_MARKER, patched)
         self.assertIn("min(_global_max_iterations", patched)
         repeated, changed_again = patcher.patch_text(patched)
         self.assertFalse(changed_again)
@@ -68,6 +73,12 @@ class HermesCronPatchTests(unittest.TestCase):
 
         class Agent:
             interrupted = None
+            step_callback = None
+            tools = [{"function": {"name": "terminal"}}]
+            valid_tool_names = {"terminal"}
+            _skill_nudge_interval = 5
+            _pending_steer_lock = None
+            _pending_steer = None
 
             def interrupt(self, reason):
                 self.interrupted = reason
@@ -84,6 +95,43 @@ class HermesCronPatchTests(unittest.TestCase):
         with self.assertRaisesRegex(TimeoutError, "exceeded wall limit"):
             run({"max_wall_seconds": 0.001}, {}, agent, Future())
         self.assertEqual(agent.interrupted, "Cron job timed out (wall limit)")
+
+    def test_no_tools_finalization_is_opt_in_and_preserves_other_jobs(self):
+        namespace = {}
+        patched, _ = patcher.patch_text(self.scheduler_source())
+        exec(compile(patched, "scheduler.py", "exec"), namespace)
+
+        class Agent:
+            step_callback = None
+            tools = [{"function": {"name": "terminal"}}]
+            valid_tool_names = {"terminal"}
+            _skill_nudge_interval = 5
+            _pending_steer_lock = None
+            _pending_steer = None
+
+        class Future:
+            def result(self): return {"ok": True}
+
+        run = namespace["run"]
+        plain = Agent()
+        run({}, {"agent": {"max_turns": 16}}, plain, Future())
+        self.assertIsNone(plain.step_callback)
+        gated = Agent()
+        run(
+            {"max_turns": 16, "finalize_no_tools_after": 13},
+            {"agent": {"max_turns": 90}}, gated, Future(),
+        )
+        gated.step_callback(13, [])
+        self.assertTrue(gated.tools)
+        gated.step_callback(14, [])
+        self.assertEqual(gated.tools, [])
+        self.assertEqual(gated.valid_tool_names, set())
+        self.assertIn("six markdown labels", gated._pending_steer)
+        with self.assertRaisesRegex(RuntimeError, "requires 0 <"):
+            run(
+                {"max_turns": 16, "finalize_no_tools_after": 16},
+                {"agent": {"max_turns": 90}}, Agent(), Future(),
+            )
 
     def test_file_install_preserves_backup_and_mode(self):
         with tempfile.TemporaryDirectory() as tmp:

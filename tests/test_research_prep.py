@@ -142,7 +142,8 @@ class PrepTests(unittest.TestCase):
         contract = prep.milestone_contract(None, policy)
         self.assertEqual(contract["phase"], "initial_verifier")
         self.assertEqual(contract["action_kind"], "verifier_construction")
-        self.assertIn("Do not start a search", contract["deferred"])
+        self.assertIn("Do not run random/generated candidates", contract["deferred"])
+        self.assertIn("Do not load a specialist skill", contract["specialist_skill_policy"])
         self.assertRegex(
             contract["receipt_action_prefix"],
             r"^Milestone: verifier_construction; contract=sha256:[a-f0-9]{64}$",
@@ -150,6 +151,7 @@ class PrepTests(unittest.TestCase):
         instruction = prep.milestone_instruction(contract)
         self.assertIn("directly in the assistant response by call 14", instruction)
         self.assertIn("Do not write the final receipt to a file", instruction)
+        self.assertIn("random or generated candidate testing counts as search", instruction)
         self.assertIn(contract["receipt_action_prefix"], instruction)
 
     def test_continuation_milestone_selects_one_coarse_primitive(self):
@@ -169,6 +171,7 @@ class PrepTests(unittest.TestCase):
         self.assertEqual(contract["action_kind"], "bounded_exact_search")
         self.assertEqual(contract["max_action_primitives"], 1)
         self.assertIn("Defer every downstream primitive", contract["deferred"])
+        self.assertIn("at most one specialist skill", contract["specialist_skill_policy"])
 
     def test_runtime_quarantine_shrinks_instead_of_replaying_route(self):
         runtime = prep.quarantine_instruction(

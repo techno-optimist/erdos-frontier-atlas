@@ -33,6 +33,13 @@
       "next_experiment_design",
       "continuation_primitive"
     ],
+    "action_kind_forbidden_claim_patterns": {
+      "verifier_construction": [
+        "\\b(?:random|heuristic|annealing|backtracking|optimization|circulant)[- ]+(?:search|test|trials?|samples?|candidates?)\\b",
+        "\\b(?:searched|sampled)\\b.{0,120}\\b(?:trials?|seeds?|candidates?|nodes?)\\b",
+        "\\b\\d+/\\d+\\s+(?:accepted|valid|witnesses?)\\b"
+      ]
+    },
     "max_action_primitives": 1,
     "implementation_stop_call": 12,
     "final_replay_call": 13,
