@@ -52,6 +52,20 @@ def certified_stall(rows: list[dict], threshold: int) -> bool:
     return same_frontier or same_move
 
 
+def publication_quarantines_consistent(receipts: list[dict], incidents: list[dict], ingest_state: dict) -> bool:
+    quarantines = [row for row in incidents if row.get("schema") == "p42-foundry-publication-incident-v1"]
+    if not quarantines:
+        return False
+    rejected_hashes = set(ingest_state.get("rejected", {}).values())
+    admitted_hashes = {row.get("source", {}).get("sha256") for row in receipts}
+    return all(
+        row.get("status") == "quarantined_before_publication"
+        and row.get("source_sha256") in rejected_hashes
+        and row.get("source_sha256") not in admitted_hashes
+        for row in quarantines
+    )
+
+
 def tool_call_smoke() -> tuple[bool, dict]:
     body = json.dumps({
         "model": MODEL,
@@ -78,11 +92,14 @@ def main() -> int:
     ap.add_argument("--sessions-root", type=Path, default=HOME / "cultural-soliton-observatory" / "research_sessions")
     ap.add_argument("--cron-root", type=Path, default=HOME / ".hermes" / "cron")
     ap.add_argument("--state-root", type=Path, default=HOME / ".hermes" / "chronos_state")
+    ap.add_argument("--ingest-state", type=Path, default=HOME / ".hermes" / "chronos_state" / "foundry_ingest_state.json")
     args = ap.parse_args()
     now = datetime.now(timezone.utc)
     config = json.loads((ROOT / "foundry" / "config.json").read_text())
     receipt_paths = sorted((ROOT / "progress" / "receipts").glob("**/*.json"))
     receipts = [json.loads(path.read_text()) for path in receipt_paths]
+    incidents = [json.loads(path.read_text()) for path in (ROOT / "progress" / "incidents").glob("*.json")]
+    ingest_state = json.loads(args.ingest_state.read_text()) if args.ingest_state.exists() else {"rejected": {}}
     by_id = {row["receipt_id"]: row for row in receipts}
     before = {name: sha_file(args.data_root / name) for name in ("atlas.db", "atlas2.db", "arena_atlas.db")}
 
@@ -166,6 +183,8 @@ def main() -> int:
         "night_shift_local_35b": night.get("provider") == "foundry-qwen35b" and night.get("model") == MODEL and night.get("last_status") == "ok",
         "publisher_30m_recent": publisher.get("schedule", {}).get("minutes") == 30 and publisher.get("last_status") == "ok" and (parse_time(publisher.get("last_run_at")) or datetime.min.replace(tzinfo=timezone.utc)) >= recent_cutoff,
         "foundry_and_atlas_validation": validate.returncode == 0,
+        "semantic_target_contracts_active": bool(config.get("semantic_contracts")),
+        "publication_quarantines_consistent": publication_quarantines_consistent(receipts, incidents, ingest_state),
         "automation_branch_current": bool(remote_head) and local_head == remote_head,
         "installed_runtime_matches_repo": all(row["source"] == row["installed"] for row in runtime_hashes.values()),
         "frontier_call_incidents_acknowledged": bool(calls) and all(row["certified_stall"] or row["incident_acknowledged"] for row in call_evidence),
@@ -185,6 +204,8 @@ def main() -> int:
         "checks": checks,
         "evidence": {
             "receipt_count": len(receipts), "traced_consults": len(traced), "executed_consults": len(executed),
+            "publication_incidents": len([row for row in incidents if row.get("schema") == "p42-foundry-publication-incident-v1"]),
+            "private_rejected_sources": len(ingest_state.get("rejected", {})),
             "frontier_calls": len(calls), "call_evidence": call_evidence, "valid_frontier_calls": len(valid_calls),
             "lane_aligned_executions": len(aligned_executions), "daily_call_counts": daily_counts,
             "tool_smoke": tool_evidence, "local_head": local_head, "remote_head": remote_head,

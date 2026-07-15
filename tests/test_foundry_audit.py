@@ -29,6 +29,21 @@ class AuditTests(unittest.TestCase):
         a["frontier_id"] = b["frontier_id"] = "fm_steiner_large"
         self.assertTrue(audit.certified_stall([a, b], 2))
 
+    def test_public_quarantine_matches_private_rejection_and_no_receipt(self):
+        source_sha = "a" * 64
+        incidents = [{
+            "schema": "p42-foundry-publication-incident-v1",
+            "status": "quarantined_before_publication", "source_sha256": source_sha,
+        }]
+        state = {"rejected": {"job/run.md": source_sha}}
+        self.assertTrue(audit.publication_quarantines_consistent([], incidents, state))
+        self.assertFalse(audit.publication_quarantines_consistent(
+            [{"source": {"sha256": source_sha}}], incidents, state,
+        ))
+
+    def test_missing_public_quarantine_is_not_proof(self):
+        self.assertFalse(audit.publication_quarantines_consistent([], [], {"rejected": {}}))
+
 
 if __name__ == "__main__":
     unittest.main()
