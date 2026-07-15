@@ -85,7 +85,19 @@ def main() -> int:
             continue
         job_id, separator, filename = key.partition("/")
         source = args.cron_output / job_id / filename
-        if not separator or not source.exists() or hashlib.sha256(source.read_bytes()).hexdigest() != source_sha:
+        if not separator or not source.exists():
+            ingest_state["rejected_details"][key] = rejection_detail({
+                "source_sha256": source_sha,
+                "receipt": None,
+                "errors": ["legacy raw source unavailable; hash-only quarantine retained"],
+            }, "legacy raw source unavailable")
+            continue
+        if hashlib.sha256(source.read_bytes()).hexdigest() != source_sha:
+            ingest_state["rejected_details"][key] = rejection_detail({
+                "source_sha256": source_sha,
+                "receipt": None,
+                "errors": ["legacy raw source no longer matches quarantined hash; quarantine retained"],
+            }, "legacy raw source hash mismatch")
             continue
         inspection = inspect_run(tool, source, job_id, args.repo)
         if inspection.get("valid"):
