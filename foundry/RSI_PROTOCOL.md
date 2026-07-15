@@ -67,9 +67,11 @@ final artifact set. Every remaining Python artifact requires its own direct
 zero-exit replay step; a verifier mentioned as evidence cannot ride along
 unexecuted beside a replayed search script. The worker executes those declared
 steps once before accepting the submission, so a failed command is returned to
-the candidate during the two-call correction reserve. This preflight is only
-correction feedback: evaluator-owned replay remains independent and candidate
-preflight contributes zero utility.
+the candidate during the two-call correction reserve. All observed replay
+failures are returned together, so the final reserved call can correct or omit
+every broken declaration without extending the fixed budget. This preflight is
+bounded to two minutes total and is only correction feedback: evaluator-owned
+replay remains independent and candidate preflight contributes zero utility.
 Task semantics cover the registered hypothesis and replay output as well as the
 final claim. For the #552 witness lane, a 22-vertex witness implies
 `R(C4,S17) >= 23`; reversed or off-by-one implications are hard failures, and
