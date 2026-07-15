@@ -273,17 +273,23 @@ def validate() -> None:
 def publish(branch: str) -> None:
     validate()
     status = run(["git", "status", "--short", "--", "progress"]).stdout.strip()
-    if not status:
-        print(json.dumps({"published": False, "reason": "no progress changes"}))
-        return
-    run(["git", "add", "--", "progress"])
-    staged = run(["git", "diff", "--cached", "--name-only"]).stdout.splitlines()
-    if any(not p.startswith("progress/") for p in staged):
-        raise SystemExit("refusing publish: staged path outside progress/")
+    committed = False
     count = load_json(INDEX)["receipt_count"]
-    run(["git", "commit", "-m", f"foundry: publish progress receipt {count}"])
-    run(["git", "push", "origin", f"HEAD:{branch}"])
-    print(json.dumps({"published": True, "branch": branch, "receipt_count": count}))
+    if status:
+        run(["git", "add", "--", "progress"])
+        staged = run(["git", "diff", "--cached", "--name-only"]).stdout.splitlines()
+        if any(not p.startswith("progress/") for p in staged):
+            raise SystemExit("refusing publish: staged path outside progress/")
+        run(["git", "commit", "-m", f"foundry: publish progress receipt {count}"])
+        committed = True
+    head = run(["git", "rev-parse", "HEAD"]).stdout.strip()
+    remote_line = run(["git", "ls-remote", "origin", f"refs/heads/{branch}"], check=False).stdout.strip()
+    remote = remote_line.split()[0] if remote_line else None
+    if remote != head:
+        run(["git", "push", "origin", f"HEAD:{branch}"])
+        print(json.dumps({"published": True, "committed": committed, "retried_pending_push": not committed, "branch": branch, "receipt_count": count, "sha": head}))
+        return
+    print(json.dumps({"published": False, "committed": committed, "reason": "remote already current", "branch": branch, "receipt_count": count, "sha": head}))
 
 
 def main() -> int:
