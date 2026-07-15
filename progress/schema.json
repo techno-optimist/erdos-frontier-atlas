@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/techno-optimist/erdos-frontier-atlas/progress/schema.json",
+  "title": "P42 Foundry research receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema", "receipt_id", "content_digest", "occurred_at", "frontier", "action",
+    "verified", "result", "next_gate", "boundary_held", "classification",
+    "evidence_class", "source"
+  ],
+  "properties": {
+    "schema": { "const": "p42-foundry-receipt-v1" },
+    "receipt_id": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "content_digest": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "occurred_at": { "type": "string", "format": "date-time" },
+    "frontier": { "type": "string", "minLength": 1 },
+    "action": { "type": "string", "minLength": 1 },
+    "verified": { "type": "string", "minLength": 1 },
+    "result": { "type": "string", "minLength": 1 },
+    "next_gate": { "type": "string", "minLength": 1 },
+    "boundary_held": { "type": "string", "minLength": 1 },
+    "classification": {
+      "type": "string",
+      "enum": ["progress", "negative_result", "blocked"]
+    },
+    "evidence_class": { "const": "provisional" },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["job_id", "run_file", "sha256"],
+      "properties": {
+        "job_id": { "type": "string", "pattern": "^[a-f0-9]{12}$" },
+        "run_file": { "type": "string", "pattern": "^[0-9_-]+\\.md$" },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    }
+  }
+}
