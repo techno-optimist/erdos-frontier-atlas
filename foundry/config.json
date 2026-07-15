@@ -11,6 +11,16 @@
   "frontier_url": "http://127.0.0.1:8808/v1/chat/completions",
   "publication_branch": "automation/frontier-scout",
   "semantic_contracts": {
+    "arena_scorer_hardening": {
+      "effective_after": "2026-07-15T06:30:00Z",
+      "target_quantity": "live scorer parity must distinguish exact local-versus-official numerical comparison from liveness-only checks",
+      "required_evidence_any": ["verifier parity", "pnt", "difference", "diff"],
+      "forbidden_claim_patterns": [
+        "zero (difference|diff).{0,80}all (4|four)",
+        "all (4|four).{0,80}zero[- ]?(difference|diff)",
+        "live verifiers match local implementations to machine precision"
+      ]
+    },
     "fm_stretched_lr": {
       "effective_after": "2026-07-15T04:40:00Z",
       "target_quantity": "signs of coefficients of the stretching polynomial t -> c^(t lambda)_(t mu,t nu), not nonnegativity of the evaluated LR values",
@@ -40,6 +50,48 @@
         "proves? q\\(6\\)",
         "establishes? the exact value of q\\(6\\)"
       ]
+    },
+    "erdos_1029_r55": {
+      "effective_after": "2026-07-15T06:45:00Z",
+      "target_quantity": "the finite diagonal Ramsey bracket 43 <= R(5,5) <= 46; a graph witness and a nonexistence certificate move opposite sides of the bracket",
+      "required_evidence_any": ["k5", "5-clique", "clique verifier", "independent set of size 5"],
+      "forbidden_claim_patterns": ["settles? r\\(5,5\\)", "proves? the (erdos )?#?1029 (asymptotic )?conjecture"]
+    },
+    "erdos_552_c4_star_n17": {
+      "effective_after": "2026-07-15T06:45:00Z",
+      "target_quantity": "the n=17,m=22 C4-versus-star cell: either a C4-free graph of minimum degree at least 5 or a replayable nonexistence certificate",
+      "required_evidence_any": ["codegree", "minimum degree", "c4-free", "c_4-free"],
+      "forbidden_claim_patterns": ["solver (timeout|unknown).*proves?", "settles? (erdos )?#?552"]
+    },
+    "erdos_140_r3_212": {
+      "effective_after": "2026-07-15T06:45:00Z",
+      "target_quantity": "the finite value r_3(212): a 44-element 3-AP-free witness improves the lower bound; exactness needs complete nonexistence evidence",
+      "required_evidence_any": ["3-ap", "arithmetic progression", "r_3(212)"],
+      "forbidden_claim_patterns": ["proves? r_3\\(212\\)\\s*=\\s*43", "settles? (erdos )?#?140"]
+    },
+    "erdos_1_a11": {
+      "effective_after": "2026-07-15T06:45:00Z",
+      "target_quantity": "the finite distinct-subset-sum record a(11), currently 310 <= a(11) <= 594; a witness only improves the upper bound",
+      "required_evidence_any": ["subset sums", "2048"],
+      "forbidden_claim_patterns": ["solves? (erdos )?#?1", "proves?.*asymptotic"]
+    },
+    "erdos_41_b3_a11": {
+      "effective_after": "2026-07-15T06:45:00Z",
+      "target_quantity": "the shortest 11-mark B3 ruler with all multiset triple sums distinct, currently at most 445; a witness only improves the upper bound",
+      "required_evidence_any": ["triple sums", "multiset", "b3", "b_3"],
+      "forbidden_claim_patterns": ["solves?.*liminf", "proves?.*b_?3.*asymptotic"]
+    },
+    "erdos_67_discrepancy_c3": {
+      "effective_after": "2026-07-15T06:45:00Z",
+      "target_quantity": "the unrestricted finite C=3 discrepancy witness length beyond 130000, distinct from the exact multiplicative subcase",
+      "required_evidence_any": ["unrestricted", "homogeneous arithmetic progression", "discrepancy"],
+      "forbidden_claim_patterns": ["multiplicative.*(settles?|proves?).*unrestricted", "127645.*unrestricted.*exact"]
+    },
+    "erdos_86_q7_c4": {
+      "effective_after": "2026-07-15T06:45:00Z",
+      "target_quantity": "a C4-free subgraph of Q7 with at least 305 edges, which improves only the finite lower bound ex(Q7,C4) >= 305",
+      "required_evidence_any": ["4-cycle", "c4-free", "hypercube", "q7"],
+      "forbidden_claim_patterns": ["proves? ex\\(q7,?c4\\).*exact", "settles? (erdos )?#?86"]
     }
   }
 }
