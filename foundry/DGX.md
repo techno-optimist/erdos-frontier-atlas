@@ -45,6 +45,17 @@ After the smoke passes, schedule the tick as a no-agent job. Git credentials
 must be scoped to this public repository; the publisher refuses to stage any
 path outside `progress/`.
 
+The terminal completion gate is executable:
+
+```bash
+python3 ~/erdos-frontier-atlas/tools/foundry_audit.py \
+  --output ~/.hermes/chronos_state/foundry_operational_audit.json
+```
+
+It exits nonzero until every service, scheduler, publication, stall-budget,
+advice-execution, validation, and protected-hash check is green. Use
+`--allow-incomplete` only for monitoring while the final trace is pending.
+
 `foundry/deploy_jobs.py` performs the one-time scheduler migration under the
 Hermes cron lock, writes a timestamped backup, pins both research jobs to the
 local 35B provider, points auxiliary compression at the same local provider,
