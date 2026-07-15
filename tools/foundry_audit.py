@@ -129,6 +129,12 @@ def main() -> int:
     latest_id = (args.sessions_root / "latest").read_text().strip()
     packet = json.loads((args.sessions_root / latest_id / "context_packet.json").read_text())
     packet_ro = all(row.get("read_only_verified") is True and row.get("hash_before") == row.get("hash_after") for row in packet.get("databases", {}).values())
+    focused_path = args.sessions_root / latest_id / "focused_context.json"
+    focused = json.loads(focused_path.read_text()) if focused_path.exists() else None
+    focused_ro = bool(focused and focused.get("databases") and all(
+        row.get("read_only_verified") is True and row.get("hash_before") == row.get("hash_after")
+        for row in focused["databases"].values()
+    ))
     after = {name: sha_file(args.data_root / name) for name in before}
     runtime_pairs = {
         "scout_prep": (ROOT / "foundry" / "dgx_research_prep.py", HOME / ".hermes" / "scripts" / "chronos_frontier_scout_prep.py"),
@@ -166,6 +172,7 @@ def main() -> int:
         "frontier_state_private": (args.state_root / "foundry_frontier_budget.json").stat().st_mode & 0o777 == 0o600,
         "lane_aligned_frontier_advice_executed_trace": bool(aligned_executions),
         "latest_context_read_only": packet_ro,
+        "latest_focused_retrieval_read_only": focused_ro,
         "protected_hashes_stable_during_audit": before == after,
     }
     report = {
@@ -182,7 +189,9 @@ def main() -> int:
             "cron_status_tail": [line.strip() for line in cron_status.stdout.splitlines() if line.strip()][-4:],
             "frontier_state_mode": oct((args.state_root / "foundry_frontier_budget.json").stat().st_mode & 0o777),
             "runtime_hashes": runtime_hashes,
-            "latest_session": latest_id, "protected_hashes_before": before, "protected_hashes_after": after,
+            "latest_session": latest_id, "focused_retrieval_present": focused_path.exists(),
+            "focused_hit_counts": ({name: len(rows) for name, rows in focused.get("surfaces", {}).items()} if focused else {}),
+            "protected_hashes_before": before, "protected_hashes_after": after,
             "validation_tail": validate.stdout.strip().splitlines()[-1] if validate.stdout.strip() else None,
         },
     }

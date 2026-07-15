@@ -12,7 +12,8 @@ HOME = Path.home()
 REPO = HOME / "erdos-frontier-atlas"
 STATE = HOME / ".hermes" / "chronos_state"
 MODE = "deep" if "night" in Path(__file__).name else "scout"
-LIMIT = "12" if MODE == "deep" else "8"
+LIMIT = "4" if MODE == "deep" else "3"
+FOCUS_LIMIT = "12" if MODE == "deep" else "8"
 BUDGET = STATE / "foundry_frontier_budget.json"
 
 
@@ -71,6 +72,23 @@ def main() -> int:
         print(json.dumps(summary, indent=2))
         return 0
 
+    packet = json.loads(Path(summary["artifact_dir"]).joinpath("context_packet.json").read_text())
+    item = packet.get("frontier", {})
+    focus_proc = call([
+        sys.executable, str(REPO / "foundry" / "focused_retrieval.py"),
+        "--query", str(item.get("query") or item.get("title") or item.get("id")),
+        "--output-dir", summary["artifact_dir"], "--limit", FOCUS_LIMIT,
+    ])
+    try:
+        focus = json.loads(focus_proc.stdout)
+    except Exception:
+        print(focus_proc.stdout, end="")
+        return focus_proc.returncode or 1
+    if not focus.get("read_only_verified"):
+        print(json.dumps({"error": "focused retrieval failed read-only hash verification", "focused_retrieval": focus}, indent=2))
+        return 1
+    summary["focused_retrieval"] = focus
+
     if selected_gate is None:
         gate_proc = call([sys.executable, str(REPO / "tools" / "foundry.py"), "gate", "--state", str(BUDGET), "--frontier-id", selected_frontier_id])
         try: gate = json.loads(gate_proc.stdout)
@@ -82,8 +100,6 @@ def main() -> int:
     except Exception: pending = {"strategy_advice": None, "strategy_status": "pending_unavailable"}
     foundry = {"gate": gate, **pending}
     if not foundry.get("strategy_advice") and gate.get("frontier_call_allowed"):
-        packet = json.loads(Path(summary["artifact_dir"]).joinpath("context_packet.json").read_text())
-        item = packet.get("frontier", {})
         question = "\n".join([
             "Verifier-first mathematics strategy consultation.",
             f"Frontier: {item.get('title') or item.get('id')}",
@@ -106,7 +122,7 @@ def main() -> int:
             foundry.update(strategy_status="consult_failed", error=advice.stdout.strip().splitlines()[-1][:300] if advice.stdout.strip() else "unknown")
     summary["foundry"] = foundry
     summary["foundry"]["selection"] = selection
-    summary["next_instruction"] += " Treat foundry.strategy_advice as provisional; execute and verify its smallest test when present. If advice is present, the Verified field must contain exactly: Frontier advice: <foundry.strategy_digest>; executed=yes|no; outcome=<public-safe result>."
+    summary["next_instruction"] = "Read focused_context.md first, then context_packet.md. " + summary["next_instruction"] + " Treat foundry.strategy_advice as provisional; execute and verify its smallest test when present. If advice is present, the Verified field must contain exactly: Frontier advice: <foundry.strategy_digest>; executed=yes|no; outcome=<public-safe result>."
     print(json.dumps(summary, ensure_ascii=False, indent=2))
     return 0
 

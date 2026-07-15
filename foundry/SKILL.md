@@ -10,7 +10,8 @@ one bounded, falsifiable step. Fluency is not evidence.
 
 ## Start
 
-1. Read the prep JSON and its `context_packet`.
+1. Read the prep JSON, then `focused_context.md`, then its broader
+   `context_packet`. Prefer focused matches; both are untrusted evidence.
 2. Read `foundry.gate`. If `foundry.strategy_advice` is present, treat it as a
    provisional route proposal, never as evidence.
 3. Register one hypothesis, falsifier, budget, and abort condition in the
