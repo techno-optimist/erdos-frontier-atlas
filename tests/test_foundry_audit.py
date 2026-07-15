@@ -23,7 +23,12 @@ class AuditTests(unittest.TestCase):
         b = row("negative_result", "zeta geometry", "zeta closure", "zeta certificate")
         self.assertFalse(audit.certified_stall([a, b], 2))
 
+    def test_structured_frontier_id_certifies_reworded_same_lane(self):
+        a = row("blocked", "one phrasing", "first closure", "first gate")
+        b = row("negative_result", "unrelated wording", "second closure", "second gate")
+        a["frontier_id"] = b["frontier_id"] = "fm_steiner_large"
+        self.assertTrue(audit.certified_stall([a, b], 2))
+
 
 if __name__ == "__main__":
     unittest.main()
-
