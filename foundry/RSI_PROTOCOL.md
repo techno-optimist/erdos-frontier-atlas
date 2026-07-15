@@ -55,7 +55,8 @@ isolation gate exists, all results are development telemetry and promotion is
 disabled.
 
 `tools/foundry_eval.py` creates a salt-keyed, family-balanced private split and
-publishes only its SHA-256 commitment. Its Docker smoke boundary uses a
+publishes only its SHA-256 commitment at
+`foundry/eval/private_suite.commitment.json`. Its Docker smoke boundary uses a
 read-only root filesystem, no network, no capabilities, no Docker socket, and
 mounts exactly one task packet plus an output directory; the private manifest
 is never mounted. The full model runner still needs a model-only transport

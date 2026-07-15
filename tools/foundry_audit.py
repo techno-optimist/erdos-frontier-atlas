@@ -8,6 +8,7 @@ import hashlib
 import json
 import subprocess
 import sys
+from collections import Counter
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from urllib import request
@@ -66,6 +67,41 @@ def publication_quarantines_consistent(receipts: list[dict], incidents: list[dic
     )
 
 
+def private_holdout_committed(manifest_path: Path, commitment_path: Path) -> bool:
+    try:
+        manifest = json.loads(manifest_path.read_text())
+        commitment = json.loads(commitment_path.read_text())
+    except (OSError, ValueError):
+        return False
+    tasks = manifest.get("tasks", [])
+    counts = dict(sorted(Counter(row.get("family") for row in tasks).items()))
+    canonical = json.dumps(
+        manifest, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+    ).encode()
+    expected = "sha256:" + hashlib.sha256(canonical).hexdigest()
+    forbidden_public_keys = {"tasks", "task_ids", "problem_ids", "split_salt_hex"}
+    try:
+        private_modes = (
+            manifest_path.parent.stat().st_mode & 0o777 == 0o700
+            and manifest_path.stat().st_mode & 0o777 == 0o600
+        )
+    except OSError:
+        return False
+    return bool(
+        manifest.get("schema") == "p42-foundry-private-eval-suite-v1"
+        and commitment.get("schema") == "p42-foundry-private-suite-commitment-v1"
+        and private_modes
+        and commitment.get("manifest_sha256") == expected
+        and commitment.get("task_count") == len(tasks)
+        and commitment.get("family_counts") == counts
+        and commitment.get("task_ids_or_problem_ids_disclosed") is False
+        and not forbidden_public_keys.intersection(commitment)
+        and all(commitment.get(key) == manifest.get(key) for key in (
+            "suite_version", "atlas_version", "public_suite_version"
+        ))
+    )
+
+
 def tool_call_smoke() -> tuple[bool, dict]:
     body = json.dumps({
         "model": MODEL,
@@ -110,6 +146,9 @@ def main() -> int:
     budget = json.loads((args.state_root / "foundry_frontier_budget.json").read_text()) if (args.state_root / "foundry_frontier_budget.json").exists() else {"calls": []}
     efficiency_path = args.state_root / "foundry_efficiency_latest.json"
     efficiency = json.loads(efficiency_path.read_text()) if efficiency_path.exists() else None
+    private_manifest_path = args.state_root / "foundry_eval" / "private_suite.json"
+    public_commitment_path = ROOT / "foundry" / "eval" / "private_suite.commitment.json"
+    public_commitment = json.loads(public_commitment_path.read_text()) if public_commitment_path.exists() else None
     calls = budget.get("calls", [])
     call_evidence = []
     for call in calls:
@@ -206,6 +245,9 @@ def main() -> int:
             and (parse_time(efficiency.get("generated_at")) or datetime.min.replace(tzinfo=timezone.utc)) >= recent_cutoff
             and efficiency_path.stat().st_mode & 0o777 == 0o600
         ),
+        "private_holdout_committed_and_isolated": private_holdout_committed(
+            private_manifest_path, public_commitment_path
+        ),
         "protected_hashes_stable_during_audit": before == after,
     }
     report = {
@@ -232,6 +274,9 @@ def main() -> int:
             "efficiency_metrics_mode": oct(efficiency_path.stat().st_mode & 0o777) if efficiency_path.exists() else None,
             "efficiency_metrics_generated_at": efficiency.get("generated_at") if efficiency else None,
             "efficiency_metrics_aggregate": efficiency.get("aggregate") if efficiency else None,
+            "private_holdout_commitment": public_commitment,
+            "private_holdout_manifest_mode": oct(private_manifest_path.stat().st_mode & 0o777) if private_manifest_path.exists() else None,
+            "private_holdout_parent_mode": oct(private_manifest_path.parent.stat().st_mode & 0o777) if private_manifest_path.parent.exists() else None,
             "protected_hashes_before": before, "protected_hashes_after": after,
             "validation_tail": validate.stdout.strip().splitlines()[-1] if validate.stdout.strip() else None,
         },

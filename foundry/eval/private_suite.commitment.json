@@ -1,0 +1,15 @@
+{
+  "schema": "p42-foundry-private-suite-commitment-v1",
+  "suite_version": "1.0.0",
+  "created_at": "2026-07-15T06:54:32Z",
+  "atlas_version": "0.2.0",
+  "public_suite_version": "2026-07-15.1",
+  "manifest_sha256": "sha256:bf311ccdebfce43fbbfbb9ac332f57a09c52a3d54fb9495050282a6e01afc6c2",
+  "task_count": 12,
+  "family_counts": {
+    "constructive_or_local_search": 4,
+    "exact_witness_or_backtracking": 4,
+    "nonexistence_or_certificate": 4
+  },
+  "task_ids_or_problem_ids_disclosed": false
+}

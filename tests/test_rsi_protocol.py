@@ -18,6 +18,17 @@ class RsiProtocolTests(unittest.TestCase):
         self.assertFalse(self.protocol["promotion_gate"]["automatic_production_promotion"])
         self.assertFalse(self.protocol["adjudication"]["self_reported_receipt_classification_is_reward"])
 
+    def test_checked_in_private_commitment_discloses_no_task_identity(self):
+        commitment = json.loads(
+            (ROOT / "foundry" / "eval" / "private_suite.commitment.json").read_text()
+        )
+        self.assertEqual(commitment["task_count"], self.protocol["evaluation"]["private_holdout_tasks"])
+        self.assertFalse(commitment["task_ids_or_problem_ids_disclosed"])
+        self.assertFalse(
+            {"tasks", "task_ids", "problem_ids", "split_salt_hex"}
+            & set(commitment)
+        )
+
     def test_budget_is_fixed_and_frontier_free(self):
         budget = self.protocol["evaluation"]["budget_per_task_run"]
         self.assertGreater(budget["max_input_tokens"], 0)
