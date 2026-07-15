@@ -67,7 +67,7 @@
       "verifier": "Given A subset [212], verify cardinality and reject every distinct a<b<c with a+c=2b. A 44-set improves the lower bound; exactness requires a complete nonexistence certificate.",
       "next_action": "Replay the exact 3-AP verifier on known-good and rejection-reason fixtures, then execute one bounded structurally targeted search cell for a 44-set or one explicitly manifested hard nonexistence shard.",
       "next_gate": "verified_44_set_in_1_to_212_or_complete_replayable_hard_chunk_certificate",
-      "avoid": "Do not report another 43-set as a frontier improvement and do not claim r_3(212)=43 from incomplete CP-SAT, MIP, or CDCL runs. No Atlas writes or external submissions."
+      "avoid": "Do not report another 43-set as a frontier improvement and do not claim r_3(212)=43 from incomplete CP-SAT, MIP, or CDCL runs. Execute at most one expensive terminal action; a timeout ends the action and must not trigger a replacement search in the same session. Do not execute prior-session code in place. Seed every randomness source. Simulated annealing must permit non-improving transitions with a valid acceptance law, and a cardinality-growth search must contain a move that can increase cardinality. Repeated seeds, renamed loops, or identical state transitions are not independent strategies. A bounded no-hit result scopes only the exact tried implementation; it establishes no firm numerical ceiling, route barrier, or need for a construction-level approach. No Atlas writes or external submissions."
     },
     {
       "id": "erdos_1_a11",

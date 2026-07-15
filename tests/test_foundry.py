@@ -420,6 +420,36 @@ RuntimeError: Connection error.
         config = json.loads((ROOT / "foundry" / "config.json").read_text())
         self.assertEqual(foundry.semantic_contract_errors(receipt, config), [])
 
+    def test_r3_212_contract_rejects_independence_and_ceiling_inflation(self):
+        receipt = {
+            "frontier_id": "erdos_140_r3_212",
+            "occurred_at": "2026-07-15T13:21:36Z",
+            "frontier": "Can a 44-element 3-AP-free subset of [1,212] be found?",
+            "action": (
+                "Ran six independent search strategies, including simulated "
+                "annealing and local search, across 15,000 seeds."
+            ),
+            "verified": "No strategy found a 3-AP-free set of size at least 38.",
+            "result": (
+                "The performance ceiling is firmly at 36-37. The AP-density "
+                "barrier blocks all greedy strategies, so a construction-level "
+                "approach is needed."
+            ),
+            "next_gate": "Run a two-hour SAT search.",
+        }
+        config = json.loads((ROOT / "foundry" / "config.json").read_text())
+        errors = foundry.semantic_contract_errors(receipt, config)
+        self.assertGreaterEqual(
+            sum("quantity-conflation" in error for error in errors), 4
+        )
+
+    def test_foundry_skill_bounds_expensive_actions_and_algorithm_claims(self):
+        skill = (ROOT / "foundry" / "SKILL.md").read_text()
+        self.assertIn("run at most one per research session", skill)
+        self.assertIn("never execute them in place", skill)
+        self.assertIn("Simulated annealing must permit seeded non-improving transitions", skill)
+        self.assertIn("not independent strategies", skill)
+
     def test_cockpit_table_fallback(self):
         text = """## Response
 | Field | Value |
