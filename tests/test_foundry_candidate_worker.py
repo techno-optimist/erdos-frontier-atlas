@@ -56,6 +56,7 @@ class CandidateWorkerTests(unittest.TestCase):
             task_path = root / "task.json"
             (output / "artifacts").mkdir(parents=True)
             (output / "artifacts" / "check.py").write_text("print('ok')\n")
+            (output / "artifacts" / "scratch.py").write_text("raise SystemExit(9)\n")
             task = {"evaluation_id": "opaque", "seed": 9}
             task_path.write_text(json.dumps(task))
             payload = {
@@ -79,6 +80,8 @@ class CandidateWorkerTests(unittest.TestCase):
             self.assertEqual(result["seed"], 9)
             self.assertEqual(result["artifacts"][0]["path"], "check.py")
             self.assertTrue(result["artifacts"][0]["sha256"].startswith("sha256:"))
+            self.assertFalse((output / "artifacts" / "scratch.py").exists())
+            self.assertEqual(result["artifacts_claimed"], ["check.py"])
 
     def test_prefixed_write_is_inventory_normalized(self):
         with tempfile.TemporaryDirectory() as tmp:
