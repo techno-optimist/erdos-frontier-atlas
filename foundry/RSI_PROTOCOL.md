@@ -66,6 +66,10 @@ At typed submission the worker deletes scratch files omitted from the declared
 final artifact set. Every remaining Python artifact requires its own direct
 zero-exit replay step; a verifier mentioned as evidence cannot ride along
 unexecuted beside a replayed search script.
+Task semantics cover the registered hypothesis and replay output as well as the
+final claim. For the #552 witness lane, a 22-vertex witness implies
+`R(C4,S17) >= 23`; reversed or off-by-one implications are hard failures, and
+a negative-search artifact may not print that failure suggests a Ramsey bound.
 
 The no-frontier-call rule isolates harness quality from purchased strategy.
 Consultation is evaluated separately after the local-only core passes.
