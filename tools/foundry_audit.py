@@ -97,6 +97,7 @@ def scheduled_worker_policy_current(job: dict, config: dict) -> bool:
         and job.get("state") != "paused"
         and prompt.count("FOUNDRY HARD RUNTIME BUDGET") == 1
         and prompt.count("FOUNDRY MILESTONE CONTRACT") == 1
+        and job.get("finalize_no_tools_after") == milestone.get("final_replay_call")
         and f"at most {turns} model calls" in normalized
         and f"rejects a run above {turns} calls" in normalized
         and f"assistant response by call {receipt_call}" in normalized
@@ -420,9 +421,11 @@ def main() -> int:
         and efficiency.get("telemetry_contract_digest") == telemetry_contract_digest(config)
         and "FOUNDRY_JOB_MAX_TURNS_V1" in scheduler_text
         and "FOUNDRY_JOB_MAX_WALL_SECONDS_V1" in scheduler_text
+        and "FOUNDRY_JOB_FINALIZE_NO_TOOLS_V1" in scheduler_text
         and all(
             job.get("max_turns") == runtime_budget.get("scheduled_job_max_turns")
             and job.get("max_wall_seconds") == runtime_budget.get("max_wall_seconds")
+            and job.get("finalize_no_tools_after") == config.get("milestone_policy", {}).get("final_replay_call")
             for job in (scout, night)
         )
     )
@@ -515,8 +518,10 @@ def main() -> int:
             "efficiency_parser_source_sha256": efficiency.get("parser_source_sha256") if efficiency else None,
             "scheduler_job_max_turns_marker": "FOUNDRY_JOB_MAX_TURNS_V1" in scheduler_text,
             "scheduler_job_max_wall_marker": "FOUNDRY_JOB_MAX_WALL_SECONDS_V1" in scheduler_text,
+            "scheduler_job_finalize_no_tools_marker": "FOUNDRY_JOB_FINALIZE_NO_TOOLS_V1" in scheduler_text,
             "scheduled_job_max_turns": {job["id"]: job.get("max_turns") for job in (scout, night)},
             "scheduled_job_max_wall_seconds": {job["id"]: job.get("max_wall_seconds") for job in (scout, night)},
+            "scheduled_job_finalize_no_tools_after": {job["id"]: job.get("finalize_no_tools_after") for job in (scout, night)},
             "latest_session": latest_id, "focused_retrieval_present": focused_path.exists(),
             "focused_hit_counts": ({name: len(rows) for name, rows in focused.get("surfaces", {}).items()} if focused else {}),
             "shadow_policy_present": shadow_path.exists(),

@@ -269,6 +269,17 @@ def required_milestone_contract_errors(text: str, receipt: dict, config: dict) -
         return [
             "missing or mismatched milestone prefix in Action: expected " + required
         ]
+    claims = " ".join(
+        str(receipt.get(key, "")) for key in ("action", "verified", "result")
+    ).lower()
+    for pattern in policy.get("action_kind_forbidden_claim_patterns", {}).get(
+        action_kind, []
+    ):
+        if re.search(pattern, claims, re.I):
+            return [
+                "milestone contract forbids downstream execution claim for "
+                f"{action_kind}: {pattern}"
+            ]
     return []
 
 

@@ -163,11 +163,13 @@ def milestone_contract(continuation: dict | None, policy: dict) -> dict:
         action_kind = infer_action_kind(continuation.get("next_gate"))
         scope = "Complete only the smallest independently replayable primitive from accepted_continuation.next_gate."
         deferred = "Defer every downstream primitive from that next gate to the receipt's Next gate field."
+        specialist_skill_policy = "Load at most one specialist skill only if the admitted primitive cannot be executed from focused evidence."
     else:
         phase = "initial_verifier"
         action_kind = str(policy["initial_action_kind"])
-        scope = "Build or replay exactly one target verifier with branch-specific known-good and known-bad fixtures."
-        deferred = "Do not start a search, solver, construction, or optimization in this session; place it in Next gate."
+        scope = "Build or replay exactly one target verifier with fixed branch-specific known-good and known-bad fixtures."
+        deferred = "Do not run random/generated candidates, trials, search, solver exploration, construction, or optimization in this session; place all of it in Next gate."
+        specialist_skill_policy = "Do not load a specialist skill; initial verifier construction is self-contained in focused evidence."
     core = {
         "schema": "p42-foundry-milestone-contract-v1",
         "authority": "operator_owned_scope_and_finalization_contract",
@@ -176,6 +178,7 @@ def milestone_contract(continuation: dict | None, policy: dict) -> dict:
         "max_action_primitives": int(policy["max_action_primitives"]),
         "scope": scope,
         "deferred": deferred,
+        "specialist_skill_policy": specialist_skill_policy,
         "implementation_stop_call": int(policy["implementation_stop_call"]),
         "final_replay_call": int(policy["final_replay_call"]),
         "receipt_deadline_call": int(policy["receipt_deadline_call"]),
@@ -198,7 +201,8 @@ def milestone_instruction(contract: dict | None) -> str:
     return (
         " foundry.milestone_contract is operator-owned and permits exactly one "
         "action primitive. Obey its scope and deferred fields even when stale "
-        "queue text asks for multiple stages. Stop implementation by call "
+        "queue text asks for multiple stages. Obey specialist_skill_policy; "
+        "random or generated candidate testing counts as search. Stop implementation by call "
         f"{contract['implementation_stop_call']}, perform only final replay on "
         f"call {contract['final_replay_call']}, and emit the six labelled fields "
         f"directly in the assistant response by call {contract['receipt_deadline_call']}. "

@@ -229,6 +229,10 @@ def rejection_detail(
         str(error).startswith(("runtime ", "trusted runtime "))
         for error in errors
     )
+    milestone_rejection = any(
+        str(error).startswith(("milestone contract ", "missing operator milestone ", "invalid operator milestone "))
+        for error in errors
+    )
     detail = {
         "schema": "p42-foundry-quarantine-feedback-v1",
         "recorded_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
@@ -241,7 +245,11 @@ def rejection_detail(
         "remediation": (
             "shrink the action and context to the checked-in runtime budget, then rerun one bounded step; runtime rejection says nothing about the mathematical claim"
             if runtime_rejection
-            else "replay the bounded evidence, then correct scope; never claim the quarantined receipt was published"
+            else (
+                "complete only the admitted milestone, defer every downstream primitive, and emit the hash-bound Action prefix; never claim the quarantined receipt was published"
+                if milestone_rejection
+                else "replay the bounded evidence, then correct scope; never claim the quarantined receipt was published"
+            )
         ),
     }
     if contract_digest:

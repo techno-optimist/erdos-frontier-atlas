@@ -24,6 +24,7 @@ COMPACT_SKILLS = ["foundry"]
 API_MAX_RETRIES = 8
 FOUNDRY_MAX_TURNS = 16
 FOUNDRY_MAX_WALL_SECONDS = 900
+FOUNDRY_FINALIZE_NO_TOOLS_AFTER = 13
 HERMES_SCHEDULER = HOME / ".hermes" / "hermes-agent" / "cron" / "scheduler.py"
 SETTINGS = {
     "agent.api_max_retries": str(API_MAX_RETRIES),
@@ -91,7 +92,8 @@ FOUNDRY MILESTONE CONTRACT (operator-enforced): Obey the exact
 foundry.milestone_contract emitted by prep. It permits one action primitive.
 Stop implementation by call 12, use call 13 only for final replay, and emit the
 six labels directly in the assistant response by call 14. Calls 15-16 are
-emergency headroom, not research budget. Do not write the final receipt to a
+emergency headroom, not research budget; the scheduler removes tool access
+after call 13. Do not write the final receipt to a
 file or make a tool call in place of that response. Copy receipt_action_prefix
 exactly as the first line under Action; publication verifies it against the
 hash-bound prep contract.
@@ -165,6 +167,7 @@ def main() -> int:
             job["skills"] = COMPACT_SKILLS
             job["max_turns"] = FOUNDRY_MAX_TURNS
             job["max_wall_seconds"] = FOUNDRY_MAX_WALL_SECONDS
+            job["finalize_no_tools_after"] = FOUNDRY_FINALIZE_NO_TOOLS_AFTER
             job["prompt"] = job.get("prompt", "").replace(
                 "python3 ~/erdos-frontier-atlas/tools/foundry.py consult --state\n~/.hermes/chronos_state/foundry_frontier_budget.json '<public-safe frontier,",
                 "python3 ~/erdos-frontier-atlas/tools/foundry.py consult --state\n~/.hermes/chronos_state/foundry_frontier_budget.json --frontier-id\n'<foundry.gate.frontier_id>' '<public-safe frontier,",
@@ -196,7 +199,7 @@ def main() -> int:
         tmp = JOBS.with_suffix(".json.tmp")
         tmp.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n")
         os.replace(tmp, JOBS)
-    print(json.dumps({"updated": changed, "provider": "foundry-qwen35b", "model": MODEL, "max_turns": FOUNDRY_MAX_TURNS, "max_wall_seconds": FOUNDRY_MAX_WALL_SECONDS, "scheduler_patch": scheduler_patch, "installed": installed}))
+    print(json.dumps({"updated": changed, "provider": "foundry-qwen35b", "model": MODEL, "max_turns": FOUNDRY_MAX_TURNS, "max_wall_seconds": FOUNDRY_MAX_WALL_SECONDS, "finalize_no_tools_after": FOUNDRY_FINALIZE_NO_TOOLS_AFTER, "scheduler_patch": scheduler_patch, "installed": installed}))
     return 0
 
 
