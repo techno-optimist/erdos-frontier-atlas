@@ -26,6 +26,7 @@ FOUNDRY_MAX_TURNS = 16
 FOUNDRY_MAX_WALL_SECONDS = 900
 FOUNDRY_FINALIZE_NO_TOOLS_AFTER = 13
 HERMES_SCHEDULER = HOME / ".hermes" / "hermes-agent" / "cron" / "scheduler.py"
+HERMES_CONVERSATION_LOOP = HOME / ".hermes" / "hermes-agent" / "agent" / "conversation_loop.py"
 SETTINGS = {
     "agent.api_max_retries": str(API_MAX_RETRIES),
     "providers.foundry-qwen35b.name": "foundry-qwen35b",
@@ -127,7 +128,10 @@ def patch_hermes_scheduler(path: Path) -> dict:
         raise RuntimeError("cannot load reviewed Hermes scheduler patch")
     module = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(module)
-    return module.patch_file(path)
+    return {
+        "scheduler": module.patch_file(path),
+        "conversation_loop": module.patch_loop_file(HERMES_CONVERSATION_LOOP),
+    }
 
 
 def install_runtime_files() -> dict[str, str]:

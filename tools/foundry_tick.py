@@ -176,10 +176,11 @@ def apply_runtime_budget(
     inspection: dict, efficiency: dict | None, config: dict,
     source_job_id: str | None = None,
 ) -> dict:
-    if not inspection.get("valid"):
+    receipt = inspection.get("receipt") or {}
+    if not receipt.get("occurred_at"):
         return inspection
     errors, evidence = runtime_budget_assessment(
-        inspection.get("receipt") or {}, efficiency, config, source_job_id
+        receipt, efficiency, config, source_job_id
     )
     if evidence is not None:
         inspection["runtime_telemetry"] = evidence
@@ -233,6 +234,11 @@ def rejection_detail(
         str(error).startswith(("milestone contract ", "missing operator milestone ", "invalid operator milestone "))
         for error in errors
     )
+    receipt_structure_rejection = any(
+        "missing required receipt labels" in str(error)
+        or "missing cron response boundary" in str(error)
+        for error in errors
+    )
     detail = {
         "schema": "p42-foundry-quarantine-feedback-v1",
         "recorded_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
@@ -243,7 +249,9 @@ def rejection_detail(
         "occurred_at": receipt.get("occurred_at"),
         "errors": errors or [fallback_reason[:500]],
         "remediation": (
-            "shrink the action and context to the checked-in runtime budget, then rerun one bounded step; runtime rejection says nothing about the mathematical claim"
+            "shrink the action and context to the checked-in runtime budget and emit all six labels directly; runtime or receipt-shape rejection says nothing about the mathematical claim"
+            if runtime_rejection and receipt_structure_rejection
+            else "shrink the action and context to the checked-in runtime budget, then rerun one bounded step; runtime rejection says nothing about the mathematical claim"
             if runtime_rejection
             else (
                 "complete only the admitted milestone, defer every downstream primitive, and emit the hash-bound Action prefix; never claim the quarantined receipt was published"

@@ -24,6 +24,15 @@ class PrepTests(unittest.TestCase):
         self.assertIn("only if", instruction)
         self.assertEqual(instruction.count("Load context_packet.md"), 1)
 
+    def test_initial_milestone_instruction_does_not_invite_broad_context(self):
+        instruction = prep.worker_instruction(
+            "Load context_packet.md, run one bounded action",
+            {"broad_context_policy": "gated_focused_only"},
+        )
+        self.assertIn("Read focused_context.md only", instruction)
+        self.assertIn("do not load its Markdown or JSON views", instruction)
+        self.assertNotIn("Load context_packet.md", instruction)
+
     def test_first_allowed_stall_overrides_moving_top_rank(self):
         ranked = [{"frontier_id": "moving"}, {"frontier_id": "stuck"}, {"frontier_id": "later"}]
         gates = {
@@ -133,6 +142,8 @@ class PrepTests(unittest.TestCase):
     def test_initial_milestone_is_verifier_only_and_hash_bound(self):
         policy = {
             "initial_action_kind": "verifier_construction",
+            "initial_broad_context_policy": "gated_focused_only",
+            "continuation_broad_context_policy": "conditional_recorded_falsifier_need",
             "max_action_primitives": 1,
             "implementation_stop_call": 12,
             "final_replay_call": 13,
@@ -142,6 +153,7 @@ class PrepTests(unittest.TestCase):
         contract = prep.milestone_contract(None, policy)
         self.assertEqual(contract["phase"], "initial_verifier")
         self.assertEqual(contract["action_kind"], "verifier_construction")
+        self.assertEqual(contract["broad_context_policy"], "gated_focused_only")
         self.assertIn("Do not run random/generated candidates", contract["deferred"])
         self.assertIn("Do not load a specialist skill", contract["specialist_skill_policy"])
         self.assertRegex(
@@ -157,6 +169,8 @@ class PrepTests(unittest.TestCase):
     def test_continuation_milestone_selects_one_coarse_primitive(self):
         policy = {
             "initial_action_kind": "verifier_construction",
+            "initial_broad_context_policy": "gated_focused_only",
+            "continuation_broad_context_policy": "conditional_recorded_falsifier_need",
             "max_action_primitives": 1,
             "implementation_stop_call": 12,
             "final_replay_call": 13,
@@ -169,9 +183,46 @@ class PrepTests(unittest.TestCase):
         contract = prep.milestone_contract(continuation, policy)
         self.assertEqual(contract["phase"], "accepted_continuation")
         self.assertEqual(contract["action_kind"], "bounded_exact_search")
+        self.assertEqual(
+            contract["broad_context_policy"],
+            "conditional_recorded_falsifier_need",
+        )
         self.assertEqual(contract["max_action_primitives"], 1)
         self.assertIn("Defer every downstream primitive", contract["deferred"])
         self.assertIn("at most one specialist skill", contract["specialist_skill_policy"])
+
+    def test_initial_broad_context_is_replaced_by_hash_bound_stub(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            markdown = root / "context_packet.md"
+            canonical = root / "context_packet.json"
+            markdown.write_text("# Broad packet\nsecretly large context\n")
+            canonical.write_text('{"frontier":{"id":"fixture"}}\n')
+            original_json = canonical.read_text()
+            evidence = prep.stage_broad_context(
+                root, {"broad_context_policy": "gated_focused_only"}
+            )
+            self.assertEqual(evidence["status"], "gated_with_hash_receipt")
+            self.assertIn("Broad context gated", markdown.read_text())
+            self.assertNotIn("secretly large context", markdown.read_text())
+            self.assertEqual(canonical.read_text(), original_json)
+            self.assertIn(evidence["original_markdown_sha256"], markdown.read_text())
+            self.assertIn(evidence["canonical_json_sha256"], markdown.read_text())
+
+    def test_continuation_broad_context_remains_conditional_and_unchanged(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            markdown = root / "context_packet.md"
+            canonical = root / "context_packet.json"
+            markdown.write_text("# Broad packet\n")
+            canonical.write_text("{}\n")
+            original = markdown.read_text()
+            evidence = prep.stage_broad_context(
+                root,
+                {"broad_context_policy": "conditional_recorded_falsifier_need"},
+            )
+            self.assertEqual(evidence["status"], "available_conditionally")
+            self.assertEqual(markdown.read_text(), original)
 
     def test_runtime_quarantine_shrinks_instead_of_replaying_route(self):
         runtime = prep.quarantine_instruction(

@@ -93,6 +93,31 @@ RuntimeError: Connection error.
         self.assertEqual(result["receipt"]["frontier_id"], "erdos_1029_r55")
         self.assertTrue(any("quantity-conflation" in row for row in result["errors"]))
 
+    def test_missing_labels_preserve_operator_bound_lane_and_time(self):
+        sample = (
+            '# Cron Job: scout\n'
+            '**Run Time:** 2026-07-15 08:38:00\n'
+            '## Prompt\nUntrusted decoy: {"frontier_id":"wrong_lane"}\n'
+            '## Script Output\nThe operator prep emitted:\n```\n'
+            '{"frontier_id":"erdos_67_discrepancy_c3",'
+            '"ranked":[{"frontier_id":"other_lane"}]}\n```\n'
+            '## Response\nIntermediate sentence without labels.\n'
+        )
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "run.md"
+            path.write_text(sample)
+            result = foundry.inspect_source(
+                path,
+                "50c8e4391849",
+                {"source_timezone": "Etc/GMT+7"},
+            )
+        self.assertFalse(result["valid"])
+        self.assertEqual(
+            result["receipt"]["frontier_id"], "erdos_67_discrepancy_c3"
+        )
+        self.assertEqual(result["receipt"]["occurred_at"], "2026-07-15T15:38:00Z")
+        self.assertTrue(any("missing required receipt labels" in row for row in result["errors"]))
+
     def test_system_postamble_is_outside_six_field_membrane(self):
         sample = SAMPLE + "\n---\n\nObservation outside receipt.\n⚠️ File-mutation verifier: /home/private/path\n"
         sections = foundry.parse_sections(sample)
