@@ -52,6 +52,16 @@ class FoundryTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             foundry.parse_sections("**Frontier**\nOnly one field")
 
+    def test_system_postamble_is_outside_six_field_membrane(self):
+        sample = SAMPLE + "\n---\n\nObservation outside receipt.\n⚠️ File-mutation verifier: /home/private/path\n"
+        sections = foundry.parse_sections(sample)
+        self.assertEqual(sections["Boundary held"], "No Atlas writes or submissions.")
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "run.md"
+            path.write_text(sample)
+            receipt = foundry.build_receipt(path, "50c8e4391849")
+            self.assertEqual(foundry.validate_receipt(receipt), [])
+
     def test_classification(self):
         self.assertEqual(foundry.classify("candidate survives", "built verifier"), "progress")
         self.assertEqual(foundry.classify("local-exhaustion", "checked route"), "negative_result")
