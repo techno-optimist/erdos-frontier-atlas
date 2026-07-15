@@ -25,6 +25,21 @@
         "all stretched (littlewood[- ]richardson|lr) coefficients are non-negative",
         "confirms? the (horn/)?knutson-tao saturation theorem"
       ]
+    },
+    "erdos_21_q6": {
+      "effective_after": "2026-07-15T05:00:00Z",
+      "target_quantity": "the minimum edge count q(6), with witness validity requiring pairwise intersection and cover number exactly 6; a single valid hypergraph is only an upper bound",
+      "required_evidence_any": [
+        "5-cover",
+        "cover number",
+        "hitting set",
+        "pairwise-intersecting",
+        "pairwise intersection"
+      ],
+      "forbidden_claim_patterns": [
+        "proves? q\\(6\\)",
+        "establishes? the exact value of q\\(6\\)"
+      ]
     }
   }
 }
