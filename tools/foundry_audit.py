@@ -43,6 +43,16 @@ def configured_api_retry_budget(path: Path) -> int:
     return int(match.group(1)) if match else 0
 
 
+def semantic_contract_digest(config: dict) -> str:
+    canonical = json.dumps(
+        config.get("semantic_contracts", {}),
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode()
+    return "sha256:" + hashlib.sha256(canonical).hexdigest()
+
+
 def norm(text: str) -> str:
     import re
     return " ".join(re.findall(r"[a-z0-9]+", text.lower()))
@@ -76,7 +86,9 @@ def publication_quarantines_consistent(receipts: list[dict], incidents: list[dic
     )
 
 
-def structured_quarantine_feedback_consistent(ingest_state: dict) -> bool:
+def structured_quarantine_feedback_consistent(
+    ingest_state: dict, contract_digest: str | None = None
+) -> bool:
     rejected = ingest_state.get("rejected", {})
     details = ingest_state.get("rejected_details", {})
     if not rejected:
@@ -87,6 +99,10 @@ def structured_quarantine_feedback_consistent(ingest_state: dict) -> bool:
         and details[key].get("source_sha256") == source_sha
         and isinstance(details[key].get("errors"), list)
         and bool(details[key]["errors"])
+        and (
+            contract_digest is None
+            or details[key].get("semantic_contract_digest") == contract_digest
+        )
         and key not in ingest_state.get("accepted", {})
         for key, source_sha in rejected.items()
     )
@@ -364,7 +380,9 @@ def main() -> int:
         "foundry_and_atlas_validation": validate.returncode == 0,
         "semantic_target_contracts_active": bool(config.get("semantic_contracts")),
         "publication_quarantines_consistent": publication_quarantines_consistent(receipts, incidents, ingest_state),
-        "structured_quarantine_feedback_consistent": structured_quarantine_feedback_consistent(ingest_state),
+        "structured_quarantine_feedback_consistent": structured_quarantine_feedback_consistent(
+            ingest_state, semantic_contract_digest(config)
+        ),
         "automation_branch_current": bool(remote_head) and local_head == remote_head,
         "installed_runtime_matches_repo": all(row["source"] == row["installed"] for row in runtime_hashes.values()),
         "frontier_call_incidents_acknowledged": bool(calls) and all(row["certified_stall"] or row["incident_acknowledged"] for row in call_evidence),
