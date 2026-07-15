@@ -66,6 +66,14 @@ class FoundryEvalTests(unittest.TestCase):
         self.assertNotIn("private_suite", rendered)
         self.assertEqual(packet["authority"]["promotion"], "none")
 
+    def test_replay_ready_public_task_carries_only_its_public_canonical_contract(self):
+        task = next(row for row in self.public["tasks"] if row["problem_id"] == 552)
+        packet = evaluation.make_task_packet(task, self.atlas, self.protocol, 13)
+        contract = packet["canonical_artifact_contract"]
+        self.assertEqual(contract["verifier_id"], "erdos-552-c4-star-v1")
+        self.assertEqual(contract["artifact_path"], "canonical_witness.json")
+        self.assertNotIn("private", json.dumps(contract).lower())
+
     def test_private_atomic_state_is_mode_0600(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "private.json"

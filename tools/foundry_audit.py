@@ -142,6 +142,61 @@ def model_transport_verified(report: dict | None, path: Path, cutoff: datetime) 
     )
 
 
+def independent_replay_verified(report: dict | None, path: Path, cutoff: datetime) -> bool:
+    try:
+        private_mode = path.stat().st_mode & 0o777 == 0o600
+    except OSError:
+        return False
+    boundary = report.get("replay_boundary", {}) if report else {}
+    replays = report.get("replays", []) if report else []
+    artifacts = report.get("artifact_inventory", []) if report else []
+    return bool(
+        report
+        and report.get("schema") == "p42-foundry-independent-replay-v1"
+        and report.get("mode") == "synthetic_boundary_smoke_no_rsi_claim"
+        and report.get("scope") == "contract_smoke"
+        and report.get("ok") is True
+        and report.get("verified_utility_units") == 0
+        and report.get("artifact_replay_ok") is True
+        and report.get("canonical_math_verdict") == "pending_evaluator_owned_verifier"
+        and report.get("promotion_authority") == "none_smoke_only"
+        and report.get("evaluator_tree_clean") is True
+        and str(report.get("image_id", "")).startswith("sha256:")
+        and boundary.get("candidate_network") == "none"
+        and boundary.get("root_filesystem") == "read_only"
+        and boundary.get("candidate_workspace_mounted") is False
+        and boundary.get("model_transport_mounted") is False
+        and boundary.get("private_manifest_mounted") is False
+        and boundary.get("docker_socket_mounted") is False
+        and bool(artifacts)
+        and all(str(row.get("sha256", "")).startswith("sha256:") for row in artifacts)
+        and bool(replays)
+        and all(row.get("ok") is True for row in replays)
+        and private_mode
+        and (parse_time(report.get("created_at")) or datetime.min.replace(tzinfo=timezone.utc)) >= cutoff
+    )
+
+
+def paired_evaluation_verified(report: dict | None, path: Path, cutoff: datetime) -> bool:
+    try:
+        private_mode = path.stat().st_mode & 0o777 == 0o600
+    except OSError:
+        return False
+    return bool(
+        report
+        and report.get("schema") == "p42-foundry-paired-evaluation-v1"
+        and report.get("paired_runs", 0) > 0
+        and report.get("fixed_budget_evidence_matched") is True
+        and report.get("automatic_production_promotion") is False
+        and report.get("promotion_authority") == "none_human_review_required"
+        and report.get("claim_status") in {
+            "development_evidence_only", "promotion_candidate_human_review_required"
+        }
+        and private_mode
+        and (parse_time(report.get("created_at")) or datetime.min.replace(tzinfo=timezone.utc)) >= cutoff
+    )
+
+
 def tool_call_smoke() -> tuple[bool, dict]:
     body = json.dumps({
         "model": MODEL,
@@ -189,6 +244,10 @@ def main() -> int:
     private_manifest_path = args.state_root / "foundry_eval" / "private_suite.json"
     model_transport_path = args.state_root / "foundry_eval" / "model_transport_smoke.json"
     model_transport = json.loads(model_transport_path.read_text()) if model_transport_path.exists() else None
+    replay_smoke_path = args.state_root / "foundry_eval" / "replay_smoke.json"
+    replay_smoke = json.loads(replay_smoke_path.read_text()) if replay_smoke_path.exists() else None
+    paired_eval_path = args.state_root / "foundry_eval" / "paired_evaluation_latest.json"
+    paired_eval = json.loads(paired_eval_path.read_text()) if paired_eval_path.exists() else None
     public_commitment_path = ROOT / "foundry" / "eval" / "private_suite.commitment.json"
     public_commitment = json.loads(public_commitment_path.read_text()) if public_commitment_path.exists() else None
     calls = budget.get("calls", [])
@@ -294,6 +353,12 @@ def main() -> int:
         "model_only_eval_transport_verified": model_transport_verified(
             model_transport, model_transport_path, now - timedelta(hours=24)
         ),
+        "independent_replay_adjudicator_verified": independent_replay_verified(
+            replay_smoke, replay_smoke_path, now - timedelta(hours=24)
+        ),
+        "paired_fixed_budget_evaluation_executed": paired_evaluation_verified(
+            paired_eval, paired_eval_path, now - timedelta(hours=24)
+        ),
         "protected_hashes_stable_during_audit": before == after,
     }
     report = {
@@ -333,6 +398,25 @@ def main() -> int:
                 )
             } if model_transport else None),
             "model_transport_report_mode": oct(model_transport_path.stat().st_mode & 0o777) if model_transport_path.exists() else None,
+            "independent_replay_smoke": ({
+                key: replay_smoke.get(key) for key in (
+                    "schema", "created_at", "mode", "ok", "scope", "image_id",
+                    "evaluator_revision", "evaluator_tree_clean", "artifact_replay_ok",
+                    "verified_utility_units",
+                    "canonical_math_verdict", "replay_boundary", "promotion_authority",
+                )
+            } if replay_smoke else None),
+            "independent_replay_report_mode": oct(replay_smoke_path.stat().st_mode & 0o777) if replay_smoke_path.exists() else None,
+            "paired_evaluation": ({
+                key: paired_eval.get(key) for key in (
+                    "schema", "created_at", "baseline_id", "candidate_id", "paired_runs",
+                    "private_paired_runs", "public_paired_runs", "private_wins",
+                    "bootstrap_lower_bound", "fixed_budget_evidence_matched",
+                    "promotion_eligible", "claim_status", "automatic_production_promotion",
+                    "promotion_authority",
+                )
+            } if paired_eval else None),
+            "paired_evaluation_report_mode": oct(paired_eval_path.stat().st_mode & 0o777) if paired_eval_path.exists() else None,
             "protected_hashes_before": before, "protected_hashes_after": after,
             "validation_tail": validate.stdout.strip().splitlines()[-1] if validate.stdout.strip() else None,
         },

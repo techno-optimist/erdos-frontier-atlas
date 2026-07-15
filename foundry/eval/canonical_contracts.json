@@ -1,0 +1,33 @@
+{
+  "schema": "p42-foundry-canonical-contract-registry-v1",
+  "version": "2026-07-15.1",
+  "contracts": {
+    "1": {
+      "verifier_id": "erdos-1-distinct-subset-sums-v1",
+      "artifact_path": "canonical_witness.json",
+      "artifact_schema": {"set": "strictly increasing array of exactly 11 positive integers"},
+      "acceptance": "all 2048 subset sums are distinct and the largest element is below 594"
+    },
+    "21": {
+      "verifier_id": "erdos-21-q6-v1",
+      "artifact_path": "canonical_witness.json",
+      "artifact_schema": {"edges": "array of distinct six-element integer arrays"},
+      "acceptance": "pairwise intersecting, no hitting set of size at most five, and fewer than 18 edges"
+    },
+    "138": {
+      "verifier_id": "erdos-138-van-der-waerden-v1",
+      "artifact_path": "canonical_witness.json",
+      "artifact_schema": {
+        "k": "one of 7, 8, 9, 10",
+        "coloring": "zero/one array coloring positions 1 through N"
+      },
+      "acceptance": "no monochromatic k-term arithmetic progression and N exceeds the frozen witness length"
+    },
+    "552": {
+      "verifier_id": "erdos-552-c4-star-v1",
+      "artifact_path": "canonical_witness.json",
+      "artifact_schema": {"n": 17, "vertices": 22, "edges": "simple undirected edge array"},
+      "acceptance": "C4-free graph of minimum degree at least five on 22 vertices"
+    }
+  }
+}
