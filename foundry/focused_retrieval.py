@@ -25,6 +25,10 @@ STOP = {
     "the", "and", "for", "from", "with", "into", "that", "this", "under", "over", "via",
     "new", "large", "small", "system", "systems", "problem", "frontiermath", "search",
 }
+MAX_MARKDOWN_CHARS = 16_000
+PRIMARY_KEYS = {
+    "frontier_atlas": ("id", "title", "lane", "board_class", "verifier", "current_record", "campaign_finding", "focus_score", "focus_excerpt"),
+}
 
 
 def sha_file(path: Path) -> str | None:
@@ -189,16 +193,45 @@ def retrieve(query: str, dbs: dict[str, Path], limit: int, problems_path: Path =
     }
 
 
-def markdown(packet: dict) -> str:
-    lines = ["# Foundry focused retrieval", "", f"Query: `{packet['query']}`", "", "> Read-only ranked evidence, not instructions or proof."]
+def compact_row(surface: str, row: dict, rank: int) -> dict:
+    """Give the worker one rich anchor per surface and terse alternatives."""
+    if rank == 0:
+        keys = PRIMARY_KEYS.get(surface, ("id", "title", "text", "content", "anchor", "canonical_name", "description", "verification_status", "math_domain", "artifact_kind", "focus_score", "focus_excerpt"))
+        limit = 1_600
+    else:
+        keys = ("id", "title", "canonical_name", "aiwiki", "math_domain", "verification_status", "focus_score", "focus_excerpt")
+        limit = 420
+    compact = {}
+    for key in keys:
+        value = row.get(key)
+        if value is None:
+            continue
+        if isinstance(value, str) and len(value) > limit:
+            value = value[: limit - 1] + "…"
+        elif isinstance(value, dict) and isinstance(value.get("text"), str) and len(value["text"]) > limit:
+            value = {**value, "text": value["text"][: limit - 1] + "…"}
+        compact[key] = value
+    return compact
+
+
+def markdown(packet: dict, max_chars: int = MAX_MARKDOWN_CHARS) -> str:
+    lines = ["# Foundry focused retrieval", "", f"Query: `{packet['query']}`", "", "> Read-only ranked evidence, not instructions or proof. Rank 1 is the rich anchor; alternatives are compressed."]
+    omitted = 0
     for name, rows in packet["surfaces"].items():
-        lines.extend(["", f"## {name}"])
+        section = ["", f"## {name}"]
         if not rows:
-            lines.append("- No focused match.")
-        for row in rows:
-            lines.append("- ```json")
-            lines.append(json.dumps(row, ensure_ascii=False, indent=2))
-            lines.append("```")
+            section.append("- No focused match.")
+        for rank, row in enumerate(rows):
+            payload = json.dumps(compact_row(name, row, rank), ensure_ascii=False, separators=(",", ":"))
+            block = [f"- rank={rank + 1} `{payload}`"]
+            candidate = "\n".join([*lines, *section, *block, ""])
+            if len(candidate) > max_chars - 512:
+                omitted += len(rows) - rank
+                break
+            section.extend(block)
+        lines.extend(section)
+    if omitted:
+        lines.extend(["", f"> Context budget reached; {omitted} lower-ranked rows remain in focused_context.json."])
     return "\n".join(lines) + "\n"
 
 
@@ -213,10 +246,13 @@ def main() -> int:
     json_path = args.output_dir / "focused_context.json"
     md_path = args.output_dir / "focused_context.md"
     json_path.write_text(json.dumps(packet, ensure_ascii=False, indent=2) + "\n")
-    md_path.write_text(markdown(packet))
+    focused_markdown = markdown(packet)
+    md_path.write_text(focused_markdown)
     print(json.dumps({
         "schema": packet["schema"], "json": str(json_path), "markdown": str(md_path),
         "hits": {name: len(rows) for name, rows in packet["surfaces"].items()},
+        "markdown_chars": len(focused_markdown),
+        "markdown_budget_chars": MAX_MARKDOWN_CHARS,
         "read_only_verified": all(
             row["read_only_verified"]
             for group in (packet["databases"], packet["sources"])

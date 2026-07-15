@@ -75,6 +75,20 @@ class FocusedRetrievalTests(unittest.TestCase):
             self.assertIn("5-cover", rows[0]["focus_excerpt"]["text"])
             self.assertIn("orderly generation", rows[0]["campaign_finding"])
 
+    def test_worker_markdown_is_bounded_and_keeps_rich_anchor(self):
+        rich = {
+            "id": 21, "title": "q(6)", "lane": "orderly-generation",
+            "verifier": "PAIRWISE AND NO FIVE COVER " * 200,
+            "current_record": "14 <= q(6) <= 18", "campaign_finding": "SAT failed; use canonical augmentation.",
+            "focus_score": 10.0, "focus_excerpt": {"text": "exact target"},
+        }
+        alternative = {"id": 22, "title": "alternative", "text": "noise " * 1000, "focus_score": 1.0, "focus_excerpt": {"text": "short"}}
+        packet = {"query": "q(6)", "surfaces": {name: [rich, *([alternative] * 20)] for name in ("frontier_atlas", "atlas", "atlas2", "arena_problems", "arena_concepts", "aiwiki")}}
+        rendered = focused.markdown(packet, max_chars=6_000)
+        self.assertLessEqual(len(rendered), 6_000)
+        self.assertIn("14 <= q(6) <= 18", rendered)
+        self.assertIn("Context budget reached", rendered)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -8,6 +8,12 @@ SPEC.loader.exec_module(prep)
 
 
 class PrepTests(unittest.TestCase):
+    def test_focused_context_is_primary_and_broader_packet_is_conditional(self):
+        instruction = prep.worker_instruction("Load context_packet.md, fill experiment.json, run one bounded action")
+        self.assertIn("Read focused_context.md first", instruction)
+        self.assertIn("only if", instruction)
+        self.assertEqual(instruction.count("Load context_packet.md"), 1)
+
     def test_first_allowed_stall_overrides_moving_top_rank(self):
         ranked = [{"frontier_id": "moving"}, {"frontier_id": "stuck"}, {"frontier_id": "later"}]
         gates = {
