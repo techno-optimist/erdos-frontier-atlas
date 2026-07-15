@@ -189,6 +189,33 @@ class FoundryTests(unittest.TestCase):
         config = json.loads((ROOT / "foundry" / "config.json").read_text())
         self.assertEqual(foundry.semantic_contract_errors(receipt, config), [])
 
+    def test_c4_star_contract_rejects_off_by_one_equivalence_and_impossible_gate(self):
+        receipt = {
+            "frontier_id": "erdos_552_c4_star_n17",
+            "occurred_at": "2026-07-15T08:09:19Z",
+            "frontier": "Does a C4-free graph on 22 vertices with minimum degree 5 exist? Equivalent: R(C4, S₁₇) ≥ 22.",
+            "action": "Ran an exact codegree and minimum degree verifier.",
+            "verified": "No witness in 8,000 bounded seeds; codegree checks passed on fixtures.",
+            "result": "No witness was found; the bracket is unchanged.",
+            "next_gate": "Try a C4-free bipartite graph on (11,11) with min_degree ≥ 5.",
+        }
+        config = json.loads((ROOT / "foundry" / "config.json").read_text())
+        errors = foundry.semantic_contract_errors(receipt, config)
+        self.assertEqual(sum("quantity-conflation" in error for error in errors), 2)
+
+    def test_c4_star_contract_accepts_bounded_result_and_correct_target(self):
+        receipt = {
+            "frontier_id": "erdos_552_c4_star_n17",
+            "occurred_at": "2026-07-15T08:09:19Z",
+            "frontier": "Can a 22-vertex C4-free graph of minimum degree 5 prove R(C4,S17) ≥ 23?",
+            "action": "Ran an exact codegree and minimum degree verifier.",
+            "verified": "No witness in 8,000 bounded seeds; codegree checks passed on fixtures.",
+            "result": "No witness was found in the bounded sample; the bracket remains 22..23.",
+            "next_gate": "Use degree-sequence SAT with a replayable certificate or rotate.",
+        }
+        config = json.loads((ROOT / "foundry" / "config.json").read_text())
+        self.assertEqual(foundry.semantic_contract_errors(receipt, config), [])
+
     def test_cockpit_table_fallback(self):
         text = """## Response
 | Field | Value |

@@ -28,6 +28,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ATLAS = ROOT / "atlas" / "problems.json"
 PROTOCOL = ROOT / "foundry" / "rsi_protocol.json"
 PUBLIC_SUITE = ROOT / "foundry" / "eval" / "public_suite.json"
+CANONICAL_CONTRACTS = ROOT / "foundry" / "eval" / "canonical_contracts.json"
 PRIVATE_ROOT = Path.home() / ".hermes" / "chronos_state" / "foundry_eval"
 PRIVATE_MANIFEST = PRIVATE_ROOT / "private_suite.json"
 PRIVATE_COMMITMENT = PRIVATE_ROOT / "private_suite.commitment.json"
@@ -172,7 +173,8 @@ def make_task_packet(
     by_id = {int(row["id"]): row for row in atlas["problems"]}
     problem = by_id[int(task["problem_id"])]
     budget = dict(protocol["evaluation"]["budget_per_task_run"])
-    return {
+    contracts = load(CANONICAL_CONTRACTS).get("contracts", {})
+    value = {
         "schema": "p42-foundry-eval-task-v1",
         "protocol_version": protocol["protocol_version"],
         "evaluation_id": task.get("task_id") or task.get("frontier_id"),
@@ -200,6 +202,10 @@ def make_task_packet(
         },
         "split_disclosure": "undisclosed_to_candidate",
     }
+    contract = contracts.get(str(problem["id"]))
+    if contract:
+        value["canonical_artifact_contract"] = contract
+    return value
 
 
 def docker_sandbox_command(

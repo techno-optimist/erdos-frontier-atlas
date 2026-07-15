@@ -1,0 +1,44 @@
+{
+  "schema": "p42-foundry-adjudication-protocol-v1",
+  "protocol_version": "1.0.0",
+  "frozen_at": "2026-07-15T08:15:44Z",
+  "owner": "evaluator_not_candidate",
+  "candidate_result_schema": "p42-foundry-candidate-result-v2",
+  "replay_acceptance_requires": [
+    "frozen task packet binding by evaluation id, seed, and canonical SHA-256",
+    "successful candidate run under the fixed model budget membrane",
+    "exact content-address match for every bounded regular artifact",
+    "fresh independent replay of artifact Python entrypoints",
+    "zero structural or hard-constraint violations"
+  ],
+  "generic_replay_utility_cap": 0,
+  "positive_utility_additional_requirement": "separately registered evaluator-owned canonical mathematical verifier bound to the task and candidate-result hashes",
+  "canonical_verifier_registry": {
+    "source": "tools/foundry_canonical_verify.py",
+    "contracts": "foundry/eval/canonical_contracts.json",
+    "registered_frontier_ids": [1, 21, 138, 552],
+    "duplicates_or_non_improvements_score": 0
+  },
+  "replay_boundary": {
+    "network": "none",
+    "root_filesystem": "read_only",
+    "capabilities": "all_dropped",
+    "candidate_workspace_mounted": false,
+    "model_transport_mounted": false,
+    "private_manifest_mounted": false,
+    "docker_socket_mounted": false,
+    "mounted_inputs": ["content-addressed artifacts read-only", "one task packet read-only"]
+  },
+  "paired_comparison": {
+    "requires_identical_task_packet_hashes": true,
+    "requires_identical_fixed_model_budget_evidence": true,
+    "bootstrap_iterations": 10000,
+    "automatic_production_promotion": false,
+    "human_review_required": true
+  },
+  "synthetic_boundary_smoke": {
+    "operational_evidence_only": true,
+    "rsi_evidence": false,
+    "promotion_authority": "none"
+  }
+}

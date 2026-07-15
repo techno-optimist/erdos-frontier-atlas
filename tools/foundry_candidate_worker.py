@@ -9,6 +9,7 @@ candidate output directory.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import os
 import socket
@@ -101,8 +102,31 @@ TOOLS = [
                     "claim": {"type": "string"},
                     "evidence": {"type": "array", "items": {"type": "string"}},
                     "artifacts": {"type": "array", "items": {"type": "string"}},
-                    "replay": {"type": "array", "items": {"type": "string"}},
-                    "theorem_status": {"type": "string"},
+                    "replay": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "argv": {
+                                    "type": "array",
+                                    "items": {"type": "string"},
+                                    "minItems": 2,
+                                },
+                                "timeout_seconds": {
+                                    "type": "integer", "minimum": 1, "maximum": 180,
+                                },
+                                "expected_exit": {"const": 0},
+                            },
+                            "required": ["argv"],
+                            "additionalProperties": False,
+                        },
+                    },
+                    "theorem_status": {
+                        "enum": [
+                            "witness_only", "local_result_only",
+                            "certificate_pending", "theorem_unchanged",
+                        ]
+                    },
                 },
                 "required": [
                     "classification", "hypothesis", "falsifier", "claim",
@@ -140,6 +164,33 @@ def _artifact_path(raw: str) -> Path:
     if Path(raw).is_absolute() or not _inside(path, root):
         raise ValueError("artifact path escapes output directory")
     return path
+
+
+def _canonical_bytes(value: object) -> bytes:
+    return json.dumps(
+        value, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+    ).encode()
+
+
+def _artifact_inventory() -> list[dict]:
+    root = OUTPUT / "artifacts"
+    rows = []
+    if not root.exists():
+        return rows
+    for path in sorted(root.rglob("*")):
+        if path.is_symlink() or (path.exists() and not _inside(path, root)):
+            raise ValueError("artifact tree contains an unsafe path")
+        if not path.is_file():
+            continue
+        data = path.read_bytes()
+        if len(data) > 1_000_000:
+            raise ValueError("artifact exceeds one megabyte")
+        rows.append({
+            "path": path.relative_to(root).as_posix(),
+            "sha256": "sha256:" + hashlib.sha256(data).hexdigest(),
+            "bytes": len(data),
+        })
+    return rows
 
 
 def unix_chat(payload: dict, socket_path: Path = MODEL_SOCKET) -> dict:
@@ -219,7 +270,15 @@ def execute_tool(name: str, args: dict) -> str:
             return json.dumps({"written": str(path.relative_to(OUTPUT)), "bytes": len(content.encode())})
         if name == "submit_result":
             result = dict(args)
-            result["schema"] = "p42-foundry-candidate-result-v1"
+            task = json.loads(TASK_PATH.read_text())
+            result["schema"] = "p42-foundry-candidate-result-v2"
+            result["evaluation_id"] = task.get("evaluation_id")
+            result["seed"] = task.get("seed")
+            result["task_packet_sha256"] = (
+                "sha256:" + hashlib.sha256(_canonical_bytes(task)).hexdigest()
+            )
+            result["artifacts_claimed"] = result.pop("artifacts")
+            result["artifacts"] = _artifact_inventory()
             result["independent_replay_status"] = "pending"
             (OUTPUT / "result.json").write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n")
             return json.dumps({"submitted": True, "authority": "none_pending_independent_replay"})
@@ -250,7 +309,13 @@ def run_task(task_path: Path) -> int:
         "You are the isolated Foundry math worker. Work verifier-first on the single task packet. "
         "Register one bounded hypothesis and executable falsifier before exploration. Use tools to "
         "inspect candidate code and run local checks. Separate witness/local evidence/certificate/theorem "
-        "status. Never infer acceptance from your own classification. Finish with submit_result."
+        "status. Put every final file under artifacts/, and give replay as argv objects of the form "
+        "{\"argv\":[\"python3\",\"artifacts/check.py\"],\"timeout_seconds\":180,"
+        "\"expected_exit\":0}; shell strings, inline Python, and nonzero expected exits are forbidden. "
+        "Use only the bounded theorem_status classes exposed by submit_result. Never infer acceptance "
+        "from your own classification. If canonical_artifact_contract is present, write exactly its "
+        "artifact_path and satisfy its public schema; only the evaluator-owned verifier can score it. "
+        "Finish with submit_result."
     )
     messages = [
         {"role": "system", "content": system},

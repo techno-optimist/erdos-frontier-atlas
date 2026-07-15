@@ -131,3 +131,38 @@ python3 ~/erdos-frontier-atlas/tools/foundry_efficiency.py \
 This instrumentation can prove that compact context reduced compute while
 preserving independently judged output. It cannot prove the preservation by
 itself.
+
+## Independent replay implementation
+
+[`tools/foundry_adjudicate.py`](../tools/foundry_adjudicate.py) implements the
+previously specified independent-replay boundary. It is run from a clean,
+evaluator-owned revision, never from the candidate worktree. A positive replay
+unit requires a v2 result bound to the exact task ID, seed, and canonical task
+packet hash; an evaluator-computed content address for every bounded regular
+artifact; a fixed-budget model-run receipt; and fresh zero-exit replay in a
+second Docker container with no network, model socket, candidate workspace,
+private manifest, or Docker socket.
+
+Candidate-authored executable replay earns **zero utility units** by itself. It
+establishes reproducibility, not mathematical truth. Every positive rubric
+level, including the one-unit typed-receipt level, requires an evaluator-owned
+canonical verdict bound to the task-packet and candidate-result hashes. The
+verdict records the immutable verifier identity/source digest and is unavailable
+inside both candidate and replay containers. This prevents a candidate from
+promoting its own checker into a correctness oracle.
+
+The initial canonical registry covers four exact public witness classes:
+distinct subset sums (#1), q(6) (#21), van der Waerden lower-bound colorings
+(#138), and C4-versus-star Ramsey witnesses (#552). It accepts only a strict
+improvement over the frozen frontier; reproductions and known witnesses score
+zero. Other task classes remain honestly unscored until an evaluator-owned
+verifier is registered. In particular, replay infrastructure being operational
+does not by itself open the Level 1 promotion gate.
+
+The same tool performs paired comparison. It refuses incomplete matrices,
+different task-packet hashes, or different fixed model/budget evidence; applies
+the frozen holdout win and bootstrap gates; and always leaves automatic
+production promotion disabled. Its `smoke` command is explicitly labelled
+synthetic boundary evidence and cannot count as RSI evidence. The complete
+machine-readable membrane is frozen in
+[`adjudication_protocol.json`](adjudication_protocol.json).

@@ -10,6 +10,9 @@ class RsiProtocolTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.protocol = json.loads((ROOT / "foundry" / "rsi_protocol.json").read_text())
+        cls.adjudication = json.loads(
+            (ROOT / "foundry" / "adjudication_protocol.json").read_text()
+        )
         cls.suite = json.loads((ROOT / "foundry" / "eval" / "public_suite.json").read_text())
         cls.atlas = json.loads((ROOT / "atlas" / "problems.json").read_text())
 
@@ -60,6 +63,18 @@ class RsiProtocolTests(unittest.TestCase):
         expected_holdout = evaluation["private_holdout_tasks"] * evaluation["seeds_per_task"]
         self.assertEqual(evaluation["paired_task_runs_per_candidate"], expected_total)
         self.assertEqual(self.protocol["promotion_gate"]["minimum_paired_holdout_runs"], expected_holdout)
+
+    def test_generic_replay_cannot_self_promote_math_claims(self):
+        self.assertEqual(self.adjudication["generic_replay_utility_cap"], 0)
+        self.assertFalse(
+            self.adjudication["paired_comparison"]["automatic_production_promotion"]
+        )
+        self.assertTrue(self.adjudication["paired_comparison"]["human_review_required"])
+        boundary = self.adjudication["replay_boundary"]
+        self.assertEqual(boundary["network"], "none")
+        self.assertFalse(boundary["candidate_workspace_mounted"])
+        self.assertFalse(boundary["model_transport_mounted"])
+        self.assertFalse(boundary["private_manifest_mounted"])
 
 
 if __name__ == "__main__":

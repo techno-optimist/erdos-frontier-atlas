@@ -71,6 +71,56 @@ class AuditTests(unittest.TestCase):
             report["candidate_network"] = "bridge"
             self.assertFalse(audit.model_transport_verified(report, path, cutoff))
 
+    def test_independent_replay_smoke_proves_fresh_second_boundary(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "replay.json"
+            report = {
+                "schema": "p42-foundry-independent-replay-v1",
+                "created_at": "2026-07-15T08:00:00Z",
+                "mode": "synthetic_boundary_smoke_no_rsi_claim",
+                "scope": "contract_smoke",
+                "ok": True,
+                "verified_utility_units": 0,
+                "artifact_replay_ok": True,
+                "canonical_math_verdict": "pending_evaluator_owned_verifier",
+                "promotion_authority": "none_smoke_only",
+                "evaluator_tree_clean": True,
+                "image_id": "sha256:" + "1" * 64,
+                "replay_boundary": {
+                    "candidate_network": "none",
+                    "root_filesystem": "read_only",
+                    "candidate_workspace_mounted": False,
+                    "model_transport_mounted": False,
+                    "private_manifest_mounted": False,
+                    "docker_socket_mounted": False,
+                },
+                "artifact_inventory": [{"sha256": "sha256:" + "2" * 64}],
+                "replays": [{"ok": True}],
+            }
+            path.write_text(json.dumps(report)); path.chmod(0o600)
+            cutoff = datetime(2026, 7, 15, 7, 0, tzinfo=timezone.utc)
+            self.assertTrue(audit.independent_replay_verified(report, path, cutoff))
+            report["replay_boundary"]["model_transport_mounted"] = True
+            self.assertFalse(audit.independent_replay_verified(report, path, cutoff))
+
+    def test_paired_eval_is_operational_evidence_without_auto_promotion(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "paired.json"
+            report = {
+                "schema": "p42-foundry-paired-evaluation-v1",
+                "created_at": "2026-07-15T08:00:00Z",
+                "paired_runs": 1,
+                "fixed_budget_evidence_matched": True,
+                "automatic_production_promotion": False,
+                "promotion_authority": "none_human_review_required",
+                "claim_status": "development_evidence_only",
+            }
+            path.write_text(json.dumps(report)); path.chmod(0o600)
+            cutoff = datetime(2026, 7, 15, 7, 0, tzinfo=timezone.utc)
+            self.assertTrue(audit.paired_evaluation_verified(report, path, cutoff))
+            report["automatic_production_promotion"] = True
+            self.assertFalse(audit.paired_evaluation_verified(report, path, cutoff))
+
     def test_structured_quarantine_feedback_matches_rejected_hash(self):
         state = {
             "accepted": {},
