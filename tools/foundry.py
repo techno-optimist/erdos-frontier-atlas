@@ -28,7 +28,13 @@ INDEX = PROGRESS / "index.json"
 CONFIG = ROOT / "foundry" / "config.json"
 LABELS = ("Frontier", "Action", "Verified", "Result", "Next gate", "Boundary held")
 BLOCKED = ("blocked", "no changed condition", "selector-repeat", "selector repeat", "cannot run", "unavailable")
-NEGATIVE = ("negative result", "negative-result", "local-exhaustion", "local exhaustion", "no disagreement", "prior verdict holds", "route closed", "lane remains closed", "no mathematical progress", "standing rotation", "no-signal", "no signal", "control_plane_only", "control-plane only")
+NEGATIVE = (
+    "negative result", "negative-result", "local-exhaustion", "local exhaustion",
+    "no disagreement", "prior verdict holds", "route closed", "lane remains closed",
+    "no mathematical progress", "standing rotation", "no-signal", "no signal",
+    "control_plane_only", "control-plane only", "inconclusive", "no witness found",
+    "no witness was found", "bracket is unchanged", "bracket remains",
+)
 FORBIDDEN_PUBLIC = (
     re.compile(r"/(?:home|Users|private|tmp)/"),
     re.compile(r"\b(?:sk|ghp|github_pat)-[A-Za-z0-9_-]{8,}"),
