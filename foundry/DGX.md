@@ -138,8 +138,12 @@ the publisher entrypoint, and compact skill, then performs the scheduler
 migration under the Hermes cron lock. It writes a timestamped backup, pins both research jobs to the
 local 35B provider, points auxiliary compression at the same local provider,
 replaces eager 100KB umbrella-skill injection with the compact `foundry` skill,
-and appends the recursion instruction idempotently. Specialist skills remain
-available for adaptive loading after target selection.
+and appends the recursion and typed frontier-trace instructions idempotently.
+Specialist skills remain available for adaptive loading after target selection.
+Hermes background review may propose skill mutations after a research turn, but
+they are not promotion-authorized: the no-agent publisher atomically restores
+the reviewed repository skill on every tick, and the operational audit requires
+the installed and reviewed digests to match.
 
 The checked-in `40-foundry-tool-parser.conf` preserves the live W19/MoE hooks
 while enabling SGLang's `qwen3_coder` tool-call parser. Install it as the

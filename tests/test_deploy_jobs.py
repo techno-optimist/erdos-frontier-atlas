@@ -21,6 +21,20 @@ class DeployTests(unittest.TestCase):
             self.assertEqual(target.stat().st_mode & 0o777, 0o755)
             self.assertEqual(len(installed[str(target)]), 64)
 
+    def test_prompt_suffixes_are_idempotent_and_trace_is_explicit(self):
+        prompt = deploy.append_prompt_once(
+            "base", "FOUNDRY RECURSION (operator-authorized)", deploy.SUFFIX
+        )
+        prompt = deploy.append_prompt_once(
+            prompt, "FOUNDRY TRACE (required)", deploy.TRACE_SUFFIX
+        )
+        repeated = deploy.append_prompt_once(
+            prompt, "FOUNDRY TRACE (required)", deploy.TRACE_SUFFIX
+        )
+        self.assertEqual(prompt, repeated)
+        self.assertEqual(prompt.count("FOUNDRY TRACE (required)"), 1)
+        self.assertIn("only the six labelled receipt crosses", prompt)
+
 
 if __name__ == "__main__":
     unittest.main()
