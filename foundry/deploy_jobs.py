@@ -22,7 +22,7 @@ MODEL = "/home/chronos/models/qwen3.6-35b-a3b"
 AGENT = HOME / ".local" / "bin" / "chronos-agent"
 COMPACT_SKILLS = ["foundry"]
 API_MAX_RETRIES = 8
-FOUNDRY_MAX_TURNS = 18
+FOUNDRY_MAX_TURNS = 16
 FOUNDRY_MAX_WALL_SECONDS = 900
 HERMES_SCHEDULER = HOME / ".hermes" / "hermes-agent" / "cron" / "scheduler.py"
 SETTINGS = {
@@ -75,10 +75,10 @@ publication membrane.
 """.strip()
 RUNTIME_SUFFIX = """
 
-FOUNDRY HARD RUNTIME BUDGET (operator-enforced): This job has at most 18 model
+FOUNDRY HARD RUNTIME BUDGET (operator-enforced): This job has at most 16 model
 calls. Reserve the final two calls for the six-label receipt; after call 14,
 start no new implementation or search. Publication uses trusted Hermes logs
-and rejects a run above 18 calls, 70,000 maximum input tokens, 45,000 context
+and rejects a run above 16 calls, 70,000 maximum input tokens, 45,000 context
 growth tokens, 900 wall seconds, or more than one terminal action longer than
 30 seconds.
 A timeout or budget rejection is a scoped blocker, never evidence about the

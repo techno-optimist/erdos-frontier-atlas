@@ -14,7 +14,7 @@ class DeployTests(unittest.TestCase):
     def test_retry_budget_covers_observed_cold_model_restart(self):
         self.assertEqual(deploy.API_MAX_RETRIES, 8)
         self.assertEqual(deploy.SETTINGS["agent.api_max_retries"], "8")
-        self.assertEqual(deploy.FOUNDRY_MAX_TURNS, 18)
+        self.assertEqual(deploy.FOUNDRY_MAX_TURNS, 16)
         self.assertEqual(deploy.FOUNDRY_MAX_WALL_SECONDS, 900)
         config = json.loads((Path(__file__).parents[1] / "foundry" / "config.json").read_text())
         self.assertEqual(

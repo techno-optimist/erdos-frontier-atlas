@@ -79,6 +79,11 @@ fresh agent from repeating a solver route already falsified by prior runs.
 It records before/after database hashes and writes only compact session-local
 `focused_context` artifacts; failure of any read-only hash check fails prep.
 
+Prep also binds the latest public receipt to the private accepted-source hash
+and exposes it as `foundry.accepted_continuation`. Its completed action cannot
+be repeated by stale queue text; the worker continues from the receipt's next
+gate. This is progression state, not theorem or promotion authority.
+
 `foundry/shadow_policy.py` is an observe-only recursive-improvement layer. It
 scores lane evidence yield, exploration need, age, and repeated blocking, then
 writes `shadow_policy.json` into the session. It has no production selection
@@ -93,6 +98,9 @@ private report before ingest and hash-time-binds every post-policy source to a
 complete same-job turn. Runs above the checked-in API, context, wall-clock, or
 one-expensive-terminal budget are quarantined with structured replay feedback;
 the model cannot self-report around this gate.
+The report also binds the telemetry parser's source SHA-256 into its contract
+digest. Parser changes invalidate the publication-policy digest and replay
+hash-retained quarantines, so a fixed undercount cannot leave stale evidence.
 Receipt classifications remain telemetry and never become their own reward.
 The existing no-agent publisher refreshes that report every 30 minutes at
 `~/.hermes/chronos_state/foundry_efficiency_latest.json` with mode `0600`; the
@@ -142,7 +150,7 @@ source hash and emits a public old-to-new receipt-ID migration manifest.
 the publisher entrypoint, and compact skill, then performs the scheduler
 migration under the Hermes cron lock. It writes a timestamped backup, pins both research jobs to the
 local 35B provider, points auxiliary compression at the same local provider,
-pins the Foundry jobs to 18 turns and 900 wall-clock seconds, and installs
+pins the Foundry jobs to 16 turns and 900 wall-clock seconds, and installs
 exact-source fail-closed Hermes scheduler hooks for both limits. An
 operator-owned job may lower, never raise, the shared gateway turn cap. Other
 cron and interactive jobs retain the global Hermes behavior; restart the

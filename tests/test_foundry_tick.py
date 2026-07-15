@@ -17,8 +17,8 @@ class FoundryTickTests(unittest.TestCase):
     def runtime_config(self):
         return {"runtime_budget": {
             "effective_after": "2026-07-15T13:50:00Z",
-            "scheduled_job_max_turns": 18,
-            "max_api_calls": 18,
+            "scheduled_job_max_turns": 16,
+            "max_api_calls": 16,
             "max_input_tokens": 70000,
             "max_context_growth_tokens": 45000,
             "max_wall_seconds": 900,
@@ -45,6 +45,7 @@ class FoundryTickTests(unittest.TestCase):
         session.update(overrides)
         return {
             "runtime_budget_digest": foundry_tick.runtime_budget_digest(config),
+            "telemetry_contract_digest": foundry_tick.telemetry_contract_digest(config),
             "sessions": [session],
         }
 
@@ -56,6 +57,18 @@ class FoundryTickTests(unittest.TestCase):
         self.assertEqual(errors, [])
         self.assertEqual(evidence["status"], "within_budget")
         self.assertEqual(evidence["source_end_delta_seconds"], 2)
+
+    def test_runtime_budget_uses_operator_bound_job_for_raw_draft(self):
+        config = self.runtime_config()
+        receipt = {"occurred_at": "2026-07-15T14:07:00Z"}
+        errors, evidence = foundry_tick.runtime_budget_assessment(
+            receipt,
+            self.runtime_report(config),
+            config,
+            source_job_id="50c8e4391849",
+        )
+        self.assertEqual(errors, [])
+        self.assertEqual(evidence["session_id"], "cron_50c8e4391849_20260715_065247")
 
     def test_runtime_budget_rejects_observed_runaway_loop(self):
         config = self.runtime_config()
@@ -80,6 +93,27 @@ class FoundryTickTests(unittest.TestCase):
         )
         self.assertIn("telemetry unavailable", errors[0])
         self.assertIsNone(evidence)
+
+    def test_runtime_budget_fails_closed_on_parser_contract_mismatch(self):
+        config = self.runtime_config()
+        report = self.runtime_report(config)
+        report["telemetry_contract_digest"] = "sha256:" + "0" * 64
+        errors, evidence = foundry_tick.runtime_budget_assessment(
+            self.runtime_receipt(), report, config
+        )
+        self.assertIn("parser contract", errors[0])
+        self.assertEqual(evidence["status"], "telemetry_contract_mismatch")
+
+    def test_parser_change_invalidates_publication_policy_digest(self):
+        config = self.runtime_config()
+        with tempfile.TemporaryDirectory() as tmp:
+            parser = Path(tmp) / "parser.py"
+            parser.write_text("v1\n")
+            with mock.patch.object(foundry_tick, "EFFICIENCY_PARSER", parser):
+                first = foundry_tick.semantic_contract_digest(config)
+                parser.write_text("v2\n")
+                second = foundry_tick.semantic_contract_digest(config)
+        self.assertNotEqual(first, second)
 
     def test_exact_accepted_or_rejected_hash_is_skipped(self):
         state = {
@@ -123,6 +157,8 @@ class FoundryTickTests(unittest.TestCase):
         }
         detail = foundry_tick.rejection_detail(inspection, "fallback")
         self.assertEqual(detail["runtime_telemetry"]["session_id"], "s")
+        self.assertIn("shrink the action", detail["remediation"])
+        self.assertIn("says nothing", detail["remediation"])
 
     def test_rejection_feedback_is_replayed_after_contract_change(self):
         source_sha = "a" * 64
