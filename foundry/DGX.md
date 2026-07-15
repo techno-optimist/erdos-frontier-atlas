@@ -77,13 +77,13 @@ when they differ by more than 30 minutes. A one-time provenance repair can be
 previewed, then applied, with `tools/repair_receipts.py`; it verifies every raw
 source hash and emits a public old-to-new receipt-ID migration manifest.
 
-`foundry/deploy_jobs.py` performs the one-time scheduler migration under the
-Hermes cron lock, writes a timestamped backup, pins both research jobs to the
+`foundry/deploy_jobs.py` atomically installs and hash-verifies both prep copies,
+the publisher entrypoint, and compact skill, then performs the scheduler
+migration under the Hermes cron lock. It writes a timestamped backup, pins both research jobs to the
 local 35B provider, points auxiliary compression at the same local provider,
 replaces eager 100KB umbrella-skill injection with the compact `foundry` skill,
-and appends the recursion instruction idempotently. Install `foundry/SKILL.md`
-under `~/.hermes/skills/foundry/` before running the migration; specialist
-skills remain available for adaptive loading after target selection.
+and appends the recursion instruction idempotently. Specialist skills remain
+available for adaptive loading after target selection.
 
 The checked-in `40-foundry-tool-parser.conf` preserves the live W19/MoE hooks
 while enabling SGLang's `qwen3_coder` tool-call parser. Install it as the
