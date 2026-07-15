@@ -19,7 +19,10 @@ class AuditTests(unittest.TestCase):
     def test_scheduled_policy_rejects_paused_or_stale_jobs(self):
         config = {
             "runtime_budget": {"scheduled_job_max_turns": 16},
-            "milestone_policy": {"receipt_deadline_call": 14},
+            "milestone_policy": {
+                "final_replay_call": 13,
+                "receipt_deadline_call": 14,
+            },
         }
         prompt = " ".join([
             "FOUNDRY HARD RUNTIME BUDGET This job has at most 16 model calls",
@@ -27,7 +30,12 @@ class AuditTests(unittest.TestCase):
             "FOUNDRY MILESTONE CONTRACT emit the assistant response by call 14.",
             "Do not write the final receipt to a file.",
         ])
-        job = {"enabled": True, "state": "scheduled", "prompt": prompt}
+        job = {
+            "enabled": True,
+            "state": "scheduled",
+            "prompt": prompt,
+            "finalize_no_tools_after": 13,
+        }
         self.assertTrue(audit.scheduled_worker_policy_current(job, config))
         job["enabled"] = False
         self.assertFalse(audit.scheduled_worker_policy_current(job, config))

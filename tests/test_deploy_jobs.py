@@ -16,6 +16,7 @@ class DeployTests(unittest.TestCase):
         self.assertEqual(deploy.SETTINGS["agent.api_max_retries"], "8")
         self.assertEqual(deploy.FOUNDRY_MAX_TURNS, 16)
         self.assertEqual(deploy.FOUNDRY_MAX_WALL_SECONDS, 900)
+        self.assertEqual(deploy.FOUNDRY_FINALIZE_NO_TOOLS_AFTER, 13)
         config = json.loads((Path(__file__).parents[1] / "foundry" / "config.json").read_text())
         self.assertEqual(
             deploy.FOUNDRY_MAX_TURNS,
@@ -28,6 +29,10 @@ class DeployTests(unittest.TestCase):
         self.assertEqual(
             deploy.FOUNDRY_MAX_TURNS,
             config["milestone_policy"]["hard_stop_call"],
+        )
+        self.assertEqual(
+            deploy.FOUNDRY_FINALIZE_NO_TOOLS_AFTER,
+            config["milestone_policy"]["final_replay_call"],
         )
         self.assertLess(
             config["milestone_policy"]["receipt_deadline_call"],

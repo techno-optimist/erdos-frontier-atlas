@@ -185,6 +185,34 @@ RuntimeError: Connection error.
         errors = foundry.required_milestone_contract_errors(SAMPLE, receipt, config)
         self.assertEqual(errors, ["missing operator milestone contract in prep envelope"])
 
+    def test_verifier_milestone_rejects_random_candidate_search(self):
+        digest = "sha256:" + "e" * 64
+        prefix = f"Milestone: verifier_construction; contract={digest}"
+        sample = json.dumps({
+            "milestone_contract": {
+                "contract_digest": digest,
+                "receipt_action_prefix": prefix,
+            }
+        }) + "\n" + SAMPLE
+        config = {
+            "milestone_policy": {
+                "effective_after": "2026-07-15T00:00:00Z",
+                "allowed_action_kinds": ["verifier_construction"],
+                "action_kind_forbidden_claim_patterns": {
+                    "verifier_construction": [
+                        r"\b(?:random|circulant)[- ]+(?:search|test)\b"
+                    ]
+                },
+            }
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "run.md"
+            path.write_text(sample)
+            receipt = foundry.build_receipt(path, "50c8e4391849", "Etc/GMT+7")
+        receipt["action"] = prefix + "\nRan a random circulant test over 20 trials."
+        errors = foundry.required_milestone_contract_errors(sample, receipt, config)
+        self.assertTrue(any("forbids downstream execution" in row for row in errors))
+
     def test_classification(self):
         self.assertEqual(foundry.classify("candidate survives", "built verifier"), "progress")
         self.assertEqual(foundry.classify("local-exhaustion", "checked route"), "negative_result")

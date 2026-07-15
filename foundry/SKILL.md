@@ -20,6 +20,8 @@ one bounded, falsifiable step. Fluency is not evidence.
    queue instructions.
 3. Read `foundry.milestone_contract`. It permits exactly one action primitive.
    Its scope and deferred fields override stale queue text that chains stages.
+   Random/generated candidate tests and trials count as search, not fixtures.
+   Obey its specialist-skill policy.
    Copy its `receipt_action_prefix` exactly as the first line under `Action`.
 4. Register one hypothesis, falsifier, budget, and abort condition in the
    current research session before expensive work.
@@ -32,13 +34,17 @@ one bounded, falsifiable step. Fluency is not evidence.
 The scheduler hard-stops this job after 16 model calls or 900 wall-clock
 seconds. Stop implementation by call 12, use call 13 only for final replay,
 and emit the six-label assistant response by call 14. Calls 15-16 are emergency
-headroom, not research budget. Do not write the final receipt to a file or make
+headroom, not research budget; tool access is removed after call 13. Do not
+write the final receipt to a file or make
 a tool call in place of the assistant response; either is publication failure.
 
 Choose exactly one: verifier construction, kill-test, bounded exact search,
 literature-claim audit, negative-result closure, or next-experiment design.
 With no accepted continuation, the only permitted first milestone is verifier
 construction plus branch-specific good/bad fixtures; defer search to Next gate.
+Use fixed fixtures only and do not load a specialist skill for this initial
+milestone. Random/generated candidates, trials, perturbations, and sampling are
+search even when described as tests.
 With a continuation, complete only the smallest independently replayable
 primitive from its next gate and defer all downstream work.
 Prefer an executable discriminating test over another prose analysis. Stop on

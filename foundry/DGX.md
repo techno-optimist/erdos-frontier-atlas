@@ -90,7 +90,10 @@ continuation receives the smallest independently replayable primitive inferred
 from its next gate. The worker must copy the contract's typed Action prefix,
 and the publisher rejects a missing or mismatched prefix. Implementation stops
 at call 12, call 13 is final replay, and the six-field assistant response is
-due by call 14; writing a receipt file cannot substitute for that response.
+due by call 14. The exact-source scheduler removes every tool schema after call
+13 and injects one finalization steer, so writing a receipt file cannot
+substitute for that response. Initial verifier milestones also reject evidence
+of random/generated candidate trials; those are search, not fixtures.
 
 `foundry/shadow_policy.py` is an observe-only recursive-improvement layer. It
 scores lane evidence yield, exploration need, age, and repeated blocking, then
@@ -159,7 +162,8 @@ the publisher entrypoint, and compact skill, then performs the scheduler
 migration under the Hermes cron lock. It writes a timestamped backup, pins both research jobs to the
 local 35B provider, points auxiliary compression at the same local provider,
 pins the Foundry jobs to 16 turns and 900 wall-clock seconds, and installs
-exact-source fail-closed Hermes scheduler hooks for both limits. An
+exact-source fail-closed Hermes scheduler hooks for both limits plus a no-tools
+finalization phase after call 13. An
 operator-owned job may lower, never raise, the shared gateway turn cap. Other
 cron and interactive jobs retain the global Hermes behavior; restart the
 gateway when these hooks are first installed.
