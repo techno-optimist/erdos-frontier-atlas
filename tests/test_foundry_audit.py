@@ -6,9 +6,15 @@ import unittest
 from datetime import datetime, timezone
 from pathlib import Path
 
-SPEC = importlib.util.spec_from_file_location("foundry_audit", Path(__file__).parents[1] / "tools" / "foundry_audit.py")
+ROOT = Path(__file__).parents[1]
+SPEC = importlib.util.spec_from_file_location("foundry_audit", ROOT / "tools" / "foundry_audit.py")
 audit = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(audit)
+TICK_SPEC = importlib.util.spec_from_file_location(
+    "foundry_tick_for_audit_test", ROOT / "tools" / "foundry_tick.py"
+)
+foundry_tick = importlib.util.module_from_spec(TICK_SPEC)
+TICK_SPEC.loader.exec_module(foundry_tick)
 
 
 def row(classification, frontier="same route", result="same result", gate="same gate"):
@@ -16,6 +22,13 @@ def row(classification, frontier="same route", result="same result", gate="same 
 
 
 class AuditTests(unittest.TestCase):
+    def test_auditor_and_publisher_semantic_digests_match(self):
+        config = json.loads((ROOT / "foundry" / "config.json").read_text())
+        self.assertEqual(
+            audit.semantic_contract_digest(config),
+            foundry_tick.semantic_contract_digest(config),
+        )
+
     def test_scheduled_policy_rejects_paused_or_stale_jobs(self):
         config = {
             "runtime_budget": {"scheduled_job_max_turns": 16},
