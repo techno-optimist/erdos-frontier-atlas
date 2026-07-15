@@ -1,0 +1,23 @@
+{
+  "schema": "p42-foundry-public-incident-v1",
+  "incident_id": "foundry-20260715-cross-frontier-global-gate",
+  "occurred_at": "2026-07-15T02:44:02Z",
+  "status": "acknowledged_nonqualifying",
+  "kind": "cross_frontier_global_gate",
+  "consulted_frontier_id": "fm_steiner_large",
+  "gate_receipt_frontier_ids": [
+    "fm_prime_factorization_gnfs",
+    "arena_scorer_hardening",
+    "arena_scorer_hardening"
+  ],
+  "gate_receipts": [
+    "sha256:fc411930524b428e122525e806a7e52d841ceca05bb0cc7d4d3a32e686751dc3",
+    "sha256:d740003bd078f97b76c365dcaa0941fed5966970dca245816c68dbfce14c822e",
+    "sha256:0ec67d2f00258ea3bf044e00217be086411b61b4e54cc629de749fb1b99d5293"
+  ],
+  "question_sha256": "c4e8d028f09a4bcb6b8f1136b5c27a8913bc99ea60587069d1307489ef0124a7",
+  "answer_sha256": "47121efa88c9c8385fbdf04fd4c5953a338b1e48632d0e402e60de05ae832528",
+  "impact": "The call respected the global budget and cooldown but was not authorized by a certified stall on the consulted frontier. It is excluded from completion evidence.",
+  "remediation": "Lane-scoped stall gate v2 requires exact structured frontier identity for consultation, and pending advice pins that frontier until an executed receipt retires it.",
+  "boundary": "No theorem claim, Atlas mutation, external submission, training, or published advice text resulted from this incident."
+}

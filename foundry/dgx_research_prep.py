@@ -13,6 +13,7 @@ REPO = HOME / "erdos-frontier-atlas"
 STATE = HOME / ".hermes" / "chronos_state"
 MODE = "deep" if "night" in Path(__file__).name else "scout"
 LIMIT = "12" if MODE == "deep" else "8"
+BUDGET = STATE / "foundry_frontier_budget.json"
 
 
 def call(cmd: list[str]) -> subprocess.CompletedProcess:
@@ -20,13 +21,19 @@ def call(cmd: list[str]) -> subprocess.CompletedProcess:
 
 
 def main() -> int:
-    selector_proc = call([sys.executable, str(REPO / "foundry" / "select_frontier.py")])
-    try:
-        selection = json.loads(selector_proc.stdout)
-        selected_frontier_id = selection["selected_frontier_id"]
-    except Exception:
-        print(selector_proc.stdout, end="")
-        return selector_proc.returncode or 1
+    private_state = json.loads(BUDGET.read_text()) if BUDGET.exists() else {}
+    pinned_frontier_id = (private_state.get("pending_advice") or {}).get("frontier_id")
+    if pinned_frontier_id:
+        selected_frontier_id = pinned_frontier_id
+        selection = {"schema": "p42-foundry-selector-v1", "selected_frontier_id": pinned_frontier_id, "reason": "pending advice pins its certified frontier until execution"}
+    else:
+        selector_proc = call([sys.executable, str(REPO / "foundry" / "select_frontier.py")])
+        try:
+            selection = json.loads(selector_proc.stdout)
+            selected_frontier_id = selection["selected_frontier_id"]
+        except Exception:
+            print(selector_proc.stdout, end="")
+            return selector_proc.returncode or 1
     context = call([
         sys.executable, str(HOME / ".hermes" / "scripts" / "chronos_frontier_context.py"),
         "--mode", MODE, "--limit", LIMIT, "--frontier-id", selected_frontier_id,
@@ -40,10 +47,10 @@ def main() -> int:
         print(json.dumps(summary, indent=2))
         return 0
 
-    gate_proc = call([sys.executable, str(REPO / "tools" / "foundry.py"), "gate", "--state", str(STATE / "foundry_frontier_budget.json")])
+    gate_proc = call([sys.executable, str(REPO / "tools" / "foundry.py"), "gate", "--state", str(BUDGET), "--frontier-id", selected_frontier_id])
     try: gate = json.loads(gate_proc.stdout)
     except Exception: gate = {"frontier_call_allowed": False, "reason": "gate unavailable"}
-    pending_proc = call([sys.executable, str(REPO / "tools" / "foundry.py"), "pending", "--state", str(STATE / "foundry_frontier_budget.json")])
+    pending_proc = call([sys.executable, str(REPO / "tools" / "foundry.py"), "pending", "--state", str(BUDGET), "--frontier-id", selected_frontier_id])
     try: pending = json.loads(pending_proc.stdout)
     except Exception: pending = {"strategy_advice": None, "strategy_status": "pending_unavailable"}
     foundry = {"gate": gate, **pending}
@@ -59,7 +66,7 @@ def main() -> int:
             f"Avoid: {item.get('avoid')}",
             "Return one route delta, its falsifier, and the smallest executable local test. No theorem claim.",
         ])
-        advice = call([sys.executable, str(REPO / "tools" / "foundry.py"), "consult", "--state", str(STATE / "foundry_frontier_budget.json"), question])
+        advice = call([sys.executable, str(REPO / "tools" / "foundry.py"), "consult", "--state", str(BUDGET), "--frontier-id", selected_frontier_id, question])
         if advice.returncode == 0:
             advice_text = advice.stdout.strip()
             foundry.update(
