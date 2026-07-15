@@ -25,6 +25,14 @@ class DeployTests(unittest.TestCase):
             deploy.FOUNDRY_MAX_WALL_SECONDS,
             config["runtime_budget"]["max_wall_seconds"],
         )
+        self.assertEqual(
+            deploy.FOUNDRY_MAX_TURNS,
+            config["milestone_policy"]["hard_stop_call"],
+        )
+        self.assertLess(
+            config["milestone_policy"]["receipt_deadline_call"],
+            deploy.FOUNDRY_MAX_TURNS,
+        )
 
     def test_runtime_install_is_atomic_and_digest_verified(self):
         with tempfile.TemporaryDirectory() as tmp:
@@ -54,6 +62,27 @@ class DeployTests(unittest.TestCase):
             prompt, "FOUNDRY HARD RUNTIME BUDGET", deploy.RUNTIME_SUFFIX
         )
         self.assertIn("more than one terminal action", runtime)
+
+    def test_managed_prompt_upsert_replaces_stale_runtime_policy(self):
+        stale = (
+            "base\n\nFOUNDRY HARD RUNTIME BUDGET (operator-enforced): "
+            "This job has at most 18 model calls.\n\n"
+            "FOUNDRY TRACE (required): stale trace"
+        )
+        current = deploy.upsert_prompt_section(
+            stale, "FOUNDRY HARD RUNTIME BUDGET", deploy.RUNTIME_SUFFIX
+        )
+        current = deploy.upsert_prompt_section(
+            current, "FOUNDRY MILESTONE CONTRACT", deploy.MILESTONE_SUFFIX
+        )
+        repeated = deploy.upsert_prompt_section(
+            current, "FOUNDRY MILESTONE CONTRACT", deploy.MILESTONE_SUFFIX
+        )
+        self.assertNotIn("at most 18 model", current)
+        self.assertIn("at most 16 model", current)
+        self.assertEqual(current.count("FOUNDRY HARD RUNTIME BUDGET"), 1)
+        self.assertEqual(current.count("FOUNDRY MILESTONE CONTRACT"), 1)
+        self.assertEqual(current, repeated)
 
 
 if __name__ == "__main__":

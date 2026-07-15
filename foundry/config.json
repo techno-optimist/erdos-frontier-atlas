@@ -21,6 +21,24 @@
     "max_expensive_terminal_calls": 1,
     "receipt_match_window_seconds": 300
   },
+  "milestone_policy": {
+    "effective_after": "2026-07-15T15:15:00Z",
+    "initial_action_kind": "verifier_construction",
+    "allowed_action_kinds": [
+      "verifier_construction",
+      "kill_test",
+      "bounded_exact_search",
+      "literature_claim_audit",
+      "negative_result_closure",
+      "next_experiment_design",
+      "continuation_primitive"
+    ],
+    "max_action_primitives": 1,
+    "implementation_stop_call": 12,
+    "final_replay_call": 13,
+    "receipt_deadline_call": 14,
+    "hard_stop_call": 16
+  },
   "semantic_contracts": {
     "arena_scorer_hardening": {
       "effective_after": "2026-07-15T06:30:00Z",

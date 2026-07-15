@@ -139,6 +139,52 @@ RuntimeError: Connection error.
             for row in foundry.required_strategy_trace_errors(sample, receipt)
         ))
 
+    def test_milestone_action_prefix_is_bound_to_prep_contract(self):
+        digest = "sha256:" + "d" * 64
+        prefix = f"Milestone: verifier_construction; contract={digest}"
+        sample = (
+            json.dumps({
+                "foundry": {
+                    "milestone_contract": {
+                        "contract_digest": digest,
+                        "receipt_action_prefix": prefix,
+                    }
+                }
+            })
+            + "\n"
+            + SAMPLE.replace(
+                "Ran one bounded exact check.",
+                prefix + "\nBuilt one verifier and replayed branch fixtures.",
+            )
+        )
+        config = {
+            "milestone_policy": {
+                "effective_after": "2026-07-15T00:00:00Z",
+                "allowed_action_kinds": ["verifier_construction"],
+            }
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "run.md"
+            path.write_text(sample)
+            receipt = foundry.build_receipt(path, "50c8e4391849", "Etc/GMT+7")
+        self.assertEqual(
+            foundry.required_milestone_contract_errors(sample, receipt, config), []
+        )
+        receipt["action"] = "Built one verifier without the typed prefix."
+        errors = foundry.required_milestone_contract_errors(sample, receipt, config)
+        self.assertTrue(any("mismatched milestone prefix" in row for row in errors))
+
+    def test_milestone_contract_fails_closed_when_prep_binding_is_missing(self):
+        config = {
+            "milestone_policy": {
+                "effective_after": "2026-07-15T00:00:00Z",
+                "allowed_action_kinds": ["verifier_construction"],
+            }
+        }
+        receipt = {"occurred_at": "2026-07-15T16:00:00Z", "action": "anything"}
+        errors = foundry.required_milestone_contract_errors(SAMPLE, receipt, config)
+        self.assertEqual(errors, ["missing operator milestone contract in prep envelope"])
+
     def test_classification(self):
         self.assertEqual(foundry.classify("candidate survives", "built verifier"), "progress")
         self.assertEqual(foundry.classify("local-exhaustion", "checked route"), "negative_result")

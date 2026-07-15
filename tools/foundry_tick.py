@@ -38,6 +38,7 @@ def semantic_contract_digest(config: dict) -> str:
     canonical = json.dumps(
         {
             "semantic_contracts": config.get("semantic_contracts", {}),
+            "milestone_policy": config.get("milestone_policy", {}),
             "runtime_budget": config.get("runtime_budget"),
             "runtime_telemetry_contract_digest": telemetry_contract_digest(config),
         },

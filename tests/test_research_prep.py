@@ -130,6 +130,46 @@ class PrepTests(unittest.TestCase):
         self.assertIn("continuation wins", instruction)
         self.assertEqual(prep.continuation_instruction(None), "")
 
+    def test_initial_milestone_is_verifier_only_and_hash_bound(self):
+        policy = {
+            "initial_action_kind": "verifier_construction",
+            "max_action_primitives": 1,
+            "implementation_stop_call": 12,
+            "final_replay_call": 13,
+            "receipt_deadline_call": 14,
+            "hard_stop_call": 16,
+        }
+        contract = prep.milestone_contract(None, policy)
+        self.assertEqual(contract["phase"], "initial_verifier")
+        self.assertEqual(contract["action_kind"], "verifier_construction")
+        self.assertIn("Do not start a search", contract["deferred"])
+        self.assertRegex(
+            contract["receipt_action_prefix"],
+            r"^Milestone: verifier_construction; contract=sha256:[a-f0-9]{64}$",
+        )
+        instruction = prep.milestone_instruction(contract)
+        self.assertIn("directly in the assistant response by call 14", instruction)
+        self.assertIn("Do not write the final receipt to a file", instruction)
+        self.assertIn(contract["receipt_action_prefix"], instruction)
+
+    def test_continuation_milestone_selects_one_coarse_primitive(self):
+        policy = {
+            "initial_action_kind": "verifier_construction",
+            "max_action_primitives": 1,
+            "implementation_stop_call": 12,
+            "final_replay_call": 13,
+            "receipt_deadline_call": 14,
+            "hard_stop_call": 16,
+        }
+        continuation = {
+            "next_gate": "Implement one isomorph-free orderly-generation search primitive."
+        }
+        contract = prep.milestone_contract(continuation, policy)
+        self.assertEqual(contract["phase"], "accepted_continuation")
+        self.assertEqual(contract["action_kind"], "bounded_exact_search")
+        self.assertEqual(contract["max_action_primitives"], 1)
+        self.assertIn("Defer every downstream primitive", contract["deferred"])
+
     def test_runtime_quarantine_shrinks_instead_of_replaying_route(self):
         runtime = prep.quarantine_instruction(
             {"runtime_telemetry": {"status": "over_budget"}}

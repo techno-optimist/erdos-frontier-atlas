@@ -84,6 +84,14 @@ and exposes it as `foundry.accepted_continuation`. Its completed action cannot
 be repeated by stale queue text; the worker continues from the receipt's next
 gate. This is progression state, not theorem or promotion authority.
 
+Every prep packet also carries a hash-bound `foundry.milestone_contract`.
+An untouched lane receives a verifier-and-fixtures-only milestone; an admitted
+continuation receives the smallest independently replayable primitive inferred
+from its next gate. The worker must copy the contract's typed Action prefix,
+and the publisher rejects a missing or mismatched prefix. Implementation stops
+at call 12, call 13 is final replay, and the six-field assistant response is
+due by call 14; writing a receipt file cannot substitute for that response.
+
 `foundry/shadow_policy.py` is an observe-only recursive-improvement layer. It
 scores lane evidence yield, exploration need, age, and repeated blocking, then
 writes `shadow_policy.json` into the session. It has no production selection
@@ -156,7 +164,8 @@ operator-owned job may lower, never raise, the shared gateway turn cap. Other
 cron and interactive jobs retain the global Hermes behavior; restart the
 gateway when these hooks are first installed.
 The deployment also replaces eager 100KB umbrella-skill injection with the compact `foundry` skill,
-and appends the recursion and typed frontier-trace instructions idempotently.
+and upserts the recursion, typed frontier-trace, runtime, and milestone
+instructions so an older embedded job policy cannot survive an upgrade.
 It also sets Hermes `agent.api_max_retries=8`: the bounded exponential retry
 window covers the observed four-minute 35B cold reload while the SGLang
 watchdog replaces a wedged worker. Permanent failures still terminate and do

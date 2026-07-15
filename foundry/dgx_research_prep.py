@@ -133,6 +133,81 @@ def continuation_instruction(continuation: dict | None) -> str:
     )
 
 
+def infer_action_kind(next_gate: str | None) -> str:
+    """Map an admitted next gate to one coarse, auditable action primitive."""
+    text = (next_gate or "").lower()
+    routes = (
+        ("literature_claim_audit", ("literature", "citation", "source audit", "paper audit")),
+        ("verifier_construction", ("verifier", "checker", "validation fixture")),
+        ("kill_test", ("kill-test", "kill test", "falsifier", "counterexample test")),
+        (
+            "bounded_exact_search",
+            (
+                "search", "solver", "sat", "drat", "backtrack", "enumerat",
+                "generation", "generate", "constructive", "optimization",
+            ),
+        ),
+        ("negative_result_closure", ("negative result", "close the route", "no-go")),
+        ("next_experiment_design", ("design", "plan", "specification", "protocol")),
+    )
+    for action_kind, markers in routes:
+        if any(marker in text for marker in markers):
+            return action_kind
+    return "continuation_primitive"
+
+
+def milestone_contract(continuation: dict | None, policy: dict) -> dict:
+    """Bind one session to one declared primitive and a receipt deadline."""
+    if continuation:
+        phase = "accepted_continuation"
+        action_kind = infer_action_kind(continuation.get("next_gate"))
+        scope = "Complete only the smallest independently replayable primitive from accepted_continuation.next_gate."
+        deferred = "Defer every downstream primitive from that next gate to the receipt's Next gate field."
+    else:
+        phase = "initial_verifier"
+        action_kind = str(policy["initial_action_kind"])
+        scope = "Build or replay exactly one target verifier with branch-specific known-good and known-bad fixtures."
+        deferred = "Do not start a search, solver, construction, or optimization in this session; place it in Next gate."
+    core = {
+        "schema": "p42-foundry-milestone-contract-v1",
+        "authority": "operator_owned_scope_and_finalization_contract",
+        "phase": phase,
+        "action_kind": action_kind,
+        "max_action_primitives": int(policy["max_action_primitives"]),
+        "scope": scope,
+        "deferred": deferred,
+        "implementation_stop_call": int(policy["implementation_stop_call"]),
+        "final_replay_call": int(policy["final_replay_call"]),
+        "receipt_deadline_call": int(policy["receipt_deadline_call"]),
+        "hard_stop_call": int(policy["hard_stop_call"]),
+    }
+    canonical = json.dumps(
+        core, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+    ).encode()
+    digest = "sha256:" + hashlib.sha256(canonical).hexdigest()
+    return {
+        **core,
+        "contract_digest": digest,
+        "receipt_action_prefix": f"Milestone: {action_kind}; contract={digest}",
+    }
+
+
+def milestone_instruction(contract: dict | None) -> str:
+    if not contract:
+        return ""
+    return (
+        " foundry.milestone_contract is operator-owned and permits exactly one "
+        "action primitive. Obey its scope and deferred fields even when stale "
+        "queue text asks for multiple stages. Stop implementation by call "
+        f"{contract['implementation_stop_call']}, perform only final replay on "
+        f"call {contract['final_replay_call']}, and emit the six labelled fields "
+        f"directly in the assistant response by call {contract['receipt_deadline_call']}. "
+        "Do not write the final receipt to a file or make a tool call in place "
+        "of that response. The first line under Action must be copied exactly: "
+        f"{contract['receipt_action_prefix']}"
+    )
+
+
 def quarantine_instruction(feedback: dict | None) -> str:
     if not feedback:
         return ""
@@ -171,6 +246,7 @@ def trace_receipt_contract(strategy_digest: str | None) -> dict | None:
 
 
 def main() -> int:
+    config = json.loads(CONFIG.read_text())
     private_state = json.loads(BUDGET.read_text()) if BUDGET.exists() else {}
     pinned_frontier_id = (private_state.get("pending_advice") or {}).get("frontier_id")
     if pinned_frontier_id:
@@ -252,6 +328,9 @@ def main() -> int:
     foundry["accepted_continuation"] = latest_accepted_continuation(
         RECEIPTS, INGEST_STATE, selected_frontier_id
     )
+    foundry["milestone_contract"] = milestone_contract(
+        foundry["accepted_continuation"], config["milestone_policy"]
+    )
     foundry["quarantine_feedback"] = latest_quarantine_feedback(
         INGEST_STATE, selected_frontier_id
     )
@@ -281,11 +360,14 @@ def main() -> int:
     summary["foundry"]["receipt_contract"] = trace_receipt_contract(
         foundry.get("strategy_digest")
     )
-    contract = json.loads(CONFIG.read_text()).get("semantic_contracts", {}).get(selected_frontier_id)
+    contract = config.get("semantic_contracts", {}).get(selected_frontier_id)
     summary["foundry"]["target_contract"] = contract
     summary["next_instruction"] = worker_instruction(summary["next_instruction"]) + " Preserve the exact target quantity in foundry.target_contract; a related theorem or easier quantity is not evidence. Treat foundry.strategy_advice as provisional; execute and verify its smallest test when present. If foundry.receipt_contract is present, copy its digest byte-for-byte into one typed Frontier advice line in Verified. Missing or mismatched trace is a hard publication quarantine."
     summary["next_instruction"] += continuation_instruction(
         foundry["accepted_continuation"]
+    )
+    summary["next_instruction"] += milestone_instruction(
+        foundry["milestone_contract"]
     )
     summary["next_instruction"] += quarantine_instruction(
         foundry["quarantine_feedback"]

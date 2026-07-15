@@ -16,6 +16,24 @@ def row(classification, frontier="same route", result="same result", gate="same 
 
 
 class AuditTests(unittest.TestCase):
+    def test_scheduled_policy_rejects_paused_or_stale_jobs(self):
+        config = {
+            "runtime_budget": {"scheduled_job_max_turns": 16},
+            "milestone_policy": {"receipt_deadline_call": 14},
+        }
+        prompt = " ".join([
+            "FOUNDRY HARD RUNTIME BUDGET This job has at most 16 model calls",
+            "and rejects a run above 16 calls.",
+            "FOUNDRY MILESTONE CONTRACT emit the assistant response by call 14.",
+            "Do not write the final receipt to a file.",
+        ])
+        job = {"enabled": True, "state": "scheduled", "prompt": prompt}
+        self.assertTrue(audit.scheduled_worker_policy_current(job, config))
+        job["enabled"] = False
+        self.assertFalse(audit.scheduled_worker_policy_current(job, config))
+        job.update(enabled=True, prompt=prompt.replace("at most 16", "at most 18"))
+        self.assertFalse(audit.scheduled_worker_policy_current(job, config))
+
     def test_retry_budget_parser_fails_closed(self):
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "config.yaml"
