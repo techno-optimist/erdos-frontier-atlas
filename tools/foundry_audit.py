@@ -46,7 +46,8 @@ def certified_stall(rows: list[dict], threshold: int) -> bool:
     terminal.reverse()
     if len(terminal) < threshold or len(terminal) < 2: return False
     a, b = terminal[-2:]
-    same_frontier = difflib.SequenceMatcher(None, norm(a["frontier"]), norm(b["frontier"])).ratio() >= 0.75
+    structured_match = bool(a.get("frontier_id") and a.get("frontier_id") == b.get("frontier_id"))
+    same_frontier = structured_match or difflib.SequenceMatcher(None, norm(a["frontier"]), norm(b["frontier"])).ratio() >= 0.75
     same_move = difflib.SequenceMatcher(None, norm(a["result"] + " " + a["next_gate"]), norm(b["result"] + " " + b["next_gate"])).ratio() >= 0.80
     return same_frontier or same_move
 

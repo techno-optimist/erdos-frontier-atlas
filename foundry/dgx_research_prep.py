@@ -20,7 +20,17 @@ def call(cmd: list[str]) -> subprocess.CompletedProcess:
 
 
 def main() -> int:
-    context = call([sys.executable, str(HOME / ".hermes" / "scripts" / "chronos_frontier_context.py"), "--mode", MODE, "--limit", LIMIT])
+    selector_proc = call([sys.executable, str(REPO / "foundry" / "select_frontier.py")])
+    try:
+        selection = json.loads(selector_proc.stdout)
+        selected_frontier_id = selection["selected_frontier_id"]
+    except Exception:
+        print(selector_proc.stdout, end="")
+        return selector_proc.returncode or 1
+    context = call([
+        sys.executable, str(HOME / ".hermes" / "scripts" / "chronos_frontier_context.py"),
+        "--mode", MODE, "--limit", LIMIT, "--frontier-id", selected_frontier_id,
+    ])
     try:
         summary = json.loads(context.stdout)
     except Exception:
@@ -61,6 +71,7 @@ def main() -> int:
         else:
             foundry.update(strategy_status="consult_failed", error=advice.stdout.strip().splitlines()[-1][:300] if advice.stdout.strip() else "unknown")
     summary["foundry"] = foundry
+    summary["foundry"]["selection"] = selection
     summary["next_instruction"] += " Treat foundry.strategy_advice as provisional; execute and verify its smallest test when present. If advice is present, the Verified field must contain exactly: Frontier advice: <foundry.strategy_digest>; executed=yes|no; outcome=<public-safe result>."
     print(json.dumps(summary, ensure_ascii=False, indent=2))
     return 0

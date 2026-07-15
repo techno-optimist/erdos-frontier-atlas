@@ -56,6 +56,7 @@ def main() -> int:
                 "run_file": src["run_file"], "old_occurred_at": old["occurred_at"],
                 "new_occurred_at": new["occurred_at"], "old_classification": old["classification"],
                 "new_classification": new["classification"],
+                "changed_fields": sorted(key for key in set(old) | set(new) if old.get(key) != new.get(key)),
             }
             repairs.append(record)
             planned.append((old_path, new_path, new))
