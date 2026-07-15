@@ -13,6 +13,7 @@
       "status": "materialized_from_public_atlas_unstarted",
       "query": "q(6) minimum edges 6-uniform pairwise-intersecting hypergraph cover number six exact witness verifier 5-cover rejection SAT DRAT bracket",
       "falsifier": "A proposed witness has two disjoint edges or admits a hitting set of size at most 5; an optimality claim lacks a complete independently checkable nonexistence certificate.",
+      "verifier": "Given an edge list of 6-sets, check every edge pair intersects and exhaustively reject every hitting set of size at most 5. Any edge gives cover number at most 6, so no 5-cover certifies cover number exactly 6. Optimality still requires a complete nonexistence certificate for every smaller edge count.",
       "next_action": "Build the exact witness verifier first, including known-good and known-bad fixtures. Then inventory authoritative q(5) or q(6) seeds and define one bounded m-cell experiment; do not claim optimality without a complete certificate.",
       "next_gate": "exact_pairwise_intersection_and_no_5_cover_verifier_with_kill_fixtures_then_one_bounded_m_cell",
       "avoid": "Do not launch a broad hypergraph search, claim q(6), or spend heavy SAT compute before the witness verifier, kill fixtures, encoding manifest, and bounded cell are exact. No Atlas writes or external submissions."
