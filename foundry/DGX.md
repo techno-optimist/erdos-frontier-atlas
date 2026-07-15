@@ -72,6 +72,8 @@ while a lane with verified progress remains eligible for continued work.
 
 `foundry/focused_retrieval.py` supplements the broad context builder with
 read-only IDF- and phrase-ranked matches from Atlas, Atlas2, Arena, and aiwiki.
+The public 51-problem frontier Atlas is a separate first-class hashed surface,
+so exact problem/verifier records outrank merely thematic database matches.
 It records before/after database hashes and writes only compact session-local
 `focused_context` artifacts; failure of any read-only hash check fails prep.
 

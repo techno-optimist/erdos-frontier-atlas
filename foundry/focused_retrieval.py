@@ -12,7 +12,9 @@ from pathlib import Path
 from urllib.parse import quote
 
 HOME = Path.home()
+ROOT = Path(__file__).resolve().parents[1]
 OBS = HOME / "cultural-soliton-observatory"
+DEFAULT_PROBLEMS = ROOT / "atlas" / "problems.json"
 DEFAULT_DBS = {
     "atlas": OBS / "data" / "atlas.db",
     "atlas2": OBS / "data" / "atlas2.db",
@@ -127,9 +129,36 @@ def focused_rows(path: Path, table: str, query: str, limit: int, preferred_cols:
         con.close()
 
 
-def retrieve(query: str, dbs: dict[str, Path], limit: int) -> dict:
+def public_atlas_rows(path: Path, query: str, limit: int) -> list[dict]:
+    document = json.loads(path.read_text())
+    records = document.get("problems", [])
+    features = query_features(query)
+    weighted = []
+    haystacks = [" ".join(str(row.get(key, "")) for key in ("id", "title", "lane", "verifier", "beatable_reason", "wall_reason")).lower() for row in records]
+    for feature, boost in features:
+        count = sum(feature in text for text in haystacks)
+        if count:
+            weighted.append((feature, boost * (math.log((len(records) + 1) / (count + 1)) + 1.0)))
+    ranked = []
+    for row, text in zip(records, haystacks):
+        matched = [feature for feature, _ in weighted if feature in text]
+        if not matched:
+            continue
+        score = sum(weight for feature, weight in weighted if feature in text)
+        excerpt = focus_excerpt(row, ["title", "verifier", "beatable_reason", "wall_reason"], [(feature, "%" + feature + "%", weight) for feature, weight in weighted])
+        ranked.append({
+            **{key: row.get(key) for key in ("id", "title", "lane", "board_class", "verifier", "beatable_reason", "wall_reason") if row.get(key) is not None},
+            "focus_score": round(score, 4), "matched_features": matched, "focus_excerpt": excerpt,
+        })
+    ranked.sort(key=lambda row: (-row["focus_score"], int(row["id"])))
+    return ranked[:limit]
+
+
+def retrieve(query: str, dbs: dict[str, Path], limit: int, problems_path: Path = DEFAULT_PROBLEMS) -> dict:
     before = {name: sha_file(path) for name, path in dbs.items()}
+    problems_before = sha_file(problems_path)
     surfaces = {
+        "frontier_atlas": public_atlas_rows(problems_path, query, limit),
         "atlas": focused_rows(dbs["atlas"], "thoughts", query, limit, ["text", "content", "anchor"]),
         "atlas2": focused_rows(dbs["atlas2"], "thoughts", query, max(3, limit // 2), ["text", "content", "anchor"]),
         "arena_problems": focused_rows(dbs["arena"], "problems", query, limit, ["title", "slug", "scoring"]),
@@ -137,6 +166,7 @@ def retrieve(query: str, dbs: dict[str, Path], limit: int) -> dict:
         "aiwiki": focused_rows(dbs["aiwiki"], "docs", query, limit, ["title", "text", "aiwiki", "record_key"]),
     }
     after = {name: sha_file(path) for name, path in dbs.items()}
+    problems_after = sha_file(problems_path)
     return {
         "schema": "p42-foundry-focused-context-v1", "query": query,
         "features": [feature for feature, _ in query_features(query)], "surfaces": surfaces,
@@ -147,6 +177,13 @@ def retrieve(query: str, dbs: dict[str, Path], limit: int) -> dict:
                 "read_only_verified": bool(before[name]) and before[name] == after[name],
             }
             for name in dbs
+        },
+        "sources": {
+            "frontier_atlas": {
+                "hash_before": problems_before,
+                "hash_after": problems_after,
+                "read_only_verified": bool(problems_before) and problems_before == problems_after,
+            }
         },
     }
 
@@ -179,7 +216,11 @@ def main() -> int:
     print(json.dumps({
         "schema": packet["schema"], "json": str(json_path), "markdown": str(md_path),
         "hits": {name: len(rows) for name, rows in packet["surfaces"].items()},
-        "read_only_verified": all(row["read_only_verified"] for row in packet["databases"].values()),
+        "read_only_verified": all(
+            row["read_only_verified"]
+            for group in (packet["databases"], packet["sources"])
+            for row in group.values()
+        ),
     }, indent=2))
     return 0
 
