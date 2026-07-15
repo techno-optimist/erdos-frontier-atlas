@@ -102,6 +102,30 @@ def private_holdout_committed(manifest_path: Path, commitment_path: Path) -> boo
     )
 
 
+def model_transport_verified(report: dict | None, path: Path, cutoff: datetime) -> bool:
+    try:
+        private_mode = path.stat().st_mode & 0o777 == 0o600
+    except OSError:
+        return False
+    return bool(
+        report
+        and report.get("schema") == "p42-foundry-model-transport-v1"
+        and report.get("ok") is True
+        and report.get("mode") == "smoke"
+        and report.get("candidate_network") == "none"
+        and report.get("model_transport") == "mounted_unix_socket_only"
+        and report.get("model_upstream") == "evaluator_loopback_only"
+        and report.get("model_upstream_host") == "127.0.0.1"
+        and report.get("model_upstream_port") == 30000
+        and report.get("private_manifest_mounted") is False
+        and report.get("docker_socket_mounted") is False
+        and report.get("budget", {}).get("budget_ok") is True
+        and report.get("promotion_authority") == "none_pending_independent_replay"
+        and private_mode
+        and (parse_time(report.get("created_at")) or datetime.min.replace(tzinfo=timezone.utc)) >= cutoff
+    )
+
+
 def tool_call_smoke() -> tuple[bool, dict]:
     body = json.dumps({
         "model": MODEL,
@@ -147,6 +171,8 @@ def main() -> int:
     efficiency_path = args.state_root / "foundry_efficiency_latest.json"
     efficiency = json.loads(efficiency_path.read_text()) if efficiency_path.exists() else None
     private_manifest_path = args.state_root / "foundry_eval" / "private_suite.json"
+    model_transport_path = args.state_root / "foundry_eval" / "model_transport_smoke.json"
+    model_transport = json.loads(model_transport_path.read_text()) if model_transport_path.exists() else None
     public_commitment_path = ROOT / "foundry" / "eval" / "private_suite.commitment.json"
     public_commitment = json.loads(public_commitment_path.read_text()) if public_commitment_path.exists() else None
     calls = budget.get("calls", [])
@@ -248,6 +274,9 @@ def main() -> int:
         "private_holdout_committed_and_isolated": private_holdout_committed(
             private_manifest_path, public_commitment_path
         ),
+        "model_only_eval_transport_verified": model_transport_verified(
+            model_transport, model_transport_path, now - timedelta(hours=24)
+        ),
         "protected_hashes_stable_during_audit": before == after,
     }
     report = {
@@ -277,6 +306,15 @@ def main() -> int:
             "private_holdout_commitment": public_commitment,
             "private_holdout_manifest_mode": oct(private_manifest_path.stat().st_mode & 0o777) if private_manifest_path.exists() else None,
             "private_holdout_parent_mode": oct(private_manifest_path.parent.stat().st_mode & 0o777) if private_manifest_path.parent.exists() else None,
+            "model_transport_smoke": ({
+                key: model_transport.get(key) for key in (
+                    "schema", "created_at", "ok", "mode", "image_id", "candidate_network",
+                    "model_transport", "model_upstream", "model_upstream_host",
+                    "model_upstream_port", "private_manifest_mounted",
+                    "docker_socket_mounted", "budget", "promotion_authority",
+                )
+            } if model_transport else None),
+            "model_transport_report_mode": oct(model_transport_path.stat().st_mode & 0o777) if model_transport_path.exists() else None,
             "protected_hashes_before": before, "protected_hashes_after": after,
             "validation_tail": validate.stdout.strip().splitlines()[-1] if validate.stdout.strip() else None,
         },
