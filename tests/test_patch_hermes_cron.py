@@ -86,6 +86,36 @@ class HermesCronPatchTests(unittest.TestCase):
         self.assertEqual(patched.count(patcher.MARKER), 1)
         self.assertEqual(patched.count(patcher.WALL_MARKER), 1)
 
+    def test_installed_v1_finalizer_is_exactly_upgraded_to_retry_state(self):
+        current, _ = patcher.patch_text(self.scheduler_source())
+        legacy = current.replace(
+            patcher.FINALIZE_MARKER, patcher.LEGACY_FINALIZE_MARKER, 1
+        ).replace(patcher.FINALIZE_STATE_V2, patcher.FINALIZE_STATE_V1, 1)
+        self.assertNotIn("_foundry_required_final_labels", legacy)
+        upgraded, changed = patcher.patch_text(legacy)
+        self.assertTrue(changed)
+        self.assertIn(patcher.FINALIZE_MARKER, upgraded)
+        self.assertNotIn(patcher.LEGACY_FINALIZE_MARKER, upgraded)
+        self.assertIn("_foundry_required_final_labels", upgraded)
+        self.assertEqual(upgraded, current)
+        repeated, changed_again = patcher.patch_text(upgraded)
+        self.assertFalse(changed_again)
+        self.assertEqual(repeated, upgraded)
+
+    def test_drifted_v1_finalizer_fails_closed(self):
+        current, _ = patcher.patch_text(self.scheduler_source())
+        drifted = current.replace(
+            patcher.FINALIZE_MARKER, patcher.LEGACY_FINALIZE_MARKER, 1
+        ).replace(
+            patcher.FINALIZE_STATE_V2,
+            "            _prior_step_callback = agent.step_callback\n"
+            "            _finalization_injected = 'drifted'\n\n"
+            "            def _foundry_finalize_step(iteration, previous_tools):\n",
+            1,
+        )
+        with self.assertRaisesRegex(RuntimeError, "legacy finalization state drifted"):
+            patcher.patch_text(drifted)
+
     def test_wall_cap_is_opt_in_and_fails_closed_on_invalid_values(self):
         namespace = {}
         patched, _ = patcher.patch_text(self.scheduler_source())
@@ -147,6 +177,10 @@ class HermesCronPatchTests(unittest.TestCase):
         self.assertEqual(gated.tools, [])
         self.assertEqual(gated.valid_tool_names, set())
         self.assertIn("six markdown labels", gated._pending_steer)
+        self.assertEqual(gated._foundry_finalize_after, 13)
+        self.assertEqual(gated._foundry_finalization_retry_limit, 2)
+        self.assertEqual(gated._foundry_finalization_retries, 0)
+        self.assertEqual(len(gated._foundry_required_final_labels), 6)
         with self.assertRaisesRegex(RuntimeError, "requires 0 <"):
             run(
                 {"max_turns": 16, "finalize_no_tools_after": 16},

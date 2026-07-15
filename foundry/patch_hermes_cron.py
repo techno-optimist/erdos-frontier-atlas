@@ -18,7 +18,8 @@ from pathlib import Path
 
 MARKER = "FOUNDRY_JOB_MAX_TURNS_V1"
 WALL_MARKER = "FOUNDRY_JOB_MAX_WALL_SECONDS_V1"
-FINALIZE_MARKER = "FOUNDRY_JOB_FINALIZE_NO_TOOLS_V1"
+LEGACY_FINALIZE_MARKER = "FOUNDRY_JOB_FINALIZE_NO_TOOLS_V1"
+FINALIZE_MARKER = "FOUNDRY_JOB_FINALIZE_NO_TOOLS_V2"
 LOOP_MARKER = "FOUNDRY_REQUIRED_RECEIPT_RETRY_V1"
 OLD = """        # Max iterations
         max_iterations = _cfg.get("agent", {}).get("max_turns") or _cfg.get("max_turns") or 90
@@ -92,10 +93,29 @@ FINALIZE_OLD = """            session_db=_session_db,
         )
 """ + "        \n" + """        # Run the agent with an *inactivity*-based timeout: the job can run
 """
+FINALIZE_STATE_V1 = """            _prior_step_callback = agent.step_callback
+            _finalization_injected = False
+
+            def _foundry_finalize_step(iteration, previous_tools):
+"""
+FINALIZE_STATE_V2 = """            _prior_step_callback = agent.step_callback
+            _finalization_injected = False
+            agent._foundry_finalize_after = _job_finalize_after
+            agent._foundry_required_final_labels = (
+                "Frontier", "Action", "Verified", "Result", "Next gate",
+                "Boundary held",
+            )
+            agent._foundry_finalization_retry_limit = max(
+                0, max_iterations - _job_finalize_after - 1
+            )
+            agent._foundry_finalization_retries = 0
+
+            def _foundry_finalize_step(iteration, previous_tools):
+"""
 FINALIZE_NEW = """            session_db=_session_db,
         )
 
-        # FOUNDRY_JOB_FINALIZE_NO_TOOLS_V1: an operator-owned job may reserve
+        # FOUNDRY_JOB_FINALIZE_NO_TOOLS_V2: an operator-owned job may reserve
         # its last calls for a direct response. At the first call strictly
         # after the configured threshold, remove tool schemas and inject one
         # finalization steer. Jobs without the field retain upstream behavior.
@@ -254,11 +274,23 @@ def patch_text(text: str) -> tuple[str, bool]:
         text = text.replace(WALL_LOOP_OLD, WALL_LOOP_NEW)
         changed = True
     if FINALIZE_MARKER not in text:
-        if text.count(FINALIZE_OLD) != 1:
-            raise RuntimeError(
-                "Hermes scheduler source drifted; refusing unreviewed finalization patch"
-            )
-        text = text.replace(FINALIZE_OLD, FINALIZE_NEW)
+        if LEGACY_FINALIZE_MARKER in text:
+            if (
+                text.count(LEGACY_FINALIZE_MARKER) != 1
+                or text.count(FINALIZE_STATE_V1) != 1
+            ):
+                raise RuntimeError(
+                    "Hermes legacy finalization state drifted; refusing unreviewed V2 upgrade"
+                )
+            text = text.replace(
+                LEGACY_FINALIZE_MARKER, FINALIZE_MARKER, 1
+            ).replace(FINALIZE_STATE_V1, FINALIZE_STATE_V2, 1)
+        else:
+            if text.count(FINALIZE_OLD) != 1:
+                raise RuntimeError(
+                    "Hermes scheduler source drifted; refusing unreviewed finalization patch"
+                )
+            text = text.replace(FINALIZE_OLD, FINALIZE_NEW)
         changed = True
     return text, changed
 
