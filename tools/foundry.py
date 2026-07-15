@@ -209,6 +209,31 @@ def semantic_contract_errors(r: dict, config: dict) -> list[str]:
     return errors
 
 
+def inspect_source(source: Path, job_id: str, config: dict) -> dict:
+    """Parse and validate a raw run without mutating the public progress tree."""
+    source_sha = sha(source.read_bytes())
+    try:
+        receipt = build_receipt(
+            source, job_id, config.get("source_timezone", "America/Denver")
+        )
+        errors = validate_receipt(receipt) + semantic_contract_errors(receipt, config)
+        summary = {
+            key: receipt.get(key)
+            for key in ("receipt_id", "frontier_id", "classification", "occurred_at")
+        }
+    except Exception as exc:
+        errors = [type(exc).__name__ + ": " + str(exc)]
+        summary = None
+    return {
+        "schema": "p42-foundry-inspection-v1",
+        "inspected_at": iso(),
+        "valid": not errors,
+        "source_sha256": source_sha,
+        "receipt": summary,
+        "errors": errors,
+    }
+
+
 def rebuild_index() -> dict:
     rows = [load_json(p) for p in receipt_files()]
     counts = Counter(r["classification"] for r in rows)
@@ -436,6 +461,7 @@ def main() -> int:
     parser.add_argument("--config", type=Path, default=CONFIG)
     sub = parser.add_subparsers(dest="command", required=True)
     p = sub.add_parser("ingest"); p.add_argument("source", type=Path); p.add_argument("--job-id", required=True)
+    p = sub.add_parser("inspect"); p.add_argument("source", type=Path); p.add_argument("--job-id", required=True)
     p = sub.add_parser("gate"); p.add_argument("--state", type=Path, required=True); p.add_argument("--frontier-id")
     p = sub.add_parser("consult"); p.add_argument("question"); p.add_argument("--state", type=Path, required=True); p.add_argument("--frontier-id", required=True)
     p = sub.add_parser("pending"); p.add_argument("--state", type=Path, required=True); p.add_argument("--frontier-id", required=True)
@@ -446,6 +472,7 @@ def main() -> int:
     config = load_json(args.config)
     if args.command == "ingest":
         path, created = ingest(args.source, args.job_id, config.get("source_timezone", "America/Denver")); print(json.dumps({"path": str(path), "created": created}))
+    elif args.command == "inspect": print(json.dumps(inspect_source(args.source, args.job_id, config), indent=2))
     elif args.command == "gate": print(json.dumps(stall_gate(args.state, config, args.frontier_id), indent=2))
     elif args.command == "consult": print(consult(args.question, args.state, config, args.frontier_id))
     elif args.command == "pending": print(json.dumps(take_pending_advice(args.state, args.frontier_id), ensure_ascii=False, indent=2))

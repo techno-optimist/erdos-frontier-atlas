@@ -71,6 +71,20 @@ class AuditTests(unittest.TestCase):
             report["candidate_network"] = "bridge"
             self.assertFalse(audit.model_transport_verified(report, path, cutoff))
 
+    def test_structured_quarantine_feedback_matches_rejected_hash(self):
+        state = {
+            "accepted": {},
+            "rejected": {"job/run.md": "a" * 64},
+            "rejected_details": {"job/run.md": {
+                "schema": "p42-foundry-quarantine-feedback-v1",
+                "source_sha256": "a" * 64,
+                "errors": ["semantic contract rejected the claim"],
+            }},
+        }
+        self.assertTrue(audit.structured_quarantine_feedback_consistent(state))
+        state["rejected_details"]["job/run.md"]["source_sha256"] = "b" * 64
+        self.assertFalse(audit.structured_quarantine_feedback_consistent(state))
+
     def test_repeated_terminal_route_is_certified_stall(self):
         self.assertTrue(audit.certified_stall([row("negative_result"), row("blocked")], 2))
 

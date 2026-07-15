@@ -1,4 +1,6 @@
 import importlib.util
+import json
+import tempfile
 import unittest
 from pathlib import Path
 
@@ -24,6 +26,33 @@ class PrepTests(unittest.TestCase):
         frontier_id, gate = prep.first_allowed_stall(ranked, gates.get)
         self.assertEqual(frontier_id, "stuck")
         self.assertEqual(gate["frontier_id"], "stuck")
+
+    def test_latest_quarantine_feedback_is_scoped_to_selected_frontier(self):
+        state = {
+            "rejected_details": {
+                "job/one.md": {
+                    "schema": "p42-foundry-quarantine-feedback-v1",
+                    "recorded_at": "2026-07-15T07:00:00Z",
+                    "source_sha256": "a" * 64,
+                    "frontier_id": "other",
+                    "errors": ["other error"],
+                },
+                "job/two.md": {
+                    "schema": "p42-foundry-quarantine-feedback-v1",
+                    "recorded_at": "2026-07-15T08:00:00Z",
+                    "source_sha256": "b" * 64,
+                    "frontier_id": "target",
+                    "errors": ["scope overclaim"],
+                    "remediation": "replay and narrow",
+                },
+            }
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "state.json"
+            path.write_text(json.dumps(state))
+            feedback = prep.latest_quarantine_feedback(path, "target")
+        self.assertEqual(feedback["frontier_id"], "target")
+        self.assertEqual(feedback["errors"], ["scope overclaim"])
 
 
 if __name__ == "__main__":

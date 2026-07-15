@@ -88,6 +88,12 @@ certificate replay rate, semantic violations, input tokens, and wall time are
 secondary diagnostics. Efficiency never compensates for lower verified
 utility.
 
+Production semantic rejections are also counterexamples, not discarded logs.
+The no-agent publisher retains a private hash-keyed rejection record; when that
+frontier is next selected, the worker receives the exact contract errors and
+must replay the bounded evidence before issuing a narrower corrected receipt.
+No model-authored redaction crosses the public membrane automatically.
+
 ## Promotion rule
 
 A candidate remains in an isolated worktree. It cannot edit production jobs,

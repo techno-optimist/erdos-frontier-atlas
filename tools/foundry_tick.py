@@ -9,12 +9,46 @@ import json
 import os
 import subprocess
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 
 def source_is_watermarked(state: dict, key: str, source_sha: str) -> bool:
     """Return true only when this exact immutable source was already handled."""
     return any(state.get(bucket, {}).get(key) == source_sha for bucket in ("accepted", "rejected"))
+
+
+def inspect_run(tool: Path, source: Path, job_id: str, repo: Path) -> dict:
+    proc = subprocess.run(
+        [sys.executable, str(tool), "inspect", str(source), "--job-id", job_id],
+        cwd=repo, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE,
+    )
+    try:
+        value = json.loads(proc.stdout)
+    except (TypeError, ValueError):
+        value = {
+            "schema": "p42-foundry-inspection-v1", "valid": False,
+            "source_sha256": hashlib.sha256(source.read_bytes()).hexdigest(),
+            "receipt": None,
+            "errors": [proc.stderr.strip().splitlines()[-1][:500] if proc.stderr.strip() else "inspection failed"],
+        }
+    return value
+
+
+def rejection_detail(inspection: dict, fallback_reason: str) -> dict:
+    receipt = inspection.get("receipt") or {}
+    errors = [str(row)[:500] for row in inspection.get("errors", []) if str(row).strip()]
+    return {
+        "schema": "p42-foundry-quarantine-feedback-v1",
+        "recorded_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
+        "source_sha256": inspection.get("source_sha256"),
+        "receipt_id": receipt.get("receipt_id"),
+        "frontier_id": receipt.get("frontier_id"),
+        "classification": receipt.get("classification"),
+        "occurred_at": receipt.get("occurred_at"),
+        "errors": errors or [fallback_reason[:500]],
+        "remediation": "replay the bounded evidence, then correct scope; never claim the quarantined receipt was published",
+    }
 
 
 def main() -> int:
@@ -41,6 +75,24 @@ def main() -> int:
     ingest_state = json.loads(args.ingest_state.read_text()) if args.ingest_state.exists() else {}
     ingest_state.setdefault("accepted", {})
     ingest_state.setdefault("rejected", {})
+    ingest_state.setdefault("rejected_details", {})
+    # Backfill structured feedback for old hash-only quarantines. If a current
+    # contract now accepts an old source, clear its watermark so normal ingest
+    # can reconsider it below.
+    for key, source_sha in list(ingest_state["rejected"].items()):
+        detail = ingest_state["rejected_details"].get(key, {})
+        if detail.get("source_sha256") == source_sha:
+            continue
+        job_id, separator, filename = key.partition("/")
+        source = args.cron_output / job_id / filename
+        if not separator or not source.exists() or hashlib.sha256(source.read_bytes()).hexdigest() != source_sha:
+            continue
+        inspection = inspect_run(tool, source, job_id, args.repo)
+        if inspection.get("valid"):
+            ingest_state["rejected"].pop(key, None)
+            ingest_state["rejected_details"].pop(key, None)
+        else:
+            ingest_state["rejected_details"][key] = rejection_detail(inspection, "ingest failed")
     for job_id in config["source_job_ids"]:
         source_dir = args.cron_output / job_id
         if not source_dir.exists(): continue
@@ -49,14 +101,25 @@ def main() -> int:
             key = f"{job_id}/{source.name}"
             if source_is_watermarked(ingest_state, key, source_sha):
                 continue
+            inspection = inspect_run(tool, source, job_id, args.repo)
+            if not inspection.get("valid"):
+                detail = rejection_detail(inspection, "ingest failed")
+                rejected.append({"run_file": source.name, "reason": detail["errors"][0][:240]})
+                ingest_state["rejected"][key] = source_sha
+                ingest_state["rejected_details"][key] = detail
+                ingest_state["accepted"].pop(key, None)
+                continue
             proc = subprocess.run([sys.executable, str(tool), "ingest", str(source), "--job-id", job_id], cwd=args.repo, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             if proc.returncode == 0:
                 if json.loads(proc.stdout).get("created"): created.append(source.name)
                 ingest_state["accepted"][key] = source_sha
                 ingest_state["rejected"].pop(key, None)
+                ingest_state["rejected_details"].pop(key, None)
             elif proc.returncode != 0:
-                rejected.append({"run_file": source.name, "reason": proc.stderr.strip().splitlines()[-1][:240] if proc.stderr.strip() else "ingest failed"})
+                reason = proc.stderr.strip().splitlines()[-1][:240] if proc.stderr.strip() else "ingest failed"
+                rejected.append({"run_file": source.name, "reason": reason})
                 ingest_state["rejected"][key] = source_sha
+                ingest_state["rejected_details"][key] = rejection_detail(inspection, reason)
                 ingest_state["accepted"].pop(key, None)
     args.ingest_state.parent.mkdir(parents=True, exist_ok=True)
     ingest_tmp = args.ingest_state.with_suffix(args.ingest_state.suffix + ".tmp")
