@@ -15,6 +15,10 @@ from pathlib import Path
 
 PUBLIC_TEMPLATE_PLACEHOLDER = re.compile(r"<[^<>\n]{2,240}>")
 EFFICIENCY_PARSER = Path(__file__).with_name("foundry_efficiency.py")
+SEMANTIC_VALIDATOR_SOURCES = (
+    Path(__file__).with_name("foundry.py"),
+    Path(__file__),
+)
 
 
 def parser_source_digest() -> str:
@@ -34,6 +38,18 @@ def telemetry_contract_digest(config: dict) -> str:
     return "sha256:" + hashlib.sha256(canonical).hexdigest()
 
 
+def semantic_validator_source_digest() -> str:
+    canonical = json.dumps(
+        {
+            path.name: "sha256:" + hashlib.sha256(path.read_bytes()).hexdigest()
+            for path in SEMANTIC_VALIDATOR_SOURCES
+        },
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode()
+    return "sha256:" + hashlib.sha256(canonical).hexdigest()
+
+
 def semantic_contract_digest(config: dict) -> str:
     canonical = json.dumps(
         {
@@ -44,6 +60,7 @@ def semantic_contract_digest(config: dict) -> str:
             ),
             "runtime_budget": config.get("runtime_budget"),
             "runtime_telemetry_contract_digest": telemetry_contract_digest(config),
+            "semantic_validator_source_digest": semantic_validator_source_digest(),
         },
         ensure_ascii=False,
         sort_keys=True,

@@ -135,6 +135,23 @@ class FoundryTickTests(unittest.TestCase):
                 second = foundry_tick.semantic_contract_digest(config)
         self.assertNotEqual(first, second)
 
+    def test_validator_code_change_invalidates_publication_policy_digest(self):
+        config = self.runtime_config()
+        with tempfile.TemporaryDirectory() as tmp:
+            validator = Path(tmp) / "foundry.py"
+            publisher = Path(tmp) / "foundry_tick.py"
+            validator.write_text("validator-v1\n")
+            publisher.write_text("publisher-v1\n")
+            with mock.patch.object(
+                foundry_tick,
+                "SEMANTIC_VALIDATOR_SOURCES",
+                (validator, publisher),
+            ):
+                first = foundry_tick.semantic_contract_digest(config)
+                publisher.write_text("publisher-v2\n")
+                second = foundry_tick.semantic_contract_digest(config)
+        self.assertNotEqual(first, second)
+
     def test_milestone_policy_change_invalidates_publication_policy_digest(self):
         config = self.runtime_config()
         config["milestone_policy"] = {"receipt_deadline_call": 14}
