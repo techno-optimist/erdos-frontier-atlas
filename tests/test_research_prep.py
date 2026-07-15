@@ -52,6 +52,7 @@ class PrepTests(unittest.TestCase):
                     "frontier_id": "target",
                     "errors": ["scope overclaim"],
                     "remediation": "replay and narrow",
+                    "semantic_contract_digest": "sha256:" + "c" * 64,
                 },
             }
         }
@@ -61,6 +62,9 @@ class PrepTests(unittest.TestCase):
             feedback = prep.latest_quarantine_feedback(path, "target")
         self.assertEqual(feedback["frontier_id"], "target")
         self.assertEqual(feedback["errors"], ["scope overclaim"])
+        self.assertEqual(
+            feedback["semantic_contract_digest"], "sha256:" + "c" * 64
+        )
 
 
 if __name__ == "__main__":

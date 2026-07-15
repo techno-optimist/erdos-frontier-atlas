@@ -161,6 +161,7 @@ class AuditTests(unittest.TestCase):
             )
 
     def test_structured_quarantine_feedback_matches_rejected_hash(self):
+        contract_digest = "sha256:" + "c" * 64
         state = {
             "accepted": {},
             "rejected": {"job/run.md": "a" * 64},
@@ -168,11 +169,25 @@ class AuditTests(unittest.TestCase):
                 "schema": "p42-foundry-quarantine-feedback-v1",
                 "source_sha256": "a" * 64,
                 "errors": ["semantic contract rejected the claim"],
+                "semantic_contract_digest": contract_digest,
             }},
         }
-        self.assertTrue(audit.structured_quarantine_feedback_consistent(state))
+        self.assertTrue(
+            audit.structured_quarantine_feedback_consistent(
+                state, contract_digest
+            )
+        )
+        self.assertFalse(
+            audit.structured_quarantine_feedback_consistent(
+                state, "sha256:" + "d" * 64
+            )
+        )
         state["rejected_details"]["job/run.md"]["source_sha256"] = "b" * 64
-        self.assertFalse(audit.structured_quarantine_feedback_consistent(state))
+        self.assertFalse(
+            audit.structured_quarantine_feedback_consistent(
+                state, contract_digest
+            )
+        )
 
     def test_repeated_terminal_route_is_certified_stall(self):
         self.assertTrue(audit.certified_stall([row("negative_result"), row("blocked")], 2))

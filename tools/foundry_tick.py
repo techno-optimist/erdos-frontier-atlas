@@ -16,6 +16,25 @@ from pathlib import Path
 PUBLIC_TEMPLATE_PLACEHOLDER = re.compile(r"<[^<>\n]{2,240}>")
 
 
+def semantic_contract_digest(config: dict) -> str:
+    canonical = json.dumps(
+        config.get("semantic_contracts", {}),
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode()
+    return "sha256:" + hashlib.sha256(canonical).hexdigest()
+
+
+def rejection_feedback_is_current(
+    detail: dict, source_sha: str, contract_digest: str
+) -> bool:
+    return bool(
+        detail.get("source_sha256") == source_sha
+        and detail.get("semantic_contract_digest") == contract_digest
+    )
+
+
 def source_is_watermarked(state: dict, key: str, source_sha: str) -> bool:
     """Return true only when this exact immutable source was already handled."""
     return any(state.get(bucket, {}).get(key) == source_sha for bucket in ("accepted", "rejected"))
@@ -38,10 +57,12 @@ def inspect_run(tool: Path, source: Path, job_id: str, repo: Path) -> dict:
     return value
 
 
-def rejection_detail(inspection: dict, fallback_reason: str) -> dict:
+def rejection_detail(
+    inspection: dict, fallback_reason: str, contract_digest: str | None = None
+) -> dict:
     receipt = inspection.get("receipt") or {}
     errors = [str(row)[:500] for row in inspection.get("errors", []) if str(row).strip()]
-    return {
+    detail = {
         "schema": "p42-foundry-quarantine-feedback-v1",
         "recorded_at": datetime.now(timezone.utc).replace(microsecond=0).isoformat().replace("+00:00", "Z"),
         "source_sha256": inspection.get("source_sha256"),
@@ -52,6 +73,9 @@ def rejection_detail(inspection: dict, fallback_reason: str) -> dict:
         "errors": errors or [fallback_reason[:500]],
         "remediation": "replay the bounded evidence, then correct scope; never claim the quarantined receipt was published",
     }
+    if contract_digest:
+        detail["semantic_contract_digest"] = contract_digest
+    return detail
 
 
 def failed_run_reason(text: str) -> str | None:
@@ -94,7 +118,8 @@ def template_receipt_reason(paths: list[Path]) -> str | None:
 
 
 def quarantine_invalid_accepted_sources(
-    ingest_state: dict, cron_output: Path, repo: Path, tool: Path
+    ingest_state: dict, cron_output: Path, repo: Path, tool: Path,
+    contract_digest: str | None = None,
 ) -> list[dict]:
     """Repair older failed-envelope or template-placeholder acceptances."""
     revoked = []
@@ -129,7 +154,7 @@ def quarantine_invalid_accepted_sources(
         ingest_state["accepted"].pop(key, None)
         ingest_state.setdefault("rejected", {})[key] = source_sha
         ingest_state.setdefault("rejected_details", {})[key] = rejection_detail(
-            inspection, reason
+            inspection, reason, contract_digest
         )
         revoked.append({
             "run_file": filename,
@@ -173,7 +198,7 @@ def quarantine_invalid_accepted_sources(
         }
         ingest_state.setdefault("rejected", {})[ledger_key] = source_sha
         ingest_state.setdefault("rejected_details", {})[ledger_key] = rejection_detail(
-            inspection, reason
+            inspection, reason, contract_digest
         )
         path.unlink()
         revoked.append({
@@ -202,6 +227,7 @@ def main() -> int:
         print(json.dumps({"skipped": True, "reason": "another Foundry tick holds the publication lock"}))
         return 0
     config = json.loads((args.repo / "foundry" / "config.json").read_text())
+    contract_digest = semantic_contract_digest(config)
     tool = args.repo / "tools" / "foundry.py"
     created = []
     rejected = []
@@ -210,7 +236,7 @@ def main() -> int:
     ingest_state.setdefault("rejected", {})
     ingest_state.setdefault("rejected_details", {})
     revoked = quarantine_invalid_accepted_sources(
-        ingest_state, args.cron_output, args.repo, tool
+        ingest_state, args.cron_output, args.repo, tool, contract_digest
     )
     if any(row["removed_receipts"] for row in revoked):
         subprocess.run(
@@ -218,12 +244,12 @@ def main() -> int:
             cwd=args.repo, text=True, stdout=subprocess.PIPE,
             stderr=subprocess.STDOUT, check=True,
         )
-    # Backfill structured feedback for old hash-only quarantines. If a current
-    # contract now accepts an old source, clear its watermark so normal ingest
-    # can reconsider it below.
+    # Backfill hash-only quarantines and replay exact rejected sources whenever
+    # the semantic contract changes. If a current contract accepts an old
+    # source, clear its watermark so normal ingest can reconsider it below.
     for key, source_sha in list(ingest_state["rejected"].items()):
         detail = ingest_state["rejected_details"].get(key, {})
-        if detail.get("source_sha256") == source_sha:
+        if rejection_feedback_is_current(detail, source_sha, contract_digest):
             continue
         job_id, separator, filename = key.partition("/")
         source = args.cron_output / job_id / filename
@@ -232,21 +258,23 @@ def main() -> int:
                 "source_sha256": source_sha,
                 "receipt": None,
                 "errors": ["legacy raw source unavailable; hash-only quarantine retained"],
-            }, "legacy raw source unavailable")
+            }, "legacy raw source unavailable", contract_digest)
             continue
         if hashlib.sha256(source.read_bytes()).hexdigest() != source_sha:
             ingest_state["rejected_details"][key] = rejection_detail({
                 "source_sha256": source_sha,
                 "receipt": None,
                 "errors": ["legacy raw source no longer matches quarantined hash; quarantine retained"],
-            }, "legacy raw source hash mismatch")
+            }, "legacy raw source hash mismatch", contract_digest)
             continue
         inspection = inspect_run(tool, source, job_id, args.repo)
         if inspection.get("valid"):
             ingest_state["rejected"].pop(key, None)
             ingest_state["rejected_details"].pop(key, None)
         else:
-            ingest_state["rejected_details"][key] = rejection_detail(inspection, "ingest failed")
+            ingest_state["rejected_details"][key] = rejection_detail(
+                inspection, "ingest failed", contract_digest
+            )
     for job_id in config["source_job_ids"]:
         source_dir = args.cron_output / job_id
         if not source_dir.exists(): continue
@@ -257,7 +285,7 @@ def main() -> int:
                 continue
             inspection = inspect_run(tool, source, job_id, args.repo)
             if not inspection.get("valid"):
-                detail = rejection_detail(inspection, "ingest failed")
+                detail = rejection_detail(inspection, "ingest failed", contract_digest)
                 rejected.append({"run_file": source.name, "reason": detail["errors"][0][:240]})
                 ingest_state["rejected"][key] = source_sha
                 ingest_state["rejected_details"][key] = detail
@@ -273,7 +301,9 @@ def main() -> int:
                 reason = proc.stderr.strip().splitlines()[-1][:240] if proc.stderr.strip() else "ingest failed"
                 rejected.append({"run_file": source.name, "reason": reason})
                 ingest_state["rejected"][key] = source_sha
-                ingest_state["rejected_details"][key] = rejection_detail(inspection, reason)
+                ingest_state["rejected_details"][key] = rejection_detail(
+                    inspection, reason, contract_digest
+                )
                 ingest_state["accepted"].pop(key, None)
     args.ingest_state.parent.mkdir(parents=True, exist_ok=True)
     ingest_tmp = args.ingest_state.with_suffix(args.ingest_state.suffix + ".tmp")
