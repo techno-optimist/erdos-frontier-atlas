@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import fcntl
+import hashlib
 import json
 import os
 import shutil
@@ -11,6 +12,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 HOME = Path.home()
+ROOT = Path(__file__).resolve().parents[1]
 CRON = HOME / ".hermes" / "cron"
 JOBS = CRON / "jobs.json"
 LOCK = CRON / ".jobs.lock"
@@ -18,6 +20,14 @@ TARGETS = {"50c8e4391849", "e97056701b6d"}
 MODEL = "/home/chronos/models/qwen3.6-35b-a3b"
 AGENT = HOME / ".local" / "bin" / "chronos-agent"
 COMPACT_SKILLS = ["foundry"]
+INSTALLS = {
+    ROOT / "foundry" / "dgx_research_prep.py": [
+        HOME / ".hermes" / "scripts" / "chronos_frontier_scout_prep.py",
+        HOME / ".hermes" / "scripts" / "chronos_frontier_night_prep.py",
+    ],
+    ROOT / "foundry" / "dgx_tick.py": [HOME / ".hermes" / "scripts" / "erdos_foundry_tick.py"],
+    ROOT / "foundry" / "SKILL.md": [HOME / ".hermes" / "skills" / "foundry" / "SKILL.md"],
+}
 SUFFIX = """
 
 FOUNDRY RECURSION (operator-authorized): Use only the lane-scoped
@@ -35,7 +45,24 @@ no-agent membrane; do not run git here.
 """.strip()
 
 
+def install_runtime_files() -> dict[str, str]:
+    installed = {}
+    for source, targets in INSTALLS.items():
+        digest = hashlib.sha256(source.read_bytes()).hexdigest()
+        for target in targets:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            tmp = target.with_suffix(target.suffix + ".tmp")
+            shutil.copy2(source, tmp)
+            tmp.chmod(0o755 if target.suffix == ".py" else 0o644)
+            os.replace(tmp, target)
+            if hashlib.sha256(target.read_bytes()).hexdigest() != digest:
+                raise SystemExit(f"runtime install digest mismatch: {target}")
+            installed[str(target)] = digest
+    return installed
+
+
 def main() -> int:
+    installed = install_runtime_files()
     settings = {
         "providers.foundry-qwen35b.name": "foundry-qwen35b",
         "providers.foundry-qwen35b.base_url": "http://127.0.0.1:30000/v1",
@@ -88,7 +115,7 @@ def main() -> int:
         tmp = JOBS.with_suffix(".json.tmp")
         tmp.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n")
         os.replace(tmp, JOBS)
-    print(json.dumps({"updated": changed, "provider": "foundry-qwen35b", "model": MODEL}))
+    print(json.dumps({"updated": changed, "provider": "foundry-qwen35b", "model": MODEL, "installed": installed}))
     return 0
 
 
