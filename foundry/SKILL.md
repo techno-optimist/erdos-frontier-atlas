@@ -26,7 +26,18 @@ one bounded, falsifiable step. Fluency is not evidence.
 Choose exactly one: verifier construction, kill-test, bounded exact search,
 literature-claim audit, negative-result closure, or next-experiment design.
 Prefer an executable discriminating test over another prose analysis. Stop on
-the registered abort condition. Preserve a failed route as useful state.
+the registered abort condition. Preserve a failed route as useful state. An
+expensive terminal action is any search, solver, or tool call budgeted above 30
+seconds: run at most one per research session. A timeout or error exhausts that
+action; do not retry it or substitute a different search in the same session.
+Fast verifier fixtures and final replays do not consume the terminal action,
+but they must not be used to smuggle in another search.
+
+Execute only code written or deliberately copied into the current research
+session after review. Prior-session artifacts are evidence, not live programs:
+never execute them in place. Do not load the broad context packet after the
+terminal action begins, and do not replace focused retrieval with exploratory
+tool loops.
 
 Allowed writes are scoped research-session artifacts and the frontier queue.
 Production Atlas databases are read-only. Do not submit externally, train a
@@ -43,6 +54,13 @@ model, deploy, or run git; deterministic publisher jobs own publication.
   mutable run.
 - Separate theorem/certificate, exact local result, heuristic observation,
   literature claim, and model speculation.
+- Treat algorithm names as verifiable claims. Seed every randomness source.
+  Simulated annealing must permit seeded non-improving transitions under a
+  stated acceptance law; a cardinality-growth search must have a move that can
+  increase cardinality. Repeated seeds, renamed loops, and equivalent state
+  transitions are not independent strategies. A no-hit run scopes only the
+  exact implementation and trials executed; it establishes no numerical
+  ceiling, route barrier, construction necessity, or nonexistence.
 - Recheck protected database hashes before and after the action.
 - A frontier consultation supplies strategy only; independently execute and
   verify its proposed test before crediting progress.
