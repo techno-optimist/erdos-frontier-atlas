@@ -17,6 +17,10 @@ from urllib import request
 ROOT = Path(__file__).resolve().parents[1]
 HOME = Path.home()
 MODEL = "/home/chronos/models/qwen3.6-35b-a3b"
+SEMANTIC_VALIDATOR_SOURCES = (
+    ROOT / "tools" / "foundry.py",
+    ROOT / "tools" / "foundry_tick.py",
+)
 
 
 def run(cmd: list[str]) -> subprocess.CompletedProcess:
@@ -60,6 +64,18 @@ def telemetry_contract_digest(config: dict) -> str:
     return "sha256:" + hashlib.sha256(canonical).hexdigest()
 
 
+def semantic_validator_source_digest() -> str:
+    canonical = json.dumps(
+        {
+            path.name: "sha256:" + sha_file(path)
+            for path in SEMANTIC_VALIDATOR_SOURCES
+        },
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode()
+    return "sha256:" + hashlib.sha256(canonical).hexdigest()
+
+
 def semantic_contract_digest(config: dict) -> str:
     canonical = json.dumps(
         {
@@ -70,6 +86,7 @@ def semantic_contract_digest(config: dict) -> str:
             ),
             "runtime_budget": config.get("runtime_budget"),
             "runtime_telemetry_contract_digest": telemetry_contract_digest(config),
+            "semantic_validator_source_digest": semantic_validator_source_digest(),
         },
         ensure_ascii=False,
         sort_keys=True,
@@ -534,6 +551,7 @@ def main() -> int:
             "runtime_budget_digest": runtime_budget_digest(config),
             "efficiency_runtime_budget_digest": efficiency.get("runtime_budget_digest") if efficiency else None,
             "telemetry_contract_digest": telemetry_contract_digest(config),
+            "semantic_validator_source_digest": semantic_validator_source_digest(),
             "efficiency_telemetry_contract_digest": efficiency.get("telemetry_contract_digest") if efficiency else None,
             "efficiency_parser_source_sha256": efficiency.get("parser_source_sha256") if efficiency else None,
             "scheduler_job_max_turns_marker": "FOUNDRY_JOB_MAX_TURNS_V1" in scheduler_text,

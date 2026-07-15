@@ -148,7 +148,9 @@ Recent accepted sources are also bound to the publication-contract digest.
 When that digest changes after the checked-in replay cutoff, the no-agent
 publisher re-inspects the exact retained raw hash; a now-invalid acceptance is
 removed and converted to structured quarantine rather than remaining stale
-prior state. Older receipts remain explicitly grandfathered.
+prior state. The digest includes the exact semantic-validator and publisher
+source hashes, so executable policy changes trigger the same replay as config
+changes. Older receipts remain explicitly grandfathered.
 
 The consultation gate, router call, and private-state commit are one
 cross-process locked transaction. Concurrent scout/night attempts serialize;
