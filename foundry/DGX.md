@@ -74,6 +74,8 @@ while a lane with verified progress remains eligible for continued work.
 read-only IDF- and phrase-ranked matches from Atlas, Atlas2, Arena, and aiwiki.
 The public 51-problem frontier Atlas is a separate first-class hashed surface,
 so exact problem/verifier records outrank merely thematic database matches.
+Its current record and campaign finding travel with each hit, preventing a
+fresh agent from repeating a solver route already falsified by prior runs.
 It records before/after database hashes and writes only compact session-local
 `focused_context` artifacts; failure of any read-only hash check fails prep.
 

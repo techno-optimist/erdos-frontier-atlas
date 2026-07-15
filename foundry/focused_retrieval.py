@@ -134,7 +134,8 @@ def public_atlas_rows(path: Path, query: str, limit: int) -> list[dict]:
     records = document.get("problems", [])
     features = query_features(query)
     weighted = []
-    haystacks = [" ".join(str(row.get(key, "")) for key in ("id", "title", "lane", "verifier", "beatable_reason", "wall_reason")).lower() for row in records]
+    atlas_fields = ("id", "title", "lane", "verifier", "current_record", "campaign_finding", "beatable_reason", "attack", "wall_reason")
+    haystacks = [" ".join(str(row.get(key, "")) for key in atlas_fields).lower() for row in records]
     for feature, boost in features:
         count = sum(feature in text for text in haystacks)
         if count:
@@ -145,9 +146,9 @@ def public_atlas_rows(path: Path, query: str, limit: int) -> list[dict]:
         if not matched:
             continue
         score = sum(weight for feature, weight in weighted if feature in text)
-        excerpt = focus_excerpt(row, ["title", "verifier", "beatable_reason", "wall_reason"], [(feature, "%" + feature + "%", weight) for feature, weight in weighted])
+        excerpt = focus_excerpt(row, ["title", "verifier", "current_record", "campaign_finding", "beatable_reason", "attack", "wall_reason"], [(feature, "%" + feature + "%", weight) for feature, weight in weighted])
         ranked.append({
-            **{key: row.get(key) for key in ("id", "title", "lane", "board_class", "verifier", "beatable_reason", "wall_reason") if row.get(key) is not None},
+            **{key: row.get(key) for key in ("id", "title", "lane", "board_class", "verifier", "current_record", "campaign_finding", "beatable_reason", "wall_reason") if row.get(key) is not None},
             "focus_score": round(score, 4), "matched_features": matched, "focus_excerpt": excerpt,
         })
     ranked.sort(key=lambda row: (-row["focus_score"], int(row["id"])))
