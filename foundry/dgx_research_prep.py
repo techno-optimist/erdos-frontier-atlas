@@ -180,10 +180,21 @@ def milestone_contract(continuation: dict | None, policy: dict) -> dict:
     else:
         phase = "initial_verifier"
         action_kind = str(policy["initial_action_kind"])
-        scope = "Build or replay exactly one target verifier with fixed branch-specific known-good and known-bad fixtures."
+        scope = "Build or replay exactly one target verifier. Validate both candidate-domain membership/well-formedness and the target predicate, with a fixed out-of-domain fixture and a branch-specific predicate-violation fixture."
         deferred = "Do not run random/generated candidates, trials, search, solver exploration, construction, or optimization in this session; place all of it in Next gate."
         specialist_skill_policy = "Do not load a specialist skill; initial verifier construction is self-contained in focused evidence."
         broad_context_policy = str(policy["initial_broad_context_policy"])
+    verifier_evidence_contract = (
+        {
+            "required_verified_prefixes": list(
+                policy["verifier_required_verified_prefixes"]
+            ),
+            "domain_requirement": "Validate exact target-domain membership or well-formedness and replay a fixed out-of-domain known-bad fixture with its rejection reason.",
+            "predicate_requirement": "Validate the exact target predicate and replay a fixed branch-specific predicate-violation fixture with its rejection reason.",
+        }
+        if action_kind == "verifier_construction"
+        else None
+    )
     core = {
         "schema": "p42-foundry-milestone-contract-v1",
         "authority": "operator_owned_scope_and_finalization_contract",
@@ -194,6 +205,7 @@ def milestone_contract(continuation: dict | None, policy: dict) -> dict:
         "deferred": deferred,
         "specialist_skill_policy": specialist_skill_policy,
         "broad_context_policy": broad_context_policy,
+        "verifier_evidence_contract": verifier_evidence_contract,
         "implementation_stop_call": int(policy["implementation_stop_call"]),
         "final_replay_call": int(policy["final_replay_call"]),
         "receipt_deadline_call": int(policy["receipt_deadline_call"]),
@@ -213,6 +225,17 @@ def milestone_contract(continuation: dict | None, policy: dict) -> dict:
 def milestone_instruction(contract: dict | None) -> str:
     if not contract:
         return ""
+    verifier_instruction = ""
+    evidence = contract.get("verifier_evidence_contract")
+    if isinstance(evidence, dict):
+        prefixes = evidence.get("required_verified_prefixes") or []
+        verifier_instruction = (
+            " For verifier construction, domain/well-formedness and the target "
+            "predicate are separate rejection branches. Replay one fixed bad "
+            "fixture for each and put these exact nonempty lines in Verified: "
+            + " and ".join(f"`{prefix} <evidence>`" for prefix in prefixes)
+            + "."
+        )
     return (
         " foundry.milestone_contract is operator-owned and permits exactly one "
         "action primitive. Obey its scope and deferred fields even when stale "
@@ -226,6 +249,7 @@ def milestone_instruction(contract: dict | None) -> str:
         "Do not write the final receipt to a file or make a tool call in place "
         "of that response. The first line under Action must be copied exactly: "
         f"{contract['receipt_action_prefix']}"
+        + verifier_instruction
     )
 
 

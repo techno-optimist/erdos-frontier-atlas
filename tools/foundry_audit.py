@@ -65,6 +65,9 @@ def semantic_contract_digest(config: dict) -> str:
         {
             "semantic_contracts": config.get("semantic_contracts", {}),
             "milestone_policy": config.get("milestone_policy", {}),
+            "accepted_contract_replay_after": config.get(
+                "accepted_contract_replay_after"
+            ),
             "runtime_budget": config.get("runtime_budget"),
             "runtime_telemetry_contract_digest": telemetry_contract_digest(config),
         },
@@ -158,6 +161,14 @@ def structured_quarantine_feedback_consistent(
         and key not in ingest_state.get("accepted", {})
         for key, source_sha in rejected.items()
     )
+
+
+def accepted_contract_bindings_current(
+    ingest_state: dict, contract_digest: str
+) -> bool:
+    accepted = ingest_state.get("accepted", {})
+    bindings = ingest_state.get("accepted_policy", {})
+    return all(bindings.get(key) == contract_digest for key in accepted)
 
 
 def private_holdout_committed(manifest_path: Path, commitment_path: Path) -> bool:
@@ -461,6 +472,9 @@ def main() -> int:
         "structured_quarantine_feedback_consistent": structured_quarantine_feedback_consistent(
             ingest_state, semantic_contract_digest(config)
         ),
+        "accepted_contract_bindings_current": accepted_contract_bindings_current(
+            ingest_state, semantic_contract_digest(config)
+        ),
         "automation_branch_current": bool(remote_head) and local_head == remote_head,
         "installed_runtime_matches_repo": all(row["source"] == row["installed"] for row in runtime_hashes.values()),
         "runtime_budget_membrane_enforced": runtime_budget_enforced,
@@ -507,6 +521,7 @@ def main() -> int:
             "publication_incidents": len([row for row in incidents if row.get("schema") == "p42-foundry-publication-incident-v1"]),
             "private_rejected_sources": len(ingest_state.get("rejected", {})),
             "structured_quarantine_feedback": len(ingest_state.get("rejected_details", {})),
+            "accepted_contract_bindings": len(ingest_state.get("accepted_policy", {})),
             "frontier_calls": len(calls), "call_evidence": call_evidence, "valid_frontier_calls": len(valid_calls),
             "lane_aligned_executions": len(aligned_executions), "daily_call_counts": daily_counts,
             "tool_smoke": tool_evidence, "local_head": local_head, "remote_head": remote_head,
