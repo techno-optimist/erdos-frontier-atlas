@@ -17,6 +17,12 @@ class DeployTests(unittest.TestCase):
         self.assertEqual(deploy.FOUNDRY_MAX_TURNS, 16)
         self.assertEqual(deploy.FOUNDRY_MAX_WALL_SECONDS, 900)
         self.assertEqual(deploy.FOUNDRY_FINALIZE_NO_TOOLS_AFTER, 13)
+        self.assertEqual(deploy.FOUNDRY_FINALIZE_WALL_SECONDS, 600)
+        # The soft wall deadline must leave headroom before the hard kill.
+        self.assertGreater(deploy.FOUNDRY_FINALIZE_WALL_SECONDS, 0)
+        self.assertLess(
+            deploy.FOUNDRY_FINALIZE_WALL_SECONDS, deploy.FOUNDRY_MAX_WALL_SECONDS
+        )
         config = json.loads((Path(__file__).parents[1] / "foundry" / "config.json").read_text())
         self.assertEqual(
             deploy.FOUNDRY_MAX_TURNS,

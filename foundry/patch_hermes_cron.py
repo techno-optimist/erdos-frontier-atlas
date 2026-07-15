@@ -20,6 +20,7 @@ MARKER = "FOUNDRY_JOB_MAX_TURNS_V1"
 WALL_MARKER = "FOUNDRY_JOB_MAX_WALL_SECONDS_V1"
 LEGACY_FINALIZE_MARKER = "FOUNDRY_JOB_FINALIZE_NO_TOOLS_V1"
 FINALIZE_MARKER = "FOUNDRY_JOB_FINALIZE_NO_TOOLS_V2"
+FINALIZE_WALL_MARKER = "FOUNDRY_JOB_FINALIZE_WALL_SECONDS_V1"
 LOOP_MARKER = "FOUNDRY_REQUIRED_RECEIPT_RETRY_V1"
 OLD = """        # Max iterations
         max_iterations = _cfg.get("agent", {}).get("max_turns") or _cfg.get("max_turns") or 90
@@ -88,6 +89,97 @@ WALL_LOOP_NEW = """                    if (
                         result = _cron_future.result()
                         break
                     # Agent still running — check inactivity.
+"""
+# The wall-finalization anchor is the tail of WALL_SETUP_NEW, so this hunk can
+# install on a scheduler that is already wall-capped (WALL_MARKER present).
+FINALIZE_WALL_OLD = """        import time as _foundry_time
+        _job_wall_started = _foundry_time.monotonic()
+"""
+FINALIZE_WALL_NEW = """        import time as _foundry_time
+        _job_wall_started = _foundry_time.monotonic()
+        # FOUNDRY_JOB_FINALIZE_WALL_SECONDS_V1: a job that reserves its last
+        # calls for a receipt (finalize_no_tools_after) and carries a wall cap
+        # (max_wall_seconds) may also finalize on *elapsed wall time*. Under
+        # inference contention a slow-but-active run can exhaust the wall budget
+        # while still below the call threshold; without this it is hard-killed
+        # as a failed cron envelope and publishes nothing. At the first step
+        # boundary past finalize_wall_seconds this removes tool schemas and
+        # injects one finalization steer, so the worker still emits its six
+        # labelled receipt before the hard wall kill. The hard cap remains the
+        # backstop for a genuinely wedged single call. Jobs without the field
+        # retain the exact prior behavior.
+        _raw_finalize_wall = job.get("finalize_wall_seconds")
+        if _raw_finalize_wall is None:
+            _job_finalize_wall = None
+        else:
+            try:
+                _job_finalize_wall = float(_raw_finalize_wall)
+            except (TypeError, ValueError) as _finalize_wall_exc:
+                raise RuntimeError(
+                    f"Cron job '{job_name}' has invalid finalize_wall_seconds="
+                    f"{_raw_finalize_wall!r}"
+                ) from _finalize_wall_exc
+            if _job_finalize_after is None:
+                raise RuntimeError(
+                    f"Cron job '{job_name}' finalize_wall_seconds requires "
+                    f"finalize_no_tools_after"
+                )
+            if _job_wall_limit is None or not (
+                0 < _job_finalize_wall < _job_wall_limit
+            ):
+                raise RuntimeError(
+                    f"Cron job '{job_name}' requires 0 < finalize_wall_seconds "
+                    f"< max_wall_seconds, got {_raw_finalize_wall!r}"
+                )
+            _prior_wall_finalize_callback = agent.step_callback
+            agent._foundry_wall_finalize_started = _job_wall_started
+            agent._foundry_wall_finalize_deadline = _job_finalize_wall
+            agent._foundry_wall_finalize_triggered = False
+
+            def _foundry_wall_finalize_step(iteration, previous_tools):
+                if _prior_wall_finalize_callback is not None:
+                    _prior_wall_finalize_callback(iteration, previous_tools)
+                _wall_elapsed = (
+                    _foundry_time.monotonic()
+                    - agent._foundry_wall_finalize_started
+                )
+                if _wall_elapsed < agent._foundry_wall_finalize_deadline:
+                    return
+                agent.tools = []
+                agent.valid_tool_names = set()
+                agent._skill_nudge_interval = 0
+                if agent._foundry_wall_finalize_triggered:
+                    return
+                instruction = (
+                    "Operator wall-clock finalization gate: this job is nearly "
+                    "out of wall-clock budget and tool access is now disabled. "
+                    "Reply directly with exactly these six markdown labels and "
+                    "their public-safe contents: Frontier, Action, Verified, "
+                    "Result, Next gate, Boundary held. Copy the hash-bound "
+                    "milestone Action prefix from the prep contract. Do not "
+                    "describe a tool call or write another file."
+                )
+                lock = getattr(agent, "_pending_steer_lock", None)
+                if lock is not None:
+                    with lock:
+                        pending = getattr(agent, "_pending_steer", None)
+                        agent._pending_steer = (
+                            pending + "\\n" + instruction if pending else instruction
+                        )
+                else:
+                    pending = getattr(agent, "_pending_steer", None)
+                    agent._pending_steer = (
+                        pending + "\\n" + instruction if pending else instruction
+                    )
+                agent._foundry_wall_finalize_triggered = True
+                logger.info(
+                    "Job '%s' entered no-tools finalization at %.0fs wall "
+                    "(finalize_wall_seconds=%.0f, call %s)",
+                    job_name, _wall_elapsed,
+                    agent._foundry_wall_finalize_deadline, iteration,
+                )
+
+            agent.step_callback = _foundry_wall_finalize_step
 """
 FINALIZE_OLD = """            session_db=_session_db,
         )
@@ -273,6 +365,16 @@ def patch_text(text: str) -> tuple[str, bool]:
         text = text.replace(WALL_SETUP_OLD, WALL_SETUP_NEW)
         text = text.replace(WALL_LOOP_OLD, WALL_LOOP_NEW)
         changed = True
+    if FINALIZE_WALL_MARKER not in text:
+        # Anchor is created by the wall-cap hunk above, so this applies to a
+        # freshly patched source and to one that was already wall-capped.
+        if text.count(FINALIZE_WALL_OLD) != 1:
+            raise RuntimeError(
+                "Hermes scheduler source drifted; refusing unreviewed "
+                "wall-finalization patch"
+            )
+        text = text.replace(FINALIZE_WALL_OLD, FINALIZE_WALL_NEW)
+        changed = True
     if FINALIZE_MARKER not in text:
         if LEGACY_FINALIZE_MARKER in text:
             if (
@@ -323,6 +425,7 @@ def patch_file(path: Path) -> dict:
         MARKER not in installed
         or WALL_MARKER not in installed
         or FINALIZE_MARKER not in installed
+        or FINALIZE_WALL_MARKER not in installed
     ):
         raise RuntimeError("Hermes per-job runtime-cap markers missing after patch")
     return {
@@ -330,7 +433,7 @@ def patch_file(path: Path) -> dict:
         "changed": changed,
         "sha256": hashlib.sha256(installed.encode()).hexdigest(),
         "backup": str(backup),
-        "markers": [MARKER, WALL_MARKER, FINALIZE_MARKER],
+        "markers": [MARKER, WALL_MARKER, FINALIZE_MARKER, FINALIZE_WALL_MARKER],
     }
 
 

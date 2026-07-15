@@ -48,12 +48,29 @@ class AuditTests(unittest.TestCase):
             "state": "scheduled",
             "prompt": prompt,
             "finalize_no_tools_after": 13,
+            "max_wall_seconds": 900,
+            "finalize_wall_seconds": 600,
         }
         self.assertTrue(audit.scheduled_worker_policy_current(job, config))
         job["enabled"] = False
         self.assertFalse(audit.scheduled_worker_policy_current(job, config))
         job.update(enabled=True, prompt=prompt.replace("at most 16", "at most 18"))
         self.assertFalse(audit.scheduled_worker_policy_current(job, config))
+        # A missing soft wall deadline, or one that does not leave headroom
+        # before the hard kill, fails the policy.
+        good = dict(job, prompt=prompt)
+        self.assertTrue(audit.scheduled_worker_policy_current(good, config))
+        self.assertFalse(
+            audit.scheduled_worker_policy_current(
+                {k: v for k, v in good.items() if k != "finalize_wall_seconds"},
+                config,
+            )
+        )
+        self.assertFalse(
+            audit.scheduled_worker_policy_current(
+                dict(good, finalize_wall_seconds=900), config
+            )
+        )
 
     def test_retry_budget_parser_fails_closed(self):
         with tempfile.TemporaryDirectory() as tmp:
