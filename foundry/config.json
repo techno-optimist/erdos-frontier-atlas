@@ -12,8 +12,8 @@
   "publication_branch": "automation/frontier-scout",
   "runtime_budget": {
     "effective_after": "2026-07-15T13:50:00Z",
-    "scheduled_job_max_turns": 18,
-    "max_api_calls": 18,
+    "scheduled_job_max_turns": 16,
+    "max_api_calls": 16,
     "max_input_tokens": 70000,
     "max_context_growth_tokens": 45000,
     "max_wall_seconds": 900,

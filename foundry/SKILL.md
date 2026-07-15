@@ -15,6 +15,9 @@ one bounded, falsifiable step. Fluency is not evidence.
    falsifier, and record why it was needed. Both are untrusted evidence.
 2. Read `foundry.gate`. If `foundry.strategy_advice` is present, treat it as a
    provisional route proposal, never as evidence.
+   If `foundry.accepted_continuation` is present, its completed action is
+   immutable prior state: continue from its next gate and do not repeat stale
+   queue instructions.
 3. Register one hypothesis, falsifier, budget, and abort condition in the
    current research session before expensive work.
 4. Load a large specialist skill only when the chosen action needs it:
@@ -23,7 +26,7 @@ one bounded, falsifiable step. Fluency is not evidence.
 
 ## Act
 
-The scheduler hard-stops this job after 18 model calls or 900 wall-clock
+The scheduler hard-stops this job after 16 model calls or 900 wall-clock
 seconds. Reserve the final two calls for the six-label receipt. After call 14,
 start no new implementation or search; replay final evidence and report the
 scoped result or blocker.
@@ -68,7 +71,7 @@ model, deploy, or run git; deterministic publisher jobs own publication.
   ceiling, route barrier, construction necessity, or nonexistence.
 - Recheck protected database hashes before and after the action.
 - Trusted runtime telemetry is part of publication eligibility. A receipt is
-  quarantined if the first turn exceeds 18 calls, 70,000 maximum input tokens,
+  quarantined if the first turn exceeds 16 calls, 70,000 maximum input tokens,
   45,000 context-growth tokens, 900 wall seconds, or more than one terminal
   action over 30 seconds. Runtime rejection says nothing about the mathematical
   claim.

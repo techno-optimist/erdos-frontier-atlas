@@ -70,6 +70,31 @@ class FoundryEfficiencyTests(unittest.TestCase):
         self.assertEqual(run["expensive_terminal_calls"][0]["duration_seconds"], 97.93)
         self.assertAlmostEqual(run["sum_terminal_seconds"], 98.01)
 
+    def test_timed_out_terminal_is_counted_as_expensive(self):
+        lines = [
+            line(
+                "2026-07-14 01:00:00,000", "agent.turn_context",
+                "conversation turn: session=x history=0",
+            ),
+            line(
+                "2026-07-14 01:00:01,000", "agent.conversation_loop",
+                "API call #1: model=m in=10 out=2 total=12 latency=1.0s",
+            ),
+            line(
+                "2026-07-14 01:02:01,000", "agent.tool_executor",
+                'Tool terminal returned error (120.21s): {"exit_code": 124}',
+            ),
+            line(
+                "2026-07-14 01:02:02,000", "agent.conversation_loop",
+                "Turn ended: reason=done model=x api_calls=1/18",
+            ),
+        ]
+        run = efficiency.parse_log_lines(lines, {JOB}, "Etc/GMT+7")[0]
+        self.assertEqual(run["terminal_call_count"], 1)
+        self.assertEqual(run["expensive_terminal_call_count"], 1)
+        self.assertEqual(run["expensive_terminal_calls"][0]["outcome"], "returned_error")
+        self.assertAlmostEqual(run["sum_terminal_seconds"], 120.21)
+
     def test_incomplete_turn_remains_visible(self):
         rows = [
             line("2026-07-14 23:02:12,100", "agent.turn_context", "conversation turn: session=x history=0"),

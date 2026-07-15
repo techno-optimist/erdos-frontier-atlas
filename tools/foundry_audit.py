@@ -43,11 +43,29 @@ def configured_api_retry_budget(path: Path) -> int:
     return int(match.group(1)) if match else 0
 
 
+def parser_source_digest() -> str:
+    return "sha256:" + sha_file(ROOT / "tools" / "foundry_efficiency.py")
+
+
+def telemetry_contract_digest(config: dict) -> str:
+    canonical = json.dumps(
+        {
+            "runtime_budget": config.get("runtime_budget"),
+            "parser_source_sha256": parser_source_digest(),
+        },
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode()
+    return "sha256:" + hashlib.sha256(canonical).hexdigest()
+
+
 def semantic_contract_digest(config: dict) -> str:
     canonical = json.dumps(
         {
             "semantic_contracts": config.get("semantic_contracts", {}),
             "runtime_budget": config.get("runtime_budget"),
+            "runtime_telemetry_contract_digest": telemetry_contract_digest(config),
         },
         ensure_ascii=False,
         sort_keys=True,
@@ -379,6 +397,7 @@ def main() -> int:
         runtime_budget
         and efficiency
         and efficiency.get("runtime_budget_digest") == runtime_budget_digest(config)
+        and efficiency.get("telemetry_contract_digest") == telemetry_contract_digest(config)
         and "FOUNDRY_JOB_MAX_TURNS_V1" in scheduler_text
         and "FOUNDRY_JOB_MAX_WALL_SECONDS_V1" in scheduler_text
         and all(
@@ -468,6 +487,9 @@ def main() -> int:
             "runtime_budget": runtime_budget,
             "runtime_budget_digest": runtime_budget_digest(config),
             "efficiency_runtime_budget_digest": efficiency.get("runtime_budget_digest") if efficiency else None,
+            "telemetry_contract_digest": telemetry_contract_digest(config),
+            "efficiency_telemetry_contract_digest": efficiency.get("telemetry_contract_digest") if efficiency else None,
+            "efficiency_parser_source_sha256": efficiency.get("parser_source_sha256") if efficiency else None,
             "scheduler_job_max_turns_marker": "FOUNDRY_JOB_MAX_TURNS_V1" in scheduler_text,
             "scheduler_job_max_wall_marker": "FOUNDRY_JOB_MAX_WALL_SECONDS_V1" in scheduler_text,
             "scheduled_job_max_turns": {job["id"]: job.get("max_turns") for job in (scout, night)},
