@@ -91,9 +91,14 @@ from its next gate. The worker must copy the contract's typed Action prefix,
 and the publisher rejects a missing or mismatched prefix. Implementation stops
 at call 12, call 13 is final replay, and the six-field assistant response is
 due by call 14. The exact-source scheduler removes every tool schema after call
-13 and injects one finalization steer, so writing a receipt file cannot
-substitute for that response. Initial verifier milestones also reject evidence
-of random/generated candidate trials; those are search, not fixtures.
+13 and injects a finalization steer; the exact-source conversation loop spends
+the remaining reserved calls only when the response still lacks required
+labels. Writing a receipt file cannot substitute for that response. Initial
+verifier milestones also reject evidence
+of random/generated candidate trials; those are search, not fixtures. For the
+same initial milestone, prep replaces the broad Markdown packet with a compact
+hash receipt while retaining the canonical JSON for provenance and audit. This
+prevents paying for focused plus broad context before a recorded need exists.
 
 `foundry/shadow_policy.py` is an observe-only recursive-improvement layer. It
 scores lane evidence yield, exploration need, age, and repeated blocking, then

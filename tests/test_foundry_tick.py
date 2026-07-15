@@ -104,6 +104,26 @@ class FoundryTickTests(unittest.TestCase):
         self.assertIn("parser contract", errors[0])
         self.assertEqual(evidence["status"], "telemetry_contract_mismatch")
 
+    def test_runtime_budget_binds_even_when_receipt_labels_are_invalid(self):
+        config = self.runtime_config()
+        inspection = {
+            "valid": False,
+            "receipt": {
+                "occurred_at": "2026-07-15T14:07:00Z",
+                "frontier_id": "erdos_67_discrepancy_c3",
+            },
+            "errors": ["ValueError: missing required receipt labels: Action"],
+        }
+        updated = foundry_tick.apply_runtime_budget(
+            inspection,
+            self.runtime_report(config, max_input_tokens=71000),
+            config,
+            "50c8e4391849",
+        )
+        self.assertFalse(updated["valid"])
+        self.assertEqual(updated["runtime_telemetry"]["status"], "over_budget")
+        self.assertTrue(any("max_input_tokens=71000" in row for row in updated["errors"]))
+
     def test_parser_change_invalidates_publication_policy_digest(self):
         config = self.runtime_config()
         with tempfile.TemporaryDirectory() as tmp:
@@ -166,6 +186,20 @@ class FoundryTickTests(unittest.TestCase):
         detail = foundry_tick.rejection_detail(inspection, "fallback")
         self.assertEqual(detail["runtime_telemetry"]["session_id"], "s")
         self.assertIn("shrink the action", detail["remediation"])
+        self.assertIn("says nothing", detail["remediation"])
+
+    def test_rejection_detail_combines_runtime_and_receipt_shape_remediation(self):
+        detail = foundry_tick.rejection_detail({
+            "source_sha256": "a" * 64,
+            "receipt": {"frontier_id": "erdos_67_discrepancy_c3"},
+            "errors": [
+                "ValueError: missing required receipt labels: Frontier, Action",
+                "runtime budget exceeded: max_input_tokens=71000 > max_input_tokens=70000",
+            ],
+            "runtime_telemetry": {"status": "over_budget", "session_id": "s"},
+        }, "fallback")
+        self.assertEqual(detail["frontier_id"], "erdos_67_discrepancy_c3")
+        self.assertIn("emit all six labels directly", detail["remediation"])
         self.assertIn("says nothing", detail["remediation"])
 
     def test_rejection_detail_stages_milestone_counterexample(self):

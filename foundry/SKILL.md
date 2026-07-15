@@ -22,6 +22,8 @@ one bounded, falsifiable step. Fluency is not evidence.
    Its scope and deferred fields override stale queue text that chains stages.
    Random/generated candidate tests and trials count as search, not fixtures.
    Obey its specialist-skill policy.
+   If `broad_context_policy` is `gated_focused_only`, do not load the broad
+   Markdown or JSON packet; its Markdown path is an operator-owned hash stub.
    Copy its `receipt_action_prefix` exactly as the first line under `Action`.
 4. Register one hypothesis, falsifier, budget, and abort condition in the
    current research session before expensive work.

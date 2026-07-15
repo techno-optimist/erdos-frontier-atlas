@@ -33,9 +33,21 @@ def first_allowed_stall(ranked: list[dict], gate_lookup) -> tuple[str | None, di
     return None, None
 
 
-def worker_instruction(original: str) -> str:
+def worker_instruction(original: str, contract: dict | None = None) -> str:
     original = original.replace("Load context_packet.md, ", "")
-    return "Read focused_context.md first. Load context_packet.md only if the focused evidence cannot support the registered falsifier; record why broader context was needed. " + original
+    if contract and contract.get("broad_context_policy") == "gated_focused_only":
+        context_instruction = (
+            "Read focused_context.md only. The broad context packet is "
+            "operator-gated for this milestone; do not load its Markdown or "
+            "JSON views. Record any broader-context need in Next gate. "
+        )
+    else:
+        context_instruction = (
+            "Read focused_context.md first. Load context_packet.md only if the "
+            "focused evidence cannot support the registered falsifier; record "
+            "why broader context was needed. "
+        )
+    return context_instruction + original
 
 
 def latest_quarantine_feedback(state_path: Path, frontier_id: str) -> dict | None:
@@ -164,12 +176,14 @@ def milestone_contract(continuation: dict | None, policy: dict) -> dict:
         scope = "Complete only the smallest independently replayable primitive from accepted_continuation.next_gate."
         deferred = "Defer every downstream primitive from that next gate to the receipt's Next gate field."
         specialist_skill_policy = "Load at most one specialist skill only if the admitted primitive cannot be executed from focused evidence."
+        broad_context_policy = str(policy["continuation_broad_context_policy"])
     else:
         phase = "initial_verifier"
         action_kind = str(policy["initial_action_kind"])
         scope = "Build or replay exactly one target verifier with fixed branch-specific known-good and known-bad fixtures."
         deferred = "Do not run random/generated candidates, trials, search, solver exploration, construction, or optimization in this session; place all of it in Next gate."
         specialist_skill_policy = "Do not load a specialist skill; initial verifier construction is self-contained in focused evidence."
+        broad_context_policy = str(policy["initial_broad_context_policy"])
     core = {
         "schema": "p42-foundry-milestone-contract-v1",
         "authority": "operator_owned_scope_and_finalization_contract",
@@ -179,6 +193,7 @@ def milestone_contract(continuation: dict | None, policy: dict) -> dict:
         "scope": scope,
         "deferred": deferred,
         "specialist_skill_policy": specialist_skill_policy,
+        "broad_context_policy": broad_context_policy,
         "implementation_stop_call": int(policy["implementation_stop_call"]),
         "final_replay_call": int(policy["final_replay_call"]),
         "receipt_deadline_call": int(policy["receipt_deadline_call"]),
@@ -202,7 +217,9 @@ def milestone_instruction(contract: dict | None) -> str:
         " foundry.milestone_contract is operator-owned and permits exactly one "
         "action primitive. Obey its scope and deferred fields even when stale "
         "queue text asks for multiple stages. Obey specialist_skill_policy; "
-        "random or generated candidate testing counts as search. Stop implementation by call "
+        "random or generated candidate testing counts as search. Obey "
+        "broad_context_policy; a gated packet is not an invitation to load its "
+        "JSON twin. Stop implementation by call "
         f"{contract['implementation_stop_call']}, perform only final replay on "
         f"call {contract['final_replay_call']}, and emit the six labelled fields "
         f"directly in the assistant response by call {contract['receipt_deadline_call']}. "
@@ -210,6 +227,42 @@ def milestone_instruction(contract: dict | None) -> str:
         "of that response. The first line under Action must be copied exactly: "
         f"{contract['receipt_action_prefix']}"
     )
+
+
+def stage_broad_context(artifact_dir: Path, contract: dict) -> dict:
+    """Replace the broad Markdown view with a hash receipt when scope gates it."""
+    markdown = artifact_dir / "context_packet.md"
+    canonical = artifact_dir / "context_packet.json"
+    if not markdown.exists() or not canonical.exists():
+        raise RuntimeError("context packet artifacts missing before milestone staging")
+    original = markdown.read_bytes()
+    canonical_bytes = canonical.read_bytes()
+    evidence = {
+        "policy": contract.get("broad_context_policy"),
+        "original_markdown_sha256": "sha256:" + hashlib.sha256(original).hexdigest(),
+        "canonical_json_sha256": "sha256:" + hashlib.sha256(canonical_bytes).hexdigest(),
+    }
+    if contract.get("broad_context_policy") != "gated_focused_only":
+        return {**evidence, "status": "available_conditionally"}
+    stub = (
+        "# Broad context gated for this milestone\n\n"
+        "The operator-owned milestone permits focused_context.md only. Do not "
+        "load context_packet.json or seek a renamed copy. Complete the fixed "
+        "verifier fixtures, then place any broader-context need in Next gate.\n\n"
+        f"Original Markdown SHA-256: {evidence['original_markdown_sha256']}\n"
+        f"Canonical JSON SHA-256: {evidence['canonical_json_sha256']}\n"
+    )
+    tmp = markdown.with_suffix(markdown.suffix + ".tmp")
+    tmp.write_text(stub)
+    tmp.chmod(markdown.stat().st_mode & 0o777)
+    tmp.replace(markdown)
+    return {
+        **evidence,
+        "status": "gated_with_hash_receipt",
+        "staged_markdown_sha256": "sha256:" + hashlib.sha256(
+            markdown.read_bytes()
+        ).hexdigest(),
+    }
 
 
 def quarantine_instruction(feedback: dict | None) -> str:
@@ -335,6 +388,9 @@ def main() -> int:
     foundry["milestone_contract"] = milestone_contract(
         foundry["accepted_continuation"], config["milestone_policy"]
     )
+    foundry["context_access"] = stage_broad_context(
+        Path(summary["artifact_dir"]), foundry["milestone_contract"]
+    )
     foundry["quarantine_feedback"] = latest_quarantine_feedback(
         INGEST_STATE, selected_frontier_id
     )
@@ -366,7 +422,9 @@ def main() -> int:
     )
     contract = config.get("semantic_contracts", {}).get(selected_frontier_id)
     summary["foundry"]["target_contract"] = contract
-    summary["next_instruction"] = worker_instruction(summary["next_instruction"]) + " Preserve the exact target quantity in foundry.target_contract; a related theorem or easier quantity is not evidence. Treat foundry.strategy_advice as provisional; execute and verify its smallest test when present. If foundry.receipt_contract is present, copy its digest byte-for-byte into one typed Frontier advice line in Verified. Missing or mismatched trace is a hard publication quarantine."
+    summary["next_instruction"] = worker_instruction(
+        summary["next_instruction"], foundry["milestone_contract"]
+    ) + " Preserve the exact target quantity in foundry.target_contract; a related theorem or easier quantity is not evidence. Treat foundry.strategy_advice as provisional; execute and verify its smallest test when present. If foundry.receipt_contract is present, copy its digest byte-for-byte into one typed Frontier advice line in Verified. Missing or mismatched trace is a hard publication quarantine."
     summary["next_instruction"] += continuation_instruction(
         foundry["accepted_continuation"]
     )

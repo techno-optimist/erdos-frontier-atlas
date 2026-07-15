@@ -43,6 +43,26 @@ class HermesCronPatchTests(unittest.TestCase):
             + "        return max_iterations\n"
         )
 
+    @staticmethod
+    def loop_source():
+        return (
+            "def run_loop(agent, responses):\n"
+            "    messages = []\n"
+            "    api_call_count = 0\n"
+            "    while api_call_count < agent.max_iterations:\n"
+            "        api_call_count += 1\n"
+            "        if True:\n"
+            "            if True:\n"
+            "                final_response = responses[api_call_count - 1]\n"
+            "                assistant_message = {'content': final_response}\n"
+            "                finish_reason = 'stop'\n"
+            + patcher.LOOP_OLD
+            + "                messages.append(final_msg)\n"
+            + "                agent._session_messages = messages\n"
+            + "                return final_response, api_call_count, messages\n"
+            + "    return None, api_call_count, messages\n"
+        )
+
     def test_patch_is_exact_idempotent_and_only_lowers_global_cap(self):
         original = self.scheduler_source()
         patched, changed = patcher.patch_text(original)
@@ -139,6 +159,83 @@ class HermesCronPatchTests(unittest.TestCase):
             path.write_text(self.scheduler_source())
             path.chmod(0o640)
             result = patcher.patch_file(path)
+            self.assertTrue(result["changed"])
+            self.assertEqual(path.stat().st_mode & 0o777, 0o640)
+            self.assertTrue(Path(result["backup"]).exists())
+            self.assertEqual(len(result["sha256"]), 64)
+
+    def test_receipt_retry_is_exact_idempotent_and_preserves_plain_agents(self):
+        original = self.loop_source()
+        patched, changed = patcher.patch_loop_text(original)
+        self.assertTrue(changed)
+        self.assertIn(patcher.LOOP_MARKER, patched)
+        repeated, changed_again = patcher.patch_loop_text(patched)
+        self.assertFalse(changed_again)
+        self.assertEqual(repeated, patched)
+        namespace = {}
+        exec(compile(patched, "conversation_loop.py", "exec"), namespace)
+
+        class Agent:
+            max_iterations = 3
+            _foundry_required_final_labels = ()
+            _foundry_finalize_after = None
+            _foundry_finalization_retries = 0
+            _foundry_finalization_retry_limit = 0
+
+            @staticmethod
+            def _strip_think_blocks(value): return value
+
+            @staticmethod
+            def _build_assistant_message(message, reason):
+                return {"role": "assistant", "content": message["content"], "reason": reason}
+
+        response, calls, messages = namespace["run_loop"](Agent(), ["plain"])
+        self.assertEqual((response, calls), ("plain", 1))
+        self.assertEqual(len(messages), 1)
+
+    def test_receipt_retry_uses_reserved_calls_until_all_labels_exist(self):
+        patched, _ = patcher.patch_loop_text(self.loop_source())
+        namespace = {"logger": type("Log", (), {"info": staticmethod(lambda *args: None)})()}
+        exec(compile(patched, "conversation_loop.py", "exec"), namespace)
+
+        class Agent:
+            max_iterations = 3
+            _foundry_required_final_labels = (
+                "Frontier", "Action", "Verified", "Result", "Next gate",
+                "Boundary held",
+            )
+            _foundry_finalize_after = 0
+            _foundry_finalization_retries = 0
+            _foundry_finalization_retry_limit = 2
+
+            @staticmethod
+            def _strip_think_blocks(value): return value
+
+            @staticmethod
+            def _build_assistant_message(message, reason):
+                return {"role": "assistant", "content": message["content"], "reason": reason}
+
+        receipt = "\n".join(f"**{label}**\nvalue" for label in Agent._foundry_required_final_labels)
+        agent = Agent()
+        response, calls, messages = namespace["run_loop"](
+            agent, ["intermediate", "still incomplete", receipt]
+        )
+        self.assertEqual((response, calls), (receipt, 3))
+        self.assertEqual(agent._foundry_finalization_retries, 2)
+        self.assertEqual(len(messages), 5)
+        self.assertIn("all six required markdown labels", messages[1]["content"])
+        self.assertIn("Frontier, Action, Verified", messages[1]["content"])
+
+    def test_unknown_conversation_loop_source_fails_closed(self):
+        with self.assertRaisesRegex(RuntimeError, "source drifted"):
+            patcher.patch_loop_text("unrecognized loop")
+
+    def test_loop_file_install_preserves_backup_and_mode(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "conversation_loop.py"
+            path.write_text(self.loop_source())
+            path.chmod(0o640)
+            result = patcher.patch_loop_file(path)
             self.assertTrue(result["changed"])
             self.assertEqual(path.stat().st_mode & 0o777, 0o640)
             self.assertTrue(Path(result["backup"]).exists())
