@@ -425,7 +425,7 @@ def main() -> int:
         and efficiency.get("telemetry_contract_digest") == telemetry_contract_digest(config)
         and "FOUNDRY_JOB_MAX_TURNS_V1" in scheduler_text
         and "FOUNDRY_JOB_MAX_WALL_SECONDS_V1" in scheduler_text
-        and "FOUNDRY_JOB_FINALIZE_NO_TOOLS_V1" in scheduler_text
+        and "FOUNDRY_JOB_FINALIZE_NO_TOOLS_V2" in scheduler_text
         and "FOUNDRY_REQUIRED_RECEIPT_RETRY_V1" in conversation_loop_text
         and all(
             job.get("max_turns") == runtime_budget.get("scheduled_job_max_turns")
@@ -523,7 +523,7 @@ def main() -> int:
             "efficiency_parser_source_sha256": efficiency.get("parser_source_sha256") if efficiency else None,
             "scheduler_job_max_turns_marker": "FOUNDRY_JOB_MAX_TURNS_V1" in scheduler_text,
             "scheduler_job_max_wall_marker": "FOUNDRY_JOB_MAX_WALL_SECONDS_V1" in scheduler_text,
-            "scheduler_job_finalize_no_tools_marker": "FOUNDRY_JOB_FINALIZE_NO_TOOLS_V1" in scheduler_text,
+            "scheduler_job_finalize_no_tools_marker": "FOUNDRY_JOB_FINALIZE_NO_TOOLS_V2" in scheduler_text,
             "conversation_loop_receipt_retry_marker": "FOUNDRY_REQUIRED_RECEIPT_RETRY_V1" in conversation_loop_text,
             "scheduled_job_max_turns": {job["id"]: job.get("max_turns") for job in (scout, night)},
             "scheduled_job_max_wall_seconds": {job["id"]: job.get("max_wall_seconds") for job in (scout, night)},
