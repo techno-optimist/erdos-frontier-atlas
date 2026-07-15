@@ -14,6 +14,7 @@ import json
 import os
 import socket
 import subprocess
+import time
 from pathlib import Path
 
 WORKSPACE = Path("/workspace")
@@ -24,6 +25,13 @@ MODEL = os.environ.get("FOUNDRY_MODEL", "evaluator-forced-local-model")
 MAX_TOOL_OUTPUT = 24_000
 SUBMISSION_RESERVE_CALLS = 2
 MAX_SUBMISSION_REPLAYS = 8
+MAX_REPLAY_PATH_BYTES = 240
+MAX_CORRECTION_MESSAGE = 4_000
+MAX_PREFLIGHT_TOTAL_SECONDS = 120
+
+
+class ReplayPreflightError(ValueError):
+    """Bounded candidate-visible correction data, never evaluator authority."""
 
 
 TOOLS = [
@@ -264,6 +272,7 @@ def _preflight_replays(replay: object, final_paths: list[str]) -> None:
             script_path.is_absolute()
             or ".." in script_path.parts
             or script_path.suffix != ".py"
+            or len(script_path.as_posix().encode()) > MAX_REPLAY_PATH_BYTES
             or script_path.as_posix() not in python_paths
         ):
             raise ValueError(f"replay script is not a final Python artifact: {argv[1]}")
@@ -283,7 +292,14 @@ def _preflight_replays(replay: object, final_paths: list[str]) -> None:
         )
     work = OUTPUT / "work"
     work.mkdir(parents=True, exist_ok=True)
+    failures = []
+    deadline = time.monotonic() + MAX_PREFLIGHT_TOTAL_SECONDS
     for script_path, args, timeout in normalized:
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            failures.append(f"{script_path}: skipped after preflight time limit")
+            continue
+        effective_timeout = min(timeout, max(1, int(remaining)))
         try:
             proc = subprocess.run(
                 ["python3", str(OUTPUT / "artifacts" / script_path), *args],
@@ -296,17 +312,22 @@ def _preflight_replays(replay: object, final_paths: list[str]) -> None:
                 text=True,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.STDOUT,
-                timeout=timeout,
+                timeout=effective_timeout,
             )
-        except subprocess.TimeoutExpired as exc:
-            raise ValueError(
-                f"candidate replay preflight timed out for {script_path}"
-            ) from exc
+        except subprocess.TimeoutExpired:
+            failures.append(
+                f"{script_path}: timed out after {effective_timeout}s preflight limit"
+            )
+            continue
         if proc.returncode != 0:
-            raise ValueError(
-                f"candidate replay preflight failed for {script_path}: "
-                + proc.stdout[-1000:]
+            output_tail = " ".join(proc.stdout[-160:].split())
+            failures.append(
+                f"{script_path}: exit {proc.returncode}: {output_tail}"
             )
+    if failures:
+        raise ReplayPreflightError(
+            "candidate replay preflight failed: " + " | ".join(failures)
+        )
 
 
 def unix_chat(payload: dict, socket_path: Path = MODEL_SOCKET) -> dict:
@@ -405,7 +426,11 @@ def execute_tool(name: str, args: dict) -> str:
             return json.dumps({"submitted": True, "authority": "none_pending_independent_replay"})
         raise ValueError(f"unknown tool: {name}")
     except Exception as exc:  # An error is data for the agent, not a sandbox escape.
-        return json.dumps({"error": type(exc).__name__, "message": str(exc)[:500]})
+        correction = isinstance(exc, ReplayPreflightError)
+        return json.dumps({
+            "error": "ValueError" if correction else type(exc).__name__,
+            "message": str(exc)[: MAX_CORRECTION_MESSAGE if correction else 500],
+        })
 
 
 def run_smoke() -> int:
