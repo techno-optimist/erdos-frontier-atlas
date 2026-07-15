@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:9d449620b8783e8a8ee3e163f6536d308223bcd3c4a9f40b55bed865591c9e0d",
+  "content_digest": "sha256:f32c21e4442ba5dabba952ba20ba06c9321ce3c3d0e9edd61ba98b72e59748e7",
+  "occurred_at": "2026-07-09T08:30:56Z",
+  "frontier": "Night-shift deep verifier-first frontier work admission gate.",
+  "action": "Held the deep-work loop instead of launching a FrontierMath/Arena/Atlas-heavy probe.",
+  "verified": "Prep gate reported services and public DGX health green, but deep-mode load budget blocked. Same-tick GPU check confirmed 96% utilization.",
+  "result": "Negative/control result: deep frontier work was not admitted because compute load was already high. No solver, model-training, Atlas, Arena, or public-surface action was started.",
+  "next_gate": "Retry a bounded verifier-first seam only after load budget is green; if the same frontier queue repeats unchanged, prefer a read-only selector/materializer receipt-consumption check over heavy compute.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training unless explicitly authorized.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "e97056701b6d",
+    "run_file": "2026-07-09_01-30-56.md",
+    "sha256": "3fad63c75640557f24455321f4d5a4cdf96cc289961c7d8c6cefaeccfcb573e8"
+  }
+}

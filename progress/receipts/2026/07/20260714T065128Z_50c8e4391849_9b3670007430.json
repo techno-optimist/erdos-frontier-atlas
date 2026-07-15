@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:9b36700074300487f1b9bfefc987483ee9389113dee540c2f95ea86317884c40",
+  "content_digest": "sha256:6f9e5d87fb1c457d1ff36c93ac57f88560fe1d46842c62c22f340173cf58c638",
+  "occurred_at": "2026-07-14T06:51:28Z",
+  "frontier": "Stretched Littlewood-Richardson negative coefficient — unchanged fm_stretched_lr reselection under the frozen rank7/weight20 Horn-wall generator",
+  "action": "Read-only control-plane reaffirmation: counted zero affirmative changed-condition markers and zero admitted nonconstant rows under the frozen generator admission contract, verified protected DB hash stability across the three databases, applied a single idempotent queue-priority decay (0.17→0.165), and ran a verifier-only reproduction harness.",
+  "verified": "`affirmative_changed_condition_count == 0`: no new generator surface, scoring adjustment, verifier/source-hash change, or admitted nonconstant non-overlapping row.\n- `admitted_nonconstant_rows == 0`: frozen generator produced no viable coefficient-scout target.\n- Protected DB hashes identical before/after (atlas.db `650d2cb2…`, atlas2.db `0a5b38c3…`, arena_atlas.db `df210a2a…`).\n- Final queue SHA after pointer update matches receipt: `a6fe2afe…d05fca4`.\n- Reproduction certificate: `pass` on all four checks; final readback confirmed `result_verified` / cert parity and queue-hash match.",
+  "result": "`current_tick_rank7_weight20_no_viable_admission_reaffirmed_control_plane_only` — local-exhaustion / selector-repeat only, no new mathematical or coefficient-scout evidence. All prior exhausted surfaces (full 9,024-row Horn-wall, widened max_sum≤20/max_len≤6 prefixes, finite-difference shape-diversity manifest, smaller-shape manifolds) remain closed with zero negative ordinary-basis coefficients.",
+  "next_gate": "A concrete changed generator surface, scoring adjustment, verifier/source-hash change, or admitted nonconstant non-overlapping preliminary-polynomial row under the admission contract — otherwise remain rotated out. Do not rerank unchanged frozen surfaces, coefficient-signature manifests, or product-timeout caveats as new search evidence.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or model training. Read-only control-plane reaffirmation only; queue update was a single non-doubled priority decay.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-13_23-51-28.md",
+    "sha256": "93e2e3878afe6d3a9b82e07245be9a30678c8886c9ac72338f01a653de6e0a90"
+  }
+}

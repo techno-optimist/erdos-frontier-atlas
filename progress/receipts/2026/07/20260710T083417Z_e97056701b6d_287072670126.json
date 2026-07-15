@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:287072670126b79c269b1f760b6a955a49b91612318a2bfe80ae0c5581858cd7",
+  "content_digest": "sha256:f8f1162f98eb7a4817af015e52d32010af90c0866fd6722cc04bc1cb1306a6e0",
+  "occurred_at": "2026-07-10T08:34:17Z",
+  "frontier": "Whether the current Hadamard-design seam has acquired any new executable construction evidence.",
+  "action": "Performed the bounded control-plane verification: source/scope parity, prior-receipt lineage, queue state, and protected-data stability.",
+  "verified": "The verification passed: zero changed-condition markers, stable protected-data fingerprints, and no forbidden side effects.",
+  "result": "Negative result preserved: no new payload, theorem map, schema defect, or fixture-hardening artifact exists. The seam remains non-executable and should rotate rather than consume solver effort.",
+  "next_gate": "Reopen only on a concrete new construction artifact or explicit hardening request; otherwise calibrate/rotate to another FrontierMath basin.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training unless explicitly authorized.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "e97056701b6d",
+    "run_file": "2026-07-10_01-34-17.md",
+    "sha256": "95a95410e236cb0e18c3a9f9c2a6ce2b457140977259d62b9c01a2d4ceb1113d"
+  }
+}

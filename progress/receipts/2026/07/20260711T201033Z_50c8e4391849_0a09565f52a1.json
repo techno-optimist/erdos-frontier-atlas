@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:0a09565f52a19dd4748e52a5028a0240eb745f29b4914ddf30455e7c8becf7cc",
+  "content_digest": "sha256:c104b885ce63d9e1fc8d5d62a7e76affab31841b79235916230dec8945793ce4",
+  "occurred_at": "2026-07-11T20:10:33Z",
+  "frontier": "Prime factorization / GNFS constant-factor ledger.",
+  "action": "Reviewed the current control-plane gate and its verified, read-only closure receipt; no GNFS computation was run.",
+  "verified": "The closure receipt passed all recorded checks: protected state matched, prior closure remained valid, and no qualified reopener was present.",
+  "result": "Negative result: the route remains closed for unattended work. This is a scheduling/control finding, not a claim about GNFS mathematics or performance.",
+  "next_gate": "Rotate away. Reopen only upon explicit authorization or verified drift in the sealed runner, manifest, planned rows, adversarial fixture, source lineage, prior receipt, or protected state; then first run the no-factorer nonemission check.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training unless explicitly authorized.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-11_13-10-33.md",
+    "sha256": "e15c8a06888b8e57761631870c9ae28fa1031937bb964ec5f4c38c6b7db44c7c"
+  }
+}

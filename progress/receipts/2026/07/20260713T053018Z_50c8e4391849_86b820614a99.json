@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:86b820614a99fb8dba660304730d89db76770d6e9862912cce854bc82d91f2b5",
+  "content_digest": "sha256:d181647f00248800374b40b117e5558817ff2aa0d7a915a9771f5fa60e41fd4d",
+  "occurred_at": "2026-07-13T05:30:18Z",
+  "frontier": "EinsteinArena scorer/verifier hardening: does this repeated control packet contain a concrete reopener?",
+  "action": "Registered a bounded receipt-consumption hypothesis and verified the current four-condition reopener contract against the prior selector-repeat result and replication certificate.",
+  "verified": "Receipt contract: PASS; prior selector-repeat and replication: PASS; prior changed-condition count: 0; protected database fingerprints matched the prior receipt.",
+  "result": "Negative result / `local_exhaustion`: no concrete reopener observed. No scorer/static diagnostic rerun and no queue mutation occurred.",
+  "next_gate": "Reopen only with authorized remote CI observation, an explicit pre-commit request, one selected legacy submit-surface promotion, or concrete scorer/static-gate source-test drift.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, deployments, or training unless explicitly authorized.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-12_22-30-18.md",
+    "sha256": "346adb12bf0c8ff97d2a3d129690e33ac01af9bad322f835d859c75f365a4182"
+  }
+}

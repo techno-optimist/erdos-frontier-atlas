@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:eb57e3d1e3ccf7f9e488f481b1f9e14f1f8e6813d815fef34dcad6b3def8cf58",
+  "content_digest": "sha256:51fd9c667f7b2290442511bee3c85421aedd855c7217ba87c424aa70f684e062",
+  "occurred_at": "2026-07-15T02:52:09Z",
+  "frontier": "FrontierMath large Steiner systems: Can any encoding pathway beyond the exhausted fourth-block CNF / cube-membrane approaches produce discriminative evidence on S(t,k,v) with n<200, r>5, r<10?",
+  "action": "Negative-result consolidation and rotation. Confirmed all 7 replicated approaches (Glucose3 caps, Kissat per-cube caps, orbit membranes 2nd–5th block, import/parse smoke, LP cuts beyond single pair cut x_1205+x_1208≤1) exhausted across 5+ prior sessions. Wrote `negative_result.md` (neg_20260715_fm_steiner_rotate), updated `experiment.json` with status `rotated_away`, and `next_gate.md` with reopen conditions.",
+  "verified": "Gate state: `stalled=false`, `frontier_call_allowed=false` — no strategy consultation needed. Context packet explicitly directs rotation. All file writes verified with `ls -la`. No production atlas writes performed. No external submissions, git pushes, or model training.",
+  "result": "fm_steiner_large rotated away cleanly. Zero new mathematical signal. One historical data point preserved: exactly one necessary-condition pair cut found (x_1205+x_1208≤1) during 2026-05-26 LP work, but it did not improve solver performance or enumerate new candidates. Lane remains closed until a changed-condition artifact appears (new encoding pathway, exact-iff lift map on a known small instance, parameter-space bound shift, or fixture-hardening verifier smoke).",
+  "next_gate": "Reopen only when a concrete current-session target-facing proof-producing encoding or exact-iff primary lift map materializes, then run import/parse + proof/decode/verifier smoke on a known small instance (Fano S(2,3,7) or Witt S(5,8,24)). If no changed condition within 3–5 tick cycles, continue priority decay and consider permanent retirement.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. All writes scoped to research session artifact directory only. Read-only atlas/aiwiki/arena verified before analysis.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-14_19-52-09.md",
+    "sha256": "bdef49538f39c39d60b3f93bd12702ef8aaea77297e5ec984cfb03cbd420707b"
+  }
+}

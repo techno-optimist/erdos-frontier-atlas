@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:72b93032ee44fb9e250d6fa9ee8be966fa97b5f68980b9204db46498e5521453",
+  "content_digest": "sha256:690606d92511c137da8ce30f7207d24938262e97d8b473b6710ddcee0ea9ded1",
+  "occurred_at": "2026-07-15T03:37:24Z",
+  "frontier": "Can large Steiner systems S(t,k,v) with n<200, r>5, r<10 be found via a new proof-producing CNF encoding or exact-iff primary lift map that passes verifier-decode smoke on known small instances?",
+  "action": "Negative-result consolidation: verified that no changed-condition artifact exists for fm_steiner_large since the last rotation at 2026-07-15T03:00:00Z; confirmed standing rotation with all 7 replicated CNF/solver/smoke approaches exhausted; updated experiment.json and next_gate.md in the current session artifact directory.",
+  "verified": "Stall gate (p42-foundry-stall-gate-v1) checked at 2026-07-15T03:29:20Z: stuck=false, frontier_call_allowed=false, strategy_advice=null. Frontier queue entry for fm_steiner_large cross-referenced: status=current_tick_target_artifact_absence_rotation_reaffirmed_control_plane_only, priority=0.16. Prior negative-result ledger (neg_20260715_fm_steiner_rotate) and 5+ prior session receipts confirm all replicated approaches exhausted. No frontier advice digest to record (none provided).",
+  "result": "Standing rotation reaffirmed. No mathematical progress — the lane remains closed pending a new encoding pathway, exact-iff primary lift map with verifier-decode smoke on Fano/projective plane/Witt, a parameter-space shift, or fixture hardening that passes on a known instance. All 7 replicated approaches remain exhausted; the single LP cut found (x_1205 + x_1208 ≤ 1) remains the only positive signal across the entire history and did not yield solver improvement.",
+  "next_gate": "Detect a concrete current-session artifact matching any of the four reopen conditions: (1) target-facing proof-producing CNF encoding structurally different from fourth-block orbit membrane, (2) exact-iff primary lift map with import/parse + proof/decode/verifier smoke on Fano S(2,3,7), projective plane S(2,3,13), or Witt S(5,8,24), (3) new combinatorial bound narrowing the n<200 r>5 r<10 envelope, or (4) verifier-decode smoke passing on a known instance and failing on a known non-instance.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. No replicated approaches rerun. Frontier queue read-only; no frontier consultation invoked (frontier_call_allowed=false). All writes scoped to local research session artifacts only.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-14_20-37-24.md",
+    "sha256": "3dff141991032b601746c049e0a775301b2c4c2be8e46587f83149f3bc04ea62"
+  }
+}

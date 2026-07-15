@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:d740003bd078f97b76c365dcaa0941fed5966970dca245816c68dbfce14c822e",
+  "content_digest": "sha256:463ad25fdeec458e3c23a89100eb6003778e125aeb254969aa3a2e0933f63c0b",
+  "occurred_at": "2026-07-15T00:00:51Z",
+  "frontier": "EinsteinArena scorer/verifier hardening — is there a concrete reopener this tick?",
+  "action": "Read the bounded scout context packet only; inspected frontier status, next-action, falsifier, and the read-only arena transfer roster (5 problems with scoring direction + min_improvement). No Arena diagnostics, no `run_verifier`/`preflight`, no solver runs.",
+  "verified": "Packet reports frontier status `selector_repeat_after_current_tick_enforcement_reaffirmation_control_plane_only`, priority 0.165, with all four reopeners absent (no authorized CI push/PR, no pre-commit wiring request, no legacy submit-surface promotion, no scorer/static-gate source-test drift). Data surfaces read-only-verified (atlas/atlas2/arena/aiwiki). Roster metadata internally consistent with the canonical arena problem set.",
+  "result": "Control-plane selector-repeat / local-exhaustion. No changed condition → correct action is rotate-away reaffirmation, not a diagnostic rerun. The falsifier (local scorer disagrees with ArenaClient) was intentionally not fired, since firing it would be an unneeded diagnostic rerun with no reopener present. No new evidence produced; prior verdict holds.",
+  "next_gate": "Reopen only on a concrete trigger: authorized remote CI observation / push-or-PR, explicit pre-commit wiring request, exactly one selected legacy submit-surface promotion, or scorer/static-gate source-test drift. Otherwise the next unchanged tick should perform selector/materializer receipt-consumption or class-level skill/reference curation — not Arena diagnostics.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training unless explicitly authorized.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-14_17-00-51.md",
+    "sha256": "2aa351d5d4bb39fcbd7c7bd58e57dbf346eeac7fc731e354179f2af649406f53"
+  }
+}

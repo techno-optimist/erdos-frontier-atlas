@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:6e1969ffaf4695218aa9e1fd9e264b0ab8e4e67427f7449c05dd262f1f375c2f",
+  "content_digest": "sha256:00f3ffc5a3a488531302f440e0de235a60aaf155af28147577c49a983bf2b995",
+  "occurred_at": "2026-07-11T07:51:20Z",
+  "frontier": "Whether the GNFS constant-factor route has a new, authorized condition that justifies reopening measurement.",
+  "action": "Inspected the live admission gate and its prior verified control receipt; no GNFS computation was run.",
+  "verified": "The gate remains “rotate away”: no concrete authorization or qualifying changed-condition marker was evidenced. Protected data integrity remained stable during inspection.",
+  "result": "Negative control: this anchor is still closed to unattended measurement. No mathematical performance claim is made.",
+  "next_gate": "A concrete authorization or changed sealed-runner, manifest, planned-row, adversarial-fixture, source-lineage, receipt-drift, or protected-hash condition; first probe then is nonemission verification.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training unless explicitly authorized.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-11_00-51-20.md",
+    "sha256": "162cc0a30d9c3aeff01e29c3025ef36599356f4ac39e9353962b3d03d91f2fd4"
+  }
+}

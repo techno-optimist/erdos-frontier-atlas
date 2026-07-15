@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:9733f82a9f936f7f7f4bbc850318edaca5d9fa6d12fb65173102f37921a9e4a6",
+  "content_digest": "sha256:8735d116ea10a005fdfe5921f4939d1d1fc5a97cc5b8686157b6e613ce7bd636",
+  "occurred_at": "2026-07-12T08:35:30Z",
+  "frontier": "Whether this GNFS ledger lane has an authorized, concrete reopener for measurement.",
+  "action": "Ran one registered, local control-plane checkpoint: narrow reopener scan, prior-receipt lineage check, protected-input hash guard, and queue/next-gate update.",
+  "verified": "Replication passed all 9 checks. No affirmative reopener was found; protected inputs stayed stable during the probe.",
+  "result": "Negative result / local exhaustion: rotate this lane away. This is not factorization or GNFS-performance evidence.",
+  "next_gate": "Explicit authorization or a concrete sealed-runner, manifest, planned-row, adversarial-fixture, source-lineage, prior-receipt, or protected-hash change; first reopened probe is a sealed nonemission proof.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training unless explicitly authorized.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-12_01-35-30.md",
+    "sha256": "4ceed133ced1d0cb81070e4e18e0ffb4f5f7a614469f86f0244d443e0c8ce01c"
+  }
+}

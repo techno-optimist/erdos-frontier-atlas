@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:177a6013e14e31c8b37bec857c132b846f5e476502431879b801bcc0e8eaf1a7",
+  "content_digest": "sha256:e2fafce9439dd9933a4bad0334aa05f977647ee6c524a4f53308cb0dec83203d",
+  "occurred_at": "2026-07-13T15:58:33Z",
+  "frontier": "<one public-safe question/anchor>",
+  "action": "<what was inspected or probed>",
+  "verified": "<receipt/source/check performed, or explicit uncertainty>",
+  "result": "<smallest useful result or negative result>",
+  "next_gate": "<next bounded verifier/falsifier>",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training unless explicitly authorized.\n\n## Error\n\n```\nRuntimeError: Codex provider quota exhausted (429); retry after 561412s. Credentials are still valid.\n```",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-13_08-58-33.md",
+    "sha256": "6f3866e161bc79ca4af3ee2f40c132c695afe86b3d320de3a70dbacce7a887e8"
+  }
+}

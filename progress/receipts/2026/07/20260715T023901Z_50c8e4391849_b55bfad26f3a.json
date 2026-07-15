@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:b55bfad26f3a91c46197b76b78f985cd205947d5e0e1c8069fd24cf1d20068f4",
+  "content_digest": "sha256:cdce545781a97ed4e22af61a54209477aed1d7895574db49ec55636bac996ec9",
+  "occurred_at": "2026-07-15T02:39:01Z",
+  "frontier": "`fm_hadamard_668` (FrontierMath Hadamard matrix order 668)",
+  "action": "Artifact hash stability check, updated `result_verified.json`, bumped queue entry, wrote session conclusion",
+  "verified": "9/10 pass; `queue_hash_parity` failed as expected (inter-tick drift); changed conditions: 0 (none detected)",
+  "result": "`hadamard_current_tick_source_scope_reaffirmation_pass_control_plane_only`; blocked: None — all construction membranes retired, no payload/theorem/schema-bug found",
+  "next_gate": "Awaiting concrete changed-condition artifact; otherwise lane rotates away",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training; cockpit fallback parsed deterministically.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-14_19-39-01.md",
+    "sha256": "4019ceb5f816c0daea4c34ecc3eb5f96061ec77a2da2532ae6afe96c9601fee2"
+  }
+}

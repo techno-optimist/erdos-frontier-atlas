@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:497d8c79bc17c2c4fa86268b0290b6748f8a1f3978a1157fcaece57fc2f696d1",
+  "content_digest": "sha256:b4b70738eff30a4468070c62a32547d883b2837bc7ebf5ad5d7e63884580bafb",
+  "occurred_at": "2026-07-14T04:38:02Z",
+  "frontier": "Does the stretched Littlewood–Richardson rank7/weight20 search grammar admit any nonconstant, non-overlapping preliminary-polynomial row (a candidate negative-coefficient signal) — or is the lane exhausted?",
+  "action": "Read the current scout context packet and next-gate. Scanned the session directory for concrete changed-condition artifacts (candidate_artifacts / solver / checkpoints / proofs / encodings / lift_maps / inputs) and inspected packet status, next_action, and admitted-row count. Checked the durable frontier queue for a matching row. Recorded a control-plane reaffirmation rather than rerunning any coefficient scout.",
+  "verified": "Changed-condition artifact roots: all absent (0 files).\n- Packet: `admitted_nonconstant_rows=0`, `affirmative_changed_condition_count=0`, status = no-viable-admission reaffirmed, next_action = rotate-away-unless-changed-condition.\n- Durable queue: no `fm_stretched_lr` row present (already rotated out) — no priority decay applied.\n- Protected DBs stable before and after all writes: atlas.db `650d2cb2…`, atlas2.db `0a5b38c3…`, arena_atlas.db `df210a2a…`.\n- `bash replication/reproduce.sh` → REPRODUCE_STATUS: pass; classification parity True; certificate status `pass`.",
+  "result": "Local-exhaustion / control-plane-only reaffirmation: `current_tick_rank7_weight20_no_viable_admission_reaffirmed_control_plane_only`. No changed condition, no admitted row, no math scout run. Evidence + negative-result ledgers, result/result_verified/claim receipts, and a passing reproduction certificate written; queue left correctly rotated-out. No new mathematical evidence and no Arena/performance claim.",
+  "next_gate": "Remain rotated out unless a concrete reopener appears under `fm_lr_changed_generator_admission_contract_v1`: a changed generator surface, scoring adjustment, verifier/source-hash change, or at least one admitted nonconstant non-overlapping preliminary-polynomial row. Otherwise route scheduler attention to a different frontier basin.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training unless explicitly authorized.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-13_21-38-02.md",
+    "sha256": "21cdf82d1166aeede2d591e5e6b5a5bd26ea6f60e03f72530187c4f71fed72ef"
+  }
+}

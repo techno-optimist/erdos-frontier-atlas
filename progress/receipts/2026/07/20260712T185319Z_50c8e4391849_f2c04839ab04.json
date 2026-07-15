@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:f2c04839ab04c9c0ca8c851fa603b4c811ce555d1eaea4d641b6063b4e69492e",
+  "content_digest": "sha256:8d29f63e752150489ce0ea2e7f0ac2926dc5d6e4aa8e0d7d8c71ba6b6c522703",
+  "occurred_at": "2026-07-12T18:53:19Z",
+  "frontier": "EinsteinArena scorer/verifier hardening: is a repeated selector exposure genuinely reopened?",
+  "action": "Reproduced the bounded, read-only receipt-admissibility check; no scorer diagnostics were rerun.",
+  "verified": "Reproduction passed: zero authorized reopener markers, prior closure receipt valid, and protected data hashes remained stable during the check.",
+  "result": "Classified as local selector-repeat exhaustion only—not evidence of scorer correctness or Arena performance.",
+  "next_gate": "Rotate away until authorized CI observation, explicit pre-commit/legacy-surface work, or scorer/static source-test drift appears.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training unless explicitly authorized.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-12_11-53-19.md",
+    "sha256": "24aee4d8bd6d72ae2e5e0bbe04eec6466b7b04cc8c5d7b617fae9c0d74085b3d"
+  }
+}
