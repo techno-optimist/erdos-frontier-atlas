@@ -23,9 +23,10 @@ one bounded, falsifiable step. Fluency is not evidence.
 
 ## Act
 
-The scheduler hard-stops this job after 18 model calls. Reserve the final two
-calls for the six-label receipt. After call 14, start no new implementation or
-search; replay final evidence and report the scoped result or blocker.
+The scheduler hard-stops this job after 18 model calls or 900 wall-clock
+seconds. Reserve the final two calls for the six-label receipt. After call 14,
+start no new implementation or search; replay final evidence and report the
+scoped result or blocker.
 
 Choose exactly one: verifier construction, kill-test, bounded exact search,
 literature-claim audit, negative-result closure, or next-experiment design.
