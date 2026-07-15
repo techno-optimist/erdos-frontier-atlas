@@ -15,5 +15,6 @@
     "job_id": "50c8e4391849",
     "run_file": "2026-07-14_19-08-20.md",
     "sha256": "4e1631e87b8472d48f2631f8880437c0b5a5c7b889adb93de8ec8305fad25a5e"
-  }
+  },
+  "frontier_id": "arena_scorer_hardening"
 }

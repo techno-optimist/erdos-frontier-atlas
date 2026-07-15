@@ -1,0 +1,579 @@
+{
+  "schema": "p42-foundry-receipt-truth-repair-v1",
+  "generated_at": "2026-07-15T03:52:56Z",
+  "source_timezone": "Etc/GMT+7",
+  "applied": true,
+  "repair_count": 46,
+  "retained_count": 3,
+  "repairs": [
+    {
+      "old_receipt_id": "sha256:033a34d5767b9fe28945f9a5d33eabd48301da3004890ae6e6ee8dd30dfab9d4",
+      "new_receipt_id": "sha256:033a34d5767b9fe28945f9a5d33eabd48301da3004890ae6e6ee8dd30dfab9d4",
+      "run_file": "2026-07-07_01-35-38.md",
+      "old_occurred_at": "2026-07-07T08:35:38Z",
+      "new_occurred_at": "2026-07-07T08:35:38Z",
+      "old_classification": "negative_result",
+      "new_classification": "negative_result",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:e1a115be72b43a66beb6a0f8a15a19b4e623b33e740cf10b5e6c7ec703ac9065",
+      "new_receipt_id": "sha256:e1a115be72b43a66beb6a0f8a15a19b4e623b33e740cf10b5e6c7ec703ac9065",
+      "run_file": "2026-07-08_01-33-52.md",
+      "old_occurred_at": "2026-07-08T08:33:52Z",
+      "new_occurred_at": "2026-07-08T08:33:52Z",
+      "old_classification": "negative_result",
+      "new_classification": "negative_result",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:66ab9ee037e6e9ac1f724a11f985f425b361c73fb727567cd10d1e1c6575cf64",
+      "new_receipt_id": "sha256:66ab9ee037e6e9ac1f724a11f985f425b361c73fb727567cd10d1e1c6575cf64",
+      "run_file": "2026-07-10_22-36-07.md",
+      "old_occurred_at": "2026-07-11T05:36:07Z",
+      "new_occurred_at": "2026-07-11T05:36:07Z",
+      "old_classification": "progress",
+      "new_classification": "progress",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:6e1969ffaf4695218aa9e1fd9e264b0ab8e4e67427f7449c05dd262f1f375c2f",
+      "new_receipt_id": "sha256:6e1969ffaf4695218aa9e1fd9e264b0ab8e4e67427f7449c05dd262f1f375c2f",
+      "run_file": "2026-07-11_00-51-20.md",
+      "old_occurred_at": "2026-07-11T07:51:20Z",
+      "new_occurred_at": "2026-07-11T07:51:20Z",
+      "old_classification": "progress",
+      "new_classification": "progress",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:d27f7c605e7f9bc9110f1268bba16d1bb9c8ddd20c1f03cf4b4f88b774422acb",
+      "new_receipt_id": "sha256:d27f7c605e7f9bc9110f1268bba16d1bb9c8ddd20c1f03cf4b4f88b774422acb",
+      "run_file": "2026-07-11_01-38-24.md",
+      "old_occurred_at": "2026-07-11T08:38:24Z",
+      "new_occurred_at": "2026-07-11T08:38:24Z",
+      "old_classification": "negative_result",
+      "new_classification": "negative_result",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:f4c819706ac97a8404d3e22c0dae3d306b505e76d695dd05ac774ecf986111cd",
+      "new_receipt_id": "sha256:f4c819706ac97a8404d3e22c0dae3d306b505e76d695dd05ac774ecf986111cd",
+      "run_file": "2026-07-11_02-52-11.md",
+      "old_occurred_at": "2026-07-11T09:52:11Z",
+      "new_occurred_at": "2026-07-11T09:52:11Z",
+      "old_classification": "negative_result",
+      "new_classification": "negative_result",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:e2b621f142c14877528ac1877f9195a8311d1fa8ebde09553d08e13db14d7881",
+      "new_receipt_id": "sha256:e2b621f142c14877528ac1877f9195a8311d1fa8ebde09553d08e13db14d7881",
+      "run_file": "2026-07-11_04-56-10.md",
+      "old_occurred_at": "2026-07-11T11:56:10Z",
+      "new_occurred_at": "2026-07-11T11:56:10Z",
+      "old_classification": "progress",
+      "new_classification": "progress",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:599d38a10d4105954e5236d907d25e2f696a8b006a27b8f6d22b2191301d4a33",
+      "new_receipt_id": "sha256:599d38a10d4105954e5236d907d25e2f696a8b006a27b8f6d22b2191301d4a33",
+      "run_file": "2026-07-11_06-58-56.md",
+      "old_occurred_at": "2026-07-11T13:58:56Z",
+      "new_occurred_at": "2026-07-11T13:58:56Z",
+      "old_classification": "blocked",
+      "new_classification": "blocked",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:9854f3100977ace6ce349e3c416f9c68d2ddd27520ae197879e4c7f1c93d01fe",
+      "new_receipt_id": "sha256:9854f3100977ace6ce349e3c416f9c68d2ddd27520ae197879e4c7f1c93d01fe",
+      "run_file": "2026-07-11_11-06-50.md",
+      "old_occurred_at": "2026-07-11T18:06:50Z",
+      "new_occurred_at": "2026-07-11T18:06:50Z",
+      "old_classification": "negative_result",
+      "new_classification": "negative_result",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:0a09565f52a19dd4748e52a5028a0240eb745f29b4914ddf30455e7c8becf7cc",
+      "new_receipt_id": "sha256:0a09565f52a19dd4748e52a5028a0240eb745f29b4914ddf30455e7c8becf7cc",
+      "run_file": "2026-07-11_13-10-33.md",
+      "old_occurred_at": "2026-07-11T20:10:33Z",
+      "new_occurred_at": "2026-07-11T20:10:33Z",
+      "old_classification": "negative_result",
+      "new_classification": "negative_result",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:74ab7b3f2d319387499e28fc59ca7f53cff6deed974ffd6f7f3dffd1672f443a",
+      "new_receipt_id": "sha256:74ab7b3f2d319387499e28fc59ca7f53cff6deed974ffd6f7f3dffd1672f443a",
+      "run_file": "2026-07-11_15-15-09.md",
+      "old_occurred_at": "2026-07-11T22:15:09Z",
+      "new_occurred_at": "2026-07-11T22:15:09Z",
+      "old_classification": "progress",
+      "new_classification": "progress",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:48b56c687ffbec89f9cd7424f6cdffc15d75b27e3e860a24636a1c524bf88130",
+      "new_receipt_id": "sha256:48b56c687ffbec89f9cd7424f6cdffc15d75b27e3e860a24636a1c524bf88130",
+      "run_file": "2026-07-11_17-18-17.md",
+      "old_occurred_at": "2026-07-12T00:18:17Z",
+      "new_occurred_at": "2026-07-12T00:18:17Z",
+      "old_classification": "negative_result",
+      "new_classification": "negative_result",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:7a0dfa586a039947ce68769ca3bea6aaa288c80615b55d3cd123d00ddf6c2962",
+      "new_receipt_id": "sha256:7a0dfa586a039947ce68769ca3bea6aaa288c80615b55d3cd123d00ddf6c2962",
+      "run_file": "2026-07-11_19-21-51.md",
+      "old_occurred_at": "2026-07-12T02:21:51Z",
+      "new_occurred_at": "2026-07-12T02:21:51Z",
+      "old_classification": "progress",
+      "new_classification": "progress",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:f3b2900670714a0ef6838989c59a0b777c83dd940a5e97280cda9b79922e4f71",
+      "new_receipt_id": "sha256:f3b2900670714a0ef6838989c59a0b777c83dd940a5e97280cda9b79922e4f71",
+      "run_file": "2026-07-11_21-27-38.md",
+      "old_occurred_at": "2026-07-12T04:27:38Z",
+      "new_occurred_at": "2026-07-12T04:27:38Z",
+      "old_classification": "progress",
+      "new_classification": "progress",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:9733f82a9f936f7f7f4bbc850318edaca5d9fa6d12fb65173102f37921a9e4a6",
+      "new_receipt_id": "sha256:9733f82a9f936f7f7f4bbc850318edaca5d9fa6d12fb65173102f37921a9e4a6",
+      "run_file": "2026-07-12_01-35-30.md",
+      "old_occurred_at": "2026-07-12T08:35:30Z",
+      "new_occurred_at": "2026-07-12T08:35:30Z",
+      "old_classification": "negative_result",
+      "new_classification": "negative_result",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:9d40181c225fda574db8bb4a0eeb5a161f73e50c3b19cb709d1d4cdf6cb0074a",
+      "new_receipt_id": "sha256:9d40181c225fda574db8bb4a0eeb5a161f73e50c3b19cb709d1d4cdf6cb0074a",
+      "run_file": "2026-07-12_01-40-19.md",
+      "old_occurred_at": "2026-07-12T08:40:19Z",
+      "new_occurred_at": "2026-07-12T08:40:19Z",
+      "old_classification": "negative_result",
+      "new_classification": "negative_result",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:cc5bc6e632390a9567bc9f28cb76c4863d76d17a1ae9ae960138a2e4c179ed2f",
+      "new_receipt_id": "sha256:cc5bc6e632390a9567bc9f28cb76c4863d76d17a1ae9ae960138a2e4c179ed2f",
+      "run_file": "2026-07-12_05-40-46.md",
+      "old_occurred_at": "2026-07-12T12:40:46Z",
+      "new_occurred_at": "2026-07-12T12:40:46Z",
+      "old_classification": "blocked",
+      "new_classification": "blocked",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:4be8a0c7e8c8d26c5846361c83c6ba3fba9e736519880b5995c68f9438d6f4f2",
+      "new_receipt_id": "sha256:4be8a0c7e8c8d26c5846361c83c6ba3fba9e736519880b5995c68f9438d6f4f2",
+      "run_file": "2026-07-12_07-44-24.md",
+      "old_occurred_at": "2026-07-12T14:44:24Z",
+      "new_occurred_at": "2026-07-12T14:44:24Z",
+      "old_classification": "blocked",
+      "new_classification": "blocked",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:008dcbab02bd8606bf87cd83f582bb8ca637dc45fd1e5129303d6445f92375e4",
+      "new_receipt_id": "sha256:008dcbab02bd8606bf87cd83f582bb8ca637dc45fd1e5129303d6445f92375e4",
+      "run_file": "2026-07-12_09-49-35.md",
+      "old_occurred_at": "2026-07-12T16:49:35Z",
+      "new_occurred_at": "2026-07-12T16:49:35Z",
+      "old_classification": "negative_result",
+      "new_classification": "negative_result",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:f2c04839ab04c9c0ca8c851fa603b4c811ce555d1eaea4d641b6063b4e69492e",
+      "new_receipt_id": "sha256:f2c04839ab04c9c0ca8c851fa603b4c811ce555d1eaea4d641b6063b4e69492e",
+      "run_file": "2026-07-12_11-53-19.md",
+      "old_occurred_at": "2026-07-12T18:53:19Z",
+      "new_occurred_at": "2026-07-12T18:53:19Z",
+      "old_classification": "blocked",
+      "new_classification": "blocked",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:bf2dae93cb1ab245d139b77dedf264b9b2220a9f09c012c9ab05efdb8357dc9e",
+      "new_receipt_id": "sha256:bf2dae93cb1ab245d139b77dedf264b9b2220a9f09c012c9ab05efdb8357dc9e",
+      "run_file": "2026-07-12_13-54-30.md",
+      "old_occurred_at": "2026-07-12T20:54:30Z",
+      "new_occurred_at": "2026-07-12T20:54:30Z",
+      "old_classification": "negative_result",
+      "new_classification": "negative_result",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:cd5e57218150cb7ab29dc177ea835364891102eb9ba905c24fa2d44a3c173668",
+      "new_receipt_id": "sha256:cd5e57218150cb7ab29dc177ea835364891102eb9ba905c24fa2d44a3c173668",
+      "run_file": "2026-07-12_15-57-38.md",
+      "old_occurred_at": "2026-07-12T22:57:38Z",
+      "new_occurred_at": "2026-07-12T22:57:38Z",
+      "old_classification": "negative_result",
+      "new_classification": "negative_result",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:b73133180f219929e2639a955aea8c749ae0a8f006459d375da09f21a5c699a6",
+      "new_receipt_id": "sha256:b73133180f219929e2639a955aea8c749ae0a8f006459d375da09f21a5c699a6",
+      "run_file": "2026-07-12_18-21-57.md",
+      "old_occurred_at": "2026-07-13T01:21:57Z",
+      "new_occurred_at": "2026-07-13T01:21:57Z",
+      "old_classification": "negative_result",
+      "new_classification": "negative_result",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:2d4335b0a5f92272e21d313d55ad6de145e11c5df3ecfee5717cec7e987d2b24",
+      "new_receipt_id": "sha256:2d4335b0a5f92272e21d313d55ad6de145e11c5df3ecfee5717cec7e987d2b24",
+      "run_file": "2026-07-12_20-25-49.md",
+      "old_occurred_at": "2026-07-13T03:25:49Z",
+      "new_occurred_at": "2026-07-13T03:25:49Z",
+      "old_classification": "blocked",
+      "new_classification": "blocked",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:86b820614a99fb8dba660304730d89db76770d6e9862912cce854bc82d91f2b5",
+      "new_receipt_id": "sha256:86b820614a99fb8dba660304730d89db76770d6e9862912cce854bc82d91f2b5",
+      "run_file": "2026-07-12_22-30-18.md",
+      "old_occurred_at": "2026-07-13T05:30:18Z",
+      "new_occurred_at": "2026-07-13T05:30:18Z",
+      "old_classification": "blocked",
+      "new_classification": "blocked",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:b53b9e5234f221a0301b072174ed6307958ffd4c81f00ec72465ea3c3c0894bb",
+      "new_receipt_id": "sha256:b53b9e5234f221a0301b072174ed6307958ffd4c81f00ec72465ea3c3c0894bb",
+      "run_file": "2026-07-13_04-56-35.md",
+      "old_occurred_at": "2026-07-13T11:56:35Z",
+      "new_occurred_at": "2026-07-13T11:56:35Z",
+      "old_classification": "progress",
+      "new_classification": "progress",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:c61f684879d590038a12a070624d56a9ffcc0a00674711d539e8bdedd10e5ce3",
+      "new_receipt_id": "sha256:c61f684879d590038a12a070624d56a9ffcc0a00674711d539e8bdedd10e5ce3",
+      "run_file": "2026-07-13_06-58-19.md",
+      "old_occurred_at": "2026-07-13T13:58:19Z",
+      "new_occurred_at": "2026-07-13T13:58:19Z",
+      "old_classification": "negative_result",
+      "new_classification": "negative_result",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:177a6013e14e31c8b37bec857c132b846f5e476502431879b801bcc0e8eaf1a7",
+      "new_receipt_id": "sha256:177a6013e14e31c8b37bec857c132b846f5e476502431879b801bcc0e8eaf1a7",
+      "run_file": "2026-07-13_08-58-33.md",
+      "old_occurred_at": "2026-07-13T15:58:33Z",
+      "new_occurred_at": "2026-07-13T15:58:33Z",
+      "old_classification": "negative_result",
+      "new_classification": "negative_result",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:cd018030de0c9080c2985d67ad2fae1c9cab495c4ef974288ae72027ccecc8a8",
+      "new_receipt_id": "sha256:cd018030de0c9080c2985d67ad2fae1c9cab495c4ef974288ae72027ccecc8a8",
+      "run_file": "2026-07-13_10-59-36.md",
+      "old_occurred_at": "2026-07-13T17:59:36Z",
+      "new_occurred_at": "2026-07-13T17:59:36Z",
+      "old_classification": "negative_result",
+      "new_classification": "negative_result",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:9749148955e24e407effd722a5641fe5dd9ca1f444b2b354e79417bd2b153c2c",
+      "new_receipt_id": "sha256:9749148955e24e407effd722a5641fe5dd9ca1f444b2b354e79417bd2b153c2c",
+      "run_file": "2026-07-13_13-06-20.md",
+      "old_occurred_at": "2026-07-13T20:06:20Z",
+      "new_occurred_at": "2026-07-13T20:06:20Z",
+      "old_classification": "negative_result",
+      "new_classification": "negative_result",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:5339cf914f93a76bf8f9780f18e6feb369670cedb2c4705422d2173312724fbf",
+      "new_receipt_id": "sha256:5339cf914f93a76bf8f9780f18e6feb369670cedb2c4705422d2173312724fbf",
+      "run_file": "2026-07-13_15-16-15.md",
+      "old_occurred_at": "2026-07-13T22:16:15Z",
+      "new_occurred_at": "2026-07-13T22:16:15Z",
+      "old_classification": "negative_result",
+      "new_classification": "negative_result",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:b6633cb7a2ab40903793a97d86e5b18ba27586371a9f7ec32e6e1c7583cef5cc",
+      "new_receipt_id": "sha256:b6633cb7a2ab40903793a97d86e5b18ba27586371a9f7ec32e6e1c7583cef5cc",
+      "run_file": "2026-07-13_17-20-43.md",
+      "old_occurred_at": "2026-07-14T00:20:43Z",
+      "new_occurred_at": "2026-07-14T00:20:43Z",
+      "old_classification": "blocked",
+      "new_classification": "blocked",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:c72ce278188cfdfeaa1946dc3190feef7b61eb0157b30c663f22b319aaef8bb6",
+      "new_receipt_id": "sha256:c72ce278188cfdfeaa1946dc3190feef7b61eb0157b30c663f22b319aaef8bb6",
+      "run_file": "2026-07-13_19-28-22.md",
+      "old_occurred_at": "2026-07-14T02:28:22Z",
+      "new_occurred_at": "2026-07-14T02:28:22Z",
+      "old_classification": "negative_result",
+      "new_classification": "negative_result",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:497d8c79bc17c2c4fa86268b0290b6748f8a1f3978a1157fcaece57fc2f696d1",
+      "new_receipt_id": "sha256:497d8c79bc17c2c4fa86268b0290b6748f8a1f3978a1157fcaece57fc2f696d1",
+      "run_file": "2026-07-13_21-38-02.md",
+      "old_occurred_at": "2026-07-14T04:38:02Z",
+      "new_occurred_at": "2026-07-14T04:38:02Z",
+      "old_classification": "blocked",
+      "new_classification": "blocked",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:9b36700074300487f1b9bfefc987483ee9389113dee540c2f95ea86317884c40",
+      "new_receipt_id": "sha256:9b36700074300487f1b9bfefc987483ee9389113dee540c2f95ea86317884c40",
+      "run_file": "2026-07-13_23-51-28.md",
+      "old_occurred_at": "2026-07-14T06:51:28Z",
+      "new_occurred_at": "2026-07-14T06:51:28Z",
+      "old_classification": "blocked",
+      "new_classification": "blocked",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:5ae9cd50c013061377eb5e0fceaa0a0b84799ce1affe2dd51a36679ee41de42f",
+      "new_receipt_id": "sha256:5ae9cd50c013061377eb5e0fceaa0a0b84799ce1affe2dd51a36679ee41de42f",
+      "run_file": "2026-07-14_02-05-54.md",
+      "old_occurred_at": "2026-07-14T09:05:54Z",
+      "new_occurred_at": "2026-07-14T09:05:54Z",
+      "old_classification": "blocked",
+      "new_classification": "blocked",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:915f957e5db3c4c0cf5d70f2ac39b0ad52f1fb9940c109991b93bcbb09b86943",
+      "new_receipt_id": "sha256:915f957e5db3c4c0cf5d70f2ac39b0ad52f1fb9940c109991b93bcbb09b86943",
+      "run_file": "2026-07-14_04-15-51.md",
+      "old_occurred_at": "2026-07-14T11:15:51Z",
+      "new_occurred_at": "2026-07-14T11:15:51Z",
+      "old_classification": "negative_result",
+      "new_classification": "negative_result",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:219aaec8741da652afea931d81273f0d34fc96d22807e9f8302d47ba46c20f0e",
+      "new_receipt_id": "sha256:219aaec8741da652afea931d81273f0d34fc96d22807e9f8302d47ba46c20f0e",
+      "run_file": "2026-07-14_08-39-40.md",
+      "old_occurred_at": "2026-07-14T15:39:40Z",
+      "new_occurred_at": "2026-07-14T15:39:40Z",
+      "old_classification": "blocked",
+      "new_classification": "blocked",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:6e3ce0f11de842f75ff75fd04790b5de23df37ea5a20f09058dc364a43b829d7",
+      "new_receipt_id": "sha256:6e3ce0f11de842f75ff75fd04790b5de23df37ea5a20f09058dc364a43b829d7",
+      "run_file": "2026-07-14_10-48-24.md",
+      "old_occurred_at": "2026-07-14T17:48:24Z",
+      "new_occurred_at": "2026-07-14T17:48:24Z",
+      "old_classification": "progress",
+      "new_classification": "progress",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:e20ca3a76c0ff730f7d11f2d1d5564eb1c8a6c6a5a716b2994b2e9d49a264489",
+      "new_receipt_id": "sha256:e20ca3a76c0ff730f7d11f2d1d5564eb1c8a6c6a5a716b2994b2e9d49a264489",
+      "run_file": "2026-07-14_12-51-13.md",
+      "old_occurred_at": "2026-07-14T19:51:13Z",
+      "new_occurred_at": "2026-07-14T19:51:13Z",
+      "old_classification": "progress",
+      "new_classification": "progress",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:fc411930524b428e122525e806a7e52d841ceca05bb0cc7d4d3a32e686751dc3",
+      "new_receipt_id": "sha256:fc411930524b428e122525e806a7e52d841ceca05bb0cc7d4d3a32e686751dc3",
+      "run_file": "2026-07-14_14-57-38.md",
+      "old_occurred_at": "2026-07-14T21:57:38Z",
+      "new_occurred_at": "2026-07-14T21:57:38Z",
+      "old_classification": "negative_result",
+      "new_classification": "negative_result",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:d740003bd078f97b76c365dcaa0941fed5966970dca245816c68dbfce14c822e",
+      "new_receipt_id": "sha256:d740003bd078f97b76c365dcaa0941fed5966970dca245816c68dbfce14c822e",
+      "run_file": "2026-07-14_17-00-51.md",
+      "old_occurred_at": "2026-07-15T00:00:51Z",
+      "new_occurred_at": "2026-07-15T00:00:51Z",
+      "old_classification": "blocked",
+      "new_classification": "blocked",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:0ec67d2f00258ea3bf044e00217be086411b61b4e54cc629de749fb1b99d5293",
+      "new_receipt_id": "sha256:0ec67d2f00258ea3bf044e00217be086411b61b4e54cc629de749fb1b99d5293",
+      "run_file": "2026-07-14_19-08-20.md",
+      "old_occurred_at": "2026-07-15T02:08:20Z",
+      "new_occurred_at": "2026-07-15T02:08:20Z",
+      "old_classification": "blocked",
+      "new_classification": "blocked",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:b55bfad26f3a91c46197b76b78f985cd205947d5e0e1c8069fd24cf1d20068f4",
+      "new_receipt_id": "sha256:b55bfad26f3a91c46197b76b78f985cd205947d5e0e1c8069fd24cf1d20068f4",
+      "run_file": "2026-07-14_19-39-01.md",
+      "old_occurred_at": "2026-07-15T02:39:01Z",
+      "new_occurred_at": "2026-07-15T02:39:01Z",
+      "old_classification": "blocked",
+      "new_classification": "blocked",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:eb57e3d1e3ccf7f9e488f481b1f9e14f1f8e6813d815fef34dcad6b3def8cf58",
+      "new_receipt_id": "sha256:eb57e3d1e3ccf7f9e488f481b1f9e14f1f8e6813d815fef34dcad6b3def8cf58",
+      "run_file": "2026-07-14_19-52-09.md",
+      "old_occurred_at": "2026-07-15T02:52:09Z",
+      "new_occurred_at": "2026-07-15T02:52:09Z",
+      "old_classification": "negative_result",
+      "new_classification": "negative_result",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    },
+    {
+      "old_receipt_id": "sha256:72b93032ee44fb9e250d6fa9ee8be966fa97b5f68980b9204db46498e5521453",
+      "new_receipt_id": "sha256:72b93032ee44fb9e250d6fa9ee8be966fa97b5f68980b9204db46498e5521453",
+      "run_file": "2026-07-14_20-37-24.md",
+      "old_occurred_at": "2026-07-15T03:37:24Z",
+      "new_occurred_at": "2026-07-15T03:37:24Z",
+      "old_classification": "negative_result",
+      "new_classification": "negative_result",
+      "changed_fields": [
+        "frontier_id"
+      ]
+    }
+  ],
+  "retained": [
+    {
+      "receipt_id": "sha256:f153fcec2c4197780942e1613c5a6095858eb6ea2a7d82ee79ebcf2810c6d036",
+      "run_file": "2026-07-10_12-18-57.md",
+      "reason": "raw source unavailable"
+    },
+    {
+      "receipt_id": "sha256:1a6fdb1e048003b84e2b16be77af5f932ec456b805dd0daf21cf5a13faaa48d3",
+      "run_file": "2026-07-10_16-27-14.md",
+      "reason": "raw source unavailable"
+    },
+    {
+      "receipt_id": "sha256:149b83bf790168ffbb0032e17bb632414aea03325def094cbf8f172e7a7cc93a",
+      "run_file": "2026-07-10_20-31-09.md",
+      "reason": "raw source unavailable"
+    }
+  ]
+}

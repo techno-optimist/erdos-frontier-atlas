@@ -15,5 +15,6 @@
     "job_id": "50c8e4391849",
     "run_file": "2026-07-14_19-52-09.md",
     "sha256": "bdef49538f39c39d60b3f93bd12702ef8aaea77297e5ec984cfb03cbd420707b"
-  }
+  },
+  "frontier_id": "fm_steiner_large"
 }

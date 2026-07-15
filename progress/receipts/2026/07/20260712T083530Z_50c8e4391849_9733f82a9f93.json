@@ -15,5 +15,6 @@
     "job_id": "50c8e4391849",
     "run_file": "2026-07-12_01-35-30.md",
     "sha256": "4ceed133ced1d0cb81070e4e18e0ffb4f5f7a614469f86f0244d443e0c8ce01c"
-  }
+  },
+  "frontier_id": "fm_prime_factorization_gnfs"
 }
