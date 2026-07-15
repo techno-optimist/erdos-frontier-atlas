@@ -240,7 +240,10 @@ def rejection_detail(
 ) -> dict:
     receipt = inspection.get("receipt") or {}
     errors = [str(row)[:500] for row in inspection.get("errors", []) if str(row).strip()]
-    runtime_rejection = bool(inspection.get("runtime_telemetry")) or any(
+    runtime_status = (inspection.get("runtime_telemetry") or {}).get("status")
+    runtime_rejection = runtime_status not in {
+        None, "within_budget", "grandfathered_before_runtime_budget"
+    } or any(
         str(error).startswith(("runtime ", "trusted runtime "))
         for error in errors
     )
