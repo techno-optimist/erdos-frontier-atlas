@@ -232,6 +232,28 @@ def semantic_contract_errors(r: dict, config: dict) -> list[str]:
     return errors
 
 
+def required_strategy_trace_errors(text: str, receipt: dict) -> list[str]:
+    """Bind a delivered private strategy digest to the six-field receipt."""
+    pre_response = text.split("## Response", 1)[0]
+    digests = re.findall(
+        r'"strategy_digest"\s*:\s*"(sha256:[a-f0-9]{64})"',
+        pre_response, re.I,
+    )
+    if not digests:
+        return []
+    required = digests[-1].lower()
+    consult = receipt.get("frontier_consult")
+    if not isinstance(consult, dict):
+        return [
+            "missing required typed frontier trace in Verified: "
+            f"Frontier advice: {required}; executed=yes|no; outcome=<public-safe result>"
+        ]
+    actual = str(consult.get("advice_digest", "")).lower()
+    if actual != required:
+        return [f"frontier trace digest mismatch: required {required}, got {actual or 'missing'}"]
+    return []
+
+
 def inspect_source(source: Path, job_id: str, config: dict) -> dict:
     """Parse and validate a raw run without mutating the public progress tree."""
     source_sha = sha(source.read_bytes())
@@ -239,7 +261,11 @@ def inspect_source(source: Path, job_id: str, config: dict) -> dict:
         receipt = build_receipt(
             source, job_id, config.get("source_timezone", "America/Denver")
         )
-        errors = validate_receipt(receipt) + semantic_contract_errors(receipt, config)
+        errors = (
+            validate_receipt(receipt)
+            + semantic_contract_errors(receipt, config)
+            + required_strategy_trace_errors(source.read_text(errors="replace"), receipt)
+        )
         summary = {
             key: receipt.get(key)
             for key in ("receipt_id", "frontier_id", "classification", "occurred_at")
@@ -277,7 +303,11 @@ def ingest(source: Path, job_id: str, source_timezone: str = "America/Denver") -
     dest = RECEIPTS / receipt["occurred_at"][:4] / receipt["occurred_at"][5:7] / f"{timestamp}_{job_id}_{suffix}.json"
     if dest.exists():
         return dest, False
-    errors = validate_receipt(receipt) + semantic_contract_errors(receipt, load_json(CONFIG))
+    errors = (
+        validate_receipt(receipt)
+        + semantic_contract_errors(receipt, load_json(CONFIG))
+        + required_strategy_trace_errors(source.read_text(errors="replace"), receipt)
+    )
     if errors: raise ValueError("; ".join(errors))
     atomic_json(dest, receipt)
     rebuild_index()
