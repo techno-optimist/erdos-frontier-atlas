@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:ea57ddda4c6aa84bbad4b1aec773cd5db00e341bf13d77c8088c1b55aea884de",
+  "content_digest": "sha256:b79bd52a3021310c6a36fafa06d147325e793cc37c340b908ad1aa67d3deae39",
+  "occurred_at": "2026-07-15T08:32:50Z",
+  "frontier": "Do the two verifier scripts (PG(2,q) tau-verification and R(k,k) Ramsey witness test) still pass their documented known-good and known-bad fixtures, or have they regressed?",
+  "action": "Ran PG(2,q) tau verification on q=2 and q=5 (both known-positive; tau=q+1). Ran Ramsey verifier kill-test suite on C5 (accepted as (3,3)-Ramsey witness), K5 (rejected for k=3, short-circuit branch), Empty-3 (rejected for k=3, complement branch), and K5 complete-flag (rejected for k=5). Computed SHA-256 of both scripts and compared against the circulant-ramsey-negative-results reference doc.",
+  "verified": "PG(2,2): tau=3, PASS (0.0ms). PG(2,5): tau=6, PASS (113.0ms).\n- Ramsey C5/k=3: is_ramsey=true (Path A). K5/k=3: rejected via K3-in-graph (Path B). Empty-3/k=3: rejected via IS3-in-complement (Path C). K5/k=5: rejected via K5-in-graph.\n- `pg2_tau_verifier.py` SHA-256: `a3902d00...`. `ramsey_kk_verifier.py` SHA-256: `b1ae7682...`.\n- Reference doc `circulant-ramsey-negative-results.md` claims SHA `9162385c...` for the Ramsey script — this is **stale**. Evidence chain degraded on that reference only.",
+  "result": "Both verifier scripts are structurally sound — no regression detected. All three Ramsey branch paths confirmed. Baseline verification complete. The stale reference hash means the circulant-ramsey negative result's provenance chain is weakened but the conclusion (circulants exhausted for R(k,k) lower bounds) remains supported by independent literature (Exoo 1989, Angeltveit–McKay 2024).",
+  "next_gate": "When GPU load drops below 90% (gate `allowed: true`): run a small batch of the stretched LR verifier against the verified LR triples from `verified-lr-triples-2026-07-15.md` to confirm the `yield from` fix still produces correct coefficients. Update the circulant-ramsey negative-result reference with the current script SHA-256 to restore evidence chain integrity.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. All work confined to local script verification under shallow gate mode.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "e97056701b6d",
+    "run_file": "2026-07-15_01-32-50.md",
+    "sha256": "bf1067309fc3e841da926b89246d1835e92ee41394140680d42f260ef8ee0ab0"
+  }
+}
