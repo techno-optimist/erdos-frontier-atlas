@@ -85,6 +85,11 @@ quantity. Prep exposes the contract to the researcher, and publication fails
 closed if evidence addresses a related but easier quantity or repeats a known
 conflation claim. Rejected raw runs are hash-quarantined in private ingest state.
 
+`foundry/materialize_frontiers.py` converts reviewed, provenance-tagged seeds
+from `foundry/frontier_seeds.json` into DGX queue items. It is dry-run by
+default; `--apply` creates a timestamped byte-for-byte backup and atomically
+replaces only the private queue file. It never writes an Atlas database.
+
 DGX cron renders wall-clock timestamps in fixed MST (`UTC-07:00`), so
 `foundry/config.json` uses `Etc/GMT+7`. Receipt construction cross-checks that
 offset against the raw run file's absolute mtime and fails over to the latter
