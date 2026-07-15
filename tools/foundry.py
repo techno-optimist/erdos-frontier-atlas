@@ -181,6 +181,22 @@ def validate_receipt(r: dict) -> list[str]:
     return errors
 
 
+def semantic_contract_errors(r: dict, config: dict) -> list[str]:
+    contract = config.get("semantic_contracts", {}).get(r.get("frontier_id"))
+    if not contract or str(r.get("occurred_at", "")) < str(contract.get("effective_after", "")):
+        return []
+    evidence = " ".join(str(r.get(key, "")) for key in ("action", "verified")).lower()
+    claims = " ".join(str(r.get(key, "")) for key in ("frontier", "result", "next_gate")).lower()
+    errors = []
+    required = [phrase.lower() for phrase in contract.get("required_evidence_any", [])]
+    if required and not any(phrase in evidence for phrase in required):
+        errors.append("semantic contract missing target-quantity evidence: " + contract["target_quantity"])
+    for pattern in contract.get("forbidden_claim_patterns", []):
+        if re.search(pattern, claims, re.I):
+            errors.append("semantic contract quantity-conflation claim: " + pattern)
+    return errors
+
+
 def rebuild_index() -> dict:
     rows = [load_json(p) for p in receipt_files()]
     counts = Counter(r["classification"] for r in rows)
@@ -201,7 +217,7 @@ def ingest(source: Path, job_id: str, source_timezone: str = "America/Denver") -
     dest = RECEIPTS / receipt["occurred_at"][:4] / receipt["occurred_at"][5:7] / f"{timestamp}_{job_id}_{suffix}.json"
     if dest.exists():
         return dest, False
-    errors = validate_receipt(receipt)
+    errors = validate_receipt(receipt) + semantic_contract_errors(receipt, load_json(CONFIG))
     if errors: raise ValueError("; ".join(errors))
     atomic_json(dest, receipt)
     rebuild_index()
@@ -356,7 +372,8 @@ def validate() -> None:
     seen = set()
     for path in receipt_files():
         row = load_json(path)
-        for err in validate_receipt(row): errors.append(f"{path.relative_to(ROOT)}: {err}")
+        for err in validate_receipt(row) + semantic_contract_errors(row, load_json(CONFIG)):
+            errors.append(f"{path.relative_to(ROOT)}: {err}")
         if row.get("receipt_id") in seen: errors.append(f"{path.relative_to(ROOT)}: duplicate receipt")
         seen.add(row.get("receipt_id"))
     expected = load_json(INDEX)

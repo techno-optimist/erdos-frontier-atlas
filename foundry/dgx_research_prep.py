@@ -15,6 +15,7 @@ MODE = "deep" if "night" in Path(__file__).name else "scout"
 LIMIT = "4" if MODE == "deep" else "3"
 FOCUS_LIMIT = "12" if MODE == "deep" else "8"
 BUDGET = STATE / "foundry_frontier_budget.json"
+CONFIG = REPO / "foundry" / "config.json"
 
 
 def call(cmd: list[str]) -> subprocess.CompletedProcess:
@@ -132,7 +133,9 @@ def main() -> int:
             foundry.update(strategy_status="consult_failed", error=advice.stdout.strip().splitlines()[-1][:300] if advice.stdout.strip() else "unknown")
     summary["foundry"] = foundry
     summary["foundry"]["selection"] = selection
-    summary["next_instruction"] = "Read focused_context.md first, then context_packet.md. " + summary["next_instruction"] + " Treat foundry.strategy_advice as provisional; execute and verify its smallest test when present. If advice is present, the Verified field must contain exactly: Frontier advice: <foundry.strategy_digest>; executed=yes|no; outcome=<public-safe result>."
+    contract = json.loads(CONFIG.read_text()).get("semantic_contracts", {}).get(selected_frontier_id)
+    summary["foundry"]["target_contract"] = contract
+    summary["next_instruction"] = "Read focused_context.md first, then context_packet.md. " + summary["next_instruction"] + " Preserve the exact target quantity in foundry.target_contract; a related theorem or easier quantity is not evidence. Treat foundry.strategy_advice as provisional; execute and verify its smallest test when present. If advice is present, the Verified field must contain exactly: Frontier advice: <foundry.strategy_digest>; executed=yes|no; outcome=<public-safe result>."
     print(json.dumps(summary, ensure_ascii=False, indent=2))
     return 0
 
