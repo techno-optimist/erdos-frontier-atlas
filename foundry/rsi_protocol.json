@@ -34,6 +34,7 @@
     "split": {
       "public_manifest": "foundry/eval/public_suite.json",
       "private_manifest": "evaluator-owned and unavailable to candidate workers",
+      "private_commitment": "foundry/eval/private_suite.commitment.json",
       "private_commitment_required": true,
       "isolation_gate": "OS- or container-enforced evaluator isolation is required before held-out results can authorize promotion. Same-user path secrecy is insufficient.",
       "isolation_controller": "tools/foundry_eval.py",
