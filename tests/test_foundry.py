@@ -85,6 +85,10 @@ RuntimeError: Connection error.
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "run.md"
             path.write_text(sample)
+            expected_epoch = datetime(
+                2026, 7, 15, 15, 38, tzinfo=timezone.utc
+            ).timestamp()
+            os.utime(path, (expected_epoch, expected_epoch))
             result = foundry.inspect_source(
                 path, "50c8e4391849",
                 json.loads((ROOT / "foundry" / "config.json").read_text()),
@@ -106,6 +110,10 @@ RuntimeError: Connection error.
         with tempfile.TemporaryDirectory() as tmp:
             path = Path(tmp) / "run.md"
             path.write_text(sample)
+            expected_epoch = datetime(
+                2026, 7, 15, 15, 38, tzinfo=timezone.utc
+            ).timestamp()
+            os.utime(path, (expected_epoch, expected_epoch))
             result = foundry.inspect_source(
                 path,
                 "50c8e4391849",
@@ -117,6 +125,46 @@ RuntimeError: Connection error.
         )
         self.assertEqual(result["receipt"]["occurred_at"], "2026-07-15T15:38:00Z")
         self.assertTrue(any("missing required receipt labels" in row for row in result["errors"]))
+
+    def test_verifier_milestone_requires_domain_and_predicate_evidence_lines(self):
+        digest = "sha256:" + "f" * 64
+        prefix = f"Milestone: verifier_construction; contract={digest}"
+        sample = json.dumps({
+            "milestone_contract": {
+                "contract_digest": digest,
+                "receipt_action_prefix": prefix,
+            }
+        })
+        config = {
+            "milestone_policy": {
+                "effective_after": "2026-07-15T00:00:00Z",
+                "verifier_evidence_effective_after": "2026-07-15T16:00:00Z",
+                "verifier_required_verified_prefixes": [
+                    "Verifier domain:", "Verifier predicate:"
+                ],
+                "allowed_action_kinds": ["verifier_construction"],
+            }
+        }
+        receipt = {
+            "occurred_at": "2026-07-15T16:08:47Z",
+            "action": prefix + "\nBuilt a partial checker.",
+            "verified": "Cycle enumeration replayed.",
+            "result": "Verifier construction complete.",
+        }
+        errors = foundry.required_milestone_contract_errors(
+            sample, receipt, config
+        )
+        self.assertEqual(len(errors), 2)
+        self.assertTrue(any("Verifier domain:" in row for row in errors))
+        self.assertTrue(any("Verifier predicate:" in row for row in errors))
+        receipt["verified"] = (
+            "Verifier domain: rejected a fixed non-Q7 edge with edge-membership reason.\n"
+            "Verifier predicate: rejected a fixed Q7 square with C4 reason."
+        )
+        self.assertEqual(
+            foundry.required_milestone_contract_errors(sample, receipt, config),
+            [],
+        )
 
     def test_system_postamble_is_outside_six_field_membrane(self):
         sample = SAMPLE + "\n---\n\nObservation outside receipt.\n⚠️ File-mutation verifier: /home/private/path\n"

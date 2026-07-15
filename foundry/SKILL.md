@@ -47,6 +47,11 @@ construction plus branch-specific good/bad fixtures; defer search to Next gate.
 Use fixed fixtures only and do not load a specialist skill for this initial
 milestone. Random/generated candidates, trials, perturbations, and sampling are
 search even when described as tests.
+Verifier construction has two independent branches: candidate-domain
+membership/well-formedness and the exact target predicate. Replay an
+out-of-domain bad fixture and a predicate-violation bad fixture, assert their
+rejection reasons, and include the contract's exact `Verifier domain:` and
+`Verifier predicate:` lines under `Verified`.
 With a continuation, complete only the smallest independently replayable
 primitive from its next gate and defer all downstream work.
 Prefer an executable discriminating test over another prose analysis. Stop on

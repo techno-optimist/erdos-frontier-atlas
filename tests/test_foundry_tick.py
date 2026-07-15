@@ -143,6 +143,29 @@ class FoundryTickTests(unittest.TestCase):
         second = foundry_tick.semantic_contract_digest(config)
         self.assertNotEqual(first, second)
 
+    def test_accepted_replay_cutoff_invalidates_publication_policy_digest(self):
+        config = self.runtime_config()
+        config["accepted_contract_replay_after"] = "2026-07-15T16:00:00Z"
+        first = foundry_tick.semantic_contract_digest(config)
+        config["accepted_contract_replay_after"] = "2026-07-15T17:00:00Z"
+        second = foundry_tick.semantic_contract_digest(config)
+        self.assertNotEqual(first, second)
+
+    def test_exact_source_replay_reuses_current_runtime_evidence(self):
+        config = self.runtime_config()
+        evidence = {
+            "status": "within_budget",
+            "runtime_budget_digest": foundry_tick.runtime_budget_digest(config),
+            "telemetry_contract_digest": foundry_tick.telemetry_contract_digest(config),
+        }
+        self.assertTrue(
+            foundry_tick.accepted_runtime_evidence_is_current(evidence, config)
+        )
+        evidence["runtime_budget_digest"] = "sha256:stale"
+        self.assertFalse(
+            foundry_tick.accepted_runtime_evidence_is_current(evidence, config)
+        )
+
     def test_exact_accepted_or_rejected_hash_is_skipped(self):
         state = {
             "accepted": {"job/accepted.md": "aaa"},
@@ -213,6 +236,18 @@ class FoundryTickTests(unittest.TestCase):
         self.assertIn("complete only the admitted milestone", detail["remediation"])
         self.assertIn("defer every downstream", detail["remediation"])
 
+    def test_rejection_detail_stages_both_verifier_branches(self):
+        detail = foundry_tick.rejection_detail({
+            "source_sha256": "a" * 64,
+            "receipt": {},
+            "errors": [
+                "milestone contract missing required verifier evidence line in Verified: Verifier domain:"
+            ],
+        }, "fallback")
+        self.assertIn("out-of-domain fixture", detail["remediation"])
+        self.assertIn("target-predicate violation", detail["remediation"])
+        self.assertIn("typed verifier evidence", detail["remediation"])
+
     def test_rejection_feedback_is_replayed_after_contract_change(self):
         source_sha = "a" * 64
         old_digest = "sha256:" + "b" * 64
@@ -273,6 +308,92 @@ class FoundryTickTests(unittest.TestCase):
             self.assertFalse(receipt_path.exists())
             self.assertNotIn(f"{job_id}/{source.name}", state["accepted"])
             self.assertEqual(state["rejected"][f"{job_id}/{source.name}"], source_sha)
+
+    def test_changed_contract_replays_and_revokes_recent_acceptance(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            job_id = "50c8e4391849"
+            run_file = "recent.md"
+            source_dir = root / "cron" / job_id
+            source_dir.mkdir(parents=True)
+            source = source_dir / run_file
+            source.write_text("raw source\n")
+            source_sha = hashlib.sha256(source.read_bytes()).hexdigest()
+            receipt_dir = root / "repo" / "progress" / "receipts" / "2026" / "07"
+            receipt_dir.mkdir(parents=True)
+            receipt_path = receipt_dir / "recent.json"
+            receipt_path.write_text(json.dumps({
+                "receipt_id": "sha256:" + "b" * 64,
+                "frontier_id": "erdos_86_q7_c4",
+                "classification": "progress",
+                "occurred_at": "2026-07-15T16:08:47Z",
+                "source": {
+                    "job_id": job_id, "run_file": run_file, "sha256": source_sha,
+                },
+            }))
+            key = f"{job_id}/{run_file}"
+            state = {
+                "accepted": {key: source_sha},
+                "accepted_runtime": {key: {"status": "within_budget"}},
+                "accepted_policy": {key: "sha256:old"},
+                "rejected": {}, "rejected_details": {},
+            }
+            inspection = {
+                "valid": False,
+                "source_sha256": source_sha,
+                "receipt": {
+                    "receipt_id": "sha256:" + "b" * 64,
+                    "frontier_id": "erdos_86_q7_c4",
+                    "classification": "progress",
+                    "occurred_at": "2026-07-15T16:08:47Z",
+                },
+                "errors": [
+                    "milestone contract missing required verifier evidence line in Verified: Verifier domain:"
+                ],
+            }
+            config = {
+                "accepted_contract_replay_after": "2026-07-15T16:00:00Z"
+            }
+            with mock.patch.object(
+                foundry_tick, "inspect_run", return_value=inspection
+            ):
+                revoked = foundry_tick.revalidate_stale_accepted_sources(
+                    state, root / "cron", root / "repo", root / "tool.py",
+                    None, config, "sha256:new",
+                )
+            self.assertEqual(len(revoked), 1)
+            self.assertFalse(receipt_path.exists())
+            self.assertNotIn(key, state["accepted"])
+            self.assertNotIn(key, state["accepted_runtime"])
+            self.assertNotIn(key, state["accepted_policy"])
+            self.assertEqual(state["rejected"][key], source_sha)
+            self.assertIn(
+                "out-of-domain fixture",
+                state["rejected_details"][key]["remediation"],
+            )
+
+    def test_changed_contract_grandfathers_pre_cutoff_acceptance(self):
+        state = {
+            "accepted": {"job/old.md": "a" * 64},
+            "accepted_policy": {},
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            receipt_dir = root / "repo" / "progress" / "receipts" / "2026" / "07"
+            receipt_dir.mkdir(parents=True)
+            (receipt_dir / "old.json").write_text(json.dumps({
+                "occurred_at": "2026-07-15T15:59:59Z",
+                "source": {
+                    "job_id": "job", "run_file": "old.md", "sha256": "a" * 64,
+                },
+            }))
+            revoked = foundry_tick.revalidate_stale_accepted_sources(
+                state, root / "cron", root / "repo", root / "tool.py", None,
+                {"accepted_contract_replay_after": "2026-07-15T16:00:00Z"},
+                "sha256:new",
+            )
+        self.assertEqual(revoked, [])
+        self.assertEqual(state["accepted_policy"]["job/old.md"], "sha256:new")
 
     def test_template_receipt_is_quarantined_after_raw_source_rotation(self):
         with tempfile.TemporaryDirectory() as tmp:

@@ -215,6 +215,16 @@ class AuditTests(unittest.TestCase):
             )
         )
 
+    def test_all_accepted_sources_are_bound_to_current_contract(self):
+        current = "sha256:" + "c" * 64
+        state = {
+            "accepted": {"job/run.md": "a" * 64},
+            "accepted_policy": {"job/run.md": current},
+        }
+        self.assertTrue(audit.accepted_contract_bindings_current(state, current))
+        state["accepted_policy"]["job/run.md"] = "sha256:" + "d" * 64
+        self.assertFalse(audit.accepted_contract_bindings_current(state, current))
+
     def test_repeated_terminal_route_is_certified_stall(self):
         self.assertTrue(audit.certified_stall([row("negative_result"), row("blocked")], 2))
 

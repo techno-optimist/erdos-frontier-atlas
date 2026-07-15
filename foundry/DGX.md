@@ -95,7 +95,10 @@ due by call 14. The exact-source scheduler removes every tool schema after call
 the remaining reserved calls only when the response still lacks required
 labels. Writing a receipt file cannot substitute for that response. Initial
 verifier milestones also reject evidence
-of random/generated candidate trials; those are search, not fixtures. For the
+of random/generated candidate trials; those are search, not fixtures. A
+verifier milestone is not complete until fixed fixtures separately cover
+candidate-domain validity and the target predicate, with typed evidence lines
+that the publisher checks. For the
 same initial milestone, prep replaces the broad Markdown packet with a compact
 hash receipt while retaining the canonical JSON for provenance and audit. This
 prevents paying for focused plus broad context before a recorded need exists.
@@ -141,6 +144,11 @@ immutable source hash. On the next visit to that exact frontier, prep exposes
 only its errors and remediation as `foundry.quarantine_feedback`, requiring the
 35B to replay the evidence and narrow the claim. The membrane never rewrites or
 silently salvages a rejected receipt.
+Recent accepted sources are also bound to the publication-contract digest.
+When that digest changes after the checked-in replay cutoff, the no-agent
+publisher re-inspects the exact retained raw hash; a now-invalid acceptance is
+removed and converted to structured quarantine rather than remaining stale
+prior state. Older receipts remain explicitly grandfathered.
 
 The consultation gate, router call, and private-state commit are one
 cross-process locked transaction. Concurrent scout/night attempts serialize;
