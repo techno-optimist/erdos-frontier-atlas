@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:a1c8b28094ee195f48a58138b4ee39c7e75a0ae116ca6116a98bb344ac8d2647",
+  "content_digest": "sha256:739f4a348d41810a3529fb2db97de1f0895be9ad4c123714b1592476886d9ba5",
+  "occurred_at": "2026-07-15T05:30:47Z",
+  "frontier": "Erdős q(6): minimum number of edges in a 6-uniform pairwise-intersecting hypergraph with cover number exactly 6. The bracket is 14 ≤ q(6) ≤ 18.",
+  "action": "Built and validated the exact witness verifier (q6_verifier.py): pairwise-intersection check O(m²·6) + exact 5-cover rejection via C(N,5) enumeration. Ran 6 fixtures (all pass): star τ=1, τ=2, disjoint edges, 3-cover, two 5-cover variants. Constructed PG(2,q) generator (pg2_verify.py) and proved τ(PG(2,q)) = q+1 for q=2,3,5. PG(2,5) verified as valid 31-edge 6-uniform intersecting hypergraph with τ=6 in 114ms.",
+  "verified": "6/6 fixture tests pass: verifier correctly rejects all known-bad non-witnesses\n- PG(2,5): 31 edges, τ=6, pairwise-intersecting — confirmed valid witness (m=31, above bracket)\n- PG(2,2): τ=3, PG(2,3): τ=4 — general theorem τ(PG(2,q)) = q+1 confirmed at all three tested prime orders\n- No frontier call was needed or made (frontier_call_allowed=false)",
+  "result": "Verifier is correct and fast. PG(2,5) provides a valid but suboptimal witness (m=31 vs. 14-18 bracket). The SAT/DRAT route was previously falsified (global τ constraint caused solver blowup). The productive path is orderly generation with canonical augmentation + τ-deficiency pruning, targeting m=14..17 with V≤29 (Barát Lemma 6.4). No improvement to the bracket was achieved in this scout pass.",
+  "next_gate": "Implement or import an isomorph-free orderly-generation engine for 6-uniform intersecting families. For each generated candidate with 14 ≤ m ≤ 17, run the exact witness verifier. A single valid witness with m < 18 improves the bound; m=14 settles q(6)=14.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Research artifacts scoped to `research_sessions/res_20260715_052504_erdos-21-q6/`.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-14_22-30-47.md",
+    "sha256": "72fc7398f8017ba421e140c1c3adbe072b71c1de49f426d1a7f1d873ac42807a"
+  },
+  "frontier_id": "erdos_21_q6"
+}
