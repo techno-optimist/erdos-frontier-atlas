@@ -185,9 +185,9 @@ def _claimed_artifact_paths(result: dict) -> set[str]:
 def semantic_contract_violations(result: dict, packet: dict) -> list[str]:
     """Reject theorem inflation that a replayable bounded search cannot establish."""
     violations = []
-    claim = " ".join(
-        str(result.get(key, "")) for key in ("hypothesis", "claim")
-    ).lower()
+    claim_text = str(result.get("claim", "")).lower()
+    hypothesis_text = str(result.get("hypothesis", "")).lower()
+    bounded_context = hypothesis_text + " " + claim_text
     if result.get("classification") == "negative_result":
         observation_markers = (
             "bounded", "no witness found", "did not find", "inconclusive",
@@ -197,29 +197,34 @@ def semantic_contract_violations(result: dict, packet: dict) -> list[str]:
             "theorem unchanged", "bracket unchanged", "does not prove",
             "not a proof", "cannot conclude", "local result only",
         )
-        if not any(marker in claim for marker in observation_markers) or not any(
-            marker in claim for marker in boundary_markers
-        ):
+        observation_ok = any(marker in bounded_context for marker in observation_markers)
+        boundary_ok = result.get("theorem_status") == "theorem_unchanged" or any(
+            marker in bounded_context for marker in boundary_markers
+        )
+        if not observation_ok or not boundary_ok:
             violations.append("negative_result_lacks_bounded_claim_boundary")
     if int((packet.get("target") or {}).get("id", -1)) == 552:
-        normalized = re.sub(r"[\s_{}\\]", "", claim)
+        normalized = re.sub(r"[\s_{}\\]", "", claim_text)
         unsupported_nonexistence = bool(
-            re.search(r"no\s+c4[- ]free\s+graph.{0,100}\b(?:exists|exist)\b", claim)
+            re.search(
+                r"no\s+c4[- ]free\s+graph.{0,100}\b(?:exists|exist)\b",
+                claim_text,
+            )
             or re.search(r"r\(c4,s17\)(?:=|<=)22", normalized)
             or re.search(r"r\(c4,k1,?17\)(?:=|<=)22", normalized)
             or (
-                ("prove" in claim or "therefore" in claim)
+                ("prove" in claim_text or "therefore" in claim_text)
                 and (
-                    "upper bound" in claim
-                    or "nonexistence" in claim
-                    or "no c4-free" in claim
+                    "upper bound" in claim_text
+                    or "nonexistence" in claim_text
+                    or "no c4-free" in claim_text
                 )
             )
         )
         explicit_boundary = any(
-            marker in claim
+            marker in claim_text
             for marker in (
-                "does not prove", "not a proof", "cannot conclude", "theorem unchanged"
+                "does not prove", "not a proof", "cannot conclude"
             )
         )
         if unsupported_nonexistence and not explicit_boundary:
