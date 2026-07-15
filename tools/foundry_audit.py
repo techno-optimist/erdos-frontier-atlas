@@ -148,9 +148,10 @@ def main() -> int:
     packet_ro = all(row.get("read_only_verified") is True and row.get("hash_before") == row.get("hash_after") for row in packet.get("databases", {}).values())
     focused_path = args.sessions_root / latest_id / "focused_context.json"
     focused = json.loads(focused_path.read_text()) if focused_path.exists() else None
-    focused_ro = bool(focused and focused.get("databases") and all(
+    focused_ro = bool(focused and focused.get("databases") and focused.get("sources") and all(
         row.get("read_only_verified") is True and row.get("hash_before") == row.get("hash_after")
-        for row in focused["databases"].values()
+        for group in (focused["databases"], focused["sources"])
+        for row in group.values()
     ))
     shadow_path = args.sessions_root / latest_id / "shadow_policy.json"
     shadow = json.loads(shadow_path.read_text()) if shadow_path.exists() else None

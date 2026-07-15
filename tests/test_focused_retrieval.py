@@ -1,4 +1,5 @@
 import importlib.util
+import json
 import sqlite3
 import tempfile
 import unittest
@@ -61,6 +62,17 @@ class FocusedRetrievalTests(unittest.TestCase):
                 "atlas": missing, "atlas2": missing, "arena": missing, "aiwiki": missing,
             }, 3)
             self.assertFalse(any(row["read_only_verified"] for row in packet["databases"].values()))
+
+    def test_public_atlas_exact_q6_entry_is_retrieved(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "problems.json"
+            path.write_text(json.dumps({"problems": [
+                {"id": 21, "title": "q(6) intersecting hypergraph", "lane": "exact-backtracking", "verifier": "Check pairwise-intersecting edges and prove no 5-cover hitting set."},
+                {"id": 52, "title": "sum product", "lane": "exact-backtracking", "verifier": "Count sums and products."},
+            ]}))
+            rows = focused.public_atlas_rows(path, "q(6) pairwise-intersecting hypergraph exact 5-cover verifier", 3)
+            self.assertEqual(rows[0]["id"], 21)
+            self.assertIn("5-cover", rows[0]["focus_excerpt"]["text"])
 
 
 if __name__ == "__main__":
