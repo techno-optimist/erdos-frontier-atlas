@@ -37,6 +37,7 @@ class FoundryTests(unittest.TestCase):
             self.assertEqual(receipt["occurred_at"], "2026-07-14T23:00:51Z")
             self.assertEqual(foundry.validate_receipt(receipt), [])
             self.assertTrue(receipt["receipt_id"].startswith("sha256:"))
+            self.assertTrue(receipt["content_digest"].startswith("sha256:"))
 
     def test_required_labels_fail_closed(self):
         with self.assertRaises(ValueError):

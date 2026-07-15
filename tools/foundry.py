@@ -97,14 +97,18 @@ def build_receipt(source: Path, job_id: str, source_timezone: str = "America/Den
         ("result", "Result"), ("next_gate", "Next gate"), ("boundary_held", "Boundary held"),
     )}
     stable = json.dumps(content, ensure_ascii=False, sort_keys=True).encode()
+    occurred_at = parse_run_time(text, datetime.fromtimestamp(source.stat().st_mtime, timezone.utc), source_timezone)
+    source_sha = sha(raw)
+    occurrence = stable + b"\0" + occurred_at.encode() + b"\0" + job_id.encode() + b"\0" + source_sha.encode()
     return {
         "schema": "p42-foundry-receipt-v1",
-        "receipt_id": "sha256:" + sha(stable),
-        "occurred_at": parse_run_time(text, datetime.fromtimestamp(source.stat().st_mtime, timezone.utc), source_timezone),
+        "receipt_id": "sha256:" + sha(occurrence),
+        "content_digest": "sha256:" + sha(stable),
+        "occurred_at": occurred_at,
         **content,
         "classification": classify(content["result"], content["action"]),
         "evidence_class": "provisional",
-        "source": {"job_id": job_id, "run_file": source.name, "sha256": sha(raw)},
+        "source": {"job_id": job_id, "run_file": source.name, "sha256": source_sha},
     }
 
 
@@ -114,7 +118,7 @@ def receipt_files() -> list[Path]:
 
 def validate_receipt(r: dict) -> list[str]:
     errors = []
-    required = {"schema", "receipt_id", "occurred_at", "frontier", "action", "verified", "result", "next_gate", "boundary_held", "classification", "evidence_class", "source"}
+    required = {"schema", "receipt_id", "content_digest", "occurred_at", "frontier", "action", "verified", "result", "next_gate", "boundary_held", "classification", "evidence_class", "source"}
     extra = set(r) - required
     missing = required - set(r)
     if missing: errors.append("missing fields: " + ", ".join(sorted(missing)))
@@ -126,10 +130,12 @@ def validate_receipt(r: dict) -> list[str]:
         if not isinstance(r.get(key), str) or not r[key].strip(): errors.append(f"empty {key}")
         elif any(pattern.search(r[key]) for pattern in FORBIDDEN_PUBLIC): errors.append(f"public membrane violation in {key}")
     stable = json.dumps({key: r.get(key) for key in ("frontier", "action", "verified", "result", "next_gate", "boundary_held")}, ensure_ascii=False, sort_keys=True).encode()
-    if r.get("receipt_id") != "sha256:" + sha(stable): errors.append("receipt digest mismatch")
+    if r.get("content_digest") != "sha256:" + sha(stable): errors.append("content digest mismatch")
     src = r.get("source", {})
     if not re.fullmatch(r"[a-f0-9]{12}", str(src.get("job_id", ""))): errors.append("bad source job id")
     if Path(str(src.get("run_file", ""))).name != src.get("run_file"): errors.append("source run_file must be a basename")
+    occurrence = stable + b"\0" + str(r.get("occurred_at", "")).encode() + b"\0" + str(src.get("job_id", "")).encode() + b"\0" + str(src.get("sha256", "")).encode()
+    if r.get("receipt_id") != "sha256:" + sha(occurrence): errors.append("receipt occurrence digest mismatch")
     return errors
 
 

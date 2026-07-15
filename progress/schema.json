@@ -5,13 +5,14 @@
   "type": "object",
   "additionalProperties": false,
   "required": [
-    "schema", "receipt_id", "occurred_at", "frontier", "action",
+    "schema", "receipt_id", "content_digest", "occurred_at", "frontier", "action",
     "verified", "result", "next_gate", "boundary_held", "classification",
     "evidence_class", "source"
   ],
   "properties": {
     "schema": { "const": "p42-foundry-receipt-v1" },
     "receipt_id": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "content_digest": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
     "occurred_at": { "type": "string", "format": "date-time" },
     "frontier": { "type": "string", "minLength": 1 },
     "action": { "type": "string", "minLength": 1 },

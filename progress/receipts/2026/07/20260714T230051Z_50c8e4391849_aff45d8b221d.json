@@ -1,6 +1,7 @@
 {
   "schema": "p42-foundry-receipt-v1",
-  "receipt_id": "sha256:463ad25fdeec458e3c23a89100eb6003778e125aeb254969aa3a2e0933f63c0b",
+  "receipt_id": "sha256:aff45d8b221d0a92ea12b1e6c7c4d652beb73b7c76db751ce4d987ed8c9c70c7",
+  "content_digest": "sha256:463ad25fdeec458e3c23a89100eb6003778e125aeb254969aa3a2e0933f63c0b",
   "occurred_at": "2026-07-14T23:00:51Z",
   "frontier": "EinsteinArena scorer/verifier hardening — is there a concrete reopener this tick?",
   "action": "Read the bounded scout context packet only; inspected frontier status, next-action, falsifier, and the read-only arena transfer roster (5 problems with scoring direction + min_improvement). No Arena diagnostics, no `run_verifier`/`preflight`, no solver runs.",
