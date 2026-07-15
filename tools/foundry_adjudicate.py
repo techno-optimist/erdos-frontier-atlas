@@ -204,6 +204,21 @@ def semantic_contract_violations(result: dict, packet: dict) -> list[str]:
         if not observation_ok or not boundary_ok:
             violations.append("negative_result_lacks_bounded_claim_boundary")
     if int((packet.get("target") or {}).get("id", -1)) == 552:
+        normalized_hypothesis = re.sub(
+            r"[\s_{}\\]", "", hypothesis_text.replace("≥", ">=").replace("≤", "<=")
+        )
+        witness_implication = bool(
+            "exists" in hypothesis_text
+            and "c4-free graph" in hypothesis_text
+            and "22" in hypothesis_text
+            and ("would prove" in hypothesis_text or "implies" in hypothesis_text)
+            and "r(c4,s17)" in normalized_hypothesis
+        )
+        if witness_implication and not (
+            "r(c4,s17)>=23" in normalized_hypothesis
+            or "r(c4,s17)>22" in normalized_hypothesis
+        ):
+            violations.append("erdos_552_witness_implication_direction_or_threshold")
         normalized = re.sub(r"[\s_{}\\]", "", claim_text)
         unsupported_nonexistence = bool(
             re.search(
@@ -232,6 +247,28 @@ def semantic_contract_violations(result: dict, packet: dict) -> list[str]:
                 "erdos_552_nonexistence_claim_without_replayable_proof"
             )
     return violations
+
+
+def semantic_replay_violations(
+    result: dict, packet: dict, replay_rows: list[dict]
+) -> list[str]:
+    """Reject theorem-level language emitted by bounded negative artifacts."""
+    if (
+        int((packet.get("target") or {}).get("id", -1)) != 552
+        or result.get("classification") != "negative_result"
+    ):
+        return []
+    for row in replay_rows:
+        output = str(
+            row.get("_semantic_output", row.get("output_tail", ""))
+        ).lower()
+        normalized = re.sub(r"[\s_{}\\]", "", output)
+        if re.search(
+            r"(?:suggests?|supports?|implies?).{0,80}r\(c4,s17\)[<>=]",
+            normalized,
+        ):
+            return ["erdos_552_negative_replay_emits_bound_inference"]
+    return []
 
 
 def _normalized_replay_step(step: object, inventory: list[dict]) -> dict:
@@ -379,6 +416,7 @@ def run_replays(
                 "timed_out": timed_out,
                 "output_sha256": sha256_bytes(output.encode()),
                 "output_tail": output[-1000:],
+                "_semantic_output": output,
                 "ok": bool(not timed_out and proc.returncode == step["expected_exit"]),
             }
         )
@@ -528,6 +566,11 @@ def adjudicate(
         else []
     )
     replay_ok = bool(replay_rows and all(row["ok"] for row in replay_rows))
+    hard_violations.extend(
+        semantic_replay_violations(result, packet, replay_rows)
+    )
+    for row in replay_rows:
+        row.pop("_semantic_output", None)
     canonical_verifier = None
     if canonical_verdict_path and not errors and not hard_violations and replay_ok:
         if _inside(canonical_verdict_path, candidate_output):

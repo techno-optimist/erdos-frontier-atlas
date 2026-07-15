@@ -369,6 +369,8 @@ def run_task(task_path: Path) -> int:
         "turn a timeout, heuristic search, or finite sample into nonexistence or an exact value. "
         "A successfully completed bounded negative search must exit zero on replay and print its "
         "bounded outcome; reserve nonzero exit status for an execution or verifier-invariant failure. "
+        "Negative-search artifact output must not say that failure suggests, supports, or implies a "
+        "Ramsey bound. For the C4/S17 task, a 22-vertex witness implies R(C4,S17)>=23. "
         "Submit only final evidence artifacts; scratch files are deleted at submission. Every final "
         "Python artifact must have its own zero-exit replay step, including verifier self-tests. "
         "Finish with submit_result. The evaluator reserves the final two API calls for typed "
