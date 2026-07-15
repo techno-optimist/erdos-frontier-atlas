@@ -112,6 +112,32 @@ class FoundryTickTests(unittest.TestCase):
             detail = state["rejected_details"][f"{job_id}/{run_file}"]
             self.assertIn("raw source unavailable", detail["errors"][0])
 
+    def test_legacy_template_receipt_without_ingest_row_is_quarantined(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            job_id = "50c8e4391849"
+            source_sha = "c" * 64
+            run_file = "pre-ledger.md"
+            receipt_dir = root / "repo" / "progress" / "receipts" / "2026" / "07"
+            receipt_dir.mkdir(parents=True)
+            receipt_path = receipt_dir / "legacy.json"
+            receipt_path.write_text(json.dumps({
+                "receipt_id": "sha256:" + "d" * 64,
+                "frontier": "<one public-safe question/anchor>",
+                "source": {"job_id": job_id, "run_file": run_file, "sha256": source_sha},
+            }))
+            state = {"accepted": {}, "rejected": {}, "rejected_details": {}}
+            revoked = foundry_tick.quarantine_invalid_accepted_sources(
+                state, root / "cron", root / "repo", root / "tool.py"
+            )
+            self.assertEqual(len(revoked), 1)
+            self.assertFalse(receipt_path.exists())
+            self.assertEqual(state["rejected"][f"{job_id}/{run_file}"], source_sha)
+            self.assertIn(
+                "legacy private acceptance",
+                state["rejected_details"][f"{job_id}/{run_file}"]["errors"][0],
+            )
+
 
 if __name__ == "__main__":
     unittest.main()

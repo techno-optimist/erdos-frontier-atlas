@@ -136,6 +136,51 @@ def quarantine_invalid_accepted_sources(
             "reason": reason,
             "removed_receipts": [path.name for path in removed],
         })
+    # The earliest publisher predates the private ingest ledger. Exact prompt
+    # placeholders plus the receipt's immutable source tuple are sufficient to
+    # quarantine those legacy rows even when both raw retention and the old
+    # acceptance record are gone.
+    for path in sorted((repo / "progress" / "receipts").glob("**/*.json")):
+        reason = template_receipt_reason([path])
+        if not reason:
+            continue
+        try:
+            receipt = json.loads(path.read_text())
+            source = receipt.get("source", {})
+            job_id = source.get("job_id")
+            filename = source.get("run_file")
+            source_sha = source.get("sha256")
+        except (OSError, ValueError):
+            continue
+        if (
+            not re.fullmatch(r"[a-f0-9]{12}", str(job_id or ""))
+            or Path(str(filename or "")).name != filename
+            or not re.fullmatch(r"[a-f0-9]{64}", str(source_sha or ""))
+        ):
+            continue
+        key = f"{job_id}/{filename}"
+        accepted_sha = ingest_state.get("accepted", {}).get(key)
+        ledger_key = key if accepted_sha in (None, source_sha) else f"{key}#{source_sha[:12]}"
+        if accepted_sha == source_sha:
+            ingest_state["accepted"].pop(key, None)
+        inspection = {
+            "source_sha256": source_sha,
+            "receipt": {
+                field: receipt.get(field)
+                for field in ("receipt_id", "frontier_id", "classification", "occurred_at")
+            },
+            "errors": [reason + "; legacy private acceptance and raw source unavailable"],
+        }
+        ingest_state.setdefault("rejected", {})[ledger_key] = source_sha
+        ingest_state.setdefault("rejected_details", {})[ledger_key] = rejection_detail(
+            inspection, reason
+        )
+        path.unlink()
+        revoked.append({
+            "run_file": filename,
+            "reason": reason,
+            "removed_receipts": [path.name],
+        })
     return revoked
 
 
