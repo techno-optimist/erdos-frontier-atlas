@@ -257,10 +257,51 @@ def consult(question: str, state_path: Path, config: dict) -> str:
     answer = result["choices"][0]["message"].get("content") or result["choices"][0]["message"].get("reasoning_content")
     if not answer: raise RuntimeError("frontier router returned no content")
     state = load_json(state_path) if state_path.exists() else {"calls": []}
-    state.setdefault("calls", []).append({"at": iso(), "gate_receipts": gate["receipts_considered"], "question_sha256": sha(question.encode()), "answer_sha256": sha(answer.encode())})
+    created_at = iso()
+    digest = "sha256:" + sha(answer.encode())
+    state.setdefault("calls", []).append({"at": created_at, "gate_receipts": gate["receipts_considered"], "question_sha256": sha(question.encode()), "answer_sha256": digest.split(":", 1)[1]})
     state["calls"] = state["calls"][-100:]
+    state["pending_advice"] = {
+        "advice": answer,
+        "advice_digest": digest,
+        "created_at": created_at,
+        "gate_receipts": gate["receipts_considered"],
+        "delivery_count": 1,
+    }
     atomic_json(state_path, state)
+    state_path.chmod(0o600)
     return answer
+
+
+def take_pending_advice(state_path: Path) -> dict:
+    """Deliver private advice until a public receipt proves it was executed."""
+    state = load_json(state_path) if state_path.exists() else {"calls": []}
+    pending = state.get("pending_advice")
+    if not pending:
+        return {"strategy_advice": None, "strategy_status": "none"}
+    digest = pending.get("advice_digest")
+    traces = [load_json(path).get("frontier_consult") for path in receipt_files()]
+    traces = [row for row in traces if row and row.get("advice_digest") == digest]
+    if any(row.get("executed") is True for row in traces):
+        state["last_consumed_advice"] = {
+            "advice_digest": digest,
+            "consumed_at": iso(),
+            "outcome": next(row["outcome"] for row in reversed(traces) if row.get("executed") is True),
+        }
+        state.pop("pending_advice", None)
+        atomic_json(state_path, state)
+        state_path.chmod(0o600)
+        return {"strategy_advice": None, "strategy_status": "consumed", "strategy_digest": digest}
+    pending["delivery_count"] = int(pending.get("delivery_count", 0)) + 1
+    pending["last_delivered_at"] = iso()
+    atomic_json(state_path, state)
+    state_path.chmod(0o600)
+    return {
+        "strategy_advice": pending["advice"],
+        "strategy_status": "pending",
+        "strategy_digest": digest,
+        "delivery_count": pending["delivery_count"],
+    }
 
 
 def run(cmd: list[str], check: bool = True) -> subprocess.CompletedProcess:
@@ -315,6 +356,7 @@ def main() -> int:
     p = sub.add_parser("ingest"); p.add_argument("source", type=Path); p.add_argument("--job-id", required=True)
     p = sub.add_parser("gate"); p.add_argument("--state", type=Path, required=True)
     p = sub.add_parser("consult"); p.add_argument("question"); p.add_argument("--state", type=Path, required=True)
+    p = sub.add_parser("pending"); p.add_argument("--state", type=Path, required=True)
     sub.add_parser("validate")
     p = sub.add_parser("publish"); p.add_argument("--branch")
     args = parser.parse_args()
@@ -323,6 +365,7 @@ def main() -> int:
         path, created = ingest(args.source, args.job_id, config.get("source_timezone", "America/Denver")); print(json.dumps({"path": str(path), "created": created}))
     elif args.command == "gate": print(json.dumps(stall_gate(args.state, config), indent=2))
     elif args.command == "consult": print(consult(args.question, args.state, config))
+    elif args.command == "pending": print(json.dumps(take_pending_advice(args.state), ensure_ascii=False, indent=2))
     elif args.command == "validate": validate()
     elif args.command == "publish": publish(args.branch or config["publication_branch"])
     return 0

@@ -1,5 +1,6 @@
 import importlib.util
 import io
+import json
 import tempfile
 import unittest
 from contextlib import redirect_stdout
@@ -99,6 +100,32 @@ class FoundryTests(unittest.TestCase):
             receipt = foundry.build_receipt(path, "50c8e4391849")
             self.assertEqual(receipt["frontier_consult"], {"advice_digest": digest, "executed": True, "outcome": "kill-test rejected route A"})
             self.assertEqual(foundry.validate_receipt(receipt), [])
+
+    def test_pending_advice_replays_then_retires_on_executed_receipt(self):
+        digest = "sha256:" + "b" * 64
+        with tempfile.TemporaryDirectory() as tmp:
+            state_path = Path(tmp) / "state.json"
+            state_path.write_text(json.dumps({
+                "calls": [],
+                "pending_advice": {
+                    "advice": "Try the bounded parity kill-test.",
+                    "advice_digest": digest,
+                    "created_at": "2026-07-15T00:00:00Z",
+                    "gate_receipts": [],
+                    "delivery_count": 0,
+                },
+            }))
+            first = foundry.take_pending_advice(state_path)
+            self.assertEqual(first["strategy_status"], "pending")
+            self.assertEqual(first["delivery_count"], 1)
+            receipt_path = Path(tmp) / "receipt.json"
+            receipt_path.write_text(json.dumps({
+                "frontier_consult": {"advice_digest": digest, "executed": True, "outcome": "route rejected"},
+            }))
+            with mock.patch.object(foundry, "receipt_files", return_value=[receipt_path]):
+                second = foundry.take_pending_advice(state_path)
+            self.assertEqual(second["strategy_status"], "consumed")
+            self.assertNotIn("pending_advice", json.loads(state_path.read_text()))
 
 
 if __name__ == "__main__":
