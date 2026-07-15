@@ -30,6 +30,7 @@ starts from a map instead of a blank page.
 | [`atlas/walls.md`](atlas/walls.md) | **the do-not-enter list** — 24 computational-looking dead ends, with the specific reason and source for each |
 | [`atlas/lanes.md`](atlas/lanes.md) | the 4 shared solver lanes (SAT+DRAT nonexistence · exact backtracking · witness local search · LP/SDP certificates) and which problems each covers |
 | [`views/board_catalog.md`](views/board_catalog.md) | human table of the 13 READY + 14 HEAVY boards with frontiers |
+| [`progress/`](progress) | append-only provisional receipts from the recursive 35B Foundry loop; never canonical theorem claims |
 | [`tools/atlas2p42.py`](tools/atlas2p42.py) | compiler: atlas entry → P42 bounty-board skeleton (problem.yaml, SPEC, solution schema, verifier stub, hostile-fixture tests) |
 | [`tools/build_problems.py`](tools/build_problems.py) | destructive archive-only bootstrap from the original audits; not the release snapshot generator |
 | [`certificates/erdos-552`](certificates/erdos-552) | exact graph witnesses and a dependency-free verifier closing A006672 terms n=12…16 and proving a(17) >= 22 |
@@ -39,6 +40,12 @@ Install the pinned release-check dependency with
 run `python3 tools/validate_atlas.py`. The check
 locks the release counts and rejects known stale routing facts, duplicate IDs,
 display-field HTML entities, and drift between the JSON and generated views.
+
+The autonomous research edge has its own fail-closed check:
+`python3 tools/foundry.py validate`. CHRONOS may append schema-valid provisional
+receipts to the `automation/frontier-scout` branch, but the publisher stages
+only `progress/`; promotion into this release snapshot still requires exact
+evidence and review.
 
 The newest certified movement is Erdős #552: five C₄-free graph witnesses meet
 Parsons' upper bound and establish `R(C4,K1,n) = n + ceil(sqrt(n)) + 1` for
