@@ -23,6 +23,7 @@ MODEL_SOCKET = Path(os.environ.get("FOUNDRY_MODEL_SOCKET", "/model/model.sock"))
 MODEL = os.environ.get("FOUNDRY_MODEL", "evaluator-forced-local-model")
 MAX_TOOL_OUTPUT = 24_000
 SUBMISSION_RESERVE_CALLS = 2
+MAX_SUBMISSION_REPLAYS = 8
 
 
 TOOLS = [
@@ -238,6 +239,76 @@ def _finalize_artifacts(claimed: object) -> list[str]:
     return sorted(keep)
 
 
+def _preflight_replays(replay: object, final_paths: list[str]) -> None:
+    """Give the candidate correction feedback before evaluator-owned replay."""
+    if not isinstance(replay, list) or len(replay) > MAX_SUBMISSION_REPLAYS:
+        raise ValueError("replay must be an array of at most eight steps")
+    python_paths = {path for path in final_paths if Path(path).suffix == ".py"}
+    replayed = set()
+    normalized = []
+    for step in replay:
+        if not isinstance(step, dict):
+            raise ValueError("each replay step must be an argv object")
+        argv = step.get("argv")
+        if not isinstance(argv, list) or len(argv) < 2 or not all(
+            isinstance(value, str) and value for value in argv
+        ):
+            raise ValueError("replay argv must contain an executable and artifact")
+        if argv[0] not in {"python", "python3", "/usr/local/bin/python3"}:
+            raise ValueError("replay executable must be the frozen Python runtime")
+        script = argv[1]
+        script = script.removeprefix("/output/artifacts/").removeprefix("/artifacts/")
+        script = script.removeprefix("artifacts/")
+        script_path = Path(script)
+        if (
+            script_path.is_absolute()
+            or ".." in script_path.parts
+            or script_path.suffix != ".py"
+            or script_path.as_posix() not in python_paths
+        ):
+            raise ValueError(f"replay script is not a final Python artifact: {argv[1]}")
+        try:
+            timeout = int(step.get("timeout_seconds", 180))
+            expected = int(step.get("expected_exit", 0))
+        except (TypeError, ValueError) as exc:
+            raise ValueError("replay timeout/exit must be integers") from exc
+        if timeout < 1 or timeout > 180 or expected != 0:
+            raise ValueError("replay requires timeout 1..180 and expected exit zero")
+        replayed.add(script_path.as_posix())
+        normalized.append((script_path, argv[2:], timeout))
+    missing = sorted(python_paths - replayed)
+    if missing:
+        raise ValueError(
+            "every final Python artifact requires replay: " + ", ".join(missing)
+        )
+    work = OUTPUT / "work"
+    work.mkdir(parents=True, exist_ok=True)
+    for script_path, args, timeout in normalized:
+        try:
+            proc = subprocess.run(
+                ["python3", str(OUTPUT / "artifacts" / script_path), *args],
+                cwd=work,
+                env={
+                    "PATH": os.environ.get("PATH", ""),
+                    "HOME": "/tmp",
+                    "PYTHONDONTWRITEBYTECODE": "1",
+                },
+                text=True,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.STDOUT,
+                timeout=timeout,
+            )
+        except subprocess.TimeoutExpired as exc:
+            raise ValueError(
+                f"candidate replay preflight timed out for {script_path}"
+            ) from exc
+        if proc.returncode != 0:
+            raise ValueError(
+                f"candidate replay preflight failed for {script_path}: "
+                + proc.stdout[-1000:]
+            )
+
+
 def unix_chat(payload: dict, socket_path: Path = MODEL_SOCKET) -> dict:
     body = json.dumps(payload, ensure_ascii=False, separators=(",", ":")).encode()
     request = (
@@ -324,6 +395,9 @@ def execute_tool(name: str, args: dict) -> str:
             )
             result["artifacts_claimed"] = _finalize_artifacts(
                 result.pop("artifacts")
+            )
+            _preflight_replays(
+                result.get("replay"), result["artifacts_claimed"]
             )
             result["artifacts"] = _artifact_inventory()
             result["independent_replay_status"] = "pending"
