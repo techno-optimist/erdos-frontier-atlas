@@ -23,6 +23,23 @@ class FoundryTickTests(unittest.TestCase):
         self.assertFalse(foundry_tick.source_is_watermarked(state, "job/run.md", "new"))
         self.assertFalse(foundry_tick.source_is_watermarked(state, "job/unseen.md", "new"))
 
+    def test_rejection_detail_is_bounded_structured_feedback(self):
+        inspection = {
+            "source_sha256": "a" * 64,
+            "receipt": {
+                "receipt_id": "sha256:" + "b" * 64,
+                "frontier_id": "erdos_1029_r55",
+                "classification": "negative_result",
+                "occurred_at": "2026-07-15T07:27:23Z",
+            },
+            "errors": ["semantic contract quantity-conflation claim: cyclic exhausted"],
+        }
+        detail = foundry_tick.rejection_detail(inspection, "fallback")
+        self.assertEqual(detail["schema"], "p42-foundry-quarantine-feedback-v1")
+        self.assertEqual(detail["frontier_id"], "erdos_1029_r55")
+        self.assertEqual(detail["source_sha256"], "a" * 64)
+        self.assertNotIn("run_file", detail)
+
 
 if __name__ == "__main__":
     unittest.main()

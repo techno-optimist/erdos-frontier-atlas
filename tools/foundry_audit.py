@@ -67,6 +67,22 @@ def publication_quarantines_consistent(receipts: list[dict], incidents: list[dic
     )
 
 
+def structured_quarantine_feedback_consistent(ingest_state: dict) -> bool:
+    rejected = ingest_state.get("rejected", {})
+    details = ingest_state.get("rejected_details", {})
+    if not rejected:
+        return False
+    return all(
+        isinstance(details.get(key), dict)
+        and details[key].get("schema") == "p42-foundry-quarantine-feedback-v1"
+        and details[key].get("source_sha256") == source_sha
+        and isinstance(details[key].get("errors"), list)
+        and bool(details[key]["errors"])
+        and key not in ingest_state.get("accepted", {})
+        for key, source_sha in rejected.items()
+    )
+
+
 def private_holdout_committed(manifest_path: Path, commitment_path: Path) -> bool:
     try:
         manifest = json.loads(manifest_path.read_text())
@@ -253,6 +269,7 @@ def main() -> int:
         "foundry_and_atlas_validation": validate.returncode == 0,
         "semantic_target_contracts_active": bool(config.get("semantic_contracts")),
         "publication_quarantines_consistent": publication_quarantines_consistent(receipts, incidents, ingest_state),
+        "structured_quarantine_feedback_consistent": structured_quarantine_feedback_consistent(ingest_state),
         "automation_branch_current": bool(remote_head) and local_head == remote_head,
         "installed_runtime_matches_repo": all(row["source"] == row["installed"] for row in runtime_hashes.values()),
         "frontier_call_incidents_acknowledged": bool(calls) and all(row["certified_stall"] or row["incident_acknowledged"] for row in call_evidence),
@@ -288,6 +305,7 @@ def main() -> int:
             "receipt_count": len(receipts), "traced_consults": len(traced), "executed_consults": len(executed),
             "publication_incidents": len([row for row in incidents if row.get("schema") == "p42-foundry-publication-incident-v1"]),
             "private_rejected_sources": len(ingest_state.get("rejected", {})),
+            "structured_quarantine_feedback": len(ingest_state.get("rejected_details", {})),
             "frontier_calls": len(calls), "call_evidence": call_evidence, "valid_frontier_calls": len(valid_calls),
             "lane_aligned_executions": len(aligned_executions), "daily_call_counts": daily_counts,
             "tool_smoke": tool_evidence, "local_head": local_head, "remote_head": remote_head,
