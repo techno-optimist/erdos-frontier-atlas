@@ -107,6 +107,11 @@ Per-frontier `semantic_contracts` in `foundry/config.json` pin the exact target
 quantity. Prep exposes the contract to the researcher, and publication fails
 closed if evidence addresses a related but easier quantity or repeats a known
 conflation claim. Rejected raw runs are hash-quarantined in private ingest state.
+The publisher also stores a bounded structured rejection record keyed by the
+immutable source hash. On the next visit to that exact frontier, prep exposes
+only its errors and remediation as `foundry.quarantine_feedback`, requiring the
+35B to replay the evidence and narrow the claim. The membrane never rewrites or
+silently salvages a rejected receipt.
 
 The consultation gate, router call, and private-state commit are one
 cross-process locked transaction. Concurrent scout/night attempts serialize;

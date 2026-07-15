@@ -53,6 +53,28 @@ class FoundryTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             foundry.parse_sections("**Frontier**\nOnly one field")
 
+    def test_inspection_returns_structured_semantic_rejection_without_writing(self):
+        sample = (
+            '{"frontier_id":"erdos_1029_r55"}\n'
+            + SAMPLE.replace(
+                "Ran one bounded exact check.",
+                "Ran a K5 and independent-set verifier over 4,000 random samples.",
+            ).replace(
+                "No changed condition; prior verdict holds.",
+                "The circulant approach is exhausted and infeasible.",
+            )
+        )
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "run.md"
+            path.write_text(sample)
+            result = foundry.inspect_source(
+                path, "50c8e4391849",
+                json.loads((ROOT / "foundry" / "config.json").read_text()),
+            )
+        self.assertFalse(result["valid"])
+        self.assertEqual(result["receipt"]["frontier_id"], "erdos_1029_r55")
+        self.assertTrue(any("quantity-conflation" in row for row in result["errors"]))
+
     def test_system_postamble_is_outside_six_field_membrane(self):
         sample = SAMPLE + "\n---\n\nObservation outside receipt.\n⚠️ File-mutation verifier: /home/private/path\n"
         sections = foundry.parse_sections(sample)

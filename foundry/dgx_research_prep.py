@@ -16,6 +16,7 @@ LIMIT = "4" if MODE == "deep" else "3"
 FOCUS_LIMIT = "12" if MODE == "deep" else "8"
 BUDGET = STATE / "foundry_frontier_budget.json"
 CONFIG = REPO / "foundry" / "config.json"
+INGEST_STATE = STATE / "foundry_ingest_state.json"
 
 
 def call(cmd: list[str]) -> subprocess.CompletedProcess:
@@ -34,6 +35,28 @@ def first_allowed_stall(ranked: list[dict], gate_lookup) -> tuple[str | None, di
 def worker_instruction(original: str) -> str:
     original = original.replace("Load context_packet.md, ", "")
     return "Read focused_context.md first. Load context_packet.md only if the focused evidence cannot support the registered falsifier; record why broader context was needed. " + original
+
+
+def latest_quarantine_feedback(state_path: Path, frontier_id: str) -> dict | None:
+    try:
+        state = json.loads(state_path.read_text())
+    except (OSError, ValueError):
+        return None
+    rows = [
+        row for row in state.get("rejected_details", {}).values()
+        if row.get("schema") == "p42-foundry-quarantine-feedback-v1"
+        and row.get("frontier_id") == frontier_id
+        and row.get("errors")
+    ]
+    if not rows:
+        return None
+    row = sorted(rows, key=lambda value: (value.get("occurred_at") or "", value.get("recorded_at") or ""))[-1]
+    return {
+        key: row.get(key) for key in (
+            "schema", "recorded_at", "source_sha256", "receipt_id", "frontier_id",
+            "classification", "occurred_at", "errors", "remediation",
+        )
+    }
 
 
 def main() -> int:
@@ -115,6 +138,9 @@ def main() -> int:
     try: pending = json.loads(pending_proc.stdout)
     except Exception: pending = {"strategy_advice": None, "strategy_status": "pending_unavailable"}
     foundry = {"gate": gate, **pending}
+    foundry["quarantine_feedback"] = latest_quarantine_feedback(
+        INGEST_STATE, selected_frontier_id
+    )
     if not foundry.get("strategy_advice") and gate.get("frontier_call_allowed"):
         question = "\n".join([
             "Verifier-first mathematics strategy consultation.",
@@ -141,6 +167,8 @@ def main() -> int:
     contract = json.loads(CONFIG.read_text()).get("semantic_contracts", {}).get(selected_frontier_id)
     summary["foundry"]["target_contract"] = contract
     summary["next_instruction"] = worker_instruction(summary["next_instruction"]) + " Preserve the exact target quantity in foundry.target_contract; a related theorem or easier quantity is not evidence. Treat foundry.strategy_advice as provisional; execute and verify its smallest test when present. If advice is present, the Verified field must contain exactly: Frontier advice: <foundry.strategy_digest>; executed=yes|no; outcome=<public-safe result>."
+    if foundry["quarantine_feedback"]:
+        summary["next_instruction"] += " A prior receipt for this exact frontier was quarantined. Treat foundry.quarantine_feedback as a hard failed-publication counterexample: do not repeat or paraphrase the forbidden claim. Replay the bounded evidence before issuing a corrected receipt, state the smaller supported claim, and never imply the quarantined receipt was published."
     print(json.dumps(summary, ensure_ascii=False, indent=2))
     return 0
 
