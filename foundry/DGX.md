@@ -5,7 +5,8 @@ The DGX is the only runtime tier. The Mac checkout is for code and review.
 ## Control law
 
 - Research agent: the SGLang Qwen 35B endpoint at `127.0.0.1:30000`.
-- Cadence: reuse the existing `chronos-frontier-scout` and night-shift jobs.
+- Cadence: the optimized local-35B `chronos-frontier-scout` runs every 30
+  minutes; the night shift remains the deeper daily pass.
 - Truth surfaces: production Atlas databases are opened read-only by the
   existing context builder.
 - Public state: `tools/foundry_tick.py` ingests labelled final receipts and
