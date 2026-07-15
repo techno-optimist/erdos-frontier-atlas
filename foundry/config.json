@@ -2,6 +2,7 @@
   "schema": "p42-foundry-config-v1",
   "source_job_ids": ["50c8e4391849", "e97056701b6d"],
   "source_timezone": "America/Denver",
+  "scout_interval_minutes": 30,
   "stall_window": 3,
   "stall_threshold": 2,
   "frontier_calls_per_utc_day": 2,
