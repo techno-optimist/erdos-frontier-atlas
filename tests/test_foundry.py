@@ -100,6 +100,31 @@ class FoundryTests(unittest.TestCase):
         self.assertTrue(any("missing target-quantity evidence" in error for error in errors))
         self.assertTrue(any("quantity-conflation" in error for error in errors))
 
+    def test_semantic_contract_scans_verified_claims_for_substitution(self):
+        receipt = {
+            "frontier_id": "arena_scorer_hardening",
+            "occurred_at": "2026-07-15T06:41:36Z",
+            "frontier": "Are live scorers aligned?",
+            "action": "Executed verifier parity and PNT liveness checks.",
+            "verified": "Zero difference on all 4 reachable problems.",
+            "result": "Negative-result closure.",
+            "next_gate": "Rotate.",
+        }
+        config = {
+            "semantic_contracts": {
+                "arena_scorer_hardening": {
+                    "effective_after": "2026-07-15T06:30:00Z",
+                    "target_quantity": "exact numerical comparison versus liveness",
+                    "required_evidence_any": ["verifier parity", "pnt"],
+                    "forbidden_claim_patterns": [
+                        "zero (difference|diff).{0,80}all (4|four)"
+                    ],
+                }
+            }
+        }
+        errors = foundry.semantic_contract_errors(receipt, config)
+        self.assertTrue(any("quantity-conflation" in error for error in errors))
+
     def test_semantic_contract_accepts_exact_target_evidence(self):
         receipt = {
             "frontier_id": "fm_stretched_lr", "occurred_at": "2026-07-15T05:00:00Z",

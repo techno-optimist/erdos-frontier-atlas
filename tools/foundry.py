@@ -193,7 +193,12 @@ def semantic_contract_errors(r: dict, config: dict) -> list[str]:
     if not contract or str(r.get("occurred_at", "")) < str(contract.get("effective_after", "")):
         return []
     evidence = " ".join(str(r.get(key, "")) for key in ("action", "verified")).lower()
-    claims = " ".join(str(r.get(key, "")) for key in ("frontier", "result", "next_gate")).lower()
+    # A quantity substitution in an evidence bullet is still a public claim.
+    # Scan the full claim-bearing membrane, not only Result and Next gate.
+    claims = " ".join(
+        str(r.get(key, ""))
+        for key in ("frontier", "action", "verified", "result", "next_gate")
+    ).lower()
     errors = []
     required = [phrase.lower() for phrase in contract.get("required_evidence_any", [])]
     if required and not any(phrase in evidence for phrase in required):
