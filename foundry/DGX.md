@@ -95,8 +95,13 @@ operational audit requires it to be fresh and explicitly authority-free.
 `tools/foundry_eval.py` owns the salt-keyed private-suite commitment, one-task
 packetization, and Docker isolation smoke. Candidate containers receive no
 private manifest, host home, Docker socket, capability, or network. This is a
-prerequisite boundary, not promotion evidence; the model-only transport and
-independent artifact adjudicator must also pass before held-out scores count.
+prerequisite boundary, not promotion evidence. Its model-only runner mounts an
+evaluator-owned Unix-domain socket into the otherwise networkless container;
+the host membrane forwards only chat completions to loopback, forces the frozen
+Qwen model, and owns all token/API accounting. Run `model-transport-smoke`
+before a candidate batch and store its mode-0600 report in evaluator state.
+The independent artifact adjudicator must still pass before held-out scores
+count.
 
 Per-frontier `semantic_contracts` in `foundry/config.json` pin the exact target
 quantity. Prep exposes the contract to the researcher, and publication fails

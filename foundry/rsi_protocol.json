@@ -39,7 +39,8 @@
       "isolation_gate": "OS- or container-enforced evaluator isolation is required before held-out results can authorize promotion. Same-user path secrecy is insufficient.",
       "isolation_controller": "tools/foundry_eval.py",
       "isolation_runtime": "Docker read-only root, all capabilities dropped, no-new-privileges, no Docker socket, private manifest never mounted",
-      "model_transport_gate": "The full candidate runner must retain the filesystem boundary while exposing only the local Qwen model transport; sandbox-smoke alone does not authorize held-out scoring."
+      "model_transport_controller": "model-transport-smoke and candidate-run expose only an evaluator-owned Unix-domain chat-completions membrane to the no-network container; the membrane forces the frozen local model and enforces API/input/output budgets.",
+      "model_transport_gate": "A fresh successful model-only smoke is required before held-out execution. Transport isolation alone does not authorize scoring or promotion; candidate artifacts still require independent replay."
     }
   },
   "adjudication": {

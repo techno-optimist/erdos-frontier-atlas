@@ -59,9 +59,14 @@ publishes only its SHA-256 commitment at
 `foundry/eval/private_suite.commitment.json`. Its Docker smoke boundary uses a
 read-only root filesystem, no network, no capabilities, no Docker socket, and
 mounts exactly one task packet plus an output directory; the private manifest
-is never mounted. The full model runner still needs a model-only transport
-through this boundary. Until that transport passes the same smoke, held-out
-scoring remains disabled.
+is never mounted. `model-transport-smoke` and `candidate-run` retain that
+boundary while mounting one evaluator-owned Unix-domain socket. The container
+has no TCP network, host address, credentials, Docker socket, or private
+manifest; the host membrane forwards only `/v1/chat/completions` to loopback,
+forces the frozen Qwen model, disables streaming, and enforces API/input/output
+budgets. A passing transport smoke is necessary but not sufficient: candidate
+artifacts still have zero utility until the independent replay adjudicator
+accepts them.
 
 ## Reward boundary
 

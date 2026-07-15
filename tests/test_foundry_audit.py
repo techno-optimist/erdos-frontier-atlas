@@ -3,6 +3,7 @@ import hashlib
 import json
 import tempfile
 import unittest
+from datetime import datetime, timezone
 from pathlib import Path
 
 SPEC = importlib.util.spec_from_file_location("foundry_audit", Path(__file__).parents[1] / "tools" / "foundry_audit.py")
@@ -45,6 +46,30 @@ class AuditTests(unittest.TestCase):
             commitment["problem_ids"] = [7]
             commitment_path.write_text(json.dumps(commitment))
             self.assertFalse(audit.private_holdout_committed(manifest_path, commitment_path))
+
+    def test_model_transport_report_proves_unix_only_boundary(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "model_transport.json"
+            report = {
+                "schema": "p42-foundry-model-transport-v1",
+                "created_at": "2026-07-15T07:00:00Z",
+                "ok": True,
+                "mode": "smoke",
+                "candidate_network": "none",
+                "model_transport": "mounted_unix_socket_only",
+                "model_upstream": "evaluator_loopback_only",
+                "model_upstream_host": "127.0.0.1",
+                "model_upstream_port": 30000,
+                "private_manifest_mounted": False,
+                "docker_socket_mounted": False,
+                "budget": {"budget_ok": True},
+                "promotion_authority": "none_pending_independent_replay",
+            }
+            path.write_text(json.dumps(report)); path.chmod(0o600)
+            cutoff = datetime(2026, 7, 15, 6, 0, tzinfo=timezone.utc)
+            self.assertTrue(audit.model_transport_verified(report, path, cutoff))
+            report["candidate_network"] = "bridge"
+            self.assertFalse(audit.model_transport_verified(report, path, cutoff))
 
     def test_repeated_terminal_route_is_certified_stall(self):
         self.assertTrue(audit.certified_stall([row("negative_result"), row("blocked")], 2))

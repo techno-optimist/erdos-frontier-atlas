@@ -86,6 +86,85 @@ class FoundryEvalTests(unittest.TestCase):
             self.assertNotIn("docker.sock", " ".join(arg for arg in command if "--mount" in arg))
             self.assertNotIn("private_suite", joined)
 
+    def test_model_proxy_forces_local_model_and_enforces_budget(self):
+        state = evaluation.ModelProxyState({
+            "max_api_calls": 1,
+            "max_input_tokens": 20_000,
+            "max_output_tokens": 10,
+        }, "/models/frozen-qwen")
+        prepared, reservation = state.prepare({
+            "model": "candidate-selected-model",
+            "messages": [{"role": "user", "content": "probe"}],
+            "stream": True,
+            "max_tokens": 99,
+        }, 100)
+        self.assertEqual(prepared["model"], "/models/frozen-qwen")
+        self.assertFalse(prepared["stream"])
+        self.assertEqual(prepared["max_tokens"], 10)
+        self.assertEqual(prepared["n"], 1)
+        self.assertEqual(prepared["chat_template_kwargs"], {"enable_thinking": False})
+        state.record({"usage": {"prompt_tokens": 5, "completion_tokens": 7}}, reservation)
+        self.assertTrue(state.report()["budget_ok"])
+        with self.assertRaises(evaluation.BudgetRejected):
+            state.prepare({"messages": []}, 10)
+
+    def test_candidate_sandbox_has_only_unix_model_transport(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            workspace = root / "workspace"
+            task = root / "task.json"
+            output = root / "output"
+            socket_dir = root / "socket"
+            workspace.mkdir(); output.mkdir(); socket_dir.mkdir(); task.write_text("{}")
+            command = evaluation.candidate_sandbox_command(
+                "sha256:" + "1" * 64,
+                workspace,
+                task,
+                output,
+                socket_dir,
+                "/models/frozen-qwen",
+            )
+            joined = " ".join(command)
+            self.assertIn("--network none", joined)
+            self.assertIn("dst=/model,readonly", joined)
+            self.assertIn("FOUNDRY_MODEL_SOCKET=/model/model.sock", joined)
+            self.assertNotIn("127.0.0.1", joined)
+            self.assertNotIn("http://", joined)
+            self.assertNotIn("docker.sock", joined)
+            self.assertNotIn("private_suite", joined)
+            self.assertIn("--entrypoint /usr/local/bin/python3", joined)
+
+    def test_concurrent_requests_cannot_oversubscribe_output_budget(self):
+        state = evaluation.ModelProxyState({
+            "max_api_calls": 2,
+            "max_input_tokens": 40_000,
+            "max_output_tokens": 10,
+        }, "/models/frozen-qwen")
+        _, reservation = state.prepare({"messages": [], "max_tokens": 10}, 10)
+        with self.assertRaises(evaluation.BudgetRejected):
+            state.prepare({"messages": [], "max_tokens": 1}, 10)
+        state.record({"usage": {"prompt_tokens": 2, "completion_tokens": 5}}, reservation)
+        second, second_reservation = state.prepare({"messages": [], "max_tokens": 10}, 10)
+        self.assertEqual(second["max_tokens"], 5)
+        state.record_upstream_error(second_reservation)
+        self.assertFalse(state.report()["budget_ok"])
+
+    def test_model_sandbox_rejects_mutated_task_budget_before_docker(self):
+        packet = evaluation.make_task_packet(
+            self.public["tasks"][0], self.atlas, self.protocol, 11
+        )
+        packet["budget"]["max_api_calls"] += 1
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            task = root / "task.json"
+            output = root / "output"
+            private = root / "private.json"
+            task.write_text(json.dumps(packet)); private.write_text("{}")
+            with self.assertRaisesRegex(ValueError, "frozen evaluation budget"):
+                evaluation.run_model_sandbox(
+                    "missing-image", ROOT, task, output, private, smoke=True
+                )
+
 
 if __name__ == "__main__":
     unittest.main()
