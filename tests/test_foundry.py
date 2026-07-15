@@ -1,7 +1,11 @@
 import importlib.util
+import io
 import tempfile
 import unittest
+from contextlib import redirect_stdout
 from pathlib import Path
+from types import SimpleNamespace
+from unittest import mock
 
 
 SPEC = importlib.util.spec_from_file_location("foundry", Path(__file__).parents[1] / "tools" / "foundry.py")
@@ -70,6 +74,18 @@ class FoundryTests(unittest.TestCase):
         sections = foundry.parse_sections(text)
         self.assertEqual(sections["Frontier"], "`fm_hadamard_668`")
         self.assertIn("9/10 pass", sections["Verified"])
+
+    def test_publish_retries_a_committed_but_unpushed_head(self):
+        calls = []
+        def fake_run(cmd, check=True):
+            calls.append(cmd)
+            if cmd[:3] == ["git", "status", "--short"]: return SimpleNamespace(stdout="")
+            if cmd[:2] == ["git", "rev-parse"]: return SimpleNamespace(stdout="local-head\n")
+            if cmd[:2] == ["git", "ls-remote"]: return SimpleNamespace(stdout="remote-head\trefs/heads/automation/frontier-scout\n")
+            return SimpleNamespace(stdout="")
+        with mock.patch.object(foundry, "validate"), mock.patch.object(foundry, "run", side_effect=fake_run):
+            with redirect_stdout(io.StringIO()): foundry.publish("automation/frontier-scout")
+        self.assertIn(["git", "push", "origin", "HEAD:automation/frontier-scout"], calls)
 
 
 if __name__ == "__main__":

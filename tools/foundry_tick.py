@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import argparse
+import fcntl
 import hashlib
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -18,6 +20,14 @@ def main() -> int:
     ap.add_argument("--ingest-state", type=Path, default=Path.home() / ".hermes" / "chronos_state" / "foundry_ingest_state.json")
     ap.add_argument("--no-push", action="store_true")
     args = ap.parse_args()
+    lock_path = args.state.with_name("foundry_tick.lock")
+    lock_path.parent.mkdir(parents=True, exist_ok=True)
+    lock_handle = lock_path.open("a+")
+    try:
+        fcntl.flock(lock_handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except BlockingIOError:
+        print(json.dumps({"skipped": True, "reason": "another Foundry tick holds the publication lock"}))
+        return 0
     config = json.loads((args.repo / "foundry" / "config.json").read_text())
     tool = args.repo / "tools" / "foundry.py"
     created = []
@@ -36,14 +46,19 @@ def main() -> int:
                 rejected.append({"run_file": source.name, "reason": proc.stderr.strip().splitlines()[-1][:240] if proc.stderr.strip() else "ingest failed"})
                 ingest_state.setdefault("rejected", {})[f"{job_id}/{source.name}"] = source_sha
     args.ingest_state.parent.mkdir(parents=True, exist_ok=True)
-    args.ingest_state.write_text(json.dumps(ingest_state, indent=2) + "\n")
+    ingest_tmp = args.ingest_state.with_suffix(args.ingest_state.suffix + ".tmp")
+    ingest_tmp.write_text(json.dumps(ingest_state, indent=2) + "\n")
+    os.replace(ingest_tmp, args.ingest_state)
     gate = subprocess.run([sys.executable, str(tool), "gate", "--state", str(args.state)], cwd=args.repo, text=True, stdout=subprocess.PIPE, check=True)
     gate_path = args.state.with_name("foundry_stall_gate.json")
     gate_path.parent.mkdir(parents=True, exist_ok=True)
     gate_path.write_text(gate.stdout)
-    if created and not args.no_push:
-        subprocess.run([sys.executable, str(tool), "publish"], cwd=args.repo, check=True)
-    print(json.dumps({"ingested": created, "rejected": rejected, "gate": json.loads(gate.stdout), "pushed": bool(created and not args.no_push)}, indent=2))
+    publish_result = {"published": False, "reason": "no-push mode"}
+    if not args.no_push:
+        published = subprocess.run([sys.executable, str(tool), "publish"], cwd=args.repo, text=True, stdout=subprocess.PIPE, check=True)
+        try: publish_result = json.loads(published.stdout.strip().splitlines()[-1])
+        except Exception: publish_result = {"published": False, "reason": "unparseable publisher output"}
+    print(json.dumps({"ingested": created, "rejected": rejected, "gate": json.loads(gate.stdout), "publication": publish_result}, indent=2))
     return 0
 
 
