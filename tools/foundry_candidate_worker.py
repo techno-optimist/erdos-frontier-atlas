@@ -22,6 +22,7 @@ OUTPUT = Path("/output")
 MODEL_SOCKET = Path(os.environ.get("FOUNDRY_MODEL_SOCKET", "/model/model.sock"))
 MODEL = os.environ.get("FOUNDRY_MODEL", "evaluator-forced-local-model")
 MAX_TOOL_OUTPUT = 24_000
+SUBMISSION_RESERVE_CALLS = 2
 
 
 TOOLS = [
@@ -315,18 +316,34 @@ def run_task(task_path: Path) -> int:
         "Use only the bounded theorem_status classes exposed by submit_result. Never infer acceptance "
         "from your own classification. If canonical_artifact_contract is present, write exactly its "
         "artifact_path and satisfy its public schema; only the evaluator-owned verifier can score it. "
-        "Finish with submit_result."
+        "Finish with submit_result. The evaluator reserves the final two API calls for typed "
+        "submission; when that gate appears, stop exploring and submit the strongest bounded "
+        "result supported by the artifacts, including negative_result or blocked when appropriate."
     )
     messages = [
         {"role": "system", "content": system},
         {"role": "user", "content": json.dumps(task, ensure_ascii=False)},
     ]
-    for _ in range(max_calls):
+    submission_start = max(0, max_calls - SUBMISSION_RESERVE_CALLS)
+    for call_index in range(max_calls):
+        submission_phase = call_index >= submission_start
+        if call_index == submission_start:
+            messages.append({
+                "role": "user",
+                "content": (
+                    "SUBMISSION GATE: exploration is over. Use submit_result now. Report a "
+                    "bounded negative_result or blocked outcome if no strict frontier improvement "
+                    "was established; do not spend another call exploring."
+                ),
+            })
         response = unix_chat({
             "model": MODEL,
             "messages": messages,
             "tools": TOOLS,
-            "tool_choice": "auto",
+            "tool_choice": (
+                {"type": "function", "function": {"name": "submit_result"}}
+                if submission_phase else "auto"
+            ),
             "temperature": 0.1,
             "seed": int(task["seed"]),
             "max_tokens": 4096,

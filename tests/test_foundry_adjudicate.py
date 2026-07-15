@@ -209,6 +209,8 @@ class FoundryAdjudicationTests(unittest.TestCase):
             "task_packet_sha256": "sha256:" + task.zfill(64)[-64:],
             "verified_utility_units": utility,
             "hard_constraint_violations": violations or [],
+            "ok": True,
+            "artifact_replay_ok": True,
             "fixed_budget": {"model": "frozen", "limits": {"api_calls": 24}},
             "canonical_verifier": ({
                 "verdict": "accepted",
@@ -247,6 +249,18 @@ class FoundryAdjudicationTests(unittest.TestCase):
             adjudication.compare_paired(
                 baseline, candidate[:-1], protocol, "frozen", "candidate"
             )
+
+    def test_nonoperational_replay_cannot_promote_or_satisfy_pair_gate(self):
+        protocol = json.loads((ROOT / "foundry" / "rsi_protocol.json").read_text())
+        baseline = [self.report("private", str(i), i, 0) for i in range(24)]
+        candidate = [self.report("private", str(i), i, 1) for i in range(24)]
+        candidate[0]["artifact_replay_ok"] = False
+        candidate[0]["ok"] = False
+        report = adjudication.compare_paired(
+            baseline, candidate, protocol, "frozen", "candidate"
+        )
+        self.assertFalse(report["all_replays_operational"])
+        self.assertFalse(report["promotion_eligible"])
 
     def test_bootstrap_is_deterministic(self):
         first = adjudication.bootstrap_lower_bound([1, 0, 1, 1], seed=9)

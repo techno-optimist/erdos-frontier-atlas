@@ -622,6 +622,12 @@ def compare_paired(
                 "candidate_hard_constraints_ok": not bool(
                     right.get("hard_constraint_violations")
                 ),
+                "baseline_replay_operational": bool(
+                    left.get("ok") is True and left.get("artifact_replay_ok") is True
+                ),
+                "candidate_replay_operational": bool(
+                    right.get("ok") is True and right.get("artifact_replay_ok") is True
+                ),
             }
         )
     private = [row for row in pairs if row["scope"] == "private"]
@@ -632,6 +638,10 @@ def compare_paired(
     wins = sum(row["delta"] > 0 for row in private)
     public_regression = any(row["delta"] < 0 for row in public)
     hard_constraints_ok = all(row["candidate_hard_constraints_ok"] for row in pairs)
+    all_replays_operational = all(
+        row["baseline_replay_operational"] and row["candidate_replay_operational"]
+        for row in pairs
+    )
     gate = protocol["promotion_gate"]
     promotion_eligible = bool(
         len(private) >= int(gate["minimum_paired_holdout_runs"])
@@ -640,6 +650,7 @@ def compare_paired(
         and lower > float(gate["required_lower_bound_on_mean_utility_delta"])
         and not public_regression
         and hard_constraints_ok
+        and all_replays_operational
     )
     report = {
         "schema": "p42-foundry-paired-evaluation-v1",
@@ -661,6 +672,7 @@ def compare_paired(
         "fixed_budget_evidence_matched": True,
         "public_regression": public_regression,
         "hard_constraints_ok": hard_constraints_ok,
+        "all_replays_operational": all_replays_operational,
         "pairs": pairs,
         "promotion_eligible": promotion_eligible,
         "claim_status": (

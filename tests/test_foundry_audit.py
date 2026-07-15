@@ -111,6 +111,7 @@ class AuditTests(unittest.TestCase):
                 "created_at": "2026-07-15T08:00:00Z",
                 "paired_runs": 1,
                 "fixed_budget_evidence_matched": True,
+                "all_replays_operational": True,
                 "automatic_production_promotion": False,
                 "promotion_authority": "none_human_review_required",
                 "claim_status": "development_evidence_only",
@@ -118,8 +119,38 @@ class AuditTests(unittest.TestCase):
             path.write_text(json.dumps(report)); path.chmod(0o600)
             cutoff = datetime(2026, 7, 15, 7, 0, tzinfo=timezone.utc)
             self.assertTrue(audit.paired_evaluation_verified(report, path, cutoff))
+            report["all_replays_operational"] = False
+            self.assertFalse(audit.paired_evaluation_verified(report, path, cutoff))
+            report["all_replays_operational"] = True
             report["automatic_production_promotion"] = True
             self.assertFalse(audit.paired_evaluation_verified(report, path, cutoff))
+
+    def test_canonical_reward_boundary_requires_zero_self_replay_utility(self):
+        protocol = {
+            "schema": "p42-foundry-adjudication-protocol-v1",
+            "generic_replay_utility_cap": 0,
+            "paired_comparison": {
+                "automatic_production_promotion": False,
+                "human_review_required": True,
+            },
+        }
+        contracts = {
+            "schema": "p42-foundry-canonical-contract-registry-v1",
+            "contracts": {
+                key: {"verifier_id": "v" + key}
+                for key in ("1", "21", "138", "552")
+            },
+        }
+        with tempfile.TemporaryDirectory() as tmp:
+            verifier = Path(tmp) / "verify.py"
+            verifier.write_text("pass\n")
+            self.assertTrue(
+                audit.canonical_reward_boundary_locked(protocol, contracts, verifier)
+            )
+            protocol["generic_replay_utility_cap"] = 1
+            self.assertFalse(
+                audit.canonical_reward_boundary_locked(protocol, contracts, verifier)
+            )
 
     def test_structured_quarantine_feedback_matches_rejected_hash(self):
         state = {

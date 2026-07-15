@@ -67,6 +67,63 @@ class CandidateWorkerTests(unittest.TestCase):
             self.assertEqual(result["artifacts"][0]["path"], "check.py")
             self.assertTrue(result["artifacts"][0]["sha256"].startswith("sha256:"))
 
+    def test_final_calls_are_reserved_for_typed_submission(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            output = root / "output"
+            output.mkdir()
+            task_path = root / "task.json"
+            task = {
+                "evaluation_id": "opaque",
+                "seed": 9,
+                "budget": {"max_api_calls": 3},
+            }
+            task_path.write_text(json.dumps(task))
+            calls = []
+            responses = iter([
+                {"choices": [{"message": {
+                    "role": "assistant",
+                    "tool_calls": [{
+                        "id": "explore",
+                        "function": {"name": "list_files", "arguments": "{}"},
+                    }],
+                }}]},
+                {"choices": [{"message": {
+                    "role": "assistant",
+                    "tool_calls": [{
+                        "id": "submit",
+                        "function": {
+                            "name": "submit_result",
+                            "arguments": json.dumps({
+                                "classification": "negative_result",
+                                "hypothesis": "bounded test",
+                                "falsifier": "replay fails",
+                                "claim": "no strict improvement established",
+                                "evidence": ["bounded exploration ended"],
+                                "artifacts": [],
+                                "replay": [],
+                                "theorem_status": "theorem_unchanged",
+                            }),
+                        },
+                    }],
+                }}]},
+            ])
+
+            def fake_chat(payload):
+                calls.append(payload)
+                return next(responses)
+
+            with mock.patch.object(worker, "OUTPUT", output), mock.patch.object(
+                worker, "TASK_PATH", task_path
+            ), mock.patch.object(worker, "unix_chat", side_effect=fake_chat):
+                self.assertEqual(worker.run_task(task_path), 0)
+            self.assertEqual(calls[0]["tool_choice"], "auto")
+            self.assertEqual(
+                calls[1]["tool_choice"],
+                {"type": "function", "function": {"name": "submit_result"}},
+            )
+            self.assertTrue((output / "result.json").is_file())
+
 
 if __name__ == "__main__":
     unittest.main()
