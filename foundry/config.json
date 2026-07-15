@@ -67,7 +67,12 @@
       "effective_after": "2026-07-15T06:45:00Z",
       "target_quantity": "the n=17,m=22 C4-versus-star cell: either a C4-free graph of minimum degree at least 5 or a replayable nonexistence certificate",
       "required_evidence_any": ["codegree", "minimum degree", "c4-free", "c_4-free"],
-      "forbidden_claim_patterns": ["solver (timeout|unknown).*proves?", "settles? (erdos )?#?552"]
+      "forbidden_claim_patterns": [
+        "solver (timeout|unknown).*proves?",
+        "settles? (erdos )?#?552",
+        "(equivalent|implying).{0,160}r\\(c4,\\s*s(?:₁|_?1)?(?:₇|7)\\)\\s*(?:>=|≥)\\s*22",
+        "c4[- ]free bipartite graph.{0,100}\\(11,\\s*11\\).{0,100}min(?:imum)?[_ -]?degree.{0,20}(?:>=|≥)\\s*5"
+      ]
     },
     "erdos_140_r3_212": {
       "effective_after": "2026-07-15T06:45:00Z",
