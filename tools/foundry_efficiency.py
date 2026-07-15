@@ -9,6 +9,7 @@ adjudication and promotion authority.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
 import subprocess
@@ -35,6 +36,10 @@ TURN_END_RE = re.compile(
     r"api_calls=(?P<used>\d+)/(?P<limit>\d+)"
 )
 FIRST_TURN_RE = re.compile(r"conversation turn:.*\bhistory=0\b")
+TERMINAL_RE = re.compile(
+    r"(?:tool|Tool) terminal (?P<outcome>completed|returned error) "
+    r"\((?P<duration>[0-9.]+)s,"
+)
 
 
 def parse_wall_time(value: str, source_timezone: str) -> datetime:
@@ -81,6 +86,7 @@ def parse_log_lines(
                 "reported_api_calls": None,
                 "api_budget": None,
                 "calls": {},
+                "terminal_calls": {},
                 "closed": False,
             }
             states[session_id] = state
@@ -103,6 +109,18 @@ def parse_log_lines(
                     "latency": float(api.group("latency")),
                 },
             )
+        terminal = TERMINAL_RE.search(message)
+        if terminal:
+            terminal_row = {
+                "at": iso(timestamp),
+                "duration_seconds": float(terminal.group("duration")),
+                "outcome": terminal.group("outcome").replace(" ", "_"),
+            }
+            terminal_key = (
+                terminal_row["at"], terminal_row["duration_seconds"],
+                terminal_row["outcome"],
+            )
+            state["terminal_calls"].setdefault(terminal_key, terminal_row)
         ended = TURN_END_RE.search(message)
         if ended:
             state["ended"] = timestamp
@@ -121,6 +139,13 @@ def parse_log_lines(
         input_tokens = sum(row["input"] for row in calls)
         output_tokens = sum(row["output"] for row in calls)
         total_tokens = sum(row["total"] for row in calls)
+        terminal_calls = [
+            state["terminal_calls"][key]
+            for key in sorted(state["terminal_calls"])
+        ]
+        expensive_terminal_calls = [
+            row for row in terminal_calls if row["duration_seconds"] > 30.0
+        ]
         sessions.append(
             {
                 "session_id": state["session_id"],
@@ -141,6 +166,13 @@ def parse_log_lines(
                 "max_input_tokens": max(row["input"] for row in calls),
                 "context_growth_tokens": calls[-1]["input"] - calls[0]["input"],
                 "sum_api_latency_seconds": round(sum(row["latency"] for row in calls), 3),
+                "terminal_call_count": len(terminal_calls),
+                "sum_terminal_seconds": round(
+                    sum(row["duration_seconds"] for row in terminal_calls), 3
+                ),
+                "expensive_terminal_threshold_seconds": 30.0,
+                "expensive_terminal_call_count": len(expensive_terminal_calls),
+                "expensive_terminal_calls": expensive_terminal_calls,
                 "token_accounting_consistent": all(
                     row["input"] + row["output"] == row["total"] for row in calls
                 ),
@@ -230,6 +262,16 @@ def git_revision() -> str | None:
     return result.stdout.strip() if result.returncode == 0 else None
 
 
+def runtime_budget_digest(config: dict) -> str | None:
+    budget = config.get("runtime_budget")
+    if not isinstance(budget, dict):
+        return None
+    canonical = json.dumps(
+        budget, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+    ).encode()
+    return "sha256:" + hashlib.sha256(canonical).hexdigest()
+
+
 def atomic_json(path: Path, value: dict) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_suffix(path.suffix + ".tmp")
@@ -276,6 +318,8 @@ def main() -> int:
         "job_ids": sorted(job_ids),
         "measurement_boundary": "first Hermes conversation turn per cron session",
         "promotion_authority": "none_metrics_only",
+        "runtime_budget": config.get("runtime_budget"),
+        "runtime_budget_digest": runtime_budget_digest(config),
         "sessions": sessions,
         "aggregate": aggregate(sessions),
     }

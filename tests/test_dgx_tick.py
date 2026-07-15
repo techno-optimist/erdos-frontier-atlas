@@ -39,24 +39,37 @@ class DgxTickTests(unittest.TestCase):
             ):
                 self.assertEqual(tick.main(), 0)
             self.assertEqual(run.call_count, 2)
+            first = " ".join(map(str, run.call_args_list[0].args[0]))
+            second = " ".join(map(str, run.call_args_list[1].args[0]))
+            self.assertIn("foundry_efficiency.py", first)
+            self.assertIn("foundry_tick.py", second)
+            self.assertIn("--efficiency-report", second)
             self.assertEqual(output.stat().st_mode & 0o777, 0o600)
             self.assertEqual(installed.read_text(), reviewed.read_text())
             self.assertEqual(installed.stat().st_mode & 0o777, 0o644)
 
     def test_publication_failure_does_not_publish_stale_metrics(self):
         with tempfile.TemporaryDirectory() as tmp:
+            state = Path(tmp) / "state"
+            state.mkdir()
             reviewed = Path(tmp) / "reviewed" / "SKILL.md"
             installed = Path(tmp) / "installed" / "SKILL.md"
             reviewed.parent.mkdir(); reviewed.write_text("reviewed\n")
-            failed = mock.Mock(returncode=7, stdout="publication failed\n")
+            def fake_run(cmd, **kwargs):
+                if "foundry_efficiency.py" in " ".join(map(str, cmd)):
+                    target = Path(cmd[cmd.index("--output") + 1])
+                    target.write_text("{}\n")
+                    return mock.Mock(returncode=0, stdout="")
+                return mock.Mock(returncode=7, stdout="publication failed\n")
             with (
+                mock.patch.object(tick, "STATE", state),
                 mock.patch.object(tick, "REVIEWED_SKILL", reviewed),
                 mock.patch.object(tick, "INSTALLED_SKILL", installed),
-                mock.patch.object(tick.subprocess, "run", return_value=failed) as run,
+                mock.patch.object(tick.subprocess, "run", side_effect=fake_run) as run,
             ):
                 with redirect_stdout(io.StringIO()):
                     self.assertEqual(tick.main(), 7)
-            self.assertEqual(run.call_count, 1)
+            self.assertEqual(run.call_count, 2)
             self.assertEqual(installed.read_text(), reviewed.read_text())
 
     def test_rotated_logs_are_supplied_oldest_first(self):

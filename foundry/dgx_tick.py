@@ -38,16 +38,6 @@ def agent_log_paths() -> list[Path]:
 
 def main() -> int:
     try:
-        proc = subprocess.run(
-            [sys.executable, str(REPO / "tools" / "foundry_tick.py"), "--repo", str(REPO)],
-            cwd=REPO,
-            text=True,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.STDOUT,
-        )
-        if proc.returncode:
-            print(proc.stdout, end="")
-            return proc.returncode
         efficiency_output = STATE / "foundry_efficiency_latest.json"
         pending_output = efficiency_output.with_suffix(".json.pending")
         pending_output.unlink(missing_ok=True)
@@ -71,6 +61,25 @@ def main() -> int:
             pending_output.unlink(missing_ok=True)
             print(metrics.stdout, end="")
             return metrics.returncode
+        # Ingest consumes the just-generated private report. A post-hoc metric
+        # refresh cannot protect a receipt that has already crossed the
+        # membrane, so runtime telemetry must exist before publication.
+        proc = subprocess.run(
+            [
+                sys.executable,
+                str(REPO / "tools" / "foundry_tick.py"),
+                "--repo", str(REPO),
+                "--efficiency-report", str(pending_output),
+            ],
+            cwd=REPO,
+            text=True,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+        )
+        if proc.returncode:
+            pending_output.unlink(missing_ok=True)
+            print(proc.stdout, end="")
+            return proc.returncode
         os.replace(pending_output, efficiency_output)
         efficiency_output.chmod(0o600)
         # Successful routine ticks stay silent; cron emits only failures.

@@ -14,6 +14,73 @@ SPEC.loader.exec_module(foundry_tick)
 
 
 class FoundryTickTests(unittest.TestCase):
+    def runtime_config(self):
+        return {"runtime_budget": {
+            "effective_after": "2026-07-15T13:50:00Z",
+            "scheduled_job_max_turns": 18,
+            "max_api_calls": 18,
+            "max_input_tokens": 70000,
+            "max_context_growth_tokens": 45000,
+            "max_wall_seconds": 900,
+            "expensive_terminal_seconds": 30,
+            "max_expensive_terminal_calls": 1,
+            "receipt_match_window_seconds": 300,
+        }}
+
+    def runtime_receipt(self):
+        return {
+            "occurred_at": "2026-07-15T14:07:00Z",
+            "source": {"job_id": "50c8e4391849"},
+        }
+
+    def runtime_report(self, config, **overrides):
+        session = {
+            "session_id": "cron_50c8e4391849_20260715_065247",
+            "job_id": "50c8e4391849", "status": "complete",
+            "ended_at": "2026-07-15T14:06:58Z", "api_call_count": 12,
+            "max_input_tokens": 60000, "context_growth_tokens": 38000,
+            "wall_seconds": 700, "token_accounting_consistent": True,
+            "expensive_terminal_calls": [{"duration_seconds": 80.0}],
+        }
+        session.update(overrides)
+        return {
+            "runtime_budget_digest": foundry_tick.runtime_budget_digest(config),
+            "sessions": [session],
+        }
+
+    def test_runtime_budget_accepts_hash_time_bound_session(self):
+        config = self.runtime_config()
+        errors, evidence = foundry_tick.runtime_budget_assessment(
+            self.runtime_receipt(), self.runtime_report(config), config
+        )
+        self.assertEqual(errors, [])
+        self.assertEqual(evidence["status"], "within_budget")
+        self.assertEqual(evidence["source_end_delta_seconds"], 2)
+
+    def test_runtime_budget_rejects_observed_runaway_loop(self):
+        config = self.runtime_config()
+        report = self.runtime_report(
+            config, api_call_count=24, max_input_tokens=92000,
+            context_growth_tokens=70000, wall_seconds=960,
+            expensive_terminal_calls=[
+                {"duration_seconds": 97.93}, {"duration_seconds": 60.07},
+            ],
+        )
+        errors, evidence = foundry_tick.runtime_budget_assessment(
+            self.runtime_receipt(), report, config
+        )
+        self.assertEqual(len(errors), 5)
+        self.assertEqual(evidence["status"], "over_budget")
+        self.assertEqual(evidence["observed"]["expensive_terminal_call_count"], 2)
+
+    def test_runtime_budget_fails_closed_without_matching_telemetry(self):
+        config = self.runtime_config()
+        errors, evidence = foundry_tick.runtime_budget_assessment(
+            self.runtime_receipt(), None, config
+        )
+        self.assertIn("telemetry unavailable", errors[0])
+        self.assertIsNone(evidence)
+
     def test_exact_accepted_or_rejected_hash_is_skipped(self):
         state = {
             "accepted": {"job/accepted.md": "aaa"},
@@ -47,6 +114,15 @@ class FoundryTickTests(unittest.TestCase):
         self.assertEqual(detail["source_sha256"], "a" * 64)
         self.assertEqual(detail["semantic_contract_digest"], contract_digest)
         self.assertNotIn("run_file", detail)
+
+    def test_rejection_detail_preserves_runtime_evidence(self):
+        inspection = {
+            "source_sha256": "a" * 64, "receipt": {},
+            "errors": ["runtime budget exceeded"],
+            "runtime_telemetry": {"status": "over_budget", "session_id": "s"},
+        }
+        detail = foundry_tick.rejection_detail(inspection, "fallback")
+        self.assertEqual(detail["runtime_telemetry"]["session_id"], "s")
 
     def test_rejection_feedback_is_replayed_after_contract_change(self):
         source_sha = "a" * 64

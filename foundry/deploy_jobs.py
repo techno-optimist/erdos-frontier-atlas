@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import fcntl
 import hashlib
+import importlib.util
 import json
 import os
 import shutil
@@ -21,6 +22,8 @@ MODEL = "/home/chronos/models/qwen3.6-35b-a3b"
 AGENT = HOME / ".local" / "bin" / "chronos-agent"
 COMPACT_SKILLS = ["foundry"]
 API_MAX_RETRIES = 8
+FOUNDRY_MAX_TURNS = 18
+HERMES_SCHEDULER = HOME / ".hermes" / "hermes-agent" / "cron" / "scheduler.py"
 SETTINGS = {
     "agent.api_max_retries": str(API_MAX_RETRIES),
     "providers.foundry-qwen35b.name": "foundry-qwen35b",
@@ -69,12 +72,33 @@ outcome=<public-safe result>`. This line is mandatory even when the same trace
 was recorded in a session artifact; only the six labelled receipt crosses the
 publication membrane.
 """.strip()
+RUNTIME_SUFFIX = """
+
+FOUNDRY HARD RUNTIME BUDGET (operator-enforced): This job has at most 18 model
+calls. Reserve the final two calls for the six-label receipt; after call 14,
+start no new implementation or search. Publication uses trusted Hermes logs
+and rejects a run above 18 calls, 70,000 maximum input tokens, 45,000 context
+growth tokens, 900 wall seconds, or more than one terminal action longer than
+30 seconds.
+A timeout or budget rejection is a scoped blocker, never evidence about the
+mathematical frontier.
+""".strip()
 
 
 def append_prompt_once(prompt: str, marker: str, suffix: str) -> str:
     if marker in prompt:
         return prompt
     return prompt.rstrip() + "\n\n" + suffix
+
+
+def patch_hermes_scheduler(path: Path) -> dict:
+    module_path = Path(__file__).with_name("patch_hermes_cron.py")
+    spec = importlib.util.spec_from_file_location("foundry_patch_hermes_cron", module_path)
+    if spec is None or spec.loader is None:
+        raise RuntimeError("cannot load reviewed Hermes scheduler patch")
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+    return module.patch_file(path)
 
 
 def install_runtime_files() -> dict[str, str]:
@@ -94,6 +118,7 @@ def install_runtime_files() -> dict[str, str]:
 
 
 def main() -> int:
+    scheduler_patch = patch_hermes_scheduler(HERMES_SCHEDULER)
     installed = install_runtime_files()
     for key, value in SETTINGS.items():
         subprocess.run([str(AGENT), "config", "set", key, value], check=True, stdout=subprocess.DEVNULL)
@@ -111,6 +136,7 @@ def main() -> int:
             job["base_url"] = "http://127.0.0.1:30000/v1"
             job["skill"] = "foundry"
             job["skills"] = COMPACT_SKILLS
+            job["max_turns"] = FOUNDRY_MAX_TURNS
             job["prompt"] = job.get("prompt", "").replace(
                 "python3 ~/erdos-frontier-atlas/tools/foundry.py consult --state\n~/.hermes/chronos_state/foundry_frontier_budget.json '<public-safe frontier,",
                 "python3 ~/erdos-frontier-atlas/tools/foundry.py consult --state\n~/.hermes/chronos_state/foundry_frontier_budget.json --frontier-id\n'<foundry.gate.frontier_id>' '<public-safe frontier,",
@@ -128,6 +154,9 @@ def main() -> int:
             job["prompt"] = append_prompt_once(
                 job["prompt"], "FOUNDRY TRACE (required)", TRACE_SUFFIX
             )
+            job["prompt"] = append_prompt_once(
+                job["prompt"], "FOUNDRY HARD RUNTIME BUDGET", RUNTIME_SUFFIX
+            )
             changed.append(job["id"])
         if changed != sorted(TARGETS):
             raise SystemExit(f"expected jobs {sorted(TARGETS)}, found {sorted(changed)}")
@@ -136,7 +165,7 @@ def main() -> int:
         tmp = JOBS.with_suffix(".json.tmp")
         tmp.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n")
         os.replace(tmp, JOBS)
-    print(json.dumps({"updated": changed, "provider": "foundry-qwen35b", "model": MODEL, "installed": installed}))
+    print(json.dumps({"updated": changed, "provider": "foundry-qwen35b", "model": MODEL, "max_turns": FOUNDRY_MAX_TURNS, "scheduler_patch": scheduler_patch, "installed": installed}))
     return 0
 
 

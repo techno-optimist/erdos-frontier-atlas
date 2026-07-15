@@ -18,12 +18,141 @@ PUBLIC_TEMPLATE_PLACEHOLDER = re.compile(r"<[^<>\n]{2,240}>")
 
 def semantic_contract_digest(config: dict) -> str:
     canonical = json.dumps(
-        config.get("semantic_contracts", {}),
+        {
+            "semantic_contracts": config.get("semantic_contracts", {}),
+            "runtime_budget": config.get("runtime_budget"),
+        },
         ensure_ascii=False,
         sort_keys=True,
         separators=(",", ":"),
     ).encode()
     return "sha256:" + hashlib.sha256(canonical).hexdigest()
+
+
+def runtime_budget_digest(config: dict) -> str | None:
+    budget = config.get("runtime_budget")
+    if not isinstance(budget, dict):
+        return None
+    canonical = json.dumps(
+        budget, ensure_ascii=False, sort_keys=True, separators=(",", ":")
+    ).encode()
+    return "sha256:" + hashlib.sha256(canonical).hexdigest()
+
+
+def parse_time(value: str | None) -> datetime | None:
+    try:
+        return datetime.fromisoformat(str(value).replace("Z", "+00:00")).astimezone(
+            timezone.utc
+        )
+    except (TypeError, ValueError):
+        return None
+
+
+def runtime_budget_assessment(
+    receipt: dict, efficiency: dict | None, config: dict
+) -> tuple[list[str], dict | None]:
+    """Bind a source occurrence to trusted first-turn resource telemetry."""
+    budget = config.get("runtime_budget")
+    if not isinstance(budget, dict):
+        return [], None
+    occurred = parse_time(receipt.get("occurred_at"))
+    effective = parse_time(budget.get("effective_after"))
+    if occurred is None:
+        return ["runtime budget cannot parse receipt occurrence time"], None
+    if effective and occurred < effective:
+        return [], {"status": "grandfathered_before_runtime_budget"}
+
+    expected_digest = runtime_budget_digest(config)
+    if not isinstance(efficiency, dict):
+        return ["trusted runtime telemetry unavailable for source occurrence"], None
+    if efficiency.get("runtime_budget_digest") != expected_digest:
+        return ["runtime telemetry policy digest does not match publisher policy"], {
+            "status": "policy_digest_mismatch",
+            "expected_runtime_budget_digest": expected_digest,
+            "observed_runtime_budget_digest": efficiency.get("runtime_budget_digest"),
+        }
+
+    job_id = receipt.get("source", {}).get("job_id")
+    window = int(budget.get("receipt_match_window_seconds", 300))
+    candidates = []
+    for session in efficiency.get("sessions", []):
+        ended = parse_time(session.get("ended_at"))
+        if (
+            session.get("status") != "complete"
+            or session.get("job_id") != job_id
+            or ended is None
+        ):
+            continue
+        delta = abs((occurred - ended).total_seconds())
+        if delta <= window:
+            candidates.append((delta, str(session.get("session_id", "")), session))
+    if not candidates:
+        return ["trusted complete runtime session unavailable for source occurrence"], {
+            "status": "no_complete_session_match",
+            "job_id": job_id,
+            "match_window_seconds": window,
+        }
+    delta, _, session = min(candidates, key=lambda row: (row[0], row[1]))
+    threshold = float(budget["expensive_terminal_seconds"])
+    expensive = [
+        row for row in session.get("expensive_terminal_calls", [])
+        if float(row.get("duration_seconds", 0)) > threshold
+    ]
+    observed = {
+        "api_call_count": int(session.get("api_call_count", 0)),
+        "max_input_tokens": int(session.get("max_input_tokens", 0)),
+        "context_growth_tokens": int(session.get("context_growth_tokens", 0)),
+        "wall_seconds": session.get("wall_seconds"),
+        "expensive_terminal_call_count": len(expensive),
+        "token_accounting_consistent": session.get("token_accounting_consistent") is True,
+    }
+    limits = {
+        key: budget[key] for key in (
+            "max_api_calls", "max_input_tokens", "max_context_growth_tokens",
+            "max_wall_seconds", "expensive_terminal_seconds",
+            "max_expensive_terminal_calls",
+        )
+    }
+    errors = []
+    for metric, limit_key in (
+        ("api_call_count", "max_api_calls"),
+        ("max_input_tokens", "max_input_tokens"),
+        ("context_growth_tokens", "max_context_growth_tokens"),
+        ("wall_seconds", "max_wall_seconds"),
+        ("expensive_terminal_call_count", "max_expensive_terminal_calls"),
+    ):
+        value = observed[metric]
+        if value is None or float(value) > float(budget[limit_key]):
+            errors.append(
+                f"runtime budget exceeded: {metric}={value} > {limit_key}={budget[limit_key]}"
+            )
+    if not observed["token_accounting_consistent"]:
+        errors.append("runtime budget telemetry has inconsistent token accounting")
+    evidence = {
+        "status": "over_budget" if errors else "within_budget",
+        "runtime_budget_digest": expected_digest,
+        "session_id": session.get("session_id"),
+        "source_end_delta_seconds": round(delta, 3),
+        "observed": observed,
+        "limits": limits,
+    }
+    return errors, evidence
+
+
+def apply_runtime_budget(
+    inspection: dict, efficiency: dict | None, config: dict
+) -> dict:
+    if not inspection.get("valid"):
+        return inspection
+    errors, evidence = runtime_budget_assessment(
+        inspection.get("receipt") or {}, efficiency, config
+    )
+    if evidence is not None:
+        inspection["runtime_telemetry"] = evidence
+    if errors:
+        inspection["valid"] = False
+        inspection.setdefault("errors", []).extend(errors)
+    return inspection
 
 
 def rejection_feedback_is_current(
@@ -75,6 +204,8 @@ def rejection_detail(
     }
     if contract_digest:
         detail["semantic_contract_digest"] = contract_digest
+    if inspection.get("runtime_telemetry") is not None:
+        detail["runtime_telemetry"] = inspection["runtime_telemetry"]
     return detail
 
 
@@ -152,6 +283,7 @@ def quarantine_invalid_accepted_sources(
         for path in removed:
             path.unlink()
         ingest_state["accepted"].pop(key, None)
+        ingest_state.setdefault("accepted_runtime", {}).pop(key, None)
         ingest_state.setdefault("rejected", {})[key] = source_sha
         ingest_state.setdefault("rejected_details", {})[key] = rejection_detail(
             inspection, reason, contract_digest
@@ -188,6 +320,7 @@ def quarantine_invalid_accepted_sources(
         ledger_key = key if accepted_sha in (None, source_sha) else f"{key}#{source_sha[:12]}"
         if accepted_sha == source_sha:
             ingest_state["accepted"].pop(key, None)
+            ingest_state.setdefault("accepted_runtime", {}).pop(key, None)
         inspection = {
             "source_sha256": source_sha,
             "receipt": {
@@ -215,6 +348,7 @@ def main() -> int:
     ap.add_argument("--cron-output", type=Path, default=Path.home() / ".hermes" / "cron" / "output")
     ap.add_argument("--state", type=Path, default=Path.home() / ".hermes" / "chronos_state" / "foundry_frontier_budget.json")
     ap.add_argument("--ingest-state", type=Path, default=Path.home() / ".hermes" / "chronos_state" / "foundry_ingest_state.json")
+    ap.add_argument("--efficiency-report", type=Path)
     ap.add_argument("--no-push", action="store_true")
     args = ap.parse_args()
     lock_path = args.state.with_name("foundry_tick.lock")
@@ -228,6 +362,9 @@ def main() -> int:
         return 0
     config = json.loads((args.repo / "foundry" / "config.json").read_text())
     contract_digest = semantic_contract_digest(config)
+    efficiency = None
+    if args.efficiency_report and args.efficiency_report.exists():
+        efficiency = json.loads(args.efficiency_report.read_text())
     tool = args.repo / "tools" / "foundry.py"
     created = []
     rejected = []
@@ -235,6 +372,7 @@ def main() -> int:
     ingest_state.setdefault("accepted", {})
     ingest_state.setdefault("rejected", {})
     ingest_state.setdefault("rejected_details", {})
+    ingest_state.setdefault("accepted_runtime", {})
     revoked = quarantine_invalid_accepted_sources(
         ingest_state, args.cron_output, args.repo, tool, contract_digest
     )
@@ -267,7 +405,9 @@ def main() -> int:
                 "errors": ["legacy raw source no longer matches quarantined hash; quarantine retained"],
             }, "legacy raw source hash mismatch", contract_digest)
             continue
-        inspection = inspect_run(tool, source, job_id, args.repo)
+        inspection = apply_runtime_budget(
+            inspect_run(tool, source, job_id, args.repo), efficiency, config
+        )
         if inspection.get("valid"):
             ingest_state["rejected"].pop(key, None)
             ingest_state["rejected_details"].pop(key, None)
@@ -283,18 +423,23 @@ def main() -> int:
             key = f"{job_id}/{source.name}"
             if source_is_watermarked(ingest_state, key, source_sha):
                 continue
-            inspection = inspect_run(tool, source, job_id, args.repo)
+            inspection = apply_runtime_budget(
+                inspect_run(tool, source, job_id, args.repo), efficiency, config
+            )
             if not inspection.get("valid"):
                 detail = rejection_detail(inspection, "ingest failed", contract_digest)
                 rejected.append({"run_file": source.name, "reason": detail["errors"][0][:240]})
                 ingest_state["rejected"][key] = source_sha
                 ingest_state["rejected_details"][key] = detail
                 ingest_state["accepted"].pop(key, None)
+                ingest_state["accepted_runtime"].pop(key, None)
                 continue
             proc = subprocess.run([sys.executable, str(tool), "ingest", str(source), "--job-id", job_id], cwd=args.repo, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
             if proc.returncode == 0:
                 if json.loads(proc.stdout).get("created"): created.append(source.name)
                 ingest_state["accepted"][key] = source_sha
+                if inspection.get("runtime_telemetry") is not None:
+                    ingest_state["accepted_runtime"][key] = inspection["runtime_telemetry"]
                 ingest_state["rejected"].pop(key, None)
                 ingest_state["rejected_details"].pop(key, None)
             elif proc.returncode != 0:
@@ -305,6 +450,7 @@ def main() -> int:
                     inspection, reason, contract_digest
                 )
                 ingest_state["accepted"].pop(key, None)
+                ingest_state["accepted_runtime"].pop(key, None)
     args.ingest_state.parent.mkdir(parents=True, exist_ok=True)
     ingest_tmp = args.ingest_state.with_suffix(args.ingest_state.suffix + ".tmp")
     ingest_tmp.write_text(json.dumps(ingest_state, indent=2) + "\n")
