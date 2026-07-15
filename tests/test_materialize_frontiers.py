@@ -11,6 +11,21 @@ SPEC.loader.exec_module(materialize)
 
 
 class MaterializerTests(unittest.TestCase):
+    def test_checked_in_portfolio_is_ready_balanced_and_contract_guarded(self):
+        root = Path(__file__).parents[1]
+        seeds = json.loads((root / "foundry" / "frontier_seeds.json").read_text())["seeds"]
+        atlas = json.loads((root / "atlas" / "problems.json").read_text())["problems"]
+        config = json.loads((root / "foundry" / "config.json").read_text())
+        atlas_by_id = {row["id"]: row for row in atlas}
+        expected = {1, 21, 41, 67, 86, 140, 552, 1029}
+        self.assertEqual({row["atlas_problem_id"] for row in seeds}, expected)
+        self.assertEqual(len({row["id"] for row in seeds}), len(seeds))
+        self.assertTrue(all(row["class"] == "erdos" for row in seeds))
+        self.assertTrue(all(row["source"] == "atlas/problems.json" for row in seeds))
+        self.assertTrue(all(atlas_by_id[row["atlas_problem_id"]]["board_class"] == "READY" for row in seeds))
+        self.assertTrue(all(float(row["priority"]) > 0.16 for row in seeds))
+        self.assertTrue(all(row["id"] in config["semantic_contracts"] for row in seeds))
+
     def test_new_seed_is_planned_and_existing_seed_is_idempotent(self):
         seed = {key: "x" for key in materialize.REQUIRED}
         seed.update(id="new", atlas_problem_id=21, priority=0.18)

@@ -106,6 +106,10 @@ the later attempt re-evaluates cooldown and daily budget after the first call.
 from `foundry/frontier_seeds.json` into DGX queue items. It is dry-run by
 default; `--apply` creates a timestamped byte-for-byte backup and atomically
 replaces only the private queue file. It never writes an Atlas database.
+The checked-in portfolio contains eight verifier-ready public Atlas frontiers
+with explicit quantity contracts. Their priorities are above retired
+control-plane lanes, so the 30-minute worker rotates through actual Erdős
+problems while recency penalties prevent one problem from monopolizing cycles.
 
 DGX cron renders wall-clock timestamps in fixed MST (`UTC-07:00`), so
 `foundry/config.json` uses `Etc/GMT+7`. Receipt construction cross-checks that
