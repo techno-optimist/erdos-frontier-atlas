@@ -1,0 +1,11 @@
+{
+  "schema": "p42-foundry-publication-incident-v1",
+  "incident_id": "20260715-stretched-lr-quantity-conflation",
+  "occurred_at": "2026-07-15T04:54:56Z",
+  "frontier_id": "fm_stretched_lr",
+  "source_sha256": "4b5201962526868e05541b3fe7a2fd6a2510064a0a2e615b5d9243b4d24d23ec",
+  "status": "quarantined_before_publication",
+  "issue": "The run verified nonnegativity of evaluated Littlewood-Richardson values, but the frontier target was signs of coefficients of the stretching polynomial.",
+  "boundary": "No receipt was admitted and no mathematical frontier claim from this run was published.",
+  "remediation": "Per-frontier target contracts are injected during prep and enforced fail-closed by the publication membrane."
+}
