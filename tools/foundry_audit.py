@@ -135,6 +135,8 @@ def main() -> int:
         row.get("read_only_verified") is True and row.get("hash_before") == row.get("hash_after")
         for row in focused["databases"].values()
     ))
+    shadow_path = args.sessions_root / latest_id / "shadow_policy.json"
+    shadow = json.loads(shadow_path.read_text()) if shadow_path.exists() else None
     after = {name: sha_file(args.data_root / name) for name in before}
     runtime_pairs = {
         "scout_prep": (ROOT / "foundry" / "dgx_research_prep.py", HOME / ".hermes" / "scripts" / "chronos_frontier_scout_prep.py"),
@@ -173,6 +175,7 @@ def main() -> int:
         "lane_aligned_frontier_advice_executed_trace": bool(aligned_executions),
         "latest_context_read_only": packet_ro,
         "latest_focused_retrieval_read_only": focused_ro,
+        "latest_shadow_policy_observe_only": bool(shadow and shadow.get("policy_status") == "shadow_only_no_control_authority"),
         "protected_hashes_stable_during_audit": before == after,
     }
     report = {
@@ -191,6 +194,8 @@ def main() -> int:
             "runtime_hashes": runtime_hashes,
             "latest_session": latest_id, "focused_retrieval_present": focused_path.exists(),
             "focused_hit_counts": ({name: len(rows) for name, rows in focused.get("surfaces", {}).items()} if focused else {}),
+            "shadow_policy_present": shadow_path.exists(),
+            "shadow_selected_frontier_id": shadow.get("shadow_selected_frontier_id") if shadow else None,
             "protected_hashes_before": before, "protected_hashes_after": after,
             "validation_tail": validate.stdout.strip().splitlines()[-1] if validate.stdout.strip() else None,
         },

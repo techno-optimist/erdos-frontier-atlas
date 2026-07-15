@@ -89,6 +89,16 @@ def main() -> int:
         return 1
     summary["focused_retrieval"] = focus
 
+    shadow_path = Path(summary["artifact_dir"]) / "shadow_policy.json"
+    shadow_proc = call([
+        sys.executable, str(REPO / "foundry" / "shadow_policy.py"), "--output", str(shadow_path),
+    ])
+    try:
+        shadow = json.loads(shadow_proc.stdout)
+    except Exception:
+        shadow = {"policy_status": "shadow_unavailable", "error": shadow_proc.stdout[-300:]}
+    selection["shadow_policy"] = shadow
+
     if selected_gate is None:
         gate_proc = call([sys.executable, str(REPO / "tools" / "foundry.py"), "gate", "--state", str(BUDGET), "--frontier-id", selected_frontier_id])
         try: gate = json.loads(gate_proc.stdout)
