@@ -66,6 +66,9 @@ def main() -> int:
             job["base_url"] = "http://127.0.0.1:30000/v1"
             job["skill"] = "foundry"
             job["skills"] = COMPACT_SKILLS
+            if job["id"] == "50c8e4391849":
+                job["schedule"] = {"kind": "interval", "minutes": 30, "display": "every 30m"}
+                job["schedule_display"] = "every 30m"
             if "FOUNDRY RECURSION (operator-authorized)" not in job.get("prompt", ""):
                 job["prompt"] = job.get("prompt", "").rstrip() + "\n\n" + SUFFIX
             changed.append(job["id"])
