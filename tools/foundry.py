@@ -27,7 +27,7 @@ INDEX = PROGRESS / "index.json"
 CONFIG = ROOT / "foundry" / "config.json"
 LABELS = ("Frontier", "Action", "Verified", "Result", "Next gate", "Boundary held")
 BLOCKED = ("blocked", "no changed condition", "selector-repeat", "selector repeat", "cannot run", "unavailable")
-NEGATIVE = ("negative result", "local-exhaustion", "local exhaustion", "no disagreement", "prior verdict holds", "route closed")
+NEGATIVE = ("negative result", "local-exhaustion", "local exhaustion", "no disagreement", "prior verdict holds", "route closed", "no-signal", "no signal", "control_plane_only", "control-plane only")
 FORBIDDEN_PUBLIC = (
     re.compile(r"/(?:home|Users|private|tmp)/"),
     re.compile(r"\b(?:sk|ghp|github_pat)-[A-Za-z0-9_-]{8,}"),
@@ -67,7 +67,20 @@ def parse_sections(text: str) -> dict[str, str]:
         sections[match.group(1)] = response[match.end():end].strip().strip("-").strip()
     missing = [label for label in LABELS if not sections.get(label)]
     if missing:
-        raise ValueError("missing required receipt labels: " + ", ".join(missing))
+        rows = {}
+        for match in re.finditer(r"(?m)^\|\s*\*\*([^*]+)\*\*\s*\|\s*(.*?)\s*\|\s*$", response):
+            rows[match.group(1).strip().lower()] = match.group(2).strip()
+        needed = {"lane", "action taken", "reproduce verifier", "status", "next gate"}
+        if not needed.issubset(rows):
+            raise ValueError("missing required receipt labels: " + ", ".join(missing))
+        sections = {
+            "Frontier": rows["lane"],
+            "Action": rows["action taken"],
+            "Verified": "; ".join(filter(None, [rows.get("reproduce verifier"), "changed conditions: " + rows.get("changed conditions", "unknown")])),
+            "Result": "; ".join(filter(None, [rows["status"], "blocked: " + rows.get("blocked", "unknown")])),
+            "Next gate": rows["next gate"],
+            "Boundary held": "No production Atlas writes, external submissions, git pushes, or training; cockpit fallback parsed deterministically.",
+        }
     return sections
 
 
@@ -212,7 +225,17 @@ def consult(question: str, state_path: Path, config: dict) -> str:
             {"role": "user", "content": question[:12000]},
         ], "temperature": 0.2,
     }).encode()
-    req = request.Request(os.getenv("FOUNDRY_FRONTIER_URL", config["frontier_url"]), data=payload, headers={"Content-Type": "application/json", "Authorization": "Bearer " + os.getenv("FOUNDRY_ROUTER_KEY", "local")})
+    edge_key = os.getenv("FOUNDRY_EDGE_KEY", "").strip()
+    if not edge_key:
+        secrets_file = Path.home() / ".config" / "aperture-secrets.env"
+        if secrets_file.exists():
+            for line in secrets_file.read_text().splitlines():
+                if line.startswith("APERTURE_EDGE_SECRET="):
+                    edge_key = line.split("=", 1)[1].strip().strip("\"'")
+                    break
+    headers = {"Content-Type": "application/json", "Authorization": "Bearer " + os.getenv("FOUNDRY_ROUTER_KEY", "local")}
+    if edge_key: headers["x-aperture-edge-key"] = edge_key
+    req = request.Request(os.getenv("FOUNDRY_FRONTIER_URL", config["frontier_url"]), data=payload, headers=headers)
     with request.urlopen(req, timeout=180) as response:
         result = json.loads(response.read())
     answer = result["choices"][0]["message"].get("content") or result["choices"][0]["message"].get("reasoning_content")
