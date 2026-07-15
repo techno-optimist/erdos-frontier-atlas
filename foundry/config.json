@@ -38,7 +38,7 @@
     },
     "erdos_21_q6": {
       "effective_after": "2026-07-15T05:00:00Z",
-      "target_quantity": "the minimum edge count q(6), with witness validity requiring pairwise intersection and cover number exactly 6; a single valid hypergraph is only an upper bound",
+      "target_quantity": "the minimum edge count q(6), with witness validity requiring pairwise intersection and cover number exactly 6; a single valid hypergraph is only an upper bound, while a lower-bound increase requires complete replayable nonexistence coverage and cannot follow from a partial or merely well-sharded no-hit search",
       "required_evidence_any": [
         "5-cover",
         "cover number",
@@ -48,7 +48,8 @@
       ],
       "forbidden_claim_patterns": [
         "proves? q\\(6\\)",
-        "establishes? the exact value of q\\(6\\)"
+        "establishes? the exact value of q\\(6\\)",
+        "well[- ]sharded(?: generation| search)? yields? none.{0,160}(?:tighten|raise|improve)[^.]{0,80}(?:the )?lower bound"
       ]
     },
     "erdos_1029_r55": {
