@@ -40,6 +40,16 @@ class FoundryTickTests(unittest.TestCase):
         self.assertEqual(detail["source_sha256"], "a" * 64)
         self.assertNotIn("run_file", detail)
 
+    def test_legacy_hash_only_quarantine_can_be_tombstoned(self):
+        detail = foundry_tick.rejection_detail({
+            "source_sha256": "c" * 64,
+            "receipt": None,
+            "errors": ["legacy raw source unavailable; hash-only quarantine retained"],
+        }, "fallback")
+        self.assertEqual(detail["source_sha256"], "c" * 64)
+        self.assertIsNone(detail["frontier_id"])
+        self.assertIn("unavailable", detail["errors"][0])
+
 
 if __name__ == "__main__":
     unittest.main()
