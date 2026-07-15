@@ -52,6 +52,13 @@ still emitted when no improvement was found. A missing or malformed result
 remains a failed run; the evaluator does not synthesize mathematical evidence
 on the candidate's behalf.
 
+Artifact tool paths are relative to the artifact root; one accidental
+`artifacts/` prefix is normalized so it cannot create a nested, ambiguously
+replayed tree. The independent adjudicator keeps evaluator-computed v2 paths
+literal. It also treats an unbounded negative-result claim as a semantic hard
+failure: a failed or heuristic search may report only its bounded no-witness
+observation, never nonexistence, an upper bound, or an exact Ramsey value.
+
 The no-frontier-call rule isolates harness quality from purchased strategy.
 Consultation is evaluated separately after the local-only core passes.
 

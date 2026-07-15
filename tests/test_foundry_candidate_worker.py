@@ -26,6 +26,19 @@ class CandidateWorkerTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             worker._artifact_path("/tmp/result.json")
 
+    def test_artifact_writer_normalizes_one_common_root_prefix(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            output = Path(tmp) / "output"
+            with mock.patch.object(worker, "OUTPUT", output):
+                expected = output / "artifacts" / "check.py"
+                self.assertEqual(worker._artifact_path("check.py"), expected)
+                self.assertEqual(worker._artifact_path("artifacts/check.py"), expected)
+                self.assertEqual(
+                    worker._artifact_path("/output/artifacts/check.py"), expected
+                )
+                with self.assertRaises(ValueError):
+                    worker._artifact_path("artifacts/artifacts/check.py")
+
     def test_tool_contract_requires_typed_submission(self):
         submit = next(row for row in worker.TOOLS if row["function"]["name"] == "submit_result")
         required = set(submit["function"]["parameters"]["required"])
@@ -66,6 +79,19 @@ class CandidateWorkerTests(unittest.TestCase):
             self.assertEqual(result["seed"], 9)
             self.assertEqual(result["artifacts"][0]["path"], "check.py")
             self.assertTrue(result["artifacts"][0]["sha256"].startswith("sha256:"))
+
+    def test_prefixed_write_is_inventory_normalized(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            output = root / "output"
+            output.mkdir()
+            with mock.patch.object(worker, "OUTPUT", output):
+                response = json.loads(worker.execute_tool(
+                    "write_artifact",
+                    {"path": "artifacts/check.py", "content": "pass\n"},
+                ))
+                self.assertEqual(response["written"], "artifacts/check.py")
+                self.assertEqual(worker._artifact_inventory()[0]["path"], "check.py")
 
     def test_final_calls_are_reserved_for_typed_submission(self):
         with tempfile.TemporaryDirectory() as tmp:

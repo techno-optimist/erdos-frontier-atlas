@@ -15,6 +15,7 @@ import hashlib
 import json
 import os
 import random
+import re
 import shlex
 import subprocess
 import tempfile
@@ -152,6 +153,7 @@ def _claimed_artifact_paths(result: dict) -> set[str]:
     for row in claimed:
         if isinstance(row, dict):
             path = row.get("path")
+            evaluator_relative = True
         elif isinstance(row, str):
             # Legacy v1 workers described artifacts as strings.  Accept only
             # an unambiguous path token; the evaluator supplies the digest.
@@ -165,16 +167,66 @@ def _claimed_artifact_paths(result: dict) -> set[str]:
                 ),
                 tokens[0] if len(tokens) == 1 else None,
             )
+            evaluator_relative = False
         else:
             path = None
+            evaluator_relative = False
         if not isinstance(path, str) or not path:
             raise AdjudicationError("artifact claim lacks a bounded path")
-        path = path.removeprefix("/output/artifacts/").removeprefix("artifacts/")
+        if not evaluator_relative:
+            path = path.removeprefix("/output/artifacts/").removeprefix("artifacts/")
         candidate = Path(path)
         if candidate.is_absolute() or ".." in candidate.parts or path in {"", "."}:
             raise AdjudicationError("artifact claim escapes artifact root")
         paths.add(candidate.as_posix())
     return paths
+
+
+def semantic_contract_violations(result: dict, packet: dict) -> list[str]:
+    """Reject theorem inflation that a replayable bounded search cannot establish."""
+    violations = []
+    claim = " ".join(
+        str(result.get(key, "")) for key in ("hypothesis", "claim")
+    ).lower()
+    if result.get("classification") == "negative_result":
+        observation_markers = (
+            "bounded", "no witness found", "did not find", "inconclusive",
+            "failed to find", "local exhaustion", "route closed",
+        )
+        boundary_markers = (
+            "theorem unchanged", "bracket unchanged", "does not prove",
+            "not a proof", "cannot conclude", "local result only",
+        )
+        if not any(marker in claim for marker in observation_markers) or not any(
+            marker in claim for marker in boundary_markers
+        ):
+            violations.append("negative_result_lacks_bounded_claim_boundary")
+    if int((packet.get("target") or {}).get("id", -1)) == 552:
+        normalized = re.sub(r"[\s_{}\\]", "", claim)
+        unsupported_nonexistence = bool(
+            re.search(r"no\s+c4[- ]free\s+graph.{0,100}\b(?:exists|exist)\b", claim)
+            or re.search(r"r\(c4,s17\)(?:=|<=)22", normalized)
+            or re.search(r"r\(c4,k1,?17\)(?:=|<=)22", normalized)
+            or (
+                ("prove" in claim or "therefore" in claim)
+                and (
+                    "upper bound" in claim
+                    or "nonexistence" in claim
+                    or "no c4-free" in claim
+                )
+            )
+        )
+        explicit_boundary = any(
+            marker in claim
+            for marker in (
+                "does not prove", "not a proof", "cannot conclude", "theorem unchanged"
+            )
+        )
+        if unsupported_nonexistence and not explicit_boundary:
+            violations.append(
+                "erdos_552_nonexistence_claim_without_replayable_proof"
+            )
+    return violations
 
 
 def _normalized_replay_step(step: object, inventory: list[dict]) -> dict:
@@ -411,7 +463,7 @@ def adjudicate(
     if packet.get("schema") != "p42-foundry-eval-task-v1":
         raise AdjudicationError("adjudicator requires one frozen task packet")
     errors = _required_result_errors(result)
-    hard_violations: list[str] = []
+    hard_violations: list[str] = semantic_contract_violations(result, packet)
     evaluator_revision = _git_revision()
     evaluator_tree_clean = _git_tree_clean()
     if not evaluator_revision or not evaluator_tree_clean:

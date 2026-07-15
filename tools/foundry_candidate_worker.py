@@ -161,8 +161,20 @@ def _workspace_path(raw: str) -> Path:
 
 def _artifact_path(raw: str) -> Path:
     root = OUTPUT / "artifacts"
-    path = root / raw
-    if Path(raw).is_absolute() or not _inside(path, root):
+    value = str(raw)
+    if value.startswith("/output/artifacts/"):
+        value = value.removeprefix("/output/artifacts/")
+    elif value.startswith("artifacts/"):
+        value = value.removeprefix("artifacts/")
+    relative = Path(value)
+    path = root / relative
+    if (
+        not value
+        or relative.is_absolute()
+        or ".." in relative.parts
+        or (relative.parts and relative.parts[0] == "artifacts")
+        or not _inside(path, root)
+    ):
         raise ValueError("artifact path escapes output directory")
     return path
 
@@ -316,6 +328,11 @@ def run_task(task_path: Path) -> int:
         "Use only the bounded theorem_status classes exposed by submit_result. Never infer acceptance "
         "from your own classification. If canonical_artifact_contract is present, write exactly its "
         "artifact_path and satisfy its public schema; only the evaluator-owned verifier can score it. "
+        "Pass artifact paths relative to the artifact root (for example check.py, not "
+        "artifacts/check.py); the worker also normalizes one accidental artifacts/ prefix. "
+        "A negative_result must say only what its bounded replay establishes: use language such "
+        "as 'no witness found within this bounded search; theorem and bracket unchanged.' Never "
+        "turn a timeout, heuristic search, or finite sample into nonexistence or an exact value. "
         "Finish with submit_result. The evaluator reserves the final two API calls for typed "
         "submission; when that gate appears, stop exploring and submit the strongest bounded "
         "result supported by the artifacts, including negative_result or blocked when appropriate."
@@ -333,7 +350,9 @@ def run_task(task_path: Path) -> int:
                 "content": (
                     "SUBMISSION GATE: exploration is over. Use submit_result now. Report a "
                     "bounded negative_result or blocked outcome if no strict frontier improvement "
-                    "was established; do not spend another call exploring."
+                    "was established; do not spend another call exploring. A failed search means "
+                    "only no witness found within the stated budget, never nonexistence, an upper "
+                    "bound, or an exact Ramsey value without a replayable proof certificate."
                 ),
             })
         response = unix_chat({
