@@ -68,13 +68,19 @@
     },
     "erdos_552_c4_star_n17": {
       "effective_after": "2026-07-15T06:45:00Z",
-      "target_quantity": "the n=17,m=22 C4-versus-star cell: either a C4-free graph of minimum degree at least 5 or a replayable nonexistence certificate",
+      "target_quantity": "the n=17,m=22 C4-versus-star cell: either a C4-free graph of minimum degree at least 5 or a replayable nonexistence certificate. A 22-vertex witness implies R(C4,S17) >= 23, not >= 22. The displayed 21-vertex Hermitian-polarity fixture has degree range 4..5 and 48 edges; it is neither SRG(21,5,0,1) nor a minimum-degree-5 equality witness. A bounded no-hit search certifies only the tried generator outputs, not route inaccessibility or extension impossibility",
       "required_evidence_any": ["codegree", "minimum degree", "c4-free", "c_4-free"],
       "forbidden_claim_patterns": [
         "solver (timeout|unknown).*proves?",
         "settles? (erdos )?#?552",
-        "(equivalent|implying).{0,160}r\\(c4,\\s*s(?:₁|_?1)?(?:₇|7)\\)\\s*(?:>=|≥)\\s*22",
-        "c4[- ]free bipartite graph.{0,100}\\(11,\\s*11\\).{0,100}min(?:imum)?[_ -]?degree.{0,20}(?:>=|≥)\\s*5"
+        "(?:equivalent|implying|would prove).{0,160}r\\(c4,\\s*s(?:₁|_?1)?(?:₇|7)\\)\\s*(?:>=|≥)\\s*22",
+        "c4[- ]free bipartite graph.{0,100}\\(11,\\s*11\\).{0,100}min(?:imum)?[_ -]?degree.{0,20}(?:>=|≥)\\s*5",
+        "verifier.{0,180}sha256:\\s*(?![a-f0-9]{64}\\b)[a-f0-9]{8,63}\\b",
+        "srg\\s*\\(\\s*21\\s*,\\s*5\\s*,\\s*0\\s*,\\s*1\\s*\\)",
+        "(?:p\\(4\\)|polarity[- ]graph|21[- ]vertex witness).{0,180}(?:exact (?:reiman )?equality|at (?:the )?(?:exact )?(?:reiman )?bound|5[- ]regular)",
+        "(?:every|all) (?:vertex )?pairs?.{0,100}(?:exactly|shares?|has|have).{0,40}(?:1|one) common neighbor",
+        "(?:polarity[- ]graph|p\\(4\\)).{0,180}(?:extension impossibility|cannot be (?:trivially )?extended|impossible to extend)",
+        "(?:search confirms?|random (?:methods?|strategies|search)).{0,180}(?:unreachable|cannot access|structurally impossible)"
       ]
     },
     "erdos_140_r3_212": {
