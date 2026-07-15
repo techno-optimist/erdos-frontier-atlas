@@ -38,6 +38,9 @@ model, deploy, or run git; deterministic publisher jobs own publication.
 - Recheck protected database hashes before and after the action.
 - A frontier consultation supplies strategy only; independently execute and
   verify its proposed test before crediting progress.
+- When prep supplies `foundry.strategy_digest`, preserve the trace in the final
+  Verified field as `Frontier advice: sha256:<digest>; executed=yes|no;
+  outcome=<public-safe result>`. `executed=yes` requires an actual local test.
 
 ## Final receipt
 
@@ -60,4 +63,3 @@ One executable falsifier or promotion condition.
 
 **Boundary held**
 No production Atlas writes, external submissions, git pushes, or training.
-
