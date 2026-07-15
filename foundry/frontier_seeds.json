@@ -50,7 +50,7 @@
       "verifier": "For m=22 and n=17, require every vertex-pair codegree at most 1 and every red degree at least m-n=5. These exact checks certify a witness; UNSAT requires a replayable proof certificate.",
       "next_action": "Replay the checked-in Erdos-552 verifier/certificate package, assert known-good and branch-specific known-bad fixtures, then run one bounded n=17,m=22 construction or certified SAT shard.",
       "next_gate": "valid_m22_graph_or_replayable_unsat_certificate_for_n17_m22",
-      "avoid": "Do not conflate a solver timeout with nonexistence, and do not re-prove the closed n=12..16 cells. Keep witness and UNSAT directions distinct. No Atlas writes or external submissions."
+      "avoid": "Do not conflate a solver timeout with nonexistence, and do not re-prove the closed n=12..16 cells. A 22-vertex witness implies R(C4,S17) >= 23. The displayed 21-vertex Hermitian-polarity fixture has degree range 4..5 and 48 edges, so it is not the m=22 witness and not SRG(21,5,0,1). Do not call an edge addition C4-safe from the endpoints' existing common-neighbor count alone; replay the full pair-codegree invariant and branch-specific kill fixtures. Random no-hit output is not route inaccessibility or extension impossibility. Keep witness and UNSAT directions distinct. No Atlas writes or external submissions."
     },
     {
       "id": "erdos_140_r3_212",

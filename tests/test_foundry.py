@@ -343,6 +343,54 @@ RuntimeError: Connection error.
         config = json.loads((ROOT / "foundry" / "config.json").read_text())
         self.assertEqual(foundry.semantic_contract_errors(receipt, config), [])
 
+    def test_c4_star_contract_rejects_observed_false_polarity_and_evidence_claims(self):
+        receipt = {
+            "frontier_id": "erdos_552_c4_star_n17",
+            "occurred_at": "2026-07-15T12:35:32Z",
+            "frontier": (
+                "Does there exist a C4-free graph on 22 vertices with minimum "
+                "degree >= 5, which would prove R(C4,S17) >= 22?"
+            ),
+            "action": (
+                "Ran random greedy construction and a polarity-graph extension "
+                "impossibility proof."
+            ),
+            "verified": (
+                "Verifier fixture suite ALL PASS (sha256: b876c28b "
+                "c4_star_verifier_v2.py). The known 21-vertex witness is "
+                "SRG(21,5,0,1), a polarity graph P(4) at exact equality; "
+                "every pair has exactly 1 common neighbor."
+            ),
+            "result": (
+                "The search confirms the target is unreachable by random methods."
+            ),
+            "next_gate": "Run symmetry-broken SAT with proof logging.",
+        }
+        config = json.loads((ROOT / "foundry" / "config.json").read_text())
+        errors = foundry.semantic_contract_errors(receipt, config)
+        self.assertEqual(sum("quantity-conflation" in error for error in errors), 7)
+
+    def test_c4_star_contract_accepts_scoped_polarity_control_with_full_hash(self):
+        receipt = {
+            "frontier_id": "erdos_552_c4_star_n17",
+            "occurred_at": "2026-07-15T12:35:32Z",
+            "frontier": "Can a bounded generator find the required 22-vertex witness?",
+            "action": "Replayed a full codegree and minimum-degree verifier.",
+            "verified": (
+                "Verifier sha256:"
+                "b876c28bdab665e9e298e927ea9840ff250c8e987ac254a6a1ac4d3347ea82ce "
+                "c4_star_verifier_v2.py. The inspected Hermitian-polarity control "
+                "has degree range 4..5 and 48 edges."
+            ),
+            "result": (
+                "No witness was found in the bounded sample; the Ramsey bracket "
+                "remains 22..23 and the generator route is unclassified."
+            ),
+            "next_gate": "Use a corrected C4-safe generator or proof-producing SAT.",
+        }
+        config = json.loads((ROOT / "foundry" / "config.json").read_text())
+        self.assertEqual(foundry.semantic_contract_errors(receipt, config), [])
+
     def test_r3_212_contract_rejects_heuristic_support_for_exact_value(self):
         receipt = {
             "frontier_id": "erdos_140_r3_212",
