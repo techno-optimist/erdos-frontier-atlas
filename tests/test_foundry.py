@@ -238,6 +238,36 @@ RuntimeError: Connection error.
         errors = foundry.semantic_contract_errors(receipt, config)
         self.assertTrue(any("quantity-conflation" in error for error in errors))
 
+    def test_q6_contract_rejects_lower_bound_inference_from_well_sharded_no_hit(self):
+        receipt = {
+            "frontier_id": "erdos_21_q6",
+            "occurred_at": "2026-07-15T11:08:09Z",
+            "frontier": "Can orderly generation find a 14-edge q(6) witness?",
+            "action": "Built an exact pairwise intersection and cover number verifier.",
+            "verified": "Known-good and known-bad hitting-set fixtures replayed.",
+            "result": "No new mathematical bound established.",
+            "next_gate": (
+                "If exhaustive or well-sharded generation yields none, log a "
+                "negative result tightening the lower bound to 15."
+            ),
+        }
+        config = json.loads((ROOT / "foundry" / "config.json").read_text())
+        errors = foundry.semantic_contract_errors(receipt, config)
+        self.assertTrue(any("quantity-conflation" in error for error in errors))
+
+    def test_q6_contract_accepts_bounded_search_without_bound_inference(self):
+        receipt = {
+            "frontier_id": "erdos_21_q6",
+            "occurred_at": "2026-07-15T11:08:09Z",
+            "frontier": "Can orderly generation find a 14-edge q(6) witness?",
+            "action": "Built an exact pairwise intersection and cover number verifier.",
+            "verified": "Known-good and known-bad hitting-set fixtures replayed.",
+            "result": "No witness was found in the bounded shard; bracket unchanged.",
+            "next_gate": "Require a complete replayable coverage certificate before changing the lower bound.",
+        }
+        config = json.loads((ROOT / "foundry" / "config.json").read_text())
+        self.assertEqual(foundry.semantic_contract_errors(receipt, config), [])
+
     def test_r55_contract_accepts_bounded_negative_sample(self):
         receipt = {
             "frontier_id": "erdos_1029_r55", "occurred_at": "2026-07-15T07:27:00Z",
