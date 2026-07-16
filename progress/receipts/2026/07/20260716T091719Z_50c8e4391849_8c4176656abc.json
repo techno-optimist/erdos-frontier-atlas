@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:8c4176656abc348c8274d1a57ee5ab5f6b241c0af85a0858226e9cf59fdbb7b6",
+  "content_digest": "sha256:005ab548ab6884ea038139d50ebbc1cfc4fb66b8b0b6fc46dddd1d2a1b026fe3",
+  "occurred_at": "2026-07-16T09:17:19Z",
+  "frontier": "What is R(C4, S17): does a C4-free simple graph on 22 vertices with minimum degree ≥ 5 exist (implying R(C4, S17) ≥ 23)?",
+  "action": "Milestone: verifier_construction; contract=sha256:20191ec98ee3e6994ddb8f50a1ae1eef886fbab446ddb9fc748b0c9e7052c4fb\nBuild and replay a target verifier: a C4-free graph predicate requiring (a) simple graph on exactly n=22 vertices, (b) every vertex pair has codegree ≤ 1 (C4-freeness via codegree check), (c) minimum degree ≥ 5. Tested three fixed fixtures: (1) 21-vertex star (out-of-domain), (2) 22-vertex graph with induced K4 on vertices 0-3 having codegree-2 pairs (predicate-violation), (3) 22-vertex star-like graph with vertex 21 degree 1 (predicate-violation for min-degree). All three correctly rejected with branch-specific rejection reasons.",
+  "verified": "Verifier domain: REJECTED out-of-domain 21-vertex star fixture (expected 22, got 21 vertices)\nVerifier predicate: REJECTED two branch-specific bad fixtures — (a) c4_free violation (codegree 2 for pairs in induced K4, SHA-256: 78b6f190e693de54), (b) min_degree violation (21 of 22 vertices below degree 5, SHA-256: 6480268f22c187c4)\nVerifier script SHA-256: 98a873d920b3f4ca02bcf65d0dcb171b89b702b41a3a06ae023a63fe50a6aefb\nTarget contract digest: sha256:20191ec98ee3e6994ddb8f50a1ae1eef886fbab446ddb9fc748b0c9e7052c4fb\nContext policy: gated_focused_only (no broad packet loaded)\nPrior context: OEIS A006672, P42 certificates for n=12..16 via SAT, 21-vertex witness for a(17)≥22, 1M-conflict SAT pass on m=22 returned UNKNOWN",
+  "result": "Verifier construction milestone complete. All three fixtures (one domain-violation, two predicate-violations) correctly rejected with branch-specific reasons. No false acceptances. The verifier code is the sole evidence artifact. The actual n=17,m=22 search (construction or SAT/UNSAT proof) is deferred to Next gate as the milestone contract mandates.",
+  "next_gate": "Run one bounded n=17,m=22 construction attempt: generate candidate 22-vertex, min-degree-5 graphs and test with the verified predicate, or attempt a SAT/DRAT nonexistence proof with a 100,000-conflict limit (smaller than the prior 1M that returned UNKNOWN). If the construction route yields a witness, immediately replay with the same verifier and publish under Verified with SHA-256 of witness edges.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. All fixture replays ran locally with bounded output. Runtime budget: under 16 calls, under 900 wall seconds, under one expensive terminal action.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-16_02-17-19.md",
+    "sha256": "e8389ce1cc3b48af852b8ffc28ce594fd39d157f7f8dfb33dc6e5b2985bbd336"
+  },
+  "frontier_id": "erdos_552_c4_star_n17"
+}
