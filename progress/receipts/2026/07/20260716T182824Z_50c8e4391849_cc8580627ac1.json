@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:cc8580627ac10278d23f5aec7570412f6d946b253c9ae8c5370de261fbd28872",
+  "content_digest": "sha256:36fcc9b93a6aae12255d7436889485ba468aba48cfa00aecbbf635243436c816",
+  "occurred_at": "2026-07-16T18:28:24Z",
+  "frontier": "Erdős B₃ sets: What is the exact value of a(11) — the minimum span of a size-11 set with all triple sums distinct? Known upper bound ≤445 (Tromp 2013), exact value unresolved.",
+  "action": "Milestone: verifier_construction; contract=sha256:20191ec98ee3e6994ddb8f50a1ae1eef886fbab446ddb9fc748b0c9e7052c4fb\nConstructed a fixed O(k³) exact verifier for B₃ triple-sum distinctness and executed a no-network replay with fixed kill fixtures: 3 domain-bad fixtures (contains 0, contains negative, contains non-integer) and 3 predicate-bad fixtures (known-colliding positive-integer sets of sizes 3 and 4), plus 3 known-good fixtures for sanity.",
+  "verified": "Domain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nVerifier domain: All 3 out-of-domain fixtures (zero, negative, non-integer elements) rejected with reason='domain'. A B₃ candidate must be a finite set of positive integers (elements ≥ 1).\nVerifier predicate: All 3 predicate-violation fixtures (A={1,2,3} with 5=5 collision, A={1,2,4,7} with 6=6 and 9=9 collisions, A={1,3,4} with 9=9 collision) rejected with reason='predicate'. The predicate requires C(k+2,3) multiset triple sums a+b+c (a≤b≤c) to be pairwise distinct.\nArtifact: verifier_b3_triple_sum.py, SHA-256: f72756a19559ac66ef4f6dbbea8940be6ecf24720a38ff129981ca59af385b98",
+  "result": "Initial verifier milestone passed: a self-contained, deterministic O(k³) B₃ triple-sum verifier is constructed and replayed. Both domain and predicate rejection branches operate correctly with fixed fixtures. The expensive half — exhaustive branch-and-bound search to prove a(11) exact value or nonexistence for span ≤445 — is deferred per contract.",
+  "next_gate": "Build and replay a SAT-encoding verifier for the nonexistence of a size-11 B₃ set in {1..N} for candidate spans N=440, 442, 445; encode distinct-triple-sum constraints as CNF and solve with Kissat/CaDiCaL to produce DRAT proofs. Budget: ~100-core farm × 24h per N. Abort if no proof found within budget for N=445 (meaning a(11)≤445 is unimprovable only by witness, not optimality).",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Mutation budget: 3/3 exhausted (experiment.json ×1, verifier.py write ×1, patch ×1). Single terminal action (replay) under 30s. Call count: 7 of 16.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-16_11-28-24.md",
+    "sha256": "f65f52d7cbc00c565a9e1dc3820287ece99bf0a91cc7ba5cd65fc2981470a430"
+  },
+  "frontier_id": "erdos_241_curated"
+}
