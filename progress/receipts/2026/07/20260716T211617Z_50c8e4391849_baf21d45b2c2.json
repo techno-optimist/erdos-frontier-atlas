@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:baf21d45b2c2a5fee84963cd484a44853917f7eb84a875db347f69a7d974b5ff",
+  "content_digest": "sha256:f39976e72e85c20ac74679a78403363139485c6136ceac79dfd0b395f128a145",
+  "occurred_at": "2026-07-16T21:16:17Z",
+  "frontier": "What is the exact maximum size f(N) of a subset A ⊆ {1, ..., N} such that no element of A divides the sum of two other (possibly equal) elements of A — for small N where no table exists?",
+  "action": "Milestone: verifier_construction; contract=sha256:20191ec98ee3e6994ddb8f50a1ae1eef886fbab446ddb9fc748b0c9e7052c4fb\nBuilt `erdos_sarkozy_verifier.py` with two-branch rejection: (1) domain/well-formedness — rejects sets containing elements outside {1, ..., N}; (2) predicate — rejects sets where any distinct a≠b with a | (b+c). Fixed fixtures: domain kill {0,1,2}⊆{1..10}, predicate kill {1,2,3} where 1|(2+3), good fixture {5,7} verified valid.",
+  "verified": "Domain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 1/1 rejected correctly\nArtifact: erdos_sarkozy_verifier.py, SHA-256: dacaa564ff505403a51528976152b91818476c0ff45b3b38afe63f7b88c2907f\nVerifier domain: A⊆{1,...,N}, non-empty, all positive integers; rejects {0,1,2} with reason \"element 0 not in {1,...,10}\"\nVerifier predicate: no distinct a≠b,c in A with a|(b+c); rejects {1,2,3} with reason \"1 | (2+3) = 5\"\nThe verifier is a no-argument entrypoint; replay exits zero and prints the required summary lines exactly once.",
+  "result": "Verifier construction complete. The exact Erdős–Sárközy no-term-divides-sum problem has a trivial O(|A|²) predicate checker. Bedert (2023, arXiv:2301.07065) proved |A|≤⌊N/3⌋+1 for large N, but no exact f(N) table exists for small N. The verifier enables the next stage: branch-and-bound or ILP search to compute f(N) exactly for N=1..50+.",
+  "next_gate": "Run an exact O(|A|²) backtracking/branch-and-bound search for f(N) for N=1..30, using the verifier as a pruning oracle, and output the sequence f(1)..f(30) with witness sets for each N.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-16_14-16-17.md",
+    "sha256": "8b89a3f1e88eb2b24fa8b0ff7d1cec493d81f853f64e810b6f1566759e830a22"
+  },
+  "frontier_id": "erdos_13_curated"
+}
