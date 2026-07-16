@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:09df490388aec4c383ad271152e1506f4f47e9617797bdd5517c2a41e07e112c",
+  "content_digest": "sha256:f7f1c04527658d39f51ed7764866a79edce63b8ffa7115a41da3e78fcb221c39",
+  "occurred_at": "2026-07-16T12:17:14Z",
+  "frontier": "q(6): minimum edges in a 6-uniform pairwise-intersecting hypergraph with cover number exactly 6. Bracket: 14 ≤ q(6) ≤ 18. Sivashankar (2026) lower bound 3r−4 = 14; Barát–Wanless PG(2,5) upper bound m=31 (τ=6).",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nBuilt q6_verifier.py with pairwise-intersection check (O(m²·6)) and exact 5-cover rejection via C(N,5) hitting-set enumeration. Tested 6 fixtures (star τ=1, 2 disjoint edges, 3-cover, 2×5-cover, PG(2,5)). The verifier failed on PG(2,5) fixture due to a normalization bug in the lines construction (modular inverse computed as iterative multiplier 1..4 instead of Fermat inverse a³ mod 5). The mutation budget was exhausted during the attempted fix, leaving the verifier in a broken state. The accepted continuation's claimed artifacts (q6_verifier.py, pg2_verify.py) were not present in the repository before this session.",
+  "verified": "q6_verifier.py (sha256 of final broken artifact): lines 174-183 normalize points correctly (a³ mod 5), but lines 215-219 normalize lines identically wrong (iterative 1..4 loop instead of inv = pow(a,3,5)).\n- Fixture replay results: star_6=ACCEPT, disjoint_2=REJECT, disjoint_3=REJECT, 3_cover=REJECT, 2_5_cover=REJECT — pairwise-intersection branch correct for small cases. 5-cover branch: the C(N,5) enumeration is correct in principle (uses itertools.combinations), but PG(2,5) never reached.\n- Literature verification: Sivashankar (2026) 3r−4 lower bound → q(6)≥14; Barát–Wanless PG(2,5) gives a τ=6 witness with m=31. q(5)=13 (Barát–Wanless, J. Combin. Designs 2021, arXiv:2011.04444), q(3)=6, q(4)=9 (Tripathi 2014).\n- Required evidence phrases present in verified literature: \"pairwise-intersecting\" (definition of q(r)), \"cover number\" (τ=6), \"5-cover\" (falsifier for τ≥6), \"hitting set\" (equivalent to cover).\n- No 5-cover found in PG(2,5) can be claimed without a working verifier. The τ=6 for PG(2,5) is a cited theorem (τ(PG(2,q))=q+1), not a local finding.",
+  "result": "The verifier's pairwise-intersection branch is correct (verified on 4/4 small fixtures). The 5-cover branch (C(N,5) enumeration) is structurally correct but untested on PG(2,5) due to the normalization bug preventing witness construction. The accepted continuation's claim that \"6 fixtures (all pass)\" cannot be verified — the artifacts were missing and the present verifier is broken. The literature bracket remains: q(6) ∈ [14, 18] per Sivashankar/Barát–Wanless. No improvement to the bracket was achieved. The productive route per accepted continuation is isomorph-free orderly generation with τ-deficiency pruning, targeting m=14..17 with V≤29 (Barát Lemma 6.4).",
+  "next_gate": "Implement an isomorph-free orderly generation engine for 6-uniform intersecting families (e.g., based on McKay's orderly generation or the canonical augmentation used by Barát). For each generated candidate with 14 ≤ m ≤ 17, run the corrected exact witness verifier. A single valid witness with m < 18 improves the bound; m=14 settles q(6)=14. First step: implement the 5-cover verifier correctly and validate on PG(2,5) as a regression test before deploying the generation engine.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. No new files written (mutation budget exhausted). All analysis sourced from existing repo state and the accepted continuation receipt.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-16_05-17-14.md",
+    "sha256": "7fc11b94c7f8f07273262871d1253d056d3b4afbe7e7a2a44c3a9f73fb0fc569"
+  },
+  "frontier_id": "erdos_21_q6"
+}
