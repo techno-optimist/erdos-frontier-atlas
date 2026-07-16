@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:86df702eccbe17fadf644b555dcc6cfa974b0762b5354bcb01977821653b7179",
+  "content_digest": "sha256:7432df9e6f5cb662bd777bb31ce73226e10b5103a606d44519867ce93d823765",
+  "occurred_at": "2026-07-16T17:55:18Z",
+  "frontier": "Shortest 11-mark B₃ ruler (a(11)): best known upper bound 445 (Tromp 2013), exact value unresolved. A B₃ set requires all C(11+2,3)=286 multiset triple sums a+b+c (i≤j≤l) to be pairwise distinct.",
+  "action": "Milestone: verifier_construction; contract=sha256:20191ec98ee3e6994ddb8f50a1ae1eef886fbab446ddb9fc748b0c9e7052c4fb\nBuilt and replayed b3_verifier.py: a no-argument Python verifier checking B₃ multiset triple-sum distinctness. Domain check validates exactly k distinct non-negative integers. Predicate check enumerates all C(k+2,3) multiset triple sums and verifies pairwise distinctness. Domain kill fixture [0,1,2,3,4,5,6,7,8,9,9] (duplicate mark → 10 distinct, not 11) correctly rejected. Predicate kill fixture [0,1,2,3,6,7,8,9,12,13,14] (11 distinct marks, 39 collision groups among 286 triples) correctly rejected.",
+  "verified": "Verifier domain: Out-of-domain fixture [0,1,2,3,4,5,6,7,8,9,9] correctly rejected — duplicate mark [9] yields only 10 distinct values, violating cardinality constraint (expected 11). Exit 0.\nVerifier predicate: Predicate-violation fixture [0,1,2,3,6,7,8,9,12,13,14] correctly rejected — domain passes (11 distinct non-negative ints), but 39 collision groups among 286 multiset triple sums (e.g., 0+1+14=15 and 0+2+13=15). Exit 0.\nArtifact: b3_verifier.py, SHA-256: 87085159fc4905fbf1bb371899e91da11d77ecdc32e4061ca81f32fb4890ac1b\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 1/1 rejected correctly\nALL KILL FIXTURES PASSED",
+  "result": "Verifier construction milestone passed. Both kill-fixture branches (domain well-formedness and predicate distinctness) produce correct rejection with proper branch attribution. The verifier is a reproducible, no-argument replay entrypoint.",
+  "next_gate": "Patch b3_verifier.py with correct good fixture (replace powers-of-2 with {0,1,4,13,32,71} — verified B₃ set of 6 marks, all 56 triple sums distinct). Then execute bounded canonical backtracking search for 11-mark B₃ sets with length < 445, using symmetry-breaking and partial-sum collision pruning.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-16_10-55-18.md",
+    "sha256": "6687cc8e4be6d37d5159d85a1cec511c08219e33126bbebe2568470bda9357bd"
+  },
+  "frontier_id": "erdos_41_b3_a11"
+}
