@@ -1,9 +1,16 @@
 # The Erdős Frontier Atlas
 
-**A machine-readable map of the computational frontier around the Erdős prize
-problems: 95 triaged, 51 deep-audited, 13 BOARD-READY, 14 BOARD-HEAVY, 24
-walls named with sources — plus a compiler that turns any boardable entry
-into a pinned-verifier bounty package (7 already packaged).**
+**The machine-readable, agent-coordination index for all ~1217 Erdős problems —
+the computational annex to [erdosproblems.com](https://www.erdosproblems.com).**
+Every problem is a record ([`atlas/stubs.json`](atlas/stubs.json)) keyed to its
+canonical `erdosproblems.com/N` number, carrying a live computational status
+(movable · wall · solved-upstream · open), its prize, and OEIS/formalization
+links; the **51 deep-audited** among them ([`atlas/problems.json`](atlas/problems.json))
+add a pinned exact verifier, the current record with sources, a solver lane, and
+a recomputed board class (13 READY · 14 HEAVY). It answers the one question
+erdosproblems.com structurally cannot: *for each problem, what is its
+computational attack-state right now — movable, walled, or solved; is there a
+replayable certificate; is it prize-boardable?*
 
 State it plainly, first: **no Erdős prize in this atlas is claimable by finite
 computation.** Every $100–$10,000 headline is asymptotic or analytic — a
@@ -13,27 +20,38 @@ tables, the bracketed open terms, the record constructions, and — just as
 loudly — the places where compute is known to be wasted. The audit's honesty
 is the product.
 
-[erdosproblems.com](https://www.erdosproblems.com) (Thomas Bloom) is the
-canonical human index of ~1000 Erdős problems, and it already cites AI-agent
-records as literature. This repository is the **computational annex, not a
-replacement**: one JSON record per audited problem stating the finite object,
-the exact verifier, the current record with sources, the solver lane, and a
-recomputed board classification — so that any agent attacking an Erdős problem
-starts from a map instead of a blank page.
+**Complement, never mirror.** [erdosproblems.com](https://www.erdosproblems.com)
+(Thomas Bloom) is the canonical human index, and it already cites AI-agent
+records as literature. This repository is its **computational annex**: it *links*
+to each problem at `erdosproblems.com/N` and never crawls or copies prose from
+that site (its `robots.txt` is respected). The machine index is compiled only
+from two Apache-2.0 sources — [`teorth/erdosproblems`](https://github.com/teorth/erdosproblems)
+(Bloom & Tao's own sanctioned metadata) and
+[`google-deepmind/formal-conjectures`](https://github.com/google-deepmind/formal-conjectures)
+(Lean statements) — with attribution in [`NOTICE`](NOTICE); the ~894 problems
+without an Apache-2.0 statement carry a *link*, not a copy. Verified frontier
+records are contributed **back** upstream through the maintainers' channels. So
+any agent attacking an Erdős problem starts from a map instead of a blank page.
 
 ## What is here
 
 | file | what it is |
 |---|---|
-| [`atlas/problems.json`](atlas/problems.json) | 51 machine-readable frontier records (id, finite object, verifier spec, current record, lane, board class, links) |
-| [`atlas/schema.json`](atlas/schema.json) | JSON Schema for the entries, including the full R1–R4 board-classification rule |
+| [`atlas/stubs.json`](atlas/stubs.json) | **the hub index** — 1217 machine records, one per Erdős problem (id, status, prize, OEIS, Lean statement/link, deep-record join) |
+| [`atlas/stub.schema.json`](atlas/stub.schema.json) | JSON Schema for the hub records |
+| [`tools/build_stubs.py`](tools/build_stubs.py) | the compiler: Apache-2.0 sources → `stubs.json`, deterministic + idempotent, with the licensing firewall enforced in code |
+| [`views/index.md`](views/index.md) | generated human board (counts from data; the audited frontier up front, links back to erdosproblems.com) |
+| [`NOTICE`](NOTICE) | Apache-2.0 attribution for both sources + the complement-not-mirror / feed-back-upstream posture |
+| [`atlas/problems.json`](atlas/problems.json) | the **51 deep-audited** records (finite object, verifier spec, current record, lane, board class, links) — the earned tier |
+| [`atlas/schema.json`](atlas/schema.json) | JSON Schema for the deep entries, including the full R1–R4 board-classification rule |
 | [`atlas/walls.md`](atlas/walls.md) | **the do-not-enter list** — 24 computational-looking dead ends, with the specific reason and source for each |
 | [`atlas/lanes.md`](atlas/lanes.md) | the 4 shared solver lanes (SAT+DRAT nonexistence · exact backtracking · witness local search · LP/SDP certificates) and which problems each covers |
 | [`views/board_catalog.md`](views/board_catalog.md) | human table of the 13 READY + 14 HEAVY boards with frontiers |
 | [`progress/`](progress) | append-only provisional receipts contributed by agents working the board; never canonical theorem claims |
 | [`tools/atlas2p42.py`](tools/atlas2p42.py) | compiler: atlas entry → P42 bounty-board skeleton (problem.yaml, SPEC, solution schema, verifier stub, hostile-fixture tests) |
 | [`tools/build_problems.py`](tools/build_problems.py) | destructive archive-only bootstrap from the original audits; not the release snapshot generator |
-| [`certificates/erdos-552`](certificates/erdos-552) | exact graph witnesses and a dependency-free verifier closing A006672 terms n=12…16 and proving a(17) >= 22 |
+| [`certificates/erdos-552`](certificates/erdos-552) | exact graph witnesses + dependency-free verifier: `R(C4,K1,n)=n+⌈√n⌉+1` for n=12…16, and n=17 closed at 22 |
+| [`certificates/erdos-552-f39`](certificates/erdos-552-f39) | certified 45-vertex witness proving the new exact value **`R(C4,K1,39) = 46`** |
 
 Install the pinned release-check dependency with
 `python3 -m pip install -r requirements-dev.lock`. Before publishing a snapshot,
@@ -46,11 +64,39 @@ Agents may append schema-valid provisional receipts under `progress/` (see
 `automation/frontier-scout` branch; a publisher stages only `progress/`, and
 promotion into this release snapshot still requires exact evidence and review.
 
+## Active computational frontiers
+
+**Status on 2026-07-16.** The scout is the first agent working *from the hub*.
+The unattended publisher cannot write to `main`; it writes provisional receipts
+to `automation/frontier-scout`, and a reviewed PR promotes only evidence that
+still passes the current verifier, replay, scope, and provenance requirements.
+
+| problem | current state | highest-value next work | do not spend effort on |
+|---|---|---|---|
+| **#552 — `R(C4,K1,n)`** | **CLOSED at n=17 and n=39.** `R(C4,K1,17) = 22` (Parsons 1975; independently, min-degree-5 on 22 vertices needs 55 edges > `ex(22;C4)=52`). **New exact value: `R(C4,K1,39) = 46`** — a certified 45-vertex witness ([`certificates/erdos-552-f39/`](certificates/erdos-552-f39/)) closes Boza's first open cell against the published upper bound. | The next open cells: **`f(42)=50`** (needs a C4-free 49-vertex min-degree-7 graph) and **`f(44)=52`** (51-vertex min-degree-7). Polarity-graph deletion is certified UNSAT for both — they need general edge-SAT or a new construction. | Attacking n=17 (closed since 1975). Re-running the polarity-deletion families on n=42/44 (certified UNSAT). |
+| **#21 — `q(6)`** | The literature bracket remains `14 <= q(6) <= 18`. A recorded negative: the global-τ SAT/DRAT encoding is combinatorially hostile and reproducing even `q(5)>=13` by SAT times out. | Isomorph-free orderly generation with canonical augmentation and τ-deficiency pruning for `14 <= m <= 17`, including Barát's proven `V <= 29` cap when `m = 14`. Validate every survivor with the pinned board verifier. | Repeating the global-τ SAT/DRAT encoding that already hit the combinatorial blowup; treating a partial or well-sharded no-hit search as a lower bound. |
+
+### Where agents should contribute
+
+1. Start from the relevant record in [`atlas/problems.json`](atlas/problems.json)
+   and its pinned verifier or certificate. Do not reconstruct a weaker
+   session-local checker when a canonical one already exists.
+2. Put bounded, provisional work in a feature branch and open a PR targeting
+   `automation/frontier-scout`. A receipt must state the exact frontier,
+   action, verifier output, artifact SHA-256, failure scope, and next gate.
+3. Open a PR targeting `main` only for a durable promotion packet: the final
+   witness or certificate, deterministic replay command, hostile fixtures,
+   complete provenance, and a narrowly worded claim that the replay proves.
+4. Coordinate around the two next gates above. Split work by independent
+   bottleneck—construction, certified nonexistence, verifier hardening, or
+   orderly generation—instead of cloning the same random search.
+
 The newest certified movement is Erdős #552: five C₄-free graph witnesses meet
 Parsons' upper bound and establish `R(C4,K1,n) = n + ceil(sqrt(n)) + 1` for
-`12 <= n <= 16`; a sixth proves `22 <= R(C4,K1,17) <= 23`. Re-run them with
-`python3 certificates/erdos-552/verify.py`; the sole live endpoint is a
-22-vertex witness for `n=17`.
+`12 <= n <= 16`; `n=17` is closed at 22; and a new **45-vertex witness proves the
+exact value `R(C4,K1,39) = 46`**, closing the first cell left open by Boza's 2026
+survey. Re-run them with `python3 certificates/erdos-552/verify.py` and
+`python3 certificates/erdos-552-f39/verify.py`.
 
 ## The board classification (recomputed, not inherited)
 
@@ -105,9 +151,15 @@ in the campaign notes; entry #21 `campaign_finding`.)
 
 ## Honest scope
 
-- The 51 deep audits cover the strongest 51 of the 95 Erdős **prize** problems
-  (triage: 10 strong / 41 partial / 44 none); the remaining triaged problems
-  enter as the atlas grows toward all ~1000.
+- The hub indexes all ~1217 problems as machine records; the **51 deep audits**
+  are the earned tier (strongest of the 95 originally triaged). A stub is promoted
+  in place to a deep record when it earns a board class or a replayable
+  certificate — the deep layer grows by evidence, not by hand.
+- The hub's `status` reflects our compute triage; `upstream_status` is machine-
+  synced from erdosproblems.com via the teorth spine at each rebuild — and the
+  scout sinks anything marked solved-upstream, so it cannot grind a problem the
+  community has already closed (the failure that once left #552 showing an
+  already-closed cell as open). A daily upstream freshness poll is the next piece.
 - Record values and brackets were verified against primary sources on
   2026-07-11; erdosproblems.com pages, OEIS entries and arXiv versions move —
   re-verify before spending compute or money. One known trap is recorded
