@@ -1,0 +1,25 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:bc0e4b4785fea146340f54268e5dc89249a1693c73759f1c842bf86f81f65ebc",
+  "content_digest": "sha256:4fb3f218bdc502c1fd646a5b3593485756eb67955e5ad7ac4ce1f37530cbe1d8",
+  "occurred_at": "2026-07-16T00:37:39Z",
+  "frontier": "GNFS constant-factor ledger: Can the d=5 nonzero-landing curve construction (496 bits, N^0.10–0.13 height) advance beyond univariate GNFS, and does Riemann-Roch relation extraction preserve its height advantage?",
+  "action": "Milestone: next_experiment_design; contract=sha256:8f51055608cd87448dc0465787ec0c29684f1bdb3c8d9d4e4f45ef8ef7c42a8c\n\nStructured next-experiment design for R3 (Sage/Magma function-field NFS relation extraction on validated d=5 genus-6 curves) plus minimal structural replay of Probe H: 20 trials of sparse bivariate support sampling (d=5, |A|=14 from 21 monomials) confirmed structural precondition met in 14/20 cases (70%), non-automatic.",
+  "verified": "experiment.json: sha256:f5d4ed49f9e4669a6872bb154a1f1ba964266ec37b73c518f9da5501f65f7f54\n- next_gate.md: sha256:6c0fe747cfcb1ea6008f6d2dc958979a6fb2b18e89820e6fe8d98ddeb7b305c1\n- probe_h_structural_replay.py: sha256:235dc3a29218e482ca6da68ea145ad6414a4dafa54637d973a688a36d0fc53c8\n- Accepted continuation sha256:6594265f (immutable prior state)\n- Strategy advice sha256:1c418cf29fc510a03379aa9710e19061794e639f3c3eba2869c708cc70b9729e; executed=no; outcome=Sage/Magma and fpylll unavailable; structural replay ran instead (sympy-only)\n- Frontier advice: sha256:1c418cf29fc510a03379aa9710e19061794e639f3c3eba2869c708cc70b9729e; executed=no; outcome=Sage/Magma and fpyllf unavailable; structural replay ran instead (sympy-only)",
+  "result": "Next-experiment design completed. R3 requires Sage/Magma (unavailable). Probe H structural precondition confirmed: sparse bivariate support selection matters — not all sparse supports yield sufficient leading-DOF for factorization (14/20 with seed=42). Full Probe H verification requires fpylll; full R3 requires Sage/Magma. Route confirmed closed at probe scale pending environment change.",
+  "next_gate": "Install fpylll and run full Probe H: LLL-reduce modular constraint lattice on 3 degree-5 sparse supports, factor leading forms with sympy, record factorization frequency. Or install SageMath and execute R3 directly on d=5 genus-6 curves.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-15_17-37-39.md",
+    "sha256": "a2778e96da8e61a61807f71e011c75b80a5ecae425892e5f5f3c3f4ca4827508"
+  },
+  "frontier_id": "fm_prime_factorization_gnfs",
+  "frontier_consult": {
+    "advice_digest": "sha256:1c418cf29fc510a03379aa9710e19061794e639f3c3eba2869c708cc70b9729e",
+    "executed": false,
+    "outcome": "Sage/Magma and fpyllf unavailable; structural replay ran instead (sympy-only)"
+  }
+}
