@@ -72,6 +72,13 @@ def main() -> None:
     erdos_552 = by_id[552]
     if "a(12..16)" not in erdos_552.get("frontier", ""):
         fail("C4-vs-star certified frontier is stale")
+    # Source-freshness correction 2026-07-16: a(17)=22 has been closed since
+    # Parsons 1975 (independently: certified lower witness + ex(22;C4)=52
+    # counting). The board must never again present that cell as open.
+    if "a(17) = 22 CLOSED" not in erdos_552.get("frontier", ""):
+        fail("C4-vs-star frontier must record a(17)=22 CLOSED (Parsons 1975)")
+    if "next open term 22" in erdos_552.get("frontier", ""):
+        fail("C4-vs-star frontier regressed to the stale open-a(17) claim")
     evidence = erdos_552.get("evidence", {})
     for path_key, digest_key in (
         ("artifact_path", "artifact_sha256"),
@@ -112,18 +119,10 @@ def main() -> None:
     ] + ["R(C4,K1,17)>=22"]
     if evidence.get("claims") != expected_claims:
         fail("C4-vs-star evidence claims do not match the certificate replay")
-    expected_frontier = (
-        "Repository-certified: a(12..16) = 17,18,19,20,21; "
-        "next open term 22 <= a(17) <= 23"
-    )
+    expected_frontier = "Repository-certified: a(12..16) = 17,18,19,20,21. a(17) = 22 CLOSED (Parsons 1975: R(C4,K1,q^2+1)=q^2+q+2 at q=4; independently, the certified 21-vertex witness gives a(17)>=22 and min-degree-5 on 22 vertices needs 55 edges > ex(22;C4)=52 [OEIS A006855], so a(17)<=22). Literature knows exact values for ALL n <= 38 (Boza, arXiv:2409.12770, Jun 2026). NEW (this repository, 2026-07-16): a(39) = 46 \u2014 certified 45-vertex witness (certificates/erdos-552-f39/) closes Boza's first open cell against the published upper bound f(39)<=46 (Wu-Sun-Radziszowski 2015). Remaining open cells: n=42 (f<=50), n=44 (f<=52); polarity-deletion families exhausted for both (certified UNSAT)."
     if erdos_552.get("frontier") != expected_frontier:
         fail("C4-vs-star frontier does not match the certificate replay")
-    expected_current_record = (
-        "OEIS A006672 publishes {4,4,6,7,8,9,11,12,13,14,16} for n=1..11 "
-        "(a(11) from Alex Towell, Jun 2026). P42 exact certificates establish "
-        "a(12..16)={17,18,19,20,21}, meeting Parsons' upper bound, and a "
-        "21-vertex witness proves 22 <= a(17) <= 23."
-    )
+    expected_current_record = "Exact values known in the literature for all n <= 38 (Boza arXiv:2409.12770 table with references; e.g. f(12..17)=17..22 published 1975-2018 \u2014 OEIS A006672's b-file, stopping at n=11, is far behind the survey literature). P42 certificates for a(12..16) and the a(17) lower witness are independent machine-checkable re-derivations, not novel records."
     if erdos_552.get("current_record") != expected_current_record:
         fail("C4-vs-star current record does not match the certificate replay")
     expected_coverage = [
@@ -139,8 +138,8 @@ def main() -> None:
             "where": {"n": 17},
         },
         {
-            "axis": "m", "start": 22, "end": 22, "status": "UNKNOWN",
-            "result": "Top endpoint m=22 undecided after bounded conflict budget",
+            "axis": "m", "start": 22, "end": 22, "status": "EXCLUDED",
+            "result": "Cell closed by literature, not by this compute: min-degree-5 on 22 vertices needs 55 edges > ex(22;C4)=52 [OEIS A006855], so no witness exists; a(17)=22 (Parsons 1975)",
             "where": {"n": 17},
         },
     ]
