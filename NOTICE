@@ -1,0 +1,29 @@
+The Erdős Frontier Atlas — hub index (atlas/stubs.json)
+=======================================================
+
+The machine-readable hub index (atlas/stubs.json) is compiled by
+tools/build_stubs.py from the following Apache-2.0 licensed sources. Their
+content is used under the terms of the Apache License, Version 2.0. Each stub
+record carries per-source provenance (repo, file, commit SHA, SPDX license).
+
+1. teorth/erdosproblems  (https://github.com/teorth/erdosproblems)
+   Erdős problems database contributors (incl. Thomas Bloom and Terence Tao).
+   Used: data/problems.yaml — problem number, prize, status, OEIS, tags,
+   formalization flag. Licensed under Apache-2.0.
+
+2. google-deepmind/formal-conjectures
+   (https://github.com/google-deepmind/formal-conjectures)
+   The Formal Conjectures Authors.
+   Used: FormalConjectures/ErdosProblems/*.lean — informal problem statements
+   (docstrings) and formalization metadata for the formalized subset.
+   Licensed under Apache-2.0.
+
+erdosproblems.com (Thomas Bloom) is the canonical HUMAN index of the Erdős
+problems. This repository is its computational annex: it LINKS to each problem
+at erdosproblems.com/N and never crawls, copies, or re-hosts prose from that
+site. Its robots.txt (ai-train=no; use=reference) is respected. Problems for
+which no Apache-2.0 statement exists carry statement=null and a link only.
+
+Verified frontier records produced here are contributed back upstream through
+the maintainers' sanctioned channels (the teorth/erdosproblems repository and
+erdosproblems.com), never intercepted or re-hosted.
