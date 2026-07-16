@@ -1,11 +1,11 @@
 {
   "schema": "p42-foundry-index-v1",
-  "receipt_count": 55,
+  "receipt_count": 54,
   "classifications": {
     "progress": 13,
-    "negative_result": 26,
+    "negative_result": 25,
     "blocked": 16
   },
-  "last_receipt": "sha256:7a53746475a3d53169b95b4684e6e10b163c3b5a33ab899a41412bd7f49b3a3d",
-  "updated_at": "2026-07-16T12:52:21Z"
+  "last_receipt": "sha256:09df490388aec4c383ad271152e1506f4f47e9617797bdd5517c2a41e07e112c",
+  "updated_at": "2026-07-16T12:17:14Z"
 }
