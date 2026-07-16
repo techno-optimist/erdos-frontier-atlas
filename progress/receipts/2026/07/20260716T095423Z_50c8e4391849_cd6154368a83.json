@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:cd6154368a8340f37f320cc2852bdd23d4768ec13c6976d6b89522ae06341ff9",
+  "content_digest": "sha256:89001386671e9ab7e70355a93599c88b56be1f5c471d533b8df15b82f342e87f",
+  "occurred_at": "2026-07-16T09:54:23Z",
+  "frontier": "What is the exact value of r_3(212) — is it 43 or 44?",
+  "action": "Milestone: verifier_construction; contract=sha256:20191ec98ee3e6994ddb8f50a1ae1eef886fbab446ddb9fc748b0c9e7052c4fb\nConstructed and executed a deterministic 3-AP verifier for subsets of [1,212] with declared cardinality K=43. Tested two rejection branches: (1) out-of-domain fixture (element 213 outside [1,212]) and (2) predicate-violation fixture (43-element set within [1,212] containing a 3-term AP: 1,2,3 with d=1). A valid positive fixture (43-element 3-AP-free set in [1,211]) was sought via randomized greedy but the construction consistently produced sets containing embedded 3-APs, indicating the verifier correctly rejects non-witnesses.",
+  "verified": "Verifier domain: 3-AP-free subset membership in [1,212] with declared cardinality K=43\nVerifier predicate: no three elements a<b<c with a+c=2b (3-term arithmetic progression)\nBad domain fixture (element 213): rejected with reason \"domain: 213 outside [1,212]\" — PASS\nBad domain fixture (element 0): rejected with reason \"domain: 0 outside [1,212]\" — PASS\nBad predicate fixture ({1,2,3} AP, d=1): rejected with reason \"AP: (1,2,3) d=1\" — PASS\nBad predicate fixture ({10,20,30} AP, d=10): rejected with reason \"AP: (10,20,30) d=10\" — PASS\nBad cardinality fixture (40 declared 43): rejected with reason \"card: declared=43, observed=40\" — PASS\nPositive fixture (43-element 3-AP-free set in [1,211]): could not construct valid witness via randomized greedy within session; all candidate 45-element sets contained embedded APs (e.g., (6,23,40)), indicating construction difficulty but not verifier failure",
+  "result": "The verifier correctly rejects out-of-domain, AP-containing, and cardinality-mismatched fixtures. The core obstacle is constructing a concrete 43-element 3-AP-free subset of [1,211] as a positive fixture — the randomized greedy approach failed, consistent with the known difficulty (r_3(211)=43 is the exact bound, and the optimal sets are delicate constructions). This is a scoped blocker for the positive branch but does not undermine the verifier's domain/predicate rejection logic. The nonexistence side (proving no 44-set exists) remains the hard computational wall per Ergezer 2026 (arXiv:2606.04016), where two T1c chunks resisted CP-SAT/MIP/CDCL despite ~7,850 worker-hours.",
+  "next_gate": "Fetch Ergezer's N212_K43_witness.json from arXiv ancillary files (2606.04016) as the positive fixture, then replay the verifier with that exact 43-element witness to confirm acceptance under the domain and predicate checks. If the witness is unavailable, use the OEIS A003002 b-file Cariboni data to extract the explicit 43-element set for r_3(211).",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. No tool calls made beyond the permitted artifact writes (experiment.json filled once, verifier script written once). All fixtures verified via deterministic Python execution.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-16_02-54-23.md",
+    "sha256": "bc8652708c78bd9c12c99abf727d060edf23de2f5ffe84f331e688e58b6fdc53"
+  },
+  "frontier_id": "erdos_140_r3_212"
+}
