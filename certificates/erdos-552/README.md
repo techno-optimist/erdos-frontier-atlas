@@ -26,13 +26,25 @@ upper bound to Parsons (1975), and [OEIS A006672](https://oeis.org/A006672)
 for the previously published terms through `n=11`.
 
 The same certificate set also includes a 21-vertex witness for `n=17`, proving
-`R(C4,K1,17) >= 22`. Together with Parsons' upper bound, the current bracket is
-therefore
+`R(C4,K1,17) >= 22`.
+
+**Closure (source-freshness correction, 2026-07-16).** The `n=17` cell is not
+open:
 
 ```text
-22 <= R(C4,K1,17) <= 23.
+R(C4,K1,17) = 22.
 ```
 
-The only unresolved cell is a 22-vertex C4-free graph of minimum degree 5. A
-bounded SAT run for that target returned `UNKNOWN`; it is not a nonexistence
-result.
+The value has been known since Parsons (1975), whose theorem
+`R(C4, K1,q^2+1) = q^2 + q + 2` applies at `q = 4`; Boza's 2026 survey table
+(arXiv:2409.12770) lists `f(17) = 22` citing exactly that paper. It also
+follows elementarily from published extremal numbers: a 22-vertex C4-free
+graph of minimum degree 5 would need `ceil(22*5/2) = 55` edges, but
+`ex(22; C4) = 52` ([OEIS A006855](https://oeis.org/A006855)), so no such graph
+exists and `R(C4,K1,17) <= 22`. The certified 21-vertex witness supplies the
+matching lower bound. The earlier bounded SAT run that returned `UNKNOWN` on
+the 22-vertex cell was searching for a witness that provably cannot exist.
+
+Per Boza (arXiv:2409.12770, Jun 2026), exact values of `R(C4,K1,n)` are now
+known for **all** `n <= 38`; the first open cells are `n = 39` (`f <= 46`),
+`n = 42` (`f <= 50`), and `n = 44` (`f <= 52`).
