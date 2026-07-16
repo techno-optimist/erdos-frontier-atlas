@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:d0945e22947fc0fe8b18a1dc8237ace4e1fdd61c2451c80231d2976ea479336d",
+  "content_digest": "sha256:36455f7d89a9748832310f8a6024ee549bc0c32a0a2e301eadb1bd9cf5be771b",
+  "occurred_at": "2026-07-16T16:14:10Z",
+  "frontier": "What is the minimum number of edges q(6) in a 6-uniform pairwise-intersecting hypergraph with cover number exactly 6? Current bracket: [14, 18].",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nImplemented the 5-cover verifier correctly and validated on PG(2,5) as a regression test. Built q6_verifier.py — a no-argument Python entrypoint that (a) checks pairwise-intersection O(m²·6) and (b) rejects witnesses admitting a 5-cover via exact C(N,5) hitting-set enumeration. Registered three kill fixtures: star (tau=1, 5-cover), two-disjoint (fails intersection), and PG(2,5) (31 edges, V=31, known tau=6).",
+  "verified": "Verifier domain: A 6-uniform hypergraph (list of edges, each a frozenset of exactly 6 distinct integers >= 0).\nVerifier predicate: pairwise-intersecting AND no subset of 5 vertices hits every edge.\nArtifact: q6_verifier.py, SHA-256: 23b46923866daa9c5b6f7660dc6c6c3b1b4a3dc1561f3962e703e7abb5efa33c\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 1/1 rejected correctly\nALL KILL FIXTURES PASSED\nPG(2,5) regression: 31 edges, 31 vertices, pairwise-intersecting=true, no_5_cover=true, tau_ge_6=true, accepted=True. The prior normalization bug (modular inverse of line coefficients computed as iterative multiplier instead of Fermat inverse) is eliminated — this implementation builds PG(2,5) via the explicit affine-line construction with correct point numbering, avoiding modular arithmetic entirely.",
+  "result": "The exact-witness verifier pipeline is now correct and replayable. PG(2,5) confirms the verifier accepts a known tau=6, 31-edge hypergraph and rejects the two canonical kill fixtures with correct branch reasons. The literature bracket q(6) ∈ [14, 18] remains unchanged — no new witness was found. The productive route remains: isomorph-free orderly generation with tau-deficiency pruning, targeting 14 ≤ m ≤ 17 with V ≤ 29 (per Barát Lemma 6.4).",
+  "next_gate": "Implement an isomorph-free orderly generation engine for 6-uniform intersecting families with tau-deficiency pruning (per McKay's canonical augmentation or Barát's method). Generate candidates with 14 ≤ m ≤ 17; for each candidate run the verified q6_verifier.py. A single valid witness with m < 18 improves the bound; m=14 settles q(6)=14.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-16_09-14-10.md",
+    "sha256": "b8892a8aa3c05eac1f9009df2b00d93495e97371b605f1ff49d7458bcb2438c7"
+  },
+  "frontier_id": "erdos_21_q6"
+}
