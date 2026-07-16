@@ -46,6 +46,34 @@ Agents may append schema-valid provisional receipts under `progress/` (see
 `automation/frontier-scout` branch; a publisher stages only `progress/`, and
 promotion into this release snapshot still requires exact evidence and review.
 
+## Active computational frontiers
+
+**Status on 2026-07-16: two Erdős lanes are under active autonomous work; no
+new bound, record, or theorem has been established.** The unattended publisher
+cannot write to `main`. It writes provisional receipts to
+`automation/frontier-scout`; a reviewed PR promotes only evidence that still
+passes the current verifier, replay, scope, and provenance requirements.
+
+| problem | current state | highest-value next work | do not spend effort on |
+|---|---|---|---|
+| **#552 — `R(C4,S17)`** | The certified bracket remains `22 <= R(C4,S17) <= 23`. A [provisional verifier-construction receipt](https://github.com/techno-optimist/erdos-frontier-atlas/blob/automation/frontier-scout/progress/receipts/2026/07/20260716T091719Z_50c8e4391849_8c4176656abc.json) exercised the 22-vertex domain, codegree, and minimum-degree branches. A later `0/100` search used a defective replacement verifier and was quarantined; it is not evidence. | Reuse or minimally extend [`certificates/erdos-552/verify.py`](certificates/erdos-552/verify.py). Produce either a 22-vertex C4-free graph of minimum degree at least 5, or a replayable SAT nonexistence certificate. Either result closes this finite cell. | Random or heuristic no-hit runs; solver `UNKNOWN`; a new checker without a hash-bound no-network replay and branch-specific kill fixtures. |
+| **#21 — `q(6)`** | The literature bracket remains `14 <= q(6) <= 18`. The [latest provisional receipt](https://github.com/techno-optimist/erdos-frontier-atlas/blob/automation/frontier-scout/progress/receipts/2026/07/20260716T121714Z_50c8e4391849_09df490388ae.json) preserves a useful failure: its pairwise-intersection checks passed, but a PG(2,5) normalization bug prevented validation of the exact 5-cover branch. No bound moved. | First validate the exact cover-number verifier on PG(2,5). Then build isomorph-free orderly generation with canonical augmentation and tau-deficiency pruning for `14 <= m <= 17`, including Barát's proven `V <= 29` cap when `m = 14`. Validate every survivor with the pinned board verifier. | Repeating the global tau SAT/DRAT encoding that already hit the combinatorial blowup; treating a partial or well-sharded no-hit search as a lower bound. |
+
+### Where agents should contribute
+
+1. Start from the relevant record in [`atlas/problems.json`](atlas/problems.json)
+   and its pinned verifier or certificate. Do not reconstruct a weaker
+   session-local checker when a canonical one already exists.
+2. Put bounded, provisional work in a feature branch and open a PR targeting
+   `automation/frontier-scout`. A receipt must state the exact frontier,
+   action, verifier output, artifact SHA-256, failure scope, and next gate.
+3. Open a PR targeting `main` only for a durable promotion packet: the final
+   witness or certificate, deterministic replay command, hostile fixtures,
+   complete provenance, and a narrowly worded claim that the replay proves.
+4. Coordinate around the two next gates above. Split work by independent
+   bottleneck—construction, certified nonexistence, verifier hardening, or
+   orderly generation—instead of cloning the same random search.
+
 The newest certified movement is Erdős #552: five C₄-free graph witnesses meet
 Parsons' upper bound and establish `R(C4,K1,n) = n + ceil(sqrt(n)) + 1` for
 `12 <= n <= 16`; a sixth proves `22 <= R(C4,K1,17) <= 23`. Re-run them with
