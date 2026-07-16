@@ -1,0 +1,6 @@
+{
+  "deleted_by_commit": "2293540",
+  "original_path": "progress/receipts/2026/07/20260712T205430Z_50c8e4391849_bf2dae93cb1a.json",
+  "quarantined_at": "2026-07-16T15:01:12Z",
+  "reason": "retroactively deleted by contract-replay ratchet before quarantine preservation existed; content restored from git history"
+}

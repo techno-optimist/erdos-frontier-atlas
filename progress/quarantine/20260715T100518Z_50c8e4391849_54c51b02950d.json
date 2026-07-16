@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:54c51b02950d1c490704d526c84182ddbc42696c5f83eca2e2b8b5f959394de6",
+  "content_digest": "sha256:2700ed710590cdf5ef5b60b1d72d0e7f1f3ba0e6bd00639ad82a524f5fa5967a",
+  "occurred_at": "2026-07-15T10:05:18Z",
+  "frontier": "<one public-safe question/anchor>",
+  "action": "<what was inspected or probed>",
+  "verified": "<receipt/source/check performed, or explicit uncertainty>",
+  "result": "<smallest useful result or negative result>",
+  "next_gate": "<next bounded verifier/falsifier>",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training unless explicitly authorized.\n\nFOUNDRY RECURSION (operator-authorized): Use only the lane-scoped\nfoundry.gate in the prep output for escalation authorization. The primary\nresearcher for this job is the local Qwen 35B. If and only if\nfrontier_call_allowed is true, make exactly one strategy consultation with:\npython3 ~/erdos-frontier-atlas/tools/foundry.py consult --state\n~/.hermes/chronos_state/foundry_frontier_budget.json --frontier-id\n'<foundry.gate.frontier_id>' '<public-safe frontier,\nfailed routes, falsifier, desired executable test>'. Treat its answer as\nprovisional strategy, execute the smallest discriminating test locally, and\nverify it before reporting. Never place secrets or local paths in the six\nlabelled final receipt fields. Git publication is handled by a separate\nno-agent membrane; do not run git here.\n\n## Error\n\n```\nRuntimeError: Connection error.\n```",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-15_03-05-18.md",
+    "sha256": "dfd5ae6673464abd181121c75005881e1af19640e97895c366b7618532d62eda"
+  },
+  "frontier_id": "fm_hadamard_668"
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:e3bed7a3e88c2a7307aa338288b7018b89cf38ea586e971f47ee2709147b6b8b",
+  "content_digest": "sha256:351187672ce8d315adb1653b47c08b5a0e83f4d00627be59d62337ed9a5c807d",
+  "occurred_at": "2026-07-16T05:11:00Z",
+  "frontier": "Does a 44-element 3-AP-free subset of [1, 212] exist? Equivalently: is r_3(212) = 43 or 44? The exact 3-AP verifier is trivially decidable in O(|S|²) time; the hardness is in search (exhaustive SAT/MIP/CP-SAT exhaustion failed on 2 of 20 chunks in Ergezer 2026).",
+  "action": "Milestone: verifier_construction; contract=sha256:20191ec98ee3e6994ddb8f50a1ae1eef886fbab446ddb9fc748b0c9e7052c4fb\nBuilt and executed an exact 3-AP-free set verifier (verifier_3ap.py) on four fixed fixtures: (1) fixed-good base-3 no-'2' construction giving 31 elements in [1,211], (2) out-of-domain bad fixture with element 213 > N=212, (3) predicate-violation bad fixture with embedded 3-AP (1,2,3), (4) 44-element set with embedded AP. All fixtures verified against domain and predicate branches.",
+  "verified": "Milestone: verifier_construction; contract=sha256:20191ec98ee3e6994ddb8f50a1ae1eef886fbab446ddb9fc748b0c9e7052c4fb\nVerifier domain: S ⊆ [1, N], distinct elements in range — confirmed by OB fixture rejection (element 213 outside [1, 212], SHA-256: 36743bd4f3a499e1ae5ce40c78674483a4c993c6a0de9918e07f2ba42c18c62a)\nVerifier predicate: no three distinct a < b < c ∈ S with a+c=2b — confirmed by PB fixture rejection (3-AP (1, 2, 3), SHA-256: 5b3b9a03c7426ca127163b66c7592f145d6352ee54f8c58138f5dc96431543cb)\nFixed-good: base-3 no-'2' elements in [1,211], |S|=31, 3-AP-free ✓ (SHA-256: de755fa600dc18641f096642867296df7810658ebd17712e64318fa93364e062)\nVerifier script: verifier_3ap.py (SHA-256: 42c1106f21c1ee54bfd096ab1ff141d21dada55e83603518a3b4754dd6490cb4)\nEvidence: OEIS A003002 b-file (Cariboni, r_3(211)=43), Ergezer 2026 arXiv:2606.04016 (43-witness + 20 SAT chunks, 2 unresolved T1c)",
+  "result": "Verifier construction completed and all four fixtures passed: fixed-good accepted, out-of-domain rejected with domain violation, predicate-violation rejected with 3-AP detection, and 44-element embedded-AP rejected. The base-3 digit-free construction yields only 31 elements, well below the known optimum of 43 — confirming that greedy/heuristic constructions are insufficient. The exact value of r_3(212) remains in {43, 44} with no change from prior sessions. No new mathematical evidence was produced; the verifier is now cataloged for use in Next gate search operations.",
+  "next_gate": "Either: (a) obtain Ergezer 2026's 43-set witness for [1,212] from arXiv:2606.04016 and replay it through this exact verifier to confirm reproducibility; or (b) attempt a bounded search for a 44-element 3-AP-free set in [1,212] using CP-SAT with a seeded solver and documented symmetry-breaking, reporting a no-hit only as scoped to the implementation and trials run.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Only local research-session artifacts created.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-15_22-11-00.md",
+    "sha256": "250e766cfa91fdd3cfb76f40a2f0d8cc7a56f25f7ca9ac757de05f7915d67573"
+  },
+  "frontier_id": "erdos_140_r3_212"
+}

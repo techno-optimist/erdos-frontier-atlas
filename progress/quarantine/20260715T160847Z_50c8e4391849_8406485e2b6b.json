@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:8406485e2b6b3e48f016bdd7dc2407d3375720e222f3b3484835f8f1c36860a2",
+  "content_digest": "sha256:bfc379a0e6a76867f3c9298169afa88ae7605e9477475058fcfae61f2c837714",
+  "occurred_at": "2026-07-15T16:08:47Z",
+  "frontier": "What is ex(Q7, C4)? Current lower bound: 304 edges (arXiv:2603.29127, two-phase simulated annealing, 2026). Target: verify whether a C4-free subgraph of Q7 with ≥305 edges exists.",
+  "action": "Milestone: verifier_construction; contract=sha256:4246ebf22a166219d665e327d97f2f918132215f9ee9a95759ef8f54a1006de1\nBuilt and exercised q7_c4_verifier.py: enumerates all 672 Q7 4-cycles via C(7,2)·2^5 = 21·32 formula; checks whether any cycle's 4 edges are fully contained in a candidate edge set. Ran 8 fixed fixtures — 3 known-good (64-edge single-bit matching, empty set, 3-edge sparse) and 5 known-bad (4-edge explicit C4, 4-edge C4 on bits {0,2}, 4-edge C4 on bits {0,3}, C4+extra edges, 1-edge too-small). All fixtures pass.",
+  "verified": "q7_c4_verifier.py: sha256:09f11ce38808233977b93f0b30a5baa67cd8a2616e114ce4d5019a2747c2a481\nFixture good_64edges: sha256:e68f1655295b099bbf60bee772a5975b49302d5daceae7924122e77115977201\nFixture bad_c4: sha256:b4a5946d04f90a77767c0fcbe94bb67faa22cd336b58d18ddef5c2b2c075a5a2\n4-cycle count verified: C(7,2)·2^5 = 672 (matches frontier_atlas rank-1 verifier description). No strategy_advice was present; no frontier advice line needed.",
+  "result": "Verifier construction complete. 8/8 fixtures pass — the C4 discrimination mechanism is functional and reproducible. No 305+ edge construction was produced; the search is deferred to Next gate as mandated by the milestone contract's deferred field.",
+  "next_gate": "Obtain the actual 304-edge construction from arXiv:2603.29127, verify it with q7_c4_verifier.py, then attempt one bounded single-edge-flip local search step to test whether 305 is reachable. Broad context packet is operator-gated for this milestone.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-15_09-08-47.md",
+    "sha256": "1e5d514fcacd24d48d883367d248eeb3cde95443af3e264404e7f970173e1da4"
+  },
+  "frontier_id": "erdos_86_q7_c4"
+}

@@ -1,0 +1,19 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:149b83bf790168ffbb0032e17bb632414aea03325def094cbf8f172e7a7cc93a",
+  "content_digest": "sha256:de40d1c94d64c2b29b106c12c69d3caf47b3934852d00b36364e36071408b79c",
+  "occurred_at": "2026-07-11T02:31:09Z",
+  "frontier": "<one public-safe question/anchor>",
+  "action": "<what was inspected or probed>",
+  "verified": "<receipt/source/check performed, or explicit uncertainty>",
+  "result": "<smallest useful result or negative result>",
+  "next_gate": "<next bounded verifier/falsifier>",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training unless explicitly authorized.\n\n## Error\n\n```\nRuntimeError: HTTP 429: The usage limit has been reached\n```",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-10_20-31-09.md",
+    "sha256": "eefecd74032345a5a455e1743a1e4aab9ed7fe4b24df5f57567e45a0fd2ca54f"
+  }
+}

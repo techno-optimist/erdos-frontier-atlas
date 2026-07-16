@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:c61f684879d590038a12a070624d56a9ffcc0a00674711d539e8bdedd10e5ce3",
+  "content_digest": "sha256:de40d1c94d64c2b29b106c12c69d3caf47b3934852d00b36364e36071408b79c",
+  "occurred_at": "2026-07-13T13:58:19Z",
+  "frontier": "<one public-safe question/anchor>",
+  "action": "<what was inspected or probed>",
+  "verified": "<receipt/source/check performed, or explicit uncertainty>",
+  "result": "<smallest useful result or negative result>",
+  "next_gate": "<next bounded verifier/falsifier>",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training unless explicitly authorized.\n\n## Error\n\n```\nRuntimeError: HTTP 429: The usage limit has been reached\n```",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-13_06-58-19.md",
+    "sha256": "083f8ee195672b79ca7facc7c1d76b9d87ba2860297f857b311fe214c4ebf82e"
+  },
+  "frontier_id": "arena_scorer_hardening"
+}
