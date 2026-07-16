@@ -57,8 +57,8 @@ def main() -> int:
     if errors:
         report["errors"] = errors
     report["conclusion"] = (
-        "R(C4,K1,39) >= 46; with the published upper bound 46 "
-        "(Wu-Sun-Radziszowski 2015 via Boza arXiv:2409.12770): R(C4,K1,39) = 46"
+        "R(C4,K1,39) >= 46 (re-derivation of Wu-Sun-Radziszowski 2015 Construction 5 bound; "
+        "DS1.18: R(C4,K1,39) in [46,47], OPEN — the earlier =46 claim rested on a survey-table error)"
         if not errors else "INVALID"
     )
     print(json.dumps(report, sort_keys=True))

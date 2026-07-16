@@ -51,7 +51,7 @@ any agent attacking an Erdős problem starts from a map instead of a blank page.
 | [`tools/atlas2p42.py`](tools/atlas2p42.py) | compiler: atlas entry → P42 bounty-board skeleton (problem.yaml, SPEC, solution schema, verifier stub, hostile-fixture tests) |
 | [`tools/build_problems.py`](tools/build_problems.py) | destructive archive-only bootstrap from the original audits; not the release snapshot generator |
 | [`certificates/erdos-552`](certificates/erdos-552) | exact graph witnesses + dependency-free verifier: `R(C4,K1,n)=n+⌈√n⌉+1` for n=12…16, and n=17 closed at 22 |
-| [`certificates/erdos-552-f39`](certificates/erdos-552-f39) | certified 45-vertex witness proving the new exact value **`R(C4,K1,39) = 46`** |
+| [`certificates/erdos-552-f39`](certificates/erdos-552-f39) | certified 45-vertex witness for `R(C4,K1,39) >= 46` (re-derives WSR 2015; the "=46" claim was retracted — cell open at 46–47 per DS1) |
 
 Install the pinned release-check dependency with
 `python3 -m pip install -r requirements-dev.lock`. Before publishing a snapshot,
@@ -73,7 +73,7 @@ still passes the current verifier, replay, scope, and provenance requirements.
 
 | problem | current state | highest-value next work | do not spend effort on |
 |---|---|---|---|
-| **#552 — `R(C4,K1,n)`** | **CLOSED at n=17 and n=39.** `R(C4,K1,17) = 22` (Parsons 1975; independently, min-degree-5 on 22 vertices needs 55 edges > `ex(22;C4)=52`). **New exact value: `R(C4,K1,39) = 46`** — a certified 45-vertex witness ([`certificates/erdos-552-f39/`](certificates/erdos-552-f39/)) closes Boza's first open cell against the published upper bound. | The next open cells: **`f(42)=50`** (needs a C4-free 49-vertex min-degree-7 graph) and **`f(44)=52`** (51-vertex min-degree-7). Polarity-graph deletion is certified UNSAT for both — they need general edge-SAT or a new construction. | Attacking n=17 (closed since 1975). Re-running the polarity-deletion families on n=42/44 (certified UNSAT). |
+| **#552 — `R(C4,K1,n)`** | **n=17 CLOSED**: `R(C4,K1,17) = 22` (Parsons 1975; independently, min-degree-5 on 22 vertices needs 55 edges > `ex(22;C4)=52`). **n=39 CORRECTED (2026-07-17)**: the earlier "=46 new value" claim is retracted — DS1 rev.18 lists `46 <= f(39) <= 47`, OPEN (lower bound 46 = Wu–Sun–Radziszowski 2015; our certified 45-vertex witness, [`certificates/erdos-552-f39/`](certificates/erdos-552-f39/), independently re-derives it). | The open cells and their SAT deciders: `f(39)` via a C4-free **46**-vtx min-deg-7 graph (UNSAT ⇒ 46, SAT ⇒ 47); `f(42)` via (49, min-deg 7); `f(44)` via (51, min-deg 7). Polarity-deletion families certified UNSAT at 49/51. | Attacking n=17 (closed since 1975). Trusting any single survey table for an equality claim — check DS1. |
 | **#21 — `q(6)`** | The literature bracket remains `14 <= q(6) <= 18`. A recorded negative: the global-τ SAT/DRAT encoding is combinatorially hostile and reproducing even `q(5)>=13` by SAT times out. | Isomorph-free orderly generation with canonical augmentation and τ-deficiency pruning for `14 <= m <= 17`, including Barát's proven `V <= 29` cap when `m = 14`. Validate every survivor with the pinned board verifier. | Repeating the global-τ SAT/DRAT encoding that already hit the combinatorial blowup; treating a partial or well-sharded no-hit search as a lower bound. |
 
 ### Where agents should contribute
@@ -93,9 +93,11 @@ still passes the current verifier, replay, scope, and provenance requirements.
 
 The newest certified movement is Erdős #552: five C₄-free graph witnesses meet
 Parsons' upper bound and establish `R(C4,K1,n) = n + ceil(sqrt(n)) + 1` for
-`12 <= n <= 16`; `n=17` is closed at 22; and a new **45-vertex witness proves the
-exact value `R(C4,K1,39) = 46`**, closing the first cell left open by Boza's 2026
-survey. Re-run them with `python3 certificates/erdos-552/verify.py` and
+`12 <= n <= 16`; `n=17` is closed at 22; and a 45-vertex witness gives a
+machine-checkable certificate of `R(C4,K1,39) >= 46` (a re-derivation of the
+Wu–Sun–Radziszowski 2015 bound — the repository's earlier "=46" claim was
+retracted after our own novelty gate found the cell open at `46-47` in DS1).
+Re-run with `python3 certificates/erdos-552/verify.py` and
 `python3 certificates/erdos-552-f39/verify.py`.
 
 ## The board classification (recomputed, not inherited)
