@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:dcad68a531c2f5d38182e8e7fad0a4f7b84ae4c240a95057d1cd7757e99883de",
+  "content_digest": "sha256:0e447e6e50ea64d38402cf16cc8f99c16c41d8bb7a2376edc47b22f50bd2dc0e",
+  "occurred_at": "2026-07-17T10:33:22Z",
+  "frontier": "Can ex(Q7,C4) exceed 305 edges? The current lower bound is 304 (arXiv:2603.29127, two-phase simulated annealing); the exact value remains open.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nReplayed the prior-session q7_c4_verifier.py (kill-fixture pass), then attempted a bounded symmetry-aware local search seeded from a greedy C4-breaking initial condition targeting ≥305 edges. The search timed out (60s clamp) because the greedy C4-breaking loop was too slow in pure Python without incremental square-count tracking.",
+  "verified": "Verifier domain: edge sets that are subsets of Q7's 448 edges.\nVerifier predicate: no 4-cycle (square) of Q7 is fully contained in the edge set.\nDomain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nArtifact: q7_c4_verifier.py, SHA-256: bbbcd39be07e7c06beb14a88cec46189ddd9a577b3bfadf7686800ed3177b3f3",
+  "result": "Negative result / resource blocker. The verifier replay is solid and passes. The bounded local search failed to execute within the 30-second terminal action budget due to pure-Python performance in the greedy C4-breaking phase (O(squares × edges) per step without incremental bookkeeping). No candidate ≥305-edge construction was produced. The route is not mathematically closed — the search method needs incremental square-count tracking (per-edge: set of squares containing that edge, incrementally updated on add/remove) to complete within budget.",
+  "next_gate": "Rewrite the local search with incremental square-count tracking (maintain for each edge the count of unsatisfied squares it belongs to; update counts in O(degree_in_square_graph) per add/remove) and rerun the ≤30s bounded search seeded from the arXiv:2603.29127 304-edge construction. If the incremental version still cannot beat 304, report negative-result closure for this search method.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-17_03-33-22.md",
+    "sha256": "42de77abc9ac099f35cc892e181e5c404cf99f32e5280ea322d2bac63abf94c1"
+  },
+  "frontier_id": "erdos_86_q7_c4"
+}
