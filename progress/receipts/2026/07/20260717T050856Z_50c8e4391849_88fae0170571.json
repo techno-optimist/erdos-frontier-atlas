@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:88fae0170571c358286bb9dea7f99d2b6be274ea44a8a71e948cb867fd0ab950",
+  "content_digest": "sha256:27f8a89e0b53550e2badb023dd75a60f0fcf46430104a4dc9fb2d227c94f411e",
+  "occurred_at": "2026-07-17T05:08:56Z",
+  "frontier": "What is ex(Q7,C4)? Current lower bound is 304 edges (May 2026). Target: prove ex(Q7,C4) ≥ 305 by constructing a C4-free subgraph of Q7 with 305+ edges. Q7 has 128 vertices, 448 edges, 672 squares.",
+  "action": "Milestone: verifier_construction; contract=sha256:20191ec98ee3e6994ddb8f50a1ae1eef886fbab446ddb9fc748b0c9e7052c4fb\nBuilt deterministic verifier enumerating all 672 4-cycles of Q7. Validated domain branch with 3 out-of-domain fixtures (vertex≥128, non-Q7 edge, negative vertex) and predicate branch with 2 predicate-violation fixtures (single 4-cycle on dims 0,1 through vertex 0; single 4-cycle on dims 2,3 through vertex 0).",
+  "verified": "Domain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nVerifier domain: Q7 edge subset check — rejects edges with vertices outside {0..127} or pairs not in Q7's 448-edge set; fixtures rejected with reasons: \"edge frozenset({128, 129}) has vertex outside Q7 vertex set\", \"edge frozenset({0, 3}) is not an edge of Q7\", \"edge frozenset({0, -1}) has vertex outside Q7 vertex set\"\nVerifier predicate: C4-freeness check — rejects edge sets containing all 4 edges of any of the 672 fixed squares; fixtures rejected with reasons: \"4-cycle found on vertices [0, 1, 2, 3]\" and \"4-cycle found on vertices [0, 4, 8, 12]\"\nArtifact: q7_c4_verifier.py, SHA-256: bbbcd39be07e7c06beb14a88cec46189ddd9a577b3bfadf7686800ed3177b3f3\nReplay: all kill fixtures pass, exit 0. Graph: 128 vertices, 448 edges, 672 squares. Contract digest sha256:20191ec98ee3e6994ddb8f50a1ae1eef886fbab446ddb9fc748b0c9e7052c4fb matched.",
+  "result": "Verifier construction complete. 5 kill fixtures (3 domain + 2 predicate) all rejected correctly with branch-specific reasons. Ready to evaluate candidate edge sets for the ex(Q7,C4) ≥ 305 search; no candidate produced this session per contract.",
+  "next_gate": "Run one bounded symmetry-aware local-search cell (≤5 min, ≤30s per terminal action) seeded from the known 304-edge construction (arXiv:2603.29127), targeting ≥305 edges. If no improvement, report negative-result closure.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. No specialist skill loaded. No mutated next_gate.md or frontier_queue.json.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-16_22-08-56.md",
+    "sha256": "28b245239d5500b9b74c463f4d1e4937864227b51c2821bd6e5741c112405932"
+  },
+  "frontier_id": "erdos_86_q7_c4"
+}
