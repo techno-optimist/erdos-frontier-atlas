@@ -52,6 +52,8 @@ any agent attacking an Erdős problem starts from a map instead of a blank page.
 | [`tools/build_problems.py`](tools/build_problems.py) | destructive archive-only bootstrap from the original audits; not the release snapshot generator |
 | [`certificates/erdos-552`](certificates/erdos-552) | exact graph witnesses + dependency-free verifier: `R(C4,K1,n)=n+⌈√n⌉+1` for n=12…16, and n=17 closed at 22 |
 | [`certificates/erdos-552-f39`](certificates/erdos-552-f39) | certified 45-vertex witness for `R(C4,K1,39) >= 46` (re-derives WSR 2015; the "=46" claim was retracted — cell open at 46–47 per DS1) |
+| [`certificates/erdos-13`](certificates/erdos-13) | exact Erdős–Sárközy table `f(1..45)` + verifier: last exception to `⌊N/3⌋+1` is `N=17` (empirical location of Bedert's ineffective threshold) |
+| [`certificates/erdos-979`](certificates/erdos-979) | self-checking exact verifier for `a(6) > 10¹²` on A385316 (smallest sum of three prime cubes in exactly 6 ways); independently cross-verified |
 
 Install the pinned release-check dependency with
 `python3 -m pip install -r requirements-dev.lock`. Before publishing a snapshot,
@@ -99,6 +101,37 @@ Wu–Sun–Radziszowski 2015 bound — the repository's earlier "=46" claim was
 retracted after our own novelty gate found the cell open at `46-47` in DS1).
 Re-run with `python3 certificates/erdos-552/verify.py` and
 `python3 certificates/erdos-552-f39/verify.py`.
+
+## CHRONOS Frontier Board
+
+The running scoreboard of what the CHRONOS agent has actually **moved** on the
+Erdős frontier — the done-work companion to the *next-work* table above. Tiered
+by verification, and honest about ceiling: reachable impact for a movable finite
+target tops out at 4/10, no prize here is finite-claimable, and a corrected
+claim is **kept in place** so the next agent does not re-walk it.
+
+**Tier.** 🟢 proven / certified · 🟡 grounded or partial · ⚪ open / in progress · 🔴 corrected or retracted (kept on purpose)
+
+| tier | problem | what CHRONOS contributed | certificate | when |
+|---|---|---|---|---|
+| 🟢 | **#552** `R(C4,K1,n)` | certified C₄-free witnesses ⇒ `R(C4,K1,n) = n + ⌈√n⌉ + 1` for `12 ≤ n ≤ 16`; `n=17` closed at `22` (Parsons 1975) | [`certificates/erdos-552`](certificates/erdos-552) · PR #78 | 2026-07-16 |
+| 🟢 | **#241** B₃-subset table (A387704) | proved `A387704(n) = max{k : A227358(k) ≤ n−1}` (translation invariance; 0/151 mismatches) ⇒ first jump to 9 at `n=209`; atlas cell **closed by cross-reference** | PR #80 | 2026-07-16 |
+| 🟢 | **#13** Erdős–Sárközy | certified exact table `f(1..45)`; `N=17` is the **last** exception to `⌊N/3⌋+1` — an empirical location for Bedert's ineffective threshold | [`certificates/erdos-13`](certificates/erdos-13) · PR #81 | 2026-07-17 |
+| 🟡 | **#979** `f₃` / A385316 | certified `a(6) > 10¹²` (smallest sum of three prime cubes in exactly 6 ways), independently cross-verified by four from-scratch implementations; beats the published `a(6) > 4.99·10¹¹` | [`certificates/erdos-979`](certificates/erdos-979) | 2026-07-17 |
+| 🟡 | **#142** `r₃(N)` | complete 12,349-cell geometric enumeration superseding a flawed 976-cell subset — a **foundation only**; self-declared no-bridge, **not** an `r₃(N)` bound | sister session | 2026-07-13 |
+| 🟢 | **#1029 / #77** `R(5,5)` | 42/42 DRAT-certified structural negatives (no witness; rigidity + prime-order orbit collapse), all consistent with `R(5,5) = 43` | [r55-rigidity-certificates](https://github.com/techno-optimist/r55-rigidity-certificates) · DOI [10.5281/zenodo.21305022](https://doi.org/10.5281/zenodo.21305022) | 2026-07-10 |
+| 🔴 | **#552** `R(C4,K1,39)` | the `=46` **new-value** claim was **retracted** — DS1 rev.18 lists `46 ≤ f(39) ≤ 47`, OPEN; the 45-vertex witness stands as a re-derivation of Wu–Sun–Radziszowski 2015 | [`certificates/erdos-552-f39`](certificates/erdos-552-f39) | 2026-07-17 |
+
+The wider verifier-first program also contributes Erdős-adjacent certificates
+from sister repositories (the min-overlap upper bound, antipodal kissing bounds,
+autoconvolution and PNT constants) — see [Provenance](#provenance-and-the-certificate-template).
+
+**Maintenance.** Add a row whenever a certified witness settles or moves an Erdős
+cell, a survey cross-reference closes one, or a claim is corrected — the event
+this board exists to record. Each row must point at a **replayable** certificate
+(in-repo `certificates/`, a receipt, or a DOI'd sister repo) and state a claim
+narrow enough for a referee to check without trusting us. This is the
+at-a-glance index into that evidence.
 
 ## The board classification (recomputed, not inherited)
 
