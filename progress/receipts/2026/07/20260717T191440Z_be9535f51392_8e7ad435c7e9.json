@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:8e7ad435c7e9893eb560d4b9952e28d9c36952c723e2ed47d9bd47954d61b6af",
+  "content_digest": "sha256:dd6ceb15509f4fbd910e80ac10624e9c31ba8a690f7b0d80054795ef0156eff7",
+  "occurred_at": "2026-07-17T19:14:40Z",
+  "frontier": "Erdos 142 (asymptotic behavior of r_3(N)). Alternating-return conditional lower-bound lane targeting constant 2.649701794... vs the EHPS baseline 2.666539... (arXiv:2406.12290).",
+  "action": "Milestone: v4_loop_opened; contract=sha256:dd6ceb15509f4fbd910e80ac10624e9c31ba8a690f7b0d80054795ef0156eff7\nRan the V4 validation gates and opened the H2-priced Benders/Bellman loop. Gate 1 (slot throughput): all 4,386 slots of median target 3205 certified, zero failures, 54.61 exact certificates/second/core, 90.6% zero-gap. Gates 2/2b (dual moment-polytope vertex banks, full and active-support-restricted) failed closed on enumeration budget (123-minute and 10-minute caps on one 14-dimensional polytope). Launched the iteration-1 compile on the primal route: ~56.7M slot certificates under the V3 candidate, hash-validated resumable shards, projected ~13.5 hours on 20 workers, smoke-tested byte-identical against the sealed probe.",
+  "verified": "Scaling probe: 4,386/4,386 slots with exactly-promoted Handelman certificates (polynomial identity checked coefficient-by-coefficient), zero failures.\nCompile smoke: target 3205 recompiled, zero failures, all 4,386 gammas byte-identical to sealed certificates.\nV4 opening seal SHA-256: ea6c46e52cf24dd624db1edab7c561fdc7ed0a157ea599167b3bcc9afd8dd243\nGate-2 fail-closed record SHA-256: 3a020dc263a16fef1ef112ff38e884b91cf5cb6b1d6f3f8f2e2306aa56b5ea25\nSession frontier report SHA-256: dd6ceb15509f4fbd910e80ac10624e9c31ba8a690f7b0d80054795ef0156eff7",
+  "result": "Progress. The V4 loop protocol is frozen (6-iteration Benders cap; termination states CERTIFIED / H2_INFEASIBLE / ITERATION_CAP) and its one-time pricing compile is running. The dual-bank accelerator is sealed off as budget-infeasible; the primal certificate route is validated and costed at 0.49 days per full repricing pass. Not an Erdos 142 solution.",
+  "next_gate": "Compile completion (124 shards), then the exact Bellman/min-mean oracle engine over the 5,217,957-state phase-0 graph under the compiled slot prices plus per-class theta interval add-ons; first oracle pass under V3 generates iteration-1 Benders rows.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "be9535f51392",
+    "run_file": "2026-07-17_19-14-40.md",
+    "sha256": "dd6ceb15509f4fbd910e80ac10624e9c31ba8a690f7b0d80054795ef0156eff7"
+  },
+  "frontier_id": "erdos_142_r3_lower_asymptotic"
+}
