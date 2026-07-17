@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:1471b32dc34e71b43521667c6b956e0a646511b868b3f8b104628b0c5cb7199a",
+  "content_digest": "sha256:6fd8a01623419eb7de2963ed1b24a6d516828fca41213cad4762854deba255f1",
+  "occurred_at": "2026-07-17T08:05:25Z",
+  "frontier": "Shortest 11-mark B3 ruler — all multiset triple sums a+b+c must be pairwise distinct; current best-known upper bound is 445 (Tromp, 2013), exact value unresolved.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nBuilt b3_verifier.py as a no-argument replay entrypoint that checks domain well-formedness (exactly k distinct non-negative integers) and predicate (all C(k+2,3) multiset triple sums pairwise distinct). Replayed domain kill fixture [0,1,2,3,4,5,6,7,8,9,9] (duplicate mark → 10 distinct, not 11) and predicate kill fixture [0,1,2,3,6,7,8,9,12,13,14] (11 distinct marks with triple-sum collisions). Included good fixture [0,1,4,13,32,71] (6 marks, 56 distinct triple sums) for pass-through coverage.",
+  "verified": "Domain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 1/1 rejected correctly\nArtifact: b3_verifier.py, SHA-256: 4347535a7b7bb1f2cd712f42790b81fdc90eb2e5cc58287a23a14266e0fe4def\nVerifier domain: Validated that input is exactly k distinct non-negative integers sorted; domain kill fixture correctly rejected for duplicate mark (10 distinct of 11 inputs) with \"duplicate\" branch attribution.\nVerifier predicate: Validated that all C(k+2,3) multiset triple sums are pairwise distinct; predicate kill fixture correctly rejected with \"collision\" branch attribution for 11-mark set with triple-sum collision groups.\nSource: Built from focused_context.md anchor data (OEIS A227358, Tromp 2013 bounds); no broader context packet loaded — focused evidence sufficed for verifier construction.",
+  "result": "Verifier construction milestone passed. Both kill-fixture branches produce correct rejection with proper branch attribution. The verifier is a reproducible, no-network, no-argument replay entrypoint. Mutation gate hit after experiment.json and write_file; the Python scoping fix applied via terminal side-effect did not count as an admitted artifact mutation. No search was executed — deferred to Next gate per contract.",
+  "next_gate": "Execute bounded canonical backtracking search for 11-mark B3 sets with length < 445, using symmetry-breaking (fix first mark at 0) and partial-sum collision pruning; target length below 445 to improve upper bound.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-17_01-05-25.md",
+    "sha256": "f149f45dc15e4dbe9081114030bfac7017d9eee632b0696f5b6b028a70393ba7"
+  },
+  "frontier_id": "erdos_41_b3_a11"
+}
