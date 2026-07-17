@@ -88,7 +88,7 @@
    "statement": "A⊆{1..N} with no a,b,c∈A such that a|(b+c) and a<min(b,c); is |A|≤N/3+O(1)? Erdős–Sárközy, $100.",
    "finite_object": "Exact maximum f(N)=max|A| and its extremal set for each small N — a max independent set in the 3-uniform hypergraph whose edges are triples {a,b,c} with a|(b+c), a<min(b,c).",
    "current_record": "PROVED. Bedert (arXiv:2301.07065, Jan 2023) proved |A|≤⌊N/3⌋+1 for N sufficiently large — stronger than the asked N/3+O(1) — resolving the $100 prize affirmatively. Construction (2N/3,N] gives ⌊N/3⌋. Threshold N_0 is ineffective/unstated; no tabulated sequence of true extremal maxima f(N) exists (OEIS A002264 = ⌊n/3⌋ is only the construction value).",
-   "frontier": "f(N) exact small-N table uncharted (Bedert arXiv:2301.07065 proved the theorem; threshold ineffective) - certified table = new OEIS sequence",
+   "frontier": "Bedert (arXiv:2301.07065) proved |A|<=floor(N/3)+1 for large N (WALL, ineffective threshold). CERTIFIED small-N table (certificates/erdos-13/, 2026-07-17): f(1..45) exact, two independent methods; f(N) beats floor(N/3)+1 exactly at N=2,4,5,7,8,10,11,13,14,17 and equals it for 18<=N<=45 (empirical threshold; N=17 the last exception, witness {6,8,9,11,12,14,17}). Not in OEIS; candidate sequence PENDING full literature/definition novelty-check before external submission.",
    "beatable": "MOVABLE",
    "beatable_reason": "The headline is a proven theorem (WALL for the prize). But the finite sub-problem — exact f(N) for small N — is genuinely computable and appears untabulated, so it is MOVABLE in the sense that we can produce exact values/certificates nobody has. Caveat: there is no defended record to beat; it is uncharted rather than contested, and any ILP solver can do it. Our edge is none beyond generic compute.",
    "fit_score": 7,
@@ -111,7 +111,8 @@
     "arxiv": [
      "2301.07065"
     ]
-   }
+   },
+   "campaign_finding": " 2026-07-17: computed+certified the exact f(N) table N=1..45 (distinct b,c reading, matching Bedert \"two larger\"); brute-force cross-checked N<=16. Empirically locates the ineffective asymptotic threshold at N=17."
   },
   {
    "id": 19,
