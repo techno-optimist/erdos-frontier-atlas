@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:8569f52c74e3b8686eaacdb3c9e2f48d5f94f647a19523d360833fa3e9c938a6",
+  "content_digest": "sha256:26ccc0c3ded5d4637f05d968047ac6630e1f8784e194b64754dc6bdcde84ed90",
+  "occurred_at": "2026-07-17T15:44:36Z",
+  "frontier": "Erdos 142 (asymptotic behavior of r_3(N); prize headline OPEN and not resolvable by finite computation). Published lower-bound baseline: r_3(N) >= N * 2^(-(2*sqrt(log2(24/7)) + o(1)) * sqrt(log2 N)) (Elsholtz-Hunter-Proske-Sauermann, arXiv:2406.12290), constant 2.666539...; the atlas current_record still cites Behrend 1946 and is stale on the lower-bound side. Local alternating-return lane targets constant 2.649701794028333... conditional on a global no-negative-cycle certificate.",
+  "action": "Milestone: stage_b_rank60_d0_contrast_saturation; contract=sha256:26ccc0c3ded5d4637f05d968047ac6630e1f8784e194b64754dc6bdcde84ed90\nSealed Stage-B directed-cohomology sweep over the phase-0-reachable K257 product graph (5,217,957 cached states; engine-enumerated 6,637,213,382 legal transitions). Adversarial six-lens design panel (one fatal circularity repaired pre-execution), construction engine (143 s), exact rational finalize, independent hostile verifier, and a post-seal three-lens artifact audit including a full from-scratch replay.",
+  "verified": "Claim: the span over Q of degree-0 cyclic-root contrast vectors of legal directed closed walks equals the full 60-dimensional ambient space (witnessed lower bound; upper bound vacuous at rank 60).\nWitnesses: 120 legal closed walks (1,089 transitions), each hostile-replayed transition-by-transition (go/hit/phase-mask legality, raw-edge mapping, pre-update emissions, wraparound closure, sorted-cache membership, phase-0 root anchor); exact rational bank rank 60/60.\nItem-5 comparison: ledger degree-0 contrast rank 4; +7 Stage-A witnesses = 11; minimal 49-walk macro-cut family extends 11 -> 60; all 56 formerly blind directions reachable, 0 certified unreachable.\nArtifact: STAGE_B_SEAL.json, SHA-256: b85129b769b351bc22eee26cbe0a472d71d0312b6cc53b84c421846e080daad8\nAudit addendum SHA-256: 0cea64ac070e78f3de9c30578af1ed527de4d66ad179fb11017f3b7bd485360b\nSession frontier report: ERDOS142_FRONTIER_REPORT_20260717.md, SHA-256: 26ccc0c3ded5d4637f05d968047ac6630e1f8784e194b64754dc6bdcde84ed90",
+  "result": "Progress. The degree-0 cyclic-root contrast sector of the phase-indexed pair-quadratic lane is topologically closed: every one of the 56 ledger-blind directions is realized by explicit legal cycles, so no unreachable-direction quotient exists and a finite completion criterion now exists (raw65 ledger + 7 + 49 rows have full rank 60 in that sector). This is a structural gate inside a conditional lower-bound program, not an Erdos 142 solution and not a new published bound.",
+  "next_gate": "Build exact phase-indexed affine rows for the 56 witness cycles through the sealed exact-replay pipeline, solve the raw121-complete master once, and only if exactly feasible run one precommitted phase-0 fixed-vertex K257 screen; if that survives, proceed to the costed all-point H2 verification ladder (209.56 single-worker hours).",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "be9535f51392",
+    "run_file": "2026-07-17_15-44-36.md",
+    "sha256": "26ccc0c3ded5d4637f05d968047ac6630e1f8784e194b64754dc6bdcde84ed90"
+  },
+  "frontier_id": "erdos_142_r3_lower_asymptotic"
+}
