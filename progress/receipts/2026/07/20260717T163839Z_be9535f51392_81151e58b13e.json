@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:81151e58b13ec288db34cf5502665fda7bc7f83b5bb3326b19a61ee2926f3801",
+  "content_digest": "sha256:06816de9fe3b56a82e7b230085b5a1d69af9641417bc583dcbfdbd7d895760e9",
+  "occurred_at": "2026-07-17T16:38:39Z",
+  "frontier": "Erdos 142 (asymptotic behavior of r_3(N)). Alternating-return conditional lower-bound lane targeting constant 2.649701794... vs the EHPS baseline 2.666539... (arXiv:2406.12290); promotion requires a complete global no-negative-cycle certificate plus transfer proof.",
+  "action": "Milestone: bounded_h2_pricing_probe; contract=sha256:06816de9fe3b56a82e7b230085b5a1d69af9641417bc583dcbfdbd7d895760e9\nOn the 132 deduplicated edges of the 8 sealed V3 rejection fixtures, proved the exact per-edge bracket H2-sound-lower <= true-min <= vertex-min under the exact V3 candidate: degree-2 Handelman certificates over the cell facet slacks (float LP discovery, exact basis promotion, coefficient-by-coefficient polynomial identity), theta-degree-4 remainder bounded by convexity at vertices.",
+  "verified": "132/132 edges certified with zero promotion failures; independent from-scratch hostile verification of every certificate and bracket with zero discrepancies.\nGap exactly zero on 114/132 edges (Handelman pricing EXACT there, pinning true all-point minima); mean gap 0.2046, max 2.7910; cycle-level tightness cost 0 on both length-30 fixtures, 4.5 on length-12 fixtures.\nProbe seal SHA-256: b70dbe3682857a4e83982988197af12d38502fb8c3ca4b0b26f487e81dc1ca96\nSession frontier report SHA-256: 06816de9fe3b56a82e7b230085b5a1d69af9641417bc583dcbfdbd7d895760e9",
+  "result": "Progress; mechanism comparison sealed. Degree-2 Handelman pricing dominates the costed 209.56-hour all-point complete-face ladder on this probe, and the sealed CEGAR divergence (-18215.6 -> -37225.9 -> -131127.0 exact per-edge mean violation across three generations) is retro-diagnosed as the infinite cycle family, not vertex-pricing drift. Not an Erdos 142 solution; no new published bound.",
+  "next_gate": "V4 architecture: H2-priced Benders/Bellman loop — per (raw base edge, source phase) slot an exact Handelman lower-bound functional, with an exact Bellman/min-mean value iteration over the 5,217,957-state phase-0 graph as the oracle; a clean pass yields the complete global no-negative-cycle certificate. First: one bounded scaling probe pricing a full target orbit to cost the 50.7M-slot certificate compiler honestly.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "be9535f51392",
+    "run_file": "2026-07-17_16-38-39.md",
+    "sha256": "06816de9fe3b56a82e7b230085b5a1d69af9641417bc583dcbfdbd7d895760e9"
+  },
+  "frontier_id": "erdos_142_r3_lower_asymptotic"
+}
