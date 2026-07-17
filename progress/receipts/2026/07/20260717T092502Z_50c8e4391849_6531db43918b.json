@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:6531db43918b81dfa98de2ec8a556aa64c674922139cea37472f6c2b2458eadb",
+  "content_digest": "sha256:cd318cc2bd6729181adc934ed08bb174d02eb61ef036d91536d103015d15a354",
+  "occurred_at": "2026-07-17T09:25:02Z",
+  "frontier": "Erdős distinct-subset-sums record: a(11), the minimum largest element of an 11-element set of nonnegative integers whose 2^11=2048 subset sums are all distinct. Current bracket 310 ≤ a(11) ≤ 594.",
+  "action": "Milestone: verifier_construction; contract=sha256:20191ec98ee3e6994ddb8f50a1ae1eef886fbab446ddb9fc748b0c9e7052c4fb\nBuild and replay a deterministic verifier with fixed domain-kill and predicate-kill fixtures. Domain rejects non-11-element or out-of-range sets; predicate rejects sets with colliding subset sums. No search or construction attempted.",
+  "verified": "Domain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 1/1 rejected correctly\nALL KILL FIXTURES PASSED\nArtifact: verifier_erdos1_a11.py, SHA-256: 83bc7b180d1467c4f7d26fb26e2d75529da4154a5c4226ff597f97791943550c\nVerifier domain: [1,2,4,7,13,24,44,84,161] (9 elements) rejected with reason \"expected 11 elements, got 9\" — out-of-domain fixture\nVerifier predicate: [0,1,2,3,100,200,300,400,500,600,700] (11 elements, 1+2=3 collision) rejected with reason \"collision at sum=3 (masks 3 and 7)\" — branch-specific predicate violation\nNo positive-control replay from focused context: the values a(0..10) = 0,1,2,4,7,13,24,44,84,161,309 are OEIS record values (minimum max element for n-term sets), not actual set elements.",
+  "result": "Verifier construction milestone satisfied: kill fixtures exercise both rejection branches (domain and predicate) and replay exits zero with complete summaries. No positive control was possible because the focused context's a(0..10) values are record thresholds, not a valid set. No search or construction attempted per milestone contract.",
+  "next_gate": "Retrieve a confirmed valid 11-element set with distinct subset sums and max ≤ 309 from OEIS A276661 or Dyson 2025 appendix, replay through verifier as positive control, then launch bounded exact search for 12-element sets (a(12)) with max < 594.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-17_02-25-02.md",
+    "sha256": "9a98119b096e07fb708f9f17774fd79da1696640e0c7394d1176e030a1bb0c5b"
+  },
+  "frontier_id": "erdos_1_a11"
+}
