@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:f3e9a2cc4c2e32bc361948de8ce5293d932af22ee236de86bd74152031cdc0bc",
+  "content_digest": "sha256:2f431e0c0c825581f5c3bb49b6e966cabaf4e38dfc548ee48880b4fb72c1018a",
+  "occurred_at": "2026-07-17T16:21:22Z",
+  "frontier": "Erdos 142 (asymptotic behavior of r_3(N); prize headline OPEN). Alternating-return conditional lower-bound lane targeting constant 2.649701794028333... against the published EHPS baseline 2.666539... (arXiv:2406.12290); promotion requires a complete global no-negative-cycle certificate plus transfer proof.",
+  "action": "Milestone: raw121_master_and_v3_phase0_screen; contract=sha256:2f431e0c0c825581f5c3bb49b6e966cabaf4e38dfc548ee48880b4fb72c1018a\nBuilt and twice hostile-verified 56 exact candidate-independent necessary rows (7 Stage-A + 49 Stage-B witness cycles, exact argmin pinned vertices, sealed-ledger conventions); solved the raw121-complete phase-indexed master once (exactly feasible, all 2,995 rows at certification margin, theta L1 step 6.2e6 from the old center); ran the single precommitted phase-0 fixed-vertex K257 screen on the V3 candidate with mandatory exact replay and hard stop.",
+  "verified": "46 of 56 witness cycles price exactly negative under the sealed V2 candidate (independent from-scratch replay, 1,995 transitions, 45,182 vertex evaluations, zero discrepancies).\nRaw121 master exactly feasible; V3 candidate rejected by 8 genuinely new phase-0-reachable cycles (all replayed exactly at the exported pinned vertices; best exact total -3933810.0813686326; all 6,637,213,382 edges streamed).\nArtifact: RAW121_LANE_SEAL.json, SHA-256: 47a2c7c70a918dceb8424c4b54c218808bde286aef6c943190f076f081a88f94\nExact rejection receipt SHA-256: f5f839241dd5ce25ebb62e2382e7ef6a89630b4ade7344485036b053eea847e5\nSession frontier report: ERDOS142_FRONTIER_REPORT_20260717.md, SHA-256: 2f431e0c0c825581f5c3bb49b6e966cabaf4e38dfc548ee48880b4fb72c1018a",
+  "result": "Progress with a decisive structural readout: across three CEGAR generations the exact violation GREW (-54646 -> -1228454 -> -3933810) even though the V3 ledger covers the full 60-dimensional degree-0 contrast space. Finite fixed-vertex necessary-row CEGAR does not converge for this architecture; the gap is jointly the infinite cycle family and candidate-dependent vertex-pricing drift. Not an Erdos 142 solution; no new published bound.",
+  "next_gate": "No raw129 single-round append. (1) Seal a bounded exact CEGAR-divergence audit across V1/V2/V3; (2) pivot to complete per-edge pricing inside the master: compare the sealed H2 dual-vertex bank mechanism (6,247 target orbits, 1,433 bank classes) against the costed 209.56-hour all-point complete-face ladder on a bounded probe; (3) hold the 8 sealed rejection cycles as verification fixtures for whatever master emerges.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "be9535f51392",
+    "run_file": "2026-07-17_16-21-22.md",
+    "sha256": "2f431e0c0c825581f5c3bb49b6e966cabaf4e38dfc548ee48880b4fb72c1018a"
+  },
+  "frontier_id": "erdos_142_r3_lower_asymptotic"
+}
