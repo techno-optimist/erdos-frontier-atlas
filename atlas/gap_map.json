@@ -6221,6 +6221,34 @@
      "Al Zimmermann Point Packing contest final report (referenced via OEIS links as source of contest-era bounds)"
     ]
    }
+  },
+  {
+   "problem": 1107,
+   "oeis": "A056828",
+   "quantity": "Mollin-Walsh completeness frontier (A056828) \u2014 verified no new n fails to be a sum of <=3 powerful numbers",
+   "kind": "verified_range",
+   "lower": {
+    "value": "10^10",
+    "source": "this project verified-up-to-N lane (extends Jobling 4x10^7); replay-verified, cross-checked OEIS A118896 powerful-number counts, 400/400 witness re-checks",
+    "year": 2026
+   },
+   "upper": null,
+   "witness_side": "none",
+   "witness_object": "n/a \u2014 verified-up-to-N: a replayable bounded scan certifies no exception beyond {7,15,23,87,111,119} up to the frontier",
+   "witness_verifier": "replayable scan; reproduces the 6 known exceptions + Jobling's 4x10^7 null result; powerful-number counts match A118896 at every power of 10 through 10^10",
+   "witness_feasibility": "none",
+   "exact_feasibility": "wall",
+   "status": "record_in_progress",
+   "notes": "Frontier extended 4x10^7 -> 10^10 (2026-07-18). Next rung 10^11 feasible (~12.5GB bitsets) but needs an sglang-down window. Full conjecture (only those 6 exceptions ever) is a wall. External OEIS submission stays Kevin's.",
+   "provenance": {
+    "added_by": "verified-up-to-N lane + lead",
+    "date": "2026-07-18",
+    "checked": [
+     "OEIS A056828",
+     "OEIS A118896",
+     "Jobling 4x10^7 null result (reproduced)"
+    ]
+   }
   }
  ]
 }
