@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/techno-optimist/erdos-frontier-atlas/atlas/gap_map.schema.json",
+  "title": "Erdős hub gap map (Records lane)",
+  "description": "One record per bounded quantity attached to a hub problem: its known [lower, upper] state, what a WITNESS is, how to verify one cheaply, and honest feasibility grades. This is the Records-lane overlay: most open problems cannot be solved exactly by machine, but every bounded quantity with a gap accepts a better witness, and witnesses are cheaply verifiable. Curated + agent-mined; keyed on the canonical erdosproblems.com id; lives BESIDE compiler-generated stubs.json (never inside it). Numeric claims MUST carry a source; entries without verified numbers belong in the miner's skipped list, not here.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "note", "entries"],
+  "properties": {
+    "schema": {"const": "erdos-gap-map-v1"},
+    "note": {"type": "string"},
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["problem", "oeis", "quantity", "kind", "lower", "upper",
+                     "witness_side", "witness_object", "witness_verifier",
+                     "witness_feasibility", "exact_feasibility", "status", "notes", "provenance"],
+        "properties": {
+          "problem": {"type": "integer", "minimum": 1, "description": "canonical erdosproblems.com id (must exist in stubs.json)"},
+          "oeis": {"type": ["string", "null"], "pattern": "^A[0-9]{6}$", "description": "primary sequence for this quantity"},
+          "quantity": {"type": "string", "description": "human name of the bounded quantity, e.g. 'R(3,3,3,3)'"},
+          "kind": {"type": "string", "enum": ["value_gap", "next_cell", "bounded_below_only", "bounded_above_only", "verified_range", "not_gap_shaped"],
+            "description": "value_gap = both bounds known; next_cell = first uncomputed table cell; verified_range = conjecture checked for all n <= lower.value"},
+          "lower": {"$ref": "#/$defs/bound"},
+          "upper": {"$ref": "#/$defs/bound"},
+          "witness_side": {"type": "string", "enum": ["lower", "upper", "both", "none"],
+            "description": "which bound a constructive witness IMPROVES. Max-type quantity: a bigger example raises lower. Min-type quantity: a smaller example lowers upper."},
+          "witness_object": {"type": "string", "description": "what a witness IS, concretely"},
+          "witness_verifier": {"type": "string", "description": "how to check a claimed witness cheaply (dependency-free sketch), or why no cheap check exists"},
+          "witness_feasibility": {"type": "string", "enum": ["open-easy", "plausible", "hard", "historic", "none"],
+            "description": "open-easy = our bounded-search tools plausibly move it in hours; plausible = days or a clever encoding; hard = decades-open / expert tooling defeated, but witness still verifiable; historic = 50-year famous target; none = no cheap witness verification"},
+          "exact_feasibility": {"type": "string", "enum": ["cell", "drat-candidate", "wall", "unknown"],
+            "description": "can the EXACT value fall: cell = bounded exhaustive + cheap verify; drat-candidate = nonexistence side plausibly machine-certifiable (DRAT); wall = no known path"},
+          "status": {"type": "string", "enum": ["open", "record_in_progress", "closed"]},
+          "notes": {"type": "string"},
+          "provenance": {
+            "type": "object", "additionalProperties": false,
+            "required": ["added_by", "date", "checked"],
+            "properties": {
+              "added_by": {"type": "string"},
+              "date": {"type": "string"},
+              "checked": {"type": "array", "minItems": 1, "items": {"type": "string"},
+                "description": "sources actually consulted for the numbers (OEIS entries, surveys, arXiv ids)"}
+            }
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "bound": {
+      "oneOf": [
+        {"type": "null"},
+        {"type": "object", "additionalProperties": false,
+         "required": ["value", "source", "year"],
+         "properties": {
+           "value": {"type": "string", "description": "string to allow big integers and qualified values like '> 2×10^12'"},
+           "source": {"type": "string"},
+           "year": {"type": ["integer", "null"]}
+         }}
+      ]
+    }
+  }
+}
