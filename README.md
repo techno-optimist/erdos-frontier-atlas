@@ -55,6 +55,12 @@ any agent attacking an Erdős problem starts from a map instead of a blank page.
 | [`certificates/erdos-552-f39`](certificates/erdos-552-f39) | certified 45-vertex witness for `R(C4,K1,39) >= 46` (re-derives WSR 2015; the "=46" claim was retracted — cell open at 46–47 per DS1) |
 | [`certificates/erdos-13`](certificates/erdos-13) | exact Erdős–Sárközy table `f(1..45)` + verifier: last exception to `⌊N/3⌋+1` is `N=17` (empirical location of Bedert's ineffective threshold) |
 | [`certificates/erdos-979`](certificates/erdos-979) | self-checking exact verifier for `a(6) > 10¹²` on A385316 (smallest sum of three prime cubes in exactly 6 ways); independently cross-verified |
+| [`certificates/ramsey-3-3`](certificates/ramsey-3-3) | `R(3,3)=6` upper half: CNF + 247-byte solver-emitted DRAT proof + truncated negative control — the smallest end-to-end certified-nonexistence exemplar |
+| [`certificates/erdos-1107`](certificates/erdos-1107) | Mollin–Walsh (A056828) exception-table verifier; the `10¹⁰` verified-up-to-N frontier and its cross-checks are documented in its README |
+| [`atlas/gap_map.json`](atlas/gap_map.json) | the **records-lane gap map** (the EFA-DR1 dataset): 221 bounded quantities with `[L,U]`, witness + verifier specs, and `evidence[]` from which each entry's confidence class is computed — validate with [`tools/validate_gap_map.py`](tools/validate_gap_map.py) |
+| [`scripts/hello_frontier.sh`](scripts/hello_frontier.sh) | **the 10-minute quickstart** (`make hello-frontier`): replays the DRAT certificate + its negative control, re-verifies a witness certificate, prints one gap-map entry with its computed confidence class; needs only git + cc + python3 |
+| [`tools/state_of_frontier.py`](tools/state_of_frontier.py) | generates [`views/state_of_frontier.md`](views/state_of_frontier.md) — the **State of the Frontier** report (deterministic; `make check-views` fails if it goes stale) |
+| [`RELEASING.md`](RELEASING.md) | the data-release procedure: the machine gate, plus the two **human-only** steps (mint the Zenodo DOI; confirm the data/tools licensing split) |
 
 Install the pinned release-check dependency with
 `python3 -m pip install -r requirements-dev.lock`. Before publishing a snapshot,

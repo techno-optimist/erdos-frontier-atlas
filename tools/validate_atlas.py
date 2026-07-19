@@ -214,16 +214,38 @@ def main() -> None:
         fail("Zenodo release metadata contains stale board counts")
     citation = (ROOT / "CITATION.cff").read_text(encoding="utf-8")
     top_level = dict(re.findall(r'^([a-z][a-z-]*):\s*"?([^"\n]+)"?\s*$', citation, re.MULTILINE))
+    # The citable object is now the gap-map data release (WS1 / EFA-DR1); the
+    # citation must pin that identity AND still state every 51-problem-tier fact
+    # the old check pinned, verbatim — no fact pin was dropped; the entry-count
+    # pin against atlas/gap_map.json is additional.
+    gap_map_entries = json.loads(
+        (ROOT / "atlas" / "gap_map.json").read_text(encoding="utf-8"))["entries"]
     required_citation_facts = (
+        "Erdős Frontier Atlas — Gap Map (EFA-DR1)",
+        f"{len(gap_map_entries)} bounded",
         "13 BOARD-READY", "14 BOARD-HEAVY", "24 named walls",
         "seven Atlas", "22 <= R(C4,K1,17) <= 23",
     )
     if (
-        top_level.get("version") != document["atlas_version"]
-        or top_level.get("date-released") != document["generated"]
+        top_level.get("version") != "DR1"
         or not all(fact in citation for fact in required_citation_facts)
     ):
         fail("citation metadata is stale")
+    # Release-gate coupling (charter WS1: DR1 does not ship without a live DOI):
+    # while doi is TBD, date-released must stay unset; a concrete DOI requires a
+    # concrete date-released. RELEASING.md step 1 is the only place both change.
+    doi = top_level.get("doi")
+    released = top_level.get("date-released")
+    if doi is None:
+        fail("citation must carry a doi field (TBD until minted)")
+    if doi == "TBD":
+        if released is not None:
+            fail("citation: date-released must stay unset until the DOI is minted "
+                 "(RELEASING.md step 1)")
+    elif not doi.startswith("10."):
+        fail("citation: doi must be TBD or a concrete DOI (10.xxxx/...)")
+    elif released is None or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", released):
+        fail("citation: a minted DOI requires a concrete date-released (YYYY-MM-DD)")
 
     print("atlas integrity: 51 entries, counts and routing invariants verified")
 

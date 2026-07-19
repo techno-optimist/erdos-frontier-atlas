@@ -1,31 +1,51 @@
 cff-version: 1.2.0
-message: "If you use this atlas, please cite it as below."
-title: "The Erdős Frontier Atlas: a machine-readable map of the computational frontier around the Erdős prize problems"
+message: "If you use this dataset, please cite it as below."
+title: "Erdős Frontier Atlas — Gap Map (EFA-DR1)"
 type: dataset
 authors:
   - family-names: "Russell"
     given-names: "Kevin"
-version: "0.2.0"
-date-released: "2026-07-13"
+version: "DR1"
+# date-released is set by the human release step, together with the DOI
+# (RELEASING.md step 1). EFA-DR1 does not ship without a live Zenodo DOI.
 doi: "TBD"
+# License of record for the repository today (single LICENSE file). A
+# CC-BY-4.0-data / MIT-tools split is PROPOSED but not confirmed — see
+# RELEASING.md step 2; this field changes only when that decision is made.
 license: MIT
 keywords:
   - "Erdős problems"
   - "combinatorics"
   - "computational frontier"
+  - "gap map"
+  - "bracket-tightening"
+  - "epistemic ledger"
+  - "confidence classes"
+  - "verification frontier"
   - "SAT"
   - "DRAT certificates"
   - "exact verification"
-  - "bounty boards"
 abstract: >-
-  Machine-readable frontier records for 51 deep-audited Erdős prize problems
-  (of 95 triaged): finite object, exact-verifier specification, current record
-  with sources, solver lane, and a recomputed board classification
-  (13 BOARD-READY, 14 BOARD-HEAVY, 24 named walls). Includes a compiler that
-  turns any boardable entry into a pinned-verifier bounty package; seven Atlas
-  entries link to packaged P42 research boards. Exact certificates establish
-  22 <= R(C4,K1,17) <= 23. No Erdős
-  prize is claimable by finite computation; the atlas maps the computational
+  EFA-DR1 is the first numbered data release of the Erdős Frontier Atlas gap
+  map (atlas/gap_map.json): a versioned [L, U] ledger over 221 bounded
+  quantities attached to the open Erdős problems, each entry recording the
+  known lower/upper bounds with sources, the witness object that would move
+  the bracket, a dependency-free verifier specification, and feasibility
+  labels; 81 quantities are witness-workable. Every entry carries an
+  evidence[] list from which its confidence class (C0 formal proof / C1
+  independently replicated / C2 single verified implementation / C3
+  literature- or numerics-grade) is mechanically computed and
+  validator-enforced — 12 entries are curated and number-checked, 208 are
+  agent-mined and honestly labeled C3 pending independent re-verification.
+  The release includes replayable certificates (DRAT nonexistence with a
+  negative control, witness/table verifiers, a verified-up-to-N frontier), a
+  10-minute quickstart (make hello-frontier), and a generated State of the
+  Frontier report. The wider repository also carries the 1217-problem hub
+  index and 51 deep-audited problem records with a recomputed board
+  classification (13 BOARD-READY, 14 BOARD-HEAVY, 24 named walls);
+  seven Atlas entries link to packaged P42 research boards, and exact
+  certificates establish 22 <= R(C4,K1,17) <= 23. No Erdős prize is
+  claimable by finite computation; the atlas maps the computational
   frontier around the problems. Canonical problem index and credit:
   erdosproblems.com (Thomas Bloom).
 references:
