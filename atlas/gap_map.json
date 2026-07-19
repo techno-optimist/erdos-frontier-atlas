@@ -354,7 +354,7 @@
    "witness_feasibility": "none",
    "exact_feasibility": "cell",
    "status": "record_in_progress",
-   "notes": "Naive all-in-RAM search is memory-bound (~20GB @ cap 2e12, ~100GB @ 1e13); needs a streaming chunked search. Ledger: the C1 class covers a(6) > 10^12 (two independent implementations at the full window; certificates/erdos-979/); the '> 2x10^12' headline bound is a single-implementation extension pending independent replication (C2-grade on its own).",
+   "notes": "Naive all-in-RAM search is memory-bound (~20GB @ cap 2e12, ~100GB @ 1e13); needs a streaming chunked search. Ledger: the C1 class covers a(6) > 10^12 (two independent implementations at the full window; certificates/erdos-979/); the '> 2x10^12' headline bound is a single-implementation extension pending independent replication (C2-grade on its own). Extension (2026-07-19): a RAM-bounded streaming implementation (validated against the naive method on the full multiplicity histogram to 2x10^10, plus the a(1..5) reproduction gate) swept contiguous, gap-free coverage of [0, 10^13) in 100 durable ledger windows with no value having exactly 6 representations \u2014 a(6) > 10^13, C2-grade on its own (single implementation at this range; the C1 headline stays at > 10^12 until an independent implementation replicates the sweep).",
    "provenance": {
     "added_by": "claude-lead, 12-candidate triage",
     "date": "2026-07-18",
