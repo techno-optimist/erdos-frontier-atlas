@@ -1,21 +1,27 @@
 <!-- GENERATED FILE — do not edit. Edit book/chapters/*.md and run
      `make book`; `make check-book` fails when this file is stale. -->
-> **STATUS: SEED EDITION — this book accretes as the frontier moves; it
-> circulates externally only after the EFA-DR1 DOI is live and the first
-> observatory note exists.**
+> **STATUS: FIRST EDITION — a living book, regenerated from the ledgers on
+> every build. The dataset it narrates is citable: EFA-DR1,
+> DOI [10.5281/zenodo.21443635](https://doi.org/10.5281/zenodo.21443635).**
 
 # Cartography of Numbers
 
 *The living book of frontier cartography — the observational practice of the
 mathematical frontier.*
 
-<!-- DRAFT: lead pass pending -->
-
 Conway drew maps of number-theoretic objects — the topograph; Hatcher built a
 book on that map; this book maps the frontier itself. Both are cited here as
 inspiration only: nothing below derives from either work.
 
-This is a **living book**. The prose is hand-written; every table, count, and
+Mathematics has never had an observational science of itself. Its frontier —
+which quantities are bracketed and how tightly, which theorems hold thresholds
+nobody can compute, which problems are walls and which merely look like them —
+has lived in surveys that age, folklore that drifts, and the memories of the
+people who tried. This book is the narrative face of a different arrangement:
+the frontier as a **versioned, machine-verifiable, citable object**, worked
+around the clock by autonomous agents and checkable in one command by anyone.
+
+It is a **living book**. The prose is hand-written; every table, count, and
 number is generated at build time from the repository's ledgers
 ([`atlas/gap_map.json`](../atlas/gap_map.json), the certificates, the
 observatory records, the Frontier Board) and carries its confidence class where
@@ -24,13 +30,18 @@ behind the data, the build gate (`make check-book`) fails loudly rather than
 letting a stale number circulate. A static text about a moving frontier would
 be wrong within weeks; this one is wrong for at most one build.
 
-It is written for two audiences at once: **agents** joining the practice, who
-need the field's objects, gates, and honest scope in one place before touching
-the ledgers; and **humans** — mathematicians, tool-builders, skeptics — who
-want to check, use, or attack the map. The charter
-([`FRONTIER_CARTOGRAPHY.md`](../FRONTIER_CARTOGRAPHY.md)) is the field's
-normative document; this book is its narrative form. Where they disagree, the
-charter wins.
+It is written for two audiences at once, on purpose. **Agents** joining the
+practice need the field's objects, gates, and honest scope in one place before
+touching the ledgers — for them this book is orientation, and the charter
+([`FRONTIER_CARTOGRAPHY.md`](../FRONTIER_CARTOGRAPHY.md)) is law; where they
+disagree, the charter wins. **Humans** — mathematicians, tool-builders,
+skeptics — get something rarer: a mathematical text whose every claim can be
+checked without trusting its authors. Run `make hello-frontier` and the
+epistemic loop demonstrates itself end-to-end. If something here is wrong, the
+map wants the correction — and will keep it visible.
+
+To cite the dataset this book narrates: the DOI above, or
+[`CITATION.cff`](../CITATION.cff) at the repository root.
 
 The state of this edition, generated from the data:
 
@@ -44,8 +55,6 @@ The state of this edition, generated from the data:
 ---
 
 # 1 · The Map
-
-<!-- DRAFT: lead pass pending -->
 
 The unit of progress in this practice is not the theorem and not the paper —
 it is the **bracket**. Knowledge state is a versioned ledger of `[L, U]` gaps
@@ -99,11 +108,14 @@ Corrected claims stay on the board by design (charter Tenet 5).
 (Certificate links in this table are relative to the repository root,
 as on the board itself.)
 
+The board is not only a record — it is an invitation. Every row's certificate
+replays on a stranger's machine, and a movement that passes a pinned verifier
+belongs to whoever produced it. Disputes are welcome; Tenet 5 guarantees a
+correction stays visible longer than the claim it corrects.
+
 ---
 
 # 2 · Fences
-
-<!-- DRAFT: lead pass pending -->
 
 Some theorems are true "for all sufficiently large N" — and silent about where
 sufficiently large begins. When the proof runs through compactness, ergodic
@@ -178,11 +190,21 @@ so no one re-hunts them.
 | Consecutive-gap growth of S-smooth numbers (S-units) | DEAD — trap (a) triggered, and this is the instructive exhibit for the whole slice. Tijdeman used Baker's theorem to prove the EFFECTIVE lower bound a_{n+1} − a_n ≫ a_n / (log a_n)^C. Since… |
 | Exact hypergraph Turán numbers 'for large n' via the (strong) removal lemma (Pikhurko / Frankl–Füredi lineage) | TRAP (a) PARTIALLY FIRES — and this is the honest weakness. The removal lemma is technically EFFECTIVE (tower/Ackermann-type via regularity, or Fox's tower-of-height-log(1/ε)), so a computa… |
 
+The hunt's second build taught the method its sharpest lesson so far. The
+Furstenberg–Katznelson axis-aligned square survived every effectivization check
+— the theorem is genuinely rate-free through the current literature — and its
+exact table `D(1..9)` is certified and externally consistent with OEIS A227133
+([`certificates/fk-square`](../certificates/fk-square)). But the fence is
+structurally **degenerate**: the density decays so slowly that no pinned
+threshold is crossed within any exact-search range. A fence needs an
+*interior* exception, and this configuration cannot produce one. That null is
+recorded in the shortlist rather than discarded — the correction of a research
+direction is a result, and the next hunt inherits it: prefer one-dimensional
+configurations whose search reach extends deep into the exception zone.
+
 ---
 
 # 3 · The Observatory
-
-<!-- DRAFT: lead pass pending -->
 
 The observatory measures **emitted-proof sizes**: how large a machine-checkable
 proof one *pinned pipeline* — encoding, solver version, configuration, seed,
@@ -236,11 +258,19 @@ pinned pipelines: [`observatory/pipeline.json`](../observatory/pipeline.json).
 **Growth fit claimed: none.**
 No growth-law fit is claimed. Three family points are now completed (the charter's bare minimum): 247 B / ~564 KB pooled mean / 5.25-6.03 GB (2 seeds). Ratios: ~x2,284 then ~x10,000. A fit is still withheld: n=3 points, the R(3,5) order-variance axis is unmeasured, and cross-machine emitted-size comparability (arm64-darwin vs aarch64-linux) is untested at small instances. Relative seed spread grows with size: 0% (R33, degenerate) -> 2.4-5.4% (R34) -> ~13.8% over 2 seeds (R35). Points from different pipelines/machines are separate series, never mixed.
 
+Two observations ride along with the curve. The small end is strangely rigid:
+the `R(3,3)` refutation came out **byte-identical** across every seed, both
+clause orders, and two independent sessions — at this scale the emitted proof
+behaves like a canonical object of the pipeline, not an accident of search.
+And the large end carries the instrument's own limits honestly: the third
+seed of `R(3,5)` was aborted by the operator after gigabyte-scale proof
+traffic twice destabilized the shared machine, and the abort — with its
+reason — is part of the measurement record. An observatory that documents
+its instrument is more credible than one that pretends it has none.
+
 ---
 
 # 4 · Walls
-
-<!-- DRAFT: lead pass pending -->
 
 Silicon does not melt walls. Combinatorial explosion did not change when
 verification became cheap, and the largest single category on the map is the
@@ -285,8 +315,6 @@ specific reason and source for each wall, is
 
 # 5 · Methods — the field's instruments
 
-<!-- DRAFT: lead pass pending -->
-
 The unit of knowledge is the **certificate**: a claim exists when a stranger's
 machine can verify it from the artifact alone — witness plus dependency-free
 checker, solver-emitted DRAT proof replayed through an independent checker
@@ -303,6 +331,10 @@ prove. Replication counts only when it is *evidence, not echo*: two
 implementations are independent when the second is blind-reimplemented from
 the spec alone, on different algorithms, and cross-checked against the first
 only after both have run. An echo of the same code path replicates nothing.
+The rule has already earned a promotion: the map's strongest bound was raised
+to class C1 only when a spec-only blind reimplementation — a different
+algorithm, forbidden from reading the first — swept the same range and agreed
+on every shared observable, one hundred windows out of one hundred.
 
 Classes are computed from recorded `evidence[]` by
 [`tools/validate_gap_map.py`](../tools/validate_gap_map.py) — the validator
@@ -323,3 +355,10 @@ force-pushed; a corrected claim is quarantined with a reason, visibly, so the
 next agent does not re-walk it. And the **no-fit posture**: below the charter's
 minimum family points, or with a variance axis unmeasured, a curve is reported
 as points and ratios — declining to claim is an instrument, not a weakness.
+
+Joining is one command deep. `make hello-frontier` replays a nonexistence
+certificate, its negative control, and a witness verifier, then prints one
+ledger entry with its computed class — the whole epistemology, demonstrated.
+From there: verify any certificate, dispute any entry, prove any
+conjecture-grade relation, or submit a witness to any record board. The map
+is the field, and the field is open.

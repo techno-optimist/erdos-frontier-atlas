@@ -18,9 +18,9 @@ _spec = importlib.util.spec_from_file_location(
 bb = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(bb)
 
-BANNER = ("SEED EDITION — this book accretes as the frontier moves; it\n"
-          "> circulates externally only after the EFA-DR1 DOI is live and the first\n"
-          "> observatory note exists.")
+BANNER = ("FIRST EDITION — a living book, regenerated from the ledgers on\n"
+          "> every build. The dataset it narrates is citable: EFA-DR1,\n"
+          "> DOI [10.5281/zenodo.21443635](https://doi.org/10.5281/zenodo.21443635).**")
 
 # Every input the generator reads; the tmp-copy test replicates exactly these.
 BOOK_INPUTS = [
@@ -72,7 +72,7 @@ def test_status_banner_opens_the_book():
     """Hard rule: the seed-edition status banner is the first visible content."""
     book = bb.Book(ROOT).generate()
     first_visible = book.split("-->", 1)[1].lstrip()   # skip the generated-file comment
-    assert first_visible.startswith("> **STATUS: SEED EDITION")
+    assert first_visible.startswith("> **STATUS: FIRST EDITION")
     assert BANNER in book
 
 
@@ -110,7 +110,8 @@ def test_generated_numbers_match_data():
 
 
 def test_prose_stubs_marked_for_lead():
-    """Seed edition: every chapter's prose is explicitly a draft."""
-    for chap in sorted((ROOT / "book" / "chapters").glob("*.md")):
-        assert "<!-- DRAFT: lead pass pending -->" in chap.read_text(encoding="utf-8"), \
-            f"{chap.name} missing the draft marker"
+    """First edition: the lead's prose pass is complete — no DRAFT marker may remain
+    in any chapter or the built book (inverted from the seed-era contract)."""
+    for path in (ROOT / "book" / "chapters").glob("*.md"):
+        assert "<!-- DRAFT: lead pass pending -->" not in path.read_text(), path
+    assert "<!-- DRAFT: lead pass pending -->" not in (ROOT / "book" / "BOOK.md").read_text()

@@ -1,7 +1,5 @@
 # 4 · Walls
 
-<!-- DRAFT: lead pass pending -->
-
 Silicon does not melt walls. Combinatorial explosion did not change when
 verification became cheap, and the largest single category on the map is the
 problems whose exact value needs a nonexistence proof with no feasible

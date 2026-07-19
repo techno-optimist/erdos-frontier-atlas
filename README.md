@@ -1,5 +1,8 @@
 # The Erdős Frontier Atlas
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21443635.svg)](https://doi.org/10.5281/zenodo.21443635)
+**Citable as EFA-DR1** · read the living book: [*Cartography of Numbers*](book/BOOK.md) · 10-minute start: `make hello-frontier`
+
 **The machine-readable, agent-coordination index for all ~1217 Erdős problems —
 the computational annex to [erdosproblems.com](https://www.erdosproblems.com).**
 Every problem is a record ([`atlas/stubs.json`](atlas/stubs.json)) keyed to its

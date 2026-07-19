@@ -1,10 +1,12 @@
 # Frontier Cartography
 
-> **STATUS: internal charter, pre-artifact.** This file is the build plan, reviewed by
-> an adversarial critic panel but not yet backed by its first two numbered artifacts
-> (the DR1 dataset release and the certificate-size survey note). External circulation
-> waits for those; until then the public-facing documents are the dataset README and
-> the certificates themselves. Nothing in this file is an offer.
+> **STATUS: PUBLIC (2026-07-19).** The gate this banner once enforced is met: the
+> dataset is citable (EFA-DR1, DOI
+> [10.5281/zenodo.21443635](https://doi.org/10.5281/zenodo.21443635)) and the
+> observatory's first measurements exist ([`observatory/`](observatory/)). This file
+> remains the build plan; the front door for readers is the living book
+> ([`book/BOOK.md`](book/BOOK.md)) and the certificates. Nothing in this document is
+> an offer (see WS9).
 
 **The observational practice of the mathematical frontier.** Frontier cartography
 treats the boundary of mathematical knowledge as a first-class object: measurable,

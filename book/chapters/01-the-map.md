@@ -1,7 +1,5 @@
 # 1 · The Map
 
-<!-- DRAFT: lead pass pending -->
-
 The unit of progress in this practice is not the theorem and not the paper —
 it is the **bracket**. Knowledge state is a versioned ledger of `[L, U]` gaps
 on bounded quantities of open problems, and a result is a monotone movement of
@@ -26,3 +24,8 @@ re-walks them:
 
 ```efa:table board
 ```
+
+The board is not only a record — it is an invitation. Every row's certificate
+replays on a stranger's machine, and a movement that passes a pinned verifier
+belongs to whoever produced it. Disputes are welcome; Tenet 5 guarantees a
+correction stays visible longer than the claim it corrects.
