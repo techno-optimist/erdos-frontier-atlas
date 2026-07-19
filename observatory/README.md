@@ -43,7 +43,8 @@ substring, never the exit code). Raw records with commands and sha256s:
 | `R(3,3)` | 6 | 15 / 40 | interleaved | 247 / 247 / 247 (byte-identical, **same proof as lex**) | ~0.005 | ~0.05 | all `s VERIFIED` |
 | `R(3,4)` | 9 | 36 / 210 | lex | 565,470 / 574,869 / 561,523 | ~0.06 | ~0.1 | all `s VERIFIED` |
 | `R(3,4)` | 9 | 36 / 210 | interleaved | 577,593 / 559,037 / 547,216 | ~0.07 | ~0.1 | all `s VERIFIED` |
-| `R(3,5)` | 14 | 91 / 2,366 | lex | **DNF** — proof stream crossed the 300 MB cap at every seed (>316 MB at abort, ~60–70 s in; 900 s budget unused) | — | — | nothing verified, nothing archived |
+| `R(3,5)` | 14 | 91 / 2,366 | lex | **5,253,767,512 B** (seed 1, solve 2,531 s) · **6,033,729,549 B** (seed 2, solve 3,981 s) — both **s VERIFIED** (memory-guarded drat-trim); seed 3 aborted by the operator (shared-host protection), no datum | ~13.8% spread over 2 seeds | sha256-pinned, retained off-repo (5.0/5.6 GiB) | measured at a 6 GiB cap on an aarch64-linux host (source-built CaDiCaL 3.0.0; same CNF sha256 as the Mac — the generator is cross-platform byte-deterministic). The earlier 300 MB-cap DNFs (kept below) were **cap artifacts** |
+| `R(3,5)` | 14 | 91 / 2,366 | lex (300 MB cap, superseded) | DNF at every seed (>316 MB at abort, ~60–70 s in) — retained as the honest record of the first attempt's cap | — | — | superseded by the 6 GiB-cap run above |
 | `R(3,5)` | 14 | 91 / 2,366 | interleaved | not attempted (Mac-tier tiny instances only) | — | — | — |
 
 Timings are wall-clock on one arm64 macOS machine — context, not pinned
@@ -64,8 +65,10 @@ quantities.
 - **R(3,4), n=9, interleaved:** real — 547,216 to 577,593 bytes across seeds,
   a spread of 30,377 bytes ≈ **5.4 % of the mean** (561,282). All three
   verified.
-- **R(3,5), n=14, lex:** the DNF is seed-robust — all three seeds hit the
-  size cap.
+- **R(3,5), n=14, lex:** two completed seeds spread ~13.8% of their mean
+  (5.25 vs 6.03 GB) — the relative seed spread GROWS with instance size
+  (0% at R(3,3), 2.4–5.4% at R(3,4), ~13.8% here over only 2 seeds). The
+  earlier 300 MB-cap DNFs were seed-robust but measured only the cap.
 
 ## Cross-encoding variance (order vs seed)
 
@@ -91,8 +94,10 @@ question: does clause ORDER move emitted size more or less than seed does?
 ## What is *not* claimed
 
 - **No growth-law fit.** The charter gate requires **≥ 3–4 completed family
-  points before any fit**; we have **two** (k=3, k=4) plus a seed-robust DNF at
-  k=5. Two points constrain nothing, so no curve is drawn and no growth rate is
+  points before any fit**; we now have **three** (k=3, k=4, k=5) — the bare
+  minimum — and the fit is still withheld: the R(3,5) order axis is unmeasured,
+  only 2 seeds completed there, and cross-machine size comparability is untested.
+  The observed ratios (~×2,284 then ~×10,000) are reported as ratios, not a law.
   named. The jump 247 → ~567 K → >300 MB is *suggestive* of rapid growth under
   this pipeline and is left at that. Points from the two pipelines are two
   separate series and are never mixed into one curve.
@@ -109,6 +114,12 @@ question: does clause ORDER move emitted size more or less than seed does?
   are unexplored here, and the order axis at `R(3,5)` is unmeasured. "Order
   moves size less than seed at R(3,4)" is an observation about this instance
   under this pipeline pair, not a general law.
+
+**Operational lesson (recorded 2026-07-19).** Gigabyte-scale solve + verification
+twice destabilized the shared host it ran on (load events from proof-stream writes
+and memory-guarded checking beside production services), and the third seed was
+aborted rather than risk a third event. Heavy observatory points are
+dedicated-window work; the caps and the abort are part of the record.
 
 ## Replay
 
