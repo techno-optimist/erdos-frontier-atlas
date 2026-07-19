@@ -1,21 +1,48 @@
 {
-  "schema": "efa-observatory-pipeline-v1",
-  "pipeline_id": "r3k-cadical300-drat-v1",
-  "purpose": "Pinned pipeline for WS5 emitted-proof-size measurements on the R(3,k) upper-half family. The measured quantity is S(F; encoding, solver, config, seed) — the size of the proof THIS pipeline emits. It is an achievable upper bound on proof length under this pipeline, NOT a minimal certificate; no claim about shortest proofs is made (charter section 4, WS5).",
-  "encoding": {
-    "name": "r3k-edge-cnf",
-    "version": "1.0.0",
-    "generator": "tools/gen_r3k_cnf.py",
-    "description": "Variables = edges of K_n in lexicographic order (true = red). Clauses: one all-negative clause per 3-subset (no red triangle), one all-positive clause per k-subset (no blue K_k); red block then blue block, each in lexicographic subset order. Deterministic; unit-tested against certificates/ramsey-3-3/problem.cnf (logically identical clause set; not byte-identical).",
-    "symmetry_breaking": "none"
-  },
+  "schema": "efa-observatory-pipeline-v2",
+  "purpose": "Pinned pipelines for WS5 emitted-proof-size measurements on the R(3,k) upper-half family. The measured quantity is S(F; encoding, solver, config, seed) — the size of the proof THIS pipeline emits. It is an achievable upper bound on proof length under this pipeline, NOT a minimal certificate; no claim about shortest proofs is made (charter section 4, WS5). Two pipelines are registered; they differ ONLY in the encoding's clause emission order — the SAME clause set and variable numbering under two orders (the encoding-variance axis the charter requires before any family trend is read). Solver, config, seeds, and checker are shared.",
+  "encodings": [
+    {
+      "encoding_id": "r3k-edge-cnf v1.0.0",
+      "name": "r3k-edge-cnf",
+      "version": "1.0.0",
+      "generator": "tools/gen_r3k_cnf.py",
+      "generator_invocation": "python3 tools/gen_r3k_cnf.py <k> <n> -o problem.cnf   (--order lex is the default)",
+      "clause_order": "lex: ALL red-triangle clauses (lexicographic 3-subset order), then ALL blue-K_k clauses (lexicographic k-subset order)",
+      "description": "Variables = edges of K_n in lexicographic order (true = red). Clauses: one all-negative clause per 3-subset (no red triangle), one all-positive clause per k-subset (no blue K_k); red block then blue block, each in lexicographic subset order. Deterministic and byte-frozen: the default output's sha256s are regression-tested in tests/test_gen_r3k_cnf.py. Logically identical to certificates/ramsey-3-3/problem.cnf (same clause set, different clause order).",
+      "symmetry_breaking": "none"
+    },
+    {
+      "encoding_id": "r3k-edge-cnf v1.0.0-interleaved",
+      "name": "r3k-edge-cnf",
+      "version": "1.0.0-interleaved",
+      "generator": "tools/gen_r3k_cnf.py",
+      "generator_invocation": "python3 tools/gen_r3k_cnf.py <k> <n> --order interleaved -o problem.cnf",
+      "clause_order": "interleaved: the same two lexicographic clause streams alternate (red_1, blue_1, red_2, blue_2, ...); when the shorter stream is exhausted, the remainder of the longer one follows. At k=3 both streams run over the same 3-subsets, so this is the negative/positive pair-per-triangle order of the committed exemplar.",
+      "relation_to_v1_0_0": "SAME clause set and variable numbering as v1.0.0 — ONLY the clause emission order and the header comments differ (unit-tested: tests/test_gen_r3k_cnf.py, test_interleaved_same_clause_set_different_order). At (k=3, n=6) the output is byte-identical to certificates/ramsey-3-3/problem.cnf, the exemplar produced by an independent earlier session (regression-tested: test_interleaved_reproduces_committed_file_byte_identically).",
+      "description": "Same variables and clause set as v1.0.0; emission order interleaves the red and blue streams pair-wise. Header = the exemplar's single-line format (at k=3 the exemplar's exact phrasing, which is what gives byte-identity with the committed file; at k>3 the honest asymmetric phrasing in the same format). The emitted file carries no encoding-version stamp in its comments; its identity is pinned by this manifest and by the generation command recorded with every measurement.",
+      "symmetry_breaking": "none"
+    }
+  ],
+  "pipelines": [
+    {
+      "pipeline_id": "r3k-cadical300-drat-v1",
+      "encoding_id": "r3k-edge-cnf v1.0.0",
+      "note": "the original pipeline; every measurement recorded before the encoding-variance axis was added runs under this id"
+    },
+    {
+      "pipeline_id": "r3k-cadical300-drat-v1-interleaved",
+      "encoding_id": "r3k-edge-cnf v1.0.0-interleaved",
+      "note": "identical to r3k-cadical300-drat-v1 in solver, config, seeds, checker, and caps; differs ONLY in the encoding's clause order — the second point on the encoding-variance axis. Per the pinning discipline, its measurements form their own series and are never mixed into the v1 curve."
+    }
+  ],
   "solver": {
     "name": "cadical",
     "version": "3.0.0",
     "install": "Homebrew formula 'cadical' (brew list --versions: cadical 3.0.0; cadical --version: 3.0.0)",
     "config": "default options; plain-text DRAT forced with --no-binary; seed set with --seed",
     "invocation_template": "cadical --no-binary --seed=<seed> <problem.cnf> <proof.drat>",
-    "seed_mechanism": "cadical's built-in --seed=<n> option (present in this version, so no clause-shuffling workaround is used). Observed: at R(3,3) n=6 the run is seed-invariant (byte-identical proofs across seeds 1-3); at R(3,4) n=9 seeds produce distinct proofs."
+    "seed_mechanism": "cadical's built-in --seed=<n> option (present in this version, so no clause-shuffling workaround is used). Observed under both encoding orders: at R(3,3) n=6 the run is seed-invariant (byte-identical proofs across seeds 1-3); at R(3,4) n=9 seeds produce distinct proofs."
   },
   "seeds": [1, 2, 3],
   "checker": {

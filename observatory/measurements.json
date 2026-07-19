@@ -1,18 +1,19 @@
 {
-  "schema": "efa-observatory-measurements-v1",
-  "pipeline_id": "r3k-cadical300-drat-v1",
+  "schema": "efa-observatory-measurements-v2",
+  "pipelines": ["r3k-cadical300-drat-v1", "r3k-cadical300-drat-v1-interleaved"],
   "pipeline_manifest": "observatory/pipeline.json",
   "date": "2026-07-18",
   "machine": "one arm64 macOS machine (Darwin 24.5.0); wall-clock timings are indicative context, not pinned quantities",
   "caveat_emitted_vs_minimal": "Every size below is the size of the proof EMITTED by the pinned pipeline — an achievable upper bound on proof length under that pipeline, NOT a minimal certificate. Minimal proof size is a proof-complexity quantity solvers do not compute; no claim about shortest proofs is made anywhere in this file.",
-  "family": "R(3,k) upper half: the r3k-edge-cnf v1.0.0 encoding of 'K_n (n = R(3,k)) admits a 2-coloring with no red triangle and no blue K_k', which is UNSAT at n = R(3,k). Instances: (k=3, n=6), (k=4, n=9), (k=5, n=14).",
+  "family": "R(3,k) upper half: the r3k-edge-cnf encoding (two pinned clause orders of the SAME clause set — see pipeline manifest) of 'K_n (n = R(3,k)) admits a 2-coloring with no red triangle and no blue K_k', which is UNSAT at n = R(3,k). Instances: (k=3, n=6), (k=4, n=9), (k=5, n=14 — lex pipeline only, DNF).",
   "family_points_completed": 2,
   "family_points_attempted": 3,
   "growth_fit": null,
-  "growth_fit_note": "No growth-law fit is claimed. The charter (WS5) requires >= 3-4 completed family points before any fit; we have 2 completed points and 1 seed-robust DNF. Two points constrain nothing.",
+  "growth_fit_note": "No growth-law fit is claimed. The charter (WS5) requires >= 3-4 completed family points before any fit; we have 2 completed points and 1 seed-robust DNF. Two points constrain nothing. Points from the two pipelines are two separate series, never mixed into one curve.",
   "measurements": [
     {
       "family_point": "R(3,3) upper half", "k": 3, "n": 6, "seed": 1,
+      "pipeline_id": "r3k-cadical300-drat-v1",
       "cnf_generation": "python3 tools/gen_r3k_cnf.py 3 6 -o problem.cnf",
       "cnf_sha256": "b2becb9de1ca7edaf13b8bde4494c4548b22ccbe0beae0b6777d79dbadf252f9",
       "solve_command": "cadical --no-binary --seed=1 problem.cnf proof.drat",
@@ -24,6 +25,7 @@
     },
     {
       "family_point": "R(3,3) upper half", "k": 3, "n": 6, "seed": 2,
+      "pipeline_id": "r3k-cadical300-drat-v1",
       "cnf_generation": "python3 tools/gen_r3k_cnf.py 3 6 -o problem.cnf",
       "cnf_sha256": "b2becb9de1ca7edaf13b8bde4494c4548b22ccbe0beae0b6777d79dbadf252f9",
       "solve_command": "cadical --no-binary --seed=2 problem.cnf proof.drat",
@@ -35,6 +37,7 @@
     },
     {
       "family_point": "R(3,3) upper half", "k": 3, "n": 6, "seed": 3,
+      "pipeline_id": "r3k-cadical300-drat-v1",
       "cnf_generation": "python3 tools/gen_r3k_cnf.py 3 6 -o problem.cnf",
       "cnf_sha256": "b2becb9de1ca7edaf13b8bde4494c4548b22ccbe0beae0b6777d79dbadf252f9",
       "solve_command": "cadical --no-binary --seed=3 problem.cnf proof.drat",
@@ -46,6 +49,7 @@
     },
     {
       "family_point": "R(3,4) upper half", "k": 4, "n": 9, "seed": 1,
+      "pipeline_id": "r3k-cadical300-drat-v1",
       "cnf_generation": "python3 tools/gen_r3k_cnf.py 4 9 -o problem.cnf",
       "cnf_sha256": "7c46f311cdf3c35fe3839b38b12acaa906b540f25ff27d5299e337d95325caa0",
       "solve_command": "cadical --no-binary --seed=1 problem.cnf proof.drat",
@@ -58,6 +62,7 @@
     },
     {
       "family_point": "R(3,4) upper half", "k": 4, "n": 9, "seed": 2,
+      "pipeline_id": "r3k-cadical300-drat-v1",
       "cnf_generation": "python3 tools/gen_r3k_cnf.py 4 9 -o problem.cnf",
       "cnf_sha256": "7c46f311cdf3c35fe3839b38b12acaa906b540f25ff27d5299e337d95325caa0",
       "solve_command": "cadical --no-binary --seed=2 problem.cnf proof.drat",
@@ -69,6 +74,7 @@
     },
     {
       "family_point": "R(3,4) upper half", "k": 4, "n": 9, "seed": 3,
+      "pipeline_id": "r3k-cadical300-drat-v1",
       "cnf_generation": "python3 tools/gen_r3k_cnf.py 4 9 -o problem.cnf",
       "cnf_sha256": "7c46f311cdf3c35fe3839b38b12acaa906b540f25ff27d5299e337d95325caa0",
       "solve_command": "cadical --no-binary --seed=3 problem.cnf proof.drat",
@@ -80,6 +86,7 @@
     },
     {
       "family_point": "R(3,5) upper half", "k": 5, "n": 14, "seed": 1,
+      "pipeline_id": "r3k-cadical300-drat-v1",
       "cnf_generation": "python3 tools/gen_r3k_cnf.py 5 14 -o problem.cnf",
       "cnf_sha256": "41fdb48d6c984fef2531fe66059c94655d559ef99ea7f3f794fd291862cd5e2e",
       "solve_command": "cadical --no-binary --seed=1 problem.cnf proof.drat",
@@ -91,6 +98,7 @@
     },
     {
       "family_point": "R(3,5) upper half", "k": 5, "n": 14, "seed": 2,
+      "pipeline_id": "r3k-cadical300-drat-v1",
       "cnf_generation": "python3 tools/gen_r3k_cnf.py 5 14 -o problem.cnf",
       "cnf_sha256": "41fdb48d6c984fef2531fe66059c94655d559ef99ea7f3f794fd291862cd5e2e",
       "solve_command": "cadical --no-binary --seed=2 problem.cnf proof.drat",
@@ -102,6 +110,7 @@
     },
     {
       "family_point": "R(3,5) upper half", "k": 5, "n": 14, "seed": 3,
+      "pipeline_id": "r3k-cadical300-drat-v1",
       "cnf_generation": "python3 tools/gen_r3k_cnf.py 5 14 -o problem.cnf",
       "cnf_sha256": "41fdb48d6c984fef2531fe66059c94655d559ef99ea7f3f794fd291862cd5e2e",
       "solve_command": "cadical --no-binary --seed=3 problem.cnf proof.drat",
@@ -110,25 +119,145 @@
       "emitted_bytes_at_abort": 315756544,
       "result": "DNF_PROOF_SIZE_CAP",
       "note": "same abort rule as seed 1"
+    },
+    {
+      "family_point": "R(3,3) upper half", "k": 3, "n": 6, "seed": 1,
+      "pipeline_id": "r3k-cadical300-drat-v1-interleaved",
+      "cnf_generation": "python3 tools/gen_r3k_cnf.py 3 6 --order interleaved -o problem.cnf",
+      "cnf_sha256": "e146a9afcb7e9529f9863851236729bc033c044efa8cc55cfb9d43f24c50c632",
+      "solve_command": "cadical --no-binary --seed=1 problem.cnf proof.drat",
+      "solver_status": "UNSAT", "solve_seconds_wall": 0.007,
+      "emitted_drat_bytes": 247,
+      "proof_sha256": "38a9c5b06f8f481134b27842d6d257a59a62ed242ad25639e2c81a6f10df536b",
+      "check_command": "drat-trim problem.cnf proof.drat",
+      "check_seconds_wall": 0.057, "checker_verdict": "s VERIFIED", "result": "VERIFIED",
+      "note": "the interleaved CNF is byte-identical to certificates/ramsey-3-3/problem.cnf (that file's sha256), and the emitted proof is byte-identical to the lex-pipeline proof and to the committed certificates/ramsey-3-3/proof.drat"
+    },
+    {
+      "family_point": "R(3,3) upper half", "k": 3, "n": 6, "seed": 2,
+      "pipeline_id": "r3k-cadical300-drat-v1-interleaved",
+      "cnf_generation": "python3 tools/gen_r3k_cnf.py 3 6 --order interleaved -o problem.cnf",
+      "cnf_sha256": "e146a9afcb7e9529f9863851236729bc033c044efa8cc55cfb9d43f24c50c632",
+      "solve_command": "cadical --no-binary --seed=2 problem.cnf proof.drat",
+      "solver_status": "UNSAT", "solve_seconds_wall": 0.005,
+      "emitted_drat_bytes": 247,
+      "proof_sha256": "38a9c5b06f8f481134b27842d6d257a59a62ed242ad25639e2c81a6f10df536b",
+      "check_command": "drat-trim problem.cnf proof.drat",
+      "check_seconds_wall": 0.042, "checker_verdict": "s VERIFIED", "result": "VERIFIED"
+    },
+    {
+      "family_point": "R(3,3) upper half", "k": 3, "n": 6, "seed": 3,
+      "pipeline_id": "r3k-cadical300-drat-v1-interleaved",
+      "cnf_generation": "python3 tools/gen_r3k_cnf.py 3 6 --order interleaved -o problem.cnf",
+      "cnf_sha256": "e146a9afcb7e9529f9863851236729bc033c044efa8cc55cfb9d43f24c50c632",
+      "solve_command": "cadical --no-binary --seed=3 problem.cnf proof.drat",
+      "solver_status": "UNSAT", "solve_seconds_wall": 0.004,
+      "emitted_drat_bytes": 247,
+      "proof_sha256": "38a9c5b06f8f481134b27842d6d257a59a62ed242ad25639e2c81a6f10df536b",
+      "check_command": "drat-trim problem.cnf proof.drat",
+      "check_seconds_wall": 0.050, "checker_verdict": "s VERIFIED", "result": "VERIFIED"
+    },
+    {
+      "family_point": "R(3,4) upper half", "k": 4, "n": 9, "seed": 1,
+      "pipeline_id": "r3k-cadical300-drat-v1-interleaved",
+      "cnf_generation": "python3 tools/gen_r3k_cnf.py 4 9 --order interleaved -o problem.cnf",
+      "cnf_sha256": "5d0e8d102f00152b1ccf2ac4747c7de9ded94824baecc53f3defb6be6a52765a",
+      "solve_command": "cadical --no-binary --seed=1 problem.cnf proof.drat",
+      "solver_status": "UNSAT", "solve_seconds_wall": 0.072,
+      "emitted_drat_bytes": 577593,
+      "proof_sha256": "1ae7f8b1e9470d3639605da4f8d14b41f1d011dbc5c9eed17393ca63f5b8e904",
+      "check_command": "drat-trim problem.cnf proof.drat",
+      "check_seconds_wall": 0.101, "checker_verdict": "s VERIFIED", "result": "VERIFIED"
+    },
+    {
+      "family_point": "R(3,4) upper half", "k": 4, "n": 9, "seed": 2,
+      "pipeline_id": "r3k-cadical300-drat-v1-interleaved",
+      "cnf_generation": "python3 tools/gen_r3k_cnf.py 4 9 --order interleaved -o problem.cnf",
+      "cnf_sha256": "5d0e8d102f00152b1ccf2ac4747c7de9ded94824baecc53f3defb6be6a52765a",
+      "solve_command": "cadical --no-binary --seed=2 problem.cnf proof.drat",
+      "solver_status": "UNSAT", "solve_seconds_wall": 0.061,
+      "emitted_drat_bytes": 559037,
+      "proof_sha256": "2362ae4bc998649d2d2542b37cbdd75209daadbff91068cf225b652a74c74ba7",
+      "check_command": "drat-trim problem.cnf proof.drat",
+      "check_seconds_wall": 0.095, "checker_verdict": "s VERIFIED", "result": "VERIFIED"
+    },
+    {
+      "family_point": "R(3,4) upper half", "k": 4, "n": 9, "seed": 3,
+      "pipeline_id": "r3k-cadical300-drat-v1-interleaved",
+      "cnf_generation": "python3 tools/gen_r3k_cnf.py 4 9 --order interleaved -o problem.cnf",
+      "cnf_sha256": "5d0e8d102f00152b1ccf2ac4747c7de9ded94824baecc53f3defb6be6a52765a",
+      "solve_command": "cadical --no-binary --seed=3 problem.cnf proof.drat",
+      "solver_status": "UNSAT", "solve_seconds_wall": 0.067,
+      "emitted_drat_bytes": 547216,
+      "proof_sha256": "9ea20977f84cb2127c7ca26d361a2cf2d4f04550864ca58cc53fedda45d03442",
+      "check_command": "drat-trim problem.cnf proof.drat",
+      "check_seconds_wall": 0.097, "checker_verdict": "s VERIFIED", "result": "VERIFIED"
     }
   ],
   "seed_variance": {
+    "r3k-cadical300-drat-v1": {
+      "r3_3_n6": {
+        "emitted_bytes_by_seed": [247, 247, 247],
+        "spread_bytes": 0,
+        "note": "the three proofs are byte-identical (same sha256) — at this scale the run is decided in preprocessing and never consults the seed, so the seed axis is degenerate here. The emitted proof is also byte-identical to the committed certificates/ramsey-3-3/proof.drat even though the generated CNF differs from the committed problem.cnf in clause order and comments — a single-instance stability observation, not a general claim."
+      },
+      "r3_4_n9": {
+        "emitted_bytes_by_seed": [565470, 574869, 561523],
+        "min": 561523, "max": 574869, "mean": 567287,
+        "spread_bytes": 13346,
+        "spread_pct_of_mean": 2.4,
+        "note": "seeds genuinely perturb the search at this scale; all three proofs verified"
+      },
+      "r3_5_n14": {
+        "result": "DNF at all three seeds (proof-size cap)",
+        "emitted_bytes_at_abort_by_seed": [316940288, 316313600, 315756544]
+      }
+    },
+    "r3k-cadical300-drat-v1-interleaved": {
+      "r3_3_n6": {
+        "emitted_bytes_by_seed": [247, 247, 247],
+        "spread_bytes": 0,
+        "note": "degenerate exactly as under lex — and the proof is byte-identical to the lex-pipeline proof: one sha256 across all six R(3,3) runs (2 orders x 3 seeds)"
+      },
+      "r3_4_n9": {
+        "emitted_bytes_by_seed": [577593, 559037, 547216],
+        "min": 547216, "max": 577593, "mean": 561282,
+        "spread_bytes": 30377,
+        "spread_pct_of_mean": 5.4,
+        "note": "all three proofs verified"
+      },
+      "r3_5_n14": {
+        "result": "not attempted under this pipeline (Mac-tier tiny instances only; the lex pipeline's three k=5 attempts were all DNF at the 300 MB cap)"
+      }
+    }
+  },
+  "cross_encoding_comparison": {
+    "question": "Does clause ORDER move emitted size more or less than seed does? (Charter WS5: a family trend is meaningful only if it dominates the cross-config spread; this is the second variance axis the charter requires.)",
+    "axes": "order axis = lex vs interleaved (the SAME clause set under two pinned emission orders); seed axis = cadical --seed in {1,2,3} within one order",
     "r3_3_n6": {
-      "emitted_bytes_by_seed": [247, 247, 247],
-      "spread_bytes": 0,
-      "note": "the three proofs are byte-identical (same sha256) — at this scale the run is decided in preprocessing and never consults the seed, so the seed axis is degenerate here. The emitted proof is also byte-identical to the committed certificates/ramsey-3-3/proof.drat even though the generated CNF differs from the committed problem.cnf in clause order and comments — a single-instance stability observation, not a general claim."
+      "emitted_bytes": {"lex_by_seed": [247, 247, 247], "interleaved_by_seed": [247, 247, 247]},
+      "order_spread_bytes": 0,
+      "seed_spread_bytes": 0,
+      "finding": "both axes are degenerate: all six runs (2 orders x 3 seeds) emit the byte-identical 247-byte proof — one proof sha256 — even though the two CNF files differ in clause order and comments. At this scale the instance is decided before either the seed or the clause order can matter; the point measures pipeline stability, not variance."
     },
     "r3_4_n9": {
-      "emitted_bytes_by_seed": [565470, 574869, 561523],
-      "min": 561523, "max": 574869, "mean": 567287,
-      "spread_bytes": 13346,
-      "spread_pct_of_mean": 2.4,
-      "note": "seeds genuinely perturb the search at this scale; all three proofs verified"
+      "emitted_bytes": {"lex_by_seed": [565470, 574869, 561523], "interleaved_by_seed": [577593, 559037, 547216]},
+      "seed_spread_within_lex_bytes": 13346,
+      "seed_spread_within_lex_pct_of_mean": 2.4,
+      "seed_spread_within_interleaved_bytes": 30377,
+      "seed_spread_within_interleaved_pct_of_mean": 5.4,
+      "order_shift_of_means_bytes": 6005,
+      "order_shift_of_means_pct_of_pooled_mean": 1.1,
+      "per_seed_order_delta_bytes_interleaved_minus_lex": [12123, -15832, -14307],
+      "per_seed_delta_caveat": "seed pairing across encodings is not meaningful — the seed only indexes the solver's randomized decisions within one run, and there is no correspondence between 'seed 1 under lex' and 'seed 1 under interleaved'. The per-seed deltas are samples of the combined variation, not paired differences.",
+      "pooled_range_bytes": [547216, 577593],
+      "ranges_overlap": "fully — the lex range [561523, 574869] lies entirely inside the interleaved range [547216, 577593]",
+      "finding": "at this instance, clause order does NOT move emitted size more than seed does: the shift of per-order means (6,005 B, ~1.1% of the pooled mean 564,285 B) is smaller than the seed spread within either order (13,346 B / 30,377 B), and the two per-order seed ranges fully overlap. Both axes land in the same few-percent band. Three seeds per order — a coarse reading, stated without any significance claim."
     },
     "r3_5_n14": {
-      "result": "DNF at all three seeds (proof-size cap)",
-      "emitted_bytes_at_abort_by_seed": [316940288, 316313600, 315756544]
-    }
+      "note": "no interleaved attempt (Mac-tier tiny instances only); the order axis at k=5 is unmeasured. The lex-pipeline DNF at the 300 MB cap stands on the seed axis only."
+    },
+    "implication_for_family_trends": "the only cross-encoding spread measured so far is a few percent at R(3,4) and exactly zero at R(3,3) — but this axis has two points on one instance pair, and with only 2 completed family points no trend is read and no fit is claimed either way."
   },
   "dnf_interpretation": "The R(3,5) DNF is pipeline-relative, not a claim about the instance: under THIS encoding (no symmetry breaking), THIS solver/config, and THESE caps, the emitted plain-text DRAT exceeds 300 MB at every tried seed. A pipeline with symmetry breaking or a different encoding may well complete — that would be a measurement under a NEW pipeline_id, not a continuation of this curve."
 }
