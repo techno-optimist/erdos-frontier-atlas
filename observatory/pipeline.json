@@ -1,0 +1,37 @@
+{
+  "schema": "efa-observatory-pipeline-v1",
+  "pipeline_id": "r3k-cadical300-drat-v1",
+  "purpose": "Pinned pipeline for WS5 emitted-proof-size measurements on the R(3,k) upper-half family. The measured quantity is S(F; encoding, solver, config, seed) — the size of the proof THIS pipeline emits. It is an achievable upper bound on proof length under this pipeline, NOT a minimal certificate; no claim about shortest proofs is made (charter section 4, WS5).",
+  "encoding": {
+    "name": "r3k-edge-cnf",
+    "version": "1.0.0",
+    "generator": "tools/gen_r3k_cnf.py",
+    "description": "Variables = edges of K_n in lexicographic order (true = red). Clauses: one all-negative clause per 3-subset (no red triangle), one all-positive clause per k-subset (no blue K_k); red block then blue block, each in lexicographic subset order. Deterministic; unit-tested against certificates/ramsey-3-3/problem.cnf (logically identical clause set; not byte-identical).",
+    "symmetry_breaking": "none"
+  },
+  "solver": {
+    "name": "cadical",
+    "version": "3.0.0",
+    "install": "Homebrew formula 'cadical' (brew list --versions: cadical 3.0.0; cadical --version: 3.0.0)",
+    "config": "default options; plain-text DRAT forced with --no-binary; seed set with --seed",
+    "invocation_template": "cadical --no-binary --seed=<seed> <problem.cnf> <proof.drat>",
+    "seed_mechanism": "cadical's built-in --seed=<n> option (present in this version, so no clause-shuffling workaround is used). Observed: at R(3,3) n=6 the run is seed-invariant (byte-identical proofs across seeds 1-3); at R(3,4) n=9 seeds produce distinct proofs."
+  },
+  "seeds": [1, 2, 3],
+  "checker": {
+    "name": "drat-trim",
+    "source": "https://github.com/marijnheule/drat-trim",
+    "commit": "2e3b2dc0ecf938addbd779d42877b6ed69d9a985",
+    "build": "cc -O2 -o drat-trim drat-trim.c (from a clean checkout of the pinned commit)",
+    "invocation_template": "drat-trim <problem.cnf> <proof.drat>",
+    "verdict_rule": "PASS iff stdout contains the substring 's VERIFIED'. The exit code is never trusted (drat-trim can exit 0 on both outcomes), and the substring is not anchored at line start (progress output uses carriage returns).",
+    "negative_control": "a deliberately truncated proof must yield 's NOT VERIFIED'"
+  },
+  "byte_size_definition": "emitted_drat_bytes = the size in bytes (st_size) of the plain-text DRAT file exactly as written by the solver invocation above. No trimming (drat-trim's optimized core is NOT the measured object), no compression, no post-processing.",
+  "timing_definition": "solve_seconds_wall and check_seconds_wall are wall-clock seconds for the solver/checker process on one arm64 macOS machine (Darwin 24.5.0); indicative only, not a pinned quantity.",
+  "caps_for_attempts": {
+    "timeout_seconds": 900,
+    "max_emitted_proof_bytes": 314572800,
+    "note": "an aborted run is recorded as DNF — a result, not a gap"
+  }
+}

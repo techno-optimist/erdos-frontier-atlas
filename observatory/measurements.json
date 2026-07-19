@@ -1,0 +1,134 @@
+{
+  "schema": "efa-observatory-measurements-v1",
+  "pipeline_id": "r3k-cadical300-drat-v1",
+  "pipeline_manifest": "observatory/pipeline.json",
+  "date": "2026-07-18",
+  "machine": "one arm64 macOS machine (Darwin 24.5.0); wall-clock timings are indicative context, not pinned quantities",
+  "caveat_emitted_vs_minimal": "Every size below is the size of the proof EMITTED by the pinned pipeline — an achievable upper bound on proof length under that pipeline, NOT a minimal certificate. Minimal proof size is a proof-complexity quantity solvers do not compute; no claim about shortest proofs is made anywhere in this file.",
+  "family": "R(3,k) upper half: the r3k-edge-cnf v1.0.0 encoding of 'K_n (n = R(3,k)) admits a 2-coloring with no red triangle and no blue K_k', which is UNSAT at n = R(3,k). Instances: (k=3, n=6), (k=4, n=9), (k=5, n=14).",
+  "family_points_completed": 2,
+  "family_points_attempted": 3,
+  "growth_fit": null,
+  "growth_fit_note": "No growth-law fit is claimed. The charter (WS5) requires >= 3-4 completed family points before any fit; we have 2 completed points and 1 seed-robust DNF. Two points constrain nothing.",
+  "measurements": [
+    {
+      "family_point": "R(3,3) upper half", "k": 3, "n": 6, "seed": 1,
+      "cnf_generation": "python3 tools/gen_r3k_cnf.py 3 6 -o problem.cnf",
+      "cnf_sha256": "b2becb9de1ca7edaf13b8bde4494c4548b22ccbe0beae0b6777d79dbadf252f9",
+      "solve_command": "cadical --no-binary --seed=1 problem.cnf proof.drat",
+      "solver_status": "UNSAT", "solve_seconds_wall": 0.007,
+      "emitted_drat_bytes": 247,
+      "proof_sha256": "38a9c5b06f8f481134b27842d6d257a59a62ed242ad25639e2c81a6f10df536b",
+      "check_command": "drat-trim problem.cnf proof.drat",
+      "check_seconds_wall": 0.046, "checker_verdict": "s VERIFIED", "result": "VERIFIED"
+    },
+    {
+      "family_point": "R(3,3) upper half", "k": 3, "n": 6, "seed": 2,
+      "cnf_generation": "python3 tools/gen_r3k_cnf.py 3 6 -o problem.cnf",
+      "cnf_sha256": "b2becb9de1ca7edaf13b8bde4494c4548b22ccbe0beae0b6777d79dbadf252f9",
+      "solve_command": "cadical --no-binary --seed=2 problem.cnf proof.drat",
+      "solver_status": "UNSAT", "solve_seconds_wall": 0.005,
+      "emitted_drat_bytes": 247,
+      "proof_sha256": "38a9c5b06f8f481134b27842d6d257a59a62ed242ad25639e2c81a6f10df536b",
+      "check_command": "drat-trim problem.cnf proof.drat",
+      "check_seconds_wall": 0.041, "checker_verdict": "s VERIFIED", "result": "VERIFIED"
+    },
+    {
+      "family_point": "R(3,3) upper half", "k": 3, "n": 6, "seed": 3,
+      "cnf_generation": "python3 tools/gen_r3k_cnf.py 3 6 -o problem.cnf",
+      "cnf_sha256": "b2becb9de1ca7edaf13b8bde4494c4548b22ccbe0beae0b6777d79dbadf252f9",
+      "solve_command": "cadical --no-binary --seed=3 problem.cnf proof.drat",
+      "solver_status": "UNSAT", "solve_seconds_wall": 0.004,
+      "emitted_drat_bytes": 247,
+      "proof_sha256": "38a9c5b06f8f481134b27842d6d257a59a62ed242ad25639e2c81a6f10df536b",
+      "check_command": "drat-trim problem.cnf proof.drat",
+      "check_seconds_wall": 0.042, "checker_verdict": "s VERIFIED", "result": "VERIFIED"
+    },
+    {
+      "family_point": "R(3,4) upper half", "k": 4, "n": 9, "seed": 1,
+      "cnf_generation": "python3 tools/gen_r3k_cnf.py 4 9 -o problem.cnf",
+      "cnf_sha256": "7c46f311cdf3c35fe3839b38b12acaa906b540f25ff27d5299e337d95325caa0",
+      "solve_command": "cadical --no-binary --seed=1 problem.cnf proof.drat",
+      "solver_status": "UNSAT", "solve_seconds_wall": 0.065,
+      "emitted_drat_bytes": 565470,
+      "proof_sha256": "f2739bee8872178402d08fa056cfb52361aa5d5ba8a97ef718bcb5b0d2fe56c6",
+      "check_command": "drat-trim problem.cnf proof.drat",
+      "check_seconds_wall": 0.109, "checker_verdict": "s VERIFIED", "result": "VERIFIED",
+      "archived": "certificates/ramsey-3-4/ (this seed's CNF + proof + negative control)"
+    },
+    {
+      "family_point": "R(3,4) upper half", "k": 4, "n": 9, "seed": 2,
+      "cnf_generation": "python3 tools/gen_r3k_cnf.py 4 9 -o problem.cnf",
+      "cnf_sha256": "7c46f311cdf3c35fe3839b38b12acaa906b540f25ff27d5299e337d95325caa0",
+      "solve_command": "cadical --no-binary --seed=2 problem.cnf proof.drat",
+      "solver_status": "UNSAT", "solve_seconds_wall": 0.065,
+      "emitted_drat_bytes": 574869,
+      "proof_sha256": "1f36f72f0acfb7b995ae2aaf8b65b95992733bcf7854f12b7b56329c543211a0",
+      "check_command": "drat-trim problem.cnf proof.drat",
+      "check_seconds_wall": 0.110, "checker_verdict": "s VERIFIED", "result": "VERIFIED"
+    },
+    {
+      "family_point": "R(3,4) upper half", "k": 4, "n": 9, "seed": 3,
+      "cnf_generation": "python3 tools/gen_r3k_cnf.py 4 9 -o problem.cnf",
+      "cnf_sha256": "7c46f311cdf3c35fe3839b38b12acaa906b540f25ff27d5299e337d95325caa0",
+      "solve_command": "cadical --no-binary --seed=3 problem.cnf proof.drat",
+      "solver_status": "UNSAT", "solve_seconds_wall": 0.061,
+      "emitted_drat_bytes": 561523,
+      "proof_sha256": "db78cabcedd0fcf3c46939f34c2fcb4b06231fcce003857f102730b3f1a02417",
+      "check_command": "drat-trim problem.cnf proof.drat",
+      "check_seconds_wall": 0.093, "checker_verdict": "s VERIFIED", "result": "VERIFIED"
+    },
+    {
+      "family_point": "R(3,5) upper half", "k": 5, "n": 14, "seed": 1,
+      "cnf_generation": "python3 tools/gen_r3k_cnf.py 5 14 -o problem.cnf",
+      "cnf_sha256": "41fdb48d6c984fef2531fe66059c94655d559ef99ea7f3f794fd291862cd5e2e",
+      "solve_command": "cadical --no-binary --seed=1 problem.cnf proof.drat",
+      "caps": {"timeout_seconds": 900, "max_emitted_proof_bytes": 314572800},
+      "solve_seconds_wall_at_abort": 62.237,
+      "emitted_bytes_at_abort": 316940288,
+      "result": "DNF_PROOF_SIZE_CAP",
+      "note": "aborted when the emitted proof stream crossed the 300 MB cap (observed size at kill, 1 s polling); the completed emitted size is unknown but > 300 MB. Nothing was verified; no proof is archived."
+    },
+    {
+      "family_point": "R(3,5) upper half", "k": 5, "n": 14, "seed": 2,
+      "cnf_generation": "python3 tools/gen_r3k_cnf.py 5 14 -o problem.cnf",
+      "cnf_sha256": "41fdb48d6c984fef2531fe66059c94655d559ef99ea7f3f794fd291862cd5e2e",
+      "solve_command": "cadical --no-binary --seed=2 problem.cnf proof.drat",
+      "caps": {"timeout_seconds": 900, "max_emitted_proof_bytes": 314572800},
+      "solve_seconds_wall_at_abort": 70.556,
+      "emitted_bytes_at_abort": 316313600,
+      "result": "DNF_PROOF_SIZE_CAP",
+      "note": "same abort rule as seed 1"
+    },
+    {
+      "family_point": "R(3,5) upper half", "k": 5, "n": 14, "seed": 3,
+      "cnf_generation": "python3 tools/gen_r3k_cnf.py 5 14 -o problem.cnf",
+      "cnf_sha256": "41fdb48d6c984fef2531fe66059c94655d559ef99ea7f3f794fd291862cd5e2e",
+      "solve_command": "cadical --no-binary --seed=3 problem.cnf proof.drat",
+      "caps": {"timeout_seconds": 900, "max_emitted_proof_bytes": 314572800},
+      "solve_seconds_wall_at_abort": 68.527,
+      "emitted_bytes_at_abort": 315756544,
+      "result": "DNF_PROOF_SIZE_CAP",
+      "note": "same abort rule as seed 1"
+    }
+  ],
+  "seed_variance": {
+    "r3_3_n6": {
+      "emitted_bytes_by_seed": [247, 247, 247],
+      "spread_bytes": 0,
+      "note": "the three proofs are byte-identical (same sha256) — at this scale the run is decided in preprocessing and never consults the seed, so the seed axis is degenerate here. The emitted proof is also byte-identical to the committed certificates/ramsey-3-3/proof.drat even though the generated CNF differs from the committed problem.cnf in clause order and comments — a single-instance stability observation, not a general claim."
+    },
+    "r3_4_n9": {
+      "emitted_bytes_by_seed": [565470, 574869, 561523],
+      "min": 561523, "max": 574869, "mean": 567287,
+      "spread_bytes": 13346,
+      "spread_pct_of_mean": 2.4,
+      "note": "seeds genuinely perturb the search at this scale; all three proofs verified"
+    },
+    "r3_5_n14": {
+      "result": "DNF at all three seeds (proof-size cap)",
+      "emitted_bytes_at_abort_by_seed": [316940288, 316313600, 315756544]
+    }
+  },
+  "dnf_interpretation": "The R(3,5) DNF is pipeline-relative, not a claim about the instance: under THIS encoding (no symmetry breaking), THIS solver/config, and THESE caps, the emitted plain-text DRAT exceeds 300 MB at every tried seed. A pipeline with symmetry breaking or a different encoding may well complete — that would be a measurement under a NEW pipeline_id, not a continuation of this curve."
+}
