@@ -1,0 +1,6 @@
+{
+  "original_path": "progress/receipts/2026/07/20260716T161410Z_50c8e4391849_d0945e22947f.json",
+  "quarantined_at": "2026-07-19T01:03:50Z",
+  "reason": "accepted contract replay failed",
+  "semantic_contract_digest": "sha256:d139e8e355e288885e258260eb508db374a2ef47e5299439ca225732b4f48fd6"
+}
