@@ -13,8 +13,8 @@ the release-facing summary of its current state.
 
 ## The ledger at a glance
 
-- **221 bounded quantities** across the Erdős-hub problems.
-- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **1** lane-added, **208** agent-mined.
+- **222 bounded quantities** across the Erdős-hub problems.
+- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **2** lane-added, **208** agent-mined.
 - Honest label: the agent-mined entries are structurally validated but **not yet
   independently number-re-verified** — they carry literature-grade evidence and
   therefore class C3 until a verification artifact exists (the WS1 release gate
@@ -30,7 +30,7 @@ validator fails any stored class the recorded evidence does not prove.
 |---|---|---|
 | C0 | formal proof, machine-checked | 0 |
 | C1 | &ge;2 independent implementations or replays with distinct artifacts at the claimed range | 1 |
-| C2 | exactly one verified, replayable implementation | 2 |
+| C2 | exactly one verified, replayable implementation | 3 |
 | C3 | literature- or numerics-grade — no independent in-project verification artifact | 218 |
 
 ## Entries by kind
@@ -39,7 +39,7 @@ validator fails any stored class the recorded evidence does not prove.
 |---|---|---|---|
 | `value_gap` | both bounds known; the open `[L, U]` gap is the object | 30 | 5 |
 | `next_cell` | the next uncomputed term of a sequence or table | 81 | 56 |
-| `verified_range` | a “no counterexample below N” frontier; `lower` records the verified-through value | 27 | 16 |
+| `verified_range` | a “no counterexample below N” frontier; `lower` records the verified-through value | 28 | 16 |
 | `bounded_below_only` | one-sided bracket: only a lower bound is known | 16 | 4 |
 | `bounded_above_only` | one-sided bracket: only an upper bound is known | 1 | 0 |
 | `not_gap_shaped` | on the map for completeness; the problem has no `[L, U]` shape to work | 66 | 0 |

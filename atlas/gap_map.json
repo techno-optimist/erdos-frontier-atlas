@@ -8037,6 +8037,43 @@
     }
    ],
    "confidence": "C2"
+  },
+  {
+   "problem": 13,
+   "oeis": null,
+   "quantity": "Erd\u0151s\u2013S\u00e1rk\u00f6zy f(N) = max |A|, A \u2286 {1,\u2026,N}, with no a,b,c \u2208 A (b \u2260 c) such that a | (b+c) and a < min(b,c) \u2014 certified exact table for N \u2264 45, the finite side Bedert's asymptotic theorem does not give; empirical lower fence for its ineffective 'sufficiently large' threshold",
+   "kind": "verified_range",
+   "lower": {
+    "value": "45",
+    "source": "this project's certified exact table f(1..45): branch-and-bound over {1,\u2026,N} cross-checked by exhaustive subset enumeration for N \u2264 16 (two independent methods inside one replayable artifact); dependency-free replay: python3 certificates/erdos-13/verify.py",
+    "year": 2026
+   },
+   "upper": null,
+   "witness_side": "none",
+   "witness_object": "n/a \u2014 verified-up-to-N: a replayable exact recomputation certifies f(1..45), every exception witness (f(N) > \u230aN/3\u230b+1 exactly at N=2,4,5,7,8,10,11,13,14,17; largest exceptional witness f(17)=7: {6,8,9,11,12,14,17}), and that f(N)=\u230aN/3\u230b+1 for all 18 \u2264 N \u2264 45",
+   "witness_verifier": "python3 certificates/erdos-13/verify.py \u2014 dependency-free, ~5\u201310 s; recomputes f(1..45) two independent ways, re-verifies every exception witness, and confirms the last exception in the computed range is N=17",
+   "witness_feasibility": "none",
+   "exact_feasibility": "wall",
+   "status": "open",
+   "notes": "Effectivization record (charter \u00a73/WS4) \u2014 a LOWER FENCE, not a threshold location: in the computed range N \u2264 45 the last exception to f(N)=\u230aN/3\u230b+1 is N=17. Because Bedert's theorem (arXiv:2301.07065) proves the bound only for sufficiently large N with an INEFFECTIVE threshold, sporadic exceptions at larger N are NOT excluded; raising the fence = extending the certified table past N=45. The headline conjecture is a proven theorem (Bedert 2023), and certifying the TRUE threshold is a wall (needs an effective proof, no compact certificate) \u2014 the untabulated finite table is the content here. oeis = null: f is not in OEIS as of 2026-07-17 (checked at certification time; candidate new sequence, deliberately not submitted pending a full literature/definition cross-check \u2014 external submissions are human-sent). The stub's A002264 (\u230an/3\u230b) is the comparison bound, not f.",
+   "provenance": {
+    "added_by": "effectivization lane (WS4) + epistemic-ledger fold-in",
+    "date": "2026-07-18",
+    "checked": [
+     "certificates/erdos-13/verify.py replayed 2026-07-18: exit 0, valid:true, ~5 s (recomputes f(1..45) two independent ways, re-checks all 10 exception witnesses, confirms last exception 17)",
+     "certificates/erdos-13/table.json (f values, exception witnesses, sample maximal sets)",
+     "certificates/erdos-13/README.md (method + OEIS non-membership check dated 2026-07-17)",
+     "atlas/stubs.json id 13 (Bedert [Be23] arXiv:2301.07065; upstream Solved)"
+    ]
+   },
+   "evidence": [
+    {
+     "type": "replay_receipt",
+     "artifact": "certificates/erdos-13/verify.py",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C2"
   }
  ]
 }
