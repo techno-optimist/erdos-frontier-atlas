@@ -6,12 +6,15 @@
 #                            Needs only git + cc + python3.
 #   make state-of-frontier   regenerate views/state_of_frontier.md from the data
 #   make check-views         fail if views/state_of_frontier.md is stale
+#   make book                rebuild book/BOOK.md ("Cartography of Numbers") from
+#                            book/chapters/*.md + the live ledgers
+#   make check-book          fail if book/BOOK.md is stale vs the data
 #   make validate            gap-map validator (dependency-free) + full atlas
 #                            integrity check (needs: pip install -r requirements-dev.lock)
 #   make verify-certs        replay every fast in-repo certificate verifier
 #   make test                pytest over tests/
 
-.PHONY: hello-frontier state-of-frontier check-views validate verify-certs test
+.PHONY: hello-frontier state-of-frontier check-views book check-book validate verify-certs test
 
 hello-frontier:
 	bash scripts/hello_frontier.sh
@@ -21,6 +24,12 @@ state-of-frontier:
 
 check-views:
 	python3 tools/state_of_frontier.py --check
+
+book:
+	python3 book/build_book.py
+
+check-book:
+	python3 book/build_book.py --check
 
 validate:
 	python3 tools/validate_gap_map.py

@@ -61,6 +61,7 @@ any agent attacking an Erdős problem starts from a map instead of a blank page.
 | [`atlas/gap_map.json`](atlas/gap_map.json) | the **records-lane gap map** (the EFA-DR1 dataset): 221 bounded quantities with `[L,U]`, witness + verifier specs, and `evidence[]` from which each entry's confidence class is computed — validate with [`tools/validate_gap_map.py`](tools/validate_gap_map.py) |
 | [`scripts/hello_frontier.sh`](scripts/hello_frontier.sh) | **the 10-minute quickstart** (`make hello-frontier`): replays the DRAT certificate + its negative control, re-verifies a witness certificate, prints one gap-map entry with its computed confidence class; needs only git + cc + python3 |
 | [`tools/state_of_frontier.py`](tools/state_of_frontier.py) | generates [`views/state_of_frontier.md`](views/state_of_frontier.md) — the **State of the Frontier** report (deterministic; `make check-views` fails if it goes stale) |
+| [`book/`](book) | **Cartography of Numbers** — the living book of the frontier-cartography field (seed edition; internal until the DR1 DOI is live): hand-written chapters in [`book/chapters/`](book/chapters) interleaved with tables generated from the live ledgers into [`book/BOOK.md`](book/BOOK.md) by [`book/build_book.py`](book/build_book.py); `make book` rebuilds, `make check-book` fails when it goes stale |
 | [`RELEASING.md`](RELEASING.md) | the data-release procedure: the machine gate, plus the two **human-only** steps (mint the Zenodo DOI; confirm the data/tools licensing split) |
 
 Install the pinned release-check dependency with
