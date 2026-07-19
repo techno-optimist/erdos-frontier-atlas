@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:9669e68ea47ecc3493719435f03d409a9db7427cd0286cfc09dd8acd815a7837",
+  "content_digest": "sha256:775fd3e31de35cee90d138531358fc0b1efb4eed5884ab5f3af49e9a7bf025f1",
+  "occurred_at": "2026-07-18T18:13:47Z",
+  "frontier": "OEIS A385316: find the smallest integer N that is a sum of three prime cubes in exactly 6 ways (a(6)); published bound a(6) > 4.99e11 remains open.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nBuilt the exact multiplicity verifier for A385316 from prior session context, fixed the f-string typo (`run_cutoof_sweep` → `run_cutoff_sweep`) and search-branch double-enumeration bug in the prior verifier, and ran domain and predicate kill-fixture tests. The verifier builds P={p prime : p³≤C}, enumerates all nondecreasing triples (p≤q≤r) with p³+q³+r³≤C, and counts exact multiplicities — a total decision procedure with no heuristics. Domain kill fixtures test that numbers with non-prime components (99=2³+3³+4³, 36=1³+2³+3³, 1035=10³+2³+3³) are correctly rejected as domain violations. Predicate kill fixtures test that 24 (multiplicity 1, not 6) and 185527 (multiplicity 2, not 6) are correctly rejected as predicate violations. The --reproduce branch was previously blocked by a typo and now reproduces all five known OEIS terms.",
+  "verified": "Verifier domain: Non-negative integer N is in the domain iff there exist primes p ≤ q ≤ r such that N = p³ + q³ + r³ and count(N) = K for K ≥ 1.\nVerifier predicate: A claimed value N* with multiplicity K* is valid iff (1) count({(p,q,r) : p,q,r prime, p≤q≤r, p³+q³+r³=N*}) == K*, and (2) for all M < N*, count(M) ≠ K*.\nArtifact: prime_cubes_a385316.py, SHA-256: 3b1071bd04896ae40fd622750afc3d2bef86fb43fa1e9c5b0ee270fee3d27877\nNo-argument replay output:\nDomain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\n--reproduce branch: all 5 known terms verified (a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419), exit 0.",
+  "result": "Prior verifier's --reproduce branch bug (f-string typo `run_cutoof_sweep`) is fixed; kill-fixture replay passes cleanly (3/3 domain + 2/2 predicate rejected correctly); all 5 known OEIS terms reproduce. The bounded search to C=1e12 remains dispatch-eligible to DGX spark-38e3.local.",
+  "next_gate": "Dispatch prime_cubes_a385316.py to DGX spark-38e3.local with `--cutoff 1000000000000 --mode search` for parallel execution; if DGX unavailable, verify search branch correctness by running with --cutoff 100000000000 --mode search --verbose locally and confirming multiplicity counts match expected bounds.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-18_11-13-47.md",
+    "sha256": "18b59283472f7cce26b6362bbbc1e05339e9d9ca226e4849aac5e2ce93fadf61"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

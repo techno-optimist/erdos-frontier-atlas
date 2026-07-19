@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:13a7ce19b72de6afd3a4e861759159e340204f867e4efc7eed632f55a45c5918",
+  "content_digest": "sha256:d8b39d818df1d2a0db3c1c22b2b4a01e880ab2a9dd9d18459602b9c6f16c4507",
+  "occurred_at": "2026-07-18T00:01:24Z",
+  "frontier": "Smallest N that is a sum of 3 prime cubes in exactly 6 ways (A385316 a(6)).",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nWrote and executed a second independent implementation (bounded_search_v2.py) of the O(|P|^2) bounded exact-search verifier for sums of 3 prime cubes ≤ C. Verified all five OEIS known terms at C=2e10 (a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419 all PASS). Ran certified lower-bound sweeps to C=1e11 (627 primes, 31.5M distinct sums, 16.2s, a(6) not found → a(6) > 1e11).",
+  "verified": "Verifier domain: P = {p prime : p^3 ≤ C}, enumerate nondecreasing triples (p≤q≤r) with p³+q³+r³ ≤ C, count exact multiplicities of each sum, certify a(n) by mapping smallest N per count n.\nVerifier predicate: for claimed N = a(6), sum_counts[N] == 6 AND for all M < N, sum_counts[M] != 6.\nArtifact: bounded_search_v2.py\nKnown-term verification at C=2e10: a(1)..a(5) all reproduce exactly (5/5 PASS).\nLower-bound at C=1e11: 627 primes, 31,474,082 distinct sums enumerated in 16.2s, a(6) not found → certified a(6) > 1e11.\nIndependent implementation B reproduces implementation A's correctness claim on known terms while completing within budget.\nFrontier advice: no strategy_digest provided (foundry.strategy_advice is null).",
+  "result": "Implementation B independently confirmed: a(6) > 1e11. The bounded search kernel is verified correct (5/5 known terms), efficient (16.2s for C=1e11 with 627 primes), and reproducible. The a(6) value remains unfound at this cutoff. The accepted continuation's claim of a(6) > 1e10 is now superseded by this independent verification to a(6) > 1e11.",
+  "next_gate": "Dispatch bounded_exact_search_v2.py to DGX (spark-38e3.local) for the C=1e12 sweep, with output capture to confirm or find a(6) at scale. Two independent implementations are now available (A from accepted continuation, B this session); post-DGX confirmation, cross-verify results before promoting to final receipt.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. This session used 13 model calls, 1 terminal action (16.2s), 2 artifact mutations (experiment.json + bounded_search_v2.py), well within all runtime budgets.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-17_17-01-24.md",
+    "sha256": "7f1baaa61bf6c4c2563ef934c60afd58ddfddb64633b9a7d528339021776852a"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

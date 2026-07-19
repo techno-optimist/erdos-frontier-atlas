@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:2a62fc250154223da1c9cdd64008204dc96ebd40149006ecb50cc644e717de4d",
+  "content_digest": "sha256:62af34adb566080f529e37416347ed109a3d350a5d4666abd69b4fcdf442945d",
+  "occurred_at": "2026-07-18T21:38:53Z",
+  "frontier": "Smallest N that is the sum of three prime cubes in exactly 6 representations (OEIS A385316 a(6)), with current lower bound a(6) > 4.99e11.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nCopied the prior-session verifier artifact (prime_cubes_a385316.py), verified kill fixtures (domain: 3/3 rejected, predicate: 2/2 rejected) and reproduce mode (all 5 known terms a(1)..a(5) match), then launched the bounded exact search to C=1e12 via `python3 prime_cubes_a385316.py --cutoff 1000000000000 --mode search`. The process (pid 1353431) began at ~21:38Z on this Mac host; at the time of reporting it had not yet completed output (pure Python O(|P|^2 · window) enumeration at 1e12 exceeds the 600s timeout window on this hardware).",
+  "verified": "Artifact: prime_cubes_a385316.py, SHA-256: 3b1071bd04896ae40fd622750afc3d2bef86fb43fa1e9c5b0ee270fee3d27877\nDomain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nReproduce mode: ALL 5 KNOWN TERMS VERIFIED (a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419 all MATCH)\nSearch to C=1e9: Certified a(6) > 1,000,000,000 (no sum with 6 reps below cutoff)\nSearch to C=1e12: in progress at time of reporting — pure Python triple enumeration exceeds tool timeout; dispatch to DGX spark-38e3.local with compiled/NumPy-optimized path required for completion.\nVerifier domain: Non-negative integer N is in the domain iff there exist primes p <= q <= r such that N = p^3 + q^3 + r^3 and count(N) = K for K >= 1.\nVerifier predicate: A claimed value N* with multiplicity K* is valid iff (1) count({(p,q,r) : p,q,r prime, p<=q<=r, p^3+q^3+r^3=N*}) == K*, and (2) for all M < N*, count(M) != K*.",
+  "result": "Negative result on bounded search to C=1e12: the pure Python implementation cannot complete within tool runtime limits, blocking the primary next gate. The verifier artifact itself is fully functional and confirmed (kill fixtures pass, known terms reproduce). The route requires DGX dispatch or a compiled/NumPy version of the enumerator to reach C=1e12 within budget.",
+  "next_gate": "Dispatch prime_cubes_a385316.py to DGX spark-38e3.local with `--cutoff 1000000000000 --mode search`; if DGX is unavailable, port the enumerator to NumPy/vectorized form to fit within Mac runtime budget, then replay the artifact and record the a(6) finding or certification.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-18_14-38-53.md",
+    "sha256": "79da5bc648f82b23765fc6eed3ecbb6284766ea126fb75569ea31d15bf3a0c31"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

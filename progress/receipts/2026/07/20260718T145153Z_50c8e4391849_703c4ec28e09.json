@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:703c4ec28e093596b2f3381ae95bb999a2e3789d9593c2910a781ab2222cf4ae",
+  "content_digest": "sha256:024d1fc855b0acf41ce2a39e7835b622363e9adae8fdf5e1aa7943247fa788cd",
+  "occurred_at": "2026-07-18T14:51:53Z",
+  "frontier": "A385316 a(6): smallest N representable as p³+q³+r³ (primes, p≤q≤r) in exactly 6 unordered ways; current best lower bound a(6) > 4.99×10¹¹.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nWrote prime_cubes_vectorized.py — a complete-prime-set triple-sum multiplicity verifier and bounded exact search for the A385316 frontier. Executed verify-only mode at C=2×10¹⁰ confirming all five known OEIS terms (a(1)..a(5)) reproduce exactly. Initiated C=1×10¹² search sweep with background process monitoring; tool access terminated before sweep completed.",
+  "verified": "Domain: complete prime set P = {p prime : p³ ≤ C} enumerates all triples (p≤q≤r) with p³+q³+r³ ≤ C; O(|P|³/6) enumeration with Counter multiplicity counting.\nPredicate: a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419 reproduce exactly at C=2e10; all 5 terms PASS.\nArtifact: prime_cubes_vectorized.py\nVerify result at C=2e10: ALL 5 KNOWN TERMS VERIFIED — a(1)=24 OK, a(2)=185527 OK, a(3)=8627527 OK, a(4)=999979163 OK, a(5)=10588881419 OK.\nC=1e12 sweep in progress at tool-stop; no a(6) certificate or extended bound confirmed in this session.",
+  "result": "Verifier passes regression on all five known terms. The C=1×10¹² vectorized search was dispatched but not confirmed to completion; the published bound a(6) > 4.99×10¹¹ stands unimproved in this session. The prior session's numpy implementation was faster but left unverified; this Python implementation is independently correct but slower due to pure-Python loops.",
+  "next_gate": "Re-run prime_cubes_vectorized.py --cutoff 1000000000000 --mode search and confirm completion with captured output (or dispatch to DGX spark-38e3.local for parallel execution). If completed, extract minimum sum with exactly 6 reps or certify a(6) > 1e12.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-18_07-51-53.md",
+    "sha256": "754fb07c10f427242589d287008cb233a60a80d60170b5bbb644eb44bb69be3a"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

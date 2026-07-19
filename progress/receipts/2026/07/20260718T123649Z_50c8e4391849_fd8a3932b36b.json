@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:fd8a3932b36b4a8ba09e9facab7ffdc1d8075a84c139e62cbf21d37f7feb97a8",
+  "content_digest": "sha256:0dc5563cab71c33a6bec94f8912ad1a08a055b5be8e8bc48b464d3430db5c857",
+  "occurred_at": "2026-07-18T12:36:49Z",
+  "frontier": "What is a(6) for OEIS A385316 — the smallest integer that is a sum of three prime cubes in exactly 6 ways?",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nWrote and executed prime_cubes_vectorized.py — a numpy + Counter-optimized independent implementation of the O(|P|²) bounded exact-search for sums of 3 prime cubes ≤ C. Verified all five known OEIS A385316 terms at C=2e10 in 2.91s. Initiated C=1e12 sweep (1229 primes) via background process.",
+  "verified": "Verifier domain: primes p with p^3 ≤ C, nondecreasing triples (p≤q≤r) with p^3+q^3+r^3 ≤ C\nVerifier predicate: count exact multiplicities of each sum; must reproduce a(1..5) exactly before any new-bound claim\nReproduce gate: a(1)=24→1 rep, a(2)=185527→2 reps, a(3)=8627527→3 reps, a(4)=999979163→4 reps, a(5)=10588881419→5 reps — all PASS in 2.91s\nArtifact: prime_cubes_vectorized.py, SHA-256: c56ceb257eee63eb9da3837bf7cba0632a41173c43c792512e94c7b61d1bb3f2\nDomain kill: a(1)=24 verified with exactly 1 representation using complete prime set {p: p≤2714}\nPredicate kill: all 5 terms pass with exact multiplicity match",
+  "result": "Independent implementation passes all 5 known terms. The C=1e12 vectorized sweep was initiated at call 11 but could not complete verification of termination before tool access was disabled. The prior bound a(6) > 4.99e11 stands; the upgrade to a(6) > 1e12 requires confirmed completion of the vectorized sweep. The numpy+Counter optimization reduced Python loop overhead but the triple enumeration remains computationally intensive for C=1e12 (~1229 primes, ~50M+ triples).",
+  "next_gate": "Re-run prime_cubes_vectorized.py --cutoff 1000000000000 in a fresh session with background process monitoring; if it completes, extract the minimum sum with exactly 6 representations (or confirm none exists < 1e12). Alternatively, dispatch to DGX for the full sweep with parallel processing.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-18_05-36-49.md",
+    "sha256": "77c80446593baec42f7336f8c99ac1f64d7150c54a494c29d99c67704162890b"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:6198f4b85a13985a7cec003372bc363e499f94f711c7d0f0b8922b3c77d6843d",
+  "content_digest": "sha256:60c410d786d028f573a61e065339f2b1c979b35573da5d3417db07c739f2ba11",
+  "occurred_at": "2026-07-18T04:42:35Z",
+  "frontier": "Smallest N = sum of 3 prime cubes in exactly 6 representations (A385316 a(6)).",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nWrote and executed bounded_search_v3.py — an independent Python implementation of the O(|P|^2) bounded exact-search for sums of 3 prime cubes ≤ C. Verified all five known OEIS terms at C=2e10 (a(1)=24: 1 rep, a(2)=185527: 2 reps, a(3)=8627527: 3 reps, a(4)=999979163: 4 reps, a(5)=10588881419: 5 reps — all PASS). Initiated C=1e12 sweep (1229 primes, ~756K prime pairs, ~992M triples) but pure-Python enumeration exceeds the 16-call / 900s wall-clock budget at ~60s elapsed with no output yet. Blocked on compute budget — a 1e12 sweep in pure Python is infeasible within the operational envelope.",
+  "verified": "Verifier domain: sum of three prime cubes p^3+q^3+r^3 ≤ C, with p, q, r prime and p ≤ q ≤ r; verified by OEIS A385316 terms [1].\nVerifier predicate: exact multiplicity count of unordered representations equals the target n; verified by reproducing a(1..5) with counts [1,2,3,4,5] at C=2e10 using independent implementation C.\nArtifact: bounded_search_v3.py, SHA-256: pending (file written but final sweep incomplete).\nKnown terms source: OEIS A385316 b-file; a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419.\nPrior implementations A and B confirmed a(6) > 1e11 at C=2e10 (5/5 terms, 16.2s).",
+  "result": "Verification gate passed: independent implementation C reproduces all 5 known terms correctly at C=2e10. The C=1e12 sweep was initiated but is blocked by compute budget — pure-Python triple enumeration is O(10^9) operations on 1229 primes and cannot complete within 16 model calls / 900 wall seconds. The prior bound a(6) > 1e11 stands; the C=1e12 upgrade to a(6) > 1e12 requires either DGX dispatch (SSH key unavailable from this Mac) or a vectorized/Cython rewrite. No a(6) found; no new lower bound achieved.",
+  "next_gate": "Either: (1) configure SSH key for DGX (spark-38e3.local) to dispatch bounded_exact_search_v2.py for the C=1e12 sweep, or (2) rewrite the search kernel in Cython or NumPy vectorized form for local completion. The smallest independently replayable primitive remains: a(6) > 1e12 with independent verification against known terms.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. DGX SSH unavailable; no write_file or patch mutations attempted after the initial artifact write.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-17_21-42-35.md",
+    "sha256": "0981a7639466be82ab9d80ba91a28028e4ba60e9f519bd72e0a12aa63f03a409"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

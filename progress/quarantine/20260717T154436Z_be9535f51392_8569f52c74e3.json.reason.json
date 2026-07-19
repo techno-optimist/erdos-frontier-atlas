@@ -1,0 +1,5 @@
+{
+  "original_path": "progress/receipts/2026/07/20260717T154436Z_be9535f51392_8569f52c74e3.json",
+  "quarantined_at": "2026-07-19T00:34:20Z",
+  "reason": "foreign writer be9535f51392 (Erdos-142 RunPod worker, committed as techno-optimist not in source_job_ids); both content_digest and receipt_id recompute-mismatch (stored digests were stuffed with the in-body report SHA, not build_receipt hashes); original run .md absent so unrepairable. Preserved not deleted; arrived via remote 9ecbef9."
+}

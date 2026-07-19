@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:de3e0f1d605c98e2c6fb227f8e7c104d95642b4d2e9b2bbc84f25f13046e34d9",
+  "content_digest": "sha256:057765e571124781de93980d66e0e78b99855280e28d26dba68d9efb3a436ba5",
+  "occurred_at": "2026-07-18T15:26:20Z",
+  "frontier": "Erdős #979: What is a(6) for A385316 — the smallest integer expressible as a sum of three prime cubes in exactly 6 ways? Current published lower bound: a(6) > 499,243,435,237 (~4.99×10¹¹).",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nRan prime_cubes_vectorized.py --cutoff 20000000000 --reproduce to verify the complete-prime-set multiplicity verifier against the five known OEIS terms. Then dispatched --cutoff 1000000000000 --mode search to extend the lower bound past 1e12.",
+  "verified": "Verifier domain: All 5 known OEIS A385316 terms reproduced exactly (a(1)=24: 1 rep, a(2)=185527: 2 reps, a(3)=8627527: 3 reps, a(4)=999979163: 4 reps, a(5)=10588881419: 5 reps). 396 primes enumerated for C=2e10. Total triples: 7,879,448. Distinct sums: 7,839,446. All PASS.\nArtifact: prime_cubes_vectorized.py, SHA-256: c56ceb257eee63eb9da3837bf7cba0632a41173c43c792512e94c7b61d1bb3f2\nSearch to C=1e12 (1,229 primes) dispatched but did not complete within budget — runtime was ~3.5 minutes with no output, significantly slower than the cited ~73s estimate from prior sessions.",
+  "result": "Verifier is correct and confirmed on 5/5 known terms. The C=1e12 bounded exact search was initiated but cannot complete on this Mac within the research session budget; it requires either more wall time or dispatch to the DGX spark-38e3.local. No improvement on the a(6) > 4.99×10¹¹ lower bound was confirmed this session.",
+  "next_gate": "Dispatch prime_cubes_vectorized.py --cutoff 1000000000000 --mode search to DGX spark-38e3.local for parallel execution. If completed, extract minimum sum with exactly 6 reps or certify a(6) > 1e12. Alternatively, optimize the pure-Python triple loop (e.g., numba JIT or C extension) to achieve the cited ~73s runtime on this machine.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-18_08-26-20.md",
+    "sha256": "43f57548e3da89179376241cb2c985aa203c9f3cb5f7ac74339c7b8e3033d330"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

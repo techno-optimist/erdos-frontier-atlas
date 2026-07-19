@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:5e3efb6b77e9b3261c6570f840438f58f8f6e0e8e6b7a29bfadd73dc4a4ff9ab",
+  "content_digest": "sha256:58b4fc6c44750fd0c4cf33a4bcf0fefa4a38e691ee3d2a9d2230eb4bc2f76fe3",
+  "occurred_at": "2026-07-18T18:46:33Z",
+  "frontier": "Smallest N = sum of 3 prime cubes in exactly 6 ways (OEIS A385316 a(6)); known terms a(1..5) = 24, 185527, 8627527, 999979163, 10588881419; published bound a(6) > 499243435237 (~4.99e11).",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nCopied the prior-session verifier artifact (prime_cubes_a385316.py from res_20260718_181039), ran default kill-fixture mode and --reproduce mode, and recorded the SHA-256 digest. The verifier builds the complete prime set P={p : p³≤C}, enumerates all nondecreasing triples (p≤q≤r) with p³+q³+r³≤C, counts exact multiplicities, and includes domain kill fixtures (99, 36, 1035 — non-prime components) and predicate kill fixtures (24, 185527 — wrong multiplicity).",
+  "verified": "Domain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nALL 5 KNOWN TERMS VERIFIED\nArtifact: prime_cubes_a385316.py, SHA-256: 3b1071bd04896ae40fd622750afc3d2bef86fb43fa1e9c5b0ee270fee3d27877\nVerifier domain: Non-negative integer N is in the domain iff there exist primes p <= q <= r such that N = p^3 + q^3 + r^3 and count(N) = K for K >= 1.\nVerifier predicate: A claimed value N* with multiplicity K* is valid iff (1) count({(p,q,r) : p,q,r prime, p<=q<=r, p^3+q^3+r^3=N*}) == K*, and (2) for all M < N*, count(M) != K*.",
+  "result": "The verifier artifact from the prior session (res_20260718_181039) is confirmed functional and ready for DGX dispatch. Both kill-fixture modes and reproduce mode exit zero with correct output. The bounded search to C=1e12 (dispatch to spark-38e3.local with --cutoff 1000000000000 --mode search) remains the next operational step.",
+  "next_gate": "Dispatch prime_cubes_a385316.py to DGX spark-38e3.local with `--cutoff 1000000000000 --mode search` for parallel execution; on success, record whether a(6) was found or certified a(6) > 1e12.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-18_11-46-33.md",
+    "sha256": "373864987d0c41c24e0084e43d8b635db74adbb16f8b9b6e894caf4a9655efa3"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

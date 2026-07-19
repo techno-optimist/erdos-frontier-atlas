@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:bb3f4e0afeb698b125ca8ba0962d902b147e07e206ddaf8ce559224a91345f18",
+  "content_digest": "sha256:6d4433b87fb63911c459b276b8f0346b94cc9e1b7e18c18a4eef4feaaa526865",
+  "occurred_at": "2026-07-18T16:00:15Z",
+  "frontier": "Smallest N = sum of 3 prime cubes in exactly 6 ways (OEIS A385316 a(6)); current lower bound a(6) > 4.9924×10¹¹",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nBuilt the exact multiplicity verifier for A385316 from focused context, then ran domain and predicate kill-fixture tests. The verifier builds P={p prime : p³≤C}, enumerates all nondecreasing triples (p≤q≤r) with p³+q³+r³≤C, and counts exact multiplicities — a total decision procedure with no heuristics. Domain kill fixtures test that numbers with non-prime components (99=2³+3³+4³, 36=1³+2³+3³, 1035=10³+2³+3³) are correctly rejected as domain violations. Predicate kill fixtures test that 24 (which has multiplicity 1, not 6) and 185527 (which has multiplicity 2, not 6) are correctly rejected as predicate violations.",
+  "verified": "Verifier domain: Non-negative integer N is in the domain iff there exist primes p ≤ q ≤ r such that N = p³ + q³ + r³ and count(N) = K for K ≥ 1.\nVerifier predicate: A claimed value N* with multiplicity K* is valid iff count({(p,q,r) : p,q,r prime, p≤q≤r, p³+q³+r³=N*}) == K*.\nDomain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nArtifact: prime_cubes_a385316.py, SHA-256: 927553b5f828e7da6dab1b7cacc78b3b7a102b5e16859e98533c1f050844f959\nAll kill fixtures exit zero. Reproduce mode (--reproduce) has a Python f-string formatting bug on line 281 that prevents it from completing the a(1..5) verification in this session; the kill-fixture path and the core enumeration logic are intact.",
+  "result": "The exact multiplicity verifier artifact is built, the kill-fixture replay passes (3/3 domain + 2/2 predicate correctly rejected), and the SHA-256 is recorded. The --reproduce path that verifies a(1..5) has a formatting error blocking full validation; the core triple-enumeration logic has been tested via the kill-fixture branch. The bounded search to C=1e12 (per the accepted continuation's next gate) remains dispatch-eligible to DGX spark-38e3.local.",
+  "next_gate": "Dispatch prime_cubes_a385316.py to DGX spark-38e3.local with --cutoff 1000000000000 --mode search for parallel execution. If DGX unavailable, first fix the f-string formatting bug in the --reproduce branch (line 281: format the found value conditionally), then re-run --reproduce to confirm all 5 known terms.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Kill-fixture replay only. The reproduce-mode verification of a(1..5) was not completed due to a formatting bug in the artifact that could not be fixed within the exhausted mutation budget.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-18_09-00-15.md",
+    "sha256": "db1c7008f741f90069a4c60566e183f2a3b9a9ae29dee923d7a8a6056060fb06"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

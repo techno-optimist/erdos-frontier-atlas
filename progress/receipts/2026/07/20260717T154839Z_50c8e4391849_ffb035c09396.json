@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:ffb035c09396217863a6c40548fcb65ee60936bcd6057804037d131e77d28e72",
+  "content_digest": "sha256:a8dd545a43249b033183db6e31bf94e836d91a242fa6c49878183eeb64f99b03",
+  "occurred_at": "2026-07-17T15:48:39Z",
+  "frontier": "Erdős #979 / OEIS A385316: smallest N = p³+q³+r³ (primes) in exactly 6 unordered representations; a(6) is currently known only to satisfy a(6) > 4.99×10¹¹.",
+  "action": "Milestone: verifier_construction; contract=sha256:20191ec98ee3e6994ddb8f50a1ae1eef886fbab446ddb9fc748b0c9e7052c4fb\nBuilt a self-contained Python verifier (a385316_verifier.py) that validates two independent rejection branches: (1) domain membership — N must be representable as p³+q³+r³ with p,q,r prime; (2) target predicate — among all triples (p≤q≤r) with p³+q³+r³ ≤ N, exactly `target_rep` distinct sums equal N. Replayed two fixed kill fixtures: a(1)=24 passes with target_rep=1, a(2)=185527 passes with target_rep=2; 49 (not a sum of three prime cubes) is correctly rejected; 185527 with target_rep=6 is correctly rejected as predicate-violating. No search, enumeration, or solver exploration was performed — deferred per contract.",
+  "verified": "Domain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 1/1 rejected correctly\nALL KILL FIXTURES PASSED\nVerifier domain: 49 rejected — not representable as p^3+q^3+r^3 with p,q,r prime; count=0\nVerifier predicate: 185527 rejected — a(2), has exactly 2 representations ≠ target_rep=6\nArtifact: a385316_verifier.py, SHA-256: dd1ec884d858fdc9923df3e83b28b957769258b4f5470017406b058046d18c40",
+  "result": "Verifier construction milestone complete. The verifier correctly distinguishes domain-well-formed inputs from out-of-domain ones (49 → 0 reps) and predicate-violating inputs (185527 → 2 reps, not 6). The known-good terms a(1)=24 and a(2)=185527 both reproduce correctly with their natural representation counts. No a(6) value or improved lower bound was produced — the search phase is explicitly deferred per the milestone contract. The previous run's exit-137 (OOM) is resolved: this verifier uses only fixed small fixtures (N ≤ 185527), keeping memory well under 10MB.",
+  "next_gate": "Extend the verifier to reproduce all five known terms a(1..5) = 24, 185527, 8627527, 999979163, 10588881419 with their correct representation counts (1, 2, 3, 4, 5 respectively) as a fail-closed self-check. Upon successful reproduction, proceed to one bounded exact-search run at cutoff C up to 1e10 (fitting in <1GB memory), recording either a(6) or a certified a(6) > C, keeping the output summary to ≤4000 characters.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Broad context packet not loaded (gated_focused_only). No specialist skills loaded. Three-mutation budget fully allocated: (1) experiment.json, (2) a385316_verifier.py. No mutations to next_gate.md or frontier_queue.json.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-17_08-48-39.md",
+    "sha256": "b47f695aa74ea3f7ef25ea166d23283ee77ab4fc880fab284dc360e87bb8e127"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

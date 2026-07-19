@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:f116fa6593fae2cde455d859cd8dd20169db5c83ac90113f3a584d3e48811405",
+  "content_digest": "sha256:15709add9af2b219440586d9ee3746f6801c8a75d2269c5866487bdbec10d191",
+  "occurred_at": "2026-07-17T16:55:56Z",
+  "frontier": "OEIS A385316: what is a(6), the smallest integer representable as p³+q³+r³ (primes, nondecreasing) in exactly 6 distinct ways?",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nReproduced all five known OEIS A385316 terms a(1..5) with their exact representation counts as a fail-closed self-check in the verifier, completing the smallest independently replayable primitive from the accepted continuation's next gate.",
+  "verified": "Domain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 1/1 rejected correctly\nKnown-term self-check: 5/5 reproduced correctly\nALL KILL FIXTURES PASSED\nVerifier domain: N must be representable as p³+q³+r³ with p,q,r prime (nondecreasing); 49 has 0 such representations and is correctly rejected as out-of-domain.\nVerifier predicate: among all triples (p≤q≤r) with p³+q³+r³ ≤ N, exactly `target_rep` distinct sums equal N; 185527 has 2 representations, not 6, and is correctly rejected as predicate-violating.\nArtifact: a385316_verifier.py, SHA-256: 98a9a3d4a286601b30ea93e8c46d941fbfabfb49ae5379969e958afdc3dd000a\nReproduced terms with triples: a(1)=24 → [(2,2,2)] count=1; a(2)=185527 → [(13,43,47),(19,31,53)] count=2; a(3)=8627527 → [(19,151,173),(23,139,181),(71,73,199)] count=3; a(4)=999979163 → [(83,757,827),(107,677,883),(197,523,947),(281,419,967)] count=4; a(5)=10588881419 → [(59,1669,1811),(83,1567,1889),(139,1427,1973),(349,1091,2099),(479,929,2131)] count=5.\nNo `foundry.strategy_advice` present (null) — no frontier advice line required.\nNo `foundry.receipt_contract` present — no receipt trace line required.",
+  "result": "All five known A385316 terms reproduce with correct representation counts. The verifier is now validated against the complete known table. The verifier also correctly kills domain-bad (49) and predicate-violating (185527 with target_rep=6) fixtures. No search, enumeration, or a(6) discovery was performed — the bounded exact search remains deferred per contract. The quarantine from the prior run (missing domain/predicate lines under Verified) is resolved: both exact lines are present in this receipt.",
+  "next_gate": "Run one bounded exact-search sweep at cutoff C up to 1e12 (the ~10GB budget from the frontier_atlas entry), using the verified complete-prime-set multiplicity algorithm, to either find a(6) or certify a(6) > 499243435237 (the published bound) and potentially raise it. Limit output to ≤4000 characters. The sweep should fit in <1GB memory with primes ≤ C^(1/3) and O(|P|²) pairwise enumeration.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. All work confined to the research session artifact directory. The verifier artifact is a no-argument Python replay entrypoint that exits zero with complete kill-fixture summaries.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-17_09-55-56.md",
+    "sha256": "5adbd82c03d3cb86342ac7b017fd3f0bd3ea1293d4710a22cd06d669a14999c2"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}
