@@ -282,7 +282,7 @@
    "witness_feasibility": "none",
    "exact_feasibility": "cell",
    "status": "record_in_progress",
-   "notes": "LIVE scout board. Naive all-in-RAM search is memory-bound (~20GB @ cap 2e12, ~100GB @ 1e13) \u2014 needs a streaming chunked search or an sglang-down window; never co-run large caps with production inference.",
+   "notes": "Naive all-in-RAM search is memory-bound (~20GB @ cap 2e12, ~100GB @ 1e13); needs a streaming chunked search.",
    "provenance": {
     "added_by": "claude-lead, 12-candidate triage",
     "date": "2026-07-18",
@@ -705,7 +705,7 @@
    "witness_feasibility": "open-easy",
    "exact_feasibility": "wall",
    "status": "record_in_progress",
-   "notes": "OEIS terms known to n=33 (a(33)=13; a(n)=floor(5n/13) for small n) \u2014 next uncomputed cell a(34). Bound history: trivial 1/4; Scherk 1-1/sqrt(2); Haugland 2016 upper 0.3809268534330870; AlphaEvolve [GGTW25] then TTT-Discover [YKLBMWKCZGS26] to 0.380876; project v1.2 exact-rational record 0.38085942 (tightest repaired variant 0.38085906 needs a sub-ULP admissibility repair, not admissible outright). The lower side (raising 0.379005) needs a proof, not a witness \u2014 asymmetric gap. mu itself is an analytic limit, flagged 'cannot be resolved with a finite computation' upstream. External submission of the project record is Kevin-gated; upstream page not yet reflecting it.",
+   "notes": "OEIS terms known to n=33 (a(33)=13; a(n)=floor(5n/13) for small n) \u2014 next uncomputed cell a(34). Bound history: trivial 1/4; Scherk 1-1/sqrt(2); Haugland 2016 upper 0.3809268534330870; AlphaEvolve [GGTW25] then TTT-Discover [YKLBMWKCZGS26] to 0.380876; project v1.2 exact-rational record 0.38085942 (tightest repaired variant 0.38085906 needs a sub-ULP admissibility repair, not admissible outright). The lower side (raising 0.379005) needs a proof, not a witness \u2014 asymmetric gap. mu itself is an analytic limit, flagged 'cannot be resolved with a finite computation' upstream. External submission of the project record is pending human review; upstream page not yet reflecting it.",
    "provenance": {
     "added_by": "gap-map miner chunk 23-82",
     "date": "2026-07-18",
@@ -6239,7 +6239,7 @@
    "witness_feasibility": "none",
    "exact_feasibility": "wall",
    "status": "record_in_progress",
-   "notes": "Frontier extended 4x10^7 -> 10^10 (2026-07-18). Next rung 10^11 feasible (~12.5GB bitsets) but needs an sglang-down window. Full conjecture (only those 6 exceptions ever) is a wall. External OEIS submission stays Kevin's.",
+   "notes": "Frontier extended 4x10^7 -> 10^10 (2026-07-18). Next rung 10^11 feasible (~12.5GB bitsets). Full conjecture (only those 6 exceptions ever) is a wall. Extension not yet submitted to OEIS.",
    "provenance": {
     "added_by": "verified-up-to-N lane + lead",
     "date": "2026-07-18",
