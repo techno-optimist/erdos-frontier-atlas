@@ -163,7 +163,7 @@ so no one re-hunts them.
 
 | candidate | grade |
 |---|---|
-| Multidimensional Szemerédi (Furstenberg–Katznelson): the 2×2 axis-aligned square in [N]² | plausible |
+| Multidimensional Szemerédi (Furstenberg–Katznelson): the 2×2 axis-aligned square in [N]² | weak |
 | Polynomial Szemerédi (Bergelson–Leibman): a 1-D configuration on the ineffective side of the Peluse–Prendiville frontier | plausible |
 | Block complexity of the base-b expansion of an algebraic irrational (Adamczewski–Bugeaud) | plausible |
 | Erdős–Rademacher exact minimum triangle count (Lovász–Simonovits, full-density refinement) | plausible |
