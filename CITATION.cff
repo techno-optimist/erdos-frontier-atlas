@@ -8,7 +8,8 @@ authors:
 version: "DR1"
 # date-released is set by the human release step, together with the DOI
 # (RELEASING.md step 1). EFA-DR1 does not ship without a live Zenodo DOI.
-doi: "TBD"
+doi: "10.5281/zenodo.21443635"
+date-released: 2026-07-19
 # License of record for the repository today (single LICENSE file). A
 # CC-BY-4.0-data / MIT-tools split is PROPOSED but not confirmed — see
 # RELEASING.md step 2; this field changes only when that decision is made.
