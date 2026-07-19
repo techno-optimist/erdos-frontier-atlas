@@ -343,8 +343,8 @@
    "quantity": "A385316(6) \u2014 smallest N that is a sum of 3 prime cubes in exactly 6 ways",
    "kind": "next_cell",
    "lower": {
-    "value": "> 10^12",
-    "source": "this project, 2nd independent implementation (supervisor board > 1e12; OEIS author > 4.99e11)",
+    "value": "> 10^13",
+    "source": "two independent implementations swept contiguous gap-free coverage of [0, 10^13) with no value having exactly 6 representations: a RAM-bounded streaming counter sweep (farm ledger, 100 windows) and a blind-reimplemented pair-sum-ledger sweep (built spec-only, forbidden from reading the primary; different algorithm). Cross-checked: 100/100 segments, first-hit observables k=1..3 all equal, zero mismatches. Both reproduce a(1..5) exactly and match a naive brute force on low + interior windows.",
     "year": 2026
    },
    "upper": null,
@@ -354,7 +354,7 @@
    "witness_feasibility": "none",
    "exact_feasibility": "cell",
    "status": "record_in_progress",
-   "notes": "Naive all-in-RAM search is memory-bound (~20GB @ cap 2e12, ~100GB @ 1e13); needs a streaming chunked search. Ledger: the C1 class covers a(6) > 10^12 (two independent implementations at the full window; certificates/erdos-979/); the '> 2x10^12' headline bound is a single-implementation extension pending independent replication (C2-grade on its own). Extension (2026-07-19): a RAM-bounded streaming implementation (validated against the naive method on the full multiplicity histogram to 2x10^10, plus the a(1..5) reproduction gate) swept contiguous, gap-free coverage of [0, 10^13) in 100 durable ledger windows with no value having exactly 6 representations \u2014 a(6) > 10^13, C2-grade on its own (single implementation at this range; the C1 headline stays at > 10^12 until an independent implementation replicates the sweep).",
+   "notes": "Naive all-in-RAM search is memory-bound (~20GB @ cap 2e12, ~100GB @ 1e13); needs a streaming chunked search. Ledger: the C1 class covers a(6) > 10^12 (two independent implementations at the full window; certificates/erdos-979/); the '> 2x10^12' headline bound is a single-implementation extension pending independent replication (C2-grade on its own). PROMOTED 2026-07-19: a(6) > 10^13 at C1 \u2014 the streaming sweep was replicated by a blind independent reimplementation (different algorithm, spec-only) with 100/100 window agreement on all shared observables. Beats the published OEIS bound (4.99x10^11) by 20x. External OEIS submission of the new bound is a separate human-sent step.",
    "provenance": {
     "added_by": "claude-lead, 12-candidate triage",
     "date": "2026-07-18",
@@ -366,18 +366,18 @@
    "evidence": [
     {
      "type": "implementation",
-     "artifact": "certificates/erdos-979/verify.py --cutoff 1e12 \u2014 exact enumeration over the provably complete prime set (1229 primes <= 9973), reproduces a(1..5) as a fail-closed self-check, certifies a(6) > 10^12",
-     "date": "2026-07-17"
+     "artifact": "foundry farm streaming_a385316.py sweep of [0,1e13) \u2014 coverage/erdos-979.jsonl (100 windows, exhausted_no_witness)",
+     "date": "2026-07-19"
     },
     {
      "type": "implementation",
-     "artifact": "independent from-scratch numpy reimplementation at the full 10^12 window (certificates/erdos-979/RECEIPT.md cross-verification table, written blind to the primary verifier; three further reimplementations replicate at 2x10^11)",
-     "date": "2026-07-17"
+     "artifact": "foundry farm replicate_a385316_sweep.py blind replica sweep of [0,1e13) \u2014 erdos-979-replication/replica.jsonl (100 windows, no exactly-6 hits)",
+     "date": "2026-07-19"
     },
     {
-     "type": "numeric_scan",
-     "artifact": "the '> 2x10^12' extension is a SINGLE-implementation run (supervisor board), not yet independently replicated \u2014 C2-grade on its own; the C1 class of this entry attaches to a(6) > 10^12",
-     "date": "2026-07-18"
+     "type": "replay_receipt",
+     "artifact": "certificates/erdos-979 (a(6) > 10^12, the earlier certified stage; verifier reproduces a(1..5))",
+     "date": "2026-07-17"
     }
    ],
    "confidence": "C1"
