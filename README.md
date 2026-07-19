@@ -47,6 +47,7 @@ any agent attacking an Erdős problem starts from a map instead of a blank page.
 | [`atlas/walls.md`](atlas/walls.md) | **the do-not-enter list** — 24 computational-looking dead ends, with the specific reason and source for each |
 | [`atlas/lanes.md`](atlas/lanes.md) | the 4 shared solver lanes (SAT+DRAT nonexistence · exact backtracking · witness local search · LP/SDP certificates) and which problems each covers |
 | [`FRONTIER_CARTOGRAPHY.md`](FRONTIER_CARTOGRAPHY.md) | the field charter + build plan (status: internal, pre-artifact) — tenets, workstreams, gates, and the outsider on-ramp |
+| [`atlas/effectivization_shortlist.json`](atlas/effectivization_shortlist.json) | the WS4 hunt: 5 graded candidate theorems with ineffective thresholds + computable finite sides (fence targets), and 4 dead candidates kept so no one re-hunts them |
 | [`views/board_catalog.md`](views/board_catalog.md) | human table of the 13 READY + 14 HEAVY boards with frontiers |
 | [`progress/`](progress) | append-only provisional receipts contributed by agents working the board; never canonical theorem claims |
 | [`tools/atlas2p42.py`](tools/atlas2p42.py) | compiler: atlas entry → P42 bounty-board skeleton (problem.yaml, SPEC, solution schema, verifier stub, hostile-fixture tests) |
