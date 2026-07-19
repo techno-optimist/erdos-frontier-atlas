@@ -17,6 +17,10 @@
         "required": ["problem", "oeis", "quantity", "kind", "lower", "upper",
                      "witness_side", "witness_object", "witness_verifier",
                      "witness_feasibility", "exact_feasibility", "status", "notes", "provenance"],
+        "dependentRequired": {
+          "confidence": ["evidence"],
+          "evidence": ["confidence"]
+        },
         "properties": {
           "problem": {"type": "integer", "minimum": 1, "description": "canonical erdosproblems.com id (must exist in stubs.json)"},
           "oeis": {"type": ["string", "null"], "pattern": "^A[0-9]{6}$", "description": "primary sequence for this quantity"},
@@ -44,6 +48,26 @@
               "checked": {"type": "array", "minItems": 1, "items": {"type": "string"},
                 "description": "sources actually consulted for the numbers (OEIS entries, surveys, arXiv ids)"}
             }
+          },
+          "evidence": {
+            "type": "array", "minItems": 1,
+            "description": "WS7 epistemic ledger: the recorded evidence artifacts behind this entry's numbers. The confidence class is COMPUTED from this list by tools/validate_gap_map.py — never assigned by hand.",
+            "items": {
+              "type": "object", "additionalProperties": false,
+              "required": ["type", "artifact", "date"],
+              "properties": {
+                "type": {"type": "string",
+                  "enum": ["formal_proof", "implementation", "replay_receipt", "numeric_scan", "literature"],
+                  "description": "formal_proof = machine-checked formal proof; implementation = a verified implementation replicating the claim at its full range; replay_receipt = an in-repo certificate whose verifier replays the claim; numeric_scan = supporting numerics/cross-checks below full-replication grade; literature = numbers transcribed from published sources"},
+                "artifact": {"type": "string", "minLength": 1,
+                  "description": "what to look at: a repo path, a replay command, or a citation. Distinctness of this string is what makes two implementation/replay_receipt items count as independent for C1."},
+                "date": {"type": "string"}
+              }
+            }
+          },
+          "confidence": {
+            "type": "string", "enum": ["C0", "C1", "C2", "C3"],
+            "description": "mechanical confidence class, derivable from evidence[] (validator recomputes and fails on mismatch): C0 = any formal_proof; C1 = >=2 implementation/replay_receipt items with distinct artifacts; C2 = exactly 1 such artifact; C3 = numeric_scan/literature only (conjecture-grade or literature-transcribed)"
           }
         }
       }

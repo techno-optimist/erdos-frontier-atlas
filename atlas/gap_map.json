@@ -1,6 +1,6 @@
 {
  "schema": "erdos-gap-map-v1",
- "note": "Records-lane overlay for the Erd\u0151s hub: bounded quantities, their known [L,U] state, and what a machine-verifiable WITNESS would be. Curated seed from the 2026-07-17 12-candidate triage (each number freshness-checked against OEIS + survey literature at triage time); extended by mining agents. Validate with tools/validate_gap_map.py. CANDIDATES, not targets: freshness-check the survey literature again before ANY claim (the #552 / f(39) lesson). [merged 208 mined entries 2026-07-18; entries below the 12-item curated seed are agent-mined, structurally validated, NOT yet independently number-re-verified]",
+ "note": "Records-lane overlay for the Erd\u0151s hub: bounded quantities, their known [L,U] state, and what a machine-verifiable WITNESS would be. Curated seed from the 2026-07-17 12-candidate triage (each number freshness-checked against OEIS + survey literature at triage time); extended by mining agents. Validate with tools/validate_gap_map.py. CANDIDATES, not targets: freshness-check the survey literature again before ANY claim (the #552 / f(39) lesson). [merged 208 mined entries 2026-07-18; entries below the 12-item curated seed are agent-mined, structurally validated, NOT yet independently number-re-verified] [2026-07-18 WS7 epistemic ledger: every entry now carries evidence[] and a confidence class MECHANICALLY COMPUTED from it by tools/validate_gap_map.py \u2014 C0 formal proof / C1 >=2 independent implementations-or-replays with distinct artifacts / C2 exactly one / C3 literature- or numerics-grade. Mined entries carry literature-grade evidence (C3) until independently re-verified; the validator fails any stored class the recorded evidence does not prove.]",
  "entries": [
   {
    "problem": 183,
@@ -32,7 +32,15 @@
      "arXiv:2509.03784",
      "OEIS A003323 history"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "Radziszowski DS1 rev.17 (R(3,3,3,3) in [51,62]: Chung 1971 lower, Fettes-Kramer-Radziszowski 2004 upper); arXiv:2509.03784 checked for movement; OEIS A003323 history \u2014 numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1013,
@@ -64,7 +72,15 @@
      "Goedgebeur, J. Graph Theory 2020",
      "Exoo\u2013Goedgebeur 2019"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "Goedgebeur, J. Graph Theory 2020 ([32,40]); Exoo-Goedgebeur 2019; OEIS A292528 (rev 2026-01-10) \u2014 numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 171,
@@ -95,7 +111,15 @@
      "OEIS A156989 (rev 2026-05-30)",
      "arXiv:1002.0374"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "Polymath1 arXiv:1002.0374 (c_7 in [1302,1386]); OEIS A156989 (rev 2026-05-30) \u2014 numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 185,
@@ -118,7 +142,15 @@
      "arXiv:1002.0374",
      "OEIS A003142"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "arXiv:1002.0374 (c'_6 = 353); OEIS A003142 \u2014 published c'_7 bounds not yet sourced here (entry carries no bounds); freshness-checked at the 2026-07-17 triage",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 724,
@@ -151,7 +183,15 @@
      "arXiv:2503.10504",
      "arXiv:2509.09633"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "OEIS A001438; Parker 1959 orthogonal pair (lower); classical design-theory bound (upper); SAT campaigns arXiv:2204.10996 / 2503.10504 / 2509.09633 \u2014 numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 82,
@@ -178,7 +218,15 @@
      "arXiv:2604.08215",
      "OEIS A394563 (rev 2026-07-10)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "Dyson-McKay arXiv:2604.08215 (a(6) >= 21); OEIS A394563 (rev 2026-07-10) \u2014 numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 141,
@@ -205,7 +253,15 @@
      "OEIS A006560 comments",
      "primerecords.dk t5k listings"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "OEIS A006560 comments (Zimmermann 2022 CPAP-7 existence witness); primerecords.dk listings \u2014 numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 345,
@@ -232,7 +288,15 @@
      "OEIS A001661 (rev 2026-05-30)",
      "arXiv:2404.08193 (distinct-vs-repetition variant clarified)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "OEIS A001661 (rev 2026-05-30; Wiener 2023 > 1.55e17); arXiv:2404.08193 \u2014 numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 902,
@@ -263,7 +327,15 @@
      "OEIS A362137 (rev 2026-05-06)",
      "arXiv:2604.08790"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "OEIS A362137 (rev 2026-05-06; a(6) computation line); arXiv:2604.08790; Graham-Spencer sufficiency criterion \u2014 numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 979,
@@ -271,7 +343,7 @@
    "quantity": "A385316(6) \u2014 smallest N that is a sum of 3 prime cubes in exactly 6 ways",
    "kind": "next_cell",
    "lower": {
-    "value": "> 2\u00d710^12",
+    "value": "> 10^12",
     "source": "this project, 2nd independent implementation (supervisor board > 1e12; OEIS author > 4.99e11)",
     "year": 2026
    },
@@ -282,7 +354,7 @@
    "witness_feasibility": "none",
    "exact_feasibility": "cell",
    "status": "record_in_progress",
-   "notes": "Naive all-in-RAM search is memory-bound (~20GB @ cap 2e12, ~100GB @ 1e13); needs a streaming chunked search.",
+   "notes": "Naive all-in-RAM search is memory-bound (~20GB @ cap 2e12, ~100GB @ 1e13); needs a streaming chunked search. Ledger: the C1 class covers a(6) > 10^12 (two independent implementations at the full window; certificates/erdos-979/); the '> 2x10^12' headline bound is a single-implementation extension pending independent replication (C2-grade on its own).",
    "provenance": {
     "added_by": "claude-lead, 12-candidate triage",
     "date": "2026-07-18",
@@ -290,7 +362,25 @@
      "OEIS A385316",
      "a385316.py --verify (a(1..5) reproduced)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "implementation",
+     "artifact": "certificates/erdos-979/verify.py --cutoff 1e12 \u2014 exact enumeration over the provably complete prime set (1229 primes <= 9973), reproduces a(1..5) as a fail-closed self-check, certifies a(6) > 10^12",
+     "date": "2026-07-17"
+    },
+    {
+     "type": "implementation",
+     "artifact": "independent from-scratch numpy reimplementation at the full 10^12 window (certificates/erdos-979/RECEIPT.md cross-verification table, written blind to the primary verifier; three further reimplementations replicate at 2x10^11)",
+     "date": "2026-07-17"
+    },
+    {
+     "type": "numeric_scan",
+     "artifact": "the '> 2x10^12' extension is a SINGLE-implementation run (supervisor board), not yet independently replicated \u2014 C2-grade on its own; the C1 class of this entry attaches to a(6) > 10^12",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C1"
   },
   {
    "problem": 556,
@@ -317,7 +407,15 @@
      "Radziszowski DS1 cycle survey",
      "arXiv:2509.03784"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "Radziszowski DS1 cycle survey (R_3(C_9) >= 33 construction, equal to the Bondy-Erdos conjectured value); arXiv:2509.03784 \u2014 numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 148,
@@ -340,7 +438,15 @@
      "OEIS A006585 b-file",
      "Louwsma 2024 (restricted variant only)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "OEIS A006585 b-file (a(8) = 151182379, Dethridge 2004); Louwsma 2024 (restricted variant only) \u2014 freshness-checked at the 2026-07-17 triage; count-shaped, no compact certificate exists",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1,
@@ -375,7 +481,15 @@
      "atlas/problems.json#1 (hub deep audit 2026-07-13)",
      "OEIS A005318"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 3,
@@ -408,7 +522,15 @@
      "OEIS A003003/A003004/A003005 (b-file ranges)",
      "arXiv:2606.04016 (search-result summary, Jun 2026)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 5,
@@ -431,7 +553,15 @@
      "erdosproblems.com/5 (fetched 2026-07-18, numeric facts paraphrased)",
      "OEIS A001223 (JSON)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 9,
@@ -455,7 +585,15 @@
      "OEIS A006286 (JSON)",
      "arXiv:0905.3809 (via OEIS link)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 10,
@@ -484,7 +622,15 @@
      "local recomputation of the 1117175146 non-representability (sympy isprime, repeats allowed)",
      "arXiv:2605.17825 (via OEIS link)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 11,
@@ -513,7 +659,15 @@
      "erdosproblems.com/11 (fetched 2026-07-18)",
      "arXiv:2411.01964 (via OEIS/erdosproblems links)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 14,
@@ -536,7 +690,15 @@
      "erdosproblems.com/14 (fetched 2026-07-18)",
      "OEIS A143824 (JSON; b-file range confirmed 0..500)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 17,
@@ -560,7 +722,15 @@
      "OEIS A038133 (JSON)",
      "mathworld.wolfram.com/ClusterPrime.html (bound direction + counts)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 18,
@@ -583,7 +753,15 @@
      "erdosproblems.com/18 (fetched 2026-07-18)",
      "OEIS A005153 (JSON)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 20,
@@ -614,7 +792,15 @@
      "OEIS A332077 (JSON: data, formula, example, keywords)",
      "atlas/problems.json#20 (hub deep audit 2026-07-13, incl. AHS 1972 / Abbott\u2013Exoo 1992 / Abbott\u2013Hanson 1974 cell records and 2023\u20132026 no-change check)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 23,
@@ -647,7 +833,15 @@
      "arXiv:2606.28041 (via OEIS comment)",
      "stub statement (Apache-licensed Lean docstring)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 30,
@@ -682,7 +876,15 @@
      "distributed.net/OGR (fetched)",
      "atlas/problems.json#30 deep record"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 36,
@@ -714,7 +916,15 @@
      "erdosproblems.com/36 (fetched 2026-07-18, numeric facts paraphrased)",
      "results_registry/results.json id erdos-min-overlap-upper-bound (DOI'd, verifier command present)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 51,
@@ -737,7 +947,15 @@
      "OEIS A002202, A014197 (JSON API)",
      "erdosproblems.com/51 (fetched 2026-07-18, paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 52,
@@ -771,7 +989,15 @@
      "arXiv:2512.13849 (Cushman, via page + search)",
      "atlas/problems.json#52 deep record (flagged stale)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 60,
@@ -804,7 +1030,15 @@
      "erdosproblems.com/60 (fetched, paraphrased)",
      "web search for 2024-2026 movement (none found)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 68,
@@ -827,7 +1061,15 @@
      "OEIS A331373 (JSON API)",
      "web search: arXiv:2601.21442, arXiv:2406.17593, erdosproblems forum irrationality blog (2026-07-18)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 77,
@@ -860,7 +1102,15 @@
      "atlas/problems.json#77 deep record",
      "project registry / R(5,5) campaign memory (closed, no witness)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 78,
@@ -883,7 +1133,15 @@
      "erdosproblems.com/78 (fetched 2026-07-18, numeric facts paraphrased)",
      "OEIS A059442 (JSON API)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 85,
@@ -917,7 +1175,15 @@
      "DS1 rev.18 bracket via project reconciliation 2026-07-17 (project_ramsey_f39 memory)",
      "WebSearch: Radziszowski small Ramsey numbers C4 star"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 86,
@@ -950,7 +1216,15 @@
      "erdosproblems.com/86 (paraphrase-only read 2026-07-18)",
      "hub deep record atlas/problems.json#86"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 87,
@@ -973,7 +1247,15 @@
      "OEIS A059442 JSON (fetched 2026-07-18)",
      "erdosproblems.com/87 (paraphrase-only read 2026-07-18)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 89,
@@ -1007,7 +1289,15 @@
      "Ahmed-Wildstrom preprint (read 2026-07-18: only six g values known)",
      "WebSearch: Erdos-Fishburn g(7) triangular lattice"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 91,
@@ -1030,7 +1320,15 @@
      "erdosproblems.com/91 (paraphrase-only read 2026-07-18)",
      "OEIS A186704 JSON (fetched 2026-07-18)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 101,
@@ -1062,7 +1360,15 @@
      "erdosproblems.com/101 metadata (via hub)",
      "hub deep record atlas/problems.json#101 (compiled 2026-07-16)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 104,
@@ -1093,7 +1399,15 @@
      "OEIS A003829 JSON (fetched 2026-07-18: a(3..8)=1,4,4,8,12,16, keyword more)",
      "erdosproblems.com/104 (paraphrase-only read 2026-07-18)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 107,
@@ -1125,7 +1439,15 @@
      "hub deep record atlas/problems.json#107 (bounds + Dec-2025 SAT status, compiled 2026-07-16)",
      "stub statement (Lean docstring, Apache)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 131,
@@ -1156,7 +1478,15 @@
      "OEIS A068063 JSON + b-file to n=100 (fetched 2026-07-18)",
      "erdosproblems.com/131 (paraphrase-only read 2026-07-18: ELRSS99 3sqrt(N)+1, Pham-Zakharov N^{1/4+o(1)}, Csaba N^{1/5}, Straus)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 138,
@@ -1186,7 +1516,15 @@
      "hub deep record atlas/problems.json#138 (compiled 2026-07-16)",
      "stub statement (Lean docstring, Apache)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 142,
@@ -1220,7 +1558,15 @@
      "OEIS A003005",
      "erdosproblems.com/142 (paraphrased, accessed 2026-07-18)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 145,
@@ -1247,7 +1593,15 @@
      "OEIS A005117",
      "erdosproblems.com/145 (paraphrased, accessed 2026-07-18; cites Er51, Ho73, GHH97 ch.11, Ch23c, Gr98)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 155,
@@ -1279,7 +1633,15 @@
      "Rokicki & Dogon, Larger Golomb Rulers (G4G12 PDF, read pp.1-6)",
      "erdosproblems.com/155 (paraphrased, accessed 2026-07-18)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 156,
@@ -1303,7 +1665,15 @@
      "erdosproblems.com/156 (paraphrased, accessed 2026-07-18)",
      "web search confirming Ruzsa 1998 Ramanujan J. paper"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 165,
@@ -1336,7 +1706,15 @@
      "erdosproblems.com/165 (paraphrased, page dated 2026-03-07, accessed 2026-07-18)",
      "web search freshness check 2026-07"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 168,
@@ -1362,7 +1740,15 @@
      "OEIS A094708",
      "erdosproblems.com/168 (paraphrased, accessed 2026-07-18)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 169,
@@ -1390,7 +1776,15 @@
      "erdosproblems.com/169 (paraphrased, page dated 2026-04-04, accessed 2026-07-18; cites Be68, Ge77, Wr84, Wa25)",
      "web search for Walker 2025 (no independent copy located; number carried with erdosproblems.com attribution)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 170,
@@ -1422,7 +1816,15 @@
      "A046693 b-file tail verified: a(211)=26, a(212)=25, a(213)=25 (non-monotone confirmed)",
      "erdosproblems.com/170 (paraphrased, accessed 2026-07-18; ErGa48, Le56, Wi63, Pe20)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 193,
@@ -1451,7 +1853,15 @@
      "OEIS A380991",
      "OEIS A393935"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 200,
@@ -1485,7 +1895,15 @@
      "local primality verification of the AP27",
      "erdosproblems.com/200 (context only, paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 201,
@@ -1519,7 +1937,15 @@
      "OEIS A003005",
      "OEIS A065825"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 208,
@@ -1551,7 +1977,15 @@
      "erdosproblems.com/208 (numeric facts paraphrased)",
      "local verification of the gap-19 record"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 218,
@@ -1576,7 +2010,15 @@
      "OEIS A333231",
      "erdosproblems.com/218 (numeric facts paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 222,
@@ -1606,7 +2048,15 @@
      "erdosproblems.com/222 (numeric facts paraphrased)",
      "local verification of the 106-run record"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 233,
@@ -1629,7 +2079,15 @@
      "OEIS A074741 (JSON API, 2026-07-18)",
      "stubs.json Lean statement for #233"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 236,
@@ -1659,7 +2117,15 @@
      "erdosproblems.com/236 (numeric facts paraphrased)",
      "local verification of A109926(20)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 241,
@@ -1692,7 +2158,15 @@
      "stubs.json #241",
      "project memory: #241 crossref closure PR #80 (2026-07-16), #41 B3 adapter"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 242,
@@ -1721,7 +2195,15 @@
      "arXiv:2509.00128",
      "arXiv:2602.11774 (unverified claim, flagged only)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 243,
@@ -1744,7 +2226,15 @@
      "OEIS A000058 (JSON, retrieved 2026-07-18)",
      "erdosproblems.com/243 (retrieved 2026-07-18)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 249,
@@ -1767,7 +2257,15 @@
      "OEIS A256936 (JSON, retrieved 2026-07-18)",
      "erdosproblems.com/249 (retrieved 2026-07-18)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 251,
@@ -1790,7 +2288,15 @@
      "OEIS A098990 (JSON, retrieved 2026-07-18)",
      "erdosproblems.com/251 (retrieved 2026-07-18)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 252,
@@ -1813,7 +2319,15 @@
      "OEIS A227988 + A227989 (JSON, retrieved 2026-07-18)",
      "erdosproblems.com/252 (retrieved 2026-07-18)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 271,
@@ -1837,7 +2351,15 @@
      "erdosproblems.com/271 (retrieved 2026-07-18)",
      "arXiv:2512.11983 (title/abstract via OEIS link)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 291,
@@ -1861,7 +2383,15 @@
      "erdosproblems.com/291 (retrieved 2026-07-18)",
      "session computation: independent gcd verification at n=9311"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 295,
@@ -1889,7 +2419,15 @@
      "erdosproblems.com/295 (retrieved 2026-07-18)",
      "session computation: exact harmonic bound"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 301,
@@ -1920,7 +2458,15 @@
      "OEIS A390394 (JSON, retrieved 2026-07-18)",
      "erdosproblems.com/301 (retrieved 2026-07-18)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 302,
@@ -1951,7 +2497,15 @@
      "OEIS A390395 + b390395.txt (retrieved 2026-07-18)",
      "erdosproblems.com/302 (retrieved 2026-07-18)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 304,
@@ -1976,7 +2530,15 @@
      "erdosproblems.com/304 (accessed 2026-07-18, paraphrased)",
      "arXiv:2512.22083 abstract"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 313,
@@ -2004,7 +2566,15 @@
      "erdosproblems.com/313 (accessed 2026-07-18, paraphrased)",
      "arXiv:2605.21518 (listing via OEIS link)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 322,
@@ -2028,7 +2598,15 @@
      "OEIS A025456 (JSON, Beregovsky Oct 2025 comments citing Mahler 1936, Chowla-Pillai 1936)",
      "erdosproblems.com/322 (accessed 2026-07-18, paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 327,
@@ -2059,7 +2637,15 @@
      "OEIS A384927 (JSON + b-file to n=5000, tail verified a(5000)=3528)",
      "erdosproblems.com/327 (accessed 2026-07-18, paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 334,
@@ -2092,7 +2678,15 @@
      "erdosproblems.com/334 (accessed 2026-07-18, paraphrased)",
      "web search for Balog-exponent improvements (inconclusive)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 340,
@@ -2120,7 +2714,15 @@
      "OEIS A005282 (JSON + 100000-term file tail, a(100000)=7135566931719)",
      "erdosproblems.com/340 (accessed 2026-07-18, paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 342,
@@ -2148,7 +2750,15 @@
      "web search confirming no post-2017 frontier extension found",
      "erdosproblems.com/342 (accessed 2026-07-18, paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 357,
@@ -2176,7 +2786,15 @@
      "OEIS A364153 (JSON, 13 terms, Hegyvari 1986 ref)",
      "erdosproblems.com/357 (accessed 2026-07-18, paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 359,
@@ -2199,7 +2817,15 @@
      "OEIS A002048 (JSON: Andrews 1975, Porubsky 1977 refs; Wu b-file to 10000)",
      "erdosproblems.com/359 (accessed 2026-07-18, paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 364,
@@ -2227,7 +2853,15 @@
      "OEIS A076445 (rev 2025-11-07)",
      "erdosproblems.com/364 (page edited 2026-04-13)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 365,
@@ -2260,7 +2894,15 @@
      "OEIS A175155 (rev 2026-03-14)",
      "erdosproblems.com/365"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 366,
@@ -2287,7 +2929,15 @@
      "erdosproblems.com/366 (page edited 2026-07-16)",
      "OEIS A060355 (rev 2025-11-06)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 367,
@@ -2310,7 +2960,15 @@
      "erdosproblems.com/367 (page edited 2026-03-23)",
      "OEIS A057521 (rev 2025-11-14)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 368,
@@ -2334,7 +2992,15 @@
      "OEIS A074399 (rev 2025-09-10)",
      "arXiv:2312.03566 (via OEIS citation)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 371,
@@ -2365,7 +3031,15 @@
      "erdosproblems.com/371 (page edited 2026-01-23)",
      "OEIS A070089 (rev 2026-03-11)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 373,
@@ -2392,7 +3066,15 @@
      "erdosproblems.com/373 (page edited 2026-01-29)",
      "OEIS A003135 (rev 2015-12-17)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 374,
@@ -2418,7 +3100,15 @@
      "OEIS A389148 (rev 2026-03-25)",
      "OEIS A389117 (rev 2026-04-04)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 376,
@@ -2445,7 +3135,15 @@
      "OEIS A030979 (rev 2026-06-28) + b-file header (1374 terms, complete to 10^70)",
      "erdosproblems.com/376 (page edited 2025-12-28)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 382,
@@ -2472,7 +3170,15 @@
      "OEIS A388850 (rev 2026-01-07)",
      "erdosproblems.com/382"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 385,
@@ -2500,7 +3206,15 @@
      "OEIS A322293 (JSON + b-file b322293.txt, all terms <= 1e8)",
      "erdosproblems.com/385 (context only, paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 386,
@@ -2527,7 +3241,15 @@
      "OEIS A280992 (JSON; Shepherd 2017 search bound, Corneth 2017 prime-factor bound)",
      "erdosproblems.com/386 (context only, paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 389,
@@ -2551,7 +3273,15 @@
      "OEIS A375077 (JSON; cross-map verified numerically at n=21,23,25)",
      "erdosproblems.com/389 (context only, paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 390,
@@ -2574,7 +3304,15 @@
      "OEIS A193429 (JSON + b-file range n=0..168)",
      "erdosproblems.com/390 (context only, paraphrased; EGS82 citation)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 393,
@@ -2601,7 +3339,15 @@
      "OEIS A388302 (JSON; Corneth tuple list n=2..79, Liou heuristic program links)",
      "erdosproblems.com/393 (context only, paraphrased; BeOs92, BPZ23, Lu02 citations)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 394,
@@ -2624,7 +3370,15 @@
      "OEIS A344005 (JSON; Sloane algorithm comments, tables to 1e7)",
      "erdosproblems.com/394 (context only, paraphrased; ErHa78 citation)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 396,
@@ -2652,7 +3406,15 @@
      "erdosproblems.com/396 (context only, paraphrased; Po14 citation)",
      "WebSearch cross-check for newer work (none found beyond Mar 2026 state)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 398,
@@ -2683,7 +3445,15 @@
      "arXiv 2004.09256 inspected and REJECTED as a bound source (Maiti; claims a proof, unreviewed)",
      "erdosproblems.com/398 (context only, paraphrased; Ov93, Na25 citations)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 408,
@@ -2706,7 +3476,15 @@
      "OEIS A049108 (JSON; Pillai-type bounds in formula field)",
      "erdosproblems.com/408 (context only, paraphrased; Pi29, Sh50, EGPS90 citations)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 409,
@@ -2734,7 +3512,15 @@
      "OEIS A039651 (JSON)",
      "erdosproblems.com/409 (context only, paraphrased; Cambie/Tao acknowledgments, Guy B41)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 410,
@@ -2763,7 +3549,15 @@
      "formal-conjectures ErdosProblems/410.lean statement (via hub stub)",
      "Cohen\u2013te Riele Exp. Math. 5 (1996) \u2014 cited in OEIS, not read"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 411,
@@ -2791,7 +3585,15 @@
      "erdosproblems.com/411 (context, paraphrased; page edited 2025-10-28)",
      "arXiv:2504.08023 abstract (Steinerberger 2025)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 412,
@@ -2820,7 +3622,15 @@
      "erdosproblems.com/412 (context, paraphrased)",
      "formal-conjectures ErdosProblems/412.lean statement (via hub stub)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 413,
@@ -2850,7 +3660,15 @@
      "formal-conjectures ErdosProblems/413.lean docstring",
      "web search for Lau/Tao\u2013Ter\u00e4v\u00e4inen barrier results"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 416,
@@ -2874,7 +3692,15 @@
      "erdosproblems.com/416 (context, paraphrased; edited 2025-09-30)",
      "formal-conjectures ErdosProblems/416.lean docstring (Pillai/Erd\u0151s/Maier\u2013Pomerance/Ford results)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 417,
@@ -2899,7 +3725,15 @@
      "erdosproblems.com/417 (context, paraphrased)",
      "formal-conjectures ErdosProblems/417.lean docstring"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 421,
@@ -2932,7 +3766,15 @@
      "erdosproblems.com/421 (context, paraphrased)",
      "formal-conjectures ErdosProblems/421.lean docstring"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 422,
@@ -2961,7 +3803,15 @@
      "formal-conjectures ErdosProblems/422.lean docstring",
      "arXiv:2311.13854 abstract (Deane\u2013Gentile)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 423,
@@ -2994,7 +3844,15 @@
      "arXiv:2603.09939 abstract (Tang 2026, v2)",
      "web search confirming Bolan/Tang independent proofs"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 424,
@@ -3018,7 +3876,15 @@
      "erdosproblems.com/424 (paraphrased; page last edited 2026-03-31)",
      "Guy UPINT section E31 (via OEIS reference)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 436,
@@ -3051,7 +3917,15 @@
      "web search for post-2020 improvements (none found)",
      "Hildebrand, Michigan Math. J. 38 (1991) via OEIS link"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 451,
@@ -3075,7 +3949,15 @@
      "erdosproblems.com/451 (paraphrased)",
      "arXiv:2606.19863 (van Doorn-Tang, existence + statement of lower bound confirmed via arXiv listing)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 454,
@@ -3105,7 +3987,15 @@
      "own validated computation to n=20000 (records listed in notes)",
      "web search for newer limsup results (none found)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 458,
@@ -3134,7 +4024,15 @@
      "own verified computation to 1e12 (script + identity sanity check, this session)",
      "Oliveira e Silva et al. 2014 maximal prime gap bound (background for the 4e18 extension route, not used in the 1e12 claim)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 462,
@@ -3157,7 +4055,15 @@
      "OEIS A032742 (JSON)",
      "erdosproblems.com/462 (paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 468,
@@ -3186,7 +4092,15 @@
      "erdosproblems.com/468 (paraphrased)",
      "Guy UPINT B2 attribution via OEIS references"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 469,
@@ -3211,7 +4125,15 @@
      "erdosproblems.com/469 (paraphrased; claimed-proof metadata noted)",
      "Benkoski-Erdos 1974 attribution via OEIS/page references"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 470,
@@ -3241,7 +4163,15 @@
      "arXiv:2207.12906 abstract (via web search)",
      "web search for post-2022 odd-weird search extensions (none found)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 472,
@@ -3268,7 +4198,15 @@
      "OEIS A389713 (JSON + b-file to 10000, tail value confirmed 190669)",
      "erdosproblems.com/472 (paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 478,
@@ -3298,7 +4236,15 @@
      "arXiv:1603.04086",
      "arXiv:2604.26429 (claimed proof, UNVERIFIED)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 479,
@@ -3326,7 +4272,15 @@
      "OEIS a036236.log.txt (Hobson, Jan 2024) \u2014 parsed all 93 unknown entries",
      "erdosproblems.com/479 (read, paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 483,
@@ -3359,7 +4313,15 @@
      "arXiv:2607.15034 / 2107.03560 / 2112.03175 (search-level)",
      "Fettes\u2013Kramer\u2013Radziszowski 2004 via seeded #183 gap entry + DS1"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 500,
@@ -3391,7 +4353,15 @@
      "erdosproblems.com/500 (read, paraphrased; edited 2025-10-05)",
      "atlas/problems.json#500 deep audit (2026-07-13, incl. Razborov 2010, Frohmader arXiv:0806.4208)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 503,
@@ -3424,7 +4394,15 @@
      "Wikipedia 'Isosceles set'",
      "Ionin, Electronic J. Combin. 16 (2009) R141 (via OEIS/search)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 528,
@@ -3457,7 +4435,15 @@
      "arXiv:2211.16146 abstract (fetched)",
      "arXiv:1206.2092 (via search summary)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 530,
@@ -3480,7 +4466,15 @@
      "OEIS A143824 (JSON API)",
      "erdosproblems.com/530 (read, paraphrased; edited 2026-04-08)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 544,
@@ -3513,7 +4507,15 @@
      "arXiv:2401.00392 / EJC v32i4p30",
      "web search 2026-07-18 (no newer result)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 545,
@@ -3536,7 +4538,15 @@
      "OEIS A059442 (JSON API)",
      "erdosproblems.com/545 (read, paraphrased; edited 2025-12-02)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 552,
@@ -3570,7 +4580,20 @@
      "Boza arXiv:2409.12770 (via deep record)",
      "certificates/erdos-552/ + erdos-552-f39/ (in-repo)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "DS1 rev.18 Table IVa (cell open, 46-47): lower 46 = Wu-Sun-(Zhang-)Radziszowski DAM 186 (2015) Construction 5; upper 47 = Parsons 1975 general bound; Boza arXiv:2409.12770 '/46' reconciled as a wheel-convention off-by-one",
+     "date": "2026-07-18"
+    },
+    {
+     "type": "replay_receipt",
+     "artifact": "certificates/erdos-552-f39/verify.py \u2014 machine-checked 45-vertex C4-free minimum-degree-6 witness re-deriving the lower bound R(C4,K1,39) >= 46 (the 2026-07-16 equality claim is retracted; the certificate stands as a lower-bound replay)",
+     "date": "2026-07-16"
+    }
+   ],
+   "confidence": "C2"
   },
   {
    "problem": 555,
@@ -3593,7 +4616,15 @@
      "OEIS A389313 (JSON, incl. formula + Howroyd b-file note)",
      "erdosproblems.com/555 (numeric facts paraphrased only)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 573,
@@ -3625,7 +4656,15 @@
      "users.cecs.anu.edu.au/~bdm/data/extremal.html girth-5 table (accessed 2026-07-18)",
      "erdosproblems.com/573 (numeric facts paraphrased only)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 588,
@@ -3658,7 +4697,15 @@
      "erich-friedman.github.io/packing/trees/ (accessed 2026-07-18)",
      "erdosproblems.com/588 (numeric facts paraphrased only)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 647,
@@ -3688,7 +4735,15 @@
      "erdosproblems.com/647 (numeric facts paraphrased only)",
      "stub Lean statement (Apache)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 663,
@@ -3711,7 +4766,15 @@
      "OEIS A391668 (JSON)",
      "erdosproblems.com/663 (numeric facts paraphrased only)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 668,
@@ -3735,7 +4798,15 @@
      "OEIS A186705 (JSON, incl. May 2026 comments)",
      "erdosproblems.com/668 (numeric facts paraphrased only)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 669,
@@ -3767,7 +4838,15 @@
      "erich-friedman.github.io/packing/trees/ (accessed 2026-07-18)",
      "erdosproblems.com/669 (numeric facts paraphrased only)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 676,
@@ -3790,7 +4869,15 @@
      "OEIS A390181 (JSON + b-file tail)",
      "erdosproblems.com/676 (numeric facts paraphrased only)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 681,
@@ -3815,7 +4902,15 @@
      "local spf-sieve verification to 10^7 (cross-checked against OEIS terms)",
      "stub Lean statement (Apache)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 683,
@@ -3841,7 +4936,15 @@
      "erdosproblems.com/683 (context, paraphrased)",
      "atlas/stubs.json Lean statement"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 684,
@@ -3875,7 +4978,15 @@
      "arXiv:2606.08216 abstract",
      "local recomputation of A392019(1..25)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 687,
@@ -3906,7 +5017,15 @@
      "arXiv:1611.03310 (listed)",
      "arXiv:1208.5342 (listed)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 693,
@@ -3930,7 +5049,15 @@
      "erdosproblems.com/693 (context, paraphrased)",
      "local recomputation of A391118(3..12)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 695,
@@ -3963,7 +5090,15 @@
      "atlas/stubs.json Lean statement",
      "local verification of greedy steps a(1..9)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 700,
@@ -3988,7 +5123,15 @@
      "local verification A091963(n)=f(n) for n=4..43",
      "web search for recent work (none found)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 710,
@@ -4022,7 +5165,15 @@
      "arXiv:2603.28636 abstract (ruled out \u2014 #650)",
      "local recomputation of A390246(1..15)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 725,
@@ -4047,7 +5198,15 @@
      "erdosproblems.com/725 (context, paraphrased)",
      "web search: Latin squares order 12 enumeration (none found)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 727,
@@ -4078,7 +5237,15 @@
      "local verification of a(2)=208 and the k=2 equivalence",
      "web search for recent progress (none found beyond #728 resolution, distinct problem)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 730,
@@ -4106,7 +5273,15 @@
      "erdosproblems.com/730 (paraphrased)",
      "own Kummer verification of (87,88) and (10003,10004,10005)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 731,
@@ -4129,7 +5304,15 @@
      "OEIS A006197 (+ b-file to 10000)",
      "erdosproblems.com/731 (paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 768,
@@ -4154,7 +5337,15 @@
      "erdosproblems.com/768 (paraphrased)",
      "arXiv:2606.24872 (existence + claimed result verified via web search)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 769,
@@ -4187,7 +5378,15 @@
      "erdosproblems.com/769 (paraphrased)",
      "Connor\u2013Marmorino 2018 (via page + OEIS link)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 770,
@@ -4211,7 +5410,15 @@
      "erdosproblems.com/770 (paraphrased)",
      "Ailon\u2013Rudnick Acta Arith. 113 (2004) via OEIS link"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 773,
@@ -4242,7 +5449,15 @@
      "OEIS A390813 (data + b-file to 68)",
      "erdosproblems.com/773 (paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 779,
@@ -4269,7 +5484,15 @@
      "OEIS A005235 (comments + b-file header to 4600)",
      "erdosproblems.com/779 (paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 786,
@@ -4293,7 +5516,15 @@
      "erdosproblems.com/786 (paraphrased)",
      "Granville\u2013Soundararajan Annals 153 (2001) via OEIS link"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 791,
@@ -4325,7 +5556,15 @@
      "erdosproblems.com/791 (paraphrased)",
      "arXiv search for post-2017 2-basis bounds (Yu limsup 0.4585 / Kohonen 85/294 confirmed)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 812,
@@ -4349,7 +5588,15 @@
      "erdosproblems.com/812 (paraphrased)",
      "arXiv:2409.15709 R(5,5)<=46 (verified via web search)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 820,
@@ -4376,7 +5623,15 @@
      "OEIS A263647 (entry + b-file to a(10000)=24898)",
      "erdosproblems.com/820 (numeric facts paraphrased; page edited 2025-12-02)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 821,
@@ -4408,7 +5663,15 @@
      "erdosproblems.com/821 (numeric facts paraphrased)",
      "arXiv:2211.09641 (Lichtman, via web search)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 830,
@@ -4432,7 +5695,15 @@
      "erdosproblems.com/830 (numeric facts paraphrased)",
      "sech.me/ap/news.html (exhaustive bound 10^21, fetched 2026-07-18)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 849,
@@ -4461,7 +5732,15 @@
      "erdosproblems.com/849 (numeric facts paraphrased)",
      "arXiv:2106.03335 (via erdosproblems citation)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 852,
@@ -4491,7 +5770,15 @@
      "OEIS A079889",
      "erdosproblems.com/852 (numeric facts paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 853,
@@ -4519,7 +5806,15 @@
      "OEIS A001223",
      "erdosproblems.com/853 (numeric facts paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 854,
@@ -4547,7 +5842,15 @@
      "OEIS A048670 (entry + b-file to a(64))",
      "erdosproblems.com/854 (numeric facts paraphrased; page edited 2025-11-04)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 855,
@@ -4581,7 +5884,15 @@
      "erdosproblems.com/855 (numeric facts paraphrased)",
      "sbseminar 'quest for narrow admissible tuples' (context)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 860,
@@ -4613,7 +5924,15 @@
      "OEIS A058989",
      "erdosproblems.com/860 (numeric facts paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 864,
@@ -4645,7 +5964,15 @@
      "erdosproblems.com/864 (fetched 2026-07-18)",
      "erdosproblems.com/840 (Pikhurko [Pi06] quasi-Sidon upper bound)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 878,
@@ -4668,7 +5995,15 @@
      "OEIS A339378",
      "erdosproblems.com/878 (page last edited 2026-05-12; fetched 2026-07-18)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 879,
@@ -4699,7 +6034,15 @@
      "OEIS A186736 + b-file (n \u2264 2500)",
      "erdosproblems.com/879 (fetched 2026-07-18)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 893,
@@ -4723,7 +6066,15 @@
      "erdosproblems.com/893 (fetched 2026-07-18)",
      "arXiv:2506.04883 (Kova\u010d\u2013Luca 2025)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 912,
@@ -4747,7 +6098,15 @@
      "erdosproblems.com/912 (fetched 2026-07-18)",
      "hub stub formal-conjectures flag (discrepancy noted)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 913,
@@ -4775,7 +6134,15 @@
      "erdosproblems.com/913 (fetched 2026-07-18)",
      "OEIS A060355 cross-check comment"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 928,
@@ -4798,7 +6165,15 @@
      "OEIS A006530",
      "erdosproblems.com/928 (page last edited 2026-04-03; fetched 2026-07-18)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 932,
@@ -4825,7 +6200,15 @@
      "OEIS A387864 + b-file (10000 terms)",
      "erdosproblems.com/932 (fetched 2026-07-18)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 935,
@@ -4857,7 +6240,15 @@
      "OEIS A389244",
      "erdosproblems.com/935 (page last edited 2026-02-08; fetched 2026-07-18)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 936,
@@ -4885,7 +6276,15 @@
      "OEIS A085692 (rev 2025-07-02; Berndt\u2013Galway/Peters/Matson comments)",
      "erdosproblems.com/936 (read 2026-07-18, paraphrased only)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 938,
@@ -4914,7 +6313,15 @@
      "OEIS search for triple values (no hits)",
      "erdosproblems.com/938 (read 2026-07-18, paraphrased only)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 945,
@@ -4942,7 +6349,15 @@
      "erdosproblems.com/945 (read 2026-07-18, paraphrased only)",
      "arXiv search for Beker upper bound (not located)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 954,
@@ -4965,7 +6380,15 @@
      "OEIS A390642 (created 2025-12-01)",
      "erdosproblems.com/954 (read 2026-07-18, paraphrased only)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 961,
@@ -4999,7 +6422,15 @@
      "arXiv:2606.19863 (checked: adjacent, not this quantity)",
      "web search for b-file extensions (none found)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 962,
@@ -5027,7 +6458,15 @@
      "erdosproblems.com/962 (read 2026-07-18, paraphrased only)",
      "arXiv search for Tang bound (not located; site remark only)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 968,
@@ -5050,7 +6489,15 @@
      "OEIS A387591 (created 2025-09-07; b-file 10000 terms)",
      "erdosproblems.com/968 (read 2026-07-18, paraphrased only)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 969,
@@ -5081,7 +6528,15 @@
      "OEIS A013928 (rev 2026-07-15; Cohen\u2013Dress\u2013El Marraki and Walfisz refs)",
      "erdosproblems.com/969 (read 2026-07-18, paraphrased only)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 970,
@@ -5111,7 +6566,15 @@
      "arXiv:1412.5029 (FGKMT)",
      "Hajdu\u2013Saradha, Math. Comp. 81 (2012) 2461-2471 (via A048670 comment)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 971,
@@ -5134,7 +6597,15 @@
      "OEIS A226521",
      "erdosproblems.com/971 (read 2026-07-18, paraphrased only)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 975,
@@ -5157,7 +6628,15 @@
      "OEIS A147807 (JSON API, incl. Eldar 2023 asymptotic comment)",
      "erdosproblems.com/975 (context only, numeric facts paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 982,
@@ -5190,7 +6669,15 @@
      "Sheffer survey arXiv:1406.1949",
      "OEIS A004526"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 985,
@@ -5219,7 +6706,15 @@
      "Moree, Artin's primitive root conjecture survey arXiv:math/0412262 (pp. 50 extract)",
      "erdosproblems.com/985 (context only)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1003,
@@ -5243,7 +6738,15 @@
      "erdosproblems.com/1003 (EPS87 bound paraphrased)",
      "Kinlaw\u2013Kobayashi\u2013Pomerance, Acta Arith. 196 (2020) via OEIS links"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1005,
@@ -5276,7 +6779,15 @@
      "erdosproblems.com/1005 (context only)",
      "own computation: verifier reproduces a(4..60); a(101)=27"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1016,
@@ -5309,7 +6820,15 @@
      "erdosproblems.com/1016 (Bondy/Griffin/GKW attribution paraphrased)",
      "web search: no post-2013 extension of m(n) found (2025 papers are edge-pancyclic, a different quantity)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1029,
@@ -5334,7 +6853,15 @@
      "arXiv:2303.09521 (CGMS)",
      "OEIS A059442"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1030,
@@ -5358,7 +6885,15 @@
      "OEIS A000791 (JSON, incl. Angeltveit R(3,10)<=41 note)",
      "OEIS A059442 (R(n,k) table values)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1052,
@@ -5387,7 +6922,15 @@
      "web search 2026-07-18 (no sixth UPN reported)",
      "local sympy verification of usigma(k)=2k for all five known terms"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1053,
@@ -5416,7 +6959,15 @@
      "Flammenkamp MPN page wwwhomes.uni-bielefeld.de/achim/mpn.html (abundancy census table)",
      "web search 2026-07-18 (no 12-perfect found)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1054,
@@ -5440,7 +6991,15 @@
      "formal-conjectures FormalConjectures/ErdosProblems/1054.lean (Apache-2.0, fetched from GitHub raw)",
      "Guy UPiNT B2 (via OEIS reference line)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1055,
@@ -5472,7 +7031,15 @@
      "erdosproblems.com/1055 (accessed 2026-07-18, numeric facts paraphrased)",
      "local sympy primality checks of 764276710625653 and 382138355312827; arithmetic check 2*a(19)-1"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1056,
@@ -5496,7 +7063,15 @@
      "erdosproblems.com/1056 (accessed 2026-07-18, numeric facts paraphrased)",
      "local check: factorial-residue multiplicity interpretation reproduces the mod-11 k=2 witness"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1057,
@@ -5525,7 +7100,15 @@
      "arXiv:2506.09903 (Shallue-Webster, cited via OEIS links; not read in full)",
      "local computation: product of 40 smallest odd primes"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1059,
@@ -5548,7 +7131,15 @@
      "OEIS A064152 (JSON API; census comment)",
      "erdosproblems.com/1059 (accessed 2026-07-18, numeric facts paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1060,
@@ -5582,7 +7173,15 @@
      "formal-conjectures FormalConjectures/ErdosProblems/1060.lean (Apache-2.0)",
      "local exhaustive numpy sieve k <= 10^7 (2026-07-18): reproduced a(4) = 5418319872 and a(5) = 1584858562560; max multiplicity 5 for m <= 10^14"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1061,
@@ -5606,7 +7205,15 @@
      "arXiv:2606.25849 abstract (fetched 2026-07-18)",
      "erdosproblems.com/1061 (accessed 2026-07-18; status still OPEN upstream)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1062,
@@ -5638,7 +7245,15 @@
      "erdosproblems.com/1062 (accessed 2026-07-18, numeric facts paraphrased)",
      "formal-conjectures FormalConjectures/ErdosProblems/1062.lean (Apache-2.0; lower-bound and Lebensold theorems)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1063,
@@ -5670,7 +7285,15 @@
      "erdosproblems.com/1063 (context only, paraphrased)",
      "local machine verification of the m=60*lcm(2..59) witness (exact big-int arithmetic)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1073,
@@ -5694,7 +7317,15 @@
      "erdosproblems.com/1073 (context only, paraphrased)",
      "stub statement from formal-conjectures Lean docstring"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1083,
@@ -5729,7 +7360,15 @@
      "arXiv:2510.09800 (few-distance sets survey/classification status)",
      "local machine verification of 14/15/16-point 7-distance and 17-point 8-distance lattice patches"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1084,
@@ -5752,7 +7391,15 @@
      "OEIS A045945 (JSON entry, closed form, b-file 0..1000)",
      "erdosproblems.com/1084 (context only, paraphrased: Harborth [Ha74b], Bezdek\u2013Reid [BeRe13], Bezdek\u2013Khan [BeKh18])"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1085,
@@ -5784,7 +7431,15 @@
      "arXiv:2412.11914 full text (Theorem 1 tables read directly)",
      "erdosproblems.com/1085 and /90 (context only, paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1095,
@@ -5810,7 +7465,15 @@
      "WCNT 2019 Sorenson slides (history: limit 357 at that date)",
      "erdosproblems.com/1095 (context only, paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1100,
@@ -5841,7 +7504,15 @@
      "OEIS A325864 (JSON entry + b-file extent 0..150)",
      "erdosproblems.com/1100 (context only, paraphrased: [ErHa78], [Er81h])"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1103,
@@ -5866,7 +7537,15 @@
      "erdosproblems.com/1103 (context only, paraphrased)",
      "arXiv:2512.01087 (van Doorn\u2013Tao, abstract + Theorem 10 check)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1104,
@@ -5899,7 +7578,15 @@
      "houseofgraphs.org meta-directory (via OEIS links)",
      "erdosproblems.com/1104 (context only, paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1106,
@@ -5928,7 +7615,15 @@
      "OEIS b194260.txt (downloaded, positivity re-verified)",
      "erdosproblems.com/1106 (context only, paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1107,
@@ -5957,7 +7652,15 @@
      "OEIS A392343 (JSON)",
      "erdosproblems.com/1107 (context only, paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1108,
@@ -5986,7 +7689,15 @@
      "OEIS A051761 (JSON)",
      "erdosproblems.com/1108 (context only, paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1109,
@@ -6015,7 +7726,15 @@
      "erdosproblems.com/1109 (context only, paraphrased)",
      "arXiv:2512.01087"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1113,
@@ -6038,7 +7757,15 @@
      "OEIS A076336 (JSON, incl. Nielsen/Hasler comments on covering-set-free examples)",
      "erdosproblems.com/1113 (context only, paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1135,
@@ -6068,7 +7795,15 @@
      "Springer J. Supercomputing 2025 article (existence confirmed via search; paywalled)",
      "erdosproblems.com/1135 (context only, paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1137,
@@ -6092,7 +7827,15 @@
      "OEIS A083550 (JSON)",
      "erdosproblems.com/1137 (context only, paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1142,
@@ -6119,7 +7862,15 @@
      "OEIS A039669 (JSON, fetched 2026-07-18)",
      "erdosproblems.com/1142 (context only, paraphrased)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1160,
@@ -6150,7 +7901,15 @@
      "Groupprops wiki: Groups of order 2048 (corroborates the exponent-2-class-2 lower bound)",
      "Blackburn-Neumann-Venkataraman, Enumeration of Finite Groups, CUP 2007 (Questions 22.16/22.18, cited via erdosproblems remarks and OEIS references)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1204,
@@ -6186,7 +7945,15 @@
      "Polymath wiki 'Finding narrow admissible tuples' (fetched; rigorous H(343) >= 2334)",
      "erdosproblems.com/1204 (read for context only; bounds/attributions paraphrased: Elliott 1965 [El65], Davenport, Hensley-Richards [HeRi73], Polymath [Po14c])"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1208,
@@ -6220,7 +7987,15 @@
      "erdosproblems.com/1208 (read for context only; asymptotic bounds and attributions paraphrased: [Ch13], [Th95], [CFGHUZ15], [ErGu70], [LeTh95], [KSS75])",
      "Al Zimmermann Point Packing contest final report (referenced via OEIS links as source of contest-era bounds)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
   },
   {
    "problem": 1107,
@@ -6248,7 +8023,20 @@
      "OEIS A118896",
      "Jobling 4x10^7 null result (reproduced)"
     ]
-   }
+   },
+   "evidence": [
+    {
+     "type": "implementation",
+     "artifact": "verified-up-to-N lane bitset-sumset scan to 10^10 (one implementation; reproduces the 6 known exceptions and Jobling's 4x10^7 null result before extending; pinned fleet-side receipt, path-sanitized public mirror pending \u2014 WS3)",
+     "date": "2026-07-18"
+    },
+    {
+     "type": "numeric_scan",
+     "artifact": "cross-checks: powerful-number counts match OEIS A118896 at every power of 10 through 10^10; 400/400 sampled witnesses re-factored by an independent code path; method + exception table replayable via certificates/erdos-1107/verify.py",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C2"
   }
  ]
 }

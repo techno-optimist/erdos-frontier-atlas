@@ -10,7 +10,12 @@ Checks, all hard failures unless marked WARN:
      verified_range => lower present;
   5. witness_side none => witness_feasibility none;
   6. every numeric bound carries a non-empty source; provenance.checked non-empty;
-  7. (problem, quantity) unique.
+  7. (problem, quantity) unique;
+  8. epistemic ledger (WS7): evidence[] items are well-formed ({type,artifact,date},
+     type in the enum, non-empty strings);
+  9. epistemic ledger (WS7): the stored confidence class EQUALS the class computed
+     from evidence[] (see compute_confidence below); an entry may not carry
+     confidence without evidence, nor evidence without a stored confidence.
 Exit 0 iff everything holds.
 """
 import json
@@ -21,16 +26,91 @@ ROOT = Path(__file__).resolve().parent.parent
 ENTRY_KEYS = {"problem", "oeis", "quantity", "kind", "lower", "upper", "witness_side",
               "witness_object", "witness_verifier", "witness_feasibility",
               "exact_feasibility", "status", "notes", "provenance"}
+# WS7 epistemic-ledger fields: optional in the schema (additive extension), but if either
+# is present the pair must be present and consistent (checked in check_ledger).
+OPTIONAL_KEYS = {"evidence", "confidence"}
 KINDS = {"value_gap", "next_cell", "bounded_below_only", "bounded_above_only",
          "verified_range", "not_gap_shaped"}
 SIDES = {"lower", "upper", "both", "none"}
 FEAS = {"open-easy", "plausible", "hard", "historic", "none"}
 EXACT = {"cell", "drat-candidate", "wall", "unknown"}
 STATUS = {"open", "record_in_progress", "closed"}
+EVIDENCE_TYPES = {"formal_proof", "implementation", "replay_receipt",
+                  "numeric_scan", "literature"}
+CONFIDENCE_CLASSES = {"C0", "C1", "C2", "C3"}
 
 
 def fail(errors, msg):
     errors.append(msg)
+
+
+def compute_confidence(evidence):
+    """Mechanical confidence class from recorded evidence (charter WS7). The rule:
+
+      C0  iff any item has type formal_proof (a machine-checked formal proof
+           dominates everything else);
+      C1  iff >= 2 items of type implementation or replay_receipt with DISTINCT
+           artifact strings (independent replications at the claimed range);
+      C2  iff exactly 1 distinct implementation/replay_receipt artifact (a single
+           verified, replayable implementation — two items citing the SAME
+           artifact still count as one);
+      C3  otherwise (numeric_scan / literature / no evidence — conjecture-grade
+           numerics or literature-transcribed values, no independent artifact).
+
+    The stored "confidence" field must EQUAL this computed value — the class is
+    derived, never asserted.
+    """
+    types = [it.get("type") for it in evidence]
+    if "formal_proof" in types:
+        return "C0"
+    artifacts = {it.get("artifact") for it in evidence
+                 if it.get("type") in ("implementation", "replay_receipt")}
+    if len(artifacts) >= 2:
+        return "C1"
+    if len(artifacts) == 1:
+        return "C2"
+    return "C3"
+
+
+def check_ledger(errors, tag, e):
+    """WS7 ledger checks on one entry: evidence[] shape + stored-vs-computed class."""
+    has_ev, has_conf = "evidence" in e, "confidence" in e
+    if has_conf and not has_ev:
+        fail(errors, f"{tag}: confidence present but no evidence[] — a class must be "
+                     f"computable from recorded evidence")
+        return
+    if has_ev and not has_conf:
+        fail(errors, f"{tag}: evidence[] present but no stored confidence — stamp the "
+                     f"computed class")
+        return
+    if not has_ev:
+        return
+    ev = e["evidence"]
+    if not isinstance(ev, list) or not ev:
+        fail(errors, f"{tag}: evidence must be a non-empty list")
+        return
+    ok = True
+    for j, it in enumerate(ev):
+        if not isinstance(it, dict) or set(it) != {"type", "artifact", "date"}:
+            fail(errors, f"{tag}.evidence[{j}]: item must be exactly {{type,artifact,date}}")
+            ok = False
+            continue
+        if it["type"] not in EVIDENCE_TYPES:
+            fail(errors, f"{tag}.evidence[{j}]: bad type {it['type']!r}")
+            ok = False
+        for fld in ("artifact", "date"):
+            if not (isinstance(it[fld], str) and it[fld].strip()):
+                fail(errors, f"{tag}.evidence[{j}]: {fld} must be a non-empty string")
+                ok = False
+    if e["confidence"] not in CONFIDENCE_CLASSES:
+        fail(errors, f"{tag}: bad confidence {e['confidence']!r}")
+        return
+    if ok:
+        computed = compute_confidence(ev)
+        if e["confidence"] != computed:
+            fail(errors, f"{tag}: stored confidence {e['confidence']} != computed "
+                         f"{computed} — the class is derived from evidence[], "
+                         f"never asserted")
 
 
 def check_bound(errors, tag, b):
@@ -65,9 +145,11 @@ def main():
     seen = set()
     for i, e in enumerate(entries):
         tag = f"entry[{i}] (problem {e.get('problem', '?')})"
-        if set(e) != ENTRY_KEYS:
-            fail(errors, f"{tag}: keys must be exactly the contract set "
-                         f"(missing {ENTRY_KEYS - set(e)}, extra {set(e) - ENTRY_KEYS})")
+        missing = ENTRY_KEYS - set(e)
+        extra = set(e) - ENTRY_KEYS - OPTIONAL_KEYS
+        if missing or extra:
+            fail(errors, f"{tag}: keys must be the contract set (+ optional "
+                         f"{sorted(OPTIONAL_KEYS)}) (missing {missing}, extra {extra})")
             continue
         pid = e["problem"]
         if not isinstance(pid, int) or pid not in by_id:
@@ -113,6 +195,8 @@ def main():
                 or not isinstance(prov.get("checked"), list) or not prov["checked"]):
             fail(errors, f"{tag}: provenance must carry added_by, date, non-empty checked[]")
 
+        check_ledger(errors, tag, e)
+
         key = (pid, e["quantity"])
         if key in seen:
             fail(errors, f"{tag}: duplicate (problem, quantity)")
@@ -128,7 +212,12 @@ def main():
     counts = {}
     for e in entries:
         counts[e["witness_feasibility"]] = counts.get(e["witness_feasibility"], 0) + 1
-    print(f"gap_map VALID: {len(entries)} entries; witness_feasibility {counts}; {len(warns)} warn(s)")
+    conf = {}
+    for e in entries:
+        conf[e.get("confidence", "unstamped")] = conf.get(e.get("confidence", "unstamped"), 0) + 1
+    conf = {k: conf[k] for k in sorted(conf)}
+    print(f"gap_map VALID: {len(entries)} entries; witness_feasibility {counts}; "
+          f"confidence {conf}; {len(warns)} warn(s)")
     return 0
 
 
