@@ -6,6 +6,23 @@ release procedure. It has two kinds of steps: a machine-checkable gate any agent
 or the lead can run, and **two steps that are human-only by policy** — no agent
 performs them, ever (charter WS10: external submissions are always human-sent).
 
+## The two release paths (updated 2026-07-19 after the first mint attempt)
+
+The reserve-first flow confused in practice ("no repo for the DOI"). Two clean paths:
+
+**Path A — recommended: Zenodo's GitHub integration (one toggle, then automatic).**
+1. HUMAN: log in at zenodo.org → account menu → **GitHub** → flip ON
+   `techno-optimist/erdos-frontier-atlas`. Tell the lead it's on.
+2. LEAD: publishes the `EFA-DR1` GitHub release (tag exists, notes prepared).
+   Zenodo's webhook archives the release and mints the DOI automatically.
+3. LEAD: pastes the minted DOI + date into `CITATION.cff` (the validator's
+   DOI/date coupling enforces consistency) and pushes the follow-up commit.
+
+**Path B — manual upload.** A release tarball is prepared by the lead
+(`git archive` of the tagged commit, sha256 recorded). HUMAN: zenodo.org →
+New upload → attach the tarball → fill title "Erdős Frontier Atlas — Gap Map
+(EFA-DR1)" → Publish → paste the DOI to the lead. Same step 3 as Path A.
+
 ## 1. The machine gate (run before anything else)
 
 All of these must pass on the release candidate, in this order:
