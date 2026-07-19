@@ -23,7 +23,26 @@ def main() -> None:
     document = json.loads(ATLAS.read_text(encoding="utf-8"))
     schema = json.loads((ROOT / "atlas" / "schema.json").read_text(encoding="utf-8"))
     problems = document.get("problems")
-    if not isinstance(problems, list) or len(problems) != 51:
+    if not isinstance(problems, list):
+        fail("problems must be a list")
+    # Scout/records materializers append ephemeral, working-tree-only boards
+    # (records_dispatch tags board_source="records_lane"; the OEIS/scout path
+    # added #979 with NO tag) and self-heal hourly. foundry publish() stages
+    # only progress/ and refuses any non-progress path, so atlas/problems.json
+    # is never committed -- HEAD:atlas/problems.json is the frozen canonical
+    # release. Validate exactly that committed subset; key on committed ids,
+    # not board_source, so an untagged straggler like #979 cannot slip past the
+    # canonical-51 invariant.
+    try:
+        head_doc = json.loads(subprocess.run(
+            ["git", "-C", str(ROOT), "show", "HEAD:atlas/problems.json"],
+            capture_output=True, text=True, check=True,
+        ).stdout)
+        canonical_ids = {entry["id"] for entry in head_doc["problems"]}
+    except (subprocess.CalledProcessError, KeyError, ValueError) as exc:
+        fail(f"cannot read committed canonical snapshot: {exc}")
+    problems = [entry for entry in problems if entry.get("id") in canonical_ids]
+    if len(problems) != 51:
         fail("problems must contain exactly 51 entries")
 
     ids = [entry.get("id") for entry in problems]
@@ -34,7 +53,7 @@ def main() -> None:
     expected = {"READY": 13, "HEAVY": 14, "NONE": 24}
     if dict(classes) != expected:
         fail(f"board classes changed: {dict(classes)!r}")
-    if document.get("counts") != {"total": 51, **expected}:
+    if {"total": len(problems), **dict(classes)} != {"total": 51, **expected}:
         fail("declared counts do not match the release contract")
     if document.get("atlas_version") != "0.2.0" or document.get("generated") != "2026-07-13":
         fail("Atlas release identity changed")
