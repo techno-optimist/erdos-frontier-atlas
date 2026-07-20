@@ -35,46 +35,52 @@ machine-checked object**:
 
 ## The blast radius at a glance
 
-*Generated from the ledger by `tools/validate_jc_crater.py --write`: all 30 nodes, every count, color, and edge below are computed from `implication_graph.json` + `computed_statuses.json` — never hand-drawn. Plus 9 candidate names that failed literature verification (quarantined, excluded).*
+*Generated from the ledger by `tools/validate_jc_crater.py --write`: all 37 nodes, every count, color, and edge below are computed from `implication_graph.json` + `computed_statuses.json` — never hand-drawn. Plus 8 candidate names that failed literature verification (quarantined, excluded).*
 
 ```text
-✕ Refuted for all n ≥ 3             █████████ 7
-⊘ Refuted in some finite dimension  ████████████████████ 15
-○ Open                              ████ 3
-✓ Survives (proven theorem)         █████ 4
+✕ Refuted for all n ≥ 3             ███████████ 10
+⊘ Refuted in some finite dimension  ████████████████████ 18
+○ Open                              ███ 3
+✓ Survives (proven theorem)         ██████ 5
 ■ Refuted independently, pre-2026   █ 1
 
-                                    30 sourced statements (+9 quarantined)
+                                    37 sourced statements (+8 quarantined)
 ```
 
 | | Status | Count | What it means |
 |:-:|:--|--:|:--|
-| ✕ | **Refuted for all n ≥ 3** | 7 | false in every dimension n ≥ 3 (reached through a per-dimension edge) |
-| ⊘ | **Refuted in some finite dimension** | 15 | false in at least one finite dimension, location unknown (a dimension-blowup reduction) |
+| ✕ | **Refuted for all n ≥ 3** | 10 | false in every dimension n ≥ 3 (reached through a per-dimension edge) |
+| ⊘ | **Refuted in some finite dimension** | 18 | false in at least one finite dimension, location unknown (a dimension-blowup reduction) |
 | ○ | **Open** | 3 | untouched — the counterexample says nothing about it |
-| ✓ | **Survives (proven theorem)** | 4 | a proven theorem, still standing |
+| ✓ | **Survives (proven theorem)** | 5 | a proven theorem, still standing |
 | ■ | **Refuted independently, pre-2026** | 1 | already refuted before 2026, by a different mechanism |
 
 ```mermaid
 flowchart RL
   jacobian_conjecture["Jacobian Conjecture"]:::root
+  jc_over_char0_fields_and_z["Base-field / over-Z reduction of JC"]:::alln
   jc_tree_vanishing["Tree-vanishing reformulation of JC"]:::alln
+  jedrzejewicz_zielinski_jc_mnk["Jedrzejewicz-Zielinski generalized Jacobian family JC"]:::alln
   keller_properness_universal["Universal properness of Keller maps"]:::alln
   nowicki_commutative_basis["Nowicki's commutative-basis characterization"]:::alln
   picard_vessiot_reformulation["Picard-Vessiot / Wronskian reformulation"]:::alln
+  special_image_conjecture["Special Image Conjecture SIC"]:::alln
   square_free_preserver["Square-free-preserver reformulation"]:::alln
   tate_jacobian_conjecture["Tate-Jacobian Conjecture TJC"]:::alln
+  bisi_subtree_shuffle_markov_conjecture["Bisi et al. subtree-shuffling Markov-chain sufficient condition for JC"]:::somedim
   chamberland_conjecture["Chamberland Conjecture"]:::somedim
   char_p_strengthenings["Characteristic-p formulations implying char-0 JC"]:::somedim
   cubic_homogeneous_jc["JC for cubic homogeneous maps"]:::somedim
   dixmier_conjecture["Dixmier Conjecture DC_n"]:::somedim
   druzkowski_jc["JC for Druzkowski maps"]:::somedim
+  gaussian_moments_conjecture["Gaussian Moments Conjecture GMC"]:::somedim
   hessian_conjecture["Hessian Conjecture"]:::somedim
   hom_dixmier_conjecture["Hom-Dixmier Conjecture"]:::somedim
   image_conjecture["Zhao's Image Conjecture"]:::somedim
   integral_conjecture["Zhao's Integral Conjecture"]:::somedim
   jelonek_real_jc["Jelonek's Real Jacobian Conjecture"]:::somedim
   mathieu_conjecture["Mathieu Conjecture"]:::somedim
+  poisson_conjecture["Poisson Conjecture"]:::somedim
   symmetric_jc["JC for symmetric Keller maps"]:::somedim
   unimodular_conjecture["Unimodular Conjecture"]:::somedim
   vanishing_conjecture["Zhao's Vanishing Conjecture"]:::somedim
@@ -82,6 +88,7 @@ flowchart RL
   kontsevich_conjecture_weyl["Kontsevich Conjecture"]:::open
   plane_jacobian_conjecture["Plane Jacobian Conjecture"]:::open
   symmetric_dependence_problem["Dependence problem for symmetric Jacobians"]:::open
+  ax_grothendieck_theorem["Ax-Grothendieck theorem"]:::theorem
   bcw_tree_formula["Bass-Connell-Wright tree inversion formula"]:::theorem
   jc_dimension_padding["Dimension stabilization of Keller counterexamples"]:::theorem
   wang_degree_two_theorem["Wang's theorem"]:::theorem
@@ -110,6 +117,12 @@ flowchart RL
   square_free_preserver --> jacobian_conjecture
   picard_vessiot_reformulation --> jacobian_conjecture
   jc_tree_vanishing --> jacobian_conjecture
+  gaussian_moments_conjecture -.-> special_image_conjecture
+  special_image_conjecture --> jacobian_conjecture
+  poisson_conjecture --> dixmier_conjecture
+  jc_over_char0_fields_and_z --> jacobian_conjecture
+  jedrzejewicz_zielinski_jc_mnk --> jacobian_conjecture
+  bisi_subtree_shuffle_markov_conjecture -.-> jacobian_conjecture
   classDef root fill:#7f1d1d,stroke:#000,color:#fff,stroke-width:3px;
   classDef alln fill:#dc2626,stroke:#7f1d1d,color:#fff;
   classDef somedim fill:#ea9010,stroke:#92400e,color:#fff;
