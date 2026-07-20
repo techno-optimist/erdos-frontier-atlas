@@ -10,7 +10,8 @@
       "certificate": "certificates/jacobian-conjecture/verify.py",
       "supplementary_checks": [
         "atlas/jc-crater/padding_check.py",
-        "atlas/jc-crater/map_degree.py"
+        "atlas/jc-crater/map_degree.py",
+        "atlas/jc-crater/geometric_degree.py"
       ],
       "note": "verify.py certifies the dim-3 refutation; padding_check.py machine-verifies the stabilization lift F -> F x id, so FALSE(3) extends to FALSE(n) for every n >= 3. The n=2 (plane) case is a separate node and remains OPEN."
     }
