@@ -1,0 +1,374 @@
+#!/usr/bin/env python3
+"""Validator + propagation engine for the JC crater implication graph.
+
+The graph (atlas/jc-crater/implication_graph.json) stores VERIFIED nodes (each
+with a primary-source statement) and TYPED edges (each with a citation). This
+tool computes every node's post-counterexample status from the certified roots
+by mechanical propagation -- statuses are DERIVED, never asserted -- and fails
+loudly on schema violations, on drift between the committed generated view
+(computed_statuses.json) and a fresh recomputation, and on INCONSISTENCY
+(an edge chain that would refute a proven theorem means an edge is wrong).
+
+Status vocabulary (computed):
+  REFUTED_ALL_N_GE_3        chain of dimension-preserving implications from the
+                            certified root (which the stabilization machine
+                            check lifts from n=3 to all n>=3)
+  REFUTED_SOME_FINITE_DIM   chain passes through a dimension-mixing edge: the
+                            universal statement fails in at least one finite
+                            dimension, location unknown (the honest modality)
+  TRUE_THEOREM              proven statement (citation on the node)
+  OPEN                      untouched by propagation
+  EXCLUDED_UNVERIFIED       node failed literature verification; quarantined,
+                            never propagated through
+
+Flags (computed, orthogonal to status):
+  orphaned_conditional_support   the node's known support was an implication
+                                 FROM a now-refuted statement; its truth value
+                                 is untouched (falsity never propagates forward
+                                 along implications) but the support is void.
+
+Propagation rules (modus tollens only -- truth never flows forward):
+  X --implies(dimension_preserving)--> Y,  Y REFUTED_ALL_N_GE_3
+      => X REFUTED_ALL_N_GE_3            (per-n: X_n => Y_n; not-Y_n => not-X_n)
+  X --implies(dimension_mixing)--> Y,  Y refuted in any mode
+      => X REFUTED_SOME_FINITE_DIM       (universal X => universal Y; Y fails
+                                          somewhere => X fails somewhere)
+  X --implies(dimension_preserving)--> Y,  Y REFUTED_SOME_FINITE_DIM
+      => X REFUTED_SOME_FINITE_DIM       (the unknown failing dimension carries)
+  X <--equivalent(dimension_preserving)--> Y   statuses copy both ways
+  X <--equivalent(dimension_mixing)--> Y       refutation degrades to
+                                               REFUTED_SOME_FINITE_DIM crossing
+  Y --implies--> X,  Y refuted  =>  X.orphaned_conditional_support = true
+
+Machine-checked edges name a script; the validator EXECUTES it and requires
+exit 0 before the edge participates (e.g. the stabilization edge runs
+atlas/jc-crater/padding_check.py; the root cites
+certificates/jacobian-conjecture/verify.py).
+
+Usage:
+  python3 tools/validate_jc_crater.py            # validate + drift-check
+  python3 tools/validate_jc_crater.py --write    # regenerate computed view
+"""
+import importlib.util
+import json
+import subprocess
+import sys
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parent.parent
+GRAPH = ROOT / "atlas" / "jc-crater" / "implication_graph.json"
+COMPUTED = ROOT / "atlas" / "jc-crater" / "computed_statuses.json"
+QUANTITIES = ROOT / "atlas" / "jc-crater" / "quantities.json"
+
+def _gap_map_module():
+    spec = importlib.util.spec_from_file_location(
+        "validate_gap_map", Path(__file__).resolve().parent / "validate_gap_map.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+EDGE_TYPES = {"implies", "equivalent"}
+DIM_SEMANTICS = {"dimension_preserving", "dimension_mixing"}
+# The two modalities that PROPAGATE by modus tollens. REFUTED_INDEPENDENTLY_PRE_2026
+# is intentionally absent: nodes carrying it are historical context leaves, and
+# load_graph forbids any edge incident to them, so they neither receive nor emit
+# propagation -- the exclusion here is correct by construction, not a silent gap.
+REFUTED = {"REFUTED_ALL_N_GE_3", "REFUTED_SOME_FINITE_DIM"}
+NODE_VERIFICATION = {"VERIFIED", "UNVERIFIED_CANDIDATE"}
+
+
+def fail(msg):
+    raise SystemExit(f"jc-crater INVALID: {msg}")
+
+
+def load_graph():
+    g = json.loads(GRAPH.read_text())
+    if g.get("schema") != "efa-jc-crater/v1":
+        fail("bad schema tag")
+    ids = [n["id"] for n in g["nodes"]]
+    if len(ids) != len(set(ids)):
+        fail("duplicate node ids")
+    nodes = {n["id"]: n for n in g["nodes"]}
+    for n in g["nodes"]:
+        for field in ("id", "name", "statement", "verification", "primary_source"):
+            if not str(n.get(field, "")).strip():
+                fail(f"node {n.get('id','?')}: missing {field}")
+        if n["verification"] not in NODE_VERIFICATION:
+            fail(f"node {n['id']}: bad verification {n['verification']}")
+        if n["verification"] == "VERIFIED" and not n.get("sources"):
+            fail(f"node {n['id']}: VERIFIED but no sources[]")
+        if "proven_theorem" in n and n["proven_theorem"] is not True:
+            fail(f"node {n['id']}: proven_theorem must be literal true, not "
+                 f"{n['proven_theorem']!r}")
+        fact = n.get("independent_fact")
+        if fact is not None:
+            if set(fact) != {"status", "citation"} or \
+               fact["status"] != "REFUTED_INDEPENDENTLY_PRE_2026" or \
+               not str(fact["citation"]).strip():
+                fail(f"node {n['id']}: malformed independent_fact")
+            if n.get("proven_theorem"):
+                fail(f"node {n['id']}: cannot be both proven_theorem and "
+                     "independent_fact")
+    for e in g["edges"]:
+        if e["from"] not in nodes or e["to"] not in nodes:
+            fail(f"edge {e['from']}->{e['to']}: unknown endpoint")
+        if e["type"] not in EDGE_TYPES:
+            fail(f"edge {e['from']}->{e['to']}: bad type {e['type']}")
+        if e["dimension_semantics"] not in DIM_SEMANTICS:
+            fail(f"edge {e['from']}->{e['to']}: bad dimension_semantics")
+        if not str(e.get("citation", "")).strip():
+            fail(f"edge {e['from']}->{e['to']}: missing citation")
+        for end in (e["from"], e["to"]):
+            if nodes[end]["verification"] != "VERIFIED":
+                fail(f"edge {e['from']}->{e['to']}: endpoint {end} not VERIFIED "
+                     "(quarantined nodes cannot carry edges)")
+            if nodes[end].get("independent_fact"):
+                # independent_fact nodes are historical CONTEXT leaves: their
+                # status is fixed by an out-of-band citation and does not take
+                # part in propagation. Forbidding incident edges makes the
+                # engine's non-participation correct by construction (rather
+                # than a silent under-derivation if an edge were added later).
+                fail(f"edge {e['from']}->{e['to']}: endpoint {end} carries an "
+                     "independent_fact and must stay an unconnected context node")
+    quarantine = g.get("quarantine_findings", {})
+    q_ids = [q["id"] for section in ("likely_confabulated", "unclear_pending_rename")
+             for q in quarantine.get(section, [])]
+    if len(q_ids) != len(set(q_ids)):
+        fail("duplicate ids in quarantine_findings")
+    for section in ("likely_confabulated", "unclear_pending_rename"):
+        for q in quarantine.get(section, []):
+            if q["id"] in nodes:
+                fail(f"quarantined id {q['id']} collides with an admitted node")
+            if not str(q.get("finding", "")).strip():
+                fail(f"quarantined id {q['id']}: empty finding")
+    seen_roots = set()
+    for r in g["roots"]:
+        if r["node"] not in nodes:
+            fail(f"root {r['node']}: unknown node")
+        if r["node"] in seen_roots:
+            fail(f"root {r['node']}: duplicate root entry")
+        seen_roots.add(r["node"])
+        if r["fact"] not in REFUTED | {"TRUE_THEOREM"}:
+            fail(f"root {r['node']}: bad fact {r['fact']}")
+        if not str(r.get("certificate", "")).strip():
+            fail(f"root {r['node']}: missing certificate")
+        # A root SEEDS a status by assignment, so it must not silently override
+        # or launder a node's own declared nature.
+        rn = nodes[r["node"]]
+        if rn["verification"] != "VERIFIED":
+            fail(f"root {r['node']}: node is not VERIFIED "
+                 "(a quarantined candidate cannot be a certified root)")
+        if rn.get("proven_theorem") and r["fact"] != "TRUE_THEOREM":
+            fail(f"root {r['node']}: node is a proven_theorem but the root "
+                 f"asserts {r['fact']} (inconsistent)")
+        if rn.get("independent_fact") and \
+           r["fact"] != rn["independent_fact"]["status"]:
+            fail(f"root {r['node']}: conflicts with the node's independent_fact")
+    return g, nodes
+
+
+def run_machine_checks(g):
+    checks = []
+    for r in g["roots"]:
+        checks.append((f"root:{r['node']}", r["certificate"]))
+        for i, extra in enumerate(r.get("supplementary_checks", [])):
+            checks.append((f"root:{r['node']}:supplementary[{i}]", extra))
+    for e in g["edges"]:
+        if e.get("machine_check"):
+            checks.append((f"edge:{e['from']}->{e['to']}", e["machine_check"]))
+    results = []
+    for label, script in checks:
+        path = ROOT / script
+        if not path.exists():
+            fail(f"machine check {label}: script missing: {script}")
+        proc = subprocess.run([sys.executable, str(path)],
+                              capture_output=True, text=True)
+        results.append({"check": label, "script": script,
+                        "exit": proc.returncode})
+        if proc.returncode != 0:
+            fail(f"machine check {label} FAILED (exit {proc.returncode}):\n"
+                 f"{proc.stdout}\n{proc.stderr}")
+    return results
+
+
+def propagate(g, nodes):
+    status = {}
+    flags = {nid: {"orphaned_conditional_support": False} for nid in nodes}
+    for nid, n in nodes.items():
+        if n["verification"] != "VERIFIED":
+            status[nid] = "EXCLUDED_UNVERIFIED"
+        elif n.get("independent_fact"):
+            # refuted (or settled) independently of the 2026 event, e.g. the
+            # real JC (Pinchuk 1994); recorded directly, never overridden
+            status[nid] = n["independent_fact"]["status"]
+        elif n.get("proven_theorem"):
+            status[nid] = "TRUE_THEOREM"
+        else:
+            status[nid] = "OPEN"
+    for r in g["roots"]:
+        status[r["node"]] = r["fact"]
+
+    def strength(s):
+        return {"REFUTED_INDEPENDENTLY_PRE_2026": 3,
+                "REFUTED_ALL_N_GE_3": 2, "REFUTED_SOME_FINITE_DIM": 1}.get(s, 0)
+
+    def merge(nid, new):
+        # A node keeps its strongest justified refutation modality; TRUE and
+        # EXCLUDED nodes never accept refutations (TRUE conflict = inconsistency).
+        cur = status[nid]
+        if cur == "EXCLUDED_UNVERIFIED":
+            fail(f"propagation reached quarantined node {nid} (validator bug)")
+        if cur == "TRUE_THEOREM":
+            fail(f"INCONSISTENCY: edges derive {new} for {nid}, which is a "
+                 "proven theorem -- some edge's direction or semantics is wrong")
+        if strength(new) > strength(cur):
+            status[nid] = new
+            return True
+        return False
+
+    # Phase 1 -- status fixpoint (modus tollens only). Flags are NOT touched
+    # here: a target that is OPEN mid-iteration may become refuted later, so an
+    # in-loop flag would depend on edge order. Flags are a pure function of the
+    # FINAL statuses, computed in phase 2.
+    changed = True
+    iterations = 0
+    while changed:
+        iterations += 1
+        if iterations > len(nodes) + len(g["edges"]) + 5:
+            fail("propagation failed to reach a fixpoint (cycle with growth?)")
+        changed = False
+        for e in g["edges"]:
+            a, b = e["from"], e["to"]
+            preserving = e["dimension_semantics"] == "dimension_preserving"
+            if e["type"] == "implies":
+                # modus tollens: b refuted => a refuted
+                if status[b] in REFUTED:
+                    new = ("REFUTED_ALL_N_GE_3"
+                           if preserving and status[b] == "REFUTED_ALL_N_GE_3"
+                           else "REFUTED_SOME_FINITE_DIM")
+                    changed |= merge(a, new)
+            elif e["type"] == "equivalent":
+                for src, dst in ((a, b), (b, a)):
+                    if status[src] in REFUTED:
+                        new = ("REFUTED_ALL_N_GE_3"
+                               if preserving and status[src] == "REFUTED_ALL_N_GE_3"
+                               else "REFUTED_SOME_FINITE_DIM")
+                        changed |= merge(dst, new)
+
+    # Phase 2 -- orphaned_conditional_support, deterministic from final statuses:
+    # a refuted X with an edge X --implies--> Y whose Y is STILL open lost its
+    # conditional support (falsity never flows forward; only the support voids).
+    for e in g["edges"]:
+        if e["type"] == "implies" and status[e["from"]] in REFUTED \
+           and status[e["to"]] == "OPEN":
+            flags[e["to"]]["orphaned_conditional_support"] = True
+    return status, flags
+
+
+def build_view(g, nodes, status, flags, checks):
+    return {
+        "schema": "efa-jc-crater-computed/v1",
+        "note": "GENERATED by tools/validate_jc_crater.py -- do not hand-edit. "
+                "Statuses are computed from certified roots + typed edges; "
+                "regenerate with --write.",
+        "machine_checks": checks,
+        "statuses": {
+            nid: {
+                "status": status[nid],
+                "orphaned_conditional_support":
+                    flags[nid]["orphaned_conditional_support"],
+                "name": nodes[nid]["name"],
+            } for nid in sorted(nodes)
+        },
+        "summary": {
+            s: sorted(n for n in status if status[n] == s)
+            for s in sorted(set(status.values()))
+        },
+    }
+
+
+def check_quantities():
+    """The crater's newborn-quantities ledger reuses the gap_map WS7 rule:
+    stored confidence class must EQUAL the one computed from evidence[]."""
+    if not QUANTITIES.exists():
+        fail(f"quantities ledger missing: {QUANTITIES.name} (the WS7 confidence "
+             "gate cannot be silently disabled by deleting the file)")
+    q = json.loads(QUANTITIES.read_text())
+    gap = _gap_map_module()
+    seen = set()
+    for e in q["entries"]:
+        tag = e.get("id", "?")
+        for field in ("id", "quantity", "kind", "status", "notes", "provenance"):
+            if not str(e.get(field, "")).strip():
+                fail(f"quantity {tag}: missing {field}")
+        if tag in seen:
+            fail(f"quantity {tag}: duplicate id")
+        seen.add(tag)
+        # bool is a subclass of int -- reject it explicitly so True/False can't
+        # masquerade as a bracket endpoint.
+        lo, hi = e.get("lower"), e.get("upper")
+        if not (type(lo) is int and type(hi) is int and lo <= hi):
+            fail(f"quantity {tag}: bad bracket [{lo!r}, {hi!r}]")
+        ev = e.get("evidence", [])
+        if not ev:
+            fail(f"quantity {tag}: no evidence[]")
+        for item in ev:
+            # Crater evidence schema is exactly {type, artifact, note} -- note
+            # carries the human-readable justification (richer than gap_map's
+            # {type, artifact, date}); the confidence rule only reads type +
+            # artifact, so the two ledgers share compute_confidence.
+            if set(item) != {"type", "artifact", "note"}:
+                fail(f"quantity {tag}: evidence item keys must be exactly "
+                     f"{{type, artifact, note}}, got {sorted(item)}")
+            if item["type"] not in gap.EVIDENCE_TYPES:
+                fail(f"quantity {tag}: bad evidence type {item['type']}")
+            if not str(item["artifact"]).strip():
+                fail(f"quantity {tag}: evidence item missing artifact")
+            if not str(item["note"]).strip():
+                fail(f"quantity {tag}: evidence item missing note")
+        # replay_receipt / implementation artifacts must name a file that exists
+        # and (if executable) passes -- a receipt may not cite a script that is
+        # absent or that does not certify what the item claims.
+        for item in ev:
+            if item.get("type") in ("replay_receipt", "implementation"):
+                art = item["artifact"].split()[0]
+                if art.endswith(".py"):
+                    p = ROOT / art
+                    if not p.exists():
+                        fail(f"quantity {tag}: evidence cites missing script {art}")
+        computed = gap.compute_confidence(ev)
+        if e.get("confidence") != computed:
+            fail(f"quantity {tag}: stored confidence {e.get('confidence')} != "
+                 f"computed {computed} (the class is derived, never asserted)")
+    return len(q["entries"])
+
+
+def main():
+    write = "--write" in sys.argv
+    g, nodes = load_graph()
+    checks = run_machine_checks(g)
+    n_quantities = check_quantities()
+    status, flags = propagate(g, nodes)
+    view = build_view(g, nodes, status, flags, checks)
+    rendered = json.dumps(view, indent=2, ensure_ascii=False) + "\n"
+    if write:
+        COMPUTED.write_text(rendered)
+        print(f"wrote {COMPUTED.relative_to(ROOT)}")
+    else:
+        if not COMPUTED.exists():
+            fail("computed_statuses.json missing -- run with --write")
+        if COMPUTED.read_text() != rendered:
+            fail("computed_statuses.json is STALE -- statuses drifted from the "
+                 "graph; regenerate with --write and review the diff")
+    counts = {}
+    for s in status.values():
+        counts[s] = counts.get(s, 0) + 1
+    print("jc-crater VALID: "
+          f"{len(nodes)} nodes, {len(g['edges'])} edges, "
+          f"{len(checks)} machine checks passed, "
+          f"{n_quantities} quantities ledger-checked; statuses {counts}")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())
