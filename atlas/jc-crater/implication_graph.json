@@ -8,7 +8,11 @@
       "node": "jacobian_conjecture",
       "fact": "REFUTED_ALL_N_GE_3",
       "certificate": "certificates/jacobian-conjecture/verify.py",
-      "supplementary_checks": ["atlas/jc-crater/padding_check.py", "atlas/jc-crater/map_degree.py"],
+      "supplementary_checks": [
+        "atlas/jc-crater/padding_check.py",
+        "atlas/jc-crater/map_degree.py",
+        "atlas/jc-crater/geometric_degree.py"
+      ],
       "note": "verify.py certifies the dim-3 refutation; padding_check.py machine-verifies the stabilization lift F -> F x id, so FALSE(3) extends to FALSE(n) for every n >= 3. The n=2 (plane) case is a separate node and remains OPEN."
     }
   ],
@@ -19,7 +23,10 @@
       "statement": "Every polynomial map F : C^n -> C^n whose Jacobian determinant is a nonzero constant has a polynomial inverse.",
       "verification": "VERIFIED",
       "primary_source": "O.-H. Keller, Monatsh. Math. Phys. 47 (1939) 299-306; A. van den Essen, Polynomial Automorphisms and the Jacobian Conjecture, Birkhäuser PM 190 (2000)",
-      "sources": ["van den Essen 2000", "https://en.wikipedia.org/wiki/Jacobian_conjecture"],
+      "sources": [
+        "van den Essen 2000",
+        "https://en.wikipedia.org/wiki/Jacobian_conjecture"
+      ],
       "pre_2026_status": "open since 1939 (every n >= 2)",
       "notes": "Refuted 2026-07-19 by Alpöge's explicit dim-3 counterexample (found with Claude Fable; widely verified within a day, not yet peer-reviewed). Certificate: certificates/jacobian-conjecture/."
     },
@@ -29,7 +36,10 @@
       "statement": "A polynomial map F = (f,g) : C^2 -> C^2 with constant nonzero Jacobian determinant is invertible with polynomial inverse (equivalently C[f,g] = C[x,y]).",
       "verification": "VERIFIED",
       "primary_source": "Keller, Monatsh. Math. Phys. 47 (1939) 299-306 (the case originally posed); van den Essen 2000, Ch. 10",
-      "sources": ["Moh, J. reine angew. Math. 340 (1983) 140-212 (true for deg <= 100)", "van den Essen 2000 Ch. 10"],
+      "sources": [
+        "Moh, J. reine angew. Math. 340 (1983) 140-212 (true for deg <= 100)",
+        "van den Essen 2000 Ch. 10"
+      ],
       "pre_2026_status": "open",
       "notes": "THE surviving frontier: the dim-3 counterexample propagates only upward in dimension and says nothing about n=2. Known true up to degree 100 (Moh 1983). Deliberately carries NO edge from the universal JC: the definitional restriction JC => JC_2 would only set a misleading orphan flag (plane JC never drew support from the universal conjecture). The former Jacobian Conjecture is now exactly the question: is this node true?"
     },
@@ -39,7 +49,11 @@
       "statement": "Every unital algebra endomorphism of the n-th Weyl algebra A_n over a characteristic-0 field is an automorphism (n=1 is Dixmier's original Probleme 1).",
       "verification": "VERIFIED",
       "primary_source": "J. Dixmier, Bull. Soc. Math. France 96 (1968) 209-242, Probleme 1",
-      "sources": ["Tsuchimoto, Osaka J. Math. 42 (2005) 435-452", "Belov-Kanel & Kontsevich, Mosc. Math. J. 7 (2007) 209-218, arXiv:math/0512171", "van den Essen 2000"],
+      "sources": [
+        "Tsuchimoto, Osaka J. Math. 42 (2005) 435-452",
+        "Belov-Kanel & Kontsevich, Mosc. Math. J. 7 (2007) 209-218, arXiv:math/0512171",
+        "van den Essen 2000"
+      ],
       "pre_2026_status": "open (every n >= 1)",
       "notes": "Both directions of the Dixmier<->Jacobian relation DOUBLE dimension (A_n has a 2n-dimensional symbol space): DC_n => JC_2n (classical) and JC_2n => DC_n (Tsuchimoto 2005 / BKK 2007). Sharp hand analysis: since JC is false for every m >= 3 and 2n >= 4 for n >= 2, the classical direction gives DC_n false for ALL n >= 2; DC_1 => JC_2 is open, so DC_1 alone survives. The engine flows the refutation through the dimension_mixing edge and records the conservative floor REFUTED_SOME_FINITE_DIM; the sharp 'false for all rank n >= 2' is this note, not a computed status. Either way the Dixmier conjecture for Weyl algebras is now false and is among the crater's most consequential casualties."
     },
@@ -49,7 +63,11 @@
       "statement": "Aut(W_n, C) is canonically isomorphic to Aut(P_n, C), the group of polynomial symplectomorphisms of A^2n (Belov-Kanel-Kontsevich 2005, Conjecture 1).",
       "verification": "VERIFIED",
       "primary_source": "Belov-Kanel & Kontsevich, Lett. Math. Phys. 74 (2005) 181-199, arXiv:math/0512169",
-      "sources": ["arXiv:math/0512169", "arXiv:1912.03759 (survey; conditionality of DC => KC route)", "arXiv:1802.01225 (claimed proof, general case)"],
+      "sources": [
+        "arXiv:math/0512169",
+        "arXiv:1912.03759 (survey; conditionality of DC => KC route)",
+        "arXiv:1802.01225 (claimed proof, general case)"
+      ],
       "pre_2026_status": "true for n=1; open (claimed proofs) for n > 1",
       "notes": "No PROVED implication connects JC or DC to this Aut-level statement in either direction (the conditional DC => KC route required an unproved polynomiality lemma and is now vacated since DC is false for n >= 3). Logically untouched by the crater; carries no edge. Do not conflate with the Poisson END-conjecture (that analog of DC IS now false for n >= 3)."
     },
@@ -59,7 +77,10 @@
       "statement": "Every Keller map of the form F = x + H with H cubic homogeneous (JH nilpotent) is invertible, in every dimension. By Bass-Connell-Wright/Yagzhev, this universal statement implies full JC (the reduction strictly increases dimension).",
       "verification": "VERIFIED",
       "primary_source": "Bass, Connell & Wright, Bull. AMS (N.S.) 7 (1982) 287-330, §II; Yagzhev, Sibirsk. Mat. Zh. 21 (1980) 141-150",
-      "sources": ["BCW 1982 §II", "van den Essen 2000 Ch. 6"],
+      "sources": [
+        "BCW 1982 §II",
+        "van den Essen 2000 Ch. 6"
+      ],
       "pre_2026_status": "open",
       "notes": "The reduction THEOREM is proven and untouched; what dies is the class-restricted universal conjecture. The counterexample forces a cubic-homogeneous Keller counterexample in SOME finite dimension N (constructively obtainable from the dim-3 map, N >> 3); nothing follows about cubic-homogeneous maps in dim 3 itself. Minimal failing dimension for this class: newborn open quantity."
     },
@@ -69,7 +90,11 @@
       "statement": "Every Keller map of the form F_i(x) = x_i + (a_i1 x_1 + ... + a_in x_n)^3 (A nilpotent) is invertible, in every dimension. By Druzkowski's reduction this universal statement implies full JC.",
       "verification": "VERIFIED",
       "primary_source": "L. M. Druzkowski, Math. Ann. 264 (1983) 303-313",
-      "sources": ["Druzkowski 1983", "BCW 1982", "arXiv:1308.0674"],
+      "sources": [
+        "Druzkowski 1983",
+        "BCW 1982",
+        "arXiv:1308.0674"
+      ],
       "pre_2026_status": "open",
       "notes": "Reduction theorem proven and untouched. A Druzkowski-form counterexample must now exist in SOME finite dimension; no clean universally-cited closed-form dimension bound N(n,d) was found in the primary literature (treat any specific numeric bound as unverified). Minimal failing dimension: newborn open quantity."
     },
@@ -80,7 +105,11 @@
       "verification": "VERIFIED",
       "proven_theorem": true,
       "primary_source": "S. S. Wang, A Jacobian criterion for separability, J. Algebra 65 (1980) 453-494",
-      "sources": ["Wang 1980", "BCW, Bull. AMS 7 (1982) 287-330", "van den Essen 2000"],
+      "sources": [
+        "Wang 1980",
+        "BCW, Bull. AMS 7 (1982) 287-330",
+        "van den Essen 2000"
+      ],
       "pre_2026_status": "proven theorem (1980)",
       "notes": "Survives untouched: the counterexample has degree 7. Gives the lower bound 3 for the newborn quantity 'minimal degree of a dim-3 counterexample'."
     },
@@ -91,7 +120,10 @@
       "verification": "VERIFIED",
       "proven_theorem": true,
       "primary_source": "Folklore (elementary block-diagonal argument); stated explicitly post-counterexample, e.g. Z. Zhang, Direct Consequences (2026); jacobianfun.org (2026)",
-      "sources": ["jacobianfun.org/jacobian-explained", "van den Essen 2000 (background)"],
+      "sources": [
+        "jacobianfun.org/jacobian-explained",
+        "van den Essen 2000 (background)"
+      ],
       "pre_2026_status": "folklore lemma",
       "notes": "MACHINE-CHECKED here: atlas/jc-crater/padding_check.py executes the dim-3 -> dim-4 instance exactly (det == -2 identically in Q[x,y,z,w]; padded collisions verified). This is the edge that lifts the root fact from FALSE(3) to FALSE(all n >= 3). Says nothing about n = 2."
     },
@@ -101,7 +133,11 @@
       "statement": "For K a compact connected Lie group and f, h K-finite functions: if the Haar integral of f^n vanishes for all n >= 1, then the integral of f^n h vanishes for all sufficiently large n. Mathieu proved this conjecture implies JC.",
       "verification": "VERIFIED",
       "primary_source": "O. Mathieu, Semin. Congr. 2, Soc. Math. France (1997) 263-279",
-      "sources": ["Mathieu 1997", "Duistermaat & van der Kallen, Indag. Math. 9 (1998) 221-231 (abelian case proved)", "Zwart, arXiv:2511.16561 (per-N form: MC for SU(N) => JC_N)"],
+      "sources": [
+        "Mathieu 1997",
+        "Duistermaat & van der Kallen, Indag. Math. 9 (1998) 221-231 (abelian case proved)",
+        "Zwart, arXiv:2511.16561 (per-N form: MC for SU(N) => JC_N)"
+      ],
       "pre_2026_status": "open (abelian/torus case a theorem since 1998)",
       "notes": "Computed floor: false for at least one compact group (Mathieu's original implication ran through the dimension-mixing cubic reduction). Sharper per-N localization (MC fails for SU(3), hence SU(N) for N >= 3) rests on Zwart arXiv:2511.16561 Thm 2.2 — recent single source, kept in notes pending wider corroboration. The Duistermaat-van der Kallen abelian theorem survives untouched."
     },
@@ -111,7 +147,11 @@
       "statement": "In C[zeta_1..zeta_n, z_1..z_n], the image of Sum_i (d/dz_i - zeta_i) is a Mathieu subspace. Implies JC (via the Generalized Vanishing Conjecture chain).",
       "verification": "VERIFIED",
       "primary_source": "W. Zhao, J. Algebra 324 (2010) 231-247, arXiv:0902.0210",
-      "sources": ["arXiv:0902.0210", "van den Essen, arXiv:1006.5801 (The Amazing Image Conjecture)", "arXiv:1008.3962"],
+      "sources": [
+        "arXiv:0902.0210",
+        "van den Essen, arXiv:1006.5801 (The Amazing Image Conjecture)",
+        "arXiv:1008.3962"
+      ],
       "pre_2026_status": "open (char 0; already false in char p)",
       "notes": "IC (all n) => JC (all n) via dimension-inflating reductions, so IC now fails in at least one finite number of variables — which one is not identified. JC is equivalent to a SPECIAL CASE of IC; the full IC is strictly stronger."
     },
@@ -121,7 +161,11 @@
       "statement": "For homogeneous P of degree 4 with Delta^m P^m = 0 for all m (Hessian nilpotent), Delta^m P^(m+1) = 0 for all large m. Equivalent to JC via the degree-3 and symmetric reductions.",
       "verification": "VERIFIED",
       "primary_source": "W. Zhao, Trans. AMS 359 (2007) 249-274, arXiv:math/0409534",
-      "sources": ["arXiv:math/0409534", "arXiv:0704.1691 (generalized form)", "de Bondt & van den Essen, Proc. AMS 133 (2005) 2201-2205"],
+      "sources": [
+        "arXiv:math/0409534",
+        "arXiv:0704.1691 (generalized form)",
+        "de Bondt & van den Essen, Proc. AMS 133 (2005) 2201-2205"
+      ],
       "pre_2026_status": "open",
       "notes": "Equivalence is universal-to-universal through dimension-inflating reductions: VC now FALSE for at least one Hessian-nilpotent degree-4 polynomial in SOME finite n; per-dimension status untouched. The Generalized VC (cofactor-Q family) is a strictly stronger separate statement, also false in some dimension."
     },
@@ -131,7 +175,10 @@
       "statement": "For phi in n variables (char 0) with det(Hess phi) a nonzero constant, the Legendre transform of phi is a polynomial — equivalently grad(phi) has a polynomial inverse.",
       "verification": "VERIFIED",
       "primary_source": "G. Meng, Appl. Math. Lett. 19 (2006) 503-510, arXiv:math-ph/0308035",
-      "sources": ["Meng 2006", "de Bondt & van den Essen, Proc. AMS 133 (2005) 2201-2205"],
+      "sources": [
+        "Meng 2006",
+        "de Bondt & van den Essen, Proc. AMS 133 (2005) 2201-2205"
+      ],
       "pre_2026_status": "open (real definite-Hessian case a theorem, Meng)",
       "notes": "Computed floor via the doubling half-edge HC_2n => JC_n: false in some finite dimension. Sharper hand analysis (fleet): phi(x,y) = y . F(x) on 6 variables has constant Hessian determinant and non-injective gradient, so HC fails at n=6 and (padding) every n >= 6; n <= 5 not directly settled. Meng's positive real-definite theorem and the HC <=> JC equivalence itself survive."
     },
@@ -141,7 +188,11 @@
       "statement": "For B open in R^n and sigma a positive measure with all polynomial integrals finite, the polynomials with vanishing integral over B form a Mathieu subspace of C[x_1..x_n].",
       "verification": "VERIFIED",
       "primary_source": "W. Zhao, J. Pure Appl. Algebra 214 (2010) 1200-1216, arXiv:0902.0212",
-      "sources": ["arXiv:0902.0212", "Derksen, van den Essen & Zhao, Israel J. Math. (2017), arXiv:1506.05192 (Gaussian Moments case => JC)", "arXiv:1006.5801 §4"],
+      "sources": [
+        "arXiv:0902.0212",
+        "Derksen, van den Essen & Zhao, Israel J. Math. (2017), arXiv:1506.05192 (Gaussian Moments case => JC)",
+        "arXiv:1006.5801 §4"
+      ],
       "pre_2026_status": "open",
       "notes": "Strictly upstream of JC (implies, not implied by). The Gaussian-measure special case already implies JC in all dimensions, so the Integral Conjecture now fails for some measure in some finite dimension; the failing dimension and measure are not identified."
     },
@@ -151,7 +202,10 @@
       "statement": "Every Keller map of the form F = x + grad(h) (symmetric Jacobian JH = Hess h, nilpotent) is invertible, in every dimension. By de Bondt-van den Essen the universal symmetric case suffices for full JC (dimension-doubling).",
       "verification": "VERIFIED",
       "primary_source": "de Bondt & van den Essen, Proc. AMS 133 (2005) 2201-2205; dimension bookkeeping: de Bondt, arXiv:1206.2865, Thm 1.2",
-      "sources": ["Proc. AMS 133 (2005) 2201-2205", "arXiv:1206.2865"],
+      "sources": [
+        "Proc. AMS 133 (2005) 2201-2205",
+        "arXiv:1206.2865"
+      ],
       "pre_2026_status": "open",
       "notes": "Reduction theorem proven and untouched. Contrapositive through the doubling: the symmetric Keller conjecture fails in dimension 6 and all even dimensions >= 6 (fleet hand analysis); computed floor records failure in some finite dimension. Symmetric maps in dimension < 6 unaddressed."
     },
@@ -161,7 +215,11 @@
       "statement": "Every Keller map C^n -> C^n is proper (equivalently injective, equivalently invertible) — per-map equivalence by BCW Thm 2.1, so this universal statement is JC_n restated.",
       "verification": "VERIFIED",
       "primary_source": "Bass, Connell & Wright, Bull. AMS (N.S.) 7 (1982) 287-330, Thm 2.1",
-      "sources": ["BCW 1982 Thm 2.1", "Bialynicki-Birula & Rosenlicht, Proc. AMS 13 (1962) 200-203", "Cynk & Rusek, Ann. Polon. Math. 56 (1991)"],
+      "sources": [
+        "BCW 1982 Thm 2.1",
+        "Bialynicki-Birula & Rosenlicht, Proc. AMS 13 (1962) 200-203",
+        "Cynk & Rusek, Ann. Polon. Math. 56 (1991)"
+      ],
       "pre_2026_status": "open (equivalent to JC)",
       "notes": "The per-map THEOREM (a proper/injective Keller map is invertible) survives untouched. The universal statement is false at every n >= 3: Alpöge's map is 3-to-1, hence non-proper — the non-properness escape hatch is exactly how the counterexample lives."
     },
@@ -175,7 +233,11 @@
         "citation": "S. Pinchuk, Math. Z. 217 (1994) 1-4: explicit F = (p,q), deg (10, 25), positive non-constant Jacobian, not injective (n=2)"
       },
       "primary_source": "S. Pinchuk, Math. Z. 217 (1994) 1-4",
-      "sources": ["Pinchuk 1994", "van den Essen 2000 Ch. 10", "Campbell, arXiv:1208.5177"],
+      "sources": [
+        "Pinchuk 1994",
+        "van den Essen 2000 Ch. 10",
+        "Campbell, arXiv:1208.5177"
+      ],
       "pre_2026_status": "refuted (1994)",
       "notes": "Historical context node: refuted 32 years before the crater by a genuinely different mechanism (over R, nonvanishing does not imply constant; Pinchuk's map never satisfied Keller's constant-determinant hypothesis, which is why it left JC standing). Both statements are now false, for unrelated reasons. Distinguish from Jelonek's properness-repaired real JC, a separate node."
     },
@@ -185,7 +247,11 @@
       "statement": "For Y : R^n -> R^n a polynomial local diffeomorphism with S_Y its set of non-proper points: if codim(S_Y) >= 2 then Y is bijective. Jelonek proved codim >= 3 unconditionally and the n=2 case, and RealJC_2n => JC_n.",
       "verification": "VERIFIED",
       "primary_source": "Z. Jelonek, Geometry of real polynomial mappings, Math. Z. 239 (2002) 321-333",
-      "sources": ["Jelonek 2002", "Fernandes, Maquera & Venato-Santos, arXiv:1108.4957", "arXiv:2011.03472"],
+      "sources": [
+        "Jelonek 2002",
+        "Fernandes, Maquera & Venato-Santos, arXiv:1108.4957",
+        "arXiv:2011.03472"
+      ],
       "pre_2026_status": "open (n >= 3); theorem for n = 2 and for codim >= 3",
       "notes": "Computed floor: fails in some finite dimension (the index-shifted route RealJC_2n => JC_n). Fleet hand analysis: the realification R^6 -> R^6 of Alpöge's map is a non-injective local diffeo with non-properness set of real codimension exactly 2, so the conjecture fails at n=6 and all n >= 6 — and the counterexample proves Jelonek's proven codim >= 3 theorem is OPTIMAL: codimension 2 genuinely fails. Open for n in {3, 4, 5}."
     },
@@ -195,7 +261,10 @@
       "statement": "If F : R^n -> R^n is C^1 and there is eps > 0 with |lambda| >= eps for every complex eigenvalue of F'(x), all x, then F is injective. Implies (via the cubic reduction) that Keller maps are injective.",
       "verification": "VERIFIED",
       "primary_source": "Chamberland & Meisters, Canad. Math. Bull. 41 (1998) 442-451, Conjecture 2.1, Thms 4.1-4.2",
-      "sources": ["Chamberland & Meisters 1998", "Fernandes, Gutierrez & Rabanal, Canad. J. Math. 56 (2004) (n=2 proved)"],
+      "sources": [
+        "Chamberland & Meisters 1998",
+        "Fernandes, Gutierrez & Rabanal, Canad. J. Math. 56 (2004) (n=2 proved)"
+      ],
       "pre_2026_status": "open (n >= 3); theorem for n = 2",
       "notes": "'Spectral gap' is a nonstandard gloss; literature name is the Chamberland Conjecture. The raw dim-3 map does NOT satisfy the eigenvalue hypothesis — refutation lands only after pushing through the BCW/Yagzhev reduction (all eigenvalues +1) and realifying, i.e. in some large real dimension 2N. The planar theorem survives. About arbitrary C^1 maps, strictly stronger than what JC needed."
     },
@@ -205,7 +274,10 @@
       "statement": "Every finite-dimensional ternary Engel algebra over a char-0 field satisfying a Capelli system is weakly nilpotent — equivalent (Yagzhev; Belov-Bokut-Rowen-Yu Thms 2.6-2.7) to JC in char 0, via the cubic-homogeneous correspondence.",
       "verification": "VERIFIED",
       "primary_source": "Yagzhev, Sibirsk. Mat. Zh. 21 (1980) 141-150; Belov, Bokut, Rowen & Yu, arXiv:1308.0674 (Thms 2.1-2.7)",
-      "sources": ["arXiv:1308.0674", "Yagzhev, Proc. Shafarevich Seminar (2000) 83-88"],
+      "sources": [
+        "arXiv:1308.0674",
+        "Yagzhev, Proc. Shafarevich Seminar (2000) 83-88"
+      ],
       "pre_2026_status": "open (char 0; char p > 3 failures long known)",
       "notes": "There now EXISTS a finite-dimensional ternary Engel char-0 algebra with Capelli identities that is not weakly nilpotent — its dimension is not 3 but some larger N obtained from cubifying the dim-3 map. The correspondence theorems survive; the char-0 side now matches the long-known char-p failures. 'Weakly nilpotent' = every element nilpotent, not algebra nilpotence."
     },
@@ -215,7 +287,10 @@
       "statement": "HDC^m_n: any nonzero homomorphism between higher-order hom-associative Weyl algebras A^k_n -> A^k'_n (k, k' with exactly m nonzero elements) is an isomorphism; the stable form HDC^<=n_n is equivalent to DC_n (Bäck, Prop 7).",
       "verification": "VERIFIED",
       "primary_source": "P. Bäck, arXiv:2502.04051; Algebras and Representation Theory 29 (2026) 697-719, Conjecture 3, Proposition 7",
-      "sources": ["arXiv:2502.04051", "Alg. Rep. Theory 29 (2026) 697-719"],
+      "sources": [
+        "arXiv:2502.04051",
+        "Alg. Rep. Theory 29 (2026) 697-719"
+      ],
       "pre_2026_status": "open (HDC^1_1 proven)",
       "notes": "Rides the Dixmier node through the exact per-n equivalence DC_n <=> HDC^<=n_n (Bäck Prop 7), so it inherits Dixmier's status: sharp hand analysis gives false for every rank n >= 2, computed floor REFUTED_SOME_FINITE_DIM (Dixmier reaches the root only through the dimension-doubling edge). The proven first-Weyl-algebra case HDC^1_1 survives. Recent single-lineage source (2025/26), flagged as such."
     },
@@ -225,7 +300,10 @@
       "statement": "Several char-p versions of JC (e.g. adding the hypothesis p does not divide the field-extension degree), each of which, if true, implies JC over C.",
       "verification": "VERIFIED",
       "primary_source": "Maubach & Rauf, arXiv:1507.02946; Lang, J. Pure Appl. Algebra (2024), arXiv:2310.15199",
-      "sources": ["arXiv:1507.02946", "arXiv:2310.15199"],
+      "sources": [
+        "arXiv:1507.02946",
+        "arXiv:2310.15199"
+      ],
       "pre_2026_status": "open",
       "notes": "Computed floor: false in some finite dimension (the authors frame the implications per-dimension, but the dimension semantics were not verbatim-confirmed from the primary texts — conservatively encoded as mixing pending wave-2 escalation). Tsuchimoto's p-curvature route is a different edge (via Dixmier) and is excluded here."
     },
@@ -235,7 +313,10 @@
       "statement": "For R with I-adic topology: an n-tuple F in the Tate algebra with det JF a unit and F(0) = 0 has a compositional inverse in the same Tate algebra. Unconditionally TJC(R,I,n) => JC(R/I, n).",
       "verification": "VERIFIED",
       "primary_source": "Hamada, Kato & Komiya, arXiv:2502.10769; J. Pure Appl. Algebra (2025), Thm 0.1",
-      "sources": ["arXiv:2502.10769", "J. Pure Appl. Algebra (2025)"],
+      "sources": [
+        "arXiv:2502.10769",
+        "J. Pure Appl. Algebra (2025)"
+      ],
       "pre_2026_status": "open in char 0 (already false when R/I has char p)",
       "notes": "2025 coinage ('Tate' = Tate algebras, not Tate's conjecture on cycles). Encoded via the unconditional direction only: TJC(R,I,3) is false for every (R,I) whose quotient contains the counterexample's coefficient field, hence false at all n >= 3 for such (R,I). The converse direction needs Hausdorff hypotheses and is left un-encoded."
     },
@@ -245,7 +326,11 @@
       "statement": "For every n and every Keller map F over Z_p, some value F(b) is unimodular — equivalently the mod-p reduction of F is not the zero map. Theorem (vdE-L 2015): JC over C holds iff this holds over Z_p for almost all primes p.",
       "verification": "VERIFIED",
       "primary_source": "van den Essen & Lipton, J. Pure Appl. Algebra 219 (2015) 2624-2628",
-      "sources": ["JPAA 219 (2015) 2624-2628", "Mendson dissertation (wodson.org/Diss300.pdf), Thms 3.4-3.7", "arXiv:2502.10769"],
+      "sources": [
+        "JPAA 219 (2015) 2624-2628",
+        "Mendson dissertation (wodson.org/Diss300.pdf), Thms 3.4-3.7",
+        "arXiv:2502.10769"
+      ],
       "pre_2026_status": "open for Z_p (provably true for infinite residue fields; provably false for char-p local domains)",
       "notes": "MERGED node (the listicle's 'p-adic Unimodular Conjecture' and 'p-adic nonzero-reduction assertion' are the same van den Essen-Lipton statement). The published equivalence quantifies over almost all primes; conservative floor: now fails for infinitely many primes in some finite dimension. No explicit zero-reduction witness is exhibited by the counterexample (Alpöge's map witnesses non-injectivity, not zero-reduction), and no specific prime is certified."
     },
@@ -255,7 +340,10 @@
       "statement": "JC_n holds iff every commutative basis of the k[X]-module of derivations Der_k(k[X]) consists of locally nilpotent derivations (Nowicki 1986).",
       "verification": "VERIFIED",
       "primary_source": "A. Nowicki, J. Pure Appl. Algebra 40 (1986) 279-302",
-      "sources": ["Nowicki 1986", "Nowicki, Polynomial Derivations and Their Rings of Constants (Torun 1994)"],
+      "sources": [
+        "Nowicki 1986",
+        "Nowicki, Polynomial Derivations and Their Rings of Constants (Torun 1994)"
+      ],
       "pre_2026_status": "open (equivalent to JC per dimension)",
       "notes": "The 'all commutative bases are LND' side is now false at n = 3 (a commutative basis of Der(k[x,y,z]) with a non-locally-nilpotent element exists) and for all n >= 3. The equivalence theorem itself survives. DISAMBIGUATE from the famous Nowicki conjecture on Weitzenbock derivations — a different, now-proven statement with no JC edge."
     },
@@ -266,7 +354,11 @@
       "verification": "VERIFIED",
       "proven_theorem": true,
       "primary_source": "J.-T. Yu, On the Jacobian Conjecture: reduction of coefficients, J. Algebra 171 (1995) 515-523",
-      "sources": ["Yu 1995", "Druzkowski, Ann. Polon. Math. 66 (1997) 67-75", "encyclopediaofmath.org/wiki/Jacobian_conjecture"],
+      "sources": [
+        "Yu 1995",
+        "Druzkowski, Ann. Polon. Math. 66 (1997) 67-75",
+        "encyclopediaofmath.org/wiki/Jacobian_conjecture"
+      ],
       "pre_2026_status": "proven theorem (1995)",
       "notes": "Survives: the counterexample lies outside the sign-restricted class. (The listicle's 'nonnegative-coefficient injectivity assertion' garbled a proven theorem into a conjecture.)"
     },
@@ -276,7 +368,10 @@
       "statement": "Char 0: an endomorphism of k[x_1..x_n] preserves square-free polynomials iff it is a Keller map; hence JC_n is equivalent to 'every square-free-preserving endomorphism is an automorphism'.",
       "verification": "VERIFIED",
       "primary_source": "Jedrzejewicz & Zielinski, Eur. J. Math. 3 (2017) 199-214, arXiv:1611.07439; de Bondt & Yan, arXiv:1304.0634; Jedrzejewicz, JPAA 217 (2013) 165-171",
-      "sources": ["arXiv:1611.07439", "arXiv:1304.0634"],
+      "sources": [
+        "arXiv:1611.07439",
+        "arXiv:1304.0634"
+      ],
       "pre_2026_status": "open (equivalent to JC per dimension)",
       "notes": "Now false at every n >= 3: Alpöge's map preserves square-freeness (it is Keller) yet is not an automorphism. The two characterization directions were always theorems; '=> automorphism' was exactly JC."
     },
@@ -286,7 +381,10 @@
       "statement": "A Keller map is invertible iff an associated homomorphism of Picard-Vessiot-type differential extensions is bijective; JC_n is equivalent to the universal form of this criterion.",
       "verification": "VERIFIED",
       "primary_source": "Crespo & Hajto, Israel J. Math. 186 (2011) 401-406; Adamus, Crespo & Hajto, SIGMA 15 (2019) 034; effective form arXiv:1506.01662",
-      "sources": ["Israel J. Math. 186 (2011) 401-406", "SIGMA 15 (2019) 034"],
+      "sources": [
+        "Israel J. Math. 186 (2011) 401-406",
+        "SIGMA 15 (2019) 034"
+      ],
       "pre_2026_status": "open (equivalent to JC per dimension)",
       "notes": "The per-map characterization and the Wronskian decision algorithm survive as tools (they simply return 'not invertible' on the counterexample); the universal reformulation is false at every n >= 3."
     },
@@ -296,7 +394,11 @@
       "statement": "For every Keller map the Bass-Connell-Wright rooted-tree expansion of the formal inverse terminates (the formal inverse is polynomial) — equivalent to JC_n per dimension (BCW Ch. III).",
       "verification": "VERIFIED",
       "primary_source": "Bass, Connell & Wright, Bull. AMS 7 (1982) 287-330, Ch. III; D. Wright, J. Pure Appl. Algebra 57 (1989); D. Singer, Electron. J. Combin. 8 (2001)",
-      "sources": ["BCW 1982 Ch. III", "arXiv:math/0511214", "arXiv:2301.08221"],
+      "sources": [
+        "BCW 1982 Ch. III",
+        "arXiv:math/0511214",
+        "arXiv:2301.08221"
+      ],
       "pre_2026_status": "open (equivalent to JC per dimension)",
       "notes": "MINTED from the fleet's split recommendation: the tree formula itself is an unconditional theorem (see bcw_tree_formula node); this node is the JC-equivalent termination assertion, now false at every n >= 3 — Alpöge's map's formal inverse never terminates. The n=2 instance remains open with JC_2."
     },
@@ -307,7 +409,10 @@
       "verification": "VERIFIED",
       "proven_theorem": true,
       "primary_source": "Bass, Connell & Wright, Bull. AMS 7 (1982) 287-330, Ch. III",
-      "sources": ["BCW 1982", "Wright, arXiv:math/0511214"],
+      "sources": [
+        "BCW 1982",
+        "Wright, arXiv:math/0511214"
+      ],
       "pre_2026_status": "proven theorem (1982)",
       "notes": "Survives untouched; the crater kills only the derived termination assertion (jc_tree_vanishing)."
     },
@@ -317,147 +422,357 @@
       "statement": "For every H with symmetric nilpotent Jacobian, the rows of JH are linearly dependent over the base field (per dimension; known true n <= 4, homogeneous n <= 5; adjacent variants false since Gordan-Noether 1876 for n >= 5).",
       "verification": "VERIFIED",
       "primary_source": "de Bondt & van den Essen, JPAA 193 (2004) 61-70; de Bondt, Symmetric Jacobians, Cent. Eur. J. Math. 12 (2014), arXiv:1206.2865 §3",
-      "sources": ["JPAA 193 (2004) 61-70", "arXiv:1206.2865", "Gordan & Noether, Math. Ann. 10 (1876) 547-568"],
+      "sources": [
+        "JPAA 193 (2004) 61-70",
+        "arXiv:1206.2865",
+        "Gordan & Noether, Math. Ann. 10 (1876) 547-568"
+      ],
       "pre_2026_status": "mixed: proven low dimensions; adjacent variants refuted (1876, 2006)",
       "notes": "NO EDGE ADMITTED: the universal implication chain to JC could not be pinned to a displayed theorem in the primary sources (fleet flag), so per the admission rules this node carries no edge and its computed status stays OPEN — the conservative floor. Its proven low-dimensional theorems are untouched either way. The exact name 'Symmetric Dependence Problem' is not literature-verbatim (the phrase is 'symmetric variants of the dependence problem')."
+    },
+    {
+      "id": "special_image_conjecture",
+      "name": "Special Image Conjecture SIC(n) (Derksen–van den Essen–Zhao)",
+      "statement": "SIC(n): Ker(E_n) is a Mathieu (Mathieu-Zhao) subspace of C[w_1..w_n, z_1..z_n], where E_n is the Gaussian-moments map P(w)Q(z) -> (P(d_z)Q)(z). Named intermediate in the chain GMC(2n) => SIC(n) => JC(n).",
+      "verification": "VERIFIED",
+      "primary_source": "H. Derksen, A. van den Essen, W. Zhao, The Gaussian Moments Conjecture and the Jacobian Conjecture, Israel J. Math. 219 (2017) 917-928; arXiv:1506.05192",
+      "sources": [
+        "arXiv:1506.05192",
+        "Israel J. Math. 219 (2017) 917-928",
+        "W. Zhao, J. Algebra 350 (2012) 245-272 (Mathieu subspaces)"
+      ],
+      "pre_2026_status": "open (equivalent-strength intermediate; per-n implies JC)",
+      "notes": "Round-2 second-ring node. SIC(n) => JC(n) is per-n (dimension_preserving), so it is refuted for all n>=3. The bridge between the Gaussian Moments Conjecture and JC."
+    },
+    {
+      "id": "gaussian_moments_conjecture",
+      "name": "Gaussian Moments Conjecture GMC (Derksen–van den Essen–Zhao)",
+      "statement": "For a standard Gaussian X in R^n and complex polynomial P: if E[P(X)^m]=0 for all m>=1, then E[P(X)^m Q(X)]=0 for all large m, every Q. Theorem 1.6: GMC (all n) => JC (all n), via GMC(2n) => SIC(n) => JC(n).",
+      "verification": "VERIFIED",
+      "primary_source": "H. Derksen, A. van den Essen, W. Zhao, Israel J. Math. 219 (2017) 917-928 (Thm 1.6); arXiv:1506.05192",
+      "sources": [
+        "arXiv:1506.05192",
+        "Israel J. Math. 219 (2017) 917-928"
+      ],
+      "pre_2026_status": "open",
+      "notes": "Round-2 second-ring node. Strictly upstream of JC. The GMC(2n) => SIC(n) step DOUBLES dimension, so only the weak 'some finite dimension' floor flows to GMC."
+    },
+    {
+      "id": "poisson_conjecture",
+      "name": "Poisson Conjecture (Adjamagbo–van den Essen)",
+      "statement": "Every C-algebra endomorphism of the Poisson algebra P_n = C[x_1..x_n, y_1..y_n] with the canonical symplectic bracket that preserves the bracket is an automorphism. Adjamagbo-van den Essen prove Jacobian, Dixmier and Poisson are equivalent in any characteristic.",
+      "verification": "VERIFIED",
+      "primary_source": "K. Adjamagbo & A. van den Essen, On the equivalence of the Jacobian, Dixmier and Poisson Conjectures in any characteristic, arXiv:math/0608009 (2006); Acta Math. Vietnam. 32 (2007)",
+      "sources": [
+        "arXiv:math/0608009",
+        "Acta Math. Vietnam. 32 (2007)",
+        "Tsuchimoto 2005 / Belov-Kanel & Kontsevich 2007 (index map)"
+      ],
+      "pre_2026_status": "open",
+      "notes": "Round-2 second-ring node. The CLASSICAL (commutative symplectic) counterpart of the Dixmier conjecture: P_n is the classical limit of the Weyl algebra A_n. Poisson_n <=> Dixmier_n is per-n (dimension_preserving); it reaches JC only through Dixmier's dimension-doubling edge, so it inherits Dixmier's REFUTED_SOME_FINITE_DIM floor."
+    },
+    {
+      "id": "jc_over_char0_fields_and_z",
+      "name": "Base-field / over-Z reduction of JC (Connell–van den Dries)",
+      "statement": "JC over any characteristic-0 field, and its over-Z formulation (integer-coefficient Keller maps), is equivalent per fixed dimension n to JC over C: if JC is false it has a counterexample with integer coefficients and Jacobian determinant 1; JC holds for all char-0 fields or for none.",
+      "verification": "VERIFIED",
+      "primary_source": "E. Connell & L. van den Dries, Injective polynomial maps and the Jacobian conjecture, J. Pure Appl. Algebra 28 (1983) 235-239",
+      "sources": [
+        "J. Pure Appl. Algebra 28 (1982) 235-239"
+      ],
+      "pre_2026_status": "open (equivalent to JC over C, per n)",
+      "notes": "Round-2 second-ring node, and the reason Alpoge's rational-coefficient dim-3 map is a bona fide counterexample over every characteristic-0 field: refuted for all n>=3, per-dimension."
+    },
+    {
+      "id": "jedrzejewicz_zielinski_jc_mnk",
+      "name": "Jedrzejewicz-Zielinski generalized Jacobian family JC(m,n,k)",
+      "statement": "JC(m,n,k): for f_1..f_m in k[x_1..x_n] (char 0, m<=n), if the gcd of all m-by-m Jacobian minors is a nonzero constant, then k[f_1..f_m] is a ring of constants of a k-derivation. By Lemma 1.1, JC(m,n,k) implies the Jacobian Conjecture for m variables; the diagonal m=n is equivalent to JC_m.",
+      "verification": "VERIFIED",
+      "primary_source": "P. Jedrzejewicz & J. Zielinski, Analogs of Jacobian conditions for subrings, J. Pure Appl. Algebra 221 (2017) 2111-2118; arXiv:1601.01508 (Lemma 1.1)",
+      "sources": [
+        "arXiv:1601.01508",
+        "J. Pure Appl. Algebra 221 (2017) 2111-2118",
+        "arXiv:1611.07439 (companion)"
+      ],
+      "pre_2026_status": "open",
+      "notes": "Round-2 node; RESOLVES the quarantined pending-rename 'generalized_subalgebra_jc'. JC(m,n,k) => JC_m per m (dimension_preserving), so the whole family is refuted for m>=3 (every n>=m); JC(1,n,k) is a theorem (Ayad 2002) and JC(2,n,k) is open with plane JC."
+    },
+    {
+      "id": "bisi_subtree_shuffle_markov_conjecture",
+      "name": "Bisi et al. subtree-shuffling Markov-chain sufficient condition for JC",
+      "statement": "Bisi-Dyszewski-Gantert-Johnston-Prochno-Schmid (Conjecture 1.5): for some degree d>=3, a subtree-shuffling ('p-shuffle') Markov chain on large d-Catalan (planar d-ary) trees has the uniform stationary distribution for all shuffle-lengths p. Theorem 1.6: if Conjecture 1.5 holds for some d>=3, then the (full, all-dimension) Jacobian Conjecture holds.",
+      "verification": "VERIFIED",
+      "primary_source": "E. Bisi, P. Dyszewski, N. Gantert, S. Johnston, J. Prochno, D. Schmid, Random planar trees and the Jacobian conjecture, arXiv:2301.08221 (2023); J. London Math. Soc. 113(2) (2026), Thm 1.6 / Conj 1.5",
+      "sources": [
+        "arXiv:2301.08221",
+        "J. London Math. Soc. 113(2) (2026)"
+      ],
+      "pre_2026_status": "open",
+      "notes": "Round-2 node: a probabilistic sufficient condition for JC. Thm 1.6 goes from a single degree d>=3 to the FULL all-dimension JC via the dimension-increasing symmetric/degree reduction (the quantified p is shuffle-length, not dimension), so the edge is dimension_mixing -> REFUTED_SOME_FINITE_DIM. (Wave-2 correction: originally mis-cited as Thm 2.12 and mis-typed dimension_preserving.)"
+    },
+    {
+      "id": "ax_grothendieck_theorem",
+      "name": "Ax-Grothendieck theorem",
+      "statement": "Every injective polynomial self-map of affine n-space over an algebraically closed field is surjective, hence bijective. A theorem (Ax via model theory; Grothendieck via reduction to finite fields), whose proof never invokes JC.",
+      "verification": "VERIFIED",
+      "proven_theorem": true,
+      "primary_source": "J. Ax, The elementary theory of finite fields, Ann. of Math. 88 (1968) 239-271; A. Grothendieck, EGA IV",
+      "sources": [
+        "Ann. of Math. 88 (1968) 239-271",
+        "Grothendieck, EGA IV"
+      ],
+      "pre_2026_status": "proven theorem",
+      "notes": "Round-2 BOUNDARY node (no propagating edge): Ax-Grothendieck says injective => bijective for polynomial self-maps, so the ONLY way a constant-Jacobian Keller map can fail to be an automorphism is by being NON-INJECTIVE -- which is exactly the crack Alpoge's 3-to-1 map exploits. It frames why the counterexample has the shape it does, and survives untouched."
     }
   ],
   "edges": [
     {
-      "from": "dixmier_conjecture", "to": "jacobian_conjecture",
-      "type": "implies", "dimension_semantics": "dimension_mixing",
+      "from": "dixmier_conjecture",
+      "to": "jacobian_conjecture",
+      "type": "implies",
+      "dimension_semantics": "dimension_mixing",
       "citation": "DC_n => JC_2n: the classical 'well-known' direction (van den Essen 2000). The Weyl algebra A_n has a 2n-dimensional symbol space, so a rank-n Dixmier endomorphism is a Jacobian problem in 2n variables — the implication DOUBLES dimension (n -> 2n), it is not per-n. Together with JC_2n => DC_n (Tsuchimoto 2005; Belov-Kanel & Kontsevich 2007, arXiv:math/0512171) this is the STABLE equivalence.",
       "notes": "Wave-2 correction: originally mis-typed dimension_preserving as DC_n => JC_n; that fabricated an n>=3 refutation the theorem does not license. Correct sharp consequence (hand analysis, in the node): DC_n => JC_2n plus JC false for all m>=3 gives DC_n false for ALL n>=2 (2n>=4>=3); DC_1 => JC_2 is open, so DC_1 survives. The engine records the conservative dimension_mixing floor REFUTED_SOME_FINITE_DIM; the sharp 'all n>=2' lives in the node notes."
     },
     {
-      "from": "jacobian_conjecture", "to": "dixmier_conjecture",
-      "type": "implies", "dimension_semantics": "dimension_mixing",
+      "from": "jacobian_conjecture",
+      "to": "dixmier_conjecture",
+      "type": "implies",
+      "dimension_semantics": "dimension_mixing",
       "citation": "JC_2n => DC_n: Tsuchimoto, Osaka J. Math. 42 (2005) 435-452; independently Belov-Kanel & Kontsevich, Mosc. Math. J. 7 (2007), arXiv:math/0512171",
       "notes": "Factor-2 dimension blowup; transmits nothing from a JC failure (wrong direction for modus tollens). Recorded for completeness of the stable equivalence."
     },
     {
-      "from": "cubic_homogeneous_jc", "to": "jacobian_conjecture",
-      "type": "implies", "dimension_semantics": "dimension_mixing",
+      "from": "cubic_homogeneous_jc",
+      "to": "jacobian_conjecture",
+      "type": "implies",
+      "dimension_semantics": "dimension_mixing",
       "citation": "BCW, Bull. AMS 7 (1982) 287-330 §II; Yagzhev 1980: cubic-homogeneous JC in all dimensions implies full JC (dimension-increasing reduction)"
     },
     {
-      "from": "druzkowski_jc", "to": "jacobian_conjecture",
-      "type": "implies", "dimension_semantics": "dimension_mixing",
+      "from": "druzkowski_jc",
+      "to": "jacobian_conjecture",
+      "type": "implies",
+      "dimension_semantics": "dimension_mixing",
       "citation": "Druzkowski, Math. Ann. 264 (1983) 303-313: cubic-linear form suffices in sufficiently large dimension"
     },
     {
-      "from": "mathieu_conjecture", "to": "jacobian_conjecture",
-      "type": "implies", "dimension_semantics": "dimension_mixing",
+      "from": "mathieu_conjecture",
+      "to": "jacobian_conjecture",
+      "type": "implies",
+      "dimension_semantics": "dimension_mixing",
       "citation": "Mathieu 1997 (via the BCW/Yagzhev degree-3 reduction); per-N sharpening in Zwart arXiv:2511.16561 kept in node notes pending corroboration"
     },
     {
-      "from": "image_conjecture", "to": "jacobian_conjecture",
-      "type": "implies", "dimension_semantics": "dimension_mixing",
+      "from": "image_conjecture",
+      "to": "jacobian_conjecture",
+      "type": "implies",
+      "dimension_semantics": "dimension_mixing",
       "citation": "Zhao 2010 (arXiv:0902.0210); van den Essen arXiv:1006.5801: IC => Generalized Vanishing Conjecture => JC (dimension-inflating chain)"
     },
     {
-      "from": "vanishing_conjecture", "to": "jacobian_conjecture",
-      "type": "equivalent", "dimension_semantics": "dimension_mixing",
+      "from": "vanishing_conjecture",
+      "to": "jacobian_conjecture",
+      "type": "equivalent",
+      "dimension_semantics": "dimension_mixing",
       "citation": "Zhao, Trans. AMS 359 (2007): JC (all n) equivalent to VC (all n) via BCW degree-3 + de Bondt-van den Essen symmetric reductions, both dimension-inflating"
     },
     {
-      "from": "hessian_conjecture", "to": "jacobian_conjecture",
-      "type": "implies", "dimension_semantics": "dimension_mixing",
+      "from": "hessian_conjecture",
+      "to": "jacobian_conjecture",
+      "type": "implies",
+      "dimension_semantics": "dimension_mixing",
       "citation": "HC_2n => JC_n (doubling, via phi = y.F(x) / de Bondt-van den Essen symmetric reduction; Meng 2006)",
       "notes": "The doubling half-edge that transmits the refutation (floor: some finite dimension; sharp: n >= 6, see node notes)."
     },
     {
-      "from": "jacobian_conjecture", "to": "hessian_conjecture",
-      "type": "implies", "dimension_semantics": "dimension_preserving",
+      "from": "jacobian_conjecture",
+      "to": "hessian_conjecture",
+      "type": "implies",
+      "dimension_semantics": "dimension_preserving",
       "citation": "JC_n => HC_n (gradient maps are polynomial maps; Meng 2006)",
       "notes": "Forward half-edge; with JC refuted it can only orphan HC's conditional support — HC is refuted through the doubling edge instead."
     },
     {
-      "from": "integral_conjecture", "to": "jacobian_conjecture",
-      "type": "implies", "dimension_semantics": "dimension_mixing",
+      "from": "integral_conjecture",
+      "to": "jacobian_conjecture",
+      "type": "implies",
+      "dimension_semantics": "dimension_mixing",
       "citation": "Gaussian Moments special case implies JC in all dimensions: Derksen, van den Essen & Zhao, Israel J. Math. (2017), arXiv:1506.05192"
     },
     {
-      "from": "symmetric_jc", "to": "jacobian_conjecture",
-      "type": "implies", "dimension_semantics": "dimension_mixing",
+      "from": "symmetric_jc",
+      "to": "jacobian_conjecture",
+      "type": "implies",
+      "dimension_semantics": "dimension_mixing",
       "citation": "de Bondt & van den Essen, Proc. AMS 133 (2005) 2201-2205: universal symmetric case suffices for full JC (dimension-doubling; sharp form arXiv:1206.2865 Thm 1.2)"
     },
     {
-      "from": "keller_properness_universal", "to": "jacobian_conjecture",
-      "type": "equivalent", "dimension_semantics": "dimension_preserving",
+      "from": "keller_properness_universal",
+      "to": "jacobian_conjecture",
+      "type": "equivalent",
+      "dimension_semantics": "dimension_preserving",
       "citation": "BCW 1982 Thm 2.1: per-map proper <=> injective <=> invertible for Keller maps, so universal properness is JC_n restated"
     },
     {
-      "from": "jelonek_real_jc", "to": "jacobian_conjecture",
-      "type": "implies", "dimension_semantics": "dimension_mixing",
+      "from": "jelonek_real_jc",
+      "to": "jacobian_conjecture",
+      "type": "implies",
+      "dimension_semantics": "dimension_mixing",
       "citation": "Jelonek, Math. Z. 239 (2002): RealJC_2n => JC_n (fixed index shift n -> 2n; quoted in arXiv:1108.4957)",
       "notes": "Controlled shift encoded as mixing so the computed floor never overstates (sharp: fails for all n >= 6, open n in {3,4,5} — node notes)."
     },
     {
-      "from": "chamberland_conjecture", "to": "jacobian_conjecture",
-      "type": "implies", "dimension_semantics": "dimension_mixing",
+      "from": "chamberland_conjecture",
+      "to": "jacobian_conjecture",
+      "type": "implies",
+      "dimension_semantics": "dimension_mixing",
       "citation": "Chamberland & Meisters 1998, Thms 4.1-4.2: Conj 2.1 => Keller maps injective (via cubic reduction + realification)"
     },
     {
-      "from": "yagzhev_engel_capelli", "to": "jacobian_conjecture",
-      "type": "equivalent", "dimension_semantics": "dimension_mixing",
+      "from": "yagzhev_engel_capelli",
+      "to": "jacobian_conjecture",
+      "type": "equivalent",
+      "dimension_semantics": "dimension_mixing",
       "citation": "Yagzhev 1980; Belov-Bokut-Rowen-Yu, arXiv:1308.0674, Thms 2.6-2.7 (via the cubic-homogeneous, dimension-increasing correspondence)"
     },
     {
-      "from": "hom_dixmier_conjecture", "to": "dixmier_conjecture",
-      "type": "equivalent", "dimension_semantics": "dimension_preserving",
+      "from": "hom_dixmier_conjecture",
+      "to": "dixmier_conjecture",
+      "type": "equivalent",
+      "dimension_semantics": "dimension_preserving",
       "citation": "Bäck, arXiv:2502.04051, Prop 7: DC_n <=> stable HDC^<=n_n, exactly per n"
     },
     {
-      "from": "char_p_strengthenings", "to": "jacobian_conjecture",
-      "type": "implies", "dimension_semantics": "dimension_mixing",
+      "from": "char_p_strengthenings",
+      "to": "jacobian_conjecture",
+      "type": "implies",
+      "dimension_semantics": "dimension_mixing",
       "citation": "Lang arXiv:2310.15199; Maubach & Rauf arXiv:1507.02946: each char-p version, if true, implies JC over C (dimension semantics conservatively floored to mixing; see node notes)"
     },
     {
-      "from": "tate_jacobian_conjecture", "to": "jacobian_conjecture",
-      "type": "implies", "dimension_semantics": "dimension_preserving",
+      "from": "tate_jacobian_conjecture",
+      "to": "jacobian_conjecture",
+      "type": "implies",
+      "dimension_semantics": "dimension_preserving",
       "citation": "Hamada, Kato & Komiya, arXiv:2502.10769, Thm 0.1: TJC(R,I,n) => JC(R/I,n) unconditionally, per n"
     },
     {
-      "from": "unimodular_conjecture", "to": "jacobian_conjecture",
-      "type": "implies", "dimension_semantics": "dimension_mixing",
+      "from": "unimodular_conjecture",
+      "to": "jacobian_conjecture",
+      "type": "implies",
+      "dimension_semantics": "dimension_mixing",
       "citation": "van den Essen & Lipton, JPAA 219 (2015): UC over Z_p for almost all p => JC over C (quantifier over primes; conservatively floored to mixing)"
     },
     {
-      "from": "nowicki_commutative_basis", "to": "jacobian_conjecture",
-      "type": "equivalent", "dimension_semantics": "dimension_preserving",
+      "from": "nowicki_commutative_basis",
+      "to": "jacobian_conjecture",
+      "type": "equivalent",
+      "dimension_semantics": "dimension_preserving",
       "citation": "Nowicki, JPAA 40 (1986) 279-302: JC_n <=> every commutative basis of Der_k(k[X]) is locally nilpotent, per n"
     },
     {
-      "from": "square_free_preserver", "to": "jacobian_conjecture",
-      "type": "equivalent", "dimension_semantics": "dimension_preserving",
+      "from": "square_free_preserver",
+      "to": "jacobian_conjecture",
+      "type": "equivalent",
+      "dimension_semantics": "dimension_preserving",
       "citation": "de Bondt & Yan arXiv:1304.0634 + Jedrzejewicz JPAA 217 (2013), assembled in Jedrzejewicz & Zielinski, Eur. J. Math. 3 (2017): square-free-preserver => automorphism is JC_n restated"
     },
     {
-      "from": "picard_vessiot_reformulation", "to": "jacobian_conjecture",
-      "type": "equivalent", "dimension_semantics": "dimension_preserving",
+      "from": "picard_vessiot_reformulation",
+      "to": "jacobian_conjecture",
+      "type": "equivalent",
+      "dimension_semantics": "dimension_preserving",
       "citation": "Crespo & Hajto, Israel J. Math. 186 (2011); Adamus, Crespo & Hajto, SIGMA 15 (2019) 034: PV-bijectivity criterion is an iff reformulation of invertibility, universal form per n"
     },
     {
-      "from": "jc_tree_vanishing", "to": "jacobian_conjecture",
-      "type": "equivalent", "dimension_semantics": "dimension_preserving",
+      "from": "jc_tree_vanishing",
+      "to": "jacobian_conjecture",
+      "type": "equivalent",
+      "dimension_semantics": "dimension_preserving",
       "citation": "BCW 1982 Ch. III: JC <=> polynomiality (termination) of the formal inverse tree series for Keller maps, per n"
+    },
+    {
+      "from": "gaussian_moments_conjecture",
+      "to": "special_image_conjecture",
+      "type": "implies",
+      "dimension_semantics": "dimension_mixing",
+      "citation": "Derksen-van den Essen-Zhao, arXiv:1506.05192, Prop. 3.2: GMC(2n) => SIC(n) (dimension-doubling)."
+    },
+    {
+      "from": "special_image_conjecture",
+      "to": "jacobian_conjecture",
+      "type": "implies",
+      "dimension_semantics": "dimension_preserving",
+      "citation": "Derksen-van den Essen-Zhao, arXiv:1506.05192, Thm 2.7: SIC(n) => JC(n), per dimension."
+    },
+    {
+      "from": "poisson_conjecture",
+      "to": "dixmier_conjecture",
+      "type": "equivalent",
+      "dimension_semantics": "dimension_preserving",
+      "citation": "Adjamagbo-van den Essen, arXiv:math/0608009, Thm 7 (chain CJC(2n) => CPC(n) => CDC(n) => CJC(n)): Poisson_n <=> Dixmier_n both hold at the same index n (P_n is the classical limit of the Weyl algebra A_n). The dimension-doubling in that paper is on the Jacobian<->Poisson step, NOT on this per-n Poisson<->Dixmier edge.",
+      "notes": "Poisson inherits Dixmier's status through this preserving equivalence; Dixmier reaches the root only via its own dimension-doubling edge, so Poisson lands at the REFUTED_SOME_FINITE_DIM floor. (The 2n is booked exactly once, on the Dixmier<->JC edge.)"
+    },
+    {
+      "from": "jc_over_char0_fields_and_z",
+      "to": "jacobian_conjecture",
+      "type": "equivalent",
+      "dimension_semantics": "dimension_preserving",
+      "citation": "Connell-van den Dries, Injective polynomial maps and the Jacobian conjecture, J. Pure Appl. Algebra 28 (1983) 235-239: JC over any char-0 field / over Z is equivalent per n to JC over C (specialization preserves the variable count)."
+    },
+    {
+      "from": "jedrzejewicz_zielinski_jc_mnk",
+      "to": "jacobian_conjecture",
+      "type": "implies",
+      "dimension_semantics": "dimension_preserving",
+      "citation": "Jedrzejewicz-Zielinski, arXiv:1601.01508, Lemma 1.1: JC(m,n,k) implies the Jacobian Conjecture for m variables (per m)."
+    },
+    {
+      "from": "bisi_subtree_shuffle_markov_conjecture",
+      "to": "jacobian_conjecture",
+      "type": "implies",
+      "dimension_semantics": "dimension_mixing",
+      "citation": "Bisi et al., arXiv:2301.08221, Thm 1.6 (from Conj 1.5): a single degree d>=3 shuffle-uniformity condition implies the FULL all-dimension JC via the dimension-increasing reduction -> dimension_mixing."
     }
   ],
   "quarantine_findings": {
     "note": "Candidates from the source listicle that FAILED literature verification. Kept visible: a confabulated conjecture list is itself a finding. None carries edges; none propagates.",
     "likely_confabulated": [
-      {"id": "system_jacobian_conjecture", "finding": "No such named conjecture. Nearest real object: Guccione-Guccione-Valqui (arXiv:1406.0886) JC-iff-polynomial-system-solvable reduction — a paper result, not a named conjecture."},
-      {"id": "base_ideal_conjecture", "finding": "No such named conjecture. 'Base ideal' is a standard term in birational geometry; no Base-Ideal Conjecture exists in the JC circle (nearest genuine relative: Wright's ideal-membership reformulation, Contemp. Math. 369 (2005))."},
-      {"id": "truong_conjecture_b", "finding": "Tuyen Trung Truong's JC papers label conjectures A, C, D (arXiv:1503.08733, 2004.03309, 2005.02260) — the label B is genuinely skipped. If Conjecture A was intended it would be a separate, correctly-named node."},
-      {"id": "moskowicz_field_extension_degree", "finding": "No such named conjecture. Nearest object: V. Moskowicz arXiv:2407.13795 (unrefereed dim-2 theorem-claim). The classical field-extension-degree formulation of JC is real but not Moskowicz's; Alpöge's map realizes extension degree 3 at n=3."},
-      {"id": "differential_ring_homomorphism_criterion", "finding": "Not a term of art; no named statement exists (the real differential-flavored JC results live under Dixmier / Vanishing / Picard-Vessiot nodes)."},
-      {"id": "keller_inversion_sequence_termination", "finding": "No named statement; the charitable reading is exactly the tree-vanishing reformulation, which is admitted as its own correctly-sourced node (jc_tree_vanishing)."},
-      {"id": "irreducibility_enhanced_restricted_jc", "finding": "No such named statement; probable fusion of the Jedrzejewicz-Zielinski irreducibility reformulation (admitted as square_free_preserver) with reduction terminology."}
+      {
+        "id": "system_jacobian_conjecture",
+        "finding": "No such named conjecture. Nearest real object: Guccione-Guccione-Valqui (arXiv:1406.0886) JC-iff-polynomial-system-solvable reduction — a paper result, not a named conjecture."
+      },
+      {
+        "id": "base_ideal_conjecture",
+        "finding": "No such named conjecture. 'Base ideal' is a standard term in birational geometry; no Base-Ideal Conjecture exists in the JC circle (nearest genuine relative: Wright's ideal-membership reformulation, Contemp. Math. 369 (2005))."
+      },
+      {
+        "id": "truong_conjecture_b",
+        "finding": "Tuyen Trung Truong's JC papers label conjectures A, C, D (arXiv:1503.08733, 2004.03309, 2005.02260) — the label B is genuinely skipped. If Conjecture A was intended it would be a separate, correctly-named node."
+      },
+      {
+        "id": "moskowicz_field_extension_degree",
+        "finding": "No such named conjecture. Nearest object: V. Moskowicz arXiv:2407.13795 (unrefereed dim-2 theorem-claim). The classical field-extension-degree formulation of JC is real but not Moskowicz's; Alpöge's map realizes extension degree 3 at n=3."
+      },
+      {
+        "id": "differential_ring_homomorphism_criterion",
+        "finding": "Not a term of art; no named statement exists (the real differential-flavored JC results live under Dixmier / Vanishing / Picard-Vessiot nodes)."
+      },
+      {
+        "id": "keller_inversion_sequence_termination",
+        "finding": "No named statement; the charitable reading is exactly the tree-vanishing reformulation, which is admitted as its own correctly-sourced node (jc_tree_vanishing)."
+      },
+      {
+        "id": "irreducibility_enhanced_restricted_jc",
+        "finding": "No such named statement; probable fusion of the Jedrzejewicz-Zielinski irreducibility reformulation (admitted as square_free_preserver) with reduction terminology."
+      }
     ],
     "unclear_pending_rename": [
-      {"id": "singer_shuffle_span_conjecture", "finding": "Real neighboring cluster exists — Dan Singer (not 'David'), Electron. J. Combin. 8 (2001) & 18(2) (2011) #P27, and the Bisi et al. subtree-shuffling descendants (arXiv:2301.08221) — but no statement named 'full shuffle-span conjecture'. Admissible after rename + verbatim statement extraction."},
-      {"id": "generalized_subalgebra_jc", "finding": "Real family exists — Jedrzejewicz-Zielinski JC(r,n,k) (arXiv:1601.01508, 1611.07439): gcd of r-by-r Jacobian minors constant => k[f_1..f_r] algebraically closed in k[x]; r=n is JC_n. Name 'generalized subalgebra JC' is LLM-coined; admissible after rename, with only the r=n diagonal refuted (r<n instances open, JC(1,n,k) a theorem)."}
+      {
+        "id": "singer_shuffle_span_conjecture",
+        "finding": "Real (Dan Singer, Electron. J. Combin. 8 (2001) & 18(2) (2011) #P27): the forest-shuffle spanning conjecture, via Wright's symmetric tree formula, implies only the QUADRATIC (degree-2) case of JC -- already a proven theorem (Wang, deg<=2). So it is NOT JC fallout: it concerns a still-true case, and connecting it to the refuted full-JC node would spuriously propagate falsity onto a true statement. Excluded from the graph, not refuted. The degree->=3 combinatorial sufficient condition that DOES imply full JC is Bisi et al. (admitted as bisi_subtree_shuffle_markov_conjecture)."
+      }
     ]
   }
 }

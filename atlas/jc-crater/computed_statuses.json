@@ -16,13 +16,28 @@
       "check": "root:jacobian_conjecture:supplementary[1]",
       "script": "atlas/jc-crater/map_degree.py",
       "exit": 0
+    },
+    {
+      "check": "root:jacobian_conjecture:supplementary[2]",
+      "script": "atlas/jc-crater/geometric_degree.py",
+      "exit": 0
     }
   ],
   "statuses": {
+    "ax_grothendieck_theorem": {
+      "status": "TRUE_THEOREM",
+      "orphaned_conditional_support": false,
+      "name": "Ax-Grothendieck theorem"
+    },
     "bcw_tree_formula": {
       "status": "TRUE_THEOREM",
       "orphaned_conditional_support": false,
       "name": "Bass-Connell-Wright tree inversion formula (the theorem)"
+    },
+    "bisi_subtree_shuffle_markov_conjecture": {
+      "status": "REFUTED_SOME_FINITE_DIM",
+      "orphaned_conditional_support": false,
+      "name": "Bisi et al. subtree-shuffling Markov-chain sufficient condition for JC"
     },
     "chamberland_conjecture": {
       "status": "REFUTED_SOME_FINITE_DIM",
@@ -48,6 +63,11 @@
       "status": "REFUTED_SOME_FINITE_DIM",
       "orphaned_conditional_support": false,
       "name": "JC for Druzkowski (cubic-linear) maps (universal, all n)"
+    },
+    "gaussian_moments_conjecture": {
+      "status": "REFUTED_SOME_FINITE_DIM",
+      "orphaned_conditional_support": false,
+      "name": "Gaussian Moments Conjecture GMC (Derksen–van den Essen–Zhao)"
     },
     "hessian_conjecture": {
       "status": "REFUTED_SOME_FINITE_DIM",
@@ -79,10 +99,20 @@
       "orphaned_conditional_support": false,
       "name": "Dimension stabilization of Keller counterexamples (padding lemma)"
     },
+    "jc_over_char0_fields_and_z": {
+      "status": "REFUTED_ALL_N_GE_3",
+      "orphaned_conditional_support": false,
+      "name": "Base-field / over-Z reduction of JC (Connell–van den Dries)"
+    },
     "jc_tree_vanishing": {
       "status": "REFUTED_ALL_N_GE_3",
       "orphaned_conditional_support": false,
       "name": "Tree-vanishing reformulation of JC (termination of the BCW tree series)"
+    },
+    "jedrzejewicz_zielinski_jc_mnk": {
+      "status": "REFUTED_ALL_N_GE_3",
+      "orphaned_conditional_support": false,
+      "name": "Jedrzejewicz-Zielinski generalized Jacobian family JC(m,n,k)"
     },
     "jelonek_real_jc": {
       "status": "REFUTED_SOME_FINITE_DIM",
@@ -119,10 +149,20 @@
       "orphaned_conditional_support": false,
       "name": "Plane Jacobian Conjecture (n = 2)"
     },
+    "poisson_conjecture": {
+      "status": "REFUTED_SOME_FINITE_DIM",
+      "orphaned_conditional_support": false,
+      "name": "Poisson Conjecture (Adjamagbo–van den Essen)"
+    },
     "real_jc_nonvanishing": {
       "status": "REFUTED_INDEPENDENTLY_PRE_2026",
       "orphaned_conditional_support": false,
       "name": "Strong real Jacobian conjecture (nonvanishing, non-constant Jacobian)"
+    },
+    "special_image_conjecture": {
+      "status": "REFUTED_ALL_N_GE_3",
+      "orphaned_conditional_support": false,
+      "name": "Special Image Conjecture SIC(n) (Derksen–van den Essen–Zhao)"
     },
     "square_free_preserver": {
       "status": "REFUTED_ALL_N_GE_3",
@@ -178,10 +218,13 @@
     ],
     "REFUTED_ALL_N_GE_3": [
       "jacobian_conjecture",
+      "jc_over_char0_fields_and_z",
       "jc_tree_vanishing",
+      "jedrzejewicz_zielinski_jc_mnk",
       "keller_properness_universal",
       "nowicki_commutative_basis",
       "picard_vessiot_reformulation",
+      "special_image_conjecture",
       "square_free_preserver",
       "tate_jacobian_conjecture"
     ],
@@ -189,23 +232,27 @@
       "real_jc_nonvanishing"
     ],
     "REFUTED_SOME_FINITE_DIM": [
+      "bisi_subtree_shuffle_markov_conjecture",
       "chamberland_conjecture",
       "char_p_strengthenings",
       "cubic_homogeneous_jc",
       "dixmier_conjecture",
       "druzkowski_jc",
+      "gaussian_moments_conjecture",
       "hessian_conjecture",
       "hom_dixmier_conjecture",
       "image_conjecture",
       "integral_conjecture",
       "jelonek_real_jc",
       "mathieu_conjecture",
+      "poisson_conjecture",
       "symmetric_jc",
       "unimodular_conjecture",
       "vanishing_conjecture",
       "yagzhev_engel_capelli"
     ],
     "TRUE_THEOREM": [
+      "ax_grothendieck_theorem",
       "bcw_tree_formula",
       "jc_dimension_padding",
       "wang_degree_two_theorem",

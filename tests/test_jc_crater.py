@@ -140,8 +140,10 @@ def test_readme_map_staleness_gate(tmp_path):
     original = readme.read_text()
     assert M.MAP_BEGIN in original and M.MAP_END in original
     try:
-        # flip a status count in the rendered block
-        mutated = original.replace("30 sourced statements", "31 sourced statements", 1)
+        # perturb a stable token inside the generated block (count-agnostic so
+        # this test survives the graph growing)
+        mutated = original.replace("The blast radius at a glance",
+                                   "The blast radius at a glance ", 1)
         assert mutated != original
         readme.write_text(mutated)
         proc = subprocess.run(

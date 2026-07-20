@@ -27,6 +27,12 @@ machine-checked object**:
   (FALSE at n=3 ⇒ FALSE for all n≥3, via F ↦ F × id) is **executed**, not
   cited: exact polynomial proof that the padded dim-4 map still has
   det ≡ −2 and still collides.
+- [`geometric_degree.py`](geometric_degree.py) — likewise **executed**:
+  exact certificate that `[C(x,y,z) : C(f1,f2,f3)] = 3`, i.e. the map is
+  generically 3-to-1 (and, being étale, 3 honest points with no multiplicity).
+  Upper bound from three Gröbner relations re-verified here as identities in
+  `Q[x,y,z]`; lower bound from a specialization of the cubic that is
+  irreducible by Gauss's lemma.
 - [`quantities.json`](quantities.json) — the newborn bounded quantities the
   falsification minted (minimal counterexample dimension, minimal degree, …),
   with `evidence[]` and computed confidence classes, gap_map-style.
@@ -35,46 +41,52 @@ machine-checked object**:
 
 ## The blast radius at a glance
 
-*Generated from the ledger by `tools/validate_jc_crater.py --write`: all 30 nodes, every count, color, and edge below are computed from `implication_graph.json` + `computed_statuses.json` — never hand-drawn. Plus 9 candidate names that failed literature verification (quarantined, excluded).*
+*Generated from the ledger by `tools/validate_jc_crater.py --write`: all 37 nodes, every count, color, and edge below are computed from `implication_graph.json` + `computed_statuses.json` — never hand-drawn. Plus 8 candidate names that failed literature verification (quarantined, excluded).*
 
 ```text
-✕ Refuted for all n ≥ 3             █████████ 7
-⊘ Refuted in some finite dimension  ████████████████████ 15
-○ Open                              ████ 3
-✓ Survives (proven theorem)         █████ 4
+✕ Refuted for all n ≥ 3             ███████████ 10
+⊘ Refuted in some finite dimension  ████████████████████ 18
+○ Open                              ███ 3
+✓ Survives (proven theorem)         ██████ 5
 ■ Refuted independently, pre-2026   █ 1
 
-                                    30 sourced statements (+9 quarantined)
+                                    37 sourced statements (+8 quarantined)
 ```
 
 | | Status | Count | What it means |
 |:-:|:--|--:|:--|
-| ✕ | **Refuted for all n ≥ 3** | 7 | false in every dimension n ≥ 3 (reached through a per-dimension edge) |
-| ⊘ | **Refuted in some finite dimension** | 15 | false in at least one finite dimension, location unknown (a dimension-blowup reduction) |
+| ✕ | **Refuted for all n ≥ 3** | 10 | false in every dimension n ≥ 3 (reached through a per-dimension edge) |
+| ⊘ | **Refuted in some finite dimension** | 18 | false in at least one finite dimension, location unknown (a dimension-blowup reduction) |
 | ○ | **Open** | 3 | untouched — the counterexample says nothing about it |
-| ✓ | **Survives (proven theorem)** | 4 | a proven theorem, still standing |
+| ✓ | **Survives (proven theorem)** | 5 | a proven theorem, still standing |
 | ■ | **Refuted independently, pre-2026** | 1 | already refuted before 2026, by a different mechanism |
 
 ```mermaid
 flowchart RL
   jacobian_conjecture["Jacobian Conjecture"]:::root
+  jc_over_char0_fields_and_z["Base-field / over-Z reduction of JC"]:::alln
   jc_tree_vanishing["Tree-vanishing reformulation of JC"]:::alln
+  jedrzejewicz_zielinski_jc_mnk["Jedrzejewicz-Zielinski generalized Jacobian family JC"]:::alln
   keller_properness_universal["Universal properness of Keller maps"]:::alln
   nowicki_commutative_basis["Nowicki's commutative-basis characterization"]:::alln
   picard_vessiot_reformulation["Picard-Vessiot / Wronskian reformulation"]:::alln
+  special_image_conjecture["Special Image Conjecture SIC"]:::alln
   square_free_preserver["Square-free-preserver reformulation"]:::alln
   tate_jacobian_conjecture["Tate-Jacobian Conjecture TJC"]:::alln
+  bisi_subtree_shuffle_markov_conjecture["Bisi et al. subtree-shuffling Markov-chain sufficient condition for JC"]:::somedim
   chamberland_conjecture["Chamberland Conjecture"]:::somedim
   char_p_strengthenings["Characteristic-p formulations implying char-0 JC"]:::somedim
   cubic_homogeneous_jc["JC for cubic homogeneous maps"]:::somedim
   dixmier_conjecture["Dixmier Conjecture DC_n"]:::somedim
   druzkowski_jc["JC for Druzkowski maps"]:::somedim
+  gaussian_moments_conjecture["Gaussian Moments Conjecture GMC"]:::somedim
   hessian_conjecture["Hessian Conjecture"]:::somedim
   hom_dixmier_conjecture["Hom-Dixmier Conjecture"]:::somedim
   image_conjecture["Zhao's Image Conjecture"]:::somedim
   integral_conjecture["Zhao's Integral Conjecture"]:::somedim
   jelonek_real_jc["Jelonek's Real Jacobian Conjecture"]:::somedim
   mathieu_conjecture["Mathieu Conjecture"]:::somedim
+  poisson_conjecture["Poisson Conjecture"]:::somedim
   symmetric_jc["JC for symmetric Keller maps"]:::somedim
   unimodular_conjecture["Unimodular Conjecture"]:::somedim
   vanishing_conjecture["Zhao's Vanishing Conjecture"]:::somedim
@@ -82,6 +94,7 @@ flowchart RL
   kontsevich_conjecture_weyl["Kontsevich Conjecture"]:::open
   plane_jacobian_conjecture["Plane Jacobian Conjecture"]:::open
   symmetric_dependence_problem["Dependence problem for symmetric Jacobians"]:::open
+  ax_grothendieck_theorem["Ax-Grothendieck theorem"]:::theorem
   bcw_tree_formula["Bass-Connell-Wright tree inversion formula"]:::theorem
   jc_dimension_padding["Dimension stabilization of Keller counterexamples"]:::theorem
   wang_degree_two_theorem["Wang's theorem"]:::theorem
@@ -110,6 +123,12 @@ flowchart RL
   square_free_preserver --> jacobian_conjecture
   picard_vessiot_reformulation --> jacobian_conjecture
   jc_tree_vanishing --> jacobian_conjecture
+  gaussian_moments_conjecture -.-> special_image_conjecture
+  special_image_conjecture --> jacobian_conjecture
+  poisson_conjecture --> dixmier_conjecture
+  jc_over_char0_fields_and_z --> jacobian_conjecture
+  jedrzejewicz_zielinski_jc_mnk --> jacobian_conjecture
+  bisi_subtree_shuffle_markov_conjecture -.-> jacobian_conjecture
   classDef root fill:#7f1d1d,stroke:#000,color:#fff,stroke-width:3px;
   classDef alln fill:#dc2626,stroke:#7f1d1d,color:#fff;
   classDef somedim fill:#ea9010,stroke:#92400e,color:#fff;
@@ -180,3 +199,49 @@ confirmation": widely machine-verified, not yet peer-reviewed); the certificate
 this graph roots in is ours; the statuses are computed. Where the literature
 was ambiguous about an edge, the edge was left out — an absent edge understates
 the blast radius, which is the safe direction to be wrong in.
+
+## Root-claim freshness
+
+All 30 computed statuses are conditional on **one** external fact: Alpöge's
+2026-07-19 announcement, currently "awaiting confirmation." Nothing described
+above watches for that status changing —
+[`validate_jc_crater.py`](../../tools/validate_jc_crater.py) staleness-gates
+the *generated view* against the *committed graph*, which says nothing about
+whether the graph's root is still current literature.
+
+[`tools/jc_root_tripwire.py`](../../tools/jc_root_tripwire.py) is that missing
+instrument: it polls arXiv's public API for the paper itself (if it ever gets
+an id — see [`root_claim.json`](root_claim.json)) and for new
+Jacobian-Conjecture-related submissions, and flags title/abstract language
+shaped like a retraction, erratum, refutation, or confirmation/publication
+announcement.
+
+```
+python3 tools/jc_root_tripwire.py            # poll once; exit 0 unless a NEW hit
+python3 tools/jc_root_tripwire.py --dry-run  # poll and print, write no state
+```
+
+**Keep the distinction crisp.** This tripwire watches the **claim** (who gets
+credit, whether/when it's peer-reviewed) — never the **object**.
+[`certificates/jacobian-conjecture/verify.py`](../../certificates/jacobian-conjecture/verify.py)
+independently re-derives that the exhibited map has a constant nonzero
+Jacobian and collides three named points every time it is run; a retraction of
+the *announcement* does not un-verify that arithmetic fact about that map. It
+would change every status in this directory pending human review, which is
+exactly what the tripwire is for.
+
+**Honest limits — read before trusting a clean run.** This is a keyword
+tripwire over arXiv abstracts, nothing more. Keyword classes alone false-positive
+freely — a 2022 paper on plane-JC degree bounds tripped
+`confirmation_or_publication` purely on the word "confirm" — so an item only
+alerts if its latest version postdates the announcement, on the grounds that
+nothing published before 2026-07-19 can be a retraction or confirmation *of*
+2026-07-19. That gate removes a whole class of noise and removes no detection
+the tripwire ever had; it does not make the remaining matches verdicts. More
+importantly, this **cannot prove the absence** of a retraction — a correction
+posted anywhere arXiv doesn't index (social media, a journal editorial, a
+Wikipedia talk page) is invisible to it, and silence from this script is not
+evidence the claim still stands. A clean run is a prompt to keep trusting the
+status quo, not a verdict; a flagged run is a prompt for a human to read the
+listed items and decide, not an automatic correction. See the tool's own
+docstring for the full statement of limits.
