@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:15e550c231d3f448e022115fb4decede36f464256d39256aaf8f2f454ead90c6",
+  "content_digest": "sha256:d4f15954391332cd5597167057be9c628aa5f5ffafb6dc182173e2074cbb551e",
+  "occurred_at": "2026-07-20T15:24:46Z",
+  "frontier": "Smallest N that is the sum of three prime cubes in exactly 6 unordered ways (A385316 a(6)).",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nConstructed and executed the bounded exact search to C=1e12: enumerated all nondecreasing triples (p≤q≤r) of primes with p^3≤C into their sums, counted exact multiplicities via Counter, and found zero values with multiplicity 6 in [0, 1e12].",
+  "verified": "Artifact: prime_cubes_a385316.py, SHA-256: 9221b3a8ba9217ea25baf3613eba044317d2f5945fc19e1010c0743f25c957b8\nDomain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 1/1 rejected correctly\nALL KILL FIXTURES PASSED\nReproduce: a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419 — all match OEIS A385316.\nSearch: C=1e12, 1229 primes, 235,275,700 total sums, 234,585,699 distinct. Multiplicity distribution: 2 values at multiplicity 5, 37 at 4, 4,074 at 3, 681,734 at 2, 233,899,852 at 1. Zero values at multiplicity 6.",
+  "result": "Certified negative result: a(6) > 1e12. The exact bounded search to C=1e12 completed in 133.5 seconds on the Mac. No number ≤1e12 has exactly 6 unordered representations as a sum of three prime cubes. The prior literature lower bound was a(6) > ~4.99e11; this extends the certified lower bound to 1e12.",
+  "next_gate": "Raise the search cutoff to C=1e13 (≈11,700 primes, ~1.7B triples, estimated ~1,800s on Mac) or dispatch to DGX for the same. At C=1e13, if no multiplicity-6 value is found, extend further until the limsup conjecture is either witness (a 6-representation found) or a much larger bound is certified.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-20_08-24-46.md",
+    "sha256": "424cec67ddc177390110530243e5e7657a2fb2566ead17e9ebd5818353a09b19"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}
