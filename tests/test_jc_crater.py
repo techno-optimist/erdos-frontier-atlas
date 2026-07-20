@@ -133,6 +133,52 @@ def test_committed_graph_validates_and_view_is_fresh():
     assert "jc-crater VALID" in proc.stdout
 
 
+def test_readme_map_staleness_gate(tmp_path):
+    """The generated README map must be regenerated, not hand-edited: mutating
+    the block between the markers must make the validator fail."""
+    readme = ROOT / "atlas" / "jc-crater" / "README.md"
+    original = readme.read_text()
+    assert M.MAP_BEGIN in original and M.MAP_END in original
+    try:
+        # flip a status count in the rendered block
+        mutated = original.replace("30 sourced statements", "31 sourced statements", 1)
+        assert mutated != original
+        readme.write_text(mutated)
+        proc = subprocess.run(
+            [sys.executable, str(ROOT / "tools" / "validate_jc_crater.py")],
+            capture_output=True, text=True)
+        assert proc.returncode != 0
+        assert "README" in proc.stdout + proc.stderr and \
+               "STALE" in proc.stdout + proc.stderr
+    finally:
+        readme.write_text(original)
+
+
+def test_short_label_handles_leading_parenthetical():
+    """_short must not return an empty label for names that START with '(...)'."""
+    assert M._short("(Stable) Hom-Dixmier Conjecture (Bäck 2026)") == \
+        "Hom-Dixmier Conjecture"
+    assert M._short("Jacobian Conjecture (Keller 1939), n >= 3") == \
+        "Jacobian Conjecture"
+    assert M._short("Dixmier Conjecture DC_n (endomorphisms of Weyl algebras)") == \
+        "Dixmier Conjecture DC_n"
+
+
+def test_rendered_mermaid_is_structurally_sound():
+    """Every edge endpoint in the generated map is a declared node, and no node
+    label is empty (an empty label renders a broken box)."""
+    import re as _re
+    g, nodes = M.load_graph()
+    status, flags = M.propagate(g, nodes)
+    block = M.render_map_block(g, nodes, status, flags)
+    mm = block[block.find("```mermaid") + 10: block.find("```", block.find("```mermaid") + 10)]
+    declared = set(_re.findall(r'^\s*([a-z_0-9]+)\["', mm, _re.M))
+    assert declared == set(nodes)
+    assert not _re.findall(r'\["\s*"\]', mm)  # no empty labels
+    endpoints = {x for e in _re.findall(r'^\s*([a-z_0-9]+)\s*-\.?->\s*([a-z_0-9]+)', mm, _re.M) for x in e}
+    assert endpoints <= declared
+
+
 def test_staleness_gate_catches_drift(tmp_path):
     """Mutating the committed view must make the validator fail."""
     committed = (ROOT / "atlas" / "jc-crater" / "computed_statuses.json")
