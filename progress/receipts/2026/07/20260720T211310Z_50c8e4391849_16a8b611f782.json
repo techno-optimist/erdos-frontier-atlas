@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:16a8b611f782b0eadca9092eb613e2a057f66c68cc180adc381cf468534da589",
+  "content_digest": "sha256:a3bc9561c73050630ba06d320dc681dea34277a9db4fe054c9ae28d31ee4ad98",
+  "occurred_at": "2026-07-20T21:13:10Z",
+  "frontier": "Erdos #979 / OEIS A385316: What is the smallest integer N that can be expressed as the sum of three prime cubes p³+q³+r³ in exactly 6 unordered ways (a(6))? Current certified lower bound: a(6) > 1e12.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nConstructed and verified the C=1e13 bounded exact-search Python script (prime_cubes_search_1e13.py) that reproduces the five known OEIS terms a(1)..a(5) as a self-check gate, then enumerates all nondecreasing prime triples (p≤q≤r) with p³+q³+r³≤C=1e13 into a multiplicity Counter. The algorithm was smoke-tested at C=1e10 (4.4M triples, 325 primes, 1.7s; max multiplicity 4) and the self-check gate passes. The C=1e13 search (~11,700 primes, ~1.7B triples, ~1,800s estimated) cannot be executed on this Mac within the 900s wall-clock budget. A DGX dispatch script (dgx_dispatch_prime_cubes_1e13.sh) was authored to self-deploy the search on the DGX Spark, but SSH to spark-38e3.local is unavailable from this cron context.",
+  "verified": "Artifact: prime_cubes_search_1e13.py, SHA-256: 587b5b8046bfbf97f7c43e89551a9a07286d22efb07d32a390bc24e6bb6e3b83\nDGX dispatch: dgx_dispatch_prime_cubes_1e13.sh, SHA-256: 21f3d1b957cc37bcacf8a35a87384de3dd7013d6a3eaa320f5dcacd53275c31e\nSelf-check: a(1)..a(5) reproduced exactly (24, 185527, 8627527, 999979163, 10588881419). C=1e10 smoke test: 4,385,406 triples enumerated, max multiplicity 4, elapsed 1.7s. Prior session (sha256:15e550c231d3f448e022115fb4decede36f464256d39256aaf8f2f454ead90c6) certified negative result through C=1e12 in 133.5s.\nVerified domain: Given a cutoff C, the complete prime set {p prime : p³ ≤ C} is provably sufficient; any prime with p³ > C cannot appear in a triple summing to ≤ C.\nVerified predicate: Enumerate all nondecreasing triples (p≤q≤r) with p³+q³+r³ ≤ C; count exact multiplicities; a(6) is the smallest N with multiplicity 6, or a(6) > C if none found.\nReplay boundary: The script is a self-contained no-argument Python entrypoint; a read-only container replay would reproduce a(1)..a(5) self-check and output a NEGATIVE RESULT or FOUND line with candidate(s).",
+  "result": "The search artifact is constructed and algorithmically validated at C=1e10 (max multiplicity 4), confirming correct enumeration logic. The C=1e13 search required by the accepted_continuation.next_gate cannot be executed on this Mac within budget. The DGX dispatch script is prepared but DGX SSH is unavailable from this cron session. The certified lower bound remains a(6) > 1e12 from the prior session.",
+  "next_gate": "An operator with DGX SSH access must execute: `bash prime_cubes_search_1e13.py` on spark-38e3.local (estimated ~1,800s). If negative again, raise to C=1e14 or consider heuristic/construction approaches. If a multiplicity-6 candidate is found, verify it independently with a smaller exact enumeration.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. No local paths or secrets in receipt fields. Runtime: within 16-call budget, within 900s wall-clock, no tool result exceeded 12,000 characters, artifact mutation limit respected.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-20_14-13-10.md",
+    "sha256": "5293e488abea581e7e197b83df2724535b05f0d81d7b685cc9c8e4f82f4217dc"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}
