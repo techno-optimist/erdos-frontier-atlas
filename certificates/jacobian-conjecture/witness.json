@@ -1,0 +1,20 @@
+{
+  "schema": "efa-certificate-witness/v1",
+  "problem": "Jacobian Conjecture (Keller 1939), n = 3",
+  "claim": "The map F below has det(JF) identically -2 (nonzero constant) and is not injective: the three listed points are distinct and share the image (-1/4, 0, 0). Jointly this contradicts the conjecture.",
+  "map": {
+    "variables": ["x", "y", "z"],
+    "f1": "(1+x*y)^3 * z + y^2 * (1+x*y) * (4+3*x*y)",
+    "f2": "y + 3*x*(1+x*y)^2 * z + 3*x*y^2*(4+3*x*y)",
+    "f3": "2*x - 3*x^2*y - x^3*z"
+  },
+  "jacobian_determinant": "-2",
+  "colliding_points": [
+    ["0", "0", "-1/4"],
+    ["1", "-3/2", "13/2"],
+    ["-1", "3/2", "13/2"]
+  ],
+  "common_image": ["-1/4", "0", "0"],
+  "verify": "python3 verify.py",
+  "provenance": "External construction by Levent Alpoge (Anthropic), presented 2026-07-19 with the help of Claude Fable; Wikipedia lists it as a counterexample 'awaiting confirmation' (widely verified, not yet peer-reviewed). This repo's contribution is the independent replayable verification only."
+}
