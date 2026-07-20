@@ -1,0 +1,51 @@
+{
+  "schema": "efa-jc-crater-quantities/v1",
+  "note": "Bounded quantities MINTED by the 2026 JC falsification -- a counterexample does not only kill statements, it births brackets. The falsification is Alpoge's dim-3 counterexample, 'awaiting confirmation' (widely machine-verified, not yet peer-reviewed); every bound below is conditional on that. Same evidence[]/confidence machinery as atlas/gap_map.json (classes computed by tools/validate_jc_crater.py via the gap_map rule, never asserted).",
+  "entries": [
+    {
+      "id": "jc-min-counterexample-dimension",
+      "quantity": "Minimal dimension n admitting a Keller counterexample (polynomial self-map of C^n, constant nonzero Jacobian determinant, not injective)",
+      "lower": 2,
+      "upper": 3,
+      "kind": "value_gap",
+      "status": "open",
+      "evidence": [
+        {"type": "replay_receipt", "artifact": "certificates/jacobian-conjecture/verify.py", "note": "upper bound 3: Alpöge's dim-3 map, independently machine-verified here (det == -2 identically; 3 distinct points, one image)"},
+        {"type": "literature", "artifact": "van den Essen, Polynomial Automorphisms and the Jacobian Conjecture (2000); Wikipedia 'Jacobian conjecture' (2026-07 revision)", "note": "lower bound 2: n=1 is a trivial theorem (constant nonzero derivative => linear); the plane case n=2 remains OPEN -- the dim-3 counterexample yields no information downward in dimension"}
+      ],
+      "confidence": "C2",
+      "notes": "The entire remaining content of the (former) Jacobian Conjecture is now the question 'is this quantity 2 or 3?'. Equivalent form: is the plane Jacobian Conjecture true? The bracket closes to 2 by exhibiting a planar Keller counterexample, and to 3 by proving JC_2.",
+      "provenance": "minted 2026-07-20 from the crater analysis; construction Alpöge 2026-07-19 (external, 'awaiting confirmation' -- not yet peer-reviewed)"
+    },
+    {
+      "id": "jc-min-counterexample-degree-dim3",
+      "quantity": "Minimal total degree (max over components) of a Keller counterexample in dimension 3",
+      "lower": 3,
+      "upper": 7,
+      "kind": "value_gap",
+      "status": "open",
+      "evidence": [
+        {"type": "replay_receipt", "artifact": "atlas/jc-crater/map_degree.py", "note": "upper bound 7: this stdlib script certifies, by exact monomial expansion, that Alpöge's map has component total degrees (7, 6, 4) -- map degree 7. (That the map IS a counterexample is certified separately by certificates/jacobian-conjecture/verify.py.)"},
+        {"type": "literature", "artifact": "S. S. Wang, A Jacobian criterion for separability, J. Algebra 65 (1980), 453-494", "note": "lower bound 3: Wang's theorem -- Keller maps with all components of degree <= 2 are invertible, for every n in characteristic 0; so any counterexample has a component of degree >= 3"}
+      ],
+      "confidence": "C2",
+      "notes": "The taboo is gone: a counterexample EXISTS at degree 7, so 'find one of degree 3, 4, 5, or 6 in dim 3' is now a legitimate witness hunt with an instant exact verifier (the certificate's engine generalizes to any candidate map + collision pair). Even no-hit searches over structured families yield certified fences. NOTE the classical cubic-homogeneous reductions do NOT bear on this fixed-dimension quantity -- they change dimension.",
+      "provenance": "minted 2026-07-20; upper bound machine-certified by map_degree.py 2026-07-20; Alpöge construction 'awaiting confirmation'"
+    },
+    {
+      "id": "jc-min-geometric-degree-noninjective",
+      "quantity": "Minimal geometric degree (generic fiber size) of a non-injective Keller map, over all dimensions",
+      "lower": 2,
+      "upper": 3,
+      "kind": "value_gap",
+      "status": "open",
+      "evidence": [
+        {"type": "numeric_scan", "artifact": "sympy exact solve of F(x)=t for sample targets (session log 2026-07-20; not part of the committed certificate)", "note": "upper bound 3: the fiber over the certified collision target (-1/4,0,0) has exactly 3 points and a sample generic target (7,2,-3) also has exactly 3 preimages -- CAS-level observation, NOT a certified computation of the geometric degree"},
+        {"type": "literature", "artifact": "pigeonhole triviality", "note": "lower bound 2: a non-injective map has a fiber with >= 2 points, so geometric degree >= 2"}
+      ],
+      "confidence": "C3",
+      "notes": "Is a generically 2-to-1 Keller map possible? Genuinely new question exposed by the counterexample's 3-to-1 structure. An etale self-map of C^n of degree > 1 is necessarily non-proper (the classical simply-connectedness obstruction), which constrains but does not decide degree 2. Honest scope: the upper bound here is conjecture-grade until the geometric degree of Alpöge's map is certified exactly (field-extension degree [C(x,y,z) : C(f1,f2,f3)]).",
+      "provenance": "minted 2026-07-20 from the crater analysis; Alpöge construction 'awaiting confirmation'"
+    }
+  ]
+}
