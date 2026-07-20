@@ -24,22 +24,28 @@ Board-class rule (documented in atlas/schema.json and README):
             (asymptotic-only / solved / duplicate object).
 """
 import json
+import os
 import re
 import sys
 from pathlib import Path
 
-# Source audits live in the cultural-soliton-observatory research session;
-# pass an alternative path as argv[1] if that checkout is elsewhere.
-_DEFAULT_SRC = (
-    "/Users/nivek/Desktop/cultural-soliton-observatory/research_sessions/"
-    "res_20260711_erdos_machinery_audit/audits.json"
-)
 if len(sys.argv) < 2 or sys.argv[1] != "--bootstrap-from-audits":
     raise SystemExit(
         "refusing to overwrite the curated Atlas; pass --bootstrap-from-audits "
         "only when intentionally rebuilding from the archival audit source"
     )
-SRC = Path(sys.argv[2] if len(sys.argv) > 2 else _DEFAULT_SRC)
+# The source audits live OUTSIDE this public repo, in the private
+# research-session archive. Give the path explicitly as the argument after the
+# flag, or via $ERDOS_ATLAS_AUDIT_SRC -- there is no in-repo default.
+_src = sys.argv[2] if len(sys.argv) > 2 else os.environ.get("ERDOS_ATLAS_AUDIT_SRC")
+if not _src:
+    raise SystemExit(
+        "no audit source: pass the archival audits.json path as the argument "
+        "after --bootstrap-from-audits, or set $ERDOS_ATLAS_AUDIT_SRC. It is the "
+        "res_*_erdos_machinery_audit/audits.json from the private research-session "
+        "archive, which is not part of this repository."
+    )
+SRC = Path(_src)
 OUT = Path(__file__).resolve().parents[1] / "atlas" / "problems.json"
 
 READY = {21, 41, 1, 67, 241, 552, 166, 138, 140, 86, 1029, 183, 564}
