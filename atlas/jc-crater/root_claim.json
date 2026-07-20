@@ -1,0 +1,25 @@
+{
+  "schema": "efa-jc-root-claim/v1",
+  "note": "STATIC identity of the claim the whole crater is conditional on. Hand-authored, rarely changes. Mutable poll state lives in the sibling files root_claim_state.json (always) and root_claim_alert.json (only while an unreviewed alert is open), both written by tools/jc_root_tripwire.py -- never edit those by hand.",
+  "claim": {
+    "statement": "An explicit polynomial map F : C^3 -> C^3 with Jacobian determinant identically -2 (a nonzero constant) that is not injective -- a counterexample to the Jacobian Conjecture (Keller 1939) at n = 3.",
+    "author": "Levent Alpöge",
+    "affiliation": "Anthropic",
+    "credited_with": "Claude Fable (assistance); question credited to Akhil",
+    "announced": "2026-07-19",
+    "venue": "public announcement (not an arXiv preprint at time of writing; Wolfram Alpha verification links included); tracked on Wikipedia's \"Jacobian conjecture\" article",
+    "arxiv_id": null,
+    "status": "awaiting confirmation",
+    "status_meaning": "Wikipedia's own phrase as of the 2026-07 revision: widely machine-verified by other mathematicians within about a day of the announcement, but not yet formally peer-reviewed or journal-published. This is an external status about the CLAIM (authorship, priority, formal acceptance) -- see 'object_certificate' below for what is independently pinned instead.",
+    "primary_sources": [
+      "https://en.wikipedia.org/wiki/Jacobian_conjecture"
+    ]
+  },
+  "object_certificate": {
+    "path": "certificates/jacobian-conjecture/witness.json",
+    "verify_script": "certificates/jacobian-conjecture/verify.py",
+    "verifies": "The EXHIBITED MAP (the specific f1, f2, f3 in witness.json) has det(JF) identically -2 and is not injective: three distinct listed points share the image (-1/4, 0, 0). Independently re-derived by this repo's own exact-rational engine, not merely cited from Alpöge's announcement or from Wolfram Alpha.",
+    "does_not_verify": "Authorship, priority, novelty, or the peer-review/publication status of the claim. Those are exactly the 'claim' fields above, and exactly what this tripwire polls for."
+  },
+  "claim_vs_object_distinction": "CLAIM STATUS and OBJECT VERIFICATION are two different things and this tripwire only ever touches the first. If the announcement is retracted, amended, or superseded -- e.g. a priority dispute, or the community later treats it as unconfirmed for some other reason -- the CLAIM's 'awaiting confirmation' status changes, and every one of the 30 statuses in atlas/jc-crater/computed_statuses.json becomes suspect pending human review (they are all conditional on this root). But rerunning `python3 certificates/jacobian-conjecture/verify.py` still exits 0 and still proves the exhibited map has a constant nonzero Jacobian and collides three named points -- that fact about that object does not depend on who gets credit for it or where it gets published. The only way the OBJECT certificate itself would need revisiting is if someone found a mathematical error IN the exhibited map or IN verify.py's arithmetic -- a different, human, code-review question that no keyword tripwire can answer."
+}

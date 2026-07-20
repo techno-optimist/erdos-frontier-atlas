@@ -27,6 +27,12 @@ machine-checked object**:
   (FALSE at n=3 ⇒ FALSE for all n≥3, via F ↦ F × id) is **executed**, not
   cited: exact polynomial proof that the padded dim-4 map still has
   det ≡ −2 and still collides.
+- [`geometric_degree.py`](geometric_degree.py) — likewise **executed**:
+  exact certificate that `[C(x,y,z) : C(f1,f2,f3)] = 3`, i.e. the map is
+  generically 3-to-1 (and, being étale, 3 honest points with no multiplicity).
+  Upper bound from three Gröbner relations re-verified here as identities in
+  `Q[x,y,z]`; lower bound from a specialization of the cubic that is
+  irreducible by Gauss's lemma.
 - [`quantities.json`](quantities.json) — the newborn bounded quantities the
   falsification minted (minimal counterexample dimension, minimal degree, …),
   with `evidence[]` and computed confidence classes, gap_map-style.
@@ -180,3 +186,49 @@ confirmation": widely machine-verified, not yet peer-reviewed); the certificate
 this graph roots in is ours; the statuses are computed. Where the literature
 was ambiguous about an edge, the edge was left out — an absent edge understates
 the blast radius, which is the safe direction to be wrong in.
+
+## Root-claim freshness
+
+All 30 computed statuses are conditional on **one** external fact: Alpöge's
+2026-07-19 announcement, currently "awaiting confirmation." Nothing described
+above watches for that status changing —
+[`validate_jc_crater.py`](../../tools/validate_jc_crater.py) staleness-gates
+the *generated view* against the *committed graph*, which says nothing about
+whether the graph's root is still current literature.
+
+[`tools/jc_root_tripwire.py`](../../tools/jc_root_tripwire.py) is that missing
+instrument: it polls arXiv's public API for the paper itself (if it ever gets
+an id — see [`root_claim.json`](root_claim.json)) and for new
+Jacobian-Conjecture-related submissions, and flags title/abstract language
+shaped like a retraction, erratum, refutation, or confirmation/publication
+announcement.
+
+```
+python3 tools/jc_root_tripwire.py            # poll once; exit 0 unless a NEW hit
+python3 tools/jc_root_tripwire.py --dry-run  # poll and print, write no state
+```
+
+**Keep the distinction crisp.** This tripwire watches the **claim** (who gets
+credit, whether/when it's peer-reviewed) — never the **object**.
+[`certificates/jacobian-conjecture/verify.py`](../../certificates/jacobian-conjecture/verify.py)
+independently re-derives that the exhibited map has a constant nonzero
+Jacobian and collides three named points every time it is run; a retraction of
+the *announcement* does not un-verify that arithmetic fact about that map. It
+would change every status in this directory pending human review, which is
+exactly what the tripwire is for.
+
+**Honest limits — read before trusting a clean run.** This is a keyword
+tripwire over arXiv abstracts, nothing more. Keyword classes alone false-positive
+freely — a 2022 paper on plane-JC degree bounds tripped
+`confirmation_or_publication` purely on the word "confirm" — so an item only
+alerts if its latest version postdates the announcement, on the grounds that
+nothing published before 2026-07-19 can be a retraction or confirmation *of*
+2026-07-19. That gate removes a whole class of noise and removes no detection
+the tripwire ever had; it does not make the remaining matches verdicts. More
+importantly, this **cannot prove the absence** of a retraction — a correction
+posted anywhere arXiv doesn't index (social media, a journal editorial, a
+Wikipedia talk page) is invisible to it, and silence from this script is not
+evidence the claim still stands. A clean run is a prompt to keep trusting the
+status quo, not a verdict; a flagged run is a prompt for a human to read the
+listed items and decide, not an automatic correction. See the tool's own
+docstring for the full statement of limits.

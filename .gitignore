@@ -1,3 +1,7 @@
 __pycache__/
 *.pyc
 .DS_Store
+
+# jc-crater tripwire: mutable poll state, regenerated each run (see tools/jc_root_tripwire.py)
+atlas/jc-crater/root_claim_state.json
+atlas/jc-crater/root_claim_alert.json

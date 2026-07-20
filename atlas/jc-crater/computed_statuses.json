@@ -16,6 +16,11 @@
       "check": "root:jacobian_conjecture:supplementary[1]",
       "script": "atlas/jc-crater/map_degree.py",
       "exit": 0
+    },
+    {
+      "check": "root:jacobian_conjecture:supplementary[2]",
+      "script": "atlas/jc-crater/geometric_degree.py",
+      "exit": 0
     }
   ],
   "statuses": {

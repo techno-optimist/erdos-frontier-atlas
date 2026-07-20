@@ -9,6 +9,11 @@ loudly on schema violations, on drift between the committed generated view
 (computed_statuses.json) and a fresh recomputation, and on INCONSISTENCY
 (an edge chain that would refute a proven theorem means an edge is wrong).
 
+NOTE this only staleness-gates the GENERATED VIEW against the committed graph
+-- it says nothing about whether the graph's certified root (Alpöge's 2026
+counterexample, "awaiting confirmation") is still current literature. For
+that, see tools/jc_root_tripwire.py and atlas/jc-crater/root_claim.json.
+
 Status vocabulary (computed):
   REFUTED_ALL_N_GE_3        chain of dimension-preserving implications from the
                             certified root (which the stabilization machine
