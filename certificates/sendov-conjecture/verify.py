@@ -537,6 +537,41 @@ def main() -> int:
         print("leg23 wave9b_free_dual_n12.json: MISSING FAIL")
         ok = False
 
+    # Leg 24 — dense_best_per_n.json
+    db = load_json("dense_best_per_n.json")
+    if db is not None:
+        ces = [r for r in db if r.get("counterexample")]
+        over = [r for r in db if float(r.get("score", 0)) > 1 + 1e-6]
+        leg = len(ces) == 0 and len(over) == 0 and len(db) >= 5
+        print(
+            f"leg24 dense_best_per_n.json: rows={len(db)} ces={len(ces)} "
+            f"over1={len(over)} {'PASS' if leg else 'FAIL'}"
+        )
+        ok &= leg
+    else:
+        print("leg24 dense_best_per_n.json: MISSING FAIL")
+        ok = False
+
+    # Leg 25 — dense_all_compact.json CE-free
+    dac = load_json("dense_all_compact.json")
+    if dac is not None:
+        ces = [r for r in dac if r.get("counterexample")]
+        bad = [
+            r
+            for r in dac
+            if float(r.get("radius", 0) or 0) > 1 + 1e-8
+            and float(r.get("max_root_mod", 99) or 99) <= 1 + 1e-8
+        ]
+        leg = len(ces) == 0 and len(bad) == 0 and len(dac) >= 50
+        print(
+            f"leg25 dense_all_compact.json: rows={len(dac)} ces={len(ces)} "
+            f"bad={len(bad)} {'PASS' if leg else 'FAIL'}"
+        )
+        ok &= leg
+    else:
+        print("leg25 dense_all_compact.json: MISSING FAIL")
+        ok = False
+
     print()
     print("ALL PASS" if ok else "FAILURES PRESENT")
     return 0 if ok else 1

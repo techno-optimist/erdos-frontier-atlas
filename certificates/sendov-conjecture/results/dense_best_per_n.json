@@ -1,0 +1,58 @@
+[
+  {
+    "n": 9,
+    "score": 1.0,
+    "source": "unity",
+    "max_root_mod": 1.000000000000001,
+    "feasible": true,
+    "counterexample": false
+  },
+  {
+    "n": 10,
+    "score": 1.0000000000498748,
+    "source": "real_beta_1.000",
+    "max_root_mod": 1.00000000009975,
+    "feasible": true,
+    "counterexample": false
+  },
+  {
+    "n": 11,
+    "score": 1.0000000000497684,
+    "source": "real_beta_1.000",
+    "max_root_mod": 1.0000000000975235,
+    "feasible": true,
+    "counterexample": false
+  },
+  {
+    "n": 12,
+    "score": 1.0,
+    "source": "unity",
+    "max_root_mod": 1.0000000000000009,
+    "feasible": true,
+    "counterexample": false
+  },
+  {
+    "n": 13,
+    "score": 1.0,
+    "source": "unity",
+    "max_root_mod": 1.0000000000000004,
+    "feasible": true,
+    "counterexample": false
+  },
+  {
+    "n": 14,
+    "score": 1.000000000049853,
+    "source": "real_beta_1.000",
+    "max_root_mod": 1.0000000000997047,
+    "feasible": true,
+    "counterexample": false
+  },
+  {
+    "n": 15,
+    "score": 1.0000000000497868,
+    "source": "real_beta_1.000",
+    "max_root_mod": 1.000000000098487,
+    "feasible": true,
+    "counterexample": false
+  }
+]

@@ -97,6 +97,10 @@
     {
       "id": "wave9b_free_dual_n12",
       "result": "n=12 free complex beta+11 crits dual R in {1.01,1.05,1.1}: CE=0; positive slack when R met"
+    },
+    {
+      "id": "dense_beta_scan",
+      "result": "dense beta scan n=9..15 (194 configs): best feasible score=1.0 every n; CE=0"
     }
   ],
   "atlas_clues": [
