@@ -250,14 +250,28 @@ def main() -> int:
     beta = 1.0
     crit = np.full(8, -0.2 + 0j)  # |1-(-0.2)|=1.2 > 1
     ev = evaluate(beta, crit)
-    leg = (not ev["counterexample"]) and (ev["radius"] > 1.0) and (not ev["feasible"] or ev["max_root_mod"] > 1)
-    # actually may or may not be feasible — require: if r>1 then not a CE
     leg = (ev["radius"] > 1.0) and (not ev["counterexample"])
     print(
         f"leg7 negctl r={ev['radius']:.4f} maxroot={ev['max_root_mod']:.4f} "
         f"CE={ev['counterexample']} {'PASS' if leg else 'FAIL'}"
     )
     ok &= leg
+
+    # Leg 8 — lune_force.json: CE-free; every feasible row has radius <= 1
+    lf = load_json("lune_force.json")
+    if lf is not None:
+        ces = [r for r in lf if r.get("counterexample") or r.get("counterexample_mp")]
+        feas = [r for r in lf if r.get("feasible")]
+        feas_ok = all(float(r.get("radius", 99)) <= 1.0 + 1e-6 for r in feas)
+        leg = len(ces) == 0 and feas_ok and len(lf) >= 20
+        print(
+            f"leg8 lune_force.json: rows={len(lf)} feas={len(feas)} ces={len(ces)} "
+            f"feas_r_le_1={feas_ok} {'PASS' if leg else 'FAIL'}"
+        )
+        ok &= leg
+    else:
+        print("leg8 lune_force.json: MISSING FAIL")
+        ok = False
 
     print()
     print("ALL PASS" if ok else "FAILURES PRESENT")
