@@ -372,6 +372,40 @@ def main() -> int:
         print("leg13 deep_best_per_n.json: MISSING FAIL")
         ok = False
 
+    # Leg 14 — equal-crit geometric theorem (numeric certificate of 0 violations)
+    ect = load_json("wave5_equal_crit_theorem.json")
+    if ect is not None:
+        viol = ect.get("violations") or []
+        leg = ect.get("trials_ok") is True and len(viol) == 0 and not ect.get("ce_possible")
+        status = "PASS" if leg else "FAIL"
+        print(
+            f"leg14 equal_crit_theorem: trials_ok={ect.get('trials_ok')} "
+            f"violations={len(viol)} {status}"
+        )
+        ok &= leg
+    else:
+        print("leg14 wave5_equal_crit_theorem.json: MISSING FAIL")
+        ok = False
+
+    # Leg 15 — left-ray mp: all slack > 0 for R>1
+    lrm = load_json("wave5_left_ray_mp.json")
+    if lrm is not None:
+        ces = [r for r in lrm if r.get("counterexample")]
+        bad_slack = [
+            r for r in lrm
+            if float(r.get("radius", 0)) > 1 + 1e-12 and float(r.get("slack_mp", -1)) <= 0
+        ]
+        leg = len(ces) == 0 and len(bad_slack) == 0 and len(lrm) >= 20
+        status = "PASS" if leg else "FAIL"
+        print(
+            f"leg15 left_ray_mp: rows={len(lrm)} ces={len(ces)} "
+            f"bad_slack={len(bad_slack)} {status}"
+        )
+        ok &= leg
+    else:
+        print("leg15 wave5_left_ray_mp.json: MISSING FAIL")
+        ok = False
+
     print()
     print("ALL PASS" if ok else "FAILURES PRESENT")
     return 0 if ok else 1

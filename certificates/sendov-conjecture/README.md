@@ -64,6 +64,8 @@ best **feasible** \(d=1\).
 | Wave3 free complex \(\beta\) + dual | \(n=9..20\), 3 penalties + dual R-grid | all free-\(\beta\) hits \(r=1\); dual \(r>1\Rightarrow\) maxroot\(>1\); CE=0 |
 | Tao near-CE family | \(n=9..80\) | best feasible gap \(\sim 0.75\) |
 
+**Theorem (equal-crit family).** If all critical points coincide at \(c\) and \(p(\beta)=0\), roots lie on the circle of radius \(|\beta-c|\) about \(c\). Hence \(r>1\) forces some root outside the unit disk — **no CE in this family for any \(n\ge 2\)**. See [`THEOREM_EQUAL_CRIT.md`](THEOREM_EQUAL_CRIT.md).
+
 **Structural slogan (empirical, within these families):**  
 *To get Sendov radius past 1, you leave the unit disk.*
 

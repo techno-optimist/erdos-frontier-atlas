@@ -61,6 +61,10 @@
     {
       "id": "deep_multi_lane",
       "result": "deep multi-lane through n=16: best feasible score=1.0 (unity) every n; CE=0"
+    },
+    {
+      "id": "equal_crit_theorem",
+      "result": "PROVED: equal-crit family p'=(z-c)^{n-1} has no Sendov CE for any n>=2 (geometry of roots-of-unity circle about c)"
     }
   ],
   "atlas_clues": [
