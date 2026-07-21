@@ -30,6 +30,8 @@ See README.md for the full, honest scope.
 
 Exit 0 iff both certificates verify.
 """
+import hashlib
+import json
 import os
 import subprocess
 import sys
@@ -37,6 +39,32 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 GEOM_SHA = "607841330978360a10b3440598a034f6ade903b8afe872c1cbe7bdf441e92ada"
 CELLSET_SHA = "35fb19672b28d318f1ea468587a378ebc9906cba9f419b7dbca1a1ff7aa859b6"
+
+
+def _fail_pin(label: str, expected: str, actual: str) -> bool:
+    print(f"\n[PIN MISMATCH] {label}\n   expected {expected}\n   on disk  {actual}")
+    return False
+
+
+def check_pins() -> bool:
+    """The pinned hashes must be load-bearing, not decorative: if the objects on
+    disk are not the pinned ones, say so instead of printing the pins as if they
+    described what was just verified.
+
+    geometry.json is pinned directly. The cell-set hash is canonical (recomputed
+    from the geometry by _verify_enum, which checks it against the value embedded
+    in enumeration_certificate.json); here we pin that embedded value, closing the
+    chain driver-pin -> cert claim -> value re-derived from the geometry.
+    """
+    ok = True
+    actual = hashlib.sha256(open(os.path.join(HERE, "geometry.json"), "rb").read()).hexdigest()
+    if actual != GEOM_SHA:
+        ok = _fail_pin("geometry.json", GEOM_SHA, actual)
+    with open(os.path.join(HERE, "enumeration_certificate.json"), "rb") as fh:
+        claimed = json.load(fh).get("canonical_cellset_sha256")
+    if claimed != CELLSET_SHA:
+        ok = _fail_pin("enumeration_certificate.canonical_cellset_sha256", CELLSET_SHA, str(claimed))
+    return ok
 
 
 def run(label: str, argv: list[str]) -> bool:
@@ -52,6 +80,7 @@ def run(label: str, argv: list[str]) -> bool:
 
 def main() -> int:
     exhaustive = "--exhaustive" in sys.argv[1:]
+    pins_ok = check_pins()
     enum_args = ["_verify_enum.py", "enumeration_certificate.json", "geometry.json"]
     enum_args += ["--exhaustive"] if exhaustive else ["--sample", "200"]
 
@@ -64,9 +93,10 @@ def main() -> int:
     print("\n" + "=" * 62)
     print(f"  geometry sha256   {GEOM_SHA}")
     print(f"  cell-set sha256   {CELLSET_SHA}")
+    print(f"  (0) pinned-object check                      : {'PASS' if pins_ok else 'FAIL'}")
     print(f"  (1) enumeration lock (12,349 full-dim cells) : {'PASS' if ok1 else 'FAIL'}")
     print(f"  (2) affine-family no-go (34-term Farkas)     : {'PASS' if ok2 else 'FAIL'}")
-    ok = ok1 and ok2
+    ok = pins_ok and ok1 and ok2
     print(f"  RESULT: {'CERTIFICATE VALID' if ok else 'CERTIFICATE FAILED'}")
     print("  (a construction on this geometry must be genuinely quadratic; NOT an r_3(N) bound)")
     return 0 if ok else 1
