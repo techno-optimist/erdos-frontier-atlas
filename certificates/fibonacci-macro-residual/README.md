@@ -14,7 +14,9 @@
 | 8 | port NO-GO | NO-GO |
 | ≥9 | port NO-GO | port NO-GO |
 
-Also: n=5 L=4,5 @ S=3 NO-GO; n=6 L=3 S=5 sample 0 routable / 23k.
+Also: n=5 L=4,5 @ S=3 NO-GO; n=6 L=4,5 @ S=3 NO-GO; n=6 L=3 S=5 has routable seeds (integer open).
+
+See `THEOREM_L3_S_LE_4_CLASSIFICATION.md` for the closed S≤4 board.
 
 ## Replay
 

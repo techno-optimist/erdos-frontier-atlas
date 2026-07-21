@@ -1,0 +1,17 @@
+{
+  "schema": "lead.n6_l3_s5_integer_progress.v1",
+  "note": "Snapshot mid-hunt 2026-07-21; full sample still running or incomplete.",
+  "stats_at_55k": {
+    "clocks": 55000,
+    "reachable": 13109,
+    "ge_tags": 6502,
+    "outward": 1305504,
+    "routable": 5,
+    "route_enum": 5,
+    "lp_infeas": 5,
+    "lp": 0
+  },
+  "first_routable": "N6_L3_S5_FIRST_ROUTABLE.json",
+  "status": "ROUTABLE_EXISTS_ALL_LP_INFEAS_SO_FAR",
+  "claim_boundary": "Partial sample; not exhaustive. All 5 routable seeds so far are LP-infeasible."
+}

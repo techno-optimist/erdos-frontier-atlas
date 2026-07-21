@@ -1,16 +1,82 @@
 {
-  "claim_boundary": "Sample only; not exhaustive for S=5.",
-  "elapsed_sec": 3.79,
-  "lp_on_first_routable": null,
-  "sample_size": 23000,
-  "schema": "lead.n6_l3_s5_sample.v1",
-  "seed": 20260721,
+  "claim_boundary": "Biased+random S=5 sample; not exhaustive.",
+  "elapsed_sec": 211.109,
+  "sample_size": 79929,
+  "schema": "lead.n6_l3_s5_sample.v2",
   "stats": {
-    "clocks": 23000,
-    "ge_tags": 117,
-    "outward": 3168,
-    "reachable": 13737
+    "clocks": 11926,
+    "ge_tags": 1519,
+    "outward": 288150,
+    "reachable": 3017,
+    "routable": 1
   },
-  "status": "NO_ROUTABLE_IN_SAMPLE",
-  "witness": null
+  "status": "FOUND_ROUTABLE",
+  "witness": {
+    "delta": [
+      [
+        2,
+        0,
+        1
+      ],
+      [
+        3,
+        1,
+        2
+      ],
+      [
+        4,
+        0,
+        0
+      ],
+      [
+        3,
+        0,
+        0
+      ],
+      [
+        1,
+        0,
+        0
+      ]
+    ],
+    "digs": [
+      2,
+      2,
+      2,
+      1,
+      1,
+      1,
+      1
+    ],
+    "ports": {
+      "0": [
+        4,
+        2
+      ],
+      "1": [
+        2,
+        2
+      ],
+      "2": [
+        3,
+        2
+      ],
+      "3": [
+        0,
+        1
+      ],
+      "4": [
+        4,
+        1
+      ],
+      "5": [
+        3,
+        1
+      ],
+      "6": [
+        2,
+        1
+      ]
+    }
+  }
 }
