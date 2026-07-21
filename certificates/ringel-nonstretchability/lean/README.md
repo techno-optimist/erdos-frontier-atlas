@@ -66,8 +66,15 @@ chirotope. So the obstruction is about Ringel's data, not about our definitions.
 
 ## Honest boundary
 
-**The proof consumes 18 of the 84 chirotope entries.** A transcription error in any of the other 66
-would be entirely invisible to Lean and the file would still compile. Provenance is two links:
+**The proof consumes 18 of the 84 chirotope entries — and this makes the theorem STRONGER, not weaker.**
+`IsRingelRealization` demands all 84 sorted triples match, but the contradiction is derived from only
+18 of them. So what is actually proved is that even those 18 constraints are jointly unsatisfiable;
+`¬(all 84)` follows a fortiori. Fewer hypotheses, stronger theorem.
+
+The real exposure is therefore NOT soundness but **data fidelity**: is this 84-entry table actually
+Ringel's chirotope? A transcription error in the other 66 entries would be invisible to Lean — the
+theorem would remain true *about the table as written*, while no longer being a theorem about Ringel's
+matroid. That is a question about our input, not about the proof. Provenance is two links:
 
 ```
 Ringel's published affine projections --(human transcription)--> es7_ringel_chirotope.py --(SHA-256)--> this table
