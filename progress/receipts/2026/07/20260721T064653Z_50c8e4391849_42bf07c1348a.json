@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:42bf07c1348a10fe08d841f855c22a7a3dd9ba9e872f9b1c1727712bebb5d953",
+  "content_digest": "sha256:17391e4f1dbc1f6108a81198ab4337da3413ba4073a3459b103ef35b39cff177",
+  "occurred_at": "2026-07-21T06:46:53Z",
+  "frontier": "Erdős #979 finite frontier: smallest N = p³+q³+r³ (p,q,r primes) with exactly 6 representations (OEIS A385316 a(6)). Prior certified lower bound: a(6) > 499243435237.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nConstructed and verified a complete-prime-set exact enumeration script that reproduces all five known OEIS A385316 terms as a self-check gate, then certifies a lower bound on a(6). The C=1.1e10 smoke test confirms: a(1)=24 (k=1), a(2)=185527 (k=2), a(3)=8627527 (k=3), a(4)=999979163 (k=4), a(5)=10588881419 (k=5) all reproduce exactly; max multiplicity in [0,1.1e10] is 4; zero numbers with k=6 found; certified a(6) > 1.1e10. The prior session's ~4.99e11 bound is unchallenged and extends beyond this run's cutoff.",
+  "verified": "Artifact: prime_cubes_search_1e13.py, SHA-256: 4ca3a0a85dd8feefe09e601f1086d36f38a62306f7e5f61578d88ae5eda790a7\nSelf-check gate: all five OEIS terms reproduced exactly at C=1.1e10 (331 primes, 4.7M triples, 1.6s, max multiplicity=4, k=6 count=0). Prior-session C=1e13 search script was authored but DGX SSH unavailable from cron context; C=5e11 verification launched in background when operator gate opened but not awaited for publication.",
+  "result": "The C=1e13 search required by the accepted continuation's next gate cannot be executed on this Mac within budget; no independent route delta. Mechanism verified and reusable. The DGX dispatch script exists but connectivity is unavailable. Lower bound remains at ~4.99e11 from the prior session.",
+  "next_gate": "An operator with DGX SSH access must execute: `python3 prime_cubes_search_1e13.py --cutoff 10000000000000` on spark-38e3.local (estimated ~1800s). If no k=6 candidate found, raise to C=1e14 or consider heuristic/construction approaches.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-20_23-46-53.md",
+    "sha256": "59a814a450575c3e1ff078277a85e4db0b50c57aec18f154c04940a77c9d27bf"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}
