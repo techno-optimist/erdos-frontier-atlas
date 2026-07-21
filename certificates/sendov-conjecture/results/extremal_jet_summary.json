@@ -1,0 +1,89 @@
+{
+  "n_samples": 26775,
+  "ces": [],
+  "summary_by_n": {},
+  "top_feasible_head": [
+    {
+      "n": 15,
+      "eps": 0.0001,
+      "dbeta": 0.0,
+      "radius": 0.9999807897135978,
+      "max_root_mod": 1.0000000000000002,
+      "feasible": true,
+      "counterexample": false,
+      "dir_id": 97
+    },
+    {
+      "n": 15,
+      "eps": 0.0001,
+      "dbeta": 1.0000000000000002e-06,
+      "radius": 0.9999807897135978,
+      "max_root_mod": 1.0000000000000002,
+      "feasible": true,
+      "counterexample": false,
+      "dir_id": 97
+    },
+    {
+      "n": 15,
+      "eps": 0.0001,
+      "dbeta": -1.0000000000000002e-06,
+      "radius": 0.9999805684230214,
+      "max_root_mod": 0.9999993067253498,
+      "feasible": true,
+      "counterexample": false,
+      "dir_id": 203
+    },
+    {
+      "n": 20,
+      "eps": 0.0001,
+      "dbeta": -1.0000000000000002e-06,
+      "radius": 0.9999800240380885,
+      "max_root_mod": 0.9999996487375382,
+      "feasible": true,
+      "counterexample": false,
+      "dir_id": 202
+    },
+    {
+      "n": 15,
+      "eps": 0.0001,
+      "dbeta": -1.0000000000000002e-06,
+      "radius": 0.9999797897135978,
+      "max_root_mod": 0.999999,
+      "feasible": true,
+      "counterexample": false,
+      "dir_id": 97
+    }
+  ],
+  "per_n": {
+    "9": {
+      "best_feasible_r": 0.999977655882,
+      "best_r_gt1": 1.035355339059,
+      "maxroot_at_r_gt1": 1.06864691,
+      "fd_raise_r_no_maxroot": "0/80"
+    },
+    "10": {
+      "best_feasible_r": 0.99997629566,
+      "best_r_gt1": 1.033333333333,
+      "maxroot_at_r_gt1": 1.06666667,
+      "fd_raise_r_no_maxroot": "0/80"
+    },
+    "12": {
+      "best_feasible_r": 0.999974211798,
+      "best_r_gt1": 1.030151134458,
+      "maxroot_at_r_gt1": 1.06030227,
+      "fd_raise_r_no_maxroot": "0/80"
+    },
+    "15": {
+      "best_feasible_r": 0.999980789714,
+      "best_r_gt1": 1.026726124191,
+      "maxroot_at_r_gt1": 1.05288288,
+      "fd_raise_r_no_maxroot": "0/80"
+    },
+    "20": {
+      "best_feasible_r": 0.999980024038,
+      "best_r_gt1": 1.022941573387,
+      "maxroot_at_r_gt1": 1.04588315,
+      "fd_raise_r_no_maxroot": "0/80"
+    }
+  }
+}
