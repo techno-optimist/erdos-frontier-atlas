@@ -1,7 +1,7 @@
 {
-  "schema": "lead.global_macro_residual.seal.v9",
+  "schema": "lead.global_macro_residual.seal.v10",
   "date": "2026-07-21",
-  "title": "Witness ladder n=3..9",
+  "title": "Witness ladder n=3..10 (minimal known cells)",
   "status": "SEALED",
   "scoreboard": [
     {"cell": "n=3 L=3 S=3", "verdict": "WITNESS"},
@@ -10,12 +10,15 @@
     {"cell": "n=6 L=4 S=5", "verdict": "WITNESS"},
     {"cell": "n=7 L=5 S=5", "verdict": "WITNESS"},
     {"cell": "n=8 L=6 S=6", "verdict": "WITNESS"},
-    {"cell": "n=9 L=7 S=7", "verdict": "WITNESS"},
+    {"cell": "n=9 L=6 S=6", "verdict": "WITNESS (smaller than L=7 S=7)"},
+    {"cell": "n=9 L=7 S=7", "verdict": "WITNESS (non-minimal)"},
+    {"cell": "n=10 L=6 S=7", "verdict": "WITNESS"},
+    {"cell": "n=10 L=8 S=7", "verdict": "WITNESS (non-minimal L)"},
     {"cell": "L=3 S<=4 non-witnesses", "verdict": "NO-GO classified"}
   ],
   "open_loopholes": [
-    "n=10 minimal (L,S)",
-    "closed form L(n)=n-2 for n>=5?, S(n) pattern",
+    "n=11+",
+    "closed form L(n),S(n)",
     "Erdős 142 density consequences"
   ],
   "claim_boundary": "Finite machine objects for the common-anchor split-integral deterministic ternary macro model. Not an Erdős 142 solution."

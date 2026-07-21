@@ -2,29 +2,29 @@
   "claim_boundary": "Heuristic pad/mutate hunt; not exhaustive.",
   "configs": [
     {
-      "L": 6,
-      "S": 6,
+      "L": 7,
+      "S": 7,
       "stats": {
-        "clocks": 281,
-        "ge_tags": 32,
-        "outward": 50
+        "clocks": 131,
+        "ge_tags": 40,
+        "outward": 510
       }
     },
     {
-      "L": 6,
+      "L": 8,
       "S": 7,
       "stats": {
-        "clocks": 122,
-        "ge_tags": 18,
+        "clocks": 6,
+        "ge_tags": 4,
         "lp": 1,
         "mip": 1,
-        "outward": 528,
+        "outward": 106,
         "routable": 1,
         "route_enum": 1
       }
     }
   ],
-  "elapsed_sec": 54.617,
+  "elapsed_sec": 124.542,
   "schema": "lead.n10_hunt.v1",
   "status": "FOUND_INTEGER"
 }
