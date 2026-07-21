@@ -245,3 +245,32 @@ evidence the claim still stands. A clean run is a prompt to keep trusting the
 status quo, not a verdict; a flagged run is a prompt for a human to read the
 listed items and decide, not an automatic correction. See the tool's own
 docstring for the full statement of limits.
+
+## What a confirmation triggers — the archival policy
+
+A signal is only useful if something is attached to it, so one standing action
+is written down in [`root_claim.json`](root_claim.json) under
+`archival_policy` (decided 2026-07-20):
+
+**While the root claim is "awaiting confirmation", no crater artifact gets a
+DOI.** Not the JC verification, not this graph, not the explicit Dixmier
+object. A DOI is permanent — a Zenodo record can be versioned but never
+retracted — and *everything here is conditional on an external, unrefereed
+announcement*. Minting now would permanently timestamp this project's name
+against a claim whose truth-value is held by someone else. A DOI is also the
+most discovery-shaped signal available, and the contribution here is typed as
+independent **verification** plus derived corollaries; a record titled
+"Dixmier Conjecture" would be read by title-only readers as a claim
+[`certificates/dixmier-conjecture/`](../../certificates/dixmier-conjecture/)
+explicitly declines to make. And what a DOI would buy — a public timestamp,
+hash-pinned permanence — git already supplies.
+
+**If the claim is confirmed** (arXiv preprint, peer review, or settled
+community acceptance on the tracked Wikipedia article): mint **one** combined
+DOI for the whole package — the JC object verification, this graph, and the
+Dixmier object — whose subject is *our* verification work, with Alpöge's
+construction cited as the input, never claimed. One record, not one per
+corollary. The mint is a human-of-record act.
+
+**If the claim is retracted:** mint nothing. Nothing was lost by waiting, and
+that asymmetry is the entire argument.
