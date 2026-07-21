@@ -498,5 +498,15 @@
     "slack": 0.212521,
     "counterexample": false,
     "source": "dual_fast_log"
+  },
+  {
+    "n": 24,
+    "R_target": 1.0001,
+    "radius": 0.9977855629,
+    "max_root_mod": 0.9979400403,
+    "meets_R": false,
+    "slack": -0.00206,
+    "counterexample": false,
+    "source": "dual_fast_log"
   }
 ]

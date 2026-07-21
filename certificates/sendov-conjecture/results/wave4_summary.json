@@ -1,7 +1,7 @@
 {
   "wave": 4,
   "counterexamples": 0,
-  "dual_soft_rows": 31,
+  "dual_soft_rows": 32,
   "equal_crit": "best feasible r~0.98",
   "true_d": "d=1 for n=9..20",
   "circle": "sub-wall numeric basins"

@@ -277,5 +277,14 @@
     "slack": 0.150215,
     "counterexample": false,
     "source": "wave4_dual_soft"
+  },
+  {
+    "n": 30,
+    "R_target": 1.1,
+    "radius": 1.09725746,
+    "max_root_mod": 1.20474201,
+    "slack": 0.204742,
+    "counterexample": false,
+    "source": "wave4_dual_soft"
   }
 ]
