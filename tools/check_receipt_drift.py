@@ -95,9 +95,6 @@ def json_drift(path):
                 walk(x.get(k), y.get(k), f"{trail}.{k}" if trail else k)
         elif x != y:
             leaf = trail.split(".")[-1]
-            # Cosmetic only if the NAME is a known timing/provenance key AND both
-            # values look like timings/stamps. A claim field that happens to be
-            # called "seconds" or "date" must not get a free pass on its value.
             # Cosmetic ONLY at the top level of the receipt and only for a known
             # timing key. Independent ablation showed a value-shape test cannot
             # separate "elapsed_sec 0.137 -> 0.032" from "seconds 42 -> 999":
@@ -196,23 +193,28 @@ def main():
             # safe in sanctioned use.)
             sh(["git", "checkout", "--", "."])
 
-    # Coverage: a receipt no verifier ever rewrites was never re-derived, so this
-    # gate says nothing about it. Silence there is not evidence, and it is the
-    # largest remaining blind spot -- report it explicitly.
+    # Coverage. A committed .json a verifier re-derives is checked by this gate.
+    # The rest are NOT all "unchecked receipts": most are witness INPUTS and
+    # search LOGS a verifier should never reproduce. This gate cannot tell an
+    # input from an unbacked receipt, so it reports the split honestly and does
+    # not imply the remainder ought to be re-derived. (Naming the number
+    # precisely matters: a gate whose headline stat cries wolf gets ignored.)
     rederived = {p for p, _, _ in substantive} | {p for p, _, _ in cosmetic} | touched
-    total_receipts = 0
+    total_json = 0
     for d in dirs:
         for p in (ROOT / d).glob("*.json"):
             if str(p.relative_to(ROOT)) in tracked:
-                total_receipts += 1
+                total_json += 1
     print(f"receipt-drift: ran {ran} verifier(s) across {len(dirs)} dir(s)")
-    if total_receipts:
-        print(f"  coverage: {len(rederived)}/{total_receipts} committed receipt(s) "
-              f"re-derived by a verifier "
-              f"({total_receipts - len(rederived)} never re-derived -- unchecked)")
+    if total_json:
+        other = total_json - len(rederived)
+        print(f"  coverage: {len(rederived)}/{total_json} committed .json in checked "
+              f"dir(s) are re-derived by a verifier; the other {other} are witness "
+              f"inputs, search logs, or unbacked claims this gate does not reproduce "
+              f"(classify by hand)")
     if uncovered:
-        print(f"  NOT CHECKED: {len(uncovered)} dir(s) hold committed .json receipts "
-              "but expose no verify*/check* script -- their receipts are unverifiable "
+        print(f"  NOT CHECKED: {len(uncovered)} dir(s) hold committed .json "
+              "but expose no verify*/check* script -- any receipts there are unverifiable "
               "by this gate:")
         for d in uncovered:
             print(f"    - {d}")

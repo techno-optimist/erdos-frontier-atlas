@@ -32,7 +32,7 @@
   "state_count": 7,
   "status": "PASS_N11_L7_S7_SPLIT_MACRO_WITNESS",
   "tag_count": 12,
-  "vertex_count": 136,
+  "vertex_count": 117,
   "weakly_connected_from_anchor": true,
   "weighted_flow_boundary_zero": true,
   "weighted_tag_column_zero": true
