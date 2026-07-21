@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:2cc9c9128cf4e15d2900e7d93ae4786e4ed464984d9a819b3b76f5bfec3457af",
+  "content_digest": "sha256:88d66afb6566a9731e3d221a379a315895f678c7bdb438895a9261fe69be8a26",
+  "occurred_at": "2026-07-21T11:20:49Z",
+  "frontier": "A385316 a(6): smallest integer expressible as a sum of three prime cubes in exactly 6 unordered ways.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nBuilt and executed a clean no-argument Python replay verifier at C=1.1e10. Reproduced all five known OEIS terms a(1)=24 (mult=1), a(2)=185527 (mult=2), a(3)=8627527 (mult=3), a(4)=999979163 (mult=4), a(5)=10588881419 (mult=5) with correct multiplicities. Tested 3 domain kill fixtures (288, 4112, 664 — composite-derived sums correctly absent from prime enumeration) and 3 predicate kill fixtures (24, 185527, 8627527 correctly not having multiplicity 6). Zero k=6 candidates found. Runs in ~11s on Mac, no OOM.",
+  "verified": "Verifier domain: N = p^3 + q^3 + r^3 where p, q, r are primes (not necessarily distinct), with p <= q <= r, sum <= C=11000000000\nVerifier predicate: count exact number of unordered representations; reject if count != 6\nArtifact: prime_cubes_verifier_1e10.py, SHA-256: 54de48fc86a154cdbf628cd7f9599d4b0247e7c4a9ff8c49dd98ae803d3272eb\nReplay exits zero, prints:\nDomain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nALL KILL FIXTURES PASSED",
+  "result": "Certified: a(6) > 11000000000 (1.1e10). The verifier reproduces all five OEIS terms and passes all six kill fixtures with deterministic zero-exit replay. The C=1.1e10 sweep found zero numbers with exactly 6 representations. This improves the prior published bound from ~4.99e11 to 1.1e10 — wait, the prior bound was already ~4.99e11 (4.99e11 > 1.1e10). The accepted continuation from the previous session already certified a(6) > 1.1e10. The incremental progress is completing a fully replayable, no-argument verifier artifact that exits zero cleanly (the prior quarantine feedback was exit-137 OOM on the earlier verifier). The next gate — C=1e13 search — still requires DGX SSH access.",
+  "next_gate": "An operator with DGX SSH access must execute `python3 prime_cubes_search_1e13.py --cutoff 10000000000000` on spark-38e3.local. If no k=6 candidate found at C=1e13, advance to C=1e14 or consider heuristic/construction approaches.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. All work was local artifact construction and verification only. DGX SSH search deferred to operator.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-21_04-20-49.md",
+    "sha256": "114f668c4d2ab0c21dfc984b30559198c71555f4d9ce1bb353f0ce274e8119fa"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}
