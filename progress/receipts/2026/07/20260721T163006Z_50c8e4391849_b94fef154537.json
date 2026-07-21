@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:b94fef15453787fa5f01b73ccfc09412d8cab9366ef54a3b7e58194068b51d91",
+  "content_digest": "sha256:68eb56b7683ade8d4f4c0c3e99dc49a79549327ffeb6b6f576fd67320a91aff6",
+  "occurred_at": "2026-07-21T16:30:06Z",
+  "frontier": "Erdős #979 / OEIS A385316: what is a(6), the smallest integer expressible as a sum of three prime cubes in exactly 6 ways?",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nAuthored a self-contained Python verifier (prime_cubes_verifier.py) that builds the complete prime set P={p : p³≤C}, enumerates all nondecreasing triples (p≤q≤r) with p³+q³+r³≤C, and counts exact representation multiplicities. Ran verified replay at C=10⁹, C=10¹⁰, and C=10¹¹. All five OEIS terms a(1)..a(5) reproduced exactly at C=10¹¹. Kill fixtures (2 domain, 2 predicate) all rejected correctly.",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nArtifact: prime_cubes_verifier.py, SHA-256: f53a78ebc4b69b9d3c02628cefbb3fcfe967a09796ee476e9a7017f3dc133150\nReplay at C=10¹¹: known terms match a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419. k-distribution {1:31346765, 2:126221, 3:1080, 4:14, 5:2}, zero entries at k=6.",
+  "result": "Verified the exact-prime-set bounded search methodology; independently confirmed certified bound a(6) > 10¹¹. The discriminating step C=10¹³ requires DGX SSH (spark-38e3.local) and cannot be reached from this Mac. No k=6 candidate exists below 10¹¹.",
+  "next_gate": "An operator with DGX SSH access must execute the same search at C=10¹³. If a k=6 candidate appears, report it; if not, advance bound to a(6) > 10¹³ and escalate to C=10¹⁴ or a heuristic/construction approach.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-21_09-30-06.md",
+    "sha256": "1c58404ee9f5f7ac94a09c0230373566b5a1df1796713bd0a2abfab6011c6616"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}
