@@ -1,17 +1,33 @@
 {
-  "schema": "lead.n6_l3_s5_integer_progress.v1",
-  "note": "Snapshot mid-hunt 2026-07-21; full sample still running or incomplete.",
-  "stats_at_55k": {
-    "clocks": 55000,
-    "reachable": 13109,
-    "ge_tags": 6502,
-    "outward": 1305504,
-    "routable": 5,
-    "route_enum": 5,
-    "lp_infeas": 5,
-    "lp": 0
-  },
-  "first_routable": "N6_L3_S5_FIRST_ROUTABLE.json",
-  "status": "ROUTABLE_EXISTS_ALL_LP_INFEAS_SO_FAR",
-  "claim_boundary": "Partial sample; not exhaustive. All 5 routable seeds so far are LP-infeasible."
+  "schema": "lead.n6_l3_s5_integer_progress.v2",
+  "date": "2026-07-21",
+  "hunts": [
+    {
+      "name": "biased_full_assign",
+      "stats": {
+        "clocks": 55000,
+        "reachable": 13109,
+        "ge_tags": 6502,
+        "outward": 1305504,
+        "routable": 5,
+        "route_enum": 5,
+        "lp_infeas": 5,
+        "lp": 0
+      },
+      "note": "All 5 routable seeds LP-infeasible; first seed in N6_L3_S5_FIRST_ROUTABLE.json"
+    },
+    {
+      "name": "capped_assign_v2",
+      "artifact": "N6_L3_S5_INTEGER_SEARCH.json",
+      "stats": {
+        "clocks": 44873,
+        "ge_tags": 5058,
+        "outward": 45150,
+        "routable": 0
+      },
+      "note": "Capped port assignment (max 15) found 0 routable in 45k samples"
+    }
+  ],
+  "status": "ROUTABLE_EXISTS_NO_LP_YET",
+  "claim_boundary": "Samples only; not exhaustive. Routable seeds exist; no LP-feasible seed found yet."
 }

@@ -1,0 +1,11 @@
+{
+  "elapsed_sec": 23.51,
+  "sample_size": 44873,
+  "schema": "lead.n6_l3_s5_integer_search.v2",
+  "stats": {
+    "clocks": 44873,
+    "ge_tags": 5058,
+    "outward": 45150
+  },
+  "status": "NO_INTEGER_IN_SAMPLE"
+}
