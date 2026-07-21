@@ -1,0 +1,50 @@
+{
+  "schema": "erdos-frontier-atlas-lean-lane-v1",
+  "purpose": "Pinned external Lean formalizations relevant to the atlas. Each record states the machine-checked scope precisely; it does not alter erdosproblems.com status or assert prize eligibility.",
+  "records": [
+    {
+      "erdos_problem": 593,
+      "title": "Obligatory triple systems",
+      "status": "complete finite classification formalization",
+      "repository": "https://github.com/SamPetkov/Erdos593",
+      "commit": "d834f1f42e7e0d5d2a6c23e9487563bedb1b277b",
+      "entrypoint": "formalization/Erdos593SelfContained.lean",
+      "toolchain": "Lean/mathlib v4.32.0",
+      "claims": [
+        "For every finite triple system F, F.IsObligatory ↔ F.isolatedReduction.Intrinsic.",
+        "For every finite triple system F, F.IsObligatory ↔ Constructible F.isolatedReduction."
+      ],
+      "replay": [
+        "git clone https://github.com/SamPetkov/Erdos593.git && cd Erdos593 && git checkout d834f1f42e7e0d5d2a6c23e9487563bedb1b277b",
+        "cd formalization && lake build && python scripts/generate_self_contained.py --check && lake env lean Erdos593SelfContained.lean"
+      ],
+      "trust_boundary": "The pin records kernel checking of the stated finite classification. It does not establish historical priority, independent discovery, external peer review, or a change to the canonical problem-page status.",
+      "attribution": {
+        "formalization": "Samuil Petkov",
+        "related_work": "Eric Li, arXiv:2606.24882. The pinned repository describes Li's contemporaneous preprint as proving the same classification, using a one-apex sequence lift in greater cardinal generality and related bridge-decomposition ideas; it is cited for comparison and is not a logical premise of the Lean development."
+      }
+    },
+    {
+      "erdos_problem": 625,
+      "title": "Chromatic–cochromatic gap in G(n,1/2)",
+      "status": "partial formalization checkpoint",
+      "repository": "https://github.com/SamPetkov/Erdos",
+      "commit": "e03159d09ddf019196d81a647632c913230fb1cf",
+      "entrypoint": "625/formalization/Erdos625SelfContained.lean",
+      "toolchain": "Lean/mathlib v4.31.0",
+      "claims": [
+        "The checkpoint includes the finite Section VII falling-factorial ratio, prefix-local full-corner induction, and complementary-profile sum reindexing lemmas.",
+        "The project explicitly leaves Erdos625Statement and the manuscript's Sections VIII–IX asymptotic/probabilistic assemblies unproved."
+      ],
+      "replay": [
+        "git clone https://github.com/SamPetkov/Erdos.git && cd Erdos && git checkout e03159d09ddf019196d81a647632c913230fb1cf",
+        "cd 625/formalization && python scripts/generate_self_contained.py --check && lake build --wfail && lake env lean -DwarningAsError=true Erdos625SelfContained.lean"
+      ],
+      "trust_boundary": "This is a scoped Lean checkpoint, not a formal proof of Erdős Problem 625, not evidence that the currently open canonical problem is solved, and not a prize claim.",
+      "attribution": {
+        "formalization": "Samuil Petkov",
+        "related_work": "No external coauthorship or priority claim is made by this registry."
+      }
+    }
+  ]
+}
