@@ -58,6 +58,8 @@ best **feasible** \(d=1\).
 | Crit-param / free \(\beta\) / rich multiplicity | \(n\) up to 26+ | Always rediscover \(r=1\) at \(\beta=1\) |
 | Extremal jet | 26 775 samples, \(n\in\{9,10,12,15,20\}\) | best feasible \(r\le 0.99998\); every \(r>1\) infeasible; 0/80 FD dirs raise \(r\) without raising maxroot |
 | Dual-ray | \(n\in\{9..30\}\), \(R\in\{1.001,1.01,1.05,1.1\}\) | min maxroot \(\approx 2R-1>1\); CE=0 |
+| Dual-fast | \(n=9..30\), 65 rows | \(r>1\Rightarrow\) maxroot\(>1\); positive slack; CE=0 |
+| Deep multi-lane | \(n\in\{9..16,20,26\}\), 77 configs | best feasible score \(=1.0\) (unity) every \(n\); CE=0 |
 | Squeeze \(r^*(\delta)\) | \(n\in\{9,10,12,15,20\}\) | \(\delta\le 10^{-3}\Rightarrow r=1\); \(\delta\ge 10^{-2}\Rightarrow r<1\) |
 | Lune dual (force crit into \(D(0,1)\setminus D(a,1)\)) | \(n\in\{9,10,12,15,20\}\), \(a\)-grid | feasible \(\Leftrightarrow r\le 1\); best feasible \(r\to 1^-\); CE=0 |
 | Miller dense grids | \(n=9..12\) | best on-grid \(r\sim 0.95\); CE=0 |

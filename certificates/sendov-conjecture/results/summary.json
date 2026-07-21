@@ -1,7 +1,7 @@
 {
   "schema": "efa-sendov-wall-ledger/v1",
   "problem": "Sendov's conjecture (1958) / Ilieff misattribution",
-  "claim": "Multi-lane computational assault found 0 counterexamples; best feasible d(f)=1 (unity extremal). Dual-ray, extremal jet, squeeze, rich multiplicity, and related lanes are consistent with a constrained maximum at d=1 in the attacked families. This is a wall ledger, not a disproof or a proof for new n.",
+  "claim": "Multi-lane computational assault found 0 counterexamples; best feasible d(f)=1 (unity extremal). Dual-ray/fast, extremal jet, squeeze, rich multiplicity, deep n<= 26, dual_fast n<= 30, and related lanes are consistent with a constrained maximum at d=1 in the attacked families. This is a wall ledger, not a disproof or a proof for new n.",
   "counterexamples_found": 0,
   "best_feasible_d": 1.0,
   "literature": {
@@ -56,11 +56,11 @@
     },
     {
       "id": "dual_fast_all",
-      "result": "dual_fast n=9..16: no CE; r>1 always has maxroot>1 (39 rows)"
+      "result": "dual_fast n=9..30: no CE; r>1 always has maxroot>1 (65 rows); positive slack for R>1"
     },
     {
       "id": "deep_multi_lane",
-      "result": "deep multi-lane through n=16: best feasible score=1.0 (unity) every n; CE=0"
+      "result": "deep multi-lane n=9..26: best feasible score=1.0 (unity) every n; CE=0 (10 degrees)"
     },
     {
       "id": "equal_crit_theorem",
