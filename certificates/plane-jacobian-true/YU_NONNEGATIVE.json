@@ -1,0 +1,8 @@
+{
+  "atlas_node": "yu_nonnegative_theorem",
+  "source": "Yu, J. Algebra 171 (1995) 515-523",
+  "n_nonneg_keller_box": 7,
+  "n_inverted": 7,
+  "elapsed_sec": 1.98,
+  "claim": "Plane elementary maps with nonnegative higher coeffs invert for all tested degrees; full {0,1}^14 NF box of deg<=3 nonnegative maps: 7/7 Keller maps invert. Yu's theorem is the literature cover for the full nonnegative class; this is a constructive plane replay."
+}

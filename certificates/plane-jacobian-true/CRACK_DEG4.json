@@ -1,8 +1,8 @@
 {
-  "wmax": 4,
-  "n_maps": 187361,
+  "wmax": 5,
+  "n_maps": 1547489,
   "n_keller": 53,
   "n_inverted": 53,
   "n_failed": 0,
-  "elapsed_sec": 25.84
+  "elapsed_sec": 270.53
 }

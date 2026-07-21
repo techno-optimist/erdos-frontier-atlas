@@ -1,0 +1,115 @@
+{
+  "schema": "efa-plane-jc-quantities/v1",
+  "note": "TRUE-lane ledger for the plane Jacobian Conjecture (atlas node plane_jacobian_conjecture). Complements atlas/jc-crater/quantities.json which is mostly dim-3 anatomy. Confidence classes follow atlas C0-C3 discipline.",
+  "atlas_links": {
+    "plane_node": "plane_jacobian_conjecture",
+    "surviving_theorems": [
+      "wang_degree_two_theorem",
+      "yu_nonnegative_theorem",
+      "bcw_tree_formula"
+    ],
+    "parent_bracket": "jc-min-counterexample-dimension"
+  },
+  "entries": [
+    {
+      "id": "jc-plane-status-degree-le-3",
+      "quantity": "Is every plane Keller map of total degree <= 3 a polynomial automorphism?",
+      "lower": 1,
+      "upper": 1,
+      "kind": "verified_range",
+      "status": "closed",
+      "value": true,
+      "evidence": [
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/plane-jacobian-true/crack_deg3_elim.py",
+          "note": "Normal form lattice 21/21 invert; elementary E_x/E_y all rational params; linear relations a11=-2 b02, b11=-2 a20; classical affine reduction to NF."
+        },
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/plane-jacobian-true/crack_structural.py",
+          "note": "Re-verified 21/21 lattice; elementary any deg; pure-power L1/L2."
+        },
+        {
+          "type": "literature",
+          "artifact": "van den Essen 2000 Ch. 10 (normal form reduction)",
+          "note": "Affine reduction of any plane Keller map of deg<=3 to normal form."
+        }
+      ],
+      "confidence": "C1",
+      "notes": "Degenerate bracket (true). Closes plane JC on the degree band <=3."
+    },
+    {
+      "id": "jc-plane-min-counterexample-degree",
+      "quantity": "Minimal total degree of a plane Keller counterexample, if any exists (else +infty)",
+      "lower": 101,
+      "upper": null,
+      "kind": "value_gap",
+      "status": "open",
+      "evidence": [
+        {
+          "type": "literature",
+          "artifact": "Moh, J. reine angew. Math. 340 (1983) 140-212",
+          "note": "lower bound 101: plane JC holds for all maps of degree <= 100."
+        },
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/plane-jacobian-true/crack_deg3_elim.py",
+          "note": "strengthening: deg<=3 fully settled constructively (subset of Moh)."
+        },
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/plane-jacobian-true/wang_degree2.py",
+          "note": "deg<=2 by Wang (all n)."
+        }
+      ],
+      "confidence": "C2",
+      "notes": "If plane JC is TRUE the quantity is +infty and the bracket never closes by upper bound. If FALSE a CE of deg>=101 exists. Atlas Moh reference on plane_jacobian_conjecture node."
+    },
+    {
+      "id": "jc-plane-elementary-class",
+      "quantity": "Are all plane elementary Keller maps (any degree) automorphisms?",
+      "lower": 1,
+      "upper": 1,
+      "kind": "verified_range",
+      "status": "closed",
+      "value": true,
+      "evidence": [
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/plane-jacobian-true/crack_structural.py",
+          "note": "E_x and E_y for deg 0..12 explicit inverse; multi-term p; linear conjugates."
+        },
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/plane-jacobian-true/bcw_formal_inverse.py",
+          "note": "Formal inverse recursion terminates and matches closed form for elementary deg 2..8."
+        }
+      ],
+      "confidence": "C1",
+      "notes": "Infinite island fully settled. Atlas Yu nonnegative covers a subcone; elementary is larger."
+    },
+    {
+      "id": "jc-min-counterexample-dimension-plane-lower",
+      "quantity": "Contribution to jc-min-counterexample-dimension lower bound from plane work",
+      "lower": 2,
+      "upper": 3,
+      "kind": "value_gap",
+      "status": "open",
+      "evidence": [
+        {
+          "type": "literature",
+          "artifact": "atlas/jc-crater/quantities.json jc-min-counterexample-dimension",
+          "note": "Parent bracket [2,3]: upper 3 by Alpoge dim-3 CE; lower 2 until plane JC proved."
+        },
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/plane-jacobian-true/RESOLUTION.md",
+          "note": "TRUE lane has not closed lower bound to 3 yet (would require full plane JC). Partial: deg<=3 and elementary any deg settled."
+        }
+      ],
+      "confidence": "C2",
+      "notes": "Closing this parent bracket to 3 IS full plane JC. Our work raises confidenc on large subclasses without yet moving the integer lower bound."
+    }
+  ]
+}
