@@ -10,7 +10,7 @@
   "nf_box_failed": 0,
   "quadratic_keller": 5,
   "quadratic_inverted": 5,
-  "elapsed_sec": 235.02,
+  "elapsed_sec": 188.23,
   "classical_reduction": "Any plane Keller map of deg<=3 reduces by affine changes of domain/codomain to normal form F=(x+A,y+B) with A,B in (x,y)^2 and det JF=1 (van den Essen 2000, Ch.10).",
   "status": "PROVED for deg<=3 over Q in normal form; box+families machine-checked"
 }

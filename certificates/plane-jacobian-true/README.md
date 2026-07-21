@@ -2,22 +2,21 @@
 
 **Hypothesis:** plane JC (\(n=2\)) is TRUE.
 
-## CRACK (deg ≤ 3)
+## Resolution (read `RESOLUTION.md`)
 
-| file | role |
-|------|------|
-| **`crack_deg3_elim.py`** | **Main crack certificate** — exit 0 |
-| **`CRACK_DEG3.json`** | Machine receipt |
-| **`THEOREM_CRACK_DEG3.md`** | Write-up + honest scope |
+| file | role | status |
+|------|------|--------|
+| **`RESOLUTION.md`** | Full status board | — |
+| **`crack_structural.py`** | Elementary **any degree** + conjugates + L1/L2 | **exit 0** |
+| **`crack_deg3_elim.py`** | Deg ≤ 3 lattice + families | **exit 0** (21/21) |
+| **`crack_deg4.py`** | Deg ≤ 4 weight≤4 lattice | **exit 0** (53/53) |
+| `CRACK_*.json` | Machine receipts | — |
 
 ```sh
-python crack_deg3_elim.py   # proves plane JC for total degree <= 3 (see theorem file)
+python crack_structural.py   # any-deg elementary RESOLVED
+python crack_deg3_elim.py    # plane JC deg<=3 RESOLVED
+python crack_deg4.py         # deg<=4 lattice
 ```
-
-**Result:** 14 Keller equations + linear relations; elementary families \(E_x,E_y\)
-for all rational parameters; **21/21** lattice Keller maps invert after linear
-elimination (\(3^{12}\) exhaust). Classical affine reduction ⇒ all deg ≤ 3
-plane Keller maps.
 
 ## Support libraries
 
