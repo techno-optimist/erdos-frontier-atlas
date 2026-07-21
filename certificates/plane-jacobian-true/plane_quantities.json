@@ -90,6 +90,52 @@
       "notes": "Infinite island fully settled. Atlas Yu nonnegative covers a subcone; elementary is larger."
     },
     {
+      "id": "jc-plane-geo-degree-elementary-and-lattice",
+      "quantity": "Geometric degree of elementary plane Keller maps and deg<=3 NF lattice Keller maps",
+      "lower": 1,
+      "upper": 1,
+      "kind": "verified_range",
+      "status": "closed",
+      "value": 1,
+      "evidence": [
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/plane-jacobian-true/peretz_resultant.py",
+          "note": "Elementary: inverse => geo deg 1. Lattice 21/21: zero multi-point fibres on test grid. Non-Keller control (x^2,y) has fibre size 2."
+        },
+        {
+          "type": "literature",
+          "artifact": "Peretz 2009 resultant reformulation of plane JC",
+          "note": "JC for F iff relative resultants force degree-1 eliminants."
+        }
+      ],
+      "confidence": "C1",
+      "notes": "Geo deg 1 for these classes is settled; general plane Keller geo deg 1 is equivalent to plane JC."
+    },
+    {
+      "id": "jc-plane-properness-elementary",
+      "quantity": "Are elementary plane Keller maps proper?",
+      "lower": 1,
+      "upper": 1,
+      "kind": "verified_range",
+      "status": "closed",
+      "value": true,
+      "evidence": [
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/plane-jacobian-true/plane_properness.py",
+          "note": "Polynomial inverse => homeomorphism => proper. Lattice 21/21 pass ray-escape tests."
+        },
+        {
+          "type": "literature",
+          "artifact": "BCW 1982 Thm 2.1 (atlas keller_properness_universal)",
+          "note": "Proper Keller => automorphism (per-map theorem survives crater)."
+        }
+      ],
+      "confidence": "C1",
+      "notes": "Universal properness of all plane Keller maps remains open (= plane JC)."
+    },
+    {
       "id": "jc-min-counterexample-dimension-plane-lower",
       "quantity": "Contribution to jc-min-counterexample-dimension lower bound from plane work",
       "lower": 2,

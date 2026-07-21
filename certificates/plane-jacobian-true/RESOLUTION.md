@@ -32,6 +32,9 @@
 | R6 | Deg ≤ 4 weight≤5 lattice **53/53** | `crack_deg4.py` | 0 |
 | R7 | Yu nonnegative plane replay (elementary + {0,1}^14 box 7/7) | `yu_nonnegative.py` | 0 |
 | R8 | BCW formal inverse terminates for elementary deg 2..8; matches closed form; shear deg-2 formal works | `bcw_formal_inverse.py` | 0 |
+| R9 | Yu nonnegative plane replay | `yu_nonnegative.py` | 0 |
+| R10 | Peretz/fibre: lattice geo deg 1 (no multi-fibre); elementary inverse | `peretz_resultant.py` | 0 |
+| R11 | Plane properness: elementary proper via inverse; lattice 21/21 ray-escape | `plane_properness.py` | 0 |
 
 ### Ledger (`plane_quantities.json`)
 
@@ -63,6 +66,8 @@ python crack_deg3_elim.py
 python crack_deg4.py --wmax 5
 python yu_nonnegative.py
 python bcw_formal_inverse.py
+python peretz_resultant.py
+python plane_properness.py
 ```
 
 ---

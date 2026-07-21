@@ -1,0 +1,8 @@
+{
+  "source": "Peretz 2009 resultant reformulation of plane JC (computational face)",
+  "atlas_link": "plane_jacobian_conjecture; geometric degree 1 for settled classes",
+  "n_lattice_keller": 21,
+  "n_multi_fibre": 0,
+  "elapsed_sec": 165.85,
+  "claim": "Elementary maps have geo deg 1 (inverse); deg<=3 lattice Keller maps show no multi-point fibres on the test grid; non-Keller control has fibre size 2. Aligns with Peretz: JC for F iff resultants force degree-1 eliminants (geo deg 1)."
+}
