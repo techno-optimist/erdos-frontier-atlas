@@ -9,6 +9,13 @@ import time
 from collections import Counter
 from pathlib import Path
 
+# `python3 -I` (isolated mode) implies -P, which drops this script's own directory from
+# sys.path, so the sibling import below fails. Re-add it explicitly: that keeps the -I
+# hermeticity the replay instructions rely on (no user site-packages) AND makes the
+# documented one-liner actually run for a stranger.
+import sys as _sys, pathlib as _pathlib
+_sys.path.insert(0, str(_pathlib.Path(__file__).resolve().parent))
+
 import search_n5_l3 as N
 
 HERE = Path(__file__).resolve().parent
