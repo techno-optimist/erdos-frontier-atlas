@@ -182,7 +182,7 @@ def main():
         "return_role_parikh_equal": parikh_ok,
         "weakly_connected_from_anchor": connected,
         "claim_boundary": (
-            "Exact n=10 common-anchor split-weight length-six Parikh-balanced "
+            "Exact n=10 common-anchor split-weight length-eight Parikh-balanced "
             "macro on a 7-state clock. Not Erdős 142."
         ),
     }
