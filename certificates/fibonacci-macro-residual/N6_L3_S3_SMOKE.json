@@ -1,0 +1,14 @@
+{
+  "claim_boundary": "Smoke only first 3000 of 19683 clocks; not a no-go.",
+  "digit_patterns": 23,
+  "elapsed_sec": 0.262,
+  "n_columns": 12,
+  "sample_clocks": 3000,
+  "schema": "lead.n6_l3_s3_smoke.v1",
+  "stats": {
+    "clocks": 3000,
+    "ge_tags": 9,
+    "reachable": 1566
+  },
+  "status": "NO_ROUTABLE_IN_SMOKE"
+}

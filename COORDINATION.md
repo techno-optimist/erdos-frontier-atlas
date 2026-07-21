@@ -37,6 +37,7 @@ others don't touch it.
 | `agent/harden-r3-search-semantics` | r₃(N) search semantics (Erdős #142) | *(register)* | *(register)* |
 | `codex/foundry-*` | foundry / atlas integration + gates | *(register)* | *(register)* |
 | `claude/erdos-142-certificate` | E142 orchestration · results registry · board certs | `certificates/erdos-142/`, `RESULTS_REGISTRY.md` | frozen E142 cert merged-pending |
+| `agent/jc-fences-fib-macro-20260720` | JC fiber/degree family fences + Fibonacci L=3 macro residual | `certificates/jc-family-fences/`, `certificates/fibonacci-macro-residual/` | PR packaging 2026-07-20 |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching

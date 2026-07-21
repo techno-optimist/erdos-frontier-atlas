@@ -1,0 +1,11 @@
+{
+  "claim_boundary": "Exact fiber counts on rational t2=0 \u2229 V(E). Not familywise.",
+  "histogram": {
+    "1": 171
+  },
+  "incomplete_y_factorizations": 0,
+  "points_tested": 171,
+  "schema": "jc.fiber_t2_zero.v1",
+  "size2_hits": [],
+  "status": "NO_SIZE_2_ON_T2_ZERO_SAMPLE"
+}

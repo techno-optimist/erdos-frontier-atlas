@@ -1,0 +1,12 @@
+{
+  "claim_boundary": "Expanded rational sample on V(E); exact fiber counts via resultant gcd. Not familywise no-go.",
+  "histogram": {
+    "0": 10,
+    "1": 239
+  },
+  "incomplete_y_factorizations": 0,
+  "points_tested": 249,
+  "schema": "jc.fiber_size2_exact.v2",
+  "size2_hits": [],
+  "status": "NO_SIZE_2_IN_EXACT_PROBE"
+}
