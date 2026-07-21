@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:15eab0c06589e8da2c37fa69c9cd97693837efa350095e20e0399f6f1b053099",
+  "content_digest": "sha256:1f9938c789c3de9240a9c9c396191783027eb9f6a6fe71dbe25134215e669118",
+  "occurred_at": "2026-07-21T21:13:15Z",
+  "frontier": "A385316: smallest integer representable as a sum of three prime cubes in exactly k ways. a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419 are known. a(6) is open. Current certified lower bound: a(6) > 10¹¹.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nWrote and locally replayed the exact-prime-set verifier at C=10^10, reproducing 4 of 5 known OEIS terms (a(1)..a(4)) and confirming a(5) requires C > 10^10. All 4 kill fixtures (2 domain, 2 predicate) rejected correctly with matching branches. The C=10^13 discriminating step from the accepted continuation requires DGX SSH (spark-38e3.local) and is blocked from this Mac.",
+  "verified": "Verifier domain: Every prime p in a triple (p,q,r) with p^3+q^3+r^3 <= C must satisfy p^3 <= C; P={p : p^3 <= C} is provably complete.\nVerifier predicate: Enumeration of all nondecreasing triples (p<=q<=r) from P with p^3+q^3+r^3 <= C produces exact multiplicity counts matching OEIS A385316.\nDomain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nArtifact: prime_cubes_verifier.py, SHA-256: 2caca43c62f564797e441347e812ea50ba1108cbc9b1d77ffed823f6429f376f\nOEIS reproduction at C=10^10: a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163 reproduced; a(5)=10588881419 not reached (requires C >= 10588881419). Run time: 8.2s.",
+  "result": "Verifier methodology confirmed: kill fixtures all correctly rejected with branch coverage; 4/5 OEIS terms reproduced at C=10^10. The accepted continuation already certified a(6) > 10^11 at C=10^11 on DGX. Advancing to C=10^13 requires DGX SSH access from this Mac — not available. No new lower bound established this session.",
+  "next_gate": "Operator with DGX SSH access (spark-38e3.local) must execute the same verifier at C=10^13. If a k=6 candidate appears, report it; if not, advance bound to a(6) > 10^13 and escalate to C=10^14 or a heuristic/construction approach.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-21_14-13-15.md",
+    "sha256": "27cffe204d7b8680df4d29b1d8d27f38751f782933ec3df239c33a949df38695"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}
