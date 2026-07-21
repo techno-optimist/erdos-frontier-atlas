@@ -174,9 +174,15 @@ def test_rendered_mermaid_is_structurally_sound():
     status, flags = M.propagate(g, nodes)
     block = M.render_map_block(g, nodes, status, flags)
     mm = block[block.find("```mermaid") + 10: block.find("```", block.find("```mermaid") + 10)]
-    declared = set(_re.findall(r'^\s*([a-z_0-9]+)\["', mm, _re.M))
+    # `[[` is mermaid's subroutine shape, used to make the ROOT visually distinct. A regex that
+    # accepted only `[` silently dropped the root from `declared` and made this assertion misfire.
+    declared = set(_re.findall(r'^\s*([a-z_0-9]+)\[\[?"', mm, _re.M))
     assert declared == set(nodes)
-    assert not _re.findall(r'\["\s*"\]', mm)  # no empty labels
+    assert not _re.findall(r'\[\[?"\s*"\]', mm)  # no empty labels, either shape
+    # The root must be present AND keep its distinct shape (regression guard for the above).
+    assert _re.search(r'^\s*jacobian_conjecture\[\["', mm, _re.M)
+    # Legend scaffolding is deliberately upper-case so it can never be taken for a graph node.
+    assert not (set(_re.findall(r'^\s*([A-Z][A-Za-z0-9]*)\[', mm, _re.M)) & set(nodes))
     endpoints = {x for e in _re.findall(r'^\s*([a-z_0-9]+)\s*-\.?->\s*([a-z_0-9]+)', mm, _re.M) for x in e}
     assert endpoints <= declared
 

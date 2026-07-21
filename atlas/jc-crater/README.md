@@ -129,12 +129,9 @@ flowchart RL
   jc_over_char0_fields_and_z --> jacobian_conjecture
   jedrzejewicz_zielinski_jc_mnk --> jacobian_conjecture
   bisi_subtree_shuffle_markov_conjecture -.-> jacobian_conjecture
-  subgraph legend [" "]
-    direction LR
-    LKEY["how to read the arrows — X to Y means X implies Y, so Y falling pulls X down"]:::legendnote
-    LP1["any statement"]:::legendbox -->|"solid: per-dimension — full ∀ n ≥ 3 refutation flows"| LP2["Jacobian Conjecture"]:::legendbox
-    LM1["any statement"]:::legendbox -.->|"dashed: dimension-MIXING — only the weaker some-finite-dim flows"| LM2["Jacobian Conjecture"]:::legendbox
-  end
+  LKEY["how to read the arrows — X to Y means X implies Y, so Y falling pulls X down"]:::legendnote
+  LP1["any statement"]:::legendbox -->|"solid: per-dimension — full ∀ n ≥ 3 refutation flows"| LP2["Jacobian Conjecture"]:::legendbox
+  LM1["any statement"]:::legendbox -.->|"dashed: dimension-MIXING — only the weaker some-finite-dim flows"| LM2["Jacobian Conjecture"]:::legendbox
   classDef root fill:#450a0a,stroke:#000,color:#fff,stroke-width:4px;
   classDef legendbox fill:#f5f5f4,stroke:#78716c,color:#1c1917,stroke-dasharray:2 2;
   classDef legendnote fill:#fffbeb,stroke:#a16207,color:#1c1917;
