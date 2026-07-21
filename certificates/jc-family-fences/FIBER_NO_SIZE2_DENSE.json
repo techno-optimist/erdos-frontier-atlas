@@ -1,0 +1,19 @@
+{
+  "parametric_dense": {
+    "hist": {
+      "1": 8494
+    },
+    "points": 8494,
+    "size2_count": 0,
+    "which": {
+      "simple_only": 8494
+    }
+  },
+  "r12_dense": {
+    "fail": 0,
+    "ok": 1157625
+  },
+  "schema": "jc.fiber_no_size2_dense.v1",
+  "status": "OK",
+  "theorem": "No size-2 on V(E) in denser parametric family; R12 identity holds on expanded grid."
+}

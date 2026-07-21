@@ -1,0 +1,24 @@
+{
+  "alpoge_control_ok": true,
+  "claim_boundary": "Expanded family fence only. Not a closed degree bracket.",
+  "elapsed_sec": 35.871,
+  "k2_wide_m3": {
+    "collision_hits": [],
+    "const_jacobian_deg_3_to_6": 0,
+    "note": "completed earlier full product range(-3,4)^7",
+    "scanned": 823543
+  },
+  "k3_near_radius2": {
+    "collision_hits": [],
+    "const_jacobian_deg_3_to_6": 0,
+    "sample_const": [],
+    "scanned": 78125
+  },
+  "k4_deg_le6": {
+    "collision_hits": [],
+    "const_jacobian_deg_3_to_6": 0,
+    "scanned": 78125
+  },
+  "schema": "jc.degree_family_expand.v1",
+  "status": "NO_HIT_IN_EXPANDED_FAMILY"
+}

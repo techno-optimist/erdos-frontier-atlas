@@ -52,6 +52,11 @@
           "type": "numeric_scan",
           "artifact": "certificates/jc-family-fences/CONST_JAC_K2.json",
           "note": "family fence (not a closed bracket): exhaustive scan of the k=2 Alpoge-shaped integer box with coefficients in {-2..2} (78125 maps); zero constant-nonzero-Jacobian maps of max total degree in {3,4,5,6}. Also CONST_JAC_K3_NEAR.json: k=3 neighborhood (800) + free small box (217728) with 0 const-Jac deg 3-6; Alpoge control still deg 7. Probes under certificates/jc-family-fences/. Does not rule out other families or larger coefficients."
+        },
+        {
+          "type": "numeric_scan",
+          "artifact": "certificates/jc-family-fences/DEGREE_FAMILY_EXPAND.json",
+          "note": "expanded family fence (still not a closed bracket): k=2 coeffs in {-3..3}^7 (823543 maps) with 0 const-Jac deg 3-6; k=3 near Alpoge radius-2 (78125) 0 hits; k=4 filtered to max deg<=6 (78125) 0 hits. Write-up THEOREM_DEGREE_FAMILY_EXPAND.md. Does not rule out other families."
         }
       ],
       "confidence": "C2",
@@ -169,6 +174,11 @@
           "type": "numeric_scan",
           "artifact": "certificates/jc-family-fences/FIBER_NO_SIZE2_VE_CORE.json",
           "note": "PROPOSED structural fence (not yet promoted to closed bracket): machine-checked R12 identity grid (140608 ok/0 fail) and u=0 obstruction samples supporting that a double root of G1 never lifts on V(E), and Phi_x forces unique x off the cusp -- implying fiber size in {0,1} on V(E). Write-up: THEOREM_FIBER_NO_SIZE2_ON_VE.md. Parametric two-y lemma sample: FIBER_TWO_Y_LEMMA.json (8494 pts, simple root only). Does NOT yet close the ledger upper bound; classical prose steps remain."
+        },
+        {
+          "type": "numeric_scan",
+          "artifact": "certificates/jc-family-fences/FIBER_NO_SIZE2_DENSE.json",
+          "note": "denser parametric reinforcement of the proposed no-size-2 fence on V(E): larger (a,s) grid + expanded R12 identity checks; zero size-2 hits. Still numeric_scan/proposed -- does not close the ledger by itself."
         }
       ],
       "confidence": "C1",

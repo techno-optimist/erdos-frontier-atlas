@@ -14,12 +14,14 @@
 | 8 | 6 | 6 | `verify_n8_l6_s6_macro_witness.py` |
 | 9 | 6 | 6 | `verify_n9_l6_s6_macro_witness.py` |
 | 10 | 6 | 7 | `verify_n10_l6_s7_macro_witness.py` |
+| 11 | 7 | 7 | `verify_n11_l7_s7_macro_witness.py` |
+| 12 | 8 | 8 | `verify_n12_l8_s8_macro_witness.py` |
 
 Also sealed (non-minimal): n=9 L=7 S=7, n=10 L=8 S=7, n=7 L=5 S=6.
 
 ```sh
-python3 -I verify_n10_l6_s7_macro_witness.py
-python3 -I verify_n9_l6_s6_macro_witness.py
+python3 -I verify_n12_l8_s8_macro_witness.py
+python3 -I verify_n11_l7_s7_macro_witness.py
 ```
 
-See `MORPHOGENESIS.md`.
+See `MORPHOGENESIS.md`. Hunt tools: `hunt_n_from_prev.py`, `hunt_n_fast.py`, `gen_verifier.py`.
