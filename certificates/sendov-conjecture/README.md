@@ -65,6 +65,10 @@ best **feasible** \(d=1\).
 | Miller dense grids | \(n=9..12\) | best on-grid \(r\sim 0.95\); CE=0 |
 | Wave3 free complex \(\beta\) + dual | \(n=9..20\), 3 penalties + dual R-grid | all free-\(\beta\) hits \(r=1\); dual \(r>1\Rightarrow\) maxroot\(>1\); CE=0 |
 | Tao near-CE family | \(n=9..80\) | best feasible gap \(\sim 0.75\) |
+| Wave6 two-real-crit | \(n\in\{9,10,12,15,20\}\) | best feasible \(r\le 0.997\); CE=0 |
+| Wave7 complex two-crit dual | \(n\in\{9,10,12,15,20\}\), \(R\in\{1.01,1.05,1.1\}\) | dual force never CE; CE=0 |
+| Wave7b three-real-crit | \(n\in\{9,10,12,15\}\) | best feasible \(r\sim 0.929\); CE=0 |
+| Wave8 n=9 lattice | 271 908 two-crit evals | best feasible \(r=0.9975\); CE=0 |
 
 **Theorem (equal-crit family).** If all critical points coincide at \(c\) and \(p(\beta)=0\), roots lie on the circle of radius \(|\beta-c|\) about \(c\). Hence \(r>1\) forces some root outside the unit disk — **no CE in this family for any \(n\ge 2\)**. See [`THEOREM_EQUAL_CRIT.md`](THEOREM_EQUAL_CRIT.md).
 

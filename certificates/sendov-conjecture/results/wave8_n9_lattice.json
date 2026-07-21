@@ -1,0 +1,12 @@
+{
+  "n": 9,
+  "grid_evals": 271908,
+  "best_feas_radius": 0.9975,
+  "best_feas_maxroot": 0.999923299496137,
+  "beta": 0.9975,
+  "c": 0.0,
+  "d": -0.010000000000000009,
+  "ces": 0,
+  "near_unity_top_count": 50,
+  "counterexample": false
+}

@@ -1,0 +1,137 @@
+[
+  {
+    "n": 9,
+    "R_target": 1.01,
+    "radius": 1.0529422597670137,
+    "max_root_mod": 1.1063441690599904,
+    "meets_R": true,
+    "slack_maxroot": 0.10634416905999045,
+    "counterexample": false
+  },
+  {
+    "n": 9,
+    "R_target": 1.05,
+    "radius": 1.0409780648670244,
+    "max_root_mod": 1.0453887465044607,
+    "meets_R": false,
+    "slack_maxroot": 0.045388746504460675,
+    "counterexample": false
+  },
+  {
+    "n": 9,
+    "R_target": 1.1,
+    "radius": 1.0963719836512908,
+    "max_root_mod": 1.4085421298177103,
+    "meets_R": false,
+    "slack_maxroot": 0.4085421298177103,
+    "counterexample": false
+  },
+  {
+    "n": 10,
+    "R_target": 1.01,
+    "radius": 1.0,
+    "max_root_mod": 1.0000000000000004,
+    "meets_R": false,
+    "slack_maxroot": 4.440892098500626e-16,
+    "counterexample": false
+  },
+  {
+    "n": 10,
+    "R_target": 1.05,
+    "radius": 1.0438217397044898,
+    "max_root_mod": 1.1583492690395036,
+    "meets_R": false,
+    "slack_maxroot": 0.15834926903950364,
+    "counterexample": false
+  },
+  {
+    "n": 10,
+    "R_target": 1.1,
+    "radius": 1.0940519994485485,
+    "max_root_mod": 1.1854115469233357,
+    "meets_R": false,
+    "slack_maxroot": 0.18541154692333572,
+    "counterexample": false
+  },
+  {
+    "n": 12,
+    "R_target": 1.01,
+    "radius": 1.0049252039250203,
+    "max_root_mod": 1.0546583372473126,
+    "meets_R": false,
+    "slack_maxroot": 0.054658337247312616,
+    "counterexample": false
+  },
+  {
+    "n": 12,
+    "R_target": 1.05,
+    "radius": 1.0403586770634718,
+    "max_root_mod": 1.1725828357344712,
+    "meets_R": false,
+    "slack_maxroot": 0.1725828357344712,
+    "counterexample": false
+  },
+  {
+    "n": 12,
+    "R_target": 1.1,
+    "radius": 1.0914133136273638,
+    "max_root_mod": 1.0919693359470883,
+    "meets_R": false,
+    "slack_maxroot": 0.09196933594708834,
+    "counterexample": false
+  },
+  {
+    "n": 15,
+    "R_target": 1.01,
+    "radius": 1.0005685568732214,
+    "max_root_mod": 1.013844937301658,
+    "meets_R": false,
+    "slack_maxroot": 0.013844937301658033,
+    "counterexample": false
+  },
+  {
+    "n": 15,
+    "R_target": 1.05,
+    "radius": 1.0445074478337766,
+    "max_root_mod": 1.0861179582899685,
+    "meets_R": false,
+    "slack_maxroot": 0.08611795828996849,
+    "counterexample": false
+  },
+  {
+    "n": 15,
+    "R_target": 1.1,
+    "radius": 1.093435541169542,
+    "max_root_mod": 1.1643292591123442,
+    "meets_R": false,
+    "slack_maxroot": 0.1643292591123442,
+    "counterexample": false
+  },
+  {
+    "n": 20,
+    "R_target": 1.01,
+    "radius": 1.0,
+    "max_root_mod": 1.000000000000001,
+    "meets_R": false,
+    "slack_maxroot": 1.1102230246251565e-15,
+    "counterexample": false
+  },
+  {
+    "n": 20,
+    "R_target": 1.05,
+    "radius": 1.0414756283901505,
+    "max_root_mod": 1.041488345791246,
+    "meets_R": false,
+    "slack_maxroot": 0.04148834579124605,
+    "counterexample": false
+  },
+  {
+    "n": 20,
+    "R_target": 1.1,
+    "radius": 1.0921086431098412,
+    "max_root_mod": 1.1601329878220248,
+    "meets_R": false,
+    "slack_maxroot": 0.16013298782202479,
+    "counterexample": false
+  }
+]

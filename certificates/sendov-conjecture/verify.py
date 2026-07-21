@@ -445,6 +445,64 @@ def main() -> int:
         print("leg17 wave4_dual_soft.json: MISSING FAIL")
         ok = False
 
+    # Leg 18 — wave6_two_crit.json
+    w6 = load_json("wave6_two_crit.json")
+    if w6 is not None:
+        ces = [r for r in w6 if r.get("counterexample") or r.get("ces", 0) > 0]
+        over = [
+            r
+            for r in w6
+            if r.get("best_feas_radius") is not None
+            and float(r["best_feas_radius"]) > 1 + 1e-6
+            and float(r.get("best_feas_maxroot", 99)) <= 1 + 1e-8
+        ]
+        leg = len(ces) == 0 and len(over) == 0 and len(w6) >= 3
+        print(f"leg18 wave6_two_crit.json: rows={len(w6)} ces={len(ces)} over={len(over)} {'PASS' if leg else 'FAIL'}")
+        ok &= leg
+    else:
+        print("leg18 wave6_two_crit.json: MISSING FAIL")
+        ok = False
+
+    # Leg 19 — wave7 dual
+    w7d = load_json("wave7_complex_two_dual.json")
+    if w7d is not None:
+        ces = [r for r in w7d if r.get("counterexample")]
+        bad = [
+            r
+            for r in w7d
+            if float(r.get("radius", 0) or 0) > 1 + 1e-8
+            and float(r.get("max_root_mod", 99) or 99) <= 1 + 1e-8
+        ]
+        leg = len(ces) == 0 and len(bad) == 0 and len(w7d) >= 5
+        print(f"leg19 wave7_complex_two_dual.json: rows={len(w7d)} ces={len(ces)} bad={len(bad)} {'PASS' if leg else 'FAIL'}")
+        ok &= leg
+    else:
+        print("leg19 wave7_complex_two_dual.json: MISSING FAIL")
+        ok = False
+
+    # Leg 20 — wave7b three real
+    w7b = load_json("wave7b_three_real.json")
+    if w7b is not None:
+        ces = [r for r in w7b if r.get("counterexample") or r.get("ces", 0) > 0]
+        leg = len(ces) == 0 and len(w7b) >= 3
+        print(f"leg20 wave7b_three_real.json: rows={len(w7b)} ces={len(ces)} {'PASS' if leg else 'FAIL'}")
+        ok &= leg
+    else:
+        print("leg20 wave7b_three_real.json: MISSING FAIL")
+        ok = False
+
+    # Leg 21 — wave8 n9 lattice
+    w8 = load_json("wave8_n9_lattice.json")
+    if w8 is not None:
+        ces = int(w8.get("ces", 0) or 0)
+        r = float(w8.get("best_feas_radius", 0) or 0)
+        leg = ces == 0 and (not w8.get("counterexample")) and r <= 1 + 1e-6 and int(w8.get("grid_evals", 0) or 0) >= 1000
+        print(f"leg21 wave8_n9_lattice.json: evals={w8.get('grid_evals')} r={r} ces={ces} {'PASS' if leg else 'FAIL'}")
+        ok &= leg
+    else:
+        print("leg21 wave8_n9_lattice.json: MISSING FAIL")
+        ok = False
+
     print()
     print("ALL PASS" if ok else "FAILURES PRESENT")
     return 0 if ok else 1

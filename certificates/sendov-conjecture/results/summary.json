@@ -73,6 +73,22 @@
     {
       "id": "wave4_dual_soft",
       "result": "wave4 dual soft n=9..30: 31 rows, CE=0, R>1 => positive maxroot slack"
+    },
+    {
+      "id": "wave6_two_crit",
+      "result": "two-real-crit P'=(z-c)^{n-2}(z-d) n in {9,10,12,15,20}: best_feas r<=0.997 (n=20 near unity); CE=0"
+    },
+    {
+      "id": "wave7_complex_two",
+      "result": "complex two-crit + dual force n in {9,10,12,15,20}: dual R>1 never CE (15 dual rows); max-r search CE=0"
+    },
+    {
+      "id": "wave7b_three_real",
+      "result": "three-real-crit n in {9,10,12,15}: best_feas r~0.929; CE=0"
+    },
+    {
+      "id": "wave8_n9_lattice",
+      "result": "n=9 two-real-crit dense lattice 271908 evals: best_feas r=0.9975; CE=0"
     }
   ],
   "atlas_clues": [
