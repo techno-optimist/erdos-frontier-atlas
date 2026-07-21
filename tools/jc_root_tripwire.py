@@ -33,6 +33,19 @@ WHAT THIS DOES NOT DO -- read this before trusting a clean run:
     re-verifies the exhibited map's arithmetic every time it is run, and nothing
     here bears on that. See root_claim.json's "claim_vs_object_distinction".
 
+ONE STANDING ACTION IS ATTACHED TO A CONFIRMATION SIGNAL. root_claim.json's
+"archival_policy" records a decision made 2026-07-20: while the root claim is
+"awaiting confirmation", NO DOI is minted for any crater artifact -- a DOI is
+permanent, everything here is conditional on an unrefereed external
+announcement, and git already supplies the timestamp. If a hit in the
+`confirmation_or_publication` class turns out to be real, the action is to mint
+ONE combined DOI covering the JC object verification + the crater graph + the
+explicit Dixmier object, subject = our verification work, Alpöge's construction
+cited as the input. That mint is Kevin's call, not an agent's. If the claim is
+retracted instead, mint nothing. Read "archival_policy" before acting on an
+alert of this class -- the point of writing it down is that nobody has to
+re-derive the reasoning under time pressure.
+
 WHAT IT DOES:
   1. If atlas/jc-crater/root_claim.json names an arxiv_id, fetches that record
      directly (id_list query) so a later-assigned id can be added by hand and
@@ -323,7 +336,8 @@ def main(argv) -> int:
     STATE.write_text(json.dumps(state, indent=2) + "\n")
 
     if new_signal_hits:
-        ALERT.write_text(json.dumps({
+        policy = root_claim.get("archival_policy") or {}
+        alert_payload = {
             "ts": ts,
             "instructions": (
                 "Candidate signal(s) about the JC crater's root claim (see "
@@ -333,7 +347,22 @@ def main(argv) -> int:
                 "'Root-claim freshness' note needs updating. Delete this file "
                 "(or let the next clean run overwrite it) once reviewed."),
             "hits": new_signal_hits,
-        }, indent=2) + "\n")
+        }
+        if policy:
+            # Carry the standing archival decision INTO the alert, so whoever
+            # reads it does not have to go find the policy (or re-derive it).
+            # Copied, never computed: a keyword hit is not a status change.
+            alert_payload["if_this_is_a_real_confirmation"] = {
+                "trigger": policy.get("trigger", ""),
+                "unit": policy.get("unit", ""),
+                "human_of_record": policy.get("human_of_record", ""),
+                "note": ("This tripwire does NOT decide that the claim is "
+                         "confirmed and does NOT authorize a mint. It only "
+                         "surfaces the item and reminds you what was already "
+                         "decided on " + str(policy.get("decided", "")) + "."),
+            }
+            alert_payload["if_this_is_a_retraction"] = policy.get("if_retracted", "")
+        ALERT.write_text(json.dumps(alert_payload, indent=2) + "\n")
         print(json.dumps(summary, indent=2))
         print(json.dumps(new_signal_hits, indent=2))
         return 1
