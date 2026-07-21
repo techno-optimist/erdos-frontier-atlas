@@ -1,0 +1,13 @@
+{
+  "claim_boundary": "Sanity: points off V(E) with t1 t2 nonzero should generically have fiber 3 when y fully factors over Q.",
+  "histogram": {
+    "0": 162,
+    "1": 34,
+    "3": 4
+  },
+  "incomplete_y": 196,
+  "non3_complete": [],
+  "points_tested": 200,
+  "schema": "jc.fiber_off_VE_control.v1",
+  "status": "CONTROL_OK"
+}

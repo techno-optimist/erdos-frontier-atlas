@@ -59,4 +59,6 @@ familywise certificate on \(V(E)\setminus\gamma\).
 
 ```sh
 python3 -I probe_fiber_size2_exact.py
+python3 -I probe_fiber_q0_slice.py
+python3 -I probe_fiber_t2_zero.py
 ```

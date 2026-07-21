@@ -1,0 +1,17 @@
+{
+  "claim_boundary": "Search for integer Parikh-balanced n=5 L=3 S=4 macro among routable assignments. FOUND_INTEGER is a positive witness.",
+  "elapsed_sec": 64.439,
+  "schema": "lead.n5_l3_s4_integer_search.v1",
+  "start_idx": 298177,
+  "stats": {
+    "clocks": 401601,
+    "ge_tags": 6598,
+    "lp": 1,
+    "lp_infeas": 17,
+    "outward": 141111,
+    "reachable": 57472,
+    "routable": 18,
+    "route_enum": 18
+  },
+  "status": "FOUND_INTEGER"
+}

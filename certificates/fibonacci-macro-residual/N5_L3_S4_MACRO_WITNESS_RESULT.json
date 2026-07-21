@@ -1,0 +1,79 @@
+{
+  "claim_boundary": "Exact n=5 common-anchor split-weight length-three globally Parikh-balanced macro on a 4-state deterministic ternary clock. Not an all-n family and not an Erd\u0151s 142 construction.",
+  "clock_delta": {
+    "0,0": 0,
+    "0,1": 0,
+    "0,2": 1,
+    "1,0": 2,
+    "1,1": 0,
+    "1,2": 2,
+    "2,0": 0,
+    "2,1": 0,
+    "2,2": 3,
+    "3,0": 0,
+    "3,1": 0,
+    "3,2": 0
+  },
+  "edge_count": 91,
+  "n": 5,
+  "outward_carries": {
+    "P0": -1,
+    "P1": 0,
+    "P2": -1,
+    "P3": 1,
+    "P4": 0,
+    "P5": 0,
+    "Q0": -1,
+    "Q1": -1,
+    "Q2": 1,
+    "Q3": 0
+  },
+  "return_length": 3,
+  "return_role_parikh_equal": true,
+  "route_unit_counts": {
+    "P0": 1,
+    "P1": 1,
+    "P2": 2,
+    "P3": 3,
+    "P4": 5,
+    "P5": 8,
+    "Q0": 1,
+    "Q1": 1,
+    "Q2": 2,
+    "Q3": 3
+  },
+  "schema": "lead.n5_l3_s4_macro_witness.v1",
+  "state_count": 4,
+  "status": "PASS_N5_L3_S4_SPLIT_MACRO_WITNESS",
+  "tag_count": 6,
+  "tag_ports": {
+    "0": [
+      2,
+      0
+    ],
+    "1": [
+      0,
+      0
+    ],
+    "2": [
+      3,
+      0
+    ],
+    "3": [
+      2,
+      1
+    ],
+    "4": [
+      1,
+      1
+    ],
+    "5": [
+      0,
+      1
+    ]
+  },
+  "vertex_count": 22,
+  "weakly_connected_from_anchor": true,
+  "weighted_flow_boundary_zero": true,
+  "weighted_tag_column_zero": true
+}

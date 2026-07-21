@@ -1,0 +1,82 @@
+{
+  "L": 3,
+  "S": 3,
+  "anchor_port_hist_all_clocks": {
+    "0": 512,
+    "1": 2304,
+    "2": 4608,
+    "3": 5376,
+    "4": 4032,
+    "5": 2016,
+    "6": 672,
+    "7": 144,
+    "8": 18,
+    "9": 1
+  },
+  "anchor_port_hist_reachable": {
+    "0": 496,
+    "1": 2184,
+    "2": 4212,
+    "3": 4574,
+    "4": 3000,
+    "5": 1182,
+    "6": 258,
+    "7": 24
+  },
+  "claim_boundary": "Under all-states L<=3-reachable filter, max anchor ports is 7, so common-anchor macros needing n+1>=8 tags (n>=7) are impossible at S=3. Without reachability filter max is 9.",
+  "max_anchor_ports_all": 9,
+  "max_anchor_ports_reachable": 7,
+  "rows": [
+    {
+      "clocks": 19683,
+      "ge_tags": 4464,
+      "n": 3,
+      "reachable": 15930,
+      "tags": 4
+    },
+    {
+      "clocks": 19683,
+      "ge_tags": 1464,
+      "n": 4,
+      "reachable": 15930,
+      "tags": 5
+    },
+    {
+      "clocks": 19683,
+      "ge_tags": 282,
+      "n": 5,
+      "reachable": 15930,
+      "tags": 6
+    },
+    {
+      "clocks": 19683,
+      "ge_tags": 24,
+      "n": 6,
+      "reachable": 15930,
+      "tags": 7
+    },
+    {
+      "clocks": 19683,
+      "ge_tags": 0,
+      "n": 7,
+      "reachable": 15930,
+      "tags": 8
+    },
+    {
+      "clocks": 19683,
+      "ge_tags": 0,
+      "n": 8,
+      "reachable": 15930,
+      "tags": 9
+    },
+    {
+      "clocks": 19683,
+      "ge_tags": 0,
+      "n": 9,
+      "reachable": 15930,
+      "tags": 10
+    }
+  ],
+  "schema": "lead.port_capacity_s3.v1",
+  "status": "N_GE_7_S3_REACHABLE_PORT_CAPACITY_NO_GO"
+}

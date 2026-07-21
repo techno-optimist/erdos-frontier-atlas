@@ -1,0 +1,12 @@
+{
+  "schema": "lead.n6_s5_clock0.v1",
+  "stats": {
+    "outward": 288,
+    "routable": 1,
+    "route_enum": 1,
+    "lp_infeas": 1
+  },
+  "found": null,
+  "elapsed": 0.908,
+  "claim_boundary": "Exhaust all dig/port on first routable clock only."
+}

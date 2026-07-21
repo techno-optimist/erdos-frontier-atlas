@@ -1,0 +1,15 @@
+{
+  "schema": "jc.fiber_two_y_conjecture.v1",
+  "points": 631,
+  "hist": {
+    "0": 12,
+    "1": 619
+  },
+  "two_y_patterns": {
+    "0+1": 299,
+    "1+0": 309
+  },
+  "size2": [],
+  "status": "NO_SIZE_2",
+  "observation": "If two rational y-roots, pattern is always 1+0 or 0+1 (never 1+1 or 2+0). Soft conjecture for rational points of V(E)."
+}

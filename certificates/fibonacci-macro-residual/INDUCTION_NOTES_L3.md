@@ -1,37 +1,26 @@
-# L=3 family notes (n=2…6)
+# Family notes — L and S both grow
 
-Date: 2026-07-20
+Date: 2026-07-21
 
-## Empirical table
+## Known witnesses
 
-| n | tags | Fib max weight | L=2 | L=3 S=3 | L=3 S=4 |
-|--:|--:|--:|---|---|---|
-| 2 | 3 | 2 | witness | — | — |
-| 3 | 4 | 3 | **no-go all S** | **witness** | — |
-| 4 | 5 | 5 | — | **witness** | — |
-| 5 | 6 | 8 | — | **no-go** (0 routable) | sample: 0 routable / 3000 |
-| 6 | 7 | 13 | — | **no-go** (0 outward) | — |
+| n | L | S | artifact |
+|--:|--:|--:|----------|
+| 3 | 3 | 3 | `verify_n3_l3_macro_witness.py` |
+| 4 | 3 | 3 | `verify_n4_l3_macro_witness.py` |
+| 5 | 3 | 4 | `verify_n5_l3_s4_macro_witness.py` |
+| 6 | **4** | **5** | `verify_n6_l4_s5_macro_witness.py` |
 
-## Observations
+## Pattern
 
-1. **L=2 capacity** is incompatible with n≥3 (sealed earlier).
-2. **L=3, S=3** works for n=3 and n=4 with split weights matching Fibonacci
-   coefficients, on **different** 3-state clocks (not a single shared clock).
-3. **n=5 L=3 S=3** fails before Parikh balance: 864 outward-legal assignments,
-   **0** simultaneous L=3 routing of all 10 columns.
-4. **n=6 L=3 S=3** fails earlier: only 24 clocks have ≥7 anchor ports, and
-   **0** outward-legal assignments among them.
-5. Port budget on S=3: at most 9 ports return to anchor; tags = n+1 so n≤8 is
-   the hard port ceiling — soft failures hit earlier.
+- Fixed L=3: S≤4 classified — only (3,3),(4,3),(5,4).
+- n=6 at L=3 S=5: routes exist, Parikh-LP fails on 57/57 sample cells.
+- n=6 at **L=4 S=5** on the same clock: **integer witness**.
 
-## Hypotheses for all-n
+Hypothesis: minimal resources grow roughly like S ≥ ⌈n/2⌉+1 or similar;
+L may need to increase when S is barely large enough for ports/routing.
 
-- Either L must grow with n,
-- Or S must grow,
-- Or the common-anchor hypothesis must be dropped.
+## Next
 
-## Next machine targets
-
-- n=5 L=3 S=4 exhaustive (or smarter MIP over clocks)
-- n=5 L=4 S=3
-- Structural no-go: fixed (L,S) cannot cover all n
+- n=7 minimal (L,S)
+- n=6 L=3 S≥6 or prove L=3 impossible for n=6

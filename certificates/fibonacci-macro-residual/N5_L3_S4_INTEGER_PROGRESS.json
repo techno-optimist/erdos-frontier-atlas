@@ -1,0 +1,13 @@
+{
+  "elapsed_sec": 63.681,
+  "next_idx": 400000,
+  "stats": {
+    "clocks": 400000,
+    "ge_tags": 6477,
+    "lp_infeas": 17,
+    "outward": 139128,
+    "reachable": 56127,
+    "routable": 17,
+    "route_enum": 17
+  }
+}

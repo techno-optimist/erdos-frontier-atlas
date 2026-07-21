@@ -1,0 +1,14 @@
+{
+  "L": 5,
+  "claim_boundary": "Exhaustive n=5 L=5 S=3 routability.",
+  "elapsed_sec": 1.038,
+  "schema": "lead.n5_l5_s3_complete.v1",
+  "stats": {
+    "clocks": 19683,
+    "ge_tags": 282,
+    "outward": 864,
+    "reachable": 15930
+  },
+  "status": "NO_N5_L5_S3",
+  "witness": null
+}
