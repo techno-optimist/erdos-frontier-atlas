@@ -41,6 +41,10 @@
     {
       "id": "dual_soft_n12_20",
       "result": "n=12,15,20 soft dual: r>1 implies maxroot>1; CE=0"
+    },
+    {
+      "id": "wave3",
+      "result": "free complex beta penalty n=9..20 all r=1; dual R>1 always maxroot>1 when r>1; CE=0"
     }
   ],
   "atlas_clues": [

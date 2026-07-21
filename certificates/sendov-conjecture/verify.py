@@ -294,6 +294,30 @@ def main() -> int:
         print("leg9 dual_soft_n12_20.json: MISSING FAIL")
         ok = False
 
+    # Leg 10 — wave3 free-beta penalty + dual: CE-free; penalty hits r=1
+    w3 = load_json("wave3_all.json")
+    if w3 is not None:
+        ces = [r for r in w3 if r.get("counterexample")]
+        pen = [r for r in w3 if r.get("lane") == "penalty"]
+        pen_ok = all(abs(float(r.get("radius", 0)) - 1.0) < 1e-9 for r in pen) and len(pen) >= 20
+        dual = [r for r in w3 if r.get("lane") == "dual"]
+        dual_bad = [
+            r
+            for r in dual
+            if float(r.get("radius", 0)) > 1 + 1e-8
+            and float(r.get("max_root_mod", 99)) <= 1 + 1e-8
+        ]
+        leg = len(ces) == 0 and pen_ok and len(dual_bad) == 0 and len(dual) >= 20
+        status = "PASS" if leg else "FAIL"
+        print(
+            f"leg10 wave3_all.json: rows={len(w3)} pen={len(pen)} dual={len(dual)} "
+            f"ces={len(ces)} dual_bad={len(dual_bad)} pen_all_r1={pen_ok} {status}"
+        )
+        ok &= leg
+    else:
+        print("leg10 wave3_all.json: MISSING FAIL")
+        ok = False
+
     print()
     print("ALL PASS" if ok else "FAILURES PRESENT")
     return 0 if ok else 1

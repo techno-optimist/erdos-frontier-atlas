@@ -61,6 +61,7 @@ best **feasible** \(d=1\).
 | Squeeze \(r^*(\delta)\) | \(n\in\{9,10,12,15,20\}\) | \(\delta\le 10^{-3}\Rightarrow r=1\); \(\delta\ge 10^{-2}\Rightarrow r<1\) |
 | Lune dual (force crit into \(D(0,1)\setminus D(a,1)\)) | \(n\in\{9,10,12,15,20\}\), \(a\)-grid | feasible \(\Leftrightarrow r\le 1\); best feasible \(r\to 1^-\); CE=0 |
 | Miller dense grids | \(n=9..12\) | best on-grid \(r\sim 0.95\); CE=0 |
+| Wave3 free complex \(\beta\) + dual | \(n=9..20\), 3 penalties + dual R-grid | all free-\(\beta\) hits \(r=1\); dual \(r>1\Rightarrow\) maxroot\(>1\); CE=0 |
 | Tao near-CE family | \(n=9..80\) | best feasible gap \(\sim 0.75\) |
 
 **Structural slogan (empirical, within these families):**  
