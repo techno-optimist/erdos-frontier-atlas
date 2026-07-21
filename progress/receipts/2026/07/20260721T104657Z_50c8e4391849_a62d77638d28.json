@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:a62d77638d2821931537cf8c030c4b7200789307d079918961c720b090e94c18",
+  "content_digest": "sha256:37d908dc8604eed833e93fac71abcb2348b64c7aecacb49e243cd6b923cf960f",
+  "occurred_at": "2026-07-21T10:46:57Z",
+  "frontier": "A385316: smallest N = p³+q³+r³ (primes) with exactly 6 representations — is a(6) ≤ 1.1e10?",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nBuilt and executed a lean complete-prime-set multiplicity verifier at C=1.1e10. Reproduced all five OEIS terms (a(1)..a(5)) with correct multiplicities. Tested 3 domain kill fixtures (composite-derived sums 288, 4112, 664 correctly absent from prime enumeration) and 3 predicate kill fixtures (known-count values 24, 185527, 8627527 correctly not having multiplicity 6). Zero k=6 candidates found. Artifact exits zero with deterministic replay.",
+  "verified": "Artifact: prime_cubes_verifier.py, SHA-256: 787d5483da5e4afea71fc1652b4d7e5b1566282dd48aed19486157234534c47c\nDomain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nALL KILL FIXTURES PASSED\nReplay: deterministic, exits 0, 3.3s wall-clock on local Qwen 35B hardware. All five known terms reproduce exactly at C=1.1e10.\nVerified\nVerifier domain: P = {p prime : p^3 ≤ 1.1e10}; enumerate all nondecreasing triples (p≤q≤r) with p³+q³+r³ ≤ 1.1e10; count exact multiplicities.\nVerifier predicate: multiplicity(N) == k iff N = p³+q³+r³ with exactly k distinct unordered prime-cube triples.",
+  "result": "Zero k=6 numbers ≤ 1.1e10. Certified: a(6) > 1.1e10. The C=1.1e10 verifier now exits zero cleanly without OOM (unlike the prior session's exit-137 verifier), confirming the same negative result with a fully replayable artifact. The a(6) search still requires DGX SSH for C=1e13.",
+  "next_gate": "An operator with DGX SSH access must execute: `python3 prime_cubes_search_1e13.py --cutoff 10000000000000` on spark-38e3.local. If no k=6 candidate found at C=1e13, advance to C=1e14 or consider heuristic/construction approaches.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-21_03-46-57.md",
+    "sha256": "72e5d8e89213d96ed38719b42c1aa2d1317c3d601a767ea98ad661134b108e50"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}
