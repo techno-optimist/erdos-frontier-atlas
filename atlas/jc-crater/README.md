@@ -44,10 +44,10 @@ machine-checked object**:
 *Generated from the ledger by `tools/validate_jc_crater.py --write`: all 37 nodes, every count, color, and edge below are computed from `implication_graph.json` + `computed_statuses.json` — never hand-drawn. Plus 8 candidate names that failed literature verification (quarantined, excluded).*
 
 ```text
-✕ Refuted for all n ≥ 3             ███████████ 10
-⊘ Refuted in some finite dimension  ████████████████████ 18
-○ Open                              ███ 3
-✓ Survives (proven theorem)         ██████ 5
+✕ Refuted for all n ≥ 3             █████████████████ 13
+⊘ Refuted in some finite dimension  ████████████████████ 15
+○ Open                              ████ 3
+✓ Survives (proven theorem)         ███████ 5
 ■ Refuted independently, pre-2026   █ 1
 
                                     37 sourced statements (+8 quarantined)
@@ -55,14 +55,16 @@ machine-checked object**:
 
 | | Status | Count | What it means |
 |:-:|:--|--:|:--|
-| ✕ | **Refuted for all n ≥ 3** | 10 | false in every dimension n ≥ 3 (reached through a per-dimension edge) |
-| ⊘ | **Refuted in some finite dimension** | 18 | false in at least one finite dimension, location unknown (a dimension-blowup reduction) |
+| ✕ | **Refuted for all n ≥ 3** | 13 | false in every dimension n ≥ 3 (reached through a per-dimension edge) |
+| ⊘ | **Refuted in some finite dimension** | 15 | false in at least one finite dimension, location unknown (a dimension-blowup reduction) |
 | ○ | **Open** | 3 | untouched — the counterexample says nothing about it |
 | ✓ | **Survives (proven theorem)** | 5 | a proven theorem, still standing |
 | ■ | **Refuted independently, pre-2026** | 1 | already refuted before 2026, by a different mechanism |
 
 ```mermaid
 flowchart RL
+  dixmier_conjecture["Dixmier Conjecture DC_n"]:::alln
+  hom_dixmier_conjecture["Hom-Dixmier Conjecture"]:::alln
   jacobian_conjecture["Jacobian Conjecture"]:::root
   jc_over_char0_fields_and_z["Base-field / over-Z reduction of JC"]:::alln
   jc_tree_vanishing["Tree-vanishing reformulation of JC"]:::alln
@@ -70,6 +72,7 @@ flowchart RL
   keller_properness_universal["Universal properness of Keller maps"]:::alln
   nowicki_commutative_basis["Nowicki's commutative-basis characterization"]:::alln
   picard_vessiot_reformulation["Picard-Vessiot / Wronskian reformulation"]:::alln
+  poisson_conjecture["Poisson Conjecture"]:::alln
   special_image_conjecture["Special Image Conjecture SIC"]:::alln
   square_free_preserver["Square-free-preserver reformulation"]:::alln
   tate_jacobian_conjecture["Tate-Jacobian Conjecture TJC"]:::alln
@@ -77,16 +80,13 @@ flowchart RL
   chamberland_conjecture["Chamberland Conjecture"]:::somedim
   char_p_strengthenings["Characteristic-p formulations implying char-0 JC"]:::somedim
   cubic_homogeneous_jc["JC for cubic homogeneous maps"]:::somedim
-  dixmier_conjecture["Dixmier Conjecture DC_n"]:::somedim
   druzkowski_jc["JC for Druzkowski maps"]:::somedim
   gaussian_moments_conjecture["Gaussian Moments Conjecture GMC"]:::somedim
   hessian_conjecture["Hessian Conjecture"]:::somedim
-  hom_dixmier_conjecture["Hom-Dixmier Conjecture"]:::somedim
   image_conjecture["Zhao's Image Conjecture"]:::somedim
   integral_conjecture["Zhao's Integral Conjecture"]:::somedim
   jelonek_real_jc["Jelonek's Real Jacobian Conjecture"]:::somedim
   mathieu_conjecture["Mathieu Conjecture"]:::somedim
-  poisson_conjecture["Poisson Conjecture"]:::somedim
   symmetric_jc["JC for symmetric Keller maps"]:::somedim
   unimodular_conjecture["Unimodular Conjecture"]:::somedim
   vanishing_conjecture["Zhao's Vanishing Conjecture"]:::somedim
@@ -100,7 +100,7 @@ flowchart RL
   wang_degree_two_theorem["Wang's theorem"]:::theorem
   yu_nonnegative_theorem["Yu's theorem"]:::theorem
   real_jc_nonvanishing["Strong real Jacobian conjecture"]:::indep
-  dixmier_conjecture -.-> jacobian_conjecture
+  dixmier_conjecture --> jacobian_conjecture
   jacobian_conjecture -.-> dixmier_conjecture
   cubic_homogeneous_jc -.-> jacobian_conjecture
   druzkowski_jc -.-> jacobian_conjecture

@@ -55,7 +55,7 @@
       "name": "JC for cubic homogeneous maps (universal, all n)"
     },
     "dixmier_conjecture": {
-      "status": "REFUTED_SOME_FINITE_DIM",
+      "status": "REFUTED_ALL_N_GE_3",
       "orphaned_conditional_support": false,
       "name": "Dixmier Conjecture DC_n (endomorphisms of Weyl algebras)"
     },
@@ -75,7 +75,7 @@
       "name": "Hessian Conjecture (Meng 2006)"
     },
     "hom_dixmier_conjecture": {
-      "status": "REFUTED_SOME_FINITE_DIM",
+      "status": "REFUTED_ALL_N_GE_3",
       "orphaned_conditional_support": false,
       "name": "(Stable) Hom-Dixmier Conjecture (Bäck 2026)"
     },
@@ -150,7 +150,7 @@
       "name": "Plane Jacobian Conjecture (n = 2)"
     },
     "poisson_conjecture": {
-      "status": "REFUTED_SOME_FINITE_DIM",
+      "status": "REFUTED_ALL_N_GE_3",
       "orphaned_conditional_support": false,
       "name": "Poisson Conjecture (Adjamagbo–van den Essen)"
     },
@@ -217,6 +217,8 @@
       "symmetric_dependence_problem"
     ],
     "REFUTED_ALL_N_GE_3": [
+      "dixmier_conjecture",
+      "hom_dixmier_conjecture",
       "jacobian_conjecture",
       "jc_over_char0_fields_and_z",
       "jc_tree_vanishing",
@@ -224,6 +226,7 @@
       "keller_properness_universal",
       "nowicki_commutative_basis",
       "picard_vessiot_reformulation",
+      "poisson_conjecture",
       "special_image_conjecture",
       "square_free_preserver",
       "tate_jacobian_conjecture"
@@ -236,16 +239,13 @@
       "chamberland_conjecture",
       "char_p_strengthenings",
       "cubic_homogeneous_jc",
-      "dixmier_conjecture",
       "druzkowski_jc",
       "gaussian_moments_conjecture",
       "hessian_conjecture",
-      "hom_dixmier_conjecture",
       "image_conjecture",
       "integral_conjecture",
       "jelonek_real_jc",
       "mathieu_conjecture",
-      "poisson_conjecture",
       "symmetric_jc",
       "unimodular_conjecture",
       "vanishing_conjecture",

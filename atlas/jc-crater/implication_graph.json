@@ -55,7 +55,7 @@
         "van den Essen 2000"
       ],
       "pre_2026_status": "open (every n >= 1)",
-      "notes": "Both directions of the Dixmier<->Jacobian relation DOUBLE dimension (A_n has a 2n-dimensional symbol space): DC_n => JC_2n (classical) and JC_2n => DC_n (Tsuchimoto 2005 / BKK 2007). Sharp hand analysis: since JC is false for every m >= 3 and 2n >= 4 for n >= 2, the classical direction gives DC_n false for ALL n >= 2; DC_1 => JC_2 is open, so DC_1 alone survives. The engine flows the refutation through the dimension_mixing edge and records the conservative floor REFUTED_SOME_FINITE_DIM; the sharp 'false for all rank n >= 2' is this note, not a computed status. Either way the Dixmier conjecture for Weyl algebras is now false and is among the crater's most consequential casualties."
+      "notes": "The easy direction DC_n => JC_n is PER n (BKK arXiv:math/0512171 intro, citing BCW 1982 + vdE 2000); the dimension DOUBLING lives only in the hard direction JC_2n => DC_n (Tsuchimoto 2005 / BKK Thm 1). Since JC is false for every n >= 3, modus tollens through the per-n edge gives DC_n FALSE FOR ALL n >= 3, now a computed status rather than hand prose. DC_2 is NOT refuted: DC_2 => JC_2 and the plane Jacobian Conjecture is open. DC_1 survives likewise. RETRACTED (round 3): the earlier note claimed 'false for ALL n >= 2, DC_1 alone survives' via DC_n => JC_2n -- that edge is the unproven converse of BKK Thm 1 and the claim is withdrawn. Ours: an EXPLICIT non-surjective endomorphism Phi: A_3 -> A_3 built from the certified root map (certificates/dixmier-conjecture/) makes ~DC_3 self-contained, independent of any edge typing. Among the crater's most consequential casualties."
     },
     {
       "id": "kontsevich_conjecture_weyl",
@@ -292,7 +292,7 @@
         "Alg. Rep. Theory 29 (2026) 697-719"
       ],
       "pre_2026_status": "open (HDC^1_1 proven)",
-      "notes": "Rides the Dixmier node through the exact per-n equivalence DC_n <=> HDC^<=n_n (Bäck Prop 7), so it inherits Dixmier's status: sharp hand analysis gives false for every rank n >= 2, computed floor REFUTED_SOME_FINITE_DIM (Dixmier reaches the root only through the dimension-doubling edge). The proven first-Weyl-algebra case HDC^1_1 survives. Recent single-lineage source (2025/26), flagged as such."
+      "notes": "Rides the Dixmier node through the exact per-n equivalence DC_n <=> HDC^<=n_n (Back Prop 7), so it inherits Dixmier's corrected status: FALSE FOR EVERY RANK n >= 3 (computed, via the per-n DC=>JC edge). RETRACTED (round 3): the earlier 'false for every rank n >= 2' rested on the withdrawn DC_n => JC_2n converse. Ranks 1 and 2 survive (HDC^1_1 proven; rank 2 open with JC_2). Recent single-lineage source (2025/26), flagged as such."
     },
     {
       "id": "char_p_strengthenings",
@@ -469,7 +469,7 @@
         "Tsuchimoto 2005 / Belov-Kanel & Kontsevich 2007 (index map)"
       ],
       "pre_2026_status": "open",
-      "notes": "Round-2 second-ring node. The CLASSICAL (commutative symplectic) counterpart of the Dixmier conjecture: P_n is the classical limit of the Weyl algebra A_n. Poisson_n <=> Dixmier_n is per-n (dimension_preserving); it reaches JC only through Dixmier's dimension-doubling edge, so it inherits Dixmier's REFUTED_SOME_FINITE_DIM floor."
+      "notes": "Round-2 second-ring node. The CLASSICAL (commutative symplectic) counterpart of the Dixmier conjecture: P_n is the classical limit of the Weyl algebra A_n. Poisson_n <=> Dixmier_n is per-n (dimension_preserving), and Dixmier now reaches the root through a per-n edge as well, so Poisson inherits FALSE FOR ALL n >= 3 (computed). RETRACTED (round 3): the earlier 'REFUTED_SOME_FINITE_DIM floor via Dixmier's dimension-doubling edge' described the withdrawn edge typing. P_1, P_2 survive (P_2 <=> DC_2 => JC_2, open)."
     },
     {
       "id": "jc_over_char0_fields_and_z",
@@ -530,9 +530,9 @@
       "from": "dixmier_conjecture",
       "to": "jacobian_conjecture",
       "type": "implies",
-      "dimension_semantics": "dimension_mixing",
-      "citation": "DC_n => JC_2n: the classical 'well-known' direction (van den Essen 2000). The Weyl algebra A_n has a 2n-dimensional symbol space, so a rank-n Dixmier endomorphism is a Jacobian problem in 2n variables — the implication DOUBLES dimension (n -> 2n), it is not per-n. Together with JC_2n => DC_n (Tsuchimoto 2005; Belov-Kanel & Kontsevich 2007, arXiv:math/0512171) this is the STABLE equivalence.",
-      "notes": "Wave-2 correction: originally mis-typed dimension_preserving as DC_n => JC_n; that fabricated an n>=3 refutation the theorem does not license. Correct sharp consequence (hand analysis, in the node): DC_n => JC_2n plus JC false for all m>=3 gives DC_n false for ALL n>=2 (2n>=4>=3); DC_1 => JC_2 is open, so DC_1 survives. The engine records the conservative dimension_mixing floor REFUTED_SOME_FINITE_DIM; the sharp 'all n>=2' lives in the node notes."
+      "dimension_semantics": "dimension_preserving",
+      "citation": "DC_n => JC_n, PER n (dimension_preserving). Belov-Kanel & Kontsevich, arXiv:math/0512171, Introduction, verbatim: \"It is well-known that DC_n implies JC_n (in particular DC_inf implies JC_inf) (see [5],[3]). The argument is very easy. Let phi: A^n_k -> A^n_k be a counterexample to JC_n. Then phi is a non-invertible etale map, and it induces a pullback homomorphism phi*_diff of the algebra of differential operators on A^n_k. ... By our assertion it is not surjective, hence we obtain a counterexample to DC_n.\" ([5] = van den Essen, Progress in Math. 190, 2000; [3] = Bass-Connell-Wright, Bull. AMS 7 (1982) 287-330.) The pullback of an n-variable Keller counterexample lands in A_n (rank n), NOT A_2n -- the 2n is the generator count of A_n, not the index of the Dixmier problem.",
+      "notes": "ROUND-3 CORRECTION (supersedes the wave-2 re-typing). Wave 2 changed this edge from dimension_preserving to dimension_mixing (DC_n => JC_2n, cited van den Essen 2000); that was itself the mis-correction. Two independent primary fetches of BKK arXiv:math/0512171 state the easy direction PER n: DC_n => JC_n. BKK Remark 1 shows vdE 2000 Thm 10.4.2 is a JC_2n => (filtered endos of A_n invertible) statement -- i.e. the vdE citation belonged to the HARD direction (the separate JC->DC edge), not here; 'DC_n => JC_2n' is the unproven CONVERSE of Tsuchimoto/BKK Theorem 1. CONSTRUCTIVE CONFIRMATION (ours): from the certified 3-variable root map we built an EXPLICIT non-surjective endomorphism Phi: A_3 -> A_3 (certificates/dixmier-conjecture/) -- a 3-variable Keller counterexample yielding a rank-3 Dixmier counterexample is dimension_preserving by construction. Consequence: ~DC_n for all n >= 3. DC_2 is NOT refuted (DC_2 => JC_2, and the plane Jacobian Conjecture is OPEN); DC_1 survives. The previous node prose claiming 'false for ALL n >= 2' rested on the unproven converse and is retracted here."
     },
     {
       "from": "jacobian_conjecture",

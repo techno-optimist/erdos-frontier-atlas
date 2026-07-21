@@ -13,7 +13,7 @@
         {
           "type": "replay_receipt",
           "artifact": "certificates/jacobian-conjecture/verify.py",
-          "note": "upper bound 3: Alp\u00f6ge's dim-3 map, independently machine-verified here (det == -2 identically; 3 distinct points, one image)"
+          "note": "upper bound 3: Alpöge's dim-3 map, independently machine-verified here (det == -2 identically; 3 distinct points, one image)"
         },
         {
           "type": "literature",
@@ -23,7 +23,7 @@
       ],
       "confidence": "C2",
       "notes": "The entire remaining content of the (former) Jacobian Conjecture is now the question 'is this quantity 2 or 3?'. Equivalent form: is the plane Jacobian Conjecture true? The bracket closes to 2 by exhibiting a planar Keller counterexample, and to 3 by proving JC_2.",
-      "provenance": "minted 2026-07-20 from the crater analysis; construction Alp\u00f6ge 2026-07-19 (external, 'awaiting confirmation' -- not yet peer-reviewed)"
+      "provenance": "minted 2026-07-20 from the crater analysis; construction Alpöge 2026-07-19 (external, 'awaiting confirmation' -- not yet peer-reviewed)"
     },
     {
       "id": "jc-min-counterexample-degree-dim3",
@@ -36,7 +36,7 @@
         {
           "type": "replay_receipt",
           "artifact": "atlas/jc-crater/map_degree.py",
-          "note": "upper bound 7: this stdlib script certifies, by exact monomial expansion, that Alp\u00f6ge's map has component total degrees (7, 6, 4) -- map degree 7. (That the map IS a counterexample is certified separately by certificates/jacobian-conjecture/verify.py.)"
+          "note": "upper bound 7: this stdlib script certifies, by exact monomial expansion, that Alpöge's map has component total degrees (7, 6, 4) -- map degree 7. (That the map IS a counterexample is certified separately by certificates/jacobian-conjecture/verify.py.)"
         },
         {
           "type": "literature",
@@ -46,7 +46,7 @@
       ],
       "confidence": "C2",
       "notes": "The taboo is gone: a counterexample EXISTS at degree 7, so 'find one of degree 3, 4, 5, or 6 in dim 3' is now a legitimate witness hunt with an instant exact verifier (the certificate's engine generalizes to any candidate map + collision pair). Even no-hit searches over structured families yield certified fences. NOTE the classical cubic-homogeneous reductions do NOT bear on this fixed-dimension quantity -- they change dimension.",
-      "provenance": "minted 2026-07-20; upper bound machine-certified by map_degree.py 2026-07-20; Alp\u00f6ge construction 'awaiting confirmation'"
+      "provenance": "minted 2026-07-20; upper bound machine-certified by map_degree.py 2026-07-20; Alpöge construction 'awaiting confirmation'"
     },
     {
       "id": "jc-min-geometric-degree-noninjective",
@@ -75,6 +75,108 @@
       "confidence": "C2",
       "notes": "Is a generically 2-to-1 Keller map possible? Genuinely new question exposed by the counterexample's 3-to-1 structure, and the bracket is still OPEN: the upper bound 3 is now CERTIFIED (geometric_degree.py; it was a CAS session-log observation when this quantity was minted), but nothing here decides whether some other Keller map achieves 2. An etale self-map of C^n of degree > 1 is necessarily non-proper (the classical simply-connectedness obstruction), which constrains but does not decide degree 2. Note the etale property matters for the count: det(JF) = -2 is a nonzero constant, so fibers carry no multiplicity and 'degree 3' means three honest points.",
       "provenance": "minted 2026-07-20 from the crater analysis; upper bound machine-certified by geometric_degree.py 2026-07-20 (superseding the session-log fiber count it was minted with); Alpoge construction 'awaiting confirmation'"
+    },
+    {
+      "id": "jc-nonproperness-degree",
+      "quantity": "Degree of the non-properness (Jelonek asymptotic) set S_F of Alpöge's dim-3 Keller counterexample",
+      "lower": 4,
+      "upper": 4,
+      "kind": "verified_range",
+      "status": "closed",
+      "evidence": [
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/jc-anatomy/certify_nonproperness.py",
+          "note": "exact value 4: S_F = V(E) with E = 27t1^2t3^2 - 18t1t2t3 + 16t1 + t2^3t3 - t2^2, a quartic. The machine part is 18 exact checks -- three annihilator pullback identities (leading coefficients 2, E(t), 8, so only x can escape), the identity disc_Y(G1) = -2916 t1^2 E, two density facts placing no component of V(E) inside the removed loci, three exact one-point fibers ON V(E), the 3-point fiber off it, and 5 planted-failure controls. The degree is read off E, whose defining identity (I2) is transcription-proof: a wrong E fails the identity, it cannot pass falsely."
+        },
+        {
+          "type": "literature",
+          "artifact": "Z. Jelonek, The set of points at which a polynomial map is not proper, Ann. Polon. Math. 58 (1993) 259-266",
+          "note": "the classical prose steps (L1)-(L5) the certificate leans on and does NOT machine-check: the root bound, asymptotic set = non-properness set, proper + etale => covering of degree = the certified generic degree 3, closedness of S_F, and disc = 0 => at most 2 distinct roots. This is Jelonek's leading-coefficient method; the value 4 is a property of THIS map, not a literature-transcribed number."
+        }
+      ],
+      "confidence": "C2",
+      "notes": "The 'non-properness escape hatch' that BCW 1982 (proper Keller => invertible) leaves open is now an exact equation for the exhibited counterexample: a degree-4 hypersurface, over whose complement F is an unbranched 3-sheeted covering. Bracket is degenerate (lower = upper) because the value is certified exactly, hence status 'closed' rather than 'open'. NOT claimed: irreducibility of E over Q or C (CAS-probed only, no replay path, and deliberately unused -- the density argument is stated per irreducible component so it never needs to know the components); and Phi_x is claimed only to be AN annihilator of x, never the minimal one. Confidence reading: C2 = exactly one replayable machine artifact; the classical lemmas above are prose, not a second implementation.",
+      "provenance": "minted 2026-07-20 (round 3, anatomy); machine-certified by certificates/jc-anatomy/certify_nonproperness.py; CONDITIONAL on the root claim -- Alpöge's construction 'awaiting confirmation', not ours, not peer-reviewed"
+    },
+    {
+      "id": "jc-image-complement-dimension",
+      "quantity": "Dimension of the complement C^3 \\ im(F) of the image of Alpöge's dim-3 Keller counterexample",
+      "lower": 1,
+      "upper": 2,
+      "kind": "value_gap",
+      "status": "open",
+      "evidence": [
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/jc-anatomy/cusp_curve_empty.py",
+          "note": "lower bound 1: F is NOT surjective -- the punctured rational curve gamma(s) = (s^2/12, s, 4/(3s)), s != 0, has EMPTY fiber for every complex s != 0. Certified route: G1 collapses on gamma so y = s/2 is the only candidate, and the slice resultants R12 = -(1/8)s(sx+2)^2, R13 = 3(sx+2)(sx-2)+4 are simultaneously unsatisfiable (R12 = 0 forces sx = -2, where R13 = 4 != 0). An omitted curve has dimension 1, so the complement has dimension >= 1."
+        },
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/jc-anatomy/certify_nonproperness.py",
+          "note": "independent replication of the SAME lower bound by a different route: check (I6a) shows both non-leading coefficients of Phi_x vanish identically along gamma (exact Laurent identities in s) while -2t3 = -8/(3s) != 0, so the certified annihilator identity (I2) is unsatisfiable there and gamma can have no preimage. Two genuinely different arguments, same omitted curve."
+        },
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/jc-anatomy/fiber_count_generic.py",
+          "note": "upper bound 2: #F^-1(t) = 3 exactly whenever t1*t2*Q(t) != 0, so every point off the hypersurface {t1*t2*Q = 0} is hit. The complement is therefore contained in that hypersurface and has dimension <= 2."
+        }
+      ],
+      "confidence": "C1",
+      "notes": "Is the omitted set exactly the curve gamma (dimension 1), or does it contain a surface piece (dimension 2)? OPEN. What is certified is the pair of inclusions gamma ∩ im(F) = empty and C^3 \\ V(E) subset im(F); the exact equality im(F) = C^3 \\ gamma is NOT established -- closing it needs a limit argument plus one CAS-level step, and is typed DERIVED-OBSERVATION, do not promote. Observation (CAS-level, used by nothing): gamma is precisely the singular locus of V(E), i.e. the map omits exactly the singular locus of its own Jelonek set. Confidence reading: the C1 here is honest -- the load-bearing lower bound really is replicated by two independent certified arguments (cusp_curve_empty.py and (I6a)); the third receipt carries the upper bound. Keller-ness never implied surjectivity, and an etale map omitting a point must be non-proper, so nothing here is surprising in theory; the explicit certified curve is what is new.",
+      "provenance": "minted 2026-07-20 (round 3, anatomy); both bounds machine-certified by certificates/jc-anatomy/; CONDITIONAL on the root claim -- Alpöge's construction 'awaiting confirmation', not ours, not peer-reviewed"
+    },
+    {
+      "id": "jc-fiber-count-spectrum-size",
+      "quantity": "Number of distinct fiber cardinalities realized by Alpöge's dim-3 Keller counterexample over C^3 (the size of its fiber-count spectrum)",
+      "lower": 3,
+      "upper": 4,
+      "kind": "value_gap",
+      "status": "open",
+      "evidence": [
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/jc-anatomy/fiber_anchors.py",
+          "note": "lower bound 3: the spectrum contains {0, 1, 3}. Ten rational anchors, one per stratum of {t1*t2*Q = 0}, each with a complete exact solve accounting for every complex root -- count 3 at (-1/4,0,0) and (0,2,3); count 1 at six anchors on Q = 0; count 0 (EMPTY) at (3,6,2/9) and (1/3,2,2/3) on the cusp curve."
+        },
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/jc-anatomy/certify_nonproperness.py",
+          "note": "independent replication of the same three values by a different certificate: (W2) exhibits the 3-point fiber over (-1/4,0,0), (W1a/b/c) exhibit exact one-point fibers at three points of V(E) (two on the t2 = 0 slice, one off it), and (I6a) exhibits the empty fibers along gamma."
+        },
+        {
+          "type": "replay_receipt",
+          "artifact": "atlas/jc-crater/geometric_degree.py",
+          "note": "upper bound 4: [C(x,y,z) : C(f1,f2,f3)] = 3 and det JF = -2 is a nonzero constant, so the map is etale and every fiber has AT MOST 3 honest points (no multiplicity). Cardinalities >= 4 are therefore impossible, and the only value that could still join {0,1,3} is 2 -- so the spectrum has size 3 or 4."
+        }
+      ],
+      "confidence": "C1",
+      "notes": "The bracket IS the open question 'does a fiber of size exactly 2 occur anywhere?'. It closes to 3 by proving no fiber has 2 points, and to 4 by exhibiting one. Every probe so far returned 1 on V(E) and 3 off it; the certified bound on V(E) minus the cusp curve is <= 2, but no certificate has ever exhibited a 2 and none excludes one. Recorded as a SIZE (an integer) rather than as the set {0,1,3} because the ledger brackets integers; the underlying object is the spectrum. Boundary: the whole-stratum counts ('count 1 everywhere on Q = 0 off the cusp', the full t1 = 0 and t2 = 0 slices) are certified AT ANCHORS only -- there is no parametrized familywise certificate, and the 'all points' versions are conjectures supported by every probe. Confidence reading: the C1 is honest -- the lower bound's three exhibited cardinalities are independently replicated by two separate certificates built on different arguments.",
+      "provenance": "minted 2026-07-20 (round 3, anatomy); lower bound machine-certified twice independently, upper bound from the round-2 degree certificate; CONDITIONAL on the root claim -- Alpöge's construction 'awaiting confirmation', not ours, not peer-reviewed"
+    },
+    {
+      "id": "jc-generic-escape-count",
+      "quantity": "Number of preimages of Alpöge's dim-3 Keller counterexample that escape to infinity over a generic point of the non-properness set S_F = V(E)",
+      "lower": 2,
+      "upper": 2,
+      "kind": "verified_range",
+      "status": "open",
+      "evidence": [
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/jc-anatomy/certify_nonproperness.py",
+          "note": "ONE COMPOSITE ARGUMENT (deliberately recorded as a single receipt, not two): (i) checks (W1a/b/c) of certify_nonproperness.py certify the fibers over the three EXHIBITED points (-16/27,0,1), (-4/27,0,2), (-1,2,-2) of V(E)\\gamma are exactly one point each; (ii) it composes with the covering degree [C(x,y,z):C(f1,f2,f3)] = 3 certified by atlas/jc-crater/geometric_degree.py, giving escape count = 3 - #F^-1(t) = 2 at those anchors. The degree certificate is an INGREDIENT of this one argument, NOT an independent replication at the claimed range, so it is not recorded as a second artifact -- the WS7 rule reserves C1 for independent replications, and inflating it here would overstate. (The degree receipt is recorded in its own right under jc-min-geometric-degree-noninjective.)"
+        },
+        {
+          "type": "literature",
+          "artifact": "Z. Jelonek, The set of points at which a polynomial map is not proper, Ann. Polon. Math. 58 (1993) 259-266; H. Bass, E. H. Connell, D. Wright, Bull. AMS 7 (1982) 287-330",
+          "note": "the classical prose step turning a fiber-count DROP into an escape TO INFINITY: proper + etale => unbranched covering with constant sheet number, so #fiber < 3 forces a sequence running to infinity. Asserted, not machine-checked."
+        }
+      ],
+      "confidence": "C2",
+      "notes": "HONEST BOUNDARY, and the reason the status is 'open' despite a degenerate bracket: the value 2 is certified at THREE EXHIBITED ANCHORS of V(E) minus the cusp curve, not familywise. The word 'generic' in the quantity name is a CAS-level extrapolation (every probe agreed; there is no parametrized certificate), and 'escape' additionally rests on the classical covering lemma above rather than on machine arithmetic. Note also that the count is NOT 2 everywhere on S_F: on the cusp curve gamma subset V(E) the fiber is EMPTY, so all 3 preimages escape -- 2 is the value off gamma. Confidence reading: the computed C1 comes from two distinct machine artifacts that certify DIFFERENT ingredients (the anchor fiber sizes, and the covering degree 3), NOT from independent replication of one claim; read it as 'two machine artifacts', and weigh the prose step separately. CONFIDENCE READING (round 3, orchestrator): recorded C2, not C1. The two certificates behind the value are ingredients of a single composite argument (anchor fiber sizes x covering degree), not two independent replications at the claimed range, which is what the WS7 C1 class means. Both artifacts remain cited inside the single receipt note; nothing was deleted from the record.",
+      "provenance": "minted 2026-07-20 (round 3, anatomy); anchor values machine-certified by certificates/jc-anatomy/certify_nonproperness.py, degree by atlas/jc-crater/geometric_degree.py; genericity NOT certified; CONDITIONAL on the root claim -- Alpöge's construction 'awaiting confirmation', not ours, not peer-reviewed"
     }
   ]
 }
