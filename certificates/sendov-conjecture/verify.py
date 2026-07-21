@@ -273,6 +273,27 @@ def main() -> int:
         print("leg8 lune_force.json: MISSING FAIL")
         ok = False
 
+    # Leg 9 — dual_soft_n12_20.json CE-free with positive slack when r>1
+    ds = load_json("dual_soft_n12_20.json")
+    if ds is not None:
+        ces = [r for r in ds if r.get("counterexample")]
+        bad = [
+            r
+            for r in ds
+            if float(r.get("radius", 0)) > 1 + 1e-8
+            and float(r.get("max_root_mod", 0)) <= 1 + 1e-8
+        ]
+        pos = [r for r in ds if float(r.get("slack", -1)) > 0]
+        leg = len(ces) == 0 and len(bad) == 0 and len(pos) >= 6
+        print(
+            f"leg9 dual_soft_n12_20.json: rows={len(ds)} ces={len(ces)} "
+            f"bad={len(bad)} pos_slack={len(pos)} {'PASS' if leg else 'FAIL'}"
+        )
+        ok &= leg
+    else:
+        print("leg9 dual_soft_n12_20.json: MISSING FAIL")
+        ok = False
+
     print()
     print("ALL PASS" if ok else "FAILURES PRESENT")
     return 0 if ok else 1

@@ -37,12 +37,16 @@
     {
       "id": "tao_near_ce_family",
       "result": "best feasible gap_at_a ~0.75; CE=0"
+    },
+    {
+      "id": "dual_soft_n12_20",
+      "result": "n=12,15,20 soft dual: r>1 implies maxroot>1; CE=0"
     }
   ],
   "atlas_clues": [
-    "JC crater: plane JC (n=2) remains OPEN after dim-3 refutation — surviving polynomial-map frontier; Sendov is a different open intermediate-band problem.",
+    "JC crater: plane JC (n=2) remains OPEN after dim-3 refutation \u2014 surviving polynomial-map frontier; Sendov is a different open intermediate-band problem.",
     "walls.md ethos: naming compute walls is load-bearing atlas content.",
-    "Tao near-CE lune analysis predicts almost-CEs fail on average — matches dual-ray/jet."
+    "Tao near-CE lune analysis predicts almost-CEs fail on average \u2014 matches dual-ray/jet."
   ],
   "verify": "python3 certificates/sendov-conjecture/verify.py",
   "not_claimed": [
