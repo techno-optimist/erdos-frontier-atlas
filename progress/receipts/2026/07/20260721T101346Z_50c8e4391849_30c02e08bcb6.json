@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:30c02e08bcb6e26c38dcfbe624ad68303f6b4f488a53a643b605a654ff0c467f",
+  "content_digest": "sha256:5146b5d45f7ce47a67ce803343e224c2f6a7d36c08d4b803853fc8120eb13716",
+  "occurred_at": "2026-07-21T10:13:46Z",
+  "frontier": "Smallest N = p³+q³+r³ (primes) in exactly 6 ways (OEIS A385316 a(6)). Current certified lower bound: a(6) > 1.1e10, with all five known terms a(1)..a(5) verified at that cutoff.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nBuilt and executed the complete-prime-set multiplicity verifier at C=1.1e10. Ran domain kill fixtures (3/3 composite-derived sums correctly absent from valid enumeration) and predicate kill fixtures (3/3 known-count values correctly rejected as having ≠6 representations). Enumerated all 4,739,205 nondecreasing prime-cube triples, counted multiplicities, and verified all five OEIS terms reproduce exactly: a(1)=24 (mult=1), a(2)=185527 (mult=2), a(3)=8627527 (mult=3), a(4)=999979163 (mult=4), a(5)=10588881419 (mult=5). Zero numbers with multiplicity 6 found.",
+  "verified": "Verifier domain: N = p³+q³+r³ where p ≤ q ≤ r are primes, all with p³ ≤ C.\nVerifier predicate: N has exactly 6 unordered representations among the complete prime set.\nArtifact: verifier_a385316.py, SHA-256: 14abfac02e6d5b3585078efbd1ec674299b2c318a3c8e30fbb68761b7555b8a5\nDomain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nALL KILL FIXTURES PASSED\nReplay exits 0 deterministically (verified twice). OEIS A385316 terms sourced from OEIS wiki / A000040 prime enumeration.",
+  "result": "The C=1.1e10 verification reproduces the accepted continuation's result (zero k=6 hits, a(6) > 1.1e10) with a fully replayable standalone artifact that did not OOM (unlike prior session's exit-137 verifier). The next gate — a C=1e13 search — still requires DGX SSH connectivity which is currently unavailable. The verifier artifact is reusable at any cutoff where memory permits.",
+  "next_gate": "An operator with DGX SSH access must execute: `python3 prime_cubes_search_1e13.py --cutoff 10000000000000` on spark-38e3.local (estimated ~1800s). If no k=6 candidate found at C=1e13, advance to C=1e14 or consider heuristic/construction approaches.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-21_03-13-46.md",
+    "sha256": "994ce2fcb17b0a6898f4c51da11ed1dcd56476b50122fe3ecf7918bee4096d3c"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}
