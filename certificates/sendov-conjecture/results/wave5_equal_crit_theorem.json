@@ -1,0 +1,7 @@
+{
+  "family": "equal_crit_all_crit_equal",
+  "theorem": "If radius |beta-c|>1, the circle of radius |beta-c| about c cannot lie in the unit disk, so some n-th root image has modulus >1. Hence equal-crit family admits no Sendov counterexample for any n>=2.",
+  "violations": [],
+  "ce_possible": false,
+  "trials_ok": true
+}

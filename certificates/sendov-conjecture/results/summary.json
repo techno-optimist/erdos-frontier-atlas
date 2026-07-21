@@ -1,0 +1,82 @@
+{
+  "schema": "efa-sendov-wall-ledger/v1",
+  "problem": "Sendov's conjecture (1958) / Ilieff misattribution",
+  "claim": "Multi-lane computational assault found 0 counterexamples; best feasible d(f)=1 (unity extremal). Dual-ray, extremal jet, squeeze, rich multiplicity, and related lanes are consistent with a constrained maximum at d=1 in the attacked families. This is a wall ledger, not a disproof or a proof for new n.",
+  "counterexamples_found": 0,
+  "best_feasible_d": 1.0,
+  "literature": {
+    "proved_n_lt_9": "Brown-Xiang 1999",
+    "proved_n_large": "Tao 2022 Acta Math / arXiv:2012.04125 (non-explicit n0)",
+    "open": "intermediate degrees 9 <= n < n0"
+  },
+  "lanes_closed": [
+    {
+      "id": "unity_extremal",
+      "result": "d=1 equality case for all tested n"
+    },
+    {
+      "id": "miller_2005_local_extrema",
+      "result": "r in (0.7,0.99) for n in {8,9,12-15,19,20,26}; local max below 1"
+    },
+    {
+      "id": "rich_multiplicity",
+      "result": "n<=26 main strata rediscover r=1 only; CE=0"
+    },
+    {
+      "id": "extremal_jet",
+      "result": "26775 samples; best feasible r<=0.99998; r>1 always infeasible; CE=0"
+    },
+    {
+      "id": "dual_ray",
+      "result": "min maxroot ~ 2R-1 > 1 for R>1; CE=0; table in dual_ray.json"
+    },
+    {
+      "id": "squeeze",
+      "result": "delta~0 => r=1; delta>=1e-2 => r<1; CE=0; table in squeeze_fast.json"
+    },
+    {
+      "id": "tao_near_ce_family",
+      "result": "best feasible gap_at_a ~0.75; CE=0"
+    },
+    {
+      "id": "dual_soft_n12_20",
+      "result": "n=12,15,20 soft dual: r>1 implies maxroot>1; CE=0"
+    },
+    {
+      "id": "wave3",
+      "result": "free complex beta penalty n=9..20 all r=1; dual R>1 always maxroot>1 when r>1; CE=0"
+    },
+    {
+      "id": "squeeze_heavy",
+      "result": "n=9,10,12,15 heavier starts: delta=0 => r=1; delta>0 => r<1; CE=0"
+    },
+    {
+      "id": "wave4_true_d",
+      "result": "true d(f) maximin n=9..20 hits d=1 only; CE=0"
+    },
+    {
+      "id": "dual_fast_all",
+      "result": "dual_fast n=9..16: no CE; r>1 always has maxroot>1 (39 rows)"
+    },
+    {
+      "id": "deep_multi_lane",
+      "result": "deep multi-lane through n=16: best feasible score=1.0 (unity) every n; CE=0"
+    },
+    {
+      "id": "equal_crit_theorem",
+      "result": "PROVED: equal-crit family p'=(z-c)^{n-1} has no Sendov CE for any n>=2 (geometry of roots-of-unity circle about c)"
+    }
+  ],
+  "atlas_clues": [
+    "JC crater: plane JC (n=2) remains OPEN after dim-3 refutation \u2014 surviving polynomial-map frontier; Sendov is a different open intermediate-band problem.",
+    "walls.md ethos: naming compute walls is load-bearing atlas content.",
+    "Tao near-CE lune analysis predicts almost-CEs fail on average \u2014 matches dual-ray/jet."
+  ],
+  "verify": "python3 certificates/sendov-conjecture/verify.py",
+  "not_claimed": [
+    "Sendov false",
+    "Sendov true for any new n",
+    "effective Tao n0",
+    "exhaustive search of all root configurations"
+  ]
+}

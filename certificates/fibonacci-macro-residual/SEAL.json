@@ -1,25 +1,84 @@
 {
-  "schema": "lead.global_macro_residual.seal.v6",
+  "schema": "lead.global_macro_residual.seal.v13",
   "date": "2026-07-21",
-  "title": "Witnesses (3,3),(4,3),(5,4) at L=3; plus n=6 L=4 S=5",
+  "title": "Witness ladder n=3..13 (best known cells; minimality NOT established)",
   "status": "SEALED",
   "scoreboard": [
-    {"cell": "n=3 L=3 S=3", "verdict": "WITNESS"},
-    {"cell": "n=4 L=3 S=3", "verdict": "WITNESS"},
-    {"cell": "n=5 L=3 S=3", "verdict": "NO-GO"},
-    {"cell": "n=5 L=3 S=4", "verdict": "WITNESS"},
-    {"cell": "n=6 L=3 S=3", "verdict": "NO-GO"},
-    {"cell": "n=6 L=3 S=4", "verdict": "NO-GO"},
-    {"cell": "n=6 L=3 S=5", "verdict": "routable; LP sample fence (0/57)"},
-    {"cell": "n=6 L=4 S=5", "verdict": "WITNESS"},
-    {"cell": "n=7 L=3 S=4", "verdict": "NO-GO"},
-    {"cell": "n=8 L=3 S=4", "verdict": "NO-GO"},
-    {"cell": "n>=7 S=3 / n>=9 S=4 ports", "verdict": "NO-GO"}
+    {
+      "cell": "n=3 L=3 S=3",
+      "verdict": "WITNESS"
+    },
+    {
+      "cell": "n=4 L=3 S=3",
+      "verdict": "WITNESS"
+    },
+    {
+      "cell": "n=5 L=3 S=4",
+      "verdict": "WITNESS"
+    },
+    {
+      "cell": "n=6 L=4 S=5",
+      "verdict": "WITNESS"
+    },
+    {
+      "cell": "n=7 L=5 S=5",
+      "verdict": "WITNESS"
+    },
+    {
+      "cell": "n=8 L=6 S=6",
+      "verdict": "WITNESS"
+    },
+    {
+      "cell": "n=9 L=6 S=6",
+      "verdict": "WITNESS"
+    },
+    {
+      "cell": "n=10 L=6 S=7",
+      "verdict": "WITNESS"
+    },
+    {
+      "cell": "n=11 L=7 S=7",
+      "verdict": "WITNESS"
+    },
+    {
+      "cell": "n=12 L=8 S=8",
+      "verdict": "WITNESS"
+    },
+    {
+      "cell": "n=13 L=9 S=9",
+      "verdict": "WITNESS"
+    },
+    {
+      "cell": "n=9 L=7 S=7",
+      "verdict": "WITNESS (non-minimal)"
+    },
+    {
+      "cell": "n=10 L=8 S=7",
+      "verdict": "WITNESS (non-minimal L)"
+    },
+    {
+      "cell": "n=7 L=5 S=6",
+      "verdict": "WITNESS (non-minimal S)"
+    },
+    {
+      "cell": "L=3 S<=4 non-witnesses",
+      "verdict": "NO-GO classified"
+    },
+    {
+      "cell": "n=11 L=6 sample hunt",
+      "verdict": "NO_INTEGER_IN_HUNT (1 routable LP-infeas)"
+    },
+    {
+      "cell": "n=13 L=8 sample hunt",
+      "verdict": "routable LP-infeas; integer at L=9 S=9"
+    }
   ],
   "open_loopholes": [
     "n=6 L=3 S>=5 exhaustive (integer at L=3 open)",
-    "n>=7 any S,L",
-    "structural f(n) for minimal (L,S)",
+    "minimality of every listed (L,S): nothing below these cells was searched",
+    "n=14+",
+    "tighten lower L for n>=11",
+    "closed form L(n),S(n)",
     "Erdős 142 density consequences"
   ],
   "claim_boundary": "Finite machine objects for the common-anchor split-integral deterministic ternary macro model. Not an Erdős 142 solution."

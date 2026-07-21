@@ -1,0 +1,66 @@
+[
+  {
+    "n": 9,
+    "score": 1.0,
+    "source": "unity",
+    "max_root_mod": 1.000000000000001,
+    "feasible": true,
+    "counterexample": false
+  },
+  {
+    "n": 10,
+    "score": 1.0,
+    "source": "unity",
+    "max_root_mod": 1.0000000000000009,
+    "feasible": true,
+    "counterexample": false
+  },
+  {
+    "n": 11,
+    "score": 1.0,
+    "source": "unity",
+    "max_root_mod": 1.0000000000000004,
+    "feasible": true,
+    "counterexample": false
+  },
+  {
+    "n": 12,
+    "score": 1.0,
+    "source": "unity",
+    "max_root_mod": 1.0000000000000009,
+    "feasible": true,
+    "counterexample": false
+  },
+  {
+    "n": 13,
+    "score": 1.0,
+    "source": "unity",
+    "max_root_mod": 1.0000000000000004,
+    "feasible": true,
+    "counterexample": false
+  },
+  {
+    "n": 14,
+    "score": 1.0,
+    "source": "unity",
+    "max_root_mod": 1.0000000000000022,
+    "feasible": true,
+    "counterexample": false
+  },
+  {
+    "n": 15,
+    "score": 1.0,
+    "source": "unity",
+    "max_root_mod": 1.0000000000000013,
+    "feasible": true,
+    "counterexample": false
+  },
+  {
+    "n": 16,
+    "score": 1.0,
+    "source": "unity",
+    "max_root_mod": 1.0000000000000004,
+    "feasible": true,
+    "counterexample": false
+  }
+]

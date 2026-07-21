@@ -1,0 +1,28 @@
+{
+  "L": 5,
+  "S": 6,
+  "claim_boundary": "Alternate n=7 witness at S=6 (not minimal S). Not E142.",
+  "n": 7,
+  "return_role_parikh_equal": true,
+  "route_unit_counts": {
+    "P0": 1,
+    "P1": 1,
+    "P2": 2,
+    "P3": 3,
+    "P4": 5,
+    "P5": 8,
+    "P6": 13,
+    "P7": 21,
+    "Q0": 1,
+    "Q1": 1,
+    "Q2": 2,
+    "Q3": 3,
+    "Q4": 5,
+    "Q5": 8
+  },
+  "schema": "lead.n7_l5_s6_macro_witness.v1",
+  "status": "PASS_N7_L5_S6_SPLIT_MACRO_WITNESS",
+  "weakly_connected_from_anchor": true,
+  "weighted_flow_boundary_zero": true,
+  "weighted_tag_column_zero": true
+}

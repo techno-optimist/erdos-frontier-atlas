@@ -1,0 +1,48 @@
+{
+  "claim_boundary": "Heuristic pad/mutate hunt; not exhaustive.",
+  "configs": [
+    {
+      "L": 7,
+      "S": 7,
+      "stats": {
+        "clocks": 1,
+        "ge_tags": 1,
+        "tried": 4,
+        "outward": 4,
+        "routable": 1,
+        "route_enum": 1,
+        "lp": 1,
+        "mip": 1
+      },
+      "note": "FOUND_INTEGER on pad of N10_L6_S7"
+    },
+    {
+      "L": 6,
+      "S": 7,
+      "stats": {
+        "clocks": 251,
+        "ge_tags": 57,
+        "lp_infeas": 1,
+        "outward": 540,
+        "routable": 1,
+        "route_enum": 1,
+        "tried": 540
+      },
+      "note": "tighten attempt: 1 routable LP-infeas"
+    },
+    {
+      "L": 6,
+      "S": 8,
+      "stats": {
+        "clocks": 251,
+        "ge_tags": 22,
+        "outward": 660,
+        "tried": 660
+      }
+    }
+  ],
+  "elapsed_sec": 559,
+  "schema": "lead.n11_hunt_fast.v1",
+  "status": "FOUND_INTEGER",
+  "witness": "N11_L7_S7_WITNESS.json"
+}
