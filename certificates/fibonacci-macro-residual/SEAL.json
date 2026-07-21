@@ -1,7 +1,7 @@
 {
-  "schema": "lead.global_macro_residual.seal.v7",
+  "schema": "lead.global_macro_residual.seal.v8",
   "date": "2026-07-21",
-  "title": "Witness chain through n=7: (3,3,3),(4,3,3),(5,3,4),(6,4,5),(7,5,5)",
+  "title": "Witness ladder n=3..8: (3,3,3)(4,3,3)(5,3,4)(6,4,5)(7,5,5)(8,6,6)",
   "status": "SEALED",
   "scoreboard": [
     {"cell": "n=3 L=3 S=3", "verdict": "WITNESS"},
@@ -9,13 +9,16 @@
     {"cell": "n=5 L=3 S=4", "verdict": "WITNESS"},
     {"cell": "n=6 L=4 S=5", "verdict": "WITNESS"},
     {"cell": "n=7 L=5 S=5", "verdict": "WITNESS"},
-    {"cell": "L=3 S<=4 non-witness pairs", "verdict": "NO-GO (classified)"},
-    {"cell": "n=7 L=4 S=5", "verdict": "sample NO_ROUTABLE (301 clocks; not exhaustive)"}
+    {"cell": "n=7 L=5 S=6", "verdict": "WITNESS (non-minimal S)"},
+    {"cell": "n=8 L=6 S=6", "verdict": "WITNESS"},
+    {"cell": "n=7 L=4 S=5", "verdict": "sample 5 routable all LP-infeas"},
+    {"cell": "n=7 L=4 S=6", "verdict": "sample 0 routable / 161 clocks"},
+    {"cell": "n=8 L=5 S=6", "verdict": "sample 0 routable / 251 clocks"},
+    {"cell": "L=3 S<=4 non-witnesses", "verdict": "NO-GO classified"}
   ],
   "open_loopholes": [
-    "n=8 minimal (L,S)",
-    "whether n=7 works at L=4 with S>5",
-    "structural minimal (L,S) formula",
+    "n=9 minimal (L,S)",
+    "closed form L(n),S(n)",
     "Erdős 142 density consequences"
   ],
   "claim_boundary": "Finite machine objects for the common-anchor split-integral deterministic ternary macro model. Not an Erdős 142 solution."
