@@ -16,6 +16,13 @@ import time
 from collections import Counter
 from pathlib import Path
 
+# `python3 -I` (isolated mode) implies -P, dropping this script's own directory from sys.path,
+# so the sibling import below fails. Re-add it: keeps -I hermeticity (no user site-packages)
+# AND makes the documented replay one-liner actually run. House convention -- see
+# certificates/README.md; enforced by tests/test_certificate_replay.py.
+import sys as _sys, pathlib as _pathlib
+_sys.path.insert(0, str(_pathlib.Path(__file__).resolve().parent))
+
 import macro_engine as M
 import route_enum as R
 
