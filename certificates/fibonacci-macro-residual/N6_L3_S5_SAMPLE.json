@@ -1,0 +1,16 @@
+{
+  "claim_boundary": "Sample only; not exhaustive for S=5.",
+  "elapsed_sec": 3.79,
+  "lp_on_first_routable": null,
+  "sample_size": 23000,
+  "schema": "lead.n6_l3_s5_sample.v1",
+  "seed": 20260721,
+  "stats": {
+    "clocks": 23000,
+    "ge_tags": 117,
+    "outward": 3168,
+    "reachable": 13737
+  },
+  "status": "NO_ROUTABLE_IN_SAMPLE",
+  "witness": null
+}

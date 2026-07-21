@@ -1,24 +1,25 @@
 {
-  "schema": "lead.global_macro_residual.seal.v4",
+  "schema": "lead.global_macro_residual.seal.v5",
   "date": "2026-07-20",
-  "title": "L=3 residual: witnesses n=3,4@S=3 and n=5@S=4; n=6 blocked through S=4",
+  "title": "L=3 residual closed through S=4 for all n: only n=3,4@S=3 and n=5@S=4 work",
   "status": "SEALED",
   "scoreboard": [
     {"cell": "n=3 L=3 S=3", "verdict": "WITNESS"},
     {"cell": "n=4 L=3 S=3", "verdict": "WITNESS"},
     {"cell": "n=5 L=3 S=3", "verdict": "NO-GO"},
-    {"cell": "n=5 L=4 S=3", "verdict": "NO-GO"},
-    {"cell": "n=5 L=5 S=3", "verdict": "NO-GO"},
     {"cell": "n=5 L=3 S=4", "verdict": "WITNESS"},
+    {"cell": "n=5 L=4,5 S=3", "verdict": "NO-GO"},
     {"cell": "n=6 L=3 S=3", "verdict": "NO-GO"},
     {"cell": "n=6 L=3 S=4", "verdict": "NO-GO (72 routable, 0 LP)"},
+    {"cell": "n=6 L=3 S=5", "verdict": "sample NO_ROUTABLE (23k clocks)"},
+    {"cell": "n=7 L=3 S=4", "verdict": "NO-GO (0 routable / 55k outward)"},
+    {"cell": "n=8 L=3 S=4", "verdict": "NO-GO (0 outward / 330 ge_tags)"},
     {"cell": "n>=7 S=3 reachable", "verdict": "NO-GO (port cap 7)"},
     {"cell": "n>=9 S=4 reachable", "verdict": "NO-GO (port cap 9)"}
   ],
   "open_loopholes": [
-    "n=6 L=3 S>=5 or L>=4",
-    "n=7,8 at S=4 (ports exist; no census yet)",
-    "structural S >= f(n) lower bound",
+    "n=6 L>=4 any S, or n=6 L=3 S>=5 exhaustive",
+    "n>=6 at S>=5",
     "non-common-anchor models",
     "Erdős 142 density consequences"
   ],

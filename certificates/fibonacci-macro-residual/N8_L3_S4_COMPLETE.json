@@ -1,0 +1,17 @@
+{
+  "L": 3,
+  "S": 4,
+  "claim_boundary": "Exhaustive n=8 L=3 S=4 common-anchor census with LP/MIP. NO_* means no integer Parikh-balanced macro.",
+  "digit_patterns": 31,
+  "elapsed_sec": 61.742,
+  "n": 8,
+  "schema": "lead.n8_l3_s4_complete.v1",
+  "stats": {
+    "clocks": 16777216,
+    "ge_ports": 6571,
+    "ge_tags": 330
+  },
+  "status": "NO_N8_L3_S4",
+  "total_clocks": 16777216,
+  "witness": null
+}

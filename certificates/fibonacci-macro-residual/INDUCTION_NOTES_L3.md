@@ -1,32 +1,34 @@
-# L=3 family notes (after n=6 S=4 no-go)
+# L=3 family notes — S=4 board complete for all n
 
 Date: 2026-07-20
 
-## Empirical table
+## Full table
 
-| n | tags | L=3 S=3 | L=3 S=4 | port kill |
+| n | tags | S=3 | S=4 | port kills |
 |--:|--:|---|---|---|
-| 3 | 4 | **witness** | — | — |
-| 4 | 5 | **witness** | — | — |
-| 5 | 6 | **no-go** | **witness** | — |
-| 6 | 7 | **no-go** | **no-go** (0 LP / 72 routable) | — |
-| 7 | 8 | port no-go | open (6972 ge_tags) | S=3 |
-| 8 | 9 | port no-go | open (330 ge_tags) | S=3 |
-| ≥9 | ≥10 | port no-go | **port no-go** | S=3 and S=4 |
+| 3 | 4 | **WITNESS** | — | — |
+| 4 | 5 | **WITNESS** | — | — |
+| 5 | 6 | NO-GO | **WITNESS** | — |
+| 6 | 7 | NO-GO | NO-GO (0 LP) | — |
+| 7 | 8 | port NO-GO | NO-GO (0 routable) | S=3 |
+| 8 | 9 | port NO-GO | NO-GO (0 outward) | S=3 |
+| ≥9 | ≥10 | port NO-GO | port NO-GO | S=3 & S=4 |
 
 ## Morphogenesis
 
-1. Fixed S=3: only n=3,4 work at L=3; n≥5 dies (routability or ports).
-2. Raising S to 4: **rescues n=5**, **does not rescue n=6** (Parikh/LP wall).
-3. Port capacity: S=3 max 7 ports → n≥7 impossible; S=4 max 9 → n≥9 impossible.
-4. Lengthening L at S=3 does not save n=5 (checked L=3,4,5).
+1. **S=3 island:** only n=3,4.
+2. **S=4 island:** only n=5 (among n≥5). n=6 dies at LP; n=7 at routes; n=8 at outward.
+3. Port capacity: S=k cannot host n with n+1 > max_ports(S).
+4. Lengthening L at S=3 does not save n=5.
 
 ## Working hypothesis
 
-Common-anchor L=3 macros need **S ≥ f(n)** with:
+Common-anchor L=3 macros exist only for small (n,S) pairs:
 
-- f(3)=f(4)=3
-- f(5)=4
-- f(6)≥5
+- (3,3), (4,3), (5,4) known
+- (6,S) requires S≥5 if anything, and sample at S=5 found 0 routable in 23k
 
-Next machine target: n=6 L=3 S=5 (5^15 clocks — needs smarter search).
+## Next
+
+- n=6 L=3 S=5 exhaustive (expensive) or structural no-go
+- S=5 port capacity table

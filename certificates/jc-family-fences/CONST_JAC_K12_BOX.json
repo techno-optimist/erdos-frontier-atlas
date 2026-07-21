@@ -1,0 +1,8 @@
+{
+  "claim_boundary": "k in {1,2}, coeffs in {-3..3}. Family fence.",
+  "const_count": 0,
+  "hits": [],
+  "param_rows": 806736,
+  "schema": "jc.const_jac_k12_box.v1",
+  "status": "NO_CE_IN_K12_BOX"
+}
