@@ -1,0 +1,29 @@
+{
+  "algebraic_notes": {
+    "parametrization": "t1=a(s-a)/3, t2=s, b=3s/2-2a, t3 from G1 constant",
+    "phi_x_reduced": "on V(E)\\\\\u03b3: x*=2 t3/(4-3 t2 t3) (from anatomy Phi_x)",
+    "shape_on_rational_VE": "disc=0 + gcd(G1,G1') linear over Q \u21d2 multiple root rational; Vieta \u21d2 simple root rational. Shape rat_y=1+leftover=2 empty."
+  },
+  "claim_boundary": "Parametric rational sample of double+simple stratum + forced-x cross-check + engine agreement. Soft lemma holds on sample; NOT familywise over C. Does not close jc-fiber-count-spectrum-size. Size-2 could still hide at non-rational t or non-parametrized strata.",
+  "cusp_count": 0,
+  "e_fail": 0,
+  "engine_fx_mismatch": 0,
+  "failure_samples": [],
+  "g1_fail": 0,
+  "histogram_fiber": {
+    "1": 8494
+  },
+  "points_tested": 8494,
+  "schema": "jc.fiber_two_y_lemma.v1",
+  "size2_hits": [],
+  "soft_lemma": {
+    "sample_support": 8494,
+    "statement": "If t \u2208 V(E) is rational and G1(t;y)=2(y-a)^2(y-b) with a\u2260b rational, then at most one of {a,b} lifts under F. On this parametric sample the lifting root is always the simple root b (double a never lifts) off the cusp, where both fail (fiber 0).",
+    "status": "HOLDS_ON_PARAMETRIC_SAMPLE"
+  },
+  "status": "NO_SIZE_2_IN_PARAMETRIC_SAMPLE",
+  "t1_zero_count": 92,
+  "which_lifts": {
+    "simple_only": 8494
+  }
+}

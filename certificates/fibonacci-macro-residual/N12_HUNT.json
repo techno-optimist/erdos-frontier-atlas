@@ -1,0 +1,22 @@
+{
+  "claim_boundary": "Heuristic pad/mutate hunt; not exhaustive.",
+  "configs": [
+    {
+      "L": 8,
+      "S": 8,
+      "stats": {
+        "clocks": 67,
+        "ge_tags": 8,
+        "lp": 1,
+        "mip": 1,
+        "outward": 229,
+        "routable": 1,
+        "route_enum": 1,
+        "tried": 229
+      }
+    }
+  ],
+  "elapsed_sec": 548.262,
+  "schema": "lead.n12_hunt_fast.v1",
+  "status": "FOUND_INTEGER"
+}

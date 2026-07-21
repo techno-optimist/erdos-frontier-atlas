@@ -48,12 +48,27 @@ fiber cubic \(G_1\).
 
 No size-2 hits. Incomplete \(y\)-factorizations: 0 on every sample.
 
+## Structural fence (2026-07-21 push)
+
+See [`THEOREM_FIBER_NO_SIZE2_ON_VE.md`](THEOREM_FIBER_NO_SIZE2_ON_VE.md).
+
+Proposed argument: on all of \(V(E)\), \(\#F^{-1}(t)\in\{0,1\}\) because
+
+1. \(\Phi_x\) forces a unique \(x_*\) off the cusp (empty fiber on the cusp);
+2. the multiple root of \(G_1\) never lifts (\(R_{12}\) identity);
+3. hence at most one \(y\)-root lifts, at most once.
+
+If accepted, spectrum \(=\{0,1,3\}\) and `jc-fiber-count-spectrum-size` closes
+to **3**. This package does **not** auto-update the ledger.
+
+Rational samples (prior + consolidated): still **zero** size-2 hits; shape
+`rat_y=1,leftover=2` is empty on rational \(V(E)\).
+
 ## Scope
 
-This is **not** a proof that size-2 fibers are absent — only that none occur
-among this rational sample of \(V(E)\). Closing the bracket still needs either
-an exhibited size-2 fiber (possibly with irrational coordinates) or a
-familywise certificate on \(V(E)\setminus\gamma\).
+Prior text: samples alone are not a familywise no-go.  
+New text: structural non-lifting argument is proposed, conditional on anatomy
+annihilators, pending human review of the case-split.
 
 ## Replay
 
@@ -61,4 +76,8 @@ familywise certificate on \(V(E)\setminus\gamma\).
 python3 -I probe_fiber_size2_exact.py
 python3 -I probe_fiber_q0_slice.py
 python3 -I probe_fiber_t2_zero.py
+python3 -I _tiny_run_core.py
+python3 -I probe_fiber_no_size2_ve.py
+python3 -I probe_fiber_two_y_lemma.py
+python3 -I probe_fiber_size2_push.py
 ```

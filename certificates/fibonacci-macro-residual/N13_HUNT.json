@@ -1,0 +1,59 @@
+{
+  "claim_boundary": "Heuristic pad/mutate hunt; not exhaustive.",
+  "configs": [
+    {
+      "L": 8,
+      "S": 8,
+      "stats": {
+        "clocks": 281,
+        "ge_tags": 66,
+        "outward": 792,
+        "tried": 792
+      }
+    },
+    {
+      "L": 8,
+      "S": 9,
+      "stats": {
+        "clocks": 281,
+        "ge_tags": 29,
+        "lp_infeas": 2,
+        "outward": 1152,
+        "routable": 2,
+        "route_enum": 2,
+        "tried": 1152
+      }
+    },
+    {
+      "L": 9,
+      "S": 8,
+      "stats": {
+        "clocks": 281,
+        "ge_tags": 61,
+        "lp_infeas": 2,
+        "outward": 936,
+        "routable": 2,
+        "route_enum": 2,
+        "tried": 936
+      }
+    },
+    {
+      "L": 9,
+      "S": 9,
+      "stats": {
+        "clocks": 48,
+        "ge_tags": 10,
+        "lp": 1,
+        "lp_infeas": 1,
+        "mip": 1,
+        "outward": 423,
+        "routable": 2,
+        "route_enum": 2,
+        "tried": 423
+      }
+    }
+  ],
+  "elapsed_sec": 3276.658,
+  "schema": "lead.n13_hunt_fast.v1",
+  "status": "FOUND_INTEGER"
+}
