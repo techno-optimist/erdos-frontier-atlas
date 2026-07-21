@@ -13,6 +13,8 @@ at S=4 under the L≤3 reachability filter.
 
 ## Census
 
+Verifier: `verify_s4_port_capacity.py` (~4 min; recomputes all 16 777 216 clocks
+and checks the stored artifact against the fresh census)  
 Artifact: `PORT_CAPACITY_S4.json`
 
 | ports | reachable clocks |
@@ -37,3 +39,9 @@ is load-bearing for the n≥9 cut (as for S=3 / n≥7).
 ## Scope
 
 Does not settle n=7,8 at S=4 (ports exist).
+
+## Replay
+
+```sh
+python3 -I verify_s4_port_capacity.py
+```

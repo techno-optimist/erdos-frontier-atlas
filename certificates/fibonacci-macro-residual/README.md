@@ -16,3 +16,10 @@
 - L=3 S≤4 board: `THEOREM_L3_S_LE_4_CLASSIFICATION.md`
 - n=6 L=3 S=4 exhaustive NO-GO; n=7,8 L=3 S=4 NO-GO
 - n=6 L=3 S=5: routable but LP-resistant in sample (`THEOREM_N6_L3_S5_LP_FENCE.md`)
+
+## Port-capacity fences (the all-large-n cuts)
+
+| S | max ports (L≤3-reachable) | kills | replay |
+|--:|--:|---|--------|
+| 3 | 7 | n ≥ 7 | `python3 -I verify_s3_port_capacity.py` |
+| 4 | 9 | n ≥ 9 | `python3 -I verify_s4_port_capacity.py` (~4 min) |
