@@ -1,32 +1,18 @@
-# Fibonacci common-anchor macro residual (2026-07-20)
+# Fibonacci common-anchor macro residual
 
-**Not** an Erdős #142 claim. Finite machine model only.
+**Not** an Erdős #142 claim.
 
-## Scoreboard (L=3)
+## Witnesses
 
-| n \\ S | 3 | 4 |
-|--:|---|---|
-| 3 | **WITNESS** | — |
-| 4 | **WITNESS** | — |
-| 5 | NO-GO | **WITNESS** |
-| 6 | NO-GO | NO-GO |
-| 7 | port NO-GO | NO-GO |
-| 8 | port NO-GO | NO-GO |
-| ≥9 | port NO-GO | port NO-GO |
+| n | L | S | replay |
+|--:|--:|--:|--------|
+| 3 | 3 | 3 | `python3 -I verify_n3_l3_macro_witness.py` |
+| 4 | 3 | 3 | `python3 -I verify_n4_l3_macro_witness.py` |
+| 5 | 3 | 4 | `python3 -I verify_n5_l3_s4_macro_witness.py` |
+| 6 | 4 | 5 | `python3 -I verify_n6_l4_s5_macro_witness.py` |
 
-Also: n=5 L=4,5 @ S=3 NO-GO; n=6 L=4,5 @ S=3 NO-GO; n=6 L=3 S=5 has routable seeds (integer open).
+## Closed no-gos (selected)
 
-See `THEOREM_L3_S_LE_4_CLASSIFICATION.md` for the closed S≤4 board.
-
-## Replay
-
-```sh
-python3 -I verify_n3_l3_macro_witness.py
-python3 -I verify_n4_l3_macro_witness.py
-python3 -I verify_n5_l3_s4_macro_witness.py
-python3 -I verify_n5_l3_s3_routability.py
-python3 -I verify_n6_l3_s3_routability.py
-python3 -I verify_s3_port_capacity.py
-python3 search_n_l3_s4_by_ports.py --n 8 7
-python3 search_n6_l3_s4_routability.py
-```
+- L=3 S≤4 board: `THEOREM_L3_S_LE_4_CLASSIFICATION.md`
+- n=6 L=3 S=4 exhaustive NO-GO; n=7,8 L=3 S=4 NO-GO
+- n=6 L=3 S=5: routable but LP-resistant in sample (`THEOREM_N6_L3_S5_LP_FENCE.md`)

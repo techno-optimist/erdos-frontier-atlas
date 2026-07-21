@@ -1,0 +1,12 @@
+{
+  "schema": "lead.n6_l4_s5_sample.v1",
+  "status": "FOUND_LP",
+  "stats": {
+    "clocks_ok": 1,
+    "outward": 148,
+    "routable": 1,
+    "lp": 1
+  },
+  "elapsed": 9.11,
+  "claim_boundary": "Small L=4 S=5 sample on first-seed neighborhood."
+}

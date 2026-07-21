@@ -1,28 +1,25 @@
 {
-  "schema": "lead.global_macro_residual.seal.v5",
-  "date": "2026-07-20",
-  "title": "L=3 residual closed through S=4 for all n: only n=3,4@S=3 and n=5@S=4 work",
+  "schema": "lead.global_macro_residual.seal.v6",
+  "date": "2026-07-21",
+  "title": "Witnesses (3,3),(4,3),(5,4) at L=3; plus n=6 L=4 S=5",
   "status": "SEALED",
   "scoreboard": [
     {"cell": "n=3 L=3 S=3", "verdict": "WITNESS"},
     {"cell": "n=4 L=3 S=3", "verdict": "WITNESS"},
     {"cell": "n=5 L=3 S=3", "verdict": "NO-GO"},
     {"cell": "n=5 L=3 S=4", "verdict": "WITNESS"},
-    {"cell": "n=5 L=4,5 S=3", "verdict": "NO-GO"},
     {"cell": "n=6 L=3 S=3", "verdict": "NO-GO"},
-    {"cell": "n=6 L=4 S=3", "verdict": "NO-GO (0 outward / 24 ge_tags)"},
-    {"cell": "n=6 L=5 S=3", "verdict": "NO-GO (0 outward / 24 ge_tags)"},
-    {"cell": "n=6 L=3 S=4", "verdict": "NO-GO (72 routable, 0 LP)"},
-    {"cell": "n=6 L=3 S=5", "verdict": "sample: routable exists, LP open (integer hunt)"},
-    {"cell": "n=7 L=3 S=4", "verdict": "NO-GO (0 routable / 55k outward)"},
-    {"cell": "n=8 L=3 S=4", "verdict": "NO-GO (0 outward / 330 ge_tags)"},
-    {"cell": "n>=7 S=3 reachable", "verdict": "NO-GO (port cap 7)"},
-    {"cell": "n>=9 S=4 reachable", "verdict": "NO-GO (port cap 9)"}
+    {"cell": "n=6 L=3 S=4", "verdict": "NO-GO"},
+    {"cell": "n=6 L=3 S=5", "verdict": "routable; LP sample fence (0/57)"},
+    {"cell": "n=6 L=4 S=5", "verdict": "WITNESS"},
+    {"cell": "n=7 L=3 S=4", "verdict": "NO-GO"},
+    {"cell": "n=8 L=3 S=4", "verdict": "NO-GO"},
+    {"cell": "n>=7 S=3 / n>=9 S=4 ports", "verdict": "NO-GO"}
   ],
   "open_loopholes": [
-    "n=6 L>=4 any S, or n=6 L=3 S>=5 exhaustive",
-    "n>=6 at S>=5",
-    "non-common-anchor models",
+    "n=6 L=3 S>=5 exhaustive (integer at L=3 open)",
+    "n>=7 any S,L",
+    "structural f(n) for minimal (L,S)",
     "Erdős 142 density consequences"
   ],
   "claim_boundary": "Finite machine objects for the common-anchor split-integral deterministic ternary macro model. Not an Erdős 142 solution."

@@ -1,34 +1,26 @@
-# L=3 family notes — S=4 board complete for all n
+# Family notes — L and S both grow
 
-Date: 2026-07-20
+Date: 2026-07-21
 
-## Full table
+## Known witnesses
 
-| n | tags | S=3 | S=4 | port kills |
-|--:|--:|---|---|---|
-| 3 | 4 | **WITNESS** | — | — |
-| 4 | 5 | **WITNESS** | — | — |
-| 5 | 6 | NO-GO | **WITNESS** | — |
-| 6 | 7 | NO-GO | NO-GO (0 LP) | — |
-| 7 | 8 | port NO-GO | NO-GO (0 routable) | S=3 |
-| 8 | 9 | port NO-GO | NO-GO (0 outward) | S=3 |
-| ≥9 | ≥10 | port NO-GO | port NO-GO | S=3 & S=4 |
+| n | L | S | artifact |
+|--:|--:|--:|----------|
+| 3 | 3 | 3 | `verify_n3_l3_macro_witness.py` |
+| 4 | 3 | 3 | `verify_n4_l3_macro_witness.py` |
+| 5 | 3 | 4 | `verify_n5_l3_s4_macro_witness.py` |
+| 6 | **4** | **5** | `verify_n6_l4_s5_macro_witness.py` |
 
-## Morphogenesis
+## Pattern
 
-1. **S=3 island:** only n=3,4.
-2. **S=4 island:** only n=5 (among n≥5). n=6 dies at LP; n=7 at routes; n=8 at outward.
-3. Port capacity: S=k cannot host n with n+1 > max_ports(S).
-4. Lengthening L at S=3 does not save n=5.
+- Fixed L=3: S≤4 classified — only (3,3),(4,3),(5,4).
+- n=6 at L=3 S=5: routes exist, Parikh-LP fails on 57/57 sample cells.
+- n=6 at **L=4 S=5** on the same clock: **integer witness**.
 
-## Working hypothesis
-
-Common-anchor L=3 macros exist only for small (n,S) pairs:
-
-- (3,3), (4,3), (5,4) known
-- (6,S) requires S≥5 if anything, and sample at S=5 found 0 routable in 23k
+Hypothesis: minimal resources grow roughly like S ≥ ⌈n/2⌉+1 or similar;
+L may need to increase when S is barely large enough for ports/routing.
 
 ## Next
 
-- n=6 L=3 S=5 exhaustive (expensive) or structural no-go
-- S=5 port capacity table
+- n=7 minimal (L,S)
+- n=6 L=3 S≥6 or prove L=3 impossible for n=6

@@ -1,0 +1,16 @@
+{
+  "claim_boundary": "Seed+mutation+random hunt for n=6 L=3 S=5 integer macro. Not exhaustive over all 5^15 clocks.",
+  "elapsed_sec": 454.007,
+  "schema": "lead.n6_l3_s5_seed_hunt.v1",
+  "stats": {
+    "clocks_ok": 2112,
+    "lp_infeas": 57,
+    "mut_tries": 5000,
+    "outward": 285008,
+    "rand_tries": 3000,
+    "routable": 57,
+    "route_enum": 57,
+    "seed_tries": 51
+  },
+  "status": "NO_INTEGER_IN_HUNT"
+}

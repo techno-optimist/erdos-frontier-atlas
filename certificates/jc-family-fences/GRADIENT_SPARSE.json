@@ -1,0 +1,8 @@
+{
+  "schema": "jc.gradient_sparse.v1",
+  "scanned": 16806,
+  "const_count": 0,
+  "hits": [],
+  "status": "NO_GRADIENT_CE_SPARSE",
+  "claim_boundary": "Sparse cubic gradient control; de Bondt predicts none."
+}
