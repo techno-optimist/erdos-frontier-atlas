@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:21bdbf16ab50eaab6b9e1c10b3bde324332ca7c2c9fea6ef1ccf8ab4589475ce",
+  "content_digest": "sha256:46723655995f8d105656b32572b64299a96db8911e10ae9e6408d91f825f0755",
+  "occurred_at": "2026-07-21T12:26:40Z",
+  "frontier": "What is a(6) for OEIS A385316 — the smallest integer that can be written as p³+q³+r³ (unordered primes p≤q≤r) in exactly 6 ways?",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nReplayed the verifier artifact (prime_cubes_verifier_a385316.py) from the prior accepted continuation (session res_20260721_115139, receipt sha256:2cc9c912) as a no-argument independent entrypoint at C=1.1e10. Copied artifact to current session artifact_dir. Confirmed exit 0, all 6 kill fixtures pass, all 5 OEIS terms reproduce exactly.",
+  "verified": "Verifier domain: P = {p prime : p³ ≤ C}, provably complete for [0, C].\nVerifier predicate: exact multiplicity count of unordered prime-cube triples summing to each N ≤ C, self-checking a(1)..a(5) match OEIS A385316.\nArtifact: prime_cubes_verifier_a385316.py, SHA-256: ba8e17a0efe636a63e5a77008e1a21078969c9e3ad48e6b94bef859add1e4fd3\nReplay summary (independent, from artifact_dir copy, exit 0):\nDomain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nALL KILL FIXTURES PASSED",
+  "result": "The verifier artifact's operational soundness is confirmed via independent replay. The bound a(6) > 1.1e10 (11 billion) is certified with a fully replayable, zero-exit verifier. The next step — advancing to C=1e13 — requires DGX SSH access (spark-38e3.local:8198), which is unavailable locally. No k=6 candidates exist below 1.1e10.",
+  "next_gate": "An operator with DGX SSH access must execute `python3 prime_cubes_search_1e13.py --cutoff 10000000000000` on spark-38e3.local. If no k=6 candidate found at C=1e13, advance to C=1e14 or consider heuristic/construction approaches.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-21_05-26-40.md",
+    "sha256": "69a1d6a02feab69feca58b56377d78b277526e65422b1f7e8e0d633cadd49b19"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}
