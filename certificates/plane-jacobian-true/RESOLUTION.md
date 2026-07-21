@@ -74,4 +74,15 @@ python plane_properness.py
 
 ## Bottom line
 
-Atlas still marks plane JC **open**. We have **settled every elementary map (all degrees)**, **all deg ≤ 3**, a **deg-4 lattice**, and **replayed Yu + BCW termination on the elementary island**. Full resolution remains the triangularization step; the parent quantity `jc-min-counterexample-dimension` moves to 3 only when that step closes.
+| Claim | Status |
+|-------|--------|
+| Plane JC **deg ≤ 3** | **SEALED** (`THEOREM_PLANE_JC_DEG3_SEALED.md`, `crack_tame_classify.py`) |
+| Deg ≤ 2 | **SEALED** — complete E_x / E_y / shear case analysis |
+| Elementary maps, any degree | **SEALED** |
+| Deg ≤ 4 weight lattices | **SEALED** (53/53) |
+| Full plane JC (all degrees) | **OPEN** (Moh ≤100 literature; CE only possible at deg ≥101) |
+
+Deg-3 lattice census: **21 = 17 elementary + 4 shear**, zero exotic mixed-cubic Keller maps.
+
+Atlas still marks plane JC open (correct for unbounded degree). Parent quantity
+`jc-min-counterexample-dimension` stays **[2, 3]** until unbounded plane JC closes.
