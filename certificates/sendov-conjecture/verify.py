@@ -406,6 +406,25 @@ def main() -> int:
         print("leg15 wave5_left_ray_mp.json: MISSING FAIL")
         ok = False
 
+    # Leg 16 — argprin_all.json: CE-free; all reported gaps <= 1
+    ap = load_json("argprin_all.json")
+    if ap is not None:
+        ces = [r for r in ap if r.get("counterexample")]
+        over = [
+            r for r in ap
+            if float(r.get("gap", r.get("d", 0)) or 0) > 1 + 1e-6
+        ]
+        leg = len(ces) == 0 and len(over) == 0 and len(ap) >= 10
+        status = "PASS" if leg else "FAIL"
+        print(
+            f"leg16 argprin_all.json: rows={len(ap)} ces={len(ces)} "
+            f"over1={len(over)} {status}"
+        )
+        ok &= leg
+    else:
+        print("leg16 argprin_all.json: MISSING FAIL")
+        ok = False
+
     print()
     print("ALL PASS" if ok else "FAILURES PRESENT")
     return 0 if ok else 1

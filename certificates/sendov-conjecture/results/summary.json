@@ -65,6 +65,10 @@
     {
       "id": "equal_crit_theorem",
       "result": "PROVED: equal-crit family p'=(z-c)^{n-1} has no Sendov CE for any n>=2 (geometry of roots-of-unity circle about c)"
+    },
+    {
+      "id": "argprin",
+      "result": "arg-principle root maximin: max gap=0.9794<1 (soft oracle underestimates unity); CE=0; low-value basin"
     }
   ],
   "atlas_clues": [
