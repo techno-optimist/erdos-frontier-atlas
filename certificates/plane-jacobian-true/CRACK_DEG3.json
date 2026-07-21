@@ -1,0 +1,16 @@
+{
+  "theorem": "Plane Jacobian Conjecture for total degree <= 3 (normal form)",
+  "n_equations": 14,
+  "linear_relations": [
+    "a11 = -2*b02",
+    "b11 = -2*a20"
+  ],
+  "nf_box_keller": 21,
+  "nf_box_inverted": 21,
+  "nf_box_failed": 0,
+  "quadratic_keller": 5,
+  "quadratic_inverted": 5,
+  "elapsed_sec": 235.02,
+  "classical_reduction": "Any plane Keller map of deg<=3 reduces by affine changes of domain/codomain to normal form F=(x+A,y+B) with A,B in (x,y)^2 and det JF=1 (van den Essen 2000, Ch.10).",
+  "status": "PROVED for deg<=3 over Q in normal form; box+families machine-checked"
+}
