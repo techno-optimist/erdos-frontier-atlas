@@ -39,6 +39,15 @@ fiber cubic \(G_1\).
 **0**. Artifact: `FIBER_SIZE2_EXACT_V2.json`. Status:
 `NO_SIZE_2_IN_EXACT_PROBE`.
 
+### Additional slices (same engine)
+
+| sample | points | hist | artifact |
+|--------|--:|------|----------|
+| dense \(Q=0\) | 276 | {0:10, 1:266} | `FIBER_Q0_SLICE.json` |
+| \(t_2=0\) | 171 | {1:171} | `FIBER_T2_ZERO.json` |
+
+No size-2 hits. Incomplete \(y\)-factorizations: 0 on every sample.
+
 ## Scope
 
 This is **not** a proof that size-2 fibers are absent — only that none occur

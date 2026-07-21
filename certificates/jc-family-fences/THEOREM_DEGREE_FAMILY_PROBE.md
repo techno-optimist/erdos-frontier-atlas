@@ -29,6 +29,15 @@ All coefficients in \(\{-2,\ldots,2\}\): **78 125** maps screened.
 
 Artifact: `CONST_JAC_K2.json` (`probe_const_jac_family.py`).
 
+### k=3 neighborhood + free small box
+
+- Alpöge \((e,f,g)\) neighborhood with \((a,b,c,d)=(4,3,3,3)\): **800** maps,
+  0 const-Jac deg 3–6.
+- Free small \((a..g)\) box at \(k=3\): **217 728** maps, 0 const-Jac deg 3–6.
+- Alpöge control still deg 7 with const det: **ok**.
+
+Artifact: `CONST_JAC_K3_NEAR.json` (`probe_const_jac_k3_near.py`).
+
 ## Scope
 
 Absence of hits is a **family fence**, not a proof that no degree-6

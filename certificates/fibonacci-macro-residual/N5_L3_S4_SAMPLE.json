@@ -1,0 +1,15 @@
+{
+  "claim_boundary": "Fast random sample S=4; not exhaustive.",
+  "elapsed_sec": 0.912,
+  "sample_size": 3000,
+  "schema": "lead.n5_l3_s4_sample.v1",
+  "seed": 20260720,
+  "stats": {
+    "clocks": 3000,
+    "ge_tags": 65,
+    "outward": 48,
+    "reachable": 2258
+  },
+  "status": "NO_ROUTABLE_IN_SAMPLE",
+  "witness": null
+}

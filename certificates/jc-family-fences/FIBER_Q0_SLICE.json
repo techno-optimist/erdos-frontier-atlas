@@ -1,0 +1,14 @@
+{
+  "claim_boundary": "Exact fiber counts on a dense rational sample of V(E)=V(Q). Not a familywise certificate.",
+  "cusp_points": 10,
+  "histogram": {
+    "0": 10,
+    "1": 266
+  },
+  "incomplete_y_factorizations": 0,
+  "points_tested": 276,
+  "schema": "jc.fiber_q0_slice.v1",
+  "size2_hits": [],
+  "smooth_q0_points": 266,
+  "status": "NO_SIZE_2_ON_Q0_SAMPLE"
+}

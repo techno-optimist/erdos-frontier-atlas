@@ -1,0 +1,13 @@
+{
+  "claim_boundary": "Exhaustive n=6 L=3 on all 3-state clocks (L<=3-reachable). Pure-Python routability; 0 routable => no common-anchor split macro at S=3.",
+  "digit_patterns": 23,
+  "elapsed_sec": 0.117,
+  "n_columns": 12,
+  "schema": "lead.n6_l3_s3_complete.v1",
+  "stats": {
+    "clocks": 19683,
+    "ge_tags": 24,
+    "reachable": 15930
+  },
+  "status": "NO_N6_L3_S3"
+}

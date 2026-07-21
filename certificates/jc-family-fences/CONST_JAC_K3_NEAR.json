@@ -1,0 +1,10 @@
+{
+  "alpoge_control_ok": true,
+  "claim_boundary": "k=3 neighborhood + small free box; family fence only. Alp\u00f6ge itself excluded (deg 7).",
+  "const_maps": [],
+  "hits": [],
+  "scanned_free_small": 217728,
+  "scanned_near": 800,
+  "schema": "jc.const_jac_k3_near.v1",
+  "status": "NO_LOW_DEGREE_CE_IN_K3_NEAR"
+}

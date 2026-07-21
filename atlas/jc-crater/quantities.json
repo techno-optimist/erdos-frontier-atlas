@@ -51,7 +51,7 @@
         {
           "type": "numeric_scan",
           "artifact": "certificates/jc-family-fences/CONST_JAC_K2.json",
-          "note": "family fence (not a closed bracket): exhaustive scan of the k=2 Alpoge-shaped integer box with coefficients in {-2..2} (78125 maps); zero constant-nonzero-Jacobian maps of max total degree in {3,4,5,6}. Probe: certificates/jc-family-fences/probe_const_jac_family.py. Does not rule out other families or larger coefficients."
+          "note": "family fence (not a closed bracket): exhaustive scan of the k=2 Alpoge-shaped integer box with coefficients in {-2..2} (78125 maps); zero constant-nonzero-Jacobian maps of max total degree in {3,4,5,6}. Also CONST_JAC_K3_NEAR.json: k=3 neighborhood (800) + free small box (217728) with 0 const-Jac deg 3-6; Alpoge control still deg 7. Probes under certificates/jc-family-fences/. Does not rule out other families or larger coefficients."
         }
       ],
       "confidence": "C2",
@@ -163,7 +163,7 @@
         {
           "type": "numeric_scan",
           "artifact": "certificates/jc-family-fences/FIBER_SIZE2_EXACT_V2.json",
-          "note": "family fence (not a closed bracket): exact fiber counts at 249 distinct rational points of V(E) via resultant-gcd solving over Q; histogram {0:10, 1:239}, zero size-2 hits, zero incomplete y-factorizations. Probe script: certificates/jc-family-fences/probe_fiber_size2_exact.py. Does NOT exclude size-2 fibers at irrational points or off this sample."
+          "note": "family fence (not a closed bracket): exact fiber counts at 249 distinct rational points of V(E) via resultant-gcd solving over Q; histogram {0:10, 1:239}, zero size-2 hits, zero incomplete y-factorizations. Additional slices: FIBER_Q0_SLICE.json (276 pts on Q=0, hist {0:10,1:266}) and FIBER_T2_ZERO.json (171 pts, all fiber size 1). Probe scripts under certificates/jc-family-fences/. Does NOT exclude size-2 fibers at irrational points or off these samples."
         }
       ],
       "confidence": "C1",
