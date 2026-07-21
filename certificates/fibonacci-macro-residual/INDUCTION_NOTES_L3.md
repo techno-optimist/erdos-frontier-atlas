@@ -22,5 +22,10 @@ L may need to increase when S is barely large enough for ports/routing.
 
 ## Next
 
-- n=7 minimal (L,S)
+- n=7 minimal (L,S) — lower bounds sealed (`THEOREM_N7_LOWER_BOUNDS.md`):
+  - S=3 impossible (ports); L=3 S=4 impossible (0 routable)
+  - S≥5: ports exist (sample); integer open
+  - sealed n=6 clock has only 7 ports (need 8 tags) → must mutate/pad
+  - hunter: `python mine_n7.py --mode hunt`
+  - verifier (when witness appears): `python verify_n7_macro_witness.py`
 - n=6 L=3 S≥6 or prove L=3 impossible for n=6

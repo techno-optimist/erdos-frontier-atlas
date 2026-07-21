@@ -1,0 +1,63 @@
+{
+  "schema": "lead.port_capacity_n7_ge8_summary.v1",
+  "date": "2026-07-21",
+  "tags_needed": 8,
+  "note": "Consolidated from existing sample artifacts (not re-sampled in this pass). Samples use biased-random clocks; not exhaustive.",
+  "samples": [
+    {
+      "source": "PORT_CAPACITY_S5_SAMPLE.json",
+      "S": 5,
+      "L": 3,
+      "trials": 200000,
+      "reachable": 137945,
+      "ge8": 160,
+      "hist_ge8": {"8": 135, "9": 24, "10": 1},
+      "max_ports": 10
+    },
+    {
+      "source": "PORT_CAPACITY_S5_L4_SAMPLE.json",
+      "S": 5,
+      "L": 4,
+      "trials": 100000,
+      "reachable": 71884,
+      "ge8": 91,
+      "hist_ge8": {"8": 79, "9": 9, "10": 3},
+      "max_ports": 10
+    },
+    {
+      "source": "PORT_CAPACITY_S5_L5_SAMPLE.json",
+      "S": 5,
+      "L": 5,
+      "trials": 50000,
+      "reachable": 35984,
+      "ge8": 55,
+      "hist_ge8": {"8": 49, "9": 6},
+      "max_ports": 9
+    },
+    {
+      "source": "PORT_CAPACITY_S6_L4_SAMPLE.json",
+      "S": 6,
+      "L": 4,
+      "trials": 50000,
+      "reachable": 33694,
+      "ge8": 75,
+      "hist_ge8": {"8": 68, "9": 7},
+      "max_ports": 9
+    },
+    {
+      "source": "PORT_CAPACITY_S4.json (exhaustive under L<=3 reachability)",
+      "S": 4,
+      "L": 3,
+      "exhaustive": true,
+      "ge8_reachable": 6972,
+      "max_ports": 9
+    }
+  ],
+  "conclusions": {
+    "n7_S3": "NO-GO by port capacity (max 7 ports under L<=3 reachability)",
+    "n7_S4_ports": "ports exist (6972 L<=3-reachable clocks with >=8 ports); L=3 still NO-GO by 0 routable",
+    "n7_S5_ports": "NOT a port no-go: sample shows ge8>0 at L=3,4,5 (max ports 9–10)",
+    "n7_S6_ports": "NOT a port no-go: sample ge8>0 at L=4"
+  },
+  "claim_boundary": "Sample rows are not exhaustive. S=3 and S=4 L=3 port/routability claims are sealed elsewhere."
+}

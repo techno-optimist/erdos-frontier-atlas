@@ -1,0 +1,29 @@
+{
+  "claim_boundary": "Heuristic hunt from n=6 witness; not exhaustive.",
+  "configs": [
+    {
+      "L": 4,
+      "S": 5,
+      "stats": {
+        "clocks": 301,
+        "ge_tags": 23,
+        "outward": 400
+      }
+    },
+    {
+      "L": 5,
+      "S": 5,
+      "stats": {
+        "clocks": 30,
+        "ge_tags": 1,
+        "lp_infeas": 1,
+        "outward": 37,
+        "routable": 2,
+        "route_enum": 2
+      }
+    }
+  ],
+  "elapsed_sec": 451.593,
+  "schema": "lead.n7_search.v1",
+  "status": "FOUND_INTEGER"
+}

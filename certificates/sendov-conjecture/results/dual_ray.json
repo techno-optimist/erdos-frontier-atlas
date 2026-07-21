@@ -1,0 +1,282 @@
+[
+  {
+    "n": 9,
+    "R_target": 1.001,
+    "n_hits": 136,
+    "min_maxroot": 1.001939750996458,
+    "max_maxroot": 9.519695314802304,
+    "best_radius": 1.0010000000000079,
+    "slack": 0.001939750996458045,
+    "counterexample": false
+  },
+  {
+    "n": 9,
+    "R_target": 1.01,
+    "n_hits": 135,
+    "min_maxroot": 1.019402663789038,
+    "max_maxroot": 9.56386055887427,
+    "best_radius": 1.0100000000000788,
+    "slack": 0.0194026637890381,
+    "counterexample": false
+  },
+  {
+    "n": 9,
+    "R_target": 1.05,
+    "n_hits": 130,
+    "min_maxroot": 1.0971179176297357,
+    "max_maxroot": 7.309685227466603,
+    "best_radius": 1.0500000000003944,
+    "slack": 0.09711791762973565,
+    "counterexample": false
+  },
+  {
+    "n": 9,
+    "R_target": 1.1,
+    "n_hits": 124,
+    "min_maxroot": 1.1944590309326526,
+    "max_maxroot": 7.491663220957485,
+    "best_radius": 1.1000000000007886,
+    "slack": 0.1944590309326526,
+    "counterexample": false
+  },
+  {
+    "n": 10,
+    "R_target": 1.001,
+    "n_hits": 102,
+    "min_maxroot": 1.002000000000409,
+    "max_maxroot": 7.220867605508491,
+    "best_radius": 1.0010000000002037,
+    "slack": 0.002000000000409008,
+    "counterexample": false
+  },
+  {
+    "n": 10,
+    "R_target": 1.01,
+    "n_hits": 101,
+    "min_maxroot": 1.0200000000004372,
+    "max_maxroot": 7.440126423023906,
+    "best_radius": 1.0100000000002183,
+    "slack": 0.020000000000437224,
+    "counterexample": false
+  },
+  {
+    "n": 10,
+    "R_target": 1.05,
+    "n_hits": 97,
+    "min_maxroot": 1.100000000000366,
+    "max_maxroot": 7.402434952068741,
+    "best_radius": 1.050000000000182,
+    "slack": 0.10000000000036602,
+    "counterexample": false
+  },
+  {
+    "n": 10,
+    "R_target": 1.1,
+    "n_hits": 89,
+    "min_maxroot": 1.200000000000725,
+    "max_maxroot": 6.949411822451698,
+    "best_radius": 1.1000000000003638,
+    "slack": 0.20000000000072493,
+    "counterexample": false
+  },
+  {
+    "n": 12,
+    "R_target": 1.001,
+    "n_hits": 96,
+    "min_maxroot": 1.0020000000005687,
+    "max_maxroot": 6.277834612789654,
+    "best_radius": 1.0010000000002837,
+    "slack": 0.002000000000568658,
+    "counterexample": false
+  },
+  {
+    "n": 12,
+    "R_target": 1.01,
+    "n_hits": 95,
+    "min_maxroot": 1.0200000000007357,
+    "max_maxroot": 5.8521792157124,
+    "best_radius": 1.0100000000003677,
+    "slack": 0.02000000000073565,
+    "counterexample": false
+  },
+  {
+    "n": 12,
+    "R_target": 1.05,
+    "n_hits": 92,
+    "min_maxroot": 1.100000000000388,
+    "max_maxroot": 6.605167957773948,
+    "best_radius": 1.0500000000001932,
+    "slack": 0.100000000000388,
+    "counterexample": false
+  },
+  {
+    "n": 12,
+    "R_target": 1.1,
+    "n_hits": 80,
+    "min_maxroot": 1.2000000000007744,
+    "max_maxroot": 6.141337403049595,
+    "best_radius": 1.1000000000003867,
+    "slack": 0.20000000000077445,
+    "counterexample": false
+  },
+  {
+    "n": 15,
+    "R_target": 1.001,
+    "n_hits": 44,
+    "min_maxroot": 1.0019781691722205,
+    "max_maxroot": 6.773830147172329,
+    "best_radius": 1.0010000000002646,
+    "slack": 0.0019781691722204897,
+    "counterexample": false
+  },
+  {
+    "n": 15,
+    "R_target": 1.01,
+    "n_hits": 43,
+    "min_maxroot": 1.0197835954439884,
+    "max_maxroot": 6.804303459698352,
+    "best_radius": 1.0100000000004572,
+    "slack": 0.019783595443988444,
+    "counterexample": false
+  },
+  {
+    "n": 15,
+    "R_target": 1.05,
+    "n_hits": 41,
+    "min_maxroot": 1.0989565496767728,
+    "max_maxroot": 6.939739753197745,
+    "best_radius": 1.0500000000000984,
+    "slack": 0.09895654967677281,
+    "counterexample": false
+  },
+  {
+    "n": 15,
+    "R_target": 1.1,
+    "n_hits": 38,
+    "min_maxroot": 1.1979951887058495,
+    "max_maxroot": 7.10903375985983,
+    "best_radius": 1.1000000000001966,
+    "slack": 0.19799518870584953,
+    "counterexample": false
+  },
+  {
+    "n": 20,
+    "R_target": 1.001,
+    "n_hits": 25,
+    "min_maxroot": 1.0020000000005358,
+    "max_maxroot": 5.241184589111709,
+    "best_radius": 1.0010000000002663,
+    "slack": 0.0020000000005357954,
+    "counterexample": false
+  },
+  {
+    "n": 20,
+    "R_target": 1.01,
+    "n_hits": 25,
+    "min_maxroot": 1.0200000000003195,
+    "max_maxroot": 5.336411780216618,
+    "best_radius": 1.0100000000001597,
+    "slack": 0.02000000000031954,
+    "counterexample": false
+  },
+  {
+    "n": 20,
+    "R_target": 1.05,
+    "n_hits": 23,
+    "min_maxroot": 1.100000000000343,
+    "max_maxroot": 4.73594787434235,
+    "best_radius": 1.0500000000001721,
+    "slack": 0.10000000000034293,
+    "counterexample": false
+  },
+  {
+    "n": 20,
+    "R_target": 1.1,
+    "n_hits": 21,
+    "min_maxroot": 1.2000000000006874,
+    "max_maxroot": 4.896892274172977,
+    "best_radius": 1.1000000000003445,
+    "slack": 0.2000000000006874,
+    "counterexample": false
+  },
+  {
+    "n": 26,
+    "R_target": 1.001,
+    "n_hits": 14,
+    "min_maxroot": 1.0020000000004072,
+    "max_maxroot": 3.5867300269142803,
+    "best_radius": 1.0010000000002037,
+    "slack": 0.0020000000004072316,
+    "counterexample": false
+  },
+  {
+    "n": 26,
+    "R_target": 1.01,
+    "n_hits": 14,
+    "min_maxroot": 1.0200000000007987,
+    "max_maxroot": 3.6035317287053656,
+    "best_radius": 1.0100000000004001,
+    "slack": 0.020000000000798712,
+    "counterexample": false
+  },
+  {
+    "n": 26,
+    "R_target": 1.05,
+    "n_hits": 13,
+    "min_maxroot": 1.1000000000007257,
+    "max_maxroot": 1.3698162352801226,
+    "best_radius": 1.0500000000003638,
+    "slack": 0.10000000000072573,
+    "counterexample": false
+  },
+  {
+    "n": 26,
+    "R_target": 1.1,
+    "n_hits": 13,
+    "min_maxroot": 1.200000000000362,
+    "max_maxroot": 1.5575270765618259,
+    "best_radius": 1.100000000000182,
+    "slack": 0.2000000000003621,
+    "counterexample": false
+  },
+  {
+    "n": 30,
+    "R_target": 1.001,
+    "n_hits": 14,
+    "min_maxroot": 1.0020000000006979,
+    "max_maxroot": 3.2843612028084324,
+    "best_radius": 1.001000000000349,
+    "slack": 0.002000000000697888,
+    "counterexample": false
+  },
+  {
+    "n": 30,
+    "R_target": 1.01,
+    "n_hits": 13,
+    "min_maxroot": 1.0200000000008969,
+    "max_maxroot": 1.1516933928136805,
+    "best_radius": 1.0100000000004483,
+    "slack": 0.020000000000896856,
+    "counterexample": false
+  },
+  {
+    "n": 30,
+    "R_target": 1.05,
+    "n_hits": 13,
+    "min_maxroot": 1.1000000000004326,
+    "max_maxroot": 1.3701539281865083,
+    "best_radius": 1.0500000000002154,
+    "slack": 0.10000000000043263,
+    "counterexample": false
+  },
+  {
+    "n": 30,
+    "R_target": 1.1,
+    "n_hits": 13,
+    "min_maxroot": 1.2000000000008681,
+    "max_maxroot": 1.5568318450829048,
+    "best_radius": 1.1000000000004309,
+    "slack": 0.20000000000086815,
+    "counterexample": false
+  }
+]

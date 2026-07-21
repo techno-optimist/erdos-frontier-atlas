@@ -68,6 +68,25 @@ walls below are walls for *spending our own search compute*.
   no exact/DRAT verifier; Tao proved the conjecture for all large n
   (arXiv:2512.12455, Dec 2025).
 
+## Polynomial geometry — post-JC CE-hunt walls (adjacent, not Erdős-numbered)
+
+- **Sendov’s conjecture (Ilieff misattr.):** \(d(f)\le 1\) for polynomials with
+  roots in the unit disk. Proved for \(n<9\) and for large \(n\) (Tao 2022,
+  non-explicit \(n_0\)); open only for intermediate degrees. **Equality is sharp**
+  (\(z^n-1\)). A 2026-07-21 multi-lane CE assault (crit-param, free \(\beta\),
+  Miller strata, Tao near-CE family, dual-ray, extremal jet 26 775 samples,
+  squeeze curves) found **0 counterexamples** and a consistent wall. Across the
+  *sampled* families (not proved in general): forcing radius \(R>1\) drove
+  max\|root\| \(\approx 2R-1>1\) on radial crit scalings, and local jets at the
+  unity extremal never raised \(r\) without ejecting roots. These are search
+  observations — a fence on where to spend compute, not a theorem.
+  **Do not burn fleet DE on random roots of unity without high-precision
+  validation** (double `np.roots` underestimates \(d\)). Wall ledger:
+  [`certificates/sendov-conjecture/`](../certificates/sendov-conjecture/)
+  (`python3 certificates/sendov-conjecture/verify.py`). Still open for a true
+  exact \(n=9\) decision procedure or effective Tao \(n_0\) — that is theory /
+  exact real algebra, not random search.
+
 ## Witness not representable / physically astronomical
 
 - **#2 / #27 — covering-system minimum modulus 42:** a minimum-40 witness

@@ -1,0 +1,22 @@
+{
+  "claim_boundary": "Heuristic pad/mutate hunt; not exhaustive.",
+  "configs": [
+    {
+      "L": 6,
+      "S": 6,
+      "stats": {
+        "clocks": 7,
+        "ge_tags": 5,
+        "outward": 102,
+        "routable": 1,
+        "route_enum": 1,
+        "lp": 1,
+        "mip": 1
+      }
+    }
+  ],
+  "elapsed_sec": 76.803,
+  "schema": "lead.n9_hunt.v1",
+  "status": "FOUND_INTEGER",
+  "note": "Found on first config L=6 S=6 from N8_L6_S6_WITNESS; remaining L,S in {6,7,8} not needed."
+}
