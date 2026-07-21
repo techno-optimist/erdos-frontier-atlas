@@ -1,0 +1,3097 @@
+{
+  "kind": "state_dependent_backbone_candidate",
+  "topology": "q4_transition_specific_octagons__subdivided",
+  "audit_scope": "exact_geometry_materialization_only",
+  "subdivision_actions": [
+    {
+      "parent_piece": 0,
+      "kind": "quad",
+      "offset": "1/1000",
+      "x_threshold": "63/500",
+      "y_threshold": "47/125"
+    },
+    {
+      "parent_piece": 1,
+      "kind": "quad",
+      "offset": "1/1000",
+      "x_threshold": "47/125",
+      "y_threshold": "63/500"
+    },
+    {
+      "parent_piece": 3,
+      "kind": "quad",
+      "offset": "1/1000",
+      "x_threshold": "63/500",
+      "y_threshold": "219/250"
+    },
+    {
+      "parent_piece": 4,
+      "kind": "quad",
+      "offset": "1/1000",
+      "x_threshold": "47/125",
+      "y_threshold": "313/500"
+    },
+    {
+      "parent_piece": 6,
+      "kind": "quad",
+      "offset": "1/1000",
+      "x_threshold": "63/500",
+      "y_threshold": "313/500"
+    },
+    {
+      "parent_piece": 7,
+      "kind": "quad",
+      "offset": "1/1000",
+      "x_threshold": "63/500",
+      "y_threshold": "219/250"
+    },
+    {
+      "parent_piece": 8,
+      "kind": "quad",
+      "offset": "1/1000",
+      "x_threshold": "47/125",
+      "y_threshold": "313/500"
+    },
+    {
+      "parent_piece": 10,
+      "kind": "quad",
+      "offset": "1/1000",
+      "x_threshold": "63/500",
+      "y_threshold": "47/125"
+    },
+    {
+      "parent_piece": 11,
+      "kind": "quad",
+      "offset": "1/1000",
+      "x_threshold": "47/125",
+      "y_threshold": "63/500"
+    }
+  ],
+  "area_preservation": [
+    {
+      "parent_piece": 0,
+      "kind": "quad",
+      "offset": "1/1000",
+      "x_threshold": "63/500",
+      "y_threshold": "47/125",
+      "parent_area": "31/512",
+      "child_areas": [
+        "492407/32000000",
+        "484343/32000000",
+        "484343/32000000",
+        "476407/32000000"
+      ],
+      "child_area_sum": "31/512",
+      "pairwise_child_intersection_areas": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "verified": true
+    },
+    {
+      "parent_piece": 1,
+      "kind": "quad",
+      "offset": "1/1000",
+      "x_threshold": "47/125",
+      "y_threshold": "63/500",
+      "parent_area": "31/512",
+      "child_areas": [
+        "492407/32000000",
+        "484343/32000000",
+        "484343/32000000",
+        "476407/32000000"
+      ],
+      "child_area_sum": "31/512",
+      "pairwise_child_intersection_areas": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "verified": true
+    },
+    {
+      "parent_piece": 3,
+      "kind": "quad",
+      "offset": "1/1000",
+      "x_threshold": "63/500",
+      "y_threshold": "219/250",
+      "parent_area": "1159/25600",
+      "child_areas": [
+        "492211/32000000",
+        "60017/8000000",
+        "484147/32000000",
+        "58081/8000000"
+      ],
+      "child_area_sum": "1159/25600",
+      "pairwise_child_intersection_areas": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "verified": true
+    },
+    {
+      "parent_piece": 4,
+      "kind": "quad",
+      "offset": "1/1000",
+      "x_threshold": "47/125",
+      "y_threshold": "313/500",
+      "parent_area": "1159/25600",
+      "child_areas": [
+        "492211/32000000",
+        "484147/32000000",
+        "60017/8000000",
+        "58081/8000000"
+      ],
+      "child_area_sum": "1159/25600",
+      "pairwise_child_intersection_areas": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "verified": true
+    },
+    {
+      "parent_piece": 6,
+      "kind": "quad",
+      "offset": "1/1000",
+      "x_threshold": "63/500",
+      "y_threshold": "313/500",
+      "parent_area": "28971/640000",
+      "child_areas": [
+        "98403/6400000",
+        "2401/320000",
+        "2401/320000",
+        "95267/6400000"
+      ],
+      "child_area_sum": "28971/640000",
+      "pairwise_child_intersection_areas": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "verified": true
+    },
+    {
+      "parent_piece": 7,
+      "kind": "quad",
+      "offset": "1/1000",
+      "x_threshold": "63/500",
+      "y_threshold": "219/250",
+      "parent_area": "67721/1280000",
+      "child_areas": [
+        "492211/32000000",
+        "2401/320000",
+        "484343/32000000",
+        "476371/32000000"
+      ],
+      "child_area_sum": "67721/1280000",
+      "pairwise_child_intersection_areas": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "verified": true
+    },
+    {
+      "parent_piece": 8,
+      "kind": "quad",
+      "offset": "1/1000",
+      "x_threshold": "47/125",
+      "y_threshold": "313/500",
+      "parent_area": "67721/1280000",
+      "child_areas": [
+        "492211/32000000",
+        "484343/32000000",
+        "2401/320000",
+        "476371/32000000"
+      ],
+      "child_area_sum": "67721/1280000",
+      "pairwise_child_intersection_areas": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "verified": true
+    },
+    {
+      "parent_piece": 10,
+      "kind": "quad",
+      "offset": "1/1000",
+      "x_threshold": "63/500",
+      "y_threshold": "47/125",
+      "parent_area": "31/512",
+      "child_areas": [
+        "492407/32000000",
+        "484343/32000000",
+        "484343/32000000",
+        "476407/32000000"
+      ],
+      "child_area_sum": "31/512",
+      "pairwise_child_intersection_areas": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "verified": true
+    },
+    {
+      "parent_piece": 11,
+      "kind": "quad",
+      "offset": "1/1000",
+      "x_threshold": "47/125",
+      "y_threshold": "63/500",
+      "parent_area": "31/512",
+      "child_areas": [
+        "492407/32000000",
+        "484343/32000000",
+        "484343/32000000",
+        "476407/32000000"
+      ],
+      "child_area_sum": "31/512",
+      "pairwise_child_intersection_areas": [
+        "0",
+        "0",
+        "0",
+        "0",
+        "0",
+        "0"
+      ],
+      "verified": true
+    }
+  ],
+  "area_matrix": [
+    [
+      "31/256",
+      "222413/1280000"
+    ],
+    [
+      "125663/640000",
+      "31/256"
+    ]
+  ],
+  "beats_seven_over_24": true,
+  "outgoing_intersection_areas": {
+    "s0:C1__quad_dxdy_1/1000_lo_lo|C1__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_lo|C1__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_lo|C1__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_lo|C4__quad_dxdy_1/1000_lo_lo": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_lo|C4__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_lo|C4__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_lo|C4__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_lo|C2": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_lo|C3__quad_dxdy_1/1000_lo_lo": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_lo|C3__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_lo|C3__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_lo|C3__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_lo|C6__quad_dxdy_1/1000_lo_lo": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_lo|C6__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_lo|C6__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_lo|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_lo|C7": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_hi|C1__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_hi|C1__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_hi|C4__quad_dxdy_1/1000_lo_lo": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_hi|C4__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_hi|C4__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_hi|C4__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_hi|C2": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_hi|C3__quad_dxdy_1/1000_lo_lo": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_hi|C3__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_hi|C3__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_hi|C3__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_hi|C6__quad_dxdy_1/1000_lo_lo": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_hi|C6__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_hi|C6__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_hi|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_lo_hi|C7": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_lo|C1__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_lo|C4__quad_dxdy_1/1000_lo_lo": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_lo|C4__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_lo|C4__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_lo|C4__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_lo|C2": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_lo|C3__quad_dxdy_1/1000_lo_lo": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_lo|C3__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_lo|C3__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_lo|C3__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_lo|C6__quad_dxdy_1/1000_lo_lo": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_lo|C6__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_lo|C6__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_lo|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_lo|C7": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_hi|C4__quad_dxdy_1/1000_lo_lo": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_hi|C4__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_hi|C4__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_hi|C4__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_hi|C2": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_hi|C3__quad_dxdy_1/1000_lo_lo": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_hi|C3__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_hi|C3__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_hi|C3__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_hi|C6__quad_dxdy_1/1000_lo_lo": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_hi|C6__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_hi|C6__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_hi|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C1__quad_dxdy_1/1000_hi_hi|C7": "0",
+    "s0:C4__quad_dxdy_1/1000_lo_lo|C4__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C4__quad_dxdy_1/1000_lo_lo|C4__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C4__quad_dxdy_1/1000_lo_lo|C4__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C4__quad_dxdy_1/1000_lo_lo|C2": "0",
+    "s0:C4__quad_dxdy_1/1000_lo_lo|C3__quad_dxdy_1/1000_lo_lo": "0",
+    "s0:C4__quad_dxdy_1/1000_lo_lo|C3__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C4__quad_dxdy_1/1000_lo_lo|C3__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C4__quad_dxdy_1/1000_lo_lo|C3__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C4__quad_dxdy_1/1000_lo_lo|C6__quad_dxdy_1/1000_lo_lo": "0",
+    "s0:C4__quad_dxdy_1/1000_lo_lo|C6__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C4__quad_dxdy_1/1000_lo_lo|C6__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C4__quad_dxdy_1/1000_lo_lo|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C4__quad_dxdy_1/1000_lo_lo|C7": "0",
+    "s0:C4__quad_dxdy_1/1000_lo_hi|C4__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C4__quad_dxdy_1/1000_lo_hi|C4__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C4__quad_dxdy_1/1000_lo_hi|C2": "0",
+    "s0:C4__quad_dxdy_1/1000_lo_hi|C3__quad_dxdy_1/1000_lo_lo": "0",
+    "s0:C4__quad_dxdy_1/1000_lo_hi|C3__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C4__quad_dxdy_1/1000_lo_hi|C3__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C4__quad_dxdy_1/1000_lo_hi|C3__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C4__quad_dxdy_1/1000_lo_hi|C6__quad_dxdy_1/1000_lo_lo": "0",
+    "s0:C4__quad_dxdy_1/1000_lo_hi|C6__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C4__quad_dxdy_1/1000_lo_hi|C6__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C4__quad_dxdy_1/1000_lo_hi|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C4__quad_dxdy_1/1000_lo_hi|C7": "0",
+    "s0:C4__quad_dxdy_1/1000_hi_lo|C4__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C4__quad_dxdy_1/1000_hi_lo|C2": "0",
+    "s0:C4__quad_dxdy_1/1000_hi_lo|C3__quad_dxdy_1/1000_lo_lo": "0",
+    "s0:C4__quad_dxdy_1/1000_hi_lo|C3__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C4__quad_dxdy_1/1000_hi_lo|C3__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C4__quad_dxdy_1/1000_hi_lo|C3__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C4__quad_dxdy_1/1000_hi_lo|C6__quad_dxdy_1/1000_lo_lo": "0",
+    "s0:C4__quad_dxdy_1/1000_hi_lo|C6__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C4__quad_dxdy_1/1000_hi_lo|C6__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C4__quad_dxdy_1/1000_hi_lo|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C4__quad_dxdy_1/1000_hi_lo|C7": "0",
+    "s0:C4__quad_dxdy_1/1000_hi_hi|C2": "0",
+    "s0:C4__quad_dxdy_1/1000_hi_hi|C3__quad_dxdy_1/1000_lo_lo": "0",
+    "s0:C4__quad_dxdy_1/1000_hi_hi|C3__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C4__quad_dxdy_1/1000_hi_hi|C3__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C4__quad_dxdy_1/1000_hi_hi|C3__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C4__quad_dxdy_1/1000_hi_hi|C6__quad_dxdy_1/1000_lo_lo": "0",
+    "s0:C4__quad_dxdy_1/1000_hi_hi|C6__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C4__quad_dxdy_1/1000_hi_hi|C6__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C4__quad_dxdy_1/1000_hi_hi|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C4__quad_dxdy_1/1000_hi_hi|C7": "0",
+    "s0:C2|C3__quad_dxdy_1/1000_lo_lo": "0",
+    "s0:C2|C3__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C2|C3__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C2|C3__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C2|C6__quad_dxdy_1/1000_lo_lo": "0",
+    "s0:C2|C6__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C2|C6__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C2|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C2|C7": "0",
+    "s0:C3__quad_dxdy_1/1000_lo_lo|C3__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C3__quad_dxdy_1/1000_lo_lo|C3__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C3__quad_dxdy_1/1000_lo_lo|C3__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C3__quad_dxdy_1/1000_lo_lo|C6__quad_dxdy_1/1000_lo_lo": "0",
+    "s0:C3__quad_dxdy_1/1000_lo_lo|C6__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C3__quad_dxdy_1/1000_lo_lo|C6__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C3__quad_dxdy_1/1000_lo_lo|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C3__quad_dxdy_1/1000_lo_lo|C7": "0",
+    "s0:C3__quad_dxdy_1/1000_lo_hi|C3__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C3__quad_dxdy_1/1000_lo_hi|C3__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C3__quad_dxdy_1/1000_lo_hi|C6__quad_dxdy_1/1000_lo_lo": "0",
+    "s0:C3__quad_dxdy_1/1000_lo_hi|C6__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C3__quad_dxdy_1/1000_lo_hi|C6__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C3__quad_dxdy_1/1000_lo_hi|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C3__quad_dxdy_1/1000_lo_hi|C7": "0",
+    "s0:C3__quad_dxdy_1/1000_hi_lo|C3__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C3__quad_dxdy_1/1000_hi_lo|C6__quad_dxdy_1/1000_lo_lo": "0",
+    "s0:C3__quad_dxdy_1/1000_hi_lo|C6__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C3__quad_dxdy_1/1000_hi_lo|C6__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C3__quad_dxdy_1/1000_hi_lo|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C3__quad_dxdy_1/1000_hi_lo|C7": "0",
+    "s0:C3__quad_dxdy_1/1000_hi_hi|C6__quad_dxdy_1/1000_lo_lo": "0",
+    "s0:C3__quad_dxdy_1/1000_hi_hi|C6__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C3__quad_dxdy_1/1000_hi_hi|C6__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C3__quad_dxdy_1/1000_hi_hi|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C3__quad_dxdy_1/1000_hi_hi|C7": "0",
+    "s0:C6__quad_dxdy_1/1000_lo_lo|C6__quad_dxdy_1/1000_lo_hi": "0",
+    "s0:C6__quad_dxdy_1/1000_lo_lo|C6__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C6__quad_dxdy_1/1000_lo_lo|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C6__quad_dxdy_1/1000_lo_lo|C7": "0",
+    "s0:C6__quad_dxdy_1/1000_lo_hi|C6__quad_dxdy_1/1000_hi_lo": "0",
+    "s0:C6__quad_dxdy_1/1000_lo_hi|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C6__quad_dxdy_1/1000_lo_hi|C7": "0",
+    "s0:C6__quad_dxdy_1/1000_hi_lo|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s0:C6__quad_dxdy_1/1000_hi_lo|C7": "0",
+    "s0:C6__quad_dxdy_1/1000_hi_hi|C7": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_lo|C2__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_lo|C2__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_lo|C2__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_lo|C3__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_lo|C3__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_lo|C3__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_lo|C3__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_lo|C6__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_lo|C6__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_lo|C6__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_lo|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_lo|C7": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_lo|C1__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_lo|C1__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_lo|C1__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_lo|C1__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_lo|C4__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_lo|C4__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_lo|C4__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_lo|C4__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_hi|C2__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_hi|C2__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_hi|C3__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_hi|C3__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_hi|C3__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_hi|C3__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_hi|C6__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_hi|C6__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_hi|C6__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_hi|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_hi|C7": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_hi|C1__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_hi|C1__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_hi|C1__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_hi|C1__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_hi|C4__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_hi|C4__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_hi|C4__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_lo_hi|C4__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_lo|C2__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_lo|C3__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_lo|C3__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_lo|C3__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_lo|C3__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_lo|C6__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_lo|C6__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_lo|C6__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_lo|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_lo|C7": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_lo|C1__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_lo|C1__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_lo|C1__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_lo|C1__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_lo|C4__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_lo|C4__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_lo|C4__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_lo|C4__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_hi|C3__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_hi|C3__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_hi|C3__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_hi|C3__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_hi|C6__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_hi|C6__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_hi|C6__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_hi|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_hi|C7": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_hi|C1__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_hi|C1__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_hi|C1__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_hi|C1__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_hi|C4__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_hi|C4__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_hi|C4__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C2__quad_dxdy_1/1000_hi_hi|C4__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_lo|C3__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_lo|C3__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_lo|C3__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_lo|C6__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_lo|C6__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_lo|C6__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_lo|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_lo|C7": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_lo|C1__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_lo|C1__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_lo|C1__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_lo|C1__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_lo|C4__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_lo|C4__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_lo|C4__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_lo|C4__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_hi|C3__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_hi|C3__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_hi|C6__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_hi|C6__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_hi|C6__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_hi|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_hi|C7": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_hi|C1__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_hi|C1__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_hi|C1__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_hi|C1__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_hi|C4__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_hi|C4__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_hi|C4__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C3__quad_dxdy_1/1000_lo_hi|C4__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_lo|C3__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_lo|C6__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_lo|C6__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_lo|C6__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_lo|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_lo|C7": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_lo|C1__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_lo|C1__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_lo|C1__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_lo|C1__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_lo|C4__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_lo|C4__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_lo|C4__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_lo|C4__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_hi|C6__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_hi|C6__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_hi|C6__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_hi|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_hi|C7": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_hi|C1__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_hi|C1__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_hi|C1__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_hi|C1__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_hi|C4__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_hi|C4__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_hi|C4__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C3__quad_dxdy_1/1000_hi_hi|C4__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C6__quad_dxdy_1/1000_lo_lo|C6__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C6__quad_dxdy_1/1000_lo_lo|C6__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C6__quad_dxdy_1/1000_lo_lo|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C6__quad_dxdy_1/1000_lo_lo|C7": "0",
+    "s1:C6__quad_dxdy_1/1000_lo_lo|C1__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C6__quad_dxdy_1/1000_lo_lo|C1__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C6__quad_dxdy_1/1000_lo_lo|C1__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C6__quad_dxdy_1/1000_lo_lo|C1__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C6__quad_dxdy_1/1000_lo_lo|C4__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C6__quad_dxdy_1/1000_lo_lo|C4__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C6__quad_dxdy_1/1000_lo_lo|C4__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C6__quad_dxdy_1/1000_lo_lo|C4__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C6__quad_dxdy_1/1000_lo_hi|C6__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C6__quad_dxdy_1/1000_lo_hi|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C6__quad_dxdy_1/1000_lo_hi|C7": "0",
+    "s1:C6__quad_dxdy_1/1000_lo_hi|C1__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C6__quad_dxdy_1/1000_lo_hi|C1__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C6__quad_dxdy_1/1000_lo_hi|C1__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C6__quad_dxdy_1/1000_lo_hi|C1__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C6__quad_dxdy_1/1000_lo_hi|C4__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C6__quad_dxdy_1/1000_lo_hi|C4__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C6__quad_dxdy_1/1000_lo_hi|C4__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C6__quad_dxdy_1/1000_lo_hi|C4__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C6__quad_dxdy_1/1000_hi_lo|C6__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C6__quad_dxdy_1/1000_hi_lo|C7": "0",
+    "s1:C6__quad_dxdy_1/1000_hi_lo|C1__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C6__quad_dxdy_1/1000_hi_lo|C1__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C6__quad_dxdy_1/1000_hi_lo|C1__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C6__quad_dxdy_1/1000_hi_lo|C1__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C6__quad_dxdy_1/1000_hi_lo|C4__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C6__quad_dxdy_1/1000_hi_lo|C4__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C6__quad_dxdy_1/1000_hi_lo|C4__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C6__quad_dxdy_1/1000_hi_lo|C4__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C6__quad_dxdy_1/1000_hi_hi|C7": "0",
+    "s1:C6__quad_dxdy_1/1000_hi_hi|C1__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C6__quad_dxdy_1/1000_hi_hi|C1__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C6__quad_dxdy_1/1000_hi_hi|C1__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C6__quad_dxdy_1/1000_hi_hi|C1__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C6__quad_dxdy_1/1000_hi_hi|C4__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C6__quad_dxdy_1/1000_hi_hi|C4__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C6__quad_dxdy_1/1000_hi_hi|C4__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C6__quad_dxdy_1/1000_hi_hi|C4__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C7|C1__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C7|C1__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C7|C1__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C7|C1__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C7|C4__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C7|C4__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C7|C4__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C7|C4__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C1__quad_dxdy_1/1000_lo_lo|C1__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C1__quad_dxdy_1/1000_lo_lo|C1__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C1__quad_dxdy_1/1000_lo_lo|C1__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C1__quad_dxdy_1/1000_lo_lo|C4__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C1__quad_dxdy_1/1000_lo_lo|C4__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C1__quad_dxdy_1/1000_lo_lo|C4__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C1__quad_dxdy_1/1000_lo_lo|C4__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C1__quad_dxdy_1/1000_lo_hi|C1__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C1__quad_dxdy_1/1000_lo_hi|C1__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C1__quad_dxdy_1/1000_lo_hi|C4__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C1__quad_dxdy_1/1000_lo_hi|C4__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C1__quad_dxdy_1/1000_lo_hi|C4__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C1__quad_dxdy_1/1000_lo_hi|C4__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C1__quad_dxdy_1/1000_hi_lo|C1__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C1__quad_dxdy_1/1000_hi_lo|C4__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C1__quad_dxdy_1/1000_hi_lo|C4__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C1__quad_dxdy_1/1000_hi_lo|C4__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C1__quad_dxdy_1/1000_hi_lo|C4__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C1__quad_dxdy_1/1000_hi_hi|C4__quad_dxdy_1/1000_lo_lo": "0",
+    "s1:C1__quad_dxdy_1/1000_hi_hi|C4__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C1__quad_dxdy_1/1000_hi_hi|C4__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C1__quad_dxdy_1/1000_hi_hi|C4__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C4__quad_dxdy_1/1000_lo_lo|C4__quad_dxdy_1/1000_lo_hi": "0",
+    "s1:C4__quad_dxdy_1/1000_lo_lo|C4__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C4__quad_dxdy_1/1000_lo_lo|C4__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C4__quad_dxdy_1/1000_lo_hi|C4__quad_dxdy_1/1000_hi_lo": "0",
+    "s1:C4__quad_dxdy_1/1000_lo_hi|C4__quad_dxdy_1/1000_hi_hi": "0",
+    "s1:C4__quad_dxdy_1/1000_hi_lo|C4__quad_dxdy_1/1000_hi_hi": "0"
+  },
+  "pieces": [
+    {
+      "index": 0,
+      "parent_piece": 0,
+      "source": 0,
+      "target": 0,
+      "label": 1,
+      "name": "C1__quad_dxdy_1/1000_lo_lo",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "h": [
+        "0",
+        "1/4",
+        "-1/4",
+        "1/2",
+        "-9/32",
+        "-1/32",
+        "15/32",
+        "23/32",
+        "63/500",
+        "47/125"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 1,
+      "parent_piece": 0,
+      "source": 0,
+      "target": 0,
+      "label": 1,
+      "name": "C1__quad_dxdy_1/1000_lo_hi",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "h": [
+        "0",
+        "1/4",
+        "-1/4",
+        "1/2",
+        "-9/32",
+        "-1/32",
+        "15/32",
+        "23/32",
+        "63/500",
+        "-47/125"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 2,
+      "parent_piece": 0,
+      "source": 0,
+      "target": 0,
+      "label": 1,
+      "name": "C1__quad_dxdy_1/1000_hi_lo",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "h": [
+        "0",
+        "1/4",
+        "-1/4",
+        "1/2",
+        "-9/32",
+        "-1/32",
+        "15/32",
+        "23/32",
+        "-63/500",
+        "47/125"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 3,
+      "parent_piece": 0,
+      "source": 0,
+      "target": 0,
+      "label": 1,
+      "name": "C1__quad_dxdy_1/1000_hi_hi",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "h": [
+        "0",
+        "1/4",
+        "-1/4",
+        "1/2",
+        "-9/32",
+        "-1/32",
+        "15/32",
+        "23/32",
+        "-63/500",
+        "-47/125"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 4,
+      "parent_piece": 1,
+      "source": 0,
+      "target": 0,
+      "label": 4,
+      "name": "C4__quad_dxdy_1/1000_lo_lo",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "h": [
+        "-1/4",
+        "1/2",
+        "0",
+        "1/4",
+        "-9/32",
+        "15/32",
+        "-1/32",
+        "23/32",
+        "47/125",
+        "63/500"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 5,
+      "parent_piece": 1,
+      "source": 0,
+      "target": 0,
+      "label": 4,
+      "name": "C4__quad_dxdy_1/1000_lo_hi",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "h": [
+        "-1/4",
+        "1/2",
+        "0",
+        "1/4",
+        "-9/32",
+        "15/32",
+        "-1/32",
+        "23/32",
+        "47/125",
+        "-63/500"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 6,
+      "parent_piece": 1,
+      "source": 0,
+      "target": 0,
+      "label": 4,
+      "name": "C4__quad_dxdy_1/1000_hi_lo",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "h": [
+        "-1/4",
+        "1/2",
+        "0",
+        "1/4",
+        "-9/32",
+        "15/32",
+        "-1/32",
+        "23/32",
+        "-47/125",
+        "63/500"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 7,
+      "parent_piece": 1,
+      "source": 0,
+      "target": 0,
+      "label": 4,
+      "name": "C4__quad_dxdy_1/1000_hi_hi",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "h": [
+        "-1/4",
+        "1/2",
+        "0",
+        "1/4",
+        "-9/32",
+        "15/32",
+        "-1/32",
+        "23/32",
+        "-47/125",
+        "-63/500"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 8,
+      "parent_piece": 2,
+      "source": 0,
+      "target": 1,
+      "label": 2,
+      "name": "C2",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ]
+      ],
+      "h": [
+        "0",
+        "1/4",
+        "-1/2",
+        "3/4",
+        "-5/8",
+        "-151/400",
+        "249/400",
+        "31/32"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 9,
+      "parent_piece": 3,
+      "source": 0,
+      "target": 1,
+      "label": 3,
+      "name": "C3__quad_dxdy_1/1000_lo_lo",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "h": [
+        "0",
+        "1/4",
+        "-3/4",
+        "1",
+        "-25/32",
+        "-17/32",
+        "349/400",
+        "449/400",
+        "63/500",
+        "219/250"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 10,
+      "parent_piece": 3,
+      "source": 0,
+      "target": 1,
+      "label": 3,
+      "name": "C3__quad_dxdy_1/1000_lo_hi",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "h": [
+        "0",
+        "1/4",
+        "-3/4",
+        "1",
+        "-25/32",
+        "-17/32",
+        "349/400",
+        "449/400",
+        "63/500",
+        "-219/250"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 11,
+      "parent_piece": 3,
+      "source": 0,
+      "target": 1,
+      "label": 3,
+      "name": "C3__quad_dxdy_1/1000_hi_lo",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "h": [
+        "0",
+        "1/4",
+        "-3/4",
+        "1",
+        "-25/32",
+        "-17/32",
+        "349/400",
+        "449/400",
+        "-63/500",
+        "219/250"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 12,
+      "parent_piece": 3,
+      "source": 0,
+      "target": 1,
+      "label": 3,
+      "name": "C3__quad_dxdy_1/1000_hi_hi",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "h": [
+        "0",
+        "1/4",
+        "-3/4",
+        "1",
+        "-25/32",
+        "-17/32",
+        "349/400",
+        "449/400",
+        "-63/500",
+        "-219/250"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 13,
+      "parent_piece": 4,
+      "source": 0,
+      "target": 1,
+      "label": 6,
+      "name": "C6__quad_dxdy_1/1000_lo_lo",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "h": [
+        "-1/4",
+        "1/2",
+        "-1/2",
+        "3/4",
+        "-25/32",
+        "-51/400",
+        "15/32",
+        "449/400",
+        "47/125",
+        "313/500"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 14,
+      "parent_piece": 4,
+      "source": 0,
+      "target": 1,
+      "label": 6,
+      "name": "C6__quad_dxdy_1/1000_lo_hi",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "h": [
+        "-1/4",
+        "1/2",
+        "-1/2",
+        "3/4",
+        "-25/32",
+        "-51/400",
+        "15/32",
+        "449/400",
+        "47/125",
+        "-313/500"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 15,
+      "parent_piece": 4,
+      "source": 0,
+      "target": 1,
+      "label": 6,
+      "name": "C6__quad_dxdy_1/1000_hi_lo",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "h": [
+        "-1/4",
+        "1/2",
+        "-1/2",
+        "3/4",
+        "-25/32",
+        "-51/400",
+        "15/32",
+        "449/400",
+        "-47/125",
+        "313/500"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 16,
+      "parent_piece": 4,
+      "source": 0,
+      "target": 1,
+      "label": 6,
+      "name": "C6__quad_dxdy_1/1000_hi_hi",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "h": [
+        "-1/4",
+        "1/2",
+        "-1/2",
+        "3/4",
+        "-25/32",
+        "-51/400",
+        "15/32",
+        "449/400",
+        "-47/125",
+        "-313/500"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 17,
+      "parent_piece": 5,
+      "source": 0,
+      "target": 1,
+      "label": 7,
+      "name": "C7",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ]
+      ],
+      "h": [
+        "-1/4",
+        "1/2",
+        "-3/4",
+        "1",
+        "-33/32",
+        "-151/400",
+        "249/400",
+        "47/32"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 18,
+      "parent_piece": 6,
+      "source": 1,
+      "target": 0,
+      "label": 2,
+      "name": "C2__quad_dxdy_1/1000_lo_lo",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "h": [
+        "0",
+        "1/4",
+        "-1/2",
+        "3/4",
+        "-17/32",
+        "-151/400",
+        "249/400",
+        "31/32",
+        "63/500",
+        "313/500"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 19,
+      "parent_piece": 6,
+      "source": 1,
+      "target": 0,
+      "label": 2,
+      "name": "C2__quad_dxdy_1/1000_lo_hi",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "h": [
+        "0",
+        "1/4",
+        "-1/2",
+        "3/4",
+        "-17/32",
+        "-151/400",
+        "249/400",
+        "31/32",
+        "63/500",
+        "-313/500"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 20,
+      "parent_piece": 6,
+      "source": 1,
+      "target": 0,
+      "label": 2,
+      "name": "C2__quad_dxdy_1/1000_hi_lo",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "h": [
+        "0",
+        "1/4",
+        "-1/2",
+        "3/4",
+        "-17/32",
+        "-151/400",
+        "249/400",
+        "31/32",
+        "-63/500",
+        "313/500"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 21,
+      "parent_piece": 6,
+      "source": 1,
+      "target": 0,
+      "label": 2,
+      "name": "C2__quad_dxdy_1/1000_hi_hi",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "h": [
+        "0",
+        "1/4",
+        "-1/2",
+        "3/4",
+        "-17/32",
+        "-151/400",
+        "249/400",
+        "31/32",
+        "-63/500",
+        "-313/500"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 22,
+      "parent_piece": 7,
+      "source": 1,
+      "target": 0,
+      "label": 3,
+      "name": "C3__quad_dxdy_1/1000_lo_lo",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "h": [
+        "0",
+        "1/4",
+        "-3/4",
+        "1",
+        "-25/32",
+        "-17/32",
+        "349/400",
+        "39/32",
+        "63/500",
+        "219/250"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 23,
+      "parent_piece": 7,
+      "source": 1,
+      "target": 0,
+      "label": 3,
+      "name": "C3__quad_dxdy_1/1000_lo_hi",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "h": [
+        "0",
+        "1/4",
+        "-3/4",
+        "1",
+        "-25/32",
+        "-17/32",
+        "349/400",
+        "39/32",
+        "63/500",
+        "-219/250"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 24,
+      "parent_piece": 7,
+      "source": 1,
+      "target": 0,
+      "label": 3,
+      "name": "C3__quad_dxdy_1/1000_hi_lo",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "h": [
+        "0",
+        "1/4",
+        "-3/4",
+        "1",
+        "-25/32",
+        "-17/32",
+        "349/400",
+        "39/32",
+        "-63/500",
+        "219/250"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 25,
+      "parent_piece": 7,
+      "source": 1,
+      "target": 0,
+      "label": 3,
+      "name": "C3__quad_dxdy_1/1000_hi_hi",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "h": [
+        "0",
+        "1/4",
+        "-3/4",
+        "1",
+        "-25/32",
+        "-17/32",
+        "349/400",
+        "39/32",
+        "-63/500",
+        "-219/250"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 26,
+      "parent_piece": 8,
+      "source": 1,
+      "target": 0,
+      "label": 6,
+      "name": "C6__quad_dxdy_1/1000_lo_lo",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "h": [
+        "-1/4",
+        "1/2",
+        "-1/2",
+        "3/4",
+        "-25/32",
+        "-51/400",
+        "15/32",
+        "39/32",
+        "47/125",
+        "313/500"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 27,
+      "parent_piece": 8,
+      "source": 1,
+      "target": 0,
+      "label": 6,
+      "name": "C6__quad_dxdy_1/1000_lo_hi",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "h": [
+        "-1/4",
+        "1/2",
+        "-1/2",
+        "3/4",
+        "-25/32",
+        "-51/400",
+        "15/32",
+        "39/32",
+        "47/125",
+        "-313/500"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 28,
+      "parent_piece": 8,
+      "source": 1,
+      "target": 0,
+      "label": 6,
+      "name": "C6__quad_dxdy_1/1000_hi_lo",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "h": [
+        "-1/4",
+        "1/2",
+        "-1/2",
+        "3/4",
+        "-25/32",
+        "-51/400",
+        "15/32",
+        "39/32",
+        "-47/125",
+        "313/500"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 29,
+      "parent_piece": 8,
+      "source": 1,
+      "target": 0,
+      "label": 6,
+      "name": "C6__quad_dxdy_1/1000_hi_hi",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "h": [
+        "-1/4",
+        "1/2",
+        "-1/2",
+        "3/4",
+        "-25/32",
+        "-51/400",
+        "15/32",
+        "39/32",
+        "-47/125",
+        "-313/500"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 30,
+      "parent_piece": 9,
+      "source": 1,
+      "target": 0,
+      "label": 7,
+      "name": "C7",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ]
+      ],
+      "h": [
+        "-1/4",
+        "1/2",
+        "-3/4",
+        "1",
+        "-33/32",
+        "-151/400",
+        "249/400",
+        "47/32"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 31,
+      "parent_piece": 10,
+      "source": 1,
+      "target": 1,
+      "label": 1,
+      "name": "C1__quad_dxdy_1/1000_lo_lo",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "h": [
+        "0",
+        "1/4",
+        "-1/4",
+        "1/2",
+        "-9/32",
+        "-1/32",
+        "15/32",
+        "23/32",
+        "63/500",
+        "47/125"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 32,
+      "parent_piece": 10,
+      "source": 1,
+      "target": 1,
+      "label": 1,
+      "name": "C1__quad_dxdy_1/1000_lo_hi",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "h": [
+        "0",
+        "1/4",
+        "-1/4",
+        "1/2",
+        "-9/32",
+        "-1/32",
+        "15/32",
+        "23/32",
+        "63/500",
+        "-47/125"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 33,
+      "parent_piece": 10,
+      "source": 1,
+      "target": 1,
+      "label": 1,
+      "name": "C1__quad_dxdy_1/1000_hi_lo",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "h": [
+        "0",
+        "1/4",
+        "-1/4",
+        "1/2",
+        "-9/32",
+        "-1/32",
+        "15/32",
+        "23/32",
+        "-63/500",
+        "47/125"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 34,
+      "parent_piece": 10,
+      "source": 1,
+      "target": 1,
+      "label": 1,
+      "name": "C1__quad_dxdy_1/1000_hi_hi",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "h": [
+        "0",
+        "1/4",
+        "-1/4",
+        "1/2",
+        "-9/32",
+        "-1/32",
+        "15/32",
+        "23/32",
+        "-63/500",
+        "-47/125"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 35,
+      "parent_piece": 11,
+      "source": 1,
+      "target": 1,
+      "label": 4,
+      "name": "C4__quad_dxdy_1/1000_lo_lo",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "h": [
+        "-1/4",
+        "1/2",
+        "0",
+        "1/4",
+        "-9/32",
+        "15/32",
+        "-1/32",
+        "23/32",
+        "47/125",
+        "63/500"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 36,
+      "parent_piece": 11,
+      "source": 1,
+      "target": 1,
+      "label": 4,
+      "name": "C4__quad_dxdy_1/1000_lo_hi",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "h": [
+        "-1/4",
+        "1/2",
+        "0",
+        "1/4",
+        "-9/32",
+        "15/32",
+        "-1/32",
+        "23/32",
+        "47/125",
+        "-63/500"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 37,
+      "parent_piece": 11,
+      "source": 1,
+      "target": 1,
+      "label": 4,
+      "name": "C4__quad_dxdy_1/1000_hi_lo",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "1"
+        ]
+      ],
+      "h": [
+        "-1/4",
+        "1/2",
+        "0",
+        "1/4",
+        "-9/32",
+        "15/32",
+        "-1/32",
+        "23/32",
+        "-47/125",
+        "63/500"
+      ],
+      "shift": "0"
+    },
+    {
+      "index": 38,
+      "parent_piece": 11,
+      "source": 1,
+      "target": 1,
+      "label": 4,
+      "name": "C4__quad_dxdy_1/1000_hi_hi",
+      "G": [
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ],
+        [
+          "0",
+          "1"
+        ],
+        [
+          "-1",
+          "-1"
+        ],
+        [
+          "1",
+          "-1"
+        ],
+        [
+          "-1",
+          "1"
+        ],
+        [
+          "1",
+          "1"
+        ],
+        [
+          "-1",
+          "0"
+        ],
+        [
+          "0",
+          "-1"
+        ]
+      ],
+      "h": [
+        "-1/4",
+        "1/2",
+        "0",
+        "1/4",
+        "-9/32",
+        "15/32",
+        "-1/32",
+        "23/32",
+        "-47/125",
+        "-63/500"
+      ],
+      "shift": "0"
+    }
+  ],
+  "independent_replay": false,
+  "exact_continuum_certificate": false,
+  "continuum_claim": false,
+  "source": "artifacts/q4_edge_conditioned_octagons_corejump1.json"
+}
