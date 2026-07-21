@@ -41,6 +41,10 @@ After plateau L=6 on n=8–10, L climbs linearly: 7,8,9 on n=11,12,13 with S mat
 
 Sample max anchor ports for S≥5: `PORT_CAPACITY_SAMPLE_HIGH.json`.
 
+## n=14 status
+
+Sample hunts from N13 (L,S around 9..12): outward-ok ports exist; no sealed integer yet. See N14_HUNT.json.
+
 ## Next
 
 n=14+ (conjecture L=S=n−4 → try L=S=10); closed form; tighten.

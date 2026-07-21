@@ -1,0 +1,36 @@
+{
+  "claim_boundary": "Heuristic pad/mutate hunt; not exhaustive.",
+  "configs": [
+    {
+      "L": 10,
+      "S": 10,
+      "stats": {
+        "clocks": 371,
+        "ge_tags": 30,
+        "outward": 630,
+        "tried": 630
+      }
+    },
+    {
+      "L": 11,
+      "S": 11,
+      "stats": {
+        "clocks": 371,
+        "ge_tags": 6,
+        "outward": 240,
+        "tried": 240
+      }
+    },
+    {
+      "L": 12,
+      "S": 12,
+      "stats": {
+        "clocks": 371,
+        "ge_tags": 3
+      }
+    }
+  ],
+  "elapsed_sec": 234.881,
+  "schema": "lead.n14_hunt_fast.v1",
+  "status": "NO_INTEGER_IN_HUNT"
+}
