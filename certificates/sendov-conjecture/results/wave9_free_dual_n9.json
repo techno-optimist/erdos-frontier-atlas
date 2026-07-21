@@ -1,0 +1,59 @@
+[
+  {
+    "n": 9,
+    "R_target": 1.001,
+    "radius": 0.9899834674705994,
+    "radius_mp": 0.9899834674705994,
+    "max_root_mod": 0.991968039721583,
+    "max_root_mod_mp": 0.9919680397215817,
+    "meets_R": false,
+    "slack_maxroot": -0.008031960278417016,
+    "counterexample": false,
+    "beta": [
+      0.9876521320339541,
+      -0.06470060722227397
+    ]
+  },
+  {
+    "n": 9,
+    "R_target": 1.01,
+    "radius": 1.0,
+    "radius_mp": 1.0,
+    "max_root_mod": 1.0000000000000004,
+    "max_root_mod_mp": 1.0,
+    "meets_R": false,
+    "slack_maxroot": 4.440892098500626e-16,
+    "counterexample": false,
+    "beta": 1.0
+  },
+  {
+    "n": 9,
+    "R_target": 1.05,
+    "radius": 1.0394594748035662,
+    "radius_mp": 1.0394594748035662,
+    "max_root_mod": 1.0415292971321357,
+    "max_root_mod_mp": 1.0415292971321366,
+    "meets_R": false,
+    "slack_maxroot": 0.04152929713213571,
+    "counterexample": false,
+    "beta": [
+      1.0386197816973357,
+      -0.05877423646736895
+    ]
+  },
+  {
+    "n": 9,
+    "R_target": 1.1,
+    "radius": 1.2424885419282925,
+    "radius_mp": 1.2424885419282925,
+    "max_root_mod": 2.1564225239845882,
+    "max_root_mod_mp": 2.1564225239845887,
+    "meets_R": true,
+    "slack_maxroot": 1.1564225239845882,
+    "counterexample": false,
+    "beta": [
+      1.5468983060674986,
+      1.5024192930091123
+    ]
+  }
+]

@@ -69,6 +69,7 @@ best **feasible** \(d=1\).
 | Wave7 complex two-crit dual | \(n\in\{9,10,12,15,20\}\), \(R\in\{1.01,1.05,1.1\}\) | dual force never CE; CE=0 |
 | Wave7b three-real-crit | \(n\in\{9,10,12,15\}\) | best feasible \(r\sim 0.929\); CE=0 |
 | Wave8 n=9 lattice | 271 908 two-crit evals | best feasible \(r=0.9975\); CE=0 |
+| Wave9 free dual \(n=9\) | free \(\beta\) + 8 complex crits, \(R\in\{1.001..1.1\}\) | CE=0; \(R=1.1\Rightarrow\) maxroot\(\gg 1\) |
 
 **Theorem (equal-crit family).** If all critical points coincide at \(c\) and \(p(\beta)=0\), roots lie on the circle of radius \(|\beta-c|\) about \(c\). Hence \(r>1\) forces some root outside the unit disk — **no CE in this family for any \(n\ge 2\)**. See [`THEOREM_EQUAL_CRIT.md`](THEOREM_EQUAL_CRIT.md).
 

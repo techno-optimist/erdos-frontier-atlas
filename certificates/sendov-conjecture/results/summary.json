@@ -89,6 +89,10 @@
     {
       "id": "wave8_n9_lattice",
       "result": "n=9 two-real-crit dense lattice 271908 evals: best_feas r=0.9975; CE=0"
+    },
+    {
+      "id": "wave9_free_dual_n9",
+      "result": "n=9 free complex beta+8 crits dual R in {1.001,1.01,1.05,1.1}: CE=0; R=1.1 meets with maxroot~2.16"
     }
   ],
   "atlas_clues": [

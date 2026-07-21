@@ -503,6 +503,23 @@ def main() -> int:
         print("leg21 wave8_n9_lattice.json: MISSING FAIL")
         ok = False
 
+    # Leg 22 — wave9 free dual n=9
+    w9 = load_json("wave9_free_dual_n9.json")
+    if w9 is not None:
+        ces = [r for r in w9 if r.get("counterexample")]
+        bad = [
+            r
+            for r in w9
+            if float(r.get("radius", 0) or 0) > 1 + 1e-8
+            and float(r.get("max_root_mod", 99) or 99) <= 1 + 1e-8
+        ]
+        leg = len(ces) == 0 and len(bad) == 0 and len(w9) >= 3
+        print(f"leg22 wave9_free_dual_n9.json: rows={len(w9)} ces={len(ces)} bad={len(bad)} {'PASS' if leg else 'FAIL'}")
+        ok &= leg
+    else:
+        print("leg22 wave9_free_dual_n9.json: MISSING FAIL")
+        ok = False
+
     print()
     print("ALL PASS" if ok else "FAILURES PRESENT")
     return 0 if ok else 1
