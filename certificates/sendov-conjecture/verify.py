@@ -520,6 +520,23 @@ def main() -> int:
         print("leg22 wave9_free_dual_n9.json: MISSING FAIL")
         ok = False
 
+    # Leg 23 — wave9b free dual n=12
+    w9b = load_json("wave9b_free_dual_n12.json")
+    if w9b is not None:
+        ces = [r for r in w9b if r.get("counterexample")]
+        bad = [
+            r
+            for r in w9b
+            if float(r.get("radius", 0) or 0) > 1 + 1e-8
+            and float(r.get("max_root_mod", 99) or 99) <= 1 + 1e-8
+        ]
+        leg = len(ces) == 0 and len(bad) == 0 and len(w9b) >= 2
+        print(f"leg23 wave9b_free_dual_n12.json: rows={len(w9b)} ces={len(ces)} bad={len(bad)} {'PASS' if leg else 'FAIL'}")
+        ok &= leg
+    else:
+        print("leg23 wave9b_free_dual_n12.json: MISSING FAIL")
+        ok = False
+
     print()
     print("ALL PASS" if ok else "FAILURES PRESENT")
     return 0 if ok else 1
