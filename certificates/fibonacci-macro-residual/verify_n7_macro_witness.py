@@ -77,7 +77,20 @@ def carry_step(digits, cin):
 
 
 def main():
-    wit_path = HERE / (sys.argv[1] if len(sys.argv) > 1 else "N7_L4_S5_WITNESS.json")
+    # The witness must be named EXPLICITLY. This is a parameterised tool whose
+    # output filename is derived from the witness (N7_L{L}_S{S}_..._RESULT.json),
+    # so defaulting to a glob meant that running it bare silently clobbered a
+    # receipt owned by a dedicated per-cell verifier (e.g. N7_L5_S5, which
+    # verify_n7_l5_s5_macro_witness.py owns) with different wording. Two writers
+    # for one receipt is an ownership bug; require the argument instead.
+    if len(sys.argv) <= 1:
+        raise SystemExit(
+            "usage: verify_n7_macro_witness.py N7_L<L>_S<S>_WITNESS.json\n"
+            "  (name the witness explicitly -- this tool derives its receipt "
+            "filename from it and must not guess, or it will overwrite a "
+            "receipt owned by a dedicated verifier)"
+        )
+    wit_path = HERE / sys.argv[1]
     if not wit_path.exists():
         # try any N7_*_WITNESS.json
         cands = sorted(HERE.glob("N7_L*_S*_WITNESS.json"))
