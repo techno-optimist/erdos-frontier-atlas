@@ -1,0 +1,89 @@
+{
+  "L": 3,
+  "S": 4,
+  "claim_boundary": "Exhaustive n=5 L=3 on all 4-state L<=3-reachable clocks. Pure-Python routability census.",
+  "digit_patterns": 19,
+  "elapsed_sec": 60.348,
+  "n": 5,
+  "schema": "lead.n5_l3_s4_complete.v1",
+  "stats": {
+    "clocks": 298177,
+    "ge_tags": 3134,
+    "outward": 194621,
+    "reachable": 11009,
+    "routable": 1
+  },
+  "status": "FOUND_ROUTABLE",
+  "total_clocks": 16777216,
+  "witness": {
+    "carries": [
+      -1,
+      -1,
+      0,
+      -1,
+      -1,
+      1,
+      1,
+      0,
+      0,
+      0
+    ],
+    "clock_idx": 298176,
+    "delta": [
+      [
+        0,
+        0,
+        1
+      ],
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        3,
+        0,
+        3
+      ],
+      [
+        0,
+        0,
+        0
+      ]
+    ],
+    "digs": [
+      0,
+      0,
+      0,
+      1,
+      1,
+      1
+    ],
+    "ports": {
+      "0": [
+        3,
+        0
+      ],
+      "1": [
+        0,
+        0
+      ],
+      "2": [
+        1,
+        0
+      ],
+      "3": [
+        3,
+        1
+      ],
+      "4": [
+        0,
+        1
+      ],
+      "5": [
+        2,
+        1
+      ]
+    }
+  }
+}

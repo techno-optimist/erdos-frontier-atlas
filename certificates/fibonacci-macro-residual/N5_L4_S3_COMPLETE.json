@@ -1,0 +1,17 @@
+{
+  "L": 4,
+  "S": 3,
+  "claim_boundary": "Exhaustive n=5 L=4 on all 3-state L<=4-reachable clocks. Pure-Python routability census.",
+  "digit_patterns": 19,
+  "elapsed_sec": 0.719,
+  "n": 5,
+  "schema": "lead.n5_l4_s3_complete.v1",
+  "stats": {
+    "clocks": 19683,
+    "ge_tags": 282,
+    "outward": 864,
+    "reachable": 15930
+  },
+  "status": "NO_N5_L4_S3",
+  "witness": null
+}

@@ -1,0 +1,21 @@
+{
+  "claim_boundary": "Classifies rational V(E) points by G1 y-factor shape vs fiber size. Not a familywise no-go for size 2.",
+  "fiber_by_rat_y_count": {
+    "rat_y=1_fiber=0": 10,
+    "rat_y=1_fiber=1": 11,
+    "rat_y=2_fiber=1": 184
+  },
+  "histogram_fiber": {
+    "0": 10,
+    "1": 195
+  },
+  "histogram_y_shape": {
+    "rat_y=1,leftover=0": 21,
+    "rat_y=2,leftover=0": 184
+  },
+  "incomplete_y_factorizations": 0,
+  "points_tested": 205,
+  "schema": "jc.fiber_size2_disc_shape.v1",
+  "size2_hits": [],
+  "status": "NO_SIZE_2_IN_SHAPE_SAMPLE"
+}

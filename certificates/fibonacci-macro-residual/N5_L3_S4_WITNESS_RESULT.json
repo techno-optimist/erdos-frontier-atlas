@@ -1,0 +1,18 @@
+{
+  "claim_boundary": "Integer Parikh-balanced n=5 L=3 S=4 common-anchor split-weight macro if FOUND_INTEGER. Finite machine object; not E142.",
+  "route_counts": {
+    "P0": 2,
+    "P1": 2,
+    "P2": 6,
+    "P3": 2,
+    "P4": 11,
+    "P5": 2,
+    "Q0": 1,
+    "Q1": 4,
+    "Q2": 2,
+    "Q3": 1
+  },
+  "schema": "lead.n5_l3_s4_witness.v1",
+  "seed_clock_idx": 298176,
+  "status": "MIP_INFEAS"
+}

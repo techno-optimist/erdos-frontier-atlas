@@ -1,66 +1,64 @@
 {
-  "schema": "lead.global_macro_residual.seal.v2",
+  "schema": "lead.global_macro_residual.seal.v3",
   "date": "2026-07-20",
-  "title": "Full residual macro chest: L=3 S=3 witnesses at n=3,4; no-gos at n=5,6",
+  "title": "L=3 residual: witnesses n=3,4 (S=3) and n=5 (S=4); no-gos elsewhere at S=3",
   "status": "SEALED",
   "treasure": {
-    "negative_L2_n3": {
-      "claim": "No common-anchor split-weight length-two Parikh-balanced Fibonacci macro exists for n=3 on any deterministic ternary clock",
-      "theorem": "THEOREM_N3_L2_ALL_S_NO_GO.md"
-    },
-    "positive_L3_n3": {
-      "claim": "Exact n=3 length-three split-weight common-anchor Parikh-balanced macro on a 3-state clock",
-      "theorem": "THEOREM_N3_L3_SPLIT_MACRO_WITNESS.md",
+    "positive_L3_n3_s3": {
       "verifier": "verify_n3_l3_macro_witness.py",
-      "result": "N3_L3_MACRO_WITNESS_RESULT.json",
       "status_line": "PASS_N3_L3_SPLIT_MACRO_WITNESS"
     },
-    "positive_L3_n4": {
-      "claim": "Exact n=4 length-three split-weight common-anchor Parikh-balanced macro on a 3-state clock",
-      "theorem": "THEOREM_N4_L3_SPLIT_MACRO_WITNESS.md",
+    "positive_L3_n4_s3": {
       "verifier": "verify_n4_l3_macro_witness.py",
-      "witness": "N4_L3_WITNESS.json",
-      "result": "N4_L3_MACRO_WITNESS_RESULT.json",
       "status_line": "PASS_N4_L3_SPLIT_MACRO_WITNESS"
     },
+    "positive_L3_n5_s4": {
+      "claim": "Exact n=5 L=3 S=4 common-anchor split-weight Parikh-balanced macro",
+      "theorem": "THEOREM_N5_L3_S4_SPLIT_MACRO_WITNESS.md",
+      "verifier": "verify_n5_l3_s4_macro_witness.py",
+      "witness": "N5_L3_S4_WITNESS.json",
+      "result": "N5_L3_S4_MACRO_WITNESS_RESULT.json",
+      "status_line": "PASS_N5_L3_S4_SPLIT_MACRO_WITNESS"
+    },
     "negative_L3_n5_s3": {
-      "claim": "No n=5 L=3 S=3 common-anchor split macro (exhaustive routability)",
       "theorem": "THEOREM_N5_L3_S3_NO_GO.md",
-      "verifier": "verify_n5_l3_s3_routability.py",
-      "result": "N5_L3_S3_COMPLETE.json",
       "status_line": "NO_N5_L3_S3"
     },
+    "negative_L4_n5_s3": {
+      "theorem": "THEOREM_N5_L4_S3_NO_GO.md",
+      "status_line": "NO_N5_L4_S3"
+    },
+    "negative_L5_n5_s3": {
+      "theorem": "THEOREM_N5_L5_S3_NO_GO.md",
+      "status_line": "NO_N5_L5_S3"
+    },
     "negative_L3_n6_s3": {
-      "claim": "No n=6 L=3 S=3 common-anchor split macro (exhaustive; dies at outward)",
       "theorem": "THEOREM_N6_L3_S3_NO_GO.md",
-      "verifier": "verify_n6_l3_s3_routability.py",
-      "result": "N6_L3_S3_COMPLETE.json",
       "status_line": "NO_N6_L3_S3"
     },
-    "prior": {
-      "n2_L2_witness": "exists",
-      "one_edge_all_n": "no-go",
-      "fixed_word_n_ge_3": "no-go"
+    "negative_n_ge_7_s3_ports": {
+      "theorem": "THEOREM_N_GE_7_S3_PORT_CAPACITY.md",
+      "status_line": "N_GE_7_S3_REACHABLE_PORT_CAPACITY_NO_GO"
+    },
+    "negative_L2_n3": {
+      "theorem": "THEOREM_N3_L2_ALL_S_NO_GO.md"
     }
   },
   "scoreboard": [
-    {"cell": "one-edge any n", "verdict": "NO-GO"},
-    {"cell": "fixed-word n>=3", "verdict": "NO-GO"},
-    {"cell": "n=2 L=2 split", "verdict": "WITNESS"},
     {"cell": "n=3 L=2 any S", "verdict": "NO-GO"},
     {"cell": "n=3 L=3 S=3", "verdict": "WITNESS"},
-    {"cell": "n=3 L=3 S=2", "verdict": "NO (0 LP)"},
     {"cell": "n=4 L=3 S=3", "verdict": "WITNESS"},
-    {"cell": "n=5 L=3 S=3", "verdict": "NO-GO (0 routable / 19683 clocks)"},
-    {"cell": "n=6 L=3 S=3", "verdict": "NO-GO (0 outward / 24 ge_tags)"},
-    {"cell": "n>=7 any L at S=3 (reachable)", "verdict": "NO-GO (port capacity: max 7 ports)"},
-    {"cell": "n=5 L=3 S=4", "verdict": "NO_ROUTABLE_IN_SAMPLE (3000 clocks; not exhaustive)"}
+    {"cell": "n=5 L=3 S=3", "verdict": "NO-GO"},
+    {"cell": "n=5 L=4 S=3", "verdict": "NO-GO"},
+    {"cell": "n=5 L=5 S=3", "verdict": "NO-GO"},
+    {"cell": "n=5 L=3 S=4", "verdict": "WITNESS"},
+    {"cell": "n=6 L=3 S=3", "verdict": "NO-GO"},
+    {"cell": "n>=7 any L at S=3 reachable", "verdict": "NO-GO (port capacity)"}
   ],
   "open_loopholes": [
-    "n=5 L=3 S>=4 exhaustive (sample: 0 routable / 48 outward among 3000 clocks)",
-    "n=5 L>=4",
-    "structural all-n for L=3 S=3 (n=3,4 yes; n=5,6 no; n>=7 port no-go)",
-    "non-common-anchor architectures",
+    "n=6 L=3 S=4 (or higher)",
+    "all-n inductive architecture (S may need to grow with n)",
+    "non-common-anchor models",
     "Erdős 142 density consequences"
   ],
   "claim_boundary": "Finite machine objects for the common-anchor split-integral deterministic ternary macro model. Not an Erdős 142 solution."

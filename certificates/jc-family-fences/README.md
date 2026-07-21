@@ -21,6 +21,10 @@ certificates.
 | global v2 | 249 | {0:10, 1:239} | 0 |
 | Q=0 dense | 276 | {0:10, 1:266} | 0 |
 | t2=0 slice | 171 | {1:171} | 0 |
+| y-shape sample | 205 | {0:10, 1:195} | 0 |
+
+Shape note: whenever G1 has 2 distinct rational y-roots (184 pts), fiber size
+was always 1 — never 2.
 
 ### Degree family fences
 
