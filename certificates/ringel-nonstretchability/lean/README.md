@@ -44,7 +44,7 @@ monomials, solve over GF(2⁶¹−1) → support **10**, re-solve exactly over �
 residual 0**. Because `br` is a plain `def`, `ring` treats brackets as opaque atoms, so each of the
 ten syzygies is a small (≤6 point, degree-6) `ring` call and the assembly is one `linear_combination`.
 
-**Structural fact worth recording: no certificate exists using only 3-term relations.** Six of the ten
+**Structural fact worth recording: no certificate exists using only 3-term relations.** Seven of the ten
 required are genuine 4-term Plücker relations — a "classical syzygy only" approach dead-ends.
 
 ## Replay

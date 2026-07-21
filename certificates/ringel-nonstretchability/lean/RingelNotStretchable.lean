@@ -61,7 +61,7 @@ reorientation short of "not stretchable"; see the parity note above
 `br` is a plain `def`, so `ring` treats a bracket application as an opaque **atom**. CLAIM 1 is
 therefore assembled by one `linear_combination` over ten Grassmann–Plücker syzygies `gp1 … gp10`
 (found by exact linear algebra over ℚ in the bracket ring; all ten coefficients are `±1`), each of
-which is itself a small `ring` call on at most six points. Six of the ten are genuine **four-term**
+which is itself a small `ring` call on at most six points. Seven of the ten are genuine **four-term**
 Plücker relations: no certificate using three-term relations alone exists in the searched span.
 
 The direct 27-variable `ring` attack does **not** work: it overflows the `Mathlib.Tactic.Ring`
