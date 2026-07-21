@@ -3,7 +3,7 @@
 Independent exact verifier for an n=7 split-weight macro witness.
 
 Usage:
-  python verify_n7_macro_witness.py [N7_L*_S*_WITNESS.json]
+  python tool_n7_macro_witness.py [N7_L*_S*_WITNESS.json]
 
 Does not import the searcher. Product-graph flow + Parikh + connectivity.
 Origins/weights from the n=7 Fibonacci column table (tags = 8).
@@ -85,7 +85,7 @@ def main():
     # for one receipt is an ownership bug; require the argument instead.
     if len(sys.argv) <= 1:
         raise SystemExit(
-            "usage: verify_n7_macro_witness.py N7_L<L>_S<S>_WITNESS.json\n"
+            "usage: tool_n7_macro_witness.py N7_L<L>_S<S>_WITNESS.json\n"
             "  (name the witness explicitly -- this tool derives its receipt "
             "filename from it and must not guess, or it will overwrite a "
             "receipt owned by a dedicated verifier)"
