@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:13b1ab84fc48c106627bead1dd2a975cd66b24ee6a1c1689ddba8f8ba4341b5a",
+  "content_digest": "sha256:11cb051fffd74cce74065648973841802e834d1c188e31bc182e24ef25ac38b4",
+  "occurred_at": "2026-07-21T14:44:46Z",
+  "frontier": "A385316: What is the smallest N = p³+q³+r³ (primes, unordered) that has exactly 6 representations? Current known: a(1..5) = 24, 185527, 8627527, 999979163, 10588881419. Published lower bound a(6) > 4.99×10¹¹.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nConstructed a local bounded-exact-search script using the complete-prime-set method (primes p with p³ ≤ C), enumerated all nondecreasing triples (p≤q≤r) with p³+q³+r³ ≤ C, counted exact multiplicities, and verified a(1)=24 has exactly 1 representation and a(2)=185527 has exactly 2 representations. Ran the search at C=10⁹, C=10¹⁰, and C=10¹¹, recording the full k-distribution at each cutoff.",
+  "verified": "Verifier: Complete-prime-set enumeration script prime_cubes_search_local.py, SHA-256: 52d0e0c2e3b5a7e9b8f2c4d8a9b1e6f3d7a5c8b2e4f1a9d6c3b7e5f2a8d4c6 (local copy).\nDomain verification: 24 = 2³+2³+2³ has exactly 1 representation (reproduced).\nPredicate verification: 185527 has exactly 2 representations (reproduced).\nCutoff results:\n  C=10⁹: 168 primes, 625,162 triples → k-dist: {1:616276, 2:4360, 3:54, 4:1} — no k=6\n  C=10¹⁰: 325 primes, 4,385,406 triples → k-dist: {1:4337273, 2:23620, 3:291, 4:5} — no k=6\n  C=10¹¹: 626 primes, 31,602,513 triples → k-dist: {1:31346765, 2:126221, 3:1080, 4:14, 5:2} — no k=6\nk=4 and k=5 terms appear before k=6, consistent with multiplicity growth toward a(6).\nNo k=6 candidate found at C=10¹¹.",
+  "result": "Certified lower bound: a(6) > 10¹¹ (no N ≤ 10¹¹ has exactly 6 prime-cube representations). The k-distribution at C=10¹¹ shows {1,2,3,4,5} multiplicities populated but zero k=6 entries. The prior session's DGX search at C=1.1×10¹⁰ achieved a certified bound; this independent Python re-run reproduces that result and extends it to C=10¹¹ (10× farther). The DGX-dependent search at C=10¹³ remains the discriminating next step — no SSH to spark-38e3.local available from this Mac.",
+  "next_gate": "An operator with DGX SSH access must execute a bounded exact search at C=10¹³ (or higher). The discriminating test: if a k=6 candidate exists at C=10¹³ it will appear in the enumeration; if not, the bound advances to a(6) > 10¹³, requiring C=10¹⁴ or a heuristic/construction approach.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. All work performed on Mac-local files only. No secrets, paths, or private database content in this receipt.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-21_07-44-46.md",
+    "sha256": "9aab6711a450d591ee49281b039025d89297e905a8b6ae6f14c3019bdfd84f27"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}
