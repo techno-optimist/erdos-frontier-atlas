@@ -77,7 +77,7 @@ theorem would remain true *about the table as written*, while no longer being a 
 matroid. That is a question about our input, not about the proof. Provenance is two links:
 
 ```
-Ringel's published affine projections --(human transcription)--> es7_ringel_chirotope.py --(SHA-256)--> this table
+Carroll's rendered affine projections --(human transcription)--> es7_ringel_chirotope.py --(SHA-256)--> this table
 ```
 
 Hash-pinned at the second link only; eyeball at the first. Closing this needs either a final

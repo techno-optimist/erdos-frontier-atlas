@@ -98,7 +98,7 @@ chain.** The canonical payload SHA-256 of the 84-entry table is
 table below is byte-identical to what `es7_ringel_chirotope.py` emitted; it certifies **nothing**
 about whether the Python reconstruction agrees with what Ringel published. The provenance chain is
 
-    Ringel's two published affine projections  →  es7_ringel_chirotope.py  →  this table
+    Carroll's two rendered affine projections  →  es7_ringel_chirotope.py  →  this table
                         (human transcription)        (SHA-256 pinned)
 
 — hash-pinned at the second link only, eyeball at the first. The transcription is the sole
@@ -303,7 +303,7 @@ theorem ringel_sign_audit (p1 p2 p3 p4 p5 p6 p7 p8 p9 : Pt ℝ)
 
 All 84 entries are `±1` (the matroid is uniform); every unsorted or repeated argument returns `0`
 and is never used. Machine-extracted from `es7_ringel_chirotope.ringel_signs()`, which reconstructs
-the table from Ringel's two published affine projections. -/
+the table from Carroll's two rendered affine projections. -/
 def chiSorted : ℕ → ℕ → ℕ → ℤ
   | 0, 1, 2 => 1
   | 0, 1, 3 => 1
