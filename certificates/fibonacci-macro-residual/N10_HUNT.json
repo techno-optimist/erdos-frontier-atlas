@@ -1,0 +1,30 @@
+{
+  "claim_boundary": "Heuristic pad/mutate hunt; not exhaustive.",
+  "configs": [
+    {
+      "L": 6,
+      "S": 6,
+      "stats": {
+        "clocks": 281,
+        "ge_tags": 32,
+        "outward": 50
+      }
+    },
+    {
+      "L": 6,
+      "S": 7,
+      "stats": {
+        "clocks": 122,
+        "ge_tags": 18,
+        "lp": 1,
+        "mip": 1,
+        "outward": 528,
+        "routable": 1,
+        "route_enum": 1
+      }
+    }
+  ],
+  "elapsed_sec": 54.617,
+  "schema": "lead.n10_hunt.v1",
+  "status": "FOUND_INTEGER"
+}

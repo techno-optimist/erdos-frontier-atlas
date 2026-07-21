@@ -1,5 +1,5 @@
-#!/usr/bin/env python3
-"""Route enumeration for Parikh LP: full product for L<=4, sampled DFS for L>=5."""
+﻿#!/usr/bin/env python3
+"""Route enumeration for Parikh LP: full product for L<=4, sampled + BFS-seed for L>=5."""
 
 from __future__ import annotations
 
@@ -52,13 +52,61 @@ def enum_routes_full(delta, ports, origin, tc, L, S):
     return list(uniq.items())
 
 
+def bfs_seed_routes(delta, ports, origin, tc, L, max_paths=8):
+    """Exact length-L routes via layered BFS; keep up to max_paths distinct paths."""
+    u, v, w = origin
+    target = (ports[u][0], ports[v][0], ports[w][0])
+    # layer: (states, carry) -> list of paths (each path = tuple of digit triples)
+    layer = {((0, 0, 0), 0): [()]}
+    for _ in range(L):
+        nxt = {}
+        for (states, carry), paths in layer.items():
+            for a, b, c in itertools.product(range(3), repeat=3):
+                cout = M.carry_step(a, b, c, carry)
+                if cout is None:
+                    continue
+                ns = (
+                    delta[states[0]][a],
+                    delta[states[1]][b],
+                    delta[states[2]][c],
+                )
+                key = (ns, cout)
+                bucket = nxt.setdefault(key, [])
+                for path in paths:
+                    if len(bucket) >= max_paths:
+                        break
+                    bucket.append(path + ((a, b, c),))
+                if len(bucket) >= max_paths:
+                    # still allow other keys to fill, but cap this key
+                    pass
+        # global cap: if layer explodes, keep arbitrary subset of keys fully
+        layer = nxt
+    return list(layer.get((target, tc), []))
+
+
+def role_ports_from_route(delta, digs3):
+    rp = [[], [], []]
+    states = (0, 0, 0)
+    for a, b, c in digs3:
+        for role, d in enumerate((a, b, c)):
+            rp[role].append((states[role], d))
+        states = (
+            delta[states[0]][a],
+            delta[states[1]][b],
+            delta[states[2]][c],
+        )
+    return rp
+
+
 def enum_routes_sampled(delta, ports, origin, tc, L, S, samples=80_000, seed=0):
-    """Monte-Carlo legal walks; keep unique feats that hit (target, tc)."""
+    """Monte-Carlo legal walks; seed with exact BFS routes when available."""
     u, v, w = origin
     target = (ports[u][0], ports[v][0], ports[w][0])
     rng = random.Random(seed + hash((target, tc, L)) % 10_000_007)
     uniq = {}
-    # also always include BFS-guided greedy attempts
+    for digs3 in bfs_seed_routes(delta, ports, origin, tc, L, max_paths=12):
+        rp = role_ports_from_route(delta, digs3)
+        uniq.setdefault(feat_role_ports(rp, S), digs3)
     for trial in range(samples):
         carry = 0
         states = (0, 0, 0)
@@ -66,7 +114,6 @@ def enum_routes_sampled(delta, ports, origin, tc, L, S, samples=80_000, seed=0):
         digs3 = []
         ok = True
         for step in range(L):
-            # sample random legal digit triple
             choices = []
             for a, b, c in itertools.product(range(3), repeat=3):
                 if M.carry_step(a, b, c, carry) is not None:
