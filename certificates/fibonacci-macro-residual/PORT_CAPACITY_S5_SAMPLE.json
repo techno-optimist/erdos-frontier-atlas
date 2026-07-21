@@ -1,0 +1,22 @@
+{
+  "schema": "lead.port_capacity_s5_sample.v1",
+  "S": 5,
+  "L": 3,
+  "samples_tried": 200000,
+  "reachable": 137945,
+  "hist": {
+    "0": 6023,
+    "1": 21780,
+    "2": 35796,
+    "3": 35101,
+    "4": 23491,
+    "5": 11046,
+    "6": 3650,
+    "7": 898,
+    "8": 135,
+    "9": 24,
+    "10": 1
+  },
+  "max_ports_seen": 10,
+  "claim_boundary": "Sample only; not exhaustive S=5 port capacity."
+}
