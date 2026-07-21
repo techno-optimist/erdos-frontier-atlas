@@ -62,5 +62,13 @@
     "max_root_mod": 1.0000000000000004,
     "feasible": true,
     "counterexample": false
+  },
+  {
+    "n": 20,
+    "score": 1.0,
+    "source": "unity",
+    "max_root_mod": 1.000000000000001,
+    "feasible": true,
+    "counterexample": false
   }
 ]

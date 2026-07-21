@@ -388,5 +388,115 @@
     "slack": 0.201361,
     "counterexample": false,
     "source": "dual_fast_log"
+  },
+  {
+    "n": 16,
+    "R_target": 1.1,
+    "radius": 1.0945105239,
+    "max_root_mod": 1.190606867,
+    "meets_R": false,
+    "slack": 0.190607,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 18,
+    "R_target": 1.0001,
+    "radius": 0.9978555417,
+    "max_root_mod": 0.9980442513,
+    "meets_R": false,
+    "slack": -0.001956,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 18,
+    "R_target": 1.001,
+    "radius": 1.0,
+    "max_root_mod": 1.0,
+    "meets_R": false,
+    "slack": 0.0,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 18,
+    "R_target": 1.01,
+    "radius": 1.0052492438,
+    "max_root_mod": 1.0104985281,
+    "meets_R": false,
+    "slack": 0.010499,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 18,
+    "R_target": 1.05,
+    "radius": 1.0427691496,
+    "max_root_mod": 1.0990904947,
+    "meets_R": false,
+    "slack": 0.09909,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 18,
+    "R_target": 1.1,
+    "radius": 1.0962068794,
+    "max_root_mod": 1.2378781986,
+    "meets_R": false,
+    "slack": 0.237878,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 20,
+    "R_target": 1.0001,
+    "radius": 0.997752401,
+    "max_root_mod": 0.9979362513,
+    "meets_R": false,
+    "slack": -0.002064,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 20,
+    "R_target": 1.001,
+    "radius": 1.0,
+    "max_root_mod": 1.0,
+    "meets_R": false,
+    "slack": 0.0,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 20,
+    "R_target": 1.01,
+    "radius": 1.0053337703,
+    "max_root_mod": 1.0106675751,
+    "meets_R": false,
+    "slack": 0.010668,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 20,
+    "R_target": 1.05,
+    "radius": 1.0455978088,
+    "max_root_mod": 1.1000442641,
+    "meets_R": false,
+    "slack": 0.100044,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 20,
+    "R_target": 1.1,
+    "radius": 1.0957126707,
+    "max_root_mod": 1.2125210769,
+    "meets_R": false,
+    "slack": 0.212521,
+    "counterexample": false,
+    "source": "dual_fast_log"
   }
 ]

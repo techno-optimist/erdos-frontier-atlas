@@ -69,6 +69,10 @@
     {
       "id": "argprin",
       "result": "arg-principle root maximin: max gap=0.9794<1 (soft oracle underestimates unity); CE=0; low-value basin"
+    },
+    {
+      "id": "wave4_dual_soft",
+      "result": "wave4 dual soft n=9..30: 31 rows, CE=0, R>1 => positive maxroot slack"
     }
   ],
   "atlas_clues": [

@@ -425,6 +425,26 @@ def main() -> int:
         print("leg16 argprin_all.json: MISSING FAIL")
         ok = False
 
+    # Leg 17 — wave4_dual_soft.json: CE-free; positive slack when r>1.001
+    w4d = load_json("wave4_dual_soft.json")
+    if w4d is not None:
+        ces = [r for r in w4d if r.get("counterexample")]
+        bad = [
+            r for r in w4d
+            if float(r.get("radius", 0)) > 1.001 + 1e-8
+            and float(r.get("max_root_mod", 99)) <= 1 + 1e-8
+        ]
+        leg = len(ces) == 0 and len(bad) == 0 and len(w4d) >= 20
+        status = "PASS" if leg else "FAIL"
+        print(
+            f"leg17 wave4_dual_soft.json: rows={len(w4d)} ces={len(ces)} "
+            f"bad={len(bad)} {status}"
+        )
+        ok &= leg
+    else:
+        print("leg17 wave4_dual_soft.json: MISSING FAIL")
+        ok = False
+
     print()
     print("ALL PASS" if ok else "FAILURES PRESENT")
     return 0 if ok else 1
