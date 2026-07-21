@@ -2,511 +2,586 @@
   {
     "n": 9,
     "R_target": 1.0001,
-    "radius": 0.9971498441,
-    "max_root_mod": 0.9975313704,
+    "radius": 0.9971498440860165,
+    "max_root_mod": 0.9975313703520738,
     "meets_R": false,
-    "slack": -0.002469,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": -0.002468629647926157,
+    "counterexample": false
   },
   {
     "n": 9,
     "R_target": 1.001,
     "radius": 1.0,
-    "max_root_mod": 1.0,
+    "max_root_mod": 1.0000000000000004,
     "meets_R": false,
-    "slack": 0.0,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 4.440892098500626e-16,
+    "counterexample": false
   },
   {
     "n": 9,
     "R_target": 1.01,
-    "radius": 1.0054580834,
-    "max_root_mod": 1.0107111154,
+    "radius": 1.0054580833713986,
+    "max_root_mod": 1.0107111154023463,
     "meets_R": false,
-    "slack": 0.010711,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.01071111540234626,
+    "counterexample": false
   },
   {
     "n": 9,
     "R_target": 1.05,
-    "radius": 1.0470151112,
-    "max_root_mod": 1.0764684532,
+    "radius": 1.0470151111646466,
+    "max_root_mod": 1.076468453246243,
     "meets_R": false,
-    "slack": 0.076468,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.07646845324624296,
+    "counterexample": false
   },
   {
     "n": 9,
     "R_target": 1.1,
-    "radius": 1.0967863863,
-    "max_root_mod": 1.1481076364,
+    "radius": 1.096786386339367,
+    "max_root_mod": 1.148107636435868,
     "meets_R": false,
-    "slack": 0.148108,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.148107636435868,
+    "counterexample": false
   },
   {
     "n": 10,
     "R_target": 1.0001,
-    "radius": 0.9967906045,
-    "max_root_mod": 0.9972149599,
+    "radius": 0.9967906044851498,
+    "max_root_mod": 0.9972149598956459,
     "meets_R": false,
-    "slack": -0.002785,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": -0.0027850401043540973,
+    "counterexample": false
   },
   {
     "n": 10,
     "R_target": 1.001,
     "radius": 1.0,
-    "max_root_mod": 1.0,
+    "max_root_mod": 1.0000000000000004,
     "meets_R": false,
-    "slack": 0.0,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 4.440892098500626e-16,
+    "counterexample": false
   },
   {
     "n": 10,
     "R_target": 1.01,
-    "radius": 1.0051385787,
-    "max_root_mod": 1.0102772704,
+    "radius": 1.0051385787383926,
+    "max_root_mod": 1.0102772703885063,
     "meets_R": false,
-    "slack": 0.010277,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.010277270388506343,
+    "counterexample": false
   },
   {
     "n": 10,
     "R_target": 1.05,
-    "radius": 1.0460506817,
-    "max_root_mod": 1.0780952714,
+    "radius": 1.0460506817199968,
+    "max_root_mod": 1.078095271358184,
     "meets_R": false,
-    "slack": 0.078095,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.07809527135818395,
+    "counterexample": false
   },
   {
     "n": 10,
     "R_target": 1.1,
-    "radius": 1.0975996549,
-    "max_root_mod": 1.1596350278,
+    "radius": 1.0975996548839804,
+    "max_root_mod": 1.1596350277744822,
     "meets_R": false,
-    "slack": 0.159635,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.15963502777448224,
+    "counterexample": false
   },
   {
     "n": 11,
     "R_target": 1.0001,
-    "radius": 0.9972757028,
-    "max_root_mod": 0.9976113238,
+    "radius": 0.9972757028382288,
+    "max_root_mod": 0.9976113237792152,
     "meets_R": false,
-    "slack": -0.002389,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": -0.002388676220784758,
+    "counterexample": false
   },
   {
     "n": 11,
     "R_target": 1.001,
     "radius": 1.0,
-    "max_root_mod": 1.0,
+    "max_root_mod": 1.000000000000002,
     "meets_R": false,
-    "slack": 0.0,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 1.9984014443252818e-15,
+    "counterexample": false
   },
   {
     "n": 11,
     "R_target": 1.01,
-    "radius": 1.0050967168,
-    "max_root_mod": 1.0100756016,
+    "radius": 1.0050967167847757,
+    "max_root_mod": 1.010075601634383,
     "meets_R": false,
-    "slack": 0.010076,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.010075601634383036,
+    "counterexample": false
   },
   {
     "n": 11,
     "R_target": 1.05,
-    "radius": 1.0474727245,
-    "max_root_mod": 1.0958836219,
+    "radius": 1.0474727244803246,
+    "max_root_mod": 1.0958836218893164,
     "meets_R": false,
-    "slack": 0.095884,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.09588362188931643,
+    "counterexample": false
   },
   {
     "n": 11,
     "R_target": 1.1,
-    "radius": 1.0973375918,
-    "max_root_mod": 1.1786833561,
+    "radius": 1.0973375917958212,
+    "max_root_mod": 1.1786833560980232,
     "meets_R": false,
-    "slack": 0.178683,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.17868335609802322,
+    "counterexample": false
   },
   {
     "n": 12,
     "R_target": 1.0001,
-    "radius": 0.9979915187,
-    "max_root_mod": 0.9982266763,
+    "radius": 0.9979915186859685,
+    "max_root_mod": 0.9982266763104543,
     "meets_R": false,
-    "slack": -0.001773,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": -0.0017733236895457472,
+    "counterexample": false
   },
   {
     "n": 12,
     "R_target": 1.001,
     "radius": 1.0,
-    "max_root_mod": 1.0,
+    "max_root_mod": 1.0000000000000007,
     "meets_R": false,
-    "slack": 0.0,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 6.661338147750939e-16,
+    "counterexample": false
   },
   {
     "n": 12,
     "R_target": 1.01,
-    "radius": 1.0050299814,
-    "max_root_mod": 1.0100600501,
+    "radius": 1.0050299813685435,
+    "max_root_mod": 1.01006005014786,
     "meets_R": false,
-    "slack": 0.01006,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.010060050147860045,
+    "counterexample": false
   },
   {
     "n": 12,
     "R_target": 1.05,
-    "radius": 1.0473855538,
-    "max_root_mod": 1.1087735234,
+    "radius": 1.0473855538450871,
+    "max_root_mod": 1.1087735233808103,
     "meets_R": false,
-    "slack": 0.108774,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.10877352338081026,
+    "counterexample": false
   },
   {
     "n": 12,
     "R_target": 1.1,
-    "radius": 1.0962256087,
-    "max_root_mod": 1.1667888124,
+    "radius": 1.0962256087016726,
+    "max_root_mod": 1.1667888124200496,
     "meets_R": false,
-    "slack": 0.166789,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.16678881242004961,
+    "counterexample": false
   },
   {
     "n": 13,
     "R_target": 1.0001,
-    "radius": 0.9979070437,
-    "max_root_mod": 0.9981404912,
+    "radius": 0.9979070437312308,
+    "max_root_mod": 0.9981404912404406,
     "meets_R": false,
-    "slack": -0.00186,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": -0.001859508759559425,
+    "counterexample": false
   },
   {
     "n": 13,
     "R_target": 1.001,
     "radius": 1.0,
-    "max_root_mod": 1.0,
+    "max_root_mod": 1.0000000000000009,
     "meets_R": false,
-    "slack": 0.0,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 8.881784197001252e-16,
+    "counterexample": false
   },
   {
     "n": 13,
     "R_target": 1.01,
-    "radius": 1.0050760429,
-    "max_root_mod": 1.0100701271,
+    "radius": 1.0050760429473125,
+    "max_root_mod": 1.0100701270904222,
     "meets_R": false,
-    "slack": 0.01007,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.01007012709042221,
+    "counterexample": false
   },
   {
     "n": 13,
     "R_target": 1.05,
-    "radius": 1.0455252926,
-    "max_root_mod": 1.0912141455,
+    "radius": 1.0455252925826461,
+    "max_root_mod": 1.091214145495676,
     "meets_R": false,
-    "slack": 0.091214,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.09121414549567608,
+    "counterexample": false
   },
   {
     "n": 13,
     "R_target": 1.1,
-    "radius": 1.0957213035,
-    "max_root_mod": 1.1677702168,
+    "radius": 1.0957213035342919,
+    "max_root_mod": 1.1677702167595532,
     "meets_R": false,
-    "slack": 0.16777,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.16777021675955317,
+    "counterexample": false
   },
   {
     "n": 14,
     "R_target": 1.0001,
-    "radius": 0.9978538012,
-    "max_root_mod": 0.9980795491,
+    "radius": 0.9978538012497755,
+    "max_root_mod": 0.9980795490516771,
     "meets_R": false,
-    "slack": -0.00192,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": -0.0019204509483229382,
+    "counterexample": false
   },
   {
     "n": 14,
     "R_target": 1.001,
     "radius": 1.0,
-    "max_root_mod": 1.0,
+    "max_root_mod": 1.0000000000000004,
     "meets_R": false,
-    "slack": 0.0,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 4.440892098500626e-16,
+    "counterexample": false
   },
   {
     "n": 14,
     "R_target": 1.01,
-    "radius": 1.0050186093,
-    "max_root_mod": 1.0100372807,
+    "radius": 1.0050186093164772,
+    "max_root_mod": 1.0100372806523013,
     "meets_R": false,
-    "slack": 0.010037,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.01003728065230125,
+    "counterexample": false
   },
   {
     "n": 14,
     "R_target": 1.05,
-    "radius": 1.0452383941,
-    "max_root_mod": 1.1049562416,
+    "radius": 1.0452383940783228,
+    "max_root_mod": 1.104956241611766,
     "meets_R": false,
-    "slack": 0.104956,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.10495624161176598,
+    "counterexample": false
   },
   {
     "n": 14,
     "R_target": 1.1,
-    "radius": 1.094807904,
-    "max_root_mod": 1.1896921669,
+    "radius": 1.0948079039915628,
+    "max_root_mod": 1.189692166897803,
     "meets_R": false,
-    "slack": 0.189692,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.1896921668978031,
+    "counterexample": false
   },
   {
     "n": 15,
     "R_target": 1.0001,
-    "radius": 0.997801257,
-    "max_root_mod": 0.9980257702,
+    "radius": 0.9978012570023095,
+    "max_root_mod": 0.998025770238063,
     "meets_R": false,
-    "slack": -0.001974,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": -0.001974229761936952,
+    "counterexample": false
   },
   {
     "n": 15,
     "R_target": 1.001,
     "radius": 1.0,
-    "max_root_mod": 1.0,
+    "max_root_mod": 1.0000000000000016,
     "meets_R": false,
-    "slack": 0.0,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 1.5543122344752192e-15,
+    "counterexample": false
   },
   {
     "n": 15,
     "R_target": 1.01,
-    "radius": 1.005094112,
-    "max_root_mod": 1.0101271736,
+    "radius": 1.0050941119618617,
+    "max_root_mod": 1.0101271736059625,
     "meets_R": false,
-    "slack": 0.010127,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.010127173605962492,
+    "counterexample": false
   },
   {
     "n": 15,
     "R_target": 1.05,
-    "radius": 1.0469666045,
-    "max_root_mod": 1.1445014721,
+    "radius": 1.0469666044877024,
+    "max_root_mod": 1.1445014720923679,
     "meets_R": false,
-    "slack": 0.144501,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.14450147209236786,
+    "counterexample": false
   },
   {
     "n": 15,
     "R_target": 1.1,
-    "radius": 1.0947720124,
-    "max_root_mod": 1.188026869,
+    "radius": 1.0947720123822693,
+    "max_root_mod": 1.1880268689884161,
     "meets_R": false,
-    "slack": 0.188027,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.18802686898841614,
+    "counterexample": false
   },
   {
     "n": 16,
     "R_target": 1.0001,
-    "radius": 0.997862063,
-    "max_root_mod": 0.9980679408,
+    "radius": 0.9978620630456461,
+    "max_root_mod": 0.9980679407804428,
     "meets_R": false,
-    "slack": -0.001932,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": -0.0019320592195571917,
+    "counterexample": false
   },
   {
     "n": 16,
     "R_target": 1.001,
     "radius": 1.0,
-    "max_root_mod": 1.0,
+    "max_root_mod": 1.0000000000000018,
     "meets_R": false,
-    "slack": 0.0,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 1.7763568394002505e-15,
+    "counterexample": false
   },
   {
     "n": 16,
     "R_target": 1.01,
-    "radius": 1.0051473865,
-    "max_root_mod": 1.0102948246,
+    "radius": 1.005147386507398,
+    "max_root_mod": 1.0102948245524113,
     "meets_R": false,
-    "slack": 0.010295,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.010294824552411264,
+    "counterexample": false
   },
   {
     "n": 16,
     "R_target": 1.05,
-    "radius": 1.0469784527,
-    "max_root_mod": 1.2013611182,
+    "radius": 1.0469784527045152,
+    "max_root_mod": 1.2013611181582269,
     "meets_R": false,
-    "slack": 0.201361,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.20136111815822688,
+    "counterexample": false
   },
   {
     "n": 16,
     "R_target": 1.1,
-    "radius": 1.0945105239,
-    "max_root_mod": 1.190606867,
+    "radius": 1.0945105239435617,
+    "max_root_mod": 1.190606866982637,
     "meets_R": false,
-    "slack": 0.190607,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.19060686698263707,
+    "counterexample": false
   },
   {
     "n": 18,
     "R_target": 1.0001,
-    "radius": 0.9978555417,
-    "max_root_mod": 0.9980442513,
+    "radius": 0.9978555417414157,
+    "max_root_mod": 0.9980442512858908,
     "meets_R": false,
-    "slack": -0.001956,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": -0.0019557487141091956,
+    "counterexample": false
   },
   {
     "n": 18,
     "R_target": 1.001,
     "radius": 1.0,
-    "max_root_mod": 1.0,
+    "max_root_mod": 1.0000000000000013,
     "meets_R": false,
-    "slack": 0.0,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 1.3322676295501878e-15,
+    "counterexample": false
   },
   {
     "n": 18,
     "R_target": 1.01,
-    "radius": 1.0052492438,
-    "max_root_mod": 1.0104985281,
+    "radius": 1.0052492438176934,
+    "max_root_mod": 1.0104985280931154,
     "meets_R": false,
-    "slack": 0.010499,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.010498528093115356,
+    "counterexample": false
   },
   {
     "n": 18,
     "R_target": 1.05,
-    "radius": 1.0427691496,
-    "max_root_mod": 1.0990904947,
+    "radius": 1.0427691495643507,
+    "max_root_mod": 1.0990904946566067,
     "meets_R": false,
-    "slack": 0.09909,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.09909049465660669,
+    "counterexample": false
   },
   {
     "n": 18,
     "R_target": 1.1,
-    "radius": 1.0962068794,
-    "max_root_mod": 1.2378781986,
+    "radius": 1.0962068793851416,
+    "max_root_mod": 1.2378781985544547,
     "meets_R": false,
-    "slack": 0.237878,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.2378781985544547,
+    "counterexample": false
   },
   {
     "n": 20,
     "R_target": 1.0001,
-    "radius": 0.997752401,
-    "max_root_mod": 0.9979362513,
+    "radius": 0.9977524009972215,
+    "max_root_mod": 0.9979362513227066,
     "meets_R": false,
-    "slack": -0.002064,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": -0.00206374867729342,
+    "counterexample": false
   },
   {
     "n": 20,
     "R_target": 1.001,
     "radius": 1.0,
-    "max_root_mod": 1.0,
+    "max_root_mod": 1.000000000000001,
     "meets_R": false,
-    "slack": 0.0,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 1.1102230246251565e-15,
+    "counterexample": false
   },
   {
     "n": 20,
     "R_target": 1.01,
-    "radius": 1.0053337703,
-    "max_root_mod": 1.0106675751,
+    "radius": 1.0053337702910727,
+    "max_root_mod": 1.0106675750534126,
     "meets_R": false,
-    "slack": 0.010668,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.010667575053412648,
+    "counterexample": false
   },
   {
     "n": 20,
     "R_target": 1.05,
-    "radius": 1.0455978088,
-    "max_root_mod": 1.1000442641,
+    "radius": 1.0455978088419609,
+    "max_root_mod": 1.1000442641055168,
     "meets_R": false,
-    "slack": 0.100044,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.10004426410551681,
+    "counterexample": false
   },
   {
     "n": 20,
     "R_target": 1.1,
-    "radius": 1.0957126707,
-    "max_root_mod": 1.2125210769,
+    "radius": 1.0957126706682525,
+    "max_root_mod": 1.2125210769326797,
     "meets_R": false,
-    "slack": 0.212521,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": 0.21252107693267974,
+    "counterexample": false
   },
   {
     "n": 24,
     "R_target": 1.0001,
-    "radius": 0.9977855629,
-    "max_root_mod": 0.9979400403,
+    "radius": 0.9977855629188614,
+    "max_root_mod": 0.9979400402780102,
     "meets_R": false,
-    "slack": -0.00206,
-    "counterexample": false,
-    "source": "dual_fast_log"
+    "slack_maxroot": -0.0020599597219898014,
+    "counterexample": false
+  },
+  {
+    "n": 24,
+    "R_target": 1.001,
+    "radius": 1.0,
+    "max_root_mod": 1.000000000000002,
+    "meets_R": false,
+    "slack_maxroot": 1.9984014443252818e-15,
+    "counterexample": false
+  },
+  {
+    "n": 24,
+    "R_target": 1.01,
+    "radius": 1.0054123167494493,
+    "max_root_mod": 1.0108246577148445,
+    "meets_R": false,
+    "slack_maxroot": 0.010824657714844532,
+    "counterexample": false
+  },
+  {
+    "n": 24,
+    "R_target": 1.05,
+    "radius": 1.0456191959410044,
+    "max_root_mod": 1.1100353046769917,
+    "meets_R": false,
+    "slack_maxroot": 0.11003530467699174,
+    "counterexample": false
+  },
+  {
+    "n": 24,
+    "R_target": 1.1,
+    "radius": 1.0958353041198723,
+    "max_root_mod": 1.2019288622577615,
+    "meets_R": false,
+    "slack_maxroot": 0.20192886225776152,
+    "counterexample": false
+  },
+  {
+    "n": 26,
+    "R_target": 1.0001,
+    "radius": 0.997677813247422,
+    "max_root_mod": 0.9977458278239241,
+    "meets_R": false,
+    "slack_maxroot": -0.0022541721760759303,
+    "counterexample": false
+  },
+  {
+    "n": 26,
+    "R_target": 1.001,
+    "radius": 1.0,
+    "max_root_mod": 1.0000000000000016,
+    "meets_R": false,
+    "slack_maxroot": 1.5543122344752192e-15,
+    "counterexample": false
+  },
+  {
+    "n": 26,
+    "R_target": 1.01,
+    "radius": 1.0064509574104494,
+    "max_root_mod": 1.0129019434273903,
+    "meets_R": false,
+    "slack_maxroot": 0.012901943427390261,
+    "counterexample": false
+  },
+  {
+    "n": 26,
+    "R_target": 1.05,
+    "radius": 1.045732177114831,
+    "max_root_mod": 1.105665833911994,
+    "meets_R": false,
+    "slack_maxroot": 0.10566583391199402,
+    "counterexample": false
+  },
+  {
+    "n": 26,
+    "R_target": 1.1,
+    "radius": 1.0945852312269309,
+    "max_root_mod": 1.2186424169172783,
+    "meets_R": false,
+    "slack_maxroot": 0.21864241691727826,
+    "counterexample": false
+  },
+  {
+    "n": 30,
+    "R_target": 1.0001,
+    "radius": 0.9977232737824392,
+    "max_root_mod": 0.9978546733270441,
+    "meets_R": false,
+    "slack_maxroot": -0.0021453266729558607,
+    "counterexample": false
+  },
+  {
+    "n": 30,
+    "R_target": 1.001,
+    "radius": 1.0,
+    "max_root_mod": 1.0000000000000027,
+    "meets_R": false,
+    "slack_maxroot": 2.6645352591003757e-15,
+    "counterexample": false
+  },
+  {
+    "n": 30,
+    "R_target": 1.01,
+    "radius": 1.0052717830882087,
+    "max_root_mod": 1.0105435714033202,
+    "meets_R": false,
+    "slack_maxroot": 0.010543571403320184,
+    "counterexample": false
+  },
+  {
+    "n": 30,
+    "R_target": 1.05,
+    "radius": 1.0473417300949475,
+    "max_root_mod": 1.191800779236559,
+    "meets_R": false,
+    "slack_maxroot": 0.19180077923655903,
+    "counterexample": false
+  },
+  {
+    "n": 30,
+    "R_target": 1.1,
+    "radius": 1.0953828716713798,
+    "max_root_mod": 1.1959095477355273,
+    "meets_R": false,
+    "slack_maxroot": 0.19590954773552727,
+    "counterexample": false
   }
 ]
