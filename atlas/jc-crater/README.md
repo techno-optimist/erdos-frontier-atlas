@@ -53,53 +53,53 @@ machine-checked object**:
                                     37 sourced statements (+8 quarantined)
 ```
 
-| | Status | Count | What it means |
-|:-:|:--|--:|:--|
-| ✕ | **Refuted for all n ≥ 3** | 13 | false in every dimension n ≥ 3 (reached through a per-dimension edge) |
-| ⊘ | **Refuted in some finite dimension** | 15 | false in at least one finite dimension, location unknown (a dimension-blowup reduction) |
-| ○ | **Open** | 3 | untouched — the counterexample says nothing about it |
-| ✓ | **Survives (proven theorem)** | 5 | a proven theorem, still standing |
-| ■ | **Refuted independently, pre-2026** | 1 | already refuted before 2026, by a different mechanism |
+| | | Status | Count | What it means |
+|:-:|:-:|:--|--:|:--|
+| 🟥 | ✕ | **Refuted for all n ≥ 3** | 13 | false in every dimension n ≥ 3 (reached through a per-dimension edge) |
+| 🟧 | ⊘ | **Refuted in some finite dimension** | 15 | false in at least one finite dimension, location unknown (a dimension-blowup reduction) |
+| 🟦 | ○ | **Open** | 3 | untouched — the counterexample says nothing about it |
+| 🟩 | ✓ | **Survives (proven theorem)** | 5 | a proven theorem, still standing |
+| ⬜ | ■ | **Refuted independently, pre-2026** | 1 | already refuted before 2026, by a different mechanism |
 
 ```mermaid
 flowchart RL
-  dixmier_conjecture["Dixmier Conjecture DC_n"]:::alln
-  hom_dixmier_conjecture["Hom-Dixmier Conjecture"]:::alln
-  jacobian_conjecture["Jacobian Conjecture"]:::root
-  jc_over_char0_fields_and_z["Base-field / over-Z reduction of JC"]:::alln
-  jc_tree_vanishing["Tree-vanishing reformulation of JC"]:::alln
-  jedrzejewicz_zielinski_jc_mnk["Jedrzejewicz-Zielinski generalized Jacobian family JC"]:::alln
-  keller_properness_universal["Universal properness of Keller maps"]:::alln
-  nowicki_commutative_basis["Nowicki's commutative-basis characterization"]:::alln
-  picard_vessiot_reformulation["Picard-Vessiot / Wronskian reformulation"]:::alln
-  poisson_conjecture["Poisson Conjecture"]:::alln
-  special_image_conjecture["Special Image Conjecture SIC"]:::alln
-  square_free_preserver["Square-free-preserver reformulation"]:::alln
-  tate_jacobian_conjecture["Tate-Jacobian Conjecture TJC"]:::alln
-  bisi_subtree_shuffle_markov_conjecture["Bisi et al. subtree-shuffling Markov-chain sufficient condition for JC"]:::somedim
-  chamberland_conjecture["Chamberland Conjecture"]:::somedim
-  char_p_strengthenings["Characteristic-p formulations implying char-0 JC"]:::somedim
-  cubic_homogeneous_jc["JC for cubic homogeneous maps"]:::somedim
-  druzkowski_jc["JC for Druzkowski maps"]:::somedim
-  gaussian_moments_conjecture["Gaussian Moments Conjecture GMC"]:::somedim
-  hessian_conjecture["Hessian Conjecture"]:::somedim
-  image_conjecture["Zhao's Image Conjecture"]:::somedim
-  integral_conjecture["Zhao's Integral Conjecture"]:::somedim
-  jelonek_real_jc["Jelonek's Real Jacobian Conjecture"]:::somedim
-  mathieu_conjecture["Mathieu Conjecture"]:::somedim
-  symmetric_jc["JC for symmetric Keller maps"]:::somedim
-  unimodular_conjecture["Unimodular Conjecture"]:::somedim
-  vanishing_conjecture["Zhao's Vanishing Conjecture"]:::somedim
-  yagzhev_engel_capelli["Yagzhev's algebraic formulation"]:::somedim
-  kontsevich_conjecture_weyl["Kontsevich Conjecture"]:::open
-  plane_jacobian_conjecture["Plane Jacobian Conjecture"]:::open
-  symmetric_dependence_problem["Dependence problem for symmetric Jacobians"]:::open
-  ax_grothendieck_theorem["Ax-Grothendieck theorem"]:::theorem
-  bcw_tree_formula["Bass-Connell-Wright tree inversion formula"]:::theorem
-  jc_dimension_padding["Dimension stabilization of Keller counterexamples"]:::theorem
-  wang_degree_two_theorem["Wang's theorem"]:::theorem
-  yu_nonnegative_theorem["Yu's theorem"]:::theorem
-  real_jc_nonvanishing["Strong real Jacobian conjecture"]:::indep
+  dixmier_conjecture["✕ Dixmier Conjecture DC_n"]:::alln
+  hom_dixmier_conjecture["✕ Hom-Dixmier Conjecture"]:::alln
+  jacobian_conjecture[["☢ Jacobian Conjecture — THE ROOT"]]:::root
+  jc_over_char0_fields_and_z["✕ Base-field / over-Z reduction of JC"]:::alln
+  jc_tree_vanishing["✕ Tree-vanishing reformulation of JC"]:::alln
+  jedrzejewicz_zielinski_jc_mnk["✕ Jedrzejewicz-Zielinski generalized Jacobian family JC"]:::alln
+  keller_properness_universal["✕ Universal properness of Keller maps"]:::alln
+  nowicki_commutative_basis["✕ Nowicki's commutative-basis characterization"]:::alln
+  picard_vessiot_reformulation["✕ Picard-Vessiot / Wronskian reformulation"]:::alln
+  poisson_conjecture["✕ Poisson Conjecture"]:::alln
+  special_image_conjecture["✕ Special Image Conjecture SIC"]:::alln
+  square_free_preserver["✕ Square-free-preserver reformulation"]:::alln
+  tate_jacobian_conjecture["✕ Tate-Jacobian Conjecture TJC"]:::alln
+  bisi_subtree_shuffle_markov_conjecture["⊘ Bisi et al. subtree-shuffling Markov-chain sufficient condition for JC"]:::somedim
+  chamberland_conjecture["⊘ Chamberland Conjecture"]:::somedim
+  char_p_strengthenings["⊘ Characteristic-p formulations implying char-0 JC"]:::somedim
+  cubic_homogeneous_jc["⊘ JC for cubic homogeneous maps"]:::somedim
+  druzkowski_jc["⊘ JC for Druzkowski maps"]:::somedim
+  gaussian_moments_conjecture["⊘ Gaussian Moments Conjecture GMC"]:::somedim
+  hessian_conjecture["⊘ Hessian Conjecture"]:::somedim
+  image_conjecture["⊘ Zhao's Image Conjecture"]:::somedim
+  integral_conjecture["⊘ Zhao's Integral Conjecture"]:::somedim
+  jelonek_real_jc["⊘ Jelonek's Real Jacobian Conjecture"]:::somedim
+  mathieu_conjecture["⊘ Mathieu Conjecture"]:::somedim
+  symmetric_jc["⊘ JC for symmetric Keller maps"]:::somedim
+  unimodular_conjecture["⊘ Unimodular Conjecture"]:::somedim
+  vanishing_conjecture["⊘ Zhao's Vanishing Conjecture"]:::somedim
+  yagzhev_engel_capelli["⊘ Yagzhev's algebraic formulation"]:::somedim
+  kontsevich_conjecture_weyl["○ Kontsevich Conjecture"]:::open
+  plane_jacobian_conjecture["○ Plane Jacobian Conjecture"]:::open
+  symmetric_dependence_problem["○ Dependence problem for symmetric Jacobians"]:::open
+  ax_grothendieck_theorem["✓ Ax-Grothendieck theorem"]:::theorem
+  bcw_tree_formula["✓ Bass-Connell-Wright tree inversion formula"]:::theorem
+  jc_dimension_padding["✓ Dimension stabilization of Keller counterexamples"]:::theorem
+  wang_degree_two_theorem["✓ Wang's theorem"]:::theorem
+  yu_nonnegative_theorem["✓ Yu's theorem"]:::theorem
+  real_jc_nonvanishing["■ Strong real Jacobian conjecture"]:::indep
   dixmier_conjecture --> jacobian_conjecture
   jacobian_conjecture -.-> dixmier_conjecture
   cubic_homogeneous_jc -.-> jacobian_conjecture
@@ -129,15 +129,24 @@ flowchart RL
   jc_over_char0_fields_and_z --> jacobian_conjecture
   jedrzejewicz_zielinski_jc_mnk --> jacobian_conjecture
   bisi_subtree_shuffle_markov_conjecture -.-> jacobian_conjecture
-  classDef root fill:#7f1d1d,stroke:#000,color:#fff,stroke-width:3px;
-  classDef alln fill:#dc2626,stroke:#7f1d1d,color:#fff;
-  classDef somedim fill:#ea9010,stroke:#92400e,color:#fff;
-  classDef open fill:#2563eb,stroke:#1e3a8a,color:#fff;
-  classDef theorem fill:#16a34a,stroke:#14532d,color:#fff;
-  classDef indep fill:#6b7280,stroke:#374151,color:#fff;
+  subgraph legend [" "]
+    direction LR
+    LKEY["how to read the arrows — X to Y means X implies Y, so Y falling pulls X down"]:::legendnote
+    LP1["any statement"]:::legendbox -->|"solid: per-dimension — full ∀ n ≥ 3 refutation flows"| LP2["Jacobian Conjecture"]:::legendbox
+    LM1["any statement"]:::legendbox -.->|"dashed: dimension-MIXING — only the weaker some-finite-dim flows"| LM2["Jacobian Conjecture"]:::legendbox
+  end
+  classDef root fill:#450a0a,stroke:#000,color:#fff,stroke-width:4px;
+  classDef legendbox fill:#f5f5f4,stroke:#78716c,color:#1c1917,stroke-dasharray:2 2;
+  classDef legendnote fill:#fffbeb,stroke:#a16207,color:#1c1917;
+  style legend fill:#fffbeb,stroke:#a16207;
+  classDef alln fill:#991b1b,stroke:#450a0a,color:#fff;
+  classDef somedim fill:#f59e0b,stroke:#92400e,color:#1c1917;
+  classDef open fill:#1d4ed8,stroke:#1e3a8a,color:#fff;
+  classDef theorem fill:#15803d,stroke:#14532d,color:#fff;
+  classDef indep fill:#9ca3af,stroke:#4b5563,color:#1c1917;
 ```
 
-**Reading the map.** Colour = computed status (legend above). An arrow `X → Jacobian Conjecture` means *X implies JC*, so JC's fall pulls X down with it. **Solid** arrows are dimension-preserving (the full `for all n ≥ 3` refutation flows); **dashed** arrows are dimension-mixing reductions (only the weaker `in some finite dimension` flows). The lone blue node with no outward arrow — the **plane Jacobian Conjecture (n = 2)** — is the entire surviving frontier: nothing propagates down to it.
+**Reading the map.** Each node carries its status **glyph** as well as its colour, so the map survives greyscale, colour blindness, and being screenshotted away from this legend — colour is never the only signal. ☢ is the root (the certified counterexample); everything else is *computed* from it, never asserted. The lone 🟦 ○ node with no outward arrow — the **plane Jacobian Conjecture (n = 2)** — is the entire surviving frontier: nothing propagates down to it.
 
 <!-- efa:crater-map:end -->
 
