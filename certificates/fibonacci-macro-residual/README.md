@@ -16,10 +16,12 @@ fixed-word no-gos). **Not** an Erdős #142 density bound and **not** a prize cla
 | \(n=4\), \(L=3\), \(S=3\) | **WITNESS** | `verify_n4_l3_macro_witness.py` + `N4_L3_WITNESS.json` |
 | \(n=5\), \(L=3\), \(S=3\) | **NO-GO** (exhaustive) | `verify_n5_l3_s3_routability.py` |
 | \(n=6\), \(L=3\), \(S=3\) | **NO-GO** (exhaustive) | `verify_n6_l3_s3_routability.py` |
+| \(n\ge 7\), any \(L\), \(S=3\) reachable | **NO-GO** (port capacity) | `verify_s3_port_capacity.py` |
 | \(n=5\), \(L=3\), \(S=4\) | sample only (0 routable) | `N5_L3_S4_SAMPLE.json` |
 
 Induction: fixed \((L,S)=(3,3)\) works for \(n=3,4\) on different 3-state clocks
-and **fails** for all \(n\ge 5\) at \(S=3\) (n=5: 0 routable; n=6: 0 outward).
+and **fails** for all \(n\ge 5\) at \(S=3\) (n=5: 0 routable; n=6: 0 outward;
+n≥7: impossible by port capacity — max 7 anchor ports under L≤3 reachability).
 
 ## Replay (stdlib)
 
@@ -28,6 +30,7 @@ python3 -I verify_n3_l3_macro_witness.py      # PASS
 python3 -I verify_n4_l3_macro_witness.py      # PASS
 python3 -I verify_n5_l3_s3_routability.py    # NO_N5_L3_S3 (~15s)
 python3 -I verify_n6_l3_s3_routability.py    # NO_N6_L3_S3 (~1s)
+python3 -I verify_s3_port_capacity.py        # n>=7 port no-go
 ```
 
 ## Claim boundary

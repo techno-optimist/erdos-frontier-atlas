@@ -53,12 +53,13 @@
     {"cell": "n=4 L=3 S=3", "verdict": "WITNESS"},
     {"cell": "n=5 L=3 S=3", "verdict": "NO-GO (0 routable / 19683 clocks)"},
     {"cell": "n=6 L=3 S=3", "verdict": "NO-GO (0 outward / 24 ge_tags)"},
+    {"cell": "n>=7 any L at S=3 (reachable)", "verdict": "NO-GO (port capacity: max 7 ports)"},
     {"cell": "n=5 L=3 S=4", "verdict": "NO_ROUTABLE_IN_SAMPLE (3000 clocks; not exhaustive)"}
   ],
   "open_loopholes": [
     "n=5 L=3 S>=4 exhaustive (sample: 0 routable / 48 outward among 3000 clocks)",
     "n=5 L>=4",
-    "all-n inductive proof for L=3 (n=3,4 yes; n>=5 no at S=3)",
+    "structural all-n for L=3 S=3 (n=3,4 yes; n=5,6 no; n>=7 port no-go)",
     "non-common-anchor architectures",
     "Erdős 142 density consequences"
   ],

@@ -11,6 +11,7 @@ Date: 2026-07-20
 | 4 | 5 | 5 | — | **witness** | — |
 | 5 | 6 | 8 | — | **no-go** (0 routable) | sample: 0 routable / 3000 |
 | 6 | 7 | 13 | — | **no-go** (0 outward) | — |
+| ≥7 | ≥8 | … | — | **no-go** (port cap ≤7) | — |
 
 ## Observations
 
