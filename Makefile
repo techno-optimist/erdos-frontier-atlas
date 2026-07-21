@@ -47,3 +47,14 @@ verify-certs:
 
 test:
 	python3 -m pytest tests/ -q
+
+# Receipt-drift gate. Slower (~4 min: replays every certificate verify*/check*
+# script, incl. fk-square ~2 min) so it is NOT in `test`. Fails if a committed
+# receipt disagrees with its own verifier -- the "verifier overwrites its
+# receipt on replay" defect the fast checks cannot see. Run before merging any
+# change under certificates/. Coverage is PARTIAL: it can only re-derive
+# receipts a verifier actually produces (it prints a coverage line, and names
+# lanes with receipts but no verifier). Green here means "no receipt on a
+# checked lane disagrees with its code", not "every receipt is certified".
+check-receipts:
+	python3 tools/check_receipt_drift.py --all
