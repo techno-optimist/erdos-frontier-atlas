@@ -1,0 +1,12 @@
+{
+  "claim_boundary": "Exact fiber counts for rational points on V(E) with rational y-roots fully factored. Points whose G1 has irreducible quadratic/cubic y-factor are flagged incomplete. Not a familywise no-go.",
+  "histogram": {
+    "0": 4,
+    "1": 95
+  },
+  "incomplete_y_factorizations": 0,
+  "points_tested": 99,
+  "schema": "jc.fiber_size2_exact.v1",
+  "size2_hits": [],
+  "status": "NO_SIZE_2_IN_EXACT_PROBE"
+}

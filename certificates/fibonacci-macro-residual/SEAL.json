@@ -1,0 +1,80 @@
+{
+  "schema": "lead.global_macro_residual.seal.v2",
+  "date": "2026-07-20",
+  "title": "Full residual macro chest: n=3 L=2 impossible; n=3 L=3 exists",
+  "status": "SEALED",
+  "treasure": {
+    "negative_L2_n3": {
+      "claim": "No common-anchor split-weight length-two Parikh-balanced Fibonacci macro exists for n=3 on any deterministic ternary clock",
+      "theorem": "THEOREM_N3_L2_ALL_S_NO_GO.md",
+      "layers": {
+        "A_clock_census_S_le_4": {
+          "S2_routable": 0,
+          "S3_routable": 52,
+          "S3_lp_feasible": 0,
+          "S4_clocks": 16777216,
+          "S4_routable": 2112,
+          "S4_lp_feasible": 0
+        },
+        "B_mip_mid_image_and_free_tags": {
+          "mid_012_K5": "11/11 digit patterns INFEAS",
+          "mid_012_K8": "11/11 digit patterns INFEAS",
+          "mid_123_K8": "11/11 digit patterns INFEAS",
+          "mid_size_1_and_2_K8": "ALL_INFEAS_SMALL_MID"
+        }
+      },
+      "artifacts": [
+        "N3_L2_S2_EXHAUSTIVE_RESULT.json",
+        "N3_L2_S3_EXHAUSTIVE_RESULT.json",
+        "N3_L2_S3_CONE_RESULT.json",
+        "N3_L2_S4_FAST_RESULT.json",
+        "N3_L2_FREE_TAGS_MIP_RESULT.json",
+        "N3_L2_MID123_RESULT.json",
+        "N3_L2_SMALL_MID_RESULT.json"
+      ]
+    },
+    "positive_L3_n3": {
+      "claim": "Exact n=3 length-three split-weight common-anchor Parikh-balanced macro on a 3-state clock",
+      "theorem": "THEOREM_N3_L3_SPLIT_MACRO_WITNESS.md",
+      "verifier": "verify_n3_l3_macro_witness.py",
+      "result": "N3_L3_MACRO_WITNESS_RESULT.json",
+      "status_line": "PASS_N3_L3_SPLIT_MACRO_WITNESS",
+      "census": "S=2: 0 LP hits; S=3: 972 LP-feasible cells among 2244 routable"
+    },
+    "positive_L3_n4": {
+      "claim": "Exact n=4 length-three split-weight common-anchor Parikh-balanced macro on a 3-state clock",
+      "theorem": "THEOREM_N4_L3_SPLIT_MACRO_WITNESS.md",
+      "verifier": "verify_n4_l3_macro_witness.py",
+      "witness": "N4_L3_WITNESS.json",
+      "result": "N4_L3_MACRO_WITNESS_RESULT.json",
+      "status_line": "PASS_N4_L3_SPLIT_MACRO_WITNESS"
+    },
+    "prior": {
+      "n2_L2_witness": "exists",
+      "one_edge_all_n": "no-go",
+      "fixed_word_n_ge_3": "no-go"
+    }
+  },
+  "scoreboard": [
+    {"cell": "one-edge any n", "verdict": "NO-GO"},
+    {"cell": "fixed-word n>=3", "verdict": "NO-GO"},
+    {"cell": "n=2 L=2 split", "verdict": "WITNESS"},
+    {"cell": "n=3 L=2 any S", "verdict": "NO-GO"},
+    {"cell": "n=3 L=3 S=3", "verdict": "WITNESS"},
+    {"cell": "n=3 L=3 S=2", "verdict": "NO (0 LP)"},
+    {"cell": "n=4 L=3 S=3", "verdict": "WITNESS"},
+    {"cell": "n=5 L=3 S=3", "verdict": "NO-GO (0 routable / 19683 clocks)"}
+  ],
+  "open_loopholes": [
+    "n=5 L=3 S>=4 or L>=4 (S=4 sample incomplete this session)",
+    "all-n inductive proof for L=3 (n=3,4 yes; n=5 no at S=3)",
+    "n=6 L=3 S=3 full census (smoke: 0 routable in first 3000 clocks)",
+    "non-common-anchor architectures",
+    "Erdős 142 density consequences"
+  ],
+  "session_extras": {
+    "n6_l3_s3_smoke": "N6_L3_S3_SMOKE.json",
+    "pure_python_n5_verifier": "verify_n5_l3_s3_routability.py"
+  },
+  "claim_boundary": "Finite machine objects for the common-anchor split-integral deterministic ternary macro model. Not an Erdős 142 solution."
+}

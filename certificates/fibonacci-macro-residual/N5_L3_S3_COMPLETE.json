@@ -1,0 +1,13 @@
+{
+  "claim_boundary": "Exhaustive n=5 L=3 on all 3-state clocks with all states L<=3 reachable. Pure-Python routability census; 0 routable => no common-anchor split macro at S=3 (LP vacuous).",
+  "elapsed_sec": 12.611,
+  "lp_hit_count": 0,
+  "schema": "lead.n5_l3_s3_complete.v1",
+  "stats": {
+    "clocks": 19683,
+    "ge_tags": 282,
+    "outward": 864,
+    "reachable": 15930
+  },
+  "status": "NO_N5_L3_S3"
+}
