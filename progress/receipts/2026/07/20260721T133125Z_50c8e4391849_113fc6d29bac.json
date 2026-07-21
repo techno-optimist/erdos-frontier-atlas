@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:113fc6d29bac79667b1abad721ec35e654e67e83afc96e294e857fd0621449ae",
+  "content_digest": "sha256:d2e594f3b0d4cfd16a7b96bdf9025c8d14d3b878e504f4869466246bd0a35bb9",
+  "occurred_at": "2026-07-21T13:31:25Z",
+  "frontier": "Smallest N that is a sum of three prime cubes in exactly 6 ways (OEIS A385316 a(6)). Current proven lower bound: a(6) > 4.99×10¹¹. Search at C=10¹³ requires DGX SSH access unavailable locally.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nCopied the verified prime_cubes_verifier_a385316.py artifact from prior session and executed a clean no-argument replay at C=1.1×10¹⁰ to produce complete domain and predicate kill-fixture summaries required by the rejected receipt.",
+  "verified": "Domain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nArtifact: prime_cubes_verifier_a385316.py, SHA-256: ba8e17a0efe636a63e5a77008e1a21078969c9e3ad48e6b94bef859add1e4fd3\nAll five known OEIS terms reproduce exactly at multiplicity=1..5. No k=6 candidate exists below 1.1×10¹⁰.",
+  "result": "Clean verifier replay succeeds — complete Domain/Predicate kill-fixture summaries now present for publication. The DGX-dependent search at C=10¹³ remains blocked: no SSH to spark-38e3.local from this Mac. The operator-authorized next gate (DGX execution) cannot be fulfilled locally.",
+  "next_gate": "An operator with DGX SSH access must execute `python3 prime_cubes_search_1e13.py --cutoff 10000000000000` on spark-38e3.local. If no k=6 candidate found at C=1e13, advance to C=1e14 or consider heuristic/construction approaches.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-21_06-31-25.md",
+    "sha256": "14d8883069c675f7f86d946b85ddceb542c64b938ff494e2c6b3bff44b55c768"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}
