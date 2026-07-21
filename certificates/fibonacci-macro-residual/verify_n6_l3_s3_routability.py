@@ -185,6 +185,13 @@ def main():
     out = {
         "schema": "lead.n6_l3_s3_complete.v1",
         "status": status,
+        # Identify the cell this receipt is about. These were present in the
+        # committed receipt but had dropped out of the emitted dict, so replay
+        # silently rewrote the receipt into a different shape -- the drift the
+        # receipt-drift gate now catches. A receipt must name its own subject.
+        "n": 6,
+        "L": 3,
+        "S": 3,
         "elapsed_sec": round(time.time() - t0, 3),
         "stats": dict(stats),
         "n_columns": len(COLUMNS),

@@ -54,7 +54,10 @@ COSMETIC_KEYS = {
     "timestamp", "generated", "generated_at", "created_at", "date", "ran_at",
     "wall_sec", "seconds",
 }
-PER_SCRIPT_TIMEOUT = 120
+# fk-square/verify.py legitimately runs ~2min (exhaustive D(1..9) recompute);
+# a 120s budget made it permanently INCONCLUSIVE, i.e. a lane that can never
+# be green. Budget must exceed the slowest honest verifier.
+PER_SCRIPT_TIMEOUT = 420
 
 
 def sh(args, cwd=None):
