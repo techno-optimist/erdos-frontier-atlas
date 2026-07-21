@@ -1,0 +1,86 @@
+{
+  "anchors": [
+    {
+      "expected": 1,
+      "fiber_fx": 1,
+      "ok": true,
+      "t": [
+        "1",
+        "4",
+        "0"
+      ]
+    },
+    {
+      "expected": 1,
+      "fiber_fx": 1,
+      "ok": true,
+      "t": [
+        "2",
+        "5",
+        "1/4"
+      ]
+    },
+    {
+      "expected": 1,
+      "fiber_fx": 1,
+      "ok": true,
+      "t": [
+        "-16/27",
+        "0",
+        "1"
+      ]
+    },
+    {
+      "expected": 1,
+      "fiber_fx": 1,
+      "ok": true,
+      "t": [
+        "0",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "expected": 0,
+      "fiber_fx": 0,
+      "ok": true,
+      "t": [
+        "3",
+        "6",
+        "2/9"
+      ]
+    },
+    {
+      "expected": 1,
+      "fiber_fx": 1,
+      "ok": true,
+      "t": [
+        "0",
+        "0",
+        "5"
+      ]
+    }
+  ],
+  "parametric": {
+    "fails_head": [],
+    "hist": {
+      "1": 3384
+    },
+    "points": 3384,
+    "size2": [],
+    "which": {
+      "simple_only": 3384
+    }
+  },
+  "r12_identity": {
+    "fail": 0,
+    "ok": 140608
+  },
+  "schema": "jc.fiber_no_size2_ve_core.v1",
+  "status": "OK",
+  "theorem": "Double root of G1 never lifts on V(E) (R12 identity + u=0 obstruction); Phi_x forces unique x on V(E)\\\\gamma; hence fiber size \u2208 {0,1} on V(E). Size-2 impossible. Spectrum {0,1,3}.",
+  "u0_obstruction": {
+    "fail": 0,
+    "ok": 446
+  }
+}

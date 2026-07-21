@@ -1,0 +1,47 @@
+{
+  "schema": "jc.fiber_size2_push.v1",
+  "status": "NO_SIZE_2",
+  "size2_hits": [],
+  "summary": {
+    "structural_fence": "Double root of G1 never lifts on V(E) (R12 identity); Phi_x forces unique x off γ → fiber ∈ {0,1} on V(E). Size-2 ruled out structurally (conditional on anatomy annihilators).",
+    "prior_max_rational_sample": 631,
+    "prior_size2_hits": 0,
+    "leftover_quad_rational_VE": "empty / impossible (disc=0 + gcd over Q)",
+    "two_y_soft_upgrade": "always at most one lifts because double never lifts"
+  },
+  "prior_samples_consolidated": {
+    "FIBER_SIZE2_EXACT_V2": {"points": 249, "hist": {"0": 10, "1": 239}},
+    "FIBER_PARAM_DENSE": {"points": 467, "hist": {"0": 10, "1": 457}, "two_y": {"0+1": 218, "1+0": 228}},
+    "FIBER_TWO_Y_CONJECTURE": {"points": 631, "hist": {"0": 12, "1": 619}, "two_y": {"0+1": 299, "1+0": 309}},
+    "FIBER_Q0_SLICE": {"points": 276, "hist": {"0": 10, "1": 266}},
+    "FIBER_T2_ZERO": {"points": 171, "hist": {"1": 171}},
+    "FIBER_SIZE2_SHAPE": {"points": 205, "hist": {"0": 10, "1": 195}, "shapes": {"rat_y=1,leftover=0": 21, "rat_y=2,leftover=0": 184}}
+  },
+  "shape_classification_notes": {
+    "on_rational_VE": ["triple (cusp or t1=t2=0)", "double+simple (both rational)"],
+    "impossible_on_rational_VE": ["rat_y=1,leftover=2", "rat_y=0,leftover=2"],
+    "fiber_by_shape_observed": {
+      "triple_cusp": 0,
+      "triple_t1_t2_0": 1,
+      "double+simple": 1,
+      "size2_any_shape": 0
+    }
+  },
+  "soft_lemma_two_y_at_most_one_lifts": {
+    "status": "STRUCTURAL",
+    "statement": "If G1 has two distinct roots a (multiple) and b (simple) on V(E), then a never lifts; at most b lifts once under forced x*.",
+    "sample_support_prior": 631,
+    "note": "See THEOREM_FIBER_NO_SIZE2_ON_VE.md"
+  },
+  "claim_boundary": "Push consolidates prior rational samples (no size-2) with a structural non-lifting argument. Full automated expansion via probe_fiber_size2_push.py / probe_fiber_no_size2_ve.py on replay. Does not auto-update jc-fiber-count-spectrum-size ledger. Conditional on anatomy.",
+  "artifacts": {
+    "theorem": "THEOREM_FIBER_NO_SIZE2_ON_VE.md",
+    "core_json": "FIBER_NO_SIZE2_VE_CORE.json",
+    "probes": [
+      "probe_fiber_no_size2_ve.py",
+      "probe_fiber_size2_push.py",
+      "probe_fiber_two_y_lemma.py",
+      "_tiny_run_core.py"
+    ]
+  }
+}

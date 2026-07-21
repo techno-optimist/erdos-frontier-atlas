@@ -1,0 +1,31 @@
+{
+  "schema": "jc.fiber_two_y_lemma.v1",
+  "status": "NO_SIZE_2_STRUCTURAL",
+  "size2_hits": [],
+  "soft_lemma": {
+    "statement": "If t ∈ V(E) and G1(t;y)=2(y-a)^2(y-b) with a≠b, then a never lifts under F; at most b lifts (once, via forced x* off γ).",
+    "status": "STRUCTURAL_NONLIFTING_OF_DOUBLE",
+    "proof_sketch": [
+      "t1=a(t2-a)/3 from G1'=0",
+      "R12 residual at y=a equals (1+a x)^2 (a-t2) up to units — independent of free z",
+      "if a≠t2 and 1+a x≠0: R12≠0",
+      "if x=-1/a: b1=-t1; t1≠0 ⇒ no z",
+      "Phi_x forces unique x* on V(E)\\γ so even if simple lifts, total fiber ≤1"
+    ],
+    "prior_sample_support": {
+      "FIBER_TWO_Y_CONJECTURE": 631,
+      "patterns_only": ["0+1", "1+0"],
+      "never": ["1+1", "2+0", "0+2"]
+    }
+  },
+  "hand_checked_points": [
+    {"t": ["1", "4", "0"], "a": "1", "b": "4", "which": "simple_only"},
+    {"t": ["2", "5", "1/4"], "a": "2", "b": "7/2", "which": "simple_only"},
+    {"t": ["1", "4", "8/27"], "a": "3", "b": "0", "which": "simple_only"},
+    {"t": ["0", "1", "1"], "a": "1", "b": "-1/2", "which": "simple_only"},
+    {"t": ["0", "2", "1/2"], "a": "2", "b": "-1", "which": "simple_only"},
+    {"t": ["3", "6", "2/9"], "which": "cusp_neither", "fiber": 0}
+  ],
+  "claim_boundary": "Structural upgrade of observational two-y soft conjecture. Replay probe_fiber_two_y_lemma.py for dense parametric grid. Not a ledger auto-close.",
+  "replay": "python3 -I probe_fiber_two_y_lemma.py"
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "jc.fiber_no_size2_ve.v1",
+  "status": "NO_SIZE_2",
+  "size2_hits": [],
+  "note": "Full automated grid deferred to replay of probe_fiber_no_size2_ve.py. Core hand-verified results live in FIBER_NO_SIZE2_VE_CORE.json. Structural argument in THEOREM_FIBER_NO_SIZE2_ON_VE.md.",
+  "core_artifact": "FIBER_NO_SIZE2_VE_CORE.json",
+  "theorem_sketch": {
+    "statement": "On V(E), #F^{-1}(t) ∈ {0,1} for every complex t. Size-2 does not occur. Spectrum = {0,1,3}.",
+    "status": "PROPOSED_STRUCTURAL_FENCE",
+    "human_steps": [
+      "disc_Y(G1)=-2916 t1^2 E (anatomy)",
+      "Phi_x annihilator (anatomy); reduces on E=0 to linear or empty",
+      "R12 identity at double root: residual = a-t2 independent of x",
+      "u=0 obstruction: b1=-t1 when t1≠0",
+      "case t1=t2=0: triple root, unique x, fiber≤1"
+    ]
+  },
+  "prior_sample_size2_hits": 0,
+  "prior_max_points": 631,
+  "spectrum_implication": {
+    "bracket_note": "If human case-split accepted, jc-fiber-count-spectrum-size closes to 3. This package does NOT auto-update the ledger."
+  },
+  "claim_boundary": "Conditional on jc-anatomy annihilators. Does not mint DOI.",
+  "replay": "python3 -I probe_fiber_no_size2_ve.py"
+}
