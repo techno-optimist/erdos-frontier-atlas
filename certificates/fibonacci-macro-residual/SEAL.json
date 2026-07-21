@@ -1,51 +1,9 @@
 {
-  "schema": "lead.global_macro_residual.seal.v3",
+  "schema": "lead.global_macro_residual.seal.v4",
   "date": "2026-07-20",
-  "title": "L=3 residual: witnesses n=3,4 (S=3) and n=5 (S=4); no-gos elsewhere at S=3",
+  "title": "L=3 residual: witnesses n=3,4@S=3 and n=5@S=4; n=6 blocked through S=4",
   "status": "SEALED",
-  "treasure": {
-    "positive_L3_n3_s3": {
-      "verifier": "verify_n3_l3_macro_witness.py",
-      "status_line": "PASS_N3_L3_SPLIT_MACRO_WITNESS"
-    },
-    "positive_L3_n4_s3": {
-      "verifier": "verify_n4_l3_macro_witness.py",
-      "status_line": "PASS_N4_L3_SPLIT_MACRO_WITNESS"
-    },
-    "positive_L3_n5_s4": {
-      "claim": "Exact n=5 L=3 S=4 common-anchor split-weight Parikh-balanced macro",
-      "theorem": "THEOREM_N5_L3_S4_SPLIT_MACRO_WITNESS.md",
-      "verifier": "verify_n5_l3_s4_macro_witness.py",
-      "witness": "N5_L3_S4_WITNESS.json",
-      "result": "N5_L3_S4_MACRO_WITNESS_RESULT.json",
-      "status_line": "PASS_N5_L3_S4_SPLIT_MACRO_WITNESS"
-    },
-    "negative_L3_n5_s3": {
-      "theorem": "THEOREM_N5_L3_S3_NO_GO.md",
-      "status_line": "NO_N5_L3_S3"
-    },
-    "negative_L4_n5_s3": {
-      "theorem": "THEOREM_N5_L4_S3_NO_GO.md",
-      "status_line": "NO_N5_L4_S3"
-    },
-    "negative_L5_n5_s3": {
-      "theorem": "THEOREM_N5_L5_S3_NO_GO.md",
-      "status_line": "NO_N5_L5_S3"
-    },
-    "negative_L3_n6_s3": {
-      "theorem": "THEOREM_N6_L3_S3_NO_GO.md",
-      "status_line": "NO_N6_L3_S3"
-    },
-    "negative_n_ge_7_s3_ports": {
-      "theorem": "THEOREM_N_GE_7_S3_PORT_CAPACITY.md",
-      "status_line": "N_GE_7_S3_REACHABLE_PORT_CAPACITY_NO_GO"
-    },
-    "negative_L2_n3": {
-      "theorem": "THEOREM_N3_L2_ALL_S_NO_GO.md"
-    }
-  },
   "scoreboard": [
-    {"cell": "n=3 L=2 any S", "verdict": "NO-GO"},
     {"cell": "n=3 L=3 S=3", "verdict": "WITNESS"},
     {"cell": "n=4 L=3 S=3", "verdict": "WITNESS"},
     {"cell": "n=5 L=3 S=3", "verdict": "NO-GO"},
@@ -53,11 +11,14 @@
     {"cell": "n=5 L=5 S=3", "verdict": "NO-GO"},
     {"cell": "n=5 L=3 S=4", "verdict": "WITNESS"},
     {"cell": "n=6 L=3 S=3", "verdict": "NO-GO"},
-    {"cell": "n>=7 any L at S=3 reachable", "verdict": "NO-GO (port capacity)"}
+    {"cell": "n=6 L=3 S=4", "verdict": "NO-GO (72 routable, 0 LP)"},
+    {"cell": "n>=7 S=3 reachable", "verdict": "NO-GO (port cap 7)"},
+    {"cell": "n>=9 S=4 reachable", "verdict": "NO-GO (port cap 9)"}
   ],
   "open_loopholes": [
-    "n=6 L=3 S=4 (or higher)",
-    "all-n inductive architecture (S may need to grow with n)",
+    "n=6 L=3 S>=5 or L>=4",
+    "n=7,8 at S=4 (ports exist; no census yet)",
+    "structural S >= f(n) lower bound",
     "non-common-anchor models",
     "Erdős 142 density consequences"
   ],

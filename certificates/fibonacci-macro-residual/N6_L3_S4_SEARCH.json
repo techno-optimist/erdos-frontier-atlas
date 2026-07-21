@@ -1,0 +1,18 @@
+{
+  "claim_boundary": "n=6 L=3 S=4 common-anchor hunt. FOUND_INTEGER is a witness; FOUND_ROUTABLE without integer is partial.",
+  "digit_patterns": 23,
+  "elapsed_sec": 580.273,
+  "first_routable_idx": 405698,
+  "schema": "lead.n6_l3_s4_search.v1",
+  "stats": {
+    "clocks": 16777216,
+    "ge_tags": 66156,
+    "lp_infeas": 72,
+    "outward": 829440,
+    "reachable": 12768384,
+    "routable": 72,
+    "route_enum": 72
+  },
+  "status": "NO_N6_L3_S4",
+  "total_clocks": 16777216
+}

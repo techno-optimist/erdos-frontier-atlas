@@ -1,0 +1,20 @@
+{
+  "claim_boundary": "Dense rational sample; not familywise. Soft conjecture is observational.",
+  "histogram_fiber": {
+    "0": 10,
+    "1": 457
+  },
+  "incomplete_y_factorizations": 0,
+  "observation": "Among points with exactly two distinct rational y-roots of G1, the lift pattern and fiber size are recorded. Soft conjecture: pattern is always 1+0 (one y lifts once, the other never), never 1+1.",
+  "points_tested": 467,
+  "schema": "jc.fiber_param_slice.v1",
+  "size2_hits": [],
+  "status": "NO_SIZE_2_IN_DENSE_SAMPLE",
+  "two_rational_y_fiber_hist": {
+    "1": 446
+  },
+  "two_y_lift_patterns": {
+    "0+1": 218,
+    "1+0": 228
+  }
+}

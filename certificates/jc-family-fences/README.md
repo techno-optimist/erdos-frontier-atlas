@@ -22,9 +22,10 @@ certificates.
 | Q=0 dense | 276 | {0:10, 1:266} | 0 |
 | t2=0 slice | 171 | {1:171} | 0 |
 | y-shape sample | 205 | {0:10, 1:195} | 0 |
+| dense param | 467 | {0:10, 1:457} | 0 |
 
-Shape note: whenever G1 has 2 distinct rational y-roots (184 pts), fiber size
-was always 1 — never 2.
+Shape note: whenever G1 has 2 distinct rational y-roots (446 dense pts),
+fiber size was always 1 with lift pattern `1+0` or `0+1` — never `1+1`.
 
 ### Degree family fences
 
