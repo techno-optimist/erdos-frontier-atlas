@@ -45,6 +45,17 @@ is not proper) is exactly this quartic hypersurface. Over `C³ ∖ V(E)` the map
 is proper and étale, hence an **unbranched 3-sheeted covering**; over every
 point of `V(E)` at least one preimage has escaped to infinity.
 
+> **Scope correction (2026-07-21).** The sheet count is machine-certified by
+> `fiber_count_generic.py` only where `9·t₁·t₂·Q ≠ 0` — it does **not** separately
+> cover the planes `{t₁ = 0}` and `{t₂ = 0}`, which lie inside `C³ ∖ V(E)`. The
+> statement above is nevertheless correct, but it consumes two steps that are
+> **prose, not certificate**: (i) `Q` is irreducible, so `C³ ∖ V(E)` is connected;
+> and (ii) a proper étale map over a connected base is a covering of *constant*
+> degree, so the certified degree 3 propagates to the planes. Step (i) has since
+> been machine-certified in round-4 work (not yet shipped here); step (ii) is
+> classical. Recorded because the original text read as though the certificate
+> alone established it, and it did not.
+
 **Only `x` escapes.** `y` and `z` satisfy cubics over `C[t]` with *constant*
 leading coefficients (2 and 8), while an annihilator of `x`
 
