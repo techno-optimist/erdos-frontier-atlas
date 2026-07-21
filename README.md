@@ -93,6 +93,17 @@ this board exists to record. Each row must point at a **replayable** certificate
 narrow enough for a referee to check without trusting us. This is the
 at-a-glance index into that evidence.
 
+## Formal spine pins
+
+The atlas records external Lean work in [`atlas/lean_lane.json`](atlas/lean_lane.json)
+without changing the canonical status of an Erdős problem. The registry pins a
+complete finite classification for **#593** and a deliberately partial checkpoint
+for **#625**, with exact entrypoints, toolchains, replay commands, attribution,
+and trust boundaries. In particular, the #593 record credits Eric Li's
+contemporaneous broader preprint as related work rather than treating it as a
+premise of the pinned formalization; the #625 record explicitly does not claim
+`Erdos625Statement`.
+
 **The records lane.** Beyond single-problem certificates, the frontier is
 systematically mapped: ~81 of the gap map's quantities have a witness-improvable
 side a single submitted construction can move. Most open problems can't be
