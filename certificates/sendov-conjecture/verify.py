@@ -318,6 +318,23 @@ def main() -> int:
         print("leg10 wave3_all.json: MISSING FAIL")
         ok = False
 
+    # Leg 11 — squeeze_heavy.json: delta=0 => r=1; no CE
+    sh = load_json("squeeze_heavy.json")
+    if sh is not None:
+        ces = [r for r in sh if r.get("counterexample")]
+        d0 = [r for r in sh if abs(float(r.get("delta", -1))) < 1e-15]
+        d0_ok = all(abs(float(r.get("radius", 0)) - 1.0) < 1e-9 for r in d0) and len(d0) >= 3
+        leg = len(ces) == 0 and d0_ok
+        status = "PASS" if leg else "FAIL"
+        print(
+            f"leg11 squeeze_heavy.json: rows={len(sh)} ces={len(ces)} "
+            f"delta0_all_r1={d0_ok} {status}"
+        )
+        ok &= leg
+    else:
+        print("leg11 squeeze_heavy.json: MISSING FAIL")
+        ok = False
+
     print()
     print("ALL PASS" if ok else "FAILURES PRESENT")
     return 0 if ok else 1

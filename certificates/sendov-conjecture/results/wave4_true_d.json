@@ -1,0 +1,68 @@
+[
+  {
+    "n": 9,
+    "beta": 1.0,
+    "radius_beta": 1.0,
+    "d_true": 1.0000000000000004,
+    "max_root_mod": 1.0000000000000004,
+    "feasible": true,
+    "counterexample": false,
+    "source": "lbfgs_0",
+    "time_s": 55.567269802093506
+  },
+  {
+    "n": 10,
+    "beta": 1.0,
+    "radius_beta": 1.0,
+    "d_true": 1.0,
+    "max_root_mod": 1.0,
+    "feasible": true,
+    "counterexample": false,
+    "source": "lbfgs_0",
+    "time_s": 52.62144136428833
+  },
+  {
+    "n": 11,
+    "beta": 1.0,
+    "radius_beta": 1.0,
+    "d_true": 1.000000000000001,
+    "max_root_mod": 1.000000000000001,
+    "feasible": true,
+    "counterexample": false,
+    "source": "lbfgs_0",
+    "time_s": 53.071298360824585
+  },
+  {
+    "n": 12,
+    "beta": 1.0,
+    "radius_beta": 1.0,
+    "d_true": 1.0000000000000007,
+    "max_root_mod": 1.0000000000000007,
+    "feasible": true,
+    "counterexample": false,
+    "source": "lbfgs_0",
+    "time_s": 59.1143057346344
+  },
+  {
+    "n": 15,
+    "beta": 1.0,
+    "radius_beta": 1.0,
+    "d_true": 1.0000000000000009,
+    "max_root_mod": 1.0000000000000009,
+    "feasible": true,
+    "counterexample": false,
+    "source": "lbfgs_0",
+    "time_s": 115.69294238090515
+  },
+  {
+    "n": 20,
+    "beta": 1.0,
+    "radius_beta": 1.0,
+    "d_true": 1.000000000000001,
+    "max_root_mod": 1.000000000000001,
+    "feasible": true,
+    "counterexample": false,
+    "source": "lbfgs_0",
+    "time_s": 289.1011276245117
+  }
+]

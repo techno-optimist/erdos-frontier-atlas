@@ -45,6 +45,14 @@
     {
       "id": "wave3",
       "result": "free complex beta penalty n=9..20 all r=1; dual R>1 always maxroot>1 when r>1; CE=0"
+    },
+    {
+      "id": "squeeze_heavy",
+      "result": "n=9,10,12,15 heavier starts: delta=0 => r=1; delta>0 => r<1; CE=0"
+    },
+    {
+      "id": "wave4_true_d",
+      "result": "true d(f) maximin n=9..20 hits d=1 only; CE=0"
     }
   ],
   "atlas_clues": [
