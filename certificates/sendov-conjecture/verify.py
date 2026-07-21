@@ -335,6 +335,43 @@ def main() -> int:
         print("leg11 squeeze_heavy.json: MISSING FAIL")
         ok = False
 
+    # Leg 12 — dual_fast_all.json: CE-free; no r>1 with maxroot<=1
+    dfa = load_json("dual_fast_all.json")
+    if dfa is not None:
+        ces = [r for r in dfa if r.get("counterexample")]
+        bad = [
+            r
+            for r in dfa
+            if float(r.get("radius", 0)) > 1 + 1e-8
+            and float(r.get("max_root_mod", 99)) <= 1 + 1e-8
+        ]
+        leg = len(ces) == 0 and len(bad) == 0 and len(dfa) >= 20
+        status = "PASS" if leg else "FAIL"
+        print(
+            f"leg12 dual_fast_all.json: rows={len(dfa)} ces={len(ces)} "
+            f"bad={len(bad)} {status}"
+        )
+        ok &= leg
+    else:
+        print("leg12 dual_fast_all.json: MISSING FAIL")
+        ok = False
+
+    # Leg 13 — deep_best_per_n.json: all scores <=1, no CE
+    db = load_json("deep_best_per_n.json")
+    if db is not None:
+        ces = [r for r in db if r.get("counterexample")]
+        over = [r for r in db if float(r.get("score", 0)) > 1 + 1e-6]
+        leg = len(ces) == 0 and len(over) == 0 and len(db) >= 5
+        status = "PASS" if leg else "FAIL"
+        print(
+            f"leg13 deep_best_per_n.json: rows={len(db)} ces={len(ces)} "
+            f"over1={len(over)} {status}"
+        )
+        ok &= leg
+    else:
+        print("leg13 deep_best_per_n.json: MISSING FAIL")
+        ok = False
+
     print()
     print("ALL PASS" if ok else "FAILURES PRESENT")
     return 0 if ok else 1

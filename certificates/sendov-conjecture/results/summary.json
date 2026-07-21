@@ -53,6 +53,14 @@
     {
       "id": "wave4_true_d",
       "result": "true d(f) maximin n=9..20 hits d=1 only; CE=0"
+    },
+    {
+      "id": "dual_fast_all",
+      "result": "dual_fast n=9..16: no CE; r>1 always has maxroot>1 (39 rows)"
+    },
+    {
+      "id": "deep_multi_lane",
+      "result": "deep multi-lane through n=16: best feasible score=1.0 (unity) every n; CE=0"
     }
   ],
   "atlas_clues": [

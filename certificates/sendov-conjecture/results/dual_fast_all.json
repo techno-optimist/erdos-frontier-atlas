@@ -1,0 +1,392 @@
+[
+  {
+    "n": 9,
+    "R_target": 1.0001,
+    "radius": 0.9971498441,
+    "max_root_mod": 0.9975313704,
+    "meets_R": false,
+    "slack": -0.002469,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 9,
+    "R_target": 1.001,
+    "radius": 1.0,
+    "max_root_mod": 1.0,
+    "meets_R": false,
+    "slack": 0.0,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 9,
+    "R_target": 1.01,
+    "radius": 1.0054580834,
+    "max_root_mod": 1.0107111154,
+    "meets_R": false,
+    "slack": 0.010711,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 9,
+    "R_target": 1.05,
+    "radius": 1.0470151112,
+    "max_root_mod": 1.0764684532,
+    "meets_R": false,
+    "slack": 0.076468,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 9,
+    "R_target": 1.1,
+    "radius": 1.0967863863,
+    "max_root_mod": 1.1481076364,
+    "meets_R": false,
+    "slack": 0.148108,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 10,
+    "R_target": 1.0001,
+    "radius": 0.9967906045,
+    "max_root_mod": 0.9972149599,
+    "meets_R": false,
+    "slack": -0.002785,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 10,
+    "R_target": 1.001,
+    "radius": 1.0,
+    "max_root_mod": 1.0,
+    "meets_R": false,
+    "slack": 0.0,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 10,
+    "R_target": 1.01,
+    "radius": 1.0051385787,
+    "max_root_mod": 1.0102772704,
+    "meets_R": false,
+    "slack": 0.010277,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 10,
+    "R_target": 1.05,
+    "radius": 1.0460506817,
+    "max_root_mod": 1.0780952714,
+    "meets_R": false,
+    "slack": 0.078095,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 10,
+    "R_target": 1.1,
+    "radius": 1.0975996549,
+    "max_root_mod": 1.1596350278,
+    "meets_R": false,
+    "slack": 0.159635,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 11,
+    "R_target": 1.0001,
+    "radius": 0.9972757028,
+    "max_root_mod": 0.9976113238,
+    "meets_R": false,
+    "slack": -0.002389,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 11,
+    "R_target": 1.001,
+    "radius": 1.0,
+    "max_root_mod": 1.0,
+    "meets_R": false,
+    "slack": 0.0,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 11,
+    "R_target": 1.01,
+    "radius": 1.0050967168,
+    "max_root_mod": 1.0100756016,
+    "meets_R": false,
+    "slack": 0.010076,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 11,
+    "R_target": 1.05,
+    "radius": 1.0474727245,
+    "max_root_mod": 1.0958836219,
+    "meets_R": false,
+    "slack": 0.095884,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 11,
+    "R_target": 1.1,
+    "radius": 1.0973375918,
+    "max_root_mod": 1.1786833561,
+    "meets_R": false,
+    "slack": 0.178683,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 12,
+    "R_target": 1.0001,
+    "radius": 0.9979915187,
+    "max_root_mod": 0.9982266763,
+    "meets_R": false,
+    "slack": -0.001773,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 12,
+    "R_target": 1.001,
+    "radius": 1.0,
+    "max_root_mod": 1.0,
+    "meets_R": false,
+    "slack": 0.0,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 12,
+    "R_target": 1.01,
+    "radius": 1.0050299814,
+    "max_root_mod": 1.0100600501,
+    "meets_R": false,
+    "slack": 0.01006,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 12,
+    "R_target": 1.05,
+    "radius": 1.0473855538,
+    "max_root_mod": 1.1087735234,
+    "meets_R": false,
+    "slack": 0.108774,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 12,
+    "R_target": 1.1,
+    "radius": 1.0962256087,
+    "max_root_mod": 1.1667888124,
+    "meets_R": false,
+    "slack": 0.166789,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 13,
+    "R_target": 1.0001,
+    "radius": 0.9979070437,
+    "max_root_mod": 0.9981404912,
+    "meets_R": false,
+    "slack": -0.00186,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 13,
+    "R_target": 1.001,
+    "radius": 1.0,
+    "max_root_mod": 1.0,
+    "meets_R": false,
+    "slack": 0.0,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 13,
+    "R_target": 1.01,
+    "radius": 1.0050760429,
+    "max_root_mod": 1.0100701271,
+    "meets_R": false,
+    "slack": 0.01007,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 13,
+    "R_target": 1.05,
+    "radius": 1.0455252926,
+    "max_root_mod": 1.0912141455,
+    "meets_R": false,
+    "slack": 0.091214,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 13,
+    "R_target": 1.1,
+    "radius": 1.0957213035,
+    "max_root_mod": 1.1677702168,
+    "meets_R": false,
+    "slack": 0.16777,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 14,
+    "R_target": 1.0001,
+    "radius": 0.9978538012,
+    "max_root_mod": 0.9980795491,
+    "meets_R": false,
+    "slack": -0.00192,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 14,
+    "R_target": 1.001,
+    "radius": 1.0,
+    "max_root_mod": 1.0,
+    "meets_R": false,
+    "slack": 0.0,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 14,
+    "R_target": 1.01,
+    "radius": 1.0050186093,
+    "max_root_mod": 1.0100372807,
+    "meets_R": false,
+    "slack": 0.010037,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 14,
+    "R_target": 1.05,
+    "radius": 1.0452383941,
+    "max_root_mod": 1.1049562416,
+    "meets_R": false,
+    "slack": 0.104956,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 14,
+    "R_target": 1.1,
+    "radius": 1.094807904,
+    "max_root_mod": 1.1896921669,
+    "meets_R": false,
+    "slack": 0.189692,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 15,
+    "R_target": 1.0001,
+    "radius": 0.997801257,
+    "max_root_mod": 0.9980257702,
+    "meets_R": false,
+    "slack": -0.001974,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 15,
+    "R_target": 1.001,
+    "radius": 1.0,
+    "max_root_mod": 1.0,
+    "meets_R": false,
+    "slack": 0.0,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 15,
+    "R_target": 1.01,
+    "radius": 1.005094112,
+    "max_root_mod": 1.0101271736,
+    "meets_R": false,
+    "slack": 0.010127,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 15,
+    "R_target": 1.05,
+    "radius": 1.0469666045,
+    "max_root_mod": 1.1445014721,
+    "meets_R": false,
+    "slack": 0.144501,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 15,
+    "R_target": 1.1,
+    "radius": 1.0947720124,
+    "max_root_mod": 1.188026869,
+    "meets_R": false,
+    "slack": 0.188027,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 16,
+    "R_target": 1.0001,
+    "radius": 0.997862063,
+    "max_root_mod": 0.9980679408,
+    "meets_R": false,
+    "slack": -0.001932,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 16,
+    "R_target": 1.001,
+    "radius": 1.0,
+    "max_root_mod": 1.0,
+    "meets_R": false,
+    "slack": 0.0,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 16,
+    "R_target": 1.01,
+    "radius": 1.0051473865,
+    "max_root_mod": 1.0102948246,
+    "meets_R": false,
+    "slack": 0.010295,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  },
+  {
+    "n": 16,
+    "R_target": 1.05,
+    "radius": 1.0469784527,
+    "max_root_mod": 1.2013611182,
+    "meets_R": false,
+    "slack": 0.201361,
+    "counterexample": false,
+    "source": "dual_fast_log"
+  }
+]
