@@ -84,5 +84,11 @@ python plane_properness.py
 
 Deg-3 lattice census: **21 = 17 elementary + 4 shear**, zero exotic mixed-cubic Keller maps.
 
+**Remaining lemmas for full (unbounded) plane JC:**
+1. Leading forms of plane Keller maps are pure powers \(\ell^d\) (classical \(n=2\)).
+2. \(\mathrm{GL}(2)+\)shear reduces to axis shape.
+3. Axis shape + Keller ⇒ elementary for all \(d\) (sealed \(d\le 3\); exotic single-monom obstruction through high \(d\); multi-exotic cancellation open).
+4. Jung–van der Kulk ⇒ automorphism.
+
 Atlas still marks plane JC open (correct for unbounded degree). Parent quantity
 `jc-min-counterexample-dimension` stays **[2, 3]** until unbounded plane JC closes.
