@@ -1,0 +1,29 @@
+[
+  {
+    "n": 15,
+    "R_target": 1.01,
+    "radius": 1.0,
+    "max_root_mod": 1.0000000000000016,
+    "meets_R": false,
+    "slack_maxroot": 1.5543122344752192e-15,
+    "counterexample": false
+  },
+  {
+    "n": 15,
+    "R_target": 1.05,
+    "radius": 1.0824487444713244,
+    "max_root_mod": 2.2466824959862377,
+    "meets_R": true,
+    "slack_maxroot": 1.2466824959862377,
+    "counterexample": false
+  },
+  {
+    "n": 15,
+    "R_target": 1.1,
+    "radius": 1.0893063283377142,
+    "max_root_mod": 1.090795016414483,
+    "meets_R": false,
+    "slack_maxroot": 0.09079501641448307,
+    "counterexample": false
+  }
+]

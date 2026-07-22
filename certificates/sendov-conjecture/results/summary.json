@@ -109,6 +109,10 @@
     {
       "id": "wave10b_true_d_n9",
       "result": "true d(f) maximin n=9 root-param: best d=0.9908<1 (numeric underest. of unity; crit-param r=1); CE=0"
+    },
+    {
+      "id": "wave11_free_dual_n15",
+      "result": "n=15 free complex beta+14 crits dual R in {1.01,1.05,1.1}: CE=0"
     }
   ],
   "atlas_clues": [

@@ -74,6 +74,7 @@ best **feasible** \(d=1\).
 | Dense \(\beta\)-scan | \(n=9..15\) so far, 194 configs | best feasible \(=1\) (unity) every \(n\); CE=0 |
 | Wave10 Miller dual | \(n\in\{9,12,15,20,26\}\), Miller \(P'\) shape | dual \(R>1\Rightarrow\) maxroot\(>1\); CE=0 |
 | Wave10b true \(d(f)\) \(n=9\) | free roots in disk, maximin \(d\) | best numeric \(d\approx 0.991\) (underestimates unity); CE=0 |
+| Wave11 free dual \(n=15\) | free \(\beta\) + 14 complex crits | CE=0; dual force never CE |
 
 **Theorem (equal-crit family).** If all critical points coincide at \(c\) and \(p(\beta)=0\), roots lie on the circle of radius \(|\beta-c|\) about \(c\). Hence \(r>1\) forces some root outside the unit disk — **no CE in this family for any \(n\ge 2\)**. See [`THEOREM_EQUAL_CRIT.md`](THEOREM_EQUAL_CRIT.md).
 
