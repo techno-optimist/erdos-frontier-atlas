@@ -1,0 +1,7 @@
+{
+  "mmax": 4,
+  "dy": 2,
+  "elapsed_sec": 0.16,
+  "theorem": "When deg_x(f)=1: the E_x o E_y tame family (f=x+p(y), g=y+Q(x+p(y))) is verified constructively with explicit inverse; r=0 is forced on the E_y (g=y) slice; the converse is spot-checked at m=2, not classified. Independent higher Q_i not matching the binomial expansion of Q(f) break const Jac. Dual E_y o E_x also tame. NOT degree-free; not a complete classification.",
+  "exit_ok": true
+}

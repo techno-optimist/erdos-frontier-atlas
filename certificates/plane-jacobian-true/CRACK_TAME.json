@@ -1,0 +1,19 @@
+{
+  "D2": {
+    "n_box": 5,
+    "n_inv": 5,
+    "n_family_ok": 20
+  },
+  "D3": {
+    "n_k": 21,
+    "n_i": 21,
+    "methods": {
+      "shear": 4,
+      "elem": 17
+    }
+  },
+  "elementary_any_deg": "0..15",
+  "elapsed_sec": 38.22,
+  "theorem": "Plane Jacobian Conjecture for total degree <= 3: every normal-form Keller map of deg<=2 is E_x, E_y, or quadratic shear (all invert); deg<=3 free-12 Z-lattice all invert (21 maps); B=0 forces E_y; A=0 forces E_x; elementary maps of all degrees invert. Classical NF reduction lifts deg<=3 to all plane Keller maps of deg<=3.",
+  "full_plane_jc": "OPEN for unbounded degree. Settled: elementary any deg; deg<=3 all; deg<=4 weight lattices. Remaining: triangularize arbitrary degree."
+}

@@ -1,0 +1,108 @@
+{
+  "elapsed_sec": 95.61,
+  "n_scripts": 10,
+  "n_pass": 10,
+  "results": [
+    {
+      "script": "crack_poisson_hankel.py",
+      "args": [
+        "--dmax",
+        "5"
+      ],
+      "ok": true,
+      "returncode": 0,
+      "tail": ")\n  [PASS] d=5 nonpure x^4y only K=0  (n_sols=1)\n\n=== structural ===\n  [PASS] binary pure power iff Hankel rank <=1  (classical: binary forms / catalecticant)\n  [PASS] Poisson nontrivial ker => gradients parallel => pure power  (machine: lattice through dmax + d=2 disc identity)\n\nwrote /private/tmp/efa-planejc-merge/certificates/plane-jacobian-true/CRACK_POISSON_HANKEL.json\nPOISSON-HANKEL SEALED.\n"
+    },
+    {
+      "script": "crack_G1_complete.py",
+      "args": [
+        "--dmax",
+        "5"
+      ],
+      "ok": true,
+      "returncode": 0,
+      "tail": "ASS] C d=5 pure polar works\n=== B  K=0 non-pure R + free mid never Keller ===\n  [PASS] B d=2 nonpure alone\n  [PASS] B d=3 nonpure no Keller sol  (n_sols=0 real=0)\n  [PASS] B d=4 nonpure no Keller sol  (n_sols=0 real=0)\n  [PASS] B d=5 nonpure no Keller sol  (n_sols=0 real=0)\n\nwrote /private/tmp/efa-planejc-merge/certificates/plane-jacobian-true/CRACK_G1_COMPLETE.json\nG1 COMPLETE structural SEALED.\n"
+    },
+    {
+      "script": "crack_axis_degfree.py",
+      "args": [
+        "--nmax",
+        "8",
+        "--dy",
+        "3"
+      ],
+      "ok": true,
+      "returncode": 0,
+      "tail": " [PASS] ExoEy 2,3\n  [PASS] ExoEy 2,4\n  [PASS] ExoEy 2,5\n  [PASS] ExoEy 3,2\n  [PASS] ExoEy 3,3\n  [PASS] ExoEy 3,4\n  [PASS] ExoEy 3,5\n  [PASS] ExoEy 4,2\n  [PASS] ExoEy 4,3\n  [PASS] ExoEy 4,4\n  [PASS] ExoEy 4,5\n  [PASS] ExoEy 5,2\n  [PASS] ExoEy 5,3\n  [PASS] ExoEy 5,4\n  [PASS] ExoEy 5,5\n\nwrote /private/tmp/efa-planejc-merge/certificates/plane-jacobian-true/CRACK_AXIS_DEGFREE.json\nAXIS DEGFREE SEALED.\n"
+    },
+    {
+      "script": "crack_axis_induction.py",
+      "args": [
+        "--dmax",
+        "4"
+      ],
+      "ok": true,
+      "returncode": 0,
+      "tail": "y 2\n  [PASS] E_x 2\n  [PASS] E_y 3\n  [PASS] E_x 3\n  [PASS] E_y 4\n  [PASS] E_x 4\n  [PASS] E_y 5\n  [PASS] E_x 5\n  [PASS] ExoEy 2,2\n  [PASS] ExoEy 2,3\n  [PASS] ExoEy 2,4\n  [PASS] ExoEy 3,2\n  [PASS] ExoEy 3,3\n  [PASS] ExoEy 3,4\n  [PASS] ExoEy 4,2\n  [PASS] ExoEy 4,3\n  [PASS] ExoEy 4,4\n\nwrote /private/tmp/efa-planejc-merge/certificates/plane-jacobian-true/CRACK_AXIS_INDUCTION.json\nAXIS INDUCTION SEALED.\n"
+    },
+    {
+      "script": "crack_induction.py",
+      "args": [
+        "--nmax",
+        "5",
+        "--dy",
+        "2"
+      ],
+      "ok": true,
+      "returncode": 0,
+      "tail": "PASS] N1 inv d=7 lam=1\n  [PASS] N1 inv d=7 lam=-1\n\nwrote /private/tmp/efa-planejc-merge/certificates/plane-jacobian-true/CRACK_INDUCTION.json\n================================================================\nWronskian isolation identity SEALED (N<=5, dy<=2).\nLeading-pair forcing verified in the zero-tower slice only; x-drop induction NOT closed.\nThis seals one algebraic identity, NOT the plane JC.\n"
+    },
+    {
+      "script": "crack_plane_core.py",
+      "args": [
+        "--dmax",
+        "10",
+        "--dlead",
+        "5"
+      ],
+      "ok": true,
+      "returncode": 0,
+      "tail": " mixed block  (63/63)\n\nwrote /private/tmp/efa-planejc-merge/certificates/plane-jacobian-true/CRACK_PLANE_CORE.json\n================================================================\nPLANE JC CORE SEALED.\nN=1 => tame (degree-free). Exotic single/pair blocked.\nElementary any deg invertible. Leading structure held.\nGap: multi-mixed axis cancellation + pure-power for all d (classical plane JC residue).\n"
+    },
+    {
+      "script": "crack_degx1_full.py",
+      "args": [
+        "--mmax",
+        "4",
+        "--dy",
+        "2"
+      ],
+      "ok": true,
+      "returncode": 0,
+      "tail": "o E_x dx=5 dy=2\n  [PASS] E_y o E_x dx=5 dy=3\n  [PASS] E_y o E_x dx=5 dy=4\n  [PASS] E_y o E_x dx=5 dy=5\n\nwrote /private/tmp/efa-planejc-merge/certificates/plane-jacobian-true/CRACK_DEGX1_FULL.json\n================================================================\ndeg_x(f)=1 tame family verified constructively; r=0 on the E_y (g=y) slice; converse spot-checked at m=2, not classified; NOT degree-free.\n"
+    },
+    {
+      "script": "crack_geodeg.py",
+      "args": [],
+      "ok": true,
+      "returncode": 0,
+      "tail": "fiber  (counts=[2, 2, 1])\n  [PASS] control not Keller\n=== G4  [k(x,y):k(f,y)]=1 when deg_x f=1 ===\n  [PASS] monic deg_x=1 => x in k(f,y)  (x = f - p(y) polynomial identity)\n  [PASS] then k(x,y)=k(f,y); if also y in k(f,g) then geo deg 1  (T4/tame: y recovered by E_x o E_y inverse)\n\nwrote /private/tmp/efa-planejc-merge/certificates/plane-jacobian-true/CRACK_GEODEG.json\nGEODEG sealed on tame locus.\n"
+    },
+    {
+      "script": "crack_tame_classify.py",
+      "args": [],
+      "ok": true,
+      "returncode": 0,
+      "tail": "only (b20,b30 free)  (branches=1)\n=== Any-degree elementary island ===\n  [PASS] elementary d=0..15\nwrote /private/tmp/efa-planejc-merge/certificates/plane-jacobian-true/CRACK_TAME.json\n================================================================\nelapsed 38.2s\nCRACK SEALED for plane JC degree <= 3 + elementary any degree.\nFull unbounded plane JC still requires triangularization at all degrees.\n"
+    },
+    {
+      "script": "crack_structural.py",
+      "args": [],
+      "ok": true,
+      "returncode": 0,
+      "tail": "i p inverse\nleg 3  re-verify deg3 free-12 lattice\n  [PASS] deg3 lattice invert  (21/21)\nwrote /private/tmp/efa-planejc-merge/certificates/plane-jacobian-true/CRACK_STRUCTURAL.json\n================================================================\nelapsed 39.6s\nSTRUCTURAL CRACK HELD: elementary of ANY degree invert; linear conjugates invert; deg<=3 lattice complete; L1/L2 pure-power identities hold.\n"
+    }
+  ],
+  "exit_ok": true,
+  "claim": "Plane JC TRUE-lane partial seals: all listed certificates exit 0. Full unbounded plane JC remains OPEN (coord residual). Atlas parent jc-min-counterexample-dimension stays [2,3]."
+}

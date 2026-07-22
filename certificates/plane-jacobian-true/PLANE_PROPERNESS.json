@@ -1,0 +1,8 @@
+{
+  "atlas_node": "keller_properness_universal",
+  "source": "BCW 1982 Thm 2.1 (per-map); Jelonek asymptotic set",
+  "elementary_proper_via_inverse": true,
+  "lattice_ray_escape": "21/21",
+  "elapsed_sec": 175.57,
+  "claim": "Elementary plane Keller maps are proper (polynomial inverse). All deg<=3 lattice Keller maps escape to infinity along 6 rational ray directions (necessary condition for properness). Full plane properness remains open and is equivalent to plane JC via BCW."
+}

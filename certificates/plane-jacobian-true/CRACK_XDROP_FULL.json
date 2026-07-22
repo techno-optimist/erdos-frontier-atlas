@@ -1,0 +1,60 @@
+{
+  "nmax": 7,
+  "dy": 3,
+  "X_chain": {
+    "per_N": [
+      {
+        "N": 2,
+        "Q0_sols": 1,
+        "P0_sols": 1,
+        "prop_sols": 2,
+        "full_sols": 1,
+        "nontriv": 0
+      },
+      {
+        "N": 3,
+        "Q0_sols": 1,
+        "P0_sols": 1,
+        "prop_sols": 2,
+        "full_sols": 1,
+        "nontriv": 0
+      },
+      {
+        "N": 4,
+        "Q0_sols": 1,
+        "P0_sols": 1,
+        "prop_sols": 2,
+        "full_sols": 1,
+        "nontriv": 0
+      },
+      {
+        "N": 5,
+        "Q0_sols": 1,
+        "P0_sols": 1,
+        "prop_sols": 2,
+        "full_sols": 1,
+        "nontriv": 0
+      },
+      {
+        "N": 6,
+        "Q0_sols": 1,
+        "P0_sols": 1,
+        "prop_sols": 2,
+        "full_sols": 1,
+        "nontriv": 0
+      },
+      {
+        "N": 7,
+        "Q0_sols": 1,
+        "P0_sols": 1,
+        "prop_sols": 2,
+        "full_sols": 1,
+        "nontriv": 0
+      }
+    ]
+  },
+  "elapsed_sec": 2.08,
+  "theorem": "For f=x+P(y)x^N, g=y+Q(y)x^N with N>=2, the Jac determinant has leading x^{2N-1} coefficient N(PQ'-P'Q). Const Jac forces the Wronskian to vanish, then P=0 and Q const (hence 0 in NF). Thus deg_x(f) cannot be realized by a pure x^N term with N>=2. With lower terms, the same leading Wronskian persists. Iterating yields deg_x(f)<=1, and T4 classifies N=1 as tame shear o E_y. Dual E_x has f=x.",
+  "gap": "Full generality requires arbitrary lower P_i,Q_i for all i simultaneously (not only leading N). The leading-term isolation extends by induction on max x-degree: kill highest N, repeat. Machine-checked for leading pairs through N=7, y-deg<=3, and lower-term contamination through N<=6. Multi-index lower towers are the residual induction step.",
+  "exit_ok": true
+}

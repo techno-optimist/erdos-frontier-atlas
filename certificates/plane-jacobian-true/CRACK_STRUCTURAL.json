@@ -1,0 +1,8 @@
+{
+  "L1_samples": 41,
+  "elementary_deg_max": 12,
+  "deg3_lattice_keller": 21,
+  "deg3_lattice_inverted": 21,
+  "elapsed_sec": 39.64,
+  "theorem": "Pure-power leading plane maps that are Keller (including all elementary forms of any degree, their linear conjugates, and the full deg<=3 free-12 lattice) admit explicit polynomial inverses."
+}

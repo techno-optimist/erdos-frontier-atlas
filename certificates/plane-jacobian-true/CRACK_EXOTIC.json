@@ -1,0 +1,8 @@
+{
+  "dmax": 30,
+  "n_elem_ok": 58,
+  "n_exotic": 928,
+  "n_exotic_break": 928,
+  "elapsed_sec": 0.18,
+  "theorem": "For all total degrees <= 30: every exotic single monom (cross term, pure x in f, pure y in g) yields non-constant Jac; every pure E_x/E_y monom yields constant Jac=1."
+}

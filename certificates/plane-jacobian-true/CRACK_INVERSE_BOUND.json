@@ -1,0 +1,19 @@
+{
+  "dmax_elementary": 8,
+  "lattice": {
+    "n_k": 21,
+    "n_formal_inv": 21,
+    "n_deg_le_d": 21
+  },
+  "shear": {
+    "d": 2,
+    "degG": [
+      2,
+      2
+    ],
+    "bound_ok": true
+  },
+  "elapsed_sec": 183.74,
+  "claim": "For all tested plane Keller maps (elementary d<=dmax, multi-term, shear, deg3 lattice 21/21), the formal inverse is polynomial and satisfies F o G = id. Elementary maps satisfy deg G <= d. Symbolic K_{d+1}=0 on Keller ideal checked for d=2,3 on solvable branches / elementary families. FULL plane JC would follow from: K_m=0 for all m>d for every plane Keller F of degree d (any d).",
+  "full_jc_status": "partial \u2014 bound verified on settled classes; general d open"
+}

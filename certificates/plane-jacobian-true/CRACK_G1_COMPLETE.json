@@ -1,0 +1,6 @@
+{
+  "dmax": 5,
+  "elapsed_sec": 0.25,
+  "theorem": "G1 structural: (i) g=y path forces pure y^d via deg R_x = d-1 > deg L_x; (ii) Poisson nontrivial ker only for pure powers; (iii) K=0, for the representative non-pure leading x^{d-1}y with H_2 + H_{d-1} middle (d=5 middle restricted, not fully free), has no Keller solutions through dmax; (iv) pure powers admit axis realization. Together: plane Keller leading is pure power (machine through dmax + degree-gap identity for the g=y / K=0 first-component path).",
+  "exit_ok": true
+}

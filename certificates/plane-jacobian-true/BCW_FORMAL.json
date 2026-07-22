@@ -1,0 +1,8 @@
+{
+  "atlas_node": "bcw_tree_formula",
+  "source": "Bass-Connell-Wright, Bull. AMS 7 (1982)",
+  "elementary_formal_match_deg_2_to_8": true,
+  "termination_elementary": true,
+  "elapsed_sec": 0.01,
+  "claim": "Plane formal inverse recursion terminates for elementary Keller maps of deg 2..8 and matches the closed-form inverse. BCW tree formula (theorem) survives the crater; termination for general Keller maps is equivalent to plane JC."
+}

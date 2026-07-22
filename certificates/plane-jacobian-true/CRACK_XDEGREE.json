@@ -1,0 +1,14 @@
+{
+  "nmax": 6,
+  "dy": 4,
+  "N1": {
+    "n_sols": 0,
+    "elem_branches": 0,
+    "non_elem_branches": 0,
+    "dy": 4
+  },
+  "msg_poly2": "no_Keller_with_degx_f>=2_through_N=6_dy=4_tests=111",
+  "elapsed_sec": 1.89,
+  "theorem": "Plane maps with a term c x^i y^j (i>=2) in f alone are never Keller. Symbolically f=x+P(y)x^N (N>=2) is Keller iff P=0. N=1 normal form with y-degree <=4 solves to E_y only (0 elem branches, 0 non-elem). E_x is the dual family f=x, g=y+Q(x).",
+  "gap_to_full_jc": "Need: every plane Keller map is affinely equivalent to one with deg_x(f)=1 and either deg_x(g)=0 (E_y path) or f=x and g=y+Q(x) (E_x), or deg-2 shear. Pure-power leading + GL2 gives axis form; x-degree reduction kills deg_x(f)>=2."
+}

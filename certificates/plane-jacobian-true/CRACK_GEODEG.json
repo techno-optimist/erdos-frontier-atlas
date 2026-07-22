@@ -1,0 +1,5 @@
+{
+  "elapsed_sec": 0.17,
+  "theorem": "Plane Keller maps in the tame class (elementary, shear o E_y, E_x o E_y) have geometric degree 1 (unique fiber, res deg 1, explicit inverse). deg_x(f)=1 monic => x in k(f,y). Plane JC <=> geo deg 1 for all Keller (classical); this certificate seals geo deg 1 on the reduced/tame locus.",
+  "exit_ok": true
+}

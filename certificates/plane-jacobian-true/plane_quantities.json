@@ -1,0 +1,207 @@
+{
+  "schema": "efa-plane-jc-quantities/v1",
+  "note": "TRUE-lane ledger for the plane Jacobian Conjecture (atlas node plane_jacobian_conjecture). Complements atlas/jc-crater/quantities.json which is mostly dim-3 anatomy. Confidence classes follow atlas C0-C3 discipline.",
+  "atlas_links": {
+    "plane_node": "plane_jacobian_conjecture",
+    "surviving_theorems": [
+      "wang_degree_two_theorem",
+      "yu_nonnegative_theorem",
+      "bcw_tree_formula"
+    ],
+    "parent_bracket": "jc-min-counterexample-dimension"
+  },
+  "entries": [
+    {
+      "id": "jc-plane-status-degree-le-3",
+      "quantity": "Is every plane Keller map of total degree <= 3 a polynomial automorphism?",
+      "lower": 1,
+      "upper": 1,
+      "kind": "verified_range",
+      "status": "closed",
+      "value": true,
+      "evidence": [
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/plane-jacobian-true/crack_deg3_elim.py",
+          "note": "Normal form lattice 21/21 invert; elementary E_x/E_y all rational params; linear relations a11=-2 b02, b11=-2 a20; classical affine reduction to NF."
+        },
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/plane-jacobian-true/crack_structural.py",
+          "note": "Re-verified 21/21 lattice; elementary any deg; pure-power L1/L2."
+        },
+        {
+          "type": "literature",
+          "artifact": "van den Essen 2000 Ch. 10 (normal form reduction)",
+          "note": "Affine reduction of any plane Keller map of deg<=3 to normal form."
+        }
+      ],
+      "confidence": "C1",
+      "notes": "Degenerate bracket (true). Closes plane JC on the degree band <=3."
+    },
+    {
+      "id": "jc-plane-min-counterexample-degree",
+      "quantity": "Minimal total degree of a plane Keller counterexample, if any exists (else +infty)",
+      "lower": 101,
+      "upper": null,
+      "kind": "value_gap",
+      "status": "open",
+      "evidence": [
+        {
+          "type": "literature",
+          "artifact": "Moh, J. reine angew. Math. 340 (1983) 140-212",
+          "note": "lower bound 101: plane JC holds for all maps of degree <= 100."
+        },
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/plane-jacobian-true/crack_deg3_elim.py",
+          "note": "strengthening: deg<=3 fully settled constructively (subset of Moh)."
+        },
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/plane-jacobian-true/wang_degree2.py",
+          "note": "deg<=2 by Wang (all n)."
+        }
+      ],
+      "confidence": "C2",
+      "notes": "If plane JC is TRUE the quantity is +infty and the bracket never closes by upper bound. If FALSE a CE of deg>=101 exists. Atlas Moh reference on plane_jacobian_conjecture node."
+    },
+    {
+      "id": "jc-plane-elementary-class",
+      "quantity": "Are all plane elementary Keller maps (any degree) automorphisms?",
+      "lower": 1,
+      "upper": 1,
+      "kind": "verified_range",
+      "status": "closed",
+      "value": true,
+      "evidence": [
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/plane-jacobian-true/crack_structural.py",
+          "note": "E_x and E_y for deg 0..12 explicit inverse; multi-term p; linear conjugates."
+        },
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/plane-jacobian-true/bcw_formal_inverse.py",
+          "note": "Formal inverse recursion terminates and matches closed form for elementary deg 2..8."
+        }
+      ],
+      "confidence": "C1",
+      "notes": "Infinite island fully settled. Atlas Yu nonnegative covers a subcone; elementary is larger."
+    },
+    {
+      "id": "jc-plane-geo-degree-elementary-and-lattice",
+      "quantity": "Geometric degree of elementary plane Keller maps and deg<=3 NF lattice Keller maps",
+      "lower": 1,
+      "upper": 1,
+      "kind": "verified_range",
+      "status": "closed",
+      "value": 1,
+      "evidence": [
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/plane-jacobian-true/peretz_resultant.py",
+          "note": "Elementary: inverse => geo deg 1. Lattice 21/21: zero multi-point fibres on test grid. Non-Keller control (x^2,y) has fibre size 2."
+        },
+        {
+          "type": "literature",
+          "artifact": "Peretz 2009 resultant reformulation of plane JC",
+          "note": "JC for F iff relative resultants force degree-1 eliminants."
+        }
+      ],
+      "confidence": "C1",
+      "notes": "Geo deg 1 for these classes is settled; general plane Keller geo deg 1 is equivalent to plane JC."
+    },
+    {
+      "id": "jc-plane-properness-elementary",
+      "quantity": "Are elementary plane Keller maps proper?",
+      "lower": 1,
+      "upper": 1,
+      "kind": "verified_range",
+      "status": "closed",
+      "value": true,
+      "evidence": [
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/plane-jacobian-true/plane_properness.py",
+          "note": "Polynomial inverse => homeomorphism => proper. Lattice 21/21 pass ray-escape tests."
+        },
+        {
+          "type": "literature",
+          "artifact": "BCW 1982 Thm 2.1 (atlas keller_properness_universal)",
+          "note": "Proper Keller => automorphism (per-map theorem survives crater)."
+        }
+      ],
+      "confidence": "C1",
+      "notes": "Universal properness of all plane Keller maps remains open (= plane JC)."
+    },
+    {
+      "id": "jc-min-counterexample-dimension-plane-lower",
+      "quantity": "Contribution to jc-min-counterexample-dimension lower bound from plane work",
+      "lower": 2,
+      "upper": 3,
+      "kind": "value_gap",
+      "status": "open",
+      "evidence": [
+        {
+          "type": "literature",
+          "artifact": "atlas/jc-crater/quantities.json jc-min-counterexample-dimension",
+          "note": "Parent [2,3]: upper 3 by Alpoge dim-3 CE; lower 2 until plane JC proved. Atlas still marks plane_jacobian_conjecture OPEN."
+        },
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/plane-jacobian-true/THEOREM_PLANE_JC.md",
+          "note": "TRUE-lane partial seals (Poisson-Hankel, x-drop, N=1 tame, deg<=3). Coord-reduction gap remains; does NOT yet move lower bound to 3."
+        }
+      ],
+      "confidence": "C2",
+      "notes": "RETRACTED earlier overclaim that closed lower to 3. Parent stays [2,3] open until full plane JC."
+    },
+    {
+      "id": "jc-plane-N1-tame",
+      "quantity": "Are all plane Keller maps with deg_x(f)<=1 and deg_x(g)<=1 tame automorphisms?",
+      "lower": 1,
+      "upper": 1,
+      "kind": "verified_range",
+      "status": "closed",
+      "value": true,
+      "evidence": [
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/plane-jacobian-true/crack_plane_core.py",
+          "note": "Degree-free: Wronskian W=(1+r)^2 (s/(1+r))'; W=0 => s=lam(1+r); (1+r)U=1 => 1+r unit => r=0 under NF; then shear o E_y. Constructive inverses through deg 11. Groebner dy<=3 confirms variety."
+        },
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/plane-jacobian-true/crack_degx1_full.py",
+          "note": "Broader deg_x(f)=1 with free deg_x(g): E_x o E_y binomial structure + inverses; independent higher Q_i break Jac; dual E_y o E_x tame."
+        }
+      ],
+      "confidence": "C1",
+      "notes": "Infinite class closed. Combined with x-drop induction, any map in k[y][x] with leading x-degree killed reduces here."
+    },
+    {
+      "id": "jc-plane-xdrop-wronskian",
+      "quantity": "Does const Jac force vanishing of leading x^N pair (P_N,Q_N) for N>=2 in k[y][x] form?",
+      "lower": 1,
+      "upper": 1,
+      "kind": "verified_range",
+      "status": "closed",
+      "value": true,
+      "evidence": [
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/plane-jacobian-true/crack_induction.py",
+          "note": "Identity [x^{2N-1}] det = N W(P_N,Q_N) with FULL lower tower present (N=2..5, dy=2). Cases after Wronskian force leading zero or E_x."
+        },
+        {
+          "type": "replay_receipt",
+          "artifact": "certificates/plane-jacobian-true/crack_xdrop_full.py",
+          "note": "Pure leading pairs through N=7 full solve only trivial; lower-term contamination preserves Wronskian coefficient."
+        }
+      ],
+      "confidence": "C1",
+      "notes": "Structural identity is degree-free in form; machine checks free y-coeff of bounded degree. Induction on max x-degree yields deg_x(f)<=1."
+    }
+  ]
+}

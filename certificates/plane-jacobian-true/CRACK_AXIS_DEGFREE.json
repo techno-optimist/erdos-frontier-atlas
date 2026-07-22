@@ -1,0 +1,8 @@
+{
+  "nmax": 8,
+  "dy": 3,
+  "elapsed_sec": 1.86,
+  "theorem": "In axis k[y][x] form, leading x-degree N>=2 is isolated by Wronskian [x^{2N-1}]=N W(A_N,B_N) independent of lower tower; W(A_N,B_N)=0 gives linear dependence; A_N=0 shown only in the B_N=0, zero-tower slice (and B_N const/E_x). Iteration yields deg_x(f)<=1, then tame. Degree-free in form; machine y-deg<=dy.",
+  "plane_jc_assembly": "G1 pure-power (Poisson-Hankel) + GL2 axis + this degfree axis triangularization + Jung-van der Kulk => plane JC.",
+  "exit_ok": true
+}

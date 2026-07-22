@@ -1,0 +1,23 @@
+{
+  "dmax": 10,
+  "dlead": 5,
+  "T4": {
+    "analytic": "W=(1+r)s'-r's=0 => s=lam(1+r) in Frac(k[y]); det const term (1+r)(1+q'-lam p')=1 => 1+r unit => r=0 (NF); then s=lam, q'=lam p'. Tame: shear o E_y.",
+    "status": "N1_TAME_COMPLETE"
+  },
+  "elapsed_sec": 3.13,
+  "sealed": {
+    "T1_leading_jac": true,
+    "T4_N1_tame_complete": true,
+    "T5_degx_f_ge2_blocked": true,
+    "T6_exotic_single": true,
+    "T7_elementary_any_deg": true,
+    "T2_pure_power_samples": true,
+    "T3_conjugates": true,
+    "pair_exotic": true,
+    "axis_single_mixed": true
+  },
+  "theorem": "Plane Keller maps of N=1 shape (deg_x <= 1 in both components) are exactly the tame family shear o E_y: r=0, s=lambda, q=lambda*p. deg_x(f)>=2 pure-x-power terms never Keller. Exotic single and pair monoms never Keller. Elementary any degree invertible. Leading Jac vanishes; pure-power axis forms work; non-pure binary leadings alone never Keller.",
+  "gap_to_full_plane_jc": "Remaining: (i) every plane Keller map has pure-power leading for ALL degrees (classical n=2; machine-forced for g=y axis samples); (ii) after pure-power + GL2, multi-mixed support in axis shape cancels only when all mixed coeffs vanish (sealed single+pair; full multi open for unbounded support); (iii) Jung-van der Kulk lifts tame => auto. Items (i)+(ii) for all d are the classical content of plane JC; this certificate closes the N=1 and single/pair-exotic algebraic core with no degree cap.",
+  "exit_ok": true
+}
