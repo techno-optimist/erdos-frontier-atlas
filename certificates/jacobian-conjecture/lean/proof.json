@@ -1,0 +1,13 @@
+{
+  "schema": "efa-formal-proof/v1",
+  "title": "The Jacobian Conjecture is false at n = 3 over Q",
+  "theorem": "jacobian_conjecture_false",
+  "kind": "refutation",
+  "prover": "Lean 4 + mathlib",
+  "sorry_free": true,
+  "axioms": ["propext", "Classical.choice", "Quot.sound"],
+  "ours": "verification (the counterexample map is Alpoge's; conditional on that root claim, awaiting confirmation)",
+  "statement": "Refutes the community formalisation (google-deepmind/formal-conjectures) restated verbatim, for k = Q, sigma = Fin 3.",
+  "upstream_pr": "google-deepmind/formal-conjectures#4486",
+  "file": "JacobianConjectureFalse.lean"
+}

@@ -1,0 +1,14 @@
+{
+  "schema": "efa-formal-proof/v1",
+  "title": "Ringel's 9-element oriented matroid is not stretchable",
+  "theorem": "ringel_not_stretchable",
+  "kind": "theorem",
+  "prover": "Lean 4 + mathlib",
+  "sorry_free": true,
+  "axioms": ["propext", "Classical.choice", "Quot.sound"],
+  "ours": "the result is ours; theorem classical (BLVSWZ; Carroll eq. 96)",
+  "statement": "No real point configuration realises Ringel's chirotope, in either orientation.",
+  "method": "certificates/ringel-nonstretchability/METHOD.md",
+  "boundary": "18 of 84 chirotope entries are load-bearing; table fidelity confirmed by uniqueness + independent verification (see fidelity/).",
+  "file": "RingelNotStretchable.lean"
+}
