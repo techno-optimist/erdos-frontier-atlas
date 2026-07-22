@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:81e5f07ea327a43c05dfe13d033329e3f5ac8c2bc315e321b3ee5de1be4bcbc3",
+  "content_digest": "sha256:36a94e9f5134cd9b4c81975dcb59d1d0be0ec93572960d2861aa19af8fc66a10",
+  "occurred_at": "2026-07-22T15:59:32Z",
+  "frontier": "What is a(6) in OEIS A385316 — the smallest integer that is the sum of three prime cubes in exactly 6 unordered ways? Known: a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419. Published lower bound: a(6) > 499243435237 (~4.99×10^11).",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nBuilt the complete-prime-set multiplicity verifier (verifier_prime_cubes.py), replayed domain kill fixtures (negative cutoff → ValueError, zero cutoff → ValueError), predicate kill fixtures (N=24 claimed k=2 → count mismatch, N=0 claimed k=6 → impossible sum), and reproduced all five OEIS terms a(1)..a(5) exactly with cutoff C=10588881420. Filled experiment.json hypothesis field.",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nArtifact: verifier_prime_cubes.py, SHA-256: 38a88b106019f5e98a02f0786da452cf7704ee3215ec4da03301ef4c1ee613c3\nVerifier domain: input cutoff must be a positive integer (N < 1 → rejected)\nVerifier predicate: claimed multiplicity k must match exact count from complete prime set enumeration (mismatch → rejected)\nOEIS a(1)..a(5) reproduced: 5/5 exactly at cutoff 10588881420.",
+  "result": "Verifier constructed, kill-tested, and fully replayed with exit 0 and ALL KILL FIXTURES PASSED. All five known OEIS terms confirmed. The discriminating step — running the verifier at C=10^13 to find a(6) or certify a(6)>10^13 — requires DGX SSH access and cannot be performed from this Mac. This matches the accepted continuation's scoped_result exactly.",
+  "next_gate": "Operator with DGX SSH access must execute `verifier_prime_cubes.py` (or an equivalent implementation of its predicate) at C=10^13. If a k=6 candidate appears, report it with full certificate; if not, certify a(6) > 10^13 and advance to C=10^14 or a heuristic/construction approach.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Only local Mac artifact written. DGX sweep deferred per accepted continuation.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-22_08-59-32.md",
+    "sha256": "c38480e819ee47bf1e3a3db87b88f8f8a1852b1d5e7a5a89412ab14edbb4aba9"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}
