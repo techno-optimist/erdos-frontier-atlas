@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:d7e9f430ea26b6dba16aaa28ef0e211dcf4ec47b67596cb9d620f865325be84d",
+  "content_digest": "sha256:93120922f1edf01f62c7752b55fba2809b017a365929c1d7f5640ecf2f337f5e",
+  "occurred_at": "2026-07-22T06:01:37Z",
+  "frontier": "Smallest N that is a sum of three prime cubes in exactly 6 ways — OEIS A385316 a(6). Current bound: a(6) > 4.99×10¹¹; no exact value known.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nReplayed the accepted-continuation verifier artifact (a385316_verifier.py) at C=2×10¹⁰ to cover the largest known term a(5). Verified domain kill fixture (triple with non-prime 4 → correctly rejected as non_prime_in_triple) and predicate kill fixture (N=24 claimed k=5, actual k=1 → correctly rejected as multiplicity_mismatch). All five OEIS terms a(1..5) = 24, 185527, 8627527, 999979163, 10588881419 reproduced exactly. The verifier is an executable no-argument Python replay entrypoint that exits zero with the required summary lines.",
+  "verified": "Domain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 1/1 rejected correctly\nALL KILL FIXTURES PASSED\nALL 5 OEIS TERMS REPRODUCED\nVerifier domain: triple (p, q, r) of prime values; rejected (4,3,2) because 4 is composite → reason: non_prime_in_triple\nVerifier predicate: count of nondecreasing prime-cube triples summing to N equals k; rejected N=24,k=5 because actual multiplicity is 1 → reason: multiplicity_mismatch\nArtifact: a385316_verifier.py, SHA-256: 70b9436be5cde4fb73f523a7fd6a67bbd561488845b13cad98e0ae9751aacd50",
+  "result": "Verifier construction milestone fully replayed and verified locally. Kill fixtures pass with branch coverage (domain + predicate). All five OEIS terms reproduced. The C=2×10¹⁰ sweep is insufficient to reach a(6) — the next discriminating bound is C=10¹³ per the accepted continuation, which requires DGX SSH access not available from this Mac.",
+  "next_gate": "Operator with DGX SSH access must execute the same verifier at C=10¹³. If a k=6 candidate appears, report it; if not, advance bound to a(6) > 10¹³ and escalate to C=10¹⁴ or a heuristic/construction approach.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-21_23-01-37.md",
+    "sha256": "5acb3d644efae969c288d9160862c89f0ae9d111f32e186cd5860e5d1926209a"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}
