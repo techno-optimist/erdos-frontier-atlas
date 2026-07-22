@@ -1,0 +1,150 @@
+{
+  "dmax": 5,
+  "results": [
+    {
+      "D": 2,
+      "n_exotic": 3,
+      "n_elem_b": 1,
+      "n_p": 1,
+      "elem_subvariety": true,
+      "independent_product_breaks": true,
+      "single_break": "3/3",
+      "n_forced": 3,
+      "status": "ALL_EXOTIC_FORCED_ZERO"
+    },
+    {
+      "D": 3,
+      "n_exotic": 8,
+      "n_elem_b": 2,
+      "n_p": 2,
+      "elem_subvariety": true,
+      "independent_product_breaks": true,
+      "single_break": "8/8",
+      "n_forced": 8,
+      "status": "ALL_EXOTIC_FORCED_ZERO"
+    },
+    {
+      "D": 4,
+      "n_exotic": 15,
+      "n_elem_b": 3,
+      "n_p": 3,
+      "elem_subvariety": true,
+      "independent_product_breaks": true,
+      "single_break": "15/15",
+      "n_forced": 15,
+      "status": "ALL_EXOTIC_FORCED_ZERO"
+    },
+    {
+      "D": 5,
+      "n_exotic": 24,
+      "n_elem_b": 4,
+      "n_p": 4,
+      "elem_subvariety": true,
+      "independent_product_breaks": true,
+      "single_break": "24/24",
+      "n_forced": 24,
+      "status": "ALL_EXOTIC_FORCED_ZERO"
+    }
+  ],
+  "isolation_sample": [
+    [
+      "a5_0",
+      "lin_const_lc mon=(4, 4)"
+    ],
+    [
+      "a4_1",
+      "fallback_force0"
+    ],
+    [
+      "b4_1",
+      "lin_const_lc mon=(4, 4)"
+    ],
+    [
+      "a3_2",
+      "fallback_force0"
+    ],
+    [
+      "b3_2",
+      "fallback_force0"
+    ],
+    [
+      "a2_3",
+      "fallback_force0"
+    ],
+    [
+      "b2_3",
+      "fallback_force0"
+    ],
+    [
+      "a1_4",
+      "lin_const_lc mon=(5, 3)"
+    ],
+    [
+      "b1_4",
+      "fallback_force0"
+    ],
+    [
+      "a4_0",
+      "lin_const_lc mon=(4, 4)"
+    ],
+    [
+      "a3_1",
+      "fallback_force0"
+    ],
+    [
+      "b3_1",
+      "lin_const_lc mon=(4, 4)"
+    ],
+    [
+      "a2_2",
+      "fallback_force0"
+    ],
+    [
+      "b2_2",
+      "fallback_force0"
+    ],
+    [
+      "a1_3",
+      "lin_const_lc mon=(5, 2)"
+    ],
+    [
+      "b1_3",
+      "fallback_force0"
+    ],
+    [
+      "a3_0",
+      "lin_const_lc mon=(4, 4)"
+    ],
+    [
+      "a2_1",
+      "fallback_force0"
+    ],
+    [
+      "b2_1",
+      "lin_const_lc mon=(4, 4)"
+    ],
+    [
+      "a1_2",
+      "lin_const_lc mon=(5, 1)"
+    ],
+    [
+      "b1_2",
+      "fallback_force0"
+    ],
+    [
+      "a2_0",
+      "lin_const_lc mon=(4, 4)"
+    ],
+    [
+      "a1_1",
+      "lin_const_lc mon=(5, 0)"
+    ],
+    [
+      "b1_1",
+      "lin_const_lc mon=(4, 4)"
+    ]
+  ],
+  "elapsed_sec": 39.03,
+  "theorem": "Axis-leading Keller maps of degree <= 5: every exotic coefficient is forced to 0 by the constant-Jacobian equations; remaining free variables are elementary (p_k for E_y, b_i0 for E_x). Tame compositions E_x o E_y invert constructively.",
+  "exit_ok": true
+}

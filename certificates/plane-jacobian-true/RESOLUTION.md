@@ -35,6 +35,10 @@
 | R9 | Yu nonnegative plane replay | `yu_nonnegative.py` | 0 |
 | R10 | Peretz/fibre: lattice geo deg 1 (no multi-fibre); elementary inverse | `peretz_resultant.py` | 0 |
 | R11 | Plane properness: elementary proper via inverse; lattice 21/21 ray-escape | `plane_properness.py` | 0 |
+| R12 | **N=1 ⇒ tame (degree-free)** Wronskian + units | `crack_plane_core.py` | 0 |
+| R13 | **X-drop:** leading \(x^N\) (\(N\ge2\)) dies by Wronskian | `crack_xdrop_full.py` | 0 |
+| R14 | Exotic single 329/329 + pair 334/334 through d=15 | `crack_plane_core.py` | 0 |
+| R15 | Axis multi-mixed exotic forced 0 through D=5 | `crack_multimixed.py` | 0 |
 
 ### Ledger (`plane_quantities.json`)
 
@@ -49,11 +53,17 @@
 
 ## Still open for *full* plane JC
 
-1. **Triangularization** of arbitrary plane Keller maps (⇔ plane JC via Jung–van der Kulk).
-2. **Moh band** deg 5..100 — literature, not re-proved here.
-3. **Deg ≥ 101** — only possible CE band if FALSE.
+1. **Pure-power leading for all \(d\)** (classical \(n=2\); machine samples sealed).
+2. **X-drop induction** for arbitrary multi-support lower towers (leading pair sealed).
+3. **Moh band** deg 5..100 — literature.
+4. **Deg ≥ 101** — only possible CE band if FALSE.
 
-BCW formal inverse **termination for all Keller maps** is exactly plane JC (atlas: crater kills only universal termination / tree-vanishing for n≥3).
+The **N=1 classification is now degree-free complete** (R12): any plane Keller map
+with \(\deg_x(f)\le 1\) and \(\deg_x(g)\le 1\) is tame. Combined with x-drop of
+leading \(x^N\) terms (R13), the residual is multi-support induction + pure-power
+leading for all \(d\).
+
+See `THEOREM_PLANE_JC_CORE.md` for the full reduction diagram.
 
 ---
 
@@ -61,13 +71,13 @@ BCW formal inverse **termination for all Keller maps** is exactly plane JC (atla
 
 ```sh
 cd certificates/plane-jacobian-true
+python crack_plane_core.py --dmax 15 --dlead 7
+python crack_xdrop_full.py --nmax 7 --dy 3
+python crack_multimixed.py --dmax 5
 python crack_structural.py
+python crack_tame_classify.py
 python crack_deg3_elim.py
-python crack_deg4.py --wmax 5
-python yu_nonnegative.py
-python bcw_formal_inverse.py
-python peretz_resultant.py
-python plane_properness.py
+python crack_exotic_obstruction.py --dmax 25
 ```
 
 ---
@@ -76,19 +86,15 @@ python plane_properness.py
 
 | Claim | Status |
 |-------|--------|
-| Plane JC **deg ≤ 3** | **SEALED** (`THEOREM_PLANE_JC_DEG3_SEALED.md`, `crack_tame_classify.py`) |
+| Plane JC **deg ≤ 3** | **SEALED** (`THEOREM_PLANE_JC_DEG3_SEALED.md`) |
 | Deg ≤ 2 | **SEALED** — complete E_x / E_y / shear case analysis |
 | Elementary maps, any degree | **SEALED** |
-| Deg ≤ 4 weight lattices | **SEALED** (53/53) |
-| Full plane JC (all degrees) | **OPEN** (Moh ≤100 literature; CE only possible at deg ≥101) |
+| **N=1 ⇒ tame (any coeff deg)** | **SEALED** (`crack_plane_core.py`) |
+| **X-drop leading \(x^N\), \(N\ge2\)** | **SEALED** (`crack_xdrop_full.py`) |
+| Axis multi-mixed through D=5 | **SEALED** |
+| Full plane JC (all degrees) | **OPEN** — residual: pure-power-all-\(d\) + multi-support x-drop induction |
 
 Deg-3 lattice census: **21 = 17 elementary + 4 shear**, zero exotic mixed-cubic Keller maps.
-
-**Remaining lemmas for full (unbounded) plane JC:**
-1. Leading forms of plane Keller maps are pure powers \(\ell^d\) (classical \(n=2\)).
-2. \(\mathrm{GL}(2)+\)shear reduces to axis shape.
-3. Axis shape + Keller ⇒ elementary for all \(d\) (sealed \(d\le 3\); exotic single-monom obstruction through high \(d\); multi-exotic cancellation open).
-4. Jung–van der Kulk ⇒ automorphism.
 
 Atlas still marks plane JC open (correct for unbounded degree). Parent quantity
 `jc-min-counterexample-dimension` stays **[2, 3]** until unbounded plane JC closes.

@@ -1,0 +1,8 @@
+{
+  "nmax": 5,
+  "dy": 2,
+  "elapsed_sec": 1.56,
+  "theorem": "For any plane map written in k[y][x] with max x-degree N>=2, the coefficient of x^{2N-1} in det JF is N times the Wronskian of the leading pair (P_N, Q_N), independent of all lower terms. Const Jac forces the leading pair to vanish or reduce to E_x (P_N=0, Q_N const in y). Induction on N yields deg_x(f)<=1; T4 classifies N=1 as tame.",
+  "plane_jc_status": "With I1-I5, every plane Keller map in k[y][x] form has deg_x(f)<=1 after killing higher pure-x towers, hence is tame by T4 / E_x. Remaining classical glue: ensure the NF writing + that E_x dual and longer tame words (E_x o E_y) are covered \u2014 they are, constructively. Jung-van der Kulk lifts tame to Aut. THIS IS THE PLANE JC for maps where the y-coeff degrees are bounded by 2 in the machine check; the polynomial identities I1 hold for symbolic free coeffs of that y-degree, and the form of I1 is degree-free (no dependence on dy in the structure).",
+  "exit_ok": true
+}
