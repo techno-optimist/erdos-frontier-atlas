@@ -1,0 +1,6 @@
+{
+  "dmax": 6,
+  "elapsed_sec": 0.94,
+  "theorem": "Binary leading forms that are not pure powers of a linear form never yield plane Keller maps in the tested patterns: two-factor monoms x^{d-k}y^k, square-free (x^2-y^2)y^{d-2}, and general binary R with g=y (Keller iff R pure in y). Pure powers work (axis + GL2 conjugates). Proportional leading + free H_{d-1} forces pure y when a=1,b=0 through d<=4.",
+  "exit_ok": true
+}
