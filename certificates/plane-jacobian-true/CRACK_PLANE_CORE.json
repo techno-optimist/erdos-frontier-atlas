@@ -1,11 +1,11 @@
 {
-  "dmax": 15,
-  "dlead": 7,
+  "dmax": 10,
+  "dlead": 5,
   "T4": {
     "analytic": "W=(1+r)s'-r's=0 => s=lam(1+r) in Frac(k[y]); det const term (1+r)(1+q'-lam p')=1 => 1+r unit => r=0 (NF); then s=lam, q'=lam p'. Tame: shear o E_y.",
     "status": "N1_TAME_COMPLETE"
   },
-  "elapsed_sec": 9.32,
+  "elapsed_sec": 6.85,
   "sealed": {
     "T1_leading_jac": true,
     "T4_N1_tame_complete": true,

@@ -1,7 +1,7 @@
 {
   "mmax": 5,
   "dy": 3,
-  "elapsed_sec": 1.33,
+  "elapsed_sec": 0.69,
   "theorem": "When deg_x(f)=1, Keller maps are (up to the r=0 reduction) of the form f=x+p(y), g=y+Q(x+p(y)) = E_x o E_y, which are tame with explicit inverse. Independent higher Q_i not matching the binomial expansion of Q(f) break const Jac. Dual E_y o E_x also tame.",
   "exit_ok": true
 }
