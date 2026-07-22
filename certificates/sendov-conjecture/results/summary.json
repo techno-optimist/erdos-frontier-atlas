@@ -101,6 +101,14 @@
     {
       "id": "dense_beta_scan",
       "result": "dense beta scan n=9..15 (194 configs): best feasible score=1.0 every n; CE=0"
+    },
+    {
+      "id": "wave10_miller_dual",
+      "result": "Miller conjugate-pair family dual n in {9,12,15,20,26}: CE=0; when R met, maxroot>1"
+    },
+    {
+      "id": "wave10b_true_d_n9",
+      "result": "true d(f) maximin n=9 root-param: best d=0.9908<1 (numeric underest. of unity; crit-param r=1); CE=0"
     }
   ],
   "atlas_clues": [

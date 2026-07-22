@@ -1,0 +1,9 @@
+{
+  "n": 9,
+  "best_d": 0.9907522679429891,
+  "max_root_mod": 1.0,
+  "counterexample": false,
+  "note": "root-param d maximin underestimates near roots-of-unity (double np.roots on p'); crit-param recovers r=1. CE=0 either way.",
+  "unity_root_param_d": 0.9907990772717605,
+  "unity_crit_param_r": 1.0
+}

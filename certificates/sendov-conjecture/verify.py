@@ -572,6 +572,40 @@ def main() -> int:
         print("leg25 dense_all_compact.json: MISSING FAIL")
         ok = False
 
+    # Leg 26 — wave10 Miller dual
+    w10d = load_json("wave10_miller_dual.json")
+    if w10d is not None:
+        ces = [r for r in w10d if r.get("counterexample")]
+        bad = [
+            r
+            for r in w10d
+            if float(r.get("radius", 0) or 0) > 1 + 1e-8
+            and float(r.get("max_root_mod", 99) or 99) <= 1 + 1e-8
+        ]
+        leg = len(ces) == 0 and len(bad) == 0 and len(w10d) >= 5
+        print(
+            f"leg26 wave10_miller_dual.json: rows={len(w10d)} ces={len(ces)} "
+            f"bad={len(bad)} {'PASS' if leg else 'FAIL'}"
+        )
+        ok &= leg
+    else:
+        print("leg26 wave10_miller_dual.json: MISSING FAIL")
+        ok = False
+
+    # Leg 27 — wave10b true d n=9
+    w10b = load_json("wave10b_true_d_n9.json")
+    if w10b is not None:
+        ce = bool(w10b.get("counterexample"))
+        d = float(w10b.get("best_d", 0) or 0)
+        leg = (not ce) and d <= 1 + 1e-6
+        print(
+            f"leg27 wave10b_true_d_n9.json: d={d} ce={ce} {'PASS' if leg else 'FAIL'}"
+        )
+        ok &= leg
+    else:
+        print("leg27 wave10b_true_d_n9.json: MISSING FAIL")
+        ok = False
+
     print()
     print("ALL PASS" if ok else "FAILURES PRESENT")
     return 0 if ok else 1
