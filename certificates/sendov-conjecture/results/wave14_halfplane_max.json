@@ -1,0 +1,17 @@
+[
+  {
+    "n": 9,
+    "radius": null,
+    "counterexample": false
+  },
+  {
+    "n": 12,
+    "radius": null,
+    "counterexample": false
+  },
+  {
+    "n": 15,
+    "radius": null,
+    "counterexample": false
+  }
+]

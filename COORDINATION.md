@@ -38,7 +38,7 @@ others don't touch it.
 | `codex/foundry-*` | foundry / atlas integration + gates | *(register)* | *(register)* |
 | `claude/erdos-142-certificate` | E142 orchestration · results registry · board certs | `certificates/erdos-142/`, `RESULTS_REGISTRY.md` | frozen E142 cert merged-pending |
 | `agent/jc-fences-fib-macro-20260720` | JC fiber/degree family fences + Fibonacci L=3 macro residual | `certificates/jc-family-fences/`, `certificates/fibonacci-macro-residual/` | PR packaging 2026-07-20 |
-| `agent/sendov-wall-ledger-20260721` | Sendov conjecture CE hunt → wall ledger (0 CEs; dual-ray/jet/squeeze) | `certificates/sendov-conjecture/` | PR packaging 2026-07-21 |
+| `agent/sendov-wall-ledger-20260721` | Sendov CE hunt → wall ledger (0 CEs; dense n≤30; free duals; equal-crit thm) | `certificates/sendov-conjecture/` | PR #94 active 2026-07-22 |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching

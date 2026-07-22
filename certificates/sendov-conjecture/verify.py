@@ -646,6 +646,61 @@ def main() -> int:
         print("leg29 wave12_arc_dual.json: MISSING FAIL")
         ok = False
 
+    # Leg 30 — wave13 unit circle
+    w13 = load_json("wave13_unit_circle.json")
+    if w13 is not None:
+        ces = [r for r in w13 if r.get("counterexample")]
+        over = [r for r in w13 if float(r.get("best_d", 0)) > 1 + 1e-6]
+        leg = len(ces) == 0 and len(over) == 0 and len(w13) >= 3
+        print(
+            f"leg30 wave13_unit_circle.json: rows={len(w13)} ces={len(ces)} "
+            f"over={len(over)} {'PASS' if leg else 'FAIL'}"
+        )
+        ok &= leg
+    else:
+        print("leg30 wave13_unit_circle.json: MISSING FAIL")
+        ok = False
+
+    # Leg 31 — wave13b near wall dual
+    w13b = load_json("wave13b_near_wall_dual.json")
+    if w13b is not None:
+        ces = [r for r in w13b if r.get("counterexample")]
+        bad = [
+            r
+            for r in w13b
+            if float(r.get("radius", 0) or 0) > 1 + 1e-8
+            and float(r.get("max_root_mod", 99) or 99) <= 1 + 1e-8
+        ]
+        leg = len(ces) == 0 and len(bad) == 0 and len(w13b) >= 5
+        print(
+            f"leg31 wave13b_near_wall_dual.json: rows={len(w13b)} ces={len(ces)} "
+            f"bad={len(bad)} {'PASS' if leg else 'FAIL'}"
+        )
+        ok &= leg
+    else:
+        print("leg31 wave13b_near_wall_dual.json: MISSING FAIL")
+        ok = False
+
+    # Leg 32 — wave14 halfplane dual
+    w14 = load_json("wave14_halfplane_dual.json")
+    if w14 is not None:
+        ces = [r for r in w14 if r.get("counterexample")]
+        bad = [
+            r
+            for r in w14
+            if float(r.get("radius", 0) or 0) > 1 + 1e-8
+            and float(r.get("max_root_mod", 99) or 99) <= 1 + 1e-8
+        ]
+        leg = len(ces) == 0 and len(bad) == 0 and len(w14) >= 3
+        print(
+            f"leg32 wave14_halfplane_dual.json: rows={len(w14)} ces={len(ces)} "
+            f"bad={len(bad)} {'PASS' if leg else 'FAIL'}"
+        )
+        ok &= leg
+    else:
+        print("leg32 wave14_halfplane_dual.json: MISSING FAIL")
+        ok = False
+
     print()
     print("ALL PASS" if ok else "FAILURES PRESENT")
     return 0 if ok else 1

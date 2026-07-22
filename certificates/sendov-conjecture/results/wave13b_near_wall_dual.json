@@ -1,0 +1,92 @@
+[
+  {
+    "n": 9,
+    "R_target": 1.0001,
+    "radius": 0.9899072444799547,
+    "max_root_mod": 0.9934919359427764,
+    "meets_R": false,
+    "slack_maxroot": -0.006508064057223595,
+    "counterexample": false,
+    "equal_crit_slack": 9.999999999998899e-05
+  },
+  {
+    "n": 9,
+    "R_target": 1.0005,
+    "radius": 0.9940998970143409,
+    "max_root_mod": 0.9946107942491366,
+    "meets_R": false,
+    "slack_maxroot": -0.005389205750863435,
+    "counterexample": false,
+    "equal_crit_slack": 0.0004999999999999449
+  },
+  {
+    "n": 9,
+    "R_target": 1.001,
+    "radius": 0.994597841378657,
+    "max_root_mod": 0.9951094038124025,
+    "meets_R": false,
+    "slack_maxroot": -0.004890596187597462,
+    "counterexample": false,
+    "equal_crit_slack": 0.0009999999999998899
+  },
+  {
+    "n": 9,
+    "R_target": 1.002,
+    "radius": 0.9955936385980005,
+    "max_root_mod": 0.9961065594883745,
+    "meets_R": false,
+    "slack_maxroot": -0.0038934405116255455,
+    "counterexample": false,
+    "equal_crit_slack": 0.0020000000000000018
+  },
+  {
+    "n": 9,
+    "R_target": 1.005,
+    "radius": 0.9981589782578136,
+    "max_root_mod": 0.9989455766748869,
+    "meets_R": false,
+    "slack_maxroot": -0.0010544233251130741,
+    "counterexample": false,
+    "equal_crit_slack": 0.004999999999999893
+  },
+  {
+    "n": 9,
+    "R_target": 1.01,
+    "radius": 1.0,
+    "max_root_mod": 1.0000000000000004,
+    "meets_R": false,
+    "slack_maxroot": 4.440892098500626e-16,
+    "counterexample": false,
+    "equal_crit_slack": 0.010000000000000009
+  },
+  {
+    "n": 9,
+    "R_target": 1.02,
+    "radius": 1.0126753321891266,
+    "max_root_mod": 1.0136430280709714,
+    "meets_R": false,
+    "slack_maxroot": 0.013643028070971397,
+    "counterexample": false,
+    "equal_crit_slack": 0.020000000000000018
+  },
+  {
+    "n": 9,
+    "R_target": 1.05,
+    "radius": 1.2303778201775064,
+    "max_root_mod": 2.1100585543095773,
+    "meets_R": true,
+    "slack_maxroot": 1.1100585543095773,
+    "counterexample": false,
+    "equal_crit_slack": 0.050000000000000044
+  },
+  {
+    "n": 9,
+    "R_target": 1.1,
+    "radius": 1.0928110638843602,
+    "max_root_mod": 1.0935764580512053,
+    "meets_R": false,
+    "slack_maxroot": 0.09357645805120529,
+    "counterexample": false,
+    "equal_crit_slack": 0.10000000000000009
+  }
+]

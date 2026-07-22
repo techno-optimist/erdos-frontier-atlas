@@ -117,6 +117,18 @@
     {
       "id": "wave12_arc_force",
       "result": "arc-crit dual (equal-spaced crits on circle) n in {9,12,15,20}: 12 dual rows CE=0"
+    },
+    {
+      "id": "wave13_unit_circle",
+      "result": "all-roots-on-unit-circle maximin d: rediscovers equal-spaced every n in {9,10,12,15,20}; best numeric d=0.9917<1 (root-param underest.); CE=0"
+    },
+    {
+      "id": "wave13b_near_wall",
+      "result": "n=9 free dual fine R-grid 9 rows near R=1+: CE=0; meets R only with maxroot>1 (or fails meet at unity basin)"
+    },
+    {
+      "id": "wave14_halfplane",
+      "result": "left-halfplane crit dual n in {9,12,15}: 9 rows CE=0"
     }
   ],
   "atlas_clues": [

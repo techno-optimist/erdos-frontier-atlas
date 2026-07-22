@@ -1,0 +1,42 @@
+[
+  {
+    "n": 9,
+    "best_d": 0.9917073258989537,
+    "equal_spaced_d_numeric": 0.9917073258989537,
+    "counterexample": false,
+    "rediscovered_equal_spaced": true,
+    "note": "root-param d underestimates unity; equal-spaced maximizer on boundary"
+  },
+  {
+    "n": 10,
+    "best_d": 0.9860403982925767,
+    "equal_spaced_d_numeric": 0.9860403982925767,
+    "counterexample": false,
+    "rediscovered_equal_spaced": true,
+    "note": "root-param d underestimates unity; equal-spaced maximizer on boundary"
+  },
+  {
+    "n": 12,
+    "best_d": 0.9681510430305572,
+    "equal_spaced_d_numeric": 0.9681510430305572,
+    "counterexample": false,
+    "rediscovered_equal_spaced": true,
+    "note": "root-param d underestimates unity; equal-spaced maximizer on boundary"
+  },
+  {
+    "n": 15,
+    "best_d": 0.9276392645542859,
+    "equal_spaced_d_numeric": 0.9276392645542859,
+    "counterexample": false,
+    "rediscovered_equal_spaced": true,
+    "note": "root-param d underestimates unity; equal-spaced maximizer on boundary"
+  },
+  {
+    "n": 20,
+    "best_d": 0.861504460830174,
+    "equal_spaced_d_numeric": 0.861504460830174,
+    "counterexample": false,
+    "rediscovered_equal_spaced": true,
+    "note": "root-param d underestimates unity; equal-spaced maximizer on boundary"
+  }
+]

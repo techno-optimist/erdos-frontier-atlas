@@ -73,16 +73,17 @@ walls below are walls for *spending our own search compute*.
 - **Sendov’s conjecture (Ilieff misattr.):** \(d(f)\le 1\) for polynomials with
   roots in the unit disk. Proved for \(n<9\) and for large \(n\) (Tao 2022,
   non-explicit \(n_0\)); open only for intermediate degrees. **Equality is sharp**
-  (\(z^n-1\)). A 2026-07-21 multi-lane CE assault (crit-param, free \(\beta\),
-  Miller strata, Tao near-CE family, dual-ray, extremal jet 26 775 samples,
-  squeeze curves) found **0 counterexamples** and a consistent wall: forcing
-  radius \(R>1\) forces max\|root\| \(\approx 2R-1>1\) on radial crit scalings;
-  local jets at the unity extremal never raise \(r\) without ejecting roots.
-  **Do not burn fleet DE on random roots of unity without high-precision
-  validation** (double `np.roots` underestimates \(d\)). Wall ledger:
-  [`certificates/sendov-conjecture/`](../certificates/sendov-conjecture/)
-  (`python3 certificates/sendov-conjecture/verify.py`). Still open for a true
-  exact \(n=9\) decision procedure or effective Tao \(n_0\) — that is theory /
+  (\(z^n-1\)). A 2026-07 multi-lane CE assault (crit-param, free \(\beta\),
+  Miller strata, Tao near-CE family, dual-ray/fast, extremal jet 26 775 samples,
+  squeeze, dense \(\beta\)-scan \(n\le 30\), free complex duals, unit-circle
+  maximin, halfplane strata) found **0 counterexamples** and a consistent wall:
+  forcing radius \(R>1\) forces max\|root\| \(>1\); unit-circle maximin
+  rediscovers equal-spaced roots. **Equal-crit family has a geometric no-CE
+  theorem.** **Do not burn fleet DE on random roots of unity without
+  high-precision validation** (double `np.roots` underestimates \(d\)). Wall
+  ledger: [`certificates/sendov-conjecture/`](../certificates/sendov-conjecture/)
+  (`python3 certificates/sendov-conjecture/verify.py`, 32 legs). Still open for a
+  true exact \(n=9\) decision procedure or effective Tao \(n_0\) — theory /
   exact real algebra, not random search.
 
 ## Witness not representable / physically astronomical
