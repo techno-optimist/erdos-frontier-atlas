@@ -1,0 +1,26 @@
+[
+  {
+    "n": 9,
+    "radius": 0.11147499284958559,
+    "max_root_mod": 0.6993685178440683,
+    "counterexample": false
+  },
+  {
+    "n": 12,
+    "radius": null,
+    "max_root_mod": null,
+    "counterexample": false
+  },
+  {
+    "n": 15,
+    "radius": 0.10017202738610084,
+    "max_root_mod": 0.7163270032417448,
+    "counterexample": false
+  },
+  {
+    "n": 20,
+    "radius": null,
+    "max_root_mod": null,
+    "counterexample": false
+  }
+]

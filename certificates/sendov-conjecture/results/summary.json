@@ -113,6 +113,10 @@
     {
       "id": "wave11_free_dual_n15",
       "result": "n=15 free complex beta+14 crits dual R in {1.01,1.05,1.1}: CE=0"
+    },
+    {
+      "id": "wave12_arc_force",
+      "result": "arc-crit dual (equal-spaced crits on circle) n in {9,12,15,20}: 12 dual rows CE=0"
     }
   ],
   "atlas_clues": [
