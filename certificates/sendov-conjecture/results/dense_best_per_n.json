@@ -54,5 +54,69 @@
     "max_root_mod": 1.000000000098487,
     "feasible": true,
     "counterexample": false
+  },
+  {
+    "n": 16,
+    "score": 1.0000000000498603,
+    "source": "real_beta_1.000",
+    "max_root_mod": 1.000000000099722,
+    "feasible": true,
+    "counterexample": false
+  },
+  {
+    "n": 18,
+    "score": 1.0,
+    "source": "unity",
+    "max_root_mod": 1.0000000000000022,
+    "feasible": true,
+    "counterexample": false
+  },
+  {
+    "n": 20,
+    "score": 1.0,
+    "source": "unity",
+    "max_root_mod": 1.000000000000001,
+    "feasible": true,
+    "counterexample": false
+  },
+  {
+    "n": 22,
+    "score": 1.0,
+    "source": "unity",
+    "max_root_mod": 1.0000000000000013,
+    "feasible": true,
+    "counterexample": false
+  },
+  {
+    "n": 24,
+    "score": 1.0,
+    "source": "unity",
+    "max_root_mod": 1.000000000000002,
+    "feasible": true,
+    "counterexample": false
+  },
+  {
+    "n": 26,
+    "score": 1.0,
+    "source": "unity",
+    "max_root_mod": 1.0000000000000016,
+    "feasible": true,
+    "counterexample": false
+  },
+  {
+    "n": 28,
+    "score": 1.000000000049999,
+    "source": "real_beta_1.000",
+    "max_root_mod": 1.0000000000999982,
+    "feasible": true,
+    "counterexample": false
+  },
+  {
+    "n": 30,
+    "score": 1.0000000000497586,
+    "source": "real_beta_1.000",
+    "max_root_mod": 1.0000000000995193,
+    "feasible": true,
+    "counterexample": false
   }
 ]

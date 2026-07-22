@@ -100,7 +100,7 @@
     },
     {
       "id": "dense_beta_scan",
-      "result": "dense beta scan n=9..15 (194 configs): best feasible score=1.0 every n; CE=0"
+      "result": "dense beta scan n=9..30 (321 configs): best feasible score=1.0 every n; CE=0"
     },
     {
       "id": "wave10_miller_dual",
