@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:99cae4a1ab96e8876391dc6b4edd39ce8210f5877bc02bd0342f88d8c8c9d8f9",
+  "content_digest": "sha256:b9c9c6f670e9b3bb4336e42949e359fa4a4c7cbb307ad2d4f37bc58286c2d328",
+  "occurred_at": "2026-07-22T13:13:55Z",
+  "frontier": "A385316: smallest number expressible as sum of three prime cubes in exactly 6 ways (a(6)); current lower bound a(6) > 4.99×10¹¹.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nBuilt the complete-prime-set multiplicity verifier from focused context. Replayed domain kill fixtures (N=0, N=-1 — both correctly rejected via ValueError), predicate kill fixtures (N=24 claimed k=2, k=0, k=3 — all correctly rejected as count mismatches), and reproduced all five OEIS terms a(1)..a(5) exactly.",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nALL KILL FIXTURES PASSED\nArtifact: verifier_a385316.py, SHA-256: f730c3bda06bb56fe383cfa960f70769df83023bb4f2959c01aff5aa4a2562a9\nTerm reproduction: a(1)=24 (k=1 OK), a(2)=185527 (k=2 OK), a(3)=8627527 (k=3 OK), a(4)=999979163 (k=4 OK), a(5)=10588881419 (k=5 OK). All five terms reproduced in <1s on local hardware.\nVerifier domain: (N, k) where N is a positive integer and k is a positive integer; count_representations raises ValueError for N ≤ 0.\nVerifier predicate: count nondecreasing prime-cube triples (p ≤ q ≤ r) with p³+q³+r³ = N; reject if count ≠ k.\nFrontier advice: None (no strategy_advice present in gate).",
+  "result": "Verifier artifact constructed, kill-tested, and fully replayed with zero failures. All five OEIS terms a(1)..a(5) reproduced exactly. The discriminating step — running the verifier at C=10¹³ to find a(6) or certify a(6) > 10¹³ — requires DGX SSH access and cannot be performed from this Mac.",
+  "next_gate": "Operator with DGX SSH access must execute the same verifier at C=10¹³. If a k=6 candidate appears, report it with certificate; if not, certify a(6) > 10¹³ and advance to C=10¹⁴ or a heuristic/construction approach.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-22_06-13-55.md",
+    "sha256": "927ec6dacca13baabfc57d26e2c9cbcf047d9b3b52937eca62026fc864f093bf"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}
