@@ -1,0 +1,42 @@
+{
+  "n": 9,
+  "grid_evals": 270480,
+  "best_feas_radius": 0.9813043478260868,
+  "bad_feas_count": 0,
+  "ces": 0,
+  "counterexample": false,
+  "dual": [
+    {
+      "R_target": 1.001,
+      "radius": 1.0671954553594851,
+      "max_root_mod": 1.2815216585187348,
+      "meets_R": true,
+      "slack_maxroot": 0.2815216585187348,
+      "counterexample": false
+    },
+    {
+      "R_target": 1.01,
+      "radius": 0.9978869286506731,
+      "max_root_mod": 0.9980902081171349,
+      "meets_R": false,
+      "slack_maxroot": -0.0019097918828651084,
+      "counterexample": false
+    },
+    {
+      "R_target": 1.05,
+      "radius": 1.110157528256177,
+      "max_root_mod": 1.3638357822247162,
+      "meets_R": true,
+      "slack_maxroot": 0.36383578222471624,
+      "counterexample": false
+    },
+    {
+      "R_target": 1.1,
+      "radius": 1.100553704682802,
+      "max_root_mod": 1.3435203420135629,
+      "meets_R": true,
+      "slack_maxroot": 0.34352034201356285,
+      "counterexample": false
+    }
+  ]
+}

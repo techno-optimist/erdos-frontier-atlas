@@ -76,6 +76,7 @@ best **feasible** \(d=1\).
 | Wave13 unit-circle roots | all \(\lvert z_i\rvert=1\), maximin \(d(f)\) | rediscovers equal-spaced; numeric \(d<1\); CE=0 |
 | Wave13b near-wall dual \(n=9\) | free crits, fine \(R\in[1.0001,1.1]\) | CE=0; wall slack positive when \(R\) met |
 | Wave14 left-halfplane crits | \(\mathrm{Re}(\zeta)\le 0\), dual \(n\in\{9,12,15\}\) | CE=0 |
+| Wave15 two-real-crit \(n=9\) | 270 480 grid + dual | best feas \(r\approx 0.981\); bad\((r>1,\mathrm{maxroot}\le1)=0\); CE=0 |
 | Wave10 Miller dual | \(n\in\{9,12,15,20,26\}\), Miller \(P'\) shape | dual \(R>1\Rightarrow\) maxroot\(>1\); CE=0 |
 | Wave10b true \(d(f)\) \(n=9\) | free roots in disk, maximin \(d\) | best numeric \(d\approx 0.991\) (underestimates unity); CE=0 |
 | Wave11 free dual \(n=15\) | free \(\beta\) + 14 complex crits | CE=0; dual force never CE |

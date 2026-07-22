@@ -701,6 +701,29 @@ def main() -> int:
         print("leg32 wave14_halfplane_dual.json: MISSING FAIL")
         ok = False
 
+    # Leg 33 — wave15 two-crit n=9
+    w15 = load_json("wave15_two_crit_n9.json")
+    if w15 is not None:
+        ces = int(w15.get("ces", 0) or 0)
+        bad = int(w15.get("bad_feas_count", 0) or 0)
+        dual = w15.get("dual") or []
+        dual_ce = [r for r in dual if r.get("counterexample")]
+        leg = (
+            ces == 0
+            and bad == 0
+            and (not w15.get("counterexample"))
+            and int(w15.get("grid_evals", 0) or 0) >= 1000
+            and len(dual_ce) == 0
+        )
+        print(
+            f"leg33 wave15_two_crit_n9.json: evals={w15.get('grid_evals')} "
+            f"bad={bad} ces={ces} dual_ce={len(dual_ce)} {'PASS' if leg else 'FAIL'}"
+        )
+        ok &= leg
+    else:
+        print("leg33 wave15_two_crit_n9.json: MISSING FAIL")
+        ok = False
+
     print()
     print("ALL PASS" if ok else "FAILURES PRESENT")
     return 0 if ok else 1

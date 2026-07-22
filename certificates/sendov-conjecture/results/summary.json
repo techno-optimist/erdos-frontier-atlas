@@ -129,6 +129,10 @@
     {
       "id": "wave14_halfplane",
       "result": "left-halfplane crit dual n in {9,12,15}: 9 rows CE=0"
+    },
+    {
+      "id": "wave15_two_crit_n9",
+      "result": "n=9 two-real-crit dense grid 270480 evals: best_feas r=0.9813; bad_feas=0; CE=0"
     }
   ],
   "atlas_clues": [
