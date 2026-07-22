@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:891497bf8bcaa82ff41e9898c79cfa9665fae6b8c5abd5cca89c6e4731166037",
+  "content_digest": "sha256:775fe77bc700add8010ed2f8b76b39d93d983afbe95c17dee3a99c504e7c23ec",
+  "occurred_at": "2026-07-22T09:17:23Z",
+  "frontier": "A385316: smallest N = p³+q³+r³ (primes) in exactly 6 ways — what is a(6)?",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nReconstructed the A385316 verifier from focused context (OEIS terms a(1..5), domain/predicate specification). Replayed at C=2×10¹⁰: domain kill fixtures (2/2 reject composite-injected triples), predicate kill fixtures (3/3 reject non-multiplicity claims), and all five OEIS terms reproduced exactly.",
+  "verified": "Verifier domain: P = {p prime : p^3 <= C}; enumerate nondecreasing triples (p<=q<=r) with p^3+q^3+r^3 <= C.\nVerifier predicate: count[s] = #{(p,q,r) : p<=q<=r, p³+q³+r³=s}; must equal n for a(n).\nDomain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nALL KILL FIXTURES PASSED\nArtifact: a385316_verifier.py, SHA-256: ea899c8c1b6e72290bd15d6be0dea6bfdcada702c2b0205050f0761ce9678540\nReproduced: a(1)=24(×1), a(2)=185527(×2), a(3)=8627527(×3), a(4)=999979163(×4), a(5)=10588881419(×5) — all exact.",
+  "result": "Verifier construction milestone fully replayed and verified locally. All five OEIS terms reproduced at C=2×10¹⁰. Kill fixtures pass with full branch coverage (domain: composite rejection + empty-set correctness; predicate: multiplicity mismatch rejection for three known terms). No k=6 candidate found up to C=2×10¹⁰ (the accepted continuation's bound). The discriminating bound a(6) > 10¹³ requires DGX SSH access, not available from this Mac.",
+  "next_gate": "Operator with DGX SSH access must run the same verifier at C=10¹³. If a k=6 candidate appears, report it with certificate; if not, certify a(6) > 10¹³ and advance to C=10¹⁴ or a heuristic/construction approach.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-22_02-17-23.md",
+    "sha256": "7ac1fc560740519bb4729d89735e00a30400ecebdd295f27bc6fa30333b45b1e"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}
