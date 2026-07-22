@@ -1,0 +1,53 @@
+{
+  "dmax": 5,
+  "results": [
+    {
+      "d": 2,
+      "n_poisson_minors": 1,
+      "n_hankel_minors": 1,
+      "d2_disc": "-4*c0*c2 + c1**2",
+      "lattice": {
+        "tot": 124,
+        "pure": 12,
+        "poisson0": 12,
+        "mismatch": 0
+      }
+    },
+    {
+      "d": 3,
+      "n_poisson_minors": 4,
+      "n_hankel_minors": 4,
+      "lattice": {
+        "tot": 624,
+        "pure": 8,
+        "poisson0": 8,
+        "mismatch": 0
+      }
+    },
+    {
+      "d": 4,
+      "n_poisson_minors": 15,
+      "n_hankel_minors": 9,
+      "lattice": {
+        "tot": 242,
+        "pure": 4,
+        "poisson0": 4,
+        "mismatch": 0
+      }
+    },
+    {
+      "d": 5,
+      "n_poisson_minors": 56,
+      "n_hankel_minors": 19,
+      "lattice": {
+        "tot": 728,
+        "pure": 4,
+        "poisson0": 4,
+        "mismatch": 0
+      }
+    }
+  ],
+  "elapsed_sec": 36.07,
+  "theorem": "For binary form R of degree d, the Poisson matrix M(R) for {R,K}=0 (K homog deg d-1) has nontrivial kernel if and only if R is a pure d-th power of a linear form. Verified by lattice and disc identity through d=5. When pure, ker contains the polar ell^{d-1}. Hence deg-(2d-3) Jac of plane Keller forces pure-power leading.",
+  "exit_ok": true
+}

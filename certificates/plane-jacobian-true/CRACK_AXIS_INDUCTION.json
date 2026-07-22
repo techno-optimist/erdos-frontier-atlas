@@ -1,0 +1,43 @@
+{
+  "dmax": 4,
+  "results": [
+    {
+      "D": 2,
+      "n_eqs": 5,
+      "n_free": 5,
+      "n_exotic": 3,
+      "elem_ey": true,
+      "elem_ex": true,
+      "n_sols": 3,
+      "solve_sec": 0.21,
+      "exotic_nonzero_branches": 0,
+      "status": "ALL_SOLS_ELEMENTARY"
+    },
+    {
+      "D": 3,
+      "n_eqs": 14,
+      "n_free": 12,
+      "n_exotic": 8,
+      "elem_ey": true,
+      "elem_ex": true,
+      "n_sols": 10,
+      "solve_sec": 0.96,
+      "exotic_nonzero_branches": 0,
+      "status": "ALL_SOLS_ELEMENTARY"
+    },
+    {
+      "D": 4,
+      "n_eqs": 27,
+      "n_free": 21,
+      "n_exotic": 15,
+      "elem_ey": true,
+      "elem_ex": true,
+      "single_break": "15/15",
+      "n_forced": 15,
+      "status": "FORCED_EXOTIC_ZERO"
+    }
+  ],
+  "elapsed_sec": 5.23,
+  "exit_ok": true,
+  "theorem": "Axis-leading Keller maps of degree <= 4: solutions are elementary or tame shear (D=2). Exotic mixed coeffs forced to 0."
+}

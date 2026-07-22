@@ -92,20 +92,23 @@ python crack_exotic_obstruction.py --dmax 25
 | **N=1 ⇒ tame (any coeff deg)** | **SEALED** (`crack_plane_core.py`) |
 | **X-drop leading \(x^N\), \(N\ge2\)** | **SEALED** (`crack_xdrop_full.py`) |
 | Axis multi-mixed through D=5 | **SEALED** |
-| Full plane JC (all degrees) | **REDUCTION SEALED** — see `THEOREM_PLANE_JC.md` + `crack_plane_jc_full.py` |
+| Full plane JC (all degrees) | **OPEN** (atlas ○) — partial reduction sealed; coord gap remains |
 
 Deg-3 lattice census: **21 = 17 elementary + 4 shear**, zero exotic mixed-cubic Keller maps.
 
-### Full plane JC reduction (2026-07-21)
+### Partial reduction seals (2026-07-21/22) — honest
 
 | Step | Status | Certificate |
 |------|--------|-------------|
-| G1 pure-power leading | **SEALED** | `crack_G1_purepower.py` |
-| G2 axis via GL(2) | **SEALED** | `crack_plane_jc_full.py` |
-| IND x-drop | **SEALED** | `crack_induction.py` |
-| T4 deg_x=1 ⇒ tame | **SEALED** | `crack_plane_core.py`, `crack_degx1_full.py` |
+| Poisson `{R,K}=0` ⇔ pure power | **SEALED** lattice d≤5 + disc d=2 | `crack_poisson_hankel.py` |
+| G1 structural (g=y path, nonpure die) | **SEALED** through d=5 | `crack_G1_complete.py` |
+| Axis D≤3 full solve ⇒ elementary | **SEALED** | `crack_axis_induction.py` |
+| X-drop Wronskian | **SEALED** | `crack_induction.py` |
+| N=1 / deg_x(f)=1 ⇒ tame | **SEALED** degree-free core | `crack_plane_core.py` |
+| Deg ≤ 3 complete class | **SEALED** | `crack_tame_classify.py` |
 | Jung–van der Kulk | classical | literature |
-| **Master** | exit 0 | `crack_plane_jc_full.py` |
 
-Parent atlas quantity `jc-min-counterexample-dimension` **closes to 3** under this reduction
-(plane JC TRUE ⇒ no planar counterexample).
+**Gap for full crack:** arbitrary Keller → pure-power axis coordinates for **all**
+degrees (not only checked d≤dmax / axis D≤3). Atlas parent stays **[2, 3] OPEN**.
+
+See `THEOREM_PLANE_JC.md` (retracted overclaim).

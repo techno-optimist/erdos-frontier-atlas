@@ -1,120 +1,93 @@
-# Plane Jacobian Conjecture — TRUE
+# Plane Jacobian Conjecture — TRUE-lane status (honest)
 
-**Certificate package:** `certificates/plane-jacobian-true/`  
-**Master runner:** `python crack_plane_jc_full.py --dmax 5` (exit 0)  
+**Atlas:** [`plane_jacobian_conjecture`](https://github.com/techno-optimist/erdos-frontier-atlas/blob/main/atlas/jc-crater/implication_graph.json) remains **○ OPEN**.  
+**Parent bracket:** `jc-min-counterexample-dimension` stays **[2, 3]** until plane JC is fully proved.  
 **Date:** 2026-07-21.
 
----
-
-## Theorem
-
-Let \(k\) be a field of characteristic 0. Let \(F = (f,g) \in k[x,y]^2\) with
-\(\det JF \in k^\times\). Then \(F\) is a polynomial automorphism of \(\mathbb{A}^2_k\).
+This package does **not** claim a complete community-grade proof of unbounded plane JC.
+It machine-seals a long reduction chain and infinite subclasses. Overclaim language
+from earlier drafts is retracted here.
 
 ---
 
-## Proof (reduction chain)
+## Atlas clues used
 
-### Step 0 — Normal form (classical)
+| Clue | Status | Use |
+|------|--------|-----|
+| Plane JC is the sole open survivor | ○ OPEN | Target |
+| Moh deg ≤ 100 | literature | CE only possible at deg ≥ 101 if FALSE |
+| Wang deg ≤ 2 | ✓ theorem | Base rung |
+| Yu nonnegative | ✓ theorem | Sign cone |
+| BCW tree formula | ✓ theorem | Formal inverse exists |
+| `jc_tree_vanishing` (n=2) | ○ open = plane JC | Termination = invertibility |
+| BCW proper Keller ⇒ auto | ✓ per-map | Plane JC ⇔ properness |
+| Ax–Grothendieck | ✓ theorem | Injectivity ⇒ bijectivity |
+| Geo deg of noninjective Keller | [2,3] open | Plane wants geo deg 1 |
 
-After an affine change of domain and codomain, \(F = \mathrm{Id} + H\) with
-\(H\) having no constant or linear terms, and \(\det JF = 1\).
+---
 
-### Step 1 — Pure-power leading **[G1, machine + binary-form structure]**
+## What is machine-sealed (exit 0)
 
-Write \(H = H_d + H_{d-1} + \cdots + H_2\) by total degree. The residual
-\(S = \mathrm{div}\,H + \det JH\) vanishes in each homogeneous degree:
+| ID | Claim | Certificate |
+|----|--------|-------------|
+| R1–R11 | Deg≤3, elementary, Yu/BCW/Peretz/properness samples | prior seals |
+| **PH** | Poisson `{R,K}=0` nontrivial ⇔ binary R pure power (Hankel) | `crack_poisson_hankel.py` |
+| **G1*** | Pure-power patterns + Poisson/gcd through dmax | `crack_G1_purepower.py` |
+| **IND** | X-drop: `[x^{2N-1}]=N W(P_N,Q_N)` full lower tower | `crack_induction.py` |
+| **T4** | `deg_x(f)=1` ⇒ tame `E_x∘E_y` / shear (degree-free core) | `crack_plane_core.py`, `crack_degx1_full.py` |
+| Deg≤3 | Full tame class 21=17+4 | `crack_tame_classify.py` |
 
-| Degree | Condition | Consequence |
-|--------|-----------|-------------|
-| \(2d-2\) | \(\det J(H_d)=0\) | \(H_d = (\alpha R, \beta R)\) |
-| \(2d-3\) | Poisson \(\{R,K\}=0\) | \(K=0\) or \(R=\ell^d\) |
+### Poisson–Hankel (G1 structural heart)
 
-**Machine certificates** (`crack_G1_purepower.py`, exit 0):
-
-- **G1a:** \(\det J(\alpha R,\beta R)=0\) identically.
-- **G1b:** Codomain shear reduces to \(H_d=(R,0)\).
-- **G1c:** Poisson \(\{R,K\}=0\): pure powers admit polar \(K=c\ell^{d-1}\);
-  non-pure force \(K=0\); Poisson matrix minors vanish on pure powers and
-  not on non-pure (through \(d\le 5\)).
-- **G1d:** \(\gcd(R_x,R_y)\) has degree \(d-1\) iff \(R=c\ell^d\)
-  (lattice \(63/63\) for \(d=2\), \(255/255\) for \(d=3\)).
-- **G1e:** Non-pure \(R\) cannot be repaired by free \(H_{d-1}\) (no Keller sols
-  through \(d=5\); poly2 \(0/150\) bad).
-- **G1f:** Pure power \(\to\) axis via GL(2); constructive inverse.
-
-### Step 2 — Axis form **[G2, machine]**
-
-After domain GL(2) sending \(\ell\mapsto y\), leading is pure \(y^d\) in one
-component. Axis shape has \(\deg_x(f)=1\) for the elementary realization;
-conjugates remain Keller with inverse (`crack_plane_jc_full.py` G2).
-
-### Step 3 — X-degree drop **[IND, machine]**
-
-In \(k[y][x]\) form with full lower tower, the coefficient of \(x^{2N-1}\) in
-\(\det JF\) is exactly
+For binary \(R\) of degree \(d\) and \(K\) homogeneous of degree \(d-1\):
 \[
-N\bigl(P_N Q_N' - P_N' Q_N\bigr),
+\{R,K\}=R_x K_y - R_y K_x = 0
 \]
-independent of lower terms (`crack_induction.py`). Const Jac kills leading
-\(N\ge 2\). Induction: \(\deg_x(f)\le 1\).
+is linear \(M(R)\,k=0\). Machine lattice + \(d=2\) discriminant identity:
+**nontrivial kernel ⇔ \(R=c\ell^d\)** (pure power). When pure, the polar
+\(K=\ell^{d-1}\) lies in the kernel.
 
-### Step 4 — \(\deg_x(f)=1\) \(\Rightarrow\) tame **[T4, machine, degree-free]**
+This is the algebraic content of “leading form is pure power” at order \(2d-3\).
 
-Write \(f=(1+r)x+p\), \(g=y+q+\sum Q_i x^i\).
+### X-filtration (after coordinates)
 
-- Wronskian: \((1+r)s'-r's=(1+r)^2(s/(1+r))'\).
-- \(W=0\Rightarrow s=\lambda(1+r)\); units in \(k[y]\) \(\Rightarrow r=0\).
-- Result: \(F = E_x\circ E_y\) or shear \(\circ E_y\), with explicit polynomial inverse
-  (`crack_plane_core.py`, `crack_degx1_full.py`).
-
-### Step 5 — Tame \(\Rightarrow\) automorphism **[classical]**
-
-**Jung–van der Kulk (1942/1953):** \(\mathrm{Aut}_k(k[x,y])\) is generated by
-affine automorphisms and elementary automorphisms \(E_x,E_y\).
-
-Hence \(F\) is a polynomial automorphism.
+Once the map is written in \(k[y][x]\) with pure-power / axis leading:
+const Jac forces \(\deg_x(f)\le 1\), then T4 gives tame form with inverse.
 
 ---
 
-## Machine replay (all exit 0)
+## What remains for a full crack
+
+| Gap | Why it matters |
+|-----|----------------|
+| **Coord reduction for arbitrary Keller** | Not every Keller map is presented in axis \(k[y][x]\) form; pure-power leading + GL(2) must be justified for **all** free lower terms of all degrees, not only checked \(d\le d_{\max}\) and elementary conjugates |
+| **Multi-support lower induction unbounded** | X-drop identity is structural; free y-coeff machine checks are bounded |
+| **Geo deg = 1 in general** | Equivalent (with Keller Satz 3 / Formanek) to plane JC; sealed on tame classes only |
+| **Jung–van der Kulk** | Classical (not re-proved here); needed to pass from tame to Aut |
+
+**Honest bottom line:** plane JC is **still open** in the atlas sense. This lane
+has sealed the **Poisson–Hankel pure-power step**, the **x-drop Wronskian**, and
+the **N=1 tame classification**, and fully classified **deg ≤ 3**. Closing the
+coord-reduction gap for arbitrary degree is the remaining path to the full crack.
+
+---
+
+## Replay
 
 ```sh
 cd certificates/plane-jacobian-true
-python crack_plane_jc_full.py --dmax 5
-# or piecemeal:
+python crack_poisson_hankel.py --dmax 5
 python crack_G1_purepower.py --dmax 5
 python crack_induction.py --nmax 5 --dy 2
-python crack_degx1_full.py --mmax 5 --dy 3
 python crack_plane_core.py --dmax 12 --dlead 5
-python crack_tame_classify.py   # deg <= 3 complete class
+python crack_degx1_full.py --mmax 5 --dy 3
+python crack_tame_classify.py
 ```
 
-Receipts: `CRACK_PLANE_JC_FULL.json`, `CRACK_G1_PUREPOWER.json`,
-`CRACK_INDUCTION.json`, `CRACK_DEGX1_FULL.json`, `CRACK_PLANE_CORE.json`.
-
 ---
 
-## Atlas consequence
+## Atlas quantity discipline
 
-| Quantity | Effect |
-|----------|--------|
-| `plane_jacobian_conjecture` | TRUE (reduction sealed) |
-| `jc-min-counterexample-dimension` | closes **[2,3] → 3** |
-| Surviving theorems (Wang, Yu, BCW) | unchanged (still theorems) |
-
----
-
-## Scope honesty
-
-| Piece | Nature |
-|-------|--------|
-| N=1 / deg_x=1 ⇒ tame | **Degree-free machine** |
-| X-drop Wronskian isolation | **Machine** (form degree-free; free y-coeff through bound) |
-| G1 Poisson/gcd/patterns | **Machine through dmax** + structural identities |
-| Jung–van der Kulk | **Classical theorem** |
-| Affine NF reduction | **Classical** |
-
-The algebraic heart that was open for unbounded degree — reducing Keller maps
-in the plane to tame elementary form via x-filtration — is machine-certified.
-Combined with Jung–van der Kulk, plane JC holds.
+Do **not** set `jc-min-counterexample-dimension` lower bound to 3 until the
+coord-reduction gap is closed. Keep parent **[2, 3] OPEN**. Partial seals live
+in `plane_quantities.json` under N1/xdrop/deg≤3 entries only.
