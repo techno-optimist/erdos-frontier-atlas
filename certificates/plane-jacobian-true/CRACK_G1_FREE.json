@@ -1,0 +1,6 @@
+{
+  "dmax": 5,
+  "elapsed_sec": 19.38,
+  "exit_ok": true,
+  "theorem": "Free binary R: Poisson matrix full rank unless R pure power (lattice through d=5; d=2 det=discriminant). K=0 nonpure + free mid: no Keller solutions through dmax."
+}
