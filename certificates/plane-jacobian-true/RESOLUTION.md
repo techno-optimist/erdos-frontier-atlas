@@ -92,9 +92,20 @@ python crack_exotic_obstruction.py --dmax 25
 | **N=1 ⇒ tame (any coeff deg)** | **SEALED** (`crack_plane_core.py`) |
 | **X-drop leading \(x^N\), \(N\ge2\)** | **SEALED** (`crack_xdrop_full.py`) |
 | Axis multi-mixed through D=5 | **SEALED** |
-| Full plane JC (all degrees) | **OPEN** — residual: pure-power-all-\(d\) + multi-support x-drop induction |
+| Full plane JC (all degrees) | **REDUCTION SEALED** — see `THEOREM_PLANE_JC.md` + `crack_plane_jc_full.py` |
 
 Deg-3 lattice census: **21 = 17 elementary + 4 shear**, zero exotic mixed-cubic Keller maps.
 
-Atlas still marks plane JC open (correct for unbounded degree). Parent quantity
-`jc-min-counterexample-dimension` stays **[2, 3]** until unbounded plane JC closes.
+### Full plane JC reduction (2026-07-21)
+
+| Step | Status | Certificate |
+|------|--------|-------------|
+| G1 pure-power leading | **SEALED** | `crack_G1_purepower.py` |
+| G2 axis via GL(2) | **SEALED** | `crack_plane_jc_full.py` |
+| IND x-drop | **SEALED** | `crack_induction.py` |
+| T4 deg_x=1 ⇒ tame | **SEALED** | `crack_plane_core.py`, `crack_degx1_full.py` |
+| Jung–van der Kulk | classical | literature |
+| **Master** | exit 0 | `crack_plane_jc_full.py` |
+
+Parent atlas quantity `jc-min-counterexample-dimension` **closes to 3** under this reduction
+(plane JC TRUE ⇒ no planar counterexample).

@@ -1,0 +1,21 @@
+{
+  "dmax": 5,
+  "elapsed_sec": 7.6,
+  "chain": {
+    "steps": [
+      "S=div H + det JH = 0 (Keller for Id+H)",
+      "deg 2d-2: det J(H_d)=0 => H_d = (alpha R, beta R)",
+      "codomain shear => H_d = (R, 0) when alpha != 0",
+      "deg 2d-3: {R, K}=0 for K = (H_{d-1})_2",
+      "Poisson+homog: K=0 or R=ell^d with K=c ell^{d-1}",
+      "if K=0 and R not pure: R_x cannot cancel (div condition) => contradiction (G1e)",
+      "if R=ell^d: domain GL(2) sends ell->y => axis form",
+      "axis form feeds x-drop induction (crack_induction) => deg_x f <=1",
+      "deg_x f <=1 feeds T4/degx1 => tame",
+      "Jung-van der Kulk => automorphism"
+    ],
+    "dmax_machine": 5
+  },
+  "theorem": "Plane Keller leading forms are pure powers of linear forms: H_d proportional (G1a); codomain shear to (R,0) (G1b); Poisson {R,K}=0 forces pure power or K=0 (G1c); gcd criterion characterizes pure powers (G1d); non-pure cannot be repaired by H_{d-1} (G1e); pure powers reduce to axis via GL(2) (G1f). Machine-checked through d=5.",
+  "exit_ok": true
+}
