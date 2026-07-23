@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:6cef8f97a06b904addf6af94c9121e090be0f7f41c970710aec159235262e14e",
+  "content_digest": "sha256:5d73cfb6015c2485f70225b79aa46e3a15f8a17816ed688694b4e52a267acc28",
+  "occurred_at": "2026-07-23T09:15:14Z",
+  "frontier": "What is a(6) for A385316 — the smallest integer expressible as p³+q³+r³ (p,q,r primes, p≤q≤r) in exactly 6 unordered ways? Current record: a(1..5) = 24, 185527, 8627527, 999979163, 10588881419 and a(6) > 499243435237.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nRebuilt verifier_prime_cubes.py from focused evidence (no broad context packet needed; focused context contained the exact verifier specification). The verifier builds a provably complete prime set P={p : p³≤C}, enumerates all nondecreasing triples (p≤q≤r) with p³+q³+r³≤C, counts exact multiplicities per sum, and supports --cutoff / --k CLI args for the C=10¹³ search. Domain-kill fixtures (string, negative, zero, float) and predicate-kill fixtures (N=24 k=6 has 1, N=185527 k=6 has 2, N=1 k=1 has 0, N=8 k=1 has 0) all assert branch-specific rejection. Reproduction confirmed: a(1)=24 with k=1, a(2)=185527 with k=2.",
+  "verified": "Verifier domain: N and cutoff must be non-negative integers; rejected string, negative (-5), zero (0), and non-integer float (3.14) with branch-specific reasons.\nVerifier predicate: Counts exact multiplicities of unordered prime-cube triples; rejected N=24 requested k=6 (has 1), N=185527 requested k=6 (has 2), N=1 and N=8 as trivial non-representations (both have 0).\nArtifact: verifier_prime_cubes.py, SHA-256: b8f0f5ce03be7d3f05d2913d43a1455d31f3543a054d38a783019a4b48f4ff05\nReplay summary (isolated, no-network):\nDomain kill fixtures: 4/4 rejected correctly\nPredicate kill fixtures: 4/4 rejected correctly\nALL KILL FIXTURES PASSED\na(3)=8627527 at cutoff≈9M runs in <0.1s with 13805 triples; zero numbers with k≥3 below it; zero numbers with k=4,5,6 at this cutoff.\nNo broad context packet loaded; focused evidence contained complete verifier specification.",
+  "result": "Verifier construction complete and independently replayable. No mathematical claim about a(6) advanced. The C=10¹³ discriminating search is blocked pending operator-provided DGX SSH access (the accepted_continuation's next gate). The verifier is ready for the operator to run: `ssh dgx 'python3 ~/cultural-soliton-observatory/research_sessions/res_20260723_091225_erdos-979-prime-cubes-a385316/verifier_prime_cubes.py --cutoff 10000000000000'`",
+  "next_gate": "Operator with DGX SSH access must execute the C=10¹³ search via the replayed verifier. If a k=6 candidate appears, report it with full certificate; if not, certify a(6) > 10¹³ and advance to C=10¹⁴ or a heuristic/construction approach.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-23_02-15-14.md",
+    "sha256": "4baf0711a9e7d3fba47dce3b307dddd3e842476fe3ac1da6046855028f578e70"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}
