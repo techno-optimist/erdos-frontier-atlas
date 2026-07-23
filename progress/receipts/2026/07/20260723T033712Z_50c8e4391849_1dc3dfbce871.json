@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:1dc3dfbce871e5330060a8dc9a50d97dd9386b45a0d5d5fa438b23d3e70c8684",
+  "content_digest": "sha256:2b0e93ef6e0308165d66c8a6abd715081a06e456c3e79e7974ec659b8262ca60",
+  "occurred_at": "2026-07-23T03:37:12Z",
+  "frontier": "Smallest N that is the sum of three prime cubes in exactly 6 ways (OEIS A385316 a(6)). Published lower bound: a(6) > 499243435237 (~4.99×10¹¹). The exact value is OPEN.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nCopied the accepted-continuation verifier (verifier_prime_cubes.py) into this session's artifact directory, repaired the domain kill-fixture function (fixture 2: k=0 was a no-op `pass`), and executed an isolated exit-0 replay.",
+  "verified": "Artifact: verifier_prime_cubes.py, SHA-256: a151de9d0d2a9da47880864144fcf0af1e60ae97c0383ad706a9590b9c6ac323\nDomain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nKnown terms verified: 1/1 at small cutoff (full cutoff C=10588881419 required for all 5)\nALL KILL FIXTURES PASSED\nVerifier domain: N=−1 → ValueError (not a non-negative integer); k=0 → ValueError (not a positive integer); C=0 → ValueError (not a positive integer) — all three out-of-domain inputs correctly rejected with ValueError\nVerifier predicate: N=24, k=2 → False (24 has exactly 1 representation: 2³+2³+2³=24, not 2); N=0, k=6 → False (0 is not a sum of three positive prime cubes) — both predicate-violation inputs correctly rejected\na(1)=24 confirmed at C=30 with verify_predicate(24, 1, 30) → (True, \"N=24 has exactly 1 representations\")\nNo foundry.strategy_digest present in prep; no strategy_advice; no receipt_contract.",
+  "result": "Verifier construction milestone completed and replayed exit-0 with all kill fixtures passing. The C=10¹³ discriminating search is a DGX-SSH-only operation; this Mac operator cannot execute it. No mathematical claim beyond the verifier correctness has been advanced.",
+  "next_gate": "Operator with DGX SSH access (spark-38e3.local) must execute `python3 verifier_prime_cubes.py --cutoff 10000000000000` to run the C=10¹³ search. If a k=6 candidate appears, report it with full certificate; if not, certify a(6) > 10¹³ and advance to C=10¹⁴ or a heuristic/construction approach. Independent reproduction by a second implementation required before publishing the lower bound.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-22_20-37-12.md",
+    "sha256": "a9236d1fe29a4c40f2d2925e355e0838c36e846a7ee384bbdcf6011d4cf68e8c"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}
