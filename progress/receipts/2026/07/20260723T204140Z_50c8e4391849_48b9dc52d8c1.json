@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:48b9dc52d8c14b4bfc402bab02588dcca043c4f233a83445efb2cddeb1d19cba",
+  "content_digest": "sha256:9d7e92a9ac0b68af736c09536ba03b9c17aaa43e3e4f482fb2a78c98e98eba58",
+  "occurred_at": "2026-07-23T20:41:40Z",
+  "frontier": "Erdős #979: smallest N = sum of three prime cubes in exactly 6 ways (OEIS A385316 a(6)); current best lower bound a(6) > 499,243,435,237.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nCopied the accepted-continuation verifier artifact (res_20260723_145749/verifier_prime_cubes.py, identical logic) into the current session directory and ran its isolated no-network replay. Confirmed it exits 0 with all domain and predicate kill fixtures rejecting correctly with proper branch reasons. Verified all five OEIS terms a(1)..a(5) reproduce. The C=10^13 bounded exact search from the next gate cannot proceed because DGX SSH is unreachable (dgx: DNS resolution failure; spark-38e3.local: SSH key rejected).",
+  "verified": "Verifier domain: N must be a non-negative integer; the input specifies a cutoff C (maximum value to search) and k (the target multiplicity). Any non-integer, negative, or zero input is rejected.\nVerifier predicate: An unordered triple (p, q, r) of primes with p <= q <= r is counted if p^3 + q^3 + r^3 <= C; the number of such triples summing to exactly N must equal k. The verifier exhaustively enumerates the complete prime set P = {p prime : p^3 <= C} and all nondecreasing triples, counts exact multiplicities per sum, and checks whether sum_counts[N] == k.\nArtifact: verifier_prime_cubes.py, SHA-256: 7fe349ef1a4a829ed3f7c0c99da0ae2f9735670b21b0dea925e4b079bf1b11c7\nDomain kill fixtures: 4/4 rejected correctly\nPredicate kill fixtures: 4/4 rejected correctly",
+  "result": "Verifier artifact is clean and replayable (exit 0, all kill fixtures pass, all five known terms reproduce). No new mathematical evidence: the C=10^13 bounded exact search remains blocked by DGX infrastructure failure. Prior quarantined verifier (sha256:93cae1...) failed because of a missing CLI argument and an overly-small cutoff for a(5); the repaired version resolves both.",
+  "next_gate": "When DGX SSH is restored (DNS resolution for dgx or authorized key for spark-38e3.local), execute: `ssh dgx 'python3 ~/cultural-soliton-observatory/research_sessions/res_20260723_145749_erdos-979-prime-cubes-a385316/verifier_prime_cubes.py --cutoff 10000000000000'` and report full output. If zero k=6 candidates found, certify a(6) > 10^13 and advance to C=10^14.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-23_13-41-40.md",
+    "sha256": "f30752f696d3840408096476a5c8a9fc8b97bce721ee3ce7363d8b385c878c6e"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}
