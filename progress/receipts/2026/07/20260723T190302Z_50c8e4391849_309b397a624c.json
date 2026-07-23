@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:309b397a624c19b1558934489bf99c222705136a70aaa1fb54aafd935f9e30b4",
+  "content_digest": "sha256:246bf7c070c04d5ac6f91f9550a9c84ccc28fa13703e197ab778264f84cac767",
+  "occurred_at": "2026-07-23T19:03:02Z",
+  "frontier": "Erdős #979: What is the smallest N = p³+q³+r³ (p,q,r primes) representable in exactly 6 unordered ways — the next term a(6) of OEIS A385316?",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nDeployed verifier_prime_cubes.py to the current session artifact directory (same code as accepted continuation sha256:b4d4..., verified identical logic with all five OEIS terms a(1)..a(5)). Ran local kill fixtures (4/4 domain, 4/4 predicate — all rejected with correct branches). Attempted the next_gate action: execute C=10^13 bounded exact search on DGX via ssh. SSH to dgx failed — hostname resolution error, and alternative host spark-38e3.local returned SSH key rejection. Local Python at C=10^13 would enumerate ~1.78B triples in ~300–1800s, exceeding the 30s terminal action budget and 900s wall-clock budget.",
+  "verified": "Artifact: verifier_prime_cubes.py, SHA-256: 6dd8b2d3b300a3e9fc4e0cc05107a616596aa5ca508afee401e5ea27b6294dd5\nDomain kill fixtures: 4/4 rejected correctly\nPredicate kill fixtures: 4/4 rejected correctly\nALL KILL FIXTURES PASSED\nReplicated all five known terms: a(1)=24 (k=1), a(2)=185527 (k=2), a(3)=8627527 (k=3), a(4)=999979163 (k=4), a(5)=10588881419 (k=5).\nC=10^13 sweep: BLOCKED — DGX SSH unreachable, local enumeration would take 300–1800s (exceeds 30s terminal / 900s wall budget). Lower bound remains a(6) > 10^12 from prior session (res_20260723_145749).",
+  "result": "Infrastructure blocker. The verifier artifact is correct and published. The C=10^13 search cannot proceed until DGX SSH is restored (DNS resolution failed, no authorized key for spark-38e3.local). No new mathematical evidence was produced this turn.",
+  "next_gate": "When DGX SSH is reachable, execute: `ssh dgx 'python3 ~/cultural-soliton-observatory/research_sessions/res_20260723_145749_erdos-979-prime-cubes-a385316/verifier_prime_cubes.py --cutoff 10000000000000'` and report full output. If zero k=6 candidates found, certify a(6) > 10^13 and advance to C=10^14.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. DGX unreachable — no remote writes attempted. Local artifacts only.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-23_12-03-02.md",
+    "sha256": "f9d1d081a034ef637d0cf8680db26f033fd21f2099477541680314cf1fe42e21"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}
