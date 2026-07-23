@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:c13c9c5757d056731479d1205b43e673999a64464a65f2b68b220d7b72c00dc7",
+  "content_digest": "sha256:cdc01edff7729dfd2b1562c27f1aef7cc87f425b04fd2a7df7a760aa6cf866b2",
+  "occurred_at": "2026-07-23T04:10:11Z",
+  "frontier": "OEIS A385316: what is a(6), the smallest integer expressible as p³+q³+r³ in exactly 6 ways with p,q,r prime?",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nBuilt verifier_prime_cubes.py from focused evidence (no broad context packet needed; focused context contained the exact verifier specification and known terms). The verifier enumerates complete prime sets up to C^(1/3) and counts exact multiplicities of unordered prime-cube triples. Domain kill fixtures: string, negative, zero, float — all rejected with branch-specific reasons. Predicate kill fixtures: N=24 requested k=6 (has 1, not 6), N=185527 requested k=6 (has 2, not 6), N=1 and N=8 as trivial non-representations — all rejected.",
+  "verified": "Artifact: verifier_prime_cubes.py, SHA-256: fa06003aab3dcbaa2dd1330c4a3046258f7eaba9a9c3f08c8f34729101bf214a\nDomain kill fixtures: 4/4 rejected correctly\nPredicate kill fixtures: 4/4 rejected correctly\nALL KILL FIXTURES PASSED\nVerifier domain: Non-negative integer type/structure check; rejects bool, string, float, negative, and zero values.\nVerifier predicate: Exact k-unordered-representation count verification via complete prime-set enumeration (p≤q≤r, p³+q³+r³=N), with minimality check for a(k).\nKnown-term reproduction: a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419 — all 5/5 match OEIS A385316.",
+  "result": "Verifier construction milestone completed. The artifact is a no-argument replay entrypoint with deterministic exit-0 kill-fixture coverage. No mathematical claim beyond verifier correctness has been advanced — the C=10^13 discriminating search requires DGX SSH access as documented in the accepted continuation's next gate.",
+  "next_gate": "Operator with DGX SSH access must execute `python3 verifier_prime_cubes.py --cutoff 10000000000000` to run the C=10^13 search. If a k=6 candidate appears, report it with full certificate; if not, certify a(6) > 10^13 and advance to C=10^14 or a heuristic/construction approach.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-22_21-10-11.md",
+    "sha256": "a3ccc79eb0721d783f24617841abaafdf0a13f609cc237ece5bf8275ae031e16"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}
