@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:5f15e9340fa984e36b08235a86d3f1c0c33f19f98079364160b5d4f43003d6af",
+  "content_digest": "sha256:fb42a54e0abd3e1ae31861e62e8f0eb888f508f68c11815f602cd0128c6f7069",
+  "occurred_at": "2026-07-23T00:18:39Z",
+  "frontier": "What is a(6) in OEIS A385316 — the smallest integer expressible as p³+q³+r³ (p,q,r primes, nondecreasing) in exactly 6 ways?",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nWrote verifier_prime_cubes.py (complete-prime-set multiplicity verifier) in the current session artifact directory. Implemented domain kill fixtures (N=-1, k=0, C=0 → ValueError) and predicate kill fixtures (N=24,k=2 → count mismatch; N=0,k=6 → impossible sum). Replayed isolated exit-0: 3/3 domain fixtures rejected correctly, 2/2 predicate fixtures rejected correctly, a(1)=24 confirmed at small cutoff C=30. Filled experiment.json hypothesis field.",
+  "verified": "Domain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nKnown terms verified: 1/1 at small cutoff (full cutoff C=10588881419 required for all 5)\nALL KILL FIXTURES PASSED\nArtifact: verifier_prime_cubes.py, SHA-256: 7efed6efb814daf707094af764951d7a06dc483e30f8643db5048bea95b3063b\nVerifier domain: N must be a non-negative integer, k must be a positive integer, C must be a positive integer; rejects N<0, k=0, C=0 with ValueError\nVerifier predicate: given cutoff C, enumerates all nondecreasing triples (p<=q<=r) of primes with p³≤C, computes sums s=p³+q³+r³≤C, counts exact multiplicities; rejects N=24,k=2 (count=1≠2) and N=0,k=6 (count=0≠6)",
+  "result": "Verifier construction milestone completed and replayed exit-0. This session could not execute the discriminating search at C=10¹³ (requires DGX SSH access, which the Mac operator does not have). The previous accepted continuation correctly identified this as an immovable blocker. The quarantined receipt from cron_50c8e4391849 was re-repaired: the verifier artifact now includes the required SHA-256 line, domain/predicate kill-fixture summaries, and explicit Verifier domain/predicate evidence lines.",
+  "next_gate": "Operator with DGX SSH access (spark-38e3.local) must execute `python3 verifier_prime_cubes.py --cutoff 10000000000000` to run the C=10¹³ search. If a k=6 candidate appears, report it with full certificate; if not, certify a(6) > 10¹³ and advance to C=10¹⁴ or a heuristic/construction approach. Independent reproduction by a second implementation required before publishing the lower bound.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-22_17-18-39.md",
+    "sha256": "0d12a030cc431a7c2483aa094d3d1492e69ca82b25ab026931169cd4a3eb3278"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}
