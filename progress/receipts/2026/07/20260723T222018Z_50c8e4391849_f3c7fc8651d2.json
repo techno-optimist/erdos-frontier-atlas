@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:f3c7fc8651d2b17ef218b633ed25fc1752e92ebbabfd70589d9bc0462994a1d2",
+  "content_digest": "sha256:0108619022d3b55c16ab504337cfbd698304f5eb9954bdfbe54608e80f682d40",
+  "occurred_at": "2026-07-23T22:20:18Z",
+  "frontier": "Smallest integer N expressible as a sum of three prime cubes in exactly 6 unordered ways (OEIS A385316 a(6)). Prior lower bound: a(6) > 4.99 × 10^11.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nCopied the accepted-continuation verifier (sha256:7fe349ef...) into the current session directory, ran its isolated no-network replay confirming 4/4 domain kill fixtures rejected, 4/4 predicate kill fixtures rejected, all five OEIS terms a(1)..a(5) reproduced correctly. Verified DGX SSH remains unreachable (dgx: DNS failure; spark-38e3.local: key rejected), blocking the C=10^13 bounded exact search specified in the next gate.",
+  "verified": "Domain kill fixtures: 4/4 rejected correctly\nPredicate kill fixtures: 4/4 rejected correctly\nALL KILL FIXTURES PASSED\nReproduced a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419 (all confirmed)\nArtifact: verifier_prime_cubes.py, SHA-256: 7fe349ef1a4a829ed3f7c0c99da0ae2f9735670b21b0dea925e4b079bf1b11c7\nDGX SSH confirmed unreachable: dgx (Temporary failure in name resolution), spark-38e3.local (Permission denied)",
+  "result": "Verifier artifact verified clean and identical to accepted-continuation artifact (exit 0, all kill fixtures pass, all 5 known terms reproduce). C=10^13 bounded exact search remains blocked — DGX SSH infrastructure failure unchanged from prior session. No new mathematical evidence produced. The a(6) determination requires DGX access for the ~73s / ~10GB enumeration.",
+  "next_gate": "When DGX SSH is restored, execute: `ssh dgx 'python3 ~/cultural-soliton-observatory/research_sessions/res_20260723_145749_erdos-979-prime-cubes-a385316/verifier_prime_cubes.py --cutoff 10000000000000'` and report full output. If zero k=6 candidates found, certify a(6) > 10^13 and advance to C=10^14.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-23_15-20-18.md",
+    "sha256": "510ba326f910cd5cfd7c9e8af35794592b521b484218edf061230adca1b3ce67"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}
