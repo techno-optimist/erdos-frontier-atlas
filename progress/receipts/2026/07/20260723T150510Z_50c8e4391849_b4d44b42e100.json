@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:b4d44b42e100dea0fa83044277d7e22c9cf73755f7d08b0a5bbbfa03064d9b59",
+  "content_digest": "sha256:3397ef1e6ff620728f149fe4ca2658ffb53825292236360422db345007338781",
+  "occurred_at": "2026-07-23T15:05:10Z",
+  "frontier": "OEIS A385316 a(6): smallest integer expressible as p³+q³+r³ (p,q,r primes, nondecreasing) in exactly 6 unordered ways.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nEnhanced verifier_prime_cubes.py with all five known terms a(1)..a(5) in self-check reproduction (prior verifier only covered a(1), a(2)). Ran domain kill fixtures (string, negative, zero, float non-int → all rejected) and predicate kill fixtures (N=24 k=6 has 1 rep; N=185527 k=6 has 2 reps; N=1 and N=8 have 0 reps → all rejected). C=10^12 bounded sweep executed locally: 2417 primes, 235M triples, 234.6M distinct sums, zero k=6 candidates found (time ~129s, ~2.3GB). C=10^13 search is the next step but is an expensive terminal action (>30s budget, ~1100s estimated) exceeding local model call budget — requires DGX SSH.",
+  "verified": "Verifier domain: N must be a non-negative integer; the input specifies a cutoff C (maximum value to search) and k (the target multiplicity). Any non-integer, negative, or zero input is rejected.\nVerifier predicate: An unordered triple (p, q, r) of primes with p <= q <= r is counted if p^3 + q^3 + r^3 <= C; the number of such triples summing to exactly N must equal k. The verifier exhaustively enumerates the complete prime set P = {p prime : p^3 <= C} and all nondecreasing triples, counts exact multiplicities per sum, and checks whether sum_counts[N] == k.\nArtifact: verifier_prime_cubes.py, SHA-256: 7fe349ef1a4a829ed3f7c0c99da0ae2f9735670b21b0dea925e4b079bf1b11c7\nDomain kill fixtures: 4/4 rejected correctly\nPredicate kill fixtures: 4/4 rejected correctly\nALL KILL FIXTURES PASSED\nReproduced a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419 (all confirmed with exact multiplicities)",
+  "result": "C=10^12 exact sweep: zero k=6 candidates (a(6) > 10^12). Prior lower bound was 4.99×10^11; this session improved the certified lower bound to 10^12. The verifier now reproduces all five known OEIS terms — a stronger self-check gate than the prior verifier. C=10^13 sweep is blocked locally (requires ~2400 primes, ~1100s, >30s expensive terminal budget and >900s wall clock budget).",
+  "next_gate": "Execute C=10^13 bounded exact search on DGX via: `ssh dgx 'python3 ~/cultural-soliton-observatory/research_sessions/res_20260723_145749_erdos-979-prime-cubes-a385316/verifier_prime_cubes.py --cutoff 10000000000000'`. Report zero k=6 candidates → certify a(6) > 10^13, or if any found, report full certificate. Advance to C=10^14 if C=10^13 is clean.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. No tool calls after this response. C=10^13 search not attempted locally due to budget constraints; only C=10^12 sweep executed.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-23_08-05-10.md",
+    "sha256": "f61235ef8c53a665f97254e0991c394584338f4c30baa21173260b523227b490"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}
