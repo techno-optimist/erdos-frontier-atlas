@@ -8,8 +8,13 @@ Replay (from this directory):
 
 Everything in the trust path is exact integer/Fraction arithmetic. No
 floats are used in any decision; floats appear only in the final display
-block, clearly labelled. Planted-failure controls are run at the end and
-MUST fail.
+block and in the display-decimal re-derivation, both clearly labelled.
+Planted-failure controls are run at the end and MUST fail.
+
+The committed artifact `constants.json` is CHECKED, never regenerated:
+every field is re-derived here from the exact constants below, and the
+keyset is enforced in both directions, so a field added to the artifact
+later fails the replay instead of silently escaping the drift check.
 
 WHAT IS CERTIFIED HERE (and nothing more)
 -----------------------------------------
@@ -55,7 +60,9 @@ exists (that antecedent is open). This is a WALL/FENCE result: it maps
 where a large class of candidate constructions provably cannot go.
 """
 
+from decimal import Decimal, localcontext
 from fractions import Fraction as F
+import copy
 import json
 import sys
 from pathlib import Path
@@ -65,6 +72,17 @@ HERE = Path(__file__).resolve().parent
 
 def fail(msg):
     raise AssertionError(msg)
+
+
+def _expect_rejected(label, fn, *args, **kwargs):
+    """A planted failure that is ACCEPTED aborts the replay."""
+    try:
+        fn(*args, **kwargs)
+    except AssertionError as exc:
+        print(f"  [ok] rejected: {label} -- {str(exc)[:60]}")
+    else:
+        print(f"  [FAIL] ACCEPTED a bad input: {label}")
+        sys.exit(1)
 
 
 # ---------------------------------------------------------------- inputs
@@ -84,9 +102,19 @@ U = F(211, 250)  # = 0.844
 
 # The pressure bracket hypothesis (external, proved for one family):
 #   1 - rho(m) <= 2/(3m) + 11/(6m^2).
+# Coefficients of 1/m and 1/m^2, kept as named constants so that the bracket
+# STRING committed in constants.json is rendered from the bracket the code
+# actually uses (it cannot drift from the implemented hypothesis).
+BRACKET = (F(2, 3), F(11, 6))
+
+# Smallest m for which the exclusion is claimed.
+M_MIN = 7
+
+
 def rho_lower(m):
     """Exact lower bound on rho(m) implied by the bracket hypothesis."""
-    return 1 - (F(2, 3 * m) + F(11, 6 * m * m))
+    a, b = BRACKET
+    return 1 - (a / m + b / (m * m))
 
 
 # ------------------------------------------------------- C1: beats EHPS?
@@ -119,7 +147,7 @@ def check_ceiling_bound():
 
 
 # ------------------------------------------- C2b: the exclusion, all m>=7
-def check_exclusion(m_min=7, m_check_upto=200):
+def check_exclusion(m_min=M_MIN, m_check_upto=200):
     """rho_lower(m) > U for every m >= m_min.
 
     rho_lower(m) = 1 - 2/(3m) - 11/(6m^2) is strictly increasing in m>0
@@ -159,13 +187,211 @@ def run_all(lambda_candidate=None, x0=None, u=None, bracket_scale=None):
         else:
             # mutated bracket: 1 - rho <= scale*(2/(3m) + 11/(6m^2))
             def mutated(m):
-                return 1 - bracket_scale * (F(2, 3 * m) + F(11, 6 * m * m))
-            base = mutated(7)
+                a, b = BRACKET
+                return 1 - bracket_scale * (a / m + b / (m * m))
+            base = mutated(M_MIN)
             if not base > U:
-                fail("C2b(mutated): exclusion fails at m=7")
+                fail(f"C2b(mutated): exclusion fails at m={M_MIN}")
         return margin, R, lhs, rhs, base
     finally:
         LAMBDA_CANDIDATE, X0, U = saved
+
+
+# ------------------------------------------- committed-artifact drift check
+# DISPLAY ONLY, NEVER IN THE TRUST PATH. The five decimals in
+# constants.json["display_only_decimals"] are 16-significant-digit roundings
+# of irrational quantities. No decision in C1/C2a/C2b consults them; they are
+# re-derived here only so that a committed decimal cannot drift away from the
+# exact rational it summarises. Hence -- and only here -- a tolerance:
+DISPLAY_PRECISION = 60           # working digits for the re-derivation
+DISPLAY_REL_TOL = Decimal("1e-15")   # committed decimals carry ~16 digits
+
+
+def _dec(fr):
+    return Decimal(fr.numerator) / Decimal(fr.denominator)
+
+
+def _log2(d):
+    return d.ln() / Decimal(2).ln()
+
+
+def _constant_map(lam):
+    """c(lambda) = 2*sqrt(log2(1/lambda)) -- external input (E1), display use."""
+    return 2 * _log2(1 / lam).sqrt()
+
+
+def display_decimals():
+    """Re-derive the display decimals from the exact rationals (display only)."""
+    with localcontext() as ctx:
+        ctx.prec = DISPLAY_PRECISION
+        lam = _dec(LAMBDA_CANDIDATE)
+        # theta_3 = min_{x>0} (1+x+x^2)/x^(2/3); f'(x)=0 <=> 4x^2 + x - 2 = 0,
+        # so the minimiser is x* = (-1+sqrt(33))/8. (The TRUST-PATH bound C2a
+        # does not use x*: it uses the rational witness X0 and stays exact.)
+        xs = (Decimal(-1) + Decimal(33).sqrt()) / 8
+        if abs(4 * xs * xs + xs - 2) > Decimal("1e-50"):
+            fail("display: minimiser x* does not satisfy 4x^2 + x - 2 = 0")
+        theta3 = (1 + xs + xs * xs) / (Decimal(2) / 3 * xs.ln()).exp()
+        cap = (theta3 / 3) ** 2                       # true Lambda_cap
+        return {
+            "lambda_candidate": +lam,
+            "ehps_constant": +_constant_map(_dec(EHPS_RATE)),
+            "candidate_constant_if_certified": +_constant_map(lam),
+            "cap_set_ceiling_true_value": +cap,
+            "universal_constant_floor_from_ceiling": +_constant_map(cap),
+        }
+
+
+def bracket_strings():
+    """Render the bracket exactly as the code implements it."""
+    (an, ad), (bn, bd) = ((BRACKET[0].numerator, BRACKET[0].denominator),
+                          (BRACKET[1].numerator, BRACKET[1].denominator))
+    spaced = f"1 - rho(m) <= {an}/({ad}m) + {bn}/({bd}m^2)"
+    compact = f"1-rho(m) <= {an}/({ad}m)+{bn}/({bd}m^2)"
+    return spaced, compact
+
+
+def expected_artifact():
+    """Every field constants.json is allowed to contain, re-derived from the
+    exact constants above. Numbers are never copied from the artifact."""
+    margin = LAMBDA_CANDIDATE - EHPS_RATE
+    rho7 = rho_lower(M_MIN)
+    spaced, compact = bracket_strings()
+    dd = display_decimals()
+    floor4 = f"{dd['universal_constant_floor_from_ceiling']:.4f}"
+    return {
+        "problem": 142,
+        "title": "H1-H5 constant ceiling and pressure-to-one exclusion",
+        "kind": "fence",
+        "certified_here": [
+            f"C1: lambda_candidate > {EHPS_RATE} (exact rational), i.e. this rate"
+            " would give a constant strictly better than the EHPS 2024 baseline"
+            " IF a survivor certificate for it existed",
+            f"C2a: Lambda_cap = (theta_3/3)^2 <= {U}, certified by the purely"
+            " rational inequality R^2 <= (9U)^3 with"
+            " R = (1+x0+x0^2)^3/x0^2 >= theta_3^3",
+            f"C2b: any family obeying the pressure bracket {compact} has"
+            f" rho(m) >= {rho7} > {U} for every m >= {M_MIN}, hence exceeds the"
+            " ceiling and cannot be an H1-H5 survivor",
+        ],
+        "not_certified_here": [
+            "the constant map c = 2*sqrt(log2(1/lambda)) itself (external,"
+            " sealed-by-audit, not formalized, not re-derived in this repo)",
+            "the cap-set ceiling Lambda_cap on H1-H5 survivor return rates"
+            " (external, from published Ellenberg-Gijswijt plus a Fubini +"
+            " periodic Perron-Frobenius argument; sealed-by-audit)",
+            "the pressure bracket, which is an external PROVED input for one"
+            " specific family and is treated here as a hypothesis",
+            "any r_3(N) lower bound; no survivor certificate exists",
+        ],
+        "lambda_candidate": str(LAMBDA_CANDIDATE),
+        "ehps_building_block_rate": str(EHPS_RATE),
+        "lambda_margin_over_ehps": str(margin),
+        "theta_3_witness_x0": str(X0),
+        "ceiling_rational_upper_bound_U": str(U),
+        "exclusion_bracket": spaced,
+        "exclusion_rho_lower_at_m7": str(rho7),
+        "exclusion_holds_for_m_at_least": M_MIN,
+        "display_only_decimals": dd,
+        "consequence": (
+            "Because c = 2*sqrt(log2(1/lambda)) is strictly decreasing in lambda"
+            " and no H1-H5 survivor may exceed Lambda_cap, no survivor in this"
+            f" framework can have a constant below ~{floor4}. The framework can"
+            " therefore improve the CONSTANT but can never beat the sqrt(log N)"
+            " ORDER. Separately, pressure-to-one families are excluded outright:"
+            " the closer rho is driven to 1, the more decisively the ceiling is"
+            " violated."
+        ),
+        # A fence must not quietly become a claim: all three stay false.
+        "claim_boundary": {
+            "erdos142_solved": False,
+            "new_r3_bound": False,
+            "survivor_certificate_exists": False,
+        },
+    }
+
+
+def _check_keys(where, got, want, bad):
+    missing = sorted(set(want) - set(got))
+    extra = sorted(set(got) - set(want))
+    if missing:
+        bad.append(f"{where}: missing field(s) {missing}")
+    if extra:
+        # The point of the whole function: an uncovered field is a FAILURE,
+        # not a shrug. This closes the defect class, not just one instance.
+        bad.append(f"{where}: field(s) {extra} are not covered by this check")
+    return not (missing or extra)
+
+
+def check_committed_artifact(rec):
+    """Drift-check EVERY field of constants.json; return the number checked.
+
+    Trust-path fields are compared as exact strings/ints derived from the
+    Fractions above. The display-only decimals are compared with an explicit
+    relative tolerance (see DISPLAY_REL_TOL) because they are roundings; they
+    are informational and never feed a decision.
+    """
+    want = expected_artifact()
+    bad = []
+    checked = 0
+    if not isinstance(rec, dict):
+        fail("constants.json: top level is not a JSON object")
+    _check_keys("top level", rec, want, bad)
+
+    for key in sorted(set(rec) & set(want)):
+        exp, got = want[key], rec[key]
+        if key == "display_only_decimals":
+            if not isinstance(got, dict):
+                bad.append("display_only_decimals: not an object")
+                continue
+            note = "informational; never in the trust path"
+            sub_want = dict(exp, note=note)
+            _check_keys("display_only_decimals", got, sub_want, bad)
+            for name in sorted(set(got) & set(sub_want)):
+                checked += 1
+                if name == "note":
+                    if got[name] != note:
+                        bad.append(f"display_only_decimals.note drift: {got[name]!r}")
+                    continue
+                if not isinstance(got[name], float):
+                    bad.append(f"display_only_decimals.{name}: not a JSON number")
+                    continue
+                with localcontext() as ctx:
+                    ctx.prec = DISPLAY_PRECISION
+                    exact = sub_want[name]
+                    err = abs(Decimal(got[name]) - exact)
+                    if err > DISPLAY_REL_TOL * abs(exact):
+                        bad.append(
+                            f"display_only_decimals.{name} drift: committed"
+                            f" {got[name]!r} vs exact {exact:.20f} (rel err"
+                            f" {err / abs(exact):.3E} > {DISPLAY_REL_TOL})")
+        elif key == "claim_boundary":
+            if not isinstance(got, dict):
+                bad.append("claim_boundary: not an object")
+                continue
+            _check_keys("claim_boundary", got, exp, bad)
+            for name in sorted(set(got) & set(exp)):
+                checked += 1
+                if got[name] is not False:
+                    bad.append(
+                        f"claim_boundary.{name} must be false, found {got[name]!r}")
+        elif isinstance(exp, list):
+            if not isinstance(got, list) or len(got) != len(exp):
+                bad.append(f"{key}: expected a list of {len(exp)} entries")
+                continue
+            for i, (g, e) in enumerate(zip(got, exp)):
+                checked += 1
+                if g != e:
+                    bad.append(f"{key}[{i}] drift:\n    committed: {g!r}\n    "
+                               f"re-derived: {e!r}")
+        else:
+            checked += 1
+            if type(got) is not type(exp) or got != exp:
+                bad.append(f"{key} drift: committed {got!r} != re-derived {exp!r}")
+
+    if bad:
+        fail("constants.json: " + "; ".join(bad))
+    return checked
 
 
 def main():
@@ -194,6 +420,18 @@ def main():
     print("     => such a family exceeds the ceiling and CANNOT be an")
     print("        H1-H5 survivor. Driving pressure -> 1 makes this worse.\n")
 
+    # check the committed artifact rather than regenerating it
+    art = HERE / "constants.json"
+    if not art.is_file():
+        fail("constants.json is missing; the certificate must ship its artifact")
+    rec = json.loads(art.read_text(encoding="utf-8"))
+    n_checked = check_committed_artifact(rec)
+    print("constants.json matches the verified values (artifact not rewritten)")
+    print(f"     all {n_checked} committed fields re-derived and matched;"
+          " unknown fields are rejected")
+    print("     (display-only decimals compared at relative tolerance"
+          f" {DISPLAY_REL_TOL}; never in the trust path)\n")
+
     # planted-failure controls: each MUST fail
     print("planted-failure controls (each must FAIL):")
     controls = [
@@ -207,26 +445,37 @@ def main():
          dict(bracket_scale=F(4))),
     ]
     for label, kwargs in controls:
-        try:
-            run_all(**kwargs)
-        except AssertionError as exc:
-            print(f"  [ok] rejected: {label} -- {str(exc)[:60]}")
-        else:
-            print(f"  [FAIL] ACCEPTED a bad input: {label}")
-            sys.exit(1)
+        _expect_rejected(label, run_all, **kwargs)
 
-    # check the committed artifact rather than regenerating it
-    art = HERE / "constants.json"
-    if art.is_file():
-        rec = json.loads(art.read_text())
-        if rec["lambda_candidate"] != str(LAMBDA_CANDIDATE):
-            fail("constants.json: lambda_candidate drift")
-        if rec["ceiling_rational_upper_bound_U"] != str(U):
-            fail("constants.json: U drift")
-        if rec["exclusion_holds_for_m_at_least"] != 7:
-            fail("constants.json: exclusion threshold drift")
-        print("\nconstants.json matches the verified values (artifact not rewritten)")
+    # artifact-coverage controls: each mutates a field of constants.json that
+    # an earlier revision of this checker did NOT look at. They exist to prove
+    # the coverage gap is closed, so they must be kept if fields are added.
+    artifact_controls = [
+        ("artifact: lambda_margin_over_ehps falsified",
+         lambda r: r.update(lambda_margin_over_ehps="1/2")),
+        ("artifact: theta_3 witness x0 falsified",
+         lambda r: r.update(theta_3_witness_x0="1/100")),
+        ("artifact: display decimal nudged by 1e-9 relative",
+         lambda r: r["display_only_decimals"].update(
+             universal_constant_floor_from_ceiling=(
+                 r["display_only_decimals"]["universal_constant_floor_from_ceiling"]
+                 * (1 + 1e-9)))),
+        ("artifact: claim_boundary.erdos142_solved flipped to true",
+         lambda r: r["claim_boundary"].update(erdos142_solved=True)),
+        ("artifact: an unchecked field added (coverage-gap control)",
+         lambda r: r.update(a_field_this_checker_never_heard_of=1)),
+        ("artifact: a checked field deleted",
+         lambda r: r.pop("exclusion_rho_lower_at_m7")),
+    ]
+    for label, mutate in artifact_controls:
+        mutated = copy.deepcopy(rec)
+        mutate(mutated)
+        if mutated == rec:
+            fail(f"control is a no-op (mutation did not change anything): {label}")
+        _expect_rejected(label, check_committed_artifact, mutated)
 
+    print(f"\n{len(controls) + len(artifact_controls)} planted-failure controls,"
+          " all rejected")
     print("\nVERIFIER PASS")
 
 
