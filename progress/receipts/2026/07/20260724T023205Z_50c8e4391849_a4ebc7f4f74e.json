@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:a4ebc7f4f74e9f78e62aeffa715819f3255a030c86326b8d7ca210e69c9a6b22",
+  "content_digest": "sha256:4d1b8184aa43f61e6fed606d41b3d994bb07c9937642291d15a067b37fa6adea",
+  "occurred_at": "2026-07-24T02:32:05Z",
+  "frontier": "Erdős #979: A385316 — find a(6), the smallest N representable as p³+q³+r³ (p,q,r primes, nondecreasing) in exactly 6 ways. Current best bound: a(6) > 499,243,435,237 (~4.99×10¹¹). Exact terms a(1)–a(5) = 24, 185527, 8627527, 999979163, 10588881419.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nCopied the accepted-continuation verifier (SHA-256 7fe349ef1a4a829ed3f7c0c99da0ae2f9735670b21b0dea925e4b079bf1b11c7) into the current session directory and ran its isolated no-network replay. The replay exited 0 with all kill fixtures passing and all five OEIS terms a(1)–a(5) reproduced correctly. The next gate requires executing C=10¹³ bounded exact search, but DGX SSH infrastructure (both dgx DNS resolution and spark-38e3.local key auth) remains unreachable — the blocker from the accepted continuation is unchanged. Local execution of C=10¹³ is estimated at ~20 minutes CPU time with ~50–70GB RAM, exceeding the 24GB available on this machine; C=10¹² would be feasible locally (~117s, ~10GB) but is a different cutoff than the gate.",
+  "verified": "Artifact: verifier_prime_cubes.py, SHA-256: 7fe349ef1a4a829ed3f7c0c99da0ae2f9735670b21b0dea925e4b079bf1b11c7\nDomain kill fixtures: 4/4 rejected correctly\nPredicate kill fixtures: 4/4 rejected correctly\nALL KILL FIXTURES PASSED\nReproduced a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419 — all confirmed with correct multiplicities.\nDGX connectivity confirmed broken: dgx DNS failure, spark-38e3.local key rejected.\nC=10¹³ local RAM requirement estimated at 50–70GB (vs. 24GB available) — blocked by memory, not by verifier correctness.",
+  "result": "Verifier artifact is verified clean and identical to the accepted-continuation artifact. The C=10¹³ bounded exact search remains blocked — same two failures as prior session (DGX SSH infrastructure down, local machine insufficient RAM for C=10¹³). No new mathematical evidence produced. a(6) determination still requires either DGX access for the ~73s/~10GB enumeration or a local C=10¹² run as an intermediate step.",
+  "next_gate": "Option A (preferred): When DGX SSH is restored, execute: `ssh dgx 'python3 ~/cultural-soliton-observatory/research_sessions/res_20260723_145749_erdos-979-prime-cubes-a385316/verifier_prime_cubes.py --cutoff 10000000000000'` and report full output.\nOption B (fallback): Run C=10¹² locally as an intermediate certified bound (~117s, ~10GB RAM fits), certifying a(6) > 10¹² and advancing toward C=10¹³.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. No tool calls after this response.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-07-23_19-32-05.md",
+    "sha256": "eb178d39aedb4ef02bc30fbd0bd41af364f5dff328b55be992db0b49e9ecbcca"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}
