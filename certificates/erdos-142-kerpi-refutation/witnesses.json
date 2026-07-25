@@ -1,0 +1,771 @@
+{
+ "claim_boundary": {
+  "erdos142_solved": false,
+  "new_r3_bound": false,
+  "note": "refutes two lemmas and proves one; no r_3(N) bound"
+ },
+ "full36_delta": [
+  [
+   0,
+   3,
+   9
+  ],
+  [
+   1,
+   4,
+   10
+  ],
+  [
+   2,
+   5,
+   11
+  ],
+  [
+   3,
+   6,
+   12
+  ],
+  [
+   4,
+   7,
+   13
+  ],
+  [
+   5,
+   8,
+   14
+  ],
+  [
+   6,
+   0,
+   15
+  ],
+  [
+   7,
+   1,
+   16
+  ],
+  [
+   8,
+   2,
+   17
+  ],
+  [
+   18,
+   5,
+   18
+  ],
+  [
+   19,
+   3,
+   19
+  ],
+  [
+   20,
+   4,
+   20
+  ],
+  [
+   21,
+   6,
+   21
+  ],
+  [
+   22,
+   7,
+   22
+  ],
+  [
+   23,
+   8,
+   23
+  ],
+  [
+   24,
+   1,
+   24
+  ],
+  [
+   25,
+   2,
+   25
+  ],
+  [
+   26,
+   0,
+   26
+  ],
+  [
+   3,
+   3,
+   27
+  ],
+  [
+   4,
+   4,
+   28
+  ],
+  [
+   5,
+   5,
+   29
+  ],
+  [
+   6,
+   6,
+   30
+  ],
+  [
+   7,
+   7,
+   31
+  ],
+  [
+   8,
+   8,
+   32
+  ],
+  [
+   0,
+   0,
+   33
+  ],
+  [
+   1,
+   1,
+   34
+  ],
+  [
+   2,
+   2,
+   35
+  ],
+  [
+   0,
+   0,
+   0
+  ],
+  [
+   1,
+   1,
+   1
+  ],
+  [
+   2,
+   2,
+   2
+  ],
+  [
+   3,
+   3,
+   3
+  ],
+  [
+   4,
+   4,
+   4
+  ],
+  [
+   5,
+   5,
+   5
+  ],
+  [
+   6,
+   6,
+   6
+  ],
+  [
+   7,
+   7,
+   7
+  ],
+  [
+   8,
+   8,
+   8
+  ]
+ ],
+ "full36_delta_sha256": "edc3d4730b89b1bdac82022443f6fb0f849be9a981e4381aeffce38618c9cb30",
+ "objects": {
+  "A_q_violation": {
+   "H1_morphism_violations": 0,
+   "H3_D_not_in_Z_failures": 0,
+   "all_collar_sources_diagonal": false,
+   "base_edge_count": 13,
+   "base_state_count": 6,
+   "canonical_form": [
+    [
+     0,
+     3,
+     3,
+     6,
+     3,
+     12
+    ],
+    [
+     [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ],
+     [
+      [
+       0,
+       2
+      ],
+      [
+       1,
+       3
+      ]
+     ],
+     [
+      [
+       0,
+       4
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       5
+      ]
+     ],
+     [
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       0
+      ]
+     ],
+     [
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       5
+      ]
+     ],
+     [
+      [
+       1,
+       3
+      ]
+     ]
+    ]
+   ],
+   "canonical_sha256": "91f52f97501ab706745e0f24e53f997005a81f1deac301638456bad02fead6ff",
+   "closed_strongly_connected_exit_free": true,
+   "collar_edge_count": 60,
+   "counting_bound_on_q_minus_dim_ker_pi": -10,
+   "counting_forces_q_lt_dim_ker_pi": true,
+   "dim_D": 34,
+   "dim_Z1_B": 8,
+   "dim_ker_pi_meet_D": 20,
+   "product_edge_count": 1088,
+   "product_vertex_count": 319,
+   "rank_pi_rows": 37,
+   "rank_pi_rows_with_tags": 37,
+   "three_dim_Z1_B": 24,
+   "witness": [
+    {
+     "coefficient": 1,
+     "row": [
+      0,
+      0,
+      0
+     ],
+     "source": [
+      0,
+      1,
+      1,
+      1
+     ],
+     "target": [
+      0,
+      2,
+      2,
+      2
+     ]
+    },
+    {
+     "coefficient": 1,
+     "row": [
+      0,
+      0,
+      0
+     ],
+     "source": [
+      0,
+      2,
+      2,
+      2
+     ],
+     "target": [
+      0,
+      4,
+      4,
+      4
+     ]
+    },
+    {
+     "coefficient": 1,
+     "row": [
+      0,
+      0,
+      0
+     ],
+     "source": [
+      0,
+      4,
+      4,
+      4
+     ],
+     "target": [
+      0,
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "coefficient": -1,
+     "row": [
+      0,
+      0,
+      0
+     ],
+     "source": [
+      0,
+      4,
+      2,
+      1
+     ],
+     "target": [
+      0,
+      1,
+      4,
+      2
+     ]
+    },
+    {
+     "coefficient": -1,
+     "row": [
+      0,
+      0,
+      0
+     ],
+     "source": [
+      0,
+      1,
+      4,
+      2
+     ],
+     "target": [
+      0,
+      2,
+      1,
+      4
+     ]
+    },
+    {
+     "coefficient": -1,
+     "row": [
+      0,
+      0,
+      0
+     ],
+     "source": [
+      0,
+      2,
+      1,
+      4
+     ],
+     "target": [
+      0,
+      4,
+      2,
+      1
+     ]
+    }
+   ],
+   "witness_support_size": 6
+  },
+  "B_minimal_intersection": {
+   "H1_morphism_violations": 0,
+   "H3_D_not_in_Z_failures": 0,
+   "all_collar_sources_diagonal": false,
+   "base_edge_count": 10,
+   "base_state_count": 5,
+   "canonical_form": [
+    [
+     0,
+     3,
+     3,
+     6,
+     12
+    ],
+    [
+     [
+      [
+       0,
+       0
+      ],
+      [
+       1,
+       1
+      ]
+     ],
+     [
+      [
+       0,
+       2
+      ],
+      [
+       1,
+       3
+      ]
+     ],
+     [
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       3
+      ],
+      [
+       2,
+       4
+      ]
+     ],
+     [
+      [
+       0,
+       3
+      ],
+      [
+       1,
+       0
+      ]
+     ],
+     [
+      [
+       1,
+       3
+      ]
+     ]
+    ]
+   ],
+   "canonical_sha256": "321b7cef5b9724eaa5acf95a1db8a6acef03ca675d0f68dc715d7d71fffbd925",
+   "closed_strongly_connected_exit_free": true,
+   "collar_edge_count": 22,
+   "counting_bound_on_q_minus_dim_ker_pi": 6,
+   "counting_forces_q_lt_dim_ker_pi": false,
+   "dim_D": 12,
+   "dim_Z1_B": 6,
+   "dim_ker_pi_meet_D": 4,
+   "product_edge_count": 619,
+   "product_vertex_count": 216,
+   "rank_pi_rows": 28,
+   "rank_pi_rows_with_tags": 28,
+   "three_dim_Z1_B": 18,
+   "witness": [
+    {
+     "coefficient": 1,
+     "row": [
+      0,
+      0,
+      0
+     ],
+     "source": [
+      0,
+      1,
+      1,
+      1
+     ],
+     "target": [
+      0,
+      2,
+      2,
+      2
+     ]
+    },
+    {
+     "coefficient": 1,
+     "row": [
+      0,
+      0,
+      0
+     ],
+     "source": [
+      0,
+      2,
+      2,
+      2
+     ],
+     "target": [
+      0,
+      1,
+      1,
+      1
+     ]
+    },
+    {
+     "coefficient": -1,
+     "row": [
+      0,
+      0,
+      0
+     ],
+     "source": [
+      0,
+      1,
+      2,
+      1
+     ],
+     "target": [
+      0,
+      2,
+      1,
+      2
+     ]
+    },
+    {
+     "coefficient": -1,
+     "row": [
+      0,
+      0,
+      0
+     ],
+     "source": [
+      0,
+      2,
+      1,
+      2
+     ],
+     "target": [
+      0,
+      1,
+      2,
+      1
+     ]
+    }
+   ],
+   "witness_support_size": 4
+  },
+  "C_known_object_250ac6cd": {
+   "H1_morphism_violations": 0,
+   "H3_D_not_in_Z_failures": 0,
+   "all_collar_sources_diagonal": true,
+   "base_edge_count": 11,
+   "base_state_count": 7,
+   "canonical_form": [
+    [
+     0,
+     3,
+     3,
+     12,
+     6,
+     21,
+     30
+    ],
+    [
+     [
+      [
+       1,
+       1
+      ]
+     ],
+     [
+      [
+       0,
+       2
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      [
+       0,
+       1
+      ]
+     ],
+     [
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       5
+      ]
+     ],
+     [
+      [
+       1,
+       0
+      ]
+     ],
+     [
+      [
+       2,
+       6
+      ]
+     ],
+     [
+      [
+       0,
+       1
+      ],
+      [
+       1,
+       1
+      ],
+      [
+       2,
+       1
+      ]
+     ]
+    ]
+   ],
+   "canonical_sha256": "250ac6cd9d92f0fd7d6dcea513da08d50576b30b57de12662dce38d831166efe",
+   "closed_strongly_connected_exit_free": true,
+   "collar_edge_count": 11,
+   "counting_bound_on_q_minus_dim_ker_pi": 10,
+   "counting_forces_q_lt_dim_ker_pi": false,
+   "dim_D": 5,
+   "dim_Z1_B": 5,
+   "dim_ker_pi_meet_D": 0,
+   "product_edge_count": 45,
+   "product_vertex_count": 27,
+   "rank_pi_rows": 26,
+   "rank_pi_rows_with_tags": 26,
+   "three_dim_Z1_B": 15,
+   "witness_support_size": 0
+  },
+  "D_known_object_5da67053": {
+   "H1_morphism_violations": 0,
+   "H3_D_not_in_Z_failures": 0,
+   "all_collar_sources_diagonal": false,
+   "base_edge_count": 12,
+   "base_state_count": 7,
+   "canonical_form": [
+    [
+     0,
+     3,
+     6,
+     12,
+     6,
+     21,
+     6
+    ],
+    [
+     [
+      [
+       1,
+       1
+      ]
+     ],
+     [
+      [
+       1,
+       2
+      ],
+      [
+       2,
+       3
+      ]
+     ],
+     [
+      [
+       0,
+       4
+      ]
+     ],
+     [
+      [
+       0,
+       5
+      ],
+      [
+       1,
+       4
+      ],
+      [
+       2,
+       5
+      ]
+     ],
+     [
+      [
+       0,
+       6
+      ]
+     ],
+     [
+      [
+       0,
+       6
+      ],
+      [
+       1,
+       4
+      ]
+     ],
+     [
+      [
+       0,
+       6
+      ],
+      [
+       1,
+       0
+      ]
+     ]
+    ]
+   ],
+   "canonical_sha256": "5da670531e267e7e112168dd7f036941c00f7c3edd246fa3f5f63df040f9cae5",
+   "closed_strongly_connected_exit_free": true,
+   "collar_edge_count": 16,
+   "counting_bound_on_q_minus_dim_ker_pi": 12,
+   "counting_forces_q_lt_dim_ker_pi": false,
+   "dim_D": 6,
+   "dim_Z1_B": 6,
+   "dim_ker_pi_meet_D": 0,
+   "product_edge_count": 47,
+   "product_vertex_count": 31,
+   "rank_pi_rows": 34,
+   "rank_pi_rows_with_tags": 34,
+   "three_dim_Z1_B": 18,
+   "witness_support_size": 0
+  }
+ },
+ "provenance": {
+  "full36_delta_derivation": "engine.full36_delta: 3*d12[state][digit] + ((phase + voltage[3*state+digit]) % 3), voltage[10]=2, voltage[16]=1, over state in 0..11, phase in 0..2",
+  "note": "verify.py re-implements the product, tags and collar predicate from their definitions and does NOT import the sealed engine; the sealed hashes are recorded only to identify what the reconstruction was cross-checked against at build time",
+  "sealed_context_path": "E:\\arena\\atlas_n5_z3_context_face_audit_20260724\\RESULT.json",
+  "sealed_context_sha256": "402a9b26fccdd822e65323db861c086f8b4a0086abce26957b936acec92f0ae3",
+  "sealed_engine_path": "E:\\arena\\atlas_d15_support_minimal_closed_face_synthesis_20260724\\engine.py",
+  "sealed_engine_sha256": "daf64647c7fcde2a3f1f982ab7ac0b9de5fef638fda89ba4569d033d57b9bdf2"
+ }
+}
