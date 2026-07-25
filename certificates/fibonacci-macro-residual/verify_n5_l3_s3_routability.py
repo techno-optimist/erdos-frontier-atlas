@@ -156,7 +156,6 @@ def main():
     out = {
         "schema": "lead.n5_l3_s3_complete.v1",
         "status": status,
-        "elapsed_sec": round(time.time() - t0, 3),
         "stats": dict(stats),
         "lp_hit_count": 0,
         "claim_boundary": (
@@ -165,7 +164,28 @@ def main():
             "common-anchor split macro at S=3 (LP vacuous)."
         ),
     }
-    OUT.write_text(json.dumps(out, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    # CHECK-ONLY BY DEFAULT. Writing the receipt on every replay is how a
+    # committed receipt that disagrees with its verifier gets silently
+    # overwritten instead of reported (see tools/check_receipt_drift.py and the
+    # harness-change record). Replay compares; only `--emit` rewrites.
+    import sys as _sys
+    _emit = "--emit" in _sys.argv
+    if _emit:
+        OUT.write_text(json.dumps(out, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    elif OUT.exists():
+        # Declare the receipt we verified, so tools/check_receipt_drift.py can
+        # count check-only verification as coverage. Without this a verifier
+        # that stops rewriting its receipt -- the behaviour we want -- would
+        # score as "never re-derived".
+        print("receipt-checked: " + OUT.name)
+        committed = json.loads(OUT.read_text(encoding="utf-8"))
+        if committed != out:
+            diff = sorted(set(committed) ^ set(out)) or [
+                k for k in out if committed.get(k) != out.get(k)]
+            raise SystemExit(
+                f"RECEIPT DRIFT: {OUT.name} disagrees with this verifier on "
+                f"{diff}. The receipt is evidence -- fix the code or re-emit "
+                f"deliberately with --emit; do not let a replay overwrite it.")
     print(json.dumps(out, indent=2))
     if status != "NO_N5_L3_S3":
         raise SystemExit(1)

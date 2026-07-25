@@ -3,7 +3,6 @@
   "S": 4,
   "claim_boundary": "Exhaustive n=5 L=3 on all 4-state L<=3-reachable clocks. Pure-Python routability census.",
   "digit_patterns": 19,
-  "elapsed_sec": 60.348,
   "n": 5,
   "schema": "lead.n5_l3_s4_complete.v1",
   "stats": {
