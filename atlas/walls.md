@@ -87,6 +87,30 @@ walls below are walls for *spending our own search compute*.
   exact \(n=9\) decision procedure or effective Tao \(n_0\) — that is theory /
   exact real algebra, not random search.
 
+  **Update 2026-07-25 — the "effective \(n_0\)" half is CLAIMED; the wall does not
+  move.** J. Pickhardt with an "Omniscience Research Agent" ([explicit
+  threshold](https://omniscienceproject.com/papers/an-explicit-high-degree-threshold-for-sendovs-conjecture-deEGnk8R),
+  2026-07-22, self-published, unrefereed, with a Lean companion) claims an explicit
+  version of Tao's threshold at \(N_0=\exp(10^{126})\). We read it and did not break
+  it, but **nothing here becomes computable**: \(N_0\) has \(\approx 4.34\times10^{125}\)
+  decimal digits — the digit *count* is itself a 126-digit number — so \([9,N_0]\)
+  still holds \(\sim10^{4.34\times10^{125}}\) undecided degrees. Skewes-type numbers are
+  small by comparison. **No degree becomes reachable and no search becomes feasible;
+  do not read "the gap is now finite" as an opening.**
+
+  Two things in that paper *are* worth knowing before spending here. (1) The
+  astronomical cost is **not diffuse** — it sits in a single sliver,
+  \(0.99\le a\) with \(1-a>90/(n^{12}\log n)\); everything else is covered at
+  \(n\ge e^{400}\), and the dominant term is the Fejér order (\(<10^{123}\)) needed
+  for pointwise root density at \(\eta_0=4.73\times10^{-61}\). Anyone attacking the
+  constant should attack that sliver, and the author's own view is that it needs a
+  different argument, not sharper constants. (2) Its Corollary 11.2 gives Sendov for
+  every marked zero with \(a\le 1/2\) at \(n\ge\lceil e^{400}\rceil\approx10^{174}\) —
+  still unreachable, but \(10^{(4\times10^{125})}\) times smaller than the headline,
+  and the part a follow-up would actually build on.
+
+  Net for us: **\(n=9\) is now the sole tractable-looking target and remains a wall.**
+
 ## Witness not representable / physically astronomical
 
 - **#2 / #27 — covering-system minimum modulus 42:** a minimum-40 witness
@@ -118,6 +142,19 @@ walls below are walls for *spending our own search compute*.
   #552, a table being pushed by the same SAT tools: repository certificates
   close a(12)…a(16) and certify the a(17) lower endpoint, so repeat compute on
   those cells is now a named wall; only n=17,m=22 and later remain live.
+- **#421 — distinct consecutive products** (density-1 sequence with all
+  \(\prod_{u\le i\le v} d_i\) distinct): erdosproblems.com states it **cannot be
+  resolved with a finite computation**, so it is ineligible for our records and
+  witness lanes — reference only. Recorded here because a **claimed solution is
+  circulating** (P. Chojecki, ulam.ai, 2026-07-13, machine-authored, 5pp,
+  self-hosted, not on arXiv) and **upstream still marks #421 OPEN** as of
+  2026-07-25. We read it and found nothing wrong, but three earlier "final"
+  proofs of the same statement by the same pipeline each had real errors found
+  by readers within days, and a requested human-written version has not
+  appeared. **Do not sink #421 on a headline** — a scraper that closes a cell
+  because someone announced a proof is precisely the failure the #552 retraction
+  was supposed to teach us. Status changes when *upstream* changes, not when a
+  claim appears. Cross-refs: #786 (finite version, Selfridge density 1/e), #795.
 
 ---
 
