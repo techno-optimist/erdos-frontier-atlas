@@ -243,8 +243,29 @@ def analyse(labels, trans, delta):
     diag, inc_c = collar_data(P)
     n = len(diag)
 
+    # dim Z_1(B) = |E| - |V| + (number of weak components).  The component
+    # count is LOAD-BEARING and is computed, never assumed: under-counting it
+    # would shrink 3*dim Z_1(B) and make the counting bound of R2 too tight,
+    # i.e. unsound in our favour.  (Reachability from the root already forces
+    # one component, but that is an argument, not a check.)
     base_edges = sorted((u, d) for u, row in enumerate(tmap) for d in row)
-    dim_Z1B = len(base_edges) - len(tmap) + 1
+    nbr = {u: set() for u in range(len(tmap))}
+    for u, d in base_edges:
+        nbr[u].add(tmap[u][d])
+        nbr[tmap[u][d]].add(u)
+    seen, comps = set(), 0
+    for start in range(len(tmap)):
+        if start in seen:
+            continue
+        comps += 1
+        seen.add(start)
+        stack = [start]
+        while stack:
+            for w in nbr[stack.pop()]:
+                if w not in seen:
+                    seen.add(w)
+                    stack.append(w)
+    dim_Z1B = len(base_edges) - len(tmap) + comps
 
     dim_D = n - rank_of(inc_c, n)
     marg = {}
@@ -276,6 +297,7 @@ def analyse(labels, trans, delta):
                                                 and not P["exits"]),
         "base_state_count": len(tmap), "base_edge_count": len(base_edges),
         "dim_Z1_B": dim_Z1B, "three_dim_Z1_B": 3 * dim_Z1B,
+        "base_weak_component_count": comps,
         "collar_edge_count": n, "dim_D": dim_D, "dim_ker_pi_meet_D": dim_meet,
         "rank_pi_rows": rank_pi, "rank_pi_rows_with_tags": rank_pi_tags,
         "H1_morphism_violations": h1bad, "H3_D_not_in_Z_failures": h3bad,
@@ -356,12 +378,18 @@ def main():
               r["closed_strongly_connected_exit_free"])
         for field in ("product_vertex_count", "product_edge_count",
                       "base_state_count", "base_edge_count", "dim_Z1_B",
+                      "base_weak_component_count",
                       "collar_edge_count", "dim_D", "dim_ker_pi_meet_D",
                       "rank_pi_rows", "rank_pi_rows_with_tags",
                       "all_collar_sources_diagonal",
                       "counting_bound_on_q_minus_dim_ker_pi"):
             check(f"recomputed {field} = {r[field]}", r[field] == obj[field],
                   "" if r[field] == obj[field] else f"expected {obj[field]}")
+        check("dim Z_1(B) uses a COMPUTED weak-component count "
+              f"(= {r['base_weak_component_count']}), not an assumed 1",
+              r["base_weak_component_count"] >= 1
+              and r["dim_Z1_B"] == r["base_edge_count"] - r["base_state_count"]
+              + r["base_weak_component_count"])
         check("H1: pi_i induced by a graph morphism P -> B (0 violations)",
               r["H1_morphism_violations"] == 0,
               f"{r['H1_morphism_violations']} violations over "

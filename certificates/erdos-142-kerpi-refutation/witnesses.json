@@ -194,6 +194,7 @@
    "all_collar_sources_diagonal": false,
    "base_edge_count": 13,
    "base_state_count": 6,
+   "base_weak_component_count": 1,
    "canonical_form": [
     [
      0,
@@ -413,6 +414,7 @@
    "all_collar_sources_diagonal": false,
    "base_edge_count": 10,
    "base_state_count": 5,
+   "base_weak_component_count": 1,
    "canonical_form": [
     [
      0,
@@ -577,6 +579,7 @@
    "all_collar_sources_diagonal": true,
    "base_edge_count": 11,
    "base_state_count": 7,
+   "base_weak_component_count": 1,
    "canonical_form": [
     [
      0,
@@ -669,6 +672,7 @@
    "all_collar_sources_diagonal": false,
    "base_edge_count": 12,
    "base_state_count": 7,
+   "base_weak_component_count": 1,
    "canonical_form": [
     [
      0,

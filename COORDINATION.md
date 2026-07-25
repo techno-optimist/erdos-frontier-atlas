@@ -75,8 +75,12 @@ Certificate: `certificates/erdos-142-kerpi-refutation/` (`python3 -I verify.py`,
 
 2. **`q ≥ dim ker π` — REFUTED.** This was the bridge from a `dim ker π`
    floor to a `q` floor, i.e. the route to excluding `q = 1`. It is not
-   merely unproved — it is false. Witness `91f52f97…`: `q = 732 <
-   748 = dim ker π`. Forced by **counting**, with tiny exact inputs:
+   merely unproved — it is false. Witness `91f52f97…`: the certificate
+   recomputes `dim D = 34 > 24 = 3·dim Z₁(B)`, which forces `q < dim ker π`
+   (machine-checked bound: `q − dim ker π ≤ −10`). The referee lane
+   separately reports the exact values `q = 732`, `dim ker π = 748`; those
+   are **NOT re-derived** by the certificate. Forced by **counting**, with
+   tiny exact inputs:
 
        ker π ⊆ Z  ⟹  q − dim ker π = rank(π|_Z) − dim D      (identity)
        im π ⊆ Z₁(B)³  ⟹  rank(π|_Z) ≤ 3·dim Z₁(B)
@@ -106,3 +110,9 @@ products, still the unique absent value in 0..24. What is closed is one route
 to excluding it; `q` must now be attacked directly.
 
 `erdos142_solved: false`. `new_r3_bound: false`.
+
+*Reported vs recomputed:* `verify.py` recomputes `dim Z₁(B)`, `dim D`,
+`dim(ker π ∩ D)`, `rank(π rows)` and H1/H2/H3 on all four objects, in exact
+rational arithmetic. All census figures in this section (31,548 / 873,264 /
+0 Theorem A violations / >1.18M) and the exact `q` and `dim ker π` values are
+**reported by the referee lane, not re-derived** by the certificate.
