@@ -61,8 +61,13 @@ Object `91f52f97…` (6 states, 319 vertices, 1088 edges, closed) likewise, with
 
 **Mechanism.** Per digit, a collar circulation is a 3-index array `d(q₀,q₁,q₂)`
 and the three role projections are exactly its three **1-marginals**. The
-kernel of "all three 1-marginals vanish" is large — minimal element the 2×2×2
-rectangle. Flow conservation alone cannot close the gap.
+kernel of "all three 1-marginals vanish" is large — its minimal elements have
+support **4**: two diagonal cells against two cells of a transversal,
+`d(1,1,1) + d(2,2,2) − d(1,2,1) − d(2,1,2)`, which is **not** a rank-one
+tensor. (The 2×2×2 rank-one tensor `(e₁−e₂)^⊗3` has support 8 and is a sum of
+two support-4 elements, so it is *not* minimal here — that circuit is minimal
+for the kernel of the three **2**-marginals, a different problem.) Flow
+conservation alone cannot close the gap.
 
 **Scale** (reported by the referee lane, not re-derived here): 31,548
 counterexamples among 873,264 closed products at ≤7 states.
