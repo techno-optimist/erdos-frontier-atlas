@@ -14,7 +14,7 @@
 #   make verify-certs        replay every fast in-repo certificate verifier
 #   make test                pytest over tests/
 
-.PHONY: hello-frontier state-of-frontier check-views book check-book validate verify-certs test
+.PHONY: hello-frontier state-of-frontier check-views book check-book validate verify-certs test check-contracts replay-contracts-fast replay-contracts-slow audit-fast audit-slow
 
 hello-frontier:
 	bash scripts/hello_frontier.sh
@@ -44,10 +44,27 @@ verify-certs:
 	python3 certificates/erdos-552-f39/verify.py
 	python3 certificates/erdos-13/verify.py
 	python3 certificates/erdos-1107/verify.py 200000
-	python3 -I certificates/erdos-142-kerpi-refutation/verify.py
 
 test:
 	python3 -m pytest tests/ -q
+
+# Claim-bound trust gate. Unlike verifier filename discovery, this checks that
+# every promoted statement is attached to exact artifact bytes, publication
+# text, a semantic replay verdict, and an explicit planted-failure boundary.
+check-contracts:
+	python3 tools/check_certificate_contracts.py
+
+replay-contracts-fast:
+	python3 tools/check_certificate_contracts.py --profile fast
+
+# Requires the DGX-class 11 GB runner because Erdős #979 at 10^12 is the
+# claim-bearing slow replay. This is intentionally separate from hosted CI.
+replay-contracts-slow:
+	python3 tools/check_certificate_contracts.py --profile slow
+
+audit-fast: validate check-views check-book check-contracts replay-contracts-fast test
+
+audit-slow: check-receipts
 
 # Receipt-drift gate. Slower (~4 min: replays every certificate verify*/check*
 # script, incl. fk-square ~2 min) so it is NOT in `test`. Fails if a committed

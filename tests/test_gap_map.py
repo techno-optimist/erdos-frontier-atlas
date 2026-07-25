@@ -58,7 +58,13 @@ def test_problems_exist_in_hub():
 # ---------------------------------------------------------------------------
 
 def _ev(*pairs):
-    return [{"type": t, "artifact": a, "date": "2026-07-18"} for t, a in pairs]
+    out = []
+    for t, a in pairs:
+        item = {"type": t, "artifact": a, "date": "2026-07-18"}
+        if t in {"formal_proof", "implementation", "replay_receipt"}:
+            item["contract"] = "erdos-13-table"
+        out.append(item)
+    return out
 
 
 def test_confidence_c0_formal_proof_dominates():
@@ -123,7 +129,15 @@ def test_ledger_malformed_evidence_fails():
     vgm.check_ledger(errors, "t", {
         "evidence": [{"type": "vibes", "artifact": "x", "date": "2026-07-18"}],
         "confidence": "C3"})
-    assert errors and "bad type" in errors[0]
+    assert any("bad type" in error for error in errors)
+
+
+def test_claim_bearing_evidence_requires_a_real_promoted_contract():
+    errors = []
+    item = _ev(("implementation", "certificates/does-not-exist.py"))[0]
+    item["contract"] = "fabricated-contract"
+    vgm.check_ledger(errors, "t", {"evidence": [item], "confidence": "C2"})
+    assert any("promoted certificate contract" in error for error in errors)
 
 
 def test_all_entries_stamped_and_classes_match():
@@ -141,12 +155,13 @@ def test_ledger_anchor_classes():
     by = {}
     for e in gm["entries"]:
         by.setdefault(e["problem"], []).append(e)
-    # A385316 / #979: two independent implementations at the full 1e12 window -> C1
+    # A385316 / #979: one public exact replay at the full 1e12 window -> C2.
+    # Private DGX 1e13 ledgers do not count until they ship in this package.
     e979 = [e for e in by[979] if "miner" not in e["provenance"]["added_by"]]
-    assert len(e979) == 1 and e979[0]["confidence"] == "C1"
-    assert any(it["type"] == "implementation" and "erdos-979" in it["artifact"]
+    assert len(e979) == 1 and e979[0]["confidence"] == "C2"
+    assert any(it["type"] == "replay_receipt" and "erdos-979" in it["artifact"]
                for it in e979[0]["evidence"])
-    # Mollin-Walsh / #1107 lane entry: one scan implementation, receipt fleet-side -> C2
+    # Mollin-Walsh / #1107: one public exact replay through 1e6 -> C2.
     e1107 = [e for e in by[1107] if "miner" not in e["provenance"]["added_by"]]
     assert len(e1107) == 1 and e1107[0]["confidence"] == "C2"
     # #552: literature bracket + one in-repo lower-bound replay certificate -> C2

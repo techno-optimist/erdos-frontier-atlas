@@ -11,8 +11,8 @@ Checks, all hard failures unless marked WARN:
   5. witness_side none => witness_feasibility none;
   6. every numeric bound carries a non-empty source; provenance.checked non-empty;
   7. (problem, quantity) unique;
-  8. epistemic ledger (WS7): evidence[] items are well-formed ({type,artifact,date},
-     type in the enum, non-empty strings);
+  8. epistemic ledger (WS7): evidence[] items are well-formed ({type,artifact,date}
+     plus a required promoted contract id for claim-bearing evidence);
   9. epistemic ledger (WS7): the stored confidence class EQUALS the class computed
      from evidence[] (see compute_confidence below); an entry may not carry
      confidence without evidence, nor evidence without a stored confidence.
@@ -38,6 +38,7 @@ STATUS = {"open", "record_in_progress", "closed"}
 EVIDENCE_TYPES = {"formal_proof", "implementation", "replay_receipt",
                   "numeric_scan", "literature"}
 CONFIDENCE_CLASSES = {"C0", "C1", "C2", "C3"}
+CONTRACTS = ROOT / "certificates" / "contracts.json"
 
 
 def fail(errors, msg):
@@ -72,7 +73,16 @@ def compute_confidence(evidence):
     return "C3"
 
 
-def check_ledger(errors, tag, e):
+def promoted_contract_ids():
+    try:
+        data = json.loads(CONTRACTS.read_text())
+    except (OSError, json.JSONDecodeError):
+        return set()
+    return {claim.get("id") for claim in data.get("claims", [])
+            if claim.get("status") == "promoted"}
+
+
+def check_ledger(errors, tag, e, contracts=None):
     """WS7 ledger checks on one entry: evidence[] shape + stored-vs-computed class."""
     has_ev, has_conf = "evidence" in e, "confidence" in e
     if has_conf and not has_ev:
@@ -90,11 +100,18 @@ def check_ledger(errors, tag, e):
         fail(errors, f"{tag}: evidence must be a non-empty list")
         return
     ok = True
+    contracts = promoted_contract_ids() if contracts is None else contracts
     for j, it in enumerate(ev):
-        if not isinstance(it, dict) or set(it) != {"type", "artifact", "date"}:
-            fail(errors, f"{tag}.evidence[{j}]: item must be exactly {{type,artifact,date}}")
+        if not isinstance(it, dict):
+            fail(errors, f"{tag}.evidence[{j}]: item must be an object")
             ok = False
             continue
+        claim_bearing = it.get("type") in {"formal_proof", "implementation", "replay_receipt"}
+        expected_keys = {"type", "artifact", "date", "contract"} if claim_bearing \
+            else {"type", "artifact", "date"}
+        if set(it) != expected_keys:
+            fail(errors, f"{tag}.evidence[{j}]: keys must be exactly {sorted(expected_keys)}")
+            ok = False
         if it["type"] not in EVIDENCE_TYPES:
             fail(errors, f"{tag}.evidence[{j}]: bad type {it['type']!r}")
             ok = False
@@ -102,6 +119,10 @@ def check_ledger(errors, tag, e):
             if not (isinstance(it[fld], str) and it[fld].strip()):
                 fail(errors, f"{tag}.evidence[{j}]: {fld} must be a non-empty string")
                 ok = False
+        if claim_bearing and it.get("contract") not in contracts:
+            fail(errors, f"{tag}.evidence[{j}]: claim-bearing evidence must reference "
+                         f"a promoted certificate contract; got {it.get('contract')!r}")
+            ok = False
     if e["confidence"] not in CONFIDENCE_CLASSES:
         fail(errors, f"{tag}: bad confidence {e['confidence']!r}")
         return
@@ -195,7 +216,7 @@ def main():
                 or not isinstance(prov.get("checked"), list) or not prov["checked"]):
             fail(errors, f"{tag}: provenance must carry added_by, date, non-empty checked[]")
 
-        check_ledger(errors, tag, e)
+        check_ledger(errors, tag, e, promoted_contract_ids())
 
         key = (pid, e["quantity"])
         if key in seen:

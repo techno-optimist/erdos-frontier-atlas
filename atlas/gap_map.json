@@ -343,8 +343,8 @@
    "quantity": "A385316(6) \u2014 smallest N that is a sum of 3 prime cubes in exactly 6 ways",
    "kind": "next_cell",
    "lower": {
-    "value": "> 10^13",
-    "source": "two independent implementations swept contiguous gap-free coverage of [0, 10^13) with no value having exactly 6 representations: a RAM-bounded streaming counter sweep (farm ledger, 100 windows) and a blind-reimplemented pair-sum-ledger sweep (built spec-only, forbidden from reading the primary; different algorithm). Cross-checked: 100/100 segments, first-hit observables k=1..3 all equal, zero mismatches. Both reproduce a(1..5) exactly and match a naive brute force on low + interior windows.",
+    "value": "> 10^12",
+    "source": "public in-repo exact verifier exhaustively counts the complete prime-cube window [0,10^12], reproduces a(1..5), and finds no value with exactly 6 representations",
     "year": 2026
    },
    "upper": null,
@@ -354,7 +354,7 @@
    "witness_feasibility": "none",
    "exact_feasibility": "cell",
    "status": "record_in_progress",
-   "notes": "Naive all-in-RAM search is memory-bound (~20GB @ cap 2e12, ~100GB @ 1e13); needs a streaming chunked search. Ledger: the C1 class covers a(6) > 10^12 (two independent implementations at the full window; certificates/erdos-979/); the '> 2x10^12' headline bound is a single-implementation extension pending independent replication (C2-grade on its own). PROMOTED 2026-07-19: a(6) > 10^13 at C1 \u2014 the streaming sweep was replicated by a blind independent reimplementation (different algorithm, spec-only) with 100/100 window agreement on all shared observables. Beats the published OEIS bound (4.99x10^11) by 20x. External OEIS submission of the new bound is a separate human-sent step.",
+   "notes": "PUBLIC BOUND: a(6) > 10^12, replayable from certificates/erdos-979/ (~11 GB). PRIVATE OPERATIONAL RESULT: the DGX streaming sweep and blind replica report gap-free agreement through 10^13, but their code and ledgers are not tracked in this repository, so that stronger result is quarantined from public promotion pending a self-contained replay packet. External OEIS submission is a separate human-sent step.",
    "provenance": {
     "added_by": "claude-lead, 12-candidate triage",
     "date": "2026-07-18",
@@ -365,22 +365,13 @@
    },
    "evidence": [
     {
-     "type": "implementation",
-     "artifact": "foundry farm streaming_a385316.py sweep of [0,1e13) \u2014 coverage/erdos-979.jsonl (100 windows, exhausted_no_witness)",
-     "date": "2026-07-19"
-    },
-    {
-     "type": "implementation",
-     "artifact": "foundry farm replicate_a385316_sweep.py blind replica sweep of [0,1e13) \u2014 erdos-979-replication/replica.jsonl (100 windows, no exactly-6 hits)",
-     "date": "2026-07-19"
-    },
-    {
      "type": "replay_receipt",
-     "artifact": "certificates/erdos-979 (a(6) > 10^12, the earlier certified stage; verifier reproduces a(1..5))",
-     "date": "2026-07-17"
+     "artifact": "certificates/erdos-979/verify.py --cutoff 1e12 (complete prime set; reproduces a(1..5); exact finite count)",
+     "date": "2026-07-21",
+     "contract": "erdos-979-a6-public"
     }
    ],
-   "confidence": "C1"
+   "confidence": "C2"
   },
   {
    "problem": 556,
@@ -4590,7 +4581,8 @@
     {
      "type": "replay_receipt",
      "artifact": "certificates/erdos-552-f39/verify.py \u2014 machine-checked 45-vertex C4-free minimum-degree-6 witness re-deriving the lower bound R(C4,K1,39) >= 46 (the 2026-07-16 equality claim is retracted; the certificate stands as a lower-bound replay)",
-     "date": "2026-07-16"
+     "date": "2026-07-16",
+     "contract": "erdos-552-f39-lower"
     }
    ],
    "confidence": "C2"
@@ -8003,18 +7995,18 @@
    "quantity": "Mollin-Walsh completeness frontier (A056828) \u2014 verified no new n fails to be a sum of <=3 powerful numbers",
    "kind": "verified_range",
    "lower": {
-    "value": "10^10",
-    "source": "this project verified-up-to-N lane (extends Jobling 4x10^7); replay-verified, cross-checked OEIS A118896 powerful-number counts, 400/400 witness re-checks",
+    "value": "10^6",
+    "source": "public in-repo exact bitset-sumset verifier recomputes the exception set through 10^6",
     "year": 2026
    },
    "upper": null,
    "witness_side": "none",
    "witness_object": "n/a \u2014 verified-up-to-N: a replayable bounded scan certifies no exception beyond {7,15,23,87,111,119} up to the frontier",
-   "witness_verifier": "replayable scan; reproduces the 6 known exceptions + Jobling's 4x10^7 null result; powerful-number counts match A118896 at every power of 10 through 10^10",
+   "witness_verifier": "python3 -I certificates/erdos-1107/verify.py; exact exception-set equality through the chosen N (default 10^6)",
    "witness_feasibility": "none",
    "exact_feasibility": "wall",
    "status": "record_in_progress",
-   "notes": "Frontier extended 4x10^7 -> 10^10 (2026-07-18). Next rung 10^11 feasible (~12.5GB bitsets). Full conjecture (only those 6 exceptions ever) is a wall. Extension not yet submitted to OEIS.",
+   "notes": "PUBLIC BOUND: no seventh exception through 10^6, replayable in-repo. PRIVATE OPERATIONAL RESULT: a DGX verified-up-to-N run reported 10^10 with A118896 and sampled-witness cross-checks, but no canonical receipt was found in the public package during the 2026-07-21 audit; it is quarantined from promotion until packaged. The full conjecture is a wall.",
    "provenance": {
     "added_by": "verified-up-to-N lane + lead",
     "date": "2026-07-18",
@@ -8026,14 +8018,10 @@
    },
    "evidence": [
     {
-     "type": "implementation",
-     "artifact": "verified-up-to-N lane bitset-sumset scan to 10^10 (one implementation; reproduces the 6 known exceptions and Jobling's 4x10^7 null result before extending; pinned fleet-side receipt, path-sanitized public mirror pending \u2014 WS3)",
-     "date": "2026-07-18"
-    },
-    {
-     "type": "numeric_scan",
-     "artifact": "cross-checks: powerful-number counts match OEIS A118896 at every power of 10 through 10^10; 400/400 sampled witnesses re-factored by an independent code path; method + exception table replayable via certificates/erdos-1107/verify.py",
-     "date": "2026-07-18"
+     "type": "replay_receipt",
+     "artifact": "certificates/erdos-1107/verify.py default N=1000000 exact bitset-sumset replay",
+     "date": "2026-07-21",
+     "contract": "erdos-1107-public-table"
     }
    ],
    "confidence": "C2"
@@ -8070,7 +8058,8 @@
     {
      "type": "replay_receipt",
      "artifact": "certificates/erdos-13/verify.py",
-     "date": "2026-07-18"
+     "date": "2026-07-18",
+     "contract": "erdos-13-table"
     }
    ],
    "confidence": "C2"

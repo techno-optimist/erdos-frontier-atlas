@@ -47,9 +47,9 @@ The state of this edition, generated from the data:
 
 | this edition | state |
 |---|---|
-| data through | **2026-07-19** (latest provenance/evidence date in the gap map) |
+| data through | **2026-07-21** (latest provenance/evidence date in the gap map) |
 | the ledger | **222** bounded quantities |
-| confidence | C0 0 · C1 1 · C2 3 · C3 218 |
+| confidence | C0 0 · C1 0 · C2 4 · C3 218 |
 | movements on the board | **9** (🟢 5 · 🔴 2 · 🟡 2) — corrected claims kept visible |
 
 ---
@@ -73,7 +73,7 @@ labeling *is* the release gate.
 
 - **222 bounded quantities** on the map ([`atlas/gap_map.json`](../atlas/gap_map.json)).
 - Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **2** lane-added, **208** agent-mined.
-- Confidence distribution (computed from `evidence[]`, never asserted): **C0** 0 · **C1** 1 · **C2** 3 · **C3** 218.
+- Confidence distribution (computed from `evidence[]`, never asserted): **C0** 0 · **C1** 0 · **C2** 4 · **C3** 218.
 - **81 witness-workable**: still open, with a side a single submitted
   construction — checked by the entry's stated verifier — can move.
 
@@ -99,8 +99,8 @@ Corrected claims stay on the board by design (charter Tenet 5).
 | 🟢 | **#552** `R(C4,K1,n)` | certified C₄-free witnesses ⇒ `R(C4,K1,n) = n + ⌈√n⌉ + 1` for `12 ≤ n ≤ 16`; `n=17` closed at `22` (Parsons 1975) | [`certificates/erdos-552`](certificates/erdos-552) · PR #78 | 2026-07-16 |
 | 🟢 | **#241** B₃-subset table (A387704) | proved `A387704(n) = max{k : A227358(k) ≤ n−1}` (translation invariance; 0/151 mismatches) ⇒ first jump to 9 at `n=209`; atlas cell **closed by cross-reference** | PR #80 | 2026-07-16 |
 | 🟢 | **#13** Erdős–Sárközy | certified exact table `f(1..45)`; `N=17` is the **last** exception to `⌊N/3⌋+1` — an empirical location for Bedert's ineffective threshold | [`certificates/erdos-13`](certificates/erdos-13) · PR #81 | 2026-07-17 |
-| 🟢 | **#979** `f₃` / A385316 | **`a(6) > 10¹³` at C1** — two independent implementations (a streaming counter sweep and a blind-reimplemented pair-sum sweep, different algorithms, spec-only isolation) each covered `[0, 10¹³)` gap-free with no 6-way value; cross-checked 100/100 windows, zero mismatches; 20× past the published `4.99·10¹¹` | [`certificates/erdos-979`](certificates/erdos-979) | 2026-07-19 |
-| 🟡 | **#1107** Mollin–Walsh / A056828 | verified **no exception below `10¹⁰`** to being a sum of ≤3 powerful numbers — extends the published `4·10⁷` frontier; exception set `{7,15,23,87,111,119}` reproduced, powerful-counts cross-checked vs A118896, replay-verified | [`certificates/erdos-1107`](certificates/erdos-1107) | 2026-07-18 |
+| 🟢 | **#979** `f₃` / A385316 | **`a(6) > 10¹²` at C2** — exhaustively verified and replayable from this repo (`verify.py --cutoff 1e12`, ~80 s, ~11 GB; reproduces `a(1..5)` as a fail-closed self-check) — past the published `4.99·10¹¹`. A stronger `> 10¹³` sweep exists but its code and ledgers are **not tracked here**, so it is **quarantined from public promotion** pending a self-contained replay packet — see the entry note in the gap map. *(Corrected 2026-07-25: this row previously claimed `> 10¹³` at C1; the second "independent implementation" backing that class lives outside this repository, so a reader could not replay it.)* | [`certificates/erdos-979`](certificates/erdos-979) | 2026-07-19 |
+| 🟡 | **#1107** Mollin–Walsh / A056828 | verified **no seventh exception below `10⁶`** to being a sum of ≤3 powerful numbers (`verify.py`, default `N = 10⁶`, ~10 s, dependency-free); the six known exceptions `{7,15,23,87,111,119}` are all `< 120` and are reproduced, powerful-counts cross-checked vs A118896. A wider `10¹⁰` run exists but is **not replayable from this repository**, so it is not the public claim. *(Corrected 2026-07-25: this row previously claimed `10¹⁰`.)* | [`certificates/erdos-1107`](certificates/erdos-1107) | 2026-07-18 |
 | 🟡 | **#142** `r₃(N)` | complete 12,349-cell geometric enumeration superseding a flawed 976-cell subset, now certified in-repo as a **construction no-go** — a **foundation only**; self-declared no-bridge, **not** an `r₃(N)` bound | [`certificates/erdos-142`](certificates/erdos-142) · PR #84 | 2026-07-13 |
 | 🔴 | **#142** / D15 lemmas | **refuted** `ker π ∩ D = 0` and `q ≥ dim ker π` (two lemmas a bridge attempt rested on) and proved Theorem A in their place — a dead path closed so the next agent does not re-walk it; explicitly **not** an `r₃(N)` bound | [`certificates/erdos-142-kerpi-refutation`](certificates/erdos-142-kerpi-refutation) · PR #101, #102 | 2026-07-24 |
 | 🟢 | **#1029 / #77** `R(5,5)` | 42/42 DRAT-certified structural negatives (no witness; rigidity + prime-order orbit collapse), all consistent with `R(5,5) = 43` | [r55-rigidity-certificates](https://github.com/techno-optimist/r55-rigidity-certificates) · DOI [10.5281/zenodo.21305022](https://doi.org/10.5281/zenodo.21305022) | 2026-07-10 |
@@ -343,9 +343,9 @@ fails any stored class the recorded evidence does not prove.
 
 | class | meaning | entries |
 |---|---|---|
-| C0 | formal proof, machine-checked | 0 |
-| C1 | &ge;2 independent implementations or replays with distinct artifacts at the claimed range | 1 |
-| C2 | exactly one verified, replayable implementation | 3 |
+| C0 | contract-bound formal proof, machine-checked | 0 |
+| C1 | &ge;2 contract-bound independent replays at the claimed range | 0 |
+| C2 | exactly one contract-bound verified replay | 4 |
 | C3 | literature- or numerics-grade — no independent in-project verification artifact | 218 |
 
 The remaining instruments are refusals. The **freshness gate**: no claim of
