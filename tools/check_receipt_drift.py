@@ -166,6 +166,17 @@ def main():
                                    timeout=PER_SCRIPT_TIMEOUT)
                 if p.returncode != 0:
                     failed_runs.append(f"{d}/{v.name} (exit {p.returncode})")
+                # A CHECK-ONLY verifier re-derives its receipt without rewriting
+                # it, so mtime cannot see it. Honour an explicit declaration:
+                # "receipt-checked: <file>". Otherwise converting a verifier to
+                # check-only -- exactly the fix this gate exists to encourage --
+                # would make coverage look WORSE.
+                for line in (p.stdout or "").splitlines():
+                    if line.startswith("receipt-checked:"):
+                        nm = line.split(":", 1)[1].strip()
+                        cand = str((ROOT / d / nm).relative_to(ROOT))
+                        if cand in tracked:
+                            touched.add(cand)
             except subprocess.TimeoutExpired:
                 failed_runs.append(f"{d}/{v.name} (timeout)")
             for p, mt in before_mt.items():

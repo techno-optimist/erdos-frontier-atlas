@@ -86,7 +86,6 @@ def main():
             snap = {
                 "next_idx": idx + 1,
                 "stats": dict(stats),
-                "elapsed_sec": round(time.time() - t0, 3),
             }
             PROGRESS.write_text(
                 json.dumps(snap, indent=2, sort_keys=True) + "\n", encoding="utf-8"
@@ -103,7 +102,6 @@ def main():
         "L": L,
         "S": S,
         "n": N,
-        "elapsed_sec": round(time.time() - t0, 3),
         "stats": dict(stats),
         "digit_patterns": len(legal),
         "total_clocks": total,
@@ -113,7 +111,28 @@ def main():
             "Pure-Python routability census."
         ),
     }
-    OUT.write_text(json.dumps(out, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    # CHECK-ONLY BY DEFAULT. Writing the receipt on every replay is how a
+    # committed receipt that disagrees with its verifier gets silently
+    # overwritten instead of reported (see tools/check_receipt_drift.py and the
+    # harness-change record). Replay compares; only `--emit` rewrites.
+    import sys as _sys
+    _emit = "--emit" in _sys.argv
+    if _emit:
+        OUT.write_text(json.dumps(out, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    elif OUT.exists():
+        # Declare the receipt we verified, so tools/check_receipt_drift.py can
+        # count check-only verification as coverage. Without this a verifier
+        # that stops rewriting its receipt -- the behaviour we want -- would
+        # score as "never re-derived".
+        print("receipt-checked: " + OUT.name)
+        committed = json.loads(OUT.read_text(encoding="utf-8"))
+        if committed != out:
+            diff = sorted(set(committed) ^ set(out)) or [
+                k for k in out if committed.get(k) != out.get(k)]
+            raise SystemExit(
+                f"RECEIPT DRIFT: {OUT.name} disagrees with this verifier on "
+                f"{diff}. The receipt is evidence -- fix the code or re-emit "
+                f"deliberately with --emit; do not let a replay overwrite it.")
     if PROGRESS.exists() and not found:
         PROGRESS.unlink()
     print(json.dumps({k: v for k, v in out.items() if k != "witness"}, indent=2))
