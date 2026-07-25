@@ -34,6 +34,8 @@ from typing import Dict, List, Tuple
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
+import sys as _sys, pathlib as _pathlib
+_sys.path.insert(0, str(_pathlib.Path(__file__).resolve().parent))
 from poly2 import X, Y, jac_det, padd, pconst, poly_eq, ppow, pscale, total_degree
 from tame_invert import invert_tame, verify_inverse, try_elementary_y, try_elementary_x
 from wang_degree2 import invert_structured

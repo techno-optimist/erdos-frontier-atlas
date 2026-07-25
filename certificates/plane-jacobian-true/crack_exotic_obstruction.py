@@ -26,6 +26,8 @@ from fractions import Fraction as Q
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
+import sys as _sys, pathlib as _pathlib
+_sys.path.insert(0, str(_pathlib.Path(__file__).resolve().parent))
 from poly2 import X, Y, jac_det, padd, pconst, pmul, poly_eq, ppow, pscale
 
 
