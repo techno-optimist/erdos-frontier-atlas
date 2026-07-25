@@ -1,0 +1,38 @@
+{
+  "problem": 142,
+  "title": "H1-H5 constant ceiling and pressure-to-one exclusion",
+  "kind": "fence",
+  "certified_here": [
+    "C1: lambda_candidate > 7/24 (exact rational), i.e. this rate would give a constant strictly better than the EHPS 2024 baseline IF a survivor certificate for it existed",
+    "C2a: Lambda_cap = (theta_3/3)^2 <= 211/250, certified by the purely rational inequality R^2 <= (9U)^3 with R = (1+x0+x0^2)^3/x0^2 >= theta_3^3",
+    "C2b: any family obeying the pressure bracket 1-rho(m) <= 2/(3m)+11/(6m^2) has rho(m) >= 85/98 > 211/250 for every m >= 7, hence exceeds the ceiling and cannot be an H1-H5 survivor"
+  ],
+  "not_certified_here": [
+    "the constant map c = 2*sqrt(log2(1/lambda)) itself (external, sealed-by-audit, not formalized, not re-derived in this repo)",
+    "the cap-set ceiling Lambda_cap on H1-H5 survivor return rates (external, from published Ellenberg-Gijswijt plus a Fubini + periodic Perron-Frobenius argument; sealed-by-audit)",
+    "the pressure bracket, which is an external PROVED input for one specific family and is treated here as a hypothesis",
+    "any r_3(N) lower bound; no survivor certificate exists"
+  ],
+  "lambda_candidate": "65789102774707418182759/222090924810025888000000",
+  "ehps_building_block_rate": "7/24",
+  "lambda_margin_over_ehps": "3037749115349602548277/666272774430077664000000",
+  "theta_3_witness_x0": "593/1000",
+  "ceiling_rational_upper_bound_U": "211/250",
+  "exclusion_bracket": "1 - rho(m) <= 2/(3m) + 11/(6m^2)",
+  "exclusion_rho_lower_at_m7": "85/98",
+  "exclusion_holds_for_m_at_least": 7,
+  "display_only_decimals": {
+    "note": "informational; never in the trust path",
+    "lambda_candidate": 0.2962259841593378,
+    "ehps_constant": 2.666539014275660,
+    "candidate_constant_if_certified": 2.649701794028334,
+    "cap_set_ceiling_true_value": 0.843400158744900,
+    "universal_constant_floor_from_ceiling": 0.991384489945289
+  },
+  "consequence": "Because c = 2*sqrt(log2(1/lambda)) is strictly decreasing in lambda and no H1-H5 survivor may exceed Lambda_cap, no survivor in this framework can have a constant below ~0.9914. The framework can therefore improve the CONSTANT but can never beat the sqrt(log N) ORDER. Separately, pressure-to-one families are excluded outright: the closer rho is driven to 1, the more decisively the ceiling is violated.",
+  "claim_boundary": {
+    "erdos142_solved": false,
+    "new_r3_bound": false,
+    "survivor_certificate_exists": false
+  }
+}
