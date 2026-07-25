@@ -101,6 +101,13 @@ def parse_board_rows(readme_text):
                      if ln.strip() == "## CHRONOS Frontier Board")
     except StopIteration:
         raise SystemExit("build_book: README has no '## CHRONOS Frontier Board' section")
+    def _reanchor(cell):
+        """Rewrite repo-root-relative markdown links so they work from book/."""
+        for top in ("certificates/", "atlas/", "tools/", "views/", "observatory/",
+                    "progress/", "tests/", "book/"):
+            cell = cell.replace(f"]({top}", f"](../{top}")
+        return cell
+
     rows, in_table = [], False
     for ln in lines[start + 1:]:
         if ln.startswith("## "):
@@ -114,7 +121,11 @@ def parse_board_rows(readme_text):
                 in_table = True
                 continue
             if len(cells) >= 5:
-                rows.append(cells[:5])
+                # The board lives in README.md at the repo ROOT, so its links are
+                # root-relative. BOOK.md sits one directory down, where the same
+                # text resolves to book/certificates/... and 404s for a reader on
+                # GitHub. Re-anchor on import.
+                rows.append([_reanchor(c) for c in cells[:5]])
         elif in_table:
             break
     if not rows:

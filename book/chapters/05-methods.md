@@ -16,10 +16,18 @@ prove. Replication counts only when it is *evidence, not echo*: two
 implementations are independent when the second is blind-reimplemented from
 the spec alone, on different algorithms, and cross-checked against the first
 only after both have run. An echo of the same code path replicates nothing.
-The rule has already earned a promotion: the map's strongest bound was raised
-to class C1 only when a spec-only blind reimplementation — a different
-algorithm, forbidden from reading the first — swept the same range and agreed
-on every shared observable, one hundred windows out of one hundred.
+
+The rule earned its keep by taking something away. The map's strongest bound
+had been raised to class C1 on exactly that basis — a spec-only blind
+reimplementation, a different algorithm, agreeing on a hundred windows out of a
+hundred. In July 2026 it was **demoted back to C2**, because that second
+implementation lives in a private repository: a reader could not run it, and a
+class that counts evidence a stranger cannot execute is measuring our
+confidence rather than the claim's. The bound itself was reduced to the range
+the public certificate actually covers. **The ledger now contains no C1 entry at
+all** — and that emptiness is the instrument working, not a hole in it. C1 is a
+statement about independent replication; until the replication is publishable,
+the honest column is C2.
 
 ```efa:table confidence_ledger
 ```

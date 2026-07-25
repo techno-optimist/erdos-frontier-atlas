@@ -68,9 +68,9 @@ every family — plus the incompressible region no biological practice could ent
 
 | object | what it is | prototype (state, honestly labeled) |
 |---|---|---|
-| **Gap map** | the versioned `[L,U]` ledger over bounded quantities of open problems | [`atlas/gap_map.json`](atlas/gap_map.json) — 221 quantities: 12 curated + number-checked, ~208 agent-mined (**structurally validated, not yet independently number-re-verified** — see WS1 gate); ~81 witness-workable; schema + validator + tests |
-| **Certificates** | witness+verifier, DRAT nonexistence, verified-up-to-N receipts, cross-ref closures | [`certificates/`](certificates/) — e.g. erdos-552, erdos-13, erdos-1107, ramsey-3-3 |
-| **Verification frontiers** | "no counterexample below N", with replay + cross-checks | Mollin–Walsh (#1107): published 4×10⁷ → **verified to 10¹⁰** (C2: one scan implementation + independent witness re-factoring + A118896 count cross-checks; full pipeline receipt in the parent workspace pending path-sanitization; method + exception table publicly replayable via [`certificates/erdos-1107/`](certificates/erdos-1107/)) |
+| **Gap map** | the versioned `[L,U]` ledger over bounded quantities of open problems | [`atlas/gap_map.json`](atlas/gap_map.json) — 222 quantities: 12 curated + number-checked, ~208 agent-mined (**structurally validated, not yet independently number-re-verified** — see WS1 gate); ~81 witness-workable; schema + validator + tests |
+| **Certificates** | witness+verifier, DRAT nonexistence, verified-up-to-N receipts, cross-ref closures | [`certificates/`](certificates/) — 19 lanes, each with a dependency-free verifier; e.g. erdos-552, erdos-13, erdos-1107, ramsey-3-3, jacobian-conjecture, sendov-conjecture |
+| **Verification frontiers** | "no counterexample below N", with replay + cross-checks | Mollin–Walsh (#1107): the **public, replayable** claim is *no seventh exception below `10⁶`* ([`certificates/erdos-1107/`](certificates/erdos-1107/), `verify.py`, default `N = 10⁶`, ~10 s, dependency-free), with the six known exceptions reproduced and cross-checked against A118896. A wider `10¹⁰` scan exists fleet-side but **its code and receipt are not in this repository, so it is not a public claim** — see the correction note below |
 | **Relation graph** | numerically-verified relations between sequences, conjecture-grade until proven | exemplar: `A387704(n) = max{k: A227358(k) ≤ n−1}` — found by numerical crossref (0/151 mismatches), then proven (translation invariance), closing #241; the librarian lane re-derives it as its standing control |
 | **Effectivization records** | empirical *lower fences* for ineffective thresholds ("true for N large enough") | Erdős–Sárközy #13: in the computed range `N ≤ 45`, the last exception to `f(N)=⌊N/3⌋+1` is **N=17**. Because Bedert's theorem is ineffective, sporadic exceptions at larger N are **not excluded** — this is a lower fence on the threshold, not its location |
 | **Certificate-size observations** | measured *emitted-proof* sizes under pinned pipelines across parameterized families | first exemplar: the upper half of `R(3,3)=6` has a 247-byte solver-emitted DRAT proof — [`certificates/ramsey-3-3/`](certificates/ramsey-3-3/) (CNF + proof + negative control, independently checkable) |
@@ -124,10 +124,15 @@ Requires: verification from this repo; search campaigns fleet-side.
 **WS3 — Verified-up-to-N ladders.**
 Goal: standardize the depth-sounding pattern — reproduce the published frontier, then
 extend with independent cross-checks, witness sampling, and replay.
-First artifact: exists — Mollin–Walsh to 10¹⁰. Next: 3 more ladders from
+First artifact: exists — Mollin–Walsh, public at `10⁶`. Next: 3 more ladders from
 `verified_range` candidates; and mirror **path-sanitized** receipts of every ladder
-into `certificates/` (the MW receipt currently lives fleet-side; public mirroring is
-part of this workstream's definition of done).
+into `certificates/`.
+**This workstream's standing lesson (2026-07-25):** the wider MW scan reached `10¹⁰`
+fleet-side and was published as the headline for a week — but its code and ledger were
+never in this repository, so no reader could replay it. It has been retracted to the
+public `10⁶`. **A ladder's rung is where its *public* receipt reaches, not where the
+fleet got to.** Mirroring is therefore not "definition of done" housekeeping; it is
+the difference between a claim and a number.
 Gate: published-frontier reproduction *before* extension; ≥2 independent
 implementations; replay command in the receipt.
 Requires: heavy scans fleet-side; receipts land here.
@@ -191,10 +196,13 @@ evidence — no vibes.
 Classes: **C0** formal proof (machine-checked) · **C1** ≥2 independent
 implementations replicated at the full claimed range · **C2** single verified
 implementation, replayable · **C3** conjecture-grade numerics.
-(Exemplar, stated exactly: `a(6) > 10¹²` for A385316 is **C1** — two independent
-implementations at the full window, three more replicating at 2×10¹¹; the newer
-`a(6) > 2×10¹²` extension is currently **C2** — one implementation, pending
-independent replication.)
+(Exemplar, and the one that taught the rule: `a(6) > 10¹²` for A385316 was carried as
+**C1** on the strength of "two independent implementations". On 2026-07-25 it was
+**demoted to C2** — the second implementation lives in a private repository, so a
+reader cannot run it, and a class may only count artifacts a stranger can execute.
+**The gap map today contains no C1 entry at all** (C2: 4, C3: 218). That emptiness is
+the ledger working, not a gap in it: C1 is a claim about *independent replication*,
+and we had been paying ourselves for replication nobody outside could check.)
 First artifact: **a schema extension first** — the current provenance block
 (`added_by`/`date`/`checked`) cannot express implementation count or artifact
 lineage, so add an `evidence[]` field (`{type: formal_proof | implementation |
@@ -211,6 +219,16 @@ First artifact: `atlas/lean_lane.json` recording the upstream formalization repo
 pinned commit, the pin date, and the ranked shortlist — then one statement proven
 end-to-end (the min-overlap family #36, where this project already holds a registered
 theorem, tops the shortlist).
+**Status: the end-to-end half is DELIVERED, by a different route than planned.** Two
+statements are now machine-checked in-repo, **sorry-free in Lean 4 + mathlib**, each
+with a `proof.json` manifest that *State of the Frontier* discovers mechanically:
+`jacobian_conjecture_false` ([`certificates/jacobian-conjecture/lean/`](certificates/jacobian-conjecture/lean/))
+and `ringel_not_stretchable` ([`certificates/ringel-nonstretchability/lean/`](certificates/ringel-nonstretchability/lean/)).
+Note what they are: **theorems and refutations, not bracketed quantities**, so they sit
+beside the gap map rather than inside its C0 count — the shortlist target (a *bracket*
+promoted to C0) is still open. `lean_lane.json` remains the register for **external**
+formalizations, and the two are kept apart on purpose: our proofs and other people's
+are never blurred.
 Gate: compiles against the commit recorded in `atlas/lean_lane.json`; upstream drift
 re-checked before investing (observed decay of the easy-cell pool: ~6/month — this is
 a race).
