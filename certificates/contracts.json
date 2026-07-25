@@ -27,6 +27,11 @@
       "boundary": "Refutes two lemmas (`ker pi cap D = 0`, `q >= dim ker pi`) and proves Theorem A in their place. Explicitly NOT an r_3(N) bound and not a solution of #142; the claim boundary is stated in the certificate README as erdos142_solved=false, new_r3_bound=false."
     },
     {
+      "path": "certificates/erdos-142-pressure-ceiling",
+      "classification": "certified_local",
+      "boundary": "A FENCE, not a bound. Certifies (C1) an exact rational comparison lambda > 7/24, (C2a) a rational ceiling Lambda_cap <= 211/250, and (C2b) that any family obeying the stated pressure bracket exceeds that ceiling for every m >= 7 and so cannot be an H1-H5 survivor. Explicitly NOT certified: the constant map itself, the cap-set ceiling (both external, sealed-by-audit), and ANY r_3(N) lower bound -- no survivor certificate exists. claim_boundary.erdos142_solved is pinned false and the verifier's own controls reject flipping it."
+    },
+    {
       "path": "certificates/erdos-552",
       "classification": "certified_local",
       "boundary": "Exact n=12..16 values and a lower bound at n=17 only."
