@@ -205,7 +205,22 @@ def main():
         "selected": r.get("selected"),
         "status": r.get("status"),
     }
-    OUT.write_text(json.dumps(out_wit, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    # CHECK-ONLY BY DEFAULT. Emitting and checking on one code path is how a
+    # committed receipt that disagrees with its verifier gets silently
+    # overwritten instead of reported. Replay compares; only --emit rewrites.
+    import sys as _sys
+    if "--emit" in _sys.argv:
+        OUT.write_text(json.dumps(out_wit, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    elif OUT.exists():
+        print("receipt-checked: " + OUT.name)
+        _committed = json.loads(OUT.read_text(encoding="utf-8"))
+        if _committed != out_wit:
+            _d = sorted(k for k in set(_committed) | set(out_wit)
+                        if _committed.get(k) != out_wit.get(k))
+            raise SystemExit(
+                "RECEIPT DRIFT: " + OUT.name + " disagrees with this verifier "
+                "on " + repr(_d) + ". The receipt is evidence -- fix the code, "
+                "or re-emit deliberately with --emit.")
     res = {
         "schema": "lead.n5_l3_s4_witness.v1",
         "status": r.get("status"),
