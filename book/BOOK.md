@@ -96,15 +96,15 @@ Corrected claims stay on the board by design (charter Tenet 5).
 
 | tier | problem | movement | certificate | when |
 |---|---|---|---|---|
-| 🟢 | **#552** `R(C4,K1,n)` | certified C₄-free witnesses ⇒ `R(C4,K1,n) = n + ⌈√n⌉ + 1` for `12 ≤ n ≤ 16`; `n=17` closed at `22` (Parsons 1975) | [`certificates/erdos-552`](certificates/erdos-552) · PR #78 | 2026-07-16 |
+| 🟢 | **#552** `R(C4,K1,n)` | certified C₄-free witnesses ⇒ `R(C4,K1,n) = n + ⌈√n⌉ + 1` for `12 ≤ n ≤ 16`; `n=17` closed at `22` (Parsons 1975) | [`certificates/erdos-552`](../certificates/erdos-552) · PR #78 | 2026-07-16 |
 | 🟢 | **#241** B₃-subset table (A387704) | proved `A387704(n) = max{k : A227358(k) ≤ n−1}` (translation invariance; 0/151 mismatches) ⇒ first jump to 9 at `n=209`; atlas cell **closed by cross-reference** | PR #80 | 2026-07-16 |
-| 🟢 | **#13** Erdős–Sárközy | certified exact table `f(1..45)`; `N=17` is the **last** exception to `⌊N/3⌋+1` — an empirical location for Bedert's ineffective threshold | [`certificates/erdos-13`](certificates/erdos-13) · PR #81 | 2026-07-17 |
-| 🟢 | **#979** `f₃` / A385316 | **`a(6) > 10¹²` at C2** — exhaustively verified and replayable from this repo (`verify.py --cutoff 1e12`, ~80 s, ~11 GB; reproduces `a(1..5)` as a fail-closed self-check) — past the published `4.99·10¹¹`. A stronger `> 10¹³` sweep exists but its code and ledgers are **not tracked here**, so it is **quarantined from public promotion** pending a self-contained replay packet — see the entry note in the gap map. *(Corrected 2026-07-25: this row previously claimed `> 10¹³` at C1; the second "independent implementation" backing that class lives outside this repository, so a reader could not replay it.)* | [`certificates/erdos-979`](certificates/erdos-979) | 2026-07-19 |
-| 🟡 | **#1107** Mollin–Walsh / A056828 | verified **no seventh exception below `10⁶`** to being a sum of ≤3 powerful numbers (`verify.py`, default `N = 10⁶`, ~10 s, dependency-free); the six known exceptions `{7,15,23,87,111,119}` are all `< 120` and are reproduced, powerful-counts cross-checked vs A118896. A wider `10¹⁰` run exists but is **not replayable from this repository**, so it is not the public claim. *(Corrected 2026-07-25: this row previously claimed `10¹⁰`.)* | [`certificates/erdos-1107`](certificates/erdos-1107) | 2026-07-18 |
-| 🟡 | **#142** `r₃(N)` | complete 12,349-cell geometric enumeration superseding a flawed 976-cell subset, now certified in-repo as a **construction no-go** — a **foundation only**; self-declared no-bridge, **not** an `r₃(N)` bound | [`certificates/erdos-142`](certificates/erdos-142) · PR #84 | 2026-07-13 |
-| 🔴 | **#142** / D15 lemmas | **refuted** `ker π ∩ D = 0` and `q ≥ dim ker π` (two lemmas a bridge attempt rested on) and proved Theorem A in their place — a dead path closed so the next agent does not re-walk it; explicitly **not** an `r₃(N)` bound | [`certificates/erdos-142-kerpi-refutation`](certificates/erdos-142-kerpi-refutation) · PR #101, #102 | 2026-07-24 |
+| 🟢 | **#13** Erdős–Sárközy | certified exact table `f(1..45)`; `N=17` is the **last** exception to `⌊N/3⌋+1` — an empirical location for Bedert's ineffective threshold | [`certificates/erdos-13`](../certificates/erdos-13) · PR #81 | 2026-07-17 |
+| 🟢 | **#979** `f₃` / A385316 | **`a(6) > 10¹²` at C2** — exhaustively verified and replayable from this repo (`verify.py --cutoff 1e12`, ~80 s, ~11 GB; reproduces `a(1..5)` as a fail-closed self-check) — past the published `4.99·10¹¹`. A stronger `> 10¹³` sweep exists but its code and ledgers are **not tracked here**, so it is **quarantined from public promotion** pending a self-contained replay packet — see the entry note in the gap map. *(Corrected 2026-07-25: this row previously claimed `> 10¹³` at C1; the second "independent implementation" backing that class lives outside this repository, so a reader could not replay it.)* | [`certificates/erdos-979`](../certificates/erdos-979) | 2026-07-19 |
+| 🟡 | **#1107** Mollin–Walsh / A056828 | verified **no seventh exception below `10⁶`** to being a sum of ≤3 powerful numbers (`verify.py`, default `N = 10⁶`, ~10 s, dependency-free); the six known exceptions `{7,15,23,87,111,119}` are all `< 120` and are reproduced, powerful-counts cross-checked vs A118896. A wider `10¹⁰` run exists but is **not replayable from this repository**, so it is not the public claim. *(Corrected 2026-07-25: this row previously claimed `10¹⁰`.)* | [`certificates/erdos-1107`](../certificates/erdos-1107) | 2026-07-18 |
+| 🟡 | **#142** `r₃(N)` | complete 12,349-cell geometric enumeration superseding a flawed 976-cell subset, now certified in-repo as a **construction no-go** — a **foundation only**; self-declared no-bridge, **not** an `r₃(N)` bound | [`certificates/erdos-142`](../certificates/erdos-142) · PR #84 | 2026-07-13 |
+| 🔴 | **#142** / D15 lemmas | **refuted** `ker π ∩ D = 0` and `q ≥ dim ker π` (two lemmas a bridge attempt rested on) and proved Theorem A in their place — a dead path closed so the next agent does not re-walk it; explicitly **not** an `r₃(N)` bound | [`certificates/erdos-142-kerpi-refutation`](../certificates/erdos-142-kerpi-refutation) · PR #101, #102 | 2026-07-24 |
 | 🟢 | **#1029 / #77** `R(5,5)` | 42/42 DRAT-certified structural negatives (no witness; rigidity + prime-order orbit collapse), all consistent with `R(5,5) = 43` | [r55-rigidity-certificates](https://github.com/techno-optimist/r55-rigidity-certificates) · DOI [10.5281/zenodo.21305022](https://doi.org/10.5281/zenodo.21305022) | 2026-07-10 |
-| 🔴 | **#552** `R(C4,K1,39)` | the `=46` **new-value** claim was **retracted** — DS1 rev.18 lists `46 ≤ f(39) ≤ 47`, OPEN; the 45-vertex witness stands as a re-derivation of Wu–Sun–Radziszowski 2015 | [`certificates/erdos-552-f39`](certificates/erdos-552-f39) | 2026-07-17 |
+| 🔴 | **#552** `R(C4,K1,39)` | the `=46` **new-value** claim was **retracted** — DS1 rev.18 lists `46 ≤ f(39) ≤ 47`, OPEN; the 45-vertex witness stands as a re-derivation of Wu–Sun–Radziszowski 2015 | [`certificates/erdos-552-f39`](../certificates/erdos-552-f39) | 2026-07-17 |
 
 (Certificate links in this table are relative to the repository root,
 as on the board itself.)
@@ -332,10 +332,18 @@ prove. Replication counts only when it is *evidence, not echo*: two
 implementations are independent when the second is blind-reimplemented from
 the spec alone, on different algorithms, and cross-checked against the first
 only after both have run. An echo of the same code path replicates nothing.
-The rule has already earned a promotion: the map's strongest bound was raised
-to class C1 only when a spec-only blind reimplementation — a different
-algorithm, forbidden from reading the first — swept the same range and agreed
-on every shared observable, one hundred windows out of one hundred.
+
+The rule earned its keep by taking something away. The map's strongest bound
+had been raised to class C1 on exactly that basis — a spec-only blind
+reimplementation, a different algorithm, agreeing on a hundred windows out of a
+hundred. In July 2026 it was **demoted back to C2**, because that second
+implementation lives in a private repository: a reader could not run it, and a
+class that counts evidence a stranger cannot execute is measuring our
+confidence rather than the claim's. The bound itself was reduced to the range
+the public certificate actually covers. **The ledger now contains no C1 entry at
+all** — and that emptiness is the instrument working, not a hole in it. C1 is a
+statement about independent replication; until the replication is publishable,
+the honest column is C2.
 
 Classes are computed from recorded `evidence[]` by
 [`tools/validate_gap_map.py`](../tools/validate_gap_map.py) — the validator
