@@ -49,9 +49,9 @@ HEADER = (
 )
 
 CLASS_MEANING = {
-    "C0": "formal proof, machine-checked",
-    "C1": "&ge;2 independent implementations or replays with distinct artifacts at the claimed range",
-    "C2": "exactly one verified, replayable implementation",
+    "C0": "contract-bound formal proof, machine-checked",
+    "C1": "&ge;2 contract-bound independent replays at the claimed range",
+    "C2": "exactly one contract-bound verified replay",
     "C3": "literature- or numerics-grade — no independent in-project verification artifact",
 }
 

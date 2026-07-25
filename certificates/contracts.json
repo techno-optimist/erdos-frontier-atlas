@@ -1,0 +1,464 @@
+{
+  "schema": "efa-certificate-contracts-v1",
+  "directories": [
+    {
+      "path": "certificates/dixmier-conjecture",
+      "classification": "reference_only",
+      "boundary": "Symbolic Weyl-algebra exploration; no promoted theorem claim."
+    },
+    {
+      "path": "certificates/erdos-1107",
+      "classification": "partial_local",
+      "boundary": "The public verifier certifies the exception table only through its chosen N; the private DGX 10^10 run is quarantined until its receipt and runner are public."
+    },
+    {
+      "path": "certificates/erdos-13",
+      "classification": "certified_local",
+      "boundary": "Exact finite table through N=45; no asymptotic threshold theorem."
+    },
+    {
+      "path": "certificates/erdos-142",
+      "classification": "certified_local",
+      "boundary": "Enumeration and affine-family no-go only; not an r_3(N) bound."
+    },
+    {
+      "path": "certificates/erdos-142-kerpi-refutation",
+      "classification": "certified_local",
+      "boundary": "Refutes two lemmas (`ker pi cap D = 0`, `q >= dim ker pi`) and proves Theorem A in their place. Explicitly NOT an r_3(N) bound and not a solution of #142; the claim boundary is stated in the certificate README as erdos142_solved=false, new_r3_bound=false."
+    },
+    {
+      "path": "certificates/erdos-552",
+      "classification": "certified_local",
+      "boundary": "Exact n=12..16 values and a lower bound at n=17 only."
+    },
+    {
+      "path": "certificates/erdos-552-f39",
+      "classification": "certified_local",
+      "boundary": "Lower bound 46 only; the former equality claim is retracted."
+    },
+    {
+      "path": "certificates/erdos-979",
+      "classification": "certified_local",
+      "boundary": "Public package certifies a(6)>10^12; private 10^13 ledgers are not promoted here."
+    },
+    {
+      "path": "certificates/fibonacci-macro-residual",
+      "classification": "research_fence",
+      "boundary": "A collection of bounded macro-model witnesses and no-go fences, not a global Fibonacci theorem."
+    },
+    {
+      "path": "certificates/fk-square",
+      "classification": "certified_local",
+      "boundary": "Exact finite D(1..9) table; no effective Furstenberg-Katznelson threshold."
+    },
+    {
+      "path": "certificates/jacobian-conjecture",
+      "classification": "certified_local",
+      "boundary": "Independent exact verification of the external n=3 construction."
+    },
+    {
+      "path": "certificates/jc-anatomy",
+      "classification": "research_fence",
+      "boundary": "Exact probes of one counterexample's anatomy, not general Jacobian-Conjecture theorems."
+    },
+    {
+      "path": "certificates/jc-family-fences",
+      "classification": "research_fence",
+      "boundary": "Search-bounded family probes; receipts are not fully re-derived by the legacy drift gate."
+    },
+    {
+      "path": "certificates/plane-jacobian-true",
+      "classification": "partial_local",
+      "boundary": "TRUE-lane exploration of the plane (n=2) Jacobian Conjecture, which remains OPEN. Machine-checked elementary cases over a finite integer lattice only; plane JC is already a theorem for degree <= 100 (Moh 1983), so nothing here is new progress on the open problem."
+    },
+    {
+      "path": "certificates/ramsey-3-3",
+      "classification": "certified_local",
+      "boundary": "DRAT upper-bound half of the classical R(3,3)=6 result."
+    },
+    {
+      "path": "certificates/ramsey-3-4",
+      "classification": "certified_local",
+      "boundary": "DRAT upper-bound half of the classical R(3,4)=9 result."
+    },
+    {
+      "path": "certificates/ringel-nonstretchability",
+      "classification": "formal_external",
+      "boundary": "Python fidelity/BFP checks are local; the Lean replay depends on an externally pinned formal-conjectures checkout."
+    },
+    {
+      "path": "certificates/sendov-conjecture",
+      "classification": "research_fence",
+      "boundary": "Checks bounded computational lemmas and sampled regions, not Sendov's conjecture."
+    }
+  ],
+  "claims": [
+    {
+      "id": "erdos-552-n12-n16",
+      "status": "promoted",
+      "statement": "R(C4,K1,n) = n + ceil(sqrt(n)) + 1 for 12 <= n <= 16",
+      "scope": "Five exact finite Ramsey values; the n=17 artifact is only a lower bound.",
+      "machine_verdict": "\"claim\":\"R(C4,K1,n) = n + ceil(sqrt(n)) + 1 for 12 <= n <= 16\"",
+      "publication_bindings": [
+        {
+          "path": "README.md",
+          "contains": "for `12 ≤ n ≤ 16`; `n=17` closed at `22`"
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "certificates/erdos-552/verify.py",
+          "sha256": "b31ab2d4950825fbb7270f986ada54652d152885fb158eaa3209178bfaa4bcb2"
+        },
+        {
+          "path": "certificates/erdos-552/witnesses.json",
+          "sha256": "6fad85db5cc5925f5a5894446c56720433065652fecb284a1340262a70a914d3"
+        }
+      ],
+      "replays": [
+        {
+          "profile": "fast",
+          "certifies_claim": true,
+          "entrypoint": "certificates/erdos-552/verify.py",
+          "argv": [
+            "python3",
+            "-I",
+            "certificates/erdos-552/verify.py"
+          ],
+          "timeout_seconds": 30,
+          "exit_code": 0,
+          "stdout_contains": [
+            "\"claim\":\"R(C4,K1,n) = n + ceil(sqrt(n)) + 1 for 12 <= n <= 16\"",
+            "\"valid\":true",
+            "\"n\":16",
+            "\"status\":\"EXACT\""
+          ],
+          "failure_control": {
+            "kind": "none_explained",
+            "evidence": "Verifier rejects malformed degree, edge, or codegree witnesses; a standalone planted artifact is still debt."
+          }
+        }
+      ]
+    },
+    {
+      "id": "erdos-552-f39-lower",
+      "status": "promoted",
+      "statement": "R(C4,K1,39) >= 46",
+      "scope": "Re-derivation of the 2015 construction; equality is explicitly retracted.",
+      "machine_verdict": "R(C4,K1,39) >= 46",
+      "publication_bindings": [
+        {
+          "path": "README.md",
+          "contains": "the `=46` **new-value** claim was **retracted**"
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "certificates/erdos-552-f39/verify.py",
+          "sha256": "6f46fd3061bfc98aa3f9eec1c6e74ec82397557c22b2c9ea66b46fb3020c101c"
+        },
+        {
+          "path": "certificates/erdos-552-f39/witness.json",
+          "sha256": "aced9e128e859980a91951e00c47938bc8b5d7303dd690f8552ab8b1fa06f57c"
+        }
+      ],
+      "replays": [
+        {
+          "profile": "fast",
+          "certifies_claim": true,
+          "entrypoint": "certificates/erdos-552-f39/verify.py",
+          "argv": [
+            "python3",
+            "-I",
+            "certificates/erdos-552-f39/verify.py"
+          ],
+          "timeout_seconds": 30,
+          "exit_code": 0,
+          "stdout_contains": [
+            "\"valid\": true",
+            "R(C4,K1,39) >= 46",
+            "OPEN"
+          ],
+          "failure_control": {
+            "kind": "none_explained",
+            "evidence": "Structural verifier rejects an invalid witness; an explicit mutated witness fixture remains debt."
+          }
+        }
+      ]
+    },
+    {
+      "id": "erdos-13-table",
+      "status": "promoted",
+      "statement": "The exact finite table f(1..45), with N=17 the last exception in that range.",
+      "scope": "Empirical finite threshold location only; no claim about Bedert's asymptotic threshold.",
+      "machine_verdict": "\"last_exception\": 17",
+      "publication_bindings": [
+        {
+          "path": "README.md",
+          "contains": "exact table `f(1..45)`; `N=17` is the **last** exception"
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "certificates/erdos-13/verify.py",
+          "sha256": "78905a2576d81347571f1f3872e04171b960cf71942d51fc41a0d8bfe394c07f"
+        },
+        {
+          "path": "certificates/erdos-13/table.json",
+          "sha256": "57d0a4d0911ee9fa023916e5775b947684fa174cb6ba9f12fc1543248e4d2c2e"
+        }
+      ],
+      "replays": [
+        {
+          "profile": "fast",
+          "certifies_claim": true,
+          "entrypoint": "certificates/erdos-13/verify.py",
+          "argv": [
+            "python3",
+            "-I",
+            "certificates/erdos-13/verify.py"
+          ],
+          "timeout_seconds": 30,
+          "exit_code": 0,
+          "stdout_contains": [
+            "\"valid\": true",
+            "\"last_exception\": 17"
+          ],
+          "failure_control": {
+            "kind": "none_explained",
+            "evidence": "The verifier compares an independently recomputed table with committed bytes; an explicit planted table remains debt."
+          }
+        }
+      ]
+    },
+    {
+      "id": "erdos-142-foundation",
+      "status": "promoted",
+      "statement": "A 12,349-cell enumeration lock plus a 34-term affine-family Farkas no-go.",
+      "scope": "Foundation only; not an r_3(N) bound and not a global no-go.",
+      "machine_verdict": "RESULT: CERTIFICATE VALID",
+      "publication_bindings": [
+        {
+          "path": "README.md",
+          "contains": "complete 12,349-cell geometric enumeration"
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "certificates/erdos-142/verify.py",
+          "sha256": "4c7532afd95c178665051dae3d869cc92cd1ccc188a5120c99eb413718379108"
+        },
+        {
+          "path": "certificates/erdos-142/enumeration_certificate.json",
+          "sha256": "4cfe8edb1eda8dc78db338c6801d38a28bd5b7726ab329695ac4043dbf7bb516"
+        },
+        {
+          "path": "certificates/erdos-142/affine_farkas_cert.json",
+          "sha256": "fd6d5b39779999c8982e1c3c275615abfd6940b985494f5ec6bd7bcfd063cfd6"
+        }
+      ],
+      "replays": [
+        {
+          "profile": "fast",
+          "certifies_claim": true,
+          "entrypoint": "certificates/erdos-142/verify.py",
+          "argv": [
+            "python3",
+            "-I",
+            "certificates/erdos-142/verify.py"
+          ],
+          "timeout_seconds": 90,
+          "exit_code": 0,
+          "stdout_contains": [
+            "RESULT: CERTIFICATE VALID",
+            "12,349 full-dim cells",
+            "34-term Farkas",
+            "NOT an r_3(N) bound"
+          ],
+          "failure_control": {
+            "kind": "embedded",
+            "evidence": "Pinned-object, enumeration-lock, and exact Farkas identities are all fail-closed gates."
+          }
+        }
+      ]
+    },
+    {
+      "id": "erdos-979-a6-public",
+      "status": "promoted",
+      "statement": "A385316(6) > 10^12.",
+      "scope": "Exact finite lower bound only; does not bear on the asymptotic Erdős #979 limsup question. The private 10^13 sweep is quarantined from public promotion until packaged.",
+      "machine_verdict": "a(6) > 1000000000000",
+      "publication_bindings": [
+        {
+          "path": "README.md",
+          "contains": "**`a(6) > 10¹²` at C2**",
+          "must_not_contain": [
+            "**`a(6) > 10¹³` at C1**"
+          ]
+        },
+        {
+          "path": "atlas/gap_map.json",
+          "contains": "\"value\": \"> 10^12\"",
+          "must_not_contain": [
+            "\"value\": \"> 10^13\""
+          ]
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "certificates/erdos-979/verify.py",
+          "sha256": "0aef06820a6d338274254cab24b99e39489e8b474c9beb745bce4d1a1db6525e"
+        },
+        {
+          "path": "requirements-dev.lock",
+          "sha256": "02ae2881260379d48ab819edfb56d186cd85b5b3d0232555fe28611861f05f75"
+        }
+      ],
+      "replays": [
+        {
+          "profile": "fast",
+          "certifies_claim": false,
+          "entrypoint": "certificates/erdos-979/verify.py",
+          "argv": [
+            "python3",
+            "-I",
+            "certificates/erdos-979/verify.py"
+          ],
+          "timeout_seconds": 90,
+          "exit_code": 0,
+          "stdout_contains": [
+            "SOUND=True",
+            "a(6) > 20000000000",
+            "a(5) = 10588881419  OK"
+          ],
+          "failure_control": {
+            "kind": "embedded",
+            "evidence": "Known a(1..5) values and prime-set completeness fail closed before a bound is emitted."
+          }
+        },
+        {
+          "profile": "slow",
+          "certifies_claim": true,
+          "runner": "dgx-11gb",
+          "entrypoint": "certificates/erdos-979/verify.py",
+          "argv": [
+            "python3",
+            "-I",
+            "certificates/erdos-979/verify.py",
+            "--cutoff",
+            "1e12"
+          ],
+          "timeout_seconds": 900,
+          "exit_code": 0,
+          "stdout_contains": [
+            "SOUND=True",
+            "a(6) > 1000000000000",
+            "a(5) = 10588881419  OK"
+          ],
+          "failure_control": {
+            "kind": "embedded",
+            "evidence": "Known a(1..5) values and prime-set completeness fail closed before a bound is emitted."
+          }
+        }
+      ]
+    },
+    {
+      "id": "erdos-1107-public-table",
+      "status": "promoted",
+      "statement": "A056828 intersect [1,10^6] is exactly {7,15,23,87,111,119}.",
+      "scope": "Publicly replayable range only. The private DGX 10^10 scan is operational evidence, not a public claim, until its canonical receipt is packaged.",
+      "machine_verdict": "N=1000000: exceptions = [7, 15, 23, 87, 111, 119]",
+      "publication_bindings": [
+        {
+          "path": "README.md",
+          "contains": "verified **no seventh exception below `10⁶`**",
+          "must_not_contain": [
+            "verified **no exception below `10¹⁰`**"
+          ]
+        },
+        {
+          "path": "atlas/gap_map.json",
+          "contains": "\"value\": \"10^6\"",
+          "must_not_contain": [
+            "\"value\": \"10^10\""
+          ]
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "certificates/erdos-1107/verify.py",
+          "sha256": "68c540dce5a35fdd5e21b9a40732b1f79f012deb373b72e61f840097ec73df80"
+        }
+      ],
+      "replays": [
+        {
+          "profile": "fast",
+          "certifies_claim": true,
+          "entrypoint": "certificates/erdos-1107/verify.py",
+          "argv": [
+            "python3",
+            "-I",
+            "certificates/erdos-1107/verify.py"
+          ],
+          "timeout_seconds": 90,
+          "exit_code": 0,
+          "stdout_contains": [
+            "N=1000000: exceptions = [7, 15, 23, 87, 111, 119]",
+            "expected [7, 15, 23, 87, 111, 119] -> MATCH",
+            "no seventh exception below N"
+          ],
+          "failure_control": {
+            "kind": "none_explained",
+            "evidence": "Exact exception-set equality fails on any extra or missing value; a standalone planted scan fixture remains debt."
+          }
+        }
+      ]
+    },
+    {
+      "id": "jacobian-n3-counterexample",
+      "status": "promoted",
+      "statement": "The pinned n=3 polynomial map has constant nonzero Jacobian and is non-injective.",
+      "scope": "Independent exact verification of Alpoge's external construction, not an original construction claim.",
+      "machine_verdict": "CERTIFICATE VERIFIED: constant Jacobian -2 + non-injective",
+      "publication_bindings": [
+        {
+          "path": "README.md",
+          "contains": "independent verification of Alpöge's 2026 counterexample"
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "certificates/jacobian-conjecture/verify.py",
+          "sha256": "b0e6fd06363a76c4971fc60c85e379e722c676e037504fabb5caf548343b2b77"
+        },
+        {
+          "path": "certificates/jacobian-conjecture/witness.json",
+          "sha256": "b91b0b59dd7cb98e3d58d947c71925f3c2a1680f1b67547b00eac53a8a13101e"
+        }
+      ],
+      "replays": [
+        {
+          "profile": "fast",
+          "certifies_claim": true,
+          "entrypoint": "certificates/jacobian-conjecture/verify.py",
+          "argv": [
+            "python3",
+            "-I",
+            "certificates/jacobian-conjecture/verify.py"
+          ],
+          "timeout_seconds": 90,
+          "exit_code": 0,
+          "stdout_contains": [
+            "CERTIFICATE VERIFIED: constant Jacobian -2 + non-injective",
+            "ctrl A perturbed map",
+            "ctrl B perturbed point"
+          ],
+          "failure_control": {
+            "kind": "embedded",
+            "evidence": "Two planted mutations must be rejected by separate verification legs."
+          }
+        }
+      ]
+    }
+  ]
+}

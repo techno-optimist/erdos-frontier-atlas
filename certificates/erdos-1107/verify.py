@@ -10,10 +10,9 @@ it equals exactly those six values — reproducing the published data (and Jobli
 result: no seventh exception). All six known exceptions are < 120, so any N ≥ 120 already
 pins the table; the default N = 10^6 gives a wide, fast independent re-check.
 
-The FULL computational frontier — "no exception below 10^10" — was established separately
-by a replayable scan (foundry verified-up-to-N lane, receipt a056828-mollin-walsh-*.json,
-cross-checked against OEIS A118896 powerful-number counts, 400/400 witness re-checks). This
-in-repo verifier certifies the method + the exception table; the 10^10 bound is that receipt.
+An operational DGX run separately reported a 10^10 frontier, but its canonical runner and
+receipt are not part of this public package. This verifier therefore makes no 10^10 claim:
+it certifies exactly the requested N (default 10^6).
 
   python3 certificates/erdos-1107/verify.py            # N = 10^6
   python3 certificates/erdos-1107/verify.py 2000000    # custom N
@@ -66,8 +65,7 @@ def main():
     print(f"expected {KNOWN} -> {'MATCH' if ok else 'MISMATCH'}")
     if ok:
         print("VALID: A056828 ∩ [1,N] = {7,15,23,87,111,119}; no seventh exception below N.")
-        print("Full frontier 'no exception below 10^10' = foundry verified-up-to-N receipt "
-              "a056828-mollin-walsh (replay-verified, cross-checked vs OEIS A118896).")
+        print(f"PUBLIC SCOPE: this run certifies N={n}; no larger private run is implied.")
     return 0 if ok else 1
 
 

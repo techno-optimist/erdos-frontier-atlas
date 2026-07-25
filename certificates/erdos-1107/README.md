@@ -12,13 +12,12 @@ powerful numbers — equivalently, whether the exception set (OEIS
   by an exact bitset sumset and confirms they are *exactly* `{7, 15, 23, 87, 111, 119}`
   (default `N = 10⁶`, ~10 s, dependency-free). All six are `< 120`, so no seventh exists
   below `10⁶`.
-- **The frontier.** The scan was pushed to **no exception below `10¹⁰`** — extending the
-  previously published frontier of `4·10⁷` (Jobling). That run lives in the foundry
-  `verified-up-to-N` lane: reproduced Jobling's null result first, cross-checked the
-  powerful-number counts against OEIS [A118896](https://oeis.org/A118896) at every power of
-  ten through `10¹⁰`, sampled 400 witnesses (each re-factored by an independent code path),
-  and is replay-verified. This in-repo verifier certifies the *method and the table*; the
-  `10¹⁰` bound is the pinned foundry receipt (`a056828-mollin-walsh-*.json`).
+- **The public frontier.** This repository certifies **no seventh exception below `10⁶`**.
+  A DGX `verified-up-to-N` run separately reported no seventh exception through `10¹⁰`,
+  with A118896 and sampled-witness cross-checks. The 2026-07-21 honesty audit could not
+  locate the cited canonical receipt in the public package, so `10¹⁰` is quarantined as
+  private operational evidence until the runner and receipt ship together. It is not a
+  public claim of this certificate.
 
 ## Reproduce
 
@@ -30,8 +29,6 @@ python3 certificates/erdos-1107/verify.py 2000000    # wider
 ## Honest scope
 
 - This is a **verification-frontier** result, not a proof of the conjecture: it establishes
-  that *no new exception appears below `10¹⁰`*, which is a first-class replayable
-  contribution, but the finiteness conjecture itself is a WALL (no finite computation
-  settles it).
-- The `10¹⁰` extension is **not yet submitted to OEIS** — an external submission is a
-  separate, human-sent step; this certificate records what we verified.
+  only the chosen finite replay range (default `10⁶`). The finiteness conjecture itself is
+  a WALL; no finite computation settles it.
+- The private `10¹⁰` run is not yet a public artifact and is not submitted to OEIS.
