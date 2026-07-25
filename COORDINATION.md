@@ -55,3 +55,54 @@ and replayable in `certificates/erdos-142/` (`python3 verify.py`).
 objects were UNTRACKED working-tree files; a later run overwrote them and they are
 gone from Mac and DGX — a result that was replayed-clean 2026-07-13 is now unbacked.
 Commit your certs.
+
+## 2026-07-24 — Erdős 142 / D15: two lemmas REFUTED, one theorem proved
+
+Certificate: `certificates/erdos-142-kerpi-refutation/` (`python3 -I verify.py`,
+~2 s, stdlib only, now wired into `make verify-certs`).
+
+**If you are working the D15/PC-F lane, two laws you may be using are FALSE.**
+
+1. **`ker π ∩ D = 0` — REFUTED** on CLOSED products (strongly connected,
+   exit-free). Explicit nonzero integer circulation on **4 collar edges**
+   (the minimal e₁−e₂−e₃+e₄ rectangle), checked directly against the
+   definition on the full product: support ⊆ collar, `incidence_P·d = 0`,
+   `π₀=π₁=π₂=0`, `d ≠ 0`. Referee sweep: 31,548 counterexamples in 873,264
+   closed products at ≤7 states.
+   *Mechanism:* per digit a collar circulation is a 3-index array and the
+   three role projections are exactly its three 1-marginals, whose joint
+   kernel is large. Flow conservation alone cannot carry the burden.
+
+2. **`q ≥ dim ker π` — REFUTED.** This was the bridge from a `dim ker π`
+   floor to a `q` floor, i.e. the route to excluding `q = 1`. It is not
+   merely unproved — it is false. Witness `91f52f97…`: `q = 732 <
+   748 = dim ker π`. Forced by **counting**, with tiny exact inputs:
+
+       ker π ⊆ Z  ⟹  q − dim ker π = rank(π|_Z) − dim D      (identity)
+       im π ⊆ Z₁(B)³  ⟹  rank(π|_Z) ≤ 3·dim Z₁(B)
+       ⟹  dim D > 3·dim Z₁(B)  forces  q < dim ker π
+
+   For the witness `dim Z₁(B) = 8` and `dim D = 34 > 24`. `dim Z₁(B)` depends
+   only on the base; `dim D` grows with the collar — so the inequality was
+   never structural, only an artifact of small-collar objects.
+   **A floor on `dim ker π` proves nothing about `q`.**
+
+**PROVED replacement — THEOREM A.** If every collar edge has a diagonal source
+`(0,u,u,u)` then `ker π ∩ D = 0`. (Diagonal rows are legal only from carry 0
+and the product is deterministic, so a collar edge is determined by
+(source,digit); `π₀` sends it to base edge `(u,a)` and `((0,u,u,u),a) ↦ (u,a)`
+is injective, so `π₀` is injective on `ℚ^{E(C)} ⊇ D`.) 0 violations over
+873,264 closed products. **Its converse is FALSE** — object `5da67053…` has
+non-diagonal collar sources and still zero intersection, so source-diagonality
+is sufficient, never necessary. For a per-object decision use the exact test
+`dim(ker π ∩ D) = |E(C)| − rank[∂; π₀; π₁; π₂]` on collar columns (11–60
+edges: milliseconds).
+
+**Any per-object use of `q ≥ dim ker π` now requires BOTH** a `ker π ∩ D = 0`
+certificate **AND** counting slack `3·dim Z₁(B) − dim D ≥ 0`.
+
+**Untouched:** the `q = 1` hole itself — still 0 occurrences in >1.18M closed
+products, still the unique absent value in 0..24. What is closed is one route
+to excluding it; `q` must now be attacked directly.
+
+`erdos142_solved: false`. `new_r3_bound: false`.
