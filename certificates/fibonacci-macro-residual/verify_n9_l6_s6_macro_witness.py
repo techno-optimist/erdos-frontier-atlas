@@ -182,7 +182,22 @@ def main():
             "macro on a 6-state clock. Not Erdős 142."
         ),
     }
-    OUT.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    # CHECK-ONLY BY DEFAULT. Emitting and checking on one code path is how a
+    # committed receipt that disagrees with its verifier gets silently
+    # overwritten instead of reported. Replay compares; only --emit rewrites.
+    import sys as _sys
+    if "--emit" in _sys.argv:
+        OUT.write_text(json.dumps(result, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    elif OUT.exists():
+        print("receipt-checked: " + OUT.name)
+        _committed = json.loads(OUT.read_text(encoding="utf-8"))
+        if _committed != result:
+            _d = sorted(k for k in set(_committed) | set(result)
+                        if _committed.get(k) != result.get(k))
+            raise SystemExit(
+                "RECEIPT DRIFT: " + OUT.name + " disagrees with this verifier "
+                "on " + repr(_d) + ". The receipt is evidence -- fix the code, "
+                "or re-emit deliberately with --emit.")
     print(json.dumps(result, indent=2, sort_keys=True))
     assert status.startswith("PASS"), result
 

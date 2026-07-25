@@ -290,7 +290,22 @@ def main():
             "FOUND_ROUTABLE without integer is partial."
         ),
     }
-    OUT.write_text(json.dumps(res, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    # CHECK-ONLY BY DEFAULT. Emitting and checking on one code path is how a
+    # committed receipt that disagrees with its verifier gets silently
+    # overwritten instead of reported. Replay compares; only --emit rewrites.
+    import sys as _sys
+    if "--emit" in _sys.argv:
+        OUT.write_text(json.dumps(res, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    elif OUT.exists():
+        print("receipt-checked: " + OUT.name)
+        _committed = json.loads(OUT.read_text(encoding="utf-8"))
+        if _committed != res:
+            _d = sorted(k for k in set(_committed) | set(res)
+                        if _committed.get(k) != res.get(k))
+            raise SystemExit(
+                "RECEIPT DRIFT: " + OUT.name + " disagrees with this verifier "
+                "on " + repr(_d) + ". The receipt is evidence -- fix the code, "
+                "or re-emit deliberately with --emit.")
     print(json.dumps(res, indent=2))
 
 
