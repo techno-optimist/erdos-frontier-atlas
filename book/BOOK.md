@@ -50,7 +50,7 @@ The state of this edition, generated from the data:
 | data through | **2026-07-19** (latest provenance/evidence date in the gap map) |
 | the ledger | **222** bounded quantities |
 | confidence | C0 0 · C1 1 · C2 3 · C3 218 |
-| movements on the board | **8** (🟢 5 · 🟡 2 · 🔴 1) — corrected claims kept visible |
+| movements on the board | **9** (🟢 5 · 🔴 2 · 🟡 2) — corrected claims kept visible |
 
 ---
 
@@ -90,8 +90,8 @@ Movements against this ledger are recorded on the Frontier Board — the done-wo
 record, tiered by verification, with corrected claims kept in place so no one
 re-walks them:
 
-8 movements recorded on the
-[CHRONOS Frontier Board](../README.md#chronos-frontier-board) (🟢 5 · 🟡 2 · 🔴 1).
+9 movements recorded on the
+[CHRONOS Frontier Board](../README.md#chronos-frontier-board) (🟢 5 · 🔴 2 · 🟡 2).
 Corrected claims stay on the board by design (charter Tenet 5).
 
 | tier | problem | movement | certificate | when |
@@ -101,7 +101,8 @@ Corrected claims stay on the board by design (charter Tenet 5).
 | 🟢 | **#13** Erdős–Sárközy | certified exact table `f(1..45)`; `N=17` is the **last** exception to `⌊N/3⌋+1` — an empirical location for Bedert's ineffective threshold | [`certificates/erdos-13`](certificates/erdos-13) · PR #81 | 2026-07-17 |
 | 🟢 | **#979** `f₃` / A385316 | **`a(6) > 10¹³` at C1** — two independent implementations (a streaming counter sweep and a blind-reimplemented pair-sum sweep, different algorithms, spec-only isolation) each covered `[0, 10¹³)` gap-free with no 6-way value; cross-checked 100/100 windows, zero mismatches; 20× past the published `4.99·10¹¹` | [`certificates/erdos-979`](certificates/erdos-979) | 2026-07-19 |
 | 🟡 | **#1107** Mollin–Walsh / A056828 | verified **no exception below `10¹⁰`** to being a sum of ≤3 powerful numbers — extends the published `4·10⁷` frontier; exception set `{7,15,23,87,111,119}` reproduced, powerful-counts cross-checked vs A118896, replay-verified | [`certificates/erdos-1107`](certificates/erdos-1107) | 2026-07-18 |
-| 🟡 | **#142** `r₃(N)` | complete 12,349-cell geometric enumeration superseding a flawed 976-cell subset — a **foundation only**; self-declared no-bridge, **not** an `r₃(N)` bound | sister session | 2026-07-13 |
+| 🟡 | **#142** `r₃(N)` | complete 12,349-cell geometric enumeration superseding a flawed 976-cell subset, now certified in-repo as a **construction no-go** — a **foundation only**; self-declared no-bridge, **not** an `r₃(N)` bound | [`certificates/erdos-142`](certificates/erdos-142) · PR #84 | 2026-07-13 |
+| 🔴 | **#142** / D15 lemmas | **refuted** `ker π ∩ D = 0` and `q ≥ dim ker π` (two lemmas a bridge attempt rested on) and proved Theorem A in their place — a dead path closed so the next agent does not re-walk it; explicitly **not** an `r₃(N)` bound | [`certificates/erdos-142-kerpi-refutation`](certificates/erdos-142-kerpi-refutation) · PR #101, #102 | 2026-07-24 |
 | 🟢 | **#1029 / #77** `R(5,5)` | 42/42 DRAT-certified structural negatives (no witness; rigidity + prime-order orbit collapse), all consistent with `R(5,5) = 43` | [r55-rigidity-certificates](https://github.com/techno-optimist/r55-rigidity-certificates) · DOI [10.5281/zenodo.21305022](https://doi.org/10.5281/zenodo.21305022) | 2026-07-10 |
 | 🔴 | **#552** `R(C4,K1,39)` | the `=46` **new-value** claim was **retracted** — DS1 rev.18 lists `46 ≤ f(39) ≤ 47`, OPEN; the 45-vertex witness stands as a re-derivation of Wu–Sun–Radziszowski 2015 | [`certificates/erdos-552-f39`](certificates/erdos-552-f39) | 2026-07-17 |
 

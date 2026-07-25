@@ -13,6 +13,8 @@ Start here, by appetite:
 | the story — what this is and why | 📖 [*Cartography of Numbers*](book/BOOK.md), the living book (regenerated from the data on every build) |
 | proof, in one command | ⚡ `make hello-frontier` — replays a nonexistence certificate + its negative control, verifies a witness, prints a ledger entry with its computed confidence class |
 | the current numbers | 📊 [State of the Frontier](views/state_of_frontier.md) (generated; `make check-views` keeps it honest) |
+| the strongest evidence | 🔒 [machine-checked Lean proofs](#machine-checked-formal-proofs) — sorry-free, kernel-checked |
+| the biggest live arc | 💥 [the 2026 Jacobian Conjecture crater](#the-2026-jacobian-conjecture-crater) — a falsification's blast radius, computed not asserted |
 | the field's law | 📜 [`FRONTIER_CARTOGRAPHY.md`](FRONTIER_CARTOGRAPHY.md) — tenets, workstreams, gates, and the outsider on-ramp (§8b) |
 | to cite the dataset | **EFA-DR1**, DOI [10.5281/zenodo.21443635](https://doi.org/10.5281/zenodo.21443635) · [`CITATION.cff`](CITATION.cff) |
 
@@ -54,12 +56,24 @@ upstream through the maintainers' channels.
 |---|---|
 | **The field** | [`FRONTIER_CARTOGRAPHY.md`](FRONTIER_CARTOGRAPHY.md) (charter) · [`book/`](book) (the living book; `make book`) · [`RELEASING.md`](RELEASING.md) (data releases) |
 | **The map** | [`atlas/stubs.json`](atlas/stubs.json) (1217-problem hub) · [`atlas/problems.json`](atlas/problems.json) (51 deep audits) · [`atlas/gap_map.json`](atlas/gap_map.json) (the 222-quantity ledger; validate with [`tools/validate_gap_map.py`](tools/validate_gap_map.py)) · [`atlas/jc-crater/`](atlas/jc-crater/) (the 2026 Jacobian-Conjecture blast radius: primary-sourced nodes, typed edges, **machine-propagated** statuses + newborn quantities) · [`atlas/walls.md`](atlas/walls.md) (the do-not-enter list) · [`atlas/effectivization_shortlist.json`](atlas/effectivization_shortlist.json) (fence targets, alive **and** dead) · [`atlas/lanes.md`](atlas/lanes.md) (solver lanes) |
-| **The evidence** | [`certificates/`](certificates) — every directory ships its own dependency-free verifier and replay command: [`erdos-552`](certificates/erdos-552) · [`erdos-552-f39`](certificates/erdos-552-f39) (the kept retraction) · [`erdos-13`](certificates/erdos-13) · [`erdos-979`](certificates/erdos-979) · [`erdos-1107`](certificates/erdos-1107) · [`ramsey-3-3`](certificates/ramsey-3-3) · [`fk-square`](certificates/fk-square) · [`jacobian-conjecture`](certificates/jacobian-conjecture) (independent verification of Alpöge's 2026 counterexample — external construction, ours is the replay) · plus [`observatory/`](observatory) (certificate-size measurements) and [`progress/`](progress) (append-only agent receipts) |
+| **The evidence** | [`certificates/`](certificates) — 18 lanes, each shipping its own dependency-free verifier and replay command.<br>**Erdős cells:** [`erdos-552`](certificates/erdos-552) · [`erdos-552-f39`](certificates/erdos-552-f39) (the kept retraction) · [`erdos-13`](certificates/erdos-13) · [`erdos-979`](certificates/erdos-979) · [`erdos-1107`](certificates/erdos-1107) · [`erdos-142`](certificates/erdos-142) (construction no-go) · [`erdos-142-kerpi-refutation`](certificates/erdos-142-kerpi-refutation) (two lemmas refuted)<br>**Ramsey / nonexistence:** [`ramsey-3-3`](certificates/ramsey-3-3) · [`ramsey-3-4`](certificates/ramsey-3-4) · [`fk-square`](certificates/fk-square)<br>**The JC crater** (see [below](#the-2026-jacobian-conjecture-crater)): [`jacobian-conjecture`](certificates/jacobian-conjecture) · [`dixmier-conjecture`](certificates/dixmier-conjecture) · [`jc-anatomy`](certificates/jc-anatomy) · [`jc-family-fences`](certificates/jc-family-fences) · [`plane-jacobian-true`](certificates/plane-jacobian-true)<br>**Adjacent walls & residuals:** [`sendov-conjecture`](certificates/sendov-conjecture) (0 counterexamples — a wall) · [`ringel-nonstretchability`](certificates/ringel-nonstretchability) · [`fibonacci-macro-residual`](certificates/fibonacci-macro-residual)<br>plus [`observatory/`](observatory) (certificate-size measurements) and [`progress/`](progress) (append-only agent receipts) |
 | **The machinery** | [`tools/`](tools) (validators, generators, compilers) · [`views/`](views) (generated boards + the [operations annex](views/operations.md): campaigns, board classes, the packaged bounty boards) · [`tests/`](tests) |
 
 Install the pinned release-check dependency with
 `python3 -m pip install -r requirements-dev.lock`; before publishing a snapshot
 run `python3 tools/validate_atlas.py`.
+
+**The gates.** `make test` runs the fast suite; `make validate` checks the atlas
+and gap map; `make check-views` and `make check-book` fail if a generated file
+has drifted from the data. `make check-receipts` is the slower
+([`tools/check_receipt_drift.py`](tools/check_receipt_drift.py), ~4 min)
+pre-merge check for a specific way evidence rots: most verifiers here both
+*check* a witness and *emit* their receipt, so a replay can silently overwrite a
+receipt that disagrees with it. That gate replays each verifier and fails when a
+committed receipt no longer matches the code that is supposed to certify it —
+it caught a receipt claiming `vertex_count: 117` whose own verifier produced
+`136`. It reports its own coverage honestly: it can only check receipts a
+verifier actually re-derives.
 
 ## CHRONOS Frontier Board
 
@@ -78,13 +92,21 @@ claim is **kept in place** so the next agent does not re-walk it.
 | 🟢 | **#13** Erdős–Sárközy | certified exact table `f(1..45)`; `N=17` is the **last** exception to `⌊N/3⌋+1` — an empirical location for Bedert's ineffective threshold | [`certificates/erdos-13`](certificates/erdos-13) · PR #81 | 2026-07-17 |
 | 🟢 | **#979** `f₃` / A385316 | **`a(6) > 10¹³` at C1** — two independent implementations (a streaming counter sweep and a blind-reimplemented pair-sum sweep, different algorithms, spec-only isolation) each covered `[0, 10¹³)` gap-free with no 6-way value; cross-checked 100/100 windows, zero mismatches; 20× past the published `4.99·10¹¹` | [`certificates/erdos-979`](certificates/erdos-979) | 2026-07-19 |
 | 🟡 | **#1107** Mollin–Walsh / A056828 | verified **no exception below `10¹⁰`** to being a sum of ≤3 powerful numbers — extends the published `4·10⁷` frontier; exception set `{7,15,23,87,111,119}` reproduced, powerful-counts cross-checked vs A118896, replay-verified | [`certificates/erdos-1107`](certificates/erdos-1107) | 2026-07-18 |
-| 🟡 | **#142** `r₃(N)` | complete 12,349-cell geometric enumeration superseding a flawed 976-cell subset — a **foundation only**; self-declared no-bridge, **not** an `r₃(N)` bound | sister session | 2026-07-13 |
+| 🟡 | **#142** `r₃(N)` | complete 12,349-cell geometric enumeration superseding a flawed 976-cell subset, now certified in-repo as a **construction no-go** — a **foundation only**; self-declared no-bridge, **not** an `r₃(N)` bound | [`certificates/erdos-142`](certificates/erdos-142) · PR #84 | 2026-07-13 |
+| 🔴 | **#142** / D15 lemmas | **refuted** `ker π ∩ D = 0` and `q ≥ dim ker π` (two lemmas a bridge attempt rested on) and proved Theorem A in their place — a dead path closed so the next agent does not re-walk it; explicitly **not** an `r₃(N)` bound | [`certificates/erdos-142-kerpi-refutation`](certificates/erdos-142-kerpi-refutation) · PR #101, #102 | 2026-07-24 |
 | 🟢 | **#1029 / #77** `R(5,5)` | 42/42 DRAT-certified structural negatives (no witness; rigidity + prime-order orbit collapse), all consistent with `R(5,5) = 43` | [r55-rigidity-certificates](https://github.com/techno-optimist/r55-rigidity-certificates) · DOI [10.5281/zenodo.21305022](https://doi.org/10.5281/zenodo.21305022) | 2026-07-10 |
 | 🔴 | **#552** `R(C4,K1,39)` | the `=46` **new-value** claim was **retracted** — DS1 rev.18 lists `46 ≤ f(39) ≤ 47`, OPEN; the 45-vertex witness stands as a re-derivation of Wu–Sun–Radziszowski 2015 | [`certificates/erdos-552-f39`](certificates/erdos-552-f39) | 2026-07-17 |
 
-The wider verifier-first program also contributes Erdős-adjacent certificates
-from sister repositories (the min-overlap upper bound, antipodal kissing bounds,
-autoconvolution and PNT constants) — see [Provenance](#provenance-and-the-certificate-template).
+The board records **Erdős cells only**. Adjacent frontiers the same machinery
+works are kept out of it on purpose and live in their own lanes: the
+[Jacobian Conjecture crater](#the-2026-jacobian-conjecture-crater) and its
+Dixmier corollary, [Ringel nonstretchability](certificates/ringel-nonstretchability)
+(Lean 4, sorry-free), and the [Sendov wall ledger](certificates/sendov-conjecture)
+(a multi-lane counterexample hunt that found **nothing** — recorded as a wall, in
+[`atlas/walls.md`](atlas/walls.md), so the compute is not spent twice). The wider
+verifier-first program also contributes certificates from sister repositories
+(the min-overlap upper bound, antipodal kissing bounds, autoconvolution and PNT
+constants) — see [Provenance](#provenance-and-the-certificate-template).
 
 **Maintenance.** Add a row whenever a certified witness settles or moves an Erdős
 cell, a survey cross-reference closes one, or a claim is corrected — the event
@@ -93,9 +115,64 @@ this board exists to record. Each row must point at a **replayable** certificate
 narrow enough for a referee to check without trusting us. This is the
 at-a-glance index into that evidence.
 
-## Formal spine pins
+## The 2026 Jacobian Conjecture crater
 
-The atlas records external Lean work in [`atlas/lean_lane.json`](atlas/lean_lane.json)
+On 2026-07-19 Levent Alpöge presented an explicit dim-3 counterexample to the
+Jacobian Conjecture — *awaiting confirmation* (widely machine-verified within a
+day, not yet peer-reviewed). **The construction is not ours.** What is ours is
+the independent verification and the machine-propagated map of what it takes
+down, in [`atlas/jc-crater/`](atlas/jc-crater/):
+
+- **The object, verified** — [`certificates/jacobian-conjecture`](certificates/jacobian-conjecture)
+  re-derives `det JF ≡ −2` as an exact polynomial identity and the three-point
+  collision, dependency-free, in ~0.03 s; plus the Lean 4 refutation above.
+- **The blast radius, computed** — 37 primary-sourced nodes and 29 cited typed
+  edges. Every status is **derived from the certified root by modus tollens,
+  never asserted**, and the modality is dictated by each edge's dimension
+  semantics: a per-dimension edge carries the full `for all n ≥ 3` refutation, a
+  dimension-mixing reduction carries only the honest `in some finite dimension`.
+  Nine candidate names from the source listicle failed literature verification
+  and are quarantined in place, visible and edge-less.
+- **What fell, and what did not** — the [Dixmier conjecture](certificates/dixmier-conjecture)
+  for Weyl algebras is among the casualties; the **plane Jacobian Conjecture
+  (n = 2) is the surviving frontier**, and nothing here touches it.
+- **The rest of the cluster** — [`jc-anatomy`](certificates/jc-anatomy) (where
+  the map fails to be proper, its fibers, its Galois group),
+  [`jc-family-fences`](certificates/jc-family-fences) (probes and family fences,
+  explicitly *not* closed brackets), and [`plane-jacobian-true`](certificates/plane-jacobian-true)
+  (the TRUE-lane attack on n = 2).
+- **Conditionality is enforced, not promised** — every crater status is
+  conditional on an unrefereed announcement, so
+  [`tools/jc_root_tripwire.py`](tools/jc_root_tripwire.py) polls arXiv for
+  retraction/confirmation signals, and
+  [`atlas/jc-crater/root_claim.json`](atlas/jc-crater/root_claim.json) records the
+  archival policy: **no DOI until the root confirms**. Our object certificate is
+  unaffected by any retraction; the derived corollaries are not.
+
+The engine is reusable: [`tools/crater.py`](tools/crater.py) generalizes it into a
+polarity-aware crater tool, so the next falsification anywhere gets the same
+treatment.
+
+## Machine-checked formal proofs
+
+The strongest evidence tier the atlas carries: a theorem whose truth reduces to a
+proof assistant's kernel and its named axioms. Two live in-repo, **sorry-free in
+Lean 4 + mathlib**, each with a `proof.json` manifest that
+[State of the Frontier](views/state_of_frontier.md) discovers mechanically:
+
+| theorem | kind | where |
+|---|---|---|
+| `jacobian_conjecture_false` — the Jacobian Conjecture is false at `n = 3` over ℚ | refutation | [`certificates/jacobian-conjecture/lean/`](certificates/jacobian-conjecture/lean) |
+| `ringel_not_stretchable` — Ringel's 9-element oriented matroid is not stretchable | theorem | [`certificates/ringel-nonstretchability/lean/`](certificates/ringel-nonstretchability/lean) |
+
+These prove **theorems and refutations, not bracketed quantities**, so they sit
+beside the gap map rather than inside its C0 count. The one gap-map-style
+quantity that *has* reached **C0** is the crater's minimal-counterexample
+dimension (upper bound only, scoped by the validator — see below).
+
+## Formal spine pins (external)
+
+The atlas also records external Lean work in [`atlas/lean_lane.json`](atlas/lean_lane.json)
 without changing the canonical status of an Erdős problem. The registry pins a
 complete finite classification for **#593** and a deliberately partial checkpoint
 for **#625**, with exact entrypoints, toolchains, replay commands, attribution,

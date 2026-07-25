@@ -63,6 +63,8 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import sympy as sp
 from sympy import Poly, expand, simplify, symbols, diff
 
+import sys as _sys, pathlib as _pathlib
+_sys.path.insert(0, str(_pathlib.Path(__file__).resolve().parent))
 from poly2 import X, Y, jac_det, padd, pmul, ppow, pscale, pconst
 from tame_invert import verify_inverse
 

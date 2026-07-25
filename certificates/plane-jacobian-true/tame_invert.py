@@ -6,6 +6,8 @@ from fractions import Fraction as Q
 from itertools import product
 from typing import Dict, List, Optional, Tuple
 
+import sys as _sys, pathlib as _pathlib
+_sys.path.insert(0, str(_pathlib.Path(__file__).resolve().parent))
 from poly2 import X, Y, compose, padd, pconst, poly_eq, ppow, pscale, total_degree
 
 Poly = Dict[Tuple[int, int], Q]
