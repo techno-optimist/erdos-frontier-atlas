@@ -15,6 +15,8 @@ import re
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PAGES = [
     "README.md",
+    "GRAPH.md",
+    "CLAUDE.md",
     "FRONTIER_CARTOGRAPHY.md",
     "book/BOOK.md",
     "atlas/walls.md",
