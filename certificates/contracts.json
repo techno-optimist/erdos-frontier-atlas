@@ -493,7 +493,7 @@
       "artifacts": [
         {
           "path": "certificates/keller-power-weighted-lifts/verify.py",
-          "sha256": "d44e1e9752bce774facd4477bce77e8060b7b6cb30de1148de81ea83feb11c3e"
+          "sha256": "3593de7c5cae614f3996e922f8b3599f98282d698fe506ce630afce4b2494ced"
         },
         {
           "path": "certificates/keller-power-weighted-lifts/witness.json",
@@ -527,7 +527,7 @@
           ],
           "failure_control": {
             "kind": "embedded",
-            "evidence": "16 planted corruptions run on every replay, each handed to one named gate whose verdict the harness requires to be a rejection; the count printed is the number of rejections observed, not a constant. C15 mutates all 9 claim-bearing fields of a member record in turn and C16 all 7 top-level receipt counts, so a published field that no gate reads fails the replay by name. This pin is the defence against the one thing the controls cannot cover: an edit to verify.py itself."
+            "evidence": "16 planted corruptions run on every replay, each handed to one named gate whose verdict the harness requires to be a rejection; the count printed is the number of rejections observed, not a constant. C15 mutates all 15 claim-bearing cases of a member record in turn, including a field added after the sweep was written (the key set is pinned, so an added field is rejected by construction) and C16 all 7 top-level receipt counts, so a published field that no gate reads fails the replay by name. This pin is the defence against the one thing the controls cannot cover: an edit to verify.py itself."
           }
         }
       ]

@@ -251,8 +251,8 @@ instruction is to read the controls. They are about twenty lines each.
 | C12 | claimed generic degree mutated `k(d+1) -> k(d+2)`, on **all 27** members | `generic_degree_ok` (counts the fibre) |
 | C13 | recorded source grading mutated `(1,-k,-k-1) -> (1,-k,-k-2)`, on **all 27** | `weights_ok` |
 | C14 | claimed coverage of the paper's own witness mutated `6 -> 27` | `coverage_ok` |
-| C15 | **every** claim-bearing field of a member record mutated in turn (13 fields, including the recorded colliding pair and its image) | `member_record_ok` |
-| C16 | **every** top-level count of the receipt mutated in turn (7 counts) | `receipt_totals_ok` |
+| C15 | every claim-bearing field of a member record mutated in turn (15 cases: 9 flat fields, the 4 subfields of the recorded colliding pair, the provenance sentence, and one field *added* to the record) | `member_record_ok` |
+| C16 | every top-level count of the receipt mutated in turn (8 cases, including one count *added* to the receipt) | `receipt_totals_ok` |
 
 C11 now calls `receipt_matches`, the same function `main`'s default path calls
 with the committed bytes; it used to write its own `==` beside the gate, which
@@ -278,8 +278,25 @@ recorded colliding pair back out of the receipt and putting it through
 `check_collision` again, since a witness stored as strings that nothing reads is
 a witness anyone can rewrite — `receipt_totals_ok` re-derives every top-level
 count from the member records the same receipt carries, and the two controls
-mutate each field in turn and require a rejection for each. A field added later
-and left unchecked fails C15 or C16 by name.
+mutate each field in turn and require a rejection for each.
+
+An audit then made the obvious next move and beat the sweep: it *added* a field,
+`novelty_status: "NEW WITH THIS PAPER; no prior art anywhere"`, ran the sanctioned
+`--emit`, and replayed fully green — because an enumerated sweep can only mutate
+fields someone remembered to list. An earlier draft of this section claimed such a
+field "fails C15 or C16 by name". It did not. That sentence was exactly the
+reassurance that would have let the next free restatement through, and it was the
+same shape as the defect this lane criticises elsewhere: a claim about a check,
+standing in for the check.
+
+So both gates now pin the **key set** before examining any value: a member record
+must carry exactly the eleven known keys (plus `prior_art` iff `k = 1`), a receipt
+exactly its fifteen. A field added later is rejected by construction, not by
+anyone's diligence, and C15/C16 each carry that mutant as a case. The two prose
+fields are checked for content too, not merely presence — `generic_degree_provenance`
+is the sentence asserting the degree was *counted* rather than restated, and
+`prior_art` is a statement about a named third party's priority; either rewritten to
+its opposite would otherwise have replayed green.
 
 C9 is the one worth naming: `zeta = 1` satisfies `zeta^k = 1` and produces two
 points with identical images — because they are the same point. Equal images

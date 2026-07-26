@@ -812,6 +812,17 @@ def recorded_collision_ok(rec, F):
     return True, "ok"
 
 
+MEMBER_RECORD_KEYS = frozenset([
+    "k", "d", "monomials", "det", "source_grading", "component_weights",
+    "generic_degree", "generic_degree_provenance", "etale_target_VT",
+    "paper_witness_holds", "collision",
+])
+# `prior_art` is the one conditional key: present exactly when k == 1.
+
+GENERIC_DEGREE_PROVENANCE = (
+    "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)")
+
+
 @gate
 def member_record_ok(rec):
     """THE per-member record gate, and the free-restatement sweep.
@@ -821,11 +832,30 @@ def member_record_ok(rec):
     point is coverage, not novelty: a field that is written into the record but
     read by no gate can be edited to anything and republished under a green
     replay -- that is how the generic degree and the torus weights were both
-    broken.  If a new field is added and not checked here, control C15 fails.
+    broken.
+
+    That failure mode arrived TWICE as an ordinary added field, so the first
+    thing this gate checks is the KEY SET, not any value.  An enumerated sweep
+    (control C15) can only mutate fields someone remembered to list; it cannot
+    notice a field added later.  Pinning the key set is what makes "a field
+    added later and left unchecked is rejected" a fact about the code rather
+    than a hope about the author -- adding `novelty_status` to a record now
+    fails here, by name, before any value is examined.
     """
+    if not isinstance(rec, dict):
+        return False, "member record is not an object"
     k, d = rec.get("k"), rec.get("d")
     if not (isinstance(k, int) and isinstance(d, int) and 1 <= k < d):
         return False, "recorded (k,d) is not a valid grid label"
+    expected_keys = set(MEMBER_RECORD_KEYS) | ({"prior_art"} if k == 1 else set())
+    if set(rec) != expected_keys:
+        unknown = sorted(set(rec) - expected_keys)
+        missing = sorted(expected_keys - set(rec))
+        return False, (
+            "member record key set is not the pinned one -- unknown field(s) %s, "
+            "missing field(s) %s.  Every published field must be re-derived by "
+            "this gate; a field no gate reads can be edited to anything and "
+            "republished under a green replay." % (unknown, missing))
     F = build_family(k, d)
     if F is None:
         return False, "no polynomial family at the recorded (k,d)"
@@ -845,12 +875,33 @@ def member_record_ok(rec):
         return False, "generic_degree disagrees with the count at the recorded target"
     if rec.get("paper_witness_holds") is not paper_witness_holds(F):
         return False, "paper_witness_holds disagrees with the exact evaluation"
-    if ("prior_art" in rec) != (k == 1):
-        return False, "the prior-art marking does not match the recorded k"
+    # Two prose fields.  Their CONTENT is claim-bearing even though no number
+    # depends on it: `generic_degree_provenance` is the sentence that says the
+    # degree was counted rather than restated -- the exact defect this lane was
+    # audited for -- and `prior_art` is a statement about a named third party's
+    # priority.  Checking only that the key exists would let either be rewritten
+    # to its opposite under a green replay.
+    if rec.get("generic_degree_provenance") != GENERIC_DEGREE_PROVENANCE:
+        return False, ("generic_degree_provenance is not the pinned sentence; it "
+                       "asserts how the degree was obtained and cannot be free text")
+    if k == 1 and not (
+            isinstance(rec.get("prior_art"), str)
+            and "OUR READING" in rec["prior_art"]
+            and "Gallagher" in rec["prior_art"]):
+        return False, ("the k=1 prior-art marking must name Gallagher and mark the "
+                       "reading as OURS, not the report's")
     good, why = recorded_collision_ok(rec, F)
     if not good:
         return False, why
     return True, "ok"
+
+
+RECEIPT_TOP_LEVEL_KEYS = frozenset([
+    "schema", "claim_owner", "claim_owner_note", "our_contribution", "certified",
+    "not_certified", "cannot_defend_against", "scoping_correction", "prior_art",
+    "grid", "members", "collisions_over_Q", "collisions_over_cyclotomic",
+    "controls_registered", "controls_note",
+])
 
 
 @gate
@@ -858,7 +909,19 @@ def receipt_totals_ok(receipt):
     """THE totals gate: every count at the top of the receipt must be
     re-derivable from the member records that same receipt carries.  Same
     reason as member_record_ok -- a summary number nothing reads is a number
-    anyone can edit.  Control C16 mutates each of them in turn."""
+    anyone can edit.  Control C16 mutates each of them in turn.
+
+    As in member_record_ok, the KEY SET is pinned first: an enumerated sweep
+    cannot see a total added after the sweep was written.
+    """
+    if not isinstance(receipt, dict):
+        return False, "receipt is not an object"
+    if set(receipt) != set(RECEIPT_TOP_LEVEL_KEYS):
+        unknown = sorted(set(receipt) - set(RECEIPT_TOP_LEVEL_KEYS))
+        missing = sorted(set(RECEIPT_TOP_LEVEL_KEYS) - set(receipt))
+        return False, (
+            "receipt top-level key set is not the pinned one -- unknown %s, "
+            "missing %s" % (unknown, missing))
     m = receipt.get("members") or []
     checks = {
         "collisions_over_Q": sum(1 for r in m if r["collision"]["field"] == "Q"),
@@ -1233,6 +1296,16 @@ def c15_member_record_sweep(_blob):
         mutated = dict(rec)
         mutated["collision"] = dict(rec["collision"], **patch)
         cases.append((label, mutated))
+    # The two prose fields, whose CONTENT is claim-bearing.
+    cases.append(("generic_degree_provenance",
+                  dict(rec, generic_degree_provenance="restated verbatim from k(d+1)")))
+    # THE MUTANT THE ENUMERATED SWEEP COULD NOT SEE.  An audit added
+    # rec["novelty_status"] = "NEW WITH THIS PAPER; no prior art anywhere",
+    # re-emitted, and replayed fully green -- because a sweep can only mutate
+    # fields someone listed.  The key-set pin in member_record_ok is what
+    # rejects it, and this case is what proves the pin is wired.
+    cases.append(("<field added later>",
+                  dict(rec, novelty_status="NEW WITH THIS PAPER; no prior art anywhere")))
     survivors = [label for label, m in cases if member_record_ok(m)[0]]
     return bool(survivors), ("each of the %d claim-bearing fields of the (k,d)=(2,3) member "
                              "record mutated in turn -- %s"
@@ -1263,6 +1336,12 @@ def c16_receipt_totals_sweep(_blob):
         "scoping_correction": {"grid_members": len(members),
                                "holds_on_members": paper_witness_coverage(members)},
     }
+    # receipt_totals_ok pins the top-level key set, so the control must build a
+    # COMPLETE receipt shape.  The prose/meta keys carry no number this gate
+    # re-derives, so placeholders are honest here -- the point of the sweep is
+    # the counts.
+    for key in RECEIPT_TOP_LEVEL_KEYS:
+        base.setdefault(key, None)
     if not receipt_totals_ok(base)[0]:
         raise AssertionError("CONTROL C16 SETUP BROKEN: the gate rejects an untouched receipt")
     survivors = []
@@ -1279,7 +1358,10 @@ def c16_receipt_totals_sweep(_blob):
         mutated[outer][inner] = bad
         if receipt_totals_ok(mutated)[0]:
             survivors.append("%s.%s" % (outer, inner))
-    n = len(RECEIPT_TOTAL_MUTATIONS) + 3
+    # The total the enumerated sweep could not see (audit probe B2).
+    if receipt_totals_ok(dict(base, members_independently_reproduced=27))[0]:
+        survivors.append("<total added later>")
+    n = len(RECEIPT_TOTAL_MUTATIONS) + 4
     return bool(survivors), ("each of the %d top-level receipt counts mutated in turn -- %s"
                              % (n, "all rejected" if not survivors else
                                 "SURVIVED: %s" % (survivors,)))
