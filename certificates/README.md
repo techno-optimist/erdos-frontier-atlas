@@ -10,7 +10,7 @@ Public promotion is governed by [`contracts.json`](contracts.json), checked by
 certificate directory and binds each promoted claim to its exact statement and
 scope, publication text, artifact SHA-256 values, semantic replay output, and a
 failure-control boundary. Merely naming two paths cannot produce an independent
-replication class. Private DGX artifacts remain operational evidence until their
+replication class. Private artifacts remain operational evidence until their
 runner and receipts are packaged here.
 
 Every certificate advertises a one-liner. It must actually work, from the certificate's own directory:

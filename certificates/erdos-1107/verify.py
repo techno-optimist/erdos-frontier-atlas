@@ -10,7 +10,7 @@ it equals exactly those six values — reproducing the published data (and Jobli
 result: no seventh exception). All six known exceptions are < 120, so any N ≥ 120 already
 pins the table; the default N = 10^6 gives a wide, fast independent re-check.
 
-An operational DGX run separately reported a 10^10 frontier, but its canonical runner and
+An operational private run separately reported a 10^10 frontier, but its canonical runner and
 receipt are not part of this public package. This verifier therefore makes no 10^10 claim:
 it certifies exactly the requested N (default 10^6).
 

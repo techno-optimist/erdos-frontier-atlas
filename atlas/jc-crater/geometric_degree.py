@@ -17,7 +17,7 @@ multiplicity -- points are counted honestly.
 WHAT IS CERTIFIED HERE, AND HOW
 
 Write t1, t2, t3 for the coordinates on the target. A Groebner computation
-(Singular, char 0, lex, on the DGX) produced three relations generating the
+(Singular, char 0, lex, on a private runner) produced three relations generating the
 ideal (f1-t1, f2-t2, f3-t3). This script does NOT trust that computation: it
 carries the three relations as abstract polynomials in Q[x,y,z,t1,t2,t3] and
 verifies each one directly by substituting t_i := f_i(x,y,z) and expanding in

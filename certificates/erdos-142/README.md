@@ -75,7 +75,7 @@ Dependency-free. Exit 0 iff both certificates verify.
 
 ProjectForty2 / CHRONOS — session
 `arena/research_sessions/res_20260712_erdos142_graph_directed_crossing` (E142
-agent `be9535f51392`), 2026-07-13; artifacts re-verified from the DGX mirror
+agent `be9535f51392`), 2026-07-13; artifacts re-verified from the private mirror
 `~/erdos142_scratch/{complete_enum,complete_handelman}_20260713/` before
 packaging. Related campaign context:
 [`certificates/erdos-13`](../erdos-13), the R(5,5) and kissing certificate repos.

@@ -73,7 +73,7 @@
         },
         {
           "type": "numeric_scan",
-          "artifact": "Singular 'vdim' and Macaulay2 'degree' over QQ(t1,t2,t3) (DGX, 2026-07-20; not committed in-repo)",
+          "artifact": "Singular 'vdim' and Macaulay2 'degree' over QQ(t1,t2,t3) (private runner, 2026-07-20; not committed in-repo)",
           "note": "independent cross-check: two separate CAS engines each return dim 0, degree 3 for the ideal (f1-t1,f2-t2,f3-t3). Agreement with the committed certificate, not a substitute for it -- neither run is replayable from this repo."
         },
         {

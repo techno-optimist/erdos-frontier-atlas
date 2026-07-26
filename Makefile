@@ -57,7 +57,7 @@ check-contracts:
 replay-contracts-fast:
 	python3 tools/check_certificate_contracts.py --profile fast
 
-# Requires the DGX-class 11 GB runner because Erdős #979 at 10^12 is the
+# Requires an 11 GB-class runner because Erdős #979 at 10^12 is the
 # claim-bearing slow replay. This is intentionally separate from hosted CI.
 replay-contracts-slow:
 	python3 tools/check_certificate_contracts.py --profile slow

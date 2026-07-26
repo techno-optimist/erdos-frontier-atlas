@@ -354,7 +354,7 @@
    "witness_feasibility": "none",
    "exact_feasibility": "cell",
    "status": "record_in_progress",
-   "notes": "PUBLIC BOUND: a(6) > 10^12, replayable from certificates/erdos-979/ (~11 GB). PRIVATE OPERATIONAL RESULT: the DGX streaming sweep and blind replica report gap-free agreement through 10^13, but their code and ledgers are not tracked in this repository, so that stronger result is quarantined from public promotion pending a self-contained replay packet. External OEIS submission is a separate human-sent step.",
+   "notes": "PUBLIC BOUND: a(6) > 10^12, replayable from certificates/erdos-979/ (~11 GB). PRIVATE OPERATIONAL RESULT: the private streaming sweep and blind replica report gap-free agreement through 10^13, but their code and ledgers are not tracked in this repository, so that stronger result is quarantined from public promotion pending a self-contained replay packet. External OEIS submission is a separate human-sent step.",
    "provenance": {
     "added_by": "claude-lead, 12-candidate triage",
     "date": "2026-07-18",
@@ -8006,7 +8006,7 @@
    "witness_feasibility": "none",
    "exact_feasibility": "wall",
    "status": "record_in_progress",
-   "notes": "PUBLIC BOUND: no seventh exception through 10^6, replayable in-repo. PRIVATE OPERATIONAL RESULT: a DGX verified-up-to-N run reported 10^10 with A118896 and sampled-witness cross-checks, but no canonical receipt was found in the public package during the 2026-07-21 audit; it is quarantined from promotion until packaged. The full conjecture is a wall.",
+   "notes": "PUBLIC BOUND: no seventh exception through 10^6, replayable in-repo. PRIVATE OPERATIONAL RESULT: a private verified-up-to-N run reported 10^10 with A118896 and sampled-witness cross-checks, but no canonical receipt was found in the public package during the 2026-07-21 audit; it is quarantined from promotion until packaged. The full conjecture is a wall.",
    "provenance": {
     "added_by": "verified-up-to-N lane + lead",
     "date": "2026-07-18",

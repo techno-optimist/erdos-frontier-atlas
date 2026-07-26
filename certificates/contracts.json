@@ -9,7 +9,7 @@
     {
       "path": "certificates/erdos-1107",
       "classification": "partial_local",
-      "boundary": "The public verifier certifies the exception table only through its chosen N; the private DGX 10^10 run is quarantined until its receipt and runner are public."
+      "boundary": "The public verifier certifies the exception table only through its chosen N; the private 10^10 run is quarantined until its receipt and runner are public."
     },
     {
       "path": "certificates/erdos-13",
@@ -359,7 +359,7 @@
         {
           "profile": "slow",
           "certifies_claim": true,
-          "runner": "dgx-11gb",
+          "runner": "private-11gb",
           "entrypoint": "certificates/erdos-979/verify.py",
           "argv": [
             "python3",
@@ -386,7 +386,7 @@
       "id": "erdos-1107-public-table",
       "status": "promoted",
       "statement": "A056828 intersect [1,10^6] is exactly {7,15,23,87,111,119}.",
-      "scope": "Publicly replayable range only. The private DGX 10^10 scan is operational evidence, not a public claim, until its canonical receipt is packaged.",
+      "scope": "Publicly replayable range only. The private 10^10 scan is operational evidence, not a public claim, until its canonical receipt is packaged.",
       "machine_verdict": "N=1000000: exceptions = [7, 15, 23, 87, 111, 119]",
       "publication_bindings": [
         {
@@ -407,7 +407,7 @@
       "artifacts": [
         {
           "path": "certificates/erdos-1107/verify.py",
-          "sha256": "68c540dce5a35fdd5e21b9a40732b1f79f012deb373b72e61f840097ec73df80"
+          "sha256": "8b0c43a89a694b877360f456b525e756f8b6ae2d324d544709e82461c1dafd07"
         }
       ],
       "replays": [

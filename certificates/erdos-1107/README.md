@@ -13,7 +13,7 @@ powerful numbers — equivalently, whether the exception set (OEIS
   (default `N = 10⁶`, ~10 s, dependency-free). All six are `< 120`, so no seventh exists
   below `10⁶`.
 - **The public frontier.** This repository certifies **no seventh exception below `10⁶`**.
-  A DGX `verified-up-to-N` run separately reported no seventh exception through `10¹⁰`,
+  A private `verified-up-to-N` run separately reported no seventh exception through `10¹⁰`,
   with A118896 and sampled-witness cross-checks. The 2026-07-21 honesty audit could not
   locate the cited canonical receipt in the public package, so `10¹⁰` is quarantined as
   private operational evidence until the runner and receipt ship together. It is not a
