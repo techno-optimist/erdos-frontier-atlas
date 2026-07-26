@@ -8,19 +8,20 @@
     "page_sha256": "8d0266e6a140ba75e213987104f7a56234a294f49b0230b48bbce199214aa67a",
     "records_on_page": 217,
     "records_carrying_an_erdos_number": 89,
-    "note": "Statuses and verification methods in each entry are the SOURCE's claims, transcribed, not ours."
+    "note": "Statuses and verification methods in each entry are the SOURCE's claims, transcribed, not ours.",
+    "extraction_note": "Records are sliced title-to-title (anchored on the 'Problem statement' label); an earlier extraction keyed on the 'System' label and mis-assigned the model and verification fields from an adjacent card. The model name is not recovered here rather than guessed."
   },
   "counts": {
     "erdos_linked_claims": 89,
     "all_present_in_our_hub": true,
-    "claims_against_problems_we_record_open_or_wall": 21
+    "claims_against_problems_we_record_open_or_wall": 21,
+    "claims_the_registry_itself_scopes_as_not_a_resolution": 12,
+    "hot_claims_the_registry_itself_scopes_as_not_a_resolution": 12
   },
   "entries": [
     {
       "erdos_id": 12,
       "claim_title": "Erdős Problem #12 — divisor-avoiding sets",
-      "claimed_system": "GPT-5.5 Pro",
-      "claimed_verification": "Author-checked preprint",
       "claim_sources": [
         "https://www.erdosproblems.com/12",
         "https://arxiv.org/abs/2605.22763",
@@ -29,13 +30,16 @@
       "our_recorded_status": "open",
       "upstream_status": "Open",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_scope_note": [
+        "This answers part (i) positively and disproves part (ii); the reciprocal-sum part remains open."
+      ],
+      "registry_says_not_a_resolution": true
     },
     {
       "erdos_id": 26,
       "claim_title": "Erdős Problem #26",
-      "claimed_system": "Gauss",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/26",
         "https://www.erdosproblems.com/forum/thread/26",
@@ -45,13 +49,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 38,
       "claim_title": "Erdős Problem #38",
-      "claimed_system": "DeepMind prover agent",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/38",
         "https://www.erdosproblems.com/forum/thread/38",
@@ -61,13 +65,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 42,
       "claim_title": "Erdős Problem #42",
-      "claimed_system": "Aristotle + GPT + Gemini + AlphaEvolve",
-      "claimed_verification": "Lean checked + expert synthesis",
       "claim_sources": [
         "https://www.erdosproblems.com/42",
         "https://github.com/teorth/erdosproblems/wiki/AI-contributions-to-Erd%C5%91s-problems"
@@ -75,13 +79,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked + community review",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 43,
       "claim_title": "Erdős Problem #43 — paired Sidon sets",
-      "claimed_system": "GPT-5.5 Pro",
-      "claimed_verification": "Single community claim; not incorporated",
       "claim_sources": [
         "https://www.erdosproblems.com/43",
         "https://www.erdosproblems.com/forum/thread/43",
@@ -90,13 +94,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Site confirmed; component Lean proofs",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 56,
       "claim_title": "Erdős Problem #56 — missing-hypothesis audit",
-      "claimed_system": "GPT-5.2 Pro + Aristotle",
-      "claimed_verification": "Lean checked + human writeup",
       "claim_sources": [
         "https://www.erdosproblems.com/forum/thread/56",
         "https://www.erdosproblems.com/history/56",
@@ -105,13 +109,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked; target statement was faulty",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 124,
       "claim_title": "Erdős Problem #124",
-      "claimed_system": "GPT-5.6 Pro + GPT-5.6 Sol",
-      "claimed_verification": "Lean checked + author review",
       "claim_sources": [
         "https://xenaproject.wordpress.com/2025/12/05/formalization-of-erdos-problems/",
         "https://www.erdosproblems.com/124",
@@ -120,13 +124,17 @@
       "our_recorded_status": "open",
       "upstream_status": "Open",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Reported Lean proof; linked statement contains sorry",
+      "registry_scope_note": [
+        "Verification Reported Lean proof; linked statement contains sorry Claim audit Statement fidelity: the Lean target captured a weaker formulation than the historically intended conjecture, and the public linked statement is not a complete proof artifact.",
+        "The AI work addressed a weaker literal formulation, while the intended Burr–Erdős–Graham–Li problem remains open."
+      ],
+      "registry_says_not_a_resolution": true
     },
     {
       "erdos_id": 125,
       "claim_title": "Erdős Problem #125",
-      "claimed_system": "GPT-5.5 Pro",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/125",
         "https://www.erdosproblems.com/forum/thread/125",
@@ -136,13 +144,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 138,
       "claim_title": "Erdős Problem #138 — gaps between van der Waerden numbers",
-      "claimed_system": "GPT-5.4 Pro",
-      "claimed_verification": "Interval checked; expert review pending",
       "claim_sources": [
         "https://www.erdosproblems.com/138",
         "https://firsching.ch/formal-conjectures/src/FormalConjectures/ErdosProblems/%C2%AB138%C2%BB/",
@@ -151,13 +159,17 @@
       "our_recorded_status": "wall",
       "upstream_status": "Open",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_scope_note": [
+        "The stronger parent question W ( k ) 1 / k → ∞ W(k)^{1/k}\\to\\infty W ( k ) 1/ k → ∞ remains open.",
+        "The theorem is a separately recorded difference variant on the official problem page, not a full solution to Erdős #138."
+      ],
+      "registry_says_not_a_resolution": true
     },
     {
       "erdos_id": 152,
       "claim_title": "Erdős Problem #152",
-      "claimed_system": "Claude Fable 5 + Codex + GPT-5.5",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/152",
         "https://www.erdosproblems.com/forum/thread/152",
@@ -167,13 +179,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 176,
       "claim_title": "Erdős Problem #176 — discrepancy on arithmetic progressions",
-      "claimed_system": "GPT-5.5 Pro / Codex",
-      "claimed_verification": "Lean checked + expert screening",
       "claim_sources": [
         "https://www.erdosproblems.com/176",
         "https://www.erdosproblems.com/forum/thread/176",
@@ -182,13 +194,16 @@
       "our_recorded_status": "open",
       "upstream_status": "Open",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Public Lean proof",
+      "registry_scope_note": [
+        "The broader two-parameter discrepancy problem remains open."
+      ],
+      "registry_says_not_a_resolution": true
     },
     {
       "erdos_id": 202,
       "claim_title": "Erdős Problem #202",
-      "claimed_system": "Aristotle",
-      "claimed_verification": "Lean checked; source wording corrected",
       "claim_sources": [
         "https://www.erdosproblems.com/202",
         "https://www.erdosproblems.com/forum/thread/202",
@@ -197,13 +212,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Community checked + formal artifact reported",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 205,
       "claim_title": "Erdős Problem #205",
-      "claimed_system": "DeepMind prover agent",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/205",
         "https://www.erdosproblems.com/forum/thread/205",
@@ -213,13 +228,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 258,
       "claim_title": "Erdős Problem #258",
-      "claimed_system": "Aristotle, GPT-5.2 Thinking",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/258",
         "https://www.erdosproblems.com/forum/thread/258",
@@ -229,13 +244,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 281,
       "claim_title": "Erdős Problem #281",
-      "claimed_system": "DeepMind prover agent",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/281",
         "https://www.erdosproblems.com/forum/thread/281",
@@ -245,13 +260,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 283,
       "claim_title": "Erdős Problem #283",
-      "claimed_system": "GPT-5.4 Pro",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/283",
         "https://www.erdosproblems.com/forum/thread/283",
@@ -261,13 +276,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 306,
       "claim_title": "Erdős Problem #306 — reciprocal semiprimes",
-      "claimed_system": "ProofCouncil / GPT-5.5 Pro",
-      "claimed_verification": "Official update + Lean record",
       "claim_sources": [
         "https://www.erdosproblems.com/306",
         "https://github.com/Yuren-Tang/erdos-306",
@@ -276,13 +291,13 @@
       "our_recorded_status": "open",
       "upstream_status": "Open",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked modulo two named inputs",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 330,
       "claim_title": "Erdős Problem #330",
-      "claimed_system": "GPT-5.5 Pro",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/330",
         "https://www.erdosproblems.com/forum/thread/330",
@@ -292,13 +307,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 333,
       "claim_title": "Erdős Problem #333",
-      "claimed_system": "GPT-5.5 Pro",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/333",
         "https://www.erdosproblems.com/forum/thread/333",
@@ -308,13 +323,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 347,
       "claim_title": "Erdős Problem #347",
-      "claimed_system": "GPT-5.4 Pro",
-      "claimed_verification": "Community checked + formal artifact reported",
       "claim_sources": [
         "https://www.erdosproblems.com/347",
         "https://github.com/teorth/erdosproblems/wiki/AI-contributions-to-Erd%C5%91s-problems"
@@ -322,13 +337,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 351,
       "claim_title": "Erdős Problem #351",
-      "claimed_system": "Claude Opus 4.5, GPT-5.2 Pro",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/351",
         "https://www.erdosproblems.com/forum/thread/351",
@@ -338,13 +353,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 369,
       "claim_title": "Erdős Problem #369",
-      "claimed_system": "GPT-5.5 Pro",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/369",
         "https://www.erdosproblems.com/forum/thread/369",
@@ -354,13 +369,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 380,
       "claim_title": "Erdős Problem #380",
-      "claimed_system": "GPT",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/380",
         "https://www.erdosproblems.com/forum/thread/380",
@@ -370,13 +385,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Erdős Problems site confirmed",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 397,
       "claim_title": "Erdős Problem #397",
-      "claimed_system": "GPT-5.4 Pro",
-      "claimed_verification": "Erdős Problems site confirmed",
       "claim_sources": [
         "https://www.erdosproblems.com/397",
         "https://www.erdosproblems.com/forum/thread/397",
@@ -386,13 +401,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 401,
       "claim_title": "Erdős Problem #401",
-      "claimed_system": "Aristotle, GPT-5.2 Pro",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/401",
         "https://www.erdosproblems.com/forum/thread/401",
@@ -402,13 +417,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 451,
       "claim_title": "Erdős Problem #451 — blocks avoiding middle-sized prime factors",
-      "claimed_system": "AxiomProver",
-      "claimed_verification": "Published and Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/451",
         "https://arxiv.org/abs/2606.19863",
@@ -417,13 +432,17 @@
       "our_recorded_status": "open",
       "upstream_status": "Open",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Human-checked arXiv proof",
+      "registry_scope_note": [
+        "Determining the sharper order of n k n_k n k ​ remains open.",
+        "The growth conjecture is proved, but the original problem also asks for an estimate of n k n_k n k ​ , so the entry remains partial."
+      ],
+      "registry_says_not_a_resolution": true
     },
     {
       "erdos_id": 456,
       "claim_title": "Erdős Problem #456 — totient preimages and least primes",
-      "claimed_system": "Gemini 3.1 Pro / Gemini 3.0 Flash / Claude Sonnet 4.6 / Project Numina / Aristotle / Claude Opus 4.8 / ulam.ai CLI harness",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/456",
         "https://www.erdosproblems.com/forum/thread/456"
@@ -431,13 +450,13 @@
       "our_recorded_status": "open",
       "upstream_status": "Open",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Community manuscript; expert review requested",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 457,
       "claim_title": "Erdős Problem #457",
-      "claimed_system": "Aristotle, GPT-5.2 Pro",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/457",
         "https://www.erdosproblems.com/forum/thread/457",
@@ -447,13 +466,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 477,
       "claim_title": "Erdős Problem #477 — polynomial tiling complements",
-      "claimed_system": "GPT-5.5 Pro",
-      "claimed_verification": "Author-checked preprint",
       "claim_sources": [
         "https://github.com/Pengbinghui/pipeline-math/blob/main/papers/tiling-complement.pdf",
         "https://www.erdosproblems.com/477",
@@ -462,13 +481,13 @@
       "our_recorded_status": "open",
       "upstream_status": "Open",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Author-checked manuscript; official record open",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 480,
       "claim_title": "Erdős Problem #480 — variable-mismatch audit",
-      "claimed_system": "Aristotle + ChatGPT",
-      "claimed_verification": "Lean checked; target statement was faulty",
       "claim_sources": [
         "https://www.erdosproblems.com/forum/thread/480",
         "https://xenaproject.wordpress.com/2025/12/05/formalization-of-erdos-problems/"
@@ -476,13 +495,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked; wrong variable in target",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 488,
       "claim_title": "Erdős Problem #488 — corrected-target audit",
-      "claimed_system": "Aristotle",
-      "claimed_verification": "Lean checked; wrong variable in target",
       "claim_sources": [
         "https://www.erdosproblems.com/488",
         "https://www.erdosproblems.com/forum/thread/488",
@@ -492,13 +511,16 @@
       "our_recorded_status": "open",
       "upstream_status": "Open",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked; source wording corrected",
+      "registry_scope_note": [
+        "Source comparison showed that this was likely a misstated “non-divisibility” version; the corrected “divisibility” problem remains open."
+      ],
+      "registry_says_not_a_resolution": true
     },
     {
       "erdos_id": 501,
       "claim_title": "Erdős Problem #501 — relative independence under a measure extension",
-      "claimed_system": "Aristotle",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/501",
         "https://www.erdosproblems.com/forum/thread/501"
@@ -506,13 +528,16 @@
       "our_recorded_status": "open",
       "upstream_status": "Open",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Author checked; community screening",
+      "registry_scope_note": [
+        "The official problem page remains open."
+      ],
+      "registry_says_not_a_resolution": true
     },
     {
       "erdos_id": 524,
       "claim_title": "Erdős Problem #524 — random Littlewood-polynomial maxima",
-      "claimed_system": "GPT-5.4 Pro",
-      "claimed_verification": "Erdős Problems site confirmed",
       "claim_sources": [
         "https://www.erdosproblems.com/524",
         "https://www.erdosproblems.com/forum/thread/524",
@@ -522,13 +547,13 @@
       "our_recorded_status": "open",
       "upstream_status": "Open",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Specialist checked; stronger paper followed",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 539,
       "claim_title": "Erdős Problem #539 — growth of cofactor sets",
-      "claimed_system": "GPT-5.5 Pro",
-      "claimed_verification": "Human-checked arXiv proof",
       "claim_sources": [
         "https://www.erdosproblems.com/539",
         "https://arxiv.org/abs/2607.09474",
@@ -537,13 +562,13 @@
       "our_recorded_status": "open",
       "upstream_status": "Open",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Official update + Lean record",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 543,
       "claim_title": "Erdős Problem #543",
-      "claimed_system": "Aristotle, GPT-5.2 Pro",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/543",
         "https://www.erdosproblems.com/forum/thread/543",
@@ -553,13 +578,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Erdős Problems site confirmed",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 603,
       "claim_title": "Erdős Problem #603",
-      "claimed_system": "GPT-5.2 Pro",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/603",
         "https://www.erdosproblems.com/forum/thread/603",
@@ -569,13 +594,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Erdős Problems site confirmed",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 610,
       "claim_title": "Erdős Problem #610",
-      "claimed_system": "GPT-5.5 Pro + Codex",
-      "claimed_verification": "Lean checked + community review",
       "claim_sources": [
         "https://www.erdosproblems.com/610",
         "https://www.erdosproblems.com/forum/thread/610",
@@ -584,13 +609,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Published theorem + expert site record",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 619,
       "claim_title": "Erdős Problem #619",
-      "claimed_system": "Aristotle + GPT-5.4 Pro",
-      "claimed_verification": "Published theorem + expert site record",
       "claim_sources": [
         "https://www.erdosproblems.com/619",
         "https://vibemathed.com/problem/erdos-619",
@@ -599,13 +624,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 650,
       "claim_title": "Erdős Problem #650",
-      "claimed_system": "Aristotle + Claude + Codex + GPT",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://arxiv.org/abs/2603.28636",
         "https://www.erdosproblems.com/650",
@@ -615,13 +640,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked + human paper",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 652,
       "claim_title": "Erdős Problem #652 — distinct distances from selected points",
-      "claimed_system": "GPT-5.4 Pro",
-      "claimed_verification": "Automatically checked; expert review pending",
       "claim_sources": [
         "https://www.erdosproblems.com/652",
         "https://arxiv.org/abs/2601.22401",
@@ -631,13 +656,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Official problem record updated",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 654,
       "claim_title": "Erdős Problem #654 — distinct distances with no four concyclic",
-      "claimed_system": "Aletheia / Gemini Deep Think",
-      "claimed_verification": "Official problem record updated",
       "claim_sources": [
         "https://www.erdosproblems.com/654",
         "https://arxiv.org/abs/2601.22401",
@@ -647,13 +672,17 @@
       "our_recorded_status": "open",
       "upstream_status": "Open",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Expert-reviewed project result",
+      "registry_scope_note": [
+        "The weaker improvement beyond n / 3 n/3 n /3 remains open.",
+        "The parent problem remains open and is therefore classified as partial."
+      ],
+      "registry_says_not_a_resolution": true
     },
     {
       "erdos_id": 659,
       "claim_title": "Erdős Problem #659",
-      "claimed_system": "Gauss",
-      "claimed_verification": "Lean checked + expert project audit",
       "claim_sources": [
         "https://www.erdosproblems.com/659",
         "https://www.erdosproblems.com/forum/thread/659",
@@ -663,13 +692,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 690,
       "claim_title": "Erdős Problem #690",
-      "claimed_system": "GPT-5.2 Pro",
-      "claimed_verification": "Erdős Problems site confirmed",
       "claim_sources": [
         "https://www.erdosproblems.com/690",
         "https://www.erdosproblems.com/forum/thread/690",
@@ -679,13 +708,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Erdős Problems site confirmed",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 694,
       "claim_title": "Erdős Problem #694",
-      "claimed_system": "Multiscalar Fields System",
-      "claimed_verification": "Erdős Problems site confirmed",
       "claim_sources": [
         "https://www.erdosproblems.com/694",
         "https://www.erdosproblems.com/forum/thread/694",
@@ -695,13 +724,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 696,
       "claim_title": "Erdős Problem #696",
-      "claimed_system": "GPT-5.4 Pro + Aristotle + AlphaEvolve",
-      "claimed_verification": "Lean checked + human paper",
       "claim_sources": [
         "https://www.erdosproblems.com/696",
         "https://vibemathed.com/problem/erdos-696",
@@ -710,13 +739,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 728,
       "claim_title": "Erdős Problem #728",
-      "claimed_system": "GPT-5.4 Pro",
-      "claimed_verification": "Multi-author human proof",
       "claim_sources": [
         "https://arxiv.org/abs/2601.07421",
         "https://github.com/plby/lean-proofs/blob/main/src/v4.24.0/ErdosProblems/Erdos728b.lean",
@@ -725,13 +754,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked + human writeup",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 729,
       "claim_title": "Erdős Problem #729",
-      "claimed_system": "GPT-5.5 Pro",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/729",
         "https://www.erdosproblems.com/forum/thread/729",
@@ -741,13 +770,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 741,
       "claim_title": "Erdős Problem #741",
-      "claimed_system": "GPT-5.4 Pro",
-      "claimed_verification": "Erdős Problems site confirmed",
       "claim_sources": [
         "https://www.erdosproblems.com/741",
         "https://www.erdosproblems.com/forum/thread/741",
@@ -757,13 +786,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 750,
       "claim_title": "Erdős Problem #750",
-      "claimed_system": "DeepMind prover agent",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/750",
         "https://www.erdosproblems.com/forum/thread/750",
@@ -773,13 +802,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 846,
       "claim_title": "Erdős Problem #846",
-      "claimed_system": "FullProof workflow",
-      "claimed_verification": "Multi-author mathematical proof",
       "claim_sources": [
         "https://www.erdosproblems.com/846",
         "https://github.com/teorth/erdosproblems/wiki/AI-contributions-to-Erd%C5%91s-problems"
@@ -787,13 +816,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked + independent derivation",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 848,
       "claim_title": "Erdős Problem #848",
-      "claimed_system": "Aristotle, GPT-5.2 Pro",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/848",
         "https://www.erdosproblems.com/forum/thread/848",
@@ -803,13 +832,13 @@
       "our_recorded_status": "open",
       "upstream_status": "Open",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Erdős Problems site confirmed",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 851,
       "claim_title": "Erdős Problem #851",
-      "claimed_system": "GPT-5",
-      "claimed_verification": "Erdős Problems site confirmed",
       "claim_sources": [
         "https://www.erdosproblems.com/851",
         "https://www.erdosproblems.com/forum/thread/851",
@@ -819,13 +848,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Erdős Problems site confirmed",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 858,
       "claim_title": "Erdős Problem #858",
-      "claimed_system": "GPT-5.2 Pro",
-      "claimed_verification": "Erdős Problems site confirmed",
       "claim_sources": [
         "https://www.erdosproblems.com/858",
         "https://www.erdosproblems.com/forum/thread/858",
@@ -835,13 +864,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Erdős Problems site confirmed",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 863,
       "claim_title": "Erdős Problem #863",
-      "claimed_system": "GPT-5.5 Pro",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/863",
         "https://www.erdosproblems.com/forum/thread/863",
@@ -851,13 +880,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Erdős Problems site confirmed",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 865,
       "claim_title": "Erdős Problem #865",
-      "claimed_system": "GPT-5.4 Pro",
-      "claimed_verification": "Erdős Problems site confirmed",
       "claim_sources": [
         "https://www.erdosproblems.com/865",
         "https://www.erdosproblems.com/forum/thread/865",
@@ -867,13 +896,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 871,
       "claim_title": "Erdős Problem #871",
-      "claimed_system": "GPT-5.4 Pro",
-      "claimed_verification": "Erdős Problems site confirmed",
       "claim_sources": [
         "https://www.erdosproblems.com/871",
         "https://www.erdosproblems.com/forum/thread/871",
@@ -883,13 +912,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 888,
       "claim_title": "Erdős Problem #888",
-      "claimed_system": "Claude Opus 4.5, Gemini 3 Pro",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/888",
         "https://www.erdosproblems.com/forum/thread/888",
@@ -899,13 +928,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Erdős Problems site confirmed",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 896,
       "claim_title": "Erdős Problem #896",
-      "claimed_system": "Aristotle, GPT-5.5 Pro",
-      "claimed_verification": "Erdős Problems site confirmed",
       "claim_sources": [
         "https://www.erdosproblems.com/896",
         "https://www.erdosproblems.com/forum/thread/896",
@@ -915,13 +944,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Erdős Problems site confirmed",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 897,
       "claim_title": "Erdős Problem #897",
-      "claimed_system": "GPT-5.5 Pro",
-      "claimed_verification": "Erdős Problems site confirmed",
       "claim_sources": [
         "https://www.erdosproblems.com/897",
         "https://www.erdosproblems.com/forum/thread/897",
@@ -931,13 +960,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 942,
       "claim_title": "Erdős Problem #942 — powerful numbers between squares",
-      "claimed_system": "AI-assisted Lean development",
-      "claimed_verification": "Lean checked modulo two named inputs",
       "claim_sources": [
         "https://www.erdosproblems.com/942",
         "https://www.erdosproblems.com/forum/thread/942",
@@ -946,13 +975,16 @@
       "our_recorded_status": "open",
       "upstream_status": "Open",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_scope_note": [
+        "The extremal order of the counting function remains open, so this is a strong lower-bound advance rather than a resolution."
+      ],
+      "registry_says_not_a_resolution": true
     },
     {
       "erdos_id": 948,
       "claim_title": "Erdős Problem #948",
-      "claimed_system": "Archivara, Aristotle",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/948",
         "https://www.erdosproblems.com/forum/thread/948",
@@ -962,13 +994,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 960,
       "claim_title": "Erdős Problem #960",
-      "claimed_system": "Gemini 3",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/960",
         "https://www.erdosproblems.com/forum/thread/960",
@@ -978,13 +1010,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Erdős Problems site confirmed",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 966,
       "claim_title": "Erdős Problem #966",
-      "claimed_system": "GPT-5.5 Pro",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/966",
         "https://www.erdosproblems.com/forum/thread/966",
@@ -994,13 +1026,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 986,
       "claim_title": "Erdős Problem #986",
-      "claimed_system": "Aristotle",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/986",
         "https://www.erdosproblems.com/forum/thread/986",
@@ -1010,13 +1042,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Erdős Problems site confirmed",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 987,
       "claim_title": "Erdős Problem #987",
-      "claimed_system": "Numina-Lean-Agent / Claude Opus 4.5",
-      "claimed_verification": "Paper report; complete source not located",
       "claim_sources": [
         "https://www.erdosproblems.com/987",
         "https://www.erdosproblems.com/forum/thread/987",
@@ -1026,13 +1058,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Erdős Problems site confirmed",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 990,
       "claim_title": "Erdős Problem #990",
-      "claimed_system": "OpenAI internal model",
-      "claimed_verification": "Erdős Problems site confirmed",
       "claim_sources": [
         "https://www.erdosproblems.com/990",
         "https://www.erdosproblems.com/forum/thread/990",
@@ -1042,13 +1074,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 997,
       "claim_title": "Erdős Problem #997",
-      "claimed_system": "OpenAI internal model",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/997",
         "https://www.erdosproblems.com/forum/thread/997",
@@ -1058,13 +1090,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 1014,
       "claim_title": "Erdős Problem #1014",
-      "claimed_system": "Claude, OpenAI internal model",
-      "claimed_verification": "Erdős Problems site confirmed",
       "claim_sources": [
         "https://www.erdosproblems.com/1014",
         "https://www.erdosproblems.com/forum/thread/1014",
@@ -1074,13 +1106,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 1026,
       "claim_title": "Erdős Problem #1026",
-      "claimed_system": "LEAP + foundation models",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://terrytao.wordpress.com/2025/12/08/the-story-of-erdos-problem-126/",
         "https://www.erdosproblems.com/1026",
@@ -1089,13 +1121,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked + expert synthesis",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 1032,
       "claim_title": "Erdős Problem #1032 — minimum degree in 4-critical graphs",
-      "claimed_system": "AlphaEvolve / AlphaProof Nexus",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/1032",
         "https://www.erdosproblems.com/forum/thread/1032"
@@ -1103,13 +1135,16 @@
       "our_recorded_status": "open",
       "upstream_status": "Open",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked + expert screening",
+      "registry_scope_note": [
+        "The existence of a positive linear lower construction remains open."
+      ],
+      "registry_says_not_a_resolution": true
     },
     {
       "erdos_id": 1033,
       "claim_title": "Erdős Problem #1033 — triangle degree-sum bound",
-      "claimed_system": "GPT-5.5 Pro",
-      "claimed_verification": "Author checked; community screening",
       "claim_sources": [
         "https://www.erdosproblems.com/1033",
         "https://www.erdosproblems.com/forum/thread/1033"
@@ -1117,13 +1152,16 @@
       "our_recorded_status": "open",
       "upstream_status": "Open",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Single community claim; not incorporated",
+      "registry_scope_note": [
+        "Verification Single community claim; not incorporated Claim audit The official page remains OPEN and says that no partial or complete solution has been incorporated from the comments."
+      ],
+      "registry_says_not_a_resolution": true
     },
     {
       "erdos_id": 1038,
       "claim_title": "Erdős Problem #1038 — polynomial lemniscates",
-      "claimed_system": "Aristotle",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://github.com/Pengbinghui/pipeline-math/blob/main/papers/erdos1038/Erdos_1038.pdf",
         "https://www.erdosproblems.com/1038",
@@ -1132,13 +1170,13 @@
       "our_recorded_status": "open",
       "upstream_status": "Open",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Author-checked manuscript; official record open",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 1039,
       "claim_title": "Erdős Problem #1039 — inradius of polynomial lemniscates",
-      "claimed_system": "Gemini Deep Think / Claude Code / Aristotle",
-      "claimed_verification": "Lean checked end to end",
       "claim_sources": [
         "https://www.erdosproblems.com/1039",
         "https://www.erdosproblems.com/forum/thread/1039",
@@ -1147,13 +1185,13 @@
       "our_recorded_status": "open",
       "upstream_status": "Open",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Expert-vouched and Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 1040,
       "claim_title": "Erdős Problem #1040 — polynomial sublevel-set measure",
-      "claimed_system": "GPT-5.2 Pro",
-      "claimed_verification": "Analytically checked by authors",
       "claim_sources": [
         "https://www.erdosproblems.com/1040",
         "https://arxiv.org/abs/2601.22401",
@@ -1163,13 +1201,13 @@
       "our_recorded_status": "open",
       "upstream_status": "Open",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Expert-reviewed project result",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 1051,
       "claim_title": "Erdős Problem #1051",
-      "claimed_system": "Aristotle + Claude Code + Claude Opus 4.7 + GPT-5.5 Pro",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/1051",
         "https://arxiv.org/abs/2602.10177",
@@ -1178,13 +1216,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 1089,
       "claim_title": "Erdős Problem #1089",
-      "claimed_system": "OpenAI internal model",
-      "claimed_verification": "Erdős Problems site confirmed",
       "claim_sources": [
         "https://www.erdosproblems.com/1089",
         "https://www.erdosproblems.com/forum/thread/1089",
@@ -1194,13 +1232,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Erdős Problems site confirmed",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 1091,
       "claim_title": "Erdős Problem #1091",
-      "claimed_system": "OpenAI internal model",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/1091",
         "https://www.erdosproblems.com/forum/thread/1091",
@@ -1210,13 +1248,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Erdős Problems site confirmed",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 1092,
       "claim_title": "Erdős Problem #1092",
-      "claimed_system": "OpenAI internal model",
-      "claimed_verification": "Erdős Problems site confirmed",
       "claim_sources": [
         "https://www.erdosproblems.com/1092",
         "https://www.erdosproblems.com/forum/thread/1092",
@@ -1226,13 +1264,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Erdős Problems site confirmed",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 1101,
       "claim_title": "Erdős Problem #1101 — subexponential good sequences",
-      "claimed_system": "GPT-5.5 Pro audit-and-revise scaffold",
-      "claimed_verification": "Community manuscript; expert review requested",
       "claim_sources": [
         "https://www.erdosproblems.com/1101",
         "https://www.erdosproblems.com/forum/thread/1101"
@@ -1240,13 +1278,16 @@
       "our_recorded_status": "open",
       "upstream_status": "Open",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Community partial result",
+      "registry_scope_note": [
+        "The full polynomial-growth question remains open."
+      ],
+      "registry_says_not_a_resolution": true
     },
     {
       "erdos_id": 1138,
       "claim_title": "Erdős Problem #1138",
-      "claimed_system": "Aristotle, GPT-5.5 Pro",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/1138",
         "https://www.erdosproblems.com/forum/thread/1138",
@@ -1256,13 +1297,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 1141,
       "claim_title": "Erdős Problem #1141",
-      "claimed_system": "GPT-5.5 Pro, GPT-5.5 Thinking",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/1141",
         "https://www.erdosproblems.com/forum/thread/1141",
@@ -1272,13 +1313,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 1148,
       "claim_title": "Erdős Problem #1148",
-      "claimed_system": "OpenAI internal model",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/1148",
         "https://www.erdosproblems.com/forum/thread/1148",
@@ -1288,13 +1329,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 1153,
       "claim_title": "Erdős Problem #1153",
-      "claimed_system": "GPT-5.2 Thinking",
-      "claimed_verification": "Human-checked mathematical proof",
       "claim_sources": [
         "https://www.erdosproblems.com/1153",
         "https://github.com/teorth/erdosproblems/wiki/AI-contributions-to-Erd%C5%91s-problems"
@@ -1302,13 +1343,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Community-accepted proof",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 1190,
       "claim_title": "Erdős Problem #1190",
-      "claimed_system": "GPT-5.5 Pro",
-      "claimed_verification": "Erdős Problems site confirmed",
       "claim_sources": [
         "https://www.erdosproblems.com/1190",
         "https://www.erdosproblems.com/forum/thread/1190",
@@ -1318,13 +1359,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 1195,
       "claim_title": "Erdős Problem #1195",
-      "claimed_system": "OpenAI internal model",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/1195",
         "https://www.erdosproblems.com/forum/thread/1195",
@@ -1334,13 +1375,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Erdős Problems site confirmed",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 1196,
       "claim_title": "Erdős Problem #1196",
-      "claimed_system": "GPT-5.4 Pro",
-      "claimed_verification": "Problem authors checked",
       "claim_sources": [
         "https://chatgpt.com/share/69dd1c83-b164-8385-bf2e-8533e9baba9c",
         "https://terrytao.wordpress.com/2026/05/03/primitive-sets-and-von-mangoldt-chains-erdos-problem-1196-and-beyond/",
@@ -1350,13 +1391,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Multi-author human proof",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 1197,
       "claim_title": "Erdős Problem #1197",
-      "claimed_system": "GPT-5.4 Pro",
-      "claimed_verification": "Erdős Problems site confirmed",
       "claim_sources": [
         "https://www.erdosproblems.com/1197",
         "https://www.erdosproblems.com/forum/thread/1197",
@@ -1366,13 +1407,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Lean checked",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 1202,
       "claim_title": "Erdős Problem #1202",
-      "claimed_system": "Gemini 3 Pro, Gemini 3.1 Pro, GPT-5.2 Pro, GPT-5.2 Thinking, GPT-5.4 Pro",
-      "claimed_verification": "Lean checked",
       "claim_sources": [
         "https://www.erdosproblems.com/1202",
         "https://www.erdosproblems.com/forum/thread/1202",
@@ -1382,13 +1423,13 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Erdős Problems site confirmed",
+      "registry_says_not_a_resolution": false
     },
     {
       "erdos_id": 1217,
       "claim_title": "Erdős Problem #1217",
-      "claimed_system": "GPT-5.4 Pro",
-      "claimed_verification": "Erdős Problems site confirmed",
       "claim_sources": [
         "https://www.erdosproblems.com/1217",
         "https://www.erdosproblems.com/forum/thread/1217",
@@ -1398,7 +1439,9 @@
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
       "our_verdict": "not independently checked",
-      "status_changed_by_this_claim": false
+      "status_changed_by_this_claim": false,
+      "registry_verification": "Erdős Problems site confirmed",
+      "registry_says_not_a_resolution": false
     }
   ]
 }

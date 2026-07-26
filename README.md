@@ -174,13 +174,26 @@ replayable certificate. This repo learned the rule the expensive way on **#552**
 where its own new-value claim was retracted after publication, and applies it to
 **#421**, where a circulating solution left the upstream record open.
 
-The overlay's real use is triage: **21 of the 89 are claims against problems this
-atlas still records as open — or, in one case, as a wall.** That case is
-[**#138**](https://www.erdosproblems.com/138) (`lim (W(k))^{1/k} = ∞`, a $500
-problem), which we list under [walls](atlas/walls.md) as not worth compute.
-Either the claim is wrong or our wall is stale, and both are worth knowing.
-None of the 21 has been independently checked by us yet; the overlay says so in
-every entry rather than leaving it to be assumed.
+The overlay's real use is triage — and the honest headline is calmer than the raw
+count suggests. **21 of the 89 are claims against problems this atlas still records
+as open** (one as a *wall*), but **12 of those 21 are scoped by the registry
+itself** as not resolving the problem, in its own words, now quoted in each entry.
+
+The clearest case is [**#138**](https://www.erdosproblems.com/138)
+(`lim (W(k))^{1/k} = ∞`, a $500 problem) which we list under
+[walls](atlas/walls.md). AlphaProof Nexus has a complete, sorry-free Lean proof
+there — but of `W(k+1) − W(k) → ∞`, the *gaps* between consecutive van der Waerden
+numbers, via `W(k+1) − W(k) ≥ k`. The registry says so plainly: *"The stronger
+parent question W(k)^{1/k}→∞ remains open"*, and *"not a full solution to Erdős
+#138"*. The artifact is even named `erdos_138.variants.difference.lean`. **Our wall
+stands**, and the gap bound is far weaker than the exponential lower bounds known
+since Berlekamp (1968).
+
+That leaves **9 claims against open problems that the registry does not itself
+scope down**: `306, 456, 477, 524, 539, 848, 1038, 1039, 1040`. Those are the ones
+worth a verification pass. **None of the 21 has been independently checked by us**,
+and every entry records `our_verdict: "not independently checked"` rather than
+leaving it to be assumed.
 
 ## Independent verifications of other people's results
 
