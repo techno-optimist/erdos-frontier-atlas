@@ -3,14 +3,16 @@
     "each F_{k,d} is a polynomial map A^3 -> A^3 (exact x-divisibility)",
     "det J F_{k,d} == -k/(k+1) as a polynomial identity in Q[x,y,z]",
     "source torus weights (1,-k,-k-1)",
-    "generic fibre has exactly k(d+1) points (exact gcd conditions)",
+    "generic fibre point count, COUNTED as k * #distinct roots of the fibre equation at an exhibited etale target (exact gcd conditions), agrees with the paper's claimed k(d+1) on every member",
     "F_{k,d} is not injective (explicit exhibited colliding pair)",
     "our rebuild reproduces the paper's printed (k,d)=(2,3) expansion exactly"
   ],
   "claim_owner": "Nathan Wilbanks and \"Annie\" (AGNT Labs Technical Report III v1.0, 2026-07-21)",
   "collisions_over_Q": 22,
   "collisions_over_cyclotomic": 5,
-  "controls": 11,
+  "controls": 12,
+  "controls_load_bearing": 12,
+  "controls_note": "every control is rejected by a gate the default path itself runs (det_ok, build_family, check_collision, weights_ok, anchor_ok, fibre_is_etale, generic_degree_ok, fibre_identity_ok, or the receipt byte-comparison); none re-implements a comparison beside the gate",
   "grid": {
     "d_max": 8,
     "k_max": 6,
@@ -45,12 +47,14 @@
         "0"
       ],
       "generic_degree": 3,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 1,
       "monomials": [
         7,
         6,
         3
       ],
+      "prior_art": "k=1 row: prior art -- an instance of Gallagher's published one-variable weighted-lift recipe, by the paper's own account; not new with this paper and not adjudicated here",
       "weights": [
         1,
         -1,
@@ -84,6 +88,7 @@
         "0"
       ],
       "generic_degree": 4,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 1,
       "monomials": [
         16,
@@ -91,6 +96,7 @@
         3
       ],
       "paper_witness_odd_odd": "F(1,0,0) = F(-1,0,2) = (0,0,1)",
+      "prior_art": "k=1 row: prior art -- an instance of Gallagher's published one-variable weighted-lift recipe, by the paper's own account; not new with this paper and not adjudicated here",
       "weights": [
         1,
         -1,
@@ -124,12 +130,14 @@
         "0"
       ],
       "generic_degree": 5,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 1,
       "monomials": [
         28,
         25,
         3
       ],
+      "prior_art": "k=1 row: prior art -- an instance of Gallagher's published one-variable weighted-lift recipe, by the paper's own account; not new with this paper and not adjudicated here",
       "weights": [
         1,
         -1,
@@ -163,6 +171,7 @@
         "0"
       ],
       "generic_degree": 6,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 1,
       "monomials": [
         43,
@@ -170,6 +179,7 @@
         3
       ],
       "paper_witness_odd_odd": "F(1,0,0) = F(-1,0,2) = (0,0,1)",
+      "prior_art": "k=1 row: prior art -- an instance of Gallagher's published one-variable weighted-lift recipe, by the paper's own account; not new with this paper and not adjudicated here",
       "weights": [
         1,
         -1,
@@ -203,12 +213,14 @@
         "0"
       ],
       "generic_degree": 7,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 1,
       "monomials": [
         61,
         56,
         3
       ],
+      "prior_art": "k=1 row: prior art -- an instance of Gallagher's published one-variable weighted-lift recipe, by the paper's own account; not new with this paper and not adjudicated here",
       "weights": [
         1,
         -1,
@@ -242,6 +254,7 @@
         "0"
       ],
       "generic_degree": 8,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 1,
       "monomials": [
         82,
@@ -249,6 +262,7 @@
         3
       ],
       "paper_witness_odd_odd": "F(1,0,0) = F(-1,0,2) = (0,0,1)",
+      "prior_art": "k=1 row: prior art -- an instance of Gallagher's published one-variable weighted-lift recipe, by the paper's own account; not new with this paper and not adjudicated here",
       "weights": [
         1,
         -1,
@@ -282,12 +296,14 @@
         "0"
       ],
       "generic_degree": 9,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 1,
       "monomials": [
         106,
         99,
         3
       ],
+      "prior_art": "k=1 row: prior art -- an instance of Gallagher's published one-variable weighted-lift recipe, by the paper's own account; not new with this paper and not adjudicated here",
       "weights": [
         1,
         -1,
@@ -321,6 +337,7 @@
         "0"
       ],
       "generic_degree": 8,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 2,
       "monomials": [
         9,
@@ -360,6 +377,7 @@
         "0"
       ],
       "generic_degree": 10,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 2,
       "monomials": [
         19,
@@ -399,6 +417,7 @@
         "0"
       ],
       "generic_degree": 12,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 2,
       "monomials": [
         32,
@@ -438,6 +457,7 @@
         "0"
       ],
       "generic_degree": 14,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 2,
       "monomials": [
         48,
@@ -477,6 +497,7 @@
         "0"
       ],
       "generic_degree": 16,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 2,
       "monomials": [
         67,
@@ -516,6 +537,7 @@
         "0"
       ],
       "generic_degree": 18,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 2,
       "monomials": [
         89,
@@ -555,6 +577,7 @@
         "0"
       ],
       "generic_degree": 15,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 3,
       "monomials": [
         11,
@@ -594,6 +617,7 @@
         "0"
       ],
       "generic_degree": 18,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 3,
       "monomials": [
         22,
@@ -634,6 +658,7 @@
         "0"
       ],
       "generic_degree": 21,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 3,
       "monomials": [
         36,
@@ -673,6 +698,7 @@
         "0"
       ],
       "generic_degree": 24,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 3,
       "monomials": [
         53,
@@ -713,6 +739,7 @@
         "0"
       ],
       "generic_degree": 27,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 3,
       "monomials": [
         73,
@@ -752,6 +779,7 @@
         "0"
       ],
       "generic_degree": 24,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 4,
       "monomials": [
         13,
@@ -791,6 +819,7 @@
         "0"
       ],
       "generic_degree": 28,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 4,
       "monomials": [
         24,
@@ -830,6 +859,7 @@
         "0"
       ],
       "generic_degree": 32,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 4,
       "monomials": [
         40,
@@ -869,6 +899,7 @@
         "0"
       ],
       "generic_degree": 36,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 4,
       "monomials": [
         57,
@@ -908,6 +939,7 @@
         "0"
       ],
       "generic_degree": 35,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 5,
       "monomials": [
         15,
@@ -947,6 +979,7 @@
         "0"
       ],
       "generic_degree": 40,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 5,
       "monomials": [
         28,
@@ -987,6 +1020,7 @@
         "0"
       ],
       "generic_degree": 45,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 5,
       "monomials": [
         44,
@@ -1026,6 +1060,7 @@
         "0"
       ],
       "generic_degree": 48,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 6,
       "monomials": [
         17,
@@ -1065,6 +1100,7 @@
         "0"
       ],
       "generic_degree": 54,
+      "generic_degree_provenance": "counted: k * #distinct roots of G at (V,T)=(1,0), not restated from k(d+1)",
       "k": 6,
       "monomials": [
         31,
@@ -1078,6 +1114,24 @@
       ]
     }
   ],
-  "our_contribution": "independent exact replay only; the construction is not ours",
-  "schema": "keller-power-weighted-lifts-v1"
+  "not_certified": [
+    "novelty and priority -- not checked at all",
+    "the k=1 row (7 of 27 members) is prior art by the paper's own account; see prior_art",
+    "reproduction of the authors' own receipts (none intact to replay)",
+    "anything outside the published 27-member grid"
+  ],
+  "our_contribution": "independent exact replay only; the construction is not ours, and this is a reimplementation from the report's prose, NOT a replay of the authors' receipts (their independent_reproduction.md is hash-bound to the wrong document)",
+  "prior_art": {
+    "members_affected": 7,
+    "row": "k = 1",
+    "source": "the report's own disclaimer; no canonical citation located by us",
+    "statement": "k=1 row: prior art -- an instance of Gallagher's published one-variable weighted-lift recipe, by the paper's own account; not new with this paper and not adjudicated here"
+  },
+  "schema": "keller-power-weighted-lifts-v2",
+  "scoping_correction": {
+    "finding": "the paper's stated witness covers 6 of 27 members, not all of them; witnesses for the remaining 21 are ours (sign / root-of-unity / two-root) and each is checked by exact evaluation",
+    "grid_members": 27,
+    "holds_on_members": 6,
+    "paper_witness": "F(1,0,0) = F(-1,0,2) = (0,0,1), stated for k and d both odd"
+  }
 }
