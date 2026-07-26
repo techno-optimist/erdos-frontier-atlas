@@ -1,724 +1,788 @@
 {
-  "schema": "efa-certificate-contracts-v1",
-  "directories": [
+ "schema": "efa-certificate-contracts-v1",
+ "directories": [
+  {
+   "path": "certificates/dixmier-conjecture",
+   "classification": "reference_only",
+   "boundary": "Symbolic Weyl-algebra exploration; no promoted theorem claim."
+  },
+  {
+   "path": "certificates/erdos-1107",
+   "classification": "partial_local",
+   "boundary": "The public verifier certifies the exception table only through its chosen N; the private 10^10 run is quarantined until its receipt and runner are public."
+  },
+  {
+   "path": "certificates/erdos-13",
+   "classification": "certified_local",
+   "boundary": "Exact finite table through N=45; no asymptotic threshold theorem."
+  },
+  {
+   "path": "certificates/erdos-142",
+   "classification": "certified_local",
+   "boundary": "Enumeration and affine-family no-go only; not an r_3(N) bound."
+  },
+  {
+   "path": "certificates/erdos-142-cone-obstruction",
+   "classification": "certified_local",
+   "boundary": "Per-object refutations of the strict symmetric CONE on three q=1 closed carry-triple products, by an explicit non-negative edge functional orthogonal to the zero-tag circulation space. Settles exactly the three listed objects; explicitly NOT a theorem that every q=1 product has an infeasible cone, and NOT an r_3(N) bound. claim_boundary erdos142_solved=false, new_r3_bound=false."
+  },
+  {
+   "path": "certificates/erdos-142-kerpi-refutation",
+   "classification": "certified_local",
+   "boundary": "Refutes two lemmas (`ker pi cap D = 0`, `q >= dim ker pi`) and proves Theorem A in their place. Explicitly NOT an r_3(N) bound and not a solution of #142; the claim boundary is stated in the certificate README as erdos142_solved=false, new_r3_bound=false."
+  },
+  {
+   "path": "certificates/erdos-142-pressure-ceiling",
+   "classification": "certified_local",
+   "boundary": "A FENCE, not a bound. Certifies (C1) an exact rational comparison lambda > 7/24, (C2a) a rational ceiling Lambda_cap <= 211/250, and (C2b) that any family obeying the stated pressure bracket exceeds that ceiling for every m >= 7 and so cannot be an H1-H5 survivor. Explicitly NOT certified: the constant map itself, the cap-set ceiling (both external, sealed-by-audit), and ANY r_3(N) lower bound -- no survivor certificate exists. claim_boundary.erdos142_solved is pinned false and the verifier's own controls reject flipping it."
+  },
+  {
+   "path": "certificates/erdos-366",
+   "classification": "certified_local",
+   "boundary": "Exhaustive search result: no 2-full n with n+1 3-full for n <= 10^25. A negative verified-to-N record, NOT a resolution of Erdos #366 -- abc implies finiteness, so no search can close it. Does not extend the consecutive-powerful-pair frontier (OEIS A060355), which is the X^(1/2) search."
+  },
+  {
+   "path": "certificates/erdos-552",
+   "classification": "certified_local",
+   "boundary": "Exact n=12..16 values and a lower bound at n=17 only."
+  },
+  {
+   "path": "certificates/erdos-552-f39",
+   "classification": "certified_local",
+   "boundary": "Lower bound 46 only; the former equality claim is retracted."
+  },
+  {
+   "path": "certificates/erdos-979",
+   "classification": "certified_local",
+   "boundary": "Public package certifies a(6)>10^12; private 10^13 ledgers are not promoted here."
+  },
+  {
+   "path": "certificates/fibonacci-macro-residual",
+   "classification": "research_fence",
+   "boundary": "A collection of bounded macro-model witnesses and no-go fences, not a global Fibonacci theorem."
+  },
+  {
+   "path": "certificates/fk-square",
+   "classification": "certified_local",
+   "boundary": "Exact finite D(1..9) table; no effective Furstenberg-Katznelson threshold."
+  },
+  {
+   "path": "certificates/graffiti-284-refutation",
+   "classification": "certified_local",
+   "boundary": "Independent exact replay of an external refutation (Wilbanks & Annie, AGNT Labs). Certifies that the statement as given is false, witnessed by the graph built here; does not certify novelty, priority, the authors' own artifacts, or that the conjecture is faithfully transcribed from Fajtlowicz's Graffiti list."
+  },
+  {
+   "path": "certificates/graffiti-290",
+   "classification": "certified_local",
+   "boundary": "Independent exact verification of an EXTERNAL claim (conjecture: Graffiti/Fajtlowicz #290; proof: Wilbanks and Annie, AGNT Labs) on a finite family only, and ONLY under the Written-on-the-Wall / Brewster gravity convention. Both halves of the convention split are reported: (a) under the gravity definition in Aouchiche-Hansen's 2010 survey the conjecture is reported REFUTED (Roucairol-Cazenave, arXiv:2409.18626v1 Sec. 5.2), and (b) those same authors call the Written-on-the-Wall / Brewster definition 'the correct definition' and report refutation was 'seemingly impossible' under it. Neither the refutation nor that judgement is adjudicated here. The paper's proof is not replayed; novelty and priority are not assessed."
+  },
+  {
+   "path": "certificates/jacobian-conjecture",
+   "classification": "certified_local",
+   "boundary": "Independent exact verification of the external n=3 construction."
+  },
+  {
+   "path": "certificates/jc-anatomy",
+   "classification": "research_fence",
+   "boundary": "Exact probes of one counterexample's anatomy, not general Jacobian-Conjecture theorems."
+  },
+  {
+   "path": "certificates/jc-family-fences",
+   "classification": "research_fence",
+   "boundary": "Search-bounded family probes; receipts are not fully re-derived by the legacy drift gate."
+  },
+  {
+   "path": "certificates/keller-power-weighted-lifts",
+   "classification": "certified_local",
+   "boundary": "Independent exact replay of an external two-parameter Keller family claimed by Annie (AGNT Labs, Technical Report III, v1.0, 21 July 2026) on its published 27-member grid. Reimplemented from the report's prose, not replayed from the author's receipts. Novelty and priority are not certified; on OUR reading of the report (not its words) the k=1 row lies inside Alexis Gallagher's earlier one-variable weighted-lift work."
+  },
+  {
+   "path": "certificates/plane-jacobian-true",
+   "classification": "partial_local",
+   "boundary": "TRUE-lane exploration of the plane (n=2) Jacobian Conjecture, which remains OPEN. Machine-checked elementary cases over a finite integer lattice only; plane JC is already a theorem for degree <= 100 (Moh 1983), so nothing here is new progress on the open problem."
+  },
+  {
+   "path": "certificates/ramsey-3-3",
+   "classification": "certified_local",
+   "boundary": "DRAT upper-bound half of the classical R(3,3)=6 result."
+  },
+  {
+   "path": "certificates/ramsey-3-4",
+   "classification": "certified_local",
+   "boundary": "DRAT upper-bound half of the classical R(3,4)=9 result."
+  },
+  {
+   "path": "certificates/ringel-nonstretchability",
+   "classification": "formal_external",
+   "boundary": "Python fidelity/BFP checks are local; the Lean replay depends on an externally pinned formal-conjectures checkout."
+  },
+  {
+   "path": "certificates/sendov-conjecture",
+   "classification": "research_fence",
+   "boundary": "Checks bounded computational lemmas and sampled regions, not Sendov's conjecture."
+  }
+ ],
+ "claims": [
+  {
+   "id": "erdos-552-n12-n16",
+   "status": "promoted",
+   "statement": "R(C4,K1,n) = n + ceil(sqrt(n)) + 1 for 12 <= n <= 16",
+   "scope": "Five exact finite Ramsey values; the n=17 artifact is only a lower bound.",
+   "machine_verdict": "\"claim\":\"R(C4,K1,n) = n + ceil(sqrt(n)) + 1 for 12 <= n <= 16\"",
+   "publication_bindings": [
     {
-      "path": "certificates/dixmier-conjecture",
-      "classification": "reference_only",
-      "boundary": "Symbolic Weyl-algebra exploration; no promoted theorem claim."
-    },
-    {
-      "path": "certificates/erdos-1107",
-      "classification": "partial_local",
-      "boundary": "The public verifier certifies the exception table only through its chosen N; the private 10^10 run is quarantined until its receipt and runner are public."
-    },
-    {
-      "path": "certificates/erdos-13",
-      "classification": "certified_local",
-      "boundary": "Exact finite table through N=45; no asymptotic threshold theorem."
-    },
-    {
-      "path": "certificates/erdos-142",
-      "classification": "certified_local",
-      "boundary": "Enumeration and affine-family no-go only; not an r_3(N) bound."
-    },
-    {
-      "path": "certificates/erdos-142-kerpi-refutation",
-      "classification": "certified_local",
-      "boundary": "Refutes two lemmas (`ker pi cap D = 0`, `q >= dim ker pi`) and proves Theorem A in their place. Explicitly NOT an r_3(N) bound and not a solution of #142; the claim boundary is stated in the certificate README as erdos142_solved=false, new_r3_bound=false."
-    },
-    {
-      "path": "certificates/erdos-142-cone-obstruction",
-      "classification": "certified_local",
-      "boundary": "Per-object refutations of the strict symmetric CONE on three q=1 closed carry-triple products, by an explicit non-negative edge functional orthogonal to the zero-tag circulation space. Settles exactly the three listed objects; explicitly NOT a theorem that every q=1 product has an infeasible cone, and NOT an r_3(N) bound. claim_boundary erdos142_solved=false, new_r3_bound=false."
-    },
-    {
-      "path": "certificates/erdos-142-pressure-ceiling",
-      "classification": "certified_local",
-      "boundary": "A FENCE, not a bound. Certifies (C1) an exact rational comparison lambda > 7/24, (C2a) a rational ceiling Lambda_cap <= 211/250, and (C2b) that any family obeying the stated pressure bracket exceeds that ceiling for every m >= 7 and so cannot be an H1-H5 survivor. Explicitly NOT certified: the constant map itself, the cap-set ceiling (both external, sealed-by-audit), and ANY r_3(N) lower bound -- no survivor certificate exists. claim_boundary.erdos142_solved is pinned false and the verifier's own controls reject flipping it."
-    },
-    {
-      "path": "certificates/erdos-552",
-      "classification": "certified_local",
-      "boundary": "Exact n=12..16 values and a lower bound at n=17 only."
-    },
-    {
-      "path": "certificates/erdos-552-f39",
-      "classification": "certified_local",
-      "boundary": "Lower bound 46 only; the former equality claim is retracted."
-    },
-    {
-      "path": "certificates/erdos-979",
-      "classification": "certified_local",
-      "boundary": "Public package certifies a(6)>10^12; private 10^13 ledgers are not promoted here."
-    },
-    {
-      "path": "certificates/fibonacci-macro-residual",
-      "classification": "research_fence",
-      "boundary": "A collection of bounded macro-model witnesses and no-go fences, not a global Fibonacci theorem."
-    },
-    {
-      "path": "certificates/fk-square",
-      "classification": "certified_local",
-      "boundary": "Exact finite D(1..9) table; no effective Furstenberg-Katznelson threshold."
-    },
-    {
-      "path": "certificates/graffiti-284-refutation",
-      "classification": "certified_local",
-      "boundary": "Independent exact replay of an external refutation (Wilbanks & Annie, AGNT Labs). Certifies that the statement as given is false, witnessed by the graph built here; does not certify novelty, priority, the authors' own artifacts, or that the conjecture is faithfully transcribed from Fajtlowicz's Graffiti list."
-    },
-    {
-      "path": "certificates/jacobian-conjecture",
-      "classification": "certified_local",
-      "boundary": "Independent exact verification of the external n=3 construction."
-    },
-    {
-      "path": "certificates/jc-anatomy",
-      "classification": "research_fence",
-      "boundary": "Exact probes of one counterexample's anatomy, not general Jacobian-Conjecture theorems."
-    },
-    {
-      "path": "certificates/jc-family-fences",
-      "classification": "research_fence",
-      "boundary": "Search-bounded family probes; receipts are not fully re-derived by the legacy drift gate."
-    },
-    {
-      "path": "certificates/plane-jacobian-true",
-      "classification": "partial_local",
-      "boundary": "TRUE-lane exploration of the plane (n=2) Jacobian Conjecture, which remains OPEN. Machine-checked elementary cases over a finite integer lattice only; plane JC is already a theorem for degree <= 100 (Moh 1983), so nothing here is new progress on the open problem."
-    },
-    {
-      "path": "certificates/ramsey-3-3",
-      "classification": "certified_local",
-      "boundary": "DRAT upper-bound half of the classical R(3,3)=6 result."
-    },
-    {
-      "path": "certificates/ramsey-3-4",
-      "classification": "certified_local",
-      "boundary": "DRAT upper-bound half of the classical R(3,4)=9 result."
-    },
-    {
-      "path": "certificates/ringel-nonstretchability",
-      "classification": "formal_external",
-      "boundary": "Python fidelity/BFP checks are local; the Lean replay depends on an externally pinned formal-conjectures checkout."
-    },
-    {
-      "path": "certificates/sendov-conjecture",
-      "classification": "research_fence",
-      "boundary": "Checks bounded computational lemmas and sampled regions, not Sendov's conjecture."
-    },
-    {
-      "path": "certificates/graffiti-290",
-      "classification": "certified_local",
-      "boundary": "Independent exact verification of an EXTERNAL claim (conjecture: Graffiti/Fajtlowicz #290; proof: Wilbanks and Annie, AGNT Labs) on a finite family only, and ONLY under the Written-on-the-Wall / Brewster gravity convention. Both halves of the convention split are reported: (a) under the gravity definition in Aouchiche-Hansen's 2010 survey the conjecture is reported REFUTED (Roucairol-Cazenave, arXiv:2409.18626v1 Sec. 5.2), and (b) those same authors call the Written-on-the-Wall / Brewster definition 'the correct definition' and report refutation was 'seemingly impossible' under it. Neither the refutation nor that judgement is adjudicated here. The paper's proof is not replayed; novelty and priority are not assessed."
-    },
-    {
-      "path": "certificates/keller-power-weighted-lifts",
-      "classification": "certified_local",
-      "boundary": "Independent exact replay of an external two-parameter Keller family claimed by Annie (AGNT Labs, Technical Report III, v1.0, 21 July 2026) on its published 27-member grid. Reimplemented from the report's prose, not replayed from the author's receipts. Novelty and priority are not certified; on OUR reading of the report (not its words) the k=1 row lies inside Alexis Gallagher's earlier one-variable weighted-lift work."
+     "path": "README.md",
+     "contains": "for `12 ≤ n ≤ 16`; `n=17` closed at `22`"
     }
-  ],
-  "claims": [
+   ],
+   "artifacts": [
     {
-      "id": "erdos-552-n12-n16",
-      "status": "promoted",
-      "statement": "R(C4,K1,n) = n + ceil(sqrt(n)) + 1 for 12 <= n <= 16",
-      "scope": "Five exact finite Ramsey values; the n=17 artifact is only a lower bound.",
-      "machine_verdict": "\"claim\":\"R(C4,K1,n) = n + ceil(sqrt(n)) + 1 for 12 <= n <= 16\"",
-      "publication_bindings": [
-        {
-          "path": "README.md",
-          "contains": "for `12 \u2264 n \u2264 16`; `n=17` closed at `22`"
-        }
-      ],
-      "artifacts": [
-        {
-          "path": "certificates/erdos-552/verify.py",
-          "sha256": "b31ab2d4950825fbb7270f986ada54652d152885fb158eaa3209178bfaa4bcb2"
-        },
-        {
-          "path": "certificates/erdos-552/witnesses.json",
-          "sha256": "6fad85db5cc5925f5a5894446c56720433065652fecb284a1340262a70a914d3"
-        }
-      ],
-      "replays": [
-        {
-          "profile": "fast",
-          "certifies_claim": true,
-          "entrypoint": "certificates/erdos-552/verify.py",
-          "argv": [
-            "python3",
-            "-I",
-            "certificates/erdos-552/verify.py"
-          ],
-          "timeout_seconds": 30,
-          "exit_code": 0,
-          "stdout_contains": [
-            "\"claim\":\"R(C4,K1,n) = n + ceil(sqrt(n)) + 1 for 12 <= n <= 16\"",
-            "\"valid\":true",
-            "\"n\":16",
-            "\"status\":\"EXACT\""
-          ],
-          "failure_control": {
-            "kind": "none_explained",
-            "evidence": "Verifier rejects malformed degree, edge, or codegree witnesses; a standalone planted artifact is still debt."
-          }
-        }
-      ]
+     "path": "certificates/erdos-552/verify.py",
+     "sha256": "b31ab2d4950825fbb7270f986ada54652d152885fb158eaa3209178bfaa4bcb2"
     },
     {
-      "id": "erdos-552-f39-lower",
-      "status": "promoted",
-      "statement": "R(C4,K1,39) >= 46",
-      "scope": "Re-derivation of the 2015 construction; equality is explicitly retracted.",
-      "machine_verdict": "R(C4,K1,39) >= 46",
-      "publication_bindings": [
-        {
-          "path": "README.md",
-          "contains": "the `=46` **new-value** claim was **retracted**"
-        }
-      ],
-      "artifacts": [
-        {
-          "path": "certificates/erdos-552-f39/verify.py",
-          "sha256": "6f46fd3061bfc98aa3f9eec1c6e74ec82397557c22b2c9ea66b46fb3020c101c"
-        },
-        {
-          "path": "certificates/erdos-552-f39/witness.json",
-          "sha256": "aced9e128e859980a91951e00c47938bc8b5d7303dd690f8552ab8b1fa06f57c"
-        }
-      ],
-      "replays": [
-        {
-          "profile": "fast",
-          "certifies_claim": true,
-          "entrypoint": "certificates/erdos-552-f39/verify.py",
-          "argv": [
-            "python3",
-            "-I",
-            "certificates/erdos-552-f39/verify.py"
-          ],
-          "timeout_seconds": 30,
-          "exit_code": 0,
-          "stdout_contains": [
-            "\"valid\": true",
-            "R(C4,K1,39) >= 46",
-            "OPEN"
-          ],
-          "failure_control": {
-            "kind": "none_explained",
-            "evidence": "Structural verifier rejects an invalid witness; an explicit mutated witness fixture remains debt."
-          }
-        }
-      ]
-    },
-    {
-      "id": "erdos-13-table",
-      "status": "promoted",
-      "statement": "The exact finite table f(1..45), with N=17 the last exception in that range.",
-      "scope": "Empirical finite threshold location only; no claim about Bedert's asymptotic threshold.",
-      "machine_verdict": "\"last_exception\": 17",
-      "publication_bindings": [
-        {
-          "path": "README.md",
-          "contains": "exact table `f(1..45)`; `N=17` is the **last** exception"
-        }
-      ],
-      "artifacts": [
-        {
-          "path": "certificates/erdos-13/verify.py",
-          "sha256": "78905a2576d81347571f1f3872e04171b960cf71942d51fc41a0d8bfe394c07f"
-        },
-        {
-          "path": "certificates/erdos-13/table.json",
-          "sha256": "57d0a4d0911ee9fa023916e5775b947684fa174cb6ba9f12fc1543248e4d2c2e"
-        }
-      ],
-      "replays": [
-        {
-          "profile": "fast",
-          "certifies_claim": true,
-          "entrypoint": "certificates/erdos-13/verify.py",
-          "argv": [
-            "python3",
-            "-I",
-            "certificates/erdos-13/verify.py"
-          ],
-          "timeout_seconds": 30,
-          "exit_code": 0,
-          "stdout_contains": [
-            "\"valid\": true",
-            "\"last_exception\": 17"
-          ],
-          "failure_control": {
-            "kind": "none_explained",
-            "evidence": "The verifier compares an independently recomputed table with committed bytes; an explicit planted table remains debt."
-          }
-        }
-      ]
-    },
-    {
-      "id": "erdos-142-foundation",
-      "status": "promoted",
-      "statement": "A 12,349-cell enumeration lock plus a 34-term affine-family Farkas no-go.",
-      "scope": "Foundation only; not an r_3(N) bound and not a global no-go.",
-      "machine_verdict": "RESULT: CERTIFICATE VALID",
-      "publication_bindings": [
-        {
-          "path": "README.md",
-          "contains": "complete 12,349-cell geometric enumeration"
-        }
-      ],
-      "artifacts": [
-        {
-          "path": "certificates/erdos-142/verify.py",
-          "sha256": "4c7532afd95c178665051dae3d869cc92cd1ccc188a5120c99eb413718379108"
-        },
-        {
-          "path": "certificates/erdos-142/enumeration_certificate.json",
-          "sha256": "4cfe8edb1eda8dc78db338c6801d38a28bd5b7726ab329695ac4043dbf7bb516"
-        },
-        {
-          "path": "certificates/erdos-142/affine_farkas_cert.json",
-          "sha256": "fd6d5b39779999c8982e1c3c275615abfd6940b985494f5ec6bd7bcfd063cfd6"
-        }
-      ],
-      "replays": [
-        {
-          "profile": "fast",
-          "certifies_claim": true,
-          "entrypoint": "certificates/erdos-142/verify.py",
-          "argv": [
-            "python3",
-            "-I",
-            "certificates/erdos-142/verify.py"
-          ],
-          "timeout_seconds": 90,
-          "exit_code": 0,
-          "stdout_contains": [
-            "RESULT: CERTIFICATE VALID",
-            "12,349 full-dim cells",
-            "34-term Farkas",
-            "NOT an r_3(N) bound"
-          ],
-          "failure_control": {
-            "kind": "embedded",
-            "evidence": "Pinned-object, enumeration-lock, and exact Farkas identities are all fail-closed gates."
-          }
-        }
-      ]
-    },
-    {
-      "id": "erdos-979-a6-public",
-      "status": "promoted",
-      "statement": "A385316(6) > 10^12.",
-      "scope": "Exact finite lower bound only; does not bear on the asymptotic Erd\u0151s #979 limsup question. The private 10^13 sweep is quarantined from public promotion until packaged.",
-      "machine_verdict": "a(6) > 1000000000000",
-      "publication_bindings": [
-        {
-          "path": "README.md",
-          "contains": "**`a(6) > 10\u00b9\u00b2` at C2**",
-          "must_not_contain": [
-            "**`a(6) > 10\u00b9\u00b3` at C1**"
-          ]
-        },
-        {
-          "path": "atlas/gap_map.json",
-          "contains": "\"value\": \"> 10^12\"",
-          "must_not_contain": [
-            "\"value\": \"> 10^13\""
-          ]
-        }
-      ],
-      "artifacts": [
-        {
-          "path": "certificates/erdos-979/verify.py",
-          "sha256": "0aef06820a6d338274254cab24b99e39489e8b474c9beb745bce4d1a1db6525e"
-        },
-        {
-          "path": "requirements-dev.lock",
-          "sha256": "c5013ea586ef8af85be0f9099d424aa59659efc40eb2fe5465159d90c7b7bd91"
-        }
-      ],
-      "replays": [
-        {
-          "profile": "fast",
-          "certifies_claim": false,
-          "entrypoint": "certificates/erdos-979/verify.py",
-          "argv": [
-            "python3",
-            "-I",
-            "certificates/erdos-979/verify.py"
-          ],
-          "timeout_seconds": 90,
-          "exit_code": 0,
-          "stdout_contains": [
-            "SOUND=True",
-            "a(6) > 20000000000",
-            "a(5) = 10588881419  OK"
-          ],
-          "failure_control": {
-            "kind": "embedded",
-            "evidence": "Known a(1..5) values and prime-set completeness fail closed before a bound is emitted."
-          }
-        },
-        {
-          "profile": "slow",
-          "certifies_claim": true,
-          "runner": "private-11gb",
-          "entrypoint": "certificates/erdos-979/verify.py",
-          "argv": [
-            "python3",
-            "-I",
-            "certificates/erdos-979/verify.py",
-            "--cutoff",
-            "1e12"
-          ],
-          "timeout_seconds": 900,
-          "exit_code": 0,
-          "stdout_contains": [
-            "SOUND=True",
-            "a(6) > 1000000000000",
-            "a(5) = 10588881419  OK"
-          ],
-          "failure_control": {
-            "kind": "embedded",
-            "evidence": "Known a(1..5) values and prime-set completeness fail closed before a bound is emitted."
-          }
-        }
-      ]
-    },
-    {
-      "id": "erdos-1107-public-table",
-      "status": "promoted",
-      "statement": "A056828 intersect [1,10^6] is exactly {7,15,23,87,111,119}.",
-      "scope": "Publicly replayable range only. The private 10^10 scan is operational evidence, not a public claim, until its canonical receipt is packaged.",
-      "machine_verdict": "N=1000000: exceptions = [7, 15, 23, 87, 111, 119]",
-      "publication_bindings": [
-        {
-          "path": "README.md",
-          "contains": "verified **no seventh exception below `10\u2076`**",
-          "must_not_contain": [
-            "verified **no exception below `10\u00b9\u2070`**"
-          ]
-        },
-        {
-          "path": "atlas/gap_map.json",
-          "contains": "\"value\": \"10^6\"",
-          "must_not_contain": [
-            "\"value\": \"10^10\""
-          ]
-        }
-      ],
-      "artifacts": [
-        {
-          "path": "certificates/erdos-1107/verify.py",
-          "sha256": "8b0c43a89a694b877360f456b525e756f8b6ae2d324d544709e82461c1dafd07"
-        }
-      ],
-      "replays": [
-        {
-          "profile": "fast",
-          "certifies_claim": true,
-          "entrypoint": "certificates/erdos-1107/verify.py",
-          "argv": [
-            "python3",
-            "-I",
-            "certificates/erdos-1107/verify.py"
-          ],
-          "timeout_seconds": 90,
-          "exit_code": 0,
-          "stdout_contains": [
-            "N=1000000: exceptions = [7, 15, 23, 87, 111, 119]",
-            "expected [7, 15, 23, 87, 111, 119] -> MATCH",
-            "no seventh exception below N"
-          ],
-          "failure_control": {
-            "kind": "none_explained",
-            "evidence": "Exact exception-set equality fails on any extra or missing value; a standalone planted scan fixture remains debt."
-          }
-        }
-      ]
-    },
-    {
-      "id": "graffiti-284-hoffman-singleton",
-      "status": "promoted",
-      "statement": "The Graffiti 284 statement as given -- if girth(G) >= 5 then the minimum dual degree is at most -lambda_min(D(G)) -- is false: the Hoffman-Singleton graph has girth 5, minimum dual degree 7, and distance-matrix smallest eigenvalue -4.",
-      "scope": "Independent exact replay of an EXTERNAL refutation by Nathan Wilbanks and Annie (AGNT Labs, 2026-07-23). The counterexample and its identification are theirs; this repository contributes only the dependency-free verification. Certifies the falsity of the statement AS GIVEN, not that the statement is conjecture 284 of Fajtlowicz's Graffiti list, and not novelty or priority.",
-      "machine_verdict": "\"claim\":\"The Graffiti 284 statement as given -- if girth(G) >= 5 then min dual degree <= -lambda_min(D(G)) -- is FALSE: the Hoffman-Singleton graph has girth 5, computed minimum dual degree 7, and distance-matrix smallest eigenvalue exactly -4\"",
-      "publication_bindings": [
-        {
-          "path": "certificates/graffiti-284-refutation/README.md",
-          "contains": "**The refutation is not ours.**"
-        },
-        {
-          "path": "certificates/graffiti-284-refutation/README.md",
-          "contains": "min_dual = 7  # every neighbor of every vertex has degree 7"
-        },
-        {
-          "path": "certificates/graffiti-284-refutation/README.md",
-          "contains": "7d58813fa2b9f151eb4ac39dc342244503772702fc75c24f4052eed7653c97f2"
-        }
-      ],
-      "artifacts": [
-        {
-          "path": "certificates/graffiti-284-refutation/verify.py",
-          "sha256": "2377ff7baf51d5a150e9ec1e32d0294f6d5756a4d962b5e5d4186b90d9137762"
-        },
-        {
-          "path": "certificates/graffiti-284-refutation/receipt.json",
-          "sha256": "02db775e22a35f703eac344c2b4a05d63385797331ead5aeb9d71250b05c88f5"
-        }
-      ],
-      "replays": [
-        {
-          "profile": "fast",
-          "certifies_claim": true,
-          "entrypoint": "certificates/graffiti-284-refutation/verify.py",
-          "argv": [
-            "python3",
-            "-I",
-            "certificates/graffiti-284-refutation/verify.py"
-          ],
-          "timeout_seconds": 60,
-          "exit_code": 0,
-          "stdout_contains": [
-            "\"claim\":\"The Graffiti 284 statement as given -- if girth(G) >= 5 then min dual degree <= -lambda_min(D(G)) -- is FALSE: the Hoffman-Singleton graph has girth 5, computed minimum dual degree 7, and distance-matrix smallest eigenvalue exactly -4\"",
-            "\"not_checked\":\"that this statement is conjecture 284 of Fajtlowicz's Graffiti list",
-            "girth = 5 (computed by BFS, not inferred)",
-            "minimum dual degree -- COMPUTED from the graph, not asserted",
-            "computed min_v d*(v) equals the published claim 7",
-            "lambda_min(hoffman-singleton) = -4 is DERIVED from the checked spectrum, not asserted",
-            "computed lambda_min(D) equals the published claim -4",
-            "computed margin min d* - (-lambda_min) equals the published claim 3",
-            "rejected: hardcoded (min_dual=7, rhs=4) verdict applied to the Petersen graph",
-            "rejected: lambda_min asserted as the literal -4 on the Petersen graph",
-            "rejected: integer-truncated dual degree on a non-regular girth-7 graph",
-            "rejected: girth-4 graph K_{3,3} offered as a 284 counterexample",
-            "rejected: Hoffman-Singleton with one 2-swap presented as HS",
-            "planted controls: 8 expected, all rejected  executed=8, rejected=8",
-            "receipt-checked: receipt.json",
-            "PASS -- external refutation independently verified; 8/8 planted controls rejected"
-          ],
-          "stdout_not_contains": [
-            "[FAIL]"
-          ],
-          "failure_control": {
-            "kind": "embedded",
-            "evidence": "Eight planted controls run on the default path; the run exits nonzero if any is not rejected, and the control COUNT is measured (rejected() records each call; the exit gate compares the number that executed against EXPECTED_CONTROLS and the receipt publishes it), so deleting a control block fails instead of publishing a stale total. The headline control re-creates the external verifier's hardcoded (min_dual=7, rhs=4) logic and hands it the Petersen graph, which that logic calls REFUTED and the computed pipeline clears; a second control plants the literal lambda_min=-4 on the same graph and requires lambda_min_is_derived() -- the gate every published lambda_min passes -- to reject it; a third uses a NON-REGULAR girth-7 graph so the exact Fraction in min_dual_degree() is exercised rather than assumed. Thirteen single-line source mutations, plus one poisoned receipt field, were applied to a clean copy and each was MEASURED to exit 1 (README, 'Measured mutation battery'). BOUNDARY, stated in the verifier and the README: none of this defends against edits to verify.py itself -- a deleted check stays deleted. The exit gate is made tamper-EVIDENT (it recomputes from per-check and per-control records instead of trusting the FAILURES side effect, and cross-checks the two accountings), which is why no-oping that accumulator no longer disarms the controls, but the real defenses against a corrupted verifier are the artifact sha256 pins in this file, the stdout_not_contains '[FAIL]' pin, and git history. Three earlier 'controls' asserting min d* in {6,8,3} were REMOVED, not counted: they compared two already-computed constants and still printed '[ok] rejected' under the min_dual_degree stub this lane exists to catch."
-          }
-        }
-      ]
-    },
-    {
-      "id": "jacobian-n3-counterexample",
-      "status": "promoted",
-      "statement": "The pinned n=3 polynomial map has constant nonzero Jacobian and is non-injective.",
-      "scope": "Independent exact verification of Alpoge's external construction, not an original construction claim.",
-      "machine_verdict": "CERTIFICATE VERIFIED: constant Jacobian -2 + non-injective",
-      "publication_bindings": [
-        {
-          "path": "README.md",
-          "contains": "independent verification of Alp\u00f6ge's 2026 counterexample"
-        }
-      ],
-      "artifacts": [
-        {
-          "path": "certificates/jacobian-conjecture/verify.py",
-          "sha256": "b0e6fd06363a76c4971fc60c85e379e722c676e037504fabb5caf548343b2b77"
-        },
-        {
-          "path": "certificates/jacobian-conjecture/witness.json",
-          "sha256": "b91b0b59dd7cb98e3d58d947c71925f3c2a1680f1b67547b00eac53a8a13101e"
-        }
-      ],
-      "replays": [
-        {
-          "profile": "fast",
-          "certifies_claim": true,
-          "entrypoint": "certificates/jacobian-conjecture/verify.py",
-          "argv": [
-            "python3",
-            "-I",
-            "certificates/jacobian-conjecture/verify.py"
-          ],
-          "timeout_seconds": 90,
-          "exit_code": 0,
-          "stdout_contains": [
-            "CERTIFICATE VERIFIED: constant Jacobian -2 + non-injective",
-            "ctrl A perturbed map",
-            "ctrl B perturbed point"
-          ],
-          "failure_control": {
-            "kind": "embedded",
-            "evidence": "Two planted mutations must be rejected by separate verification legs."
-          }
-        }
-      ]
-    },
-    {
-      "id": "graffiti-290-finite-verification",
-      "status": "promoted",
-      "statement": "Graffiti 290 holds, under the Written-on-the-Wall / Brewster gravity convention, on every girth >= 5 graph of order <= 10 (all 1360 with at least one edge, connected and disconnected) and on 21 larger instances up to Hoffman-Singleton.",
-      "scope": "An INDEPENDENT FINITE VERIFICATION of an EXTERNAL claim, and nothing more. The conjecture is Graffiti's (Fajtlowicz #290); the proof is Nathan Wilbanks and Annie (AGNT Labs). Neither is a result of this repository. The paper's proof is NOT replayed -- only the truth of the inequality on a finite family is checked, which is not a verification of a proof. Scoped to the Written-on-the-Wall / Brewster gravity convention; under the Aouchiche-Hansen survey definition the conjecture is reported REFUTED (Roucairol-Cazenave, arXiv:2409.18626v1 Sec. 5.2) and that reading is neither obtained nor replayed here. Novelty and priority are not assessed. Nothing is certified for n > 10 beyond the 21 listed instances.",
-      "machine_verdict": "verdict digest over 2720 verdict records: b7ac0c575c819a5bfba1beb9fb43f896296c2574940d82d348141069d6d66d9a",
-      "publication_bindings": [
-        {
-          "path": "certificates/graffiti-290/README.md",
-          "contains": "**Graffiti 290 holds, under the Written-on-the-Wall / Brewster gravity convention, on every",
-          "must_not_contain": [
-            "It is the exact rational `r`, which varies graph to graph",
-            "Planted-failure controls \u2014 16 of them"
-          ]
-        }
-      ],
-      "artifacts": [
-        {
-          "path": "certificates/graffiti-290/verify.py",
-          "sha256": "2924d00245b6cf4d9d94d6c8af8af49a9423109d8157e8b952f475aa0532b7bb"
-        },
-        {
-          "path": "certificates/graffiti-290/certificate.json",
-          "sha256": "4e94328713369af6bcfa2ff3c22f11769fdd6b8c40a8341a7b6f1e7a759fce30"
-        }
-      ],
-      "replays": [
-        {
-          "profile": "fast",
-          "certifies_claim": true,
-          "entrypoint": "certificates/graffiti-290/verify.py",
-          "argv": [
-            "python3",
-            "-I",
-            "certificates/graffiti-290/verify.py"
-          ],
-          "timeout_seconds": 600,
-          "exit_code": 0,
-          "stdout_contains": [
-            "verdict digest over 2720 verdict records: b7ac0c575c819a5bfba1beb9fb43f896296c2574940d82d348141069d6d66d9a",
-            "sweep digest over both readings' returned records: 55fe709a7df9110f1c26af339ceb551ed63725332b835a6aed05d6d53b350d01",
-            "19 of 19 planted-failure controls rejected as required",
-            "1360 graphs checked (678 of them disconnected)",
-            "receipt-checked: certificate.json",
-            "PASS -- Graffiti 290 holds, under the Written-on-the-Wall / Brewster gravity"
-          ],
-          "stdout_not_contains": [
-            "[FAIL]"
-          ],
-          "failure_control": {
-            "kind": "embedded",
-            "evidence": "19 planted-failure controls run on the default path and the count is ASSERTED against EXPECTED_CONTROLS, so deleting a control block exits 1. Control 19 is the load-bearing one: it feeds holds_paper a genuinely FAILING instance (Petersen under the file's own planted-wrong mutated_mean_gravity, certified as a violation by control 11) and requires the verdict record to come back (False, 4, 5/3, (4,0)) -- so the verdict path is shown to be able to answer False rather than assumed to. Controls 17 and 18 plant mutant mutD ((True, 0, rhs(...)), which needs no spectral work) and a sharpened mutD with a fabricated inertia index, and require the digest to move. Measured: mutD, mutD2, mutD3, a stubbed spectral_index, and dropping the literal reading from the girth<5 sweep all exit 1. BOUNDARY: every control corrupts an INPUT. Nothing in verify.py can detect an edit to verify.py; that is what the artifact sha256 above and the git history are for."
-          }
-        }
-      ]
-    },
-    {
-      "id": "keller-power-weighted-lifts-replay",
-      "status": "promoted",
-      "statement": "Every member of the published 27-member grid F_{k,d} (1<=k<=6, k<d<=8) is a polynomial self-map of A^3 with det J F == -k/(k+1), isobaric of source weights (1,-k,-k-1), of counted generic fibre size k(d+1) at an exhibited etale target, and non-injective via an exhibited colliding pair.",
-      "scope": "Independent exact replay of an external construction claimed by Annie (AGNT Labs, Technical Report III, v1.0, 21 July 2026), reimplemented from the report's prose rather than replayed from its receipts. Novelty and priority are certified by nobody here. On OUR reading of the report -- not its words -- the k=1 row (7 members) lies inside Alexis Gallagher's earlier one-variable weighted-lift work. The counted generic degree cannot disagree with k(d+1): the etale gate forces deg G = d+1, so that comparison is unreachable and is not a test of the paper's formula.",
-      "machine_verdict": "PASS -- 27/27 grid members verified, 16/16 planted failures rejected, receipt matches",
-      "publication_bindings": [
-        {
-          "path": "certificates/keller-power-weighted-lifts/README.md",
-          "contains": "It is claimed by **Annie** in *Power-Weighted",
-          "must_not_contain": [
-            "Nathan Wilbanks",
-            "All 12 are load-bearing"
-          ]
-        },
-        {
-          "path": "certificates/keller-power-weighted-lifts/README.md",
-          "contains": "## What this verifier cannot defend against"
-        }
-      ],
-      "artifacts": [
-        {
-          "path": "certificates/keller-power-weighted-lifts/verify.py",
-          "sha256": "3593de7c5cae614f3996e922f8b3599f98282d698fe506ce630afce4b2494ced"
-        },
-        {
-          "path": "certificates/keller-power-weighted-lifts/witness.json",
-          "sha256": "42041299dd6417f59def1fef0a7026562dc8e47433f62ed2988f33e7178c6d92"
-        }
-      ],
-      "replays": [
-        {
-          "profile": "fast",
-          "certifies_claim": true,
-          "entrypoint": "certificates/keller-power-weighted-lifts/verify.py",
-          "argv": [
-            "python3",
-            "-I",
-            "certificates/keller-power-weighted-lifts/verify.py"
-          ],
-          "timeout_seconds": 120,
-          "exit_code": 0,
-          "stdout_contains": [
-            "PASS -- 27/27 grid members verified, 16/16 planted failures rejected, receipt matches",
-            "receipt-checked: witness.json",
-            "planted-failure controls: 16 registered, 16 run, 16 observed rejected by the named gate",
-            "claimed by Annie (AGNT Labs, Technical Report III, v1.0, 21 July 2026),",
-            "[!] WHAT THIS VERIFIER CANNOT DEFEND AGAINST: an edit to verify.py.  Stub a"
-          ],
-          "stdout_not_contains": [
-            "[FAIL]",
-            "FAIL:",
-            "NOT RUN",
-            "SURVIVED"
-          ],
-          "failure_control": {
-            "kind": "embedded",
-            "evidence": "16 planted corruptions run on every replay, each handed to one named gate whose verdict the harness requires to be a rejection; the count printed is the number of rejections observed, not a constant. C15 mutates all 15 claim-bearing cases of a member record in turn, including a field added after the sweep was written (the key set is pinned, so an added field is rejected by construction) and C16 all 7 top-level receipt counts, so a published field that no gate reads fails the replay by name. This pin is the defence against the one thing the controls cannot cover: an edit to verify.py itself."
-          }
-        }
-      ]
-    },
-    {
-      "id": "erdos-142-cone-infeasible-objects",
-      "status": "promoted",
-      "statement": "The strict symmetric cone is infeasible on each of three named q=1 closed carry-triple products",
-      "scope": "Three specific objects, each refuted by a published potential and tag multiplier; not a statement about the class of q=1 products, and not an r_3(N) bound.",
-      "machine_verdict": "\"claim\":\"cone INFEASIBLE on the listed q=1 closed products\"",
-      "publication_bindings": [
-        {
-          "path": "certificates/erdos-142-cone-obstruction/README.md",
-          "contains": "**Not** that every `q = 1` closed product has an infeasible cone."
-        }
-      ],
-      "artifacts": [
-        {
-          "path": "certificates/erdos-142-cone-obstruction/verify.py",
-          "sha256": "bb4702028016d32206c1c3472a6c95b9833178cb2e5733be2338e8a7667acf1a"
-        },
-        {
-          "path": "certificates/erdos-142-cone-obstruction/witnesses.json",
-          "sha256": "0e3e32731ccece19559ff8ea0ce376a7782f765fc3c1792398c9e6ad2985de44"
-        }
-      ],
-      "replays": [
-        {
-          "profile": "fast",
-          "certifies_claim": true,
-          "entrypoint": "certificates/erdos-142-cone-obstruction/verify.py",
-          "argv": [
-            "python3",
-            "-I",
-            "certificates/erdos-142-cone-obstruction/verify.py"
-          ],
-          "timeout_seconds": 120,
-          "exit_code": 0,
-          "stdout_contains": [
-            "\"claim\":\"cone INFEASIBLE on the listed q=1 closed products\"",
-            "\"valid\":true",
-            "\"objects\":3",
-            "RESULT: PASS -- every certificate is sound."
-          ],
-          "failure_control": {
-            "kind": "embedded",
-            "evidence": "verify.py runs three planted mutations that must each be detected or the run fails: perturbing theta must break Y >= 0 or the pairing with the zero-tag circulation space; perturbing the vertex potential must break Y >= 0; mutating a base transition must break the pointed-simulation invariant. It additionally recomputes every published quantity rather than trusting witnesses.json, and requires Y to annihilate a FULL basis of Z rather than a sampled vector."
-          }
-        }
-      ]
+     "path": "certificates/erdos-552/witnesses.json",
+     "sha256": "6fad85db5cc5925f5a5894446c56720433065652fecb284a1340262a70a914d3"
     }
-  ]
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-552/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-552/verify.py"
+     ],
+     "timeout_seconds": 30,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"claim\":\"R(C4,K1,n) = n + ceil(sqrt(n)) + 1 for 12 <= n <= 16\"",
+      "\"valid\":true",
+      "\"n\":16",
+      "\"status\":\"EXACT\""
+     ],
+     "failure_control": {
+      "kind": "none_explained",
+      "evidence": "Verifier rejects malformed degree, edge, or codegree witnesses; a standalone planted artifact is still debt."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-552-f39-lower",
+   "status": "promoted",
+   "statement": "R(C4,K1,39) >= 46",
+   "scope": "Re-derivation of the 2015 construction; equality is explicitly retracted.",
+   "machine_verdict": "R(C4,K1,39) >= 46",
+   "publication_bindings": [
+    {
+     "path": "README.md",
+     "contains": "the `=46` **new-value** claim was **retracted**"
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-552-f39/verify.py",
+     "sha256": "6f46fd3061bfc98aa3f9eec1c6e74ec82397557c22b2c9ea66b46fb3020c101c"
+    },
+    {
+     "path": "certificates/erdos-552-f39/witness.json",
+     "sha256": "aced9e128e859980a91951e00c47938bc8b5d7303dd690f8552ab8b1fa06f57c"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-552-f39/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-552-f39/verify.py"
+     ],
+     "timeout_seconds": 30,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"valid\": true",
+      "R(C4,K1,39) >= 46",
+      "OPEN"
+     ],
+     "failure_control": {
+      "kind": "none_explained",
+      "evidence": "Structural verifier rejects an invalid witness; an explicit mutated witness fixture remains debt."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-13-table",
+   "status": "promoted",
+   "statement": "The exact finite table f(1..45), with N=17 the last exception in that range.",
+   "scope": "Empirical finite threshold location only; no claim about Bedert's asymptotic threshold.",
+   "machine_verdict": "\"last_exception\": 17",
+   "publication_bindings": [
+    {
+     "path": "README.md",
+     "contains": "exact table `f(1..45)`; `N=17` is the **last** exception"
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-13/verify.py",
+     "sha256": "78905a2576d81347571f1f3872e04171b960cf71942d51fc41a0d8bfe394c07f"
+    },
+    {
+     "path": "certificates/erdos-13/table.json",
+     "sha256": "57d0a4d0911ee9fa023916e5775b947684fa174cb6ba9f12fc1543248e4d2c2e"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-13/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-13/verify.py"
+     ],
+     "timeout_seconds": 30,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"valid\": true",
+      "\"last_exception\": 17"
+     ],
+     "failure_control": {
+      "kind": "none_explained",
+      "evidence": "The verifier compares an independently recomputed table with committed bytes; an explicit planted table remains debt."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-142-foundation",
+   "status": "promoted",
+   "statement": "A 12,349-cell enumeration lock plus a 34-term affine-family Farkas no-go.",
+   "scope": "Foundation only; not an r_3(N) bound and not a global no-go.",
+   "machine_verdict": "RESULT: CERTIFICATE VALID",
+   "publication_bindings": [
+    {
+     "path": "README.md",
+     "contains": "complete 12,349-cell geometric enumeration"
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-142/verify.py",
+     "sha256": "4c7532afd95c178665051dae3d869cc92cd1ccc188a5120c99eb413718379108"
+    },
+    {
+     "path": "certificates/erdos-142/enumeration_certificate.json",
+     "sha256": "4cfe8edb1eda8dc78db338c6801d38a28bd5b7726ab329695ac4043dbf7bb516"
+    },
+    {
+     "path": "certificates/erdos-142/affine_farkas_cert.json",
+     "sha256": "fd6d5b39779999c8982e1c3c275615abfd6940b985494f5ec6bd7bcfd063cfd6"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-142/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142/verify.py"
+     ],
+     "timeout_seconds": 90,
+     "exit_code": 0,
+     "stdout_contains": [
+      "RESULT: CERTIFICATE VALID",
+      "12,349 full-dim cells",
+      "34-term Farkas",
+      "NOT an r_3(N) bound"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "Pinned-object, enumeration-lock, and exact Farkas identities are all fail-closed gates."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-979-a6-public",
+   "status": "promoted",
+   "statement": "A385316(6) > 10^12.",
+   "scope": "Exact finite lower bound only; does not bear on the asymptotic Erdős #979 limsup question. The private 10^13 sweep is quarantined from public promotion until packaged.",
+   "machine_verdict": "a(6) > 1000000000000",
+   "publication_bindings": [
+    {
+     "path": "README.md",
+     "contains": "**`a(6) > 10¹²` at C2**",
+     "must_not_contain": [
+      "**`a(6) > 10¹³` at C1**"
+     ]
+    },
+    {
+     "path": "atlas/gap_map.json",
+     "contains": "\"value\": \"> 10^12\"",
+     "must_not_contain": [
+      "\"value\": \"> 10^13\""
+     ]
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-979/verify.py",
+     "sha256": "0aef06820a6d338274254cab24b99e39489e8b474c9beb745bce4d1a1db6525e"
+    },
+    {
+     "path": "requirements-dev.lock",
+     "sha256": "c5013ea586ef8af85be0f9099d424aa59659efc40eb2fe5465159d90c7b7bd91"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": false,
+     "entrypoint": "certificates/erdos-979/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-979/verify.py"
+     ],
+     "timeout_seconds": 90,
+     "exit_code": 0,
+     "stdout_contains": [
+      "SOUND=True",
+      "a(6) > 20000000000",
+      "a(5) = 10588881419  OK"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "Known a(1..5) values and prime-set completeness fail closed before a bound is emitted."
+     }
+    },
+    {
+     "profile": "slow",
+     "certifies_claim": true,
+     "runner": "private-11gb",
+     "entrypoint": "certificates/erdos-979/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-979/verify.py",
+      "--cutoff",
+      "1e12"
+     ],
+     "timeout_seconds": 900,
+     "exit_code": 0,
+     "stdout_contains": [
+      "SOUND=True",
+      "a(6) > 1000000000000",
+      "a(5) = 10588881419  OK"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "Known a(1..5) values and prime-set completeness fail closed before a bound is emitted."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-1107-public-table",
+   "status": "promoted",
+   "statement": "A056828 intersect [1,10^6] is exactly {7,15,23,87,111,119}.",
+   "scope": "Publicly replayable range only. The private 10^10 scan is operational evidence, not a public claim, until its canonical receipt is packaged.",
+   "machine_verdict": "N=1000000: exceptions = [7, 15, 23, 87, 111, 119]",
+   "publication_bindings": [
+    {
+     "path": "README.md",
+     "contains": "verified **no seventh exception below `10⁶`**",
+     "must_not_contain": [
+      "verified **no exception below `10¹⁰`**"
+     ]
+    },
+    {
+     "path": "atlas/gap_map.json",
+     "contains": "\"value\": \"10^6\"",
+     "must_not_contain": [
+      "\"value\": \"10^10\""
+     ]
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-1107/verify.py",
+     "sha256": "8b0c43a89a694b877360f456b525e756f8b6ae2d324d544709e82461c1dafd07"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-1107/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-1107/verify.py"
+     ],
+     "timeout_seconds": 90,
+     "exit_code": 0,
+     "stdout_contains": [
+      "N=1000000: exceptions = [7, 15, 23, 87, 111, 119]",
+      "expected [7, 15, 23, 87, 111, 119] -> MATCH",
+      "no seventh exception below N"
+     ],
+     "failure_control": {
+      "kind": "none_explained",
+      "evidence": "Exact exception-set equality fails on any extra or missing value; a standalone planted scan fixture remains debt."
+     }
+    }
+   ]
+  },
+  {
+   "id": "graffiti-284-hoffman-singleton",
+   "status": "promoted",
+   "statement": "The Graffiti 284 statement as given -- if girth(G) >= 5 then the minimum dual degree is at most -lambda_min(D(G)) -- is false: the Hoffman-Singleton graph has girth 5, minimum dual degree 7, and distance-matrix smallest eigenvalue -4.",
+   "scope": "Independent exact replay of an EXTERNAL refutation by Nathan Wilbanks and Annie (AGNT Labs, 2026-07-23). The counterexample and its identification are theirs; this repository contributes only the dependency-free verification. Certifies the falsity of the statement AS GIVEN, not that the statement is conjecture 284 of Fajtlowicz's Graffiti list, and not novelty or priority.",
+   "machine_verdict": "\"claim\":\"The Graffiti 284 statement as given -- if girth(G) >= 5 then min dual degree <= -lambda_min(D(G)) -- is FALSE: the Hoffman-Singleton graph has girth 5, computed minimum dual degree 7, and distance-matrix smallest eigenvalue exactly -4\"",
+   "publication_bindings": [
+    {
+     "path": "certificates/graffiti-284-refutation/README.md",
+     "contains": "**The refutation is not ours.**"
+    },
+    {
+     "path": "certificates/graffiti-284-refutation/README.md",
+     "contains": "min_dual = 7  # every neighbor of every vertex has degree 7"
+    },
+    {
+     "path": "certificates/graffiti-284-refutation/README.md",
+     "contains": "7d58813fa2b9f151eb4ac39dc342244503772702fc75c24f4052eed7653c97f2"
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/graffiti-284-refutation/verify.py",
+     "sha256": "2377ff7baf51d5a150e9ec1e32d0294f6d5756a4d962b5e5d4186b90d9137762"
+    },
+    {
+     "path": "certificates/graffiti-284-refutation/receipt.json",
+     "sha256": "02db775e22a35f703eac344c2b4a05d63385797331ead5aeb9d71250b05c88f5"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/graffiti-284-refutation/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/graffiti-284-refutation/verify.py"
+     ],
+     "timeout_seconds": 60,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"claim\":\"The Graffiti 284 statement as given -- if girth(G) >= 5 then min dual degree <= -lambda_min(D(G)) -- is FALSE: the Hoffman-Singleton graph has girth 5, computed minimum dual degree 7, and distance-matrix smallest eigenvalue exactly -4\"",
+      "\"not_checked\":\"that this statement is conjecture 284 of Fajtlowicz's Graffiti list",
+      "girth = 5 (computed by BFS, not inferred)",
+      "minimum dual degree -- COMPUTED from the graph, not asserted",
+      "computed min_v d*(v) equals the published claim 7",
+      "lambda_min(hoffman-singleton) = -4 is DERIVED from the checked spectrum, not asserted",
+      "computed lambda_min(D) equals the published claim -4",
+      "computed margin min d* - (-lambda_min) equals the published claim 3",
+      "rejected: hardcoded (min_dual=7, rhs=4) verdict applied to the Petersen graph",
+      "rejected: lambda_min asserted as the literal -4 on the Petersen graph",
+      "rejected: integer-truncated dual degree on a non-regular girth-7 graph",
+      "rejected: girth-4 graph K_{3,3} offered as a 284 counterexample",
+      "rejected: Hoffman-Singleton with one 2-swap presented as HS",
+      "planted controls: 8 expected, all rejected  executed=8, rejected=8",
+      "receipt-checked: receipt.json",
+      "PASS -- external refutation independently verified; 8/8 planted controls rejected"
+     ],
+     "stdout_not_contains": [
+      "[FAIL]"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "Eight planted controls run on the default path; the run exits nonzero if any is not rejected, and the control COUNT is measured (rejected() records each call; the exit gate compares the number that executed against EXPECTED_CONTROLS and the receipt publishes it), so deleting a control block fails instead of publishing a stale total. The headline control re-creates the external verifier's hardcoded (min_dual=7, rhs=4) logic and hands it the Petersen graph, which that logic calls REFUTED and the computed pipeline clears; a second control plants the literal lambda_min=-4 on the same graph and requires lambda_min_is_derived() -- the gate every published lambda_min passes -- to reject it; a third uses a NON-REGULAR girth-7 graph so the exact Fraction in min_dual_degree() is exercised rather than assumed. Thirteen single-line source mutations, plus one poisoned receipt field, were applied to a clean copy and each was MEASURED to exit 1 (README, 'Measured mutation battery'). BOUNDARY, stated in the verifier and the README: none of this defends against edits to verify.py itself -- a deleted check stays deleted. The exit gate is made tamper-EVIDENT (it recomputes from per-check and per-control records instead of trusting the FAILURES side effect, and cross-checks the two accountings), which is why no-oping that accumulator no longer disarms the controls, but the real defenses against a corrupted verifier are the artifact sha256 pins in this file, the stdout_not_contains '[FAIL]' pin, and git history. Three earlier 'controls' asserting min d* in {6,8,3} were REMOVED, not counted: they compared two already-computed constants and still printed '[ok] rejected' under the min_dual_degree stub this lane exists to catch."
+     }
+    }
+   ]
+  },
+  {
+   "id": "jacobian-n3-counterexample",
+   "status": "promoted",
+   "statement": "The pinned n=3 polynomial map has constant nonzero Jacobian and is non-injective.",
+   "scope": "Independent exact verification of Alpoge's external construction, not an original construction claim.",
+   "machine_verdict": "CERTIFICATE VERIFIED: constant Jacobian -2 + non-injective",
+   "publication_bindings": [
+    {
+     "path": "README.md",
+     "contains": "independent verification of Alpöge's 2026 counterexample"
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/jacobian-conjecture/verify.py",
+     "sha256": "b0e6fd06363a76c4971fc60c85e379e722c676e037504fabb5caf548343b2b77"
+    },
+    {
+     "path": "certificates/jacobian-conjecture/witness.json",
+     "sha256": "b91b0b59dd7cb98e3d58d947c71925f3c2a1680f1b67547b00eac53a8a13101e"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/jacobian-conjecture/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/jacobian-conjecture/verify.py"
+     ],
+     "timeout_seconds": 90,
+     "exit_code": 0,
+     "stdout_contains": [
+      "CERTIFICATE VERIFIED: constant Jacobian -2 + non-injective",
+      "ctrl A perturbed map",
+      "ctrl B perturbed point"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "Two planted mutations must be rejected by separate verification legs."
+     }
+    }
+   ]
+  },
+  {
+   "id": "graffiti-290-finite-verification",
+   "status": "promoted",
+   "statement": "Graffiti 290 holds, under the Written-on-the-Wall / Brewster gravity convention, on every girth >= 5 graph of order <= 10 (all 1360 with at least one edge, connected and disconnected) and on 21 larger instances up to Hoffman-Singleton.",
+   "scope": "An INDEPENDENT FINITE VERIFICATION of an EXTERNAL claim, and nothing more. The conjecture is Graffiti's (Fajtlowicz #290); the proof is Nathan Wilbanks and Annie (AGNT Labs). Neither is a result of this repository. The paper's proof is NOT replayed -- only the truth of the inequality on a finite family is checked, which is not a verification of a proof. Scoped to the Written-on-the-Wall / Brewster gravity convention; under the Aouchiche-Hansen survey definition the conjecture is reported REFUTED (Roucairol-Cazenave, arXiv:2409.18626v1 Sec. 5.2) and that reading is neither obtained nor replayed here. Novelty and priority are not assessed. Nothing is certified for n > 10 beyond the 21 listed instances.",
+   "machine_verdict": "verdict digest over 2720 verdict records: b7ac0c575c819a5bfba1beb9fb43f896296c2574940d82d348141069d6d66d9a",
+   "publication_bindings": [
+    {
+     "path": "certificates/graffiti-290/README.md",
+     "contains": "**Graffiti 290 holds, under the Written-on-the-Wall / Brewster gravity convention, on every",
+     "must_not_contain": [
+      "It is the exact rational `r`, which varies graph to graph",
+      "Planted-failure controls — 16 of them"
+     ]
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/graffiti-290/verify.py",
+     "sha256": "2924d00245b6cf4d9d94d6c8af8af49a9423109d8157e8b952f475aa0532b7bb"
+    },
+    {
+     "path": "certificates/graffiti-290/certificate.json",
+     "sha256": "4e94328713369af6bcfa2ff3c22f11769fdd6b8c40a8341a7b6f1e7a759fce30"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/graffiti-290/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/graffiti-290/verify.py"
+     ],
+     "timeout_seconds": 600,
+     "exit_code": 0,
+     "stdout_contains": [
+      "verdict digest over 2720 verdict records: b7ac0c575c819a5bfba1beb9fb43f896296c2574940d82d348141069d6d66d9a",
+      "sweep digest over both readings' returned records: 55fe709a7df9110f1c26af339ceb551ed63725332b835a6aed05d6d53b350d01",
+      "19 of 19 planted-failure controls rejected as required",
+      "1360 graphs checked (678 of them disconnected)",
+      "receipt-checked: certificate.json",
+      "PASS -- Graffiti 290 holds, under the Written-on-the-Wall / Brewster gravity"
+     ],
+     "stdout_not_contains": [
+      "[FAIL]"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "19 planted-failure controls run on the default path and the count is ASSERTED against EXPECTED_CONTROLS, so deleting a control block exits 1. Control 19 is the load-bearing one: it feeds holds_paper a genuinely FAILING instance (Petersen under the file's own planted-wrong mutated_mean_gravity, certified as a violation by control 11) and requires the verdict record to come back (False, 4, 5/3, (4,0)) -- so the verdict path is shown to be able to answer False rather than assumed to. Controls 17 and 18 plant mutant mutD ((True, 0, rhs(...)), which needs no spectral work) and a sharpened mutD with a fabricated inertia index, and require the digest to move. Measured: mutD, mutD2, mutD3, a stubbed spectral_index, and dropping the literal reading from the girth<5 sweep all exit 1. BOUNDARY: every control corrupts an INPUT. Nothing in verify.py can detect an edit to verify.py; that is what the artifact sha256 above and the git history are for."
+     }
+    }
+   ]
+  },
+  {
+   "id": "keller-power-weighted-lifts-replay",
+   "status": "promoted",
+   "statement": "Every member of the published 27-member grid F_{k,d} (1<=k<=6, k<d<=8) is a polynomial self-map of A^3 with det J F == -k/(k+1), isobaric of source weights (1,-k,-k-1), of counted generic fibre size k(d+1) at an exhibited etale target, and non-injective via an exhibited colliding pair.",
+   "scope": "Independent exact replay of an external construction claimed by Annie (AGNT Labs, Technical Report III, v1.0, 21 July 2026), reimplemented from the report's prose rather than replayed from its receipts. Novelty and priority are certified by nobody here. On OUR reading of the report -- not its words -- the k=1 row (7 members) lies inside Alexis Gallagher's earlier one-variable weighted-lift work. The counted generic degree cannot disagree with k(d+1): the etale gate forces deg G = d+1, so that comparison is unreachable and is not a test of the paper's formula.",
+   "machine_verdict": "PASS -- 27/27 grid members verified, 16/16 planted failures rejected, receipt matches",
+   "publication_bindings": [
+    {
+     "path": "certificates/keller-power-weighted-lifts/README.md",
+     "contains": "It is claimed by **Annie** in *Power-Weighted",
+     "must_not_contain": [
+      "Nathan Wilbanks",
+      "All 12 are load-bearing"
+     ]
+    },
+    {
+     "path": "certificates/keller-power-weighted-lifts/README.md",
+     "contains": "## What this verifier cannot defend against"
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/keller-power-weighted-lifts/verify.py",
+     "sha256": "3593de7c5cae614f3996e922f8b3599f98282d698fe506ce630afce4b2494ced"
+    },
+    {
+     "path": "certificates/keller-power-weighted-lifts/witness.json",
+     "sha256": "42041299dd6417f59def1fef0a7026562dc8e47433f62ed2988f33e7178c6d92"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/keller-power-weighted-lifts/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/keller-power-weighted-lifts/verify.py"
+     ],
+     "timeout_seconds": 120,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS -- 27/27 grid members verified, 16/16 planted failures rejected, receipt matches",
+      "receipt-checked: witness.json",
+      "planted-failure controls: 16 registered, 16 run, 16 observed rejected by the named gate",
+      "claimed by Annie (AGNT Labs, Technical Report III, v1.0, 21 July 2026),",
+      "[!] WHAT THIS VERIFIER CANNOT DEFEND AGAINST: an edit to verify.py.  Stub a"
+     ],
+     "stdout_not_contains": [
+      "[FAIL]",
+      "FAIL:",
+      "NOT RUN",
+      "SURVIVED"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "16 planted corruptions run on every replay, each handed to one named gate whose verdict the harness requires to be a rejection; the count printed is the number of rejections observed, not a constant. C15 mutates all 15 claim-bearing cases of a member record in turn, including a field added after the sweep was written (the key set is pinned, so an added field is rejected by construction) and C16 all 7 top-level receipt counts, so a published field that no gate reads fails the replay by name. This pin is the defence against the one thing the controls cannot cover: an edit to verify.py itself."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-142-cone-infeasible-objects",
+   "status": "promoted",
+   "statement": "The strict symmetric cone is infeasible on each of three named q=1 closed carry-triple products",
+   "scope": "Three specific objects, each refuted by a published potential and tag multiplier; not a statement about the class of q=1 products, and not an r_3(N) bound.",
+   "machine_verdict": "\"claim\":\"cone INFEASIBLE on the listed q=1 closed products\"",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-142-cone-obstruction/README.md",
+     "contains": "**Not** that every `q = 1` closed product has an infeasible cone."
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-142-cone-obstruction/verify.py",
+     "sha256": "bb4702028016d32206c1c3472a6c95b9833178cb2e5733be2338e8a7667acf1a"
+    },
+    {
+     "path": "certificates/erdos-142-cone-obstruction/witnesses.json",
+     "sha256": "0e3e32731ccece19559ff8ea0ce376a7782f765fc3c1792398c9e6ad2985de44"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-142-cone-obstruction/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-cone-obstruction/verify.py"
+     ],
+     "timeout_seconds": 120,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"claim\":\"cone INFEASIBLE on the listed q=1 closed products\"",
+      "\"valid\":true",
+      "\"objects\":3",
+      "RESULT: PASS -- every certificate is sound."
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "verify.py runs three planted mutations that must each be detected or the run fails: perturbing theta must break Y >= 0 or the pairing with the zero-tag circulation space; perturbing the vertex potential must break Y >= 0; mutating a base transition must break the pointed-simulation invariant. It additionally recomputes every published quantity rather than trusting witnesses.json, and requires Y to annihilate a FULL basis of Z rather than a sampled vector."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-366-cubefull-sweep-1e25",
+   "status": "promoted",
+   "statement": "No 2-full n with n+1 3-full exists for n <= 10^25 (Erdos #366, the orientation as stated and as formalised).",
+   "scope": "Exhaustive over every cubefull number in (0, 10^25]; both orientations swept. Establishes a verified range only -- it does not resolve the problem, and it says nothing above 10^25.",
+   "machine_verdict": "\"strict_solutions\":0",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-366/README.md",
+     "contains": "no such `n` exists for `n ≤ 10²⁵`",
+     "must_not_contain": [
+      "resolves Erdős #366",
+      "proves there are none"
+     ]
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-366/verify.py",
+     "sha256": "f56fb31ab53e4a1d947f07d98cc253d07c4a35ff1bb51d0600db1ab91f0b71ed"
+    },
+    {
+     "path": "certificates/erdos-366/search366.c",
+     "sha256": "d1963a0acaf0a422dea87da8c20ebd394a9c9794498e0f995b655b8adb0396d6"
+    },
+    {
+     "path": "certificates/erdos-366/reference.py",
+     "sha256": "2bd0b2643b736e3c50a9b80a2aa3ba0ced779c781f936a999706f7aa3d6f9a1a"
+    },
+    {
+     "path": "certificates/erdos-366/RESULT.json",
+     "sha256": "e4c178c63f43b2011b3a044733861b411ceb719166c3b1e9945f4ac22b691199"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-366/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-366/verify.py",
+      "--quick"
+     ],
+     "timeout_seconds": 300,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"strict_solutions\":0",
+      "\"verified\":true",
+      "\"range_hi\":\"10000000000000000000000000\""
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "search366 --selftest, run by verify.py, builds non-powerful numbers that must be REJECTED (a powerful number times one extra prime at exponent 1) alongside powerful ones that must be accepted, so a checker that always answers either way fails. Both directions were watched failing on two deliberately planted code bugs before the gate was trusted."
+     }
+    }
+   ]
+  }
+ ]
 }

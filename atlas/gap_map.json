@@ -2901,9 +2901,9 @@
    "quantity": "count of n with {n, n+1} both powerful and at least one member 3-full (Erdos-Graham: is (8,9) essentially the only one?) — known count = 2 below 10^22",
    "kind": "verified_range",
    "lower": {
-    "value": "1e22",
-    "source": "complete consecutive-powerful-pair list below 10^22 — a SINGLE unreplicated computation (Johnson's OEIS A060355 b-file, 39 terms, uploaded 15 Nov 2011; no published method, code or certificate); only (8,9) and (12167,12168) have a 3-full member (erdosproblems.com/366 remarks)",
-    "year": 2011
+    "value": "1e25",
+    "source": "OUR exhaustive cubefull-side sweep, certificates/erdos-366/ (1,620,172,043 candidates, 6.27 core-hours, both orientations, replayable in one command). Supersedes the inherited 1e22, which was complete consecutive-powerful-pair list below 10^22 — a SINGLE unreplicated computation (Johnson's OEIS A060355 b-file, 39 terms, uploaded 15 Nov 2011; no published method, code or certificate); only (8,9) and (12167,12168) have a 3-full member (erdosproblems.com/366 remarks)",
+    "year": 2026
    },
    "upper": null,
    "witness_side": "lower",
@@ -2912,7 +2912,7 @@
    "witness_feasibility": "hard",
    "exact_feasibility": "wall",
    "status": "open",
-   "notes": "Both known examples have the 3-full member FIRST (8 = 2^3 before 9 = 3^2; 12167 = 23^3 before 12168), so the exact Lean-stub orientation is even more open. abc implies finitely many such n (Turturean, per erdosproblems). Honest rung: extending the A060355 sweep 10^22 -> 10^23 (~7e11 powerful numbers, days-scale) raises the verified bound; constructive Pell-style witnesses look blocked because 3-fullness of a pair member is a much stronger Diophantine constraint. Weaker open sub-question (Er76d): any pair of consecutive 3-full integers at all. Page freshly edited 2026-07-16.",
+   "notes": "Both known examples have the 3-full member FIRST (8 = 2^3 before 9 = 3^2; 12167 = 23^3 before 12168), so the exact Lean-stub orientation is even more open. abc implies finitely many such n (Turturean, per erdosproblems). DONE 2026-07-26 (certificates/erdos-366/): swept to 10^25, zero strict-orientation solutions. The lever was enumerating the CUBEFULL side (~X^(1/3)) instead of the powerful-PAIR side (~X^(1/2)) -- three decades for 6.27 core-hours. Extending the A060355 PAIR sweep itself remains the expensive rung and is untouched; constructive Pell-style witnesses look blocked because 3-fullness of a pair member is a much stronger Diophantine constraint. Weaker open sub-question (Er76d): any pair of consecutive 3-full integers at all. Page freshly edited 2026-07-16.",
    "provenance": {
     "added_by": "gap-map miner chunk 364-382",
     "date": "2026-07-18",
@@ -2926,9 +2926,15 @@
      "type": "literature",
      "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
      "date": "2026-07-18"
+    },
+    {
+     "type": "implementation",
+     "artifact": "certificates/erdos-366/ — exhaustive sweep of every cubefull number in (0,10^25], exact powerfulness test on both neighbours; zero strict-orientation solutions, the two known reverse pairs recovered as positive control",
+     "date": "2026-07-26",
+     "contract": "erdos-366-cubefull-sweep-1e25"
     }
    ],
-   "confidence": "C3"
+   "confidence": "C2"
   },
   {
    "problem": 367,

@@ -4,12 +4,17 @@
 `VERIFIABLE`): *are there any 2-full `n` such that `n+1` is 3-full?* That is,
 `p | n ⟹ p² | n` and `p | n+1 ⟹ p³ | n+1`.
 
-**What this certificate establishes:** no such `n` exists below the bound
-recorded in [`RESULT.json`](RESULT.json), by exhaustive enumeration of every
-cubefull number in the range and an exact powerfulness test on both of its
-neighbours. **This is a negative "verified to N" record, not a resolution** —
-and per Turturean's abc argument on the problem page, a resolution by search
-was never on the table.
+**What this certificate establishes: no such `n` exists for `n ≤ 10²⁵`** —
+a thousandfold extension of the `10²²` bound that has stood unmoved, and
+unreplicated, since 2011. Established by exhaustive enumeration of every
+cubefull number in the range (1,620,172,043 candidates, 6.27 core-hours) with
+an exact powerfulness test on both of its neighbours, in both orientations.
+
+**This is a negative "verified to N" record, not a resolution** — and per
+Turturean's abc argument on the problem page, a resolution by search was never
+on the table. Two independent runs support it: an earlier sweep to `10²⁴`
+(749,400,934 candidates, different shard count, different binary) agrees with
+this one everywhere they overlap.
 
 Replay:
 
@@ -107,7 +112,17 @@ can only read and re-derive.
   the `X^(1/2)` search and is untouched here.
 - The prior `10²²` bound is a **single unreplicated 2011 computation** with no
   published method or code. This sweep re-derives that region independently
-  rather than inheriting it, which is the more useful half of the result.
+  rather than inheriting it, which may be the more useful half of the result.
+
+## Calibration note
+
+The atlas budgeted this lane at `5.5·X^(1/3)` candidates citing A036966. That
+was wrong twice: A036966 carries no density comment, and the raw `x⁵y⁴z³`
+stream is not deduplicated, so it emits `ζ(4/3)·ζ(5/3) ≈ 7.65·X^(1/3)` triples
+against `4.659·X^(1/3)` *distinct* cubefull numbers (A362974). The measured
+counts — 749,400,934 at `10²⁴` and 1,620,172,043 at `10²⁵` — match the raw
+constant, and `atlas/finite_handle_triage.json` has been corrected to budget
+against it.
 
 ## Related upstream activity (recorded, not evaluated)
 

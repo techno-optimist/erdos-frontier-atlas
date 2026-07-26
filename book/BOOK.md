@@ -47,9 +47,9 @@ The state of this edition, generated from the data:
 
 | this edition | state |
 |---|---|
-| data through | **2026-07-21** (latest provenance/evidence date in the gap map) |
+| data through | **2026-07-26** (latest provenance/evidence date in the gap map) |
 | the ledger | **222** bounded quantities |
-| confidence | C0 0 · C1 0 · C2 4 · C3 218 |
+| confidence | C0 0 · C1 0 · C2 5 · C3 217 |
 | movements on the board | **9** (🟢 5 · 🔴 2 · 🟡 2) — corrected claims kept visible |
 
 ---
@@ -73,7 +73,7 @@ labeling *is* the release gate.
 
 - **222 bounded quantities** on the map ([`atlas/gap_map.json`](../atlas/gap_map.json)).
 - Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **2** lane-added, **208** agent-mined.
-- Confidence distribution (computed from `evidence[]`, never asserted): **C0** 0 · **C1** 0 · **C2** 4 · **C3** 218.
+- Confidence distribution (computed from `evidence[]`, never asserted): **C0** 0 · **C1** 0 · **C2** 5 · **C3** 217.
 - **81 witness-workable**: still open, with a side a single submitted
   construction — checked by the entry's stated verifier — can move.
 
@@ -353,8 +353,8 @@ fails any stored class the recorded evidence does not prove.
 |---|---|---|
 | C0 | contract-bound formal proof, machine-checked | 0 |
 | C1 | &ge;2 contract-bound independent replays at the claimed range | 0 |
-| C2 | exactly one contract-bound verified replay | 4 |
-| C3 | literature- or numerics-grade — no independent in-project verification artifact | 218 |
+| C2 | exactly one contract-bound verified replay | 5 |
+| C3 | literature- or numerics-grade — no independent in-project verification artifact | 217 |
 
 The remaining instruments are refusals. The **freshness gate**: no claim of
 "new" ships before a survey-literature check — this project's one retraction
