@@ -1682,7 +1682,13 @@ def main():
             for d in diffs[:40]:
                 print("  - " + d)
             return 1
-        print("     receipt-checked: %s" % RECEIPT.name)
+        # Unindented on purpose: tools/check_receipt_drift.py matches this line
+        # with str.startswith("receipt-checked:"), and that is how a CHECK-ONLY
+        # verifier declares it re-derived its receipt without rewriting it.
+        # Indented, the gate cannot see it and reports the receipt as never
+        # checked -- a false "unchecked" on a receipt that is compared field by
+        # field on every run.
+        print("receipt-checked: %s" % RECEIPT.name)
 
     print("\n%d of %d planted-failure controls rejected as required (count asserted, not just "
           "printed)." % (CONTROLS_PASSED, EXPECTED_CONTROLS))

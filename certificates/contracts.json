@@ -489,7 +489,7 @@
       "artifacts": [
         {
           "path": "certificates/graffiti-290/verify.py",
-          "sha256": "3d8c06f1dfdb372c860ee81d3051947c8e8d1d6671915d3d942ebee74fa44fc3"
+          "sha256": "8abda708893f18b7d1b61d69eecc9350aa3a6b334d8e1c32c507eb0ea5ee7cd9"
         },
         {
           "path": "certificates/graffiti-290/certificate.json",
