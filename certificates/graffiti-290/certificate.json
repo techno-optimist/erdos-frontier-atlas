@@ -1,0 +1,395 @@
+{
+  "claim_owner": "Graffiti (S. Fajtlowicz), conjecture 290, 'Written on the Wall' p.79; proof by Nathan Wilbanks and 'Annie' (AGNT Labs), 'A Proof of Graffiti 290'",
+  "convention": {
+    "connectivity": "the paper adds a connectivity hypothesis that Written on the Wall p.79 does not state; not needed in the verified range",
+    "convention_dependence": "The truth value of Graffiti 290 depends on which gravity definition is used, and BOTH halves of the situation must be reported. (a) A live refutation exists under the gravity definition in Aouchiche and Hansen's survey (Linear Algebra Appl. 432(9):2293-2322, 2010): Roucairol-Cazenave (arXiv:2409.18626v1, Sec. 5.2 'Erratum') report 290 there 'was solved instantly'. (b) Those same authors disavow that definition: they call the Written-on-the-Wall / Brewster-Dinneen-Faber definition 'the correct definition' and report that refutation was 'seemingly impossible' under it. This certificate is scoped to the Brewster reading -- the one the theorem is stated over -- and does NOT replay the refutation.",
+    "gravity_matrix": "Written-on-the-Wall / Brewster et al.: Gr(u,v) = 0 if u == v or if no path joins u to v, else d(u)d(v)/((n-1) d(u,v)); checked entry by entry against that transcription in check 1b, on connected and disconnected hand-computed cases, rather than assumed",
+    "mean_gravity": "not defined in Written on the Wall; the paper fixes it as the mean over all n^2 entries of the gravity matrix. Verified here under that convention AND under the mean over the n(n-1) off-diagonal entries.",
+    "readings": "verified in both the paper's reading (-lambda_{n-1} <= m/Gr_bar) and the literal Written-on-the-Wall reading (lambda_{n-1} <= m/Gr_bar); the paper's is the stronger of the two"
+  },
+  "corpus": {
+    "disconnected_checked": 678,
+    "edgeless_excluded": 9,
+    "girth_lt5_labelled_swept": 30092,
+    "girth_lt5_sweep_digest_sha256": "55fe709a7df9110f1c26af339ceb551ed63725332b835a6aed05d6d53b350d01",
+    "girth_lt5_sweep_up_to_order": 6,
+    "girth_lt5_violations_literal": 0,
+    "girth_lt5_violations_paper": 0,
+    "graphs_checked": 1360,
+    "smallest_margin_lower_bound": "201561/31744",
+    "smallest_margin_order": 4,
+    "tightest_ratio_lower_bound": "40960/7953",
+    "tightest_ratio_order": 5,
+    "verdict_count_pairs": [
+      [
+        0,
+        0,
+        1360
+      ]
+    ],
+    "verdict_digest_sha256": "b7ac0c575c819a5bfba1beb9fb43f896296c2574940d82d348141069d6d66d9a",
+    "verdict_records": 2720
+  },
+  "exhaustive_enumeration": {
+    "cutoff_reason": "compute, not mathematics -- see README",
+    "includes_disconnected": true,
+    "isomorphism_classes_by_order": [
+      1,
+      2,
+      3,
+      6,
+      11,
+      23,
+      48,
+      114,
+      293,
+      869
+    ],
+    "up_to_order": 10
+  },
+  "larger_instances": [
+    {
+      "adjacency_inertia_neg_zero": [
+        4,
+        0
+      ],
+      "count_above_rhs": 0,
+      "count_below_minus_rhs": 0,
+      "girth": 5,
+      "lhs_upper_bound": "16385/8192",
+      "m": 15,
+      "n": 10,
+      "name": "Petersen = Kneser K(5,2)",
+      "rhs": "25",
+      "verdict_digest_sha256": "fe5dd9e98fc8a41678fe8e6853259547fb0f413b4930cd1e9ad428cfb1c9e672"
+    },
+    {
+      "adjacency_inertia_neg_zero": [
+        7,
+        0
+      ],
+      "count_above_rhs": 0,
+      "count_below_minus_rhs": 0,
+      "girth": 6,
+      "lhs_upper_bound": "46347/32768",
+      "m": 21,
+      "n": 14,
+      "name": "Heawood = Fano incidence",
+      "rhs": "637/11",
+      "verdict_digest_sha256": "da2edfd59298b29d7a1f0c58a96ff6438ed53012c5d1a72c4750ab6efd212967"
+    },
+    {
+      "adjacency_inertia_neg_zero": [
+        13,
+        0
+      ],
+      "count_above_rhs": 0,
+      "count_below_minus_rhs": 0,
+      "girth": 6,
+      "lhs_upper_bound": "28379/16384",
+      "m": 52,
+      "n": 26,
+      "name": "PG(2,3) incidence",
+      "rhs": "325/2",
+      "verdict_digest_sha256": "f573eee5de28ee50ff0951673fbf4471514a1614c35ea3cba3147a41ee229b74"
+    },
+    {
+      "adjacency_inertia_neg_zero": [
+        20,
+        0
+      ],
+      "count_above_rhs": 0,
+      "count_below_minus_rhs": 0,
+      "girth": 6,
+      "lhs_upper_bound": "393225/131072",
+      "m": 70,
+      "n": 35,
+      "name": "Odd graph O_4 = Kneser K(7,3)",
+      "rhs": "20825/64",
+      "verdict_digest_sha256": "823d37c458788edb73ab13c08ab05438fbaa49156f1d6240e6a19782fa6dd3d0"
+    },
+    {
+      "adjacency_inertia_neg_zero": [
+        21,
+        0
+      ],
+      "count_above_rhs": 0,
+      "count_below_minus_rhs": 0,
+      "girth": 5,
+      "lhs_upper_bound": "393225/131072",
+      "m": 175,
+      "n": 50,
+      "name": "Hoffman-Singleton",
+      "rhs": "625/2",
+      "verdict_digest_sha256": "cf0902b2643b66aa9519ce2a47fb962ec1bcd4b37b768f62ed4f76daf7f8a050"
+    },
+    {
+      "adjacency_inertia_neg_zero": [
+        2,
+        0
+      ],
+      "count_above_rhs": 0,
+      "count_below_minus_rhs": 0,
+      "girth": 5,
+      "lhs_upper_bound": "13255/8192",
+      "m": 5,
+      "n": 5,
+      "name": "cycle C_5",
+      "rhs": "25/3",
+      "verdict_digest_sha256": "b3f6d1f5390326599207be001549c676c3de20ad10ec041e389a19107acb4bcd"
+    },
+    {
+      "adjacency_inertia_neg_zero": [
+        4,
+        0
+      ],
+      "count_above_rhs": 0,
+      "count_below_minus_rhs": 0,
+      "girth": 7,
+      "lhs_upper_bound": "14763/8192",
+      "m": 7,
+      "n": 7,
+      "name": "cycle C_7",
+      "rhs": "441/22",
+      "verdict_digest_sha256": "16cf4ddd5608b886c912315461c29fbd301be16e54f0d6d46a343c821359c6b4"
+    },
+    {
+      "adjacency_inertia_neg_zero": [
+        6,
+        0
+      ],
+      "count_above_rhs": 0,
+      "count_below_minus_rhs": 0,
+      "girth": 11,
+      "lhs_upper_bound": "125763/65536",
+      "m": 11,
+      "n": 11,
+      "name": "cycle C_11",
+      "rhs": "9075/137",
+      "verdict_digest_sha256": "16dc17faa6b7f52059c016b30fa7828eed5031e51280555448c012716f82570d"
+    },
+    {
+      "adjacency_inertia_neg_zero": [
+        6,
+        0
+      ],
+      "count_above_rhs": 0,
+      "count_below_minus_rhs": 0,
+      "girth": 13,
+      "lhs_upper_bound": "63635/32768",
+      "m": 13,
+      "n": 13,
+      "name": "cycle C_13",
+      "rhs": "5070/49",
+      "verdict_digest_sha256": "515850c28b2372ad5e0895fd59e71e501cd368f455936d10a62dc2ea05be0b85"
+    },
+    {
+      "adjacency_inertia_neg_zero": [
+        8,
+        0
+      ],
+      "count_above_rhs": 0,
+      "count_below_minus_rhs": 0,
+      "girth": 17,
+      "lhs_upper_bound": "128843/65536",
+      "m": 17,
+      "n": 17,
+      "name": "cycle C_17",
+      "rhs": "161840/761",
+      "verdict_digest_sha256": "a655cdc673f7ea61be0de12d9ac7fc90d866bda51fb5749e73e5525f63a5a4cc"
+    },
+    {
+      "adjacency_inertia_neg_zero": [
+        12,
+        0
+      ],
+      "count_above_rhs": 0,
+      "count_below_minus_rhs": 0,
+      "girth": 23,
+      "lhs_upper_bound": "64929/32768",
+      "m": 23,
+      "n": 23,
+      "name": "cycle C_23",
+      "rhs": "40325670/83711",
+      "verdict_digest_sha256": "53aba3f47ecf790c3507285c457742d08af03b40a445135f0173d75a938e75bf"
+    },
+    {
+      "adjacency_inertia_neg_zero": [
+        16,
+        0
+      ],
+      "count_above_rhs": 0,
+      "count_below_minus_rhs": 0,
+      "girth": 31,
+      "lhs_upper_bound": "260803/131072",
+      "m": 31,
+      "n": 31,
+      "name": "cycle C_31",
+      "rhs": "1298647350/1195757",
+      "verdict_digest_sha256": "c2bebdf1e1e9e0d6e1c64ac70a1b5c2abf50c5a048b773574b64b695bf85d5f7"
+    },
+    {
+      "adjacency_inertia_neg_zero": [
+        19,
+        2
+      ],
+      "count_above_rhs": 0,
+      "count_below_minus_rhs": 0,
+      "girth": 40,
+      "lhs_upper_bound": "32365/16384",
+      "m": 40,
+      "n": 40,
+      "name": "cycle C_40",
+      "rhs": "605260656000/277235737",
+      "verdict_digest_sha256": "d4653e81705f0eeccdb771474c50158c6b3b05f3c4fc1edcf525d8affeb55fec"
+    },
+    {
+      "adjacency_inertia_neg_zero": [
+        8,
+        0
+      ],
+      "count_above_rhs": 0,
+      "count_below_minus_rhs": 0,
+      "girth": 5,
+      "lhs_upper_bound": "1263/512",
+      "m": 26,
+      "n": 16,
+      "name": "pseudo-random girth-5 n=16 seed=1",
+      "rhs": "149760/2251",
+      "verdict_digest_sha256": "f6804448cea95585a609caf9f04f0671db09eb4ecb2be401d5da31b6dd26fe5f"
+    },
+    {
+      "adjacency_inertia_neg_zero": [
+        7,
+        0
+      ],
+      "count_above_rhs": 0,
+      "count_below_minus_rhs": 0,
+      "girth": 5,
+      "lhs_upper_bound": "39/16",
+      "m": 26,
+      "n": 16,
+      "name": "pseudo-random girth-5 n=16 seed=2",
+      "rhs": "299520/4361",
+      "verdict_digest_sha256": "e483e5426c1956768b3cef9b8f77be983c1703facd2d682c1ba271854d8f4e42"
+    },
+    {
+      "adjacency_inertia_neg_zero": [
+        11,
+        0
+      ],
+      "count_above_rhs": 0,
+      "count_below_minus_rhs": 0,
+      "girth": 5,
+      "lhs_upper_bound": "367625/131072",
+      "m": 50,
+      "n": 25,
+      "name": "pseudo-random girth-5 n=25 seed=1",
+      "rhs": "2250000/15617",
+      "verdict_digest_sha256": "34b8e609859f2b1991f77cb510e2cc8667fbb18cfdddd3f5189434b446e5fbe7"
+    },
+    {
+      "adjacency_inertia_neg_zero": [
+        12,
+        0
+      ],
+      "count_above_rhs": 0,
+      "count_below_minus_rhs": 0,
+      "girth": 5,
+      "lhs_upper_bound": "185475/65536",
+      "m": 48,
+      "n": 25,
+      "name": "pseudo-random girth-5 n=25 seed=2",
+      "rhs": "2160000/14281",
+      "verdict_digest_sha256": "667ff564b1c436e81bc15705ff2c861c8dbd1f1b35d5d6442f5135d57b3695a5"
+    },
+    {
+      "adjacency_inertia_neg_zero": [
+        15,
+        0
+      ],
+      "count_above_rhs": 0,
+      "count_below_minus_rhs": 0,
+      "girth": 5,
+      "lhs_upper_bound": "798699/262144",
+      "m": 72,
+      "n": 33,
+      "name": "pseudo-random girth-5 n=33 seed=1",
+      "rhs": "7527168/31651",
+      "verdict_digest_sha256": "88820ba463abb79b8c9a343d2edbdf67e65bca2096ef1008384b6ce4e4f35584"
+    },
+    {
+      "adjacency_inertia_neg_zero": [
+        15,
+        0
+      ],
+      "count_above_rhs": 0,
+      "count_below_minus_rhs": 0,
+      "girth": 5,
+      "lhs_upper_bound": "402303/131072",
+      "m": 74,
+      "n": 33,
+      "name": "pseudo-random girth-5 n=33 seed=2",
+      "rhs": "2578752/11135",
+      "verdict_digest_sha256": "4695cf6a44c0e7199f76f243de11606531cedc6c1d6d76ef3cbaa70007f55594"
+    },
+    {
+      "adjacency_inertia_neg_zero": [
+        19,
+        0
+      ],
+      "count_above_rhs": 0,
+      "count_below_minus_rhs": 0,
+      "girth": 5,
+      "lhs_upper_bound": "26635/8192",
+      "m": 95,
+      "n": 40,
+      "name": "pseudo-random girth-5 n=40 seed=1",
+      "rhs": "8892000/26441",
+      "verdict_digest_sha256": "31cba8e5e83288f6e85f2be00da8bdf28ffffb3e711abb5ce14fed23aada5a7d"
+    },
+    {
+      "adjacency_inertia_neg_zero": [
+        19,
+        0
+      ],
+      "count_above_rhs": 0,
+      "count_below_minus_rhs": 0,
+      "girth": 5,
+      "lhs_upper_bound": "27065/8192",
+      "m": 95,
+      "n": 40,
+      "name": "pseudo-random girth-5 n=40 seed=2",
+      "rhs": "49400/149",
+      "verdict_digest_sha256": "60d13e7017456004185785722f0ca183050c0bf610ec9155b556f9d184fbff76"
+    }
+  ],
+  "not_certified_here": [
+    "novelty and priority of the proof -- not assessed",
+    "the paper's own proof, its lemmas, its quartic-positivity step, and its n >= 7 argument -- NOT replayed; only the inequality's truth on a finite family is checked",
+    "the conjecture for n > 10 outside the explicitly listed larger instances",
+    "the Aouchiche-Hansen gravity definition and the refutation reported under it -- we did not obtain that definition and did not replay that refutation; we also do not adjudicate Roucairol-Cazenave's own judgement that it is a misstatement",
+    "the text of Written on the Wall p.79 and p.52 -- quoted here at second hand via Roucairol-Cazenave, not read in the original by this certificate",
+    "whether the girth >= 5 hypothesis is necessary -- see README; our search found no girth < 5 counterexample either, which is a fact about our range, not a theorem"
+  ],
+  "not_defended_against": "A corrupted VERIFIER. Every control in this run is a corrupted INPUT; nothing in verify.py can detect an edit to verify.py (a stubbed function, a no-oped failure accumulator, a hardcoded verdict). That boundary is held outside the file: the sha256 of verify.py and of this receipt pinned in certificates/contracts.json, the git history of both, and review.",
+  "our_contribution": "independent finite verification only -- no part of the conjecture or of the proof is a result of this repository",
+  "planted_failure_controls": {
+    "expected": 19,
+    "note": "Every control block must run and be rejected. The count is asserted against EXPECTED_CONTROLS before this receipt is built, so removing a control block fails the run rather than quietly shrinking the battery.",
+    "rejected": 19
+  },
+  "verdict_binding": "corpus.verdict_digest_sha256 is a sha256 over the canonical sorted stream of the verdict records RETURNED by holds_paper and holds_literal on every corpus graph under both mean conventions. Each record is (holds, exact_count, m/Gr_bar, spectral_index), the last being the inertia of the adjacency matrix -- the field with per-graph entropy that cannot be produced without running the exact congruence. It was added after mutant mutD, which returned (True, 0, rhs(...)) with no spectral work at all, reproduced the previous receipt byte for byte. No shipped field in this receipt is computed around the verdict path. Controls 6e and 6f plant a stubbed verdict function, a fabricated count, a fabricated m/Gr_bar, mutD itself, a fabricated inertia index, and a genuinely FAILING instance on which the verdict path must return False.",
+  "worked_examples_from_the_paper": {
+    "Hoffman-Singleton": {
+      "lhs": "3",
+      "margin": "619/2",
+      "rhs": "625/2"
+    },
+    "Petersen": {
+      "lhs": "2",
+      "margin": "23",
+      "rhs": "25"
+    }
+  }
+}
