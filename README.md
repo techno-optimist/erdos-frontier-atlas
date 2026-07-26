@@ -153,6 +153,35 @@ The engine is reusable: [`tools/crater.py`](tools/crater.py) generalizes it into
 polarity-aware crater tool, so the next falsification anywhere gets the same
 treatment.
 
+## The AI-claim overlay — 89 claims, 0 status changes
+
+Claimed AI-assisted resolutions of Erdős problems now appear faster than anyone
+can check them. [`atlas/ai_claims.json`](atlas/ai_claims.json) records **89** of
+them, transcribed from the public registry
+[*Open Math Problems Claimed to Be Solved with AI*](https://aimath.robertj1.com/)
+(retrieved 2026-07-26, page pinned by `sha256`), which carries 217 records in
+total. All 89 were already indexed in our 1217-problem hub; what was missing was
+the annotation.
+
+**Recording a claim changes no status, anywhere.** A status changes when the
+*upstream* record changes — not when a claim appears. That is not a policy
+statement, it is
+[`tools/validate_ai_claims.py`](tools/validate_ai_claims.py): every entry must
+carry `status_changed_by_this_claim: false`, every claim must cite a source, the
+overlay's copy of each status must agree with the hub it annotates, and any
+verdict of our own stronger than *"not independently checked"* must name a
+replayable certificate. This repo learned the rule the expensive way on **#552**,
+where its own new-value claim was retracted after publication, and applies it to
+**#421**, where a circulating solution left the upstream record open.
+
+The overlay's real use is triage: **21 of the 89 are claims against problems this
+atlas still records as open — or, in one case, as a wall.** That case is
+[**#138**](https://www.erdosproblems.com/138) (`lim (W(k))^{1/k} = ∞`, a $500
+problem), which we list under [walls](atlas/walls.md) as not worth compute.
+Either the claim is wrong or our wall is stale, and both are worth knowing.
+None of the 21 has been independently checked by us yet; the overlay says so in
+every entry rather than leaving it to be assumed.
+
 ## Independent verifications of other people's results
 
 Claims arrive faster than anyone can check them. A replay a stranger can run in

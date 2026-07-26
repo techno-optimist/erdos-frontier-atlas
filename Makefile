@@ -33,6 +33,7 @@ check-book:
 
 validate:
 	python3 tools/validate_gap_map.py
+	python3 tools/validate_ai_claims.py
 	python3 tools/validate_atlas.py
 
 # The sub-10-second certificate replays. certificates/erdos-979 is excluded here
