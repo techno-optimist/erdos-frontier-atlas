@@ -1,16 +1,23 @@
 #!/usr/bin/env python3
 """Independent exact replay of the power-weighted-lift Keller family F_{k,d} : A^3 -> A^3.
 
-THE FAMILY IS NOT OURS.  It is claimed by Nathan Wilbanks and "Annie" (AGNT Labs
-Technical Report III, v1.0, 2026-07-21), "Power-Weighted Lifts: Explicit
-Higher-Weight Noninjective Keller Maps".  What is ours is only this replay: a
-from-scratch reimplementation of their Section 3 PROSE -- not a replay of their
-receipts, which have no intact chain -- in exact rational arithmetic, plus the
-checks and the planted failures below.
+THE FAMILY IS NOT OURS.  It is claimed by Annie (AGNT Labs, Technical Report III,
+v1.0, 21 July 2026), "Power-Weighted Lifts: Explicit Higher-Weight Noninjective
+Keller Maps in Three Variables".  That byline is the whole byline: the document
+names no other author.  What is ours is only this replay: a from-scratch
+reimplementation of its Section 3 PROSE -- not a replay of its receipts, which
+have no intact chain -- in exact rational arithmetic, plus the checks and the
+planted failures below.
 
-PRIOR ART: by the paper's own account the k = 1 row of the grid is an instance
-of Gallagher's published one-variable weighted-lift recipe, so 7 of the 27
-members verified here are not new with this paper (see PRIOR_ART_K1).
+PRIOR ART (our reading, not the report's words): we read the report as placing
+the k = 1 row of the grid inside Alexis Gallagher's earlier one-variable
+weighted-lift work, so 7 of the 27 members verified here look to us not new with
+this paper.  See PRIOR_ART_K1 for the report's actual sentences and GALLAGHER for
+the citation its own bibliography gives.
+
+WHAT THIS FILE CANNOT DEFEND AGAINST: an edit to this file.  See the section of
+that name in README.md; the defence is the sha256 pinned in
+certificates/contracts.json plus the git history, not any check written here.
 
 Replay:   python3 -I verify.py
 Emit:     python3 -I verify.py --emit      (rewrites witness.json; NOT the default)
@@ -30,17 +37,57 @@ RECEIPT = HERE / "witness.json"
 # The grid the paper tabulates.
 GRID = [(k, d) for k in range(1, 7) for d in range(k + 1, 9)]
 
-# Prior art, by the paper's OWN account: the report states that Gallagher's
-# published notes already describe the one-variable weighted-lift mechanism of
-# the k = 1 row, so those 7 of the 27 members are not new with this paper.  This
-# string is printed in the header, attached to every k = 1 member record, and
-# stored at the top level of the receipt: a reader of the transcript alone must
-# not be able to mistake that row for something the paper introduces.  We did
-# not locate a canonical citation for those notes and we do not adjudicate the
-# overlap -- we record the paper's own disclaimer.
-PRIOR_ART_K1 = ("k=1 row: prior art -- an instance of Gallagher's published "
-                "one-variable weighted-lift recipe, by the paper's own account; "
-                "not new with this paper and not adjudicated here")
+# --------------------------------------------------------------------------
+# 0.  Gate call tracing.
+#
+#     Every function marked @gate records its name when it is called.  This buys
+#     exactly one thing, and it is worth being precise about what: after the
+#     default verification path has finished, we snapshot the set of gates it
+#     actually called, and then require each planted-failure control to name a
+#     gate from that snapshot.  So "the control is scored against a gate the
+#     default path itself runs" stops being a sentence in a comment and becomes
+#     something this run measures.
+#
+#     It does NOT measure that the control's rejection came from that gate and
+#     nowhere else -- the control returns the gate call's own verdict, which is a
+#     source-level property a reader must check by reading, not something the
+#     program can establish about itself.
+# --------------------------------------------------------------------------
+
+GATE_CALLS = set()
+
+
+def gate(fn):
+    def wrapper(*a, **kw):
+        GATE_CALLS.add(fn.__name__)
+        return fn(*a, **kw)
+    wrapper.__name__ = fn.__name__
+    wrapper.__doc__ = fn.__doc__
+    wrapper.__wrapped__ = fn
+    return wrapper
+
+# Prior art.  The inference below is OURS, not the report's.  The report does
+# not say "the k = 1 row is prior art"; it says the two things quoted in
+# PAPER_PRIOR_ART_QUOTE, and we read them as putting that row inside Gallagher's
+# earlier work.  Our reading errs toward de-claiming, which is the safe
+# direction, but it is still ours and it is labelled as ours everywhere it
+# appears: the header, every k = 1 member record, and the top of the receipt.  A
+# reader of the transcript alone must be able to tell our inference from their
+# assertion.
+PAPER_PRIOR_ART_QUOTE = (
+    "\"Gallagher's subsequent public notes describe a one-variable weighted-lift "
+    "mechanism in that row and an atlas realizing generic degrees at least three "
+    "... The old weight row is k=1; the new construction works for every k>=1\"; "
+    "and, separately, \"Historical priority outside the searched public record is "
+    "not asserted.\"")
+GALLAGHER = ("Alexis Gallagher, \"Exact certificate atlas: Generic fiber degrees 3 "
+             "through 100,\" jacobianfun.org/counterexamples, accessed July 21, 2026 "
+             "(the citation given in the report's own bibliography)")
+PRIOR_ART_K1 = ("k=1 row: OUR READING of the report -- not its words -- is that this "
+                "row lies inside Gallagher's earlier one-variable weighted-lift work "
+                "and so is not new with this paper; see prior_art at the top of this "
+                "receipt for the report's actual sentences. Priority is not "
+                "adjudicated here, by us or by them.")
 
 
 # --------------------------------------------------------------------------
@@ -243,6 +290,7 @@ def build_alpha_beta(k, d, c_v=None):
     return alpha, beta, g
 
 
+@gate
 def build_family(k, d, c_v=None):
     """Returns (F1, F2, F3) or None if the x-divisions do not come out exact."""
     alpha, beta, g = build_alpha_beta(k, d, c_v)
@@ -421,6 +469,7 @@ def collision_root_of_unity(k, d):
     return ring, P1, P2, "root-of-unity"
 
 
+@gate
 def check_collision(F, ring, P1, P2):
     """The non-injectivity gate.  Distinctness FIRST -- equal images between a
     point and itself is not evidence of anything."""
@@ -487,6 +536,7 @@ def fibre_poly(k, d, V, T):
     return uadd(uQ(k, d), uadd(umono(-Fr(V), 1), umono(Fr(k + 1) * Fr(T), 0)))
 
 
+@gate
 def fibre_is_etale(k, d, V, T):
     G = fibre_poly(k, d, V, T)
     if len(G) != d + 2:
@@ -523,6 +573,7 @@ def fibre_point_count(k, d, V, T):
     return k * distinct_roots
 
 
+@gate
 def generic_degree_ok(k, d, V, T, claimed):
     """THE gate for the generic-degree leg: `claimed` must equal the count.
 
@@ -566,6 +617,7 @@ PAPER_23 = (
 # 8.  Per-member verification.
 # --------------------------------------------------------------------------
 
+@gate
 def det_ok(F, claimed):
     """THE determinant gate: det J F must BE the claimed constant, coefficient by
     coefficient.  Shared by the default path and control C3 so that the control
@@ -573,6 +625,7 @@ def det_ok(F, claimed):
     return pjacdet(F) == pconst(Fr(claimed))
 
 
+@gate
 def anchor_ok(anchor):
     """THE anchor gate: our independent rebuild of (k,d)=(2,3) must equal the
     expansion `anchor` printed in the paper.  Shared by the default path (which
@@ -581,15 +634,53 @@ def anchor_ok(anchor):
     return F23 is not None and tuple(F23) == tuple(anchor)
 
 
-def weights_ok(F, k):
-    want = (-(k + 1), -k, 1)
-    for f, wt in zip(F, want):
-        for (a, b, c) in f:
-            if a - k * b - (k + 1) * c != wt:
-                return False
-    return True
+def source_grading(k):
+    """The grading of the source torus: deg(x, y, z) = (1, -k, -(k+1)).
+
+    This triple is a DEFINITION -- the torus action the equivariance claim is
+    made with respect to -- so it is not something a check can discover.  What
+    makes it non-free in the receipt is that the very object recorded there is
+    the one handed to component_weights(): change it and the isobaric
+    measurement changes with it, which is what control C13 exercises.
+    """
+    return (1, -k, -(k + 1))
 
 
+def component_weights(F, grading):
+    """MEASURE the weight of each component of F under `grading`.
+
+    Returns [w1, w2, w3] when every component is isobaric, and None as soon as
+    one is not -- there is no weight to report for a component whose monomials
+    disagree, and reporting one anyway is the restatement this function exists
+    to prevent.
+    """
+    wx, wy, wz = grading
+    out = []
+    for f in F:
+        seen = {a * wx + b * wy + c * wz for (a, b, c) in f}
+        if len(seen) != 1:
+            return None
+        out.append(seen.pop())
+    return out
+
+
+@gate
+def weights_ok(F, k, grading=None, recorded=None):
+    """THE weight gate: under the source grading, F1, F2, F3 must be isobaric of
+    weights (-(k+1), -k, 1).
+
+    Both of the receipt's weight fields are fed back through here: `grading` is
+    the triple the receipt records (mutate it and no component is isobaric), and
+    `recorded` is the weight list the receipt records (mutate it and it stops
+    equalling the measurement).  Neither is a free restatement any more.
+    """
+    got = component_weights(F, source_grading(k) if grading is None else grading)
+    if got is None or got != [-(k + 1), -k, 1]:
+        return False
+    return recorded is None or recorded == got
+
+
+@gate
 def gamma_cancellation_ok(k, d):
     """(k+1) p(w) == w q(w) - Q(w)  and  the two closed forms used for alpha,
     beta really equal p(w)/gamma^{k+1} and q(w)/gamma^k -- checked by
@@ -612,6 +703,7 @@ def gamma_cancellation_ok(k, d):
     return True
 
 
+@gate
 def fibre_identity_ok(F, k, d, tamper=False):
     """(Y Z^k) W - Q(W) - (k+1) (X Z^{k+1}) == 0 identically, W = u*gamma."""
     _u, _g, w = build_uv(k, d)
@@ -624,6 +716,182 @@ def fibre_identity_ok(F, k, d, tamper=False):
     lhs = psub(lhs, QW)
     lhs = psub(lhs, pscal(pmul(X, ppow(Z, k + 1)), k + 1))
     return not lhs
+
+
+PAPER_WITNESS = "F(1,0,0) = F(-1,0,2) = (0,0,1), stated for k and d both odd"
+
+
+def paper_witness_holds(F):
+    """DOES the report's one stated witness hold for this member?  Measured on
+    every member of the grid, not assumed on the parity class -- this boolean is
+    what the scoping correction is counted from, so it must be a measurement."""
+    q = QRing()
+    a = image(F, (Fr(1), Fr(0), Fr(0)), q)
+    b = image(F, (Fr(-1), Fr(0), Fr(2)), q)
+    return a == b and a == (Fr(0), Fr(0), Fr(1))
+
+
+def paper_witness_coverage(members):
+    """COUNT the members on which the paper's witness was observed to hold."""
+    return sum(1 for r in members if r["paper_witness_holds"])
+
+
+@gate
+def coverage_ok(members, claimed):
+    """THE gate for the scoping correction: `claimed` must equal the counted
+    coverage.  Without it, `holds_on_members` was a free restatement -- setting
+    it to len(members) would have republished the paper's 6-member witness as
+    covering all 27 and erased our own negative finding under a green replay."""
+    counted = paper_witness_coverage(members)
+    if counted != claimed:
+        return False, ("counted %d members where the paper's witness holds, claim says %d"
+                       % (counted, claimed))
+    return True, "ok"
+
+
+def ring_from_name(name):
+    """Rebuild the coefficient ring from the name the receipt records."""
+    if name == "Q":
+        return QRing()
+    if isinstance(name, str) and name.startswith("Q(zeta_") and name.endswith(")"):
+        try:
+            r = int(name[len("Q(zeta_"):-1])
+        except ValueError:
+            return None
+        return CycRing(r) if r in (3, 5) else None
+    return None
+
+
+def parse_element(ring, s):
+    """Inverse of ring.key(): turn a recorded coordinate back into a ring element."""
+    if not isinstance(s, str):
+        return None
+    try:
+        if isinstance(ring, QRing):
+            return Fr(s)
+        if not (s.startswith("[") and s.endswith("]")):
+            return None
+        parts = s[1:-1].split(",")
+        if len(parts) != ring.n:
+            return None
+        return tuple(Fr(p) for p in parts)
+    except (ValueError, ZeroDivisionError):
+        return None
+
+
+def recorded_collision_ok(rec, F):
+    """Re-check the collision the receipt RECORDS, by reading it back.
+
+    The pair was checked when it was derived, but the receipt carries strings,
+    and strings nothing reads can say anything.  So the points are parsed out of
+    the record and put back through check_collision, and the recorded image is
+    re-evaluated from the parsed p1.
+    """
+    col = rec.get("collision")
+    if not isinstance(col, dict):
+        return False, "no collision record"
+    if col.get("mechanism") not in {"sign", "root-of-unity", "two-root"}:
+        return False, "unknown collision mechanism"
+    ring = ring_from_name(col.get("field"))
+    if ring is None:
+        return False, "collision field is not a ring this verifier can rebuild"
+    pts = []
+    for key in ("p1", "p2"):
+        raw = col.get(key)
+        if not (isinstance(raw, list) and len(raw) == 3):
+            return False, "%s is malformed" % key
+        parsed = [parse_element(ring, s) for s in raw]
+        if any(p is None for p in parsed):
+            return False, "%s does not parse over %s" % (key, ring.name)
+        pts.append(tuple(parsed))
+    good, why = check_collision(F, ring, pts[0], pts[1])
+    if not good:
+        return False, "the recorded collision pair does not collide -- %s" % why
+    if col.get("image") != [ring.key(c) for c in image(F, pts[0], ring)]:
+        return False, "the recorded collision image is not F(p1)"
+    return True, "ok"
+
+
+@gate
+def member_record_ok(rec):
+    """THE per-member record gate, and the free-restatement sweep.
+
+    Every claim-bearing field of a member record is RE-DERIVED here from that
+    record's own (k, d) and compared with what the receipt will carry.  The
+    point is coverage, not novelty: a field that is written into the record but
+    read by no gate can be edited to anything and republished under a green
+    replay -- that is how the generic degree and the torus weights were both
+    broken.  If a new field is added and not checked here, control C15 fails.
+    """
+    k, d = rec.get("k"), rec.get("d")
+    if not (isinstance(k, int) and isinstance(d, int) and 1 <= k < d):
+        return False, "recorded (k,d) is not a valid grid label"
+    F = build_family(k, d)
+    if F is None:
+        return False, "no polynomial family at the recorded (k,d)"
+    if rec.get("monomials") != [len(F[0]), len(F[1]), len(F[2])]:
+        return False, "monomials disagree with the family at the recorded (k,d)"
+    if rec.get("det") != str(Fr(-k, k + 1)):
+        return False, "det disagrees with -k/(k+1) at the recorded k"
+    if rec.get("source_grading") != list(source_grading(k)):
+        return False, "source_grading is not the grading of the recorded k"
+    if not weights_ok(F, k, grading=tuple(rec["source_grading"]),
+                      recorded=rec.get("component_weights")):
+        return False, "component_weights disagree with the measurement"
+    vt = rec.get("etale_target_VT")
+    if not (isinstance(vt, list) and len(vt) == 2):
+        return False, "etale_target_VT is malformed"
+    if not generic_degree_ok(k, d, Fr(vt[0]), Fr(vt[1]), rec.get("generic_degree"))[0]:
+        return False, "generic_degree disagrees with the count at the recorded target"
+    if rec.get("paper_witness_holds") is not paper_witness_holds(F):
+        return False, "paper_witness_holds disagrees with the exact evaluation"
+    if ("prior_art" in rec) != (k == 1):
+        return False, "the prior-art marking does not match the recorded k"
+    good, why = recorded_collision_ok(rec, F)
+    if not good:
+        return False, why
+    return True, "ok"
+
+
+@gate
+def receipt_totals_ok(receipt):
+    """THE totals gate: every count at the top of the receipt must be
+    re-derivable from the member records that same receipt carries.  Same
+    reason as member_record_ok -- a summary number nothing reads is a number
+    anyone can edit.  Control C16 mutates each of them in turn."""
+    m = receipt.get("members") or []
+    checks = {
+        "collisions_over_Q": sum(1 for r in m if r["collision"]["field"] == "Q"),
+        "collisions_over_cyclotomic": sum(1 for r in m if r["collision"]["field"] != "Q"),
+        "controls_registered": len(CONTROL_REGISTRY),
+    }
+    for key, want in checks.items():
+        if receipt.get(key) != want:
+            return False, "%s: receipt says %r, re-derived %r" % (key, receipt.get(key), want)
+    ks = sorted({r["k"] for r in m})
+    ds = sorted({r["d"] for r in m})
+    if receipt.get("grid") != {"k_min": min(ks), "k_max": max(ks),
+                               "d_max": max(ds), "members": len(m)}:
+        return False, "grid bounds do not match the member records"
+    if receipt.get("prior_art", {}).get("members_affected") != sum(
+            1 for r in m if "prior_art" in r):
+        return False, "prior_art.members_affected does not match the member records"
+    sc = receipt.get("scoping_correction", {})
+    if sc.get("grid_members") != len(m):
+        return False, "scoping_correction.grid_members does not match the member records"
+    if not coverage_ok(m, sc.get("holds_on_members"))[0]:
+        return False, "scoping_correction.holds_on_members does not match the count"
+    return True, "ok"
+
+
+@gate
+def receipt_matches(text, blob):
+    """THE receipt gate: the committed witness.json must be byte-identical to the
+    freshly recomputed serialisation.  main()'s default path calls it with the
+    committed file's bytes; control C11 calls this same function with a mutated
+    copy.  (It used to be an `==` written inside C11, which tested the control's
+    own comparison rather than the gate.)"""
+    return text == blob
 
 
 def verify_member(k, d):
@@ -639,9 +907,16 @@ def verify_member(k, d):
         raise AssertionError("(%d,%d): det JF is not the constant %s" % (k, d, want))
     rec["det"] = str(want)
 
-    if not weights_ok(F, k):
+    # MEASURED, then gated THROUGH THE RECORDED VALUES.  `weights` used to be
+    # the literal [1, -k, -k-1] with no gate reading it, so mutating it to
+    # [1, -k, -k-2] published wrong torus weights for all 27 members under a
+    # fully green replay.  Both fields below are now handed back to the gate.
+    grading = source_grading(k)
+    rec["source_grading"] = list(grading)
+    rec["component_weights"] = component_weights(F, grading)
+    if not weights_ok(F, k, grading=tuple(rec["source_grading"]),
+                      recorded=rec["component_weights"]):
         raise AssertionError("(%d,%d): torus weights (1,-k,-k-1) violated" % (k, d))
-    rec["weights"] = [1, -k, -k - 1]
 
     if not gamma_cancellation_ok(k, d):
         raise AssertionError("(%d,%d): gamma-cancellation identity failed" % (k, d))
@@ -654,9 +929,10 @@ def verify_member(k, d):
         raise AssertionError("(%d,%d): no etale rational target found" % (k, d))
     V0, T0 = tgt
     # COUNTED from the fibre polynomial the etale gate just measured -- never
-    # restated from the paper's formula.  Then gated twice: once against that
-    # same count (so a mutated number here is rejected), once against the
-    # paper's claimed k(d+1) (so this leg can falsify the paper).
+    # restated from the paper's formula.  Then gated against that same count, so
+    # a mutated number here is rejected (control C12).  It is also compared with
+    # the paper's k(d+1), but see the comment on that branch: the comparison is
+    # unreachable, and it is not a falsification test.
     counted = fibre_point_count(k, d, V0, T0)
     if counted is None:
         raise AssertionError("(%d,%d): fibre point count refused a non-etale target" % (k, d))
@@ -665,6 +941,13 @@ def verify_member(k, d):
     if not good:
         raise AssertionError("(%d,%d): generic-degree gate rejected the recorded number -- %s"
                              % (k, d, why))
+    # A CONSISTENCY CHECK, AND IT CANNOT FIRE.  fibre_is_etale has already
+    # forced deg G = d+1 and gcd(G, G') constant, so whenever `counted` is not
+    # None it is identically k*(d+1).  The branch is kept because it is the
+    # sentence a reader expects to see enforced, but it is unreachable, and this
+    # leg therefore does NOT falsify the paper's formula -- do not say that it
+    # does.  What is real here is the gate above: the recorded number must equal
+    # what was counted (control C12).
     if rec["generic_degree"] != k * (d + 1):
         raise AssertionError(
             "(%d,%d): counted %d fibre points, but the paper claims k(d+1) = %d"
@@ -690,21 +973,27 @@ def verify_member(k, d):
         "image": [ring.key(c) for c in i1],
     }
 
-    # The paper's own stated witness, where its parity hypothesis applies.
-    if k % 2 and d % 2:
-        q = QRing()
-        a = image(F, (Fr(1), Fr(0), Fr(0)), q)
-        b = image(F, (Fr(-1), Fr(0), Fr(2)), q)
-        if a != b or a != (Fr(0), Fr(0), Fr(1)):
-            raise AssertionError("(%d,%d): paper's (1,0,0)/(-1,0,2) witness failed" % (k, d))
-        rec["paper_witness_odd_odd"] = "F(1,0,0) = F(-1,0,2) = (0,0,1)"
+    # The paper's own stated witness, MEASURED on every member -- not only where
+    # its parity hypothesis applies.  The scoping correction is counted from
+    # this boolean, so it has to be a measurement on all 27, and where the
+    # parity hypothesis does apply the paper's claim must hold.
+    rec["paper_witness_holds"] = paper_witness_holds(F)
+    if k % 2 and d % 2 and not rec["paper_witness_holds"]:
+        raise AssertionError("(%d,%d): paper's (1,0,0)/(-1,0,2) witness failed" % (k, d))
 
-    # Prior art, machine-readable and per member.  The report itself says the
-    # k = 1 row is an instance of Gallagher's published one-variable
-    # weighted-lift recipe, so those members are not new with this paper.  A
-    # green line for them must carry that fact, not hide it in a README section.
+    # Prior art, machine-readable and per member, and labelled as OUR reading.
+    # A green line for a k = 1 member must carry that qualification with it, not
+    # leave it in a README section the transcript's reader never opens.
     if k == 1:
         rec["prior_art"] = PRIOR_ART_K1
+
+    # The sweep: every claim-bearing field of the record just built is handed
+    # back to a gate that re-derives it.  Nothing published per member is a free
+    # restatement.
+    good, why = member_record_ok(rec)
+    if not good:
+        raise AssertionError("(%d,%d): the member record failed its own re-derivation -- %s"
+                             % (k, d, why))
     return rec
 
 
@@ -712,145 +1001,147 @@ def verify_member(k, d):
 # 9.  Planted failures.  Each MUST be rejected.  A checker that cannot fail
 #     certifies nothing, so these are the load-bearing part of this file.
 #
-#     EVERY control below is rejected by a gate the DEFAULT PATH ITSELF RUNS --
-#     det_ok, build_family, check_collision, weights_ok, anchor_ok,
-#     fibre_is_etale, generic_degree_ok, fibre_identity_ok, or the receipt
-#     byte-comparison in main().  The gate is named in each printed line.  A
-#     control that re-implemented a comparison beside the gate would prove only
-#     that the control's own copy works, so there are none of those: the
-#     load-bearing count is 12 of 12.
+#     Each control is a function that performs one corruption, hands it to ONE
+#     named gate, and returns that gate's own verdict.  The harness -- not the
+#     control -- decides what the verdict means: an ACCEPTED corruption aborts
+#     the run, and only an observed rejection increments the count that gets
+#     printed.  The count is therefore measured on this run rather than
+#     asserted as a constant.  (It used to be `N_CONTROLS = 12` printed
+#     unconditionally; a controls() that did nothing and returned 12 would have
+#     printed "12/12 rejected".)
+#
+#     The harness additionally checks that each control's named gate appears in
+#     the set of gates the DEFAULT verification path actually called on this
+#     run (see section 0).  That is what "load-bearing" is allowed to mean here
+#     and nothing more; in particular it does not prove that the control's
+#     rejection came from that gate rather than from some other line inside the
+#     control.  Read the controls -- they are twenty lines each.
 # --------------------------------------------------------------------------
 
-N_CONTROLS = 12
 
-
-def controls(out, blob):
-    ok = []
-
-    # C1 -- perturb one coefficient of alpha: the determinant stops being constant.
+def c1_alpha_perturbed(_blob):
+    """F1 += x*y at (k,d)=(2,3): the Jacobian determinant stops being constant."""
     k, d = 2, 3
     alpha, beta, g = build_alpha_beta(k, d)
-    bad_alpha = padd(alpha, {(k + 2, 1, 0): Fr(1)})       # F1 += x*y
+    bad_alpha = padd(alpha, {(k + 2, 1, 0): Fr(1)})
     Fb = (pdiv_x(bad_alpha, k + 1), pdiv_x(beta, k), pmul(pvar(0), g))
-    if det_ok(Fb, Fr(-k, k + 1)):
-        raise AssertionError("CONTROL C1 NOT REJECTED: perturbed alpha still gave det = -k/(k+1)")
-    ok.append("[ok] rejected by det_ok: F1 + x*y at (k,d)=(2,3) -- det JF is no longer the "
-              "constant -k/(k+1)")
+    accepted = det_ok(Fb, Fr(-k, k + 1))
+    return accepted, ("F1 + x*y at (k,d)=(2,3) -- det JF is no longer the constant "
+                      "-k/(k+1)")
 
-    # C2 -- wrong coefficient on v inside gamma: polynomiality dies.
-    if build_family(2, 3, c_v=Fr(1)) is not None:
-        raise AssertionError("CONTROL C2 NOT REJECTED: gamma with c_v=1 still divided out")
-    ok.append("[ok] rejected by build_family: gamma with coefficient 1 instead of (d+k)/d -- "
-              "alpha is not divisible by x^{k+1}")
 
-    # C3 -- mutate the CLAIMED determinant and put it through the gate the
-    #       default path runs, on every member of the grid.  (The old C3 only
-    #       asserted that one map's determinant was not one other constant,
-    #       which is nearly free and exercised no gate.)
-    survivors = [(k, d) for (k, d) in GRID
-                 if det_ok(build_family(k, d), Fr(-k, k + 2))]
-    if survivors:
-        raise AssertionError("CONTROL C3 NOT REJECTED: det_ok accepted the mutated claim "
-                             "-k/(k+2) at %s" % (survivors[:3],))
-    ok.append("[ok] rejected by det_ok: claimed determinant mutated -k/(k+1) -> -k/(k+2) -- "
-              "rejected on all %d grid members by the same gate the default path runs"
-              % len(GRID))
+def c2_gamma_coefficient(_blob):
+    """gamma with coefficient 1 in place of (d+k)/d: polynomiality dies."""
+    accepted = build_family(2, 3, c_v=Fr(1)) is not None
+    return accepted, ("gamma with coefficient 1 instead of (d+k)/d -- alpha is not "
+                      "divisible by x^{k+1}")
 
-    # C4 -- break a collision point by one unit, and run it through
-    #       check_collision (the actual non-injectivity gate), not a bare ==.
-    q = QRing()
+
+def c3_determinant_claim(_blob):
+    """Mutate the CLAIMED determinant and put it through the gate the default path
+    runs, on every member of the grid."""
+    survivors = [(k, d) for (k, d) in GRID if det_ok(build_family(k, d), Fr(-k, k + 2))]
+    return bool(survivors), ("claimed determinant mutated -k/(k+1) -> -k/(k+2) -- rejected "
+                             "on all %d grid members%s"
+                             % (len(GRID), "" if not survivors else
+                                " EXCEPT %s" % (survivors[:3],)))
+
+
+def c4_collision_partner(_blob):
+    """Break a collision point by one unit and run it through the real gate."""
     F = build_family(3, 5)
-    good, why = check_collision(F, q, (Fr(1), Fr(0), Fr(0)), (Fr(-1), Fr(0), Fr(3)))
-    if good:
-        raise AssertionError("CONTROL C4 NOT REJECTED: perturbed point still collided")
-    ok.append("[ok] rejected by check_collision: collision partner (-1,0,2) -> (-1,0,3) at "
-              "(k,d)=(3,5) -- %s" % why)
+    good, why = check_collision(F, QRing(), (Fr(1), Fr(0), Fr(0)), (Fr(-1), Fr(0), Fr(3)))
+    return good, ("collision partner (-1,0,2) -> (-1,0,3) at (k,d)=(3,5) -- %s" % why)
 
-    # C5 -- a monomial of the wrong torus weight.
+
+def c5_wrong_weight_monomial(_blob):
+    """A monomial of the wrong torus weight in F1."""
     F = build_family(2, 3)
     Fw = (padd(F[0], {(0, 0, 0): Fr(1)}), F[1], F[2])
-    if weights_ok(Fw, 2):
-        raise AssertionError("CONTROL C5 NOT REJECTED: weight gate accepted a weight-0 monomial in F1")
-    ok.append("[ok] rejected by weights_ok: constant monomial added to F1 at (k,d)=(2,3) -- "
-              "torus weight -(k+1) violated")
+    return weights_ok(Fw, 2), ("constant monomial added to F1 at (k,d)=(2,3) -- torus "
+                               "weight -(k+1) violated")
 
-    # C6 -- corrupt the paper's printed expansion and feed it to anchor_ok, the
-    #       gate run() itself calls.  (The old C6 compared a corrupted dict to
-    #       the rebuild inline, so it tested the control's own ==, not the gate.)
+
+def c6_corrupt_anchor(_blob):
+    """Corrupt the paper's printed expansion and feed it to the anchor gate the
+    default path itself calls."""
     bad_F1 = dict(PAPER_23[0])
     bad_F1[(3, 3, 0)] = Fr(7)                         # true value 20/3
-    if anchor_ok((bad_F1, PAPER_23[1], PAPER_23[2])):
-        raise AssertionError("CONTROL C6 NOT REJECTED: anchor_ok accepted a corrupted anchor")
-    ok.append("[ok] rejected by anchor_ok: one coefficient of the paper's printed F1 at (2,3) "
-              "flipped 20/3 -> 7 -- anchor mismatch")
+    return anchor_ok((bad_F1, PAPER_23[1], PAPER_23[2])), (
+        "one coefficient of the paper's printed F1 at (2,3) flipped 20/3 -> 7 -- anchor "
+        "mismatch")
 
-    # C7 -- a target whose fibre is not etale (planted double root of G).
+
+def c7_non_etale_target(_blob):
+    """A target whose fibre is not etale (planted double root of G)."""
     k, d, w0 = 2, 5, Fr(2)
     Qp = uQ(k, d)
     Vbad = sum((Qp[i] * i * w0 ** (i - 1) for i in range(1, len(Qp))), Fr(0))   # Q'(w0)
     Qw0 = sum((Qp[i] * w0 ** i for i in range(len(Qp))), Fr(0))
     Tbad = (Vbad * w0 - Qw0) / Fr(k + 1)
     good, why = fibre_is_etale(k, d, Vbad, Tbad)
-    if good:
-        raise AssertionError("CONTROL C7 NOT REJECTED: planted double root passed the etale gate")
-    ok.append("[ok] rejected by fibre_is_etale: planted double root of the fibre equation at "
-              "(k,d)=(2,5) -- %s" % why)
+    return good, ("planted double root of the fibre equation at (k,d)=(2,5) -- %s" % why)
 
-    # C8 -- the cyclotomic evaluation path must also be able to say "no".
+
+def c8_cyclotomic_partner(_blob):
+    """The cyclotomic evaluation path must also be able to say no."""
     k, d = 3, 4
     ring, P1, P2, _kind = collision_root_of_unity(k, d)
     F = build_family(k, d)
     P2bad = (P2[0], ring.add(P2[1], ring.one), P2[2])          # y2 -> y2 + 1
     good, why = check_collision(F, ring, P1, P2bad)
-    if good:
-        raise AssertionError("CONTROL C8 NOT REJECTED: perturbed Q(zeta_3) partner still collided")
-    ok.append("[ok] rejected by check_collision: Q(zeta_3) collision partner shifted by "
-              "y -> y+1 at (k,d)=(3,4) -- %s" % why)
+    return good, ("Q(zeta_3) collision partner shifted by y -> y+1 at (k,d)=(3,4) -- %s" % why)
 
-    # C9 -- the degenerate choice zeta = 1 satisfies zeta^k = 1 but produces the
-    #       SAME point twice.  Equal images then prove nothing, and the
-    #       distinctness gate -- not the image gate -- must be what rejects it.
+
+def c9_degenerate_zeta(_blob):
+    """zeta = 1 satisfies zeta^k = 1 but produces the SAME point twice.  Equal
+    images then prove nothing, and the distinctness gate -- not the image gate --
+    must be what rejects it."""
     k, d = 3, 4
     ring = CycRing(3)
     F = build_family(k, d)
     P1, P2deg = root_of_unity_pair(k, d, ring, e=0)          # e=0 => zeta = 1
-    good, why = check_collision(F, ring, P1, P2deg)
-    if good:
-        raise AssertionError("CONTROL C9 NOT REJECTED: zeta=1 accepted as a non-injectivity witness")
     if not all(ring.eq(a, b) for a, b in zip(image(F, P1, ring), image(F, P2deg, ring))):
         # The trap only exists if the images really do agree; otherwise this
         # control would be passing for the wrong reason.
         raise AssertionError("CONTROL C9 SETUP BROKEN: zeta=1 was expected to give equal images")
-    ok.append("[ok] rejected by check_collision: zeta = 1 at (k,d)=(3,4) -- images agree but the "
-              "points are equal, so the distinctness gate fires (%s)" % why)
+    good, why = check_collision(F, ring, P1, P2deg)
+    return good, ("zeta = 1 at (k,d)=(3,4) -- images agree but the points are equal, so the "
+                  "distinctness gate fires (%s)" % why)
 
-    # C10 -- tamper the fibre identity's W.
-    if fibre_identity_ok(build_family(4, 6), 4, 6, tamper=True):
-        raise AssertionError("CONTROL C10 NOT REJECTED: fibre identity held with W replaced by W+1")
-    ok.append("[ok] rejected by fibre_identity_ok: fibre identity with W := u*gamma + 1 at "
-              "(k,d)=(4,6) -- identity fails")
 
-    # C11 -- run the mutated committed receipt through the SAME comparison the
-    #        default path performs against the freshly recomputed blob.
-    if RECEIPT.exists():
-        text = RECEIPT.read_text()
-        mutated = text.replace('"det": "-1/2"', '"det": "-1/3"', 1)
-        if mutated == text:
-            raise AssertionError("CONTROL C11 SETUP BROKEN: no det field found in the receipt")
-        if mutated == blob:                     # `!=` here is the default path's gate
-            raise AssertionError("CONTROL C11 NOT REJECTED: mutated receipt matched the recomputation")
-        ok.append("[ok] rejected by the receipt comparison: committed witness.json with one det "
-                  "field mutated -1/2 -> -1/3 -- fails the byte comparison the default path runs")
-    else:
-        ok.append("[ok] rejected by the receipt comparison: (receipt absent; the default path "
-                  "exits nonzero rather than writing one -- only --emit writes)")
+def c10_tampered_fibre_identity(_blob):
+    """Replace W = u*gamma by W + 1 in the fibre identity."""
+    return fibre_identity_ok(build_family(4, 6), 4, 6, tamper=True), (
+        "fibre identity with W := u*gamma + 1 at (k,d)=(4,6) -- identity fails")
 
-    # C12 -- mutate the CLAIMED generic degree, on every member, and put it
-    #        through generic_degree_ok: the same gate the default path runs on
-    #        the number it records.  Until this existed the generic-degree leg
-    #        was unfalsifiable -- the recorded number merely restated k(d+1),
-    #        nothing counted it, so an auditor could set it to k(d+2), run the
-    #        sanctioned --emit, and get a full green replay with all 27 wrong.
+
+def c11_mutated_receipt(blob):
+    """Feed a mutated copy of the COMMITTED receipt to receipt_matches -- the same
+    function main()'s default path calls with the real bytes."""
+    if not RECEIPT.exists():
+        # No committed receipt to mutate.  Report NOT RUN rather than scoring a
+        # rejection that never happened; the default path exits nonzero in this
+        # state anyway (only --emit writes a receipt).
+        return None, "no committed receipt to mutate; run --emit first"
+    text = RECEIPT.read_text()
+    if not receipt_matches(text, blob):
+        # The committed receipt already disagrees with the recomputation, so a
+        # rejection here would be caused by the pre-existing disagreement and
+        # not by the mutation.  That is not a control; say NOT RUN.
+        return None, ("the committed receipt already disagrees with the recomputation, so this "
+                      "control cannot isolate the mutation")
+    mutated = text.replace('"det": "-1/2"', '"det": "-1/3"', 1)
+    if mutated == text:
+        raise AssertionError("CONTROL C11 SETUP BROKEN: no det field found in the receipt")
+    return receipt_matches(mutated, blob), (
+        "committed witness.json with one det field mutated -1/2 -> -1/3 -- fails the byte "
+        "comparison the default path runs")
+
+
+def c12_generic_degree_claim(_blob):
+    """Mutate the CLAIMED generic degree, on every member, through the gate the
+    default path runs on the number it records."""
     survivors, setup_broken = [], []
     for (k, d) in GRID:
         tgt = find_etale_target(k, d)
@@ -866,15 +1157,181 @@ def controls(out, blob):
     if setup_broken:
         raise AssertionError("CONTROL C12 SETUP BROKEN: the gate rejects its own count at %s"
                              % (setup_broken[:3],))
-    if survivors:
-        raise AssertionError("CONTROL C12 NOT REJECTED: generic_degree_ok accepted the mutated "
-                             "claim k(d+2) at %s" % (survivors[:3],))
-    ok.append("[ok] rejected by generic_degree_ok: claimed generic degree mutated k(d+1) -> "
-              "k(d+2) -- rejected on all %d grid members by counting the fibre, and the gate "
-              "still accepts the counted value" % len(GRID))
+    return bool(survivors), ("claimed generic degree mutated k(d+1) -> k(d+2) -- rejected on "
+                             "all %d grid members by counting the fibre, and the gate still "
+                             "accepts the counted value" % len(GRID))
 
-    out.extend(ok)
-    return len(ok)
+
+def c13_mutated_grading(_blob):
+    """Mutate the SOURCE GRADING that the receipt records, on every member.
+
+    The receipt's torus weights used to be the literal [1, -k, -k-1], read by
+    nothing: an edit to [1, -k, -k-2] published wrong weights for all 27 members
+    under a green replay.  Now the recorded grading is the one handed to the
+    measurement, so mutating it makes the components non-isobaric and the gate
+    refuses.
+    """
+    survivors = [(k, d) for (k, d) in GRID
+                 if weights_ok(build_family(k, d), k, grading=(1, -k, -(k + 2)))]
+    return bool(survivors), ("source grading mutated (1,-k,-k-1) -> (1,-k,-k-2) -- rejected "
+                             "on all %d grid members; no component is isobaric for it"
+                             % len(GRID))
+
+
+def c14_scoping_coverage_claim(_blob):
+    """Mutate the CLAIMED coverage of the paper's own witness to the whole grid.
+
+    `holds_on_members` used to be a free restatement; setting it to len(members)
+    would have republished the paper's 6-member witness as covering all 27 and
+    deleted our own negative finding while the replay stayed green.
+    """
+    members = [{"paper_witness_holds": paper_witness_holds(build_family(k, d))}
+               for (k, d) in GRID]
+    counted = paper_witness_coverage(members)
+    if not coverage_ok(members, counted)[0]:
+        raise AssertionError("CONTROL C14 SETUP BROKEN: the gate rejects its own count")
+    good, why = coverage_ok(members, len(members))
+    return good, ("claimed coverage of the paper's stated witness mutated %d -> %d (the whole "
+                  "grid) -- %s" % (counted, len(members), why))
+
+
+MEMBER_FIELD_MUTATIONS = [
+    ("k", 1),
+    ("d", 8),
+    ("monomials", [0, 0, 0]),
+    ("det", "-1/3"),
+    ("source_grading", [1, -2, -4]),
+    ("component_weights", [-3, -2, 2]),
+    ("generic_degree", 99),
+    ("etale_target_VT", ["0", "0"]),
+    ("paper_witness_holds", True),
+]
+
+
+def c15_member_record_sweep(_blob):
+    """THE free-restatement sweep, as a control.  Mutate every claim-bearing
+    field of a member record in turn and require member_record_ok to reject each
+    one.  A field that is published but read by nothing survives this control
+    and fails it by name -- which is exactly how the generic degree and the
+    torus weights should have been caught the first time."""
+    rec = verify_member(2, 3)
+    if not member_record_ok(rec)[0]:
+        raise AssertionError("CONTROL C15 SETUP BROKEN: the gate rejects an untouched record")
+    cases = []
+    for key, bad in MEMBER_FIELD_MUTATIONS:
+        if rec.get(key) == bad:
+            raise AssertionError("CONTROL C15 SETUP BROKEN: %r is already the mutated value" % key)
+        mutated = dict(rec)
+        mutated[key] = bad
+        cases.append((key, mutated))
+    # The collision block is a nested record of strings; mutate it too.
+    for label, patch in [
+            ("collision.p2", {"p2": rec["collision"]["p1"]}),           # same point twice
+            ("collision.image", {"image": ["0", "0", "0"]}),
+            ("collision.field", {"field": "Q(zeta_7)"}),
+            ("collision.mechanism", {"mechanism": "handwave"})]:
+        mutated = dict(rec)
+        mutated["collision"] = dict(rec["collision"], **patch)
+        cases.append((label, mutated))
+    survivors = [label for label, m in cases if member_record_ok(m)[0]]
+    return bool(survivors), ("each of the %d claim-bearing fields of the (k,d)=(2,3) member "
+                             "record mutated in turn -- %s"
+                             % (len(cases),
+                                "all rejected" if not survivors else
+                                "SURVIVED: %s" % (survivors,)))
+
+
+RECEIPT_TOTAL_MUTATIONS = [
+    ("collisions_over_Q", 27),
+    ("collisions_over_cyclotomic", 0),
+    ("controls_registered", 99),
+    ("grid", {"k_min": 1, "k_max": 7, "d_max": 9, "members": 27}),
+]
+
+
+def c16_receipt_totals_sweep(_blob):
+    """Same sweep for the receipt's top-level counts, including the two nested
+    ones (prior_art.members_affected and scoping_correction.*)."""
+    members = [verify_member(k, d) for (k, d) in GRID]
+    base = {
+        "members": members,
+        "collisions_over_Q": sum(1 for r in members if r["collision"]["field"] == "Q"),
+        "collisions_over_cyclotomic": sum(1 for r in members if r["collision"]["field"] != "Q"),
+        "controls_registered": len(CONTROL_REGISTRY),
+        "grid": {"k_min": 1, "k_max": 6, "d_max": 8, "members": len(members)},
+        "prior_art": {"members_affected": sum(1 for r in members if "prior_art" in r)},
+        "scoping_correction": {"grid_members": len(members),
+                               "holds_on_members": paper_witness_coverage(members)},
+    }
+    if not receipt_totals_ok(base)[0]:
+        raise AssertionError("CONTROL C16 SETUP BROKEN: the gate rejects an untouched receipt")
+    survivors = []
+    for key, bad in RECEIPT_TOTAL_MUTATIONS:
+        mutated = dict(base)
+        mutated[key] = bad
+        if receipt_totals_ok(mutated)[0]:
+            survivors.append(key)
+    for outer, inner, bad in [("prior_art", "members_affected", 27),
+                              ("scoping_correction", "grid_members", 6),
+                              ("scoping_correction", "holds_on_members", 27)]:
+        mutated = dict(base)
+        mutated[outer] = dict(base[outer])
+        mutated[outer][inner] = bad
+        if receipt_totals_ok(mutated)[0]:
+            survivors.append("%s.%s" % (outer, inner))
+    n = len(RECEIPT_TOTAL_MUTATIONS) + 3
+    return bool(survivors), ("each of the %d top-level receipt counts mutated in turn -- %s"
+                             % (n, "all rejected" if not survivors else
+                                "SURVIVED: %s" % (survivors,)))
+
+
+# id, the gate the control is scored against, the control itself.
+CONTROL_REGISTRY = [
+    ("C1", "det_ok", c1_alpha_perturbed),
+    ("C2", "build_family", c2_gamma_coefficient),
+    ("C3", "det_ok", c3_determinant_claim),
+    ("C4", "check_collision", c4_collision_partner),
+    ("C5", "weights_ok", c5_wrong_weight_monomial),
+    ("C6", "anchor_ok", c6_corrupt_anchor),
+    ("C7", "fibre_is_etale", c7_non_etale_target),
+    ("C8", "check_collision", c8_cyclotomic_partner),
+    ("C9", "check_collision", c9_degenerate_zeta),
+    ("C10", "fibre_identity_ok", c10_tampered_fibre_identity),
+    ("C11", "receipt_matches", c11_mutated_receipt),
+    ("C12", "generic_degree_ok", c12_generic_degree_claim),
+    ("C13", "weights_ok", c13_mutated_grading),
+    ("C14", "coverage_ok", c14_scoping_coverage_claim),
+    ("C15", "member_record_ok", c15_member_record_sweep),
+    ("C16", "receipt_totals_ok", c16_receipt_totals_sweep),
+]
+
+
+def controls(out, blob, default_gates):
+    """Run every registered control.
+
+    Returns (rejected, registered, in_default_path, skipped).
+    `rejected` counts corruptions this run OBSERVED a gate refuse -- a control
+    returning None was not runnable and is counted as skipped, never as a
+    rejection.  `in_default_path` counts controls whose named gate is in
+    `default_gates`, the set of gates the default verification path called.
+    """
+    rejected, in_default_path, skipped = 0, 0, 0
+    for cid, gate_name, fn in CONTROL_REGISTRY:
+        accepted, note = fn(blob)
+        if accepted is None:
+            skipped += 1
+            out.append("[!!] %-3s NOT RUN (%s): %s" % (cid, gate_name, note))
+            continue
+        if accepted:
+            raise AssertionError("CONTROL %s NOT REJECTED by %s: %s" % (cid, gate_name, note))
+        rejected += 1
+        if gate_name in default_gates:
+            in_default_path += 1
+            mark = ""
+        else:
+            mark = "   <-- NOT run by the default path"
+        out.append("[ok] %-3s rejected by %s: %s%s" % (cid, gate_name, note, mark))
+    return rejected, len(CONTROL_REGISTRY), in_default_path, skipped
 
 
 # --------------------------------------------------------------------------
@@ -910,14 +1367,19 @@ def cyclotomic_self_test():
 def run():
     lines = []
     lines.append("Power-weighted-lift Keller family F_{k,d} : A^3 -> A^3")
-    lines.append("  claimed by Nathan Wilbanks and \"Annie\" (AGNT Labs Technical Report III,")
-    lines.append("  v1.0, 2026-07-21).  The construction is theirs; this replay is ours, and it")
-    lines.append("  is a REIMPLEMENTATION FROM THEIR PROSE, not a replay of their receipts")
-    lines.append("  (their independent_reproduction.md is hash-bound to the wrong document).")
-    lines.append("  PRIOR ART: the report itself states that the k=1 row is an instance of")
-    lines.append("  Gallagher's published one-variable weighted-lift recipe, so 7 of the 27")
-    lines.append("  members below are NOT new with this paper.  Their lines are marked; a green")
-    lines.append("  line there is not a novelty claim.  Novelty and priority are not certified.")
+    lines.append("  claimed by Annie (AGNT Labs, Technical Report III, v1.0, 21 July 2026),")
+    lines.append("  \"Power-Weighted Lifts: Explicit Higher-Weight Noninjective Keller Maps in")
+    lines.append("  Three Variables\".  That is the document's whole byline.  The construction is")
+    lines.append("  the author's; this replay is ours, and it is a REIMPLEMENTATION FROM THE")
+    lines.append("  REPORT'S PROSE, not a replay of its receipts (its independent_reproduction.md")
+    lines.append("  is hash-bound to the wrong document).")
+    lines.append("  PRIOR ART -- OUR READING, NOT THE REPORT'S WORDS: the report says Gallagher's")
+    lines.append("  public notes describe a one-variable weighted-lift mechanism in the k=1 row,")
+    lines.append("  and separately that historical priority outside the searched public record is")
+    lines.append("  not asserted.  We read that as: the 7 k=1 members below are not new with this")
+    lines.append("  paper.  Their lines are marked.  Prior-art holder, per the report's own")
+    lines.append("  bibliography: " + GALLAGHER.split(" (the citation")[0] + ".")
+    lines.append("  Novelty and priority are certified by nobody here -- not by them, not by us.")
     lines.append("")
 
     # anchor: our rebuild must reproduce the paper's own printed (2,3) expansion
@@ -935,7 +1397,7 @@ def run():
     lines.append("")
 
     members = []
-    rational, cyclotomic, paper_wit, prior_art = 0, 0, 0, 0
+    rational, cyclotomic, prior_art = 0, 0, 0
     for (k, d) in GRID:
         rec = verify_member(k, d)
         members.append(rec)
@@ -943,84 +1405,115 @@ def run():
             rational += 1
         else:
             cyclotomic += 1
-        if "paper_witness_odd_odd" in rec:
-            paper_wit += 1
         if "prior_art" in rec:
             prior_art += 1
         lines.append(
-            "[ok] k=%d d=%d  polynomial(%3d,%3d,%2d monomials)  det=%-6s  weights(1,%d,%d)"
+            "[ok] k=%d d=%d  polynomial(%3d,%3d,%2d monomials)  det=%-6s  weights(%d,%d,%d)"
             "  generic degree %2d (counted)  collision/%s over %s%s"
             % (k, d, rec["monomials"][0], rec["monomials"][1], rec["monomials"][2],
-               rec["det"], -k, -k - 1, rec["generic_degree"],
+               rec["det"], rec["component_weights"][0], rec["component_weights"][1],
+               rec["component_weights"][2], rec["generic_degree"],
                rec["collision"]["mechanism"], rec["collision"]["field"],
-               "   <-- PRIOR ART (Gallagher), not new with this paper" if k == 1 else ""))
+               "   <-- PRIOR ART on OUR reading (Gallagher)" if k == 1 else ""))
+
+    # The scoping correction is COUNTED from the per-member measurement; the
+    # number the receipt carries is gated below, once the receipt exists.
+    paper_wit = paper_witness_coverage(members)
+
     lines.append("")
     lines.append("[ok] all %d grid members (1<=k<=6, k<d<=8) are genuinely polynomial:" % len(members))
     lines.append("     alpha is divisible by x^{k+1} and beta by x^k, exactly, in Q[x,y,z]")
     lines.append("[ok] det J F_{k,d} == -k/(k+1) as a polynomial identity in Q[x,y,z]")
     lines.append("     (coefficient-by-coefficient on the expanded 3x3 cofactor determinant --")
     lines.append("      not sampled at points, and no float anywhere)")
-    lines.append("[ok] source torus weights (1,-k,-k-1): every monomial of F1,F2,F3 is isobaric")
+    lines.append("[ok] torus weights: under the source grading deg(x,y,z) = (1,-k,-k-1), every")
+    lines.append("     monomial of F1,F2,F3 is isobaric of weight -(k+1), -k, 1 -- MEASURED per")
+    lines.append("     component and recorded as measured (controls C5, C13)")
     lines.append("[ok] fibre identity (Y Z^k) W - Q(W) - (k+1)(X Z^{k+1}) == 0 identically")
     lines.append("[ok] generic degree: COUNTED, not restated.  At an exhibited rational target the")
     lines.append("     fibre equation G(w) = Q(w) - V w + (k+1) T is squarefree and no root of it")
     lines.append("     forces gamma = 0 (two exact gcd tests over Q), so the fibre has exactly")
     lines.append("     k * #{distinct roots of G} = k * deg(G/gcd(G,G')) points.  THAT PRODUCT is")
-    lines.append("     what each line above and the receipt record; it is then compared with the")
-    lines.append("     paper's claimed k(d+1), and a mismatch fails the run.  Control C12 mutates")
-    lines.append("     the claim to k(d+2) on all 27 members and the same gate rejects it.")
+    lines.append("     what each line above and the receipt record, and control C12 mutates the")
+    lines.append("     recorded claim to k(d+2) on all 27 members for the same gate to reject.")
+    lines.append("     HONEST LIMIT: the count is also compared with the paper's k(d+1), but the")
+    lines.append("     etale gate has already forced deg G = d+1 and gcd(G,G') constant, so that")
+    lines.append("     comparison is unreachable.  This leg does not falsify the paper's formula;")
+    lines.append("     what it does is stop the recorded number from being a free restatement.")
     lines.append("[ok] non-injectivity: explicit colliding pairs -- %d of %d over Q, %d over a"
                  % (rational, len(members), cyclotomic))
     lines.append("     cyclotomic field Q(zeta_r); every pair checked by exact evaluation")
     lines.append("")
     lines.append("[!!] SCOPING CORRECTION (ours, and negative): the paper states one witness,")
     lines.append("     F(1,0,0) = F(-1,0,2) = (0,0,1), for k and d both odd.  It holds -- we")
-    lines.append("     confirm it exactly -- but on only %d of the %d grid members, not all of"
-                 % (paper_wit, len(members)))
-    lines.append("     them.  The other %d needed witnesses we derived ourselves (sign,"
-                 % (len(members) - paper_wit))
+    lines.append("     confirm it exactly -- but it was evaluated on all %d members and holds on"
+                 % len(members))
+    lines.append("     only %d of them.  The other %d needed witnesses we derived ourselves (sign,"
+                 % (paper_wit, len(members) - paper_wit))
     lines.append("     root-of-unity, two-root); the paper's witness does not cover its own grid.")
-    lines.append("[!!] PRIOR ART: %d of the %d members (the k=1 row) are, by the paper's own"
+    lines.append("     (Counted, then gated: control C14 mutates the count to %d and it is"
+                 % len(members))
+    lines.append("     rejected.)")
+    lines.append("[!!] PRIOR ART, ON OUR READING: %d of the %d members (the k=1 row) look to us"
                  % (prior_art, len(members)))
-    lines.append("     account, an instance of Gallagher's published one-variable weighted-lift")
-    lines.append("     recipe -- verified here, but not new with this paper.  This replay does")
-    lines.append("     not date or adjudicate that overlap, and certifies no novelty for any row.")
+    lines.append("     to lie inside Gallagher's earlier one-variable weighted-lift work -- they")
+    lines.append("     are verified here, but not new with this paper.  The report does not use")
+    lines.append("     the words 'prior art'; the inference is ours, and it is recorded as ours.")
+    lines.append("     We do not date or adjudicate the overlap, and certify no novelty anywhere.")
     lines.append("")
 
+    ks = sorted({r["k"] for r in members})
+    ds = sorted({r["d"] for r in members})
     receipt = {
-        "schema": "keller-power-weighted-lifts-v2",
-        "claim_owner": "Nathan Wilbanks and \"Annie\" (AGNT Labs Technical Report III v1.0, 2026-07-21)",
+        "schema": "keller-power-weighted-lifts-v3",
+        "claim_owner": "Annie (AGNT Labs, Technical Report III, v1.0, 21 July 2026)",
+        "claim_owner_note": ("the report's byline names one author; it is \"Power-Weighted "
+                             "Lifts: Explicit Higher-Weight Noninjective Keller Maps in Three "
+                             "Variables\", (c) 2026 AGNT Labs"),
         "our_contribution": ("independent exact replay only; the construction is not ours, and "
-                            "this is a reimplementation from the report's prose, NOT a replay of "
-                            "the authors' receipts (their independent_reproduction.md is "
-                            "hash-bound to the wrong document)"),
-        "grid": {"k_min": 1, "k_max": 6, "d_max": 8, "members": len(members)},
+                             "this is a reimplementation from the report's prose, NOT a replay of "
+                             "the author's receipts (the report's independent_reproduction.md is "
+                             "hash-bound to the wrong document)"),
+        "grid": {"k_min": min(ks), "k_max": max(ks), "d_max": max(ds), "members": len(members)},
         "certified": [
             "each F_{k,d} is a polynomial map A^3 -> A^3 (exact x-divisibility)",
             "det J F_{k,d} == -k/(k+1) as a polynomial identity in Q[x,y,z]",
-            "source torus weights (1,-k,-k-1)",
+            ("each component is isobaric under the source grading deg(x,y,z) = (1,-k,-k-1), of "
+             "measured weights (-(k+1), -k, 1)"),
             ("generic fibre point count, COUNTED as k * #distinct roots of the fibre "
-             "equation at an exhibited etale target (exact gcd conditions), agrees with "
-             "the paper's claimed k(d+1) on every member"),
+             "equation at an exhibited etale target (exact gcd conditions); it comes out "
+             "k(d+1) on every member"),
             "F_{k,d} is not injective (explicit exhibited colliding pair)",
             "our rebuild reproduces the paper's printed (k,d)=(2,3) expansion exactly",
         ],
         "not_certified": [
             "novelty and priority -- not checked at all",
-            ("the k=1 row (%d of %d members) is prior art by the paper's own account; see "
+            ("the k=1 row (%d of %d members) is prior art ON OUR READING of the report; see "
              "prior_art" % (prior_art, len(members))),
-            "reproduction of the authors' own receipts (none intact to replay)",
+            "reproduction of the author's own receipts (none intact to replay)",
             "anything outside the published 27-member grid",
+            ("that the counted generic degree could have disagreed with k(d+1): the etale gate "
+             "forces deg G = d+1, so that comparison is unreachable and is not a test of the "
+             "paper's formula"),
         ],
         "prior_art": {
-            "row": "k = 1",
+            "row": "k = " + ", ".join(str(k) for k in sorted(
+                {r["k"] for r in members if "prior_art" in r})),
             "members_affected": prior_art,
-            "statement": PRIOR_ART_K1,
-            "source": "the report's own disclaimer; no canonical citation located by us",
+            "whose_inference": ("OURS.  The report does not say 'prior art' or name the k=1 row "
+                                "as someone else's; we read its sentences that way, and the "
+                                "reading errs toward de-claiming."),
+            "report_says": PAPER_PRIOR_ART_QUOTE,
+            "our_reading": PRIOR_ART_K1,
+            "prior_art_holder": GALLAGHER,
         },
         "scoping_correction": {
-            "paper_witness": "F(1,0,0) = F(-1,0,2) = (0,0,1), stated for k and d both odd",
+            "paper_witness": PAPER_WITNESS,
             "holds_on_members": paper_wit,
+            "holds_on_members_provenance": (
+                "counted by evaluating the report's witness exactly on all %d members, then "
+                "gated by coverage_ok; control C14 mutates the count to %d and it is rejected"
+                % (len(members), len(members))),
             "grid_members": len(members),
             "finding": ("the paper's stated witness covers %d of %d members, not all of them; "
                         "witnesses for the remaining %d are ours (sign / root-of-unity / "
@@ -1029,25 +1522,65 @@ def run():
         },
         "collisions_over_Q": rational,
         "collisions_over_cyclotomic": cyclotomic,
-        "controls": N_CONTROLS,
-        "controls_load_bearing": N_CONTROLS,
-        "controls_note": ("every control is rejected by a gate the default path itself runs "
-                          "(det_ok, build_family, check_collision, weights_ok, anchor_ok, "
-                          "fibre_is_etale, generic_degree_ok, fibre_identity_ok, or the receipt "
-                          "byte-comparison); none re-implements a comparison beside the gate"),
+        "controls_registered": len(CONTROL_REGISTRY),
+        "controls_note": (
+            "each registered control performs one corruption, hands it to ONE named gate, and "
+            "returns that gate's verdict; the harness aborts the run if the corruption is "
+            "accepted and counts only rejections it observed, so the printed count is measured "
+            "on the run rather than asserted.  The run also checks that each control's named "
+            "gate is in the set of gates the default verification path actually called.  It "
+            "does NOT establish that the rejection came from that gate and nowhere else -- "
+            "that is a source-level property, for a reader to check by reading."),
+        "cannot_defend_against": (
+            "an edit to verify.py itself.  Stub a gate, no-op the control harness, or hardcode "
+            "a number in the verdict path and this file will happily print PASS -- no verifier "
+            "can check its own source.  What defends that boundary is outside the file: the "
+            "sha256 of verify.py and witness.json pinned in certificates/contracts.json, the "
+            "git history of both, and review.  Corrupted DATA is what the checks above are for; "
+            "a corrupted VERIFIER is what the pin is for."),
         "members": members,
     }
+    # Gate the receipt's OWN numbers, not the local variables they came from:
+    # every top-level count must be re-derivable from the member records the
+    # same file carries (controls C14, C16).
+    good, why = coverage_ok(members, receipt["scoping_correction"]["holds_on_members"])
+    if not good:
+        raise AssertionError("scoping-correction gate rejected the recorded coverage -- %s" % why)
+    good, why = receipt_totals_ok(receipt)
+    if not good:
+        raise AssertionError("receipt totals gate rejected the assembled receipt -- %s" % why)
+
     blob = json.dumps(receipt, indent=2, sort_keys=True) + "\n"
 
-    n_ctrl = controls(lines, blob)
-    if n_ctrl != N_CONTROLS:
-        raise AssertionError("expected %d planted-failure controls, ran %d" % (N_CONTROLS, n_ctrl))
+    # The receipt gate runs HERE, on the default path, so that the control
+    # tracing below can see it -- and so C11 is scored against the same function.
+    receipt_exists = RECEIPT.exists()
+    receipt_ok = receipt_matches(RECEIPT.read_text() if receipt_exists else "", blob)
+
+    default_gates = frozenset(GATE_CALLS)
+    n_rej, n_reg, n_load, n_skip = controls(lines, blob, default_gates)
+    if n_rej + n_skip != n_reg:
+        raise AssertionError("control harness lost a control: %d rejected + %d skipped != %d "
+                             "registered" % (n_rej, n_skip, n_reg))
     lines.append("")
-    lines.append("planted-failure controls: %d/%d rejected as required; %d/%d are load-bearing"
-                 % (n_ctrl, N_CONTROLS, n_ctrl, N_CONTROLS))
-    lines.append("     -- each is rejected by a gate this run itself uses (named in its line),")
-    lines.append("     not by a comparison written beside the gate inside the control")
-    return receipt, blob, lines
+    lines.append("planted-failure controls: %d registered, %d run, %d observed rejected by the "
+                 "named gate" % (n_reg, n_reg - n_skip, n_rej))
+    lines.append("     %d/%d of those named gates were called by the default verification path"
+                 % (n_load, n_reg - n_skip))
+    lines.append("     on this same run (measured by call tracing, see section 0).  That is the")
+    lines.append("     whole of what 'load-bearing' means here: it does not prove the rejection")
+    lines.append("     came from that gate rather than from another line inside the control.")
+    lines.append("")
+    lines.append("[!] WHAT THIS VERIFIER CANNOT DEFEND AGAINST: an edit to verify.py.  Stub a")
+    lines.append("    gate, no-op the harness, hardcode a verdict -- this file will print PASS.")
+    lines.append("    No verifier can check its own source.  The defence is the sha256 of")
+    lines.append("    verify.py and witness.json pinned in certificates/contracts.json, plus the")
+    lines.append("    git history and review.  The checks above are for corrupted DATA; the pin")
+    lines.append("    is for a corrupted VERIFIER.")
+    if n_load != n_reg - n_skip:
+        raise AssertionError("%d control(s) that ran are scored against a gate the default path "
+                             "never called" % (n_reg - n_skip - n_load))
+    return receipt, blob, lines, receipt_ok, receipt_exists, n_rej
 
 
 def main():
@@ -1057,7 +1590,7 @@ def main():
     args = ap.parse_args()
 
     try:
-        receipt, blob, lines = run()
+        receipt, blob, lines, receipt_ok, receipt_exists, n_rej = run()
     except AssertionError as exc:
         print("FAIL: %s" % exc)
         return 1
@@ -1072,18 +1605,18 @@ def main():
         print("PASS -- emitted (this path is not the certificate)")
         return 0
 
-    if not RECEIPT.exists():
+    if not receipt_exists:
         print("")
         print("FAIL: receipt %s is missing; run with --emit to create it" % RECEIPT.name)
         return 1
-    if RECEIPT.read_text() != blob:
+    if not receipt_ok:
         print("")
         print("FAIL: recomputed result disagrees with the committed %s" % RECEIPT.name)
         return 1
     print("")
     print("receipt-checked: %s" % RECEIPT.name)
-    print("PASS -- %d/%d grid members verified, %d planted failures rejected, receipt matches"
-          % (len(receipt["members"]), len(GRID), receipt["controls"]))
+    print("PASS -- %d/%d grid members verified, %d/%d planted failures rejected, receipt matches"
+          % (len(receipt["members"]), len(GRID), n_rej, len(CONTROL_REGISTRY)))
     return 0
 
 

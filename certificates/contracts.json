@@ -74,7 +74,7 @@
     {
       "path": "certificates/keller-power-weighted-lifts",
       "classification": "certified_local",
-      "boundary": "Independent exact replay of an external two-parameter Keller family (Wilbanks and \"Annie\", AGNT Labs) on its published 27-member grid. Reimplemented from the paper's prose, not replayed from the authors' receipts. Novelty and priority are not certified, and the k=1 row is prior art (Gallagher)."
+      "boundary": "Independent exact replay of an external two-parameter Keller family claimed by Annie (AGNT Labs, Technical Report III, v1.0, 21 July 2026) on its published 27-member grid. Reimplemented from the report's prose, not replayed from the author's receipts. Novelty and priority are not certified; on OUR reading of the report (not its words) the k=1 row lies inside Alexis Gallagher's earlier one-variable weighted-lift work."
     },
     {
       "path": "certificates/plane-jacobian-true",
@@ -112,7 +112,7 @@
       "publication_bindings": [
         {
           "path": "README.md",
-          "contains": "for `12 ≤ n ≤ 16`; `n=17` closed at `22`"
+          "contains": "for `12 \u2264 n \u2264 16`; `n=17` closed at `22`"
         }
       ],
       "artifacts": [
@@ -296,14 +296,14 @@
       "id": "erdos-979-a6-public",
       "status": "promoted",
       "statement": "A385316(6) > 10^12.",
-      "scope": "Exact finite lower bound only; does not bear on the asymptotic Erdős #979 limsup question. The private 10^13 sweep is quarantined from public promotion until packaged.",
+      "scope": "Exact finite lower bound only; does not bear on the asymptotic Erd\u0151s #979 limsup question. The private 10^13 sweep is quarantined from public promotion until packaged.",
       "machine_verdict": "a(6) > 1000000000000",
       "publication_bindings": [
         {
           "path": "README.md",
-          "contains": "**`a(6) > 10¹²` at C2**",
+          "contains": "**`a(6) > 10\u00b9\u00b2` at C2**",
           "must_not_contain": [
-            "**`a(6) > 10¹³` at C1**"
+            "**`a(6) > 10\u00b9\u00b3` at C1**"
           ]
         },
         {
@@ -381,9 +381,9 @@
       "publication_bindings": [
         {
           "path": "README.md",
-          "contains": "verified **no seventh exception below `10⁶`**",
+          "contains": "verified **no seventh exception below `10\u2076`**",
           "must_not_contain": [
-            "verified **no exception below `10¹⁰`**"
+            "verified **no exception below `10\u00b9\u2070`**"
           ]
         },
         {
@@ -433,7 +433,7 @@
       "publication_bindings": [
         {
           "path": "README.md",
-          "contains": "independent verification of Alpöge's 2026 counterexample"
+          "contains": "independent verification of Alp\u00f6ge's 2026 counterexample"
         }
       ],
       "artifacts": [
@@ -466,6 +466,68 @@
           "failure_control": {
             "kind": "embedded",
             "evidence": "Two planted mutations must be rejected by separate verification legs."
+          }
+        }
+      ]
+    },
+    {
+      "id": "keller-power-weighted-lifts-replay",
+      "status": "promoted",
+      "statement": "Every member of the published 27-member grid F_{k,d} (1<=k<=6, k<d<=8) is a polynomial self-map of A^3 with det J F == -k/(k+1), isobaric of source weights (1,-k,-k-1), of counted generic fibre size k(d+1) at an exhibited etale target, and non-injective via an exhibited colliding pair.",
+      "scope": "Independent exact replay of an external construction claimed by Annie (AGNT Labs, Technical Report III, v1.0, 21 July 2026), reimplemented from the report's prose rather than replayed from its receipts. Novelty and priority are certified by nobody here. On OUR reading of the report -- not its words -- the k=1 row (7 members) lies inside Alexis Gallagher's earlier one-variable weighted-lift work. The counted generic degree cannot disagree with k(d+1): the etale gate forces deg G = d+1, so that comparison is unreachable and is not a test of the paper's formula.",
+      "machine_verdict": "PASS -- 27/27 grid members verified, 16/16 planted failures rejected, receipt matches",
+      "publication_bindings": [
+        {
+          "path": "certificates/keller-power-weighted-lifts/README.md",
+          "contains": "It is claimed by **Annie** in *Power-Weighted",
+          "must_not_contain": [
+            "Nathan Wilbanks",
+            "All 12 are load-bearing"
+          ]
+        },
+        {
+          "path": "certificates/keller-power-weighted-lifts/README.md",
+          "contains": "## What this verifier cannot defend against"
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "certificates/keller-power-weighted-lifts/verify.py",
+          "sha256": "d44e1e9752bce774facd4477bce77e8060b7b6cb30de1148de81ea83feb11c3e"
+        },
+        {
+          "path": "certificates/keller-power-weighted-lifts/witness.json",
+          "sha256": "42041299dd6417f59def1fef0a7026562dc8e47433f62ed2988f33e7178c6d92"
+        }
+      ],
+      "replays": [
+        {
+          "profile": "fast",
+          "certifies_claim": true,
+          "entrypoint": "certificates/keller-power-weighted-lifts/verify.py",
+          "argv": [
+            "python3",
+            "-I",
+            "certificates/keller-power-weighted-lifts/verify.py"
+          ],
+          "timeout_seconds": 120,
+          "exit_code": 0,
+          "stdout_contains": [
+            "PASS -- 27/27 grid members verified, 16/16 planted failures rejected, receipt matches",
+            "receipt-checked: witness.json",
+            "planted-failure controls: 16 registered, 16 run, 16 observed rejected by the named gate",
+            "claimed by Annie (AGNT Labs, Technical Report III, v1.0, 21 July 2026),",
+            "[!] WHAT THIS VERIFIER CANNOT DEFEND AGAINST: an edit to verify.py.  Stub a"
+          ],
+          "stdout_not_contains": [
+            "[FAIL]",
+            "FAIL:",
+            "NOT RUN",
+            "SURVIVED"
+          ],
+          "failure_control": {
+            "kind": "embedded",
+            "evidence": "16 planted corruptions run on every replay, each handed to one named gate whose verdict the harness requires to be a rejection; the count printed is the number of rejections observed, not a constant. C15 mutates all 9 claim-bearing fields of a member record in turn and C16 all 7 top-level receipt counts, so a published field that no gate reads fails the replay by name. This pin is the defence against the one thing the controls cannot cover: an edit to verify.py itself."
           }
         }
       ]

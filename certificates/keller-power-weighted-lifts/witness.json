@@ -1,18 +1,19 @@
 {
+  "cannot_defend_against": "an edit to verify.py itself.  Stub a gate, no-op the control harness, or hardcode a number in the verdict path and this file will happily print PASS -- no verifier can check its own source.  What defends that boundary is outside the file: the sha256 of verify.py and witness.json pinned in certificates/contracts.json, the git history of both, and review.  Corrupted DATA is what the checks above are for; a corrupted VERIFIER is what the pin is for.",
   "certified": [
     "each F_{k,d} is a polynomial map A^3 -> A^3 (exact x-divisibility)",
     "det J F_{k,d} == -k/(k+1) as a polynomial identity in Q[x,y,z]",
-    "source torus weights (1,-k,-k-1)",
-    "generic fibre point count, COUNTED as k * #distinct roots of the fibre equation at an exhibited etale target (exact gcd conditions), agrees with the paper's claimed k(d+1) on every member",
+    "each component is isobaric under the source grading deg(x,y,z) = (1,-k,-k-1), of measured weights (-(k+1), -k, 1)",
+    "generic fibre point count, COUNTED as k * #distinct roots of the fibre equation at an exhibited etale target (exact gcd conditions); it comes out k(d+1) on every member",
     "F_{k,d} is not injective (explicit exhibited colliding pair)",
     "our rebuild reproduces the paper's printed (k,d)=(2,3) expansion exactly"
   ],
-  "claim_owner": "Nathan Wilbanks and \"Annie\" (AGNT Labs Technical Report III v1.0, 2026-07-21)",
+  "claim_owner": "Annie (AGNT Labs, Technical Report III, v1.0, 21 July 2026)",
+  "claim_owner_note": "the report's byline names one author; it is \"Power-Weighted Lifts: Explicit Higher-Weight Noninjective Keller Maps in Three Variables\", (c) 2026 AGNT Labs",
   "collisions_over_Q": 22,
   "collisions_over_cyclotomic": 5,
-  "controls": 12,
-  "controls_load_bearing": 12,
-  "controls_note": "every control is rejected by a gate the default path itself runs (det_ok, build_family, check_collision, weights_ok, anchor_ok, fibre_is_etale, generic_degree_ok, fibre_identity_ok, or the receipt byte-comparison); none re-implements a comparison beside the gate",
+  "controls_note": "each registered control performs one corruption, hands it to ONE named gate, and returns that gate's verdict; the harness aborts the run if the corruption is accepted and counts only rejections it observed, so the printed count is measured on the run rather than asserted.  The run also checks that each control's named gate is in the set of gates the default verification path actually called.  It does NOT establish that the rejection came from that gate and nowhere else -- that is a source-level property, for a reader to check by reading.",
+  "controls_registered": 16,
   "grid": {
     "d_max": 8,
     "k_max": 6,
@@ -40,6 +41,11 @@
           "-36"
         ]
       },
+      "component_weights": [
+        -2,
+        -1,
+        1
+      ],
       "d": 2,
       "det": "-1/2",
       "etale_target_VT": [
@@ -54,8 +60,9 @@
         6,
         3
       ],
-      "prior_art": "k=1 row: prior art -- an instance of Gallagher's published one-variable weighted-lift recipe, by the paper's own account; not new with this paper and not adjudicated here",
-      "weights": [
+      "paper_witness_holds": false,
+      "prior_art": "k=1 row: OUR READING of the report -- not its words -- is that this row lies inside Gallagher's earlier one-variable weighted-lift work and so is not new with this paper; see prior_art at the top of this receipt for the report's actual sentences. Priority is not adjudicated here, by us or by them.",
+      "source_grading": [
         1,
         -1,
         -2
@@ -81,6 +88,11 @@
           "2"
         ]
       },
+      "component_weights": [
+        -2,
+        -1,
+        1
+      ],
       "d": 3,
       "det": "-1/2",
       "etale_target_VT": [
@@ -95,9 +107,9 @@
         14,
         3
       ],
-      "paper_witness_odd_odd": "F(1,0,0) = F(-1,0,2) = (0,0,1)",
-      "prior_art": "k=1 row: prior art -- an instance of Gallagher's published one-variable weighted-lift recipe, by the paper's own account; not new with this paper and not adjudicated here",
-      "weights": [
+      "paper_witness_holds": true,
+      "prior_art": "k=1 row: OUR READING of the report -- not its words -- is that this row lies inside Gallagher's earlier one-variable weighted-lift work and so is not new with this paper; see prior_art at the top of this receipt for the report's actual sentences. Priority is not adjudicated here, by us or by them.",
+      "source_grading": [
         1,
         -1,
         -2
@@ -123,6 +135,11 @@
           "-53444/147"
         ]
       },
+      "component_weights": [
+        -2,
+        -1,
+        1
+      ],
       "d": 4,
       "det": "-1/2",
       "etale_target_VT": [
@@ -137,8 +154,9 @@
         25,
         3
       ],
-      "prior_art": "k=1 row: prior art -- an instance of Gallagher's published one-variable weighted-lift recipe, by the paper's own account; not new with this paper and not adjudicated here",
-      "weights": [
+      "paper_witness_holds": false,
+      "prior_art": "k=1 row: OUR READING of the report -- not its words -- is that this row lies inside Gallagher's earlier one-variable weighted-lift work and so is not new with this paper; see prior_art at the top of this receipt for the report's actual sentences. Priority is not adjudicated here, by us or by them.",
+      "source_grading": [
         1,
         -1,
         -2
@@ -164,6 +182,11 @@
           "2"
         ]
       },
+      "component_weights": [
+        -2,
+        -1,
+        1
+      ],
       "d": 5,
       "det": "-1/2",
       "etale_target_VT": [
@@ -178,9 +201,9 @@
         39,
         3
       ],
-      "paper_witness_odd_odd": "F(1,0,0) = F(-1,0,2) = (0,0,1)",
-      "prior_art": "k=1 row: prior art -- an instance of Gallagher's published one-variable weighted-lift recipe, by the paper's own account; not new with this paper and not adjudicated here",
-      "weights": [
+      "paper_witness_holds": true,
+      "prior_art": "k=1 row: OUR READING of the report -- not its words -- is that this row lies inside Gallagher's earlier one-variable weighted-lift work and so is not new with this paper; see prior_art at the top of this receipt for the report's actual sentences. Priority is not adjudicated here, by us or by them.",
+      "source_grading": [
         1,
         -1,
         -2
@@ -206,6 +229,11 @@
           "-13546102/4805"
         ]
       },
+      "component_weights": [
+        -2,
+        -1,
+        1
+      ],
       "d": 6,
       "det": "-1/2",
       "etale_target_VT": [
@@ -220,8 +248,9 @@
         56,
         3
       ],
-      "prior_art": "k=1 row: prior art -- an instance of Gallagher's published one-variable weighted-lift recipe, by the paper's own account; not new with this paper and not adjudicated here",
-      "weights": [
+      "paper_witness_holds": false,
+      "prior_art": "k=1 row: OUR READING of the report -- not its words -- is that this row lies inside Gallagher's earlier one-variable weighted-lift work and so is not new with this paper; see prior_art at the top of this receipt for the report's actual sentences. Priority is not adjudicated here, by us or by them.",
+      "source_grading": [
         1,
         -1,
         -2
@@ -247,6 +276,11 @@
           "2"
         ]
       },
+      "component_weights": [
+        -2,
+        -1,
+        1
+      ],
       "d": 7,
       "det": "-1/2",
       "etale_target_VT": [
@@ -261,9 +295,9 @@
         76,
         3
       ],
-      "paper_witness_odd_odd": "F(1,0,0) = F(-1,0,2) = (0,0,1)",
-      "prior_art": "k=1 row: prior art -- an instance of Gallagher's published one-variable weighted-lift recipe, by the paper's own account; not new with this paper and not adjudicated here",
-      "weights": [
+      "paper_witness_holds": true,
+      "prior_art": "k=1 row: OUR READING of the report -- not its words -- is that this row lies inside Gallagher's earlier one-variable weighted-lift work and so is not new with this paper; see prior_art at the top of this receipt for the report's actual sentences. Priority is not adjudicated here, by us or by them.",
+      "source_grading": [
         1,
         -1,
         -2
@@ -289,6 +323,11 @@
           "-2125687608/112903"
         ]
       },
+      "component_weights": [
+        -2,
+        -1,
+        1
+      ],
       "d": 8,
       "det": "-1/2",
       "etale_target_VT": [
@@ -303,8 +342,9 @@
         99,
         3
       ],
-      "prior_art": "k=1 row: prior art -- an instance of Gallagher's published one-variable weighted-lift recipe, by the paper's own account; not new with this paper and not adjudicated here",
-      "weights": [
+      "paper_witness_holds": false,
+      "prior_art": "k=1 row: OUR READING of the report -- not its words -- is that this row lies inside Gallagher's earlier one-variable weighted-lift work and so is not new with this paper; see prior_art at the top of this receipt for the report's actual sentences. Priority is not adjudicated here, by us or by them.",
+      "source_grading": [
         1,
         -1,
         -2
@@ -330,6 +370,11 @@
           "-16/3"
         ]
       },
+      "component_weights": [
+        -3,
+        -2,
+        1
+      ],
       "d": 3,
       "det": "-2/3",
       "etale_target_VT": [
@@ -344,7 +389,8 @@
         8,
         3
       ],
-      "weights": [
+      "paper_witness_holds": false,
+      "source_grading": [
         1,
         -2,
         -3
@@ -370,6 +416,11 @@
           "-2"
         ]
       },
+      "component_weights": [
+        -3,
+        -2,
+        1
+      ],
       "d": 4,
       "det": "-2/3",
       "etale_target_VT": [
@@ -384,7 +435,8 @@
         16,
         3
       ],
-      "weights": [
+      "paper_witness_holds": false,
+      "source_grading": [
         1,
         -2,
         -3
@@ -410,6 +462,11 @@
           "-24/5"
         ]
       },
+      "component_weights": [
+        -3,
+        -2,
+        1
+      ],
       "d": 5,
       "det": "-2/3",
       "etale_target_VT": [
@@ -424,7 +481,8 @@
         29,
         3
       ],
-      "weights": [
+      "paper_witness_holds": false,
+      "source_grading": [
         1,
         -2,
         -3
@@ -450,6 +508,11 @@
           "-2"
         ]
       },
+      "component_weights": [
+        -3,
+        -2,
+        1
+      ],
       "d": 6,
       "det": "-2/3",
       "etale_target_VT": [
@@ -464,7 +527,8 @@
         43,
         3
       ],
-      "weights": [
+      "paper_witness_holds": false,
+      "source_grading": [
         1,
         -2,
         -3
@@ -490,6 +554,11 @@
           "-32/7"
         ]
       },
+      "component_weights": [
+        -3,
+        -2,
+        1
+      ],
       "d": 7,
       "det": "-2/3",
       "etale_target_VT": [
@@ -504,7 +573,8 @@
         62,
         3
       ],
-      "weights": [
+      "paper_witness_holds": false,
+      "source_grading": [
         1,
         -2,
         -3
@@ -530,6 +600,11 @@
           "-2"
         ]
       },
+      "component_weights": [
+        -3,
+        -2,
+        1
+      ],
       "d": 8,
       "det": "-2/3",
       "etale_target_VT": [
@@ -544,7 +619,8 @@
         82,
         3
       ],
-      "weights": [
+      "paper_witness_holds": false,
+      "source_grading": [
         1,
         -2,
         -3
@@ -570,6 +646,11 @@
           "[-3/4,15/4]"
         ]
       },
+      "component_weights": [
+        -4,
+        -3,
+        1
+      ],
       "d": 4,
       "det": "-3/4",
       "etale_target_VT": [
@@ -584,7 +665,8 @@
         10,
         3
       ],
-      "weights": [
+      "paper_witness_holds": false,
+      "source_grading": [
         1,
         -3,
         -4
@@ -610,6 +692,11 @@
           "2"
         ]
       },
+      "component_weights": [
+        -4,
+        -3,
+        1
+      ],
       "d": 5,
       "det": "-3/4",
       "etale_target_VT": [
@@ -624,8 +711,8 @@
         20,
         3
       ],
-      "paper_witness_odd_odd": "F(1,0,0) = F(-1,0,2) = (0,0,1)",
-      "weights": [
+      "paper_witness_holds": true,
+      "source_grading": [
         1,
         -3,
         -4
@@ -651,6 +738,11 @@
           "[-1/2,7/2]"
         ]
       },
+      "component_weights": [
+        -4,
+        -3,
+        1
+      ],
       "d": 6,
       "det": "-3/4",
       "etale_target_VT": [
@@ -665,7 +757,8 @@
         33,
         3
       ],
-      "weights": [
+      "paper_witness_holds": false,
+      "source_grading": [
         1,
         -3,
         -4
@@ -691,6 +784,11 @@
           "2"
         ]
       },
+      "component_weights": [
+        -4,
+        -3,
+        1
+      ],
       "d": 7,
       "det": "-3/4",
       "etale_target_VT": [
@@ -705,8 +803,8 @@
         49,
         3
       ],
-      "paper_witness_odd_odd": "F(1,0,0) = F(-1,0,2) = (0,0,1)",
-      "weights": [
+      "paper_witness_holds": true,
+      "source_grading": [
         1,
         -3,
         -4
@@ -732,6 +830,11 @@
           "[-3/8,27/8]"
         ]
       },
+      "component_weights": [
+        -4,
+        -3,
+        1
+      ],
       "d": 8,
       "det": "-3/4",
       "etale_target_VT": [
@@ -746,7 +849,8 @@
         68,
         3
       ],
-      "weights": [
+      "paper_witness_holds": false,
+      "source_grading": [
         1,
         -3,
         -4
@@ -772,6 +876,11 @@
           "-28/5"
         ]
       },
+      "component_weights": [
+        -5,
+        -4,
+        1
+      ],
       "d": 5,
       "det": "-4/5",
       "etale_target_VT": [
@@ -786,7 +895,8 @@
         12,
         3
       ],
-      "weights": [
+      "paper_witness_holds": false,
+      "source_grading": [
         1,
         -4,
         -5
@@ -812,6 +922,11 @@
           "-2"
         ]
       },
+      "component_weights": [
+        -5,
+        -4,
+        1
+      ],
       "d": 6,
       "det": "-4/5",
       "etale_target_VT": [
@@ -826,7 +941,8 @@
         23,
         3
       ],
-      "weights": [
+      "paper_witness_holds": false,
+      "source_grading": [
         1,
         -4,
         -5
@@ -852,6 +968,11 @@
           "-36/7"
         ]
       },
+      "component_weights": [
+        -5,
+        -4,
+        1
+      ],
       "d": 7,
       "det": "-4/5",
       "etale_target_VT": [
@@ -866,7 +987,8 @@
         37,
         3
       ],
-      "weights": [
+      "paper_witness_holds": false,
+      "source_grading": [
         1,
         -4,
         -5
@@ -892,6 +1014,11 @@
           "-2"
         ]
       },
+      "component_weights": [
+        -5,
+        -4,
+        1
+      ],
       "d": 8,
       "det": "-4/5",
       "etale_target_VT": [
@@ -906,7 +1033,8 @@
         54,
         3
       ],
-      "weights": [
+      "paper_witness_holds": false,
+      "source_grading": [
         1,
         -4,
         -5
@@ -932,6 +1060,11 @@
           "[-11/6,17/6,-1,0]"
         ]
       },
+      "component_weights": [
+        -6,
+        -5,
+        1
+      ],
       "d": 6,
       "det": "-5/6",
       "etale_target_VT": [
@@ -946,7 +1079,8 @@
         14,
         3
       ],
-      "weights": [
+      "paper_witness_holds": false,
+      "source_grading": [
         1,
         -5,
         -6
@@ -972,6 +1106,11 @@
           "2"
         ]
       },
+      "component_weights": [
+        -6,
+        -5,
+        1
+      ],
       "d": 7,
       "det": "-5/6",
       "etale_target_VT": [
@@ -986,8 +1125,8 @@
         26,
         3
       ],
-      "paper_witness_odd_odd": "F(1,0,0) = F(-1,0,2) = (0,0,1)",
-      "weights": [
+      "paper_witness_holds": true,
+      "source_grading": [
         1,
         -5,
         -6
@@ -1013,6 +1152,11 @@
           "[-13/8,21/8,-1,0]"
         ]
       },
+      "component_weights": [
+        -6,
+        -5,
+        1
+      ],
       "d": 8,
       "det": "-5/6",
       "etale_target_VT": [
@@ -1027,7 +1171,8 @@
         41,
         3
       ],
-      "weights": [
+      "paper_witness_holds": false,
+      "source_grading": [
         1,
         -5,
         -6
@@ -1053,6 +1198,11 @@
           "-40/7"
         ]
       },
+      "component_weights": [
+        -7,
+        -6,
+        1
+      ],
       "d": 7,
       "det": "-6/7",
       "etale_target_VT": [
@@ -1067,7 +1217,8 @@
         16,
         3
       ],
-      "weights": [
+      "paper_witness_holds": false,
+      "source_grading": [
         1,
         -6,
         -7
@@ -1093,6 +1244,11 @@
           "-2"
         ]
       },
+      "component_weights": [
+        -7,
+        -6,
+        1
+      ],
       "d": 8,
       "det": "-6/7",
       "etale_target_VT": [
@@ -1107,7 +1263,8 @@
         29,
         3
       ],
-      "weights": [
+      "paper_witness_holds": false,
+      "source_grading": [
         1,
         -6,
         -7
@@ -1116,22 +1273,26 @@
   ],
   "not_certified": [
     "novelty and priority -- not checked at all",
-    "the k=1 row (7 of 27 members) is prior art by the paper's own account; see prior_art",
-    "reproduction of the authors' own receipts (none intact to replay)",
-    "anything outside the published 27-member grid"
+    "the k=1 row (7 of 27 members) is prior art ON OUR READING of the report; see prior_art",
+    "reproduction of the author's own receipts (none intact to replay)",
+    "anything outside the published 27-member grid",
+    "that the counted generic degree could have disagreed with k(d+1): the etale gate forces deg G = d+1, so that comparison is unreachable and is not a test of the paper's formula"
   ],
-  "our_contribution": "independent exact replay only; the construction is not ours, and this is a reimplementation from the report's prose, NOT a replay of the authors' receipts (their independent_reproduction.md is hash-bound to the wrong document)",
+  "our_contribution": "independent exact replay only; the construction is not ours, and this is a reimplementation from the report's prose, NOT a replay of the author's receipts (the report's independent_reproduction.md is hash-bound to the wrong document)",
   "prior_art": {
     "members_affected": 7,
+    "our_reading": "k=1 row: OUR READING of the report -- not its words -- is that this row lies inside Gallagher's earlier one-variable weighted-lift work and so is not new with this paper; see prior_art at the top of this receipt for the report's actual sentences. Priority is not adjudicated here, by us or by them.",
+    "prior_art_holder": "Alexis Gallagher, \"Exact certificate atlas: Generic fiber degrees 3 through 100,\" jacobianfun.org/counterexamples, accessed July 21, 2026 (the citation given in the report's own bibliography)",
+    "report_says": "\"Gallagher's subsequent public notes describe a one-variable weighted-lift mechanism in that row and an atlas realizing generic degrees at least three ... The old weight row is k=1; the new construction works for every k>=1\"; and, separately, \"Historical priority outside the searched public record is not asserted.\"",
     "row": "k = 1",
-    "source": "the report's own disclaimer; no canonical citation located by us",
-    "statement": "k=1 row: prior art -- an instance of Gallagher's published one-variable weighted-lift recipe, by the paper's own account; not new with this paper and not adjudicated here"
+    "whose_inference": "OURS.  The report does not say 'prior art' or name the k=1 row as someone else's; we read its sentences that way, and the reading errs toward de-claiming."
   },
-  "schema": "keller-power-weighted-lifts-v2",
+  "schema": "keller-power-weighted-lifts-v3",
   "scoping_correction": {
     "finding": "the paper's stated witness covers 6 of 27 members, not all of them; witnesses for the remaining 21 are ours (sign / root-of-unity / two-root) and each is checked by exact evaluation",
     "grid_members": 27,
     "holds_on_members": 6,
+    "holds_on_members_provenance": "counted by evaluating the report's witness exactly on all 27 members, then gated by coverage_ok; control C14 mutates the count to 27 and it is rejected",
     "paper_witness": "F(1,0,0) = F(-1,0,2) = (0,0,1), stated for k and d both odd"
   }
 }

@@ -6,39 +6,52 @@ family `F_{k,d} : A^3 -> A^3` verified here consists of polynomial self-maps of
 such a map is, by definition, a counterexample to the Jacobian Conjecture. That
 is the stake, so the three qualifiers that bound it belong in the same breath:
 
-1. **The construction is not ours.** It is claimed by **Nathan Wilbanks and
-   "Annie"** in *Power-Weighted Lifts: Explicit Higher-Weight Noninjective Keller
-   Maps* (AGNT Labs Technical Report III, v1.0, 2026-07-21,
+1. **The construction is not ours.** It is claimed by **Annie** in *Power-Weighted
+   Lifts: Explicit Higher-Weight Noninjective Keller Maps in Three Variables*
+   (AGNT Labs, Technical Report III, v1.0, 21 July 2026,
    <https://agnt.gg/whitepapers/power-weighted-lifts-higher-weight-keller-maps.html>).
-   The theorem, the family, and the idea of the power-weighted lift are theirs.
+   That is the document's whole byline — one author, © 2026 AGNT Labs. The
+   theorem, the family, and the idea of the power-weighted lift are the author's.
    Ours is only the replay: we rebuilt `F_{k,d}` in exact rational arithmetic and
    re-derived, from scratch, every property the report asserts.
 2. **This is a reimplementation from the report's prose, not a reproduction of
-   the authors' artifacts.** Their `independent_reproduction.md` is hash-bound to
-   the wrong document, so there was no intact receipt chain to replay. The only
-   place our numbers meet theirs is their printed `(k,d) = (2,3)` expansion
-   (leg 6), which we reproduce monomial for monomial.
-3. **The `k = 1` row is prior art by the paper's own account** — the report says
-   Gallagher's published notes already describe that one-variable weighted-lift
-   mechanism, so 7 of the 27 members are not new with this paper. `verify.py`
-   prints that in its header and marks those seven lines; `witness.json` carries
-   it under `prior_art`. Nothing here adjudicates novelty, priority, or dates.
+   the author's artifacts.** The report's `independent_reproduction.md` is
+   hash-bound to the wrong document, so there was no intact receipt chain to
+   replay. The only place our numbers meet its numbers is its printed
+   `(k,d) = (2,3)` expansion (leg 6), which we reproduce monomial for monomial.
+3. **We read the `k = 1` row as prior art — and that reading is ours, not the
+   report's.** The report does not use the words "prior art". What it says is
+   that *"Gallagher's subsequent public notes describe a one-variable
+   weighted-lift mechanism in that row and an atlas realizing generic degrees at
+   least three … The old weight row is k=1; the new construction works for every
+   k>=1"*, and, separately, that *"Historical priority outside the searched
+   public record is not asserted."* We read that as: the 7 `k = 1` members are not
+   new with this paper. The prior-art holder, per the report's own bibliography,
+   is **Alexis Gallagher, "Exact certificate atlas: Generic fiber degrees 3
+   through 100," `jacobianfun.org/counterexamples`, accessed July 21, 2026.**
+   `verify.py` prints all of this in its header and marks those seven lines;
+   `witness.json` carries it under `prior_art`, including whose inference it is.
+   Nothing here adjudicates novelty, priority, or dates.
 
 What we certify is exhibited objects with exhibited properties — legs 1, 2 and 5
 below, per member — not the surrounding narrative of either paper. This lane sits
 beside [`certificates/jacobian-conjecture`](../jacobian-conjecture) (the dim-3
 counterexample of Alpöge, 2026) and the `atlas/jc-crater` propagation graph. See
-*What is NOT certified* for the full boundary.
+*What is NOT certified* for the full boundary, and *What this verifier cannot
+defend against* for the one attack no amount of checking inside `verify.py` can
+answer.
 
 **One correction we owe the reader, up front.** The report states a single
 non-injectivity witness, `F(1,0,0) = F(-1,0,2) = (0,0,1)`, for `k` and `d` both
 odd. It holds — we confirm it exactly — but it covers **6 of the 27** grid
 members, not all 27. Witnesses for the other 21 are ours, derived here and each
-checked by exact evaluation. The verifier prints this as a scoping correction and
-records it in `witness.json` under `scoping_correction`.
+checked by exact evaluation. The verifier evaluates the paper's witness on **all
+27** members, counts where it holds, and gates that count (`coverage_ok`,
+control C14) before printing it as a scoping correction and recording it in
+`witness.json` under `scoping_correction`.
 
 ```bash
-python3 -I verify.py          # ~1 s, stdlib only, exit 0 iff everything passes
+python3 -I verify.py          # ~2 s, stdlib only, exit 0 iff everything passes
 ```
 
 ## What the paper claims, and what we checked
@@ -70,19 +83,25 @@ tabulates the grid `1 <= k <= 6`, `k < d <= 8` — **27 members**.
    built symbolically, expanded by 3x3 cofactors, and compared coefficient by
    coefficient against the constant polynomial. It is an identity in
    `Q[x,y,z]`, not a sample at points, and there is no float in the trust path.
-3. **Torus weights `(1, -k, -k-1)`.** Every monomial `x^a y^b z^c` of `F1`,
-   `F2`, `F3` satisfies `a - kb - (k+1)c = -(k+1), -k, 1` respectively — i.e.
-   each component is isobaric, which is the equivariance statement.
-4. **Generic fibre point count — counted, then compared with `k(d+1)`.** The
-   verifier does not restate the paper's formula: it exhibits a rational target
-   whose fibre equation `G` is squarefree with no root forcing `gamma = 0`, and
-   *counts* `k * deg(G / gcd(G, G'))` — the number of `(w, gamma)` pairs. That
-   product is what the transcript and the receipt record. It is then compared
-   with the claimed `k(d+1)`, and a mismatch fails the run. See the argument
-   below, and control C12.
+3. **Torus weights `(1, -k, -k-1)`.** Under the source grading
+   `deg(x,y,z) = (1, -k, -(k+1))`, every monomial `x^a y^b z^c` of `F1`, `F2`,
+   `F3` satisfies `a - kb - (k+1)c = -(k+1), -k, 1` respectively — i.e. each
+   component is isobaric, which is the equivariance statement. The weight of
+   each component is **measured** (`component_weights`) and the measured value
+   is what the receipt records; the recorded grading and the recorded weights
+   are both fed back through the gate (controls C5, C13, C15).
+4. **Generic fibre point count — counted, not restated.** The verifier does not
+   restate the paper's formula: it exhibits a rational target whose fibre
+   equation `G` is squarefree with no root forcing `gamma = 0`, and *counts*
+   `k * deg(G / gcd(G, G'))` — the number of `(w, gamma)` pairs. That product is
+   what the transcript and the receipt record, and the recorded number must pass
+   `generic_degree_ok` against that same count (control C12). The count is also
+   compared with the paper's `k(d+1)`; see the argument below for why that
+   particular comparison **cannot fail** and is therefore not a test of the
+   paper's formula.
 5. **Not injective.** Two distinct points with provably equal image, exhibited
    and then checked by exact evaluation of the rebuilt polynomials.
-6. **Anchor to the authors' own arithmetic.** The report prints the expanded
+6. **Anchor to the report's own arithmetic.** The report prints the expanded
    degree-8 specialisation `(k,d) = (2,3)`. Our independent rebuild reproduces
    it monomial for monomial, including `5x^7y^5/3`, `17x^5y^4/3`, `20x^3y^3/3`.
    This is the one place our reimplementation touches their numbers, and it
@@ -142,15 +161,21 @@ on `(V, T)`, holding at one point makes them hold generically.
 
 **This leg is a count, not a restatement.** `fibre_point_count` computes
 `k * (deg G - deg gcd(G, G'))` from the very polynomial the étale gate measured;
-`generic_degree_ok` is the gate that the recorded number must pass, and the
-recorded number is separately compared with the paper's `k(d+1)`. It happens that
-`deg G = d+1` always, so the count comes out `k(d+1)` on all 27 — but if it did
-not, the run would fail rather than print the formula. This is what control C12
-holds in place: it mutates the *claim* to `k(d+2)` on every member and requires
-the same gate to reject it. (Before that, a hostile edit of the recorded degree
-survived `--emit` and a full green replay — the whole leg was unfalsifiable, and
-byte-comparison against a receipt written by the mutated code is drift detection,
-not verification.)
+`generic_degree_ok` is the gate that the recorded number must pass. This is what
+control C12 holds in place: it mutates the *claim* to `k(d+2)` on every member
+and requires the same gate to reject it. (Before that, a hostile edit of the
+recorded degree survived `--emit` and a full green replay — the whole leg was
+unfalsifiable, and byte-comparison against a receipt written by the mutated code
+is drift detection, not verification.)
+
+**And one thing this leg does *not* do.** The counted value is also compared with
+the paper's `k(d+1)`, and that comparison is **unreachable**: `fibre_is_etale`
+has already forced `deg G = d+1` and `gcd(G, G')` constant before a count is
+reported at all, so the count is identically `k(d+1)` whenever it exists. The
+branch is kept because it is the sentence a reader expects to see enforced, but
+it cannot fire, and this leg therefore does not falsify the paper's formula. What
+is real here is narrower and still worth having: the number we publish is one we
+counted, and it is gated against that count.
 
 (Amusing consequence the verifier records: `Q'(w) = q(w)`, so "a root of `G`
 with `gamma = 0`" and "a double root of `G`" are literally the same condition.
@@ -190,20 +215,27 @@ Legs 1, 2 and 5 are what carry it, per member.
 
 ## Planted-failure controls
 
-A checker that cannot fail certifies nothing, so 12 deliberate corruptions are
+A checker that cannot fail certifies nothing, so 16 deliberate corruptions are
 run on every replay and every one must be **rejected**, printed as
-`[ok] rejected by <gate>: ...`.
+`[ok] C<n> rejected by <gate>: ...`.
 
-**All 12 are load-bearing.** Each is rejected by a function the default path
-itself calls — named in the table and in the printed line — not by a comparison
-written beside the gate inside the control. (Two earlier controls were not:
-old-C3 only asserted that one map's determinant was not one specific *other*
-constant, which is nearly free and exercised no gate, and old-C6 compared a
-corrupted dict to the rebuild inline instead of calling the anchor gate. Both
-were rebuilt below; a "11 controls" count with 2 decorations in it is a worse
-claim than an honest smaller number.)
+**How the count is known.** Each control performs one corruption, hands it to
+*one* named gate, and returns that gate's own verdict. The harness — not the
+control — decides what the verdict means: an accepted corruption aborts the run,
+and only a rejection the harness *observed* increments the number printed. So
+"16/16 rejected" is measured on the run, not asserted. It used to be the constant
+`N_CONTROLS = 12`, printed unconditionally; a `controls()` that did nothing and
+returned 12 would have printed `12/12`.
 
-| # | corruption | rejected by (gate the default path runs) |
+**What "load-bearing" is allowed to mean here.** The run traces which gate
+functions the default verification path actually called, snapshots that set
+before any control runs, and requires every control's named gate to be in it
+(`section 0` of `verify.py`). That is measured, and it is all that is measured.
+It does **not** prove the rejection came from that gate rather than from some
+other line inside the control — that is a source-level property, and the honest
+instruction is to read the controls. They are about twenty lines each.
+
+| # | corruption | gate it is scored against |
 |---|---|---|
 | C1 | `F1 + x*y` at `(2,3)` | `det_ok` |
 | C2 | `gamma` with coefficient `1` instead of `(d+k)/d` | `build_family` (x-divisibility) |
@@ -215,15 +247,39 @@ claim than an honest smaller number.)
 | C8 | `Q(zeta_3)` partner shifted `y -> y+1` at `(3,4)` | `check_collision` |
 | C9 | degenerate `zeta = 1` (equal images, but the *same* point twice) | `check_collision`, distinctness first |
 | C10 | `W := u*gamma + 1` in the fibre identity at `(4,6)` | `fibre_identity_ok` |
-| C11 | one `det` field mutated in the committed `witness.json` | the receipt byte comparison in `main` |
+| C11 | one `det` field mutated in the committed `witness.json` | `receipt_matches` |
 | C12 | claimed generic degree mutated `k(d+1) -> k(d+2)`, on **all 27** members | `generic_degree_ok` (counts the fibre) |
+| C13 | recorded source grading mutated `(1,-k,-k-1) -> (1,-k,-k-2)`, on **all 27** | `weights_ok` |
+| C14 | claimed coverage of the paper's own witness mutated `6 -> 27` | `coverage_ok` |
+| C15 | **every** claim-bearing field of a member record mutated in turn (13 fields, including the recorded colliding pair and its image) | `member_record_ok` |
+| C16 | **every** top-level count of the receipt mutated in turn (7 counts) | `receipt_totals_ok` |
+
+C11 now calls `receipt_matches`, the same function `main`'s default path calls
+with the committed bytes; it used to write its own `==` beside the gate, which
+tested the control's copy of the comparison rather than the gate. It also
+reports **NOT RUN** rather than a rejection when the committed receipt already
+disagrees with the recomputation — in that state a "rejection" would be caused by
+the pre-existing disagreement, not by the mutation.
 
 C12 exists because the leg it guards was, until it existed, unfalsifiable: the
 recorded generic degree was written as `k * (d + 1)`, nothing counted it, and an
 auditor who changed that line to `k * (d + 2)`, ran the sanctioned `--emit`, and
 replayed got a full green `PASS -- 27/27 grid members verified` with every
-generic degree wrong. C3 and C12 both mutate a *claim* rather than an object, and
-both are checked on the whole grid, not at one convenient member.
+generic degree wrong.
+
+C13–C16 exist because that defect was not unique. The receipt's torus weights
+were the literal `[1, -k, -k-1]`, and `holds_on_members` was the local variable —
+neither was read by any gate, so mutating them republished wrong weights on all
+27 members, and republished the paper's 6-member witness as covering the whole
+grid while erasing our own negative finding, under a fully green replay. Rather
+than patch those two, C15 and C16 **sweep**: `member_record_ok` re-derives every
+field of a member record from that record's own `(k, d)` — including parsing the
+recorded colliding pair back out of the receipt and putting it through
+`check_collision` again, since a witness stored as strings that nothing reads is
+a witness anyone can rewrite — `receipt_totals_ok` re-derives every top-level
+count from the member records the same receipt carries, and the two controls
+mutate each field in turn and require a rejection for each. A field added later
+and left unchecked fails C15 or C16 by name.
 
 C9 is the one worth naming: `zeta = 1` satisfies `zeta^k = 1` and produces two
 points with identical images — because they are the same point. Equal images
@@ -244,25 +300,58 @@ the file is absent. Writing happens only under an explicit
 own output that this path is not the certificate. A replay never dirties the
 working tree.
 
+## What this verifier cannot defend against
+
+**An edit to `verify.py` itself.** Stub a gate so it always returns `True`,
+no-op the control harness, hardcode a number in the verdict path — and this file
+will print `PASS`. Every check above, and every control, lives inside the file
+being attacked. No verifier can check its own source, and we are not going to
+pretend otherwise by adding more controls: a control that survives only because
+someone edited the file it lives in tells you about the limits of the technique,
+not about a bug.
+
+The two threats are different and they have different defences:
+
+- **Corrupted *data*** — a wrong witness, a wrong receipt, a wrong count in
+  `witness.json`. That is what the gates and the 16 controls are for, and it is
+  what the sweeps (C15, C16) are designed to cover exhaustively rather than
+  spot-check.
+- **A corrupted *verifier*** — an edit to `verify.py`. The defence is entirely
+  outside the file: the **sha256 of `verify.py` and `witness.json` pinned in
+  [`certificates/contracts.json`](../contracts.json)**, which
+  `tools/check_certificate_contracts.py` re-hashes and re-runs in a sandbox on
+  every CI run, plus the **git history** of both files, plus review. If the
+  bytes you are running do not hash to the pinned value, nothing printed below
+  them means anything.
+
+This is stated in the verifier's own transcript and in `witness.json` under
+`cannot_defend_against`, so a reader who never opens this README still gets it.
+
 ## What is NOT certified
 
 - **Novelty and priority. Not checked at all.** This directory verifies exhibited
   objects. Who first constructed this family, whether the higher-weight lift is
   new, and how it relates to prior Keller-map constructions are provenance
   questions that no amount of exact arithmetic here can settle.
-- **The `k = 1` row is prior art, by the paper's own account.** Stated in the
-  first section, and — because a reader of the transcript or the receipt alone
-  must see it too — printed in the verifier's header, appended to each of the
-  seven `k=1` lines, and recorded in `witness.json` under `prior_art` and on each
-  affected member. The report states that Gallagher's public notes describe the
-  one-variable weighted-lift mechanism in that row, so those 7 members are not
-  new with this paper. We did not locate a canonical citation for those notes and
-  we do not attempt to date or adjudicate the overlap.
-- **We did not replay the authors' receipts.** This is a *reimplementation from
-  the paper's prose*, not a reproduction of their artifacts. The report's own
+- **The `k = 1` row is prior art *on our reading*.** Stated in the first section
+  with the report's actual sentences, and — because a reader of the transcript or
+  the receipt alone must see it too — printed in the verifier's header, appended
+  to each of the seven `k=1` lines, and recorded in `witness.json` under
+  `prior_art` (including `whose_inference`, the report's quoted words, and the
+  Gallagher citation from its bibliography). The report does not itself say
+  "prior art"; it describes Gallagher's notes as covering that row and expressly
+  does not assert historical priority. Our reading errs toward de-claiming, and
+  it is still our reading. We do not attempt to date or adjudicate the overlap.
+- **We did not replay the author's receipts.** This is a *reimplementation from
+  the paper's prose*, not a reproduction of its artifacts. The report's own
   `independent_reproduction.md` is hash-bound to the wrong document, so there
-  was no intact receipt chain to replay. Agreement with their printed `(2,3)`
-  expansion (leg 6) is the only place our numbers meet theirs.
+  was no intact receipt chain to replay. Agreement with its printed `(2,3)`
+  expansion (leg 6) is the only place our numbers meet its numbers.
+- **That the generic-degree count could have contradicted `k(d+1)`.** The étale
+  gate forces `deg G = d+1` before any count is reported, so that comparison is
+  unreachable. See the generic-degree section.
+- **Anything against an edited `verify.py`.** See *What this verifier cannot
+  defend against*, above.
 - **Only the published 27-member grid.** `1 <= k <= 6`, `k < d <= 8`. Nothing is
   certified for `k > 6`, `d > 8`, or the family "in general" — the checks are
   finite and per-member. The uniform formulas suggest the pattern continues;
