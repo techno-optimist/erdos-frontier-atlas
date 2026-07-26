@@ -1,5 +1,7 @@
 {
-  "controls_rejected": 6,
+  "controls_expected": 8,
+  "controls_rejected": 8,
+  "controls_run": 8,
   "distance_spectrum": {
     "annihilating_polynomial_vanishes": true,
     "eigenvalues": {
@@ -57,6 +59,7 @@
   "verdict": {
     "conjecture_284_holds": false,
     "hypothesis_girth_ge_5": true,
+    "lambda_min_derived_ok": true,
     "margin": 3,
     "refutes_284": true
   }

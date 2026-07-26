@@ -447,11 +447,11 @@
       "artifacts": [
         {
           "path": "certificates/graffiti-284-refutation/verify.py",
-          "sha256": "2feb269fead490b2521ff5323dff3edb7ec2a4b82fcb368fea28b08f8d2c2810"
+          "sha256": "83a989b73833831ea30ce47efa65799d200876d03302431183cf9ca3c68d34f8"
         },
         {
           "path": "certificates/graffiti-284-refutation/receipt.json",
-          "sha256": "78fbcdfaae46e4bae1ef36a29beb9b69f5f5ef98228bfaf9232e31f5e7936507"
+          "sha256": "02db775e22a35f703eac344c2b4a05d63385797331ead5aeb9d71250b05c88f5"
         }
       ],
       "replays": [
@@ -471,18 +471,25 @@
             "\"not_checked\":\"that this statement is conjecture 284 of Fajtlowicz's Graffiti list",
             "girth = 5 (computed by BFS, not inferred)",
             "minimum dual degree -- COMPUTED from the graph, not asserted",
+            "computed min_v d*(v) equals the published claim 7",
+            "lambda_min(hoffman-singleton) = -4 is DERIVED from the checked spectrum, not asserted",
+            "computed lambda_min(D) equals the published claim -4",
+            "computed margin min d* - (-lambda_min) equals the published claim 3",
             "rejected: hardcoded (min_dual=7, rhs=4) verdict applied to the Petersen graph",
+            "rejected: lambda_min asserted as the literal -4 on the Petersen graph",
+            "rejected: integer-truncated dual degree on a non-regular girth-7 graph",
             "rejected: girth-4 graph K_{3,3} offered as a 284 counterexample",
             "rejected: Hoffman-Singleton with one 2-swap presented as HS",
+            "planted controls: 8 expected, all rejected  executed=8, rejected=8",
             "receipt-checked: receipt.json",
-            "PASS -- external refutation independently verified; all planted controls rejected"
+            "PASS -- external refutation independently verified; 8/8 planted controls rejected"
           ],
           "stdout_not_contains": [
             "[FAIL]"
           ],
           "failure_control": {
             "kind": "embedded",
-            "evidence": "Six planted controls, each load-bearing, must be rejected or the run exits nonzero -- including a re-creation of the external verifier's hardcoded (min_dual=7, rhs=4) logic applied to the Petersen graph, which that logic calls REFUTED and the computed pipeline correctly clears. Every one of eight independent source mutations, plus one poisoned receipt field, was confirmed to drive exit 1. Three further 'controls' that asserted min d* in {6,8,3} were REMOVED, not counted: they compared two already-computed constants and still printed '[ok] rejected' under the min_dual_degree stub this lane exists to catch."
+            "evidence": "Eight planted controls run on the default path; the run exits nonzero if any is not rejected, and the control COUNT is measured (rejected() records each call; the exit gate compares the number that executed against EXPECTED_CONTROLS and the receipt publishes it), so deleting a control block fails instead of publishing a stale total. The headline control re-creates the external verifier's hardcoded (min_dual=7, rhs=4) logic and hands it the Petersen graph, which that logic calls REFUTED and the computed pipeline clears; a second control plants the literal lambda_min=-4 on the same graph and requires lambda_min_is_derived() -- the gate every published lambda_min passes -- to reject it; a third uses a NON-REGULAR girth-7 graph so the exact Fraction in min_dual_degree() is exercised rather than assumed. Thirteen single-line source mutations, plus one poisoned receipt field, were applied to a clean copy and each was MEASURED to exit 1 (README, 'Measured mutation battery'). BOUNDARY, stated in the verifier and the README: none of this defends against edits to verify.py itself -- a deleted check stays deleted. The exit gate is made tamper-EVIDENT (it recomputes from per-check and per-control records instead of trusting the FAILURES side effect, and cross-checks the two accountings), which is why no-oping that accumulator no longer disarms the controls, but the real defenses against a corrupted verifier are the artifact sha256 pins in this file, the stdout_not_contains '[FAIL]' pin, and git history. Three earlier 'controls' asserting min d* in {6,8,3} were REMOVED, not counted: they compared two already-computed constants and still printed '[ok] rejected' under the min_dual_degree stub this lane exists to catch."
           }
         }
       ]
