@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Emit RESULT.json from a completed sweep's shard outputs. EMIT SIDE ONLY.
 
-  python3 -I emit_result.py <outdir> > RESULT.json
+  python3 -I emit_result.py <outdir> [binary_provenance_note] > RESULT.json
 
 Deliberately separate from verify.py: the verifier must never be able to
 rewrite the receipt it is checking (this repo has been bitten by verifiers that
@@ -80,6 +80,8 @@ def main():
                        "enumeration, not a cubefull-side search"),
             "unreplicated": True,
         },
+        "binary_provenance": (sys.argv[2] if len(sys.argv) > 2 else
+                              "built from the committed search366.c"),
         "artifacts": {
             "search366.c": sha256(HERE / "search366.c"),
             "reference.py": sha256(HERE / "reference.py"),

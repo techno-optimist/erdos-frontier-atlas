@@ -1,0 +1,155 @@
+{
+ "B": "63096",
+ "B_soundness": "the fast powerfulness test is exact while B^5 >= the largest number it decides (hi+1); asserted at startup",
+ "artifacts": {
+  "reference.py": "2bd0b2643b736e3c50a9b80a2aa3ba0ced779c781f936a999706f7aa3d6f9a1a",
+  "run_sweep.sh": "ed50ef0b2b9066092e5e54fd02ba361511a9bfa54190bd83ca40a72722533e1e",
+  "search366.c": "d1963a0acaf0a422dea87da8c20ebd394a9c9794498e0f995b655b8adb0396d6",
+  "verify.py": "f56fb31ab53e4a1d947f07d98cc253d07c4a35ff1bb51d0600db1ab91f0b71ed"
+ },
+ "binary_provenance": "The sweep binary was compiled from this source BEFORE a comment-only edit that corrected the soundness exposition (the minimising bad cofactor is p^3q^2, not p^2q^3, and the gcd condition is joint not pairwise). No code changed. Verified inert: the post-edit binary re-run on (0,10^18] reproduces the pre-edit candidate count 7181136 and the same two hits exactly. The superseding 10^25 run uses the committed source directly.",
+ "candidates_tested": 749400934,
+ "claim": "No 2-full n with n+1 3-full exists for n <= 1000000000000000000000000. Exhaustive over every cubefull number in (0, 1000000000000000000000000]; both orientations swept.",
+ "core_seconds": 7687.9,
+ "graph_nodes": [
+  "P366",
+  "S:triage:366"
+ ],
+ "hits": [
+  {
+   "n": "8",
+   "n_plus_1": "9",
+   "orientation": "reverse"
+  },
+  {
+   "n": "12167",
+   "n_plus_1": "12168",
+   "orientation": "reverse"
+  }
+ ],
+ "hits_note": "Both hits are the known REVERSE-orientation pairs (n 3-full, n+1 2-full). The strict orientation asked by the problem statement and its Lean formalisation has zero solutions in this range.",
+ "nshards": 12,
+ "prior_frontier": {
+  "bound": "10^22",
+  "source": "inherited from OEIS A060355 b-file (Donovan Johnson, 39 terms, max a(39)=3887785221910670811499), cited by erdosproblems.com/366; a consecutive-powerful-PAIR enumeration, not a cubefull-side search",
+  "unreplicated": true
+ },
+ "problem": "https://www.erdosproblems.com/366",
+ "question": "Is there a 2-full n with n+1 3-full? (p|n => p^2|n; p|n+1 => p^3|n+1)",
+ "range": {
+  "hi": "1000000000000000000000000",
+  "lo": "0"
+ },
+ "schema": "efa-erdos-366-sweep-v1",
+ "shards": [
+  {
+   "B": "63096",
+   "candidates": "65631217",
+   "hi": "1000000000000000000000000",
+   "hits": "0",
+   "lo": "0",
+   "secs": "554.1",
+   "shard": "0/12"
+  },
+  {
+   "B": "63096",
+   "candidates": "63793376",
+   "hi": "1000000000000000000000000",
+   "hits": "1",
+   "lo": "0",
+   "secs": "661.1",
+   "shard": "1/12"
+  },
+  {
+   "B": "63096",
+   "candidates": "63051787",
+   "hi": "1000000000000000000000000",
+   "hits": "0",
+   "lo": "0",
+   "secs": "683.1",
+   "shard": "2/12"
+  },
+  {
+   "B": "63096",
+   "candidates": "62623067",
+   "hi": "1000000000000000000000000",
+   "hits": "0",
+   "lo": "0",
+   "secs": "644.9",
+   "shard": "3/12"
+  },
+  {
+   "B": "63096",
+   "candidates": "62331449",
+   "hi": "1000000000000000000000000",
+   "hits": "0",
+   "lo": "0",
+   "secs": "551.7",
+   "shard": "4/12"
+  },
+  {
+   "B": "63096",
+   "candidates": "62113558",
+   "hi": "1000000000000000000000000",
+   "hits": "0",
+   "lo": "0",
+   "secs": "797.5",
+   "shard": "5/12"
+  },
+  {
+   "B": "63096",
+   "candidates": "61940887",
+   "hi": "1000000000000000000000000",
+   "hits": "0",
+   "lo": "0",
+   "secs": "545.9",
+   "shard": "6/12"
+  },
+  {
+   "B": "63096",
+   "candidates": "61798121",
+   "hi": "1000000000000000000000000",
+   "hits": "0",
+   "lo": "0",
+   "secs": "639.8",
+   "shard": "7/12"
+  },
+  {
+   "B": "63096",
+   "candidates": "61676697",
+   "hi": "1000000000000000000000000",
+   "hits": "0",
+   "lo": "0",
+   "secs": "668.5",
+   "shard": "8/12"
+  },
+  {
+   "B": "63096",
+   "candidates": "61570887",
+   "hi": "1000000000000000000000000",
+   "hits": "0",
+   "lo": "0",
+   "secs": "637.4",
+   "shard": "9/12"
+  },
+  {
+   "B": "63096",
+   "candidates": "61477046",
+   "hi": "1000000000000000000000000",
+   "hits": "1",
+   "lo": "0",
+   "secs": "516.8",
+   "shard": "10/12"
+  },
+  {
+   "B": "63096",
+   "candidates": "61392842",
+   "hi": "1000000000000000000000000",
+   "hits": "0",
+   "lo": "0",
+   "secs": "787.1",
+   "shard": "11/12"
+  }
+ ],
+ "strict_orientation_solutions": 0
+}
