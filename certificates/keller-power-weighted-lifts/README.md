@@ -73,6 +73,16 @@ is ever performed numerically**. The verifier does not take this on trust: leg
 `gamma-cancellation` multiplies the closed forms back up by `gamma^k` and
 `gamma^{k+1}` and checks they equal the honest `q(w)`, `p(w)` as polynomials.
 
+### Out-of-band corroboration (not in the trust path)
+
+Before this dependency-free verifier was written, all 27 members were rebuilt a
+second time in sympy along a deliberately different route — the raw
+`p(w)/gamma^{k+1}` and `q(w)/gamma^k` divisions performed symbolically rather
+than via the closed forms above, and the determinant taken by Berkowitz rather
+than cofactor expansion. All 27 gave `-k/(k+1)`. That run used a third-party CAS
+and is **not** part of the certificate; it is recorded only because it exercised
+a path that shares no code with `verify.py`.
+
 ### The generic-degree argument
 
 Write `X, Y, Z` for the components of `F`. The target weights are
