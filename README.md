@@ -32,9 +32,19 @@ machine-verifiable witness would be, and an `evidence[]` block from which each
 entry's **confidence class (C0–C3) is computed by the validator — never
 asserted**. The unit of progress here is the bracket, not the paper.
 
-State the limits first: **no Erdős prize in this atlas is claimable by finite
-computation** — every headline prize attaches to an asymptotic statement. What
-finite computation *can* do is what this atlas maps: exact small-value tables,
+State the limits first: **almost every Erdős prize here attaches to an asymptotic
+statement, and is therefore not claimable by finite computation.** The exception
+is worth naming precisely, because an earlier version of this page claimed there
+was none. Upstream marks 43 problems with a state that is open *and* names a
+finite handle — `decidable` (resolved up to a finite check), `falsifiable` (a
+finite counterexample would settle it), `verifiable` (a finite check would settle
+it) — and **seven of those carry a prize**, including a **$1000** falsifiable
+(#64) and a **$500** decidable (#19). For a falsifiable conjecture, exhibiting one
+finite counterexample settles it. That is not a promise a counterexample exists or
+can be found; it is the difference between a wall and a target, and the atlas now
+records which is which (`upstream_finite_handle` in
+[`atlas/stubs.json`](atlas/stubs.json)). What finite computation *can* do is what
+this atlas maps: exact small-value tables,
 witness records, verified-up-to-N frontiers, certified nonexistence — and, just
 as loudly, the **walls** where compute is known to be wasted
 ([`atlas/walls.md`](atlas/walls.md)). Most map entries are agent-mined and
