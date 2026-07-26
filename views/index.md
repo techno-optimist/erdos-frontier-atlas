@@ -10,7 +10,7 @@ The machine-readable **agent-coordination annex** to [erdosproblems.com](https:/
 
 | total | movable | wall | open | solved-upstream | formalized (Lean) | with statement | audited (deep) | cash-prize |
 |--:|--:|--:|--:|--:|--:|--:|--:|--:|
-| **1217** | 5 | 27 | 623 | 562 | 404 | 323 | 51 | 106 |
+| **1217** | 5 | 27 | 619 | 566 | 404 | 323 | 51 | 106 |
 
 ## Audited frontier (deep records)
 
