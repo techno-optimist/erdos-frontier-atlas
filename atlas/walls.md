@@ -47,12 +47,44 @@ the entries a scout is most tempted by and most likely to burn a farm on:
 | problem | upstream handle | prize | why the handle does not help |
 |---|---|---|---|
 | **#19** | `decidable` | $500 | Erdős–Faber–Lovász is **proved for large n** (Kang–Kelly–Kühn–Methuku–Osthus, *Annals* 2023). The witness branch is empty; what remains is small-case certification, which reduces to pigeonhole/resolution and has no compact certificate. |
-| **#64** | `falsifiable` | $1000 | 2-power cycles: witness branch unbounded or believed empty. Nothing finite to aim at. |
+| **#64** | `falsifiable` | $1000 | **This row was too coarse — see the split below.** The *general* problem (min degree ≥ 3, any graph) has an unbounded witness branch and remains a wall. The *cubic* sub-lane does not. |
 | **#97** | `falsifiable` | $100 | Measure-zero collinearity defeats float search; nonexistence needs order-type enumeration with an **∃ℝ realizability gap** — no DRAT route exists. |
 | **#107** | `falsifiable` | $500 | Happy Ending `f(7)=33`: Heule/Scheucher/Marić/Bogdan **already run our exact SAT+DRAT order-type pipeline**, at 2.28M CPU-sec per configuration. Do not duplicate an active, walled 2026 effort. |
 | **#114** | `falsifiable` | $250 | Lemniscate length: transcendental objective (elliptic integrals) so no exact/DRAT verifier — and **Tao proved the conjecture for all large n** (arXiv:2512.12455). |
 | **#128** | `falsifiable` | $250 | Sparse Half: the verifier is **NP-hard** (Sparsest-k-Subgraph), failing the cheap-verification precondition, and a counterexample is conjectured not to exist (tight at n²/50). |
 | **#548** | `falsifiable` | — | Erdős–Sós: believed-empty witness branch. |
+
+### #64 splits, and our wall only covered one half
+
+A 2026-07-26 feasibility triage of all 43 finite-handled problems confirmed six of
+the seven rows above — several with sharper reasons than we had — and **contradicted
+#64**, correctly.
+
+Erdős–Gyárfás asks whether every graph with minimum degree ≥ 3 contains a cycle
+whose length is a power of two. Over *all* such graphs the witness branch really is
+unbounded, which is what this file recorded. But the **cubic** sub-lane is bounded
+and unswept:
+
+- Klas Markström, *Extremal graphs for some problems on cycles in graphs*,
+  Congr. Numer. 171 (2004), §4 — generated **all cubic graphs on fewer than 30
+  vertices** with Brinkmann's `minibaum`, and found none.
+- Cubic graphs on 30 vertices: **845,480,228,069** (OEIS [A002851](https://oeis.org/A002851),
+  tabulated to 32 vertices, so the class is demonstrably generatable).
+- ≈10¹² generations with C4/C8 early-abort — one workstation, days not years.
+- Verification is bounded-DFS cycle detection on integers: exact, dependency-free,
+  no floats, no CAS.
+- **Nobody has swept n = 30.** The published frontier is still Markström 2004.
+
+That is a live records-lane rung, not a resolution: a clean sweep yields "no cubic
+counterexample on ≤ 30 vertices", two decades of nothing more. It is recorded here
+rather than in the target list because the *problem* stays walled — only this one
+sub-lane is reachable, and it should be entered with that expectation.
+
+**The general lesson, which is why this is in walls.md and not a footnote:** a wall
+row that says "witness branch unbounded or believed empty" can be true of a problem
+and false of its most-studied special case. Two rows carried that phrasing (#64,
+#548); #548 survived re-examination, #64 did not. When writing a wall, say which
+*branch* is walled.
 
 The pattern is worth naming, because it is why the handle misleads. A conjecture
 gets marked falsifiable precisely when it is *believed true* — so the finite object
