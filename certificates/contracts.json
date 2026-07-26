@@ -59,7 +59,7 @@
     {
       "path": "certificates/graffiti-284-refutation",
       "classification": "certified_local",
-      "boundary": "Independent exact replay of an external refutation (Wilbanks & \"Annie\", AGNT Labs). Certifies that the statement as given is false, witnessed by the graph built here; does not certify novelty, priority, the authors' own artifacts, or that the conjecture is faithfully transcribed from Fajtlowicz's Graffiti list."
+      "boundary": "Independent exact replay of an external refutation (Wilbanks & Annie, AGNT Labs). Certifies that the statement as given is false, witnessed by the graph built here; does not certify novelty, priority, the authors' own artifacts, or that the conjecture is faithfully transcribed from Fajtlowicz's Graffiti list."
     },
     {
       "path": "certificates/jacobian-conjecture",
@@ -104,7 +104,7 @@
     {
       "path": "certificates/graffiti-290",
       "classification": "certified_local",
-      "boundary": "Independent exact verification of an EXTERNAL claim (conjecture: Graffiti/Fajtlowicz #290; proof: Wilbanks and 'Annie', AGNT Labs) on a finite family only, and ONLY under the Written-on-the-Wall / Brewster gravity convention. Both halves of the convention split are reported: (a) under the gravity definition in Aouchiche-Hansen's 2010 survey the conjecture is reported REFUTED (Roucairol-Cazenave, arXiv:2409.18626v1 Sec. 5.2), and (b) those same authors call the Written-on-the-Wall / Brewster definition 'the correct definition' and report refutation was 'seemingly impossible' under it. Neither the refutation nor that judgement is adjudicated here. The paper's proof is not replayed; novelty and priority are not assessed."
+      "boundary": "Independent exact verification of an EXTERNAL claim (conjecture: Graffiti/Fajtlowicz #290; proof: Wilbanks and Annie, AGNT Labs) on a finite family only, and ONLY under the Written-on-the-Wall / Brewster gravity convention. Both halves of the convention split are reported: (a) under the gravity definition in Aouchiche-Hansen's 2010 survey the conjecture is reported REFUTED (Roucairol-Cazenave, arXiv:2409.18626v1 Sec. 5.2), and (b) those same authors call the Written-on-the-Wall / Brewster definition 'the correct definition' and report refutation was 'seemingly impossible' under it. Neither the refutation nor that judgement is adjudicated here. The paper's proof is not replayed; novelty and priority are not assessed."
     },
     {
       "path": "certificates/keller-power-weighted-lifts",
@@ -438,7 +438,7 @@
       "id": "graffiti-284-hoffman-singleton",
       "status": "promoted",
       "statement": "The Graffiti 284 statement as given -- if girth(G) >= 5 then the minimum dual degree is at most -lambda_min(D(G)) -- is false: the Hoffman-Singleton graph has girth 5, minimum dual degree 7, and distance-matrix smallest eigenvalue -4.",
-      "scope": "Independent exact replay of an EXTERNAL refutation by Nathan Wilbanks and \"Annie\" (AGNT Labs, 2026-07-23). The counterexample and its identification are theirs; this repository contributes only the dependency-free verification. Certifies the falsity of the statement AS GIVEN, not that the statement is conjecture 284 of Fajtlowicz's Graffiti list, and not novelty or priority.",
+      "scope": "Independent exact replay of an EXTERNAL refutation by Nathan Wilbanks and Annie (AGNT Labs, 2026-07-23). The counterexample and its identification are theirs; this repository contributes only the dependency-free verification. Certifies the falsity of the statement AS GIVEN, not that the statement is conjecture 284 of Fajtlowicz's Graffiti list, and not novelty or priority.",
       "machine_verdict": "\"claim\":\"The Graffiti 284 statement as given -- if girth(G) >= 5 then min dual degree <= -lambda_min(D(G)) -- is FALSE: the Hoffman-Singleton graph has girth 5, computed minimum dual degree 7, and distance-matrix smallest eigenvalue exactly -4\"",
       "publication_bindings": [
         {
@@ -457,7 +457,7 @@
       "artifacts": [
         {
           "path": "certificates/graffiti-284-refutation/verify.py",
-          "sha256": "83a989b73833831ea30ce47efa65799d200876d03302431183cf9ca3c68d34f8"
+          "sha256": "2377ff7baf51d5a150e9ec1e32d0294f6d5756a4d962b5e5d4186b90d9137762"
         },
         {
           "path": "certificates/graffiti-284-refutation/receipt.json",
@@ -554,7 +554,7 @@
       "id": "graffiti-290-finite-verification",
       "status": "promoted",
       "statement": "Graffiti 290 holds, under the Written-on-the-Wall / Brewster gravity convention, on every girth >= 5 graph of order <= 10 (all 1360 with at least one edge, connected and disconnected) and on 21 larger instances up to Hoffman-Singleton.",
-      "scope": "An INDEPENDENT FINITE VERIFICATION of an EXTERNAL claim, and nothing more. The conjecture is Graffiti's (Fajtlowicz #290); the proof is Nathan Wilbanks and 'Annie' (AGNT Labs). Neither is a result of this repository. The paper's proof is NOT replayed -- only the truth of the inequality on a finite family is checked, which is not a verification of a proof. Scoped to the Written-on-the-Wall / Brewster gravity convention; under the Aouchiche-Hansen survey definition the conjecture is reported REFUTED (Roucairol-Cazenave, arXiv:2409.18626v1 Sec. 5.2) and that reading is neither obtained nor replayed here. Novelty and priority are not assessed. Nothing is certified for n > 10 beyond the 21 listed instances.",
+      "scope": "An INDEPENDENT FINITE VERIFICATION of an EXTERNAL claim, and nothing more. The conjecture is Graffiti's (Fajtlowicz #290); the proof is Nathan Wilbanks and Annie (AGNT Labs). Neither is a result of this repository. The paper's proof is NOT replayed -- only the truth of the inequality on a finite family is checked, which is not a verification of a proof. Scoped to the Written-on-the-Wall / Brewster gravity convention; under the Aouchiche-Hansen survey definition the conjecture is reported REFUTED (Roucairol-Cazenave, arXiv:2409.18626v1 Sec. 5.2) and that reading is neither obtained nor replayed here. Novelty and priority are not assessed. Nothing is certified for n > 10 beyond the 21 listed instances.",
       "machine_verdict": "verdict digest over 2720 verdict records: b7ac0c575c819a5bfba1beb9fb43f896296c2574940d82d348141069d6d66d9a",
       "publication_bindings": [
         {
@@ -569,7 +569,7 @@
       "artifacts": [
         {
           "path": "certificates/graffiti-290/verify.py",
-          "sha256": "8abda708893f18b7d1b61d69eecc9350aa3a6b334d8e1c32c507eb0ea5ee7cd9"
+          "sha256": "2924d00245b6cf4d9d94d6c8af8af49a9423109d8157e8b952f475aa0532b7bb"
         },
         {
           "path": "certificates/graffiti-290/certificate.json",

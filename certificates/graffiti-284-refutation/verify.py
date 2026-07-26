@@ -3,7 +3,7 @@
 
 WHOSE RESULT THIS IS
 --------------------
-The counterexample is NOT ours. Nathan Wilbanks and "Annie" (AGNT Labs,
+The counterexample is NOT ours. Nathan Wilbanks and Annie (AGNT Labs,
 "Graffiti 284 Refuted by Hoffman-Singleton -- AGNT Labs Verification Note",
 2026-07-23) identified the Hoffman-Singleton graph as a counterexample to
 Graffiti 284. This directory contributes the independent, dependency-free,
@@ -646,7 +646,7 @@ def main() -> int:
             return 2
 
     print("Graffiti 284 -- independent replay of an EXTERNAL refutation")
-    print("external result: Nathan Wilbanks & \"Annie\" (AGNT Labs, 2026-07-23);")
+    print("external result: Nathan Wilbanks & Annie (AGNT Labs, 2026-07-23);")
     print("this directory contributes the independent verification only.")
     print()
 

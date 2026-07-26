@@ -1,7 +1,7 @@
 # Graffiti 290 — independent replay of someone else's result
 
 **Whose result this is.** The conjecture is **Graffiti's** (S. Fajtlowicz), conjecture **290**,
-recorded in *Written on the Wall*, p. 79. The **proof** is **Nathan Wilbanks and "Annie" (AGNT
+recorded in *Written on the Wall*, p. 79. The **proof** is **Nathan Wilbanks and Annie (AGNT
 Labs)**, *A Proof of Graffiti 290*. Neither the conjecture nor the proof is a result of this
 repository. Everything in this directory is **only an independent finite verification** of the
 inequality they assert, together with an explicit statement of what that verification leaves
@@ -45,17 +45,30 @@ Brewster–Dinneen–Faber 1995 [2], and Roucairol–Cazenave arXiv:2409.18626 �
 
 ## The statement, and the two readings of it
 
-Graffiti 290 reads: *if girth ≥ 5 then the second smallest adjacency eigenvalue ≤ size / mean
-gravity.* Writing `λ₁ ≥ … ≥ λₙ` for the adjacency spectrum, `m` for the size and `Ḡr` for the mean
-gravity, that admits two readings, and **the paper proves the stronger one**:
+Graffiti 290 reads, **verbatim from the primary source** — *Written on the Wall*, July 2004
+compilation, printed folio 79 (`sha256 d2c779d2c28418b30ab1b4f84bf7112c0e000bca1f2d6a3c48d0baba78af7733`,
+page image read directly, since the PDF's text layer uses a custom font encoding):
+
+> **290.** If girth is ≥ 5 then the **− 2nd smallest eigenvalue** ≤ size/meangravity.
+
+Writing `λ₁ ≥ … ≥ λₙ` for the adjacency spectrum, `m` for the size and `Ḡr` for the mean gravity:
 
 | | inequality | status here |
 |---|---|---|
-| literal Written-on-the-Wall reading | `λₙ₋₁ ≤ m / Ḡr` | verified |
-| the paper's reading | `−λₙ₋₁ ≤ m / Ḡr` | verified (stronger; implies the other whenever `λₙ₋₁ ≤ 0`) |
+| **the literal Written-on-the-Wall reading** — the minus is in the source | `−λₙ₋₁ ≤ m / Ḡr` | verified |
+| a weaker variant, sign dropped | `λₙ₋₁ ≤ m / Ḡr` | verified (implied by the above whenever `λₙ₋₁ ≤ 0`) |
 
-Both are checked, on every instance, so the certificate does not depend on resolving the sign
-ambiguity.
+Both are checked on every instance, so the certificate does not depend on resolving the sign.
+
+> **Correction (2026-07-26).** An earlier version of this page had these two labels **swapped** —
+> it called the sign-dropped form "the literal Written-on-the-Wall reading" and the form with the
+> minus "the paper's reading", described as a strengthening beyond what was asked. That was wrong,
+> and wrong in a direction unfair to the authors: the minus sign is in Fajtlowicz's text, so what
+> they prove is exactly the conjecture as stated, not a bonus. The error came from working off a
+> paraphrase; it was caught by reading folio 79 itself. Fajtlowicz uses the same inline-negation
+> idiom one entry earlier, in 284 on the same page — *"the minimum dual degree ≤ **-** the smallest
+> eigenvalue of distance matrix"* — which corroborates the reading. No computation changed: both
+> forms were verified before and are verified now.
 
 ## Two things the paper adds silently, and what we found
 
@@ -309,7 +322,7 @@ keep the replay under a couple of minutes. Nothing about the problem changes at 
 
 - S. Fajtlowicz, *Written on the Wall* (conjecture 290, p. 79; gravity matrix, p. 52) — cited at
   second hand, see above.
-- N. Wilbanks and "Annie" (AGNT Labs), *A Proof of Graffiti 290*,
+- N. Wilbanks and Annie (AGNT Labs), *A Proof of Graffiti 290*,
   <https://agnt.gg/whitepapers/a-proof-of-graffiti-290.html> — the external result being replayed.
 - **[1]** M. Aouchiche and P. Hansen, *A survey of automated conjectures in spectral graph theory*,
   **Linear Algebra and its Applications**, 432(9):2293–2322, April 2010 — the survey whose gravity

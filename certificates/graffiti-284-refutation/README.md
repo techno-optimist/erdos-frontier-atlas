@@ -1,6 +1,6 @@
 # Graffiti 284 — independent replay of someone else's refutation
 
-**The refutation is not ours.** Nathan Wilbanks and "Annie" (AGNT Labs), in
+**The refutation is not ours.** Nathan Wilbanks and Annie (AGNT Labs), in
 *Graffiti 284 Refuted by Hoffman–Singleton — AGNT Labs Verification Note*
 (2026-07-23, <https://agnt.gg/whitepapers/graffiti-284-refutation.html>),
 identified the Hoffman–Singleton graph as a counterexample to Graffiti
@@ -328,7 +328,7 @@ digest — not only the output it prints.
 
 ## not_certified_here
 
-- **Novelty and priority.** Whether Wilbanks & "Annie" were first to observe
+- **Novelty and priority.** Whether Wilbanks & Annie were first to observe
   that Hoffman–Singleton refutes 284 is a provenance question, unchecked here.
   This lane does not adjudicate credit; it only replays the mathematics and
   attributes it to them.

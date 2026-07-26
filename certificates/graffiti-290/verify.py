@@ -3,7 +3,7 @@
 
 WHOSE RESULT IS THIS.  The conjecture is Graffiti's (Fajtlowicz), conjecture 290,
 "Written on the Wall" p. 79.  The *proof* replayed against here is by Nathan
-Wilbanks and "Annie" (AGNT Labs), "A Proof of Graffiti 290".  Neither the
+Wilbanks and Annie (AGNT Labs), "A Proof of Graffiti 290".  Neither the
 conjecture nor the proof is ours.  This file is ONLY an independent finite
 verification of the inequality they claim, plus an explicit statement of what
 that verification does and does not settle.  Nothing here is a discovery of this
