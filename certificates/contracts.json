@@ -57,6 +57,11 @@
       "boundary": "Exact finite D(1..9) table; no effective Furstenberg-Katznelson threshold."
     },
     {
+      "path": "certificates/graffiti-284-refutation",
+      "classification": "certified_local",
+      "boundary": "Independent exact replay of an external refutation (Wilbanks & \"Annie\", AGNT Labs). Certifies that the statement as given is false, witnessed by the graph built here; does not certify novelty, priority, the authors' own artifacts, or that the conjecture is faithfully transcribed from Fajtlowicz's Graffiti list."
+    },
+    {
       "path": "certificates/jacobian-conjecture",
       "classification": "certified_local",
       "boundary": "Independent exact verification of the external n=3 construction."
@@ -415,6 +420,64 @@
           "failure_control": {
             "kind": "none_explained",
             "evidence": "Exact exception-set equality fails on any extra or missing value; a standalone planted scan fixture remains debt."
+          }
+        }
+      ]
+    },
+    {
+      "id": "graffiti-284-hoffman-singleton",
+      "status": "promoted",
+      "statement": "Graffiti conjecture 284 is false: a graph of girth 5 exists whose minimum dual degree (7) exceeds the negative of its distance matrix's smallest eigenvalue (4).",
+      "scope": "Independent exact replay of an EXTERNAL refutation by Nathan Wilbanks and \"Annie\" (AGNT Labs, 2026-07-23). The counterexample and its identification are theirs; this repository contributes only the dependency-free verification. Certifies the falsity of the statement as given, not its transcription from Fajtlowicz's Graffiti list, and not novelty or priority.",
+      "machine_verdict": "\"claim\":\"Graffiti 284 is FALSE: the Hoffman-Singleton graph has girth 5, computed minimum dual degree 7, and distance-matrix smallest eigenvalue exactly -4\"",
+      "publication_bindings": [
+        {
+          "path": "certificates/graffiti-284-refutation/README.md",
+          "contains": "**The refutation is not ours.**"
+        },
+        {
+          "path": "certificates/graffiti-284-refutation/README.md",
+          "contains": "min_dual = 7  # every neighbor of every vertex has degree 7"
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "certificates/graffiti-284-refutation/verify.py",
+          "sha256": "d53c0635ec058996d6e33bd41c588b5fc954ce04f741a044c1bb4a76b6e36152"
+        },
+        {
+          "path": "certificates/graffiti-284-refutation/receipt.json",
+          "sha256": "8feb1944e2da0e8c104344c15a32d691b68e171bef6fd4365ad38a2423f5cee6"
+        }
+      ],
+      "replays": [
+        {
+          "profile": "fast",
+          "certifies_claim": true,
+          "entrypoint": "certificates/graffiti-284-refutation/verify.py",
+          "argv": [
+            "python3",
+            "-I",
+            "certificates/graffiti-284-refutation/verify.py"
+          ],
+          "timeout_seconds": 60,
+          "exit_code": 0,
+          "stdout_contains": [
+            "\"claim\":\"Graffiti 284 is FALSE: the Hoffman-Singleton graph has girth 5, computed minimum dual degree 7, and distance-matrix smallest eigenvalue exactly -4\"",
+            "girth = 5 (computed by BFS, not inferred)",
+            "minimum dual degree -- COMPUTED from the graph, not asserted",
+            "rejected: hardcoded (min_dual=7, rhs=4) verdict applied to the Petersen graph",
+            "rejected: girth-4 graph K_{3,3} offered as a 284 counterexample",
+            "rejected: Hoffman-Singleton with one 2-swap presented as HS",
+            "receipt-checked: receipt.json",
+            "PASS -- external refutation independently verified; all planted controls rejected"
+          ],
+          "stdout_not_contains": [
+            "[FAIL]"
+          ],
+          "failure_control": {
+            "kind": "embedded",
+            "evidence": "Nine planted controls must each be rejected or the run exits nonzero, including a re-creation of the external verifier's hardcoded (min_dual=7, rhs=4) logic applied to the Petersen graph, which that logic calls REFUTED and the computed pipeline correctly clears. Eight independent source mutations and one poisoned receipt field were each confirmed to drive exit 1."
           }
         }
       ]

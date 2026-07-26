@@ -1,0 +1,52 @@
+{
+  "controls_rejected": 9,
+  "distance_spectrum": {
+    "annihilating_polynomial_vanishes": true,
+    "eigenvalues": {
+      "-4": 28,
+      "1": 21,
+      "91": 1
+    },
+    "lambda_min": -4,
+    "method": "integer annihilating polynomial + exact Bareiss rank + integer eigenvector",
+    "multiplicities_sum": 50
+  },
+  "external_result": {
+    "affiliation": "AGNT Labs",
+    "authors": [
+      "Nathan Wilbanks",
+      "Annie"
+    ],
+    "claim": "Graffiti conjecture 284 is false",
+    "counterexample": "Hoffman-Singleton graph",
+    "our_contribution": "independent exact replay only; not a discovery of this repository",
+    "source": "https://agnt.gg/whitepapers/graffiti-284-refutation.html"
+  },
+  "graph": {
+    "construction": "Robertson pentagon/pentagram, built in this script",
+    "diameter": 2,
+    "girth_computed": 5,
+    "m": 175,
+    "n": 50,
+    "regular_degree": 7,
+    "srg_parameters": [
+      50,
+      7,
+      0,
+      1
+    ]
+  },
+  "min_dual_degree": {
+    "agrees": true,
+    "attained_at_vertex": 0,
+    "computed": "7",
+    "hardcoded_in_external_verifier": 7
+  },
+  "schema": "efa-graffiti-284-v1",
+  "verdict": {
+    "conjecture_284_holds": false,
+    "hypothesis_girth_ge_5": true,
+    "margin": 3,
+    "refutes_284": true
+  }
+}
