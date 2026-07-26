@@ -12,8 +12,13 @@ Robertson's), and Graffiti 284 is a conjecture of Siemion Fajtlowicz's
 *Graffiti* program.
 
 **This directory contributes one thing: an independent, dependency-free,
-exact-arithmetic replay that a stranger can run in one command.** No statement
-below is offered as a discovery of this repository.
+exact-arithmetic replay that a stranger can run in one command** — and the
+reason that is worth doing is narrow and specific: the authors' own shipped
+verifier hardcodes `min_dual = 7` and `rhs = 4` as literals, while this one
+computes both from the graph. No statement below is offered as a discovery of
+this repository, and the mathematics of their note holds up under every check
+here; the gap is between what the note proves and what its script checks
+([details below](#why-this-lane-is-worth-publishing-the-authors-verifier-never-computes-the-number)).
 
 ## The conjecture
 
@@ -81,12 +86,30 @@ exits nonzero on drift (`receipt-checked: receipt.json`).
 
 ## Why this lane is worth publishing: the authors' verifier never computes the number
 
-The authors ship `verify_284_hoffman_singleton_exact.py` alongside the note. It
-is careful work in most respects — it checks the strongly-regular identity
+The authors ship `verify_284_hoffman_singleton_exact.py` alongside the note.
+That script is a **separate artifact from the prose note** — the note at
+`graffiti-284-refutation.html` links to it but does not serve its text, so the
+note's URL alone is not enough to check the quotations below. The file this
+section quotes and criticises is pinned here by digest:
+
+| | |
+|---|---|
+| URL | <https://agnt.gg/whitepapers/graffiti-284-artifacts/verify_284_hoffman_singleton_exact.py> |
+| sha256 | `7d58813fa2b9f151eb4ac39dc342244503772702fc75c24f4052eed7653c97f2` |
+| size | 3380 bytes |
+| read | 2026-07-25 |
+
+That digest is what we computed from the bytes we downloaded, and it agrees
+with the authors' own published `SHA256SUMS.txt` in the same directory. Anyone
+can refetch and rehash; if the file is later edited, the hash stops matching
+and this criticism should be re-checked against the new version rather than
+trusted.
+
+It is careful work in most respects — it checks the strongly-regular identity
 `A² + A − 6I = J` and the distance identity `D = 2(J − I) − A` over the integers,
 and it explicitly quarantines its one floating-point call as a
 "float sanity cross-check only (not part of the proof)". But the two numbers
-that *are* the refutation are literals. Verbatim from that file:
+that *are* the refutation are literals. Verbatim from that file, lines 69–70:
 
 ```python
 min_dual = 7  # every neighbor of every vertex has degree 7
@@ -109,7 +132,7 @@ not checked the graph.
 Two smaller observations about the same file, recorded because they point the
 same direction: it takes its graph from `networkx.hoffman_singleton_graph()`
 rather than constructing it, so the object under test is a library constant;
-and its line `assert 49 + 4*a_ + 9*b_ == 350 - 0*49 or True` can never fail —
+and its line 47, `assert 49 + 4*a_ + 9*b_ == 350 - 0*49 or True`, can never fail —
 the trailing `or True` makes the assertion vacuous. (The following line does
 carry out the real multiplicity check, so nothing downstream is wrong; the
 pattern is what is worth naming.)
@@ -119,9 +142,31 @@ lane independently recomputes and confirms. The gap is between what the note
 *proves* and what its *script* checks, and it is exactly the gap this repository
 exists to close.
 
+## Independent corroboration that 284 was open, and not trivially searchable
+
+Roucairol & Cazenave, *Refutation of Spectral Graph Theory Conjectures with
+Search Algorithms* (arXiv:2409.18626v1, 27 Sep 2024), ran an automated
+counterexample hunt across a batch of Graffiti conjectures. Their results table
+(Table 1) lists conjecture 284 with status **O** — which they gloss as "open to
+be proved or refuted" — searched over graphs of **girth ≥ 5** built **up to
+size 50**, with a dash in all eight algorithm columns (NMCS, LNMCS, NRPA, UCT,
+GBFS, BEAM, GRAVE, RAVE): no counterexample found by any configuration. The
+Hoffman–Singleton graph has exactly 50 vertices and girth 5, so it sits
+precisely at the ceiling of that search and inside its constraint class.
+
+This is independent evidence, from a source with no stake in the present
+refutation, that 284 was still open as of September 2024 and that the
+counterexample is not something generic search hands you. It is *not* evidence
+that the object is hard to reach in principle: the same paper records a budget
+of 15 minutes per algorithm per conjecture on a single core of an Intel
+i5-6600K, which is a modest budget against the space of girth-5 graphs on up to
+50 vertices. The honest reading is that a targeted 2024 campaign, correctly
+scoped and correctly constrained, ran out of budget before it reached an object
+that a human identified directly — not that the object was out of reach.
+
 ## Planted-failure controls
 
-Nine, all printed as `[ok] rejected: …`. Exit is nonzero if any is *not*
+Six, all printed as `[ok] rejected: …`. Exit is nonzero if any is *not*
 rejected:
 
 | # | Control | Must be rejected because |
@@ -130,8 +175,18 @@ rejected:
 | 2–3 | claimed `λ_min(D) = −3`, `λ_min(D) = −5` | `dim ker(D − λI) = 0` and the annihilator with that root is a nonzero matrix. |
 | 4 | Hoffman–Singleton with one 2-swap | Still 7-regular with `m = 175`, so a degree count passes it; the `srg(50,7,0,1)` identity does not. |
 | 5 | hardcoded `(min_dual=7, rhs=4)` applied to Petersen | The hardcode says REFUTED; the computed pipeline says `3 ≤ 3` holds. This is the headline control. |
-| 6–8 | asserting `min d* ∈ {6, 8, 3}` on Hoffman–Singleton | Disagrees with the computed `7`. |
-| 9 | perturbed integer eigenvector for `−4` | `D v ≠ −4 v` once one coordinate moves. |
+| 6 | perturbed integer eigenvector for `−4` | `D v ≠ −4 v` once one coordinate moves. |
+
+**Three controls were removed from this table, and the count corrected from
+nine to six.** An earlier revision also scored `[ok] rejected` for the
+assertions `min d* ∈ {6, 8, 3}` on Hoffman–Singleton. Each of those evaluated
+`Fraction(literal) != md` against the *already-computed* `md` — two constants
+compared to each other, wired to nothing. Under the single mutation this whole
+lane exists to catch (`min_dual_degree()` stubbed to return the literal `7`)
+all three still printed `[ok] rejected`; only control 5 fired. A control that
+survives the mutation it purports to detect is not a control, and counting it
+inflates the score, so they were deleted rather than relabelled. This
+paragraph stays because a public correction should be legible, not silent.
 
 The controls were themselves adversarially checked rather than assumed. Eight
 independent source mutations each drive the run to exit 1:
@@ -160,10 +215,15 @@ are what notice when the checker stops checking.
   that Hoffman–Singleton refutes 284 is a provenance question, unchecked here.
   This lane does not adjudicate credit; it only replays the mathematics and
   attributes it to them.
-- **The authors' own artifacts.** Their scripts, their outputs, their SHA256SUMS
-  and claim-ledger are neither re-executed nor mirrored here. The `min_dual = 7`
-  / `rhs = 4` lines above are quoted from the file published at the URL cited
-  above, as read on 2026-07-25; they are quoted, not run.
+- **The authors' own artifacts.** Their scripts, their outputs and their
+  claim-ledger are neither re-executed nor mirrored here. The `min_dual = 7` /
+  `rhs = 4` lines above are quoted from
+  `graffiti-284-artifacts/verify_284_hoffman_singleton_exact.py` (sha256
+  `7d58813f…c97f2`, 3380 bytes, read 2026-07-25 — full URL in the table above),
+  which is a **different artifact from the `…/graffiti-284-refutation.html`
+  note**; they are quoted, not run. We did recompute that one digest and found
+  it equal to the entry in the authors' published `SHA256SUMS.txt`; no other
+  line of that checksum file was verified, and nothing in it was replayed.
 - **That "284" is the right index, or that the statement is transcribed
   faithfully.** This lane verifies that *the statement as given* — `girth ≥ 5 ⇒
   min dual degree ≤ −λ_min(D)` — is false. It does **not** check that assertion
@@ -181,3 +241,8 @@ are what notice when the checker stops checking.
   or any other) — those are separate results with separate evidence, and none of
   it is in this directory.
 - **The other legs of the authors' note.** Only the 284 claim is replayed.
+- **The Roucairol & Cazenave search campaign.** Their Table 1 row for 284 is
+  *read*, not reproduced: none of their eight search algorithms was re-run
+  here, and this lane makes no claim about whether their search was exhaustive
+  over any class. It is cited as third-party evidence of the conjecture's
+  status in Sept 2024, nothing more.

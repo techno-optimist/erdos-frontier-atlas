@@ -1,5 +1,5 @@
 {
-  "controls_rejected": 9,
+  "controls_rejected": 6,
   "distance_spectrum": {
     "annihilating_polynomial_vanishes": true,
     "eigenvalues": {
@@ -20,6 +20,17 @@
     "claim": "Graffiti conjecture 284 is false",
     "counterexample": "Hoffman-Singleton graph",
     "our_contribution": "independent exact replay only; not a discovery of this repository",
+    "quoted_artifact": {
+      "bytes": 3380,
+      "digest_agrees_with_authors_sha256sums": true,
+      "quoted_lines": [
+        69,
+        70
+      ],
+      "read_date": "2026-07-25",
+      "sha256": "7d58813fa2b9f151eb4ac39dc342244503772702fc75c24f4052eed7653c97f2",
+      "url": "https://agnt.gg/whitepapers/graffiti-284-artifacts/verify_284_hoffman_singleton_exact.py"
+    },
     "source": "https://agnt.gg/whitepapers/graffiti-284-refutation.html"
   },
   "graph": {

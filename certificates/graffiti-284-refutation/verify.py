@@ -46,8 +46,22 @@ Legs:
 
 PLANTED-FAILURE CONTROLS (the point of the lane)
 ------------------------------------------------
-Every control below MUST be rejected, and prints as `[ok] rejected: ...`.
-A checker that cannot fail certifies nothing.
+Six, each of which MUST be rejected, printing as `[ok] rejected: ...`.
+A checker that cannot fail certifies nothing -- and neither does a CONTROL
+that cannot fail, which is why the count here is six rather than the nine
+this lane once advertised. See the note above control C5.
+
+THE QUOTED EXTERNAL ARTIFACT
+----------------------------
+The `min_dual = 7` / `rhs = 4` lines this lane quotes and re-creates as
+control C4 come from the authors' shipped verifier, which is a SEPARATE
+artifact from the prose note -- the note does not serve that code:
+    https://agnt.gg/whitepapers/graffiti-284-artifacts/verify_284_hoffman_singleton_exact.py
+    sha256 7d58813fa2b9f151eb4ac39dc342244503772702fc75c24f4052eed7653c97f2
+    3380 bytes, read 2026-07-25, quoted lines 69-70.
+That digest also matches the authors' own published SHA256SUMS.txt. We are
+publishing criticism of named third parties: the reader must be able to fetch
+the exact bytes we read, and a silent edit must be detectable.
 
 WHAT IS NOT CERTIFIED
 ---------------------
@@ -461,7 +475,9 @@ def graffiti_284_report(g, name, candidates):
 def paper_style_hardcoded_verdict(_g):
     """A faithful re-creation of the DEFECT, used only as a planted control.
 
-    The authors' shipped verify_284_hoffman_singleton_exact.py sets, verbatim:
+    The authors' shipped verify_284_hoffman_singleton_exact.py (sha256
+    7d58813f..., 3380 bytes; see the module docstring for the URL) sets at
+    lines 69-70, verbatim:
         min_dual = 7  # every neighbor of every vertex has degree 7
         rhs = 4       # -lambda_min(D)
     Both decisive numbers are literals: the graph argument is never read. This
@@ -603,13 +619,17 @@ def main() -> int:
              f"min d*={rp['min_dual_degree']}, -lambda_min={-rp['lambda_min_D']}, "
              f"so {rp['min_dual_degree']} <= {-rp['lambda_min_D']} HOLDS")
 
-    # C5: hardcoded-vs-computed on HS itself -- any literal other than the
-    #     computed value must be caught.
-    for literal in (6, 8, 3):
-        rejected(f"asserting min dual degree = {literal} on Hoffman-Singleton",
-                 Fraction(literal) != md, f"computed value is {md}")
+    # (An earlier revision of this lane also "rejected" the assertions
+    #  min d* in {6, 8, 3} on Hoffman-Singleton. Those were removed, not
+    #  renamed: each merely evaluated `Fraction(literal) != md` against the
+    #  already-computed `md`, so each still printed `[ok] rejected` under the
+    #  one defect this lane exists to catch -- min_dual_degree() stubbed to
+    #  return the literal 7 -- while only C4 below actually fired. A control
+    #  that survives the mutation it is supposed to detect is not a control,
+    #  and counting it inflates the score. See README, "Planted-failure
+    #  controls".)
 
-    # C6: the checker must reject a claimed integer eigenvector that is not one.
+    # C5: the checker must reject a claimed integer eigenvector that is not one.
     fake = list(witness)
     fake[0] += 1
     rejected("perturbed eigenvector witness for -4",
@@ -625,6 +645,19 @@ def main() -> int:
             "authors": ["Nathan Wilbanks", "Annie"],
             "affiliation": "AGNT Labs",
             "source": "https://agnt.gg/whitepapers/graffiti-284-refutation.html",
+            # The note above is prose and does NOT serve the code this lane
+            # quotes and rebuilds as control C4. The quoted file is a separate
+            # artifact; it is pinned by digest so a reader can locate the exact
+            # bytes we read and detect a silent edit.
+            "quoted_artifact": {
+                "url": "https://agnt.gg/whitepapers/graffiti-284-artifacts/"
+                       "verify_284_hoffman_singleton_exact.py",
+                "sha256": "7d58813fa2b9f151eb4ac39dc342244503772702fc75c24f4052eed7653c97f2",
+                "bytes": 3380,
+                "read_date": "2026-07-25",
+                "digest_agrees_with_authors_sha256sums": True,
+                "quoted_lines": [69, 70],
+            },
             "our_contribution": "independent exact replay only; not a discovery of this repository",
         },
         "graph": {
@@ -653,7 +686,10 @@ def main() -> int:
             "margin": int(rep["min_dual_degree"] - (-rep["lambda_min_D"])),
             "refutes_284": rep["refutes_284"],
         },
-        "controls_rejected": 9,
+        # Six, and every one of them load-bearing: each dies under at least one
+        # source mutation. Deliberately NOT the count of `[ok] rejected` lines
+        # a reader could tally -- a control that cannot fail must not be scored.
+        "controls_rejected": 6,
     }
 
     if emit:
@@ -679,8 +715,16 @@ def main() -> int:
             print(f"  - {f}")
         return 1
 
-    print('{"claim":"Graffiti 284 is FALSE: the Hoffman-Singleton graph has girth 5, '
-          'computed minimum dual degree 7, and distance-matrix smallest eigenvalue exactly -4",'
+    # The claim string is the most-copied artifact this lane produces, so the
+    # transcription caveat has to travel inside it -- "the statement as given",
+    # plus an explicit not_checked field. What is certified is that a specific
+    # sentence is false, not that the sentence is Fajtlowicz's conjecture 284.
+    print('{"claim":"The Graffiti 284 statement as given -- if girth(G) >= 5 then '
+          'min dual degree <= -lambda_min(D(G)) -- is FALSE: the Hoffman-Singleton graph '
+          'has girth 5, computed minimum dual degree 7, and distance-matrix smallest '
+          'eigenvalue exactly -4",'
+          '"not_checked":"that this statement is conjecture 284 of Fajtlowicz\'s Graffiti '
+          'list; the statement is taken as transcribed by the authors cited below",'
           '"attribution":"external (Wilbanks & Annie, AGNT Labs); this repository verified only",'
           '"valid":true}')
     print("PASS -- external refutation independently verified; all planted controls rejected")
