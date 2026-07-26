@@ -45,6 +45,7 @@ verify-certs:
 	python3 certificates/erdos-552-f39/verify.py
 	python3 certificates/erdos-13/verify.py
 	python3 certificates/erdos-1107/verify.py 200000
+	python3 -I certificates/erdos-142-cone-obstruction/verify.py
 
 test:
 	python3 -m pytest tests/ -q

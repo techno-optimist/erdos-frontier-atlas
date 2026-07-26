@@ -27,6 +27,11 @@
       "boundary": "Refutes two lemmas (`ker pi cap D = 0`, `q >= dim ker pi`) and proves Theorem A in their place. Explicitly NOT an r_3(N) bound and not a solution of #142; the claim boundary is stated in the certificate README as erdos142_solved=false, new_r3_bound=false."
     },
     {
+      "path": "certificates/erdos-142-cone-obstruction",
+      "classification": "certified_local",
+      "boundary": "Per-object refutations of the strict symmetric CONE on three q=1 closed carry-triple products, by an explicit non-negative edge functional orthogonal to the zero-tag circulation space. Settles exactly the three listed objects; explicitly NOT a theorem that every q=1 product has an infeasible cone, and NOT an r_3(N) bound. claim_boundary erdos142_solved=false, new_r3_bound=false."
+    },
+    {
       "path": "certificates/erdos-142-pressure-ceiling",
       "classification": "certified_local",
       "boundary": "A FENCE, not a bound. Certifies (C1) an exact rational comparison lambda > 7/24, (C2a) a rational ceiling Lambda_cap <= 211/250, and (C2b) that any family obeying the stated pressure bracket exceeds that ceiling for every m >= 7 and so cannot be an H1-H5 survivor. Explicitly NOT certified: the constant map itself, the cap-set ceiling (both external, sealed-by-audit), and ANY r_3(N) lower bound -- no survivor certificate exists. claim_boundary.erdos142_solved is pinned false and the verifier's own controls reject flipping it."
@@ -664,6 +669,53 @@
           "failure_control": {
             "kind": "embedded",
             "evidence": "16 planted corruptions run on every replay, each handed to one named gate whose verdict the harness requires to be a rejection; the count printed is the number of rejections observed, not a constant. C15 mutates all 15 claim-bearing cases of a member record in turn, including a field added after the sweep was written (the key set is pinned, so an added field is rejected by construction) and C16 all 7 top-level receipt counts, so a published field that no gate reads fails the replay by name. This pin is the defence against the one thing the controls cannot cover: an edit to verify.py itself."
+          }
+        }
+      ]
+    },
+    {
+      "id": "erdos-142-cone-infeasible-objects",
+      "status": "promoted",
+      "statement": "The strict symmetric cone is infeasible on each of three named q=1 closed carry-triple products",
+      "scope": "Three specific objects, each refuted by a published potential and tag multiplier; not a statement about the class of q=1 products, and not an r_3(N) bound.",
+      "machine_verdict": "\"claim\":\"cone INFEASIBLE on the listed q=1 closed products\"",
+      "publication_bindings": [
+        {
+          "path": "certificates/erdos-142-cone-obstruction/README.md",
+          "contains": "**Not** that every `q = 1` closed product has an infeasible cone."
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "certificates/erdos-142-cone-obstruction/verify.py",
+          "sha256": "bb4702028016d32206c1c3472a6c95b9833178cb2e5733be2338e8a7667acf1a"
+        },
+        {
+          "path": "certificates/erdos-142-cone-obstruction/witnesses.json",
+          "sha256": "0e3e32731ccece19559ff8ea0ce376a7782f765fc3c1792398c9e6ad2985de44"
+        }
+      ],
+      "replays": [
+        {
+          "profile": "fast",
+          "certifies_claim": true,
+          "entrypoint": "certificates/erdos-142-cone-obstruction/verify.py",
+          "argv": [
+            "python3",
+            "-I",
+            "certificates/erdos-142-cone-obstruction/verify.py"
+          ],
+          "timeout_seconds": 120,
+          "exit_code": 0,
+          "stdout_contains": [
+            "\"claim\":\"cone INFEASIBLE on the listed q=1 closed products\"",
+            "\"valid\":true",
+            "\"objects\":3",
+            "RESULT: PASS -- every certificate is sound."
+          ],
+          "failure_control": {
+            "kind": "embedded",
+            "evidence": "verify.py runs three planted mutations that must each be detected or the run fails: perturbing theta must break Y >= 0 or the pairing with the zero-tag circulation space; perturbing the vertex potential must break Y >= 0; mutating a base transition must break the pointed-simulation invariant. It additionally recomputes every published quantity rather than trusting witnesses.json, and requires Y to annihilate a FULL basis of Z rather than a sampled vector."
           }
         }
       ]
