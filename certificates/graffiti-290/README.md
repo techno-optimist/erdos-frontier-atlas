@@ -110,39 +110,66 @@ slots. It does. A generator that dropped or duplicated a class would fail this.
 
 ## What pins the verdict
 
-A verifier whose central check can be stubbed to `return True` **without any shipped artifact
-changing** is not a verifier — it is a transcript. This lane had that defect and it was found by
-mutation testing: replacing the body of `holds_paper` with `return True` used to exit `0` with a
-**byte-identical transcript and a byte-identical `certificate.json`**, because everything the receipt
-recorded was computed from `rhs()` and `lambda2_bracket()` *beside* the verdict functions rather than
-*from* them.
+A verifier whose central check can be stubbed **without any shipped artifact changing** is not a
+verifier — it is a transcript. This lane has had that defect twice, and both times it was found by
+mutation testing rather than by reasoning.
 
-It is now wired the other way round. `holds_paper` and `holds_literal` do not return booleans; each
-returns a **verdict record** `(holds, count, r)`:
+**Round 1.** Replacing the body of `holds_paper` with `return True` exited `0` with a byte-identical
+transcript and a byte-identical `certificate.json`, because everything the receipt recorded was
+computed from `rhs()` and `lambda2_bracket()` *beside* the verdict functions rather than *from* them.
+The fix was to make the functions return a record `(holds, count, r)` and hash it.
 
-| field | meaning |
-|---|---|
-| `holds` | the answer, which is exactly `count ≤ 1` |
-| `count` | the exact eigenvalue count the answer is decided on (below `−m/Ḡr`, resp. above `m/Ḡr`) |
-| `r` | the exact `m/Ḡr` the answer was decided against |
+**Round 2 — and this is the one worth reading.** That fix was not enough, and the claim made for it
+("the exact rational `r` … makes the digest discriminating") was **wrong**. Mutant `mutD` replaced
+both verdict bodies with
 
-The receipt pins `corpus.verdict_digest_sha256`: a SHA-256 over a canonical, sorted text stream of
-**every one of the 2720 verdict records actually returned** (1360 graphs × 2 mean conventions), each
-line carrying the graph, `r`, and both counts. The multiset of exact `(count_below, count_above)`
-pairs is recorded alongside, and each of the 21 battery rows carries its own counts and digest. The
-tightness figures are now read *out of* the verdict records rather than recomputed next to them.
+```python
+r = rhs(n, adj, over)
+if r is None: return None
+return (True, 0, r)
+```
 
-**Said plainly:** on this corpus every honest count is `0` — the bound is loose by a factor of 5 or
-more, so the counts carry no entropy and could not catch anything on their own. It is the exact
-rational `r`, which varies graph to graph and costs the whole gravity computation to produce, that
-makes the digest discriminating. Controls 14–16 exist to demonstrate that rather than assert it.
+and passed. Byte-identical transcript, byte-identical `certificate.json`, all sixteen controls
+rejected, exit `0`. It works because `rhs()` is a gravity/degree/distance computation that **anyone
+can call without touching the spectrum**, and because on this corpus the honest `count` is `0` on
+every single graph — so a fabricated `0` is not an approximation of the truth, it *is* the truth.
+The digest therefore had **zero entropy from the eigenvalue engine**. Worse: `mutD` has no input on
+which it can answer `False`. A real counterexample anywhere in the 1360-graph corpus would have been
+reported as a pass. That is a certificate that cannot fail, which is exactly the thing this lane
+exists to refute.
 
-## Planted-failure controls — 16 of them, all of which must be rejected
+Two things changed in response.
+
+**(1) A spectral field in the record.** `holds_paper` and `holds_literal` now return
+
+| field | meaning | reachable without an eigenvalue? |
+|---|---|---|
+| `holds` | the answer, which is exactly `count ≤ 1` | yes — one bit |
+| `count` | the exact eigenvalue count the answer is decided on | **yes in practice** — it is `0` on all 1360 graphs |
+| `r` | the exact `m/Ḡr` the answer was decided against | **yes** — `rhs()` needs no spectrum |
+| `spectrum` | `(#λ < 0, mult of 0)` for `A` itself — the inertia index | **no** |
+
+The inertia index takes the values `1,2,3,4,5` across the corpus with multiplicities
+`45/140/346/600/229`. It is a function of nothing but the spectrum, and the only way to produce it is
+to run the exact congruence. It is **not part of the inequality** — it is the entropy the
+inequality's own verdict does not carry here, carried alongside it, so that the digest depends on
+spectral work having been done. `certificate.json` pins
+`corpus.verdict_digest_sha256` over all **2720** returned records (1360 graphs × 2 mean conventions),
+and each of the 21 battery rows carries its own `adjacency_inertia_neg_zero`.
+
+**(2) A control that requires the verdict path to answer `False`.** Control 19 feeds `holds_paper`
+Petersen under this file's own planted-wrong gravity convention — the instance control 11
+independently certifies as a genuine violation — and requires the record to come back
+`(False, 4, 5/3, (4,0))`. A verdict function that cannot produce `False` on that input fails the run.
+
+Both fixes were verified by re-running the mutants; the measured table is below.
+
+## Planted-failure controls — 19 of them
 
 A checker that cannot fail certifies nothing, so the run prints `[ok] rejected:` lines. **The count
-is asserted, not merely printed:** `EXPECTED_CONTROLS = 16` is compared against the number actually
+is asserted, not merely printed:** `EXPECTED_CONTROLS = 19` is compared against the number actually
 rejected, and the pair is recorded in `certificate.json` under `planted_failure_controls`. Deleting a
-control block previously left the run at exit `0` with the battery silently smaller; it now fails.
+control block leaves the run at exit `1`.
 
 | # | planted corruption | why it must be caught |
 |---|---|---|
@@ -157,26 +184,65 @@ control block previously left the run at exit `0` with the battery silently smal
 | 12 | mean gravity inflated 20× | `m/Ḡr = 5/4 < 2` on Petersen |
 | 13 | the **flipped** inequality `m/Ḡr ≤ −λₙ₋₁` | `25 ≤ 2` is false |
 | 14 | a verdict function **stubbed to `return True`** | it is not a verdict record; the shape check says so |
-| 15 | a verdict record with a **fabricated eigenvalue count** (`(True, 1, r)`) | right shape, right answer — the digest moves anyway |
-| 16 | a verdict record with a **fabricated `m/Ḡr`** (`(True, count, r+1)`) | the two readings then disagree about what they were decided against |
+| 15 | a verdict record with a **fabricated eigenvalue count** (`(True, 1, r, spec)`) | right shape, right answer — the digest moves anyway |
+| 16 | a verdict record with a **fabricated `m/Ḡr`** (`(True, count, r+1, spec)`) | the two readings then disagree about what they were decided against |
+| 17 | **`mutD` itself** — `(True, 0, rhs(...))`, no spectral work anywhere | the record has no spectral field; the stream refuses to build |
+| 18 | `mutD` sharpened — same, plus a **fabricated** inertia index `(1,0)`, applied to both readings so every structural cross-check passes | **only the digest can catch this**, and it does |
+| 19 | a genuinely **failing** instance: Petersen under the mutated gravity convention | `holds_paper` must return `False` with count `4`. This is the control that says the verdict path can fail at all |
 
 Control 11 is **our own deliberate corruption**, planted so the convention-sensitivity of the
 statement is demonstrated rather than asserted. **It is not Aouchiche and Hansen's definition** — we
 do not have that definition and make no claim about what it is.
 
-### The three ways this run can fail, and a mutant for each
+### Mutants, measured
 
-| mutation | what catches it |
-|---|---|
-| body of `holds_paper` → `return True` | the verdict-record shape check, in check 3 and in every battery row — 25 `[FAIL]` lines, exit `1` |
-| `check_convention_controls()` deleted from `main()` | `13 planted-failure controls were rejected, but exactly 16 must run`, exit `1` |
-| **both** verdict functions → the shape-correct constant `(True, 0, Fraction(1))` | nothing structural — it passes all 16 controls — and then the receipt comparison catches it on `.corpus.verdict_digest_sha256` and on 21 battery `rhs` values, exit `1` |
+Every row below was executed. "survives" means exit `0` with a transcript **and** a
+`certificate.json` byte-identical to the clean run — the honest definition, not a weaker one.
 
-The third is the one that matters: it is the mutant that survives every check *except* the pin, which
-is what a pin is for.
+| mutation | result | caught by |
+|---|---|---|
+| body of `holds_paper` → `return True` | dies | verdict-record shape check, ~25 `[FAIL]` lines |
+| `mutD`: **both** bodies → `(True, 0, rhs(...))` | **dies** (survived before this round) | shape check — the record has no spectral field |
+| `mutD2`: `holds_paper` only → `(True, 0, rhs(...))` | **dies** (survived before this round) | same |
+| `mutD3`: both bodies → `(True, 0, rhs(...), spectral_index(...))` — real spectral work, fabricated count, **still always `True`** | **dies** | control 19: it returns `True` on the planted failing instance |
+| `spectral_index` stubbed to the constant `(1, 0)` | **dies** | control 18 notices the digest stops moving |
+| the literal reading dropped from the girth-<5 sweep (`holds_literal` → `holds_paper`) | **dies** | the sweep digest, then the receipt comparison |
+| `check_convention_controls()` deleted from `main()` | dies | `16 … rejected, but exactly 19 must run` |
+| one integer edited in `certificate.json` | dies | `.corpus.graphs_checked: 1360 vs stored 1361` |
+| **the girth-<5 sweep's `violations_literal` counter fed `vp[0]` instead of `vl[0]`** | **SURVIVES** | nothing — see below |
 
-Separately, the receipt comparison can fail on any field: editing one integer in `certificate.json`
-makes the default run print `.corpus.graphs_checked: 1360 vs stored 1361` and exit nonzero.
+**The surviving mutant is disclosed, not hidden.** Both violation counters in the girth-`<5` sweep
+are `0` across the whole range, so a counter is a constant, and swapping which reading feeds it
+changes nothing observable. No test can distinguish two constants that are equal. That is why the
+sweep also ships `girth_lt5_sweep_digest_sha256`, a hash over **both** readings' returned records:
+that digest is what makes the literal reading load-bearing in the sweep, and dropping the reading
+does kill the run (row 6 above). The counters are reported because a reader wants the number; they
+are not evidence on their own, and this README no longer implies they are.
+
+## What this verifier cannot defend against
+
+Every one of the 19 controls corrupts an **input**. None of them defends against a corrupted
+**verifier**.
+
+If someone edits `verify.py` itself — stubs a function to a constant, no-ops the `FAILURES`
+accumulator so `bad()` stops recording, deletes a check from `main()` without touching the control
+count, or hardcodes the verdict — **this file cannot detect it, and no file can**. A program cannot
+certify its own source; the mutation results above are measured against an *unmodified* `verify.py`,
+and a mutation that survives *because it edited `verify.py`* is not a bug in the technique, it is the
+boundary of the technique.
+
+What holds that boundary is outside the file, and it is deliberately boring:
+
+- **`certificates/contracts.json` pins the SHA-256 of `verify.py` and of `certificate.json`.** The
+  repository gate `python3 tools/check_certificate_contracts.py` fails if either byte-string moves.
+  Any verifier-side edit — including every mutant in the table above — changes that hash.
+- **`git log -p certificates/graffiti-290/verify.py`** shows every change to the verifier, next to
+  the receipt change it caused.
+- **Review.** Someone reads the diff.
+
+So: the controls are evidence about the *data*; the pinned hash and the history are evidence about
+the *code*. They are different defenses and neither substitutes for the other. Anyone who tells you a
+verifier is self-protecting against edits to itself is selling something.
 
 ## Replay
 
@@ -185,10 +251,18 @@ cd certificates/graffiti-290
 python3 -I verify.py
 ```
 
-Pure stdlib, no third-party imports, no network. Runtime ≈ 80 s single-threaded, dominated by the
-`n = 10` canonical augmentation. Exit `0` iff every check passes, all 16 controls are rejected, the
+Pure stdlib, no third-party imports, no network. Runtime ≈ 90 s single-threaded, dominated by the
+`n = 10` canonical augmentation. Exit `0` iff every check passes, all 19 controls are rejected, the
 control count matches `EXPECTED_CONTROLS`, and the recomputed receipt — verdict digest included —
 matches the committed one field for field.
+
+The claim this replay certifies, stated once, in full:
+
+> **Graffiti 290 holds, under the Written-on-the-Wall / Brewster gravity convention, on every
+> girth ≥ 5 graph of order ≤ 10 (all 1360 with at least one edge, connected and disconnected) and on
+> 21 larger instances up to Hoffman–Singleton.**
+
+Nothing beyond that sentence is certified here — see [not_certified_here](#not_certified_here).
 
 **Check-only by default.** A normal run **does not write** `certificate.json`; it recomputes the
 receipt, compares field by field, prints `receipt-checked: certificate.json`, and exits nonzero on
@@ -220,10 +294,12 @@ keep the replay under a couple of minutes. Nothing about the problem changes at 
   Roucairol–Cazenave's restatement and via the paper. We did not consult the original.
 - **The girth hypothesis is not shown to be necessary — and this is a disclosure, not a result.**
   Check 3b sweeps all **30092** labelled graphs of girth `< 5` on `n ≤ 6` and finds **0** violations
-  of the inequality. That is a fact about a small range, not a theorem, and emphatically not a reason
-  to drop the hypothesis: the paper's proof uses girth ≥ 5 essentially, via the Reiman `C₄`-free edge
-  bound. It is reported because a reader deserves to know that our data does not, on its own,
-  exhibit the hypothesis doing any work.
+  under the paper's reading and **0** under the literal one. That is a fact about a small range, not
+  a theorem, and emphatically not a reason to drop the hypothesis: the paper's proof uses girth ≥ 5
+  essentially, via the Reiman `C₄`-free edge bound. It is reported because a reader deserves to know
+  that our data does not, on its own, exhibit the hypothesis doing any work. Because both counts are
+  `0`, neither counter is by itself evidence that both readings were consulted — the sweep's
+  `girth_lt5_sweep_digest_sha256`, hashed over both readings' returned records, is what carries that.
 - **The `Gr(u,v) = 0`-when-no-path convention** for disconnected graphs is taken from
   Roucairol–Cazenave's restatement of the definition, not from the original page.
 - The pseudo-random instances are reproducible but **arbitrary**; they are evidence of breadth, not

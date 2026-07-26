@@ -52,22 +52,39 @@ enters a decision):
      Hoffman-Singleton graph on 50 vertices, is checked the same way, with each
      graph's structure (order, size, girth, regularity) re-derived, not asserted;
   5  the paper's two worked examples are reproduced exactly as rationals;
-  6  PLANTED-FAILURE CONTROLS: EXPECTED_CONTROLS (= 16) deliberately corrupted
+  6  PLANTED-FAILURE CONTROLS: EXPECTED_CONTROLS (= 19) deliberately corrupted
      inputs, each of which MUST be rejected, printed as `[ok] rejected:` lines.
      The run ASSERTS that exactly that many were rejected and records the number
      in the receipt, so deleting or short-circuiting a control block fails the
      run instead of silently shrinking the battery.
 
-WHAT PINS THE VERDICT.  A verifier whose central check can be stubbed to
-`return True` without any shipped artifact changing is not a verifier.  So
-`holds_paper` and `holds_literal` do not return bare booleans: each returns a
-VERDICT RECORD (holds, exact_count) carrying the exact eigenvalue count that
-justifies its answer.  The receipt pins a sha256 VERDICT DIGEST over a canonical,
-sorted text stream of what those two functions ACTUALLY RETURNED on every corpus
-graph, under both mean conventions, plus the multiset of the exact
-(count_below, count_above) pairs.  Stubbing either function therefore cannot
-leave certificate.json unchanged; check 6e plants exactly that stub, and a
-shape-correct verdict with a fabricated count, and requires both to be rejected.
+WHAT PINS THE VERDICT.  A verifier whose central check can be stubbed without any
+shipped artifact changing is not a verifier.  So `holds_paper` and `holds_literal`
+do not return bare booleans: each returns a VERDICT RECORD
+(holds, exact_count, m/Gr_bar, spectral_index) and the receipt pins a sha256
+VERDICT DIGEST over a canonical, sorted text stream of what those two functions
+ACTUALLY RETURNED on every corpus graph under both mean conventions.
+
+The fourth field is there because of a mutant that got through the previous
+round.  `mutD` replaced both verdict bodies with `return (True, 0, rhs(...))`:
+real m/Gr_bar (rhs() needs no spectral work), fabricated count 0 (the honest
+count on every graph of this corpus), no eigenvalue computed anywhere.  It passed
+all sixteen controls with a byte-identical transcript and a byte-identical
+certificate.json -- and it had no input on which it could answer False, so a real
+counterexample would have been reported as a pass.  The digest now includes the
+inertia of the adjacency matrix, which varies graph to graph and cannot be
+produced without the exact congruence, and check 6f plants mutD itself, a
+sharpened mutD with a fabricated inertia index, and a genuinely FAILING instance
+on which the verdict path is required to return False.
+
+WHAT THIS FILE CANNOT DEFEND AGAINST.  Every control above is a corrupted INPUT.
+None of them, and no control that could be written here, defends against a
+corrupted VERIFIER -- someone editing verify.py to stub a function, no-op the
+`FAILURES` accumulator, or hardcode a constant in the verdict path.  A program
+cannot certify its own source.  What defends that boundary is outside this file:
+the sha256 of verify.py and of certificate.json pinned in
+certificates/contracts.json, the git history of both, and review.  Said here so a
+reader does not have to infer it.
 
 Eigenvalues are never computed numerically.  "How many eigenvalues of A lie below
 a rational t" is decided by the inertia of the INTEGER matrix q*A - p*I (where
@@ -97,8 +114,8 @@ NMAX = 10
 # How many planted-failure controls MUST be rejected in a complete run.  This is
 # asserted in main() and recorded in the receipt: a deleted or skipped control
 # block makes the run fail loudly instead of quietly certifying less.
-#   6a: 2   6b: 5   6c: 3   6d: 3   6e: 3
-EXPECTED_CONTROLS = 16
+#   6a: 2   6b: 5   6c: 3   6d: 3   6e: 3   6f: 3
+EXPECTED_CONTROLS = 19
 
 FAILURES = []
 CONTROLS_PASSED = 0
@@ -320,6 +337,32 @@ def count_equal(n, adj, t):
     return inertia(_shifted_integer_matrix(n, adj, t))[1]
 
 
+def spectral_index(n, adj):
+    """The inertia of the ADJACENCY MATRIX ITSELF: (#eigenvalues < 0, mult of 0).
+
+    This exists for one reason.  Every other field of a verdict record can be
+    produced WITHOUT computing an eigenvalue: `rhs` is a gravity/degree/distance
+    computation, and on this corpus the honest eigenvalue count is 0 on every
+    graph, so a fabricated 0 is indistinguishable from the truth.  A verdict
+    function that never touches the spectrum could therefore emit a complete,
+    correct-looking record -- and one did: mutant `mutD` (control 6f(i)) replaced
+    both verdict bodies with `return (True, 0, rhs(...))` and produced a
+    byte-identical transcript AND a byte-identical certificate.json.
+
+    The inertia index is not reachable that way.  It varies graph to graph (on
+    the n <= 10 corpus it takes the values 1..5 with multiplicities
+    45/140/346/600/229), it is a function of nothing but the spectrum, and the
+    only way to produce it is to run the exact congruence.  Putting it in the
+    record puts it in the digest, so a spectrum-free stub can no longer
+    reproduce the committed receipt.
+
+    It is NOT part of the inequality.  It is the entropy the inequality's own
+    verdict does not carry on this corpus, carried alongside it.
+    """
+    neg, zero, _ = inertia(_shifted_integer_matrix(n, adj, 0))
+    return (neg, zero)
+
+
 def lambda2_bracket(n, adj, eps=Fraction(1, 4096)):
     """Certified rational bracket lo <= lambda_{n-1}(A) <= hi, width <= eps.
     lambda_{n-1} >= t  <=>  at most one eigenvalue lies strictly below t."""
@@ -337,69 +380,83 @@ def lambda2_bracket(n, adj, eps=Fraction(1, 4096)):
 # the two readings of the conjecture
 # ---------------------------------------------------------------------------
 
-def rhs(n, adj, over="n2"):
-    """size / mean gravity, exactly.  None when mean gravity is 0 (edgeless)."""
-    gbar = mean_gravity(n, adj, over)
+def rhs(n, adj, over="n2", gravity=mean_gravity):
+    """size / mean gravity, exactly.  None when mean gravity is 0 (edgeless).
+
+    `gravity` is a seam, defaulting to the certified convention.  It exists so a
+    control can feed the verdict path a DELIBERATELY WRONG convention and watch
+    it answer False -- see check_falsifiability (6f(iii)).  Nothing on the
+    default path ever passes it.
+    """
+    gbar = gravity(n, adj, over)
     if gbar == 0:
         return None
     return Fraction(size(n, adj)) / gbar
 
 
-VERDICT_SHAPE = "(holds: bool, exact_count: int >= 0, rhs: Fraction > 0)"
+VERDICT_SHAPE = ("(holds: bool, exact_count: int >= 0, rhs: Fraction > 0, "
+                 "spectrum: (negative_eigenvalues: int >= 0, nullity: int >= 0))")
 
 
-def holds_paper(n, adj, over="n2"):
+def holds_paper(n, adj, over="n2", gravity=mean_gravity):
     """The paper's reading: -lambda_{n-1}(A) <= m / Gr_bar.
 
-    Returns a VERDICT RECORD (holds, count, r), NOT a bare boolean:
+    Returns a VERDICT RECORD (holds, count, r, spectrum), NOT a bare boolean:
 
-      holds  the answer;
-      count  the exact number of adjacency eigenvalues lying strictly below
-             -m/Gr_bar -- the quantity the answer is decided on, `holds` being
-             exactly `count <= 1`;
-      r      the exact m/Gr_bar the answer was decided against.
+      holds     the answer;
+      count     the exact number of adjacency eigenvalues lying strictly below
+                -m/Gr_bar -- the quantity the answer is decided on, `holds` being
+                exactly `count <= 1`;
+      r         the exact m/Gr_bar the answer was decided against;
+      spectrum  `spectral_index(n, adj)` -- the inertia of A itself.
 
-    Carrying `count` and `r` is what makes the verdict falsifiable.  Both go into
-    the receipt's verdict digest, so answering "yes" is not enough: a verdict
-    function has to produce the right integer AND the right rational, and `r`
-    varies from graph to graph, so no constant can imitate it.  (On this corpus
-    `count` is 0 everywhere -- the bound is loose by a factor of 5 or more -- so
-    `r` is the part of the record that actually carries entropy.  Said plainly
-    rather than left for a reader to discover.)
+    WHY THE FOURTH FIELD.  The first three can all be produced without computing
+    an eigenvalue.  `r` is a gravity computation and `rhs()` is callable by
+    anyone; and on this corpus the honest `count` is 0 on every single graph
+    (the bound is loose by a factor of 5 or more), so a fabricated 0 is exactly
+    right.  Mutant `mutD` exploited precisely that: `return (True, 0, rhs(...))`
+    passed every control and reproduced the receipt byte for byte.  `spectrum`
+    is the field with per-graph entropy that only the exact congruence can
+    produce, so the digest now depends on spectral work having been done.
 
     None when m/Gr_bar is undefined (edgeless graph, mean gravity 0).
     """
-    r = rhs(n, adj, over)
+    r = rhs(n, adj, over, gravity)
     if r is None:
         return None
     c = count_below(n, adj, -r)
-    return (c <= 1, c, r)
+    return (c <= 1, c, r, spectral_index(n, adj))
 
 
-def holds_literal(n, adj, over="n2"):
+def holds_literal(n, adj, over="n2", gravity=mean_gravity):
     """The literal Written-on-the-Wall reading: lambda_{n-1}(A) <= m / Gr_bar.
 
-    Returns a VERDICT RECORD (holds, count, r) as `holds_paper` does; here
-    `count` is the exact number of eigenvalues lying strictly above m/Gr_bar.
+    Returns a VERDICT RECORD (holds, count, r, spectrum) as `holds_paper` does;
+    here `count` is the exact number of eigenvalues lying strictly above
+    m/Gr_bar.
     """
-    r = rhs(n, adj, over)
+    r = rhs(n, adj, over, gravity)
     if r is None:
         return None
     c = count_above(n, adj, r)
-    return (c <= 1, c, r)
+    return (c <= 1, c, r, spectral_index(n, adj))
 
 
 def verdict_error(v):
     """None if `v` is a well-formed verdict record, else why it is not.
 
     This is where a verdict function that has been stubbed out -- `return True`,
-    say -- is caught, BEFORE its non-answer can reach the receipt.  `bool` is a
-    subclass of `int`, so the count is explicitly required not to be a bool.
+    say, or `return (True, 0, rhs(...))` with the spectral field dropped -- is
+    caught, BEFORE its non-answer can reach the receipt.  `bool` is a subclass of
+    `int`, so the integer fields are explicitly required not to be bools.
     """
-    if not (isinstance(v, tuple) and len(v) == 3
+    if not (isinstance(v, tuple) and len(v) == 4
             and isinstance(v[0], bool)
             and isinstance(v[1], int) and not isinstance(v[1], bool) and v[1] >= 0
-            and isinstance(v[2], Fraction) and v[2] > 0):
+            and isinstance(v[2], Fraction) and v[2] > 0
+            and isinstance(v[3], tuple) and len(v[3]) == 2
+            and all(isinstance(x, int) and not isinstance(x, bool) and x >= 0
+                    for x in v[3])):
         return "expected a verdict record %s, got %r" % (VERDICT_SHAPE, v)
     if v[0] != (v[1] <= 1):
         return ("verdict %r is internally inconsistent: holds=%r but the exact count is %d"
@@ -428,9 +485,12 @@ def verdict_stream(items, fp=None, fl=None):
     """The canonical text stream of the verdicts ACTUALLY RETURNED by the two
     verdict functions on `items` (a list of (n, adj) with at least one edge).
 
-    One line per (graph, mean convention), carrying the boolean AND the exact
-    eigenvalue count behind it.  Lines are sorted before hashing, so the digest
-    is a function of the multiset of verdicts and not of enumeration order.
+    One line per (graph, mean convention), carrying the boolean, the exact
+    eigenvalue count behind it, the exact m/Gr_bar it was decided against, and
+    the inertia of the adjacency matrix -- the last being the field that cannot
+    be produced without running the exact congruence.  Lines are sorted before
+    hashing, so the digest is a function of the multiset of verdicts and not of
+    enumeration order.
 
     Returns a dict:
       error    None, or why a verdict function failed to answer properly
@@ -463,8 +523,22 @@ def verdict_stream(items, fp=None, fl=None):
                 return {"error": "n=%d over=%s: the two readings were decided against "
                                  "different values of m/Gr_bar, %s and %s"
                                  % (n, over, vp[2], vl[2])}
-            lines.append("%s over=%s rhs=%s paper=%s,%d literal=%s,%d"
-                         % (key, over, vp[2], "T" if vp[0] else "F", vp[1],
+            if vp[3] != vl[3]:
+                return {"error": "n=%d over=%s: the two readings report different spectra "
+                                 "for the same graph, %r and %r -- at most one of them "
+                                 "computed it" % (n, over, vp[3], vl[3])}
+            # Every graph in this stream has at least one edge, and a graph with
+            # an edge has a negative adjacency eigenvalue (trace 0, not the zero
+            # matrix).  So a reported inertia index of 0 is not a near miss, it
+            # is proof that no congruence was run.
+            if vp[3][0] < 1:
+                return {"error": "n=%d over=%s: reported inertia index %d on a graph with "
+                                 "%d edges -- a graph with an edge has a negative "
+                                 "eigenvalue, so no spectrum was computed"
+                                 % (n, over, vp[3][0], size(n, adj))}
+            lines.append("%s over=%s rhs=%s spec=%d,%d paper=%s,%d literal=%s,%d"
+                         % (key, over, vp[2], vp[3][0], vp[3][1],
+                            "T" if vp[0] else "F", vp[1],
                             "T" if vl[0] else "F", vl[1]))
             detail.append({"n": n, "adj": adj, "over": over, "paper": vp, "literal": vl})
             if over == "n2":
@@ -1002,10 +1076,28 @@ def check_inequality(levels):
 def check_girth_necessity(nmax=6):
     """Sweep ALL labelled graphs on n <= nmax with girth < 5 and count how many
     violate the inequality.  This is a disclosure, not a certification: finding
-    none is a fact about this range, not evidence the hypothesis can be dropped."""
+    none is a fact about this range, not evidence the hypothesis can be dropped.
+
+    HOW THE TWO READINGS ARE CONSULTED, AND HOW THEY ARE NOT.  This sweep used to
+    end in `if not (vp[0] and vl[0]): violations += 1`.  Because the sweep finds
+    zero violations, that conjunction is inert: mutating it to `vp[0] and vp[0]`
+    -- deleting the literal reading from the test outright -- left the transcript
+    and certificate.json byte-identical (mutant `mutK`).  A violation counter on
+    a corpus with no violations carries no entropy, and no amount of rephrasing
+    the boolean changes that.
+
+    So the counters are now kept SEPARATELY per reading (no compound boolean is
+    left to make inert), and -- this is the part that actually bites -- the sweep
+    ships a DIGEST over both readings' returned records, including the inertia
+    index.  Dropping, stubbing, or short-circuiting either reading moves that
+    digest and the committed receipt stops matching.  The counters are reported
+    because a reader wants the number; the digest is what makes them load-bearing.
+    """
     print("\n== 3b. is the girth >= 5 hypothesis visibly necessary in this range? ==")
     swept = 0
-    violations = 0
+    violations_paper = 0
+    violations_literal = 0
+    lines = []
     for n in range(3, nmax + 1):
         slots = [(i, j) for i in range(n) for j in range(i + 1, n)]
         for mask in range(1 << len(slots)):
@@ -1030,15 +1122,32 @@ def check_girth_necessity(nmax=6):
                     bad("the verdict path did not answer in the girth<5 sweep: %s: %s"
                         % (which, err))
                     return None
+            if vp[3] != vl[3]:
+                bad("the two readings reported different spectra for the same girth<5 "
+                    "graph, %r and %r" % (vp[3], vl[3]))
+                return None
             swept += 1
-            if not (vp[0] and vl[0]):
-                violations += 1
-    print("     %d labelled graphs of girth < 5 on n <= %d swept; %d violate the inequality"
-          % (swept, nmax, violations))
+            # Counted separately: no compound boolean is left for a mutation to
+            # make inert.  Both counters are 0 across this range, so neither
+            # carries entropy -- the digest below is what consults the readings.
+            if not vp[0]:
+                violations_paper += 1
+            if not vl[0]:
+                violations_literal += 1
+            lines.append("%s paper=%s,%d literal=%s,%d rhs=%s spec=%d,%d"
+                         % (graph_key(n, adj), "T" if vp[0] else "F", vp[1],
+                            "T" if vl[0] else "F", vl[1], vp[2], vp[3][0], vp[3][1]))
+    digest = hashlib.sha256(("\n".join(sorted(lines)) + "\n").encode("ascii")).hexdigest()
+    print("     %d labelled graphs of girth < 5 on n <= %d swept; %d violate the paper's "
+          "reading, %d the literal one" % (swept, nmax, violations_paper, violations_literal))
+    print("     sweep digest over both readings' returned records: %s" % digest)
     ok("no girth < 5 counterexample in this range -- so the hypothesis is not visibly "
        "necessary HERE. That is a fact about the range, not a theorem, and not a reason "
        "to drop it: the paper's proof uses girth >= 5 essentially.")
-    return {"girth_lt5_labelled_swept": swept, "girth_lt5_violations": violations,
+    return {"girth_lt5_labelled_swept": swept,
+            "girth_lt5_violations_paper": violations_paper,
+            "girth_lt5_violations_literal": violations_literal,
+            "girth_lt5_sweep_digest_sha256": digest,
             "girth_lt5_sweep_up_to_order": nmax}
 
 
@@ -1078,6 +1187,9 @@ def check_battery():
                      "rhs": str(r), "lhs_upper_bound": str(-lo),
                      "count_below_minus_rhs": n2["paper"][1],
                      "count_above_rhs": n2["literal"][1],
+                     # The spectral field of the verdict record: the inertia of
+                     # A, which no gravity computation can produce.
+                     "adjacency_inertia_neg_zero": list(n2["paper"][3]),
                      "verdict_digest_sha256": vs["digest"]})
     ok("%d larger instances, up to n = 50, satisfy both readings under both mean conventions"
        % len(rows))
@@ -1218,26 +1330,67 @@ def _stubbed_holds_paper(n, adj, over="n2"):
     return True
 
 
-def _fabricated_count_holds_paper(n, adj, over="n2"):
+def _fabricated_count_holds_paper(n, adj, over="n2", gravity=mean_gravity):
     """Harder than the stub: correct RECORD SHAPE and correct m/Gr_bar, but a
     fabricated eigenvalue count.  It reports one eigenvalue below -m/Gr_bar on
     every graph.  The boolean verdict is unchanged and the record type-checks, so
     only the digest can catch this."""
-    r = rhs(n, adj, over)
+    r = rhs(n, adj, over, gravity)
     if r is None:
         return None
-    return (True, 1, r)
+    return (True, 1, r, spectral_index(n, adj))
 
 
-def _fabricated_rhs_holds_paper(n, adj, over="n2"):
-    """Hardest of the three: correct shape, correct boolean, correct eigenvalue
-    count -- and a fabricated m/Gr_bar.  On this corpus every honest count is 0,
-    so the count carries no entropy and cannot catch anything; if the digest is
-    to mean anything it has to be the exact rational that does the work."""
-    r = rhs(n, adj, over)
+def _fabricated_rhs_holds_paper(n, adj, over="n2", gravity=mean_gravity):
+    """Correct shape, correct boolean, correct eigenvalue count -- and a
+    fabricated m/Gr_bar.  On this corpus every honest count is 0, so the count
+    carries no entropy and cannot catch anything; if the digest is to mean
+    anything it has to include the fields that do the work."""
+    r = rhs(n, adj, over, gravity)
     if r is None:
         return None
-    return (True, count_below(n, adj, -r), r + 1)
+    return (True, count_below(n, adj, -r), r + 1, spectral_index(n, adj))
+
+
+def _spectrum_free_holds_paper(n, adj, over="n2", gravity=mean_gravity):
+    """MUTANT mutD, verbatim -- the one that got through.
+
+    Real m/Gr_bar (rhs() is reachable by anyone without touching the spectrum),
+    fabricated count 0 (which is the honest value on every graph of this corpus),
+    no spectral work at all.  Against the OLD three-field verdict record this
+    passed all sixteen controls, exited 0, and produced a transcript AND a
+    certificate.json byte-identical to the clean run -- while being a verdict
+    function with NO INPUT ON WHICH IT CAN ANSWER FALSE.
+
+    It is planted here so that property is demonstrated on every run.
+    """
+    r = rhs(n, adj, over, gravity)
+    if r is None:
+        return None
+    return (True, 0, r)
+
+
+def _fabricated_spectrum_holds_paper(n, adj, over="n2", gravity=mean_gravity):
+    """The sharpened mutD: everything mutD had, PLUS a shape-valid spectral field
+    that was invented rather than computed -- inertia index 1, nullity 0, which is
+    the honest answer for 45 of the 1360 corpus graphs and wrong for the other
+    1315.  It is applied to BOTH readings (see `_fabricated_spectrum_holds_literal`)
+    so that the two-readings-agree cross-check and the "index >= 1" invariant both
+    pass.  Nothing structural can reject it.  Only the digest can -- which is the
+    whole point of putting a spectral quantity in the record."""
+    r = rhs(n, adj, over, gravity)
+    if r is None:
+        return None
+    return (True, count_below(n, adj, -r), r, (1, 0))
+
+
+def _fabricated_spectrum_holds_literal(n, adj, over="n2", gravity=mean_gravity):
+    """The literal-reading half of the fabricated-spectrum mutant, so the fake is
+    internally consistent and the digest is the only thing left to catch it."""
+    r = rhs(n, adj, over, gravity)
+    if r is None:
+        return None
+    return (True, count_above(n, adj, r), r, (1, 0))
 
 
 def check_verdict_controls(levels):
@@ -1280,6 +1433,71 @@ def check_verdict_controls(levels):
 
 
 # ---------------------------------------------------------------------------
+# check 6f -- the mutant that got through, and the question it exposed
+# ---------------------------------------------------------------------------
+
+def check_spectrum_free_controls(levels):
+    """The three controls added after mutant `mutD` was found.
+
+    mutD replaced BOTH verdict bodies with `return (True, 0, rhs(...))`.  It kept
+    the record shape, produced the REAL m/Gr_bar (rhs() needs no spectral work),
+    and fabricated a count of 0 -- which is the honest count on every graph of
+    this corpus.  It passed all sixteen controls of the previous round with a
+    transcript and a certificate.json byte-identical to the clean run.
+
+    Two things were wrong and both are controlled here:
+      (i)  the digest had ZERO entropy from the eigenvalue engine, so a verdict
+           function that never computed a spectrum could reproduce the receipt;
+      (iii) mutD had NO INPUT ON WHICH IT COULD ANSWER FALSE, so a real
+           counterexample anywhere in the corpus would have been reported as a
+           pass.  A certificate that cannot fail certifies nothing.
+    """
+    print("\n== 6f. the spectrum-free mutant, and whether this path can answer False ==")
+    n, adj = petersen()
+    sub = [(k, a) for k in range(2, 7) for a in levels[k] if size(k, a) > 0]
+    real = verdict_stream(sub)
+    if real["error"] is not None:
+        bad("the honest sub-corpus stream did not build: %s" % real["error"])
+        return
+
+    # (i) mutD itself.
+    for label, fp, fl in (
+            ("mutD: (True, 0, rhs(...)) -- no spectral work at all",
+             _spectrum_free_holds_paper, _spectrum_free_holds_paper),
+            ("mutD sharpened: shape-valid but FABRICATED inertia index",
+             _fabricated_spectrum_holds_paper, _fabricated_spectrum_holds_literal)):
+        fake = verdict_stream(sub, fp=fp, fl=fl)
+        if fake["error"] is not None:
+            rejected("%s -- stream refused to build: %s" % (label, fake["error"]))
+        elif real["digest"] == fake["digest"]:
+            bad("%s left the verdict digest unchanged -- the digest still carries no "
+                "entropy from the eigenvalue engine" % label)
+        else:
+            rejected("%s -- digest moves %s... -> %s..."
+                     % (label, real["digest"][:16], fake["digest"][:16]))
+
+    # (iii) THE DECISIVE ONE.  Feed the real verdict function a graph on which
+    # the inequality genuinely FAILS -- Petersen under this file's own planted
+    # mutated_mean_gravity, which control 6d independently certifies as a
+    # violation -- and require it to say so.  A verdict function that cannot
+    # produce False here is not deciding anything.
+    fail_gravity = lambda k, a, over="n2": mutated_mean_gravity(k, a)
+    v = holds_paper(n, adj, "n2", gravity=fail_gravity)
+    err = verdict_error(v)
+    if err is not None:
+        bad("on a planted FAILING instance the verdict path did not answer: %s" % err)
+    elif v[0] or v[1] < 2:
+        bad("holds_paper returned %r on Petersen under the planted-wrong gravity "
+            "convention, where the inequality genuinely fails (m/Gr_bar = %s < 2 = "
+            "-lambda_{n-1}) -- this verdict path has no input on which it answers False"
+            % (v, v[2]))
+    else:
+        rejected("planted FAILING instance -- Petersen under the mutated gravity "
+                 "convention: holds_paper returns %r, i.e. False with %d eigenvalues "
+                 "below -%s. The verdict path can answer False." % (v, v[1], v[2]))
+
+
+# ---------------------------------------------------------------------------
 # receipt
 # ---------------------------------------------------------------------------
 
@@ -1294,12 +1512,24 @@ def build_receipt(counts, corpus, battery_rows, worked, controls_passed):
         },
         "verdict_binding": "corpus.verdict_digest_sha256 is a sha256 over the canonical sorted "
                            "stream of the verdict records RETURNED by holds_paper and "
-                           "holds_literal on every corpus graph under both mean conventions, "
-                           "each record carrying the exact eigenvalue count behind its boolean. "
-                           "No shipped field in this receipt is computed around the verdict "
-                           "path. Control 6e plants a stubbed verdict function and a "
-                           "shape-correct verdict with a fabricated count, and requires both "
-                           "to be rejected.",
+                           "holds_literal on every corpus graph under both mean conventions. "
+                           "Each record is (holds, exact_count, m/Gr_bar, spectral_index), the "
+                           "last being the inertia of the adjacency matrix -- the field with "
+                           "per-graph entropy that cannot be produced without running the exact "
+                           "congruence. It was added after mutant mutD, which returned "
+                           "(True, 0, rhs(...)) with no spectral work at all, reproduced the "
+                           "previous receipt byte for byte. No shipped field in this receipt is "
+                           "computed around the verdict path. Controls 6e and 6f plant a stubbed "
+                           "verdict function, a fabricated count, a fabricated m/Gr_bar, mutD "
+                           "itself, a fabricated inertia index, and a genuinely FAILING instance "
+                           "on which the verdict path must return False.",
+        "not_defended_against": "A corrupted VERIFIER. Every control in this run is a corrupted "
+                                "INPUT; nothing in verify.py can detect an edit to verify.py "
+                                "(a stubbed function, a no-oped failure accumulator, a hardcoded "
+                                "verdict). That boundary is held outside the file: the sha256 of "
+                                "verify.py and of this receipt pinned in "
+                                "certificates/contracts.json, the git history of both, and "
+                                "review.",
         "claim_owner": "Graffiti (S. Fajtlowicz), conjecture 290, 'Written on the Wall' p.79; "
                        "proof by Nathan Wilbanks and 'Annie' (AGNT Labs), "
                        "'A Proof of Graffiti 290'",
@@ -1418,6 +1648,7 @@ def main():
     worked = check_worked_examples()
     check_convention_controls()
     check_verdict_controls(levels)
+    check_spectrum_free_controls(levels)
 
     # A control battery that is never counted is a control battery that can be
     # deleted in silence.  Commenting out a control block used to leave this run

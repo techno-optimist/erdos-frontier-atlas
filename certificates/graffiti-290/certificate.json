@@ -11,8 +11,10 @@
     "disconnected_checked": 678,
     "edgeless_excluded": 9,
     "girth_lt5_labelled_swept": 30092,
+    "girth_lt5_sweep_digest_sha256": "55fe709a7df9110f1c26af339ceb551ed63725332b835a6aed05d6d53b350d01",
     "girth_lt5_sweep_up_to_order": 6,
-    "girth_lt5_violations": 0,
+    "girth_lt5_violations_literal": 0,
+    "girth_lt5_violations_paper": 0,
     "graphs_checked": 1360,
     "smallest_margin_lower_bound": "201561/31744",
     "smallest_margin_order": 4,
@@ -25,7 +27,7 @@
         1360
       ]
     ],
-    "verdict_digest_sha256": "a89d9cf914b7382f96712b774a4b45dc412fa50d2a8eb83ce656ddc43c5880cb",
+    "verdict_digest_sha256": "b7ac0c575c819a5bfba1beb9fb43f896296c2574940d82d348141069d6d66d9a",
     "verdict_records": 2720
   },
   "exhaustive_enumeration": {
@@ -47,6 +49,10 @@
   },
   "larger_instances": [
     {
+      "adjacency_inertia_neg_zero": [
+        4,
+        0
+      ],
       "count_above_rhs": 0,
       "count_below_minus_rhs": 0,
       "girth": 5,
@@ -55,9 +61,13 @@
       "n": 10,
       "name": "Petersen = Kneser K(5,2)",
       "rhs": "25",
-      "verdict_digest_sha256": "24147410bbd9d9889533d32f0d56898a896cbb742649a921679adfcf72f1471e"
+      "verdict_digest_sha256": "fe5dd9e98fc8a41678fe8e6853259547fb0f413b4930cd1e9ad428cfb1c9e672"
     },
     {
+      "adjacency_inertia_neg_zero": [
+        7,
+        0
+      ],
       "count_above_rhs": 0,
       "count_below_minus_rhs": 0,
       "girth": 6,
@@ -66,9 +76,13 @@
       "n": 14,
       "name": "Heawood = Fano incidence",
       "rhs": "637/11",
-      "verdict_digest_sha256": "61863ffbd69671bcec689d14afb97602186751900328ea5e1fe2a6147b453b3f"
+      "verdict_digest_sha256": "da2edfd59298b29d7a1f0c58a96ff6438ed53012c5d1a72c4750ab6efd212967"
     },
     {
+      "adjacency_inertia_neg_zero": [
+        13,
+        0
+      ],
       "count_above_rhs": 0,
       "count_below_minus_rhs": 0,
       "girth": 6,
@@ -77,9 +91,13 @@
       "n": 26,
       "name": "PG(2,3) incidence",
       "rhs": "325/2",
-      "verdict_digest_sha256": "d0b4e39ba7ba0b68d21c40775a89b0277da5839fe70472bd0b675344cf936037"
+      "verdict_digest_sha256": "f573eee5de28ee50ff0951673fbf4471514a1614c35ea3cba3147a41ee229b74"
     },
     {
+      "adjacency_inertia_neg_zero": [
+        20,
+        0
+      ],
       "count_above_rhs": 0,
       "count_below_minus_rhs": 0,
       "girth": 6,
@@ -88,9 +106,13 @@
       "n": 35,
       "name": "Odd graph O_4 = Kneser K(7,3)",
       "rhs": "20825/64",
-      "verdict_digest_sha256": "60db4d7a53f027f43b6055f19a7588e6a610cd88e269e6ab35e929cf09c5927d"
+      "verdict_digest_sha256": "823d37c458788edb73ab13c08ab05438fbaa49156f1d6240e6a19782fa6dd3d0"
     },
     {
+      "adjacency_inertia_neg_zero": [
+        21,
+        0
+      ],
       "count_above_rhs": 0,
       "count_below_minus_rhs": 0,
       "girth": 5,
@@ -99,9 +121,13 @@
       "n": 50,
       "name": "Hoffman-Singleton",
       "rhs": "625/2",
-      "verdict_digest_sha256": "866cedac46081dfba3e5952a52d0bc333e19fc3e7b6dd75fa50c04271ddc9e1a"
+      "verdict_digest_sha256": "cf0902b2643b66aa9519ce2a47fb962ec1bcd4b37b768f62ed4f76daf7f8a050"
     },
     {
+      "adjacency_inertia_neg_zero": [
+        2,
+        0
+      ],
       "count_above_rhs": 0,
       "count_below_minus_rhs": 0,
       "girth": 5,
@@ -110,9 +136,13 @@
       "n": 5,
       "name": "cycle C_5",
       "rhs": "25/3",
-      "verdict_digest_sha256": "d24b920824189bc7d8569f8b24c82c8155fd7ab1d042fc6900e1b3dabd89ab30"
+      "verdict_digest_sha256": "b3f6d1f5390326599207be001549c676c3de20ad10ec041e389a19107acb4bcd"
     },
     {
+      "adjacency_inertia_neg_zero": [
+        4,
+        0
+      ],
       "count_above_rhs": 0,
       "count_below_minus_rhs": 0,
       "girth": 7,
@@ -121,9 +151,13 @@
       "n": 7,
       "name": "cycle C_7",
       "rhs": "441/22",
-      "verdict_digest_sha256": "8a120d2a7b2711bb9f15294c9e558c8202ca78a90168cba856c5b89a694fce25"
+      "verdict_digest_sha256": "16cf4ddd5608b886c912315461c29fbd301be16e54f0d6d46a343c821359c6b4"
     },
     {
+      "adjacency_inertia_neg_zero": [
+        6,
+        0
+      ],
       "count_above_rhs": 0,
       "count_below_minus_rhs": 0,
       "girth": 11,
@@ -132,9 +166,13 @@
       "n": 11,
       "name": "cycle C_11",
       "rhs": "9075/137",
-      "verdict_digest_sha256": "f512ded0c0e619ce90aa9438c5a57f5303b82b0b5cb8fd9b05eb59d966d4553b"
+      "verdict_digest_sha256": "16dc17faa6b7f52059c016b30fa7828eed5031e51280555448c012716f82570d"
     },
     {
+      "adjacency_inertia_neg_zero": [
+        6,
+        0
+      ],
       "count_above_rhs": 0,
       "count_below_minus_rhs": 0,
       "girth": 13,
@@ -143,9 +181,13 @@
       "n": 13,
       "name": "cycle C_13",
       "rhs": "5070/49",
-      "verdict_digest_sha256": "3a13c45da8470350432cfb1409e1b298e83eecb594ebdb5368e0530e5e2bdbc1"
+      "verdict_digest_sha256": "515850c28b2372ad5e0895fd59e71e501cd368f455936d10a62dc2ea05be0b85"
     },
     {
+      "adjacency_inertia_neg_zero": [
+        8,
+        0
+      ],
       "count_above_rhs": 0,
       "count_below_minus_rhs": 0,
       "girth": 17,
@@ -154,9 +196,13 @@
       "n": 17,
       "name": "cycle C_17",
       "rhs": "161840/761",
-      "verdict_digest_sha256": "29b699eb6cae84347979ed4e9b1d4ddc794b9b8b2a78f2bc65efe1859e695d7e"
+      "verdict_digest_sha256": "a655cdc673f7ea61be0de12d9ac7fc90d866bda51fb5749e73e5525f63a5a4cc"
     },
     {
+      "adjacency_inertia_neg_zero": [
+        12,
+        0
+      ],
       "count_above_rhs": 0,
       "count_below_minus_rhs": 0,
       "girth": 23,
@@ -165,9 +211,13 @@
       "n": 23,
       "name": "cycle C_23",
       "rhs": "40325670/83711",
-      "verdict_digest_sha256": "c6df7052955fef568feb410329649e986922afd771f8f67e646974d905b67a91"
+      "verdict_digest_sha256": "53aba3f47ecf790c3507285c457742d08af03b40a445135f0173d75a938e75bf"
     },
     {
+      "adjacency_inertia_neg_zero": [
+        16,
+        0
+      ],
       "count_above_rhs": 0,
       "count_below_minus_rhs": 0,
       "girth": 31,
@@ -176,9 +226,13 @@
       "n": 31,
       "name": "cycle C_31",
       "rhs": "1298647350/1195757",
-      "verdict_digest_sha256": "149877c1d8b50facc17e8a7f2feb70c526a1115602f09977a04fdf257809ea61"
+      "verdict_digest_sha256": "c2bebdf1e1e9e0d6e1c64ac70a1b5c2abf50c5a048b773574b64b695bf85d5f7"
     },
     {
+      "adjacency_inertia_neg_zero": [
+        19,
+        2
+      ],
       "count_above_rhs": 0,
       "count_below_minus_rhs": 0,
       "girth": 40,
@@ -187,9 +241,13 @@
       "n": 40,
       "name": "cycle C_40",
       "rhs": "605260656000/277235737",
-      "verdict_digest_sha256": "6729be5af9c1350f5d184864882185f0f47fa71c4efc81d089fa970c520741a5"
+      "verdict_digest_sha256": "d4653e81705f0eeccdb771474c50158c6b3b05f3c4fc1edcf525d8affeb55fec"
     },
     {
+      "adjacency_inertia_neg_zero": [
+        8,
+        0
+      ],
       "count_above_rhs": 0,
       "count_below_minus_rhs": 0,
       "girth": 5,
@@ -198,9 +256,13 @@
       "n": 16,
       "name": "pseudo-random girth-5 n=16 seed=1",
       "rhs": "149760/2251",
-      "verdict_digest_sha256": "cb9d271a7b6b50d56ef7dbb22a6576eaf5ac1daa8aa28bedefa080b63bbbdcab"
+      "verdict_digest_sha256": "f6804448cea95585a609caf9f04f0671db09eb4ecb2be401d5da31b6dd26fe5f"
     },
     {
+      "adjacency_inertia_neg_zero": [
+        7,
+        0
+      ],
       "count_above_rhs": 0,
       "count_below_minus_rhs": 0,
       "girth": 5,
@@ -209,9 +271,13 @@
       "n": 16,
       "name": "pseudo-random girth-5 n=16 seed=2",
       "rhs": "299520/4361",
-      "verdict_digest_sha256": "146657cea5f733104f4895f8e443941c5cf6ed5516057e7d36f4d0ec1c892250"
+      "verdict_digest_sha256": "e483e5426c1956768b3cef9b8f77be983c1703facd2d682c1ba271854d8f4e42"
     },
     {
+      "adjacency_inertia_neg_zero": [
+        11,
+        0
+      ],
       "count_above_rhs": 0,
       "count_below_minus_rhs": 0,
       "girth": 5,
@@ -220,9 +286,13 @@
       "n": 25,
       "name": "pseudo-random girth-5 n=25 seed=1",
       "rhs": "2250000/15617",
-      "verdict_digest_sha256": "0357f3acf6c17da9911d4eabec24291ef2c536670c2a6b543916124ed2207350"
+      "verdict_digest_sha256": "34b8e609859f2b1991f77cb510e2cc8667fbb18cfdddd3f5189434b446e5fbe7"
     },
     {
+      "adjacency_inertia_neg_zero": [
+        12,
+        0
+      ],
       "count_above_rhs": 0,
       "count_below_minus_rhs": 0,
       "girth": 5,
@@ -231,9 +301,13 @@
       "n": 25,
       "name": "pseudo-random girth-5 n=25 seed=2",
       "rhs": "2160000/14281",
-      "verdict_digest_sha256": "740f4d1b0746765b5dbc5834e2e0ee22d4eb09fb6655ca68b40c8c6b0fb9f360"
+      "verdict_digest_sha256": "667ff564b1c436e81bc15705ff2c861c8dbd1f1b35d5d6442f5135d57b3695a5"
     },
     {
+      "adjacency_inertia_neg_zero": [
+        15,
+        0
+      ],
       "count_above_rhs": 0,
       "count_below_minus_rhs": 0,
       "girth": 5,
@@ -242,9 +316,13 @@
       "n": 33,
       "name": "pseudo-random girth-5 n=33 seed=1",
       "rhs": "7527168/31651",
-      "verdict_digest_sha256": "a36b1086bfc9b76b7b319c25b3d5bebf417a3a84e74171dedb95051b529a9c21"
+      "verdict_digest_sha256": "88820ba463abb79b8c9a343d2edbdf67e65bca2096ef1008384b6ce4e4f35584"
     },
     {
+      "adjacency_inertia_neg_zero": [
+        15,
+        0
+      ],
       "count_above_rhs": 0,
       "count_below_minus_rhs": 0,
       "girth": 5,
@@ -253,9 +331,13 @@
       "n": 33,
       "name": "pseudo-random girth-5 n=33 seed=2",
       "rhs": "2578752/11135",
-      "verdict_digest_sha256": "64581d90a806d3fdf2020f1552d717d48e45df97525ab2c3fcdafab3aa67617e"
+      "verdict_digest_sha256": "4695cf6a44c0e7199f76f243de11606531cedc6c1d6d76ef3cbaa70007f55594"
     },
     {
+      "adjacency_inertia_neg_zero": [
+        19,
+        0
+      ],
       "count_above_rhs": 0,
       "count_below_minus_rhs": 0,
       "girth": 5,
@@ -264,9 +346,13 @@
       "n": 40,
       "name": "pseudo-random girth-5 n=40 seed=1",
       "rhs": "8892000/26441",
-      "verdict_digest_sha256": "42aa114728402b45b61f3fbd9a927acd02ab80aa8c53ab6d3654d7da4acdcbda"
+      "verdict_digest_sha256": "31cba8e5e83288f6e85f2be00da8bdf28ffffb3e711abb5ce14fed23aada5a7d"
     },
     {
+      "adjacency_inertia_neg_zero": [
+        19,
+        0
+      ],
       "count_above_rhs": 0,
       "count_below_minus_rhs": 0,
       "girth": 5,
@@ -275,7 +361,7 @@
       "n": 40,
       "name": "pseudo-random girth-5 n=40 seed=2",
       "rhs": "49400/149",
-      "verdict_digest_sha256": "ce21133a60c86456e8cd0ebc08393271f137e97701a8a34e4a7afd117a548622"
+      "verdict_digest_sha256": "60d13e7017456004185785722f0ca183050c0bf610ec9155b556f9d184fbff76"
     }
   ],
   "not_certified_here": [
@@ -286,13 +372,14 @@
     "the text of Written on the Wall p.79 and p.52 -- quoted here at second hand via Roucairol-Cazenave, not read in the original by this certificate",
     "whether the girth >= 5 hypothesis is necessary -- see README; our search found no girth < 5 counterexample either, which is a fact about our range, not a theorem"
   ],
+  "not_defended_against": "A corrupted VERIFIER. Every control in this run is a corrupted INPUT; nothing in verify.py can detect an edit to verify.py (a stubbed function, a no-oped failure accumulator, a hardcoded verdict). That boundary is held outside the file: the sha256 of verify.py and of this receipt pinned in certificates/contracts.json, the git history of both, and review.",
   "our_contribution": "independent finite verification only -- no part of the conjecture or of the proof is a result of this repository",
   "planted_failure_controls": {
-    "expected": 16,
+    "expected": 19,
     "note": "Every control block must run and be rejected. The count is asserted against EXPECTED_CONTROLS before this receipt is built, so removing a control block fails the run rather than quietly shrinking the battery.",
-    "rejected": 16
+    "rejected": 19
   },
-  "verdict_binding": "corpus.verdict_digest_sha256 is a sha256 over the canonical sorted stream of the verdict records RETURNED by holds_paper and holds_literal on every corpus graph under both mean conventions, each record carrying the exact eigenvalue count behind its boolean. No shipped field in this receipt is computed around the verdict path. Control 6e plants a stubbed verdict function and a shape-correct verdict with a fabricated count, and requires both to be rejected.",
+  "verdict_binding": "corpus.verdict_digest_sha256 is a sha256 over the canonical sorted stream of the verdict records RETURNED by holds_paper and holds_literal on every corpus graph under both mean conventions. Each record is (holds, exact_count, m/Gr_bar, spectral_index), the last being the inertia of the adjacency matrix -- the field with per-graph entropy that cannot be produced without running the exact congruence. It was added after mutant mutD, which returned (True, 0, rhs(...)) with no spectral work at all, reproduced the previous receipt byte for byte. No shipped field in this receipt is computed around the verdict path. Controls 6e and 6f plant a stubbed verdict function, a fabricated count, a fabricated m/Gr_bar, mutD itself, a fabricated inertia index, and a genuinely FAILING instance on which the verdict path must return False.",
   "worked_examples_from_the_paper": {
     "Hoffman-Singleton": {
       "lhs": "3",
