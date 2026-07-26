@@ -92,6 +92,13 @@ def main() -> int:
                 f"{where}: status_changed_by_this_claim must be false. A claim is not a "
                 f"resolution; statuses follow the upstream record.")
 
+        if e.get("upstream_finite_handle") != stubs[pid].get("upstream_finite_handle"):
+            errors.append(
+                f"{where}: upstream_finite_handle disagrees with the hub "
+                f"({e.get('upstream_finite_handle')!r} vs "
+                f"{stubs[pid].get('upstream_finite_handle')!r}). A claim against a problem "
+                f"upstream calls decidable/falsifiable/verifiable must say so.")
+
         recorded = e.get("our_recorded_status")
         actual = stubs[pid].get("status")
         if recorded != actual:
