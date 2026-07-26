@@ -7,10 +7,10 @@ that lives on a machine only we can reach, so naming that machine adds nothing
 they can use while quietly advertising our topology.
 
 It had drifted. A 2026-07-26 sweep found fifteen references to our private box
-across twelve files: one machine-readable field (`"runner": "dgx-11gb"` in a
+across twelve files: one machine-readable field (a `runner:` label naming the box, in a
 replay contract) and fourteen prose mentions in quarantine notes of the form
-"the private DGX 10^10 run is quarantined until its receipt and runner are
-public."
+"the private <vendor> 10^10 run is quarantined until its receipt and
+runner are public."
 
 Those quarantine notes are load-bearing honesty and were kept — but note what
 the hardware name was contributing to them: nothing. "Private" and "quarantined"
