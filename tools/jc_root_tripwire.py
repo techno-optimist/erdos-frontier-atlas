@@ -299,7 +299,7 @@ def main(argv) -> int:
         if classes and relevant:
             new_signal_hits.append(record)
 
-    # Bound state growth (mirrors the DGX riemann-lane tripwire's convention).
+    # Bound state growth (mirrors the riemann-lane tripwire's convention).
     if len(state["seen"]) > 3000:
         state["seen"] = dict(sorted(state["seen"].items(), key=lambda kv: kv[1])[-1500:])
 

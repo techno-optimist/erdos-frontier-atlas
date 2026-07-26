@@ -53,7 +53,7 @@ and replayable in `certificates/erdos-142/` (`python3 verify.py`).
 
 **The incident (why rule 3 exists):** the stronger "additive-local no-go" proof
 objects were UNTRACKED working-tree files; a later run overwrote them and they are
-gone from Mac and DGX — a result that was replayed-clean 2026-07-13 is now unbacked.
+gone from both working copies — a result that was replayed-clean 2026-07-13 is now unbacked.
 Commit your certs.
 
 ## 2026-07-24 — Erdős 142 / D15: two lemmas REFUTED, one theorem proved

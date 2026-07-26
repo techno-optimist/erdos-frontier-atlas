@@ -156,7 +156,7 @@ def test_ledger_anchor_classes():
     for e in gm["entries"]:
         by.setdefault(e["problem"], []).append(e)
     # A385316 / #979: one public exact replay at the full 1e12 window -> C2.
-    # Private DGX 1e13 ledgers do not count until they ship in this package.
+    # Private 1e13 ledgers do not count until they ship in this package.
     e979 = [e for e in by[979] if "miner" not in e["provenance"]["added_by"]]
     assert len(e979) == 1 and e979[0]["confidence"] == "C2"
     assert any(it["type"] == "replay_receipt" and "erdos-979" in it["artifact"]
