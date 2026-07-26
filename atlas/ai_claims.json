@@ -15,8 +15,9 @@
     "erdos_linked_claims": 89,
     "all_present_in_our_hub": true,
     "claims_against_problems_we_record_open_or_wall": 21,
-    "claims_the_registry_itself_scopes_as_not_a_resolution": 12,
-    "hot_claims_the_registry_itself_scopes_as_not_a_resolution": 12
+    "claims_the_registry_itself_scopes_as_not_a_resolution": 13,
+    "hot_claims_the_registry_itself_scopes_as_not_a_resolution": 13,
+    "claims_with_a_finite_handle_upstream": 2
   },
   "entries": [
     {
@@ -35,7 +36,8 @@
       "registry_scope_note": [
         "This answers part (i) positively and disproves part (ii); the reciprocal-sum part remains open."
       ],
-      "registry_says_not_a_resolution": true
+      "registry_says_not_a_resolution": true,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 26,
@@ -51,7 +53,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 38,
@@ -67,7 +70,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 42,
@@ -81,7 +85,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked + community review",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 43,
@@ -96,7 +101,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Site confirmed; component Lean proofs",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 56,
@@ -111,7 +117,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked; target statement was faulty",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 124,
@@ -130,7 +137,8 @@
         "Verification Reported Lean proof; linked statement contains sorry Claim audit Statement fidelity: the Lean target captured a weaker formulation than the historically intended conjecture, and the public linked statement is not a complete proof artifact.",
         "The AI work addressed a weaker literal formulation, while the intended Burr–Erdős–Graham–Li problem remains open."
       ],
-      "registry_says_not_a_resolution": true
+      "registry_says_not_a_resolution": true,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 125,
@@ -146,7 +154,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 138,
@@ -165,7 +174,8 @@
         "The stronger parent question W ( k ) 1 / k → ∞ W(k)^{1/k}\\to\\infty W ( k ) 1/ k → ∞ remains open.",
         "The theorem is a separately recorded difference variant on the official problem page, not a full solution to Erdős #138."
       ],
-      "registry_says_not_a_resolution": true
+      "registry_says_not_a_resolution": true,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 152,
@@ -181,7 +191,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 176,
@@ -199,7 +210,8 @@
       "registry_scope_note": [
         "The broader two-parameter discrepancy problem remains open."
       ],
-      "registry_says_not_a_resolution": true
+      "registry_says_not_a_resolution": true,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 202,
@@ -214,7 +226,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Community checked + formal artifact reported",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 205,
@@ -230,7 +243,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 258,
@@ -246,7 +260,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 281,
@@ -262,7 +277,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 283,
@@ -278,7 +294,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 306,
@@ -293,7 +310,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked modulo two named inputs",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 330,
@@ -309,7 +327,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 333,
@@ -325,7 +344,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 347,
@@ -339,7 +359,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 351,
@@ -355,7 +376,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 369,
@@ -371,7 +393,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 380,
@@ -387,7 +410,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Erdős Problems site confirmed",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 397,
@@ -403,7 +427,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 401,
@@ -419,7 +444,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 451,
@@ -438,7 +464,8 @@
         "Determining the sharper order of n k n_k n k ​ remains open.",
         "The growth conjecture is proved, but the original problem also asks for an estimate of n k n_k n k ​ , so the entry remains partial."
       ],
-      "registry_says_not_a_resolution": true
+      "registry_says_not_a_resolution": true,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 456,
@@ -452,7 +479,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Community manuscript; expert review requested",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 457,
@@ -468,7 +496,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 477,
@@ -483,7 +512,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Author-checked manuscript; official record open",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 480,
@@ -497,7 +527,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked; wrong variable in target",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 488,
@@ -516,7 +547,8 @@
       "registry_scope_note": [
         "Source comparison showed that this was likely a misstated “non-divisibility” version; the corrected “divisibility” problem remains open."
       ],
-      "registry_says_not_a_resolution": true
+      "registry_says_not_a_resolution": true,
+      "upstream_finite_handle": "falsifiable"
     },
     {
       "erdos_id": 501,
@@ -533,7 +565,8 @@
       "registry_scope_note": [
         "The official problem page remains open."
       ],
-      "registry_says_not_a_resolution": true
+      "registry_says_not_a_resolution": true,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 524,
@@ -549,7 +582,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Specialist checked; stronger paper followed",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 539,
@@ -564,7 +598,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Official update + Lean record",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 543,
@@ -580,7 +615,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Erdős Problems site confirmed",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 603,
@@ -596,7 +632,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Erdős Problems site confirmed",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 610,
@@ -611,7 +648,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Published theorem + expert site record",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 619,
@@ -626,7 +664,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 650,
@@ -642,7 +681,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked + human paper",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 652,
@@ -658,7 +698,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Official problem record updated",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 654,
@@ -678,7 +719,8 @@
         "The weaker improvement beyond n / 3 n/3 n /3 remains open.",
         "The parent problem remains open and is therefore classified as partial."
       ],
-      "registry_says_not_a_resolution": true
+      "registry_says_not_a_resolution": true,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 659,
@@ -694,7 +736,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 690,
@@ -710,7 +753,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Erdős Problems site confirmed",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 694,
@@ -726,7 +770,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 696,
@@ -741,7 +786,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 728,
@@ -756,7 +802,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked + human writeup",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 729,
@@ -772,7 +819,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 741,
@@ -788,7 +836,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 750,
@@ -804,7 +853,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 846,
@@ -818,7 +868,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked + independent derivation",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 848,
@@ -834,7 +885,12 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Erdős Problems site confirmed",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": true,
+      "upstream_finite_handle": "decidable",
+      "registry_scope_note": [
+        "The official record classifies it as decidable, not as a completed full resolution.",
+        "A finite decision procedure is meaningful progress, but the remaining finite check has not been reported complete."
+      ]
     },
     {
       "erdos_id": 851,
@@ -850,7 +906,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Erdős Problems site confirmed",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 858,
@@ -866,7 +923,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Erdős Problems site confirmed",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 863,
@@ -882,7 +940,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Erdős Problems site confirmed",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 865,
@@ -898,7 +957,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 871,
@@ -914,7 +974,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 888,
@@ -930,7 +991,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Erdős Problems site confirmed",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 896,
@@ -946,7 +1008,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Erdős Problems site confirmed",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 897,
@@ -962,7 +1025,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 942,
@@ -980,7 +1044,8 @@
       "registry_scope_note": [
         "The extremal order of the counting function remains open, so this is a strong lower-bound advance rather than a resolution."
       ],
-      "registry_says_not_a_resolution": true
+      "registry_says_not_a_resolution": true,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 948,
@@ -996,7 +1061,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 960,
@@ -1012,7 +1078,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Erdős Problems site confirmed",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 966,
@@ -1028,7 +1095,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 986,
@@ -1044,7 +1112,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Erdős Problems site confirmed",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 987,
@@ -1060,7 +1129,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Erdős Problems site confirmed",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 990,
@@ -1076,7 +1146,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 997,
@@ -1092,7 +1163,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 1014,
@@ -1108,7 +1180,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 1026,
@@ -1123,7 +1196,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked + expert synthesis",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 1032,
@@ -1140,7 +1214,8 @@
       "registry_scope_note": [
         "The existence of a positive linear lower construction remains open."
       ],
-      "registry_says_not_a_resolution": true
+      "registry_says_not_a_resolution": true,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 1033,
@@ -1157,7 +1232,8 @@
       "registry_scope_note": [
         "Verification Single community claim; not incorporated Claim audit The official page remains OPEN and says that no partial or complete solution has been incorporated from the comments."
       ],
-      "registry_says_not_a_resolution": true
+      "registry_says_not_a_resolution": true,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 1038,
@@ -1172,7 +1248,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Author-checked manuscript; official record open",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 1039,
@@ -1187,7 +1264,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Expert-vouched and Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 1040,
@@ -1203,7 +1281,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Expert-reviewed project result",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 1051,
@@ -1218,7 +1297,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 1089,
@@ -1234,7 +1314,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Erdős Problems site confirmed",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 1091,
@@ -1250,7 +1331,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Erdős Problems site confirmed",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 1092,
@@ -1266,7 +1348,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Erdős Problems site confirmed",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 1101,
@@ -1283,7 +1366,8 @@
       "registry_scope_note": [
         "The full polynomial-growth question remains open."
       ],
-      "registry_says_not_a_resolution": true
+      "registry_says_not_a_resolution": true,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 1138,
@@ -1299,7 +1383,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 1141,
@@ -1315,7 +1400,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 1148,
@@ -1331,7 +1417,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 1153,
@@ -1345,7 +1432,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Community-accepted proof",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 1190,
@@ -1361,7 +1449,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 1195,
@@ -1377,7 +1466,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Erdős Problems site confirmed",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 1196,
@@ -1393,7 +1483,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Multi-author human proof",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 1197,
@@ -1409,7 +1500,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 1202,
@@ -1425,7 +1517,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Erdős Problems site confirmed",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     },
     {
       "erdos_id": 1217,
@@ -1441,7 +1534,8 @@
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Erdős Problems site confirmed",
-      "registry_says_not_a_resolution": false
+      "registry_says_not_a_resolution": false,
+      "upstream_finite_handle": null
     }
   ]
 }
