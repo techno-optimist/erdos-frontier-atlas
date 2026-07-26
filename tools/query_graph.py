@@ -64,6 +64,9 @@ def cmd_card(_graph, args):
 
 def cmd_neighbors(graph, args):
     pid = f"P{int(args[0])}"
+    if not any(n["id"] == pid for n in graph["nodes"]):
+        print(f"unknown problem {pid}")
+        raise SystemExit(1)
     for e in graph["edges"]:
         if pid in (e["src"], e["dst"]):
             extra = {k: v for k, v in e.items()
@@ -80,8 +83,10 @@ def cmd_bridges(graph, args):
     for e in graph["edges"]:
         if e["type"] == "same_family" and pid in (e["src"], e["dst"]):
             other = e["dst"] if e["src"] == pid else e["src"]
-            print(f"{other}  shares {', '.join(e['shared'])}  "
-                  f"(card views/graph/{other}.md)")
+            card = ROOT / "views" / "graph" / f"{other}.md"
+            where = (f"card views/graph/{other}.md" if card.exists()
+                     else "no card — registers in atlas/stubs.json")
+            print(f"{other}  shares {', '.join(e['shared'])}  ({where})")
             found = True
     if not found:
         p = nodes.get(pid)
@@ -138,7 +143,13 @@ def main():
     if len(sys.argv) < 2 or sys.argv[1] not in COMMANDS:
         print(__doc__.strip())
         raise SystemExit(2)
-    COMMANDS[sys.argv[1]](load_graph(), sys.argv[2:])
+    try:
+        COMMANDS[sys.argv[1]](load_graph(), sys.argv[2:])
+    except (IndexError, ValueError):
+        print(f"{sys.argv[1]}: expected a problem id, "
+              f"e.g. `python3 tools/query_graph.py {sys.argv[1]} 64`\n")
+        print(__doc__.strip())
+        raise SystemExit(2)
 
 
 if __name__ == "__main__":

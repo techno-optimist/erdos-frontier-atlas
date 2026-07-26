@@ -4,7 +4,7 @@
 
 ## DO-NOT-SPEND — the traps, priced honestly
 
-Seven problems carry an upstream finite handle (`decidable/falsifiable/verifiable`) AND our catalogued wall. The prize renders beside the trap because the prize is the lure:
+7 problems carry an upstream finite handle (`decidable/falsifiable/verifiable`) AND our catalogued wall. The prize renders beside the trap because the prize is the lure:
 
 | problem | prize | upstream handle | card |
 |---|---|---|---|
@@ -20,7 +20,7 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 
 ## STRIKE LIST
 
-### T1 — triage TARGET branches (vetted 2026-07-26; all four criteria pass)
+### T1 — triage TARGET branches (vetted 2026-07-26; every triage criterion passes)
 
 - **#64** (`S:triage:64`) — Erdős–Gyárfás: does every finite graph with minimum degree >= 3 contain a cycle of length 2^k for some k >= 2 (i.e. length 4, 8, 16, 32, ...)? Liu–Montgomery [LiMo20] settled it for minimum degree above some absolute …[truncated; see source]
   - smallest untested case: Cubic graphs on n = 30 vertices. Markström generated ALL cubic graphs on fewer than 29 vertices (so <= 28; cubic orders are even, hence 30 is literally the next case). Separately, the non-cubic lane's smallest untested case is n = 16: Royle generated all …[truncated; see source]
@@ -63,8 +63,8 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 | # | quantity | feas | witness verifier | confidence |
 |---|---|---|---|---|
 | #131 | A068063(101) — maximum size of a nondividing subset of {1,...,101} …[truncated; see source] | open-easy | For each a in A run a subset-sum DP over A\{a} modulo a and …[truncated; see source] | C3 |
-| #156 | A382397(66) — minimum size of a maximal Sidon subset of {1..66} …[truncated; see source] | open-easy | Check C(|S|,2) differences distinct; then for each of the …[truncated; see source] | C3 |
-| #170 | A046693(214) — minimal number of marks in a sparse ruler / restricted …[truncated; see source] | open-easy | Compute all |S|^2 pairwise differences and check {1..214} …[truncated; see source] | C3 |
+| #156 | A382397(66) — minimum size of a maximal Sidon subset of {1..66} …[truncated; see source] | open-easy | Check C(\|S\|,2) differences distinct; then for each of the …[truncated; see source] | C3 |
+| #170 | A046693(214) — minimal number of marks in a sparse ruler / restricted …[truncated; see source] | open-easy | Compute all \|S\|^2 pairwise differences and check {1..214} …[truncated; see source] | C3 |
 | #295 | A192881(17) — minimum number of terms in an Egyptian fraction …[truncated; see source] | open-easy | Exact rational arithmetic (e.g. Python fractions): check …[truncated; see source] | C3 |
 | #301 | A390394(39) — maximum size of A ⊆ {1..39} with no solution 1/a = …[truncated; see source] | open-easy | For each a in A: subset-sum check over {1/b : b in A, b != …[truncated; see source] | C3 |
 | #302 | A390395(732) — maximum size of S ⊆ {1..732} with no solution 1/a = …[truncated; see source] | open-easy | Enumerate all harmonic triples a < b < c <= 732 with 1/a = …[truncated; see source] | C3 |
@@ -84,12 +84,12 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 | #695 | g(k) = minimal terminal prime q_k over ascending prime chains …[truncated; see source] | open-easy | k primality checks (deterministic Miller-Rabin below 2^64; …[truncated; see source] | C3 |
 | #773 | A390813(69) — size of the largest Sidon subset of the first 69 …[truncated; see source] | open-easy | O(k^2) integer check: form all k(k+1)/2 pairwise sums a+b …[truncated; see source] | C3 |
 | #779 | Verified range of Deaconescu's conjecture: for every n>1 with P = …[truncated; see source] | open-easy | gmpy2/PARI: rebuild primorial, assert p prime and p_n < p < …[truncated; see source] | C3 |
-| #791 | A066063(51) — minimal size of S ⊆ {0..51} with S+S ⊇ {0..51} (finite …[truncated; see source] | open-easy | O(|S|^2) sumset check: mark all a+b for a,b in S, assert …[truncated; see source] | C3 |
+| #791 | A066063(51) — minimal size of S ⊆ {0..51} with S+S ⊇ {0..51} (finite …[truncated; see source] | open-easy | O(\|S\|^2) sumset check: mark all a+b for a,b in S, assert …[truncated; see source] | C3 |
 | #820 | A263647 extension — integers n with gcd(2^n-1, 3^n-1) = 1 …[truncated; see source] | open-easy | one bignum gcd: math.gcd(2**n - 1, 3**n - 1) == 1 in …[truncated; see source] | C3 |
 | #852 | A079007(31) (records chain of A053597/A078515/A079889) — smallest …[truncated; see source] | open-easy | from p, iterate next_prime 31 times (deterministic …[truncated; see source] | C3 |
 | #853 | A390769 extension — r(n) = least even positive integer absent from …[truncated; see source] | open-easy | single segmented-sieve pass tracking the set of gaps seen …[truncated; see source] | C3 |
-| #864 | A389182(101) — max size of A ⊆ {1..101} such that at most one integer …[truncated; see source] | open-easy | O(|A|^2): build multiset {a+b : a≤b∈A}, count values with …[truncated; see source] | C3 |
-| #879 | A186736(2501) = G(2501) — maximum sum of a pairwise-coprime subset of …[truncated; see source] | open-easy | check gcd(a,b)=1 for all pairs (~|S|² ≈ 10^5 gcds) and sum …[truncated; see source] | C3 |
+| #864 | A389182(101) — max size of A ⊆ {1..101} such that at most one integer …[truncated; see source] | open-easy | O(\|A\|^2): build multiset {a+b : a≤b∈A}, count values with …[truncated; see source] | C3 |
+| #879 | A186736(2501) = G(2501) — maximum sum of a pairwise-coprime subset of …[truncated; see source] | open-easy | check gcd(a,b)=1 for all pairs (~\|S\|² ≈ 10^5 gcds) and sum …[truncated; see source] | C3 |
 | #913 | A359747 verified frontier — largest verified k such that k(k+1) has …[truncated; see source] | open-easy | factor k and k+1 (trial division + Pollard rho, trivial at …[truncated; see source] | C3 |
 | #932 | A387864 verified frontier — largest verified r such that at least two …[truncated; see source] | open-easy | compute p_r, p_{r+1} (sieve; p_r ≈ 1.2e8 at the frontier); …[truncated; see source] | C3 |
 | #936 | Brocard sub-case search frontier: largest N such that no n in (7, N] …[truncated; see source] | open-easy | (b) verifies in seconds: incremental r_p = n! mod p over …[truncated; see source] | C3 |
@@ -104,7 +104,7 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 | #1108 | A115645(27) — next powerful number (min prime exponent >= 2) …[truncated; see source] | open-easy | Sum the claimed factorials (exact bigint); fully factor the …[truncated; see source] | C3 |
 | #1109 | A392165(40) — smallest N with f(N) >= 40, where f(N) = A392164(N) = …[truncated; see source] | open-easy | For each of the ~820 pairs (a,a') with a <= a' in S, …[truncated; see source] | C3 |
 | #3 | A003002(212) = r_3(212) — maximum size of a subset of {1,...,212} …[truncated; see source] | plausible | Bitset over [1,212]; for each pair x<y test whether 2y-x is …[truncated; see source] | C3 |
-| #11 | A377587(13) — smallest odd m such that m - 2^k is non-squarefree for …[truncated; see source] | plausible | 13 modular divisibility checks p_k^2 | (m - 2^k) plus one …[truncated; see source] | C3 |
+| #11 | A377587(13) — smallest odd m such that m - 2^k is non-squarefree for …[truncated; see source] | plausible | 13 modular divisibility checks p_k^2 \| (m - 2^k) plus one …[truncated; see source] | C3 |
 | #20 | A332077 cell Sun(3,4) — minimal number of distinct sets of …[truncated; see source] | plausible | For N sets enumerate all C(N,4) 4-subsets (N=39: 82251) and …[truncated; see source] | C3 |
 | #23 | A389646(24) — maximum over triangle-free graphs on 24 vertices of the …[truncated; see source] | plausible | Dependency-free two-step check: (1) triangle-freeness via …[truncated; see source] | C3 |
 | #60 | A006855(41) = ex(41; C4) — maximum edges in a C4-free graph on 41 …[truncated; see source] | plausible | Compute B = A^2 and assert every off-diagonal entry <= 1 …[truncated; see source] | C3 |
@@ -129,8 +129,8 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 | #528 | C_2 — connective constant of the square lattice Z^2 (self-avoiding …[truncated; see source] | plausible | upper side: given automaton + v, verify Mv <= lambda*v by …[truncated; see source] | C3 |
 | #588 | A006065(19) — maximum number of lines containing exactly 4 points …[truncated; see source] | plausible | Exact-arithmetic collinearity: for each claimed line verify …[truncated; see source] | C3 |
 | #687 | A048670(65) = j(p_65#) — Jacobsthal function of the product of the …[truncated; see source] | plausible | For each i < L, trial-divide u+i by the 65 primes up to 313 …[truncated; see source] | C3 |
-| #727 | A343507(10) = smallest m with (m+10)!^2 | (2m)! — first uncomputed …[truncated; see source] | plausible | For each prime p <= 2m check Legendre valuations: sum_j …[truncated; see source] | C3 |
-| #730 | Largest gap k with a known pair (n, n+k) such that binomial(2n,n) and …[truncated; see source] | plausible | Kummer's theorem: p | C(2n,n) iff adding n+n in base p …[truncated; see source] | C3 |
+| #727 | A343507(10) = smallest m with (m+10)!^2 \| (2m)! — first uncomputed …[truncated; see source] | plausible | For each prime p <= 2m check Legendre valuations: sum_j …[truncated; see source] | C3 |
+| #730 | Largest gap k with a known pair (n, n+k) such that binomial(2n,n) and …[truncated; see source] | plausible | Kummer's theorem: p \| C(2n,n) iff adding n+n in base p …[truncated; see source] | C3 |
 | #854 | A389839(13) — smallest even integer that is not a difference of …[truncated; see source] | plausible | per certificate (x, x+t): gcd(x, 41#) = gcd(x+t, 41#) = 1 …[truncated; see source] | C3 |
 | #961 | A213253(269) — first cell beyond Najman's computed range n=1..268; …[truncated; see source] | plausible | trial-divide each of the L integers by the 57 primes ≤ 269 …[truncated; see source] | C3 |
 | #970 | A048670(65) — Jacobsthal function g of the product of the first 65 …[truncated; see source] | plausible | L gcd computations against p_65#, or per-offset …[truncated; see source] | C3 |
@@ -140,7 +140,7 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 | #1057 | A006931(40) - least Carmichael number with exactly 40 prime factors | plausible | Given the factor list: primality of each p_i, distinctness, …[truncated; see source] | C3 |
 | #1060 | A212490(6) - least m such that k*sigma(k) = m has exactly 6 solutions …[truncated; see source] | plausible | At-least-6: factor each k_i, compute sigma, multiply - …[truncated; see source] | C3 |
 | #1063 | A389360(60) = n_60 — least n >= 120 such that n-i divides …[truncated; see source] | plausible | dependency-free Python: compute binomial(m,60) exactly (60 …[truncated; see source] | C3 |
-| #1095 | A003458(378) = g(378) — Erdős–Selfridge function: least n > 379 such …[truncated; see source] | plausible | Kummer's theorem, dependency-free: p | binomial(n,k) iff …[truncated; see source] | C3 |
+| #1095 | A003458(378) = g(378) — Erdős–Selfridge function: least n > 379 such …[truncated; see source] | plausible | Kummer's theorem, dependency-free: p \| binomial(n,k) iff …[truncated; see source] | C3 |
 | #1106 | Conjecture F(n) > n for all n > 115, where F(n) = A194259(n) = number …[truncated; see source] | plausible | Recompute p(n) exactly (Euler pentagonal recurrence, exact …[truncated; see source] | C3 |
 | #1208 | A193838(15) — smallest k such that 15 points of the k x k lattice …[truncated; see source] | plausible | 5-line dependency-free Python: compute the 105 integer …[truncated; see source] | C3 |
 

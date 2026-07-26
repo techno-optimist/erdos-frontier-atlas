@@ -29,7 +29,9 @@ regeneration from unchanged inputs — that is what makes --check meaningful):
   python3 tools/build_graph.py            # (re)write all outputs
   python3 tools/build_graph.py --check    # exit 1 if any committed output is stale
 
-Standing rules (enforced by tools/validate_graph.py + tests/test_graph.py):
+Standing rules. Rules 1, 3, 4 and 5 are gated by tools/validate_graph.py +
+tests/test_graph.py; rule 2 holds by construction — the ranking predicate
+never reads `prize` — and is pinned by a test over the rendered order:
   1. A claim NEVER sets a status — statuses in the graph are byte-equal to
      atlas/stubs.json.
   2. Prizes are history, not targets — a prize renders beside its trap warning,
@@ -82,9 +84,12 @@ PREDICATES = {
     "trap": (
         "TRAP(problem) iff stubs upstream_finite_handle is set AND stubs "
         "status == 'wall' — upstream says a finite object could settle it, "
-        "our triage says the handle does not help at our scale. The prize "
-        "rides ON the edge so renderers must show temptation and trap "
-        "together."
+        "our status register records a wall. That wall may be BRANCH-SCOPED: "
+        "a triage surface on the same card can carry a live TARGET/MAYBE "
+        "sub-branch (#64 is exactly this). The predicate reads the two "
+        "registers and nothing else; the reason lives in atlas/walls.md and "
+        "on the surfaces. The prize rides ON the edge so renderers must show "
+        "temptation and trap together."
     ),
     "strike-ranking": (
         "Strike tiers, in order: T1 triage TARGET branches; T2 movable "
@@ -114,7 +119,19 @@ SOURCES = [
     "atlas/effectivization_shortlist.json",
     "certificates/contracts.json",
     "atlas/jc-crater/implication_graph.json",
+    "atlas/jc-crater/computed_statuses.json",
 ]
+
+# Carried onto every imported crater node: the whole island is downstream of
+# an external counterexample that has not been confirmed.
+CRATER_CONDITIONALITY = (
+    "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample "
+    "(external; 'awaiting confirmation', not yet peer-reviewed). "
+    "`lit_verification` records that an independent literature agent matched "
+    "the statement to a primary source — it is NOT a truth verdict. "
+    "`computed_status` is a conservative machine-propagated floor "
+    "(tools/validate_jc_crater.py), not a hand analysis."
+)
 
 FEAS_ORDER = {"historic": 0, "open-easy": 1, "plausible": 2, "hard": 3, "none": 4}
 
@@ -176,6 +193,11 @@ def clip(text, limit=700):
     return text[:limit].rsplit(" ", 1)[0] + " …[truncated; see source]"
 
 
+def cell(text, limit=700):
+    """clip() for a markdown table cell: pipes would break the row."""
+    return clip(text, limit).replace("|", "\\|")
+
+
 def load(rel):
     with open(ROOT / rel, encoding="utf-8") as f:
         return json.load(f)
@@ -186,7 +208,9 @@ def build_graph():
     stubs = load("atlas/stubs.json")["problems"]
     deep = {p["id"]: p for p in load("atlas/problems.json")["problems"]}
     gap = load("atlas/gap_map.json")["entries"]
-    triage = load("atlas/finite_handle_triage.json")["entries"]
+    triage_doc = load("atlas/finite_handle_triage.json")
+    triage = triage_doc["entries"]
+    triage_vintage = triage_doc["triaged"]
     ai = load("atlas/ai_claims.json")["entries"]
     lean_lane = load("atlas/lean_lane.json")["records"]
     effect = load("atlas/effectivization_shortlist.json")
@@ -198,6 +222,11 @@ def build_graph():
     edges = []
 
     def add_node(nid, ntype, **attrs):
+        # Fail closed: a silent overwrite would drop a ledger row invisibly.
+        # Intended-reuse sites guard with `if nid not in nodes` before calling.
+        if nid in nodes:
+            raise SystemExit(f"build_graph: node id collision on {nid!r} "
+                             f"({nodes[nid]['type']} vs {ntype})")
         node = {"id": nid, "type": ntype}
         node.update(attrs)
         nodes[nid] = node
@@ -319,7 +348,8 @@ def build_graph():
                  smallest_untested_case=clip(e["smallest_untested_case"], 500),
                  known_computational_frontier=clip(e["known_computational_frontier"], 500),
                  search_space_estimate=clip(e["search_space_estimate"], 400),
-                 verification_is_cheap_and_exact=clip(e["verification_is_cheap_and_exact"], 400),
+                 verification_is_cheap_and_exact=bool(
+                     e["verification_is_cheap_and_exact"]),
                  verdict_reason=clip(e["verdict_reason"], 700))
         add_edge("has_surface", f"P{e['erdos_id']}", sid,
                  "deterministic-rule", "atlas/finite_handle_triage.json")
@@ -335,7 +365,21 @@ def build_graph():
             add_edge("walled", sid, wid, "deterministic-rule",
                      "atlas/finite_handle_triage.json")
 
-    # problem-scope walls from stubs (the 27), where deep gave no wall node
+    # deep-audit walls: beatable=WALL is a wall even when wall_reason is empty
+    # (#139/#140/#166/#720 are named in atlas/walls.md but carry no
+    # wall_reason field, and would otherwise render as "no recorded walls").
+    for pid_, d in sorted(deep.items()):
+        if d["beatable"] == "WALL" and f"W:prob:{pid_}" not in nodes:
+            wid = f"W:prob:{pid_}"
+            add_node(wid, "wall", scope="problem",
+                     reason=clip(d.get("beatable_reason")
+                                 or "deep audit records beatable=WALL — "
+                                    "see atlas/walls.md", 900),
+                     source="atlas/problems.json beatable=WALL")
+            add_edge("walled", f"P{pid_}", wid, "deterministic-rule",
+                     "atlas/problems.json")
+
+    # problem-scope walls from stubs, where neither deep path gave a wall node
     for p in stubs:
         if p["status"] == "wall" and f"W:prob:{p['id']}" not in nodes:
             wid = f"W:prob:{p['id']}"
@@ -471,14 +515,37 @@ def build_graph():
                 fam.setdefault((ms[i], ms[j]), []).append(o)
     for (a, b), seqs in sorted(fam.items()):
         add_edge("same_family", f"P{a}", f"P{b}", "deterministic-rule",
-                 "shared OEIS sequence(s)", shared=sorted(seqs))
+                 "atlas/stubs.json oeis UNION problems.json links.oeis",
+                 shared=sorted(seqs))
 
     # -- crater import: the cited-implication island (T1) --------------------
+    # Everything JC-derived is conditional on an EXTERNAL counterexample that
+    # is still awaiting confirmation. The caveats travel with the nodes, or
+    # the import would launder "awaiting confirmation" into "settled".
+    crater_statuses = load("atlas/jc-crater/computed_statuses.json")["statuses"]
+    crater_roots = {r["node"]: r for r in crater["roots"]}
     for n in crater["nodes"]:
-        add_node(f"jc:{n['id']}", "crater_node", name=n["name"],
-                 verification=n["verification"],
-                 statement=clip(n.get("statement", ""), 500),
-                 primary_source=clip(n.get("primary_source", ""), 300))
+        computed = crater_statuses.get(n["id"], {})
+        node = {
+            "name": n["name"],
+            # NOT truth-of-statement: this records that an independent
+            # literature agent verified the statement against a primary source.
+            "lit_verification": n["verification"],
+            "computed_status": computed.get("status"),
+            "orphaned_conditional_support": computed.get(
+                "orphaned_conditional_support"),
+            "pre_2026_status": n.get("pre_2026_status"),
+            "notes": clip(n.get("notes", ""), 600),
+            "statement": clip(n.get("statement", ""), 500),
+            "primary_source": clip(n.get("primary_source", ""), 300),
+            "conditionality": CRATER_CONDITIONALITY,
+        }
+        if n["id"] in crater_roots:
+            r = crater_roots[n["id"]]
+            node["root_fact"] = {"fact": r["fact"],
+                                 "certificate": r["certificate"],
+                                 "note": clip(r.get("note", ""), 400)}
+        add_node(f"jc:{n['id']}", "crater_node", **node)
     for e in crater["edges"]:
         add_edge("cascades_to", f"jc:{e['from']}", f"jc:{e['to']}",
                  "cited-implication", "atlas/jc-crater/implication_graph.json",
@@ -501,6 +568,7 @@ def build_graph():
         "sources": SOURCES,
         "standing_rules": STANDING_RULES,
         "predicates": PREDICATES,
+        "source_vintages": {"finite_handle_triage": triage_vintage},
         "counts": {
             "nodes": dict(sorted(ncounts.items())),
             "edges": dict(sorted(ecounts.items())),
@@ -525,15 +593,49 @@ def build_graph():
 def _wall_lines(graph, pid):
     """STOP-section lines for problem P<id>: traps, walls, retraction pins."""
     nodes = {n["id"]: n for n in graph["nodes"]}
+    erdos_id = int(pid[1:])
     lines = []
+    # A live sub-branch on the same problem: the trap line must not claim the
+    # handle is dead everywhere when our own triage says one branch is alive.
+    live_branch = next(
+        (n for n in graph["nodes"]
+         if n["type"] == "surface"
+         and n.get("overlay") == "finite_handle_triage"
+         and n.get("problem") == erdos_id
+         and n.get("verdict") in ("TARGET", "MAYBE")), None)
     for e in graph["edges"]:
         if e["type"] == "trap" and e["src"] == pid:
-            lines.append(
-                f"- **TRAP** — prize **{e['prize']}** + upstream says "
-                f"`{e['upstream_finite_handle']}`, but our status is **wall**: "
-                f"the finite handle does not help at our scale "
-                f"(atlas/walls.md, finite-handle table). The prize is the lure; "
-                f"this line is the hook.")
+            lure = (f"prize **{e['prize']}** + upstream says"
+                    if e["prize"] != "no" else "upstream says")
+            if live_branch:
+                lines.append(
+                    f"- **TRAP (branch-scoped)** — {lure} "
+                    f"`{e['upstream_finite_handle']}`, and our status register "
+                    f"records a **wall**. The wall covers the GENERAL branch; "
+                    f"our triage marks a sub-branch "
+                    f"**{live_branch['verdict']}** (see `{live_branch['id']}` "
+                    f"below). Strike the sub-branch, not the headline.")
+            else:
+                lines.append(
+                    f"- **TRAP** — {lure} "
+                    f"`{e['upstream_finite_handle']}`, but our status register "
+                    f"records a **wall**: the finite handle does not make it "
+                    f"reachable here (reasons in atlas/walls.md, finite-handle "
+                    f"table). Decidable in principle is not reachable in "
+                    f"practice.")
+    # Retraction pins: a stronger claim on this problem was withdrawn. Named by
+    # claim id and pin hash only — never the banned string itself.
+    claim_ids = {e["dst"] for e in graph["edges"]
+                 if e["type"] == "evidenced_by" and e["src"] == pid}
+    pins = sorted({(e["src"], e["dst"]) for e in graph["edges"]
+                   if e["type"] == "retracts" and e["dst"] in claim_ids})
+    for pin_id, claim_id in pins:
+        lines.append(
+            f"- **RETRACTION PIN** — claim `{nodes[claim_id]['claim_id']}` "
+            f"carries a banned phrasing (pin `{pin_id}`): a stronger earlier "
+            f"statement was withdrawn and must not be resurrected. Check "
+            f"`certificates/contracts.json` publication_bindings before "
+            f"publishing any prose about this problem.")
     for e in graph["edges"]:
         if e["type"] == "walled":
             w = nodes[e["dst"]]
@@ -598,9 +700,9 @@ def render_card(graph, erdos_id):
     if stop:
         L.extend(stop)
     else:
-        w("- No recorded walls, traps, or campaign findings on this problem. "
-          "Absence of a wall is not evidence of feasibility — run "
-          "`M:literature-freshness-check` before any strike.")
+        w("- No recorded walls, traps, retraction pins, or campaign findings "
+          "on this problem. Absence of a wall is not evidence of feasibility "
+          "— run `M:literature-freshness-check` before any strike.")
     w("")
     # 2. STATUS — three registers, never merged
     w("## STATUS — three registers, never merged")
@@ -639,14 +741,16 @@ def render_card(graph, erdos_id):
                  if mv else "no move applies mechanically")
         if s["overlay"] == "finite_handle_triage":
             w(f"### `{sid}` — triage verdict **{s['verdict']}** "
-              f"(finite_handle_triage, 2026-07-26)")
+              f"(finite_handle_triage, "
+              f"{graph['source_vintages']['finite_handle_triage']})")
             w("")
             w(f"- our summary: {s['statement_short']}")
             w(f"- witness: {s['what_a_witness_is']}")
             w(f"- smallest untested case: {s['smallest_untested_case']}")
             w(f"- known frontier: {s['known_computational_frontier']}")
             w(f"- search-space estimate: {s['search_space_estimate']}")
-            w(f"- verification: {s['verification_is_cheap_and_exact']}")
+            w("- verification cheap and exact: "
+              f"{'yes' if s['verification_is_cheap_and_exact'] else 'no'}")
             w(f"- verdict reason: {s['verdict_reason']}")
             w(f"- {mvtxt}")
         elif s["overlay"] == "problems.json":
@@ -699,9 +803,11 @@ def render_card(graph, erdos_id):
     w("## BRIDGES — structurally adjacent problems")
     w("")
     if fams:
+        carded = set(card_problem_ids(graph))
         for other, seqs in fams[:12]:
-            w(f"- #{other} shares {', '.join(seqs)} → card "
-              f"`views/graph/P{other}.md`")
+            where = (f"card `views/graph/P{other}.md`" if other in carded
+                     else "no card (registers only: `atlas/stubs.json`)")
+            w(f"- #{other} shares {', '.join(seqs)} → {where}")
         if len(fams) > 12:
             w(f"- … and {len(fams) - 12} more (query: "
               f"`python3 tools/query_graph.py bridges {erdos_id}`)")
@@ -738,15 +844,15 @@ def render_sorties(graph):
       "(verbatim, versioned). Entry point for agents: `GRAPH.md`.")
     w("")
     # --- DO-NOT-SPEND first (standing rule 3)
+    traps = [e for e in graph["edges"] if e["type"] == "trap"]
     w("## DO-NOT-SPEND — the traps, priced honestly")
     w("")
-    w("Seven problems carry an upstream finite handle (`decidable/falsifiable/"
-      "verifiable`) AND our catalogued wall. The prize renders beside the "
-      "trap because the prize is the lure:")
+    w(f"{len(traps)} problems carry an upstream finite handle "
+      "(`decidable/falsifiable/verifiable`) AND our catalogued wall. The "
+      "prize renders beside the trap because the prize is the lure:")
     w("")
     w("| problem | prize | upstream handle | card |")
     w("|---|---|---|---|")
-    traps = [e for e in graph["edges"] if e["type"] == "trap"]
     for e in sorted(traps, key=lambda x: int(x["src"][1:])):
         eid = int(e["src"][1:])
         prize = e["prize"] if e["prize"] != "no" else "—"
@@ -767,8 +873,9 @@ def render_sorties(graph):
                     key=lambda s: s["problem"])
     w("## STRIKE LIST")
     w("")
-    w("### T1 — triage TARGET branches (vetted 2026-07-26; all four "
-      "criteria pass)")
+    w("### T1 — triage TARGET branches (vetted "
+      f"{graph['source_vintages']['finite_handle_triage']}; every triage "
+      "criterion passes)")
     w("")
     for s in targets:
         w(f"- **#{s['problem']}** (`{s['id']}`) — "
@@ -804,8 +911,8 @@ def render_sorties(graph):
     w("| # | quantity | feas | witness verifier | confidence |")
     w("|---|---|---|---|---|")
     for s in workable:
-        w(f"| #{s['problem']} | {clip(s['quantity'], 70)} | "
-          f"{s['witness_feasibility']} | {clip(s['witness_verifier'], 60)} | "
+        w(f"| #{s['problem']} | {cell(s['quantity'], 70)} | "
+          f"{s['witness_feasibility']} | {cell(s['witness_verifier'], 60)} | "
           f"{s['confidence']} |")
     w("")
     w("### T4 — triage MAYBE branches")
@@ -833,7 +940,9 @@ def render_sorties(graph):
         w(f"- trap × TARGET branch split: "
           + ", ".join(f"#{c}" for c in split)
           + " — the general branch is walled, a sub-branch is live.")
-    w("- upstream Open × our wall: the 27 catalogued walls "
+    nwalls = sum(1 for n in graph["nodes"]
+                 if n["type"] == "problem" and n["status"] == "wall")
+    w(f"- upstream Open × our wall: the {nwalls} catalogued walls "
       "(`atlas/walls.md`) — 'falsifiable upstream' is not 'reachable here'.")
     w("")
     # --- hot claims
@@ -914,24 +1023,36 @@ def emit():
     return outputs
 
 
+def orphans(outputs):
+    """Committed generated files that this build no longer produces."""
+    expected = {p.resolve() for p in outputs}
+    found = []
+    for d, pattern in ((VIEWS_DIR, "*.md"), (GRAPH_DIR, "*.json")):
+        if d.exists():
+            for f in sorted(d.glob(pattern)):
+                if f.resolve() not in expected:
+                    found.append(f)
+    return found
+
+
 def main():
     check = "--check" in sys.argv[1:]
     outputs = emit()
     stale = []
     for path, content in outputs.items():
+        # Compare BYTES: text mode translates newlines, so a CRLF hand-edit
+        # would pass a text comparison and the byte-identity claim would be a
+        # lie. Write bytes for the same reason.
+        blob = content.encode("utf-8")
         if check:
-            if not path.exists() or path.read_text(encoding="utf-8") != content:
+            if not path.exists() or path.read_bytes() != blob:
                 stale.append(str(path.relative_to(ROOT)))
         else:
             path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text(content, encoding="utf-8")
+            path.write_bytes(blob)
+    extra = orphans(outputs)
     if check:
-        # a committed card whose problem lost its graph content is also stale
-        expected = {p.name for p in outputs if p.parent == VIEWS_DIR}
-        if VIEWS_DIR.exists():
-            for f in VIEWS_DIR.glob("P*.md"):
-                if f.name not in expected:
-                    stale.append(str(f.relative_to(ROOT)) + " (orphaned)")
+        stale += [str(f.relative_to(ROOT)) + " (orphaned)" for f in extra]
         if stale:
             print("STALE graph outputs (run `make graph`):")
             for s in sorted(stale):
@@ -939,8 +1060,13 @@ def main():
             raise SystemExit(1)
         print(f"graph up to date ({len(outputs)} files).")
     else:
-        print(f"wrote {len(outputs)} files "
-              f"({len([p for p in outputs if p.parent == VIEWS_DIR]) - 1} cards).")
+        # `make graph` must actually converge: the --check remedy says to run
+        # it, so it has to remove what it no longer generates.
+        for f in extra:
+            f.unlink()
+        cards = len([p for p in outputs if p.parent == VIEWS_DIR]) - 1
+        print(f"wrote {len(outputs)} files ({cards} cards)"
+              + (f", removed {len(extra)} orphaned" if extra else "") + ".")
 
 
 if __name__ == "__main__":

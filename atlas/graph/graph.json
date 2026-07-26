@@ -14,7 +14,7 @@
    "same_family": 114,
    "tagged": 1979,
    "trap": 7,
-   "walled": 209
+   "walled": 213
   },
   "nodes": {
    "crater_node": 37,
@@ -28,11 +28,11 @@
    "problem": 1217,
    "surface": 316,
    "tag": 41,
-   "wall": 209
+   "wall": 213
   },
   "tiers": {
    "cited-implication": 29,
-   "deterministic-rule": 3941,
+   "deterministic-rule": 3945,
    "validator-enforced": 15
   }
  },
@@ -12479,7 +12479,7 @@
    "shared": [
     "A006065"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P101",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12489,7 +12489,7 @@
    "shared": [
     "A006065"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P101",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12499,7 +12499,7 @@
    "shared": [
     "A292528"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P1013",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12509,7 +12509,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P1029",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12519,7 +12519,7 @@
    "shared": [
     "A392164"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P1103",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12529,7 +12529,7 @@
    "shared": [
     "A143301"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P121",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12539,7 +12539,7 @@
    "shared": [
     "A013928"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P121",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12549,7 +12549,7 @@
    "shared": [
     "A005346"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P138",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12559,7 +12559,7 @@
    "shared": [
     "A003002"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P139",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12572,7 +12572,7 @@
     "A003004",
     "A003005"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P139",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12585,7 +12585,7 @@
     "A003004",
     "A003005"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P139",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12595,7 +12595,7 @@
    "shared": [
     "A143824"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P14",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12605,7 +12605,7 @@
    "shared": [
     "A143824"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P14",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12615,7 +12615,7 @@
    "shared": [
     "A143824"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P14",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12625,7 +12625,7 @@
    "shared": [
     "A143824"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P14",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12635,7 +12635,7 @@
    "shared": [
     "A143824"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P14",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12645,7 +12645,7 @@
    "shared": [
     "A003002"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P140",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12655,7 +12655,7 @@
    "shared": [
     "A003002"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P140",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12668,7 +12668,7 @@
     "A003004",
     "A003005"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P142",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12678,7 +12678,7 @@
    "shared": [
     "A005117"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P145",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12688,7 +12688,7 @@
    "shared": [
     "A076393"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P148",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12698,7 +12698,7 @@
    "shared": [
     "A143824"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P155",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12710,7 +12710,7 @@
     "A143824",
     "A227590"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P155",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12720,7 +12720,7 @@
    "shared": [
     "A000791"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P165",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12730,7 +12730,7 @@
    "shared": [
     "A000791"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P165",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12740,7 +12740,7 @@
    "shared": [
     "A000791"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P165",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12750,7 +12750,7 @@
    "shared": [
     "A000791"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P165",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12760,7 +12760,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P166",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12770,7 +12770,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P166",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12780,7 +12780,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P166",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12790,7 +12790,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P166",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12800,7 +12800,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P166",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12810,7 +12810,7 @@
    "shared": [
     "A005115"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P200",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12820,7 +12820,7 @@
    "shared": [
     "A003035"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P211",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12830,7 +12830,7 @@
    "shared": [
     "A039669"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P236",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12840,7 +12840,7 @@
    "shared": [
     "A000058"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P243",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12850,7 +12850,7 @@
    "shared": [
     "A098990"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P251",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12863,7 +12863,7 @@
     "A003004",
     "A003005"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P3",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12873,7 +12873,7 @@
    "shared": [
     "A003002"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P3",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12886,7 +12886,7 @@
     "A003004",
     "A003005"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P3",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12899,7 +12899,7 @@
     "A003004",
     "A003005"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P3",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12911,7 +12911,7 @@
     "A143824",
     "A227590"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P30",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12923,7 +12923,7 @@
     "A143824",
     "A227590"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P30",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12933,7 +12933,7 @@
    "shared": [
     "A143824"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P30",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12945,7 +12945,7 @@
     "A143824",
     "A227590"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P30",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12955,7 +12955,7 @@
    "shared": [
     "A384927"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P321",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12965,7 +12965,7 @@
    "shared": [
     "A060355"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P364",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12975,7 +12975,7 @@
    "shared": [
     "A060355"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P364",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12985,7 +12985,7 @@
    "shared": [
     "A060355"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P365",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -12995,7 +12995,7 @@
    "shared": [
     "A057521"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P367",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13005,7 +13005,7 @@
    "shared": [
     "A074399"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P368",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13015,7 +13015,7 @@
    "shared": [
     "A146968"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P398",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13025,7 +13025,7 @@
    "shared": [
     "A007497"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P410",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13035,7 +13035,7 @@
    "shared": [
     "A264810"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P416",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13047,7 +13047,7 @@
     "A143824",
     "A227590"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P43",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13057,7 +13057,7 @@
    "shared": [
     "A143824"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P43",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13069,7 +13069,7 @@
     "A143824",
     "A227590"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P43",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13079,7 +13079,7 @@
    "shared": [
     "A391668"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P457",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13089,7 +13089,7 @@
    "shared": [
     "A167485"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P468",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13099,7 +13099,7 @@
    "shared": [
     "A006037"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P470",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13109,7 +13109,7 @@
    "shared": [
     "A001223"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P5",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13119,7 +13119,7 @@
    "shared": [
     "A001223"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P5",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13129,7 +13129,7 @@
    "shared": [
     "A014197"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P51",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13139,7 +13139,7 @@
    "shared": [
     "A143824"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P530",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13149,7 +13149,7 @@
    "shared": [
     "A000791"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P544",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13159,7 +13159,7 @@
    "shared": [
     "A000791"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P544",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13169,7 +13169,7 @@
    "shared": [
     "A000791"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P544",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13179,7 +13179,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P545",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13189,7 +13189,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P545",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13199,7 +13199,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P545",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13209,7 +13209,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P545",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13219,7 +13219,7 @@
    "shared": [
     "A000791"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P553",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13229,7 +13229,7 @@
    "shared": [
     "A000791"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P553",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13240,7 +13240,7 @@
     "A006065",
     "A008997"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P588",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13250,7 +13250,7 @@
    "shared": [
     "A006855"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P60",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13260,7 +13260,7 @@
    "shared": [
     "A006530"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P683",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13270,7 +13270,7 @@
    "shared": [
     "A048670"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P687",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13281,7 +13281,7 @@
     "A048670",
     "A058989"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P687",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13291,7 +13291,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P77",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13301,7 +13301,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P77",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13311,7 +13311,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P77",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13321,7 +13321,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P77",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13331,7 +13331,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P77",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13341,7 +13341,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P77",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13351,7 +13351,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P77",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13361,7 +13361,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P77",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13371,7 +13371,7 @@
    "shared": [
     "A263647"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P770",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13381,7 +13381,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P78",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13391,7 +13391,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P78",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13401,7 +13401,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P78",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13411,7 +13411,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P78",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13421,7 +13421,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P78",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13431,7 +13431,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P78",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13441,7 +13441,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P78",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13451,7 +13451,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P812",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13461,7 +13461,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P812",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13471,7 +13471,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P812",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13481,7 +13481,7 @@
    "shared": [
     "A006672"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P85",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13491,7 +13491,7 @@
    "shared": [
     "A001223"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P852",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13501,7 +13501,7 @@
    "shared": [
     "A048670"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P854",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13511,7 +13511,7 @@
    "shared": [
     "A023193"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P855",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13521,7 +13521,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P87",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13531,7 +13531,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P87",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13541,7 +13541,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P87",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13551,7 +13551,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P87",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13561,7 +13561,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P87",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13571,7 +13571,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P87",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13581,7 +13581,7 @@
    "shared": [
     "A186704"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P89",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13591,7 +13591,7 @@
    "shared": [
     "A186704"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P89",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13601,7 +13601,7 @@
    "shared": [
     "A186705"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P90",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13611,7 +13611,7 @@
    "shared": [
     "A186704"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P91",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13621,7 +13621,7 @@
    "shared": [
     "A056828"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P941",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13631,7 +13631,7 @@
    "shared": [
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P986",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -13642,7 +13642,7 @@
     "A000791",
     "A059442"
    ],
-   "source": "shared OEIS sequence(s)",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P986",
    "tier": "deterministic-rule",
    "type": "same_family"
@@ -27579,14 +27579,14 @@
   },
   {
    "dst": "W:prob:1029",
-   "source": "atlas/stubs.json",
+   "source": "atlas/problems.json",
    "src": "P1029",
    "tier": "deterministic-rule",
    "type": "walled"
   },
   {
    "dst": "W:prob:107",
-   "source": "atlas/stubs.json",
+   "source": "atlas/problems.json",
    "src": "P107",
    "tier": "deterministic-rule",
    "type": "walled"
@@ -27614,8 +27614,22 @@
   },
   {
    "dst": "W:prob:138",
-   "source": "atlas/stubs.json",
+   "source": "atlas/problems.json",
    "src": "P138",
+   "tier": "deterministic-rule",
+   "type": "walled"
+  },
+  {
+   "dst": "W:prob:139",
+   "source": "atlas/problems.json",
+   "src": "P139",
+   "tier": "deterministic-rule",
+   "type": "walled"
+  },
+  {
+   "dst": "W:prob:140",
+   "source": "atlas/problems.json",
+   "src": "P140",
    "tier": "deterministic-rule",
    "type": "walled"
   },
@@ -27635,7 +27649,7 @@
   },
   {
    "dst": "W:prob:159",
-   "source": "atlas/stubs.json",
+   "source": "atlas/problems.json",
    "src": "P159",
    "tier": "deterministic-rule",
    "type": "walled"
@@ -27649,8 +27663,15 @@
   },
   {
    "dst": "W:prob:165",
-   "source": "atlas/stubs.json",
+   "source": "atlas/problems.json",
    "src": "P165",
+   "tier": "deterministic-rule",
+   "type": "walled"
+  },
+  {
+   "dst": "W:prob:166",
+   "source": "atlas/problems.json",
+   "src": "P166",
    "tier": "deterministic-rule",
    "type": "walled"
   },
@@ -27663,14 +27684,14 @@
   },
   {
    "dst": "W:prob:183",
-   "source": "atlas/stubs.json",
+   "source": "atlas/problems.json",
    "src": "P183",
    "tier": "deterministic-rule",
    "type": "walled"
   },
   {
    "dst": "W:prob:19",
-   "source": "atlas/stubs.json",
+   "source": "atlas/problems.json",
    "src": "P19",
    "tier": "deterministic-rule",
    "type": "walled"
@@ -27698,14 +27719,14 @@
   },
   {
    "dst": "W:prob:30",
-   "source": "atlas/stubs.json",
+   "source": "atlas/problems.json",
    "src": "P30",
    "tier": "deterministic-rule",
    "type": "walled"
   },
   {
    "dst": "W:prob:39",
-   "source": "atlas/stubs.json",
+   "source": "atlas/problems.json",
    "src": "P39",
    "tier": "deterministic-rule",
    "type": "walled"
@@ -27726,7 +27747,7 @@
   },
   {
    "dst": "W:prob:52",
-   "source": "atlas/stubs.json",
+   "source": "atlas/problems.json",
    "src": "P52",
    "tier": "deterministic-rule",
    "type": "walled"
@@ -27740,7 +27761,7 @@
   },
   {
    "dst": "W:prob:564",
-   "source": "atlas/stubs.json",
+   "source": "atlas/problems.json",
    "src": "P564",
    "tier": "deterministic-rule",
    "type": "walled"
@@ -27754,14 +27775,14 @@
   },
   {
    "dst": "W:prob:64",
-   "source": "atlas/stubs.json",
+   "source": "atlas/problems.json",
    "src": "P64",
    "tier": "deterministic-rule",
    "type": "walled"
   },
   {
    "dst": "W:prob:687",
-   "source": "atlas/stubs.json",
+   "source": "atlas/problems.json",
    "src": "P687",
    "tier": "deterministic-rule",
    "type": "walled"
@@ -27789,8 +27810,15 @@
   },
   {
    "dst": "W:prob:712",
-   "source": "atlas/stubs.json",
+   "source": "atlas/problems.json",
    "src": "P712",
+   "tier": "deterministic-rule",
+   "type": "walled"
+  },
+  {
+   "dst": "W:prob:720",
+   "source": "atlas/problems.json",
+   "src": "P720",
    "tier": "deterministic-rule",
    "type": "walled"
   },
@@ -68219,7 +68247,7 @@
    "upstream_handle": "FALSIFIABLE (open, but could be disproved with a finite counterexample)",
    "verdict": "WALL",
    "verdict_reason": "Inverted feasibility: the cells small enough for us to decide exactly are the cells theory already owns, and the cells theory does not own are unbounded. r=4,k=3,n=13 is a 715-variable ILP we could finish in minutes -- but a counterexample there would contradict a 60-year consensus and several published theorems abutting it, and finding none reproduces nothing publishable. Push k up to reach genuinely untouched territory and the constraint count explodes (4.5e7 already at k=4,n=17) while an S_n symmetry group makes proving ILP optimality, not just feasibility, the real cost. The FALSIFIABLE tag is technically true and operationally empty: the witness, if it exists at all, lives at large k …[truncated; see source]",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "CONCRETE. An r-uniform hypergraph H on n vertices (a list of r-subsets) with no k pairwise disjoint edges and strictly more edges than the conjectured maximum. At the smallest live cell that is a subset of the 715 4-subsets of [13]."
   },
   {
@@ -68234,7 +68262,7 @@
    "upstream_handle": "FALSIFIABLE — \"Open, but could be disproved with a finite counterexample\" (erdosproblems.com/1041, last edited 06 Dec 2025)",
    "verdict": "WALL",
    "verdict_reason": "The worst of the four and the clearest WALL. Fails criterion 1: the finite object (5 complex numbers) does not carry its own certificate — certifying it requires a global lower bound on the geodesic distance between roots inside a semialgebraic sublevel set, i.e. proving a non-existence over an infinite-dimensional path space. Fails criterion 3 absolutely: there is no cheap exact check; the candidate-verification problem is itself a research-grade continuous-optimisation/topology problem. Fails criterion 4 by direction: two independent expert-reviewed attempts are pushing toward a POSITIVE proof, degree 4 is already closed, and the only known source of pathological lemniscate geometry (Mac …[truncated; see source]",
-   "verification_is_cheap_and_exact": "False",
+   "verification_is_cheap_and_exact": false,
    "what_a_witness_is": "NOT concrete in the operational sense. A witness is a set of n roots in the open unit disk together with a PROOF that no path of length < 2 inside {|f|<1} joins any two roots. The roots are a finite object; the certifying property is an infimum over an infinite-dimensional space of paths in a semialgebraic region."
   },
   {
@@ -68249,7 +68277,7 @@
    "upstream_handle": "https://www.erdosproblems.com/106",
    "verdict": "MAYBE",
    "verdict_reason": "The only one of the four where criteria 1 and 3 are cleanly met and the case is genuinely tiny. A refutation of the ENTIRE Erdos-Soifer table reduces (via Praton) to ten squares in a unit square, and a candidate is checked exactly in rationals by separating-axis tests on 45 pairs plus a rational sum -- dependency-free, milliseconds, no floating point, no CAS. That is a real verifier we could ship. What holds it back from TARGET is criterion 2 in its honest form: the space is continuous, so the search is heuristic and CANNOT certify the negative. Success requires a 90-year-old conjecture to be false at its very smallest untested instance, immediately after its axis-parallel shadow was proved …[truncated; see source]",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "A refutation is fully concrete and small: 10 squares (for k=3) given as centre, side, rotation angle -- equivalently 10 rational-coordinate quadrilaterals -- that pairwise have disjoint interiors, all sit inside the unit square, and have side-lengths summing to strictly more than 3. Because both the disjointness and the excess are STRICT, any genuine counterexample can be rationalised without loss, so a witness can always be presented in exact rational arithmetic."
   },
   {
@@ -68264,7 +68292,7 @@
    "upstream_handle": "https://www.erdosproblems.com/107",
    "verdict": "WALL",
    "verdict_reason": "Confirms our existing atlas wall -- the judgement still looks right, and for a sharper reason than 'it is hard'. Note the asymmetry we should record: VERIFYING a hypothetical counterexample is trivial (C(33,7) = 4,272,048 subsets, each an exact rational convex-position test -- seconds), so criteria 1 and 3 pass. It dies on 2 and 4. Criterion 2: the search space is ~10^200 order types and the SAT encoding is heavy-tailed at 33 points. Criterion 4 is the decisive one -- this is the most heavily-swept problem in the four: Heule and Scheucher, who hold the world record on exactly this encoding family (ES(6) in 8.53 CPU-seconds, empty hexagon at 30 points), plus a dedicated 2025 preprint, are …[truncated; see source]",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "A refutation is concrete and cheaply checkable: a set of 2^(n-2)+1 points in R^2, no three collinear, containing NO convex n-gon. For the first open case n=7 that is 33 rational points with no convex 7-gon. (A proof, the $500 direction, is not a finite object at all -- it is a statement for all n.)"
   },
   {
@@ -68279,7 +68307,7 @@
    "upstream_handle": "FALSIFIABLE — \"Open, but could be disproved with a finite counterexample\" (erdosproblems.com/1082, last edited 11 Apr 2026)",
    "verdict": "WALL",
    "verdict_reason": "Fails criteria 2, 3 and 4. (2) 1e101 labelings over a 28-dimensional continuum. (3) The two witnesses actually produced for the (easier, now-solved) part ii both required a CAS or an ITP to confirm — eigensolver flagged his own precision errors and asked for help, StijnC verified with Maple, llllvvuu verified in Lean via Aristotle. The critical radius is a root of x^3-x^2-2x+1; exact integer squared-distance checking is not available. (4) A DeepMind autonomous prover already swept this problem and produced only a construction that turned out to be 24 years old in the literature. The remaining part i is genuinely harder than the part that AI search cracked, and the obstruction is that the …[truncated; see source]",
-   "verification_is_cheap_and_exact": "False",
+   "verification_is_cheap_and_exact": false,
    "what_a_witness_is": "Concrete: n points in R^2, no three collinear, whose total distinct-distance count is at most floor(n/2)-1. Equivalently a planar k-distance set of size n >= 2k+2 with no three points collinear. Real coordinates."
   },
   {
@@ -68294,7 +68322,7 @@
    "upstream_handle": "FALSIFIABLE — \"Open, but could be disproved with a finite counterexample\"; carries a $250 Erdos prize (erdosproblems.com/114, last edited 23 Jan 2026). Previously classified WALL in our atlas.",
    "verdict": "WALL",
    "verdict_reason": "The existing atlas wall is CORRECT and got stronger since it was set. Fails criterion 3 outright: confirming a candidate means computing the length of {|p|=1} to certified precision, i.e. rigorous numerical integration with interval arithmetic on an implicit curve — the exact floating-point dependency we refuse to ship. Fails criterion 2 in spirit: the space is a non-compact 3-real-parameter continuum at n=3 and a 2n-parameter one in general, and Fryntov-Nazarov already proved z^n-1 is a local maximiser, so any counterexample is a distant competing local max that local search will not stumble onto. And the payoff is nil: Tao closed all large n in Dec 2025 with an unstated n_0, so even a …[truncated; see source]",
-   "verification_is_cheap_and_exact": "False",
+   "verification_is_cheap_and_exact": false,
    "what_a_witness_is": "Semi-concrete: a single monic polynomial of degree n whose lemniscate is LONGER than that of z^n-1. Finitely many complex coefficients — but the discriminating quantity is an arc length, a transcendental integral, not a combinatorial count."
   },
   {
@@ -68309,7 +68337,7 @@
    "upstream_handle": "FALSIFIABLE — \"Open, but could be disproved with a finite counterexample.\" ($250 prize; erdosproblems.com/128, last edited 31 Oct 2025)",
    "verdict": "WALL",
    "verdict_reason": "PRIOR ATLAS WALL CONFIRMED — and for a stronger reason than headcount. Criterion 2 fails (7.5e15 ops at the first out-of-reach size) and criterion 3 fails: certifying a witness needs the exact MINIMUM number of edges over all floor(n/2)-subsets, which is the minimum-edge-k-subgraph problem — NP-hard, so an exact certificate needs an ILP/branch-and-bound, not a dependency-free checker, for any n past ~34. The killer is structural, not computational: the extremal family hits n^2/50 exactly at every n, so a counterexample must strictly beat a tight family in the regime where Razborov's flag-algebra bound already squeezes the constant to [0.02, 0.02637]. Nothing an enumerable graph can do …[truncated; see source]",
-   "verification_is_cheap_and_exact": "False",
+   "verification_is_cheap_and_exact": false,
    "what_a_witness_is": "CONCRETE but expensive to certify. A triangle-free graph G on n vertices such that min over all S with |S| = floor(n/2) of e(G[S]) is strictly greater than n^2/50. The witness is an adjacency matrix; the certificate that it IS a witness requires a proven MINIMUM over all half-subsets."
   },
   {
@@ -68324,7 +68352,7 @@
    "upstream_handle": "FALSIFIABLE — \"Open, but could be disproved with a finite counterexample.\" (no prize listed; erdosproblems.com/167, last edited 13 Oct 2025)",
    "verdict": "MAYBE",
    "verdict_reason": "The softest of the five, and the only one not previously triaged by us. Criteria 1 and 3 pass cleanly — the witness is a graph and both tau and nu are exact integer optimisations a dependency-free branch-and-bound can settle for small n. Criterion 2 passes at n = 11 and marginally at n = 12 after the min-degree-5 and mad>=7 filters. Criterion 4 is the honest doubt: I found NO published general-graph sweep, but absence of publication on a famous conjecture is weak evidence — a null result at n <= 12 is exactly the kind of thing people run and never write up, so we would risk reproducing folklore. And the deliverable is only a table cell (\"no counterexample on <= 12 vertices, certified\"), not …[truncated; see source]",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "CONCRETE, with a two-sided certificate. A graph G with tau(G) > 2*nu(G), shipped as an adjacency matrix plus (a) an explicit edge-disjoint triangle packing of size nu together with a proof of maximality, and (b) a proof that no edge set of size 2*nu hits every triangle. Both halves are pure-integer combinatorial optimisations — exact branch-and-bound, no floating point, no CAS. On <= 30 vertices this is seconds per candidate."
   },
   {
@@ -68339,7 +68367,7 @@
    "upstream_handle": "DECIDABLE (\"Resolved up to a finite check\"), $500 prize",
    "verdict": "WALL",
    "verdict_reason": "Our existing WALL judgement STANDS, and for a sharper reason than we had. Two independent kills. (1) The top of the finite check is not finite in any usable sense: KKKMO21's proof covers only \"sufficiently large n\" via absorption/nibble with no explicit threshold, so even a complete sweep of n=13 leaves n=14..N_0 with N_0 unknown — the DECIDABLE tag is nominal. (2) The bottom is already at a hard SAT wall: the state of the art (SMS co-certificate learning, 2023) closed n<=12 and then failed on the middle-m band at n=13 after 3 CPU-days per case. We would be re-entering exactly where a purpose-built symmetry-modulo SAT framework stopped, with no new idea. Worth logging separately: our atlas …[truncated; see source]",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "CONCRETE: a linear hypergraph H on n vertices (equivalently a partial linear space / a set of n cliques K_n pairwise sharing at most one vertex) whose chromatic index exceeds n. Refuting n-colourability is a coNP claim, but at these sizes it is a SAT UNSAT call with a checkable DRAT proof."
   },
   {
@@ -68354,7 +68382,7 @@
    "upstream_handle": "FALSIFIABLE (\"Open, but could be disproved with a finite counterexample\")",
    "verdict": "WALL",
    "verdict_reason": "Robustly a wall under both readings of the literature, which is the useful part. Take Ferudun's June 2026 result at face value and the smallest open case sits at 205 vertices, where the candidate space is 10^3163 and exact max-cut certification is hopeless. Discount it entirely (we should — our own vetting pattern this month was 5 of 6 external claims with sound math and broken verification) and the smallest open case is 25 vertices, still 10^47 graphs against an enumeration frontier of 17 vertices reached by McKay. Separately, condition 3 fails outright: a candidate counterexample cannot be cheaply certified, because proving the deletion number is large is an exact max-cut *upper* bound, …[truncated; see source]",
-   "verification_is_cheap_and_exact": "False",
+   "verification_is_cheap_and_exact": false,
    "what_a_witness_is": "CONCRETE as an object: a triangle-free graph G on 5n vertices whose bipartization number (edges minus max-cut) exceeds n^2. But the object is only half a witness — certifying it requires proving max-cut(G) < e(G) - n^2, i.e. an exact max-cut upper bound on a 5n-vertex graph, which is NP-hard and at n>=41 (205 vertices) not tractable exactly."
   },
   {
@@ -68369,7 +68397,7 @@
    "upstream_handle": "FALSIFIABLE — \"Open, but could be disproved with a finite counterexample\" (erdosproblems.com/242)",
    "verdict": "WALL",
    "verdict_reason": "Frontier is already 10^18 and 100+ years of congruence sieving has removed 99.8% of n, so every remaining case is by construction a hard one. Extending by even one decade needs ~3.4e14 individual exhaustive searches, ~300x over budget before per-case cost. Worse, a positive witness is not a small object: refuting one n requires certifying an exhaustive divisor search, so criterion 3 (cheap exact verification of a witness) fails outright.",
-   "verification_is_cheap_and_exact": "False",
+   "verification_is_cheap_and_exact": false,
    "what_a_witness_is": "A single integer n>2 (WLOG prime) together with a certified exhaustive search showing no (x,y,z) works. The witness is really the *exhaustion*, not the number: 'no solution' for one n is itself a nontrivial finite check over divisors of n·x."
   },
   {
@@ -68384,7 +68412,7 @@
    "upstream_handle": "FALSIFIABLE — \"Open, but could be disproved with a finite counterexample\" (erdosproblems.com/287)",
    "verdict": "WALL",
    "verdict_reason": "Fails criterion 4 for the opposite of the usual reason: the finite search is trivially cheap but empty. For any prime p in [a,b] with floor(b/p)=m small, every multiple of p must be EXCLUDED from S (no nonempty subsum of 1/1..1/m has numerator divisible by p once p > m·lcm(1..m)), yet the excluded set may contain no two consecutive integers. Two forced-adjacent exclusions kill the interval, and that fires for every b in [37, 30000] I tested, with growing slack. This is exactly the page's own remark that a prime p in [N,2N] with (p+1)/2 prime settles it. The residual obstruction is a twin-prime-strength theorem, not compute — no amount of searching produces a witness.",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "Concrete: a finite set S of integers with min a, max b, every consecutive gap <= 2, and sum of reciprocals exactly 1. Equivalently S = [a,b] \\ T where T contains no two consecutive integers. Verification is one exact rational sum — trivially cheap and exact."
   },
   {
@@ -68399,7 +68427,7 @@
    "upstream_handle": "VERIFIABLE — \"Open, but could be proved with a finite example\" (erdosproblems.com/307)",
    "verdict": "WALL",
    "verdict_reason": "Passes criteria 1 and 3 (concrete witness, exact cheap check) and fails 2 catastrophically. The search space is not merely large, it is UNBOUNDED — there is no known bound on the largest prime that could appear, so no finite enumeration is ever a complete search. The |P union Q| >= 60 floor guarantees the smallest possible witness already has 60+ primes, so even a bounded heuristic hunt starts at 3^60 ~ 4e28. Nobody has recorded any search at all, which is a signal about tractability, not an opening.",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "Concrete: two disjoint finite lists of primes. Verification is one exact rational multiply — cheap and exact."
   },
   {
@@ -68414,7 +68442,7 @@
    "upstream_handle": "VERIFIABLE — \"Open, but could be proved with a finite example\" (erdosproblems.com/364)",
    "verdict": "WALL",
    "verdict_reason": "Textbook criterion-4 failure. The frontier is 7.38e28 via a PROVABLY COMPLETE Pell-family enumeration (A118894/Sentance), and Alekseyev has 20 further conjectured terms beyond it — the people with the right algorithm have already run it far past where we could. The naive re-enumeration route is 700x over budget. Two 2025 papers are attacking the remaining structured cases theoretically. Nothing for a workstation sweep to add.",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "Concrete: one integer n with the factorizations of n-1, n, n+1. Verification is a handful of exact integer divisions. Structure forces 4|n and n±1 odd powerful, so the witness is equivalently a pair of odd powerful numbers differing by 2 whose midpoint is powerful."
   },
   {
@@ -68429,7 +68457,7 @@
    "upstream_handle": "VERIFIABLE — \"Open, but could be proved with a finite example\" (erdosproblems.com/366)",
    "verdict": "TARGET",
    "verdict_reason": "Only one of the five that clears all four bars. The recorded 10^22 comes from the sqrt(X)-bounded PAIR search; this problem only requires enumerating cubefull numbers, which cost X^(1/3) — so 1e24 fits in ~5e11 ops and 1e26 in ~2.6e12, i.e. 2-4 decades past the record on one workstation with pure integer arithmetic. Caveats, stated up front: (1) the expected outcome is a negative 'verified to N' record, not a resolution — the heuristic count of cubefull c <= X with c±1 powerful scales as X^(-1/6), convergent, and ABC implies finiteness; (2) the upstream statement's orientation contradicts its own worked examples (8 and 12167 are the 3-FULL member, 9 and 12168 the 2-full one), so sweep both …[truncated; see source]",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "Concrete: one integer n printed with the factorizations of n and n+1. Verification is a few dozen exact integer divisions — no floats, no CAS. Known near-examples in the REVERSE orientation: (8,9) and (12167 = 23^3, 12168 = 2^3·3^2·13^2)."
   },
   {
@@ -68444,7 +68472,7 @@
    "upstream_handle": "https://www.erdosproblems.com/375",
    "verdict": "WALL",
    "verdict_reason": "Witness is concrete and verification is exact (trial-division factorisation of <=10^3 integers + Hopcroft-Karp matching, integer-only), but criteria 2 and 4 both fail. Grimm implies p_{n+1}-p_n < p_n^{1/2-c}, i.e. it is STRICTLY HARDER than Legendre's conjecture — a counterexample would require a composite run far longer than Cramer permits. The verified range 1.9x10^10 was reached in 2006 and extending it is linear-cost with essentially zero hit probability. Classic falsifiable-but-unfindable.",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "Concrete. A pair (n,k) such that n+1,...,n+k are all composite and the bipartite graph (interval elements vs. their prime divisors) has NO perfect matching — certified by a Hall-violating subset S of the interval with |union of prime divisors of S| < |S|."
   },
   {
@@ -68459,7 +68487,7 @@
    "upstream_handle": "https://www.erdosproblems.com/398",
    "verdict": "WALL",
    "verdict_reason": "Fails criteria 2, 3 and 4. Refuting a candidate is cheap (QR test), but CONFIRMING a witness at n ~ 10^15 requires exact integer arithmetic on a 10^16-digit number — a 6-petabyte object, not a dependency-free certificate. The frontier is already at 10^15 with dedicated multi-core C++, and the heuristic count of solutions beyond n=7 is ~sum 1/sqrt(n!) ~ 0. Only realistic product is a frontier extension nobody can even verify cheaply.",
-   "verification_is_cheap_and_exact": "False",
+   "verification_is_cheap_and_exact": false,
    "what_a_witness_is": "Concrete in principle: an integer n > 7 with n!+1 a perfect square (equivalently the pair (n,x)). But at the frontier the object is not writable: n! for n ~ 10^15 has n*log10(n/e) ~ 1.4x10^16 decimal digits (~6 PB)."
   },
   {
@@ -68474,7 +68502,7 @@
    "upstream_handle": "https://www.erdosproblems.com/458",
    "verdict": "MAYBE",
    "verdict_reason": "The witness hunt is a WALL (needs a prime gap ~10^6 times longer than anything Cramer permits — it is Legendre in disguise). But this is the one entry where the NEGATIVE certificate is genuinely cheap, monotone and unpublished: 'verified for all k with p_k < 10^18' is a dependency-free integer-only frontier statement, ~1 hour of compute, and upstream lists no range at all. Fits our verified-up-to-N records rung exactly. Do NOT fund a witness search; DO consider the 1-hour certificate plus the lcm-ratio reformulation (which makes the check O(pi(sqrt N)) instead of anything involving lcm's).",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "Concrete and tiny. Reformulation (verified by us): [1..p_{k+1}-1]/[1..p_k] = product of q over all perfect prime powers q^j (j>=2) lying in the gap (p_k, p_{k+1}). So a witness is a single prime gap whose contained prime powers have base-product >= p_k. Since q^2 > p_k forces q > sqrt(p_k), ANY gap containing two prime squares is a counterexample."
   },
   {
@@ -68489,7 +68517,7 @@
    "upstream_handle": "https://www.erdosproblems.com/475",
    "verdict": "WALL",
    "verdict_reason": "The DECIDABLE label is not backed by a writable number. 'Proved for all sufficiently large p' is assembled from four theorems whose constants are unspecified or ineffective (c in e^{c(log p)^{1/3}}, the <<_alpha in Pham-Sauermann, the o(1) in BBKMM/MuPo), so no explicit p_0 exists and the 'finite check' cannot be enumerated. Exactly the Sendov n_0 = exp(10^126) failure mode we already logged. Meanwhile the small-p end (t<=12, and prime orders up to the literature's computational reach) is already swept, so criteria 2 and 4 both fail. Verification of a candidate counterexample IS cheap and exact — that is the only criterion this passes.",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "Concrete: a prime p and a set A ⊆ F_p\\{0} of size t such that NO ordering has distinct partial sums. Certified by exhaustive backtracking over <= t! orderings (integer arithmetic mod p only)."
   },
   {
@@ -68504,7 +68532,7 @@
    "upstream_handle": "https://www.erdosproblems.com/488",
    "verdict": "WALL",
    "verdict_reason": "Passes criteria 1 and 3 cleanly, fails 2 and 4. The constant 2 is best possible and is approached only from below, only by singletons; every multi-element set we measured is strictly worse (<=1.85 vs 1.99), so a bounded sweep is orthogonal to the extremal direction and its negative result would be unpublishable ('no counterexample with max(A)<=24' says nothing about a->infinity). The finite-counterexample lane on this problem number has already been harvested against the mis-stated variant, and two upstream contributors are actively on the live one. Cheap to poke at, but no credible witness direction.",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "Concrete and small: a triple (A, n, m) with m > n >= max(A) violating the inequality. Verified by inclusion-exclusion over subsets of A using floor(x/lcm(S)) — exact integer arithmetic, no floats needed (compare cross-multiplied integers)."
   },
   {
@@ -68519,7 +68547,7 @@
    "upstream_handle": "https://www.erdosproblems.com/506",
    "verdict": "WALL",
    "verdict_reason": "This is the clearest instance in the batch of the trap the brief warns about: upstream's DECIDABLE tag means 'only finitely many n remain open' (n <= 393), NOT 'a finite check settles each n'. For each individual n the configuration space is a continuum modulo Mobius transformations, so the MINIMUM -- the thing actually asked for -- is not finitely checkable, and confirming a candidate minimum needs realisability decisions that are exists-R and want a CAS, which fails criterion 3 outright. The one genuinely cheap and exact piece is the upper-bound half (rational coordinates + exact 4x4 determinants), and there does appear to be a real gap there -- nobody has published a small-n table, and …[truncated; see source]",
-   "verification_is_cheap_and_exact": "False",
+   "verification_is_cheap_and_exact": false,
    "what_a_witness_is": "Two very different objects, and they must not be conflated. UPPER bound: a concrete n-point rational configuration whose triples fall into few concyclic classes -- exactly checkable (concyclicity of 4 points is a 4x4 determinant = 0 in exact rationals; the circle count is the number of equivalence classes of the C(n,3) triples). LOWER bound / the actual MINIMUM asked for: not a concrete finite object at all -- it is a universally quantified statement over a continuum of configurations at each n."
   },
   {
@@ -68534,7 +68562,7 @@
    "upstream_handle": "DECIDABLE (\"Resolved up to a finite check\")",
    "verdict": "MAYBE",
    "verdict_reason": "The only one of the five that is not obviously dead, and I am flagging it as MAYBE rather than TARGET deliberately. In its favour: the witness is fully concrete, verification is cheap, exact and dependency-free (tree containment in a 16-vertex graph), the frontier is genuinely at order 9 (DS1 stops at order 8), 47 trees is a small outer loop, and 120 Boolean variables is a size where SMS-style co-certificate learning is the natural and proven tool — the same machinery that cleared EFL n<=12. Against it, honestly: (a) closing n=9 does NOT resolve #547, because Zhao's and AKSS's thresholds are non-explicit, so this is an uncomputed-table-cell result in our records lane, not a problem closure …[truncated; see source]",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "CONCRETE: a tree T on n vertices together with a red/blue colouring of the edges of K_{2n-2} containing no monochromatic copy of T. Verification is exact subgraph-containment of a 9-vertex tree in a 16-vertex graph — at most 16!/7! ~ 4.2x10^9 embeddings, seconds with pruning, pure integer arithmetic, no floats, no CAS."
   },
   {
@@ -68549,7 +68577,7 @@
    "upstream_handle": "FALSIFIABLE — \"Open, but could be disproved with a finite counterexample.\" ($100 prize; erdosproblems.com/548, last edited 07 Mar 2026)",
    "verdict": "WALL",
    "verdict_reason": "PRIOR ATLAS WALL CONFIRMED. Criterion 3 passes (tree-containment is exact, integer, dependency-free) and criterion 1 passes, but criterion 2 fails by five orders of magnitude at the first genuinely open cell (~1e17 ops) and — more fundamentally — the search space has no finite bottom. The standard reductions bound the minimum degree of a minimal counterexample below (>= ceil(k/2)) and force connectedness, but nothing bounds n from above for a fixed tree, so \"falsifiable\" here means only that a counterexample, if it exists, is a finite object; it does not give a finite check. This is exactly the failure mode the triage brief warns about: a real witness that may live arbitrarily far out.",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "CONCRETE. A pair (G, T): a graph G on n vertices with at least (k-1)n/2 + 1 edges, and a tree T on k+1 vertices that is not a subgraph of G. Both are small finite objects and the non-containment is exactly checkable — tree subgraph-isomorphism into an n-vertex host is a 2^k * poly(n) integer DP (colour-coding / Alon-Yuster-Zwick style), no floating point."
   },
   {
@@ -68564,7 +68592,7 @@
    "upstream_handle": "DECIDABLE (\"Resolved up to a finite check\")",
    "verdict": "WALL",
    "verdict_reason": "Textbook Ramsey wall. The finite object is concrete and cheaply verifiable, and that is the only condition satisfied. The smallest genuinely open cell requires reasoning about graphs on 64 vertices — R(5,5) is unresolved at 43 vertices, so this is well past the world frontier for exhaustive methods, and the space (10^607) is not reachable by any pruning. Note also that every advance in this row for the last twenty years has been a human structural proof of a single cell (r(C_8,K_8), r(C_9,K_8)), never a computation; there is no computational lane here to enter. Compounding it, the DECIDABLE tag is again nominal: KLS21 covers only \"large n\", so the finite check has no explicit top even if a …[truncated; see source]",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "CONCRETE: a graph G on (k-1)(n-1) + 1 vertices containing no C_k and with independence number < n (the matching lower-bound construction, n-1 disjoint K_{k-1}'s, is classical, so only the upper bound can fail). Verification is exact: no independent 8-set is C(64,8) = 4.4x10^9 checks, and C_10-absence is a pruned DFS which terminates fast precisely because the graph must be long-cycle-free."
   },
   {
@@ -68579,7 +68607,7 @@
    "upstream_handle": "DECIDABLE (\"Resolved up to a finite check\")",
    "verdict": "WALL",
    "verdict_reason": "Hardest wall of the five. The smallest open case asks for the 3-colour Ramsey behaviour of K_33, and the only classical 3-colour Ramsey number ever determined is R(3,3,3)=17 (1955); R(3,3,4) is still open at [30,31]. So n=9 sits at or past the absolute world frontier for 3-colour Ramsey computation, in a space of 10^252 with a direct encoding two orders of magnitude too large to write down (2.3x10^12 clauses), let alone solve. Cheap verification of a hypothetical witness does not rescue this. And as with #19, #547 and #551, the DECIDABLE tag is nominal: KSS05 and BeSk09 both say \"sufficiently large\", so there is no explicit upper end to the finite check.",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "CONCRETE: a red/green/blue colouring of the edges of K_{4n-2} with no monochromatic C_n. Verification is exact — for each of the 3 colour classes, a pruned DFS for a cycle of length exactly n on 33 vertices; integer only, no floats."
   },
   {
@@ -68594,7 +68622,7 @@
    "upstream_handle": "DECIDABLE — \"Resolved up to a finite check.\" (no prize listed; erdosproblems.com/580, last edited 24 Oct 2025)",
    "verdict": "WALL",
    "verdict_reason": "This is the cleanest illustration in the batch of why the upstream state label is not a promise. \"DECIDABLE / resolved up to a finite check\" is literally true, but the finite check is bounded above by a Szemerédi-Regularity-Lemma n0 that Zhao never makes explicit, and bounded below in cost by the number of graphs on n vertices, which passes 1e23 by n = 20. Criterion 3 is the only one that passes — tree containment is exact and cheap. Criteria 2 and 4 fail catastrophically and criterion 1's witness, while concrete, lives in a space nobody can enumerate. Filing as WALL, with a note for the atlas: #580 is worth carrying as a documented example of an upstream \"decidable\" tag whose finite handle …[truncated; see source]",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "CONCRETE. A graph G on n vertices with at least ceil(n/2) vertices of degree at least ceil(n/2), together with a tree T on at most floor(n/2) vertices that is not a subgraph of G. Non-containment is an exact integer subgraph-isomorphism check; there are only A000055 trees to test (106 trees on 10 vertices, 551 on 12), so the per-candidate cost is trivial."
   },
   {
@@ -68609,7 +68637,7 @@
    "upstream_handle": "FALSIFIABLE (\"Open, but could be disproved with a finite counterexample\"). Not formalised — erdosproblems.com/583 reports \"Formalised statement? No\".",
    "verdict": "MAYBE",
    "verdict_reason": "Passes the rubric on the letter but the payoff is thin, so I am not calling it a TARGET. In its favour: the witness is concrete, a sweep to n ≤ 11 lands right at the ~10^12 op line, verifying a decomposition is trivial integer work, and I found no published exhaustive small-n verification — so \"Gallai's conjecture holds for every connected graph on ≤ 11 vertices\" would be a genuine, replayable records-lane fact. Against it, and this is the deciding consideration: the probability of a small counterexample is essentially nil. Δ ≤ 5, planar, 3-degenerate and treewidth ≤ 3 are all already theorems, Dean–Kouider gives ⌈2n/3⌉ unconditionally (only one path above the target at n=7), and sixty …[truncated; see source]",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "A single connected graph G on n vertices (an adjacency matrix) whose minimum path-decomposition number exceeds ⌈n/2⌉, together with an exhaustive proof that no decomposition into ⌈n/2⌉ paths exists (SAT UNSAT + DRAT, or a finite search tree). Concrete, but note the hard half of the witness is the refutation, not the graph."
   },
   {
@@ -68624,7 +68652,7 @@
    "upstream_handle": "FALSIFIABLE (\"Open, but could be disproved with a finite counterexample\") — formalised in google-deepmind/formal-conjectures as FormalConjectures/ErdosProblems/617.lean, theorem erdos_617, which pins the witness as a function `coloring : Sym2 V → Fin r` on a `V` with `Fintype.card V = r^2+1` …[truncated; see source]",
    "verdict": "TARGET",
    "verdict_reason": "Meets all four criteria and is the strongest of the five. (1) The witness is a 325-integer array — nothing more. (2) The SAT encoding is of sane size (1,625 vars / 1.15M clauses), and there is a genuinely trivial first move: the r=5 boundary sits exactly one vertex above a KNOWN construction (affine plane of order 5 gives a balanced colouring of K_25), so \"does the known K_25 colouring extend to K_26?\" is a 25-variable CSP solvable in seconds. (3) Checking a candidate is 230,230 × 15 = 3.45M integer lookups — milliseconds, no floats, no CAS. (4) Frontier is r=4 from 1999; r=5 is untouched in three separate literatures. Both outcomes are publishable: SAT gives a counterexample witness …[truncated; see source]",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "A single explicit map from the 325 edges of K_26 to {1,...,5} (a 325-entry integer array) such that every one of the C(26,6)=230,230 six-element vertex subsets sees all 5 colours among its 15 induced edges. Fully concrete, integer-valued, no auxiliary structure."
   },
   {
@@ -68639,7 +68667,7 @@
    "upstream_handle": "FALSIFIABLE (\"Open, but could be disproved with a finite counterexample\"). Not formalised — erdosproblems.com/628 reports \"Formalised statement? No\".",
    "verdict": "WALL",
    "verdict_reason": "Fails criteria 2 and 3. The killer is that nothing bounds the witness: for a counterexample you need a K_6-free graph with χ = 6, and \"high chromatic number without the corresponding clique\" is precisely a property that needs room — the constructions that realise it (Mycielski, Kneser, shift graphs) grow fast, and every small χ=6 graph is dense enough that K_6-freeness is nearly self-defeating. A brute sweep to n ≤ 11 is cheap (10^9 graphs) but is searching a region where nobody believes the object lives, so it buys a near-worthless \"no counterexample on ≤ 11 vertices\" line; beyond n=12 the 2^C(n,2) growth ends it. Verification also fails the cheap-and-exact bar in the honest sense: …[truncated; see source]",
-   "verification_is_cheap_and_exact": "False",
+   "verification_is_cheap_and_exact": false,
    "what_a_witness_is": "A graph G with ω(G) < χ(G) = 6 that is not (2,5)-splittable. Usefully, non-(2,5)-splittability collapses by monotonicity to a finite local check: for EVERY edge uv, χ(G − u − v) ≤ 4. So the witness is G plus (i) a 6-colouring, (ii) a DRAT/UNSAT certificate that G has no 5-colouring, (iii) an explicit 4-colouring of G − u − v for each of the |E| edges. Concrete — but there is no bound of any kind on |V(G)|."
   },
   {
@@ -68654,7 +68682,7 @@
    "upstream_handle": "FALSIFIABLE — \"Open, but could be disproved with a finite counterexample.\" ($1000 prize; erdosproblems.com/64, last edited 10 Apr 2026)",
    "verdict": "TARGET",
    "verdict_reason": "All four criteria pass for the cubic sub-lane. (1) Witness is a graph6 string. (2) 8.45e11 generations ≈ 1e12 ops with C4/C8 early-abort — one workstation, days not years. (3) Verification is bounded-DFS cycle detection on integers: dependency-free, exact, no floating point, no CAS. (4) Nobody has swept n=30; the published frontier is Markström 2004 and two independent 2026 papers confirm it is still the state of the art. CORRECTION TO OUR ATLAS: we had #64 filed as a WALL. That wall is right for the FULL conjecture (min degree >= 3, arbitrary degrees, unbounded n — no finite check settles it) but WRONG for the cubic lane, which is a clean records-lane cell. The honest deliverable is two …[truncated; see source]",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "CONCRETE. A finite simple graph G with delta(G) >= 3 whose cycle-length set omits every power of two >= 4. Delivered as an adjacency matrix / graph6 string. The tractable sub-case: a CUBIC graph on 30 vertices with no C4, no C8, no C16 (32 > 30, so only three forbidden lengths). Markström's own reduction (Congr. Numer. 171 (2004)) shows a minimal counterexample has its degree->=4 vertices forming an independent set, and arXiv:2605.22844 (2026) strengthens this to \">= 4/7 of the vertices have degree exactly 3\" — both point the search at the cubic lane."
   },
   {
@@ -68669,7 +68697,7 @@
    "upstream_handle": "https://www.erdosproblems.com/647 (VERIFIABLE, $44, Erdős–Selfridge; [Er79],[Er79d],[Er92e]; OEIS A087280, A062249)",
    "verdict": "WALL",
    "verdict_reason": "Criteria 1 and 3 pass cleanly, criterion 4 fails hard and 2 fails by ~10×. The frontier moved to 6.16×10^17 in June 2026 with a public, laptop-reproducible certificate — we would be re-treading someone else's two-month-old work at 10× the cost. Worse, the object is receding: the required slack is Δ(n) ≤ 2 and the *minimum* observed slack up to 10^12 is 224, with a fitted growth Δ ≈ 0.069(log m)^2.18 — i.e. the data confirms Erdős's own conjecture that max_{m<n}(τ(m)+m−n) → ∞. The surviving candidates are pinned inside admissible prime 7-tuple families, so existence is Schinzel Hypothesis H territory, not a search question. Do not spend compute here.",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "A single integer n > 24. Checked by sieving τ(m) for all m < n and confirming the running maximum of m+τ(m) never exceeds n+2. Equivalently τ(n−k) ≤ k+2 for every k ≥ 1, and only k ≲ max τ matters."
   },
   {
@@ -68684,7 +68712,7 @@
    "upstream_handle": "https://www.erdosproblems.com/672 (VERIFIABLE; [Er97c], [Va99,1.32])",
    "verdict": "WALL",
    "verdict_reason": "Criterion 2 fails absolutely: 'verifiable' here means only that if an example exists it is a finite tuple, not that it lives anywhere findable. Nothing bounds n or d, and Marszalek's k ≪_d 1 is the wrong direction (it bounds k given d, ineffectively for our purposes). The whole 50-year Baker/modularity line — Erdős–Selfridge, Obláth, BBGH, GHP, Bennett–Siksek — points at non-existence, so a search is hunting an object the theory says is not there in a space with no boundary. This is a Diophantine-theory problem wearing a finite-witness costume.",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "A tuple (n, d, k, ℓ) with k ≥ 4, gcd(n,d)=1, ℓ ≥ 2 such that ∏_{t<k}(n+td) is an exact ℓ-th power. Verification is a product plus an exact integer ℓ-th root — cheap and exact."
   },
   {
@@ -68699,7 +68727,7 @@
    "upstream_handle": "https://www.erdosproblems.com/699 (FALSIFIABLE; Erdős–Szekeres [ErSz78], Guy B31)",
    "verdict": "TARGET",
    "verdict_reason": "The only one of the five that passes all four tests. The witness is a concrete triple; verification is Kummer carry-counting in exact integer arithmetic (our best possible verifier shape); the exhaustive frontier is only n = 10^7, set by one open-source hobby run in Jan 2026; and the prime-gap pruning that collapses the i-range from n/2 to ≤540 was only articulated in the thread on 25 Jul 2026, after that run — so a 100–1000× extension is genuinely available at ~10^11–10^12 ops. Two honest caveats that must go in the board framing, not be discovered later: (a) the conjecture is believed TRUE, so the realistic deliverable is a certified verified-to-N nonexistence record in our records-ladder …[truncated; see source]",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "A triple (n, i, j) with 1 ≤ i < j ≤ n/2 such that no prime p ≥ i divides both C(n,i) and C(n,j). Verified by Kummer's theorem — p | C(n,k) iff adding k and n−k in base p produces a carry — so the check is pure exact integer arithmetic on base-p digits, with no big-integer factoring and no floating point."
   },
   {
@@ -68714,7 +68742,7 @@
    "upstream_handle": "VERIFIABLE (open, but could be proved with a finite example) -- $25 from Erdos for a non-existence proof, $2000 from Selfridge for an explicit example",
    "verdict": "WALL",
    "verdict_reason": "AGREEING with our existing atlas classification, and the prior wall still looks right -- if anything it is understated. This fails criterion 3, not just criterion 2: verification of a realistic candidate is NOT a cheap exact finite check, because you would have to cover every residue class mod an lcm far past enumeration, so confirmation requires structured CRT/inclusion-exclusion reasoning over a recursively-defined object rather than a byte-capped witness check. That is exactly the 'witness not representable' wall reason already recorded on our covering-system boards #2 and #27 ('a min-modulus-40+ covering system already has > 10^50 recursively-defined congruences; no flat poly-time …[truncated; see source]",
-   "verification_is_cheap_and_exact": "False",
+   "verification_is_cheap_and_exact": false,
    "what_a_witness_is": "NOT CONCRETE IN PRACTICE. Nominally a finite list of pairs (a_i, n_i) with distinct odd n_i > 1 covering Z. But nothing bounds the list length or the moduli, and every structurally comparable object we know of is astronomical: our own atlas boards #2/#27 record that a distinct covering system with minimum modulus 40-42 (Nielsen 2009, Owens 2014) already carries more than 10^50 congruences with an lcm period beyond enumeration. A witness is a recursively-defined construction, not a data file."
   },
   {
@@ -68729,7 +68757,7 @@
    "upstream_handle": "FALSIFIABLE (open, but could be disproved with a finite counterexample)",
    "verdict": "WALL",
    "verdict_reason": "Criteria 1 and 3 are near-perfect -- the witness is a 3 KB bit matrix and checking it is C(157,2) = 12,246 pair counts, pure integer, sub-millisecond -- which is exactly the trap this triage exists to catch. Criteria 2 and 4 fail catastrophically. The immediately preceding case, n=10, was one of the largest computations in combinatorics history (Lam-Thiel-Swiercz 1989) and is still being re-certified piecewise 35 years later; n=12 is orders of magnitude larger, has resisted every serious attempt, and decades of specialist effort have only shaved off tiny collineation-group slices. Nothing about our machinery gives an edge over the SAT-plus-CAS groups already working the n=10 …[truncated; see source]",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "CONCRETE. A projective plane of order n with n not a prime power. For n=12 that is a 157 x 157 zero-one incidence matrix with exactly 13 ones per row and per column and every point pair on exactly one line -- about 24,649 bits, roughly 3 KB."
   },
   {
@@ -68744,7 +68772,7 @@
    "upstream_handle": "DECIDABLE (\"Resolved up to a finite check\") — formalised in google-deepmind/formal-conjectures as FormalConjectures/ErdosProblems/742.lean; the file itself carries `variants.fan_bound` (n ≤ 24 or n = 26) and `variants.furedi_bound` (∃ n₀, ∀ n ≥ n₀), which is exactly the shape of the trap here.",
    "verdict": "WALL",
    "verdict_reason": "This is the canonical example of the trap the brief warns about: DECIDABLE here means \"resolved up to a finite check\" where the finite check is n ≤ tower_2(10^14). Criterion 3 passes beautifully — checking a candidate is O(n·m) integer work — and criterion 1 passes, but 2 and 4 both fail hard, and they fail from opposite directions. From below, the small end is already swept and proved: Fan closed n ≤ 24 and n = 26 by hand in 1987, and Kirchweger–Szeider enumerated the entire class to n = 13, so there is nothing to pick up cheaply. From above, Füredi proved the conjecture outright for large n, so the only place a counterexample could hide is n = 25 or n ≥ 27, where the isomorphism class …[truncated; see source]",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "A diameter-2-critical graph on n vertices with more than ⌊n²/4⌋ edges — a single adjacency matrix. Verification of a candidate is genuinely trivial (all-pairs distances, then one edge-deletion diameter check per edge: O(n·m) integer work). The witness is concrete and cheap to check; that is not the problem here."
   },
   {
@@ -68759,7 +68787,7 @@
    "upstream_handle": "FALSIFIABLE (\"Open, but could be disproved with a finite counterexample\"). Not formalised — erdosproblems.com/743 reports \"Formalised statement? No\".",
    "verdict": "TARGET",
    "verdict_reason": "All four criteria hold. (1) A witness is 9 small trees plus an edge assignment — pure integer data. (2) 4.5×10^7 tuples with a ~10^11–10^12 total op budget sits inside the one-workstation line, and Bollobás's greedy result shrinks the hard part of each tuple to placing just T_9 and T_10 into 17 remaining edges. (3) Verifying a packing is checking that 45 edges are used exactly once and that 9 subgraphs are isomorphic to the prescribed trees — trivial, exact, dependency-free, no floats. (4) The frontier has stood at n ≤ 9 since Fishburn 1983 (43 years) with no evidence anyone extended it; the one claim of a general proof is unrefereed and community-doubted, which if anything raises the value …[truncated; see source]",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "A counterexample witness is a specific tuple of 9 unlabeled trees (T_2,...,T_10), each given as a parent array / edge list, that admits no edge-disjoint packing into K_10 — accompanied by an exhaustive refutation (search tree). A positive witness (per tuple) is the packing itself: an assignment of each tree's edges to distinct edges of K_10. Note the edge count is exact: sum_{k=2}^{10}(k−1) = 45 = C(10,2), so this is a perfect decomposition, not a packing with slack."
   },
   {
@@ -68774,7 +68802,7 @@
    "upstream_handle": "https://www.erdosproblems.com/779 (FALSIFIABLE; Deaconescu, via Guy [Gu83]; OEIS A005235)",
    "verdict": "WALL",
    "verdict_reason": "Fails criterion 3 catastrophically and criterion 1 outright. 'Falsifiable' here is a technicality: the counterexample is an n, but *checking* that n is a counterexample is an exhaustion over ~10^7548 huge primality tests. Nothing is exhibitable. The heuristic in the site's own remark puts the failure probability at ≈exp(−n^{cn}) — Cambie's phrasing is that the chances of failing are ridiculously small — so we would be paying an astronomical price to hunt an object that essentially certainly does not exist. The only tractable work here is extending the *verification* side (Fortunate-number primality), which is a records-ladder increment, not a resolution, and OEIS already sits at n ≤ 2000 …[truncated; see source]",
-   "verification_is_cheap_and_exact": "False",
+   "verification_is_cheap_and_exact": false,
    "what_a_witness_is": "NOT concrete in any usable sense. A counterexample is an index n together with a proof that P + p is composite for EVERY prime p in (p_n, P) — i.e. π(P) ≈ P/ln P compositeness certificates on numbers of size P. There is no small object to exhibit."
   },
   {
@@ -68789,7 +68817,7 @@
    "upstream_handle": "VERIFIABLE (open, but could be proved with a finite example)",
    "verdict": "WALL",
    "verdict_reason": "Criteria 1 and 3 pass cleanly (the object is a byte array; checking it is 2*9,237,800 = 1.85e7 integer comparisons, no floats), but 2 and 4 fail. The VERIFIABLE handle only fires in the direction of EXISTENCE, and every data point says no such k exists: chi(J(2k,k)) already runs 2-3 above k+1 by k=7,8, and Ma-Tang shows the only survivors are a thin prime-indexed subsequence they could not reach. So a witness hunt is a hunt for an object nobody believes is there. Settling the smallest live case k=10 the other way (chi(J(20,10)) > 11) is a 2.03M-variable / 101.6M-clause UNSAT with a 20!-sized automorphism group -- not a one-workstation job, and a symmetry-prescribed search that comes back …[truncated; see source]",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "CONCRETE. An explicit proper (k+1)-colouring of J(2k,k): a map from the C(2k,k) k-subsets of [2k] into {1,...,k+1} with no two sets meeting in exactly k-1 elements getting the same colour. Equivalently a partition of all k-subsets into k+1 constant-weight codes of length 2k, weight k, minimum Hamming distance 4. Storable as C(2k,k) bytes (184,756 bytes at k=10)."
   },
   {
@@ -68804,7 +68832,7 @@
    "upstream_handle": "https://www.erdosproblems.com/848 (DECIDABLE; Erdős–Sárközy [Er92b,p.239])",
    "verdict": "WALL",
    "verdict_reason": "This is the classic 'decidable up to a finite check' trap and it should be recorded as one. The tag is honest — Sawhney closed large N and the threshold is now explicit — but the residual interval is 2.6×10^17 wide and each point in it is an NP-hard exact max-clique, so the finite check cannot be completed by compute at any scale we or anyone else has. The two ends are also moving toward each other on the wrong side: the theory end has already been squeezed to within ~10% of its structural floor by a multi-model campaign, and the computational end is stuck around 10^3–10^7 with the one claimed 10^7 result judged likely wrong. The falsification side (a set beating 7 mod 25) IS cheaply …[truncated; see source]",
-   "verification_is_cheap_and_exact": "False",
+   "verification_is_cheap_and_exact": false,
    "what_a_witness_is": "Two-sided and asymmetric. A falsifying witness is a set A ⊆ {1..N} with |A| > ⌈(N−7)/25⌉ and ab+1 non-squarefree for every pair — cheap and exact to verify by squarefree-sieving ab+1 ≤ N²+1. But closing the DECIDABLE gap requires the other side: an exact maximum-clique certificate for every N in the remaining interval, on the graph with vertices {a ≤ N : a²+1 not squarefree} (density ≈0.105N) and edges ab+1 not squarefree. That is NP-hard per N."
   },
   {
@@ -68819,7 +68847,7 @@
    "upstream_handle": "https://www.erdosproblems.com/97",
    "verdict": "WALL",
    "verdict_reason": "Fails criteria 2, 3 and (fatally) the premise of 4. The falsification target is a point in a semialgebraic set, not a member of a finite list: there is no n to search at, because a counterexample may have any number of vertices and failing at n<=30 proves nothing. Even after fixing n the combinatorial layer alone is ~10^71 at n=20 and each leaf needs a polynomial-system solve, i.e. a CAS. Verification is only exact if a witness happens to have rational or low-degree algebraic coordinates, which nothing guarantees -- the constraint system is overdetermined (3n equations, 2n-4 degrees of freedom), so known witnesses at k=3 exist only through imposed symmetry, and hunting symmetric families is …[truncated; see source]",
-   "verification_is_cheap_and_exact": "False",
+   "verification_is_cheap_and_exact": false,
    "what_a_witness_is": "A convex polygon on n vertices (n points in convex position in R^2) such that EVERY vertex v has at least 4 other vertices lying on a common circle centred at v. Concrete as an object; but the coordinates are real, and nothing forces them rational or even algebraic of low degree. The Lean spec (FormalConjectures/ErdosProblems/97.lean) pins it as ConvexIndep A with HasNEquidistantProperty 4 A over Finset R^2 -- note it quantifies over ALL finite A, with no bound on |A|."
   },
   {
@@ -68834,7 +68862,7 @@
    "upstream_handle": "FALSIFIABLE — \"Open, but could be disproved with a finite counterexample\" (erdosproblems.com/982, last edited 19 Oct 2025)",
    "verdict": "WALL",
    "verdict_reason": "Fails criteria 2 and 3. The witness is concrete (criterion 1 passes) but the search space is a 12-dimensional continuum, not a finite set: the enumerable part is only the distance-equality pattern, and every pattern leaf is a real-quantifier-elimination problem. Verification is exact only if the counterexample happens to have rational coordinates, and every known extremal few-distance configuration (regular polygons, H_8, eigensolver's 21-gon pair with r a root of x^3-x^2-2x+1) is irrational-algebraic — confirming such a witness needs a CAS, which is precisely what we exclude. The theoretical gap 0.361n vs 0.5n has resisted four successive papers over 60 years with the last improvement …[truncated; see source]",
-   "verification_is_cheap_and_exact": "False",
+   "verification_is_cheap_and_exact": false,
    "what_a_witness_is": "Concrete: n points in R^2 in convex position such that EVERY vertex sees at most floor(n/2)-1 distinct distances to the other n-1 vertices. Real coordinates — the object is a point configuration, not a combinatorial structure."
   },
   {
@@ -68849,7 +68877,7 @@
    "upstream_handle": "FALSIFIABLE (open, but could be disproved with a finite counterexample)",
    "verdict": "TARGET",
    "verdict_reason": "The only one of the five that clears all four bars. The witness is a 30-byte parent array; the check is a dependency-free exact integer DP with no float and no CAS; the smallest untested size n=30 costs ~1.5e13 ops, inside the ~1e12-with-pruning budget once the published structural reductions are applied and comfortably inside one workstation-day even brute force; and the frontier is a specific published number (29) rather than a vague 'small cases'. Two honest caveats, neither fatal: (a) the payoff is asymmetric -- Ramos-Sun's ML sweep to 101 vertices found no unimodality break, so the realistic deliverable is a 'verified to n=30/31' record for the Records lane, not a solved Erdos problem; …[truncated; see source]",
-   "verification_is_cheap_and_exact": "True",
+   "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "CONCRETE and tiny. A single tree T on n vertices whose independence sequence is not unimodal -- storable as an (n-1)-entry parent array (about 30 bytes). No auxiliary data required."
   },
   {
@@ -70186,16 +70214,16 @@
   },
   {
    "id": "W:prob:1029",
-   "reason": "catalogued wall — see atlas/walls.md",
+   "reason": "Every accessible finite record is at the feasibility wall for our exact toolset: (a) R(5,5)≥43 is conjectured tight and we already ran the witness hunt (~$34 farm, no K5-free-both-colors graph on 43 vtcs; cyclic space on prime 43 is small and exhausted, full space astronomically hard); (b) R(6,6)/R(7,7)/R(8,8) lower bounds have resisted 55–60 years of exactly the cyclic/circulant local-search + SAT + simulated-annealing methods we would use, with zero movement; (c) large-k records are Paley-graph deterministic (prime-power fixed, no local-search knob); (d) ALL genuine 2023–2026 progress in this class is asymptotic/analytic (CGMS upper bound; Campos–Jenssen–Michelen–Sahasrabudhe R(3,k) probabilistic lower bound) or lives OFF-diagonal / multicolor (Wesley SAT on R(3,8), book & multicolor Ramsey) — none is a finite diagonal-witness record. Record set by the same tools we'd use = textbook …[truncated; see source]",
    "scope": "problem",
-   "source": "atlas/stubs.json status=wall",
+   "source": "atlas/problems.json beatable=WALL",
    "type": "wall"
   },
   {
    "id": "W:prob:107",
-   "reason": "catalogued wall — see atlas/walls.md",
+   "reason": "The one live finite frontier is f(7)=33. It is being attacked RIGHT NOW with our exact machinery — order-type/triple-orientation SAT + DRAT certificates — by the world leaders (Heule, Scheucher, Marić, Bogdan). Bogdan's Dec-2025 SAT attack (16.67M clauses) only closes anchored subfamilies and hits heavy-tailed runtimes up to 2.28M CPU-sec per config, explicitly \"far from resolving ES(7)=33.\" We have no edge over the people who own the ES-SAT encoding, and a 100-core farm cannot dent heavy-tailed n=7 instances. Falsification search (33 points, no convex heptagon) targets an object almost certainly nonexistent (construction tight for all n≤6) → expected null with no certificate. The $500 headline (all n) is a pure theorem.",
    "scope": "problem",
-   "source": "atlas/stubs.json status=wall",
+   "source": "atlas/problems.json beatable=WALL",
    "type": "wall"
   },
   {
@@ -70221,9 +70249,23 @@
   },
   {
    "id": "W:prob:138",
-   "reason": "catalogued wall — see atlas/walls.md",
+   "reason": "Two finite sub-problems, both walled. (1) Exact-value extension: only W(2,3..6) known (W(2,6)=1132 needed clusters+FPGAs); W(2,7) ~ 10^4-10^5, so an UNSAT+DRAT cert at that N is astronomically infeasible - identical to the R(5,5) upper-bound wall. (2) Lower-bound record colorings ARE a live SAT/SLS problem with a trivial verifier, but the records are held by exactly the tools we'd use (tuned stochastic local search: Ahmed 2014, Heule, Monroe's 2023 DDFW linear-weight-transfer solver built specifically to crack these instances). No verifier moat (checker is commodity), DRAT-nonexistence infeasible, and any gain is a marginal, non-prize nudge won only by out-tuning SLS specialists. No edge beyond generic compute.",
    "scope": "problem",
-   "source": "atlas/stubs.json status=wall",
+   "source": "atlas/problems.json beatable=WALL",
+   "type": "wall"
+  },
+  {
+   "id": "W:prob:139",
+   "reason": "The only meaningful frontier is r_3(212) (r_3(211)=43 is the last confirmed OEIS A003002 term; 212 is either 43 or 44). Ergezer 2026 (arXiv 2606.04016) threw ~7,850 worker-hours on a SLURM cluster at exactly this value using exactly our arsenal — OR-Tools CP-SAT + HiGHS MIP + CaDiCaL CDCL/SAT with depth-d witness splitting — and it RESISTED. The LP relaxation is flat (dual bounds pinned at 0.0 after 8h), and two chunks (T1c) are paradigm-invariant: CP-SAT, MIP, 12h pure CDCL, and windowed CDCL all fail. The author states the certificate is 'too combinatorially diffuse' for CDCL clause-learning and that closing it needs a NEW idea — a Fourier-analytic/additive-combinatorial upper bound, a degree-4/6 SDP relaxation, or Lean-4 proof search — NOT more of the compute we have. Our ~100-core farm is strictly smaller than the cluster that already stalled. This is the R(5,5)-witness pattern, but …[truncated; see source]",
+   "scope": "problem",
+   "source": "atlas/problems.json beatable=WALL",
+   "type": "wall"
+  },
+  {
+   "id": "W:prob:140",
+   "reason": "Two independent walls. (1) Witness side: a 44-set in [1,212] would extend the table upward, but Ergezer 2026 searched millions of CP-SAT subproblems and found none — strong evidence it does not exist. (2) Nonexistence side: certifying r_3(212)=43 requires proving no 44-set exists, and that was JUST attacked with the identical SAT/MIP/DRAT pipeline we would use and hit a documented structural hard pocket (dual bounds at 0.0, 2 chunks pushed to Lean formal search). This is R(5,5) redux: the exact-record frontier was set in 2026 by our own toolkit and sits at the feasibility wall. Closing the 2 remaining chunks would extend the OEIS table by exactly one value (N=212) — a marginal, contested contribution, not a record we can cleanly take.",
+   "scope": "problem",
+   "source": "atlas/problems.json beatable=WALL",
    "type": "wall"
   },
   {
@@ -70242,9 +70284,9 @@
   },
   {
    "id": "W:prob:159",
-   "reason": "catalogued wall — see atlas/walls.md",
+   "reason": "The $100 headline (power-saving exponent) is purely asymptotic — the Erdős-problems page explicitly states it cannot be resolved by finite computation; it needs a new theorem (NONE). The one genuine finite sub-problem — extending the exact R(C_4,K_n) table to n=11 — is a WALL: the current record (n=10, 2014) was set by Radziszowski's own RIT group using exactly our tool class (SAT + structured C_4-free graph exhaustion), and n=11 has resisted their dedicated pipeline for ~12 years. Same R(5,5)-witness situation: the record-holder already uses SAT/exhaustion, the next size hits combinatorial explosion (C_4-free graphs on 40+ vertices with the required degree structure blow up), and a 100-core farm gives no edge over a purpose-built extension pipeline. The cheap verifier does not make the search feasible.",
    "scope": "problem",
-   "source": "atlas/stubs.json status=wall",
+   "source": "atlas/problems.json beatable=WALL",
    "type": "wall"
   },
   {
@@ -70256,9 +70298,16 @@
   },
   {
    "id": "W:prob:165",
-   "reason": "catalogued wall — see atlas/walls.md",
+   "reason": "The $250 prize is purely asymptotic/analytic — the page explicitly says it cannot be resolved by finite computation; no witness route to the prize. The genuine finite sub-problem (closing R(3,10), improving R(3,11+) lower bounds) is also a wall for our farm: (a) the lower-bound witness record was set by simulated-annealing/Metropolis — the exact tool we would deploy — and has been stuck at a 39-vertex graph for years, strongly implying R(3,10)=40 (better witness does not exist); (b) the nonexistence/SAT direction is defeated by clause explosion (the no-independent-10-set constraint is ~C(40,10)=8.5e8 width-45 clauses, infeasible to even instantiate), and Angeltveit states the orderly-generation route needs orders of magnitude beyond 3 CPU-years; (c) specialized nauty-based gluing codebases (McKay/Angeltveit/Radziszowski/Goedgebeur) dominate generic solvers, and SAT experts (Heule) have …[truncated; see source]",
    "scope": "problem",
-   "source": "atlas/stubs.json status=wall",
+   "source": "atlas/problems.json beatable=WALL",
+   "type": "wall"
+  },
+  {
+   "id": "W:prob:166",
+   "reason": "Three walls. (1) The headline is PROVED and asymptotic — no finite object, no claimable prize; pure NONE. (2) The finite sub-problem is genuinely in-class but is the textbook \"computational-looking record already at the wall,\" exactly like the R(5,5) witness was for us. The specialized community owns strictly better tooling than our generic farm: Exoo's targeted cyclic/quasi-cyclic constructions for lower bounds and McKay's nauty-based isomorph-free orderly generation for upper bounds — and R(4,6)'s lower bound has been frozen at 36 since 2012 despite exactly this machinery hammering it. (3) The tools we'd bring (SAT + DRAT, local search, MIS) are the same tools the frontier is already running (SAT is now standard in this niche). \"Record set by the same-or-better tools we'd use\" = no edge. A 100-core farm would reproduce known values, not beat them. Lower-bound ticks on R(4,7)/R(4,8) …[truncated; see source]",
+   "scope": "problem",
+   "source": "atlas/problems.json beatable=WALL",
    "type": "wall"
   },
   {
@@ -70270,16 +70319,16 @@
   },
   {
    "id": "W:prob:183",
-   "reason": "catalogued wall — see atlas/walls.md",
+   "reason": "Headline is asymptotic and needs a theorem (prove the limit finite-with-value, or prove it infinite) — no finite witness resolves it. The genuine finite sub-frontier (small-case R_k(3) bounds, OEIS extension) is either provably stuck (R_4(3)=51 un-improvable by the natural construction classes; the 51–62 gap SAT-infeasible, far beyond R(5,5) which was already at the witness wall) or is actively moving only in the hands of specialists (Exoo, Rowley, Schur-template groups; 2024 AgCP+) using exactly the SAT / cyclic / local-search / Schur-heuristic tools we would deploy. No edge beyond generic compute; no single R_k(3) improvement claims the prize.",
    "scope": "problem",
-   "source": "atlas/stubs.json status=wall",
+   "source": "atlas/problems.json beatable=WALL",
    "type": "wall"
   },
   {
    "id": "W:prob:19",
-   "reason": "catalogued wall — see atlas/walls.md",
+   "reason": "Three independent reasons the meaningful frontier does not move for us. (1) The conjecture is TRUE — proved for all large n (KKKMO, Annals 2023) and verified for all n≤12 — so the witness branch (find a χ>n hypergraph) is a KNOWN-EMPTY dead end; there is no record-beating finite object to find, unlike kissing/R(5,5)-lower-bound where a witness might exist. (2) The current small-case record is held by EXACTLY our toolchain (Kirchweger–Peitl–Szeider 2023: SAT + SAT-Modulo-Symmetries + co-certificate-learning + DRAT), the same R(5,5)-was-already-at-the-wall situation. (3) The certification/UNSAT branch hits a real complexity wall, not a budget wall: KPS could not even get a SAT solver to prove K₁₃ is not 12-edge-colorable, because that reduces to the pigeonhole formula, which is exponentially hard for resolution/CDCL — a 100-core farm does nothing against pigeonhole. Only a narrow, …[truncated; see source]",
    "scope": "problem",
-   "source": "atlas/stubs.json status=wall",
+   "source": "atlas/problems.json beatable=WALL",
    "type": "wall"
   },
   {
@@ -70305,16 +70354,16 @@
   },
   {
    "id": "W:prob:30",
-   "reason": "catalogued wall — see atlas/walls.md",
+   "reason": "see above",
    "scope": "problem",
-   "source": "atlas/stubs.json status=wall",
+   "source": "atlas/problems.json beatable=WALL",
    "type": "wall"
   },
   {
    "id": "W:prob:39",
-   "reason": "catalogued wall — see atlas/walls.md",
+   "reason": "Two independent walls. (1) The $500 headline is purely asymptotic: improving the density exponent from √2−1≈0.4142 toward 1/2 needs a new construction/theorem, and no finite object can resolve it (an infinite set can't be exhibited by finite compute, and finite maxima provably don't nest into a dense infinite set — Erdős's liminf=0 result). (2) The genuine in-class finite sub-problem (densest finite Sidon set / optimal Golomb ruler table) is already at the feasibility wall, set by EXACTLY the exhaustive branch-and-bound tools we would use, run by distributed.net at a scale orders of magnitude beyond a ~100-core farm over multiple years; the next term (OGR-29) is estimated at years of that-scale compute. And even pushing that table one mark would not advance the prize conjecture at all. This is R(5,5)-witness-like: computational-looking but already exhausted.",
    "scope": "problem",
-   "source": "atlas/stubs.json status=wall",
+   "source": "atlas/problems.json beatable=WALL",
    "type": "wall"
   },
   {
@@ -70333,9 +70382,9 @@
   },
   {
    "id": "W:prob:52",
-   "reason": "catalogued wall — see atlas/walls.md",
+   "reason": "The headline is explicitly asymptotic and self-declares \"cannot be resolved with a finite computation\" — no witness touches the $250 exponent (a single better construction cannot change an ε-exponent claim; that needs an infinite family + proof). The genuine finite sub-problem (extend/beat A263996) is real but sits on a wall: the mid-range records were set by exactly the tools we'd bring — simulated annealing / local search on a large distributed compute pool across 1,639 contest entries specifically tuned for \"sophisticated heuristics.\" That is the R(5,5)-witness situation inverted: the record-holder already ran our attack, harder and longer, and the optimal sets are highly structured smooth-number sets ({2^a·3^b·5^c…}) where the search is well-understood and saturated. Worse for a certified-optimality angle: the domain is unbounded integers, so proving a(n) exactly (the …[truncated; see source]",
    "scope": "problem",
-   "source": "atlas/stubs.json status=wall",
+   "source": "atlas/problems.json beatable=WALL",
    "type": "wall"
   },
   {
@@ -70347,9 +70396,9 @@
   },
   {
    "id": "W:prob:564",
-   "reason": "catalogued wall — see atlas/walls.md",
+   "reason": "Two-layer wall. (1) The $500 headline is asymptotic and provably NOT finite-resolvable: closing 2^{cn^2} vs 2^{2^n} requires a 2-color stepping-up lemma, which is exactly the missing THEOREM (Erdos-Hajnal stepping-up only fires for uniformity>=3 AND colors>=4). No finite computation touches it. (2) The one genuinely search-shaped finite frontier -- the lower bound for R(4,5;3), record >=35 from a good 2-coloring on 34 vertices -- was itself set by a SAT solver with class/symmetry decomposition, the identical tooling we'd bring. This is the R(5,5)-witness lesson verbatim: the record IS the wall for our tool. Improving to >=36 needs a good coloring on 35 vertices (C(35,3)=6545 vars, ~377k clauses of a notoriously hard Ramsey SAT family); the 2018 authors already needed a structured class-decomposition ansatz just to reach 34, and raw symmetric SAT does not beat them. R(4,4;3)=13 is …[truncated; see source]",
    "scope": "problem",
-   "source": "atlas/stubs.json status=wall",
+   "source": "atlas/problems.json beatable=WALL",
    "type": "wall"
   },
   {
@@ -70361,16 +70410,16 @@
   },
   {
    "id": "W:prob:64",
-   "reason": "catalogued wall — see atlas/walls.md",
+   "reason": "The prize-relevant frontier is a wall on both sides. Proving the conjecture needs a new theorem (NONE-like). The disproof/witness search is unbounded (a counterexample has no size ceiling) and near-certainly null: the conjecture is widely believed, Liu–Montgomery proved it for large min degree AND killed the stronger version, and Carr-2026's 'predominantly cubic' structure further constrains any counterexample — a stronger R(5,5)-style no-witness situation. The one MOVABLE piece — extending Markström's exhaustive cubic verification 2–4 vertices (>=30 -> >=32/>=34) — is feasible but uses the record-holder's own tooling, claims no prize, does not resolve the conjecture, and pushes a number the field no longer tracks. Classic 'computational-looking record already at the wall.'",
    "scope": "problem",
-   "source": "atlas/stubs.json status=wall",
+   "source": "atlas/problems.json beatable=WALL",
    "type": "wall"
   },
   {
    "id": "W:prob:687",
-   "reason": "catalogued wall — see atlas/walls.md",
+   "reason": "The record is held by precisely our own method class — massively parallel exhaustive search with domain-specific pruning — run at Google-Cloud scale (Bozek 2021). The next term a(65) sits at/beyond the feasibility frontier: the search over residue assignments mod the primorial grows super-exponentially, and the last three terms already required cloud-scale compute exceeding a ~100-core farm. Generic SAT/ILP/MIS encodings have NO edge over the hand-tuned Ziller–Morack pruning (they'd be dramatically worse), and there's no clean DRAT-certified nonexistence hook because the hard direction is the completeness of a bespoke search, not a CNF UNSAT. This is the R(5,5)-witness situation: computationally-shaped but already pinned to the wall by the same tools we'd bring. Lower-bound witnesses are trivially verifiable but can't \"beat\" an already-exact record without also doing the (infeasible) …[truncated; see source]",
    "scope": "problem",
-   "source": "atlas/stubs.json status=wall",
+   "source": "atlas/problems.json beatable=WALL",
    "type": "wall"
   },
   {
@@ -70396,9 +70445,16 @@
   },
   {
    "id": "W:prob:712",
-   "reason": "catalogued wall — see atlas/walls.md",
+   "reason": "The $500 frontier is the ASYMPTOTIC density — the page itself states it cannot be resolved by finite computation, and it is one of the oldest open problems in extremal combinatorics (80+ yr). Its three levers are all walls for us: (1) UPPER bound is a flag-algebra SDP — same certificate class as our PNT/autocorrelation work — but it is already run to feasibility limits (order-6/7 flags) and there is a known flag-algebra barrier suggesting the method alone cannot reach 5/9; shaving the 4th decimal resolves nothing. (2) LOWER bound is capped at the conjectured-optimal 5/9, with matching constructions already known — no config can beat it. (3) The only genuinely finite, verifier-first slice — exact ex(n,K_4^3) for a new n via SAT/ILP — is a footnote with no tracked record and no OEIS entry, and even that hits the wall fast: near-optimum solution density is high and the automorphism group …[truncated; see source]",
    "scope": "problem",
-   "source": "atlas/stubs.json status=wall",
+   "source": "atlas/problems.json beatable=WALL",
+   "type": "wall"
+  },
+  {
+   "id": "W:prob:720",
+   "reason": "The headline is PROVED and thus not prize-movable: Beck (1983) proved the far stronger linear bounds R̂(P_n)≪n and R̂(C_n)≪n (constant later improved to <137n), fully settling both the →∞ and o(n²) questions. The only live finite sub-problem is pinning EXACT small size-Ramsey values, and that frontier is already set by exactly our tools (nauty graph-generation + backtracking; recent Kissat/SMS SAT). Determining R̂ exactly is Σ₂/Π₂-hard: an OUTER search over ALL non-isomorphic host graphs H (unbounded, unlike classical Ramsey's fixed K_N — a graph with m≈30–40 edges already has astronomically many candidate hosts) wrapping an INNER coNP-complete arrowing test (Burr 1976). State of the art reaches only ≤6-vertex targets (r̂(C₆,C₆)=26); the next case explodes on both layers. We have no edge over the incumbents beyond generic compute, and the outer host-search — not a fixed board — is …[truncated; see source]",
+   "scope": "problem",
+   "source": "atlas/problems.json beatable=WALL",
    "type": "wall"
   },
   {
@@ -71753,300 +71809,490 @@
    "type": "external_claim"
   },
   {
+   "computed_status": "TRUE_THEOREM",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:ax_grothendieck_theorem",
+   "lit_verification": "VERIFIED",
    "name": "Ax-Grothendieck theorem",
+   "notes": "Round-2 BOUNDARY node (no propagating edge): Ax-Grothendieck says injective => bijective for polynomial self-maps, so the ONLY way a constant-Jacobian Keller map can fail to be an automorphism is by being NON-INJECTIVE -- which is exactly the crack Alpoge's 3-to-1 map exploits. It frames why the counterexample has the shape it does, and survives untouched.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "proven theorem",
    "primary_source": "J. Ax, The elementary theory of finite fields, Ann. of Math. 88 (1968) 239-271; A. Grothendieck, EGA IV",
    "statement": "Every injective polynomial self-map of affine n-space over an algebraically closed field is surjective, hence bijective. A theorem (Ax via model theory; Grothendieck via reduction to finite fields), whose proof never invokes JC.",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "TRUE_THEOREM",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:bcw_tree_formula",
+   "lit_verification": "VERIFIED",
    "name": "Bass-Connell-Wright tree inversion formula (the theorem)",
+   "notes": "Survives untouched; the crater kills only the derived termination assertion (jc_tree_vanishing).",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "proven theorem (1982)",
    "primary_source": "Bass, Connell & Wright, Bull. AMS 7 (1982) 287-330, Ch. III",
    "statement": "For F = X - H the formal inverse has the explicit rooted-tree expansion (sum over trees T weighted by 1/|Aut T|) — an unconditional theorem in every dimension.",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_SOME_FINITE_DIM",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:bisi_subtree_shuffle_markov_conjecture",
+   "lit_verification": "VERIFIED",
    "name": "Bisi et al. subtree-shuffling Markov-chain sufficient condition for JC",
+   "notes": "Round-2 node: a probabilistic sufficient condition for JC. Thm 1.6 goes from a single degree d>=3 to the FULL all-dimension JC via the dimension-increasing symmetric/degree reduction (the quantified p is shuffle-length, not dimension), so the edge is dimension_mixing -> REFUTED_SOME_FINITE_DIM. (Wave-2 correction: originally mis-cited as Thm 2.12 and mis-typed dimension_preserving.)",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open",
    "primary_source": "E. Bisi, P. Dyszewski, N. Gantert, S. Johnston, J. Prochno, D. Schmid, Random planar trees and the Jacobian conjecture, arXiv:2301.08221 (2023); J. London Math. Soc. 113(2) (2026), Thm 1.6 / Conj 1.5",
    "statement": "Bisi-Dyszewski-Gantert-Johnston-Prochno-Schmid (Conjecture 1.5): for some degree d>=3, a subtree-shuffling ('p-shuffle') Markov chain on large d-Catalan (planar d-ary) trees has the uniform stationary distribution for all shuffle-lengths p. Theorem 1.6: if Conjecture 1.5 holds for some d>=3, then the (full, all-dimension) Jacobian Conjecture holds.",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_SOME_FINITE_DIM",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:chamberland_conjecture",
+   "lit_verification": "VERIFIED",
    "name": "Chamberland Conjecture (eigenvalues bounded away from zero => injective)",
+   "notes": "'Spectral gap' is a nonstandard gloss; literature name is the Chamberland Conjecture. The raw dim-3 map does NOT satisfy the eigenvalue hypothesis — refutation lands only after pushing through the BCW/Yagzhev reduction (all eigenvalues +1) and realifying, i.e. in some large real dimension 2N. The planar theorem survives. About arbitrary C^1 maps, strictly stronger than what JC needed.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open (n >= 3); theorem for n = 2",
    "primary_source": "Chamberland & Meisters, Canad. Math. Bull. 41 (1998) 442-451, Conjecture 2.1, Thms 4.1-4.2",
    "statement": "If F : R^n -> R^n is C^1 and there is eps > 0 with |lambda| >= eps for every complex eigenvalue of F'(x), all x, then F is injective. Implies (via the cubic reduction) that Keller maps are injective.",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_SOME_FINITE_DIM",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:char_p_strengthenings",
+   "lit_verification": "VERIFIED",
    "name": "Characteristic-p formulations implying char-0 JC (Adjamagbo; Maubach-Rauf; Lang)",
+   "notes": "Computed floor: false in some finite dimension (the authors frame the implications per-dimension, but the dimension semantics were not verbatim-confirmed from the primary texts — conservatively encoded as mixing pending wave-2 escalation). Tsuchimoto's p-curvature route is a different edge (via Dixmier) and is excluded here.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open",
    "primary_source": "Maubach & Rauf, arXiv:1507.02946; Lang, J. Pure Appl. Algebra (2024), arXiv:2310.15199",
    "statement": "Several char-p versions of JC (e.g. adding the hypothesis p does not divide the field-extension degree), each of which, if true, implies JC over C.",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_SOME_FINITE_DIM",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:cubic_homogeneous_jc",
+   "lit_verification": "VERIFIED",
    "name": "JC for cubic homogeneous maps (universal, all n)",
+   "notes": "The reduction THEOREM is proven and untouched; what dies is the class-restricted universal conjecture. The counterexample forces a cubic-homogeneous Keller counterexample in SOME finite dimension N (constructively obtainable from the dim-3 map, N >> 3); nothing follows about cubic-homogeneous maps in dim 3 itself. Minimal failing dimension for this class: newborn open quantity.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open",
    "primary_source": "Bass, Connell & Wright, Bull. AMS (N.S.) 7 (1982) 287-330, §II; Yagzhev, Sibirsk. Mat. Zh. 21 (1980) 141-150",
    "statement": "Every Keller map of the form F = x + H with H cubic homogeneous (JH nilpotent) is invertible, in every dimension. By Bass-Connell-Wright/Yagzhev, this universal statement implies full JC (the reduction strictly increases dimension).",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_ALL_N_GE_3",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:dixmier_conjecture",
+   "lit_verification": "VERIFIED",
    "name": "Dixmier Conjecture DC_n (endomorphisms of Weyl algebras)",
+   "notes": "The easy direction DC_n => JC_n is PER n (BKK arXiv:math/0512171 intro, citing BCW 1982 + vdE 2000); the dimension DOUBLING lives only in the hard direction JC_2n => DC_n (Tsuchimoto 2005 / BKK Thm 1). Since JC is false for every n >= 3, modus tollens through the per-n edge gives DC_n FALSE FOR ALL n >= 3, now a computed status rather than hand prose. DC_2 is NOT refuted: DC_2 => JC_2 and the plane Jacobian Conjecture is open. DC_1 survives likewise. RETRACTED (round 3): the earlier note claimed 'false for ALL n >= 2, DC_1 alone survives' via DC_n => JC_2n -- that edge is the unproven …[truncated; see source]",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open (every n >= 1)",
    "primary_source": "J. Dixmier, Bull. Soc. Math. France 96 (1968) 209-242, Probleme 1",
    "statement": "Every unital algebra endomorphism of the n-th Weyl algebra A_n over a characteristic-0 field is an automorphism (n=1 is Dixmier's original Probleme 1).",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_SOME_FINITE_DIM",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:druzkowski_jc",
+   "lit_verification": "VERIFIED",
    "name": "JC for Druzkowski (cubic-linear) maps (universal, all n)",
+   "notes": "Reduction theorem proven and untouched. A Druzkowski-form counterexample must now exist in SOME finite dimension; no clean universally-cited closed-form dimension bound N(n,d) was found in the primary literature (treat any specific numeric bound as unverified). Minimal failing dimension: newborn open quantity.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open",
    "primary_source": "L. M. Druzkowski, Math. Ann. 264 (1983) 303-313",
    "statement": "Every Keller map of the form F_i(x) = x_i + (a_i1 x_1 + ... + a_in x_n)^3 (A nilpotent) is invertible, in every dimension. By Druzkowski's reduction this universal statement implies full JC.",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_SOME_FINITE_DIM",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:gaussian_moments_conjecture",
+   "lit_verification": "VERIFIED",
    "name": "Gaussian Moments Conjecture GMC (Derksen–van den Essen–Zhao)",
+   "notes": "Round-2 second-ring node. Strictly upstream of JC. The GMC(2n) => SIC(n) step DOUBLES dimension, so only the weak 'some finite dimension' floor flows to GMC.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open",
    "primary_source": "H. Derksen, A. van den Essen, W. Zhao, Israel J. Math. 219 (2017) 917-928 (Thm 1.6); arXiv:1506.05192",
    "statement": "For a standard Gaussian X in R^n and complex polynomial P: if E[P(X)^m]=0 for all m>=1, then E[P(X)^m Q(X)]=0 for all large m, every Q. Theorem 1.6: GMC (all n) => JC (all n), via GMC(2n) => SIC(n) => JC(n).",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_SOME_FINITE_DIM",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:hessian_conjecture",
+   "lit_verification": "VERIFIED",
    "name": "Hessian Conjecture (Meng 2006)",
+   "notes": "Computed floor via the doubling half-edge HC_2n => JC_n: false in some finite dimension. Sharper hand analysis (fleet): phi(x,y) = y . F(x) on 6 variables has constant Hessian determinant and non-injective gradient, so HC fails at n=6 and (padding) every n >= 6; n <= 5 not directly settled. Meng's positive real-definite theorem and the HC <=> JC equivalence itself survive.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open (real definite-Hessian case a theorem, Meng)",
    "primary_source": "G. Meng, Appl. Math. Lett. 19 (2006) 503-510, arXiv:math-ph/0308035",
    "statement": "For phi in n variables (char 0) with det(Hess phi) a nonzero constant, the Legendre transform of phi is a polynomial — equivalently grad(phi) has a polynomial inverse.",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_ALL_N_GE_3",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:hom_dixmier_conjecture",
+   "lit_verification": "VERIFIED",
    "name": "(Stable) Hom-Dixmier Conjecture (Bäck 2026)",
+   "notes": "Rides the Dixmier node through the exact per-n equivalence DC_n <=> HDC^<=n_n (Back Prop 7), so it inherits Dixmier's corrected status: FALSE FOR EVERY RANK n >= 3 (computed, via the per-n DC=>JC edge). RETRACTED (round 3): the earlier 'false for every rank n >= 2' rested on the withdrawn DC_n => JC_2n converse. Ranks 1 and 2 survive (HDC^1_1 proven; rank 2 open with JC_2). Recent single-lineage source (2025/26), flagged as such.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open (HDC^1_1 proven)",
    "primary_source": "P. Bäck, arXiv:2502.04051; Algebras and Representation Theory 29 (2026) 697-719, Conjecture 3, Proposition 7",
    "statement": "HDC^m_n: any nonzero homomorphism between higher-order hom-associative Weyl algebras A^k_n -> A^k'_n (k, k' with exactly m nonzero elements) is an isomorphism; the stable form HDC^<=n_n is equivalent to DC_n (Bäck, Prop 7).",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_SOME_FINITE_DIM",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:image_conjecture",
+   "lit_verification": "VERIFIED",
    "name": "Zhao's Image Conjecture (Mathieu subspaces)",
+   "notes": "IC (all n) => JC (all n) via dimension-inflating reductions, so IC now fails in at least one finite number of variables — which one is not identified. JC is equivalent to a SPECIAL CASE of IC; the full IC is strictly stronger.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open (char 0; already false in char p)",
    "primary_source": "W. Zhao, J. Algebra 324 (2010) 231-247, arXiv:0902.0210",
    "statement": "In C[zeta_1..zeta_n, z_1..z_n], the image of Sum_i (d/dz_i - zeta_i) is a Mathieu subspace. Implies JC (via the Generalized Vanishing Conjecture chain).",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_SOME_FINITE_DIM",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:integral_conjecture",
+   "lit_verification": "VERIFIED",
    "name": "Zhao's Integral Conjecture",
+   "notes": "Strictly upstream of JC (implies, not implied by). The Gaussian-measure special case already implies JC in all dimensions, so the Integral Conjecture now fails for some measure in some finite dimension; the failing dimension and measure are not identified.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open",
    "primary_source": "W. Zhao, J. Pure Appl. Algebra 214 (2010) 1200-1216, arXiv:0902.0212",
    "statement": "For B open in R^n and sigma a positive measure with all polynomial integrals finite, the polynomials with vanishing integral over B form a Mathieu subspace of C[x_1..x_n].",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_ALL_N_GE_3",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:jacobian_conjecture",
+   "lit_verification": "VERIFIED",
    "name": "Jacobian Conjecture (Keller 1939), n >= 3",
+   "notes": "Refuted 2026-07-19 by Alpöge's explicit dim-3 counterexample (found with Claude Fable; widely verified within a day, not yet peer-reviewed). Certificate: certificates/jacobian-conjecture/.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open since 1939 (every n >= 2)",
    "primary_source": "O.-H. Keller, Monatsh. Math. Phys. 47 (1939) 299-306; A. van den Essen, Polynomial Automorphisms and the Jacobian Conjecture, Birkhäuser PM 190 (2000)",
+   "root_fact": {
+    "certificate": "certificates/jacobian-conjecture/verify.py",
+    "fact": "REFUTED_ALL_N_GE_3",
+    "note": "verify.py certifies the dim-3 refutation; padding_check.py machine-verifies the stabilization lift F -> F x id, so FALSE(3) extends to FALSE(n) for every n >= 3. The n=2 (plane) case is a separate node and remains OPEN."
+   },
    "statement": "Every polynomial map F : C^n -> C^n whose Jacobian determinant is a nonzero constant has a polynomial inverse.",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "TRUE_THEOREM",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:jc_dimension_padding",
+   "lit_verification": "VERIFIED",
    "name": "Dimension stabilization of Keller counterexamples (padding lemma)",
+   "notes": "MACHINE-CHECKED here: atlas/jc-crater/padding_check.py executes the dim-3 -> dim-4 instance exactly (det == -2 identically in Q[x,y,z,w]; padded collisions verified). This is the edge that lifts the root fact from FALSE(3) to FALSE(all n >= 3). Says nothing about n = 2.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "folklore lemma",
    "primary_source": "Folklore (elementary block-diagonal argument); stated explicitly post-counterexample, e.g. Z. Zhang, Direct Consequences (2026); jacobianfun.org (2026)",
    "statement": "If F : k^n -> k^n is a non-injective Keller map then G = F x id on k^(n+1) is one too (block-diagonal Jacobian, det JG = det JF; collisions extend); the set of failing dimensions is upward-closed.",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_ALL_N_GE_3",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:jc_over_char0_fields_and_z",
+   "lit_verification": "VERIFIED",
    "name": "Base-field / over-Z reduction of JC (Connell–van den Dries)",
+   "notes": "Round-2 second-ring node, and the reason Alpoge's rational-coefficient dim-3 map is a bona fide counterexample over every characteristic-0 field: refuted for all n>=3, per-dimension.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open (equivalent to JC over C, per n)",
    "primary_source": "E. Connell & L. van den Dries, Injective polynomial maps and the Jacobian conjecture, J. Pure Appl. Algebra 28 (1983) 235-239",
    "statement": "JC over any characteristic-0 field, and its over-Z formulation (integer-coefficient Keller maps), is equivalent per fixed dimension n to JC over C: if JC is false it has a counterexample with integer coefficients and Jacobian determinant 1; JC holds for all char-0 fields or for none.",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_ALL_N_GE_3",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:jc_tree_vanishing",
+   "lit_verification": "VERIFIED",
    "name": "Tree-vanishing reformulation of JC (termination of the BCW tree series)",
+   "notes": "MINTED from the fleet's split recommendation: the tree formula itself is an unconditional theorem (see bcw_tree_formula node); this node is the JC-equivalent termination assertion, now false at every n >= 3 — Alpöge's map's formal inverse never terminates. The n=2 instance remains open with JC_2.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open (equivalent to JC per dimension)",
    "primary_source": "Bass, Connell & Wright, Bull. AMS 7 (1982) 287-330, Ch. III; D. Wright, J. Pure Appl. Algebra 57 (1989); D. Singer, Electron. J. Combin. 8 (2001)",
    "statement": "For every Keller map the Bass-Connell-Wright rooted-tree expansion of the formal inverse terminates (the formal inverse is polynomial) — equivalent to JC_n per dimension (BCW Ch. III).",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_ALL_N_GE_3",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:jedrzejewicz_zielinski_jc_mnk",
+   "lit_verification": "VERIFIED",
    "name": "Jedrzejewicz-Zielinski generalized Jacobian family JC(m,n,k)",
+   "notes": "Round-2 node; RESOLVES the quarantined pending-rename 'generalized_subalgebra_jc'. JC(m,n,k) => JC_m per m (dimension_preserving), so the whole family is refuted for m>=3 (every n>=m); JC(1,n,k) is a theorem (Ayad 2002) and JC(2,n,k) is open with plane JC.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open",
    "primary_source": "P. Jedrzejewicz & J. Zielinski, Analogs of Jacobian conditions for subrings, J. Pure Appl. Algebra 221 (2017) 2111-2118; arXiv:1601.01508 (Lemma 1.1)",
    "statement": "JC(m,n,k): for f_1..f_m in k[x_1..x_n] (char 0, m<=n), if the gcd of all m-by-m Jacobian minors is a nonzero constant, then k[f_1..f_m] is a ring of constants of a k-derivation. By Lemma 1.1, JC(m,n,k) implies the Jacobian Conjecture for m variables; the diagonal m=n is equivalent to JC_m.",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_SOME_FINITE_DIM",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:jelonek_real_jc",
+   "lit_verification": "VERIFIED",
    "name": "Jelonek's Real Jacobian Conjecture (codimension-2 non-properness)",
+   "notes": "Computed floor: fails in some finite dimension (the index-shifted route RealJC_2n => JC_n). Fleet hand analysis: the realification R^6 -> R^6 of Alpöge's map is a non-injective local diffeo with non-properness set of real codimension exactly 2, so the conjecture fails at n=6 and all n >= 6 — and the counterexample proves Jelonek's proven codim >= 3 theorem is OPTIMAL: codimension 2 genuinely fails. Open for n in {3, 4, 5}.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open (n >= 3); theorem for n = 2 and for codim >= 3",
    "primary_source": "Z. Jelonek, Geometry of real polynomial mappings, Math. Z. 239 (2002) 321-333",
    "statement": "For Y : R^n -> R^n a polynomial local diffeomorphism with S_Y its set of non-proper points: if codim(S_Y) >= 2 then Y is bijective. Jelonek proved codim >= 3 unconditionally and the n=2 case, and RealJC_2n => JC_n.",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_ALL_N_GE_3",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:keller_properness_universal",
+   "lit_verification": "VERIFIED",
    "name": "Universal properness of Keller maps ('every Keller map is proper')",
+   "notes": "The per-map THEOREM (a proper/injective Keller map is invertible) survives untouched. The universal statement is false at every n >= 3: Alpöge's map is 3-to-1, hence non-proper — the non-properness escape hatch is exactly how the counterexample lives.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open (equivalent to JC)",
    "primary_source": "Bass, Connell & Wright, Bull. AMS (N.S.) 7 (1982) 287-330, Thm 2.1",
    "statement": "Every Keller map C^n -> C^n is proper (equivalently injective, equivalently invertible) — per-map equivalence by BCW Thm 2.1, so this universal statement is JC_n restated.",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "OPEN",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:kontsevich_conjecture_weyl",
+   "lit_verification": "VERIFIED",
    "name": "Kontsevich Conjecture (Aut of Weyl algebra vs polynomial symplectomorphisms)",
+   "notes": "No PROVED implication connects JC or DC to this Aut-level statement in either direction (the conditional DC => KC route required an unproved polynomiality lemma and is now vacated since DC is false for n >= 3). Logically untouched by the crater; carries no edge. Do not conflate with the Poisson END-conjecture (that analog of DC IS now false for n >= 3).",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "true for n=1; open (claimed proofs) for n > 1",
    "primary_source": "Belov-Kanel & Kontsevich, Lett. Math. Phys. 74 (2005) 181-199, arXiv:math/0512169",
    "statement": "Aut(W_n, C) is canonically isomorphic to Aut(P_n, C), the group of polynomial symplectomorphisms of A^2n (Belov-Kanel-Kontsevich 2005, Conjecture 1).",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_SOME_FINITE_DIM",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:mathieu_conjecture",
+   "lit_verification": "VERIFIED",
    "name": "Mathieu Conjecture (integrals over compact connected Lie groups)",
+   "notes": "Computed floor: false for at least one compact group (Mathieu's original implication ran through the dimension-mixing cubic reduction). Sharper per-N localization (MC fails for SU(3), hence SU(N) for N >= 3) rests on Zwart arXiv:2511.16561 Thm 2.2 — recent single source, kept in notes pending wider corroboration. The Duistermaat-van der Kallen abelian theorem survives untouched.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open (abelian/torus case a theorem since 1998)",
    "primary_source": "O. Mathieu, Semin. Congr. 2, Soc. Math. France (1997) 263-279",
    "statement": "For K a compact connected Lie group and f, h K-finite functions: if the Haar integral of f^n vanishes for all n >= 1, then the integral of f^n h vanishes for all sufficiently large n. Mathieu proved this conjecture implies JC.",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_ALL_N_GE_3",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:nowicki_commutative_basis",
+   "lit_verification": "VERIFIED",
    "name": "Nowicki's commutative-basis characterization (all commutative bases LND)",
+   "notes": "The 'all commutative bases are LND' side is now false at n = 3 (a commutative basis of Der(k[x,y,z]) with a non-locally-nilpotent element exists) and for all n >= 3. The equivalence theorem itself survives. DISAMBIGUATE from the famous Nowicki conjecture on Weitzenbock derivations — a different, now-proven statement with no JC edge.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open (equivalent to JC per dimension)",
    "primary_source": "A. Nowicki, J. Pure Appl. Algebra 40 (1986) 279-302",
    "statement": "JC_n holds iff every commutative basis of the k[X]-module of derivations Der_k(k[X]) consists of locally nilpotent derivations (Nowicki 1986).",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_ALL_N_GE_3",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:picard_vessiot_reformulation",
+   "lit_verification": "VERIFIED",
    "name": "Picard-Vessiot / Wronskian reformulation (Crespo-Hajto)",
+   "notes": "The per-map characterization and the Wronskian decision algorithm survive as tools (they simply return 'not invertible' on the counterexample); the universal reformulation is false at every n >= 3.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open (equivalent to JC per dimension)",
    "primary_source": "Crespo & Hajto, Israel J. Math. 186 (2011) 401-406; Adamus, Crespo & Hajto, SIGMA 15 (2019) 034; effective form arXiv:1506.01662",
    "statement": "A Keller map is invertible iff an associated homomorphism of Picard-Vessiot-type differential extensions is bijective; JC_n is equivalent to the universal form of this criterion.",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "OPEN",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:plane_jacobian_conjecture",
+   "lit_verification": "VERIFIED",
    "name": "Plane Jacobian Conjecture (n = 2)",
+   "notes": "THE surviving frontier: the dim-3 counterexample propagates only upward in dimension and says nothing about n=2. Known true up to degree 100 (Moh 1983). Deliberately carries NO edge from the universal JC: the definitional restriction JC => JC_2 would only set a misleading orphan flag (plane JC never drew support from the universal conjecture). The former Jacobian Conjecture is now exactly the question: is this node true?",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open",
    "primary_source": "Keller, Monatsh. Math. Phys. 47 (1939) 299-306 (the case originally posed); van den Essen 2000, Ch. 10",
    "statement": "A polynomial map F = (f,g) : C^2 -> C^2 with constant nonzero Jacobian determinant is invertible with polynomial inverse (equivalently C[f,g] = C[x,y]).",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_ALL_N_GE_3",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:poisson_conjecture",
+   "lit_verification": "VERIFIED",
    "name": "Poisson Conjecture (Adjamagbo–van den Essen)",
+   "notes": "Round-2 second-ring node. The CLASSICAL (commutative symplectic) counterpart of the Dixmier conjecture: P_n is the classical limit of the Weyl algebra A_n. Poisson_n <=> Dixmier_n is per-n (dimension_preserving), and Dixmier now reaches the root through a per-n edge as well, so Poisson inherits FALSE FOR ALL n >= 3 (computed). RETRACTED (round 3): the earlier 'REFUTED_SOME_FINITE_DIM floor via Dixmier's dimension-doubling edge' described the withdrawn edge typing. P_1, P_2 survive (P_2 <=> DC_2 => JC_2, open).",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open",
    "primary_source": "K. Adjamagbo & A. van den Essen, On the equivalence of the Jacobian, Dixmier and Poisson Conjectures in any characteristic, arXiv:math/0608009 (2006); Acta Math. Vietnam. 32 (2007)",
    "statement": "Every C-algebra endomorphism of the Poisson algebra P_n = C[x_1..x_n, y_1..y_n] with the canonical symplectic bracket that preserves the bracket is an automorphism. Adjamagbo-van den Essen prove Jacobian, Dixmier and Poisson are equivalent in any characteristic.",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_INDEPENDENTLY_PRE_2026",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:real_jc_nonvanishing",
+   "lit_verification": "VERIFIED",
    "name": "Strong real Jacobian conjecture (nonvanishing, non-constant Jacobian)",
+   "notes": "Historical context node: refuted 32 years before the crater by a genuinely different mechanism (over R, nonvanishing does not imply constant; Pinchuk's map never satisfied Keller's constant-determinant hypothesis, which is why it left JC standing). Both statements are now false, for unrelated reasons. Distinguish from Jelonek's properness-repaired real JC, a separate node.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "refuted (1994)",
    "primary_source": "S. Pinchuk, Math. Z. 217 (1994) 1-4",
    "statement": "A polynomial map R^n -> R^n with everywhere non-vanishing Jacobian determinant is globally injective.",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_ALL_N_GE_3",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:special_image_conjecture",
+   "lit_verification": "VERIFIED",
    "name": "Special Image Conjecture SIC(n) (Derksen–van den Essen–Zhao)",
+   "notes": "Round-2 second-ring node. SIC(n) => JC(n) is per-n (dimension_preserving), so it is refuted for all n>=3. The bridge between the Gaussian Moments Conjecture and JC.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open (equivalent-strength intermediate; per-n implies JC)",
    "primary_source": "H. Derksen, A. van den Essen, W. Zhao, The Gaussian Moments Conjecture and the Jacobian Conjecture, Israel J. Math. 219 (2017) 917-928; arXiv:1506.05192",
    "statement": "SIC(n): Ker(E_n) is a Mathieu (Mathieu-Zhao) subspace of C[w_1..w_n, z_1..z_n], where E_n is the Gaussian-moments map P(w)Q(z) -> (P(d_z)Q)(z). Named intermediate in the chain GMC(2n) => SIC(n) => JC(n).",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_ALL_N_GE_3",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:square_free_preserver",
+   "lit_verification": "VERIFIED",
    "name": "Square-free-preserver reformulation (Jedrzejewicz-Zielinski)",
+   "notes": "Now false at every n >= 3: Alpöge's map preserves square-freeness (it is Keller) yet is not an automorphism. The two characterization directions were always theorems; '=> automorphism' was exactly JC.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open (equivalent to JC per dimension)",
    "primary_source": "Jedrzejewicz & Zielinski, Eur. J. Math. 3 (2017) 199-214, arXiv:1611.07439; de Bondt & Yan, arXiv:1304.0634; Jedrzejewicz, JPAA 217 (2013) 165-171",
    "statement": "Char 0: an endomorphism of k[x_1..x_n] preserves square-free polynomials iff it is a Keller map; hence JC_n is equivalent to 'every square-free-preserving endomorphism is an automorphism'.",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "OPEN",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:symmetric_dependence_problem",
+   "lit_verification": "VERIFIED",
    "name": "Dependence problem for symmetric Jacobians",
+   "notes": "NO EDGE ADMITTED: the universal implication chain to JC could not be pinned to a displayed theorem in the primary sources (fleet flag), so per the admission rules this node carries no edge and its computed status stays OPEN — the conservative floor. Its proven low-dimensional theorems are untouched either way. The exact name 'Symmetric Dependence Problem' is not literature-verbatim (the phrase is 'symmetric variants of the dependence problem').",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "mixed: proven low dimensions; adjacent variants refuted (1876, 2006)",
    "primary_source": "de Bondt & van den Essen, JPAA 193 (2004) 61-70; de Bondt, Symmetric Jacobians, Cent. Eur. J. Math. 12 (2014), arXiv:1206.2865 §3",
    "statement": "For every H with symmetric nilpotent Jacobian, the rows of JH are linearly dependent over the base field (per dimension; known true n <= 4, homogeneous n <= 5; adjacent variants false since Gordan-Noether 1876 for n >= 5).",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_SOME_FINITE_DIM",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:symmetric_jc",
+   "lit_verification": "VERIFIED",
    "name": "JC for symmetric Keller maps (universal, all n)",
+   "notes": "Reduction theorem proven and untouched. Contrapositive through the doubling: the symmetric Keller conjecture fails in dimension 6 and all even dimensions >= 6 (fleet hand analysis); computed floor records failure in some finite dimension. Symmetric maps in dimension < 6 unaddressed.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open",
    "primary_source": "de Bondt & van den Essen, Proc. AMS 133 (2005) 2201-2205; dimension bookkeeping: de Bondt, arXiv:1206.2865, Thm 1.2",
    "statement": "Every Keller map of the form F = x + grad(h) (symmetric Jacobian JH = Hess h, nilpotent) is invertible, in every dimension. By de Bondt-van den Essen the universal symmetric case suffices for full JC (dimension-doubling).",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_ALL_N_GE_3",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:tate_jacobian_conjecture",
+   "lit_verification": "VERIFIED",
    "name": "Tate-Jacobian Conjecture TJC(R, I, n) (Tate algebras, 2025)",
+   "notes": "2025 coinage ('Tate' = Tate algebras, not Tate's conjecture on cycles). Encoded via the unconditional direction only: TJC(R,I,3) is false for every (R,I) whose quotient contains the counterexample's coefficient field, hence false at all n >= 3 for such (R,I). The converse direction needs Hausdorff hypotheses and is left un-encoded.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open in char 0 (already false when R/I has char p)",
    "primary_source": "Hamada, Kato & Komiya, arXiv:2502.10769; J. Pure Appl. Algebra (2025), Thm 0.1",
    "statement": "For R with I-adic topology: an n-tuple F in the Tate algebra with det JF a unit and F(0) = 0 has a compositional inverse in the same Tate algebra. Unconditionally TJC(R,I,n) => JC(R/I, n).",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_SOME_FINITE_DIM",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:unimodular_conjecture",
+   "lit_verification": "VERIFIED",
    "name": "Unimodular Conjecture (van den Essen-Lipton, over Z_p)",
+   "notes": "MERGED node (the listicle's 'p-adic Unimodular Conjecture' and 'p-adic nonzero-reduction assertion' are the same van den Essen-Lipton statement). The published equivalence quantifies over almost all primes; conservative floor: now fails for infinitely many primes in some finite dimension. No explicit zero-reduction witness is exhibited by the counterexample (Alpöge's map witnesses non-injectivity, not zero-reduction), and no specific prime is certified.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open for Z_p (provably true for infinite residue fields; provably false for char-p local domains)",
    "primary_source": "van den Essen & Lipton, J. Pure Appl. Algebra 219 (2015) 2624-2628",
    "statement": "For every n and every Keller map F over Z_p, some value F(b) is unimodular — equivalently the mod-p reduction of F is not the zero map. Theorem (vdE-L 2015): JC over C holds iff this holds over Z_p for almost all primes p.",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_SOME_FINITE_DIM",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:vanishing_conjecture",
+   "lit_verification": "VERIFIED",
    "name": "Zhao's Vanishing Conjecture (Hessian-nilpotent polynomials)",
+   "notes": "Equivalence is universal-to-universal through dimension-inflating reductions: VC now FALSE for at least one Hessian-nilpotent degree-4 polynomial in SOME finite n; per-dimension status untouched. The Generalized VC (cofactor-Q family) is a strictly stronger separate statement, also false in some dimension.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open",
    "primary_source": "W. Zhao, Trans. AMS 359 (2007) 249-274, arXiv:math/0409534",
    "statement": "For homogeneous P of degree 4 with Delta^m P^m = 0 for all m (Hessian nilpotent), Delta^m P^(m+1) = 0 for all large m. Equivalent to JC via the degree-3 and symmetric reductions.",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "TRUE_THEOREM",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:wang_degree_two_theorem",
+   "lit_verification": "VERIFIED",
    "name": "Wang's theorem: degree <= 2 Keller maps are invertible",
+   "notes": "Survives untouched: the counterexample has degree 7. Gives the lower bound 3 for the newborn quantity 'minimal degree of a dim-3 counterexample'.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "proven theorem (1980)",
    "primary_source": "S. S. Wang, A Jacobian criterion for separability, J. Algebra 65 (1980) 453-494",
    "statement": "A Keller map F : k^n -> k^n (char 0) with deg F_i <= 2 for every component is a polynomial automorphism, in every dimension n.",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "REFUTED_SOME_FINITE_DIM",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:yagzhev_engel_capelli",
+   "lit_verification": "VERIFIED",
    "name": "Yagzhev's algebraic formulation (Engel + Capelli => weakly nilpotent)",
+   "notes": "There now EXISTS a finite-dimensional ternary Engel char-0 algebra with Capelli identities that is not weakly nilpotent — its dimension is not 3 but some larger N obtained from cubifying the dim-3 map. The correspondence theorems survive; the char-0 side now matches the long-known char-p failures. 'Weakly nilpotent' = every element nilpotent, not algebra nilpotence.",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "open (char 0; char p > 3 failures long known)",
    "primary_source": "Yagzhev, Sibirsk. Mat. Zh. 21 (1980) 141-150; Belov, Bokut, Rowen & Yu, arXiv:1308.0674 (Thms 2.1-2.7)",
    "statement": "Every finite-dimensional ternary Engel algebra over a char-0 field satisfying a Capelli system is weakly nilpotent — equivalent (Yagzhev; Belov-Bokut-Rowen-Yu Thms 2.6-2.7) to JC in char 0, via the cubic-homogeneous correspondence.",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   },
   {
+   "computed_status": "TRUE_THEOREM",
+   "conditionality": "Conditional on Levent Alpöge's 2026-07-19 dim-3 counterexample (external; 'awaiting confirmation', not yet peer-reviewed). `lit_verification` records that an independent literature agent matched the statement to a primary source — it is NOT a truth verdict. `computed_status` is a conservative machine-propagated floor (tools/validate_jc_crater.py), not a hand analysis.",
    "id": "jc:yu_nonnegative_theorem",
+   "lit_verification": "VERIFIED",
    "name": "Yu's theorem: sign-restricted Keller maps are automorphisms",
+   "notes": "Survives: the counterexample lies outside the sign-restricted class. (The listicle's 'nonnegative-coefficient injectivity assertion' garbled a proven theorem into a conjecture.)",
+   "orphaned_conditional_support": false,
+   "pre_2026_status": "proven theorem (1995)",
    "primary_source": "J.-T. Yu, On the Jacobian Conjecture: reduction of coefficients, J. Algebra 171 (1995) 515-523",
    "statement": "Keller maps whose coefficients obey the non-negative sign convention are polynomial automorphisms (proven; independently reproved by Druzkowski 1997).",
-   "type": "crater_node",
-   "verification": "VERIFIED"
+   "type": "crater_node"
   }
  ],
  "note": "Generated by tools/build_graph.py — regenerate with `make graph`, do not hand-edit. `make check-graph` fails if this file is stale. Any disagreement with this graph is a bug report against its SOURCES, never a patch here.",
@@ -72054,11 +72300,14 @@
   "hot-claim": "APPLIES(external-claim-replay, problem) iff an ai_claims entry has our_recorded_status in ('open', 'wall', 'movable') — a live claim against a problem we record unresolved is a verification target, never a status change.",
   "lane-move": "APPLIES(<lane>, deep surface) iff problems.json lane not in ('wall',) — the lane field is authoritative (see atlas/lanes.md).",
   "strike-ranking": "Strike tiers, in order: T1 triage TARGET branches; T2 movable boards (stubs status='movable' UNION deep beatable='MOVABLE'); T3 workable gap surfaces (the 'workable' predicate); T4 triage MAYBE branches. Within a tier: witness_feasibility class ('historic' < 'open-easy' < 'plausible' < 'hard'), then problem id ascending. Prize is NEVER a key (standing rule 2).",
-  "trap": "TRAP(problem) iff stubs upstream_finite_handle is set AND stubs status == 'wall' — upstream says a finite object could settle it, our triage says the handle does not help at our scale. The prize rides ON the edge so renderers must show temptation and trap together.",
+  "trap": "TRAP(problem) iff stubs upstream_finite_handle is set AND stubs status == 'wall' — upstream says a finite object could settle it, our status register records a wall. That wall may be BRANCH-SCOPED: a triage surface on the same card can carry a live TARGET/MAYBE sub-branch (#64 is exactly this). The predicate reads the two registers and nothing else; the reason lives in atlas/walls.md and on the surfaces. The prize rides ON the edge so renderers must show temptation and trap together.",
   "triage-move": "APPLIES(finite-witness-search, triage surface) iff finite_handle_triage verdict in ('TARGET', 'MAYBE').",
   "workable": "APPLIES(witness-local-search, gap surface) iff status == 'open' AND witness_side != 'none' AND witness_feasibility in ('open-easy', 'plausible') — imported from tools/state_of_frontier.is_workable, never forked."
  },
  "schema": "efa-attack-graph-v1",
+ "source_vintages": {
+  "finite_handle_triage": "2026-07-26"
+ },
  "sources": [
   "atlas/stubs.json",
   "atlas/problems.json",
@@ -72068,7 +72317,8 @@
   "atlas/lean_lane.json",
   "atlas/effectivization_shortlist.json",
   "certificates/contracts.json",
-  "atlas/jc-crater/implication_graph.json"
+  "atlas/jc-crater/implication_graph.json",
+  "atlas/jc-crater/computed_statuses.json"
  ],
  "standing_rules": [
   "A claim never sets a status: graph statuses are byte-equal to atlas/stubs.json.",

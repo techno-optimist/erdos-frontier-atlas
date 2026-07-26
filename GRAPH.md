@@ -5,8 +5,14 @@ contains a machine-built graph over all 1,217 Erdős problems whose only job is
 to answer: **where do I strike, what exactly do I run, what must my receipt
 contain to be promotable, and what must I NOT touch?**
 
-## Cold start — four reads, ~9k tokens
+## Cold start — four reads (~42 KB)
 
+0. **[`COORDINATION.md`](COORDINATION.md) if you are going to write anything**
+   — register your lane first. Its rules bind every session: work on your own
+   branch and reach `main` by PR only; merged `certificates/<slug>/` are
+   FROZEN (extend with new files, never regenerate); never edit another
+   agent's files. The charter ([`FRONTIER_CARTOGRAPHY.md`](FRONTIER_CARTOGRAPHY.md)
+   §2 tenets, §6 honest scope, §8 agent protocol) binds every action.
 1. **This file** — the protocol (you are here).
 2. **`views/sorties.md`** — the Quartermaster's board: the do-not-spend list
    renders *first*, then the ranked strike list (T1 vetted targets → T4
@@ -42,9 +48,12 @@ surface.
 
 - `atlas/graph/graph.json` — nodes (problems, branch-level surfaces, moves,
   walls, evidence, external claims, incidents, OEIS/tag/MSC bridges, the
-  jc-crater cited-implication island) and tiered edges, every one carrying its
-  source file. Verbatim predicates for every mechanical rule live under
-  `predicates`.
+  jc-crater cited-implication island) and tiered edges, each carrying the
+  source it was derived from. Verbatim predicates for every mechanical rule
+  live under `predicates`. Everything under `jc:` is **conditional on an
+  external counterexample still awaiting confirmation** — each such node
+  carries that caveat in its `conditionality` field, and its
+  `lit_verification` records a literature match, not a truth verdict.
 - `atlas/graph/quarantine.json` — suggestion-tier material; empty in v1: the
   committed graph is 100% deterministic.
 - Regenerate: `make graph` · staleness gate: `make check-graph` · rules:

@@ -124,7 +124,7 @@ def validate(graph, quarantine, stubs, cards):
 
     # 10: quarantine discipline
     for q in quarantine.get("entries", []):
-        for field in ("source_file", "quote"):
+        for field in ("source_file", "line", "quote"):
             if not q.get(field):
                 errors.append("quarantine entry without a "
                               f"{field} anchor: {str(q)[:80]}")
