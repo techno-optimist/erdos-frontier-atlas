@@ -43,6 +43,17 @@ CANONICAL_SOURCE = "erdosproblems.com — metadata mirror of the community datab
 # solved upstream. Mirrors google-deepmind's own status reading.
 OPEN_STATES = {"open", "falsifiable", "verifiable", "decidable"}
 
+# Three of those "open" states are not merely open — they name a FINITE handle on
+# the problem, which is precisely this atlas's subject:
+#   decidable    resolved up to a finite check
+#   falsifiable  a finite counterexample would settle it
+#   verifiable   a finite check would settle it
+# Collapsing them into plain "open" throws away the one signal that says "compute
+# here". 43 of the 1217 carry one, including a $1000 falsifiable (#64) and a $500
+# decidable (#19). The status stays "open" — they ARE open — but the handle is
+# recorded alongside it so a scout can see it.
+FINITE_HANDLE_STATES = {"decidable", "falsifiable", "verifiable"}
+
 
 def _sha(repo: Path) -> str:
     try:
@@ -129,6 +140,7 @@ def build():
             "oeis": [x for x in (e.get("oeis") or []) if re.fullmatch(r"A\d{6}", str(x))],
             "tags": e.get("tags") or [],
             "upstream_state_raw": state,
+            "upstream_finite_handle": (state if state in FINITE_HANDLE_STATES else None),
             "upstream_status": upstream,
             "status": status,
             "statement_source": "link",

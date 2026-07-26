@@ -16,6 +16,7 @@
     "tags": {"type": "array", "items": {"type": "string"}},
     "msc": {"type": "array", "items": {"type": "string"}},
     "upstream_state_raw": {"type": ["string", "null"], "description": "verbatim teorth status.state"},
+    "upstream_finite_handle": {"type": ["string", "null"], "enum": ["decidable", "falsifiable", "verifiable", null], "description": "set when upstream's open state names a FINITE handle: decidable = resolved up to a finite check, falsifiable = a finite counterexample would settle it, verifiable = a finite check would settle it. Null otherwise. Distinguishes a target from a wall."},
     "upstream_status": {"type": "string", "enum": ["Open", "Solved", "unknown"]},
     "status": {"type": "string", "enum": ["stub", "open", "movable", "in-progress", "wall", "solved", "solved-upstream"]},
     "statement_source": {"type": "string", "enum": ["lean", "link"],
