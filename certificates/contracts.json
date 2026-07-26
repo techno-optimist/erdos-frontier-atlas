@@ -57,6 +57,11 @@
       "boundary": "Exact finite D(1..9) table; no effective Furstenberg-Katznelson threshold."
     },
     {
+      "path": "certificates/graffiti-290",
+      "classification": "certified_local",
+      "boundary": "Independent exact verification of an EXTERNAL claim (conjecture: Graffiti/Fajtlowicz #290; proof: Wilbanks and 'Annie', AGNT Labs) on a finite family only, and ONLY under the Written-on-the-Wall / Brewster gravity convention. Both halves of the convention split are reported: (a) under the gravity definition in Aouchiche-Hansen's 2010 survey the conjecture is reported REFUTED (Roucairol-Cazenave, arXiv:2409.18626v1 Sec. 5.2), and (b) those same authors call the Written-on-the-Wall / Brewster definition 'the correct definition' and report refutation was 'seemingly impossible' under it. Neither the refutation nor that judgement is adjudicated here. The paper's proof is not replayed; novelty and priority are not assessed."
+    },
+    {
       "path": "certificates/jacobian-conjecture",
       "classification": "certified_local",
       "boundary": "Independent exact verification of the external n=3 construction."
