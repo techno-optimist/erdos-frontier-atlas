@@ -9,12 +9,15 @@
 #   make book                rebuild book/BOOK.md ("Cartography of Numbers") from
 #                            book/chapters/*.md + the live ledgers
 #   make check-book          fail if book/BOOK.md is stale vs the data
+#   make graph               rebuild the attack graph (atlas/graph/ +
+#                            views/sorties.md + views/graph/ cards) — see GRAPH.md
+#   make check-graph         fail if any graph output is stale or breaks a rule
 #   make validate            gap-map validator (dependency-free) + full atlas
 #                            integrity check (needs: pip install -r requirements-dev.lock)
 #   make verify-certs        replay every fast in-repo certificate verifier
 #   make test                pytest over tests/
 
-.PHONY: hello-frontier state-of-frontier check-views book check-book validate verify-certs test check-contracts replay-contracts-fast replay-contracts-slow audit-fast audit-slow
+.PHONY: hello-frontier state-of-frontier check-views book check-book graph check-graph validate verify-certs test check-contracts replay-contracts-fast replay-contracts-slow audit-fast audit-slow
 
 hello-frontier:
 	bash scripts/hello_frontier.sh
@@ -30,6 +33,13 @@ book:
 
 check-book:
 	python3 book/build_book.py --check
+
+graph:
+	python3 tools/build_graph.py
+
+check-graph:
+	python3 tools/build_graph.py --check
+	python3 tools/validate_graph.py
 
 validate:
 	python3 tools/validate_gap_map.py
@@ -64,7 +74,7 @@ replay-contracts-fast:
 replay-contracts-slow:
 	python3 tools/check_certificate_contracts.py --profile slow
 
-audit-fast: validate check-views check-book check-contracts replay-contracts-fast test
+audit-fast: validate check-views check-book check-graph check-contracts replay-contracts-fast test
 
 audit-slow: check-receipts
 
