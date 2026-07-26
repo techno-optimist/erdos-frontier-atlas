@@ -331,7 +331,7 @@
         },
         {
           "path": "requirements-dev.lock",
-          "sha256": "02ae2881260379d48ab819edfb56d186cd85b5b3d0232555fe28611861f05f75"
+          "sha256": "c5013ea586ef8af85be0f9099d424aa59659efc40eb2fe5465159d90c7b7bd91"
         }
       ],
       "replays": [
