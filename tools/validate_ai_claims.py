@@ -61,6 +61,23 @@ def main() -> int:
                           f"annotate problems the hub actually indexes")
             continue
 
+        if "claimed_system" in e or "claimed_verification" in e:
+            errors.append(
+                f"{where}: carries claimed_system/claimed_verification. Those fields were "
+                f"mis-extracted from an adjacent card and are not recoverable per-record; "
+                f"use registry_verification, taken from the record's own details.")
+
+        if "registry_says_not_a_resolution" not in e:
+            errors.append(
+                f"{where}: registry_says_not_a_resolution is required. Whether the SOURCE "
+                f"itself calls a claim a variant is the field that distinguishes a resolution "
+                f"from a partial result, and omitting it makes every claim look alike.")
+
+        if e.get("registry_says_not_a_resolution") and not e.get("registry_scope_note"):
+            errors.append(
+                f"{where}: flagged as not-a-resolution but quotes no scope note; the "
+                f"source's own words are the evidence for that flag")
+
         if not e.get("claim_sources"):
             errors.append(f"{where}: no claim_sources — a claim we cannot point at is not "
                           f"recordable")
