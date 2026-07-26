@@ -64489,7 +64489,7 @@
    "id": "S:gap:366:8ee41086",
    "kind": "verified_range",
    "lower": {
-    "source": "complete consecutive-powerful-pair list below 10^22 (Johnson, OEIS A060355 b-file); only (8,9) and (12167,12168) have a 3-full member (erdosproblems.com/366 remarks)",
+    "source": "complete consecutive-powerful-pair list below 10^22 — a SINGLE unreplicated computation (Johnson's OEIS A060355 b-file, 39 terms, uploaded 15 Nov 2011; no published method, code or certificate); only (8,9) and (12167,12168) have a 3-full member (erdosproblems.com/366 remarks)",
     "value": "1e22",
     "year": 2011
    },
@@ -68450,7 +68450,7 @@
    "known_computational_frontier": "No examples for n < 10^22 — but this bound is INHERITED from OEIS A060355 (consecutive powerful pairs), b-file by Donovan Johnson, 39 terms < 10^22. That is the harder, sqrt(X)-cost search. No sequence or computation exists anywhere for the cubefull-driven version, and OEIS has NO sequence at all for consecutive cubefull pairs (Erdős's weaker question in [Er76d], Guy B16). Page last edited 16 July 2026 and actively curated (Cambie, Stephan, van Doorn), so absence of a deeper bound is meaningful …[truncated; see source]",
    "overlay": "finite_handle_triage",
    "problem": 366,
-   "search_space_estimate": "Only n+1 needs enumerating: #cubefull <= X ~ 5.5·X^(1/3) (A036966; generate as x^5·y^4·z^3, streamed, no storage). At X = 1e24: 5.5e8 candidates x ~1e3 ops each (trial-divide neighbour to 1e4, then perfect-power test on the cofactor — valid since a leftover p^2·q^3 with p,q >= 1e4 exceeds 1e20 only rarely) = ~5e11 ops. X = 1e26 costs 2.6e9 x 1e3 = 2.6e12.",
+   "search_space_estimate": "Only n+1 needs enumerating: #cubefull <= X ~ 4.659*X^(1/3) (constant A362974 = 4.659266..., counts tabulated in A362973; Bateman-Grosswald 1958 / Finch 2003 sec. 2.6.1). Generate as x^5*y^4*z^3 per A036966 (Greathouse), streamed, no storage -- but that stream is NOT deduplicated and emits ~7.65*X^(1/3) = zeta(4/3)*zeta(5/3) raw triples, so budget the raw count, not the distinct one. At X = 1e24: …[truncated; see source]",
    "smallest_untested_case": "n > 10^22. Concretely: the first cubefull number c in (10^22, 10^24] with c-1 (or c+1, reverse orientation) powerful.",
    "statement_short": "Is there a 2-full n with n+1 3-full? (p|n implies p^2|n; p|n+1 implies p^3|n+1.)",
    "type": "surface",
