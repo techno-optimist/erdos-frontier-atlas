@@ -1,0 +1,1083 @@
+{
+  "certified": [
+    "each F_{k,d} is a polynomial map A^3 -> A^3 (exact x-divisibility)",
+    "det J F_{k,d} == -k/(k+1) as a polynomial identity in Q[x,y,z]",
+    "source torus weights (1,-k,-k-1)",
+    "generic fibre has exactly k(d+1) points (exact gcd conditions)",
+    "F_{k,d} is not injective (explicit exhibited colliding pair)",
+    "our rebuild reproduces the paper's printed (k,d)=(2,3) expansion exactly"
+  ],
+  "claim_owner": "Nathan Wilbanks and \"Annie\" (AGNT Labs Technical Report III v1.0, 2026-07-21)",
+  "collisions_over_Q": 22,
+  "collisions_over_cyclotomic": 5,
+  "controls": 11,
+  "grid": {
+    "d_max": 8,
+    "k_max": 6,
+    "k_min": 1,
+    "members": 27
+  },
+  "members": [
+    {
+      "collision": {
+        "field": "Q",
+        "image": [
+          "0",
+          "1",
+          "-2"
+        ],
+        "mechanism": "two-root",
+        "p1": [
+          "1",
+          "-1",
+          "9/2"
+        ],
+        "p2": [
+          "-1/3",
+          "2",
+          "-36"
+        ]
+      },
+      "d": 2,
+      "det": "-1/2",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 3,
+      "k": 1,
+      "monomials": [
+        7,
+        6,
+        3
+      ],
+      "weights": [
+        1,
+        -1,
+        -2
+      ]
+    },
+    {
+      "collision": {
+        "field": "Q",
+        "image": [
+          "0",
+          "0",
+          "1"
+        ],
+        "mechanism": "sign",
+        "p1": [
+          "1",
+          "0",
+          "0"
+        ],
+        "p2": [
+          "-1",
+          "0",
+          "2"
+        ]
+      },
+      "d": 3,
+      "det": "-1/2",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 4,
+      "k": 1,
+      "monomials": [
+        16,
+        14,
+        3
+      ],
+      "paper_witness_odd_odd": "F(1,0,0) = F(-1,0,2) = (0,0,1)",
+      "weights": [
+        1,
+        -1,
+        -2
+      ]
+    },
+    {
+      "collision": {
+        "field": "Q",
+        "image": [
+          "0",
+          "1",
+          "-14/3"
+        ],
+        "mechanism": "two-root",
+        "p1": [
+          "1",
+          "-1",
+          "83/12"
+        ],
+        "p2": [
+          "-7/31",
+          "4",
+          "-53444/147"
+        ]
+      },
+      "d": 4,
+      "det": "-1/2",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 5,
+      "k": 1,
+      "monomials": [
+        28,
+        25,
+        3
+      ],
+      "weights": [
+        1,
+        -1,
+        -2
+      ]
+    },
+    {
+      "collision": {
+        "field": "Q",
+        "image": [
+          "0",
+          "0",
+          "1"
+        ],
+        "mechanism": "sign",
+        "p1": [
+          "1",
+          "0",
+          "0"
+        ],
+        "p2": [
+          "-1",
+          "0",
+          "2"
+        ]
+      },
+      "d": 5,
+      "det": "-1/2",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 6,
+      "k": 1,
+      "monomials": [
+        43,
+        39,
+        3
+      ],
+      "paper_witness_odd_odd": "F(1,0,0) = F(-1,0,2) = (0,0,1)",
+      "weights": [
+        1,
+        -1,
+        -2
+      ]
+    },
+    {
+      "collision": {
+        "field": "Q",
+        "image": [
+          "0",
+          "1",
+          "-62/5"
+        ],
+        "mechanism": "two-root",
+        "p1": [
+          "1",
+          "-1",
+          "437/30"
+        ],
+        "p2": [
+          "-31/191",
+          "6",
+          "-13546102/4805"
+        ]
+      },
+      "d": 6,
+      "det": "-1/2",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 7,
+      "k": 1,
+      "monomials": [
+        61,
+        56,
+        3
+      ],
+      "weights": [
+        1,
+        -1,
+        -2
+      ]
+    },
+    {
+      "collision": {
+        "field": "Q",
+        "image": [
+          "0",
+          "0",
+          "1"
+        ],
+        "mechanism": "sign",
+        "p1": [
+          "1",
+          "0",
+          "0"
+        ],
+        "p2": [
+          "-1",
+          "0",
+          "2"
+        ]
+      },
+      "d": 7,
+      "det": "-1/2",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 8,
+      "k": 1,
+      "monomials": [
+        82,
+        76,
+        3
+      ],
+      "paper_witness_odd_odd": "F(1,0,0) = F(-1,0,2) = (0,0,1)",
+      "weights": [
+        1,
+        -1,
+        -2
+      ]
+    },
+    {
+      "collision": {
+        "field": "Q",
+        "image": [
+          "0",
+          "1",
+          "-254/7"
+        ],
+        "mechanism": "two-root",
+        "p1": [
+          "1",
+          "-1",
+          "2151/56"
+        ],
+        "p2": [
+          "-127/1023",
+          "8",
+          "-2125687608/112903"
+        ]
+      },
+      "d": 8,
+      "det": "-1/2",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 9,
+      "k": 1,
+      "monomials": [
+        106,
+        99,
+        3
+      ],
+      "weights": [
+        1,
+        -1,
+        -2
+      ]
+    },
+    {
+      "collision": {
+        "field": "Q",
+        "image": [
+          "0",
+          "0",
+          "1"
+        ],
+        "mechanism": "root-of-unity",
+        "p1": [
+          "1",
+          "0",
+          "0"
+        ],
+        "p2": [
+          "-1",
+          "-2",
+          "-16/3"
+        ]
+      },
+      "d": 3,
+      "det": "-2/3",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 8,
+      "k": 2,
+      "monomials": [
+        9,
+        8,
+        3
+      ],
+      "weights": [
+        1,
+        -2,
+        -3
+      ]
+    },
+    {
+      "collision": {
+        "field": "Q",
+        "image": [
+          "0",
+          "0",
+          "1"
+        ],
+        "mechanism": "sign",
+        "p1": [
+          "1",
+          "0",
+          "0"
+        ],
+        "p2": [
+          "-1",
+          "0",
+          "-2"
+        ]
+      },
+      "d": 4,
+      "det": "-2/3",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 10,
+      "k": 2,
+      "monomials": [
+        19,
+        16,
+        3
+      ],
+      "weights": [
+        1,
+        -2,
+        -3
+      ]
+    },
+    {
+      "collision": {
+        "field": "Q",
+        "image": [
+          "0",
+          "0",
+          "1"
+        ],
+        "mechanism": "root-of-unity",
+        "p1": [
+          "1",
+          "0",
+          "0"
+        ],
+        "p2": [
+          "-1",
+          "-2",
+          "-24/5"
+        ]
+      },
+      "d": 5,
+      "det": "-2/3",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 12,
+      "k": 2,
+      "monomials": [
+        32,
+        29,
+        3
+      ],
+      "weights": [
+        1,
+        -2,
+        -3
+      ]
+    },
+    {
+      "collision": {
+        "field": "Q",
+        "image": [
+          "0",
+          "0",
+          "1"
+        ],
+        "mechanism": "sign",
+        "p1": [
+          "1",
+          "0",
+          "0"
+        ],
+        "p2": [
+          "-1",
+          "0",
+          "-2"
+        ]
+      },
+      "d": 6,
+      "det": "-2/3",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 14,
+      "k": 2,
+      "monomials": [
+        48,
+        43,
+        3
+      ],
+      "weights": [
+        1,
+        -2,
+        -3
+      ]
+    },
+    {
+      "collision": {
+        "field": "Q",
+        "image": [
+          "0",
+          "0",
+          "1"
+        ],
+        "mechanism": "root-of-unity",
+        "p1": [
+          "1",
+          "0",
+          "0"
+        ],
+        "p2": [
+          "-1",
+          "-2",
+          "-32/7"
+        ]
+      },
+      "d": 7,
+      "det": "-2/3",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 16,
+      "k": 2,
+      "monomials": [
+        67,
+        62,
+        3
+      ],
+      "weights": [
+        1,
+        -2,
+        -3
+      ]
+    },
+    {
+      "collision": {
+        "field": "Q",
+        "image": [
+          "0",
+          "0",
+          "1"
+        ],
+        "mechanism": "sign",
+        "p1": [
+          "1",
+          "0",
+          "0"
+        ],
+        "p2": [
+          "-1",
+          "0",
+          "-2"
+        ]
+      },
+      "d": 8,
+      "det": "-2/3",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 18,
+      "k": 2,
+      "monomials": [
+        89,
+        82,
+        3
+      ],
+      "weights": [
+        1,
+        -2,
+        -3
+      ]
+    },
+    {
+      "collision": {
+        "field": "Q(zeta_3)",
+        "image": [
+          "[0,0]",
+          "[0,0]",
+          "[1,0]"
+        ],
+        "mechanism": "root-of-unity",
+        "p1": [
+          "[1,0]",
+          "[0,0]",
+          "[0,0]"
+        ],
+        "p2": [
+          "[-1,-1]",
+          "[-2,-1]",
+          "[-3/4,15/4]"
+        ]
+      },
+      "d": 4,
+      "det": "-3/4",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 15,
+      "k": 3,
+      "monomials": [
+        11,
+        10,
+        3
+      ],
+      "weights": [
+        1,
+        -3,
+        -4
+      ]
+    },
+    {
+      "collision": {
+        "field": "Q",
+        "image": [
+          "0",
+          "0",
+          "1"
+        ],
+        "mechanism": "sign",
+        "p1": [
+          "1",
+          "0",
+          "0"
+        ],
+        "p2": [
+          "-1",
+          "0",
+          "2"
+        ]
+      },
+      "d": 5,
+      "det": "-3/4",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 18,
+      "k": 3,
+      "monomials": [
+        22,
+        20,
+        3
+      ],
+      "paper_witness_odd_odd": "F(1,0,0) = F(-1,0,2) = (0,0,1)",
+      "weights": [
+        1,
+        -3,
+        -4
+      ]
+    },
+    {
+      "collision": {
+        "field": "Q(zeta_3)",
+        "image": [
+          "[0,0]",
+          "[0,0]",
+          "[1,0]"
+        ],
+        "mechanism": "root-of-unity",
+        "p1": [
+          "[1,0]",
+          "[0,0]",
+          "[0,0]"
+        ],
+        "p2": [
+          "[-1,-1]",
+          "[-2,-1]",
+          "[-1/2,7/2]"
+        ]
+      },
+      "d": 6,
+      "det": "-3/4",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 21,
+      "k": 3,
+      "monomials": [
+        36,
+        33,
+        3
+      ],
+      "weights": [
+        1,
+        -3,
+        -4
+      ]
+    },
+    {
+      "collision": {
+        "field": "Q",
+        "image": [
+          "0",
+          "0",
+          "1"
+        ],
+        "mechanism": "sign",
+        "p1": [
+          "1",
+          "0",
+          "0"
+        ],
+        "p2": [
+          "-1",
+          "0",
+          "2"
+        ]
+      },
+      "d": 7,
+      "det": "-3/4",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 24,
+      "k": 3,
+      "monomials": [
+        53,
+        49,
+        3
+      ],
+      "paper_witness_odd_odd": "F(1,0,0) = F(-1,0,2) = (0,0,1)",
+      "weights": [
+        1,
+        -3,
+        -4
+      ]
+    },
+    {
+      "collision": {
+        "field": "Q(zeta_3)",
+        "image": [
+          "[0,0]",
+          "[0,0]",
+          "[1,0]"
+        ],
+        "mechanism": "root-of-unity",
+        "p1": [
+          "[1,0]",
+          "[0,0]",
+          "[0,0]"
+        ],
+        "p2": [
+          "[-1,-1]",
+          "[-2,-1]",
+          "[-3/8,27/8]"
+        ]
+      },
+      "d": 8,
+      "det": "-3/4",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 27,
+      "k": 3,
+      "monomials": [
+        73,
+        68,
+        3
+      ],
+      "weights": [
+        1,
+        -3,
+        -4
+      ]
+    },
+    {
+      "collision": {
+        "field": "Q",
+        "image": [
+          "0",
+          "0",
+          "1"
+        ],
+        "mechanism": "root-of-unity",
+        "p1": [
+          "1",
+          "0",
+          "0"
+        ],
+        "p2": [
+          "-1",
+          "-2",
+          "-28/5"
+        ]
+      },
+      "d": 5,
+      "det": "-4/5",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 24,
+      "k": 4,
+      "monomials": [
+        13,
+        12,
+        3
+      ],
+      "weights": [
+        1,
+        -4,
+        -5
+      ]
+    },
+    {
+      "collision": {
+        "field": "Q",
+        "image": [
+          "0",
+          "0",
+          "1"
+        ],
+        "mechanism": "sign",
+        "p1": [
+          "1",
+          "0",
+          "0"
+        ],
+        "p2": [
+          "-1",
+          "0",
+          "-2"
+        ]
+      },
+      "d": 6,
+      "det": "-4/5",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 28,
+      "k": 4,
+      "monomials": [
+        24,
+        23,
+        3
+      ],
+      "weights": [
+        1,
+        -4,
+        -5
+      ]
+    },
+    {
+      "collision": {
+        "field": "Q",
+        "image": [
+          "0",
+          "0",
+          "1"
+        ],
+        "mechanism": "root-of-unity",
+        "p1": [
+          "1",
+          "0",
+          "0"
+        ],
+        "p2": [
+          "-1",
+          "-2",
+          "-36/7"
+        ]
+      },
+      "d": 7,
+      "det": "-4/5",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 32,
+      "k": 4,
+      "monomials": [
+        40,
+        37,
+        3
+      ],
+      "weights": [
+        1,
+        -4,
+        -5
+      ]
+    },
+    {
+      "collision": {
+        "field": "Q",
+        "image": [
+          "0",
+          "0",
+          "1"
+        ],
+        "mechanism": "sign",
+        "p1": [
+          "1",
+          "0",
+          "0"
+        ],
+        "p2": [
+          "-1",
+          "0",
+          "-2"
+        ]
+      },
+      "d": 8,
+      "det": "-4/5",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 36,
+      "k": 4,
+      "monomials": [
+        57,
+        54,
+        3
+      ],
+      "weights": [
+        1,
+        -4,
+        -5
+      ]
+    },
+    {
+      "collision": {
+        "field": "Q(zeta_5)",
+        "image": [
+          "[0,0,0,0]",
+          "[0,0,0,0]",
+          "[1,0,0,0]"
+        ],
+        "mechanism": "root-of-unity",
+        "p1": [
+          "[1,0,0,0]",
+          "[0,0,0,0]",
+          "[0,0,0,0]"
+        ],
+        "p2": [
+          "[-1,-1,-1,-1]",
+          "[-2,-1,-1,-1]",
+          "[-11/6,17/6,-1,0]"
+        ]
+      },
+      "d": 6,
+      "det": "-5/6",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 35,
+      "k": 5,
+      "monomials": [
+        15,
+        14,
+        3
+      ],
+      "weights": [
+        1,
+        -5,
+        -6
+      ]
+    },
+    {
+      "collision": {
+        "field": "Q",
+        "image": [
+          "0",
+          "0",
+          "1"
+        ],
+        "mechanism": "sign",
+        "p1": [
+          "1",
+          "0",
+          "0"
+        ],
+        "p2": [
+          "-1",
+          "0",
+          "2"
+        ]
+      },
+      "d": 7,
+      "det": "-5/6",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 40,
+      "k": 5,
+      "monomials": [
+        28,
+        26,
+        3
+      ],
+      "paper_witness_odd_odd": "F(1,0,0) = F(-1,0,2) = (0,0,1)",
+      "weights": [
+        1,
+        -5,
+        -6
+      ]
+    },
+    {
+      "collision": {
+        "field": "Q(zeta_5)",
+        "image": [
+          "[0,0,0,0]",
+          "[0,0,0,0]",
+          "[1,0,0,0]"
+        ],
+        "mechanism": "root-of-unity",
+        "p1": [
+          "[1,0,0,0]",
+          "[0,0,0,0]",
+          "[0,0,0,0]"
+        ],
+        "p2": [
+          "[-1,-1,-1,-1]",
+          "[-2,-1,-1,-1]",
+          "[-13/8,21/8,-1,0]"
+        ]
+      },
+      "d": 8,
+      "det": "-5/6",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 45,
+      "k": 5,
+      "monomials": [
+        44,
+        41,
+        3
+      ],
+      "weights": [
+        1,
+        -5,
+        -6
+      ]
+    },
+    {
+      "collision": {
+        "field": "Q",
+        "image": [
+          "0",
+          "0",
+          "1"
+        ],
+        "mechanism": "root-of-unity",
+        "p1": [
+          "1",
+          "0",
+          "0"
+        ],
+        "p2": [
+          "-1",
+          "-2",
+          "-40/7"
+        ]
+      },
+      "d": 7,
+      "det": "-6/7",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 48,
+      "k": 6,
+      "monomials": [
+        17,
+        16,
+        3
+      ],
+      "weights": [
+        1,
+        -6,
+        -7
+      ]
+    },
+    {
+      "collision": {
+        "field": "Q",
+        "image": [
+          "0",
+          "0",
+          "1"
+        ],
+        "mechanism": "sign",
+        "p1": [
+          "1",
+          "0",
+          "0"
+        ],
+        "p2": [
+          "-1",
+          "0",
+          "-2"
+        ]
+      },
+      "d": 8,
+      "det": "-6/7",
+      "etale_target_VT": [
+        "1",
+        "0"
+      ],
+      "generic_degree": 54,
+      "k": 6,
+      "monomials": [
+        31,
+        29,
+        3
+      ],
+      "weights": [
+        1,
+        -6,
+        -7
+      ]
+    }
+  ],
+  "our_contribution": "independent exact replay only; the construction is not ours",
+  "schema": "keller-power-weighted-lifts-v1"
+}

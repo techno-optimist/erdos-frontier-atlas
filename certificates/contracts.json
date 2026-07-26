@@ -72,6 +72,11 @@
       "boundary": "Search-bounded family probes; receipts are not fully re-derived by the legacy drift gate."
     },
     {
+      "path": "certificates/keller-power-weighted-lifts",
+      "classification": "certified_local",
+      "boundary": "Independent exact replay of an external two-parameter Keller family (Wilbanks and \"Annie\", AGNT Labs) on its published 27-member grid. Reimplemented from the paper's prose, not replayed from the authors' receipts. Novelty and priority are not certified, and the k=1 row is prior art (Gallagher)."
+    },
+    {
       "path": "certificates/plane-jacobian-true",
       "classification": "partial_local",
       "boundary": "TRUE-lane exploration of the plane (n=2) Jacobian Conjecture, which remains OPEN. Machine-checked elementary cases over a finite integer lattice only; plane JC is already a theorem for degree <= 100 (Moh 1983), so nothing here is new progress on the open problem."
