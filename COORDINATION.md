@@ -116,3 +116,42 @@ to excluding it; `q` must now be attacked directly.
 rational arithmetic. All census figures in this section (31,548 / 873,264 /
 0 Theorem A violations / >1.18M) and the exact `q` and `dim ker π` values are
 **reported by the referee lane, not re-derived** by the certificate.
+
+## 2026-07-26 - Erdos 142 / D15: the CONE obstruction, certified per object
+
+Certificate: `certificates/erdos-142-cone-obstruction/` (`python3 -I verify.py`,
+~0.5 s, stdlib only, wired into `make verify-certs`).
+
+**Context, and a retraction of something this lane repeated for a long time.**
+The construction gate needs a closed carry-triple product with quotient
+signature `(q+,q-) = (1,0)` **and** a cone certificate. The first half now
+EXISTS - 298 verified objects, the sealed engine's own `rank_gate` returning
+quotient dimension 1 with `passes_quotient_one = True`. So **"q = 1 has never
+been observed; the unique absent value in 0..24 across >1.18M closed products"
+is STALE and must not be repeated** - it was a search-region artifact, not a
+structural fact.
+
+**This certificate is the second half, and it closes negatively.** For three
+`q=1` objects it publishes a vertex potential `p` and tag multiplier `theta`
+whose edge functional `Y(e) = p[t] - p[s] + <theta, tag(e)>` satisfies
+`Y >= 0` on every edge and `Y > 0` off the collar. A cone point is a
+circulation with zero tag, so `0 = sum Y(e)w(e) >= sum_nondiag Y(e) > 0` - a
+contradiction, using only `w >= 0` and `w >= 1` off the collar. **No solver,
+no coefficient cap, no integrality, no sigma-invariance, no reference to q.**
+It replaces a CP-SAT INFEASIBLE verdict with a line anyone can audit.
+
+**sigma was never the blocker.** The lane pursued `(1,0)` over `(0,1)`
+precisely to obtain a sigma-invariant generator. A relaxation ladder shows:
+baseline INFEASIBLE; **drop sigma-invariance -> still INFEASIBLE**; drop
+zero-tag, or non-negativity, or the strict `>=1` -> feasible. The conflict is
+zero-tag + non-negativity + strict positivity and survives dropping symmetry
+entirely. Do not spend further compute on the `(1,0)`-vs-`(0,1)` distinction
+for cone purposes.
+
+**Scope, stated exactly.** The certificate settles the three named objects and
+nothing more. It is **not** a theorem that every `q=1` product has an
+infeasible cone; none is offered. Separately measured but NOT certified here:
+collar-LP infeasibility across all 298 known `q=1` objects with the sealed
+engine agreeing 298/298 - a measurement over objects found so far.
+
+`erdos142_solved: false`. `new_r3_bound: false`.
