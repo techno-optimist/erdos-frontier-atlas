@@ -56,7 +56,7 @@ upstream through the maintainers' channels.
 |---|---|
 | **The field** | [`FRONTIER_CARTOGRAPHY.md`](FRONTIER_CARTOGRAPHY.md) (charter) · [`book/`](book) (the living book; `make book`) · [`RELEASING.md`](RELEASING.md) (data releases) |
 | **The map** | [`atlas/stubs.json`](atlas/stubs.json) (1217-problem hub) · [`atlas/problems.json`](atlas/problems.json) (51 deep audits) · [`atlas/gap_map.json`](atlas/gap_map.json) (the 222-quantity ledger; validate with [`tools/validate_gap_map.py`](tools/validate_gap_map.py)) · [`atlas/jc-crater/`](atlas/jc-crater/) (the 2026 Jacobian-Conjecture blast radius: primary-sourced nodes, typed edges, **machine-propagated** statuses + newborn quantities) · [`atlas/walls.md`](atlas/walls.md) (the do-not-enter list) · [`atlas/effectivization_shortlist.json`](atlas/effectivization_shortlist.json) (fence targets, alive **and** dead) · [`atlas/lanes.md`](atlas/lanes.md) (solver lanes) |
-| **The evidence** | [`certificates/`](certificates) — 18 lanes, each shipping its own dependency-free verifier and replay command.<br>**Erdős cells:** [`erdos-552`](certificates/erdos-552) · [`erdos-552-f39`](certificates/erdos-552-f39) (the kept retraction) · [`erdos-13`](certificates/erdos-13) · [`erdos-979`](certificates/erdos-979) · [`erdos-1107`](certificates/erdos-1107) · [`erdos-142`](certificates/erdos-142) (construction no-go) · [`erdos-142-kerpi-refutation`](certificates/erdos-142-kerpi-refutation) (two lemmas refuted)<br>**Ramsey / nonexistence:** [`ramsey-3-3`](certificates/ramsey-3-3) · [`ramsey-3-4`](certificates/ramsey-3-4) · [`fk-square`](certificates/fk-square)<br>**The JC crater** (see [below](#the-2026-jacobian-conjecture-crater)): [`jacobian-conjecture`](certificates/jacobian-conjecture) (independent verification of Alpöge's 2026 counterexample — external construction, ours is the replay) · [`dixmier-conjecture`](certificates/dixmier-conjecture) · [`jc-anatomy`](certificates/jc-anatomy) · [`jc-family-fences`](certificates/jc-family-fences) · [`plane-jacobian-true`](certificates/plane-jacobian-true)<br>**Adjacent walls & residuals:** [`sendov-conjecture`](certificates/sendov-conjecture) (0 counterexamples — a wall) · [`ringel-nonstretchability`](certificates/ringel-nonstretchability) · [`fibonacci-macro-residual`](certificates/fibonacci-macro-residual)<br>plus [`observatory/`](observatory) (certificate-size measurements) and [`progress/`](progress) (append-only agent receipts) |
+| **The evidence** | [`certificates/`](certificates) — 22 lanes, each shipping its own dependency-free verifier and replay command.<br>**Erdős cells:** [`erdos-552`](certificates/erdos-552) · [`erdos-552-f39`](certificates/erdos-552-f39) (the kept retraction) · [`erdos-13`](certificates/erdos-13) · [`erdos-979`](certificates/erdos-979) · [`erdos-1107`](certificates/erdos-1107) · [`erdos-142`](certificates/erdos-142) (construction no-go) · [`erdos-142-kerpi-refutation`](certificates/erdos-142-kerpi-refutation) (two lemmas refuted)<br>**Ramsey / nonexistence:** [`ramsey-3-3`](certificates/ramsey-3-3) · [`ramsey-3-4`](certificates/ramsey-3-4) · [`fk-square`](certificates/fk-square)<br>**The JC crater** (see [below](#the-2026-jacobian-conjecture-crater)): [`jacobian-conjecture`](certificates/jacobian-conjecture) (independent verification of Alpöge's 2026 counterexample — external construction, ours is the replay) · [`dixmier-conjecture`](certificates/dixmier-conjecture) · [`jc-anatomy`](certificates/jc-anatomy) · [`jc-family-fences`](certificates/jc-family-fences) · [`plane-jacobian-true`](certificates/plane-jacobian-true)<br>**[Independent verifications of others' results](#independent-verifications-of-other-peoples-results):** [`graffiti-284-refutation`](certificates/graffiti-284-refutation) · [`graffiti-290`](certificates/graffiti-290) · [`keller-power-weighted-lifts`](certificates/keller-power-weighted-lifts) (external authors — ours is the replay)<br>**Adjacent walls & residuals:** [`sendov-conjecture`](certificates/sendov-conjecture) (0 counterexamples — a wall) · [`ringel-nonstretchability`](certificates/ringel-nonstretchability) · [`fibonacci-macro-residual`](certificates/fibonacci-macro-residual)<br>plus [`observatory/`](observatory) (certificate-size measurements) and [`progress/`](progress) (append-only agent receipts) |
 | **The machinery** | [`tools/`](tools) (validators, generators, compilers) · [`views/`](views) (generated boards + the [operations annex](views/operations.md): campaigns, board classes, the packaged bounty boards) · [`tests/`](tests) |
 
 Install the pinned release-check dependency with
@@ -152,6 +152,42 @@ down, in [`atlas/jc-crater/`](atlas/jc-crater/):
 The engine is reusable: [`tools/crater.py`](tools/crater.py) generalizes it into a
 polarity-aware crater tool, so the next falsification anywhere gets the same
 treatment.
+
+## Independent verifications of other people's results
+
+Claims arrive faster than anyone can check them. A replay a stranger can run in
+one command is the cheapest useful thing this repository can offer their author —
+so where a result is finite and checkable, we check it and publish the checker.
+
+**These are not our results.** Each lane states its author in the first lines, and
+our contribution is the replay and nothing else. All are self-published and
+unrefereed; each carries its own caveats at the claim, not in a footnote.
+
+| result | author | what our replay establishes |
+|---|---|---|
+| [`jacobian-conjecture`](certificates/jacobian-conjecture) — JC is false at `n = 3` | Alpöge (2026) | the counterexample is exact: `det ≡ −2`, dual-path collision, in exact rational arithmetic |
+| [`graffiti-284-refutation`](certificates/graffiti-284-refutation) — Graffiti 284 is false | Nathan Wilbanks and Annie, AGNT Labs | Hoffman–Singleton built from the Robertson construction, `λ_min(D) = −4` by integer algebra with **no eigensolver**, and minimum dual degree **computed** — the authors' own script types both numbers in as literals |
+| [`graffiti-290`](certificates/graffiti-290) — Graffiti 290 holds | Nathan Wilbanks and Annie, AGNT Labs | exhaustive over all 1360 girth-≥5 graphs of order ≤ 10, exact throughout — **under the Written-on-the-Wall gravity convention**, which is not the only one in the literature (see below) |
+| [`keller-power-weighted-lifts`](certificates/keller-power-weighted-lifts) — a 2-parameter family of non-injective Keller maps | Annie, AGNT Labs Technical Report III | all 27 published members rebuilt from the paper's prose: genuinely polynomial, `det ≡ −k/(k+1)` as a coefficient identity, and the fibre degree **counted** rather than restated |
+
+Two things a reader should know before citing any of this:
+
+**Graffiti 290's truth depends on a definition.** Under the "gravity" definition in
+Aouchiche–Hansen's 2010 survey the statement is refuted instantly; under the
+Written-on-the-Wall / Brewster et al. definition — the one the theorem is stated
+over, and the one our verifier implements — it survives. That is not us choosing a
+favourable reading: the authors who found the refutation are the ones who call the
+survey definition a misstatement and the Written-on-the-Wall definition "the
+correct definition" (Roucairol & Cazenave, [arXiv:2409.18626](https://arxiv.org/abs/2409.18626)
+§5.2). Both halves belong at the claim.
+
+**A verifier cannot check its own source.** Every lane here defends against
+corrupted *data* — poison the witness or the receipt and the replay fails. None can
+defend against an edit to itself: stub a gate, hardcode a verdict, and the file
+will print PASS. That gap is closed by the `sha256` pinned in
+[`certificates/contracts.json`](certificates/contracts.json), plus git history and
+review — and each lane says so in its own words rather than leaving a reader to
+assume otherwise.
 
 ## Machine-checked formal proofs
 

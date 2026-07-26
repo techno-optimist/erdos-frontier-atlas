@@ -25,6 +25,7 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
+          cache-dependency-path: requirements-dev.lock
       - run: python -m pip install -r requirements-dev.lock
       - run: make audit-fast
 
@@ -38,5 +39,6 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
+          cache-dependency-path: requirements-dev.lock
       - run: python -m pip install -r requirements-dev.lock
       - run: make audit-slow
