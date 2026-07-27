@@ -5,12 +5,12 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 379,
-   "evidenced_by": 10,
-   "has_surface": 318,
+   "evidenced_by": 11,
+   "has_surface": 319,
    "learned_from": 5,
    "measures": 223,
    "references": 479,
-   "retracts": 14,
+   "retracts": 17,
    "same_family": 114,
    "tagged": 1979,
    "trap": 7,
@@ -18,22 +18,22 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 14,
+   "evidence_claim": 15,
    "evidence_container": 28,
    "external_claim": 91,
-   "incident": 23,
+   "incident": 26,
    "move": 7,
    "msc": 17,
    "oeis_seq": 403,
    "problem": 1217,
-   "surface": 318,
+   "surface": 319,
    "tag": 41,
    "wall": 214
   },
   "tiers": {
    "cited-implication": 29,
-   "deterministic-rule": 3949,
-   "validator-enforced": 24
+   "deterministic-rule": 3950,
+   "validator-enforced": 28
   }
  },
  "edges": [
@@ -5264,6 +5264,14 @@
    "type": "evidenced_by"
   },
   {
+   "dst": "E:claim:erdos-699-rowsweep-1e8",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P699",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
    "dst": "E:claim:erdos-743-k10-packing",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
@@ -6943,6 +6951,13 @@
    "dst": "S:gap:695:160904d2",
    "source": "atlas/gap_map.json",
    "src": "P695",
+   "tier": "deterministic-rule",
+   "type": "has_surface"
+  },
+  {
+   "dst": "S:gap:699:6362e233",
+   "source": "atlas/gap_map.json",
+   "src": "P699",
    "tier": "deterministic-rule",
    "type": "has_surface"
   },
@@ -12484,9 +12499,23 @@
    "type": "retracts"
   },
   {
+   "dst": "E:claim:erdos-699-rowsweep-1e8",
+   "source": "certificates/contracts.json",
+   "src": "I:pin:323bc1be",
+   "tier": "validator-enforced",
+   "type": "retracts"
+  },
+  {
    "dst": "E:claim:erdos-993-unimodal-n30",
    "source": "certificates/contracts.json",
    "src": "I:pin:5d2c1a12",
+   "tier": "validator-enforced",
+   "type": "retracts"
+  },
+  {
+   "dst": "E:claim:erdos-699-rowsweep-1e8",
+   "source": "certificates/contracts.json",
+   "src": "I:pin:69919a0f",
    "tier": "validator-enforced",
    "type": "retracts"
   },
@@ -12550,6 +12579,13 @@
    "dst": "E:claim:erdos-979-a6-public",
    "source": "certificates/contracts.json",
    "src": "I:pin:d0112dbe",
+   "tier": "validator-enforced",
+   "type": "retracts"
+  },
+  {
+   "dst": "E:claim:erdos-699-rowsweep-1e8",
+   "source": "certificates/contracts.json",
+   "src": "I:pin:dbfe44a6",
    "tier": "validator-enforced",
    "type": "retracts"
   },
@@ -29387,6 +29423,46 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-699/verify.py",
+     "sha256": "a3a8d2d1988b27c1bd61523e9b8d0fea116d990b5f553dcdcb5b83145fb83565"
+    },
+    {
+     "path": "certificates/erdos-699/exact.py",
+     "sha256": "f198c04152d1587e2123b68ada94d71dc102ff9e275e88a03ddf20ca0ca18b91"
+    },
+    {
+     "path": "certificates/erdos-699/reference.py",
+     "sha256": "1bc82152defb527fe2e4c71db8ed3f964dc000ee78063341c920dd186f632593"
+    },
+    {
+     "path": "certificates/erdos-699/RESULT.json",
+     "sha256": "27523ffcce2b0c69298dd1de37fffcefc7a6bbaeda48551c4adb1bee9da837eb"
+    }
+   ],
+   "claim_id": "erdos-699-rowsweep-1e8",
+   "id": "E:claim:erdos-699-rowsweep-1e8",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-699/verify.py",
+     "--quick"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "\"counterexamples\":0",
+     "\"verified\":true",
+     "\"rows\":90000000"
+    ]
+   },
+   "scope": "Exhaustive over all 90,000,000 rows, contiguous with no gap or overlap. A verified-to-N record, not a proof. Says nothing above 10^8, and does not reach virgin ground above 10^8 -- structured families were already covered to ~1.34x10^8.",
+   "statement": "For every n with 10^7 <= n < 10^8 and every 1 <= i < j <= n/2, some prime p >= i divides gcd(C(n,i), C(n,j)) (Erdos #699).",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-743/verify.py",
      "sha256": "5eb44441799f1cce432879456a340141d42d8d9f3f960b7a919a74660ad6bb54"
     },
@@ -29721,8 +29797,8 @@
    "type": "evidence_container"
   },
   {
-   "boundary": "NOT a certificate and carries NO promoted claim. Verified groundwork only: Kummer's theorem checked against direct factorisation (0 mismatches), the prime-gap pruning lemma checked exhaustively for n <= 400, and brute force over n=4..300 finding no counterexamples. The sweep this was built for was NOT run -- the covering test for p <= j is unresolved -- so no bound is claimed at any n.",
-   "classification": "reference_only",
+   "boundary": "Exhaustive row sweep: the property holds for every n with 10^7 <= n < 10^8 (90,000,000 rows, 119.53 core-hours). NOT a proof -- the conjecture is believed true and no finite sweep can settle it. It does not reach virgin ground above 10^8: Cong Lu had already covered the structured families n=2^k (k<=27) and n=3^m+1 (m<=17) to ~1.34x10^8. This is the first exhaustive GENERAL-ROW sweep past 10^7, and it says nothing above 10^8.",
+   "classification": "certified_local",
    "id": "E:dir:certificates:erdos-699",
    "path": "certificates/erdos-699",
    "type": "evidence_container"
@@ -29933,8 +30009,22 @@
    "type": "incident"
   },
   {
+   "banned_string": "resolves Erdős #699",
+   "id": "I:pin:323bc1be",
+   "kind": "retraction_pin",
+   "source": "certificates/contracts.json must_not_contain",
+   "type": "incident"
+  },
+  {
    "banned_string": "proves the conjecture",
    "id": "I:pin:5d2c1a12",
+   "kind": "retraction_pin",
+   "source": "certificates/contracts.json must_not_contain",
+   "type": "incident"
+  },
+  {
+   "banned_string": "proves Erdős #699",
+   "id": "I:pin:69919a0f",
    "kind": "retraction_pin",
    "source": "certificates/contracts.json must_not_contain",
    "type": "incident"
@@ -29998,6 +30088,13 @@
   {
    "banned_string": "\"value\": \"> 10^13\"",
    "id": "I:pin:d0112dbe",
+   "kind": "retraction_pin",
+   "source": "certificates/contracts.json must_not_contain",
+   "type": "incident"
+  },
+  {
+   "banned_string": "first computation past 10^8",
+   "id": "I:pin:dbfe44a6",
    "kind": "retraction_pin",
    "source": "certificates/contracts.json must_not_contain",
    "type": "incident"
@@ -66835,6 +66932,37 @@
    "witness_verifier": "k primality checks (deterministic Miller-Rabin below 2^64; Pratt/ECPP certificates beyond) plus k-1 congruence checks q_{i+1} mod q_i == 1. Trivial, dependency-free."
   },
   {
+   "confidence": "C2",
+   "evidence": [
+    {
+     "artifact": "certificates/erdos-699/ -- exhaustive general-row sweep of [10^7,10^8), shards proven to tile the range, decider cross-validated against an independent gcd oracle",
+     "contract": "erdos-699-rowsweep-1e8",
+     "date": "2026-07-27",
+     "type": "implementation"
+    }
+   ],
+   "exact_feasibility": "cell",
+   "id": "S:gap:699:6362e233",
+   "kind": "verified_range",
+   "lower": {
+    "source": "OUR exhaustive row sweep, certificates/erdos-699/ -- all 90,000,000 rows in [10^7, 10^8), 119.53 core-hours, zero counterexamples. Prior general-row frontier was 10^7 (Cong Lu, Jan 2026); his structured families n=2^k (k<=27) and n=3^m+1 (m<=17) already reached ~1.34x10^8, so this is the first exhaustive GENERAL-ROW sweep past 10^7 and does not reach virgin ground above 10^8",
+    "value": "1e8",
+    "year": 2026
+   },
+   "notes": "Believed true, so the deliverable is a verified-to-N record. The sweep rests on a prime-gap pruning lemma (a prime in (n-i,n] settles the row, so only i <= n - prevprime(n) can host a counterexample) and on a THEOREM that large primes never suffice: on every pruned row max S(n,i) <= n/2, so at j = floor(n/2) there is never a covering prime above j -- p=2 can be the unique usable prime. Partial theory: Liam Price (accepted 2026-07-18) covers j <= 3i/2 and n = 2j, about a third of the (i,j) plane. COST CALIBRATION worth keeping: 141.6 us/row solo at 1e6, 897.5 us/row solo at 5e7, 4781 us/row under 13-way parallelism -- estimate at the scale AND concurrency you will actually run at.",
+   "oeis": null,
+   "overlay": "gap_map",
+   "problem": 699,
+   "quantity": "largest N such that for every n < N and every 1 <= i < j <= n/2 some prime p >= i divides gcd(C(n,i), C(n,j)) -- exhaustive general-row verification",
+   "status": "open",
+   "type": "surface",
+   "upper": null,
+   "witness_feasibility": "hard",
+   "witness_object": "a triple (n,i,j) with 1 <= i < j <= n/2 such that no prime p >= i divides both C(n,i) and C(n,j)",
+   "witness_side": "lower",
+   "witness_verifier": "Kummer carry-counting in exact integer arithmetic -- no big-integer factoring, no floats"
+  },
+  {
    "confidence": "C3",
    "evidence": [
     {
@@ -69085,7 +69213,7 @@
   },
   {
    "id": "S:triage:699",
-   "known_computational_frontier": "CORRECTED 2026-07-27 -- our frontier was INCOMPLETE, not stale. Cong Lu's January 2026 run (github.com/conglu1997/erdos_699_rust, 2 commits, both 2026-01-06, untouched since) swept all rows n = 4..10^7 AND the structured families n = 2^k for k <= 27 (n = 134,217,728) and n = 3^m+1 for m <= 17 (n = 129,140,164). So a 10^8 sweep would NOT be the first computation past 10^8 -- we recorded only the 10^7 row-sweep and missed the family coverage. NOTE also that conglu is still listed 'currently …[truncated; see source]",
+   "known_computational_frontier": "DONE 2026-07-27: we swept the general rows to 10^8 (certificates/erdos-699/, 90,000,000 rows, 119.53 core-hours, zero counterexamples). Prior state, and our earlier error: our frontier was INCOMPLETE, not stale. Cong Lu's January 2026 run (github.com/conglu1997/erdos_699_rust, 2 commits, both 2026-01-06, untouched since) swept all rows n = 4..10^7 AND the structured families n = 2^k for k <= 27 (n = 134,217,728) and n = 3^m+1 for m <= 17 (n = 129,140,164). So a 10^8 sweep would NOT be the first …[truncated; see source]",
    "overlay": "finite_handle_triage",
    "problem": 699,
    "search_space_estimate": "A counterexample forces (n−i, n] to be prime-free (any prime there exceeds n/2 and divides both binomials), so i ≤ n − prevprime(n) ≤ 540 for n < 1.8×10^19, and for p > n/2 the test collapses to 'n mod p < k', an interval condition on j. So 10^7 → 10^8 is ≈9×10^7 values of n × ≈18 admissible i on average × ~500 ops ≈ 8×10^11 primitive ops — under the 10^12 budget, and none of the existing search …[truncated; see source]",

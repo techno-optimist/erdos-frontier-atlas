@@ -58,8 +58,8 @@
   },
   {
    "path": "certificates/erdos-699",
-   "classification": "reference_only",
-   "boundary": "NOT a certificate and carries NO promoted claim. Verified groundwork only: Kummer's theorem checked against direct factorisation (0 mismatches), the prime-gap pruning lemma checked exhaustively for n <= 400, and brute force over n=4..300 finding no counterexamples. The sweep this was built for was NOT run -- the covering test for p <= j is unresolved -- so no bound is claimed at any n."
+   "classification": "certified_local",
+   "boundary": "Exhaustive row sweep: the property holds for every n with 10^7 <= n < 10^8 (90,000,000 rows, 119.53 core-hours). NOT a proof -- the conjecture is believed true and no finite sweep can settle it. It does not reach virgin ground above 10^8: Cong Lu had already covered the structured families n=2^k (k<=27) and n=3^m+1 (m<=17) to ~1.34x10^8. This is the first exhaustive GENERAL-ROW sweep past 10^7, and it says nothing above 10^8."
   },
   {
    "path": "certificates/erdos-743",
@@ -922,6 +922,66 @@
      "failure_control": {
       "kind": "embedded",
       "evidence": "--selftest pins generated tree counts to OEIS A000055 at every order (a first generator produced A000081, rooted trees, and only this caught it) and demands the unimodality predicate REJECT a non-unimodal sequence while ACCEPTING plateaus and monotone sequences."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-699-rowsweep-1e8",
+   "status": "promoted",
+   "statement": "For every n with 10^7 <= n < 10^8 and every 1 <= i < j <= n/2, some prime p >= i divides gcd(C(n,i), C(n,j)) (Erdos #699).",
+   "scope": "Exhaustive over all 90,000,000 rows, contiguous with no gap or overlap. A verified-to-N record, not a proof. Says nothing above 10^8, and does not reach virgin ground above 10^8 -- structured families were already covered to ~1.34x10^8.",
+   "machine_verdict": "\"counterexamples\":0",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-699/README.md",
+     "contains": "first exhaustive general-row sweep past",
+     "must_not_contain": [
+      "proves Erdős #699",
+      "resolves Erdős #699",
+      "first computation past 10^8"
+     ]
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-699/verify.py",
+     "sha256": "a3a8d2d1988b27c1bd61523e9b8d0fea116d990b5f553dcdcb5b83145fb83565"
+    },
+    {
+     "path": "certificates/erdos-699/exact.py",
+     "sha256": "f198c04152d1587e2123b68ada94d71dc102ff9e275e88a03ddf20ca0ca18b91"
+    },
+    {
+     "path": "certificates/erdos-699/reference.py",
+     "sha256": "1bc82152defb527fe2e4c71db8ed3f964dc000ee78063341c920dd186f632593"
+    },
+    {
+     "path": "certificates/erdos-699/RESULT.json",
+     "sha256": "27523ffcce2b0c69298dd1de37fffcefc7a6bbaeda48551c4adb1bee9da837eb"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-699/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-699/verify.py",
+      "--quick"
+     ],
+     "timeout_seconds": 900,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"counterexamples\":0",
+      "\"verified\":true",
+      "\"rows\":90000000"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "verify.py decides n=4..120 with the fast decider and with reference.py -- an independent big-integer gcd and factorisation oracle sharing no algorithm -- and fails on any disagreement; it re-proves the prime-gap pruning lemma exhaustively; it checks Kummer against direct factorisation; and it fails if the shards do not tile the range with no gap, since a gap would let a counterexample through while the sweep still reported zero."
      }
     }
    ]

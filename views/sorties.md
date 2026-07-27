@@ -166,6 +166,7 @@ Every promoted claim replays in one command; the fastest way to learn the receip
 - `erdos-366-cubefull-sweep-1e25`: `python3 -I certificates/erdos-366/verify.py --quick`
 - `erdos-552-f39-lower`: `python3 -I certificates/erdos-552-f39/verify.py`
 - `erdos-552-n12-n16`: `python3 -I certificates/erdos-552/verify.py`
+- `erdos-699-rowsweep-1e8`: `python3 -I certificates/erdos-699/verify.py --quick`
 - `erdos-743-k10-packing`: `python3 -I certificates/erdos-743/verify.py --quick`
 - `erdos-979-a6-public`: `python3 -I certificates/erdos-979/verify.py --cutoff 1e12`
 - `erdos-993-unimodal-n30`: `python3 -I certificates/erdos-993/verify.py --quick`

@@ -1,0 +1,125 @@
+{
+ "artifacts": {
+  "exact.py": "f198c04152d1587e2123b68ada94d71dc102ff9e275e88a03ddf20ca0ca18b91",
+  "reference.py": "1bc82152defb527fe2e4c71db8ed3f964dc000ee78063341c920dd186f632593",
+  "run699.sh": "557f501927d7a931338f1ae217617ca18e159a3caa7cd319278ac7443c8c1472",
+  "verify.py": "a3a8d2d1988b27c1bd61523e9b8d0fea116d990b5f553dcdcb5b83145fb83565"
+ },
+ "claim": "The property holds for every n with 10000000 <= n < 100000000. Exhaustive over all 90000000 rows; every (i,j) pair in each row decided exactly.",
+ "contiguous": true,
+ "core_hours": 119.53,
+ "core_seconds": 430312.0,
+ "cost_calibration": {
+  "actual_13way_us_per_row": 4781.2,
+  "note": "Recorded because we got this wrong twice. Per-row cost grows with n (more and larger factors per row), AND single-process sampling under-predicts N-way parallel throughput by ~5x here. Estimate at the scale AND the concurrency you will actually run at.",
+  "solo_at_1e6_us_per_row": 141.6,
+  "solo_at_5e7_us_per_row": 897.5
+ },
+ "counterexamples": 0,
+ "gaps": [],
+ "graph_nodes": [
+  "P699",
+  "S:triage:699"
+ ],
+ "method": {
+  "candidate_primes": "for p > i, v_p(C(n,i)) = v_p(n(n-1)...(n-i+1)), so the candidates are the prime factors > i of i consecutive integers below n -- factoring i numbers, not scanning primes; p = i is settled by Lucas",
+  "coverage_test": "Kummer<->Lucas: p | C(n,k) iff some base-p digit of k exceeds that of n, so the uncovered set is the digitwise submasks of n; enumerated with a mixed-radix odometer and filtered by the remaining candidate primes",
+  "pruning": "a prime in (n-i, n] divides C(n,i) and every C(n,j) and is >= i, so only i <= n - prevprime(n) (the prime gap) can host a counterexample",
+  "why_small_primes_are_needed": "THEOREM, not an observation: on every gap-pruned row max S(n,i) <= n/2, because a candidate p > i divides some n-t with t < i and p > n/2 would force n-t = p, i.e. a prime in (n-i, n] -- exactly what the pruning excludes. So at j = floor(n/2) there is NEVER a covering prime above j. p = 2 can be the unique usable prime."
+ },
+ "nshards": 13,
+ "prior_frontier": {
+  "general_rows": "10^7",
+  "honest_framing": "This is the first exhaustive GENERAL-ROW sweep past 10^7. It does NOT reach virgin ground above 10^8 -- structured families were already covered to ~1.34x10^8, which our own triage had missed until 2026-07-27.",
+  "source": "Cong Lu, github.com/conglu1997/erdos_699_rust, 2 commits both 2026-01-06, untouched since; posted to the #699 thread 2026-01-06",
+  "structured_families": "n = 2^k for k <= 27 (134,217,728) and n = 3^m+1 for m <= 17 (129,140,164)"
+ },
+ "problem": "https://www.erdosproblems.com/699",
+ "question": "For every 1 <= i < j <= n/2, is there a prime p >= i with p | gcd(C(n,i), C(n,j))?",
+ "range": {
+  "hi": 100000000,
+  "lo": 10000000
+ },
+ "rows_swept": 90000000,
+ "schema": "efa-erdos-699-rowsweep-v1",
+ "shards": [
+  {
+   "counterexamples": 0,
+   "hi": 16923077,
+   "lo": 10000000,
+   "secs": 31432.9
+  },
+  {
+   "counterexamples": 0,
+   "hi": 23846154,
+   "lo": 16923077,
+   "secs": 32212.7
+  },
+  {
+   "counterexamples": 0,
+   "hi": 30769231,
+   "lo": 23846154,
+   "secs": 32486.5
+  },
+  {
+   "counterexamples": 0,
+   "hi": 37692308,
+   "lo": 30769231,
+   "secs": 32809.9
+  },
+  {
+   "counterexamples": 0,
+   "hi": 44615385,
+   "lo": 37692308,
+   "secs": 32888.5
+  },
+  {
+   "counterexamples": 0,
+   "hi": 51538462,
+   "lo": 44615385,
+   "secs": 32998.4
+  },
+  {
+   "counterexamples": 0,
+   "hi": 58461539,
+   "lo": 51538462,
+   "secs": 33249.3
+  },
+  {
+   "counterexamples": 0,
+   "hi": 65384616,
+   "lo": 58461539,
+   "secs": 33360.8
+  },
+  {
+   "counterexamples": 0,
+   "hi": 72307693,
+   "lo": 65384616,
+   "secs": 33561.8
+  },
+  {
+   "counterexamples": 0,
+   "hi": 79230770,
+   "lo": 72307693,
+   "secs": 33686.5
+  },
+  {
+   "counterexamples": 0,
+   "hi": 86153847,
+   "lo": 79230770,
+   "secs": 33855.2
+  },
+  {
+   "counterexamples": 0,
+   "hi": 93076924,
+   "lo": 86153847,
+   "secs": 33791.6
+  },
+  {
+   "counterexamples": 0,
+   "hi": 100000000,
+   "lo": 93076924,
+   "secs": 33977.9
+  }
+ ]
+}
