@@ -1,7 +1,7 @@
 {
  "counts": {
   "edges": {
-   "applies": 141,
+   "applies": 140,
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 379,
@@ -14,12 +14,12 @@
    "same_family": 114,
    "tagged": 1979,
    "trap": 7,
-   "walled": 213
+   "walled": 214
   },
   "nodes": {
    "crater_node": 37,
    "evidence_claim": 14,
-   "evidence_container": 26,
+   "evidence_container": 28,
    "external_claim": 91,
    "incident": 23,
    "move": 7,
@@ -28,7 +28,7 @@
    "problem": 1217,
    "surface": 318,
    "tag": 41,
-   "wall": 213
+   "wall": 214
   },
   "tiers": {
    "cited-implication": 29,
@@ -383,14 +383,6 @@
   },
   {
    "dst": "S:triage:583",
-   "predicate": "triage-move",
-   "source": "atlas/finite_handle_triage.json",
-   "src": "M:finite-witness-search",
-   "tier": "deterministic-rule",
-   "type": "applies"
-  },
-  {
-   "dst": "S:triage:617",
    "predicate": "triage-move",
    "source": "atlas/finite_handle_triage.json",
    "src": "M:finite-witness-search",
@@ -29079,6 +29071,13 @@
    "type": "walled"
   },
   {
+   "dst": "W:triage:617",
+   "source": "atlas/finite_handle_triage.json",
+   "src": "S:triage:617",
+   "tier": "deterministic-rule",
+   "type": "walled"
+  },
+  {
    "dst": "W:triage:628",
    "source": "atlas/finite_handle_triage.json",
    "src": "S:triage:628",
@@ -29712,6 +29711,20 @@
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-552-f39",
    "path": "certificates/erdos-552-f39",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "NOT a certificate and carries NO promoted claim. Working notes recording two things: (a) Erdos #617 at r=5 closed UPSTREAM 18-25 July 2026 via five independent claimed proofs, one replayed inside the Lean kernel and one reproduced by a third party -- none refereed, and none sets a status here; (b) a MEASURED feasibility fence -- the monolithic SAT encoding is intractable, with cadical UNKNOWN at 300s on K_25 despite K_25 being satisfiable with a witness we hold and verified against all 888,800 clauses. The only positive facts asserted are that AG(2,5) gives a balanced 5-colouring of K_25 (177,100 six-subsets checked) and that it does not extend to K_26 (UNSAT).",
+   "classification": "research_fence",
+   "id": "E:dir:certificates:erdos-617",
+   "path": "certificates/erdos-617",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "NOT a certificate and carries NO promoted claim. Verified groundwork only: Kummer's theorem checked against direct factorisation (0 mismatches), the prime-gap pruning lemma checked exhaustively for n <= 400, and brute force over n=4..300 finding no counterexamples. The sweep this was built for was NOT run -- the covering test for p <= j is unresolved -- so no bound is claimed at any n.",
+   "classification": "reference_only",
+   "id": "E:dir:certificates:erdos-699",
+   "path": "certificates/erdos-699",
    "type": "evidence_container"
   },
   {
@@ -68997,16 +69010,16 @@
   },
   {
    "id": "S:triage:617",
-   "known_computational_frontier": "r=3 settled by hand: Chung & Liu, \"A generalization of Ramsey theory for graphs\", Discrete Math. 21 (1978) 117–127, Thm 3.6 gives R^3_2(K_4,K_4,K_4)=10, with the lower bound from their Thm 2.6 product colouring; recorded again as R_{2,3}(K_4)=10 by Harborth & Möller, Discrete Appl. Math. 95 (1999) 279–284. r=4 by Erdős & Gyárfás [ErGy99] (Discrete Math. 1999). The same quantity is studied independently as a \"complementary Ramsey number\" (Munemasa & Shinohara, arXiv:1406.2050; J. Indones. Math. …[truncated; see source]",
+   "known_computational_frontier": "SETTLED UPSTREAM for r=5..9 between 18 and 25 July 2026, nine days after our triage called r=5 a TARGET. erdosproblems.com/617 carries SIX claimed proofs: r=5 by Sneiderman (2026-07-18, extremal), Silverstein (2026-07-21, 12 DRAT-certified UNSAT instances -- independently REPRODUCED by Del Pin 2026-07-23, 12/12 re-verified from regenerated CNFs), Rose (2026-07-25, 458 DRAT instances, ~13.4 GiB), Land (2026-07-23, independent route), and Kara (2026-07-24, LEAN 4 formalization whose finite …[truncated; see source]",
    "overlay": "finite_handle_triage",
    "problem": 617,
-   "search_space_estimate": "Naive: 5^325 ≈ 10^227 — hopeless. SAT encoding: C(26,2)=325 edges × 5 colours = 1,625 Boolean variables; constraints = C(26,6)=230,230 six-subsets × 5 colours = 1,151,150 clauses of width 15 (\"colour c occurs among these 15 edges\") plus 325 exactly-one blocks ≈ 3,900 clauses. Sub-problem that is outright trivial: fix the known affine-plane balanced colouring of K_25 and ask whether it extends by …[truncated; see source]",
+   "search_space_estimate": "MEASURED, and our earlier estimate was wrong in the dangerous direction. We priced this as a SAT encoding of 'sane size' (1,625 vars / 1.15M clauses). SIZE IS NOT DIFFICULTY. cadical returns UNKNOWN at 300s on K_25 -- which is SATISFIABLE and for which we hold an explicit witness (AG(2,5); we verified it satisfies all 888,800 clauses) -- and UNKNOWN at 2400s on K_26. Rose's companion paper …[truncated; see source]",
    "smallest_untested_case": "r = 5, i.e. K_26 with 5 colours. r=3 (K_10) and r=4 (K_17) are proved; r=2 is false. Equivalently: is the complementary/weakened Ramsey number R^5_4(K_6) ≤ 26? The matching lower bound R^5_4(K_6) ≥ 26 already holds because the affine plane of order 5 exists, so a balanced 5-colouring of K_25 is known to exist — the open question is exactly one vertex above a known construction.",
    "statement_short": "Erdős–Gyárfás: for r ≥ 3, every r-colouring of the edges of K_{r²+1} contains r+1 vertices whose induced K_{r+1} misses at least one colour (i.e. no \"balanced\" colouring exists).",
    "type": "surface",
    "upstream_handle": "FALSIFIABLE (\"Open, but could be disproved with a finite counterexample\") — formalised in google-deepmind/formal-conjectures as FormalConjectures/ErdosProblems/617.lean, theorem erdos_617, which pins the witness as a function `coloring : Sym2 V → Fin r` on a `V` with `Fintype.card V = r^2+1` …[truncated; see source]",
-   "verdict": "TARGET",
-   "verdict_reason": "Meets all four criteria and is the strongest of the five. (1) The witness is a 325-integer array — nothing more. (2) The SAT encoding is of sane size (1,625 vars / 1.15M clauses), and there is a genuinely trivial first move: the r=5 boundary sits exactly one vertex above a KNOWN construction (affine plane of order 5 gives a balanced colouring of K_25), so \"does the known K_25 colouring extend to K_26?\" is a 25-variable CSP solvable in seconds. (3) Checking a candidate is 230,230 × 15 = 3.45M integer lookups — milliseconds, no floats, no CAS. (4) Frontier is r=4 from 1999; r=5 is untouched in three separate literatures. Both outcomes are publishable: SAT gives a counterexample witness …[truncated; see source]",
+   "verdict": "WALL",
+   "verdict_reason": "RETARGETED 2026-07-27 from TARGET to WALL, for two independent reasons, either of which suffices. (1) CLOSED UPSTREAM: r=5 was settled five times in the nine days after our triage, one of them replayed through the Lean kernel and another reproduced by a third party. Per this repo's standing rule a claim sets no status by itself, and none of these is refereed -- but five independent artefacts of that quality make spending our compute here waste, which is a feasibility judgement and exactly what this ledger is for. (2) ENCODING FENCE: the SAT route we costed is intractable as encoded, measured on an instance whose answer we already knew. What we did verify and keep: AG(2,5) gives a balanced …[truncated; see source]",
    "verification_is_cheap_and_exact": true,
    "what_a_witness_is": "A single explicit map from the 325 edges of K_26 to {1,...,5} (a 325-entry integer array) such that every one of the C(26,6)=230,230 six-element vertex subsets sees all 5 colours among its 15 induced edges. Fully concrete, integer-valued, no auxiliary structure."
   },
@@ -70990,6 +71003,13 @@
   {
    "id": "W:triage:580",
    "reason": "This is the cleanest illustration in the batch of why the upstream state label is not a promise. \"DECIDABLE / resolved up to a finite check\" is literally true, but the finite check is bounded above by a Szemerédi-Regularity-Lemma n0 that Zhao never makes explicit, and bounded below in cost by the number of graphs on n vertices, which passes 1e23 by n = 20. Criterion 3 is the only one that passes — tree containment is exact and cheap. Criteria 2 and 4 fail catastrophically and criterion 1's witness, while concrete, lives in a space nobody can enumerate. Filing as WALL, with a note for the atlas: #580 is worth carrying as a documented example of an upstream \"decidable\" tag whose finite handle …[truncated; see source]",
+   "scope": "surface",
+   "source": "atlas/finite_handle_triage.json verdict=WALL",
+   "type": "wall"
+  },
+  {
+   "id": "W:triage:617",
+   "reason": "RETARGETED 2026-07-27 from TARGET to WALL, for two independent reasons, either of which suffices. (1) CLOSED UPSTREAM: r=5 was settled five times in the nine days after our triage, one of them replayed through the Lean kernel and another reproduced by a third party. Per this repo's standing rule a claim sets no status by itself, and none of these is refereed -- but five independent artefacts of that quality make spending our compute here waste, which is a feasibility judgement and exactly what this ledger is for. (2) ENCODING FENCE: the SAT route we costed is intractable as encoded, measured on an instance whose answer we already knew. What we did verify and keep: AG(2,5) gives a balanced …[truncated; see source]",
    "scope": "surface",
    "source": "atlas/finite_handle_triage.json verdict=WALL",
    "type": "wall"

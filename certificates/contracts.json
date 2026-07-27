@@ -52,6 +52,16 @@
    "boundary": "Lower bound 46 only; the former equality claim is retracted."
   },
   {
+   "path": "certificates/erdos-617",
+   "classification": "research_fence",
+   "boundary": "NOT a certificate and carries NO promoted claim. Working notes recording two things: (a) Erdos #617 at r=5 closed UPSTREAM 18-25 July 2026 via five independent claimed proofs, one replayed inside the Lean kernel and one reproduced by a third party -- none refereed, and none sets a status here; (b) a MEASURED feasibility fence -- the monolithic SAT encoding is intractable, with cadical UNKNOWN at 300s on K_25 despite K_25 being satisfiable with a witness we hold and verified against all 888,800 clauses. The only positive facts asserted are that AG(2,5) gives a balanced 5-colouring of K_25 (177,100 six-subsets checked) and that it does not extend to K_26 (UNSAT)."
+  },
+  {
+   "path": "certificates/erdos-699",
+   "classification": "reference_only",
+   "boundary": "NOT a certificate and carries NO promoted claim. Verified groundwork only: Kummer's theorem checked against direct factorisation (0 mismatches), the prime-gap pruning lemma checked exhaustively for n <= 400, and brute force over n=4..300 finding no counterexamples. The sweep this was built for was NOT run -- the covering test for p <= j is unresolved -- so no bound is claimed at any n."
+  },
+  {
    "path": "certificates/erdos-743",
    "classification": "certified_local",
    "boundary": "Exhaustive search: every one of the 45,376,056 tuples (T_2..T_10) decomposes K_10. Settles n=10 only; says nothing about n>=11 and is not a proof of the Gyarfas conjecture."
