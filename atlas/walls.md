@@ -81,6 +81,27 @@ the reason to start one.
 
 ## Already attacked-and-walled by our exact toolset at ≥ our scale (the clearest traps)
 
+- **#617 — Erdős–Gyárfás balanced colourings, r=5 (K₂₆).** *Added 2026-07-27;
+  our own triage called this a TARGET nine days earlier and was already wrong.*
+  **Closed upstream:** between 18 and 25 July 2026 the problem page collected
+  **five independent claimed proofs for r=5** — Sneiderman (extremal),
+  Silverstein (12 DRAT-certified UNSAT instances, **independently reproduced**
+  by Del Pin from regenerated CNFs, 12/12), Rose (458 DRAT instances, ~13.4
+  GiB), Land, and **Kara, a Lean 4 formalization whose finite obstruction is
+  replayed inside the Lean kernel** — plus Sneiderman for r=6,7,8,9. None is
+  refereed and a claim sets no status here, but five artefacts of that quality
+  make our compute waste.
+  **And the encoding is a fence in its own right.** We priced this lane by
+  instance size — "sane, 1,625 vars / 1.15M clauses". Measured: cadical returns
+  UNKNOWN at 300 s on **K₂₅, which is satisfiable and whose witness we hold**
+  (AG(2,5); verified against all 888,800 clauses), and UNKNOWN at 2400 s on
+  K₂₆. Rose reports the identical failure and identifies the cause as symmetry,
+  not missing constraints: one instance of his drops from ≥14,400 s to 0.45 s
+  under symmetry-breaking. **Never price a SAT lane by variable and clause
+  count.** The cheap diagnostic we should have run first is one instance of
+  known answer at the next size down. Full notes:
+  [`certificates/erdos-617/FINDINGS.md`](../certificates/erdos-617/FINDINGS.md).
+
 - **#139 / #140 — r₃(212), largest 3-AP-free set (A003002).** Last exact term
   r₃(211)=43; 212 ∈ {43,44}. **Ergezer 2026 (arXiv:2606.04016) threw ~7,850
   worker-hours** of CP-SAT + HiGHS-MIP + CDCL + DRAT/LRAT at it — *our exact
