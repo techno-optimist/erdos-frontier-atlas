@@ -29214,7 +29214,7 @@
    "artifacts": [
     {
      "path": "certificates/erdos-366/verify.py",
-     "sha256": "f56fb31ab53e4a1d947f07d98cc253d07c4a35ff1bb51d0600db1ab91f0b71ed"
+     "sha256": "f40cf4b64d8563875bf3f0162bd490dd7e00f37a83d6390a4d79d34697fecc1e"
     },
     {
      "path": "certificates/erdos-366/search366.c",

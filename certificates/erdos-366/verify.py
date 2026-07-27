@@ -33,11 +33,19 @@ import json
 import pathlib
 import subprocess
 import sys
+import tempfile
 
 HERE = pathlib.Path(__file__).resolve().parent
 RESULT = HERE / "RESULT.json"
-BIN = HERE / "search366"
 FAILURES = []
+
+# The binary is compiled into a temp dir OUTSIDE the repo. A replay must leave
+# the tree byte-identical: writing a build artifact into the certificate
+# directory counts as mutating the sandbox, and the contract checker fails it.
+# (A .gitignore hides such a write from `git status` but not from the checker —
+# which is the point. "git status is clean" is not "the replay wrote nothing".)
+_TMP = tempfile.TemporaryDirectory(prefix="erdos366-")
+BIN = pathlib.Path(_TMP.name) / "search366"
 
 
 def check(ok, label, detail=""):
