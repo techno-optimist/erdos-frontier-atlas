@@ -97,14 +97,20 @@ def test_trap_edges_pinned():
 
 
 def test_64_branch_split_survives():
+    """#64 is walled on its general branch ($1000 trap) and live on its cubic
+    sub-branch. What this pins is the SPLIT, not which live verdict the cubic
+    branch currently carries — it moved TARGET -> MAYBE on 2026-07-27 when an
+    unrefereed artifact pre-empted the n=30 cell, and the split still holds.
+    Collapsing the two branches to one verdict is the failure mode."""
     graph = _graph()
     assert any(e["type"] == "trap" and e["src"] == "P64"
                for e in graph["edges"]), "#64 general branch must stay a trap"
     tri = next(n for n in graph["nodes"] if n["id"] == "S:triage:64")
-    assert tri["verdict"] == "TARGET", "#64 cubic branch must stay a target"
+    assert tri["verdict"] in ("TARGET", "MAYBE"), \
+        "#64 cubic sub-branch must stay live, not collapse into the wall"
     card = (ROOT / "views" / "graph" / "P64.md").read_text(encoding="utf-8")
-    assert card.index("TRAP") < card.index("TARGET"), \
-        "the trap must render before the target on the card"
+    assert card.index("TRAP") < card.index(tri["verdict"]), \
+        "the trap must render before the live sub-branch on the card"
 
 
 def test_366_two_branches_never_merge():
