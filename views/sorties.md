@@ -28,7 +28,7 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
   - card: `views/graph/P64.md`
 - **#366** (`S:triage:366`) — Is there a 2-full n with n+1 3-full? (p|n implies p^2|n; p|n+1 implies p^3|n+1.)
   - smallest untested case: n > 10^22. Concretely: the first cubefull number c in (10^22, 10^24] with c-1 (or c+1, reverse orientation) powerful.
-  - est: Only n+1 needs enumerating: #cubefull <= X ~ 5.5·X^(1/3) (A036966; generate as x^5·y^4·z^3, streamed, no storage). At X = 1e24: 5.5e8 candidates x ~1e3 ops each (trial-divide neighbour to 1e4, then …[truncated; see source]
+  - est: Only n+1 needs enumerating: #cubefull <= X ~ 4.659*X^(1/3) (constant A362974 = 4.659266..., counts tabulated in A362973; Bateman-Grosswald 1958 / Finch 2003 sec. 2.6.1). Generate as x^5*y^4*z^3 per …[truncated; see source]
   - card: `views/graph/P366.md`
 - **#617** (`S:triage:617`) — Erdős–Gyárfás: for r ≥ 3, every r-colouring of the edges of K_{r²+1} contains r+1 vertices whose induced K_{r+1} misses at least one colour (i.e. no "balanced" colouring exists).
   - smallest untested case: r = 5, i.e. K_26 with 5 colours. r=3 (K_10) and r=4 (K_17) are proved; r=2 is false. Equivalently: is the complementary/weakened Ramsey number R^5_4(K_6) ≤ 26? The matching lower bound R^5_4(K_6) ≥ 26 already holds because the affine plane of order 5 exists, …[truncated; see source]
@@ -174,6 +174,7 @@ Every promoted claim replays in one command; the fastest way to learn the receip
 - `erdos-13-table`: `python3 -I certificates/erdos-13/verify.py`
 - `erdos-142-cone-infeasible-objects`: `python3 -I certificates/erdos-142-cone-obstruction/verify.py`
 - `erdos-142-foundation`: `python3 -I certificates/erdos-142/verify.py`
+- `erdos-366-cubefull-sweep-1e25`: `python3 -I certificates/erdos-366/verify.py --quick`
 - `erdos-552-f39-lower`: `python3 -I certificates/erdos-552-f39/verify.py`
 - `erdos-552-n12-n16`: `python3 -I certificates/erdos-552/verify.py`
 - `erdos-979-a6-public`: `python3 -I certificates/erdos-979/verify.py --cutoff 1e12`

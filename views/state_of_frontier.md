@@ -5,7 +5,7 @@
 > [Frontier Board](../README.md#chronos-frontier-board). Do not edit by hand —
 > regenerate with `make state-of-frontier`; `make check-views` fails if this file
 > is stale. Deterministic: no generation timestamp — every date below comes from
-> the data. **Data through 2026-07-21** (latest provenance/evidence date).
+> the data. **Data through 2026-07-26** (latest provenance/evidence date).
 
 The gap map is the versioned `[L, U]` ledger over bounded quantities of open
 problems (charter Tenet 2: the bracket is the unit of progress). This report is
@@ -30,8 +30,8 @@ validator fails any stored class the recorded evidence does not prove.
 |---|---|---|
 | C0 | contract-bound formal proof, machine-checked | 0 |
 | C1 | &ge;2 contract-bound independent replays at the claimed range | 0 |
-| C2 | exactly one contract-bound verified replay | 4 |
-| C3 | literature- or numerics-grade — no independent in-project verification artifact | 218 |
+| C2 | exactly one contract-bound verified replay | 5 |
+| C3 | literature- or numerics-grade — no independent in-project verification artifact | 217 |
 
 ## Entries by kind
 

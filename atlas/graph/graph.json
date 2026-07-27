@@ -5,12 +5,12 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 379,
-   "evidenced_by": 7,
+   "evidenced_by": 8,
    "has_surface": 316,
    "learned_from": 5,
    "measures": 221,
    "references": 479,
-   "retracts": 8,
+   "retracts": 10,
    "same_family": 114,
    "tagged": 1979,
    "trap": 7,
@@ -18,10 +18,10 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 11,
-   "evidence_container": 23,
+   "evidence_claim": 12,
+   "evidence_container": 24,
    "external_claim": 91,
-   "incident": 17,
+   "incident": 19,
    "move": 7,
    "msc": 17,
    "oeis_seq": 402,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 3945,
-   "validator-enforced": 15
+   "validator-enforced": 18
   }
  },
  "edges": [
@@ -5244,6 +5244,14 @@
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
    "src": "P142",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-366-cubefull-sweep-1e25",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P366",
    "tier": "validator-enforced",
    "type": "evidenced_by"
   },
@@ -12433,6 +12441,13 @@
    "type": "retracts"
   },
   {
+   "dst": "E:claim:erdos-366-cubefull-sweep-1e25",
+   "source": "certificates/contracts.json",
+   "src": "I:pin:6f9f0d00",
+   "tier": "validator-enforced",
+   "type": "retracts"
+  },
+  {
    "dst": "E:claim:graffiti-290-finite-verification",
    "source": "certificates/contracts.json",
    "src": "I:pin:7ed1b65a",
@@ -12464,6 +12479,13 @@
    "dst": "E:claim:erdos-1107-public-table",
    "source": "certificates/contracts.json",
    "src": "I:pin:b3504c25",
+   "tier": "validator-enforced",
+   "type": "retracts"
+  },
+  {
+   "dst": "E:claim:erdos-366-cubefull-sweep-1e25",
+   "source": "certificates/contracts.json",
+   "src": "I:pin:c55f8e31",
    "tier": "validator-enforced",
    "type": "retracts"
   },
@@ -29191,6 +29213,46 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-366/verify.py",
+     "sha256": "f40cf4b64d8563875bf3f0162bd490dd7e00f37a83d6390a4d79d34697fecc1e"
+    },
+    {
+     "path": "certificates/erdos-366/search366.c",
+     "sha256": "d1963a0acaf0a422dea87da8c20ebd394a9c9794498e0f995b655b8adb0396d6"
+    },
+    {
+     "path": "certificates/erdos-366/reference.py",
+     "sha256": "2bd0b2643b736e3c50a9b80a2aa3ba0ced779c781f936a999706f7aa3d6f9a1a"
+    },
+    {
+     "path": "certificates/erdos-366/RESULT.json",
+     "sha256": "e4c178c63f43b2011b3a044733861b411ceb719166c3b1e9945f4ac22b691199"
+    }
+   ],
+   "claim_id": "erdos-366-cubefull-sweep-1e25",
+   "id": "E:claim:erdos-366-cubefull-sweep-1e25",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-366/verify.py",
+     "--quick"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "\"strict_solutions\":0",
+     "\"verified\":true",
+     "\"range_hi\":\"10000000000000000000000000\""
+    ]
+   },
+   "scope": "Exhaustive over every cubefull number in (0, 10^25]; both orientations swept. Establishes a verified range only -- it does not resolve the problem, and it says nothing above 10^25.",
+   "statement": "No 2-full n with n+1 3-full exists for n <= 10^25 (Erdos #366, the orientation as stated and as formalised).",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-552-f39/verify.py",
      "sha256": "6f46fd3061bfc98aa3f9eec1c6e74ec82397557c22b2c9ea66b46fb3020c101c"
     },
@@ -29476,6 +29538,13 @@
    "type": "evidence_container"
   },
   {
+   "boundary": "Exhaustive search result: no 2-full n with n+1 3-full for n <= 10^25. A negative verified-to-N record, NOT a resolution of Erdos #366 -- abc implies finiteness, so no search can close it. Does not extend the consecutive-powerful-pair frontier (OEIS A060355), which is the X^(1/2) search.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-366",
+   "path": "certificates/erdos-366",
+   "type": "evidence_container"
+  },
+  {
    "boundary": "Exact n=12..16 values and a lower bound at n=17 only.",
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-552",
@@ -29674,6 +29743,13 @@
    "type": "incident"
   },
   {
+   "banned_string": "resolves Erdős #366",
+   "id": "I:pin:6f9f0d00",
+   "kind": "retraction_pin",
+   "source": "certificates/contracts.json must_not_contain",
+   "type": "incident"
+  },
+  {
    "banned_string": "It is the exact rational `r`, which varies graph to graph",
    "id": "I:pin:7ed1b65a",
    "kind": "retraction_pin",
@@ -29704,6 +29780,13 @@
   {
    "banned_string": "verified **no exception below `10¹⁰`**",
    "id": "I:pin:b3504c25",
+   "kind": "retraction_pin",
+   "source": "certificates/contracts.json must_not_contain",
+   "type": "incident"
+  },
+  {
+   "banned_string": "proves there are none",
+   "id": "I:pin:c55f8e31",
    "kind": "retraction_pin",
    "source": "certificates/contracts.json must_not_contain",
    "type": "incident"
@@ -64477,23 +64560,29 @@
    "witness_verifier": "factor k and k+1, check all prime exponents >= 2 on both — milliseconds; for the exact cell, a sweep certificate: enumerate all a^2*b^3 (b squarefree) in the window segment-by-segment and scan for adjacent values differing by 1"
   },
   {
-   "confidence": "C3",
+   "confidence": "C2",
    "evidence": [
     {
      "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
      "date": "2026-07-18",
      "type": "literature"
+    },
+    {
+     "artifact": "certificates/erdos-366/ — exhaustive sweep of every cubefull number in (0,10^25], exact powerfulness test on both neighbours; zero strict-orientation solutions, the two known reverse pairs recovered as positive control",
+     "contract": "erdos-366-cubefull-sweep-1e25",
+     "date": "2026-07-26",
+     "type": "implementation"
     }
    ],
    "exact_feasibility": "wall",
    "id": "S:gap:366:8ee41086",
    "kind": "verified_range",
    "lower": {
-    "source": "complete consecutive-powerful-pair list below 10^22 (Johnson, OEIS A060355 b-file); only (8,9) and (12167,12168) have a 3-full member (erdosproblems.com/366 remarks)",
-    "value": "1e22",
-    "year": 2011
+    "source": "OUR exhaustive cubefull-side sweep, certificates/erdos-366/ (1,620,172,043 candidates, 6.27 core-hours, both orientations, replayable in one command). Supersedes the inherited 1e22, which was complete consecutive-powerful-pair list below 10^22 — a SINGLE unreplicated computation (Johnson's OEIS A060355 b-file, 39 terms, uploaded 15 Nov 2011; no published method, code or certificate); only (8,9) and (12167,12168) have a 3-full member (erdosproblems.com/366 remarks)",
+    "value": "1e25",
+    "year": 2026
    },
-   "notes": "Both known examples have the 3-full member FIRST (8 = 2^3 before 9 = 3^2; 12167 = 23^3 before 12168), so the exact Lean-stub orientation is even more open. abc implies finitely many such n (Turturean, per erdosproblems). Honest rung: extending the A060355 sweep 10^22 -> 10^23 (~7e11 powerful numbers, days-scale) raises the verified bound; constructive Pell-style witnesses look blocked because 3-fullness of a pair member is a much stronger Diophantine constraint. Weaker open sub-question (Er76d): any pair of consecutive 3-full integers at all. Page freshly edited 2026-07-16.",
+   "notes": "Both known examples have the 3-full member FIRST (8 = 2^3 before 9 = 3^2; 12167 = 23^3 before 12168), so the exact Lean-stub orientation is even more open. abc implies finitely many such n (Turturean, per erdosproblems). DONE 2026-07-26 (certificates/erdos-366/): swept to 10^25, zero strict-orientation solutions. The lever was enumerating the CUBEFULL side (~X^(1/3)) instead of the powerful-PAIR side (~X^(1/2)) -- three decades for 6.27 core-hours. Extending the A060355 PAIR sweep itself remains the expensive rung and is untouched; constructive Pell-style witnesses look blocked because 3-fullness of a pair member is a much stronger Diophantine constraint. Weaker open sub-question (Er76d): any pair of consecutive 3-full integers at all. Page freshly edited 2026-07-16.",
    "oeis": "A060355",
    "overlay": "gap_map",
    "problem": 366,
@@ -68450,7 +68539,7 @@
    "known_computational_frontier": "No examples for n < 10^22 — but this bound is INHERITED from OEIS A060355 (consecutive powerful pairs), b-file by Donovan Johnson, 39 terms < 10^22. That is the harder, sqrt(X)-cost search. No sequence or computation exists anywhere for the cubefull-driven version, and OEIS has NO sequence at all for consecutive cubefull pairs (Erdős's weaker question in [Er76d], Guy B16). Page last edited 16 July 2026 and actively curated (Cambie, Stephan, van Doorn), so absence of a deeper bound is meaningful …[truncated; see source]",
    "overlay": "finite_handle_triage",
    "problem": 366,
-   "search_space_estimate": "Only n+1 needs enumerating: #cubefull <= X ~ 5.5·X^(1/3) (A036966; generate as x^5·y^4·z^3, streamed, no storage). At X = 1e24: 5.5e8 candidates x ~1e3 ops each (trial-divide neighbour to 1e4, then perfect-power test on the cofactor — valid since a leftover p^2·q^3 with p,q >= 1e4 exceeds 1e20 only rarely) = ~5e11 ops. X = 1e26 costs 2.6e9 x 1e3 = 2.6e12.",
+   "search_space_estimate": "Only n+1 needs enumerating: #cubefull <= X ~ 4.659*X^(1/3) (constant A362974 = 4.659266..., counts tabulated in A362973; Bateman-Grosswald 1958 / Finch 2003 sec. 2.6.1). Generate as x^5*y^4*z^3 per A036966 (Greathouse), streamed, no storage -- but that stream is NOT deduplicated and emits ~7.65*X^(1/3) = zeta(4/3)*zeta(5/3) raw triples, so budget the raw count, not the distinct one. At X = 1e24: …[truncated; see source]",
    "smallest_untested_case": "n > 10^22. Concretely: the first cubefull number c in (10^22, 10^24] with c-1 (or c+1, reverse orientation) powerful.",
    "statement_short": "Is there a 2-full n with n+1 3-full? (p|n implies p^2|n; p|n+1 implies p^3|n+1.)",
    "type": "surface",
@@ -69527,7 +69616,7 @@
   },
   {
    "id": "W:gap:366:8ee41086",
-   "reason": "Both known examples have the 3-full member FIRST (8 = 2^3 before 9 = 3^2; 12167 = 23^3 before 12168), so the exact Lean-stub orientation is even more open. abc implies finitely many such n (Turturean, per erdosproblems). Honest rung: extending the A060355 sweep 10^22 -> 10^23 (~7e11 powerful numbers, days-scale) raises the verified bound; constructive Pell-style witnesses look blocked because 3-fullness of a pair member is a much stronger Diophantine constraint. Weaker open sub-question …[truncated; see source]",
+   "reason": "Both known examples have the 3-full member FIRST (8 = 2^3 before 9 = 3^2; 12167 = 23^3 before 12168), so the exact Lean-stub orientation is even more open. abc implies finitely many such n (Turturean, per erdosproblems). DONE 2026-07-26 (certificates/erdos-366/): swept to 10^25, zero strict-orientation solutions. The lever was enumerating the CUBEFULL side (~X^(1/3)) instead of the powerful-PAIR side (~X^(1/2)) -- three decades for 6.27 core-hours. Extending the A060355 PAIR sweep itself …[truncated; see source]",
    "scope": "surface",
    "source": "atlas/gap_map.json exact_feasibility=wall",
    "type": "wall",
