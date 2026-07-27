@@ -22,18 +22,10 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 
 ### T1 — triage TARGET branches (vetted 2026-07-26; every triage criterion passes)
 
-- **#64** (`S:triage:64`) — Erdős–Gyárfás: does every finite graph with minimum degree >= 3 contain a cycle of length 2^k for some k >= 2 (i.e. length 4, 8, 16, 32, ...)? Liu–Montgomery [LiMo20] settled it for minimum degree above some absolute …[truncated; see source]
-  - smallest untested case: Cubic graphs on n = 30 vertices. Markström generated ALL cubic graphs on fewer than 29 vertices (so <= 28; cubic orders are even, hence 30 is literally the next case). Separately, the non-cubic lane's smallest untested case is n = 16: Royle generated all …[truncated; see source]
-  - est: All cubic graphs on 30 vertices = 845,480,228,069 ≈ 8.45e11 (OEIS A002851; the sequence is tabulated out to 32 vertices = 1.89e13, direct evidence the class is generatable). At ~4e6 graphs/sec/core …[truncated; see source]
-  - card: `views/graph/P64.md`
 - **#366** (`S:triage:366`) — Is there a 2-full n with n+1 3-full? (p|n implies p^2|n; p|n+1 implies p^3|n+1.)
   - smallest untested case: n > 10^22. Concretely: the first cubefull number c in (10^22, 10^24] with c-1 (or c+1, reverse orientation) powerful.
   - est: Only n+1 needs enumerating: #cubefull <= X ~ 4.659*X^(1/3) (constant A362974 = 4.659266..., counts tabulated in A362973; Bateman-Grosswald 1958 / Finch 2003 sec. 2.6.1). Generate as x^5*y^4*z^3 per …[truncated; see source]
   - card: `views/graph/P366.md`
-- **#699** (`S:triage:699`) — Is it true that for every 1 ≤ i < j ≤ n/2 there exists a prime p ≥ i with p | gcd(C(n,i), C(n,j))?
-  - smallest untested case: n = 10^7 + 1 (general n), outside the special families n = 2^k for k ≤ 27 and n = 3^m + 1 for m ≤ 17, both already covered to ≈1.34×10^8.
-  - est: A counterexample forces (n−i, n] to be prime-free (any prime there exceeds n/2 and divides both binomials), so i ≤ n − prevprime(n) ≤ 540 for n < 1.8×10^19, and for p > n/2 the test collapses to 'n …[truncated; see source]
-  - card: `views/graph/P699.md`
 - **#743** (`S:triage:743`) — Gyárfás tree packing conjecture: for any trees T_2,...,T_n with T_k having exactly k vertices, K_n is the edge-disjoint union of the T_k.
   - smallest untested case: n = 10. Fishburn [Fi83] settled n ≤ 9. The n=10 instance is the 45,376,056 tuples (T_2,...,T_10) of unlabeled trees.
   - est: Unlabeled trees on k vertices (A000055) for k=2..10: 1,1,2,3,6,11,23,47,106 → 1·1·2·3·6·11·23·47·106 = 45,376,056 tuples. Per tuple, T_10 is spanning so its embedding is free up to relabeling K_10; …[truncated; see source]
@@ -142,18 +134,19 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 
 ### T4 — triage MAYBE branches
 
+- **#64** (`S:triage:64`) — RETARGETED 2026-07-27 from TARGET to MAYBE. #64 itself is still OPEN (erdosproblems.com/64, zero claimed proofs, last edited 2026-04-10), and the $1000 general-branch TRAP verdict stands and is reinforced: …[truncated; see source]
 - **#106** (`S:triage:106`) — The only one of the four where criteria 1 and 3 are cleanly met and the case is genuinely tiny. A refutation of the ENTIRE Erdos-Soifer table reduces (via Praton) to ten squares in a unit square, and a candidate is …[truncated; see source]
 - **#167** (`S:triage:167`) — The softest of the five, and the only one not previously triaged by us. Criteria 1 and 3 pass cleanly — the witness is a graph and both tau and nu are exact integer optimisations a dependency-free branch-and-bound can …[truncated; see source]
 - **#458** (`S:triage:458`) — The witness hunt is a WALL (needs a prime gap ~10^6 times longer than anything Cramer permits — it is Legendre in disguise). But this is the one entry where the NEGATIVE certificate is genuinely cheap, monotone and …[truncated; see source]
 - **#547** (`S:triage:547`) — The only one of the five that is not obviously dead, and I am flagging it as MAYBE rather than TARGET deliberately. In its favour: the witness is fully concrete, verification is cheap, exact and dependency-free (tree …[truncated; see source]
 - **#583** (`S:triage:583`) — Passes the rubric on the letter but the payoff is thin, so I am not calling it a TARGET. In its favour: the witness is concrete, a sweep to n ≤ 11 lands right at the ~10^12 op line, verifying a decomposition is trivial …[truncated; see source]
+- **#699** (`S:triage:699`) — RETARGETED 2026-07-27 from TARGET to MAYBE. The problem is NOT settled -- still Open/FALSIFIABLE, no full proof, the DeepMind Lean statement is still @[category research open] -- but the computation we specified is the …[truncated; see source]
 
 ## DISAGREEMENT CELLS — the highest-information rows
 
 Where two registers disagree, the disagreement IS the product (uncomputed-table-cells niche):
 
 - solved-upstream × deep MOVABLE: #13, #21, #67 — upstream closed the headline; our finite table cell still moves.
-- trap × TARGET branch split: #64 — the general branch is walled, a sub-branch is live.
 - upstream Open × our wall: the 27 catalogued walls (`atlas/walls.md`) — 'falsifiable upstream' is not 'reachable here'.
 
 ## HOT CLAIMS — 21 external claims against problems we record unresolved
