@@ -4981,6 +4981,44 @@
    "confidence": "C3"
   },
   {
+   "problem": 699,
+   "oeis": null,
+   "quantity": "largest N such that for every n < N and every 1 <= i < j <= n/2 some prime p >= i divides gcd(C(n,i), C(n,j)) -- exhaustive general-row verification",
+   "kind": "verified_range",
+   "lower": {
+    "value": "1e8",
+    "source": "OUR exhaustive row sweep, certificates/erdos-699/ -- all 90,000,000 rows in [10^7, 10^8), 119.53 core-hours, zero counterexamples. Prior general-row frontier was 10^7 (Cong Lu, Jan 2026); his structured families n=2^k (k<=27) and n=3^m+1 (m<=17) already reached ~1.34x10^8, so this is the first exhaustive GENERAL-ROW sweep past 10^7 and does not reach virgin ground above 10^8",
+    "year": 2026
+   },
+   "upper": null,
+   "witness_side": "lower",
+   "witness_object": "a triple (n,i,j) with 1 <= i < j <= n/2 such that no prime p >= i divides both C(n,i) and C(n,j)",
+   "witness_verifier": "Kummer carry-counting in exact integer arithmetic -- no big-integer factoring, no floats",
+   "witness_feasibility": "hard",
+   "exact_feasibility": "cell",
+   "status": "open",
+   "notes": "Believed true, so the deliverable is a verified-to-N record. The sweep rests on a prime-gap pruning lemma (a prime in (n-i,n] settles the row, so only i <= n - prevprime(n) can host a counterexample) and on a THEOREM that large primes never suffice: on every pruned row max S(n,i) <= n/2, so at j = floor(n/2) there is never a covering prime above j -- p=2 can be the unique usable prime. Partial theory: Liam Price (accepted 2026-07-18) covers j <= 3i/2 and n = 2j, about a third of the (i,j) plane. COST CALIBRATION worth keeping: 141.6 us/row solo at 1e6, 897.5 us/row solo at 5e7, 4781 us/row under 13-way parallelism -- estimate at the scale AND concurrency you will actually run at.",
+   "provenance": {
+    "added_by": "claude-lead, erdos-699 row sweep",
+    "date": "2026-07-27",
+    "checked": [
+     "erdosproblems.com/699 (fetched 2026-07-27)",
+     "github.com/conglu1997/erdos_699_rust README + commits",
+     "Liam Price accepted claim #86, 2026-07-18",
+     "our own sweep, certificates/erdos-699/"
+    ]
+   },
+   "evidence": [
+    {
+     "type": "implementation",
+     "artifact": "certificates/erdos-699/ -- exhaustive general-row sweep of [10^7,10^8), shards proven to tile the range, decider cross-validated against an independent gcd oracle",
+     "date": "2026-07-27",
+     "contract": "erdos-699-rowsweep-1e8"
+    }
+   ],
+   "confidence": "C2"
+  },
+  {
    "problem": 700,
    "oeis": "A091963",
    "quantity": "f(n) = min_{1<k<=n/2} gcd(n, binom(n,k)) for composite n (numerically = A091963(n)); sub-questions: characterize f(n)=n/P(n), infinitude of composite n with f(n)>sqrt(n), and f(n) <<_A n/(log n)^A",
