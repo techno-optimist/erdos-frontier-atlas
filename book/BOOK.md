@@ -47,10 +47,10 @@ The state of this edition, generated from the data:
 
 | this edition | state |
 |---|---|
-| data through | **2026-07-26** (latest provenance/evidence date in the gap map) |
-| the ledger | **222** bounded quantities |
-| confidence | C0 0 · C1 0 · C2 5 · C3 217 |
-| movements on the board | **9** (🟢 5 · 🔴 2 · 🟡 2) — corrected claims kept visible |
+| data through | **2026-07-27** (latest provenance/evidence date in the gap map) |
+| the ledger | **224** bounded quantities |
+| confidence | C0 0 · C1 0 · C2 7 · C3 217 |
+| movements on the board | **12** (🟢 8 · 🔴 2 · 🟡 2) — corrected claims kept visible |
 
 ---
 
@@ -71,9 +71,9 @@ validated, literature-grade, class C3 until an in-project verification
 artifact exists. The map does not pretend its own entries are verified; the
 labeling *is* the release gate.
 
-- **222 bounded quantities** on the map ([`atlas/gap_map.json`](../atlas/gap_map.json)).
-- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **2** lane-added, **208** agent-mined.
-- Confidence distribution (computed from `evidence[]`, never asserted): **C0** 0 · **C1** 0 · **C2** 5 · **C3** 217.
+- **224 bounded quantities** on the map ([`atlas/gap_map.json`](../atlas/gap_map.json)).
+- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **4** lane-added, **208** agent-mined.
+- Confidence distribution (computed from `evidence[]`, never asserted): **C0** 0 · **C1** 0 · **C2** 7 · **C3** 217.
 - **81 witness-workable**: still open, with a side a single submitted
   construction — checked by the entry's stated verifier — can move.
 
@@ -81,7 +81,7 @@ labeling *is* the release gate.
 |---|---|---|
 | `value_gap` | 30 | 5 |
 | `next_cell` | 81 | 56 |
-| `verified_range` | 28 | 16 |
+| `verified_range` | 30 | 16 |
 | `bounded_below_only` | 16 | 4 |
 | `bounded_above_only` | 1 | 0 |
 | `not_gap_shaped` | 66 | 0 |
@@ -90,12 +90,15 @@ Movements against this ledger are recorded on the Frontier Board — the done-wo
 record, tiered by verification, with corrected claims kept in place so no one
 re-walks them:
 
-9 movements recorded on the
-[CHRONOS Frontier Board](../README.md#chronos-frontier-board) (🟢 5 · 🔴 2 · 🟡 2).
+12 movements recorded on the
+[CHRONOS Frontier Board](../README.md#chronos-frontier-board) (🟢 8 · 🔴 2 · 🟡 2).
 Corrected claims stay on the board by design (charter Tenet 5).
 
 | tier | problem | movement | certificate | when |
 |---|---|---|---|---|
+| 🟢 | **#366** 2-full/3-full neighbours | **no 2-full `n` with `n+1` 3-full for `n ≤ 10²⁵`** — 1,620,172,043 cubefull candidates, both orientations, 6.27 core-hours. A 1000× extension of `10²²`, which was a **single unreplayed 2011 OEIS b-file**; this re-derives that region independently. The lever: enumerate the **cubefull** side (`~X^(1/3)`), not the powerful-**pair** side (`~X^(1/2)`) that set the old bound | [`certificates/erdos-366`](../certificates/erdos-366) · PR #125 | 2026-07-26 |
+| 🟢 | **#743** Gyárfás tree packing | **every one of the 45,376,056 tuples `(T₂,…,T₁₀)` decomposes `K₁₀`** — exhaustive, uncapped, 44 core-seconds. Frontier had stood at `n ≤ 9` since **Fishburn 1983** (43 years); `n=9` reproduced as positive control. Hardest tuples are exactly those with `T₄..T₇` all stars — where Gyárfás–Lehel's coverage stops | [`certificates/erdos-743`](../certificates/erdos-743) · PR #126 | 2026-07-27 |
+| 🟢 | **#993** tree independence unimodality | **all 23,522,619,475 trees on `n ≤ 30` unimodal**, zero violations, 10.33 core-hours. Includes the **first independent replication** of the `n ≤ 29` frontier (Reynolds, Zenodo v3, 8,691,747,673 trees — single-author, unreplayed until now), reaching his exact total. `n=30` alone is 1.71× that entire prior workload | [`certificates/erdos-993`](../certificates/erdos-993) · PR #126 | 2026-07-27 |
 | 🟢 | **#552** `R(C4,K1,n)` | certified C₄-free witnesses ⇒ `R(C4,K1,n) = n + ⌈√n⌉ + 1` for `12 ≤ n ≤ 16`; `n=17` closed at `22` (Parsons 1975) | [`certificates/erdos-552`](../certificates/erdos-552) · PR #78 | 2026-07-16 |
 | 🟢 | **#241** B₃-subset table (A387704) | proved `A387704(n) = max{k : A227358(k) ≤ n−1}` (translation invariance; 0/151 mismatches) ⇒ first jump to 9 at `n=209`; atlas cell **closed by cross-reference** | PR #80 | 2026-07-16 |
 | 🟢 | **#13** Erdős–Sárközy | certified exact table `f(1..45)`; `N=17` is the **last** exception to `⌊N/3⌋+1` — an empirical location for Bedert's ineffective threshold | [`certificates/erdos-13`](../certificates/erdos-13) · PR #81 | 2026-07-17 |
@@ -298,11 +301,11 @@ do-not-enter list records the four recurring reasons: someone already walled
 it with our tools at larger scale; the verifier is not exact-poly-time; the
 witness is not representable; there is no finite frontier at all.
 
-Exact-value attack-state over the gap map's 222 quantities (field `exact_feasibility`):
+Exact-value attack-state over the gap map's 224 quantities (field `exact_feasibility`):
 
 | attack-state | meaning | entries |
 |---|---|---|
-| `cell` | an uncomputed exact cell current exact tools can plausibly settle | 55 |
+| `cell` | an uncomputed exact cell current exact tools can plausibly settle | 57 |
 | `drat-candidate` | exact settlement looks reachable via a certified-UNSAT (DRAT) route | 7 |
 | `unknown` | attack-state not yet priced | 20 |
 | `wall` | the exact value needs an infeasible nonexistence proof — do not spend search compute here | 140 |
@@ -353,7 +356,7 @@ fails any stored class the recorded evidence does not prove.
 |---|---|---|
 | C0 | contract-bound formal proof, machine-checked | 0 |
 | C1 | &ge;2 contract-bound independent replays at the claimed range | 0 |
-| C2 | exactly one contract-bound verified replay | 5 |
+| C2 | exactly one contract-bound verified replay | 7 |
 | C3 | literature- or numerics-grade — no independent in-project verification artifact | 217 |
 
 The remaining instruments are refusals. The **freshness gate**: no claim of

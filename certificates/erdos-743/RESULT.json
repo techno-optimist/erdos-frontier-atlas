@@ -1,0 +1,174 @@
+{
+ "artifacts": {
+  "gen_trees.py": "ff26f85ab17180281183a07a812492e3f2d2dc3d4ff96bb6678ddd57c27484c4",
+  "pack.c": "575aa5cfd78514b2bda08f709734e3fa0d975e74ad48ee400d532b26d0e4e4db",
+  "run743.sh": "58a3640b4bd951d83888769c5c5751c654950d33d1733e62ebace6429cda0dcd",
+  "trees.txt": "87cf32f83790f888982f48e36e0f93887fe26a9055728a942c57bc428a0a63ff",
+  "verify.py": "5eb44441799f1cce432879456a340141d42d8d9f3f960b7a919a74660ad6bb54"
+ },
+ "binary_provenance": "Built from the committed pack.c (rebuilt and selftested immediately before the run, including the leaf-sibling symmetry break).",
+ "claim": "Every one of the 45376056 tuples (T_2,...,T_10) of free trees admits an edge-disjoint decomposition of K_10. Exhaustive, uncapped.",
+ "core_seconds": 44.4,
+ "edge_identity": "sum_(k=2..10) (k-1) = C(10,2) \u2014 a perfect decomposition, no slack",
+ "edges": 45,
+ "graph_nodes": [
+  "P743",
+  "S:triage:743"
+ ],
+ "hard_unresolved": 0,
+ "n": 10,
+ "nshards": 13,
+ "positive_control": "n=9 reproduces Fishburn: all 428,076 tuples pack",
+ "prior_frontier": {
+  "bound": "n <= 9",
+  "note": "erdosproblems.com's [Fi83] key resolves to a DIFFERENT 1983 Fishburn paper (matrix packing theorem); the packing result is the one cited above",
+  "source": "Fishburn, 'Packing graphs with odd and even trees', J. Graph Theory 7 (1983) 369-383",
+  "years_unmoved": 43
+ },
+ "problem": "https://www.erdosproblems.com/743",
+ "question": "Gyarfas tree packing: for trees T_2..T_n with |V(T_k)|=k, is K_n the edge-disjoint union of the T_k?",
+ "reductions_refused": [
+  "Bollobas greedy packing of the smallest floor(n/sqrt2) trees \u2014 NOT used; the search places every tree itself so a misreading of the literature cannot silently shrink the sweep",
+  "fixing T_{n-1} as well \u2014 unsound, since after T_n is pinned the remaining symmetry is only its stabiliser"
+ ],
+ "reductions_used": [
+  "T_n embedding fixed WLOG (vertex permutations are automorphisms of K_n)",
+  "leaf-sibling images ordered increasingly (swapping leaf children of a common parent is a tree automorphism)"
+ ],
+ "schema": "efa-erdos-743-packing-v1",
+ "shards": [
+  {
+   "budget": "0",
+   "hard": "0",
+   "n": "10",
+   "nodes": "30103293",
+   "secs": "3.4",
+   "shard": "0/13",
+   "tuples": "3490466",
+   "unpackable": "0"
+  },
+  {
+   "budget": "0",
+   "hard": "0",
+   "n": "10",
+   "nodes": "30176994",
+   "secs": "3.4",
+   "shard": "1/13",
+   "tuples": "3490466",
+   "unpackable": "0"
+  },
+  {
+   "budget": "0",
+   "hard": "0",
+   "n": "10",
+   "nodes": "30138605",
+   "secs": "3.4",
+   "shard": "10/13",
+   "tuples": "3490466",
+   "unpackable": "0"
+  },
+  {
+   "budget": "0",
+   "hard": "0",
+   "n": "10",
+   "nodes": "30186585",
+   "secs": "3.4",
+   "shard": "11/13",
+   "tuples": "3490465",
+   "unpackable": "0"
+  },
+  {
+   "budget": "0",
+   "hard": "0",
+   "n": "10",
+   "nodes": "30117187",
+   "secs": "3.3",
+   "shard": "12/13",
+   "tuples": "3490465",
+   "unpackable": "0"
+  },
+  {
+   "budget": "0",
+   "hard": "0",
+   "n": "10",
+   "nodes": "30077088",
+   "secs": "3.5",
+   "shard": "2/13",
+   "tuples": "3490466",
+   "unpackable": "0"
+  },
+  {
+   "budget": "0",
+   "hard": "0",
+   "n": "10",
+   "nodes": "30092628",
+   "secs": "3.5",
+   "shard": "3/13",
+   "tuples": "3490466",
+   "unpackable": "0"
+  },
+  {
+   "budget": "0",
+   "hard": "0",
+   "n": "10",
+   "nodes": "30080354",
+   "secs": "3.4",
+   "shard": "4/13",
+   "tuples": "3490466",
+   "unpackable": "0"
+  },
+  {
+   "budget": "0",
+   "hard": "0",
+   "n": "10",
+   "nodes": "30092234",
+   "secs": "3.4",
+   "shard": "5/13",
+   "tuples": "3490466",
+   "unpackable": "0"
+  },
+  {
+   "budget": "0",
+   "hard": "0",
+   "n": "10",
+   "nodes": "30058398",
+   "secs": "3.4",
+   "shard": "6/13",
+   "tuples": "3490466",
+   "unpackable": "0"
+  },
+  {
+   "budget": "0",
+   "hard": "0",
+   "n": "10",
+   "nodes": "30087828",
+   "secs": "3.4",
+   "shard": "7/13",
+   "tuples": "3490466",
+   "unpackable": "0"
+  },
+  {
+   "budget": "0",
+   "hard": "0",
+   "n": "10",
+   "nodes": "30135520",
+   "secs": "3.4",
+   "shard": "8/13",
+   "tuples": "3490466",
+   "unpackable": "0"
+  },
+  {
+   "budget": "0",
+   "hard": "0",
+   "n": "10",
+   "nodes": "30253829",
+   "secs": "3.5",
+   "shard": "9/13",
+   "tuples": "3490466",
+   "unpackable": "0"
+  }
+ ],
+ "tuples_expected": 45376056,
+ "tuples_tested": 45376056,
+ "unpackable": 0
+}

@@ -3,443 +3,6 @@
  "note": "Records-lane overlay for the Erdős hub: bounded quantities, their known [L,U] state, and what a machine-verifiable WITNESS would be. Curated seed from the 2026-07-17 12-candidate triage (each number freshness-checked against OEIS + survey literature at triage time); extended by mining agents. Validate with tools/validate_gap_map.py. CANDIDATES, not targets: freshness-check the survey literature again before ANY claim (the #552 / f(39) lesson). [merged 208 mined entries 2026-07-18; entries below the 12-item curated seed are agent-mined, structurally validated, NOT yet independently number-re-verified] [2026-07-18 WS7 epistemic ledger: every entry now carries evidence[] and a confidence class MECHANICALLY COMPUTED from it by tools/validate_gap_map.py — C0 formal proof / C1 >=2 independent implementations-or-replays with distinct artifacts / C2 exactly one / C3 literature- or numerics-grade. Mined entries carry literature-grade evidence (C3) until independently re-verified; the validator fails any stored class the recorded evidence does not prove.]",
  "entries": [
   {
-   "problem": 183,
-   "oeis": "A003323",
-   "quantity": "R(3,3,3,3) — 4-color Ramsey number of the triangle (= A003323(4))",
-   "kind": "value_gap",
-   "lower": {
-    "value": "51",
-    "source": "Chung lower-bound construction (per Radziszowski DS1)",
-    "year": 1971
-   },
-   "upper": {
-    "value": "62",
-    "source": "Fettes–Kramer–Radziszowski",
-    "year": 2004
-   },
-   "witness_side": "lower",
-   "witness_object": "a 4-coloring of E(K_n), n ≥ 51, with no monochromatic triangle (⇒ R ≥ n+1)",
-   "witness_verifier": "O(n^3): scan every triangle in each color class; dependency-free script",
-   "witness_feasibility": "historic",
-   "exact_feasibility": "wall",
-   "status": "open",
-   "notes": "50-year gap; even +1 on the lower bound would be the first movement since ~1971. DS1 rev.17 still lists 51–62; Wesley arXiv:2509.03784 (2025) improves other multicolor numbers, not this one. OEIS deleted the value in Aug 2021 'since not known'.",
-   "provenance": {
-    "added_by": "claude-lead, 12-candidate triage",
-    "date": "2026-07-18",
-    "checked": [
-     "Radziszowski DS1 rev.17",
-     "arXiv:2509.03784",
-     "OEIS A003323 history"
-    ]
-   },
-   "evidence": [
-    {
-     "type": "literature",
-     "artifact": "Radziszowski DS1 rev.17 (R(3,3,3,3) in [51,62]: Chung 1971 lower, Fettes-Kramer-Radziszowski 2004 upper); arXiv:2509.03784 checked for movement; OEIS A003323 history — numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
-     "date": "2026-07-18"
-    }
-   ],
-   "confidence": "C3"
-  },
-  {
-   "problem": 1013,
-   "oeis": "A292528",
-   "quantity": "A292528(6) — minimum vertices of a triangle-free graph with chromatic number 6",
-   "kind": "value_gap",
-   "lower": {
-    "value": "32",
-    "source": "Goedgebeur (J. Graph Theory 2020)",
-    "year": 2017
-   },
-   "upper": {
-    "value": "40",
-    "source": "Goedgebeur (J. Graph Theory 2020)",
-    "year": 2017
-   },
-   "witness_side": "upper",
-   "witness_object": "a triangle-free graph on ≤ 39 vertices with chromatic number 6",
-   "witness_verifier": "triangle-free in O(V·E); χ ≥ 6 via SAT-UNSAT certificate for 5-colorability; χ ≤ 6 via explicit coloring",
-   "witness_feasibility": "hard",
-   "exact_feasibility": "wall",
-   "status": "open",
-   "notes": "[32,40] unmoved since 2017 against Goedgebeur's own world-class enumeration tooling (a(5)=22, Jensen–Royle 1995). Witness side is legitimate but expert-defeated.",
-   "provenance": {
-    "added_by": "claude-lead, 12-candidate triage",
-    "date": "2026-07-18",
-    "checked": [
-     "OEIS A292528 (rev 2026-01-10)",
-     "Goedgebeur, J. Graph Theory 2020",
-     "Exoo–Goedgebeur 2019"
-    ]
-   },
-   "evidence": [
-    {
-     "type": "literature",
-     "artifact": "Goedgebeur, J. Graph Theory 2020 ([32,40]); Exoo-Goedgebeur 2019; OEIS A292528 (rev 2026-01-10) — numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
-     "date": "2026-07-18"
-    }
-   ],
-   "confidence": "C3"
-  },
-  {
-   "problem": 171,
-   "oeis": "A156989",
-   "quantity": "c_7 — largest line-free subset of {1,2,3}^7 (density Hales–Jewett, = A156989(7))",
-   "kind": "value_gap",
-   "lower": {
-    "value": "1302",
-    "source": "Polymath1 (arXiv:1002.0374)",
-    "year": 2010
-   },
-   "upper": {
-    "value": "1386",
-    "source": "Polymath1 (arXiv:1002.0374)",
-    "year": 2010
-   },
-   "witness_side": "lower",
-   "witness_object": "a subset of {1,2,3}^7 of size ≥ 1303 containing no combinatorial line",
-   "witness_verifier": "enumerate all 4^7 − 3^7 = 14197 line templates; check no line lies fully inside; trivial script",
-   "witness_feasibility": "hard",
-   "exact_feasibility": "wall",
-   "status": "open",
-   "notes": "16-year bracket; +1 on the lower bound would be the first movement since Polymath1. Exact value needs an optimality certificate that does not exist compactly.",
-   "provenance": {
-    "added_by": "claude-lead, 12-candidate triage",
-    "date": "2026-07-18",
-    "checked": [
-     "OEIS A156989 (rev 2026-05-30)",
-     "arXiv:1002.0374"
-    ]
-   },
-   "evidence": [
-    {
-     "type": "literature",
-     "artifact": "Polymath1 arXiv:1002.0374 (c_7 in [1302,1386]); OEIS A156989 (rev 2026-05-30) — numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
-     "date": "2026-07-18"
-    }
-   ],
-   "confidence": "C3"
-  },
-  {
-   "problem": 185,
-   "oeis": "A003142",
-   "quantity": "c'_7 — 7-dimensional Moser number (largest subset of [3]^7 with no geometric 3-in-line)",
-   "kind": "next_cell",
-   "lower": null,
-   "upper": null,
-   "witness_side": "lower",
-   "witness_object": "a geometric-line-free subset of [3]^7 (2187 cells)",
-   "witness_verifier": "enumerate the (5^7 − 3^7)/2 = 37969 geometric lines; check none lies inside the set; milliseconds",
-   "witness_feasibility": "hard",
-   "exact_feasibility": "wall",
-   "status": "open",
-   "notes": "c'_6 = 353 (Polymath 2010); published c'_7 bounds NOT yet sourced here — a miner must cite current best lower/upper before any record attempt.",
-   "provenance": {
-    "added_by": "claude-lead, 12-candidate triage",
-    "date": "2026-07-18",
-    "checked": [
-     "arXiv:1002.0374",
-     "OEIS A003142"
-    ]
-   },
-   "evidence": [
-    {
-     "type": "literature",
-     "artifact": "arXiv:1002.0374 (c'_6 = 353); OEIS A003142 — published c'_7 bounds not yet sourced here (entry carries no bounds); freshness-checked at the 2026-07-17 triage",
-     "date": "2026-07-18"
-    }
-   ],
-   "confidence": "C3"
-  },
-  {
-   "problem": 724,
-   "oeis": "A001438",
-   "quantity": "N(10) — maximum number of mutually orthogonal Latin squares of order 10 (= A001438(10))",
-   "kind": "value_gap",
-   "lower": {
-    "value": "2",
-    "source": "Parker orthogonal pair",
-    "year": 1959
-   },
-   "upper": {
-    "value": "6",
-    "source": "classical bound (design-theory survey)",
-    "year": null
-   },
-   "witness_side": "lower",
-   "witness_object": "3 mutually orthogonal Latin squares of order 10 (historic if found)",
-   "witness_verifier": "Latin property per square + pairwise orthogonality (all 100 ordered symbol pairs distinct); a few lines, dependency-free",
-   "witness_feasibility": "historic",
-   "exact_feasibility": "wall",
-   "status": "open",
-   "notes": "Open 60+ years whether 3 MOLS(10) exist; 2022–2025 SAT campaigns eliminate relation types only (9 of the Dukes–Howard types remain).",
-   "provenance": {
-    "added_by": "claude-lead, 12-candidate triage",
-    "date": "2026-07-18",
-    "checked": [
-     "OEIS A001438",
-     "arXiv:2204.10996",
-     "arXiv:2503.10504",
-     "arXiv:2509.09633"
-    ]
-   },
-   "evidence": [
-    {
-     "type": "literature",
-     "artifact": "OEIS A001438; Parker 1959 orthogonal pair (lower); classical design-theory bound (upper); SAT campaigns arXiv:2204.10996 / 2503.10504 / 2509.09633 — numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
-     "date": "2026-07-18"
-    }
-   ],
-   "confidence": "C3"
-  },
-  {
-   "problem": 82,
-   "oeis": "A394563",
-   "quantity": "A394563(6) — least N such that every graph on N vertices has an induced regular subgraph of order ≥ 6",
-   "kind": "bounded_below_only",
-   "lower": {
-    "value": "21",
-    "source": "Dyson–McKay (arXiv:2604.08215)",
-    "year": 2026
-   },
-   "upper": null,
-   "witness_side": "lower",
-   "witness_object": "a graph on N ≥ 21 vertices with no induced regular subgraph of order ≥ 6 (⇒ a(6) ≥ N+1)",
-   "witness_verifier": "enumerate all vertex subsets of size ≥ 6; check none induces a degree-regular graph (~2^N subsets, cheap at N ≈ 21)",
-   "witness_feasibility": "hard",
-   "exact_feasibility": "wall",
-   "status": "open",
-   "notes": "Witness verification is trivial; beating the bound means out-searching McKay's 2026 computation. Exact value needs a universal upper-bound proof — wall.",
-   "provenance": {
-    "added_by": "claude-lead, 12-candidate triage",
-    "date": "2026-07-18",
-    "checked": [
-     "arXiv:2604.08215",
-     "OEIS A394563 (rev 2026-07-10)"
-    ]
-   },
-   "evidence": [
-    {
-     "type": "literature",
-     "artifact": "Dyson-McKay arXiv:2604.08215 (a(6) >= 21); OEIS A394563 (rev 2026-07-10) — numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
-     "date": "2026-07-18"
-    }
-   ],
-   "confidence": "C3"
-  },
-  {
-   "problem": 141,
-   "oeis": "A006560",
-   "quantity": "A006560(7) — smallest starting prime of 7 consecutive primes in arithmetic progression (CPAP-7)",
-   "kind": "bounded_above_only",
-   "lower": null,
-   "upper": {
-    "value": "71137654873189893604531",
-    "source": "Zimmermann existence witness (OEIS comments; primerecords.dk)",
-    "year": 2022
-   },
-   "witness_side": "upper",
-   "witness_object": "a CPAP-7 with a smaller start: 7 consecutive primes in arithmetic progression",
-   "witness_verifier": "primality of the 7 + consecutiveness (no intervening primes) + equal gaps (multiple of 210); milliseconds",
-   "witness_feasibility": "hard",
-   "exact_feasibility": "wall",
-   "status": "open",
-   "notes": "Only one CPAP-7 known; any smaller one is a genuine record with trivial verification. The exact minimum needs an infeasible ~1e21 exhaustive sweep.",
-   "provenance": {
-    "added_by": "claude-lead, 12-candidate triage",
-    "date": "2026-07-18",
-    "checked": [
-     "OEIS A006560 comments",
-     "primerecords.dk t5k listings"
-    ]
-   },
-   "evidence": [
-    {
-     "type": "literature",
-     "artifact": "OEIS A006560 comments (Zimmermann 2022 CPAP-7 existence witness); primerecords.dk listings — numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
-     "date": "2026-07-18"
-    }
-   ],
-   "confidence": "C3"
-  },
-  {
-   "problem": 345,
-   "oeis": "A001661",
-   "quantity": "A001661(9) — largest number not a sum of distinct positive 9th powers",
-   "kind": "bounded_below_only",
-   "lower": {
-    "value": "> 1.55e17",
-    "source": "Wiener (OEIS comment)",
-    "year": 2023
-   },
-   "upper": null,
-   "witness_side": "lower",
-   "witness_object": "a larger integer verified non-representable as a sum of distinct 9th powers",
-   "witness_verifier": "none cheap — non-representability requires a full subset-sum reachability DP (petabyte-scale at 9th powers)",
-   "witness_feasibility": "none",
-   "exact_feasibility": "wall",
-   "status": "open",
-   "notes": "Wiener estimates ~200,000 core-months to finish 9th powers. No cheap certificate on either side; excluded from record hunting.",
-   "provenance": {
-    "added_by": "claude-lead, 12-candidate triage",
-    "date": "2026-07-18",
-    "checked": [
-     "OEIS A001661 (rev 2026-05-30)",
-     "arXiv:2404.08193 (distinct-vs-repetition variant clarified)"
-    ]
-   },
-   "evidence": [
-    {
-     "type": "literature",
-     "artifact": "OEIS A001661 (rev 2026-05-30; Wiener 2023 > 1.55e17); arXiv:2404.08193 — numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
-     "date": "2026-07-18"
-    }
-   ],
-   "confidence": "C3"
-  },
-  {
-   "problem": 902,
-   "oeis": "A362137",
-   "quantity": "A362137(7) — smallest Paley tournament with property S_7 (7-paradoxical)",
-   "kind": "value_gap",
-   "lower": {
-    "value": "> 1163 (= a(6); all smaller Paley primes fail)",
-    "source": "OEIS a(6), Bozóki/Fisher computation line",
-    "year": 2023
-   },
-   "upper": {
-    "value": "<= 200704 (Graham–Spencer sufficiency ceiling)",
-    "source": "Graham–Spencer criterion",
-    "year": null
-   },
-   "witness_side": "upper",
-   "witness_object": "a prime p ≡ 3 (mod 4) below the current best whose Paley tournament is 7-paradoxical",
-   "witness_verifier": "asymmetric: refuting a prime is cheap (exhibit one 7-subset with empty common-predecessor set), but CERTIFYING S_7 needs ~C(p,5) exact enumeration — as costly as the search itself",
-   "witness_feasibility": "hard",
-   "exact_feasibility": "unknown",
-   "status": "open",
-   "notes": "Extrapolated a(7) ≈ 4000–6000; brute exact check is days-to-weeks on one box. Needs a symmetry-reduced SAT/CP decision method before it is movable.",
-   "provenance": {
-    "added_by": "claude-lead, 12-candidate triage",
-    "date": "2026-07-18",
-    "checked": [
-     "OEIS A362137 (rev 2026-05-06)",
-     "arXiv:2604.08790"
-    ]
-   },
-   "evidence": [
-    {
-     "type": "literature",
-     "artifact": "OEIS A362137 (rev 2026-05-06; a(6) computation line); arXiv:2604.08790; Graham-Spencer sufficiency criterion — numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
-     "date": "2026-07-18"
-    }
-   ],
-   "confidence": "C3"
-  },
-  {
-   "problem": 979,
-   "oeis": "A385316",
-   "quantity": "A385316(6) — smallest N that is a sum of 3 prime cubes in exactly 6 ways",
-   "kind": "next_cell",
-   "lower": {
-    "value": "> 10^12",
-    "source": "public in-repo exact verifier exhaustively counts the complete prime-cube window [0,10^12], reproduces a(1..5), and finds no value with exactly 6 representations",
-    "year": 2026
-   },
-   "upper": null,
-   "witness_side": "none",
-   "witness_object": "n/a — exact-cell lane: a complete enumeration to a cap is a proof (every representation of V ≤ cap uses primes ≤ cap^(1/3))",
-   "witness_verifier": "sieve primes ≤ cap^(1/3); enumerate all unordered triples; histogram sums; validated by reproducing a(1..5) exactly",
-   "witness_feasibility": "none",
-   "exact_feasibility": "cell",
-   "status": "record_in_progress",
-   "notes": "PUBLIC BOUND: a(6) > 10^12, replayable from certificates/erdos-979/ (~11 GB). PRIVATE OPERATIONAL RESULT: the private streaming sweep and blind replica report gap-free agreement through 10^13, but their code and ledgers are not tracked in this repository, so that stronger result is quarantined from public promotion pending a self-contained replay packet. External OEIS submission is a separate human-sent step.",
-   "provenance": {
-    "added_by": "claude-lead, 12-candidate triage",
-    "date": "2026-07-18",
-    "checked": [
-     "OEIS A385316",
-     "a385316.py --verify (a(1..5) reproduced)"
-    ]
-   },
-   "evidence": [
-    {
-     "type": "replay_receipt",
-     "artifact": "certificates/erdos-979/verify.py --cutoff 1e12 (complete prime set; reproduces a(1..5); exact finite count)",
-     "date": "2026-07-21",
-     "contract": "erdos-979-a6-public"
-    }
-   ],
-   "confidence": "C2"
-  },
-  {
-   "problem": 556,
-   "oeis": "A389335",
-   "quantity": "R_3(C_9) — 3-color Ramsey number of the 9-cycle (= A389335(9))",
-   "kind": "bounded_below_only",
-   "lower": {
-    "value": "33",
-    "source": "known construction; equals the Bondy–Erdős conjectured value",
-    "year": null
-   },
-   "upper": null,
-   "witness_side": "none",
-   "witness_object": "n/a — the lower bound already meets the conjectured value; only the nonexistence (upper) side remains",
-   "witness_verifier": "n/a",
-   "witness_feasibility": "none",
-   "exact_feasibility": "wall",
-   "status": "open",
-   "notes": "'The first currently open case' per the cycle-Ramsey survey. No compact CNF for exact-9-cycle-freeness (~2e12 clauses naive) — not even a drat-candidate today.",
-   "provenance": {
-    "added_by": "claude-lead, 12-candidate triage",
-    "date": "2026-07-18",
-    "checked": [
-     "Radziszowski DS1 cycle survey",
-     "arXiv:2509.03784"
-    ]
-   },
-   "evidence": [
-    {
-     "type": "literature",
-     "artifact": "Radziszowski DS1 cycle survey (R_3(C_9) >= 33 construction, equal to the Bondy-Erdos conjectured value); arXiv:2509.03784 — numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
-     "date": "2026-07-18"
-    }
-   ],
-   "confidence": "C3"
-  },
-  {
-   "problem": 148,
-   "oeis": "A006585",
-   "quantity": "A006585(9) — number of Egyptian-fraction solutions to 1 = 1/x_1 + … + 1/x_9",
-   "kind": "not_gap_shaped",
-   "lower": null,
-   "upper": null,
-   "witness_side": "none",
-   "witness_object": "n/a — an exact count has no witnessable gap",
-   "witness_verifier": "none — a claimed count has no compact certificate; only a full replication run",
-   "witness_feasibility": "none",
-   "exact_feasibility": "wall",
-   "status": "open",
-   "notes": "a(8) = 151182379 (Dethridge 2004); a(9) expected ~1e12–1e13 solutions; 22 years stuck. Recorded so the lane knows to skip count-shaped problems.",
-   "provenance": {
-    "added_by": "claude-lead, 12-candidate triage",
-    "date": "2026-07-18",
-    "checked": [
-     "OEIS A006585 b-file",
-     "Louwsma 2024 (restricted variant only)"
-    ]
-   },
-   "evidence": [
-    {
-     "type": "literature",
-     "artifact": "OEIS A006585 b-file (a(8) = 151182379, Dethridge 2004); Louwsma 2024 (restricted variant only) — freshness-checked at the 2026-07-17 triage; count-shaped, no compact certificate exists",
-     "date": "2026-07-18"
-    }
-   ],
-   "confidence": "C3"
-  },
-  {
    "problem": 1,
    "oeis": "A276661",
    "quantity": "A276661(11) — least possible largest element of an 11-element set of positive integers whose 2^11 subset sums are pairwise distinct",
@@ -659,6 +222,44 @@
     }
    ],
    "confidence": "C3"
+  },
+  {
+   "problem": 13,
+   "oeis": null,
+   "quantity": "Erdős–Sárközy f(N) = max |A|, A ⊆ {1,…,N}, with no a,b,c ∈ A (b ≠ c) such that a | (b+c) and a < min(b,c) — certified exact table for N ≤ 45, the finite side Bedert's asymptotic theorem does not give; empirical lower fence for its ineffective 'sufficiently large' threshold",
+   "kind": "verified_range",
+   "lower": {
+    "value": "45",
+    "source": "this project's certified exact table f(1..45): branch-and-bound over {1,…,N} cross-checked by exhaustive subset enumeration for N ≤ 16 (two independent methods inside one replayable artifact); dependency-free replay: python3 certificates/erdos-13/verify.py",
+    "year": 2026
+   },
+   "upper": null,
+   "witness_side": "none",
+   "witness_object": "n/a — verified-up-to-N: a replayable exact recomputation certifies f(1..45), every exception witness (f(N) > ⌊N/3⌋+1 exactly at N=2,4,5,7,8,10,11,13,14,17; largest exceptional witness f(17)=7: {6,8,9,11,12,14,17}), and that f(N)=⌊N/3⌋+1 for all 18 ≤ N ≤ 45",
+   "witness_verifier": "python3 certificates/erdos-13/verify.py — dependency-free, ~5–10 s; recomputes f(1..45) two independent ways, re-verifies every exception witness, and confirms the last exception in the computed range is N=17",
+   "witness_feasibility": "none",
+   "exact_feasibility": "wall",
+   "status": "open",
+   "notes": "Effectivization record (charter §3/WS4) — a LOWER FENCE, not a threshold location: in the computed range N ≤ 45 the last exception to f(N)=⌊N/3⌋+1 is N=17. Because Bedert's theorem (arXiv:2301.07065) proves the bound only for sufficiently large N with an INEFFECTIVE threshold, sporadic exceptions at larger N are NOT excluded; raising the fence = extending the certified table past N=45. The headline conjecture is a proven theorem (Bedert 2023), and certifying the TRUE threshold is a wall (needs an effective proof, no compact certificate) — the untabulated finite table is the content here. oeis = null: f is not in OEIS as of 2026-07-17 (checked at certification time; candidate new sequence, deliberately not submitted pending a full literature/definition cross-check — external submissions are human-sent). The stub's A002264 (⌊n/3⌋) is the comparison bound, not f.",
+   "provenance": {
+    "added_by": "effectivization lane (WS4) + epistemic-ledger fold-in",
+    "date": "2026-07-18",
+    "checked": [
+     "certificates/erdos-13/verify.py replayed 2026-07-18: exit 0, valid:true, ~5 s (recomputes f(1..45) two independent ways, re-checks all 10 exception witnesses, confirms last exception 17)",
+     "certificates/erdos-13/table.json (f values, exception witnesses, sample maximal sets)",
+     "certificates/erdos-13/README.md (method + OEIS non-membership check dated 2026-07-17)",
+     "atlas/stubs.json id 13 (Bedert [Be23] arXiv:2301.07065; upstream Solved)"
+    ]
+   },
+   "evidence": [
+    {
+     "type": "replay_receipt",
+     "artifact": "certificates/erdos-13/verify.py",
+     "date": "2026-07-18",
+     "contract": "erdos-13-table"
+    }
+   ],
+   "confidence": "C2"
   },
   {
    "problem": 14,
@@ -1135,6 +736,41 @@
    "confidence": "C3"
   },
   {
+   "problem": 82,
+   "oeis": "A394563",
+   "quantity": "A394563(6) — least N such that every graph on N vertices has an induced regular subgraph of order ≥ 6",
+   "kind": "bounded_below_only",
+   "lower": {
+    "value": "21",
+    "source": "Dyson–McKay (arXiv:2604.08215)",
+    "year": 2026
+   },
+   "upper": null,
+   "witness_side": "lower",
+   "witness_object": "a graph on N ≥ 21 vertices with no induced regular subgraph of order ≥ 6 (⇒ a(6) ≥ N+1)",
+   "witness_verifier": "enumerate all vertex subsets of size ≥ 6; check none induces a degree-regular graph (~2^N subsets, cheap at N ≈ 21)",
+   "witness_feasibility": "hard",
+   "exact_feasibility": "wall",
+   "status": "open",
+   "notes": "Witness verification is trivial; beating the bound means out-searching McKay's 2026 computation. Exact value needs a universal upper-bound proof — wall.",
+   "provenance": {
+    "added_by": "claude-lead, 12-candidate triage",
+    "date": "2026-07-18",
+    "checked": [
+     "arXiv:2604.08215",
+     "OEIS A394563 (rev 2026-07-10)"
+    ]
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "Dyson-McKay arXiv:2604.08215 (a(6) >= 21); OEIS A394563 (rev 2026-07-10) — numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
+  },
+  {
    "problem": 85,
    "oeis": "A006672",
    "quantity": "A006672(39) = R(C4, K_{1,39}) — first literature-open cell of the C4-vs-star Ramsey table (the finite shadow of #85's min-degree function f(n); R(C4,K_{1,n}) = min{m : f(m) <= m-n})",
@@ -1518,6 +1154,41 @@
    "confidence": "C3"
   },
   {
+   "problem": 141,
+   "oeis": "A006560",
+   "quantity": "A006560(7) — smallest starting prime of 7 consecutive primes in arithmetic progression (CPAP-7)",
+   "kind": "bounded_above_only",
+   "lower": null,
+   "upper": {
+    "value": "71137654873189893604531",
+    "source": "Zimmermann existence witness (OEIS comments; primerecords.dk)",
+    "year": 2022
+   },
+   "witness_side": "upper",
+   "witness_object": "a CPAP-7 with a smaller start: 7 consecutive primes in arithmetic progression",
+   "witness_verifier": "primality of the 7 + consecutiveness (no intervening primes) + equal gaps (multiple of 210); milliseconds",
+   "witness_feasibility": "hard",
+   "exact_feasibility": "wall",
+   "status": "open",
+   "notes": "Only one CPAP-7 known; any smaller one is a genuine record with trivial verification. The exact minimum needs an infeasible ~1e21 exhaustive sweep.",
+   "provenance": {
+    "added_by": "claude-lead, 12-candidate triage",
+    "date": "2026-07-18",
+    "checked": [
+     "OEIS A006560 comments",
+     "primerecords.dk t5k listings"
+    ]
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "OEIS A006560 comments (Zimmermann 2022 CPAP-7 existence witness); primerecords.dk listings — numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
+  },
+  {
    "problem": 142,
    "oeis": "A003002",
    "quantity": "A003002(212) — r_3(212), size of the largest subset of {1..212} with no 3-term arithmetic progression (first uncomputed cell; exact table verified to n=211)",
@@ -1589,6 +1260,37 @@
     {
      "type": "literature",
      "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
+  },
+  {
+   "problem": 148,
+   "oeis": "A006585",
+   "quantity": "A006585(9) — number of Egyptian-fraction solutions to 1 = 1/x_1 + … + 1/x_9",
+   "kind": "not_gap_shaped",
+   "lower": null,
+   "upper": null,
+   "witness_side": "none",
+   "witness_object": "n/a — an exact count has no witnessable gap",
+   "witness_verifier": "none — a claimed count has no compact certificate; only a full replication run",
+   "witness_feasibility": "none",
+   "exact_feasibility": "wall",
+   "status": "open",
+   "notes": "a(8) = 151182379 (Dethridge 2004); a(9) expected ~1e12–1e13 solutions; 22 years stuck. Recorded so the lane knows to skip count-shaped problems.",
+   "provenance": {
+    "added_by": "claude-lead, 12-candidate triage",
+    "date": "2026-07-18",
+    "checked": [
+     "OEIS A006585 b-file",
+     "Louwsma 2024 (restricted variant only)"
+    ]
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "OEIS A006585 b-file (a(8) = 151182379, Dethridge 2004); Louwsma 2024 (restricted variant only) — freshness-checked at the 2026-07-17 triage; count-shaped, no compact certificate exists",
      "date": "2026-07-18"
     }
    ],
@@ -1812,6 +1514,116 @@
     {
      "type": "literature",
      "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
+  },
+  {
+   "problem": 171,
+   "oeis": "A156989",
+   "quantity": "c_7 — largest line-free subset of {1,2,3}^7 (density Hales–Jewett, = A156989(7))",
+   "kind": "value_gap",
+   "lower": {
+    "value": "1302",
+    "source": "Polymath1 (arXiv:1002.0374)",
+    "year": 2010
+   },
+   "upper": {
+    "value": "1386",
+    "source": "Polymath1 (arXiv:1002.0374)",
+    "year": 2010
+   },
+   "witness_side": "lower",
+   "witness_object": "a subset of {1,2,3}^7 of size ≥ 1303 containing no combinatorial line",
+   "witness_verifier": "enumerate all 4^7 − 3^7 = 14197 line templates; check no line lies fully inside; trivial script",
+   "witness_feasibility": "hard",
+   "exact_feasibility": "wall",
+   "status": "open",
+   "notes": "16-year bracket; +1 on the lower bound would be the first movement since Polymath1. Exact value needs an optimality certificate that does not exist compactly.",
+   "provenance": {
+    "added_by": "claude-lead, 12-candidate triage",
+    "date": "2026-07-18",
+    "checked": [
+     "OEIS A156989 (rev 2026-05-30)",
+     "arXiv:1002.0374"
+    ]
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "Polymath1 arXiv:1002.0374 (c_7 in [1302,1386]); OEIS A156989 (rev 2026-05-30) — numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
+  },
+  {
+   "problem": 183,
+   "oeis": "A003323",
+   "quantity": "R(3,3,3,3) — 4-color Ramsey number of the triangle (= A003323(4))",
+   "kind": "value_gap",
+   "lower": {
+    "value": "51",
+    "source": "Chung lower-bound construction (per Radziszowski DS1)",
+    "year": 1971
+   },
+   "upper": {
+    "value": "62",
+    "source": "Fettes–Kramer–Radziszowski",
+    "year": 2004
+   },
+   "witness_side": "lower",
+   "witness_object": "a 4-coloring of E(K_n), n ≥ 51, with no monochromatic triangle (⇒ R ≥ n+1)",
+   "witness_verifier": "O(n^3): scan every triangle in each color class; dependency-free script",
+   "witness_feasibility": "historic",
+   "exact_feasibility": "wall",
+   "status": "open",
+   "notes": "50-year gap; even +1 on the lower bound would be the first movement since ~1971. DS1 rev.17 still lists 51–62; Wesley arXiv:2509.03784 (2025) improves other multicolor numbers, not this one. OEIS deleted the value in Aug 2021 'since not known'.",
+   "provenance": {
+    "added_by": "claude-lead, 12-candidate triage",
+    "date": "2026-07-18",
+    "checked": [
+     "Radziszowski DS1 rev.17",
+     "arXiv:2509.03784",
+     "OEIS A003323 history"
+    ]
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "Radziszowski DS1 rev.17 (R(3,3,3,3) in [51,62]: Chung 1971 lower, Fettes-Kramer-Radziszowski 2004 upper); arXiv:2509.03784 checked for movement; OEIS A003323 history — numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
+  },
+  {
+   "problem": 185,
+   "oeis": "A003142",
+   "quantity": "c'_7 — 7-dimensional Moser number (largest subset of [3]^7 with no geometric 3-in-line)",
+   "kind": "next_cell",
+   "lower": null,
+   "upper": null,
+   "witness_side": "lower",
+   "witness_object": "a geometric-line-free subset of [3]^7 (2187 cells)",
+   "witness_verifier": "enumerate the (5^7 − 3^7)/2 = 37969 geometric lines; check none lies inside the set; milliseconds",
+   "witness_feasibility": "hard",
+   "exact_feasibility": "wall",
+   "status": "open",
+   "notes": "c'_6 = 353 (Polymath 2010); published c'_7 bounds NOT yet sourced here — a miner must cite current best lower/upper before any record attempt.",
+   "provenance": {
+    "added_by": "claude-lead, 12-candidate triage",
+    "date": "2026-07-18",
+    "checked": [
+     "arXiv:1002.0374",
+     "OEIS A003142"
+    ]
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "arXiv:1002.0374 (c'_6 = 353); OEIS A003142 — published c'_7 bounds not yet sourced here (entry carries no bounds); freshness-checked at the 2026-07-17 triage",
      "date": "2026-07-18"
     }
    ],
@@ -2746,6 +2558,41 @@
     {
      "type": "literature",
      "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
+  },
+  {
+   "problem": 345,
+   "oeis": "A001661",
+   "quantity": "A001661(9) — largest number not a sum of distinct positive 9th powers",
+   "kind": "bounded_below_only",
+   "lower": {
+    "value": "> 1.55e17",
+    "source": "Wiener (OEIS comment)",
+    "year": 2023
+   },
+   "upper": null,
+   "witness_side": "lower",
+   "witness_object": "a larger integer verified non-representable as a sum of distinct 9th powers",
+   "witness_verifier": "none cheap — non-representability requires a full subset-sum reachability DP (petabyte-scale at 9th powers)",
+   "witness_feasibility": "none",
+   "exact_feasibility": "wall",
+   "status": "open",
+   "notes": "Wiener estimates ~200,000 core-months to finish 9th powers. No cheap certificate on either side; excluded from record hunting.",
+   "provenance": {
+    "added_by": "claude-lead, 12-candidate triage",
+    "date": "2026-07-18",
+    "checked": [
+     "OEIS A001661 (rev 2026-05-30)",
+     "arXiv:2404.08193 (distinct-vs-repetition variant clarified)"
+    ]
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "OEIS A001661 (rev 2026-05-30; Wiener 2023 > 1.55e17); arXiv:2404.08193 — numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
      "date": "2026-07-18"
     }
    ],
@@ -4625,6 +4472,41 @@
    "confidence": "C3"
   },
   {
+   "problem": 556,
+   "oeis": "A389335",
+   "quantity": "R_3(C_9) — 3-color Ramsey number of the 9-cycle (= A389335(9))",
+   "kind": "bounded_below_only",
+   "lower": {
+    "value": "33",
+    "source": "known construction; equals the Bondy–Erdős conjectured value",
+    "year": null
+   },
+   "upper": null,
+   "witness_side": "none",
+   "witness_object": "n/a — the lower bound already meets the conjectured value; only the nonexistence (upper) side remains",
+   "witness_verifier": "n/a",
+   "witness_feasibility": "none",
+   "exact_feasibility": "wall",
+   "status": "open",
+   "notes": "'The first currently open case' per the cycle-Ramsey survey. No compact CNF for exact-9-cycle-freeness (~2e12 clauses naive) — not even a drat-candidate today.",
+   "provenance": {
+    "added_by": "claude-lead, 12-candidate triage",
+    "date": "2026-07-18",
+    "checked": [
+     "Radziszowski DS1 cycle survey",
+     "arXiv:2509.03784"
+    ]
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "Radziszowski DS1 cycle survey (R_3(C_9) >= 33 construction, equal to the Bondy-Erdos conjectured value); arXiv:2509.03784 — numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
+  },
+  {
    "problem": 573,
    "oeis": "A006856",
    "quantity": "A006856(54) — maximum number of edges in a 54-vertex graph of girth >= 5 (first uncomputed cell of ex(n;{C3,C4}))",
@@ -5174,6 +5056,47 @@
    "confidence": "C3"
   },
   {
+   "problem": 724,
+   "oeis": "A001438",
+   "quantity": "N(10) — maximum number of mutually orthogonal Latin squares of order 10 (= A001438(10))",
+   "kind": "value_gap",
+   "lower": {
+    "value": "2",
+    "source": "Parker orthogonal pair",
+    "year": 1959
+   },
+   "upper": {
+    "value": "6",
+    "source": "classical bound (design-theory survey)",
+    "year": null
+   },
+   "witness_side": "lower",
+   "witness_object": "3 mutually orthogonal Latin squares of order 10 (historic if found)",
+   "witness_verifier": "Latin property per square + pairwise orthogonality (all 100 ordered symbol pairs distinct); a few lines, dependency-free",
+   "witness_feasibility": "historic",
+   "exact_feasibility": "wall",
+   "status": "open",
+   "notes": "Open 60+ years whether 3 MOLS(10) exist; 2022–2025 SAT campaigns eliminate relation types only (9 of the Dukes–Howard types remain).",
+   "provenance": {
+    "added_by": "claude-lead, 12-candidate triage",
+    "date": "2026-07-18",
+    "checked": [
+     "OEIS A001438",
+     "arXiv:2204.10996",
+     "arXiv:2503.10504",
+     "arXiv:2509.09633"
+    ]
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "OEIS A001438; Parker 1959 orthogonal pair (lower); classical design-theory bound (upper); SAT campaigns arXiv:2204.10996 / 2503.10504 / 2509.09633 — numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
+  },
+  {
    "problem": 725,
    "oeis": "A001009",
    "quantity": "A001009 row-12 diagonal = number of reduced 12x12 Latin squares (= A000315(12)) — first uncomputed cell; order 11 = 5363937773277371298119673540771840",
@@ -5311,6 +5234,44 @@
     }
    ],
    "confidence": "C3"
+  },
+  {
+   "problem": 743,
+   "oeis": "A000055",
+   "quantity": "largest n for which the Gyarfas tree packing conjecture is verified for ALL tuples (T_2..T_n) -- K_n as the edge-disjoint union of trees with |V(T_k)|=k",
+   "kind": "verified_range",
+   "lower": {
+    "value": "10",
+    "source": "OUR exhaustive uncapped sweep of all 45,376,056 tuples, certificates/erdos-743/ (44 core-seconds, both the WLOG T_10 fix and leaf-sibling symmetry break proven sound; Bollobas's greedy reduction deliberately NOT used). Supersedes n<=9, Fishburn, 'Packing graphs with odd and even trees', J. Graph Theory 7 (1983) 369-383, unmoved for 43 years",
+    "year": 2026
+   },
+   "upper": null,
+   "witness_side": "lower",
+   "witness_object": "a tuple (T_2,...,T_n) of trees admitting NO edge-disjoint decomposition of K_n -- a counterexample to the conjecture",
+   "witness_verifier": "check that the 9 subgraphs are isomorphic to the prescribed trees and that the C(n,2) edges are each used exactly once -- exact, integer, dependency-free",
+   "witness_feasibility": "hard",
+   "exact_feasibility": "cell",
+   "status": "open",
+   "notes": "Edge count is exact: sum_(k=2..n)(k-1) = C(n,2), a perfect decomposition with no slack. The hardest tuples at n=10 are those where T_4..T_7 are ALL STARS -- precisely where theory stops, since Gyarfas-Lehel cover the case where all but at most two trees are stars. n=11 multiplies the tuple space by A000055(11)=235. NOTE: erdosproblems.com's [Fi83] key resolves to a DIFFERENT 1983 Fishburn paper (a matrix packing theorem).",
+   "provenance": {
+    "added_by": "claude-lead, erdos-743 K_10 sweep",
+    "date": "2026-07-27",
+    "checked": [
+     "erdosproblems.com/743 (fetched 2026-07-27, status FALSIFIABLE)",
+     "Fishburn, J. Graph Theory 7 (1983) 369-383 (n<=9)",
+     "OEIS A000055 counts k=2..10",
+     "our own uncapped sweep, certificates/erdos-743/"
+    ]
+   },
+   "evidence": [
+    {
+     "type": "implementation",
+     "artifact": "certificates/erdos-743/ -- exhaustive uncapped decomposition search over all 45,376,056 tuples; n=9 reproduces Fishburn as positive control",
+     "date": "2026-07-27",
+     "contract": "erdos-743-k10-packing"
+    }
+   ],
+   "confidence": "C2"
   },
   {
    "problem": 768,
@@ -6075,6 +6036,45 @@
    "confidence": "C3"
   },
   {
+   "problem": 902,
+   "oeis": "A362137",
+   "quantity": "A362137(7) — smallest Paley tournament with property S_7 (7-paradoxical)",
+   "kind": "value_gap",
+   "lower": {
+    "value": "> 1163 (= a(6); all smaller Paley primes fail)",
+    "source": "OEIS a(6), Bozóki/Fisher computation line",
+    "year": 2023
+   },
+   "upper": {
+    "value": "<= 200704 (Graham–Spencer sufficiency ceiling)",
+    "source": "Graham–Spencer criterion",
+    "year": null
+   },
+   "witness_side": "upper",
+   "witness_object": "a prime p ≡ 3 (mod 4) below the current best whose Paley tournament is 7-paradoxical",
+   "witness_verifier": "asymmetric: refuting a prime is cheap (exhibit one 7-subset with empty common-predecessor set), but CERTIFYING S_7 needs ~C(p,5) exact enumeration — as costly as the search itself",
+   "witness_feasibility": "hard",
+   "exact_feasibility": "unknown",
+   "status": "open",
+   "notes": "Extrapolated a(7) ≈ 4000–6000; brute exact check is days-to-weeks on one box. Needs a symmetry-reduced SAT/CP decision method before it is movable.",
+   "provenance": {
+    "added_by": "claude-lead, 12-candidate triage",
+    "date": "2026-07-18",
+    "checked": [
+     "OEIS A362137 (rev 2026-05-06)",
+     "arXiv:2604.08790"
+    ]
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "OEIS A362137 (rev 2026-05-06; a(6) computation line); arXiv:2604.08790; Graham-Spencer sufficiency criterion — numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
+  },
+  {
    "problem": 912,
    "oeis": "A071626",
    "quantity": "h(n) = A071626(n) — number of distinct exponents in the prime factorization of n!; existence of c>0 with h(n) ~ c·(n/log n)^{1/2}",
@@ -6637,6 +6637,42 @@
    "confidence": "C3"
   },
   {
+   "problem": 979,
+   "oeis": "A385316",
+   "quantity": "A385316(6) — smallest N that is a sum of 3 prime cubes in exactly 6 ways",
+   "kind": "next_cell",
+   "lower": {
+    "value": "> 10^12",
+    "source": "public in-repo exact verifier exhaustively counts the complete prime-cube window [0,10^12], reproduces a(1..5), and finds no value with exactly 6 representations",
+    "year": 2026
+   },
+   "upper": null,
+   "witness_side": "none",
+   "witness_object": "n/a — exact-cell lane: a complete enumeration to a cap is a proof (every representation of V ≤ cap uses primes ≤ cap^(1/3))",
+   "witness_verifier": "sieve primes ≤ cap^(1/3); enumerate all unordered triples; histogram sums; validated by reproducing a(1..5) exactly",
+   "witness_feasibility": "none",
+   "exact_feasibility": "cell",
+   "status": "record_in_progress",
+   "notes": "PUBLIC BOUND: a(6) > 10^12, replayable from certificates/erdos-979/ (~11 GB). PRIVATE OPERATIONAL RESULT: the private streaming sweep and blind replica report gap-free agreement through 10^13, but their code and ledgers are not tracked in this repository, so that stronger result is quarantined from public promotion pending a self-contained replay packet. External OEIS submission is a separate human-sent step.",
+   "provenance": {
+    "added_by": "claude-lead, 12-candidate triage",
+    "date": "2026-07-18",
+    "checked": [
+     "OEIS A385316",
+     "a385316.py --verify (a(1..5) reproduced)"
+    ]
+   },
+   "evidence": [
+    {
+     "type": "replay_receipt",
+     "artifact": "certificates/erdos-979/verify.py --cutoff 1e12 (complete prime set; reproduces a(1..5); exact finite count)",
+     "date": "2026-07-21",
+     "contract": "erdos-979-a6-public"
+    }
+   ],
+   "confidence": "C2"
+  },
+  {
    "problem": 982,
    "oeis": "A004526",
    "quantity": "f(n)/n where f(n) = largest m such that every convex n-gon has a vertex with >= m distinct distances to the other vertices (Erdős 1946 conjecture: f(n) = floor(n/2))",
@@ -6715,6 +6751,45 @@
    "confidence": "C3"
   },
   {
+   "problem": 993,
+   "oeis": "A000055",
+   "quantity": "largest n for which every free tree on at most n vertices is verified to have a unimodal independence sequence",
+   "kind": "verified_range",
+   "lower": {
+    "value": "30",
+    "source": "OUR exhaustive sweep, certificates/erdos-993/ -- all 23,522,619,475 trees on n<=30 (10.33 core-hours), which INCLUDES an independent replication of the previous frontier n<=29 (Brett Reynolds, Zenodo v3, DOI 10.5281/zenodo.19100781, March 2026, 8,691,747,673 trees) -- a single-author non-peer-reviewed preprint that nobody had replayed until now",
+    "year": 2026
+   },
+   "upper": null,
+   "witness_side": "lower",
+   "witness_object": "a tree whose independence sequence is not unimodal -- storable as an (n-1)-entry parent array, about 30 bytes",
+   "witness_verifier": "exact integer DP A_v=prod(A_c+B_c), B_v=x*prod(A_c); then first strict descent with no later strict ascent. No floats, no CAS",
+   "witness_feasibility": "hard",
+   "exact_feasibility": "cell",
+   "status": "open",
+   "notes": "n=30 alone (14,830,871,802 trees) is 1.71x the ENTIRE cumulative n<=29 workload -- not an incremental rung. Do NOT test log-concavity as a proxy: it is FALSE for trees from n=26 (Kadrawi-Levit-Yosef-Mizrachi arXiv:2305.01784 found exactly two order-26 trees unimodal but not log-concave; arXiv:2510.18826 found tens of thousands more to 101 vertices). The frontier holder is actively working this lane (repo pushed 2026-07-22, cloud compute), so a verified-to-N record here has a short shelf life; the replication half does not.",
+   "provenance": {
+    "added_by": "claude-lead, erdos-993 n<=30 sweep",
+    "date": "2026-07-27",
+    "checked": [
+     "erdosproblems.com/993 (fetched 2026-07-27; records NO bound)",
+     "Reynolds, Zenodo v3 DOI 10.5281/zenodo.19100781 (n<=29), via DataCite",
+     "Hibi-Kara-Vien arXiv:2604.18824 citing it",
+     "OEIS A000055 counts n=1..30",
+     "our own sweep, certificates/erdos-993/"
+    ]
+   },
+   "evidence": [
+    {
+     "type": "implementation",
+     "artifact": "certificates/erdos-993/ -- WROM free-tree generation with counts pinned to A000055 at every order, exact independence-polynomial DP, direct unimodality test",
+     "date": "2026-07-27",
+     "contract": "erdos-993-unimodal-n30"
+    }
+   ],
+   "confidence": "C2"
+  },
+  {
    "problem": 1003,
    "oeis": "A001274",
    "quantity": "infinitude of {n : phi(n) = phi(n+1)} (the set tabulated by A001274)",
@@ -6782,6 +6857,46 @@
     {
      "type": "literature",
      "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
+     "date": "2026-07-18"
+    }
+   ],
+   "confidence": "C3"
+  },
+  {
+   "problem": 1013,
+   "oeis": "A292528",
+   "quantity": "A292528(6) — minimum vertices of a triangle-free graph with chromatic number 6",
+   "kind": "value_gap",
+   "lower": {
+    "value": "32",
+    "source": "Goedgebeur (J. Graph Theory 2020)",
+    "year": 2017
+   },
+   "upper": {
+    "value": "40",
+    "source": "Goedgebeur (J. Graph Theory 2020)",
+    "year": 2017
+   },
+   "witness_side": "upper",
+   "witness_object": "a triangle-free graph on ≤ 39 vertices with chromatic number 6",
+   "witness_verifier": "triangle-free in O(V·E); χ ≥ 6 via SAT-UNSAT certificate for 5-colorability; χ ≤ 6 via explicit coloring",
+   "witness_feasibility": "hard",
+   "exact_feasibility": "wall",
+   "status": "open",
+   "notes": "[32,40] unmoved since 2017 against Goedgebeur's own world-class enumeration tooling (a(5)=22, Jensen–Royle 1995). Witness side is legitimate but expert-defeated.",
+   "provenance": {
+    "added_by": "claude-lead, 12-candidate triage",
+    "date": "2026-07-18",
+    "checked": [
+     "OEIS A292528 (rev 2026-01-10)",
+     "Goedgebeur, J. Graph Theory 2020",
+     "Exoo–Goedgebeur 2019"
+    ]
+   },
+   "evidence": [
+    {
+     "type": "literature",
+     "artifact": "Goedgebeur, J. Graph Theory 2020 ([32,40]); Exoo-Goedgebeur 2019; OEIS A292528 (rev 2026-01-10) — numbers freshness-checked at the 2026-07-17 triage, no in-project verification artifact",
      "date": "2026-07-18"
     }
    ],
@@ -7661,6 +7776,43 @@
    "confidence": "C3"
   },
   {
+   "problem": 1107,
+   "oeis": "A056828",
+   "quantity": "Mollin-Walsh completeness frontier (A056828) — verified no new n fails to be a sum of <=3 powerful numbers",
+   "kind": "verified_range",
+   "lower": {
+    "value": "10^6",
+    "source": "public in-repo exact bitset-sumset verifier recomputes the exception set through 10^6",
+    "year": 2026
+   },
+   "upper": null,
+   "witness_side": "none",
+   "witness_object": "n/a — verified-up-to-N: a replayable bounded scan certifies no exception beyond {7,15,23,87,111,119} up to the frontier",
+   "witness_verifier": "python3 -I certificates/erdos-1107/verify.py; exact exception-set equality through the chosen N (default 10^6)",
+   "witness_feasibility": "none",
+   "exact_feasibility": "wall",
+   "status": "record_in_progress",
+   "notes": "PUBLIC BOUND: no seventh exception through 10^6, replayable in-repo. PRIVATE OPERATIONAL RESULT: a private verified-up-to-N run reported 10^10 with A118896 and sampled-witness cross-checks, but no canonical receipt was found in the public package during the 2026-07-21 audit; it is quarantined from promotion until packaged. The full conjecture is a wall.",
+   "provenance": {
+    "added_by": "verified-up-to-N lane + lead",
+    "date": "2026-07-18",
+    "checked": [
+     "OEIS A056828",
+     "OEIS A118896",
+     "Jobling 4x10^7 null result (reproduced)"
+    ]
+   },
+   "evidence": [
+    {
+     "type": "replay_receipt",
+     "artifact": "certificates/erdos-1107/verify.py default N=1000000 exact bitset-sumset replay",
+     "date": "2026-07-21",
+     "contract": "erdos-1107-public-table"
+    }
+   ],
+   "confidence": "C2"
+  },
+  {
    "problem": 1108,
    "oeis": "A115645",
    "quantity": "A115645(27) — next powerful number (min prime exponent >= 2) expressible as a sum of distinct factorials; 26 terms known, largest = 1401602635449 = 1183893^2",
@@ -7994,81 +8146,6 @@
     }
    ],
    "confidence": "C3"
-  },
-  {
-   "problem": 1107,
-   "oeis": "A056828",
-   "quantity": "Mollin-Walsh completeness frontier (A056828) — verified no new n fails to be a sum of <=3 powerful numbers",
-   "kind": "verified_range",
-   "lower": {
-    "value": "10^6",
-    "source": "public in-repo exact bitset-sumset verifier recomputes the exception set through 10^6",
-    "year": 2026
-   },
-   "upper": null,
-   "witness_side": "none",
-   "witness_object": "n/a — verified-up-to-N: a replayable bounded scan certifies no exception beyond {7,15,23,87,111,119} up to the frontier",
-   "witness_verifier": "python3 -I certificates/erdos-1107/verify.py; exact exception-set equality through the chosen N (default 10^6)",
-   "witness_feasibility": "none",
-   "exact_feasibility": "wall",
-   "status": "record_in_progress",
-   "notes": "PUBLIC BOUND: no seventh exception through 10^6, replayable in-repo. PRIVATE OPERATIONAL RESULT: a private verified-up-to-N run reported 10^10 with A118896 and sampled-witness cross-checks, but no canonical receipt was found in the public package during the 2026-07-21 audit; it is quarantined from promotion until packaged. The full conjecture is a wall.",
-   "provenance": {
-    "added_by": "verified-up-to-N lane + lead",
-    "date": "2026-07-18",
-    "checked": [
-     "OEIS A056828",
-     "OEIS A118896",
-     "Jobling 4x10^7 null result (reproduced)"
-    ]
-   },
-   "evidence": [
-    {
-     "type": "replay_receipt",
-     "artifact": "certificates/erdos-1107/verify.py default N=1000000 exact bitset-sumset replay",
-     "date": "2026-07-21",
-     "contract": "erdos-1107-public-table"
-    }
-   ],
-   "confidence": "C2"
-  },
-  {
-   "problem": 13,
-   "oeis": null,
-   "quantity": "Erdős–Sárközy f(N) = max |A|, A ⊆ {1,…,N}, with no a,b,c ∈ A (b ≠ c) such that a | (b+c) and a < min(b,c) — certified exact table for N ≤ 45, the finite side Bedert's asymptotic theorem does not give; empirical lower fence for its ineffective 'sufficiently large' threshold",
-   "kind": "verified_range",
-   "lower": {
-    "value": "45",
-    "source": "this project's certified exact table f(1..45): branch-and-bound over {1,…,N} cross-checked by exhaustive subset enumeration for N ≤ 16 (two independent methods inside one replayable artifact); dependency-free replay: python3 certificates/erdos-13/verify.py",
-    "year": 2026
-   },
-   "upper": null,
-   "witness_side": "none",
-   "witness_object": "n/a — verified-up-to-N: a replayable exact recomputation certifies f(1..45), every exception witness (f(N) > ⌊N/3⌋+1 exactly at N=2,4,5,7,8,10,11,13,14,17; largest exceptional witness f(17)=7: {6,8,9,11,12,14,17}), and that f(N)=⌊N/3⌋+1 for all 18 ≤ N ≤ 45",
-   "witness_verifier": "python3 certificates/erdos-13/verify.py — dependency-free, ~5–10 s; recomputes f(1..45) two independent ways, re-verifies every exception witness, and confirms the last exception in the computed range is N=17",
-   "witness_feasibility": "none",
-   "exact_feasibility": "wall",
-   "status": "open",
-   "notes": "Effectivization record (charter §3/WS4) — a LOWER FENCE, not a threshold location: in the computed range N ≤ 45 the last exception to f(N)=⌊N/3⌋+1 is N=17. Because Bedert's theorem (arXiv:2301.07065) proves the bound only for sufficiently large N with an INEFFECTIVE threshold, sporadic exceptions at larger N are NOT excluded; raising the fence = extending the certified table past N=45. The headline conjecture is a proven theorem (Bedert 2023), and certifying the TRUE threshold is a wall (needs an effective proof, no compact certificate) — the untabulated finite table is the content here. oeis = null: f is not in OEIS as of 2026-07-17 (checked at certification time; candidate new sequence, deliberately not submitted pending a full literature/definition cross-check — external submissions are human-sent). The stub's A002264 (⌊n/3⌋) is the comparison bound, not f.",
-   "provenance": {
-    "added_by": "effectivization lane (WS4) + epistemic-ledger fold-in",
-    "date": "2026-07-18",
-    "checked": [
-     "certificates/erdos-13/verify.py replayed 2026-07-18: exit 0, valid:true, ~5 s (recomputes f(1..45) two independent ways, re-checks all 10 exception witnesses, confirms last exception 17)",
-     "certificates/erdos-13/table.json (f values, exception witnesses, sample maximal sets)",
-     "certificates/erdos-13/README.md (method + OEIS non-membership check dated 2026-07-17)",
-     "atlas/stubs.json id 13 (Bedert [Be23] arXiv:2301.07065; upstream Solved)"
-    ]
-   },
-   "evidence": [
-    {
-     "type": "replay_receipt",
-     "artifact": "certificates/erdos-13/verify.py",
-     "date": "2026-07-18",
-     "contract": "erdos-13-table"
-    }
-   ],
-   "confidence": "C2"
   }
  ]
 }

@@ -52,9 +52,19 @@
    "boundary": "Lower bound 46 only; the former equality claim is retracted."
   },
   {
+   "path": "certificates/erdos-743",
+   "classification": "certified_local",
+   "boundary": "Exhaustive search: every one of the 45,376,056 tuples (T_2..T_10) decomposes K_10. Settles n=10 only; says nothing about n>=11 and is not a proof of the Gyarfas conjecture."
+  },
+  {
    "path": "certificates/erdos-979",
    "classification": "certified_local",
    "boundary": "Public package certifies a(6)>10^12; private 10^13 ledgers are not promoted here."
+  },
+  {
+   "path": "certificates/erdos-993",
+   "classification": "certified_local",
+   "boundary": "Exhaustive search: every free tree on n<=30 vertices has a unimodal independence sequence. A verified-to-N record, NOT a proof; no finite sweep can settle the conjecture. Says nothing about log-concavity, which is already known FALSE for trees from n=26."
   },
   {
    "path": "certificates/fibonacci-macro-residual",
@@ -780,6 +790,128 @@
      "failure_control": {
       "kind": "embedded",
       "evidence": "search366 --selftest, run by verify.py, builds non-powerful numbers that must be REJECTED (a powerful number times one extra prime at exponent 1) alongside powerful ones that must be accepted, so a checker that always answers either way fails. Both directions were watched failing on two deliberately planted code bugs before the gate was trusted."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-743-k10-packing",
+   "status": "promoted",
+   "statement": "Every tuple of free trees (T_2,...,T_10) with |V(T_k)|=k decomposes K_10 into edge-disjoint copies (Erdos #743, n=10).",
+   "scope": "Exhaustive and uncapped over all 45,376,056 tuples. Settles n=10; not a proof of the conjecture for general n.",
+   "machine_verdict": "\"unpackable\":0",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-743/README.md",
+     "contains": "YES for n = 10",
+     "must_not_contain": [
+      "proves the Gyárfás conjecture",
+      "resolves Erdős #743"
+     ]
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-743/verify.py",
+     "sha256": "5eb44441799f1cce432879456a340141d42d8d9f3f960b7a919a74660ad6bb54"
+    },
+    {
+     "path": "certificates/erdos-743/pack.c",
+     "sha256": "575aa5cfd78514b2bda08f709734e3fa0d975e74ad48ee400d532b26d0e4e4db"
+    },
+    {
+     "path": "certificates/erdos-743/gen_trees.py",
+     "sha256": "ff26f85ab17180281183a07a812492e3f2d2dc3d4ff96bb6678ddd57c27484c4"
+    },
+    {
+     "path": "certificates/erdos-743/trees.txt",
+     "sha256": "87cf32f83790f888982f48e36e0f93887fe26a9055728a942c57bc428a0a63ff"
+    },
+    {
+     "path": "certificates/erdos-743/RESULT.json",
+     "sha256": "72d0eff2381b2c51ef9937d6d94d849e2f9cfcec10a1b8fab120ada2f6ea4e47"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-743/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-743/verify.py",
+      "--quick"
+     ],
+     "timeout_seconds": 600,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"unpackable\":0",
+      "\"verified\":true",
+      "\"tuples\":45376056"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "--selftest demands an over-full packing (one edge too many) be REFUSED alongside packings that must be found, so a packer that always answers yes fails and so does one that always answers no. Budget-aborted tuples are reported HARD, never UNPACKABLE; the certified run is uncapped."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-993-unimodal-n30",
+   "status": "promoted",
+   "statement": "Every free tree on at most 30 vertices has a unimodal independence sequence (Erdos #993).",
+   "scope": "Exhaustive over all 23,522,619,475 trees on n<=30, including an independent replication of the published n<=29 range (8,691,747,673 trees). A verified-to-N record, not a proof.",
+   "machine_verdict": "\"violations\":0",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-993/README.md",
+     "contains": "independent replication of the published frontier",
+     "must_not_contain": [
+      "proves the conjecture",
+      "resolves Erdős #993"
+     ]
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-993/verify.py",
+     "sha256": "7f49ce075fef6e3411d595e08d3b2ae96bb37c533bbba9a0ccc6254daede1a73"
+    },
+    {
+     "path": "certificates/erdos-993/unimodal.c",
+     "sha256": "d9bf8e8eb648175e2a94e07edf0548279a232677548c78fa974a6dba4de34047"
+    },
+    {
+     "path": "certificates/erdos-993/freetrees.py",
+     "sha256": "7e6552a7a5f7e377114e4cee093eb6dae8822771095e4ceea0cd4b9b085c0f17"
+    },
+    {
+     "path": "certificates/erdos-993/RESULT.json",
+     "sha256": "63a3058999d832a3dba71ddc4540ca87d73785880959028dc8491227d233b63b"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-993/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-993/verify.py",
+      "--quick"
+     ],
+     "timeout_seconds": 900,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"violations\":0",
+      "\"verified\":true",
+      "\"trees\":23522619475"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "--selftest pins generated tree counts to OEIS A000055 at every order (a first generator produced A000081, rooted trees, and only this caught it) and demands the unimodality predicate REJECT a non-unimodal sequence while ACCEPTING plateaus and monotone sequences."
      }
     }
    ]
