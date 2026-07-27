@@ -7,8 +7,8 @@
   "verify.py": "7f49ce075fef6e3411d595e08d3b2ae96bb37c533bbba9a0ccc6254daede1a73"
  },
  "binary_provenance": "built from the committed unimodal.c",
- "claim": "Every free tree on n <= 29 vertices has a unimodal independence sequence. Exhaustive over all 8691747673 trees.",
- "core_seconds": 13457.9,
+ "claim": "Every free tree on n <= 30 vertices has a unimodal independence sequence. Exhaustive over all 23522619475 trees.",
+ "core_seconds": 37203.7,
  "graph_nodes": [
   "P993",
   "S:triage:993"
@@ -47,7 +47,8 @@
   26,
   27,
   28,
-  29
+  29,
+  30
  ],
  "problem": "https://www.erdosproblems.com/993",
  "question": "Is the independence sequence i_0, i_1, ... of every tree unimodal? (False for general graphs: Alavi-Malde-Schwenk-Erdos 1987.)",
@@ -83,6 +84,7 @@
   "28": 13,
   "29": 13,
   "3": 13,
+  "30": 13,
   "4": 13,
   "5": 13,
   "6": 13,
@@ -114,6 +116,7 @@
   "28": 2023443032,
   "29": 5469566585,
   "3": 1,
+  "30": 14830871802,
   "4": 2,
   "5": 3,
   "6": 6,
@@ -121,7 +124,7 @@
   "8": 23,
   "9": 47
  },
- "trees_total": 8691747673,
+ "trees_total": 23522619475,
  "violation_lines": [],
  "violations": 0
 }

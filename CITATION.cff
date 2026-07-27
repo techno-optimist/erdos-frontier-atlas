@@ -28,7 +28,7 @@ keywords:
   - "exact verification"
 abstract: >-
   EFA-DR1 is the first numbered data release of the Erdős Frontier Atlas gap
-  map (atlas/gap_map.json): a versioned [L, U] ledger over 222 bounded
+  map (atlas/gap_map.json): a versioned [L, U] ledger over 224 bounded
   quantities attached to the open Erdős problems, each entry recording the
   known lower/upper bounds with sources, the witness object that would move
   the bracket, a dependency-free verifier specification, and feasibility

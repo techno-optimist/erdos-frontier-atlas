@@ -5,12 +5,12 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 379,
-   "evidenced_by": 8,
-   "has_surface": 316,
+   "evidenced_by": 10,
+   "has_surface": 318,
    "learned_from": 5,
-   "measures": 221,
+   "measures": 223,
    "references": 479,
-   "retracts": 10,
+   "retracts": 14,
    "same_family": 114,
    "tagged": 1979,
    "trap": 7,
@@ -18,22 +18,22 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 12,
-   "evidence_container": 24,
+   "evidence_claim": 14,
+   "evidence_container": 26,
    "external_claim": 91,
-   "incident": 19,
+   "incident": 23,
    "move": 7,
    "msc": 17,
-   "oeis_seq": 402,
+   "oeis_seq": 403,
    "problem": 1217,
-   "surface": 316,
+   "surface": 318,
    "tag": 41,
    "wall": 213
   },
   "tiers": {
    "cited-implication": 29,
-   "deterministic-rule": 3945,
-   "validator-enforced": 18
+   "deterministic-rule": 3949,
+   "validator-enforced": 24
   }
  },
  "edges": [
@@ -5272,10 +5272,26 @@
    "type": "evidenced_by"
   },
   {
+   "dst": "E:claim:erdos-743-k10-packing",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P743",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
    "dst": "E:claim:erdos-979-a6-public",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
    "src": "P979",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-993-unimodal-n30",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P993",
    "tier": "validator-enforced",
    "type": "evidenced_by"
   },
@@ -7051,6 +7067,13 @@
    "type": "has_surface"
   },
   {
+   "dst": "S:gap:743:207194b8",
+   "source": "atlas/gap_map.json",
+   "src": "P743",
+   "tier": "deterministic-rule",
+   "type": "has_surface"
+  },
+  {
    "dst": "S:triage:743",
    "source": "atlas/finite_handle_triage.json",
    "src": "P743",
@@ -7481,6 +7504,13 @@
    "dst": "S:gap:985:e049360b",
    "source": "atlas/gap_map.json",
    "src": "P985",
+   "tier": "deterministic-rule",
+   "type": "has_surface"
+  },
+  {
+   "dst": "S:gap:993:dbd50fcc",
+   "source": "atlas/gap_map.json",
+   "src": "P993",
    "tier": "deterministic-rule",
    "type": "has_surface"
   },
@@ -8724,6 +8754,13 @@
    "type": "measures"
   },
   {
+   "dst": "O:A000055",
+   "source": "atlas/gap_map.json",
+   "src": "S:gap:743:207194b8",
+   "tier": "deterministic-rule",
+   "type": "measures"
+  },
+  {
    "dst": "O:A352287",
    "source": "atlas/gap_map.json",
    "src": "S:gap:768:17609730",
@@ -9063,6 +9100,13 @@
    "dst": "O:A002233",
    "source": "atlas/gap_map.json",
    "src": "S:gap:985:e049360b",
+   "tier": "deterministic-rule",
+   "type": "measures"
+  },
+  {
+   "dst": "O:A000055",
+   "source": "atlas/gap_map.json",
+   "src": "S:gap:993:dbd50fcc",
    "tier": "deterministic-rule",
    "type": "measures"
   },
@@ -12434,6 +12478,27 @@
    "type": "retracts"
   },
   {
+   "dst": "E:claim:erdos-993-unimodal-n30",
+   "source": "certificates/contracts.json",
+   "src": "I:pin:0ace36de",
+   "tier": "validator-enforced",
+   "type": "retracts"
+  },
+  {
+   "dst": "E:claim:erdos-743-k10-packing",
+   "source": "certificates/contracts.json",
+   "src": "I:pin:10707414",
+   "tier": "validator-enforced",
+   "type": "retracts"
+  },
+  {
+   "dst": "E:claim:erdos-993-unimodal-n30",
+   "source": "certificates/contracts.json",
+   "src": "I:pin:5d2c1a12",
+   "tier": "validator-enforced",
+   "type": "retracts"
+  },
+  {
    "dst": "E:claim:graffiti-290-finite-verification",
    "source": "certificates/contracts.json",
    "src": "I:pin:6eb47db7",
@@ -12493,6 +12558,13 @@
    "dst": "E:claim:erdos-979-a6-public",
    "source": "certificates/contracts.json",
    "src": "I:pin:d0112dbe",
+   "tier": "validator-enforced",
+   "type": "retracts"
+  },
+  {
+   "dst": "E:claim:erdos-743-k10-packing",
+   "source": "certificates/contracts.json",
+   "src": "I:pin:f3fe3a6b",
    "tier": "validator-enforced",
    "type": "retracts"
   },
@@ -29316,6 +29388,50 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-743/verify.py",
+     "sha256": "5eb44441799f1cce432879456a340141d42d8d9f3f960b7a919a74660ad6bb54"
+    },
+    {
+     "path": "certificates/erdos-743/pack.c",
+     "sha256": "575aa5cfd78514b2bda08f709734e3fa0d975e74ad48ee400d532b26d0e4e4db"
+    },
+    {
+     "path": "certificates/erdos-743/gen_trees.py",
+     "sha256": "ff26f85ab17180281183a07a812492e3f2d2dc3d4ff96bb6678ddd57c27484c4"
+    },
+    {
+     "path": "certificates/erdos-743/trees.txt",
+     "sha256": "87cf32f83790f888982f48e36e0f93887fe26a9055728a942c57bc428a0a63ff"
+    },
+    {
+     "path": "certificates/erdos-743/RESULT.json",
+     "sha256": "72d0eff2381b2c51ef9937d6d94d849e2f9cfcec10a1b8fab120ada2f6ea4e47"
+    }
+   ],
+   "claim_id": "erdos-743-k10-packing",
+   "id": "E:claim:erdos-743-k10-packing",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-743/verify.py",
+     "--quick"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "\"unpackable\":0",
+     "\"verified\":true",
+     "\"tuples\":45376056"
+    ]
+   },
+   "scope": "Exhaustive and uncapped over all 45,376,056 tuples. Settles n=10; not a proof of the conjecture for general n.",
+   "statement": "Every tuple of free trees (T_2,...,T_10) with |V(T_k)|=k decomposes K_10 into edge-disjoint copies (Erdos #743, n=10).",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-979/verify.py",
      "sha256": "0aef06820a6d338274254cab24b99e39489e8b474c9beb745bce4d1a1db6525e"
     },
@@ -29343,6 +29459,46 @@
    },
    "scope": "Exact finite lower bound only; does not bear on the asymptotic Erdős #979 limsup question. The private 10^13 sweep is quarantined from public promotion until packaged.",
    "statement": "A385316(6) > 10^12.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
+     "path": "certificates/erdos-993/verify.py",
+     "sha256": "7f49ce075fef6e3411d595e08d3b2ae96bb37c533bbba9a0ccc6254daede1a73"
+    },
+    {
+     "path": "certificates/erdos-993/unimodal.c",
+     "sha256": "d9bf8e8eb648175e2a94e07edf0548279a232677548c78fa974a6dba4de34047"
+    },
+    {
+     "path": "certificates/erdos-993/freetrees.py",
+     "sha256": "7e6552a7a5f7e377114e4cee093eb6dae8822771095e4ceea0cd4b9b085c0f17"
+    },
+    {
+     "path": "certificates/erdos-993/RESULT.json",
+     "sha256": "63a3058999d832a3dba71ddc4540ca87d73785880959028dc8491227d233b63b"
+    }
+   ],
+   "claim_id": "erdos-993-unimodal-n30",
+   "id": "E:claim:erdos-993-unimodal-n30",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-993/verify.py",
+     "--quick"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "\"violations\":0",
+     "\"verified\":true",
+     "\"trees\":23522619475"
+    ]
+   },
+   "scope": "Exhaustive over all 23,522,619,475 trees on n<=30, including an independent replication of the published n<=29 range (8,691,747,673 trees). A verified-to-N record, not a proof.",
+   "statement": "Every free tree on at most 30 vertices has a unimodal independence sequence (Erdos #993).",
    "status": "promoted",
    "type": "evidence_claim"
   },
@@ -29559,10 +29715,24 @@
    "type": "evidence_container"
   },
   {
+   "boundary": "Exhaustive search: every one of the 45,376,056 tuples (T_2..T_10) decomposes K_10. Settles n=10 only; says nothing about n>=11 and is not a proof of the Gyarfas conjecture.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-743",
+   "path": "certificates/erdos-743",
+   "type": "evidence_container"
+  },
+  {
    "boundary": "Public package certifies a(6)>10^12; private 10^13 ledgers are not promoted here.",
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-979",
    "path": "certificates/erdos-979",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "Exhaustive search: every free tree on n<=30 vertices has a unimodal independence sequence. A verified-to-N record, NOT a proof; no finite sweep can settle the conjecture. Says nothing about log-concavity, which is already known FALSE for trees from n=26.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-993",
+   "path": "certificates/erdos-993",
    "type": "evidence_container"
   },
   {
@@ -29736,6 +29906,27 @@
    "type": "incident"
   },
   {
+   "banned_string": "resolves Erdős #993",
+   "id": "I:pin:0ace36de",
+   "kind": "retraction_pin",
+   "source": "certificates/contracts.json must_not_contain",
+   "type": "incident"
+  },
+  {
+   "banned_string": "proves the Gyárfás conjecture",
+   "id": "I:pin:10707414",
+   "kind": "retraction_pin",
+   "source": "certificates/contracts.json must_not_contain",
+   "type": "incident"
+  },
+  {
+   "banned_string": "proves the conjecture",
+   "id": "I:pin:5d2c1a12",
+   "kind": "retraction_pin",
+   "source": "certificates/contracts.json must_not_contain",
+   "type": "incident"
+  },
+  {
    "banned_string": "Planted-failure controls — 16 of them",
    "id": "I:pin:6eb47db7",
    "kind": "retraction_pin",
@@ -29794,6 +29985,13 @@
   {
    "banned_string": "\"value\": \"> 10^13\"",
    "id": "I:pin:d0112dbe",
+   "kind": "retraction_pin",
+   "source": "certificates/contracts.json must_not_contain",
+   "type": "incident"
+  },
+  {
+   "banned_string": "resolves Erdős #743",
+   "id": "I:pin:f3fe3a6b",
    "kind": "retraction_pin",
    "source": "certificates/contracts.json must_not_contain",
    "type": "incident"
@@ -29946,6 +30144,12 @@
    "problems": [
     107
    ],
+   "type": "oeis_seq"
+  },
+  {
+   "a_number": "A000055",
+   "id": "O:A000055",
+   "problems": [],
    "type": "oeis_seq"
   },
   {
@@ -66824,6 +67028,37 @@
    "witness_verifier": "n/a (no finite witness changes the epistemic state; the EGRS claim m = exp((log n)^{1/2+o(1)}) for almost all n is an analytic statement)"
   },
   {
+   "confidence": "C2",
+   "evidence": [
+    {
+     "artifact": "certificates/erdos-743/ -- exhaustive uncapped decomposition search over all 45,376,056 tuples; n=9 reproduces Fishburn as positive control",
+     "contract": "erdos-743-k10-packing",
+     "date": "2026-07-27",
+     "type": "implementation"
+    }
+   ],
+   "exact_feasibility": "cell",
+   "id": "S:gap:743:207194b8",
+   "kind": "verified_range",
+   "lower": {
+    "source": "OUR exhaustive uncapped sweep of all 45,376,056 tuples, certificates/erdos-743/ (44 core-seconds, both the WLOG T_10 fix and leaf-sibling symmetry break proven sound; Bollobas's greedy reduction deliberately NOT used). Supersedes n<=9, Fishburn, 'Packing graphs with odd and even trees', J. Graph Theory 7 (1983) 369-383, unmoved for 43 years",
+    "value": "10",
+    "year": 2026
+   },
+   "notes": "Edge count is exact: sum_(k=2..n)(k-1) = C(n,2), a perfect decomposition with no slack. The hardest tuples at n=10 are those where T_4..T_7 are ALL STARS -- precisely where theory stops, since Gyarfas-Lehel cover the case where all but at most two trees are stars. n=11 multiplies the tuple space by A000055(11)=235. NOTE: erdosproblems.com's [Fi83] key resolves to a DIFFERENT 1983 Fishburn paper (a matrix packing theorem).",
+   "oeis": "A000055",
+   "overlay": "gap_map",
+   "problem": 743,
+   "quantity": "largest n for which the Gyarfas tree packing conjecture is verified for ALL tuples (T_2..T_n) -- K_n as the edge-disjoint union of trees with |V(T_k)|=k",
+   "status": "open",
+   "type": "surface",
+   "upper": null,
+   "witness_feasibility": "hard",
+   "witness_object": "a tuple (T_2,...,T_n) of trees admitting NO edge-disjoint decomposition of K_n -- a counterexample to the conjecture",
+   "witness_side": "lower",
+   "witness_verifier": "check that the 9 subgraphs are isomorphic to the prescribed trees and that the C(n,2) edges are each used exactly once -- exact, integer, dependency-free"
+  },
+  {
    "confidence": "C3",
    "evidence": [
     {
@@ -68297,6 +68532,37 @@
    "witness_object": "extension certificate: for each prime p in (current N, new N], a prime q < p together with the prime factorization of p-1 and the checks q^((p-1)/r) != 1 (mod p) for every prime r | p-1",
    "witness_side": "lower",
    "witness_verifier": "per prime, verify the factorization of p-1 by multiplication plus primality of its factors, then k modular exponentiations; compact, dependency-free, spot-checkable certificates (only exceptional primes with large least prime primitive root need storing — max is 107 below 10^5)"
+  },
+  {
+   "confidence": "C2",
+   "evidence": [
+    {
+     "artifact": "certificates/erdos-993/ -- WROM free-tree generation with counts pinned to A000055 at every order, exact independence-polynomial DP, direct unimodality test",
+     "contract": "erdos-993-unimodal-n30",
+     "date": "2026-07-27",
+     "type": "implementation"
+    }
+   ],
+   "exact_feasibility": "cell",
+   "id": "S:gap:993:dbd50fcc",
+   "kind": "verified_range",
+   "lower": {
+    "source": "OUR exhaustive sweep, certificates/erdos-993/ -- all 23,522,619,475 trees on n<=30 (10.33 core-hours), which INCLUDES an independent replication of the previous frontier n<=29 (Brett Reynolds, Zenodo v3, DOI 10.5281/zenodo.19100781, March 2026, 8,691,747,673 trees) -- a single-author non-peer-reviewed preprint that nobody had replayed until now",
+    "value": "30",
+    "year": 2026
+   },
+   "notes": "n=30 alone (14,830,871,802 trees) is 1.71x the ENTIRE cumulative n<=29 workload -- not an incremental rung. Do NOT test log-concavity as a proxy: it is FALSE for trees from n=26 (Kadrawi-Levit-Yosef-Mizrachi arXiv:2305.01784 found exactly two order-26 trees unimodal but not log-concave; arXiv:2510.18826 found tens of thousands more to 101 vertices). The frontier holder is actively working this lane (repo pushed 2026-07-22, cloud compute), so a verified-to-N record here has a short shelf life; the replication half does not.",
+   "oeis": "A000055",
+   "overlay": "gap_map",
+   "problem": 993,
+   "quantity": "largest n for which every free tree on at most n vertices is verified to have a unimodal independence sequence",
+   "status": "open",
+   "type": "surface",
+   "upper": null,
+   "witness_feasibility": "hard",
+   "witness_object": "a tree whose independence sequence is not unimodal -- storable as an (n-1)-entry parent array, about 30 bytes",
+   "witness_side": "lower",
+   "witness_verifier": "exact integer DP A_v=prod(A_c+B_c), B_v=x*prod(A_c); then first strict descent with no later strict ascent. No floats, no CAS"
   },
   {
    "confidence": "C3",

@@ -47,9 +47,9 @@ The state of this edition, generated from the data:
 
 | this edition | state |
 |---|---|
-| data through | **2026-07-26** (latest provenance/evidence date in the gap map) |
-| the ledger | **222** bounded quantities |
-| confidence | C0 0 · C1 0 · C2 5 · C3 217 |
+| data through | **2026-07-27** (latest provenance/evidence date in the gap map) |
+| the ledger | **224** bounded quantities |
+| confidence | C0 0 · C1 0 · C2 7 · C3 217 |
 | movements on the board | **9** (🟢 5 · 🔴 2 · 🟡 2) — corrected claims kept visible |
 
 ---
@@ -71,9 +71,9 @@ validated, literature-grade, class C3 until an in-project verification
 artifact exists. The map does not pretend its own entries are verified; the
 labeling *is* the release gate.
 
-- **222 bounded quantities** on the map ([`atlas/gap_map.json`](../atlas/gap_map.json)).
-- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **2** lane-added, **208** agent-mined.
-- Confidence distribution (computed from `evidence[]`, never asserted): **C0** 0 · **C1** 0 · **C2** 5 · **C3** 217.
+- **224 bounded quantities** on the map ([`atlas/gap_map.json`](../atlas/gap_map.json)).
+- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **4** lane-added, **208** agent-mined.
+- Confidence distribution (computed from `evidence[]`, never asserted): **C0** 0 · **C1** 0 · **C2** 7 · **C3** 217.
 - **81 witness-workable**: still open, with a side a single submitted
   construction — checked by the entry's stated verifier — can move.
 
@@ -81,7 +81,7 @@ labeling *is* the release gate.
 |---|---|---|
 | `value_gap` | 30 | 5 |
 | `next_cell` | 81 | 56 |
-| `verified_range` | 28 | 16 |
+| `verified_range` | 30 | 16 |
 | `bounded_below_only` | 16 | 4 |
 | `bounded_above_only` | 1 | 0 |
 | `not_gap_shaped` | 66 | 0 |
@@ -298,11 +298,11 @@ do-not-enter list records the four recurring reasons: someone already walled
 it with our tools at larger scale; the verifier is not exact-poly-time; the
 witness is not representable; there is no finite frontier at all.
 
-Exact-value attack-state over the gap map's 222 quantities (field `exact_feasibility`):
+Exact-value attack-state over the gap map's 224 quantities (field `exact_feasibility`):
 
 | attack-state | meaning | entries |
 |---|---|---|
-| `cell` | an uncomputed exact cell current exact tools can plausibly settle | 55 |
+| `cell` | an uncomputed exact cell current exact tools can plausibly settle | 57 |
 | `drat-candidate` | exact settlement looks reachable via a certified-UNSAT (DRAT) route | 7 |
 | `unknown` | attack-state not yet priced | 20 |
 | `wall` | the exact value needs an infeasible nonexistence proof — do not spend search compute here | 140 |
@@ -353,7 +353,7 @@ fails any stored class the recorded evidence does not prove.
 |---|---|---|
 | C0 | contract-bound formal proof, machine-checked | 0 |
 | C1 | &ge;2 contract-bound independent replays at the claimed range | 0 |
-| C2 | exactly one contract-bound verified replay | 5 |
+| C2 | exactly one contract-bound verified replay | 7 |
 | C3 | literature- or numerics-grade — no independent in-project verification artifact | 217 |
 
 The remaining instruments are refusals. The **freshness gate**: no claim of
