@@ -158,3 +158,38 @@ collar-LP infeasibility across all 298 known `q=1` objects with the sealed
 engine agreeing 298/298 - a measurement over objects found so far.
 
 `erdos142_solved: false`. `new_r3_bound: false`.
+
+## 2026-07-30 - Erdos 142 / Wall A: one-day campaign record — fence complex published
+
+`progress/frontier/erdos-142/WALL_A_FENCE_COMPLEX.md` (+ erratum),
+`verify_wall_a.py` (--self: 16 exact checks, 0.1 s, fully portable;
+--lanes replays the four research lanes on the originating box),
+`LAST_CORNER_VERDICT.md`. erdos142_solved: false. new_r3_bound: false.
+
+WHAT IT IS: the complete, adversarially-judged record of a one-day audit and
+attack campaign on the L^4 Croot-Sisask/Chang chamber of Raghavan's
+arXiv:2603.27045v3 (the current r_3(N) <= N exp(-Omega((log N/loglog N)^{1/6}))
+baseline; all mathematics therein remains Raghavan's).
+
+HEADLINES, exactly scoped:
+* The 1/6 chamber is FULLY VERIFIED — every load-bearing step machine-checked
+  in exact arithmetic, every source-read flag closed, 18 printed (parameter-
+  neutral) defects catalogued, numbering erratum recorded.
+* PROVED: the S-ledger (log N = O(L^3 log L * S), S = sum_j log 2K_j, upper
+  bound; S = O(L^{3-t}) => exponent 1/(6-t)); the sigma'-matched corridor
+  R1D-2 (true but REDUNDANT — R2-3); R1C-1 exactly optimal; T1-T4; G1
+  (J*(D+1) <= n, in-model); the master formula exponent = 1/(3+2s+2kappa+lambda)
+  reproducing all six published exponents untuned, ceiling 1/(4+2s), s = 1
+  in every known mechanism.
+* ~15 judged fences (absolute-activation shadows, shift-law moment algebra,
+  spreadness monotonicity, naive corridor -> 1/7 regression, nested descent,
+  CRT towers, sparsification, ...), four of the campaign's own intermediate
+  conjectures refuted by its own adversarial phases.
+* TERMINAL META-RESULT: the F_3 subgroup model provably CANNOT decide the
+  residue (dimension budget Theta(L) vs Z/N's Theta(L^2) — EG circularity;
+  no shadow of radius-shrink increments). The honest residue: reduce s, and
+  the Z/N flat-descent/spike question, both exactly stated in the record.
+
+NO EXPONENT MOVED. The value is that the next attacker starts at the true
+frontier: this record kills, with proofs and exact constants, every obvious
+line of attack on the chamber, and names the two that remain.
