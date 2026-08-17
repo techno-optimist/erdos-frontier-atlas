@@ -165,6 +165,7 @@ Every promoted claim replays in one command; the fastest way to learn the receip
 - `erdos-142-foundation`: `python3 -I certificates/erdos-142/verify.py`
 - `erdos-142-q24-d4-cylinder-position-additive-wall`: `python3 -I certificates/erdos-142-q24-cylinder-hypograph-wall/verify.py --self-test`
 - `erdos-142-q24-d4-role-distinct-additive-wall`: `python3 -I certificates/erdos-142-d4-role-distinct-additive-wall/verify.py --self-test`
+- `erdos-142-q24-d4-second-orbit-cylinder-position-wall`: `python3 -I certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/verify.py --self-test`
 - `erdos-142-q24-mirror-core-additive-wall`: `python3 -I certificates/erdos-142-mirror-core-additive-wall/verify.py`
 - `erdos-366-cubefull-sweep-1e25`: `python3 -I certificates/erdos-366/verify.py --quick`
 - `erdos-552-f39-lower`: `python3 -I certificates/erdos-552-f39/verify.py`

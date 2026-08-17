@@ -43,7 +43,7 @@ others don't touch it.
 | `claude/erdos-366-sweep-20260726` | Erdős #366 cubefull-side sweep — verified range 10^22 → 10^25, zero strict-orientation solutions | `certificates/erdos-366/`, gap_map #366 row, contracts claim `erdos-366-cubefull-sweep-1e25` | PR packaging 2026-07-26 |
 | `claude/attack-graph-20260726` | The attack graph — a generated agent-facing overlay over every ledger (`GRAPH.md` → `views/sorties.md` → per-problem cards). Adds no facts; organizes existing ones | `tools/build_graph.py`, `tools/validate_graph.py`, `tools/query_graph.py`, `atlas/graph/`, `views/graph/`, `views/sorties.md`, `GRAPH.md`, `CLAUDE.md`, `tests/test_graph.py` | PR packaging 2026-07-26 |
 | `claude/trees-993-743-20260727` | Tree lanes: Erdős #743 Gyárfás packing at K_10, and #993 independence unimodality to n=30 (incl. first replication of the n≤29 frontier) | `certificates/erdos-743/`, `certificates/erdos-993/`, gap_map #743 + #993 rows, contracts claims `erdos-743-k10-packing` + `erdos-993-unimodal-n30` | PR packaging 2026-07-27 |
-| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md`, `certificates/erdos-142-mirror-core-additive-wall/`, `certificates/erdos-142-d4-role-distinct-additive-wall/`, `certificates/erdos-142-q24-cylinder-hypograph-wall/` | exact q=24 mirror-core, role-distinct, and stronger cylinder-position additive walls; no survivor / no new bound, 2026-08-17 |
+| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md`, `certificates/erdos-142-mirror-core-additive-wall/`, `certificates/erdos-142-d4-role-distinct-additive-wall/`, `certificates/erdos-142-q24-cylinder-hypograph-wall/`, `certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/` | exact q=24 mirror-core and role-distinct walls; both maximum-mass D4 orbits closed under cylinder-position additivity; no survivor / no new bound, 2026-08-17 |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching
@@ -103,14 +103,29 @@ sum rows) cancels all 2,820 coefficients and leaves a strictly negative exact
 right side. The stdlib semantic replay reconstructs all 125 ordered sum rows,
 midpoints, carries, raw costs, D4 mass, and ten planted failures; a separately
 written implementation agrees. This remains finite q=24 and separable across
-the three physical coordinates: arbitrary 6D, pair-interaction, recursive, and
-second-maximal-orbit potentials remain open.
+the three physical coordinates: arbitrary 6D, pair-interaction, and recursive
+potentials remain open. The second maximum-mass orbit is handled next.
 
-Next exact test: run the same hypograph certificate search on the second
-inequivalent maximum-mass D4 orbit `(7,6,7,6,7)`, then admit pair-coordinate,
-non-additive global, or recursive-state potentials where cylinder-position
-separability is still too rigid. Reprice at `q=48` and attempt rational
-continuum thickening only for a survivor. No finite survivor has been produced.
+Fourth exact branch result:
+`certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/` closes
+the second inequivalent maximum-mass assignment `(7,6,7,6,7)` under the same
+2,820-variable cylinder-position additive model. Its compact semantic packet
+has 816 selected local rows, all 125 ordered sum rows, and 931 positive integer
+Farkas multipliers. Exact cancellation leaves a strictly negative right side;
+eight planted corruptions are rejected, and a separately written stdlib replay
+agrees. The verifier also reruns the complete `8^5` mass census and proves that
+the 16 maximizers are exactly the disjoint eight-member symmetry orbits of
+`(7,7,7,6,7)` and `(7,6,7,6,7)`. Paired with the third branch certificate,
+this closes every maximum-mass D4 assignment under cylinder-position
+additivity. It remains finite q=24 and does not touch pair-coordinate,
+arbitrary 6D, recursive, deformed-support, or continuum potentials.
+
+Next exact test: admit pair-coordinate, non-additive global, or recursive-state
+potentials where cylinder-position separability is still too rigid. A corrected
+q=6 arbitrary-global sweep is numerically LP-infeasible for both representatives,
+but has no exact dual and is not a claim. Accelerate the pair-coordinate oracle,
+then reprice at `q=8`/`q=12` or `q=48` and attempt rational continuum thickening
+only for a survivor. No finite survivor has been produced.
 Naslund's public deck states only the rounded capset rate `2.22`; the cited
 `2.2208` manuscript remains unavailable publicly as of the audit.
 

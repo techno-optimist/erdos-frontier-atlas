@@ -5,7 +5,7 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 379,
-   "evidenced_by": 14,
+   "evidenced_by": 15,
    "has_surface": 319,
    "learned_from": 5,
    "measures": 223,
@@ -18,8 +18,8 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 18,
-   "evidence_container": 31,
+   "evidence_claim": 19,
+   "evidence_container": 32,
    "external_claim": 91,
    "incident": 26,
    "move": 7,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 3950,
-   "validator-enforced": 31
+   "validator-enforced": 32
   }
  },
  "edges": [
@@ -5249,6 +5249,14 @@
   },
   {
    "dst": "E:claim:erdos-142-q24-d4-role-distinct-additive-wall",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P142",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-142-q24-d4-second-orbit-cylinder-position-wall",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
    "src": "P142",
@@ -29432,6 +29440,47 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/README.md",
+     "sha256": "a2ee94b56f234686d2ca274b6bd34a7ac644285075c040e6aa2cd281e34dad82"
+    },
+    {
+     "path": "certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/verify.py",
+     "sha256": "60403dc78bdcbc929345390da9f873e2d5e55733a725dabba35f8eb212ac167c"
+    },
+    {
+     "path": "certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/certificate.json",
+     "sha256": "ab7f047034cd9287ece048ca56b78f2f1d32f2e2c2e102ae3b10ab05523a1e29"
+    },
+    {
+     "path": "certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/independent_replay.py",
+     "sha256": "54769ea9deb0810b50e7202e1ca54ca60f3d0e4d41f9250c18fa3e80a26dd813"
+    }
+   ],
+   "claim_id": "erdos-142-q24-d4-second-orbit-cylinder-position-wall",
+   "id": "E:claim:erdos-142-q24-d4-second-orbit-cylinder-position-wall",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/verify.py",
+     "--self-test"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "PASS_Q24_D4_SECOND_ORBIT_CYLINDER_HYPOGRAPH_EXACT_FARKAS",
+     "\"maximum_mass_assignments\": 16",
+     "\"positive_contradiction\": \"443949403946578587181096256508988953271196473677423811533138374068397125657555935076136756882041128041806593419991607851044352\"",
+     "\"planted_corruptions\": \"all rejected\""
+    ]
+   },
+   "scope": "Finite q=24 and the model F_c(p0,p1,p2)=G[c,0,p0]+G[c,1,p1]+G[c,2,p2] only. The eight assignments in this D4/word-symmetry orbit have union mass 21,653,735 versus the 4,741,632-point EHPS gate. The exact mass census has 16 maximizers in two disjoint orbits, so this claim plus the separate first-orbit certificate closes every maximum-mass D4 assignment under cylinder-position additivity. It does not exclude pair-coordinate or arbitrary six-dimensional potentials, recursive state, deformed supports, q=48, or a continuum construction; it gives no r_3(N) bound.",
+   "statement": "At q=24, the second maximum-mass D4 orbit represented by (P1,P2,P3,B,K)=(7,6,7,6,7) admits no cylinder-position additive potential satisfying every raw-Euclidean modular-midpoint constraint across the five Karapetyan word cylinders.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-142-mirror-core-additive-wall/README.md",
      "sha256": "20f85000a3193f7092e89117b1ee9ede11e741874ef3490dce2248eba29d1a9d"
     },
@@ -29946,6 +29995,13 @@
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-142-q24-cylinder-hypograph-wall",
    "path": "certificates/erdos-142-q24-cylinder-hypograph-wall",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "Exact finite q=24 Farkas wall for the second maximum-mass D4 orbit represented by (P1,P2,P3,B,K)=(7,6,7,6,7), under cylinder-position additive potentials on the five pairwise-disjoint Karapetyan word cylinders. The verifier reconstructs the 816 selected local rows, all 125 sum rows, the exact 931-row contradiction, and the complete 16-maximizer/two-orbit mass census. Together with the separate first-orbit certificate it closes all maximum-mass D4 assignments only in this additive ansatz. It does not exclude pair-coordinate, arbitrary six-dimensional, recursive-state, deformed-support, q=48, or continuum constructions. Gives no r_3(N) bound; Erdos Problem 142 remains unsolved.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-142-q24-second-orbit-cylinder-hypograph-wall",
+   "path": "certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall",
    "type": "evidence_container"
   },
   {

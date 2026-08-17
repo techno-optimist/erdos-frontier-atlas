@@ -32,6 +32,11 @@
    "boundary": "Exact finite q=24 Farkas wall for the single D4 assignment (P1,P2,P3,B,K)=(7,7,7,6,7) and cylinder-position additive potentials on the five pairwise-disjoint Karapetyan word cylinders. The mass-beating union, local-hypograph equivalence, 662 selected midpoint rows, all 125 sum rows, and exact 771-row contradiction are reconstructed semantically. Does not exclude arbitrary global six-dimensional or pair-interaction potentials, recursive-state potentials, the second maximum-mass D4 orbit, deformed supports, q=48, or a continuum construction. Gives no r_3(N) bound; Erdos Problem 142 remains unsolved."
   },
   {
+   "path": "certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall",
+   "classification": "certified_local",
+   "boundary": "Exact finite q=24 Farkas wall for the second maximum-mass D4 orbit represented by (P1,P2,P3,B,K)=(7,6,7,6,7), under cylinder-position additive potentials on the five pairwise-disjoint Karapetyan word cylinders. The verifier reconstructs the 816 selected local rows, all 125 sum rows, the exact 931-row contradiction, and the complete 16-maximizer/two-orbit mass census. Together with the separate first-orbit certificate it closes all maximum-mass D4 assignments only in this additive ansatz. It does not exclude pair-coordinate, arbitrary six-dimensional, recursive-state, deformed-support, q=48, or continuum constructions. Gives no r_3(N) bound; Erdos Problem 142 remains unsolved."
+  },
+  {
    "path": "certificates/erdos-142-d4-role-distinct-additive-wall",
    "classification": "certified_local",
    "boundary": "Exact finite q=24 Farkas wall for the single D4 assignment (P1,P2,P3,B,K)=(7,7,7,6,7) and role-distinct additive potentials on the five Karapetyan word cylinders. The mass-beating union and all 622 selected midpoint rows are reconstructed semantically. Does not exclude an arbitrary global six-dimensional potential, recursive-state potentials, other D4 assignments, deformed supports, q=48, or a continuum construction. Gives no r_3(N) bound; Erdos Problem 142 remains unsolved."
@@ -1019,6 +1024,92 @@
      "failure_control": {
       "kind": "none_explained",
       "evidence": "This separately written stdlib replay is a non-certifying cross-check without its own full mutation harness; the certifying verify.py replay above carries ten embedded planted failures."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-142-q24-d4-second-orbit-cylinder-position-wall",
+   "status": "promoted",
+   "statement": "At q=24, the second maximum-mass D4 orbit represented by (P1,P2,P3,B,K)=(7,6,7,6,7) admits no cylinder-position additive potential satisfying every raw-Euclidean modular-midpoint constraint across the five Karapetyan word cylinders.",
+   "scope": "Finite q=24 and the model F_c(p0,p1,p2)=G[c,0,p0]+G[c,1,p1]+G[c,2,p2] only. The eight assignments in this D4/word-symmetry orbit have union mass 21,653,735 versus the 4,741,632-point EHPS gate. The exact mass census has 16 maximizers in two disjoint orbits, so this claim plus the separate first-orbit certificate closes every maximum-mass D4 assignment under cylinder-position additivity. It does not exclude pair-coordinate or arbitrary six-dimensional potentials, recursive state, deformed supports, q=48, or a continuum construction; it gives no r_3(N) bound.",
+   "machine_verdict": "PASS_Q24_D4_SECOND_ORBIT_CYLINDER_HYPOGRAPH_EXACT_FARKAS",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/README.md",
+     "contains": "The exact local-hypograph formulation has 2,445 `G` variables and 375"
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/README.md",
+     "sha256": "a2ee94b56f234686d2ca274b6bd34a7ac644285075c040e6aa2cd281e34dad82"
+    },
+    {
+     "path": "certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/verify.py",
+     "sha256": "60403dc78bdcbc929345390da9f873e2d5e55733a725dabba35f8eb212ac167c"
+    },
+    {
+     "path": "certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/certificate.json",
+     "sha256": "ab7f047034cd9287ece048ca56b78f2f1d32f2e2c2e102ae3b10ab05523a1e29"
+    },
+    {
+     "path": "certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/independent_replay.py",
+     "sha256": "54769ea9deb0810b50e7202e1ca54ca60f3d0e4d41f9250c18fa3e80a26dd813"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/verify.py",
+      "--self-test"
+     ],
+     "timeout_seconds": 120,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_Q24_D4_SECOND_ORBIT_CYLINDER_HYPOGRAPH_EXACT_FARKAS",
+      "\"maximum_mass_assignments\": 16",
+      "\"positive_contradiction\": \"443949403946578587181096256508988953271196473677423811533138374068397125657555935076136756882041128041806593419991607851044352\"",
+      "\"planted_corruptions\": \"all rejected\""
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "verify.py reconstructs the q=24 EHPS tile, all D4 images, the cylinder-position G/t indexer, every selected local row, all 125 ordered sum rows, exact 2820-variable cancellation, union mass, and the complete 16-maximizer/two-orbit census. It requires eight planted corruptions to be rejected: multiplier, carry, raw cost, role, omitted sum row, assignment, mass, and orbit mutation."
+     }
+    },
+    {
+     "profile": "fast",
+     "certifies_claim": false,
+     "entrypoint": "certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/independent_replay.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/independent_replay.py",
+      "--self-test"
+     ],
+     "timeout_seconds": 120,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_INDEPENDENT_Q24_D4_SECOND_ORBIT_REPLAY",
+      "\"selected_rows\": 931",
+      "\"union_mass_count\": 21653735",
+      "\"packet_sha256\": \"ab7f047034cd9287ece048ca56b78f2f1d32f2e2c2e102ae3b10ab05523a1e29\"",
+      "\"mutation_self_test\": \"PASS\""
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "This separately written stdlib replay reconstructs the packet rows and exact cancellation without importing the primary verifier, and rejects a planted right-side mutation. The primary replay carries the full eight-control harness."
      }
     }
    ]

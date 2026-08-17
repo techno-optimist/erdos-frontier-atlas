@@ -59,6 +59,7 @@ verify-certs:
 	python3 -I certificates/erdos-142-mirror-core-additive-wall/verify.py
 	python3 -I certificates/erdos-142-d4-role-distinct-additive-wall/verify.py --self-test
 	python3 -I certificates/erdos-142-q24-cylinder-hypograph-wall/verify.py --self-test
+	python3 -I certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/verify.py --self-test
 
 test:
 	python3 -m pytest tests/ -q

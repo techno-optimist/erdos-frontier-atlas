@@ -337,9 +337,38 @@ written independent replay.
 
 This is a stronger finite wall, not a global one. It still permits nonlinear
 interactions between two or three physical coordinates inside a cylinder,
-arbitrary six-dimensional potentials, recursive state, the second inequivalent
-maximum-mass D4 orbit, support deformation, and continuum thickening. It gives
-no new `r_3(N)` bound.
+arbitrary six-dimensional potentials, recursive state, support deformation,
+and continuum thickening. The second inequivalent maximum-mass D4 orbit is
+handled separately below. It gives no new `r_3(N)` bound.
+
+### 4.4 Second maximum-mass D4 orbit
+
+The exact `8^5` D4 mass census has 16 maximizers. The word automorphism and
+global-D4 actions split them into two disjoint eight-member orbits, represented
+by
+
+```text
+(7,7,7,6,7) and (7,6,7,6,7).
+```
+
+The second representative has the same exact union mass `21,653,735`. A fresh
+local-hypograph CEGAR master selected an exact dual support for its 2,820-variable
+cylinder-position additive system. The compact semantic packet in
+`certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/` contains 816
+selected local rows, all 125 ordered triple-sum rows, and 931 positive integer
+multipliers. They cancel every `G` and `t` coefficient and leave a strictly
+negative exact right side. The stdlib verifier reconstructs the EHPS tile, all
+D4 images, the cylinder mass, every witness/carry/raw cost, the complete
+maximum-mass census, and eight planted corruptions; a separately written replay
+reconstructs the cancellation independently.
+
+The two exact orbit certificates therefore exclude all 16 maximum-mass D4
+assignments under cylinder-position additivity. This remains a finite `q=24`
+ansatz wall. Pair-coordinate potentials, arbitrary functions on six-dimensional
+cylinder vertices, recursive state, support deformation, and continuum transfer
+remain live escape routes. A corrected `q=6` arbitrary-global screen is
+numerically infeasible for both representatives, but no exact dual certificate
+has been extracted, so that experiment is not promoted as a claim.
 
 ## 5. What would count as progress
 
