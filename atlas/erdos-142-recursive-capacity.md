@@ -370,6 +370,38 @@ remain live escape routes. A corrected `q=6` arbitrary-global screen is
 numerically infeasible for both representatives, but no exact dual certificate
 has been extracted, so that experiment is not promoted as a claim.
 
+### 4.5 Pair-coordinate interactions at q=6
+
+Cylinder-position additivity still forbids interactions between physical
+coordinates. The next model gives each cylinder three independent tables and
+sets
+
+```text
+F_c(p0,p1,p2)
+  = H[c,01,p0,p1] + H[c,02,p0,p2] + H[c,12,p1,p2].
+```
+
+At q=6 the EHPS tile and each D4 image have 9 points, so this model has
+`5*3*9^2=1,215` variables. For both named representatives `(7,7,7,6,7)` and
+`(7,6,7,6,7)`, the five cylinders are pairwise disjoint and have union count
+`5*9^3=3,645`. Their normalized mass is `5/64`, exceeding `(7/24)^3` by the
+exact ratio `1080/343`.
+
+The full pricing oracle retained all 125 ordered cylinder triples, all even-q
+midpoint branches, and the raw canonical endpoint cost. Exact Farkas packets
+in `certificates/erdos-142-q6-pair-coordinate-walls/` select 1,067 rows for the
+first representative and 1,071 for the second. In each packet, positive integer
+multipliers cancel all 1,215 pair-table coefficients and leave a strictly
+positive right side. The stdlib verifier reconstructs every selected global
+witness and rejects 16 planted corruptions; a separately written replay and a
+third model audit agree.
+
+This is a stronger potential ansatz at a coarser quotient, so it is not a q=24
+pair-coordinate theorem. It does not exclude an arbitrary function on each
+six-dimensional cylinder, recursive state, support deformation, or continuum
+transfer. The arbitrary-global q=6 LP is numerically infeasible for both
+representatives, but no exact dual has yet been extracted.
+
 ## 5. What would count as progress
 
 A promotable positive result must include all of:

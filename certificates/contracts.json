@@ -37,6 +37,11 @@
    "boundary": "Exact finite q=24 Farkas wall for the second maximum-mass D4 orbit represented by (P1,P2,P3,B,K)=(7,6,7,6,7), under cylinder-position additive potentials on the five pairwise-disjoint Karapetyan word cylinders. The verifier reconstructs the 816 selected local rows, all 125 sum rows, the exact 931-row contradiction, and the complete 16-maximizer/two-orbit mass census. Together with the separate first-orbit certificate it closes all maximum-mass D4 assignments only in this additive ansatz. It does not exclude pair-coordinate, arbitrary six-dimensional, recursive-state, deformed-support, q=48, or continuum constructions. Gives no r_3(N) bound; Erdos Problem 142 remains unsolved."
   },
   {
+   "path": "certificates/erdos-142-q6-pair-coordinate-walls",
+   "classification": "certified_local",
+   "boundary": "Two exact finite q=6 Farkas walls for the D4 representatives (7,7,7,6,7) and (7,6,7,6,7), allowing independent H[c,01], H[c,02], and H[c,12] pair-coordinate tables on each cylinder. Both 3,645-point unions beat the finite EHPS mass gate, but exact 1,067-row and 1,071-row combinations cancel all 1,215 pair variables. This does not transfer to q=24/q=48, exclude arbitrary six-dimensional or recursive potentials, cover deformed supports, or certify continuum/integer transfer. Gives no r_3(N) bound; Erdos Problem 142 remains unsolved."
+  },
+  {
    "path": "certificates/erdos-142-d4-role-distinct-additive-wall",
    "classification": "certified_local",
    "boundary": "Exact finite q=24 Farkas wall for the single D4 assignment (P1,P2,P3,B,K)=(7,7,7,6,7) and role-distinct additive potentials on the five Karapetyan word cylinders. The mass-beating union and all 622 selected midpoint rows are reconstructed semantically. Does not exclude an arbitrary global six-dimensional potential, recursive-state potentials, other D4 assignments, deformed supports, q=48, or a continuum construction. Gives no r_3(N) bound; Erdos Problem 142 remains unsolved."
@@ -1110,6 +1115,96 @@
      "failure_control": {
       "kind": "embedded",
       "evidence": "This separately written stdlib replay reconstructs the packet rows and exact cancellation without importing the primary verifier, and rejects a planted right-side mutation. The primary replay carries the full eight-control harness."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-142-q6-pair-coordinate-walls",
+   "status": "promoted",
+   "statement": "At q=6, neither D4 representative (P1,P2,P3,B,K)=(7,7,7,6,7) nor (7,6,7,6,7) admits a cylinder-specific pair-coordinate potential satisfying every raw-Euclidean modular-midpoint coercivity inequality across the five Karapetyan word cylinders.",
+   "scope": "Exactly two finite q=6 support assignments and the model F_c=H[c,01]+H[c,02]+H[c,12]. Each five-cylinder union has 3,645 points and normalized mass 5/64, beating (7/24)^3 by 1080/343. The claim does not transfer to q=24 or q=48, exclude arbitrary functions on six-dimensional cylinders, recursive state, jointly deformed supports, or continuum/integer transfer; it gives no r_3(N) bound.",
+   "machine_verdict": "PASS_Q6_PAIR_COORDINATE_EXACT_FARKAS_WALLS",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-142-q6-pair-coordinate-walls/README.md",
+     "contains": "Neither assignment admits such a potential satisfying all raw-Euclidean"
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-142-q6-pair-coordinate-walls/README.md",
+     "sha256": "6df569f90878e18065039714d600870267e281ebfa5b01d9d795e011527d4452"
+    },
+    {
+     "path": "certificates/erdos-142-q6-pair-coordinate-walls/verify.py",
+     "sha256": "2aed068079c648333a3589d48cadbfa43aa1e4fe1f4b48dcb91e2966ea6fe7df"
+    },
+    {
+     "path": "certificates/erdos-142-q6-pair-coordinate-walls/certificate_A.json",
+     "sha256": "46dea1b400fe3c7a43f7b6b48107e2f4858ec62661bef026c3e08182587a2f6e"
+    },
+    {
+     "path": "certificates/erdos-142-q6-pair-coordinate-walls/certificate_B.json",
+     "sha256": "6a504e00146d97da7e83e6d77bf37c26cd47a7493d998096236f0212a035f7af"
+    },
+    {
+     "path": "certificates/erdos-142-q6-pair-coordinate-walls/independent_replay.py",
+     "sha256": "2dd827c67e528a930bdb48e27816b0f97ef63772e0812b1e4ced780cfdd3bb87"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-142-q6-pair-coordinate-walls/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-q6-pair-coordinate-walls/verify.py",
+      "--self-test"
+     ],
+     "timeout_seconds": 120,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_Q6_PAIR_COORDINATE_EXACT_FARKAS_WALLS",
+      "\"selected_rows\": 1067",
+      "\"selected_rows\": 1071",
+      "\"mass_gate_ratio\": \"1080/343\"",
+      "\"planted_corruptions\": \"all 16 rejected\""
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "verify.py independently reconstructs the q=6 EHPS/D4 supports, disjoint mass-beating cylinders, all 1,215 pair variables, every selected six-dimensional witness, midpoint branch, carry, raw cost, coefficient row, and exact Farkas cancellation. For each packet it rejects multiplier, midpoint, carry, raw-cost, cylinder, pair-index, assignment, and missing-row mutations."
+     }
+    },
+    {
+     "profile": "fast",
+     "certifies_claim": false,
+     "entrypoint": "certificates/erdos-142-q6-pair-coordinate-walls/independent_replay.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-q6-pair-coordinate-walls/independent_replay.py"
+     ],
+     "timeout_seconds": 120,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_INDEPENDENT_Q6_PAIR_COORDINATE_REPLAY",
+      "\"union_mass_reconstructed\": 3645",
+      "\"packet_sha256\": \"46dea1b400fe3c7a43f7b6b48107e2f4858ec62661bef026c3e08182587a2f6e\"",
+      "\"packet_sha256\": \"6a504e00146d97da7e83e6d77bf37c26cd47a7493d998096236f0212a035f7af\"",
+      "\"mutation_self_test\": \"PASS\""
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "This separately written stdlib replay reconstructs both support/mass systems and pair indexers without importing the primary verifier, replays exact cancellation for both packets, and rejects a planted right-side mutation."
      }
     }
    ]

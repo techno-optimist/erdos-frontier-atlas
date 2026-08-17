@@ -43,7 +43,7 @@ others don't touch it.
 | `claude/erdos-366-sweep-20260726` | Erdős #366 cubefull-side sweep — verified range 10^22 → 10^25, zero strict-orientation solutions | `certificates/erdos-366/`, gap_map #366 row, contracts claim `erdos-366-cubefull-sweep-1e25` | PR packaging 2026-07-26 |
 | `claude/attack-graph-20260726` | The attack graph — a generated agent-facing overlay over every ledger (`GRAPH.md` → `views/sorties.md` → per-problem cards). Adds no facts; organizes existing ones | `tools/build_graph.py`, `tools/validate_graph.py`, `tools/query_graph.py`, `atlas/graph/`, `views/graph/`, `views/sorties.md`, `GRAPH.md`, `CLAUDE.md`, `tests/test_graph.py` | PR packaging 2026-07-26 |
 | `claude/trees-993-743-20260727` | Tree lanes: Erdős #743 Gyárfás packing at K_10, and #993 independence unimodality to n=30 (incl. first replication of the n≤29 frontier) | `certificates/erdos-743/`, `certificates/erdos-993/`, gap_map #743 + #993 rows, contracts claims `erdos-743-k10-packing` + `erdos-993-unimodal-n30` | PR packaging 2026-07-27 |
-| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md`, `certificates/erdos-142-mirror-core-additive-wall/`, `certificates/erdos-142-d4-role-distinct-additive-wall/`, `certificates/erdos-142-q24-cylinder-hypograph-wall/`, `certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/` | exact q=24 mirror-core and role-distinct walls; both maximum-mass D4 orbits closed under cylinder-position additivity; no survivor / no new bound, 2026-08-17 |
+| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md`, `certificates/erdos-142-mirror-core-additive-wall/`, `certificates/erdos-142-d4-role-distinct-additive-wall/`, `certificates/erdos-142-q24-cylinder-hypograph-wall/`, `certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/`, `certificates/erdos-142-q6-pair-coordinate-walls/` | q=24 cylinder-position closure of both maximum-mass D4 orbits; q=6 pair-coordinate closure of both representatives; no survivor / no new bound, 2026-08-17 |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching
@@ -120,12 +120,25 @@ this closes every maximum-mass D4 assignment under cylinder-position
 additivity. It remains finite q=24 and does not touch pair-coordinate,
 arbitrary 6D, recursive, deformed-support, or continuum potentials.
 
-Next exact test: admit pair-coordinate, non-additive global, or recursive-state
-potentials where cylinder-position separability is still too rigid. A corrected
-q=6 arbitrary-global sweep is numerically LP-infeasible for both representatives,
-but has no exact dual and is not a claim. Accelerate the pair-coordinate oracle,
-then reprice at `q=8`/`q=12` or `q=48` and attempt rational continuum thickening
-only for a survivor. No finite survivor has been produced.
+Fifth exact branch result:
+`certificates/erdos-142-q6-pair-coordinate-walls/` moves one rung beyond
+coordinate separability. At q=6, each of the five cylinders gets independent
+pair tables `H[c,01]`, `H[c,02]`, and `H[c,12]`, for 1,215 variables. The two
+named representatives A=`(7,7,7,6,7)` and B=`(7,6,7,6,7)` each have exact
+union count 3,645 and normalized mass `5/64`, beating `(7/24)^3` by the ratio
+`1080/343`. Exact semantic Farkas packets use 1,067 and 1,071 genuine global
+midpoint rows respectively; positive integer combinations cancel every pair
+variable. The primary verifier rejects 16 planted corruptions, a separately
+written replay agrees, and an independent model audit confirms all 125 ordered
+word triples/even-q branches were present in discovery. This is a finite q=6
+wall only: it neither transfers to q=24 nor excludes arbitrary 6D potentials.
+
+Next exact test: extract exact duals, if they exist, from the corrected q=6
+**arbitrary-global** screens, then reprice pair/global models at `q=8`/`q=12`
+or `q=48`. The current arbitrary-global q=6 runs are numerically LP-infeasible
+for both representatives but remain unpromoted without exact rays. Recursive
+state, support deformation, and continuum thickening are still live. No finite
+survivor has been produced.
 Naslund's public deck states only the rounded capset rate `2.22`; the cited
 `2.2208` manuscript remains unavailable publicly as of the audit.
 

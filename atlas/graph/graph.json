@@ -5,7 +5,7 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 379,
-   "evidenced_by": 15,
+   "evidenced_by": 16,
    "has_surface": 319,
    "learned_from": 5,
    "measures": 223,
@@ -18,8 +18,8 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 19,
-   "evidence_container": 32,
+   "evidence_claim": 20,
+   "evidence_container": 33,
    "external_claim": 91,
    "incident": 26,
    "move": 7,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 3950,
-   "validator-enforced": 32
+   "validator-enforced": 33
   }
  },
  "edges": [
@@ -5265,6 +5265,14 @@
   },
   {
    "dst": "E:claim:erdos-142-q24-mirror-core-additive-wall",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P142",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-142-q6-pair-coordinate-walls",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
    "src": "P142",
@@ -29528,6 +29536,52 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-142-q6-pair-coordinate-walls/README.md",
+     "sha256": "6df569f90878e18065039714d600870267e281ebfa5b01d9d795e011527d4452"
+    },
+    {
+     "path": "certificates/erdos-142-q6-pair-coordinate-walls/verify.py",
+     "sha256": "2aed068079c648333a3589d48cadbfa43aa1e4fe1f4b48dcb91e2966ea6fe7df"
+    },
+    {
+     "path": "certificates/erdos-142-q6-pair-coordinate-walls/certificate_A.json",
+     "sha256": "46dea1b400fe3c7a43f7b6b48107e2f4858ec62661bef026c3e08182587a2f6e"
+    },
+    {
+     "path": "certificates/erdos-142-q6-pair-coordinate-walls/certificate_B.json",
+     "sha256": "6a504e00146d97da7e83e6d77bf37c26cd47a7493d998096236f0212a035f7af"
+    },
+    {
+     "path": "certificates/erdos-142-q6-pair-coordinate-walls/independent_replay.py",
+     "sha256": "2dd827c67e528a930bdb48e27816b0f97ef63772e0812b1e4ced780cfdd3bb87"
+    }
+   ],
+   "claim_id": "erdos-142-q6-pair-coordinate-walls",
+   "id": "E:claim:erdos-142-q6-pair-coordinate-walls",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-142-q6-pair-coordinate-walls/verify.py",
+     "--self-test"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "PASS_Q6_PAIR_COORDINATE_EXACT_FARKAS_WALLS",
+     "\"selected_rows\": 1067",
+     "\"selected_rows\": 1071",
+     "\"mass_gate_ratio\": \"1080/343\"",
+     "\"planted_corruptions\": \"all 16 rejected\""
+    ]
+   },
+   "scope": "Exactly two finite q=6 support assignments and the model F_c=H[c,01]+H[c,02]+H[c,12]. Each five-cylinder union has 3,645 points and normalized mass 5/64, beating (7/24)^3 by 1080/343. The claim does not transfer to q=24 or q=48, exclude arbitrary functions on six-dimensional cylinders, recursive state, jointly deformed supports, or continuum/integer transfer; it gives no r_3(N) bound.",
+   "statement": "At q=6, neither D4 representative (P1,P2,P3,B,K)=(7,7,7,6,7) nor (7,6,7,6,7) admits a cylinder-specific pair-coordinate potential satisfying every raw-Euclidean modular-midpoint coercivity inequality across the five Karapetyan word cylinders.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-366/verify.py",
      "sha256": "f40cf4b64d8563875bf3f0162bd490dd7e00f37a83d6390a4d79d34697fecc1e"
     },
@@ -30002,6 +30056,13 @@
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-142-q24-second-orbit-cylinder-hypograph-wall",
    "path": "certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "Two exact finite q=6 Farkas walls for the D4 representatives (7,7,7,6,7) and (7,6,7,6,7), allowing independent H[c,01], H[c,02], and H[c,12] pair-coordinate tables on each cylinder. Both 3,645-point unions beat the finite EHPS mass gate, but exact 1,067-row and 1,071-row combinations cancel all 1,215 pair variables. This does not transfer to q=24/q=48, exclude arbitrary six-dimensional or recursive potentials, cover deformed supports, or certify continuum/integer transfer. Gives no r_3(N) bound; Erdos Problem 142 remains unsolved.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-142-q6-pair-coordinate-walls",
+   "path": "certificates/erdos-142-q6-pair-coordinate-walls",
    "type": "evidence_container"
   },
   {
