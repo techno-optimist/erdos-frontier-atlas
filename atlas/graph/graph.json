@@ -5,7 +5,7 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 379,
-   "evidenced_by": 11,
+   "evidenced_by": 12,
    "has_surface": 319,
    "learned_from": 5,
    "measures": 223,
@@ -18,8 +18,8 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 15,
-   "evidence_container": 28,
+   "evidence_claim": 16,
+   "evidence_container": 29,
    "external_claim": 91,
    "incident": 26,
    "move": 7,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 3950,
-   "validator-enforced": 28
+   "validator-enforced": 29
   }
  },
  "edges": [
@@ -5233,6 +5233,14 @@
   },
   {
    "dst": "E:claim:erdos-142-foundation",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P142",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-142-q24-mirror-core-additive-wall",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
    "src": "P142",
@@ -29320,6 +29328,53 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-142-mirror-core-additive-wall/README.md",
+     "sha256": "20f85000a3193f7092e89117b1ee9ede11e741874ef3490dce2248eba29d1a9d"
+    },
+    {
+     "path": "certificates/erdos-142-mirror-core-additive-wall/verify.py",
+     "sha256": "a611ad437c66091be729e75aba7f1d0fcdf41f6dbbf4f81c160d75b5a6b68baf"
+    },
+    {
+     "path": "certificates/erdos-142-mirror-core-additive-wall/certificate.json",
+     "sha256": "3022c3405b4f764091e9d0fd512e892c55910407b2174f82a6d8caf34d3d290f"
+    },
+    {
+     "path": "certificates/erdos-142-mirror-core-additive-wall/replay_core_wall.py",
+     "sha256": "ae8f059159a159bed6f10e5e1cb0ea55def1183ac15dd6e1712d34ec148c7d29"
+    },
+    {
+     "path": "certificates/erdos-142-mirror-core-additive-wall/base_to_swap.witnesses.bin",
+     "sha256": "ed8bf693b7cc4905682d6a42f113405e16e5bbfa99dbb15e60f564a25c25dcc4"
+    },
+    {
+     "path": "certificates/erdos-142-mirror-core-additive-wall/swap_to_base.witnesses.bin",
+     "sha256": "91f978fefc26e9d8907a36338fa0474bc8f63cea29a087a38bfe5baba9efe940"
+    }
+   ],
+   "claim_id": "erdos-142-q24-mirror-core-additive-wall",
+   "id": "E:claim:erdos-142-q24-mirror-core-additive-wall",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-142-mirror-core-additive-wall/verify.py"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "PASS_MIRROR_EXCLUSIVE_ADDITIVE_WALL",
+     "certificate_sha256 3022C3405B4F764091E9D0FD512E892C55910407B2174F82A6D8CAF34D3D290F",
+     "planted_failures multiplier,raw-cost,carry,missing-row"
+    ]
+   },
+   "scope": "Finite q=24 and the additive local role-potential ansatz only. Covers all disjoint allocations of the 53 common tile points because every Farkas row lies in the exclusive cores. It does not exclude an arbitrary non-additive global six-dimensional potential, other role assignments, deformed supports without those cores, recursive codes, or a continuum construction; it gives no r_3(N) bound.",
+   "statement": "At q=24, no additive local role potential satisfies every raw-Euclidean modular-midpoint constraint on the two active cylinders when B and P3 contain the exclusive cores of the EHPS tile and its coordinate transpose, in either role orientation.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-366/verify.py",
      "sha256": "f40cf4b64d8563875bf3f0162bd490dd7e00f37a83d6390a4d79d34697fecc1e"
     },
@@ -29759,6 +29814,13 @@
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-142-kerpi-refutation",
    "path": "certificates/erdos-142-kerpi-refutation",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "Exact finite q=24 Farkas wall for additive local role potentials on the two product cylinders (P3,B,B) and (B,B,P3), when B and P3 contain the exclusive cores of the EHPS tile and its coordinate transpose. Covers both role orientations and every disjoint allocation of the 53 common points. Does not exclude a non-additive global six-dimensional potential, deformed supports without these cores, other role assignments, recursive states, or a continuum construction. Gives no r_3(N) bound; Erdos Problem 142 remains unsolved.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-142-mirror-core-additive-wall",
+   "path": "certificates/erdos-142-mirror-core-additive-wall",
    "type": "evidence_container"
   },
   {

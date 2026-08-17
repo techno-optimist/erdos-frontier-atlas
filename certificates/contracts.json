@@ -37,6 +37,11 @@
    "boundary": "A FENCE, not a bound. Certifies (C1) an exact rational comparison lambda > 7/24, (C2a) a rational ceiling Lambda_cap <= 211/250, and (C2b) that any family obeying the stated pressure bracket exceeds that ceiling for every m >= 7 and so cannot be an H1-H5 survivor. Explicitly NOT certified: the constant map itself, the cap-set ceiling (both external, sealed-by-audit), and ANY r_3(N) lower bound -- no survivor certificate exists. claim_boundary.erdos142_solved is pinned false and the verifier's own controls reject flipping it."
   },
   {
+   "path": "certificates/erdos-142-mirror-core-additive-wall",
+   "classification": "certified_local",
+   "boundary": "Exact finite q=24 Farkas wall for additive local role potentials on the two product cylinders (P3,B,B) and (B,B,P3), when B and P3 contain the exclusive cores of the EHPS tile and its coordinate transpose. Covers both role orientations and every disjoint allocation of the 53 common points. Does not exclude a non-additive global six-dimensional potential, deformed supports without these cores, other role assignments, recursive states, or a continuum construction. Gives no r_3(N) bound; Erdos Problem 142 remains unsolved."
+  },
+  {
    "path": "certificates/erdos-366",
    "classification": "certified_local",
    "boundary": "Exhaustive search result: no 2-full n with n+1 3-full for n <= 10^25. A negative verified-to-N record, NOT a resolution of Erdos #366 -- abc implies finiteness, so no search can close it. Does not extend the consecutive-powerful-pair frontier (OEIS A060355), which is the X^(1/2) search."
@@ -741,6 +746,71 @@
      "failure_control": {
       "kind": "embedded",
       "evidence": "verify.py runs three planted mutations that must each be detected or the run fails: perturbing theta must break Y >= 0 or the pairing with the zero-tag circulation space; perturbing the vertex potential must break Y >= 0; mutating a base transition must break the pointed-simulation invariant. It additionally recomputes every published quantity rather than trusting witnesses.json, and requires Y to annihilate a FULL basis of Z rather than a sampled vector."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-142-q24-mirror-core-additive-wall",
+   "status": "promoted",
+   "statement": "At q=24, no additive local role potential satisfies every raw-Euclidean modular-midpoint constraint on the two active cylinders when B and P3 contain the exclusive cores of the EHPS tile and its coordinate transpose, in either role orientation.",
+   "scope": "Finite q=24 and the additive local role-potential ansatz only. Covers all disjoint allocations of the 53 common tile points because every Farkas row lies in the exclusive cores. It does not exclude an arbitrary non-additive global six-dimensional potential, other role assignments, deformed supports without those cores, recursive codes, or a continuum construction; it gives no r_3(N) bound.",
+   "machine_verdict": "PASS_MIRROR_EXCLUSIVE_ADDITIVE_WALL",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-142-mirror-core-additive-wall/README.md",
+     "contains": "Therefore every disjoint allocation of any of the 53 intersection points is"
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-142-mirror-core-additive-wall/README.md",
+     "sha256": "20f85000a3193f7092e89117b1ee9ede11e741874ef3490dce2248eba29d1a9d"
+    },
+    {
+     "path": "certificates/erdos-142-mirror-core-additive-wall/verify.py",
+     "sha256": "a611ad437c66091be729e75aba7f1d0fcdf41f6dbbf4f81c160d75b5a6b68baf"
+    },
+    {
+     "path": "certificates/erdos-142-mirror-core-additive-wall/certificate.json",
+     "sha256": "3022c3405b4f764091e9d0fd512e892c55910407b2174f82a6d8caf34d3d290f"
+    },
+    {
+     "path": "certificates/erdos-142-mirror-core-additive-wall/replay_core_wall.py",
+     "sha256": "ae8f059159a159bed6f10e5e1cb0ea55def1183ac15dd6e1712d34ec148c7d29"
+    },
+    {
+     "path": "certificates/erdos-142-mirror-core-additive-wall/base_to_swap.witnesses.bin",
+     "sha256": "ed8bf693b7cc4905682d6a42f113405e16e5bbfa99dbb15e60f564a25c25dcc4"
+    },
+    {
+     "path": "certificates/erdos-142-mirror-core-additive-wall/swap_to_base.witnesses.bin",
+     "sha256": "91f978fefc26e9d8907a36338fa0474bc8f63cea29a087a38bfe5baba9efe940"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-142-mirror-core-additive-wall/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-mirror-core-additive-wall/verify.py"
+     ],
+     "timeout_seconds": 120,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_MIRROR_EXCLUSIVE_ADDITIVE_WALL",
+      "certificate_sha256 3022C3405B4F764091E9D0FD512E892C55910407B2174F82A6D8CAF34D3D290F",
+      "planted_failures multiplier,raw-cost,carry,missing-row"
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "verify.py reconstructs the q=24 EHPS tile, every selected modular midpoint row, carry, and raw endpoint cost from exact integer data, then requires four planted mutations to be rejected: a Farkas multiplier change, a raw-cost change, a carry change, and a missing-row change."
      }
     }
    ]
