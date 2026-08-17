@@ -263,6 +263,41 @@ arbitrary global potential on the six-dimensional union, a recursive state
 potential, or jointly deformed supports that do not contain the exclusive
 cores. It gives no continuum certificate and no new `r_3(N)` bound.
 
+### 4.2 Executed branch: the top-D4 role-distinct additive wall
+
+The next screen assigned each of the five roles one of the eight exact
+dihedral images of the q=24 EHPS tile. All `8^5=32,768` role assignments were
+enumerated with the actual five-cylinder union mass. The maximum is attained
+at, among symmetrically related choices,
+
+```text
+(P1,P2,P3,B,K) = (D4[7],D4[7],D4[7],D4[6],D4[7]).
+```
+
+Here `D4[6]` and `D4[7]` are disjoint 163-point supports. Consequently the
+five Karapetyan cylinders are pairwise disjoint and have exact union count
+
+```text
+5 * 163^3 = 21,653,735 > 4,741,632 = (7/24)^3 * 24^6.
+```
+
+This large mass does not survive the additive coercivity test even when every
+role gets its own potential values. There are 815 role-point variables. An
+exact Farkas certificate selects 622 valid rows from the all-ordered-triples
+CEGAR system, assigns them positive integer multipliers, cancels every one of
+the 815 coefficients, and leaves a strictly positive summed raw endpoint
+cost. The semantic replay in
+`certificates/erdos-142-d4-role-distinct-additive-wall/` reconstructs every
+EHPS/D4 support point, word triple, modular midpoint, even-q carry, raw cost,
+coefficient and inclusion-exclusion mass term. Six planted corruptions and a
+separately written replay audit the result.
+
+This closes exactly one highest-mass D4 assignment under a sum of
+role-local potentials. It does not exclude an arbitrary potential on the
+full six-dimensional union, a recursive state potential, other D4 assignments,
+joint support deformations, q=48, or a continuum construction. No new
+`r_3(N)` bound follows.
+
 ## 5. What would count as progress
 
 A promotable positive result must include all of:

@@ -27,6 +27,11 @@
    "boundary": "Per-object refutations of the strict symmetric CONE on three q=1 closed carry-triple products, by an explicit non-negative edge functional orthogonal to the zero-tag circulation space. Settles exactly the three listed objects; explicitly NOT a theorem that every q=1 product has an infeasible cone, and NOT an r_3(N) bound. claim_boundary erdos142_solved=false, new_r3_bound=false."
   },
   {
+   "path": "certificates/erdos-142-d4-role-distinct-additive-wall",
+   "classification": "certified_local",
+   "boundary": "Exact finite q=24 Farkas wall for the single D4 assignment (P1,P2,P3,B,K)=(7,7,7,6,7) and role-distinct additive potentials on the five Karapetyan word cylinders. The mass-beating union and all 622 selected midpoint rows are reconstructed semantically. Does not exclude an arbitrary global six-dimensional potential, recursive-state potentials, other D4 assignments, deformed supports, q=48, or a continuum construction. Gives no r_3(N) bound; Erdos Problem 142 remains unsolved."
+  },
+  {
    "path": "certificates/erdos-142-kerpi-refutation",
    "classification": "certified_local",
    "boundary": "Refutes two lemmas (`ker pi cap D = 0`, `q >= dim ker pi`) and proves Theorem A in their place. Explicitly NOT an r_3(N) bound and not a solution of #142; the claim boundary is stated in the certificate README as erdos142_solved=false, new_r3_bound=false."
@@ -811,6 +816,121 @@
      "failure_control": {
       "kind": "embedded",
       "evidence": "verify.py reconstructs the q=24 EHPS tile, every selected modular midpoint row, carry, and raw endpoint cost from exact integer data, then requires four planted mutations to be rejected: a Farkas multiplier change, a raw-cost change, a carry change, and a missing-row change."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-142-q24-d4-role-distinct-additive-wall",
+   "status": "promoted",
+   "statement": "At q=24, the mass-beating D4 assignment (P1,P2,P3,B,K)=(7,7,7,6,7) admits no role-distinct additive potential satisfying every raw-Euclidean modular-midpoint constraint across the five Karapetyan word cylinders.",
+   "scope": "One finite q=24 D4 support assignment and the sum-of-role-local-potentials model only. The five-cylinder union has 21,653,735 points versus the 4,741,632-point EHPS gate. The certificate does not exclude an arbitrary global six-dimensional potential, recursive-state potentials, other D4 assignments, deformed supports, q=48, or a continuum construction; it gives no r_3(N) bound.",
+   "machine_verdict": "PASS_Q24_D4_ROLE_DISTINCT_ADDITIVE_WALL",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-142-d4-role-distinct-additive-wall/README.md",
+     "contains": "The certificate supplies 622 valid"
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-142-d4-role-distinct-additive-wall/README.md",
+     "sha256": "140b6838fd0e66b9b833411baa9415e45d746f6e77dff55de36216bc28c5a130"
+    },
+    {
+     "path": "certificates/erdos-142-d4-role-distinct-additive-wall/verify.py",
+     "sha256": "12b596efea3b29d314d72cc14d7ecbc577072928fa7c33c482c4d8244ce752d8"
+    },
+    {
+     "path": "certificates/erdos-142-d4-role-distinct-additive-wall/certificate.json",
+     "sha256": "17b4128b5de28844f5c02754b225e443428ae2cb8786b32cb17c1da4a66cbe4a"
+    },
+    {
+     "path": "certificates/erdos-142-d4-role-distinct-additive-wall/role_distinct_ipm_rows.json",
+     "sha256": "45b29fd55f923626354885825ed57e8db47e5c40bde6af8d8b1e203c3b3f68a1"
+    },
+    {
+     "path": "certificates/erdos-142-d4-role-distinct-additive-wall/independent_replay.py",
+     "sha256": "a65bd318f1b390fecc7a3dc51fa05dbc7086add9c1101081cc690036bb22aa0c"
+    },
+    {
+     "path": "certificates/erdos-142-d4-role-distinct-additive-wall/mass_screen.py",
+     "sha256": "849846fff44dfad8b607fbaa627fa7c8394012f6dd937f84e9154198d9ee7050"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-142-d4-role-distinct-additive-wall/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-d4-role-distinct-additive-wall/verify.py",
+      "--self-test"
+     ],
+     "timeout_seconds": 120,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_Q24_D4_ROLE_DISTINCT_ADDITIVE_WALL",
+      "verified semantic q=24 role-distinct Farkas packet: 0 >=",
+      "planted_failures multiplier,carry,raw-cost,role,missing-row,d4-assignment-mass"
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "verify.py independently reconstructs the q=24 EHPS tile, D4 images, role-distinct variables, all 622 selected semantic rows, exact Farkas sum and union mass, then requires six planted corruptions to be rejected: multiplier, carry, raw cost, role label, missing row, and D4 assignment/mass."
+     }
+    },
+    {
+     "profile": "fast",
+     "certifies_claim": false,
+     "entrypoint": "certificates/erdos-142-d4-role-distinct-additive-wall/independent_replay.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-d4-role-distinct-additive-wall/independent_replay.py"
+     ],
+     "timeout_seconds": 120,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_INDEPENDENT_Q24_D4_ROLE_DISTINCT_REPLAY",
+      "\"selected_rows\": 622",
+      "\"union_mass\": 21653735",
+      "\"source_hash\": \"45b29fd55f923626354885825ed57e8db47e5c40bde6af8d8b1e203c3b3f68a1\""
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "none_explained",
+      "evidence": "This separately written replay is a non-certifying cross-check without its own mutation harness; the certifying verify.py replay above carries the six embedded planted failures."
+     }
+    },
+    {
+     "profile": "fast",
+     "certifies_claim": false,
+     "entrypoint": "certificates/erdos-142-d4-role-distinct-additive-wall/mass_screen.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-d4-role-distinct-additive-wall/mass_screen.py"
+     ],
+     "timeout_seconds": 120,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_Q24_D4_MASS_SCREEN",
+      "assignments=32768 passing=32760 maximum=21653735 maximizers=16",
+      "target=(7, 7, 7, 6, 7)"
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "none_explained",
+      "evidence": "This exhaustive exact mass screen is a non-certifying companion replay; it has no mutation harness and does not replace the six planted failures in the semantic Farkas verifier."
      }
     }
    ]
