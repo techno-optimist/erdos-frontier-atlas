@@ -43,7 +43,7 @@ others don't touch it.
 | `claude/erdos-366-sweep-20260726` | Erdős #366 cubefull-side sweep — verified range 10^22 → 10^25, zero strict-orientation solutions | `certificates/erdos-366/`, gap_map #366 row, contracts claim `erdos-366-cubefull-sweep-1e25` | PR packaging 2026-07-26 |
 | `claude/attack-graph-20260726` | The attack graph — a generated agent-facing overlay over every ledger (`GRAPH.md` → `views/sorties.md` → per-problem cards). Adds no facts; organizes existing ones | `tools/build_graph.py`, `tools/validate_graph.py`, `tools/query_graph.py`, `atlas/graph/`, `views/graph/`, `views/sorties.md`, `GRAPH.md`, `CLAUDE.md`, `tests/test_graph.py` | PR packaging 2026-07-26 |
 | `claude/trees-993-743-20260727` | Tree lanes: Erdős #743 Gyárfás packing at K_10, and #993 independence unimodality to n=30 (incl. first replication of the n≤29 frontier) | `certificates/erdos-743/`, `certificates/erdos-993/`, gap_map #743 + #993 rows, contracts claims `erdos-743-k10-packing` + `erdos-993-unimodal-n30` | PR packaging 2026-07-27 |
-| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md`, `certificates/erdos-142-mirror-core-additive-wall/`, `certificates/erdos-142-d4-role-distinct-additive-wall/`, `certificates/erdos-142-q24-cylinder-hypograph-wall/`, `certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/`, `certificates/erdos-142-q6-pair-coordinate-walls/` | q=24 cylinder-position closure of both maximum-mass D4 orbits; q=6 pair-coordinate closure of both representatives; no survivor / no new bound, 2026-08-17 |
+| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md`, `certificates/erdos-142-mirror-core-additive-wall/`, `certificates/erdos-142-d4-role-distinct-additive-wall/`, `certificates/erdos-142-q24-cylinder-hypograph-wall/`, `certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/`, `certificates/erdos-142-q6-pair-coordinate-walls/`, `certificates/erdos-142-q6-global-potential-walls/` | q=24 cylinder-position closure of both maximum-mass D4 orbits; exact q=6 arbitrary-global closure of both named representatives; no survivor / no new bound, 2026-08-17 |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching
@@ -133,14 +133,27 @@ written replay agrees, and an independent model audit confirms all 125 ordered
 word triples/even-q branches were present in discovery. This is a finite q=6
 wall only: it neither transfers to q=24 nor excludes arbitrary 6D potentials.
 
-Next exact test: rerun the q=6 **arbitrary-global** screens in an isolated
-directory, then extract exact duals if they exist and reprice pair/global models
-at `q=8`/`q=12` or `q=48`. An earlier log reported numerical infeasibility, but
-the corresponding 1,563/6,664-row traces were overwritten; the preserved
-result files are only 101-row `iteration-limit` traces. Therefore no current
-arbitrary-global infeasibility result is claimed. Recursive state, support
-deformation, and continuum thickening are still live. No finite survivor has
-been produced.
+Sixth exact branch result:
+`certificates/erdos-142-q6-global-potential-walls/` closes those same two
+named q=6 representatives with **one independent potential value on every
+union vertex**. The five cylinders are pairwise disjoint, so this is an
+unrestricted 3,645-variable global potential, not a separable ansatz. A fresh
+isolated CEGAR reconstructed all 1,128,545 actual modular-midpoint witnesses.
+For A=`(7,7,7,6,7)`, three unit-multiplier rows already cancel to the transparent
+contradiction `0 >= 20+20+8 = 48`; for B=`(7,6,7,6,7)`, a 646-row primitive
+positive integer ray cancels every variable. The primary stdlib verifier
+rejects 18 planted corruptions, and a separately written Luna replay rebuilds
+both finite models and the exact cancellation without importing discovery
+code.
+
+Scope is deliberately narrow. An exact `8^5` q=6 census finds 256 maximum-mass
+assignments, and global D4 transports of A's tiny three-row cycle hit only 32;
+224 lie outside that screen. B uses its separate 646-row ray. Thus this is not
+a classification of every q=6 maximizer and does not transfer to q=24/q=48,
+recursive state, support deformation, or continuum thickening. A q=8
+pair-coordinate preflight is mass-positive and technically tractable, but its
+current factorized pricing costs about 85 seconds per orbit per CEGAR round;
+acceleration is in progress. No finite survivor has been produced.
 Naslund's public deck states only the rounded capset rate `2.22`; the cited
 `2.2208` manuscript remains unavailable publicly as of the audit.
 

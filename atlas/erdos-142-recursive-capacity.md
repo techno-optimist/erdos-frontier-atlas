@@ -366,11 +366,9 @@ The two exact orbit certificates therefore exclude all 16 maximum-mass D4
 assignments under cylinder-position additivity. This remains a finite `q=24`
 ansatz wall. Pair-coordinate potentials, arbitrary functions on six-dimensional
 cylinder vertices, recursive state, support deformation, and continuum transfer
-remain live escape routes. A corrected `q=6` arbitrary-global screen is
-being rerun in an isolated directory. An earlier log reported numerical
-infeasibility, but its 1,563/6,664-row traces were overwritten; the surviving
-files are only 101-row `iteration-limit` traces. No arbitrary-global
-infeasibility is therefore asserted here.
+remain live escape routes at q=24. The coarser q=6 arbitrary-global result for
+the two named representatives is handled separately in Section 4.6; it does
+not transfer this q=24 statement.
 
 ### 4.5 Pair-coordinate interactions at q=6
 
@@ -401,10 +399,49 @@ third model audit agree.
 This is a stronger potential ansatz at a coarser quotient, so it is not a q=24
 pair-coordinate theorem. It does not exclude an arbitrary function on each
 six-dimensional cylinder, recursive state, support deformation, or continuum
-transfer. An older log reported numerical infeasibility for both arbitrary-
-global q=6 representatives, but the supporting full row sets were overwritten.
-The preserved payloads stop at 101 rows with `iteration-limit`, so that status
-is unbacked and a clean isolated rerun is in progress.
+transfer. The next section records the fresh isolated arbitrary-global rerun;
+the earlier overwritten traces remain unbacked and are not used as evidence.
+
+### 4.6 Arbitrary global potentials at q=6
+
+For the same two assignments A=`(7,7,7,6,7)` and B=`(7,6,7,6,7)`, give every
+point of every cylinder an independent potential value. Because the five
+cylinders are pairwise disjoint, this is exactly one unrestricted variable on
+each point of the 3,645-point union. No additive, pair-coordinate, polynomial,
+or other factorization remains.
+
+A fresh isolated CEGAR run rebuilt all 125 ordered word triples and all even-q
+midpoint branches. There are exactly 1,128,545 actual global witnesses. Exact
+semantic packets in `certificates/erdos-142-q6-global-potential-walls/` prove
+infeasibility for both representatives:
+
+| representative | selected rows | exact contradiction numerator |
+|---|---:|---:|
+| A `(7,7,7,6,7)` | 3 | 48 |
+| B `(7,6,7,6,7)` | 646 | a positive 133-digit primitive-ray numerator |
+
+For A the proof is already the three-row cycle
+
+```text
+ +F(1948) - 2F(2673) + F(2681) >= 20,
+ -2F(1948) + F(2673) + F(2681) >= 20,
+ +F(1948) + F(2673) - 2F(2681) >=  8.
+```
+
+Summing gives `0 >= 48`. The semantic packet binds the labels to their actual
+six-dimensional cylinder vertices and records every local midpoint, carry,
+support membership, and raw endpoint cost. The B proof is a 646-row positive
+integer Farkas combination. A primary stdlib verifier reconstructs both full
+finite models and rejects 18 planted corruptions; a separately written replay
+independently rebuilds both rays and prints the three-row cycle.
+
+This is the first arbitrary-global wall in this lane, but only at one coarse
+finite quotient and for two assignments. The exact `8^5` mass census has 256
+maximum-mass q=6 assignments. Global D4 transports of the particular A cycle
+hit 32 and leave 224 outside that screen; B is handled by its separate ray.
+No claim is made for the remaining assignments. Nothing here excludes
+recursive state, jointly deformed supports, q=24/q=48 constructions, continuum
+thickening, or integer transfer, and no new `r_3(N)` bound follows.
 
 ## 5. What would count as progress
 

@@ -42,6 +42,11 @@
    "boundary": "Two exact finite q=6 Farkas walls for the D4 representatives (7,7,7,6,7) and (7,6,7,6,7), allowing independent H[c,01], H[c,02], and H[c,12] pair-coordinate tables on each cylinder. Both 3,645-point unions beat the finite EHPS mass gate, but exact 1,067-row and 1,071-row combinations cancel all 1,215 pair variables. This does not transfer to q=24/q=48, exclude arbitrary six-dimensional or recursive potentials, cover deformed supports, or certify continuum/integer transfer. Gives no r_3(N) bound; Erdos Problem 142 remains unsolved."
   },
   {
+   "path": "certificates/erdos-142-q6-global-potential-walls",
+   "classification": "certified_local",
+   "boundary": "Two exact finite q=6 Farkas walls for the D4 representatives (7,7,7,6,7) and (7,6,7,6,7), allowing one independent potential value on every vertex of each pairwise-disjoint five-cylinder union. The 3,645-point unions beat the finite EHPS mass gate, but exact 3-row and 646-row combinations cancel all 3,645 unrestricted potential variables. The tiny 3-row cycle covers only 32 of the 256 maximum-mass D4 assignments under global D4 transport. This does not transfer to q=24/q=48, recursive potentials, deformed supports, or continuum/integer transfer. Gives no r_3(N) bound; Erdos Problem 142 remains unsolved."
+  },
+  {
    "path": "certificates/erdos-142-d4-role-distinct-additive-wall",
    "classification": "certified_local",
    "boundary": "Exact finite q=24 Farkas wall for the single D4 assignment (P1,P2,P3,B,K)=(7,7,7,6,7) and role-distinct additive potentials on the five Karapetyan word cylinders. The mass-beating union and all 622 selected midpoint rows are reconstructed semantically. Does not exclude an arbitrary global six-dimensional potential, recursive-state potentials, other D4 assignments, deformed supports, q=48, or a continuum construction. Gives no r_3(N) bound; Erdos Problem 142 remains unsolved."
@@ -1205,6 +1210,127 @@
      "failure_control": {
       "kind": "embedded",
       "evidence": "This separately written stdlib replay reconstructs both support/mass systems and pair indexers without importing the primary verifier, replays exact cancellation for both packets, and rejects a planted right-side mutation."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-142-q6-global-potential-walls",
+   "status": "promoted",
+   "statement": "At q=6, neither D4 representative (P1,P2,P3,B,K)=(7,7,7,6,7) nor (7,6,7,6,7) admits any real-valued potential on its 3,645-point five-cylinder union satisfying every raw-Euclidean modular-midpoint coercivity inequality.",
+   "scope": "Exactly two finite q=6 support assignments. Their five cylinders are pairwise disjoint, so the model has one unrestricted variable for each of 3,645 union vertices; it is not an additive or pair-coordinate ansatz. Each union has normalized mass 5/64, beating (7/24)^3 by 1080/343. Exact 3-row and 646-row Farkas combinations give contradictions. An exact 8^5 census finds 256 maximum-mass assignments, while global D4 transports of the tiny 3-row cycle hit only 32; no claim is made for the others. The result does not transfer to q=24/q=48, recursive state, jointly deformed supports, or continuum/integer transfer, and gives no r_3(N) bound.",
+   "machine_verdict": "PASS_Q6_GLOBAL_POTENTIAL_EXACT_FARKAS_WALLS",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-142-q6-global-potential-walls/README.md",
+     "contains": "This is the unrestricted global potential on the finite union"
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-142-q6-global-potential-walls/README.md",
+     "sha256": "a9be9d44eb23611161a782a3c3899378af67cb36c911470b7813e914e71b798a"
+    },
+    {
+     "path": "certificates/erdos-142-q6-global-potential-walls/verify.py",
+     "sha256": "4cde901d458bf687bdf27a90e634e3d22213f9b9ec991a7e5e72f7bdad935904"
+    },
+    {
+     "path": "certificates/erdos-142-q6-global-potential-walls/certificate_A.json",
+     "sha256": "4e9fe8e052ee87e519a9d191e3ac46052f032bc7fe474cdd3e3b6d9b903515ef"
+    },
+    {
+     "path": "certificates/erdos-142-q6-global-potential-walls/certificate_B.json",
+     "sha256": "dc865a45d6281b9640402ae341cb65b5d55b3eac82ae9f994687c59b81b1240f"
+    },
+    {
+     "path": "certificates/erdos-142-q6-global-potential-walls/independent_replay.py",
+     "sha256": "8c6e98d5978da6fe50631b4e70a97be370d66020ccc589a52caf46778478fcd6"
+    },
+    {
+     "path": "certificates/erdos-142-q6-global-potential-walls/cycle_orbit_audit.py",
+     "sha256": "da60aa6f2ceba47c7cfe686a2fc9a417506aa1db66f92a16088b201ba13d10a2"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-142-q6-global-potential-walls/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-q6-global-potential-walls/verify.py",
+      "--self-test"
+     ],
+     "timeout_seconds": 120,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_Q6_GLOBAL_POTENTIAL_EXACT_FARKAS_WALLS",
+      "\"selected_rows\": 3",
+      "\"selected_rows\": 646",
+      "\"mass_gate_ratio\": \"1080/343\"",
+      "\"planted_corruptions\": \"all 18 rejected\""
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "The stdlib verifier reconstructs the q=6 EHPS/D4 supports, pairwise-disjoint mass-beating unions, all 3,645 unrestricted vertex variables, the complete 1,128,545-witness count, every selected midpoint branch/carry/raw cost/coefficient row, and exact Farkas cancellation. For each packet it rejects multiplier, midpoint, raw-cost, carry, vertex, coefficient, word, assignment, and missing-row mutations."
+     }
+    },
+    {
+     "profile": "fast",
+     "certifies_claim": false,
+     "entrypoint": "certificates/erdos-142-q6-global-potential-walls/independent_replay.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-q6-global-potential-walls/independent_replay.py",
+      "--self-test"
+     ],
+     "timeout_seconds": 120,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_INDEPENDENT_Q6_GLOBAL_POTENTIAL_REPLAY",
+      "A_THREE_ROW_UNIT_MULTIPLIER_CYCLE",
+      "\"actual_midpoint_witnesses\": 1128545",
+      "\"packet_sha256\": \"4e9fe8e052ee87e519a9d191e3ac46052f032bc7fe474cdd3e3b6d9b903515ef\"",
+      "\"packet_sha256\": \"dc865a45d6281b9640402ae341cb65b5d55b3eac82ae9f994687c59b81b1240f\""
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "This separately written stdlib replay imports no discovery or primary-verifier module, reconstructs both finite models and exact rays, manually prints the three-row cycle, and rejects RHS, carry, coefficient, multiplier, mass, and scope mutations for each packet."
+     }
+    },
+    {
+     "profile": "fast",
+     "certifies_claim": false,
+     "entrypoint": "certificates/erdos-142-q6-global-potential-walls/cycle_orbit_audit.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-q6-global-potential-walls/cycle_orbit_audit.py"
+     ],
+     "timeout_seconds": 120,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_Q6_GLOBAL_THREE_ROW_CYCLE_SCOPE_AUDIT",
+      "\"maximizer_count\": 256",
+      "\"three_row_cycle_covered\": 32",
+      "\"three_row_cycle_uncovered\": 224",
+      "\"global_impossibility_claim_for_uncovered\": false"
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "The independent exact census recomputes all 8^5 D4 assignments, pins the maximum mass and maximizer count, and explicitly records that the tiny A cycle leaves 224 maximum-mass assignments outside its screen."
      }
     }
    ]
