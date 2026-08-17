@@ -443,6 +443,74 @@ No claim is made for the remaining assignments. Nothing here excludes
 recursive state, jointly deformed supports, q=24/q=48 constructions, continuum
 thickening, or integer transfer, and no new `r_3(N)` bound follows.
 
+### 4.7 Exact 3-torsion family for every q=3m
+
+The three-row q=6 packet is not a numerical-dual accident. For every integer
+`m>=2`, set `q=3m` and retain the top D4 assignment `(7,7,7,6,7)`. With
+
+```text
+A=C=(q-3,m-1),  B=(q-3,q-1),  D=(q-3,2m-1),  u=(0,m),
+```
+
+the exact inverse D4 images lie in the strict T1 piece for all `m>=2`.
+Consequently
+
+```text
+X=(A,B,C) in W2,  Y=(A,B,B) in W3,  Z=(A,B,D) in W3.
+```
+
+The identities `C=B+u`, `D=B-u`, and `3u=0 mod q` make `(X,Y,Z)`,
+`(Y,X,Z)`, and `(X,Z,Y)` modular midpoint rows. Their raw costs are
+`m^2,m^2,4m^2`; their potential coefficients cancel; and their sum is the
+exact contradiction `0 >= 6m^2`, normalized to `2/3` after division by
+`q^2`. The symbolic certificate in
+`certificates/erdos-142-q3m-torsion-triangle-wall/` proves all affine support
+faces and quadratic identities for the whole family, and an independent
+implementation checks both odd and even quotients.
+
+This includes q=24 and q=48. In particular, combining the family with the
+separate q=24 mass certificate upgrades the top maximum-mass representative
+from a cylinder-position-additive wall to an arbitrary-global wall.
+
+At q=6, exhaustive enumeration of every torsion triangle of this W2/W3
+incidence type covers 128 of the 256 maximum-mass assignments, exactly when
+the P2 and P3 D4 supports intersect. The 128 outside this template are not
+certified feasible. The older 32 count was only the global-D4 orbit of one
+specific planted triangle.
+
+### 4.8 Uniformly interior continuum torus wall
+
+The q=3m points above approach a square seam and a strict T1 face at distance
+`1/q`, so that family by itself leaves a limit question. A second exact family
+removes both issues. For every `q=120n`, use the fixed normalized points
+
+```text
+A=C=(13/24,2/15),  B=(7/8,4/5),  D=(5/24,7/15),
+u=(2/3,1/3).
+```
+
+Their continuous inverse D4 images are strict interior points of T2, T1, and
+T3 respectively. Every tile-face margin is at least `1/30`, and every image
+point stays at least `1/8` from a fundamental-square seam. The finite
+`epsilon=1/q` preimages retain the same uniform margins for all `n>=1`.
+
+The same W2/W3 product vertices now have carries
+`(-1,-1),(0,1),(1,0)` and normalized raw-canonical endpoint costs
+`2/9,5/9,5/9`. Summing their three coercivity inequalities cancels every
+potential value and gives `0 >= 4/3`. Hence no arbitrary real-valued potential
+on even this two-cylinder subunion can satisfy the modular torus coercivity
+rows; a common approximate row deficit must be at least `4/9`.
+
+This is a genuine continuum wall for the midpoint/cost convention actually
+stated in EHPS Proposition 2.2: midpoint modulo 1, raw Euclidean cost between
+canonical representatives. It is not a wall for a different ordinary
+Euclidean midpoint predicate; three cyclic midpoint equations in a
+torsion-free vector space force all points equal. The exact certificate in
+`certificates/erdos-142-interior-torus-torsion-wall/` verifies both scopes,
+the q=`120n` identities, uniform margins, eight planted failures, and an
+independent reconstruction. The wall still concerns one D4 role assignment
+and supplies no survivor, integer transfer, or new `r_3(N)` bound.
+
 ## 5. What would count as progress
 
 A promotable positive result must include all of:

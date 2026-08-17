@@ -5,7 +5,7 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 379,
-   "evidenced_by": 17,
+   "evidenced_by": 19,
    "has_surface": 319,
    "learned_from": 5,
    "measures": 223,
@@ -18,8 +18,8 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 21,
-   "evidence_container": 34,
+   "evidence_claim": 23,
+   "evidence_container": 36,
    "external_claim": 91,
    "incident": 26,
    "move": 7,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 3950,
-   "validator-enforced": 34
+   "validator-enforced": 36
   }
  },
  "edges": [
@@ -5240,6 +5240,14 @@
    "type": "evidenced_by"
   },
   {
+   "dst": "E:claim:erdos-142-interior-torus-torsion-wall",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P142",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
    "dst": "E:claim:erdos-142-q24-d4-cylinder-position-additive-wall",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
@@ -5265,6 +5273,14 @@
   },
   {
    "dst": "E:claim:erdos-142-q24-mirror-core-additive-wall",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P142",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-142-q3m-torsion-triangle-family",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
    "src": "P142",
@@ -29368,6 +29384,45 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-142-interior-torus-torsion-wall/README.md",
+     "sha256": "c548c6832e1480c62bd82f7e4cad7d7540da459f6f8cdee7458270f2aeaabd98"
+    },
+    {
+     "path": "certificates/erdos-142-interior-torus-torsion-wall/verify.py",
+     "sha256": "930fd7b3c5f427a3668002b5dfb8a8cde950acf354cab08275810da4f4c396ec"
+    },
+    {
+     "path": "certificates/erdos-142-interior-torus-torsion-wall/independent_replay.py",
+     "sha256": "5338ef6c669349f57411e871a7991a19e655592760d5b681a9d04b6ac45ad114"
+    }
+   ],
+   "claim_id": "erdos-142-interior-torus-torsion-wall",
+   "id": "E:claim:erdos-142-interior-torus-torsion-wall",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-142-interior-torus-torsion-wall/verify.py",
+     "--self-test"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "PASS_INTERIOR_TORUS_TORSION_WALL",
+     "\"raw_canonical_torus_continuum_wall\": true",
+     "\"ordinary_euclidean_continuum_wall\": false",
+     "\"normalized_contradiction\": \"4/3\"",
+     "\"common_row_deficit_floor\": \"4/9\"",
+     "\"planted_corruptions\": \"all 8 rejected\""
+    ]
+   },
+   "scope": "Three fixed rational product vertices lie uniformly inside the relevant T1/T2/T3 D4 images (tile-face margin >=1/30 and square-seam margin 1/8). Their torus carries are (-1,-1),(0,1),(1,0), their normalized raw costs are 2/9,5/9,5/9, and their potential coefficients cancel to give 0>=4/3. The same points give an exact q=120n family and force common row deficit >=4/9. This is a continuum wall for the modular/raw-canonical convention in EHPS Proposition 2.2, not for an ordinary torsion-free Euclidean midpoint predicate. It concerns one role assignment and gives no construction, integer transfer, or r_3(N) bound.",
+   "statement": "For the epsilon=0 EHPS interior supports S6 and S7 and assignment (P1,P2,P3,B,K)=(S7,S7,S7,S6,S7), no arbitrary real-valued potential on the W2/W3 subunion satisfies every modular-midpoint coercivity row with raw canonical endpoint cost.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-142-q24-cylinder-hypograph-wall/README.md",
      "sha256": "559a21f3b69d3c5231a11a4aa5cfc2779f738a704bb38d905f7c325ffc245047"
     },
@@ -29538,6 +29593,44 @@
    },
    "scope": "Finite q=24 and the additive local role-potential ansatz only. Covers all disjoint allocations of the 53 common tile points because every Farkas row lies in the exclusive cores. It does not exclude an arbitrary non-additive global six-dimensional potential, other role assignments, deformed supports without those cores, recursive codes, or a continuum construction; it gives no r_3(N) bound.",
    "statement": "At q=24, no additive local role potential satisfies every raw-Euclidean modular-midpoint constraint on the two active cylinders when B and P3 contain the exclusive cores of the EHPS tile and its coordinate transpose, in either role orientation.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
+     "path": "certificates/erdos-142-q3m-torsion-triangle-wall/README.md",
+     "sha256": "67936f24915a079acd7a96c3599d3e234ec14c7ae59d5e4b47d6732285e3108e"
+    },
+    {
+     "path": "certificates/erdos-142-q3m-torsion-triangle-wall/verify.py",
+     "sha256": "829c5fac6ea1eb66a820e52dcdfd660334267e1bef4e818fff078fb9bfeb6964"
+    },
+    {
+     "path": "certificates/erdos-142-q3m-torsion-triangle-wall/independent_replay.py",
+     "sha256": "0143fa397d79c093a886cd67c5c668f41ba9dd241e3d11e4ee7bd495abe11c4e"
+    }
+   ],
+   "claim_id": "erdos-142-q3m-torsion-triangle-family",
+   "id": "E:claim:erdos-142-q3m-torsion-triangle-family",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-142-q3m-torsion-triangle-wall/verify.py",
+     "--self-test"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "PASS_Q3M_TORSION_TRIANGLE_FAMILY",
+     "\"q_family\": \"q=3m, m>=2\"",
+     "\"normalized_contradiction\": \"2/3\"",
+     "\"torsion_template_covered\": 128",
+     "\"planted_corruptions\": \"all 8 rejected\""
+    ]
+   },
+   "scope": "An explicit three-row 3-torsion cycle has raw right sides m^2,m^2,4m^2, cancelling all potential coefficients and leaving normalized contradiction 2/3. It includes q=6, q=24, and q=48. At q=6, the full W2/W3 template hits exactly 128 of 256 maximum-mass D4 assignments, precisely those with intersecting P2/P3 supports; the other 128 are not certified feasible. The displayed family approaches a seam/strict face and is not itself a continuum certificate. No recursive/deformed-support or r_3(N) claim follows.",
+   "statement": "For every finite quotient q=3m with integer m>=2, the EHPS D4 assignment (P1,P2,P3,B,K)=(7,7,7,6,7) admits no arbitrary real-valued potential on its W2/W3 cylinder subunion satisfying every raw-canonical modular-midpoint coercivity row.",
    "status": "promoted",
    "type": "evidence_claim"
   },
@@ -30082,6 +30175,13 @@
    "type": "evidence_container"
   },
   {
+   "boundary": "A uniformly interior exact continuum coercivity wall for the D4 assignment (7,7,7,6,7) under the raw-canonical torus-midpoint convention of EHPS Proposition 2.2. Fixed rational points have tile-face margin >=1/30, seam margin 1/8, and three rows summing to 0>=4/3. This is not an ordinary Euclidean-midpoint wall, does not classify other assignments or deformed/recursive supports, and gives no r_3(N) bound; Erdos Problem 142 remains unsolved.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-142-interior-torus-torsion-wall",
+   "path": "certificates/erdos-142-interior-torus-torsion-wall",
+   "type": "evidence_container"
+  },
+  {
    "boundary": "Refutes two lemmas (`ker pi cap D = 0`, `q >= dim ker pi`) and proves Theorem A in their place. Explicitly NOT an r_3(N) bound and not a solution of #142; the claim boundary is stated in the certificate README as erdos142_solved=false, new_r3_bound=false.",
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-142-kerpi-refutation",
@@ -30114,6 +30214,13 @@
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-142-q24-second-orbit-cylinder-hypograph-wall",
    "path": "certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "An exact symbolic three-row torsion obstruction for the D4 assignment (7,7,7,6,7) at every finite quotient q=3m, m>=2, with normalized contradiction 2/3 for an arbitrary global potential. At q=6 the complete W2/W3 template covers 128 of 256 maximum-mass assignments, not the other 128. The displayed q=3m points approach a seam and strict face, so this certificate alone is not a continuum wall. It gives no r_3(N) bound; Erdos Problem 142 remains unsolved.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-142-q3m-torsion-triangle-wall",
+   "path": "certificates/erdos-142-q3m-torsion-triangle-wall",
    "type": "evidence_container"
   },
   {

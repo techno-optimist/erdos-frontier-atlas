@@ -43,7 +43,7 @@ others don't touch it.
 | `claude/erdos-366-sweep-20260726` | Erdős #366 cubefull-side sweep — verified range 10^22 → 10^25, zero strict-orientation solutions | `certificates/erdos-366/`, gap_map #366 row, contracts claim `erdos-366-cubefull-sweep-1e25` | PR packaging 2026-07-26 |
 | `claude/attack-graph-20260726` | The attack graph — a generated agent-facing overlay over every ledger (`GRAPH.md` → `views/sorties.md` → per-problem cards). Adds no facts; organizes existing ones | `tools/build_graph.py`, `tools/validate_graph.py`, `tools/query_graph.py`, `atlas/graph/`, `views/graph/`, `views/sorties.md`, `GRAPH.md`, `CLAUDE.md`, `tests/test_graph.py` | PR packaging 2026-07-26 |
 | `claude/trees-993-743-20260727` | Tree lanes: Erdős #743 Gyárfás packing at K_10, and #993 independence unimodality to n=30 (incl. first replication of the n≤29 frontier) | `certificates/erdos-743/`, `certificates/erdos-993/`, gap_map #743 + #993 rows, contracts claims `erdos-743-k10-packing` + `erdos-993-unimodal-n30` | PR packaging 2026-07-27 |
-| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md`, `certificates/erdos-142-mirror-core-additive-wall/`, `certificates/erdos-142-d4-role-distinct-additive-wall/`, `certificates/erdos-142-q24-cylinder-hypograph-wall/`, `certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/`, `certificates/erdos-142-q6-pair-coordinate-walls/`, `certificates/erdos-142-q6-global-potential-walls/` | q=24 cylinder-position closure of both maximum-mass D4 orbits; exact q=6 arbitrary-global closure of both named representatives; no survivor / no new bound, 2026-08-17 |
+| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md`, `certificates/erdos-142-mirror-core-additive-wall/`, `certificates/erdos-142-d4-role-distinct-additive-wall/`, `certificates/erdos-142-q24-cylinder-hypograph-wall/`, `certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/`, `certificates/erdos-142-q6-pair-coordinate-walls/`, `certificates/erdos-142-q6-global-potential-walls/`, `certificates/erdos-142-q3m-torsion-triangle-wall/`, `certificates/erdos-142-interior-torus-torsion-wall/` | exact arbitrary-global q=6 walls; q=3m torsion family; uniformly interior continuum torus wall for top D4 assignment; no survivor / no new bound, 2026-08-17 |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching
@@ -154,6 +154,40 @@ recursive state, support deformation, or continuum thickening. A q=8
 pair-coordinate preflight is mass-positive and technically tractable, but its
 current factorized pricing costs about 85 seconds per orbit per CEGAR round;
 acceleration is in progress. No finite survivor has been produced.
+
+Seventh exact branch result:
+`certificates/erdos-142-q3m-torsion-triangle-wall/` explains and generalizes
+A's q=6 three-row ray. For every `q=3m`, `m>=2`, the top assignment
+`(7,7,7,6,7)` contains an explicit W2/W3 3-torsion triangle whose three raw
+costs are `m^2,m^2,4m^2`. The potential coefficients cancel and leave the
+normalized contradiction `2/3`. This includes q=24 and q=48, and upgrades the
+top q=24 representative from an additive wall to an arbitrary-global wall.
+The symbolic stdlib replay proves every strict support incidence for all
+`m>=2`; a separately written implementation agrees. Exhausting q=6 shows the
+full W2/W3 torsion template hits 128 of the 256 maximum-mass assignments,
+exactly those with intersecting P2/P3 supports. The earlier 32 count concerned
+only global D4 transports of one planted triangle; a separate fast sweep that
+called 32 the complete count used 2D point labels instead of full cylinder
+vertices and was retracted.
+
+Eighth exact branch result:
+`certificates/erdos-142-interior-torus-torsion-wall/` removes the finite
+family's seam/boundary escape. Fixed normalized points at q=`120n` have image
+seam margin `1/8` and finite/limiting EHPS tile-face margin at least `1/30`.
+They give torus carries `(-1,-1),(0,1),(1,0)` and normalized raw costs
+`2/9,5/9,5/9`, so any arbitrary potential on the W2/W3 subunion would imply
+`0 >= 4/3`. This is a continuum wall for the modular-midpoint/raw-canonical
+model stated in EHPS Proposition 2.2, not for a different ordinary-Euclidean
+midpoint predicate. The primary verifier proves the q=`120n` family
+symbolically, rejects eight planted corruptions, and an independent exact
+implementation reconstructs all limits and D4 inverses. It remains a no-go
+for one role assignment, not a construction or `r_3(N)` bound.
+
+A corrected q=8 pair-coordinate engine now prices both orbits in about five
+seconds per round rather than 85, but 40 rounds remain `iteration-limit` with
+negative slacks; no q=8 theorem is claimed. Exact three-row searches on the
+remaining q=6 assignment orbits are active. No finite survivor has been
+produced.
 Naslund's public deck states only the rounded capset rate `2.22`; the cited
 `2.2208` manuscript remains unavailable publicly as of the audit.
 
