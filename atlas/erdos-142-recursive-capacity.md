@@ -1,7 +1,8 @@
 # Erdős 142: recursive signed-slack capacity lane
 
 **Claim boundary:** `erdos142_solved: false`; `new_r3_bound: false`;
-`continuum_certificate: false`; `finite_survivor: false`.
+`continuum_certificate: false`; `finite_survivor: false`;
+`finite_additive_wall: true` (one precisely scoped q=24 family).
 
 This is a research-lane note, not a certificate. It records a newly recovered
 primary source, isolates the exact conditional tensorization lemma relevant to
@@ -211,6 +212,56 @@ find `C subset R^L` of maximum weighted mass subject to
 `sum_i d(u_i,v_i,w_i)>=0` for every ordered codeword triple. Naslund's clue is
 to go one step further and search for a **closed recursive composition loop**
 of such weighted slack states, rather than stopping at one finite `L`.
+
+### 4.1 Executed branch: the mirror-exclusive additive wall
+
+The first nontrivial q=24 target used the published EHPS grid tile `T` and its
+coordinate transpose `Tt`. Exact enumeration gives
+
+```text
+|T| = |Tt| = 163
+|T intersect Tt| = 53
+|T without Tt| = |Tt without T| = 110.
+```
+
+Retain only the two words
+
+```text
+(P3,B,B), (B,B,P3).
+```
+
+Assign the two 110-point exclusive cores to `B` and `P3`, in either role
+orientation, and distribute the 53 intersection points disjointly. If `k`
+intersection points go to `B`, the exact two-cylinder mass is
+
+```text
+2 (110+k)^2 (163-k) / 24^6.
+```
+
+This exceeds `(7/24)^3` exactly for `18 <= k <= 53`, so the family contains
+many genuine finite mass targets. A preliminary sweep tested 199 structured
+and deterministic-random allocations, all LP-infeasible. The decisive upgrade
+is that sampling is unnecessary: the exclusive 110+110 core alone is already
+infeasible for an additive role potential. Adding any subset of intersection
+points preserves every core constraint and therefore cannot restore
+feasibility.
+
+The exact replay is in
+`certificates/erdos-142-mirror-core-additive-wall/`:
+
+- 177 Farkas rows for `B=T without Tt`, `P3=Tt without T`;
+- 174 rows for the reversed orientation;
+- exact positive integer multipliers cancel every role-point potential
+  coefficient and leave a strictly positive raw endpoint cost;
+- the stdlib verifier reconstructs the support, midpoint carries and raw
+  costs, checks the mass-passing allocation range, and runs four planted
+  failures.
+
+This proves a useful but narrow wall. It excludes the **additive local-role
+potential** on these two product cylinders at q=24. It does not exclude an
+arbitrary global potential on the six-dimensional union, a recursive state
+potential, or jointly deformed supports that do not contain the exclusive
+cores. It gives no continuum certificate and no new `r_3(N)` bound.
 
 ## 5. What would count as progress
 

@@ -43,7 +43,7 @@ others don't touch it.
 | `claude/erdos-366-sweep-20260726` | Erdős #366 cubefull-side sweep — verified range 10^22 → 10^25, zero strict-orientation solutions | `certificates/erdos-366/`, gap_map #366 row, contracts claim `erdos-366-cubefull-sweep-1e25` | PR packaging 2026-07-26 |
 | `claude/attack-graph-20260726` | The attack graph — a generated agent-facing overlay over every ledger (`GRAPH.md` → `views/sorties.md` → per-problem cards). Adds no facts; organizes existing ones | `tools/build_graph.py`, `tools/validate_graph.py`, `tools/query_graph.py`, `atlas/graph/`, `views/graph/`, `views/sorties.md`, `GRAPH.md`, `CLAUDE.md`, `tests/test_graph.py` | PR packaging 2026-07-26 |
 | `claude/trees-993-743-20260727` | Tree lanes: Erdős #743 Gyárfás packing at K_10, and #993 independence unimodality to n=30 (incl. first replication of the n≤29 frontier) | `certificates/erdos-743/`, `certificates/erdos-993/`, gap_map #743 + #993 rows, contracts claims `erdos-743-k10-packing` + `erdos-993-unimodal-n30` | PR packaging 2026-07-27 |
-| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md` | primary-source and conditional-theorem note; no construction certificate, 2026-08-17 |
+| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md`, `certificates/erdos-142-mirror-core-additive-wall/` | exact q=24 additive mirror-core wall; no survivor / no new bound, 2026-08-17 |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching
@@ -71,11 +71,21 @@ coercivity slack factors across physical two-dimensional torus blocks, and every
 ordered codeword triple must have nonnegative summed minimum slack. The mass gate
 is actual union mass `> (7/24)^L`, not a cardinality-exponent ratio.
 
-Next exact test: the five-word Karapetyan--Karapetyan role code, jointly optimizing
-all supports and potentials at `q=24`, repriced at `q=48`, then rational continuum
-thickening only for a survivor. No finite survivor has been produced yet. Naslund's
-public deck states only the rounded capset rate `2.22`; the cited `2.2208` manuscript
-remains unavailable publicly as of the audit.
+First exact branch result: `certificates/erdos-142-mirror-core-additive-wall/`
+rules out both role orientations of the two active words `(P3,B,B)` and
+`(B,B,P3)` when the roles contain the exclusive q=24 cores of the EHPS tile
+and its coordinate transpose. The stdlib Farkas replay covers every disjoint
+allocation of the 53 overlap points, including all 36 cardinality allocations
+whose finite union mass beats `(7/24)^3`; this is an additive role-potential,
+finite-q wall only. It does not exclude a non-additive global 6D potential or
+globally deformed five-role supports.
+
+Next exact test: jointly optimize all five supports and potentials outside that
+mirror-core family, and admit non-additive/recursive state potentials where the
+direct additive ansatz is too rigid. Reprice at `q=48` and attempt rational
+continuum thickening only for a survivor. No finite survivor has been produced.
+Naslund's public deck states only the rounded capset rate `2.22`; the cited
+`2.2208` manuscript remains unavailable publicly as of the audit.
 
 `erdos142_solved: false`. `new_r3_bound: false`.
 
