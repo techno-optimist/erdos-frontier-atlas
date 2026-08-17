@@ -57,6 +57,11 @@
    "boundary": "An exact finite q=6 capacity wall for full Cartesian products of the five cylinders from maximum-mass D4 assignments. Any outer code with at least two words has a cancelling three-row global obstruction even for an arbitrary nonseparable potential; a singleton has density 1/64 below the supplied (7/24)^3 gate. This does not cover correlated non-product subblocks, codeword-dependent assignments, deformed or thickened supports, scalar digit carry, continuum transfer, integer constructions, or a new r_3(N) bound. Erdos Problem 142 remains unsolved."
   },
   {
+   "path": "certificates/erdos-142-q6-coordinate-d4-product-wall",
+   "classification": "certified_local",
+   "boundary": "An exact finite q=6 capacity wall for arbitrary collections of coordinate-dependent D4 full-product words. Every two distinct words tensor a nondegenerate local 3-torsion witness into a positive three-row obstruction for an arbitrary physical potential, while a singleton has density (1/4)^L below the supplied (7/24)^L gate. This does not cover correlated non-product subblocks, graph or height lifts, deformed supports, higher quotients, continuum transfer, scalar digit encodings, or a new r_3(N) bound. Erdos Problem 142 remains unsolved."
+  },
+  {
    "path": "certificates/erdos-142-q4-affine-order4-line-wall",
    "classification": "certified_local",
    "boundary": "An exact finite q=4 wall for all 256 maximum-mass D4 assignments. Every disjoint 320-point five-cylinder union contains a full affine order-four line whose four modular-midpoint coercivity rows cancel an arbitrary global potential and leave positive raw cost. This does not cover geometric deformation or thickening, continuum limits, correlated subcylinders, scalar digit carry, integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved."
@@ -1548,6 +1553,93 @@
      "failure_control": {
       "kind": "external",
       "evidence": "A separately written stdlib reconstruction checks all 5,120 repeated-word local patterns, full physical superblock identities, coordinate-dependent maximizers, carry concatenation, raw-cost additivity, the singleton gate, and eight live corruptions."
+     }
+    }
+  ]
+ },
+  {
+   "id": "erdos-142-q6-coordinate-d4-product-wall",
+   "status": "promoted",
+   "statement": "At q=6, no collection of coordinate-dependent D4 full-product words can both admit an arbitrary real-valued physical potential satisfying every raw-canonical modular-midpoint coercivity row and pass the supplied EHPS mass gate.",
+   "scope": "For every positive word length L and every two distinct words in {0,...,7}^L, the exact local 3-torsion pair lemma tensors into three physical midpoint rows whose potential coefficients cancel and whose raw right side is positive. Hence a potential-compatible collection has at most one distinct word; one word has density (1/4)^L below (7/24)^L. This finite q=6 theorem covers arbitrary coordinate-dependent D4 words but only full Cartesian product blocks. Correlated non-product subblocks, graph or height lifts, deformed supports, higher quotients, continuum and integer transfer remain outside scope.",
+   "machine_verdict": "verified-coordinate-dependent-product-block-wall",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-142-q6-coordinate-d4-product-wall/README.md",
+     "contains": "Arbitrary-length product theorem"
+    },
+    {
+     "path": "atlas/erdos-142-recursive-capacity.md",
+     "contains": "Coordinate-dependent q=6 D4 products have capacity one"
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-142-q6-coordinate-d4-product-wall/README.md",
+     "sha256": "d0e1515678c73efc5b649ae57cae9ffcf8cbfffef15721f8ea819d75808afd54"
+    },
+    {
+     "path": "certificates/erdos-142-q6-coordinate-d4-product-wall/verify.py",
+     "sha256": "5eafa2bcaae3cc8cfe7fd08fddd5a3c8bf53a2eb185d0527c2ff705b3c359280"
+    },
+    {
+     "path": "certificates/erdos-142-q6-coordinate-d4-product-wall/independent_replay.py",
+     "sha256": "c865a6736089537212f34a14fce74838f0c9b8ac776cfdb9bd4fb8ed3c2ae8aa"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-142-q6-coordinate-d4-product-wall/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-q6-coordinate-d4-product-wall/verify.py",
+      "--self-test"
+     ],
+     "timeout_seconds": 30,
+     "exit_code": 0,
+     "stdout_contains": [
+      "verified-coordinate-dependent-product-block-wall",
+      "\"status\": \"verified-coordinate-dependent-product-block-wall\"",
+      "\"torsion_triple_count\": 324",
+      "\"nondegenerate_ordered_pair_count\": 56",
+      "\"example_weighted_rhs\": \"8/3\"",
+      "wrong_singleton_gate"
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "The self-contained stdlib verifier checks all 324 cyclic triples, all 512 total D4 buckets, all 56 nondegenerate ordered pair buckets, the arbitrary-length tensor construction, physical coefficient cancellation, carries, raw costs and singleton gate, then rejects seven live semantic corruptions."
+     }
+    },
+    {
+     "profile": "fast",
+     "certifies_claim": false,
+     "entrypoint": "certificates/erdos-142-q6-coordinate-d4-product-wall/independent_replay.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-q6-coordinate-d4-product-wall/independent_replay.py"
+     ],
+     "timeout_seconds": 30,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"status\": \"PASS_Q6_D4_PRODUCT_WALL\"",
+      "\"ordered_triples\": 324",
+      "\"2\": 24",
+      "\"L6_normalized_rhs_sum\": \"20/3\"",
+      "carry_flip_rejected"
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "external",
+      "evidence": "A separately written no-import stdlib replay reconstructs torsion triples directly, proves the 2/4/6 witness-count distribution over all 56 unequal image pairs, checks the tensor theorem through length six with a distinct concrete packet, and rejects four live corruptions."
      }
     }
    ]

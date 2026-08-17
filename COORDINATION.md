@@ -43,7 +43,7 @@ others don't touch it.
 | `claude/erdos-366-sweep-20260726` | Erdős #366 cubefull-side sweep — verified range 10^22 → 10^25, zero strict-orientation solutions | `certificates/erdos-366/`, gap_map #366 row, contracts claim `erdos-366-cubefull-sweep-1e25` | PR packaging 2026-07-26 |
 | `claude/attack-graph-20260726` | The attack graph — a generated agent-facing overlay over every ledger (`GRAPH.md` → `views/sorties.md` → per-problem cards). Adds no facts; organizes existing ones | `tools/build_graph.py`, `tools/validate_graph.py`, `tools/query_graph.py`, `atlas/graph/`, `views/graph/`, `views/sorties.md`, `GRAPH.md`, `CLAUDE.md`, `tests/test_graph.py` | PR packaging 2026-07-26 |
 | `claude/trees-993-743-20260727` | Tree lanes: Erdős #743 Gyárfás packing at K_10, and #993 independence unimodality to n=30 (incl. first replication of the n≤29 frontier) | `certificates/erdos-743/`, `certificates/erdos-993/`, gap_map #743 + #993 rows, contracts claims `erdos-743-k10-packing` + `erdos-993-unimodal-n30` | PR packaging 2026-07-27 |
-| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md`, `certificates/erdos-142-mirror-core-additive-wall/`, `certificates/erdos-142-d4-role-distinct-additive-wall/`, `certificates/erdos-142-q24-cylinder-hypograph-wall/`, `certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/`, `certificates/erdos-142-q6-pair-coordinate-walls/`, `certificates/erdos-142-q6-global-potential-walls/`, `certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/`, `certificates/erdos-142-q6-outer-code-tensor-wall/`, `certificates/erdos-142-q4-affine-order4-line-wall/`, `certificates/erdos-142-q7-q8-unit-hypercycle-walls/`, `certificates/erdos-142-q3m-torsion-triangle-wall/`, `certificates/erdos-142-interior-torus-torsion-wall/` | q=4, q=6, q=7, and q=8 maximum-mass D4 lanes closed for arbitrary global potentials; q=6 full Cartesian outer-code wall certified; higher-q/deformed/correlated lanes remain open; no new bound, 2026-08-17 |
+| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md`, `certificates/erdos-142-mirror-core-additive-wall/`, `certificates/erdos-142-d4-role-distinct-additive-wall/`, `certificates/erdos-142-q24-cylinder-hypograph-wall/`, `certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/`, `certificates/erdos-142-q6-pair-coordinate-walls/`, `certificates/erdos-142-q6-global-potential-walls/`, `certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/`, `certificates/erdos-142-q6-outer-code-tensor-wall/`, `certificates/erdos-142-q6-coordinate-d4-product-wall/`, `certificates/erdos-142-q4-affine-order4-line-wall/`, `certificates/erdos-142-q7-q8-unit-hypercycle-walls/`, `certificates/erdos-142-q3m-torsion-triangle-wall/`, `certificates/erdos-142-interior-torus-torsion-wall/` | q=4, q=6, q=7, and q=8 maximum-mass D4 lanes closed for arbitrary global potentials; q=6 Cartesian outer codes and arbitrary coordinate-dependent D4 full-product words have capacity-one walls; higher-q/deformed/non-product lanes remain open; no new bound, 2026-08-17 |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching
@@ -276,6 +276,26 @@ censuses, carries, raw costs, physical-variable cancellation, D4 transport,
 and planted semantic failures.  This closes only the exact finite q=7/q=8
 maximum full-cylinder families.  Deformed supports, correlated subblocks,
 continuum limits, scalar digit carry, and integer transfer remain open.
+
+Thirteenth exact branch result:
+`certificates/erdos-142-q6-coordinate-d4-product-wall/` closes the full-product
+version of codeword-dependent D4 geometry at q=6.  For every ordered unequal
+pair of the eight local D4 images, an exact local census supplies a
+nondegenerate cyclic 3-torsion triple in `S_g x S_g x S_h`.  Tensoring those
+witnesses over the coordinates where two D4 words differ, with diagonal
+anchors elsewhere, gives three physical midpoint rows whose arbitrary-global-
+potential coefficients cancel and whose raw right side is positive.
+
+Therefore a potential-compatible collection of coordinate-dependent full
+product words has at most one distinct word.  Its density is
+`(1/4)^L < (7/24)^L`, so it cannot pass the supplied mass gate.  Primary and
+separately written stdlib replays agree on all 324 cyclic triples, all 56
+nondegenerate ordered pair buckets, the arbitrary-length tensor construction,
+exact carries/raw costs, physical cancellation, and live corruptions.  This
+retires the six-coordinate chain candidate but does not cover genuinely
+correlated non-product subblocks, graph/height lifts, deformed supports,
+higher quotients, continuum thickening, scalar digit carry, or integer
+transfer.
 
 A corrected q=8 pair-coordinate engine now prices both orbits in about five
 seconds per round rather than 85, but 40 rounds remain `iteration-limit` with

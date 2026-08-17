@@ -703,6 +703,69 @@ a finite q=7/q=8 maximum-D4 classification only.  It does not exclude deformed
 or thickened supports, correlated non-product subblocks, continuum limits,
 scalar digit encodings with cross-block carry, or the integer transfer.
 
+### 4.13 Coordinate-dependent q=6 D4 products have capacity one
+
+The preceding outer-code theorem fixes a maximum five-cylinder assignment in
+each outer coordinate.  A natural escape was to let every codeword choose its
+own coordinate-dependent sequence of D4 images.  The exact q=6 local torsion
+table closes the full-product version of that larger class as well.
+
+Let `S_0,...,S_7` be the eight D4 images of the nine-point q=6 support.  An
+ordered triple `(x,y,z)` is *cyclic* when each point is a modular midpoint of
+the other two.  Equivalently,
+
+```text
+y = x+d,  z = x+2d,  3d=0  in (Z/6Z)^2.
+```
+
+The solver-free census in
+`certificates/erdos-142-q6-coordinate-d4-product-wall/` finds 324 ordered
+cyclic triples, including the zero-step triples.  All 512 ordered D4 buckets
+have total size between 4 and 9.  The nondegenerate statement needed below is
+more precise: for every ordered unequal pair `g!=h`, the bucket
+
+```text
+S_g x S_g x S_h
+```
+
+contains a nondegenerate cyclic triple.  All 56 pairs pass, with witness-count
+distribution `{2:24, 4:16, 6:16}`.
+
+For a length-`L` D4 word `a`, write
+
+```text
+B_a = product_i S_(a_i).
+```
+
+Given distinct words `a,b`, choose a certified nondegenerate local triple at
+every coordinate where they differ and a diagonal anchor at every unchanged
+coordinate.  Tensoring gives physical points `X,Y in B_a` and `Z in B_b`
+which form a nondegenerate cyclic triple in `(Z/6Z)^(2L)`.  The three
+coercivity rows centered successively at `X,Y,Z` cancel every coefficient of
+one arbitrary, nonseparable potential on the physical union, while their raw
+canonical endpoint costs have positive sum.
+
+Thus a potential-compatible collection contains at most one distinct D4
+product word.  A singleton has density
+
+```text
+(9/36)^L = (1/4)^L < (7/24)^L,
+```
+
+so it misses the supplied mass gate at every positive length.  This is an
+exact capacity-one theorem for arbitrary coordinate-dependent **full product**
+D4 words.  It retires, in particular, the mass-positive six-coordinate chain
+candidate `000000,111100,110011,001111,010101` before any additive, chain, or
+global potential ansatz is considered.
+
+The primary and separately written stdlib replays reconstruct the support and
+D4 action independently, verify all three midpoint equations, exact carries,
+raw costs, physical-variable cancellation, the singleton gate, and live
+semantic corruptions.  The theorem remains finite q=6 and full-product only.
+Genuinely correlated non-product subblocks, graph/height lifts, support
+deformation, higher quotients, continuum thickening, scalar digit encodings,
+and the integer transfer remain open.
+
 ## 5. What would count as progress
 
 A promotable positive result must include all of:
