@@ -43,7 +43,7 @@ others don't touch it.
 | `claude/erdos-366-sweep-20260726` | Erdős #366 cubefull-side sweep — verified range 10^22 → 10^25, zero strict-orientation solutions | `certificates/erdos-366/`, gap_map #366 row, contracts claim `erdos-366-cubefull-sweep-1e25` | PR packaging 2026-07-26 |
 | `claude/attack-graph-20260726` | The attack graph — a generated agent-facing overlay over every ledger (`GRAPH.md` → `views/sorties.md` → per-problem cards). Adds no facts; organizes existing ones | `tools/build_graph.py`, `tools/validate_graph.py`, `tools/query_graph.py`, `atlas/graph/`, `views/graph/`, `views/sorties.md`, `GRAPH.md`, `CLAUDE.md`, `tests/test_graph.py` | PR packaging 2026-07-26 |
 | `claude/trees-993-743-20260727` | Tree lanes: Erdős #743 Gyárfás packing at K_10, and #993 independence unimodality to n=30 (incl. first replication of the n≤29 frontier) | `certificates/erdos-743/`, `certificates/erdos-993/`, gap_map #743 + #993 rows, contracts claims `erdos-743-k10-packing` + `erdos-993-unimodal-n30` | PR packaging 2026-07-27 |
-| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md`, `certificates/erdos-142-mirror-core-additive-wall/`, `certificates/erdos-142-d4-role-distinct-additive-wall/`, `certificates/erdos-142-q24-cylinder-hypograph-wall/`, `certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/`, `certificates/erdos-142-q6-pair-coordinate-walls/`, `certificates/erdos-142-q6-global-potential-walls/`, `certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/`, `certificates/erdos-142-q3m-torsion-triangle-wall/`, `certificates/erdos-142-interior-torus-torsion-wall/` | all 256 maximum-mass q=6 D4 assignments closed for arbitrary global potentials; q=3m family; interior continuum torus wall for top assignment; no survivor / no new bound, 2026-08-17 |
+| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md`, `certificates/erdos-142-mirror-core-additive-wall/`, `certificates/erdos-142-d4-role-distinct-additive-wall/`, `certificates/erdos-142-q24-cylinder-hypograph-wall/`, `certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/`, `certificates/erdos-142-q6-pair-coordinate-walls/`, `certificates/erdos-142-q6-global-potential-walls/`, `certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/`, `certificates/erdos-142-q6-outer-code-tensor-wall/`, `certificates/erdos-142-q4-affine-order4-line-wall/`, `certificates/erdos-142-q7-q8-unit-hypercycle-walls/`, `certificates/erdos-142-q3m-torsion-triangle-wall/`, `certificates/erdos-142-interior-torus-torsion-wall/` | q=4, q=6, q=7, and q=8 maximum-mass D4 lanes closed for arbitrary global potentials; q=6 full Cartesian outer-code wall certified; higher-q/deformed/correlated lanes remain open; no new bound, 2026-08-17 |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching
@@ -205,9 +205,83 @@ This closes one finite quotient and support family only. It does not transfer
 to higher q, jointly deformed supports, recursive state, or a new integer
 construction, and gives no `r_3(N)` bound.
 
+Tenth exact branch result:
+`certificates/erdos-142-q6-outer-code-tensor-wall/` closes the full Cartesian
+outer-code extension of every maximum-mass q=6 assignment.  In each outer
+coordinate the maximum assignment may vary arbitrarily, provided it is fixed
+across codewords.  For every non-diagonal local label triple, the all-pattern
+census supplies three midpoint rows whose full six-dimensional potential
+coefficients cancel and whose normalized right side is at least `2/3`.
+Synchronizing those rows across the coordinates where an outer triple differs,
+and padding diagonal coordinates with zero-cost rows, gives three genuine
+global midpoint rows.  They cancel one completely arbitrary, nonseparable
+potential on the full superblock and leave contradiction at least
+`(2/3)|D|`, where `D` is the non-diagonal coordinate set.
+
+Thus any outer code with two distinct words dies by the ordered triple
+`(u,v,v)`.  A singleton survives the obstruction but has density
+`1/64 < (7/24)^3` per local q=6 cylinder, so it cannot pass the supplied mass
+gate at any product length.  Primary and separately written stdlib replays
+enumerate all 32,768 assignments, all 256 maximizers, 30,720 local pattern
+cycles, coordinate-dependent maximizers, full carries and raw-cost additivity,
+and reject planted coordinate-projection and occurrence-label aliasing errors.
+This theorem covers full Cartesian products only; correlated non-product
+subblocks, codeword-dependent geometry, deformed supports, scalar digit carry,
+and construction-to-integers transfer remain open.
+
+Eleventh exact branch result:
+`certificates/erdos-142-q4-affine-order4-line-wall/` closes every maximum-mass
+q=4 D4 assignment for an arbitrary global potential.  The exact quotient tile
+has four points.  The complete `8^5` census finds maximum union mass 320,
+attained by 256 assignments in 32 global-D4 orbits; every maximum union is the
+disjoint union of five 64-point cylinders and has density `5/64`, exceeding
+the supplied `(7/24)^3` gate by the ratio `1080/343`.
+
+Every orbit representative contains a full affine order-four line
+`A_j=A_0+j d` in `(Z/4Z)^6`.  Four adjacent midpoint rows around that line
+cancel every value of one arbitrary global potential and leave
+`2||A_0-A_2||^2+2||A_1-A_3||^2>0`.  This is a transparent cyclic-torsion
+lemma, not a numerical LP conclusion.  Primary and separately written stdlib
+replays exhaust all assignments, 4,736 representative affine lines, exact
+carries/raw costs, D4 transport to all 256 maximizers, the mass gate, and eight
+planted failures.  The wall is finite q=4 only and does not exclude deformed
+supports, correlated subcylinders, continuum thickening, scalar digit carry,
+or integer transfer.
+
+Twelfth exact branch result:
+`certificates/erdos-142-q7-q8-unit-hypercycle-walls/` identifies and certifies
+the common structural obstruction behind the finite-quotient walls.  A
+balanced midpoint hypercycle is a finite family of modular midpoint rows in
+which every physical vertex occurs with total coefficient zero.  If the raw
+endpoint cost is positive, summing the rows contradicts the existence of one
+arbitrary, nonseparable potential on the whole cylinder union.
+
+At q=8 every one of the 32 maximum-mass D4 orbits contains a full affine
+order-four line.  The four adjacent midpoint rows around the line cancel the
+global potential; order-eight lines independently close the same 32 orbits.
+At q=7 the complete line census finds no full order-seven line in any maximum
+orbit.  The apparent survivor nevertheless contains the five affine points
+`V_i=A+c_i d`, with `c=(0,1,4,3,6)`, whose endpoint cycle and center
+permutation `pi=(2,4,0,1,3)` give five midpoint rows.  Every point appears
+twice as an endpoint and once as a center, so the coefficients cancel and all
+five costs are positive.  This template is minimal in the connected
+unit-cycle/permuted-center class over `F_7`: lengths three and four have only
+the constant kernel, while length five has exactly five nonconstant-kernel
+permutations.
+
+The primary and separately written stdlib replays reconstruct the exact q=7
+and q=8 supports, all 32,768 role assignments, 256 maximizers in 32 global-D4
+orbits at each quotient, exact mass gates, complete factorized line/pattern
+censuses, carries, raw costs, physical-variable cancellation, D4 transport,
+and planted semantic failures.  This closes only the exact finite q=7/q=8
+maximum full-cylinder families.  Deformed supports, correlated subblocks,
+continuum limits, scalar digit carry, and integer transfer remain open.
+
 A corrected q=8 pair-coordinate engine now prices both orbits in about five
 seconds per round rather than 85, but 40 rounds remain `iteration-limit` with
-negative slacks; no q=8 theorem is claimed. The q=6 D4 maximum-mass search is
+negative slacks; no q=8 pair-coordinate LP theorem is claimed by that engine.
+The separate balanced-hypercycle theorem above closes the exact maximum-mass
+q=8 D4 unions for arbitrary global potentials. The q=6 D4 maximum-mass search is
 now closed negatively at the arbitrary-global-potential level, but no finite
 survivor has been produced.
 

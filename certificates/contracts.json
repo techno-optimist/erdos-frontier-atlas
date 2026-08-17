@@ -52,6 +52,21 @@
    "boundary": "An exact finite q=6 census wall for all 256 maximum-mass D4 role assignments. Every 3,645-point five-cylinder union is pairwise disjoint and admits a positive cancelling three-row modular torsion cycle, so no arbitrary real-valued potential on any such union can satisfy all coercivity rows. This classifies only the q=6 maximum-mass D4 support family; it does not transfer to higher quotients, continuum/deformed supports, recursive state, correlated superblocks, integer constructions, or a new r_3(N) bound. Erdos Problem 142 remains unsolved."
   },
   {
+   "path": "certificates/erdos-142-q6-outer-code-tensor-wall",
+   "classification": "certified_local",
+   "boundary": "An exact finite q=6 capacity wall for full Cartesian products of the five cylinders from maximum-mass D4 assignments. Any outer code with at least two words has a cancelling three-row global obstruction even for an arbitrary nonseparable potential; a singleton has density 1/64 below the supplied (7/24)^3 gate. This does not cover correlated non-product subblocks, codeword-dependent assignments, deformed or thickened supports, scalar digit carry, continuum transfer, integer constructions, or a new r_3(N) bound. Erdos Problem 142 remains unsolved."
+  },
+  {
+   "path": "certificates/erdos-142-q4-affine-order4-line-wall",
+   "classification": "certified_local",
+   "boundary": "An exact finite q=4 wall for all 256 maximum-mass D4 assignments. Every disjoint 320-point five-cylinder union contains a full affine order-four line whose four modular-midpoint coercivity rows cancel an arbitrary global potential and leave positive raw cost. This does not cover geometric deformation or thickening, continuum limits, correlated subcylinders, scalar digit carry, integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved."
+  },
+  {
+   "path": "certificates/erdos-142-q7-q8-unit-hypercycle-walls",
+   "classification": "certified_local",
+   "boundary": "Exact finite q=7 and q=8 walls for all maximum-mass D4 assignments. At q=8, full affine order-four lines give four-row cancelling obstructions; at q=7, where no maximum orbit contains a full order-seven line, a minimal five-row balanced affine hypercycle cancels an arbitrary global potential. This does not cover deformed or thickened supports, continuum limits, correlated non-product subblocks, scalar digit carry, integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved."
+  },
+  {
    "path": "certificates/erdos-142-q3m-torsion-triangle-wall",
    "classification": "certified_local",
    "boundary": "An exact symbolic three-row torsion obstruction for the D4 assignment (7,7,7,6,7) at every finite quotient q=3m, m>=2, with normalized contradiction 2/3 for an arbitrary global potential. At q=6 the complete W2/W3 template covers 128 of 256 maximum-mass assignments, not the other 128. The displayed q=3m points approach a seam and strict face, so this certificate alone is not a continuum wall. It gives no r_3(N) bound; Erdos Problem 142 remains unsolved."
@@ -1447,6 +1462,267 @@
      "failure_control": {
       "kind": "embedded",
       "evidence": "A separately written stdlib reconstruction imports neither discovery nor the primary verifier, retains cylinder label plus full vertex, accumulates coincident coefficients, checks all 120 positive patterns against all 256 maximizers, and runs five live controls rejecting midpoint corruption, ordinary-for-modular substitution, diagonal cycles, cross-cylinder point merging, and zero right side."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-142-q6-outer-code-tensor-wall",
+   "status": "promoted",
+   "statement": "For full Cartesian products of the five cylinders from coordinatewise maximum-mass q=6 D4 assignments, no outer code can both admit an arbitrary real-valued global potential satisfying every raw-canonical modular-midpoint coercivity row and pass the supplied EHPS mass gate.",
+   "scope": "At each outer coordinate the maximum assignment may be chosen independently but is fixed across codewords. Every non-diagonal local label triple has a positive three-row cycle with normalized right-side floor 2/3. Synchronizing these cycles gives an exact obstruction for every nonconstant outer triple without assuming a separable potential, so any code of size at least two dies. A singleton has density 1/64 below (7/24)^3. This covers only full Cartesian products of the exact finite q=6 maximum cylinders; correlated non-product subblocks, codeword-dependent geometry, support deformation or thickening, scalar digit carry, continuum and integer transfer remain outside scope.",
+   "machine_verdict": "PASS_Q6_OUTERCODE_TENSOR_WALL",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-142-q6-outer-code-tensor-wall/README.md",
+     "contains": "Corollary: every outer code with at least two words dies"
+    },
+    {
+     "path": "atlas/erdos-142-recursive-capacity.md",
+     "contains": "The full q=6 Cartesian outer-code extension also fails"
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-142-q6-outer-code-tensor-wall/README.md",
+     "sha256": "6fc0be934ddbc1a7f616f299e65e434e21eed5f0075a5e19398d4ef8e9f92dcf"
+    },
+    {
+     "path": "certificates/erdos-142-q6-outer-code-tensor-wall/verify.py",
+     "sha256": "5e8cb0e2a9cc971da4d0f21556d57275851aa5d4345400978e05474653b64d8f"
+    },
+    {
+     "path": "certificates/erdos-142-q6-outer-code-tensor-wall/independent_replay.py",
+     "sha256": "e3ebef58b8b02bc5611439c5f5a9fd1d472584a5742366b2c2fe51af50c82e65"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-142-q6-outer-code-tensor-wall/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-q6-outer-code-tensor-wall/verify.py",
+      "--self-test"
+     ],
+     "timeout_seconds": 120,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_Q6_OUTERCODE_TENSOR_WALL",
+      "\"every_outer_code_of_size_at_least_two_obstructed\": true",
+      "\"arbitrary_nonseparable_global_potential_cancelled\": true",
+      "\"per_nondiagonal_coordinate_normalized_rhs_floor\": \"2/3\"",
+      "\"singleton_below_gate\": true"
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "The stdlib verifier reconstructs all 32,768 D4 assignments, all 256 maximizers, 30,720 local pattern cycles, a coordinate-dependent outer sample, full carries and raw-cost additivity, exact full-global-variable cancellation, and nine planted failures including coordinate-projection identity and occurrence-label aliasing."
+     }
+    },
+    {
+     "profile": "fast",
+     "certifies_claim": false,
+     "entrypoint": "certificates/erdos-142-q6-outer-code-tensor-wall/independent_replay.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-q6-outer-code-tensor-wall/independent_replay.py"
+     ],
+     "timeout_seconds": 120,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_INDEPENDENT_Q6_OUTERCODE_TENSOR_WALL",
+      "\"pair_patterns_checked\": 5120",
+      "\"global_coefficients_cancel\": true",
+      "\"global_potential_separable_assumption\": false",
+      "\"singleton_below_gate\": true"
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "external",
+      "evidence": "A separately written stdlib reconstruction checks all 5,120 repeated-word local patterns, full physical superblock identities, coordinate-dependent maximizers, carry concatenation, raw-cost additivity, the singleton gate, and eight live corruptions."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-142-q4-affine-order4-line-wall",
+   "status": "promoted",
+   "statement": "At q=4, none of the 256 maximum-mass D4 role assignments admits any real-valued potential on its 320-point five-cylinder union satisfying every raw-canonical modular-midpoint coercivity inequality.",
+   "scope": "The complete 8^5 census finds maximum mass 320 and exactly 256 maximizers in 32 global-D4 orbits; every maximum union is five pairwise-disjoint 64-point cylinders and has density 5/64 above the supplied gate. Every orbit representative contains a full affine order-four line. Four unit-weight midpoint rows around the line cancel all 320 arbitrary global-potential coefficients and leave a strictly positive raw right side; D4 transports cover all maximizers. This finite q=4 result does not cover support deformation or thickening, continuum limits, correlated subcylinders, scalar digit carry, or integer transfer.",
+   "machine_verdict": "PASS_Q4_AFFINE_ORDER4_LINE_WALL",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-142-q4-affine-order4-line-wall/README.md",
+     "contains": "Universal four-row lemma"
+    },
+    {
+     "path": "atlas/erdos-142-recursive-capacity.md",
+     "contains": "Affine cyclic lines close every maximum q=4 assignment"
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-142-q4-affine-order4-line-wall/README.md",
+     "sha256": "c526d209e3bfda640ef1fbf9ccd664853f1e06274888f5cf75bed9b172d517a4"
+    },
+    {
+     "path": "certificates/erdos-142-q4-affine-order4-line-wall/verify.py",
+     "sha256": "1f14a47c62fbde34c15ee33a815c91229c948fd9c2dca9227fd5dfd3b6437295"
+    },
+    {
+     "path": "certificates/erdos-142-q4-affine-order4-line-wall/independent_replay.py",
+     "sha256": "df289fd3bf7cec7499d71f10519786bf25287b7feb47188fe220b0ad8a686073"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-142-q4-affine-order4-line-wall/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-q4-affine-order4-line-wall/verify.py",
+      "--self-test"
+     ],
+     "timeout_seconds": 120,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_Q4_AFFINE_ORDER4_LINE_WALL",
+      "\"all_orbits_contain_affine_order4_line\": true",
+      "\"arbitrary_global_potential_cancelled\": true",
+      "\"maximizer_count\": 256",
+      "\"mass_to_gate_ratio\": \"1080/343\"",
+      "\"transported_certificates\": 256"
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "The stdlib verifier reconstructs all 32,768 assignments, the exact mass gate and 32 symmetry orbits, exhausts 4,736 representative affine order-four lines, validates four semantic midpoint rows and D4 transports to all 256 maximizers, and rejects eight planted failures."
+     }
+    },
+    {
+     "profile": "fast",
+     "certifies_claim": false,
+     "entrypoint": "certificates/erdos-142-q4-affine-order4-line-wall/independent_replay.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-q4-affine-order4-line-wall/independent_replay.py"
+     ],
+     "timeout_seconds": 120,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_INDEPENDENT_Q4_AFFINE_ORDER4_LINE_WALL",
+      "\"all_four_rows_cancel_physically\": true",
+      "\"arbitrary_global_potential_scope\": true",
+      "\"line_count_total\": 4736",
+      "\"transported_assignments\": 256"
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+     "kind": "external",
+     "evidence": "A separately written stdlib replay imports neither the primary verifier nor discovery artifacts, independently rebuilds the full assignment/orbit/line census and semantic four-row certificates, and rejects eight live corruptions."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-142-q7-q8-unit-hypercycle-walls",
+   "status": "promoted",
+   "statement": "At q=7 and q=8, none of the maximum-mass D4 role assignments admits an arbitrary real-valued potential on its five-cylinder union satisfying every raw-canonical modular-midpoint coercivity inequality.",
+   "scope": "The exact q=7 and q=8 EHPS quotient supports each have 256 maximum assignments in 32 global-D4 orbits and masses above the supplied gate. At q=8, every orbit contains a full affine order-four line whose four adjacent midpoint rows cancel all global-potential coefficients; order-eight lines independently close every orbit. At q=7, full order-seven lines cover zero orbits, but every orbit contains the fixed five-row balanced affine hypercycle c=(0,1,4,3,6), pi=(2,4,0,1,3). This finite classification does not cover support deformation or thickening, continuum limits, correlated non-product subblocks, scalar digit carry, or integer transfer.",
+   "machine_verdict": "PASS_Q7_FIVE_ROW_AND_Q8_CYCLIC_LINE_WALLS",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-142-q7-q8-unit-hypercycle-walls/README.md",
+     "contains": "q=7: no full line, but every maximum orbit has a five-row wall"
+    },
+    {
+     "path": "atlas/erdos-142-recursive-capacity.md",
+     "contains": "Balanced midpoint hypercycles close q=7 and q=8"
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-142-q7-q8-unit-hypercycle-walls/README.md",
+     "sha256": "c51490b6ff5c16966a5a2dfc9d8023672094b24b5895dd926cdbf10c5682f933"
+    },
+    {
+     "path": "certificates/erdos-142-q7-q8-unit-hypercycle-walls/verify.py",
+     "sha256": "2f9554f0e3c74b44fdab3fbded784e85d5d38d24dd9421a6f8bd7e79769ef54a"
+    },
+    {
+     "path": "certificates/erdos-142-q7-q8-unit-hypercycle-walls/independent_replay.py",
+     "sha256": "f6e97c72dbd453badb5644e8a5fd3ce1417920756a06a8ca8ada6778cb4c9532"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-142-q7-q8-unit-hypercycle-walls/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-q7-q8-unit-hypercycle-walls/verify.py",
+      "--self-test"
+     ],
+     "timeout_seconds": 120,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_Q7_FIVE_ROW_AND_Q8_CYCLIC_LINE_WALLS",
+      "\"q7_all_32_max_orbits_killed_by_five_row_affine_hypercycle\": true",
+      "\"q7_full_order7_lines_cover_zero_orbits\": true",
+      "\"q8_all_32_max_orbits_killed_by_order4_lines\": true",
+      "\"feasible_label_sequence_count_sum\": 6976",
+      "\"assignment_count\": 256"
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "The stdlib verifier reconstructs both exact supports, all 32,768 role assignments per quotient, mass maxima and D4 orbits, complete divisor/LCM and five-row factorized censuses, full midpoint/carry/raw-cost semantics, physical-variable cancellation, transport to all 256 maximizers, q7 template minimality, and eleven planted failures."
+     }
+    },
+    {
+     "profile": "fast",
+     "certifies_claim": false,
+     "entrypoint": "certificates/erdos-142-q7-q8-unit-hypercycle-walls/independent_replay.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-q7-q8-unit-hypercycle-walls/independent_replay.py"
+     ],
+     "timeout_seconds": 180,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_INDEPENDENT_Q7_FIVE_ROW_Q8_CYCLIC_LINE_AUDIT",
+      "\"q7_all_32_max_orbits_killed_by_five_row_affine_hypercycle\": true",
+      "\"q7_full_order7_lines_cover_zero_orbits\": true",
+      "\"q8_all_32_max_orbits_killed_by_order4_lines\": true",
+      "\"certificate_count\": 6976",
+      "\"assignment_count\": 256"
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "external",
+      "evidence": "A separately written stdlib replay imports neither the primary verifier nor exploratory artifacts. It independently rebuilds support and orbit structure, semantic q7/q8 certificates and D4 transports, and rejects q7 zero-step, wrong-center, missing-row and wrong-cost controls plus seven q8 controls."
      }
     }
    ]

@@ -549,6 +549,160 @@ higher-q or continuum classification, and it does not exclude recursive
 state, jointly deformed supports, or correlated superblocks. It produces no
 construction and no new `r_3(N)` bound.
 
+### 4.10 The full q=6 Cartesian outer-code extension also fails
+
+The previous wall is local to one q=6 block, so a natural escape is to choose
+an outer code `C` of label words and allow a completely nonseparable potential
+on the resulting union of product blocks.  The exact all-pattern census closes
+that full Cartesian extension.
+
+At each outer coordinate, choose any one of the 256 maximum-mass assignments;
+the choice may vary with the coordinate but is fixed across codewords.  For
+every non-diagonal ordered local label pattern `(a,b,c)`, the q=6 census gives
+three full-vertex midpoint rows whose potential coefficients cancel and whose
+raw right sides sum to at least 24, or normalized right side at least `2/3`.
+For a nonconstant outer triple `(u,v,w)`, use this local cycle wherever
+`(u_i,v_i,w_i)` is non-diagonal and use a constant zero-cost triple elsewhere.
+Concatenation produces three actual global midpoint rows.  Their coefficients
+cancel at the full superblock-vertex level, without writing the potential as a
+sum of coordinate functions, and their normalized right side is at least
+
+```text
+(2/3) * #{i : (u_i,v_i,w_i) is non-diagonal} > 0.
+```
+
+If an outer code contains distinct words `u` and `v`, the ordered triple
+`(u,v,v)` is therefore impossible.  Hence a survivor code has at most one
+word.  But one local cylinder has density
+
+```text
+729/6^6 = 1/64 < (7/24)^3,
+```
+
+so a singleton product misses the supplied mass gate at every length.  The
+primary and independently written replays in
+`certificates/erdos-142-q6-outer-code-tensor-wall/` reconstruct all 32,768
+assignments, all 256 maximizers, all 30,720 maximum-assignment/non-diagonal
+pattern cycles, coordinate-dependent maximizers, full modular carries, raw
+cost additivity, and exact global-variable cancellation.
+
+This is an exact capacity wall for full Cartesian products of the five q=6
+cylinders.  It still leaves correlated non-product subblocks,
+codeword-dependent support assignments, support deformation or thickening,
+scalar digit encodings with cross-block carry, and the construction-to-integers
+transfer outside its scope.  Those are now the honest recursive escape hatches.
+
+### 4.11 Affine cyclic lines close every maximum q=4 assignment
+
+The next torsion-free-with-respect-to-three quotient is q=4.  Its exact EHPS
+grid support is
+
+```text
+T = {(2,1), (2,2), (3,0), (3,1)}.
+```
+
+The `8^5` D4 census again has 256 maximum assignments in 32 global-D4
+orbits.  Each maximum union consists of five disjoint 64-point cylinders, so
+its mass is 320 and its density is `5/64`.  Exact arithmetic gives
+
+```text
+(5/64) / (7/24)^3 = 1080/343,
+5/64 - (7/24)^3 = 737/13824 > 0.
+```
+
+Although three is invertible modulo four and therefore excludes the q=6
+three-row triangle, every maximum orbit contains a full affine order-four line
+
+```text
+A_j = A_0 + j d  (mod 4),  j=0,1,2,3.
+```
+
+The four modular midpoint rows centered successively around this line have
+unit multipliers and cancel every global-potential coefficient.  Their raw
+right sides sum to
+
+```text
+2||A_0-A_2||^2 + 2||A_1-A_3||^2 > 0.
+```
+
+Thus every maximum q=4 union is impossible for an arbitrary, nonseparable
+real-valued potential.  The exact primary and independent replays in
+`certificates/erdos-142-q4-affine-order4-line-wall/` enumerate all 32,768
+assignments, the 32 symmetry representatives, 4,736 affine lines across those
+representatives, exact midpoint carries and raw costs, and D4 transports to
+all 256 maximizers.  This finite wall does not survive geometric deformation
+automatically and makes no continuum, correlated-subblock, scalar-transfer,
+or integer-construction claim.
+
+### 4.12 Balanced midpoint hypercycles close q=7 and q=8
+
+The q=4 and q=6 contradictions are instances of one finite-group mechanism.
+Call a family of modular midpoint rows a *balanced midpoint hypercycle* when
+the total coefficient of every physical vertex is zero.  Summing the rows
+then eliminates one completely arbitrary, nonseparable potential.  If the
+sum of raw canonical endpoint costs is positive, the family is an exact
+Farkas contradiction.
+
+A full affine cyclic line
+
+```text
+A_j = A + j d,  j in Z/kZ,
+```
+
+with `d` of order `k>=3` is the simplest example: the `k` adjacent midpoint
+rows give each vertex endpoint multiplicity two and center multiplicity one.
+The complete factorized census in
+`certificates/erdos-142-q7-q8-unit-hypercycle-walls/` allows each of the three
+two-dimensional blocks to have any step order dividing `k` and requires only
+that the least common multiple be `k`; this makes the line census complete,
+not merely a sufficient screen.
+
+At q=8 the exact EHPS support has 15 points.  The maximum five-cylinder mass
+is `5*15^3=16875`, attained by 256 assignments in 32 global-D4 orbits, and its
+density exceeds the supplied gate by
+
+```text
+16875/8^6 - (7/24)^3 = 280009/7077888 > 0.
+```
+
+Every maximum orbit contains a full order-four affine line, yielding a
+four-row wall; full order-eight lines independently close every orbit.  Exact
+D4 transport carries the representative certificates to all 256 maximizers.
+
+At q=7 the exact support has 11 points and maximum mass `5*11^3=6655`, again
+with 256 maximizers in 32 global-D4 orbits.  Its density margin is
+
+```text
+6655/7^6 - (7/24)^3 = 51645113/1626379776 > 0.
+```
+
+Here the complete order-seven line census covers zero orbits.  A shorter
+balanced affine pattern nevertheless closes every one.  Put
+
+```text
+V_i = A + c_i d,
+c  = (0,1,4,3,6),
+pi = (2,4,0,1,3),
+```
+
+with nonzero `d` in `(Z/7Z)^6`, and for `i=0,...,4` use endpoints
+`(V_i,V_(i+1))` centered at `V_pi(i)`.  The identities
+`c_i+c_(i+1)=2c_pi(i) (mod 7)` make all five rows genuine modular midpoint
+rows.  The endpoint edges form a five-cycle and `pi` is a permutation, so
+each vertex has coefficient `2-2=0`; every consecutive coefficient difference
+is nonzero, so every cost is positive.  Exhaustion over center permutations
+shows this template is minimal inside the connected unit-cycle/permuted-center
+class: lengths three and four have only the constant kernel, whereas length
+five has exactly five nonconstant-kernel permutations.
+
+The primary and separately written stdlib replays reconstruct both quotient
+supports, the full `8^5` assignment and orbit censuses, exact mass gates,
+complete factorized pattern counts, modular carries, raw costs, physical-
+variable cancellation, D4 transports, and live corruption controls.  This is
+a finite q=7/q=8 maximum-D4 classification only.  It does not exclude deformed
+or thickened supports, correlated non-product subblocks, continuum limits,
+scalar digit encodings with cross-block carry, or the integer transfer.
+
 ## 5. What would count as progress
 
 A promotable positive result must include all of:
