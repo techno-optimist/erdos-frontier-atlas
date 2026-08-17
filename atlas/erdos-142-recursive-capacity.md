@@ -367,8 +367,10 @@ assignments under cylinder-position additivity. This remains a finite `q=24`
 ansatz wall. Pair-coordinate potentials, arbitrary functions on six-dimensional
 cylinder vertices, recursive state, support deformation, and continuum transfer
 remain live escape routes. A corrected `q=6` arbitrary-global screen is
-numerically infeasible for both representatives, but no exact dual certificate
-has been extracted, so that experiment is not promoted as a claim.
+being rerun in an isolated directory. An earlier log reported numerical
+infeasibility, but its 1,563/6,664-row traces were overwritten; the surviving
+files are only 101-row `iteration-limit` traces. No arbitrary-global
+infeasibility is therefore asserted here.
 
 ### 4.5 Pair-coordinate interactions at q=6
 
@@ -399,8 +401,10 @@ third model audit agree.
 This is a stronger potential ansatz at a coarser quotient, so it is not a q=24
 pair-coordinate theorem. It does not exclude an arbitrary function on each
 six-dimensional cylinder, recursive state, support deformation, or continuum
-transfer. The arbitrary-global q=6 LP is numerically infeasible for both
-representatives, but no exact dual has yet been extracted.
+transfer. An older log reported numerical infeasibility for both arbitrary-
+global q=6 representatives, but the supporting full row sets were overwritten.
+The preserved payloads stop at 101 rows with `iteration-limit`, so that status
+is unbacked and a clean isolated rerun is in progress.
 
 ## 5. What would count as progress
 

@@ -133,12 +133,14 @@ written replay agrees, and an independent model audit confirms all 125 ordered
 word triples/even-q branches were present in discovery. This is a finite q=6
 wall only: it neither transfers to q=24 nor excludes arbitrary 6D potentials.
 
-Next exact test: extract exact duals, if they exist, from the corrected q=6
-**arbitrary-global** screens, then reprice pair/global models at `q=8`/`q=12`
-or `q=48`. The current arbitrary-global q=6 runs are numerically LP-infeasible
-for both representatives but remain unpromoted without exact rays. Recursive
-state, support deformation, and continuum thickening are still live. No finite
-survivor has been produced.
+Next exact test: rerun the q=6 **arbitrary-global** screens in an isolated
+directory, then extract exact duals if they exist and reprice pair/global models
+at `q=8`/`q=12` or `q=48`. An earlier log reported numerical infeasibility, but
+the corresponding 1,563/6,664-row traces were overwritten; the preserved
+result files are only 101-row `iteration-limit` traces. Therefore no current
+arbitrary-global infeasibility result is claimed. Recursive state, support
+deformation, and continuum thickening are still live. No finite survivor has
+been produced.
 Naslund's public deck states only the rounded capset rate `2.22`; the cited
 `2.2208` manuscript remains unavailable publicly as of the audit.
 
