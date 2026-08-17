@@ -43,7 +43,7 @@ others don't touch it.
 | `claude/erdos-366-sweep-20260726` | Erdős #366 cubefull-side sweep — verified range 10^22 → 10^25, zero strict-orientation solutions | `certificates/erdos-366/`, gap_map #366 row, contracts claim `erdos-366-cubefull-sweep-1e25` | PR packaging 2026-07-26 |
 | `claude/attack-graph-20260726` | The attack graph — a generated agent-facing overlay over every ledger (`GRAPH.md` → `views/sorties.md` → per-problem cards). Adds no facts; organizes existing ones | `tools/build_graph.py`, `tools/validate_graph.py`, `tools/query_graph.py`, `atlas/graph/`, `views/graph/`, `views/sorties.md`, `GRAPH.md`, `CLAUDE.md`, `tests/test_graph.py` | PR packaging 2026-07-26 |
 | `claude/trees-993-743-20260727` | Tree lanes: Erdős #743 Gyárfás packing at K_10, and #993 independence unimodality to n=30 (incl. first replication of the n≤29 frontier) | `certificates/erdos-743/`, `certificates/erdos-993/`, gap_map #743 + #993 rows, contracts claims `erdos-743-k10-packing` + `erdos-993-unimodal-n30` | PR packaging 2026-07-27 |
-| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md`, `certificates/erdos-142-mirror-core-additive-wall/`, `certificates/erdos-142-d4-role-distinct-additive-wall/` | exact q=24 mirror-core and top-D4 role-distinct additive walls; no survivor / no new bound, 2026-08-17 |
+| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md`, `certificates/erdos-142-mirror-core-additive-wall/`, `certificates/erdos-142-d4-role-distinct-additive-wall/`, `certificates/erdos-142-q24-cylinder-hypograph-wall/` | exact q=24 mirror-core, role-distinct, and stronger cylinder-position additive walls; no survivor / no new bound, 2026-08-17 |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching
@@ -91,10 +91,26 @@ carry, raw cost and mass term, and an independent implementation agrees. This
 is stronger than the shared-grid-point LP screen, but remains one finite D4
 assignment and one additive ansatz.
 
-Next exact test: jointly optimize supports outside both certified families and
-admit non-additive global / recursive-state potentials where the direct
-additive ansatz is too rigid. Reprice at `q=48` and attempt rational continuum
-thickening only for a survivor. No finite survivor has been produced.
+Third exact branch result:
+`certificates/erdos-142-q24-cylinder-hypograph-wall/` closes the same
+top-D4 assignment under the strictly larger **cylinder-position additive**
+model. Each of the five disjoint cylinders and each of its three physical
+coordinate positions receives an independent 163-point potential table, for
+2,445 `G` variables. An exact local-hypograph reformulation adds 375 minimum-
+slack variables and is equivalent to exhaustive factored pricing. The frozen
+771-row positive Farkas combination (662 local witness rows and 109 active
+sum rows) cancels all 2,820 coefficients and leaves a strictly negative exact
+right side. The stdlib semantic replay reconstructs all 125 ordered sum rows,
+midpoints, carries, raw costs, D4 mass, and ten planted failures; a separately
+written implementation agrees. This remains finite q=24 and separable across
+the three physical coordinates: arbitrary 6D, pair-interaction, recursive, and
+second-maximal-orbit potentials remain open.
+
+Next exact test: run the same hypograph certificate search on the second
+inequivalent maximum-mass D4 orbit `(7,6,7,6,7)`, then admit pair-coordinate,
+non-additive global, or recursive-state potentials where cylinder-position
+separability is still too rigid. Reprice at `q=48` and attempt rational
+continuum thickening only for a survivor. No finite survivor has been produced.
 Naslund's public deck states only the rounded capset rate `2.22`; the cited
 `2.2208` manuscript remains unavailable publicly as of the audit.
 

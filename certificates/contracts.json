@@ -27,6 +27,11 @@
    "boundary": "Per-object refutations of the strict symmetric CONE on three q=1 closed carry-triple products, by an explicit non-negative edge functional orthogonal to the zero-tag circulation space. Settles exactly the three listed objects; explicitly NOT a theorem that every q=1 product has an infeasible cone, and NOT an r_3(N) bound. claim_boundary erdos142_solved=false, new_r3_bound=false."
   },
   {
+   "path": "certificates/erdos-142-q24-cylinder-hypograph-wall",
+   "classification": "certified_local",
+   "boundary": "Exact finite q=24 Farkas wall for the single D4 assignment (P1,P2,P3,B,K)=(7,7,7,6,7) and cylinder-position additive potentials on the five pairwise-disjoint Karapetyan word cylinders. The mass-beating union, local-hypograph equivalence, 662 selected midpoint rows, all 125 sum rows, and exact 771-row contradiction are reconstructed semantically. Does not exclude arbitrary global six-dimensional or pair-interaction potentials, recursive-state potentials, the second maximum-mass D4 orbit, deformed supports, q=48, or a continuum construction. Gives no r_3(N) bound; Erdos Problem 142 remains unsolved."
+  },
+  {
    "path": "certificates/erdos-142-d4-role-distinct-additive-wall",
    "classification": "certified_local",
    "boundary": "Exact finite q=24 Farkas wall for the single D4 assignment (P1,P2,P3,B,K)=(7,7,7,6,7) and role-distinct additive potentials on the five Karapetyan word cylinders. The mass-beating union and all 622 selected midpoint rows are reconstructed semantically. Does not exclude an arbitrary global six-dimensional potential, recursive-state potentials, other D4 assignments, deformed supports, q=48, or a continuum construction. Gives no r_3(N) bound; Erdos Problem 142 remains unsolved."
@@ -931,6 +936,89 @@
      "failure_control": {
       "kind": "none_explained",
       "evidence": "This exhaustive exact mass screen is a non-certifying companion replay; it has no mutation harness and does not replace the six planted failures in the semantic Farkas verifier."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-142-q24-d4-cylinder-position-additive-wall",
+   "status": "promoted",
+   "statement": "At q=24, the mass-beating D4 assignment (P1,P2,P3,B,K)=(7,7,7,6,7) admits no cylinder-position additive potential satisfying every raw-Euclidean modular-midpoint constraint across the five Karapetyan word cylinders.",
+   "scope": "One finite q=24 D4 support assignment and the model F_c(p0,p1,p2)=G[c,0,p0]+G[c,1,p1]+G[c,2,p2] only. The five-cylinder union has 21,653,735 points versus the 4,741,632-point EHPS gate. The exact local-hypograph certificate does not exclude arbitrary global six-dimensional or pair-coordinate potentials, recursive-state potentials, the second inequivalent maximum-mass D4 orbit, deformed supports, q=48, or a continuum construction; it gives no r_3(N) bound.",
+   "machine_verdict": "PASS_Q24_CYLINDER_HYPOGRAPH_EXACT_FARKAS",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-142-q24-cylinder-hypograph-wall/README.md",
+     "contains": "An exact nonnegative Farkas combination of 662 local hypograph rows"
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-142-q24-cylinder-hypograph-wall/README.md",
+     "sha256": "559a21f3b69d3c5231a11a4aa5cfc2779f738a704bb38d905f7c325ffc245047"
+    },
+    {
+     "path": "certificates/erdos-142-q24-cylinder-hypograph-wall/verify.py",
+     "sha256": "e9ded4c7a626642681bc4c85e81a714358f6396403604e4ada911bce920ccf6e"
+    },
+    {
+     "path": "certificates/erdos-142-q24-cylinder-hypograph-wall/certificate.json",
+     "sha256": "4f6344025d672e6a6e631bb34b86250ad6423a89ec9c03bf5109ae76ec6c65c8"
+    },
+    {
+     "path": "certificates/erdos-142-q24-cylinder-hypograph-wall/independent_replay.py",
+     "sha256": "42e00c6c5285463f9ccc91551a6ce2dd62ad247847666bda8697bd7ca3ce6527"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-142-q24-cylinder-hypograph-wall/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-q24-cylinder-hypograph-wall/verify.py",
+      "--self-test"
+     ],
+     "timeout_seconds": 120,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_Q24_CYLINDER_HYPOGRAPH_EXACT_FARKAS",
+      "\"positive_contradiction\": \"25778096663658656179436770653102962485172245112397074359413975984906249530469526874122319136\"",
+      "\"planted_corruptions\": \"all rejected\""
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "verify.py independently reconstructs the q=24 EHPS tile, D4 images, cylinder-position G/t indexer, all selected local hypograph rows, all 125 ordered sum rows, exact Farkas cancellation and union mass, then requires ten planted corruptions to be rejected."
+     }
+    },
+    {
+     "profile": "fast",
+     "certifies_claim": false,
+     "entrypoint": "certificates/erdos-142-q24-cylinder-hypograph-wall/independent_replay.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-q24-cylinder-hypograph-wall/independent_replay.py"
+     ],
+     "timeout_seconds": 120,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_INDEPENDENT_Q24_D4_CYLINDER_POSITION_REPLAY",
+      "\"farkas_rows\": 771",
+      "\"union_mass_count\": 21653735",
+      "\"packet_sha256\": \"4f6344025d672e6a6e631bb34b86250ad6423a89ec9c03bf5109ae76ec6c65c8\""
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "none_explained",
+      "evidence": "This separately written stdlib replay is a non-certifying cross-check without its own full mutation harness; the certifying verify.py replay above carries ten embedded planted failures."
      }
     }
    ]

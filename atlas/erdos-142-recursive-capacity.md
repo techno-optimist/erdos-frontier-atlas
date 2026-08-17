@@ -298,6 +298,49 @@ full six-dimensional union, a recursive state potential, other D4 assignments,
 joint support deformations, q=48, or a continuum construction. No new
 `r_3(N)` bound follows.
 
+### 4.3 Stronger wall: cylinder-position additive potentials
+
+The same top-D4 assignment remains impossible after substantially relaxing
+the additive ansatz. Since its five cylinders are pairwise disjoint, give
+every cylinder `c`, coordinate position `i`, and local support point `p` an
+independent variable `G[c,i,p]`, and set
+
+```text
+F_c(p0,p1,p2) = G[c,0,p0] + G[c,1,p1] + G[c,2,p2].
+```
+
+This has `5*3*163 = 2,445` variables and strictly contains the role-distinct
+model: no value is shared merely because two occurrences carry the same role.
+For each ordered cylinder triple `tau` and position `i`, introduce a local
+hypograph variable `t[tau,i]`. After scaling by `q^2`, the exact rows are
+
+```text
+t[tau,i] - Gx - Gz + 2 Gy <= -raw_cost_numerator,
+-t[tau,0] - t[tau,1] - t[tau,2] <= 0.
+```
+
+The reformulation loses nothing. The first rows bound `t[tau,i]` above by
+every local witness slack, so its largest feasible value is the local minimum.
+The sum row is therefore feasible exactly when the three local minima sum to
+a nonnegative global slack. This replaces product-sized global cuts by 375
+local witness tables while retaining every ordered triple and even-`q`
+midpoint branch.
+
+The semantic packet in
+`certificates/erdos-142-q24-cylinder-hypograph-wall/` gives an exact
+Farkas contradiction for this 2,820-variable system. It contains 662 selected
+local rows, all 125 triple-sum rows, and 771 positive multipliers. Their exact
+sum cancels all `G` and `t` coefficients and leaves a strictly negative right
+side. The verifier reconstructs every support, witness, carry, raw cost,
+index, and mass term, rejects ten planted corruptions, and has a separately
+written independent replay.
+
+This is a stronger finite wall, not a global one. It still permits nonlinear
+interactions between two or three physical coordinates inside a cylinder,
+arbitrary six-dimensional potentials, recursive state, the second inequivalent
+maximum-mass D4 orbit, support deformation, and continuum thickening. It gives
+no new `r_3(N)` bound.
+
 ## 5. What would count as progress
 
 A promotable positive result must include all of:

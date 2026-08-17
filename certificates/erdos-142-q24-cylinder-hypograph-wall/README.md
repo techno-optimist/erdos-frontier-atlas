@@ -22,7 +22,8 @@ Union mass count `5·163³ = 21,653,735` strictly exceeds the threshold
 | file | role |
 |---|---|
 | `certificate.json` | semantic packet (`erdos142-q24-cylinder-hypograph-farkas-v1`) |
-| `verify.py` | stdlib-only independent replay + planted corruption self-test |
+| `verify.py` | stdlib-only semantic verifier + planted corruption self-test |
+| `independent_replay.py` | separately written stdlib-only reconstruction and exact cross-check |
 
 Expected `certificate.json` SHA-256:
 
@@ -34,7 +35,9 @@ Expected `certificate.json` SHA-256:
 
 ```bash
 python -I verify.py --self-test
+python -I independent_replay.py
 # → PASS_Q24_CYLINDER_HYPOGRAPH_EXACT_FARKAS
+# → PASS_INDEPENDENT_Q24_D4_CYLINDER_POSITION_REPLAY
 ```
 
 ## Scope honesty

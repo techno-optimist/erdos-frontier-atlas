@@ -5,7 +5,7 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 379,
-   "evidenced_by": 13,
+   "evidenced_by": 14,
    "has_surface": 319,
    "learned_from": 5,
    "measures": 223,
@@ -18,8 +18,8 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 17,
-   "evidence_container": 30,
+   "evidence_claim": 18,
+   "evidence_container": 31,
    "external_claim": 91,
    "incident": 26,
    "move": 7,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 3950,
-   "validator-enforced": 30
+   "validator-enforced": 31
   }
  },
  "edges": [
@@ -5233,6 +5233,14 @@
   },
   {
    "dst": "E:claim:erdos-142-foundation",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P142",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-142-q24-d4-cylinder-position-additive-wall",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
    "src": "P142",
@@ -29336,6 +29344,46 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-142-q24-cylinder-hypograph-wall/README.md",
+     "sha256": "559a21f3b69d3c5231a11a4aa5cfc2779f738a704bb38d905f7c325ffc245047"
+    },
+    {
+     "path": "certificates/erdos-142-q24-cylinder-hypograph-wall/verify.py",
+     "sha256": "e9ded4c7a626642681bc4c85e81a714358f6396403604e4ada911bce920ccf6e"
+    },
+    {
+     "path": "certificates/erdos-142-q24-cylinder-hypograph-wall/certificate.json",
+     "sha256": "4f6344025d672e6a6e631bb34b86250ad6423a89ec9c03bf5109ae76ec6c65c8"
+    },
+    {
+     "path": "certificates/erdos-142-q24-cylinder-hypograph-wall/independent_replay.py",
+     "sha256": "42e00c6c5285463f9ccc91551a6ce2dd62ad247847666bda8697bd7ca3ce6527"
+    }
+   ],
+   "claim_id": "erdos-142-q24-d4-cylinder-position-additive-wall",
+   "id": "E:claim:erdos-142-q24-d4-cylinder-position-additive-wall",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-142-q24-cylinder-hypograph-wall/verify.py",
+     "--self-test"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "PASS_Q24_CYLINDER_HYPOGRAPH_EXACT_FARKAS",
+     "\"positive_contradiction\": \"25778096663658656179436770653102962485172245112397074359413975984906249530469526874122319136\"",
+     "\"planted_corruptions\": \"all rejected\""
+    ]
+   },
+   "scope": "One finite q=24 D4 support assignment and the model F_c(p0,p1,p2)=G[c,0,p0]+G[c,1,p1]+G[c,2,p2] only. The five-cylinder union has 21,653,735 points versus the 4,741,632-point EHPS gate. The exact local-hypograph certificate does not exclude arbitrary global six-dimensional or pair-coordinate potentials, recursive-state potentials, the second inequivalent maximum-mass D4 orbit, deformed supports, q=48, or a continuum construction; it gives no r_3(N) bound.",
+   "statement": "At q=24, the mass-beating D4 assignment (P1,P2,P3,B,K)=(7,7,7,6,7) admits no cylinder-position additive potential satisfying every raw-Euclidean modular-midpoint constraint across the five Karapetyan word cylinders.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-142-d4-role-distinct-additive-wall/README.md",
      "sha256": "140b6838fd0e66b9b833411baa9415e45d746f6e77dff55de36216bc28c5a130"
     },
@@ -29891,6 +29939,13 @@
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-142-pressure-ceiling",
    "path": "certificates/erdos-142-pressure-ceiling",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "Exact finite q=24 Farkas wall for the single D4 assignment (P1,P2,P3,B,K)=(7,7,7,6,7) and cylinder-position additive potentials on the five pairwise-disjoint Karapetyan word cylinders. The mass-beating union, local-hypograph equivalence, 662 selected midpoint rows, all 125 sum rows, and exact 771-row contradiction are reconstructed semantically. Does not exclude arbitrary global six-dimensional or pair-interaction potentials, recursive-state potentials, the second maximum-mass D4 orbit, deformed supports, q=48, or a continuum construction. Gives no r_3(N) bound; Erdos Problem 142 remains unsolved.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-142-q24-cylinder-hypograph-wall",
+   "path": "certificates/erdos-142-q24-cylinder-hypograph-wall",
    "type": "evidence_container"
   },
   {
