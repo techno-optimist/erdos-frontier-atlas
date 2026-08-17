@@ -43,6 +43,7 @@ others don't touch it.
 | `claude/erdos-366-sweep-20260726` | Erdős #366 cubefull-side sweep — verified range 10^22 → 10^25, zero strict-orientation solutions | `certificates/erdos-366/`, gap_map #366 row, contracts claim `erdos-366-cubefull-sweep-1e25` | PR packaging 2026-07-26 |
 | `claude/attack-graph-20260726` | The attack graph — a generated agent-facing overlay over every ledger (`GRAPH.md` → `views/sorties.md` → per-problem cards). Adds no facts; organizes existing ones | `tools/build_graph.py`, `tools/validate_graph.py`, `tools/query_graph.py`, `atlas/graph/`, `views/graph/`, `views/sorties.md`, `GRAPH.md`, `CLAUDE.md`, `tests/test_graph.py` | PR packaging 2026-07-26 |
 | `claude/trees-993-743-20260727` | Tree lanes: Erdős #743 Gyárfás packing at K_10, and #993 independence unimodality to n=30 (incl. first replication of the n≤29 frontier) | `certificates/erdos-743/`, `certificates/erdos-993/`, gap_map #743 + #993 rows, contracts claims `erdos-743-k10-packing` + `erdos-993-unimodal-n30` | PR packaging 2026-07-27 |
+| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md` | primary-source and conditional-theorem note; no construction certificate, 2026-08-17 |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching
@@ -58,6 +59,25 @@ and replayable in `certificates/erdos-142/` (`python3 verify.py`).
 objects were UNTRACKED working-tree files; a later run overwrote them and they are
 gone from both working copies — a result that was replayed-clean 2026-07-13 is now unbacked.
 Commit your certs.
+
+## 2026-08-17 — Erdős 142: recursive signed-slack capacity lane opened
+
+Research note: [`atlas/erdos-142-recursive-capacity.md`](atlas/erdos-142-recursive-capacity.md).
+Naslund's public 2023 slide deck was recovered and visually audited. It exposes a
+recursive weighted-copy/closed-loop capacity mechanism that is more specific than
+the later manuscript citations. The P142 translation is a conditional direct
+outer-code lemma: for role-dependent EHPS supports, the worst raw-Euclidean
+coercivity slack factors across physical two-dimensional torus blocks, and every
+ordered codeword triple must have nonnegative summed minimum slack. The mass gate
+is actual union mass `> (7/24)^L`, not a cardinality-exponent ratio.
+
+Next exact test: the five-word Karapetyan--Karapetyan role code, jointly optimizing
+all supports and potentials at `q=24`, repriced at `q=48`, then rational continuum
+thickening only for a survivor. No finite survivor has been produced yet. Naslund's
+public deck states only the rounded capset rate `2.22`; the cited `2.2208` manuscript
+remains unavailable publicly as of the audit.
+
+`erdos142_solved: false`. `new_r3_bound: false`.
 
 ## 2026-07-24 — Erdős 142 / D15: two lemmas REFUTED, one theorem proved
 

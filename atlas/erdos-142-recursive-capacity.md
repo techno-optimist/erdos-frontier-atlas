@@ -1,0 +1,249 @@
+# Erdős 142: recursive signed-slack capacity lane
+
+**Claim boundary:** `erdos142_solved: false`; `new_r3_bound: false`;
+`continuum_certificate: false`; `finite_survivor: false`.
+
+This is a research-lane note, not a certificate. It records a newly recovered
+primary source, isolates the exact conditional tensorization lemma relevant to
+the EHPS torus construction, and specifies the next finite experiment. Nothing
+here changes the status of P142 or any row in the attack graph.
+
+## 1. What is new in this note
+
+Eric Naslund's public 2023 slide deck gives substantially more information than
+the manuscript citations that were previously easy to find:
+
+- [author talks page](https://sites.google.com/site/naslunderic/talks-and-conferences);
+- [80-page slide deck](https://drive.google.com/file/d/1pW4FreiLm6DV9CHg3FBpGCtfjRr7ZYdp/view?usp=drive_link);
+- [OeMG 2023 program and abstract](https://imsc.uni-graz.at/oemg-tagung-2023/wp-content/uploads/2023/09/mprogramm.pdf).
+
+The deck downloaded on 2026-08-17 has SHA256
+`3868245c39118299e4b1c291757209d0a9a334278f8d0decad82041142dfd549`,
+80 pages, and PDF creation time 2023-09-18 06:50:50 MDT. The following items
+were checked against rendered pages, not search snippets.
+
+1. Slides 45--49 define the constructor hypergraph `L_k` on
+   `{0,1,...,k}` and state Edel's conjecture `Theta(L_k)=2` for `k >= 2`.
+2. Slides 53--58 state `Theta(C) >= 2.22` for capsets via a limiting
+   construction, not a product of one finite example, and state
+   `Theta(L_k)=2` for `k >= 3`.
+3. Slides 64--71 display the recursive gadget inside the strong square
+   `L_3 x L_3`:
+
+   ```text
+   H0 = {(0,0)}
+   H1 = {(0,1),(2,0),(2,3),(3,2),(1,1)}
+   H2 = {(0,2),(3,0),(1,3),(3,1),(2,2)}
+   H3 = {(0,3),(1,0),(2,1),(1,2),(3,3)}.
+   ```
+
+   The slides state that `H1,H2,H3` are weighted copies of `L_3`, with
+   weight 2 at vertex 0, while the four pieces together form another copy of
+   `L_3`. The point is a nested reusable decomposition, not a one-shot larger
+   independent set.
+4. Slides 72--75 give the optimization closure. If `(x1,y1)` and `(x2,y2)`
+   lie in a feasible set `S`, then so does
+
+   ```text
+   (x1 + x2/2 - x1*x2/2,
+    y1^(1/2) * y2^((1-x1)/2) * 2^(x2*(1-x1)/2)).
+   ```
+
+   Together with `(x,1) in S`, the stated envelope is
+   `g(x)=x^(-x)(1-x)^(-(1-x))`.
+5. Slides 76--79 summarize the general mechanism: build chains of copies in
+   high powers; a closed recursive loop yields a capacity lower bound.
+
+This is the mechanism-level clue for P142: search for a recursively reusable
+**weighted coercivity gadget**, rather than only a larger isolated torus tile.
+
+### Source-status fence
+
+The public deck states only the rounded capset value `2.22`. EHPS report that
+Naslund informed them of forthcoming work giving `2.2208^(n-o(n))` in
+`F_3^n`; later surveys repeat that attribution. Naslund's
+[research page](https://sites.google.com/site/naslunderic/research) currently
+lists *Lower Bounds for the Capacity of Hypergraphs* as "In preparation" and
+provides no paper or code. No public manuscript, proof, repository, or recording
+for the `2.2208` claim was located through 2026-08-17. Therefore:
+
+```text
+public recursive mechanism: verified in the author's deck
+public rounded 2.22 statement: verified in the author's deck
+public proof of 2.2208: not located
+2.2208 status here: attributed announcement, not a replayed theorem
+```
+
+The directly machine-searchable published comparison is the combinatorial
+degeneration theorem of
+[Christandl--Fawzi--Hoang Ta--Zuiddam](https://arxiv.org/abs/2111.08262):
+a degeneration of a directed hypergraph to `s` diagonal states in a `d`-fold
+power certifies a capacity lower bound `s^(1/d)`. That theorem concerns an
+independence hypergraph. EHPS needs a stronger signed coercivity inequality, so
+it is a model for certificate design, not a drop-in transfer.
+
+## 2. Direct outer-code coercivity lemma
+
+Let `R` be a finite role set. For every `r in R`, let
+`A_r subset [0,1)^2` be measurable and let `f_r` be a bounded real-valued
+function on `A_r`. Use the canonical representatives in `[0,1)^2`; the
+endpoint cost below is the **raw** Euclidean difference, as in EHPS
+Proposition 2.2, not the shortest flat-torus distance.
+
+For an ordered role triple `(r,s,t)`, define
+
+```text
+d(r,s,t) = inf [f_r(x)+f_t(z)-2f_s(y)-||x-z||_2^2],
+```
+
+where the infimum ranges over all
+`x in A_r, y in A_s, z in A_t` satisfying
+`x+z == 2y (mod 1)`. Equivalently, with canonical representatives,
+`x+z-2y=kappa` for one of the finitely many local carry vectors
+`kappa in Z^2`. Set the infimum of an empty witness set to `+infinity`.
+
+For a length-`L` role word `u`, put
+
+```text
+A_u = product_i A_{u_i},
+F_u(X) = sum_i f_{u_i}(X_i).
+```
+
+Let `C subset R^L`. Assume the cylinders `A_u`, `u in C`, are setwise
+disjoint, or that the formulas `F_u` agree at every overlap, so that there is
+one pointwise potential `F` on their union. If
+
+```text
+sum_i d(u_i,v_i,w_i) >= 0
+```
+
+for every **ordered** `(u,v,w) in C^3`, including `u=v=w`, then every
+modular midpoint triple `X,Y,Z` in the union satisfies
+
+```text
+F(X)+F(Z)-2F(Y) >= ||X-Z||_2^2.
+```
+
+**Proof.** A global modular midpoint triple is a modular midpoint triple in
+each physical two-dimensional coordinate block. Its slack is the sum of the
+local slacks. Each local slack is at least the corresponding `d`, and the
+assumed code inequality makes their sum nonnegative. The raw squared norm is
+additive across the physical blocks. QED.
+
+Three audit consequences matter for implementation:
+
+- There is no cross-block carry automaton at the torus stage. Local
+  `kappa in Z^2` states must be exhaustive, but the `L` physical blocks
+  factor. Inter-block carries arise only in a later scalar digit encoding.
+- There is no "some coordinate is nontrivial" shortcut. EHPS Proposition 2.2
+  quantifies over every modular midpoint triple, including `X=Z != Y`.
+- A flat-torus-distance certificate is weaker and does not establish the raw
+  representative inequality used by EHPS.
+
+This lemma proves only the superblock coercivity implication. A construction
+must still supply a bounded single potential, exact union mass, a continuum
+cell proof, and the EHPS superblock-to-integer transfer.
+
+## 3. The quantitative gate
+
+Write `theta=7/24`. If the product cylinders are disjoint, their normalized
+`2L`-dimensional mass is
+
+```text
+Lambda_C = sum_{u in C} product_i alpha_{u_i},
+alpha_r = measure(A_r).
+```
+
+With overlaps, `Lambda_C` must be replaced by a certified lower bound for the
+actual union mass. The only relevant improvement test is
+
+```text
+measure(union_{u in C} A_u) > theta^L.
+```
+
+Equivalently, the effective two-dimensional base is the `L`-th root of that
+union mass and must exceed `7/24`. Comparing a cardinality exponent or a ratio
+of logarithms directly with `7/24` is dimensionally wrong.
+
+For a common `q`-grid with `w_r` occupied cells, use
+`alpha_r=w_r/q^2`. If the realized label images are disjoint, the finite
+screen is
+
+```text
+sum_{u in C} product_i (w_{u_i}/q^2) > (7/24)^L.
+```
+
+A grid survivor is discovery evidence only. Positive-area promotion requires
+an exact rational cell/thickening certificate whose slack margin dominates
+rounding and boundary errors.
+
+## 4. First exact experiment: the five-word code
+
+Karapetyan--Karapetyan's 2026 ternary cap construction supplies a new finite
+label architecture:
+
+```text
+C_KK = {(P1,K,B), (B,K,P1), (P2,B,P2), (P3,B,B), (B,B,P3)}.
+```
+
+Its published proof uses literal zero-coordinate fibres in characteristic 3;
+those fibres have Haar measure zero, so the proof does **not** transfer to the
+EHPS torus. The five words are used only as a search ansatz.
+
+Run the following once, with all five supports and potentials globally free:
+
+1. Work on `Gamma_q=(Z/qZ)^2`, first `q=24`, then `q=48`.
+2. Enumerate every ordered local role triple and every local modular midpoint
+   witness, retaining the canonical raw endpoint cost and all local carries.
+3. For each ordered triple of the five codewords, minimize the sum of its three
+   local slacks. Because the torus product factorizes, this is three local
+   pricing calls, not enumeration of all `q^6` points.
+4. Use CEGAR: add the exact violated witness row to the LP/MILP, and iterate to
+   infeasibility or a fully priced solution.
+5. Accept only if the **actual union mass** exceeds `(7/24)^3`.
+6. Recheck on an eroded core and at `q=48`. Any one-cell, boundary-only, or
+   overlap-only gain is rejected.
+7. A survivor advances to exact rational polygons and a continuum inequality
+   certificate. It does not advance directly to an `r_3(N)` claim.
+
+The same pricing data define a more general finite signed-slack code search:
+find `C subset R^L` of maximum weighted mass subject to
+`sum_i d(u_i,v_i,w_i)>=0` for every ordered codeword triple. Naslund's clue is
+to go one step further and search for a **closed recursive composition loop**
+of such weighted slack states, rather than stopping at one finite `L`.
+
+## 5. What would count as progress
+
+A promotable positive result must include all of:
+
+- exact support and potential data;
+- exhaustive local carry/witness pricing with raw endpoint distance;
+- all ordered codeword-triple inequalities;
+- a single well-defined bounded potential on overlaps;
+- an exact union-mass proof above `(7/24)^L` after losses;
+- a continuum thickening certificate; and
+- a checked superblock-to-integer transfer.
+
+A meaningful negative result is a replayable exact dual/Farkas certificate
+showing that a precisely defined role/code family cannot clear the mass gate.
+Neither outcome may be promoted as solving P142 by itself.
+
+The existing P142 certificates remain intact and keep their stated scopes.
+This lane neither contradicts them nor claims they cover recursive correlated
+superblocks. It adds one new attack surface: weighted coercivity capacity.
+
+## References
+
+- Elsholtz, Hunter, Proske, Sauermann,
+  [*Improving Behrend's construction*](https://arxiv.org/html/2406.12290),
+  especially Proposition 2.2 and the note on Naslund at lines 77--78.
+- Naslund,
+  [*Lower Bounds for the Shannon Capacity of Hypergraphs*](https://drive.google.com/file/d/1pW4FreiLm6DV9CHg3FBpGCtfjRr7ZYdp/view?usp=drive_link),
+  OeMG 2023 slides.
+- Edel,
+  [*Extensions of generalized product caps*](https://www.yvesedel.de/Papers/ExtProd.pdf),
+  especially Definitions 9 and 12 and the recursive problem on pages 9--10.
+- Christandl, Fawzi, Hoang Ta, Zuiddam,
+  [*Larger Corner-Free Sets from Combinatorial Degenerations*](https://arxiv.org/abs/2111.08262).
+- Karapetyan, Karapetyan,
+  [*New Method for Constructing Complete Cap Sets*](https://arxiv.org/abs/2601.16917).
