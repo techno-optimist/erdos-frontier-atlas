@@ -5,7 +5,7 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 379,
-   "evidenced_by": 20,
+   "evidenced_by": 23,
    "has_surface": 319,
    "learned_from": 5,
    "measures": 223,
@@ -18,8 +18,8 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 24,
-   "evidence_container": 37,
+   "evidence_claim": 27,
+   "evidence_container": 40,
    "external_claim": 91,
    "incident": 26,
    "move": 7,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 3950,
-   "validator-enforced": 37
+   "validator-enforced": 40
   }
  },
  "edges": [
@@ -5288,6 +5288,14 @@
    "type": "evidenced_by"
   },
   {
+   "dst": "E:claim:erdos-142-q4-affine-order4-line-wall",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P142",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
    "dst": "E:claim:erdos-142-q6-all-maximizer-three-row-torsion-wall",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
@@ -5304,7 +5312,23 @@
    "type": "evidenced_by"
   },
   {
+   "dst": "E:claim:erdos-142-q6-outer-code-tensor-wall",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P142",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
    "dst": "E:claim:erdos-142-q6-pair-coordinate-walls",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P142",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-142-q7-q8-unit-hypercycle-walls",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
    "src": "P142",
@@ -29645,6 +29669,45 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-142-q4-affine-order4-line-wall/README.md",
+     "sha256": "c526d209e3bfda640ef1fbf9ccd664853f1e06274888f5cf75bed9b172d517a4"
+    },
+    {
+     "path": "certificates/erdos-142-q4-affine-order4-line-wall/verify.py",
+     "sha256": "1f14a47c62fbde34c15ee33a815c91229c948fd9c2dca9227fd5dfd3b6437295"
+    },
+    {
+     "path": "certificates/erdos-142-q4-affine-order4-line-wall/independent_replay.py",
+     "sha256": "df289fd3bf7cec7499d71f10519786bf25287b7feb47188fe220b0ad8a686073"
+    }
+   ],
+   "claim_id": "erdos-142-q4-affine-order4-line-wall",
+   "id": "E:claim:erdos-142-q4-affine-order4-line-wall",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-142-q4-affine-order4-line-wall/verify.py",
+     "--self-test"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "PASS_Q4_AFFINE_ORDER4_LINE_WALL",
+     "\"all_orbits_contain_affine_order4_line\": true",
+     "\"arbitrary_global_potential_cancelled\": true",
+     "\"maximizer_count\": 256",
+     "\"mass_to_gate_ratio\": \"1080/343\"",
+     "\"transported_certificates\": 256"
+    ]
+   },
+   "scope": "The complete 8^5 census finds maximum mass 320 and exactly 256 maximizers in 32 global-D4 orbits; every maximum union is five pairwise-disjoint 64-point cylinders and has density 5/64 above the supplied gate. Every orbit representative contains a full affine order-four line. Four unit-weight midpoint rows around the line cancel all 320 arbitrary global-potential coefficients and leave a strictly positive raw right side; D4 transports cover all maximizers. This finite q=4 result does not cover support deformation or thickening, continuum limits, correlated subcylinders, scalar digit carry, or integer transfer.",
+   "statement": "At q=4, none of the 256 maximum-mass D4 role assignments admits any real-valued potential on its 320-point five-cylinder union satisfying every raw-canonical modular-midpoint coercivity inequality.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/README.md",
      "sha256": "dfa56efe4846db39721f86ae118165c72f4cdd20f56e56a9383a84975468e431"
     },
@@ -29745,6 +29808,44 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-142-q6-outer-code-tensor-wall/README.md",
+     "sha256": "6fc0be934ddbc1a7f616f299e65e434e21eed5f0075a5e19398d4ef8e9f92dcf"
+    },
+    {
+     "path": "certificates/erdos-142-q6-outer-code-tensor-wall/verify.py",
+     "sha256": "5e8cb0e2a9cc971da4d0f21556d57275851aa5d4345400978e05474653b64d8f"
+    },
+    {
+     "path": "certificates/erdos-142-q6-outer-code-tensor-wall/independent_replay.py",
+     "sha256": "e3ebef58b8b02bc5611439c5f5a9fd1d472584a5742366b2c2fe51af50c82e65"
+    }
+   ],
+   "claim_id": "erdos-142-q6-outer-code-tensor-wall",
+   "id": "E:claim:erdos-142-q6-outer-code-tensor-wall",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-142-q6-outer-code-tensor-wall/verify.py",
+     "--self-test"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "PASS_Q6_OUTERCODE_TENSOR_WALL",
+     "\"every_outer_code_of_size_at_least_two_obstructed\": true",
+     "\"arbitrary_nonseparable_global_potential_cancelled\": true",
+     "\"per_nondiagonal_coordinate_normalized_rhs_floor\": \"2/3\"",
+     "\"singleton_below_gate\": true"
+    ]
+   },
+   "scope": "At each outer coordinate the maximum assignment may be chosen independently but is fixed across codewords. Every non-diagonal local label triple has a positive three-row cycle with normalized right-side floor 2/3. Synchronizing these cycles gives an exact obstruction for every nonconstant outer triple without assuming a separable potential, so any code of size at least two dies. A singleton has density 1/64 below (7/24)^3. This covers only full Cartesian products of the exact finite q=6 maximum cylinders; correlated non-product subblocks, codeword-dependent geometry, support deformation or thickening, scalar digit carry, continuum and integer transfer remain outside scope.",
+   "statement": "For full Cartesian products of the five cylinders from coordinatewise maximum-mass q=6 D4 assignments, no outer code can both admit an arbitrary real-valued global potential satisfying every raw-canonical modular-midpoint coercivity row and pass the supplied EHPS mass gate.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-142-q6-pair-coordinate-walls/README.md",
      "sha256": "6df569f90878e18065039714d600870267e281ebfa5b01d9d795e011527d4452"
     },
@@ -29785,6 +29886,45 @@
    },
    "scope": "Exactly two finite q=6 support assignments and the model F_c=H[c,01]+H[c,02]+H[c,12]. Each five-cylinder union has 3,645 points and normalized mass 5/64, beating (7/24)^3 by 1080/343. The claim does not transfer to q=24 or q=48, exclude arbitrary functions on six-dimensional cylinders, recursive state, jointly deformed supports, or continuum/integer transfer; it gives no r_3(N) bound.",
    "statement": "At q=6, neither D4 representative (P1,P2,P3,B,K)=(7,7,7,6,7) nor (7,6,7,6,7) admits a cylinder-specific pair-coordinate potential satisfying every raw-Euclidean modular-midpoint coercivity inequality across the five Karapetyan word cylinders.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
+     "path": "certificates/erdos-142-q7-q8-unit-hypercycle-walls/README.md",
+     "sha256": "c51490b6ff5c16966a5a2dfc9d8023672094b24b5895dd926cdbf10c5682f933"
+    },
+    {
+     "path": "certificates/erdos-142-q7-q8-unit-hypercycle-walls/verify.py",
+     "sha256": "2f9554f0e3c74b44fdab3fbded784e85d5d38d24dd9421a6f8bd7e79769ef54a"
+    },
+    {
+     "path": "certificates/erdos-142-q7-q8-unit-hypercycle-walls/independent_replay.py",
+     "sha256": "f6e97c72dbd453badb5644e8a5fd3ce1417920756a06a8ca8ada6778cb4c9532"
+    }
+   ],
+   "claim_id": "erdos-142-q7-q8-unit-hypercycle-walls",
+   "id": "E:claim:erdos-142-q7-q8-unit-hypercycle-walls",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-142-q7-q8-unit-hypercycle-walls/verify.py",
+     "--self-test"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "PASS_Q7_FIVE_ROW_AND_Q8_CYCLIC_LINE_WALLS",
+     "\"q7_all_32_max_orbits_killed_by_five_row_affine_hypercycle\": true",
+     "\"q7_full_order7_lines_cover_zero_orbits\": true",
+     "\"q8_all_32_max_orbits_killed_by_order4_lines\": true",
+     "\"feasible_label_sequence_count_sum\": 6976",
+     "\"assignment_count\": 256"
+    ]
+   },
+   "scope": "The exact q=7 and q=8 EHPS quotient supports each have 256 maximum assignments in 32 global-D4 orbits and masses above the supplied gate. At q=8, every orbit contains a full affine order-four line whose four adjacent midpoint rows cancel all global-potential coefficients; order-eight lines independently close every orbit. At q=7, full order-seven lines cover zero orbits, but every orbit contains the fixed five-row balanced affine hypercycle c=(0,1,4,3,6), pi=(2,4,0,1,3). This finite classification does not cover support deformation or thickening, continuum limits, correlated non-product subblocks, scalar digit carry, or integer transfer.",
+   "statement": "At q=7 and q=8, none of the maximum-mass D4 role assignments admits an arbitrary real-valued potential on its five-cylinder union satisfying every raw-canonical modular-midpoint coercivity inequality.",
    "status": "promoted",
    "type": "evidence_claim"
   },
@@ -30282,6 +30422,13 @@
    "type": "evidence_container"
   },
   {
+   "boundary": "An exact finite q=4 wall for all 256 maximum-mass D4 assignments. Every disjoint 320-point five-cylinder union contains a full affine order-four line whose four modular-midpoint coercivity rows cancel an arbitrary global potential and leave positive raw cost. This does not cover geometric deformation or thickening, continuum limits, correlated subcylinders, scalar digit carry, integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-142-q4-affine-order4-line-wall",
+   "path": "certificates/erdos-142-q4-affine-order4-line-wall",
+   "type": "evidence_container"
+  },
+  {
    "boundary": "An exact finite q=6 census wall for all 256 maximum-mass D4 role assignments. Every 3,645-point five-cylinder union is pairwise disjoint and admits a positive cancelling three-row modular torsion cycle, so no arbitrary real-valued potential on any such union can satisfy all coercivity rows. This classifies only the q=6 maximum-mass D4 support family; it does not transfer to higher quotients, continuum/deformed supports, recursive state, correlated superblocks, integer constructions, or a new r_3(N) bound. Erdos Problem 142 remains unsolved.",
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-142-q6-all-maximizer-three-row-torsion-wall",
@@ -30296,10 +30443,24 @@
    "type": "evidence_container"
   },
   {
+   "boundary": "An exact finite q=6 capacity wall for full Cartesian products of the five cylinders from maximum-mass D4 assignments. Any outer code with at least two words has a cancelling three-row global obstruction even for an arbitrary nonseparable potential; a singleton has density 1/64 below the supplied (7/24)^3 gate. This does not cover correlated non-product subblocks, codeword-dependent assignments, deformed or thickened supports, scalar digit carry, continuum transfer, integer constructions, or a new r_3(N) bound. Erdos Problem 142 remains unsolved.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-142-q6-outer-code-tensor-wall",
+   "path": "certificates/erdos-142-q6-outer-code-tensor-wall",
+   "type": "evidence_container"
+  },
+  {
    "boundary": "Two exact finite q=6 Farkas walls for the D4 representatives (7,7,7,6,7) and (7,6,7,6,7), allowing independent H[c,01], H[c,02], and H[c,12] pair-coordinate tables on each cylinder. Both 3,645-point unions beat the finite EHPS mass gate, but exact 1,067-row and 1,071-row combinations cancel all 1,215 pair variables. This does not transfer to q=24/q=48, exclude arbitrary six-dimensional or recursive potentials, cover deformed supports, or certify continuum/integer transfer. Gives no r_3(N) bound; Erdos Problem 142 remains unsolved.",
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-142-q6-pair-coordinate-walls",
    "path": "certificates/erdos-142-q6-pair-coordinate-walls",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "Exact finite q=7 and q=8 walls for all maximum-mass D4 assignments. At q=8, full affine order-four lines give four-row cancelling obstructions; at q=7, where no maximum orbit contains a full order-seven line, a minimal five-row balanced affine hypercycle cancels an arbitrary global potential. This does not cover deformed or thickened supports, continuum limits, correlated non-product subblocks, scalar digit carry, integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-142-q7-q8-unit-hypercycle-walls",
+   "path": "certificates/erdos-142-q7-q8-unit-hypercycle-walls",
    "type": "evidence_container"
   },
   {
