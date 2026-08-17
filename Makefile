@@ -62,6 +62,7 @@ verify-certs:
 	python3 -I certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/verify.py --self-test
 	python3 -I certificates/erdos-142-q6-pair-coordinate-walls/verify.py --self-test
 	python3 -I certificates/erdos-142-q6-global-potential-walls/verify.py --self-test
+	python3 -I certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/verify.py --self-test
 	python3 -I certificates/erdos-142-q3m-torsion-triangle-wall/verify.py --self-test
 	python3 -I certificates/erdos-142-interior-torus-torsion-wall/verify.py --self-test
 

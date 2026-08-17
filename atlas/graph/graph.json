@@ -5,7 +5,7 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 379,
-   "evidenced_by": 19,
+   "evidenced_by": 20,
    "has_surface": 319,
    "learned_from": 5,
    "measures": 223,
@@ -18,8 +18,8 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 23,
-   "evidence_container": 36,
+   "evidence_claim": 24,
+   "evidence_container": 37,
    "external_claim": 91,
    "incident": 26,
    "move": 7,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 3950,
-   "validator-enforced": 36
+   "validator-enforced": 37
   }
  },
  "edges": [
@@ -5281,6 +5281,14 @@
   },
   {
    "dst": "E:claim:erdos-142-q3m-torsion-triangle-family",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P142",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-142-q6-all-maximizer-three-row-torsion-wall",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
    "src": "P142",
@@ -29637,6 +29645,56 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/README.md",
+     "sha256": "dfa56efe4846db39721f86ae118165c72f4cdd20f56e56a9383a84975468e431"
+    },
+    {
+     "path": "certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/certificate.json",
+     "sha256": "f1c55fd23b6685953d23e9b2a7b399bced4b5a4f875216b3c3971d479d62ddd6"
+    },
+    {
+     "path": "certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/result_parent_sha256.txt",
+     "sha256": "51e3968edb0eda20d3d275329d6975d8c863f9e80e067a0aaef1278aa0f92178"
+    },
+    {
+     "path": "certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/verify.py",
+     "sha256": "381856e8002b984df5909f3c04a16eaea29a987834618b6191809f76345e4709"
+    },
+    {
+     "path": "certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/INDEPENDENT_AUDIT.md",
+     "sha256": "bfc59721f11056fee2c76a304f10933a5c6047b82d48e7a6d83892d39ece003a"
+    },
+    {
+     "path": "certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/independent_replay.py",
+     "sha256": "3977f2e651e45c456a3f7a073bd960b76d0ab5ef7cec9f081502d7fcf467c834"
+    }
+   ],
+   "claim_id": "erdos-142-q6-all-maximizer-three-row-torsion-wall",
+   "id": "E:claim:erdos-142-q6-all-maximizer-three-row-torsion-wall",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/verify.py",
+     "--self-test"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "PASS_Q6_ALL_MAXIMIZER_THREE_ROW_TORSION_WALL",
+     "\"maximum_union_mass\": 3645",
+     "\"maximizer_count\": 256",
+     "\"covered\": 256",
+     "\"uncovered\": 0"
+    ]
+   },
+   "scope": "The complete 8^5 census finds exactly 256 maximum-mass assignments in 32 global D4 orbits. Every maximum union is the disjoint union of five 729-point cylinders, so the model is an unrestricted global potential on the geometric union. Exact three-row torsion cycles cover all 256 assignments; a stronger independent audit finds that each of the 120 non-diagonal ordered word patterns hits all 256, while the five diagonal patterns have no positive cycle. This is finite q=6 only and does not transfer to higher q, continuum or deformed supports, recursive state, correlated superblocks, integer constructions, or any new r_3(N) bound.",
+   "statement": "At q=6, none of the 256 maximum-mass D4 role assignments admits any real-valued potential on its 3,645-point five-cylinder union satisfying every raw-canonical modular-midpoint coercivity inequality.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-142-q6-global-potential-walls/README.md",
      "sha256": "a9be9d44eb23611161a782a3c3899378af67cb36c911470b7813e914e71b798a"
     },
@@ -30221,6 +30279,13 @@
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-142-q3m-torsion-triangle-wall",
    "path": "certificates/erdos-142-q3m-torsion-triangle-wall",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "An exact finite q=6 census wall for all 256 maximum-mass D4 role assignments. Every 3,645-point five-cylinder union is pairwise disjoint and admits a positive cancelling three-row modular torsion cycle, so no arbitrary real-valued potential on any such union can satisfy all coercivity rows. This classifies only the q=6 maximum-mass D4 support family; it does not transfer to higher quotients, continuum/deformed supports, recursive state, correlated superblocks, integer constructions, or a new r_3(N) bound. Erdos Problem 142 remains unsolved.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-142-q6-all-maximizer-three-row-torsion-wall",
+   "path": "certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall",
    "type": "evidence_container"
   },
   {

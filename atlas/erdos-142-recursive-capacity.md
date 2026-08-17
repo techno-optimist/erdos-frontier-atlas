@@ -511,6 +511,44 @@ the q=`120n` identities, uniform margins, eight planted failures, and an
 independent reconstruction. The wall still concerns one D4 role assignment
 and supplies no survivor, integer transfer, or new `r_3(N)` bound.
 
+### 4.9 Every maximum-mass q=6 D4 assignment has a three-row wall
+
+The earlier q=6 results fixed two representatives or one W2/W3 incidence
+template. A complete exact screen now removes that restriction at this finite
+quotient. Among all `8^5 = 32,768` role assignments, exactly 256 attain the
+maximum five-cylinder union mass 3,645. They form 32 global D4 orbits. In
+every maximizer the five 729-point cylinders are pairwise disjoint, so an
+independent variable on each labelled full cylinder vertex is exactly an
+arbitrary real-valued potential on the geometric union.
+
+For an ordered word-cylinder pattern `(a,b,c)`, choose full vertices
+`X in W_a`, `Y in W_b`, and `Z in W_c` so that all three permutations
+
+```text
+(X,Y,Z), (Y,X,Z), (X,Z,Y)
+```
+
+are modular midpoint witnesses. The associated rows are centered at `Y`,
+`X`, and `Z`; their potential coefficients add to zero. Direct exact
+enumeration of the q=6 point torsion table gives 324 coordinate triples.
+Across all 125 ordered word patterns, precisely the five diagonal patterns
+`(i,i,i)` have no positive full-vertex cycle. Each of the other 120 patterns
+hits every one of the 256 maximizers with strictly positive total raw
+canonical endpoint cost. Hence every maximum-mass q=6 D4 assignment would
+force `0 >= c` for some integer `c>0`.
+
+`certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/` replays the
+complete census. A separately written reconstruction retains the cylinder
+label and all three two-dimensional points in each potential-variable key,
+accumulates coefficients when labels coincide, verifies every midpoint,
+carry, and raw cost, and plants the earlier local-point-aliasing failure mode.
+
+This is a complete negative classification only for the q=6 maximum-mass D4
+support family and arbitrary static global potentials. It does not imply a
+higher-q or continuum classification, and it does not exclude recursive
+state, jointly deformed supports, or correlated superblocks. It produces no
+construction and no new `r_3(N)` bound.
+
 ## 5. What would count as progress
 
 A promotable positive result must include all of:

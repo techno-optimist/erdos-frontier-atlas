@@ -43,7 +43,7 @@ others don't touch it.
 | `claude/erdos-366-sweep-20260726` | Erdős #366 cubefull-side sweep — verified range 10^22 → 10^25, zero strict-orientation solutions | `certificates/erdos-366/`, gap_map #366 row, contracts claim `erdos-366-cubefull-sweep-1e25` | PR packaging 2026-07-26 |
 | `claude/attack-graph-20260726` | The attack graph — a generated agent-facing overlay over every ledger (`GRAPH.md` → `views/sorties.md` → per-problem cards). Adds no facts; organizes existing ones | `tools/build_graph.py`, `tools/validate_graph.py`, `tools/query_graph.py`, `atlas/graph/`, `views/graph/`, `views/sorties.md`, `GRAPH.md`, `CLAUDE.md`, `tests/test_graph.py` | PR packaging 2026-07-26 |
 | `claude/trees-993-743-20260727` | Tree lanes: Erdős #743 Gyárfás packing at K_10, and #993 independence unimodality to n=30 (incl. first replication of the n≤29 frontier) | `certificates/erdos-743/`, `certificates/erdos-993/`, gap_map #743 + #993 rows, contracts claims `erdos-743-k10-packing` + `erdos-993-unimodal-n30` | PR packaging 2026-07-27 |
-| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md`, `certificates/erdos-142-mirror-core-additive-wall/`, `certificates/erdos-142-d4-role-distinct-additive-wall/`, `certificates/erdos-142-q24-cylinder-hypograph-wall/`, `certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/`, `certificates/erdos-142-q6-pair-coordinate-walls/`, `certificates/erdos-142-q6-global-potential-walls/`, `certificates/erdos-142-q3m-torsion-triangle-wall/`, `certificates/erdos-142-interior-torus-torsion-wall/` | exact arbitrary-global q=6 walls; q=3m torsion family; uniformly interior continuum torus wall for top D4 assignment; no survivor / no new bound, 2026-08-17 |
+| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md`, `certificates/erdos-142-mirror-core-additive-wall/`, `certificates/erdos-142-d4-role-distinct-additive-wall/`, `certificates/erdos-142-q24-cylinder-hypograph-wall/`, `certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/`, `certificates/erdos-142-q6-pair-coordinate-walls/`, `certificates/erdos-142-q6-global-potential-walls/`, `certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/`, `certificates/erdos-142-q3m-torsion-triangle-wall/`, `certificates/erdos-142-interior-torus-torsion-wall/` | all 256 maximum-mass q=6 D4 assignments closed for arbitrary global potentials; q=3m family; interior continuum torus wall for top assignment; no survivor / no new bound, 2026-08-17 |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching
@@ -183,11 +183,34 @@ symbolically, rejects eight planted corruptions, and an independent exact
 implementation reconstructs all limits and D4 inverses. It remains a no-go
 for one role assignment, not a construction or `r_3(N)` bound.
 
+Ninth exact branch result:
+`certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/` completes the
+finite q=6 maximum-mass classification at the unrestricted-global-potential
+level. The exact `8^5` census has 256 mass-3,645 assignments, partitioned into
+32 global D4 orbits. Each maximum union is the disjoint union of five
+729-point cylinders, so one value per full union vertex is an arbitrary
+potential, not a separable ansatz.
+
+For an ordered cylinder pattern `(a,b,c)`, the three rows centered at `Y`,
+`X`, and `Z` cancel on the full six-dimensional vertices `X,Y,Z`. Direct
+enumeration of all 125 patterns finds positive modular 3-torsion cycles for
+the 120 non-diagonal patterns; each such pattern hits all 256 maximizers. Only
+`(0,0,0)`, ..., `(4,4,4)` have zero positive-cycle count. Therefore every
+maximum-mass q=6 D4 assignment is impossible for any real-valued potential
+on its five-cylinder union. A separately written replay retains the cylinder
+label plus full vertex, checks carries/raw costs/coefficient accumulation,
+and rejects the earlier local-point-merging failure mode.
+
+This closes one finite quotient and support family only. It does not transfer
+to higher q, jointly deformed supports, recursive state, or a new integer
+construction, and gives no `r_3(N)` bound.
+
 A corrected q=8 pair-coordinate engine now prices both orbits in about five
 seconds per round rather than 85, but 40 rounds remain `iteration-limit` with
-negative slacks; no q=8 theorem is claimed. Exact three-row searches on the
-remaining q=6 assignment orbits are active. No finite survivor has been
-produced.
+negative slacks; no q=8 theorem is claimed. The q=6 D4 maximum-mass search is
+now closed negatively at the arbitrary-global-potential level, but no finite
+survivor has been produced.
+
 Naslund's public deck states only the rounded capset rate `2.22`; the cited
 `2.2208` manuscript remains unavailable publicly as of the audit.
 
