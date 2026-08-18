@@ -5,7 +5,7 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 379,
-   "evidenced_by": 36,
+   "evidenced_by": 37,
    "has_surface": 319,
    "learned_from": 5,
    "measures": 223,
@@ -18,8 +18,8 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 40,
-   "evidence_container": 54,
+   "evidence_claim": 41,
+   "evidence_container": 55,
    "external_claim": 91,
    "incident": 26,
    "move": 7,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 3950,
-   "validator-enforced": 53
+   "validator-enforced": 54
   }
  },
  "edges": [
@@ -5305,6 +5305,14 @@
   },
   {
    "dst": "E:claim:erdos-142-q6-117-cell-endpoint-pruned-label-wall",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P142",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-142-q6-117-cell-fullword-bounded-wall",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
    "src": "P142",
@@ -29888,6 +29896,70 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-142-q6-117-cell-fullword-bounded-wall/README.md",
+     "sha256": "74fc6d74a7d0739ed314bba459988d6c07a5d5c3268b5489957fdf8047612511"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-fullword-bounded-wall/verify_dilation_word_wall.py",
+     "sha256": "83977236663bc1df31010c7461ffd257aa3b22c4ade8425a7c2b3eeddc1af038"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-fullword-bounded-wall/independent_fullword_replay.py",
+     "sha256": "6b0b65fb901de9a376add33b25be512066e9bd31e77ebbf8232508d6d144bdd5"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-fullword-bounded-wall/FULL_WORD_DILATION_AUDIT.md",
+     "sha256": "3fb1d3c18751baf389893221e7da46e9409b7800f9365d0de33134a82259d146"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-fullword-bounded-wall/HOSTILE_AUDIT.md",
+     "sha256": "7cf4cd5e4e7a6941c491d76dbd6ed071f45a5f5a19308770fa0245811bc269f1"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-fullword-bounded-wall/verify_seven_pair_dilation_word_wall.py",
+     "sha256": "383882de8e96860a761a18187b4d90714811111ed9fc98f5cd0fdace6ca3b752"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-fullword-bounded-wall/verify_seven_pair_fullword_bounded_wall.py",
+     "sha256": "f47341575aba5c543a05c5697ff537ce3eaa23607fb110024029885df8f18eeb"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-fullword-bounded-wall/CARVING_AUDIT.md",
+     "sha256": "70aeb5bed168abcb6b581574abceeca827f4dd4d66c00fb7ff8f89d1b32da449"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-fullword-bounded-wall/verify_carving_audit.py",
+     "sha256": "4f5f1befe7a5e611f825a7a6d2859e80ad32c281d8fac6bcf11d0055cf58b186"
+    }
+   ],
+   "claim_id": "erdos-142-q6-117-cell-fullword-bounded-wall",
+   "id": "E:claim:erdos-142-q6-117-cell-fullword-bounded-wall",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-142-q6-117-cell-fullword-bounded-wall/verify_dilation_word_wall.py",
+     "--self-test"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "PASS_DILATION_WORD_WALL",
+     "DILATION_GRAPH_OK oriented_edges=66 active_hist={1: 11, 2: 38, 3: 10, 4: 7} wrap_hist={1: 61, 2: 5}",
+     "MATCHING_OK size=21 quotient_classes=96",
+     "MULTIBLOCK_OK D(3t)-D(t)>=K*(72-48t) mixed_orientations K>=1",
+     "FINITE_TELESCOPE_OK bounded_residual_potential=impossible",
+     "GATE_OK |L_m|<=96^m<(441/4)^m",
+     "PLANTED_FAILURES_REJECTED"
+    ]
+   },
+   "scope": "The physical support is the union of distinct complete q-cell product boxes, counted once even if an abstract presentation has repeated decodings. The potential may be arbitrary, fully coupled across all 4m coordinates, residual-dependent, nonadditive, discontinuous, position-dependent and horizon-dependent; boundedness is required only at the fixed horizon. An exact 66-edge componentwise dilation census and a 21-edge disjoint matching give a 96-class quotient. Two simultaneous strict-interior word rows and a finite geometric-scale telescope force the quotient map to be injective on L_m. The strongest independent replay also proves maximum matching size 21 by a Tutte barrier, while its seven simple disjoint dilation pairs already give |L_m|<=110^m<(441/4)^m. The theorem requires the inequality pointwise for every actual physical midpoint triple. An auxiliary non-certifying carving audit shows that covering these contraction rays alone has zero infimum deletion cost, so it supplies no uniform 1/192 carving loss. Proper context subtiles, partial carving, changed cell ownership, deformed or coupled tiles, overlap kernels, multivalued state functions, weighted abstract path multiplicities, graph-restricted triple rules, an almost-everywhere-only inequality, wrapped/geodesic right sides, unbounded potentials, integer transfer and a new r_3(N) bound remain outside scope; Erdos Problem 142 remains unsolved.",
+   "statement": "For every horizon m>=1 and every language L_m over the fixed 117-cell q=6 four-dimensional alphabet, if the corresponding union of complete q-cell product word boxes supports a bounded single-valued physical potential satisfying every actual raw-canonical modular-torus midpoint coercivity inequality pointwise, then |L_m|<=96^m<(441/4)^m.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-142-q6-117-cell-loopless-transition-wall/README.md",
      "sha256": "ac4c39401f4d1b4780b59d449a5173c8ee771233936de82de64fa68fc191354a"
     },
@@ -31124,6 +31196,13 @@
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-142-q6-117-cell-endpoint-pruned-label-wall",
    "path": "certificates/erdos-142-q6-117-cell-endpoint-pruned-label-wall",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "An exact strict-interior dilation wall for arbitrary full-cell word languages over the fixed 117-cell q=6 four-dimensional alphabet and arbitrary bounded, single-valued, fully coupled residual-dependent physical potentials satisfying the raw-canonical modular-torus coercivity inequality pointwise on every actual physical midpoint triple. A 21-pair quotient proves |L_m|<=96^m<(441/4)^m at every horizon; an independently replayed seven-pair quotient already proves |L_m|<=110^m. This does not cover proper context subtiles, partial carving, overlapping or coupled tiles and overlap kernels, multivalued state functions, weighted abstract path multiplicities, an almost-everywhere-only inequality, wrapped/geodesic right sides, unbounded potentials, integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-142-q6-117-cell-fullword-bounded-wall",
+   "path": "certificates/erdos-142-q6-117-cell-fullword-bounded-wall",
    "type": "evidence_container"
   },
   {

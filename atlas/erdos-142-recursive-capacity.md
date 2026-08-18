@@ -1351,6 +1351,86 @@ repeated-label automata, coupled edge tiles, horizon-varying graphs or endpoint
 masks, carving/deformation, integer transfer or a new `r_3(N)` bound.  Problem
 142 remains unsolved.
 
+### 4.27 Full-cell word languages fail even with arbitrary bounded residual potentials
+
+Let `U` be the fixed 117-cell `q=6` four-dimensional alphabet.  For an
+arbitrary language `L_m subset U^m`, let `P_m` be the disjoint union of the
+complete product boxes decoded by its words.  Distinct abstract presentations
+of the same physical word count once, and
+
+```text
+mu(P_m)=|L_m|/1296^m.
+```
+
+Assume that a bounded, single-valued physical function `F:P_m->R` satisfies
+every pointwise raw-canonical torus coercivity inequality on `P_m`.  No Markov,
+finite-state, additivity, continuity, affinity or uniform-in-`m` boundedness
+assumption is made.
+
+Orient two cells `A->B` when every scalar coarse digit is equal or obeys
+`B_i=A_i-1 mod 6`, with at least one genuine `0->5` wrap.  Exact enumeration
+gives 66 oriented dilation edges.  The certificate exhibits 21 disjoint edges;
+merging their endpoints gives 96 quotient classes.  If two distinct words
+`A_word,B_word in L_m` shared a quotient word, choose strict-interior residuals
+simultaneously across every differing block.  They define points `X(t)` and
+`Y(t)` for which the two global midpoint rows are
+
+```text
+(X(t),Y(t),Y(3t)),       (X(3t),X(t),Y(t)),       0<t<1/3.
+```
+
+Write `F(x)=2||x||^2+h(x)/36`, let
+`D(t)=h(X(t))+h(Y(t))`, and let `K>=1` be the number of wrapped scalar
+coordinates across all differing blocks.  Ordinary predecessor coordinates
+and equal coordinates contribute zero.  Each wrap contributes the two exact
+`q^2`-scaled correction terms `108-24t` and `-36-24t`, in an order that may
+depend on the word orientation.  Adding the two whole-word inequalities gives
+
+```text
+D(3t)-D(t) >= K(72-48t).
+```
+
+At `t=(1/4)/3^j`, finite telescoping through `j=1,...,N` yields
+
+```text
+D(1/4)-D(1/(4*3^N)) >= K[72N-6(1-3^-N)].
+```
+
+The right side eventually exceeds the finite bound on the left.  Hence the
+quotient map is injective on `L_m`, and therefore
+
+```text
+|L_m| <= 96^m < (441/4)^m,
+mu(P_m) <= (96/1296)^m < ((7/24)^2)^m.
+```
+
+The independent control uses only seven disjoint `0/5` pairs, hence 110
+quotient classes, and already proves the strict gate `110<441/4`.  Primary and
+independent replays are in
+`certificates/erdos-142-q6-117-cell-fullword-bounded-wall/`.
+
+This supersedes the endpoint-pruned, transition-table and complete-loopless
+restrictions throughout the **unchanged full-box lane**.  It includes arbitrary
+higher-memory, sliding-window and horizon-dependent decoded languages, and
+fully coupled residual-dependent bounded potentials; repeated abstract lifts
+do not create physical mass.  It does not cover context-owned proper subtiles,
+partial carving, changed ownership, cell deformation, overlap-kernel volume or
+coupled edge tiles.  Any such live construction needs an exact physical union-
+mass computation and one bounded single-valued physical potential satisfying
+all actual midpoint rows.
+
+There is no hidden uniform carving consequence.  The 66 dilation families can
+all be hit by corner deletions of total mass at most
+
+```text
+(11 eps+38 eps^2+10 eps^3+7 eps^4)/1296,
+```
+
+which tends to zero with `eps`.  Thus this ray cover has carving infimum zero;
+additional noncontracting gadgets would be needed to force the available
+`1/192` excess mass to disappear.  The theorem gives no integer transfer or
+new `r_3(N)` bound, and Erdős Problem 142 remains unsolved.
+
 ## 5. What would count as progress
 
 A promotable positive result must include all of:
