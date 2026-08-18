@@ -766,6 +766,32 @@ Genuinely correlated non-product subblocks, graph/height lifts, support
 deformation, higher quotients, continuum thickening, scalar digit encodings,
 and the integer transfer remain open.
 
+### 4.14 The q=6/M7 cell-local offset ansatz has an exact wall
+
+A different q=6 search produced a 24-cell half-open-box support whose mass
+passes the finite M7 screen.  The first continuous potential hierarchy for
+that candidate was
+
+```text
+H(x) = 2||x||^2 + G(cell(x), parity_pattern(x))
+       + sum_i U(cell(x), i, coarsepoint_i(x)).
+```
+
+The semantic packet in
+`certificates/erdos-142-q6-m7-cellu-restricted-wall/` proves that this exact
+feature class is impossible.  Its 358 strictly positive integer Farkas rows
+reconstruct the half-open residual costs, cancel every `G` and cell-specific
+`U` coefficient, and leave a strictly positive weighted right side.  The
+primary and separately written stdlib replays agree on all 24 cells, 148
+cell/parity states, semantic witnesses, and four planted corruptions.
+
+This is a restricted-potential wall, not a capacity theorem.  The independent
+scope audit finds 946 nonzero unrestricted physical-vertex aggregates and 60
+nonzero symmetric-quadratic aggregates, so the same ray does not exclude an
+arbitrary `H`, a general cross-coordinate quadratic, or pair interactions.
+Richer and recursive potentials, support deformation, a complete continuum
+construction, integer transfer, and a new `r_3(N)` bound remain open.
+
 ## 5. What would count as progress
 
 A promotable positive result must include all of:
