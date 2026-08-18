@@ -1100,6 +1100,50 @@ constructs the synchronized triple-path potential needed by the Markov shell
 lemma nor rules one out.  It gives no integer construction, new `r_3(N)`
 bound, or solution of Problem 142.
 
+### 4.22 The complete-loopless transition-table extension also has an exact wall
+
+The next test kept all `117` cells but replaced the one-state Cartesian
+language by the complete loopless directed graph on those cells.  Its
+length-`m` path count is
+
+```text
+117 * 116^(m-1),
+```
+
+so its asymptotic four-dimensional density base is
+`116/6^4=29/324`.  This still exceeds the EHPS product gate
+`(7/24)^2=49/576`, by `23/5184`.
+
+For a path `c_0,...,c_(m-1)`, allow the position- and length-independent
+transition potential
+
+```text
+P_m(c) = g[c_0]/2 + sum_i H[c_i,c_(i+1)] + g[c_(m-1)]/2.
+```
+
+The directed values `H[a,b]` are arbitrary.  This strictly contains additive
+cell offsets: choosing `H[a,b]=(g_0[a]+g_0[b])/2` and `g=g_0` gives
+`P_m=sum_i g_0[c_i]`.  Its range is linear in `m`, so it has the right shell
+scale if a coercive table exists.
+
+The exact packet in
+`certificates/erdos-142-q6-117-cell-loopless-transition-wall/` proves that no
+such table exists for the full loopless language.  In scaled variables
+`G=36g` and `J=36H`, five legal two-block rows with positive weights
+`(1,2,1,1,1)` cancel every endpoint and directed-transition coefficient and
+leave the contradiction `0>=1032`.  Appending the common alternating diagonal
+tail `0,1,0,...` preserves looplessness and coefficient cancellation, so the
+same ray obstructs every length `m>=2`.  Primary and separately written
+standard-library replays check the continuous carry semantics, exact dual,
+Perron gate, and all-length padding.
+
+This closes only the complete-loopless path language with fixed
+position-independent endpoint and transition tables.  It does not close
+sparse or endpoint-restricted graphs, position- or length-dependent tables,
+within-cell functions, partial carving, support deformation, or arbitrary
+physical potentials.  No integer construction, new `r_3(N)` bound, or
+solution of Problem 142 is claimed.
+
 ## 5. What would count as progress
 
 A promotable positive result must include all of:

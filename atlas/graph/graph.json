@@ -5,7 +5,7 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 379,
-   "evidenced_by": 31,
+   "evidenced_by": 32,
    "has_surface": 319,
    "learned_from": 5,
    "measures": 223,
@@ -18,8 +18,8 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 35,
-   "evidence_container": 49,
+   "evidence_claim": 36,
+   "evidence_container": 50,
    "external_claim": 91,
    "incident": 26,
    "move": 7,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 3950,
-   "validator-enforced": 48
+   "validator-enforced": 49
   }
  },
  "edges": [
@@ -5289,6 +5289,14 @@
   },
   {
    "dst": "E:claim:erdos-142-q4-affine-order4-line-wall",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P142",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-142-q6-117-cell-loopless-transition-wall",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
    "src": "P142",
@@ -29772,6 +29780,52 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-142-q6-117-cell-loopless-transition-wall/README.md",
+     "sha256": "ac4c39401f4d1b4780b59d449a5173c8ee771233936de82de64fa68fc191354a"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-loopless-transition-wall/independent_replay.py",
+     "sha256": "84e92aaf5993b46eb5fe877cd5fb3698a2d903be1a20c26d86f85d0d989fde44"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-loopless-transition-wall/markov_loopless_wall.json",
+     "sha256": "fbbbb5dc9c1dad9cad4a23e3203956d6db1bd521741f7ca0f308aabb42b28dd8"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-loopless-transition-wall/verify_markov_loopless_wall.py",
+     "sha256": "d2e94e967d52894de4fb87e7c4821fc163168112ee7b3ec271870964ebeb78e8"
+    }
+   ],
+   "claim_id": "erdos-142-q6-117-cell-loopless-transition-wall",
+   "id": "E:claim:erdos-142-q6-117-cell-loopless-transition-wall",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-142-q6-117-cell-loopless-transition-wall/verify_markov_loopless_wall.py",
+     "certificates/erdos-142-q6-117-cell-loopless-transition-wall/markov_loopless_wall.json",
+     "--self-test",
+     "--max-length",
+     "9"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "PLANTED_FAILURES_REJECTED",
+     "SEMANTICS_OK cells=117 q=6 cegar_path_blocks=2 variables=G=36g,J=36H",
+     "EXACT_PRICING_OK active_local_rows=16 paired_rows=100 selected_cuts=5",
+     "FARKAS_OK weighted_rhs=1032 scaled_contradiction=0>=1032",
+     "COMMON_TAIL_PADDING_OK lengths=2..9 universal_formula=alternating_0_1",
+     "PERRON_GATE_OK rho=116 base=29/324 gate=49/576 excess=23/5184"
+    ]
+   },
+   "scope": "The loopless language has exact path count 117*116^(m-1) and asymptotic density base 116/1296=29/324>(7/24)^2. In equivalent q^2-scaled variables G=36g and J=36H, five legal two-block rows with positive weights (1,2,1,1,1) cancel every endpoint and directed-transition coefficient and leave RHS 1032. Appending the common alternating diagonal tail 0,1,0,... preserves looplessness, coefficient cancellation and RHS, extending the same exact obstruction to every m>=2. Additive cell offsets are contained in this class. Endpoint-restricted or sparse/different graphs, position- or length-dependent tables, within-cell and arbitrary physical potentials, partial carving, support deformation, integer transfer and a new r_3(N) bound remain outside scope; Erdos Problem 142 remains unsolved.",
+   "statement": "For every length m>=2, the complete loopless directed path language on the fixed 117-cell q=6 four-dimensional alphabet admits no position- and length-independent potential P_m=g[c_0]/2+sum H[c_i,c_(i+1)]+g[c_(m-1)]/2 satisfying every required continuous raw-canonical modular-torus midpoint coercivity row.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-142-q6-117-cell-six-deletion-wall/README.md",
      "sha256": "3c77212c1c7f02ad618855fb6e4914b866c76b4a21703fe91b1331820ece4aed"
     },
@@ -30871,6 +30925,13 @@
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-142-q4-affine-order4-line-wall",
    "path": "certificates/erdos-142-q4-affine-order4-line-wall",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "An exact continuous wall for the complete loopless directed path language on the fixed 117-cell q=6 alphabet and the position- and length-independent endpoint/transition potential P_m=g[c_0]/2+sum H[c_i,c_(i+1)]+g[c_(m-1)]/2. Five positive two-block rows cancel every q^2-scaled endpoint and transition coefficient with RHS 1032, and a common alternating tail extends the obstruction to every m>=2. The graph has Perron density base 116/1296>(7/24)^2. This does not exclude endpoint-restricted or sparse/different graphs, position- or length-dependent tables, within-cell or arbitrary physical potentials, partial carving, support deformation, integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-142-q6-117-cell-loopless-transition-wall",
+   "path": "certificates/erdos-142-q6-117-cell-loopless-transition-wall",
    "type": "evidence_container"
   },
   {
