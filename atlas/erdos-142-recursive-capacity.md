@@ -1137,12 +1137,11 @@ same ray obstructs every length `m>=2`.  Primary and separately written
 standard-library replays check the continuous carry semantics, exact dual,
 Perron gate, and all-length padding.
 
-This closes only the complete-loopless path language with fixed
-position-independent endpoint and transition tables.  It does not close
-sparse or endpoint-restricted graphs, position- or length-dependent tables,
-within-cell functions, partial carving, support deformation, or arbitrary
-physical potentials.  No integer construction, new `r_3(N)` bound, or
-solution of Problem 142 is claimed.
+This certificate itself closes only the complete-loopless path language with
+fixed position-independent endpoint and transition tables.  Section 4.25
+supersedes the sparse-graph exception for unrestricted-endpoint 0/1 graphs.
+Position- or length-dependent tables, state lifts, within-edge functions,
+partial carving and support deformation are not consequences of this result.
 
 ### 4.23 Independent affine slopes in every one of the 117 cells also fail
 
@@ -1184,10 +1183,107 @@ the two rows without importing or enumerating the primary ledger.  The
 continuous ledger; infeasibility follows because the two selected rows are
 individually necessary.
 
-This closes only independent residual-affine functions on the fixed cells.
-Piecewise-affine refinements, pair/state interactions, arbitrary physical
-potentials, partial carving, support deformation and integer transfer remain
-open.  No new `r_3(N)` bound or solution of Problem 142 is claimed.
+This certificate itself closes only independent residual-affine functions on
+the fixed cells.  The next strict-interior dilation result supersedes that
+functional restriction for the unchanged one-block union.  Pair/state
+interactions, partial carving, support deformation and integer transfer are
+not consequences of this affine certificate.
+
+### 4.24 A strict-interior dilation wall closes every bounded one-block potential
+
+The affine obstruction is the visible edge of a stronger dynamical wall.  Let
+`A=93=(5,1,0,0)` and `B=91=(5,1,5,5)`, fix `0<s<1`, and write any bounded
+candidate on the unchanged 117-cell union as
+
+```text
+F(x)=2||x||^2+h(x)/36.
+```
+
+For every `0<t<1/3`, two actual strict-interior torus-midpoint triples have
+cell patterns `(A,B,B)` and `(A,A,B)`.  In the last two residual coordinates
+their `(x,y,z)` values are respectively
+
+```text
+(t,1-t,1-3t)       and       (3t,t,1-t),
+```
+
+with carries `-1` and `+1`; the first two residual coordinates are all `s`.
+Their exact `q^2`-scaled correction right sides are `216-48t` and `-72-48t`.
+Defining
+
+```text
+D(t)=h_A(s,s,t,t)+h_B(s,s,1-t,1-t),
+```
+
+and adding the required inequalities gives
+
+```text
+D(3t)-D(t) >= 144-96t.
+```
+
+At `t_n=(1/4)/3^n`, finite summation through `N` yields
+
+```text
+D(1/4)-D(1/(4*3^N)) >= 144N-12(1-3^-N).
+```
+
+The right side grows with `N`, while bounded `h` bounds the left side.  Thus
+no bounded potential can satisfy every pointwise raw-canonical coercivity row
+on the full fixed union.  This uses neither a limit, a closure face, affinity,
+continuity, nor a finite-dimensional ansatz.
+
+`certificates/erdos-142-q6-117-cell-bounded-dilation-wall/` contains primary
+and separately written exact replays.  The result requires the inequality
+pointwise on every eligible triple; it does not follow from an almost-everywhere
+claim.  Graph-restricted triples, carving/deformation, changed cell ownership,
+unbounded potentials, integer transfer and a new `r_3(N)` bound remain outside
+scope.  Erdős Problem 142 remains unsolved.
+
+### 4.25 Common-successor walls force every fixed-state transition graph below gate
+
+The sparse-graph escape can be tested without selecting a graph.  For 187
+unordered pairs `{a,b}` of the 117 cells, the two exact local closure rows
+
+```text
+(a,b,b), (a,a,b)
+```
+
+have positive summed `q^2`-scaled right side, equal to 72 or 144.  If `a,b`
+share an allowed successor `p`, append the diagonal row `(p,p,p)` to both.
+The resulting two synchronized path rows cancel every endpoint value `G[a]`
+and directed transition value `J[a,p]`, while retaining that positive right
+side.  A common predecessor gives the reversed construction.
+
+Avoiding all such two-row walls therefore forces `N+(a)` and `N+(b)` to be
+disjoint for every bad pair.  The exact census contains a matching of 27 bad
+pairs.  If `Av=rho v` is a nonnegative Perron eigenvector and `S=sum(v)`, each
+matched pair satisfies
+
+```text
+rho(v_a+v_b) <= S,
+```
+
+and each of the other 63 vertices satisfies `rho v_w<=S`.  Summing the 90
+block inequalities gives `rho<=90`, whereas the four-dimensional density gate
+requires
+
+```text
+rho > 6^4(7/24)^2 = 441/4 = 110.25.
+```
+
+Thus every unweighted directed graph on the fixed cell states either contains
+an exact two-row transition-table wall or has insufficient path growth.
+`certificates/erdos-142-q6-117-cell-transition-spectral-wall/` independently
+reconstructs the 187-pair census, 43,758 append/prepend cancellations, the
+matching and the solver-free Perron argument.  A separate replay needs only
+seven disjoint pairs and already gives `rho<=110<441/4`.
+
+The theorem assumes the full relevant two-block path language with unrestricted
+endpoints and a position-independent endpoint/edge table.  It does not cover
+weighted or repeated-label state lifts, endpoint-pruned languages that omit the
+two-block witnesses, position-dependent tables, within-edge residual functions,
+carving/deformation, integer transfer or a new `r_3(N)` bound.  Problem 142
+remains unsolved.
 
 ## 5. What would count as progress
 
