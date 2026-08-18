@@ -87,6 +87,8 @@ verify-certs:
 	python3 -I certificates/erdos-142-q6-117-cell-q18-third-microbox-wall/verify_microbox_dilation_cover.py
 	python3 -I certificates/erdos-142-q6-117-cell-q24-quarter-microbox-wall/verify_r4_order4_packing.py --self-test
 	python3 -I certificates/erdos-142-q6-117-cell-q24-quarter-microbox-wall/independent_r4_replay.py
+	python3 -I certificates/erdos-142-q6-117-cell-q30-fifth-microbox-wall/verify_q30_fourpoint_packing.py --self-test
+	python3 -I certificates/erdos-142-q6-117-cell-q30-fifth-microbox-wall/verify_r5_four_of_five_packing.py --self-test
 	python3 -I certificates/erdos-142-q6-m7-cellu-restricted-wall/verify.py
 	python3 -I certificates/erdos-142-q6-m7-cellu-restricted-wall/independent_replay.py
 	python3 -I certificates/erdos-142-q6-m7-deletion-fence/verify.py --self-test

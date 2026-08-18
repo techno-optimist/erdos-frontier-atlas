@@ -1580,6 +1580,61 @@ overlapping tiles, context/path-dependent languages, coupled multi-block
 tiles, almost-everywhere-only coercivity, unbounded corrections, integer
 transfer and a new `r_3(N)` bound remain open.  Erdős Problem 142 is unsolved.
 
+### 4.31 Complete q=30 fifth-microbox one-block supports also fail
+
+Split every residual coordinate of the fixed 117 cells into fifths.  The
+one-block universe then has
+
+```text
+117*5^4 = 73125
+```
+
+distinct complete half-open `q=30` microboxes.  The exact four-coordinate
+EHPS gate is
+
+```text
+(49/576)*30^4 = 275625/4 = 68906.25 boxes.
+```
+
+The frozen packing contains 1,789 mutually disjoint two-box strict-dilation
+supports.  After reserving their 3,578 endpoints, it also contains 2,852
+mutually disjoint four-box midpoint packets.  Each packet is a translated
+four-of-five intersection in a fixed-first-pair fiber, with last-pair support
+
+```text
+A=(5,23), B=(11,5), C=(23,29), D=(29,11).
+```
+
+The four actual common-offset torus midpoint rows `(B,A,D)`, `(C,B,D)`,
+`(A,C,B)`, and `(A,D,C)` cancel every value of an arbitrary single-valued
+physical potential and leave positive total raw endpoint-square cost.  The
+packet supports avoid all dilation endpoints, so a feasible union must omit at
+least one box from each of 4,641 mutually disjoint supports.  Consequently
+
+```text
+|U| <= 73125-(1789+2852) = 68484 < 275625/4.
+```
+
+A strictly above-gate support may delete at most 4,218 boxes; the packing
+exceeds the required 4,219 obstructions by 422.  The certificate directory
+`certificates/erdos-142-q6-117-cell-q30-fifth-microbox-wall/` binds two
+genuinely independent encodings: a 518,711-byte explicit ledger and a separate
+1,262-byte rule-and-digest certificate.  The primary replay corroborates the
+complete matching and packet ledgers.  The independent claim-certifying replay
+also reconstructs the strict-interior dilation identities and finite
+bounded-potential telescope, every four-of-five packet row, carries, raw costs,
+cross-support disjointness, gate arithmetic, frozen-byte nonmutation and
+planted failures.
+
+This is deliberately a **one-block support theorem**, not an all-horizon
+word-language or graph/path capacity theorem.  Four-point deletion packets do
+not automatically tensor into a coordinatewise quotient for arbitrary word
+languages.  Proper or finer carving inside a `q=30` box, deformation,
+non-axis-aligned or overlapping tiles, context/path-dependent languages,
+coupled multi-block tiles, almost-everywhere-only coercivity, unbounded
+corrections, integer transfer and a new `r_3(N)` bound remain open.  Erdős
+Problem 142 is unsolved.
+
 ## 5. What would count as progress
 
 A promotable positive result must include all of:
