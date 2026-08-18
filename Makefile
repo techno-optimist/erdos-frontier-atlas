@@ -65,6 +65,8 @@ verify-certs:
 	python3 -I certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/verify.py --self-test
 	python3 -I certificates/erdos-142-q6-outer-code-tensor-wall/verify.py --self-test
 	python3 -I certificates/erdos-142-q6-coordinate-d4-product-wall/verify.py --self-test
+	python3 -I certificates/erdos-142-q6-117-cell-six-deletion-wall/verify.py certificates/erdos-142-q6-117-cell-six-deletion-wall/rays.json --self-test --find-hit --verify-certificate certificates/erdos-142-q6-117-cell-six-deletion-wall/hitting_proof.json
+	python3 -I certificates/erdos-142-q6-117-cell-six-deletion-wall/independent_replay.py certificates/erdos-142-q6-117-cell-six-deletion-wall/rays.json certificates/erdos-142-q6-117-cell-six-deletion-wall/hitting_proof.json --self-test
 	python3 -I certificates/erdos-142-q6-m7-cellu-restricted-wall/verify.py
 	python3 -I certificates/erdos-142-q6-m7-cellu-restricted-wall/independent_replay.py
 	python3 -I certificates/erdos-142-q6-m7-deletion-fence/verify.py --self-test

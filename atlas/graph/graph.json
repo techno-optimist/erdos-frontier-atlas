@@ -5,7 +5,7 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 379,
-   "evidenced_by": 30,
+   "evidenced_by": 31,
    "has_surface": 319,
    "learned_from": 5,
    "measures": 223,
@@ -18,8 +18,8 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 34,
-   "evidence_container": 48,
+   "evidence_claim": 35,
+   "evidence_container": 49,
    "external_claim": 91,
    "incident": 26,
    "move": 7,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 3950,
-   "validator-enforced": 47
+   "validator-enforced": 48
   }
  },
  "edges": [
@@ -5289,6 +5289,14 @@
   },
   {
    "dst": "E:claim:erdos-142-q4-affine-order4-line-wall",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P142",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-142-q6-117-cell-six-deletion-wall",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
    "src": "P142",
@@ -29764,6 +29772,57 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-142-q6-117-cell-six-deletion-wall/README.md",
+     "sha256": "3c77212c1c7f02ad618855fb6e4914b866c76b4a21703fe91b1331820ece4aed"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-six-deletion-wall/hitting_proof.json",
+     "sha256": "6e3662dd64b55024bf9fddf3b06c202bc288a42a9fbee461f9097c45b2c3686a"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-six-deletion-wall/independent_replay.py",
+     "sha256": "064acf88a8f66dfb326d999f87a7ddca6aad04d88dc2775e5998344c16e525a5"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-six-deletion-wall/rays.json",
+     "sha256": "9f78de7eb6d2a42afcbe6b9d5604a628c6751f69d8b37872c3316a20d0c93a79"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-six-deletion-wall/verify.py",
+     "sha256": "df5c3f2e46112c7f0340f1c392e9665a5faaeda5d6803a8dcbdf0537c3b5580a"
+    }
+   ],
+   "claim_id": "erdos-142-q6-117-cell-six-deletion-wall",
+   "id": "E:claim:erdos-142-q6-117-cell-six-deletion-wall",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-142-q6-117-cell-six-deletion-wall/verify.py",
+     "certificates/erdos-142-q6-117-cell-six-deletion-wall/rays.json",
+     "--self-test",
+     "--find-hit",
+     "--verify-certificate",
+     "certificates/erdos-142-q6-117-cell-six-deletion-wall/hitting_proof.json"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "SELF_TEST_OK",
+     "PLANTED_RAY_FAILURES_REJECTED",
+     "RAYS_OK rays=943 cells=117 legal_rows=98167",
+     "GATE_OK after_six=111/1296-(7/24)^2=1/1728",
+     "HYPERGRAPH_HIT=NONE",
+     "HYPERGRAPH_PROOF_OK nodes=29980 budget=6"
+    ]
+   },
+   "scope": "The alphabet has density 117/1296, exceeding (7/24)^2 by 1/192. Six deletions retain excess 1/1728 and seven fall below the gate. The certificate reconstructs all 98167 compatible ordered continuous cell triples in the equivalent q^2-scaled offset variables, verifies 943 positive integral Farkas rays and their exact semantic cell supports, and checks a 29980-node exhaustive branching/disjoint-packing proof that no set of at most six cells hits every support. It covers only whole-cell deletion of this fixed alphabet and potentials 2||x||^2+g[cell]. Within-cell, pair, graph-state/cocycle and arbitrary physical potentials, partial carving, replacement/deformation, other supports or quotients, integer transfer and a new r_3(N) bound remain outside scope; Erdos Problem 142 remains unsolved.",
+   "statement": "No whole-cell subcollection of the fixed 117-cell q=6 four-dimensional alphabet whose density remains strictly above (7/24)^2 admits a potential F(x)=2||x||_2^2+g[cell(x)] satisfying every required continuous raw-canonical modular-torus midpoint coercivity row.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/README.md",
      "sha256": "dfa56efe4846db39721f86ae118165c72f4cdd20f56e56a9383a84975468e431"
     },
@@ -30812,6 +30871,13 @@
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-142-q4-affine-order4-line-wall",
    "path": "certificates/erdos-142-q4-affine-order4-line-wall",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "An exact continuous whole-cell deletion wall for the fixed 117-cell q=6 four-dimensional alphabet and potentials F=2||x||^2+g[cell]. The verifier reconstructs 98167 compatible q^2-scaled continuous cell-triple rows and 943 positive integral Farkas rays; a 29980-node exhaustive proof shows no deletion set of size at most six hits every ray support. Six deletions are the last ones above the supplied (7/24)^2 gate. This does not exclude within-cell, pair, graph-state/cocycle or arbitrary physical potentials, partial carving, replacement/deformation, other supports or quotients, integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-142-q6-117-cell-six-deletion-wall",
+   "path": "certificates/erdos-142-q6-117-cell-six-deletion-wall",
    "type": "evidence_container"
   },
   {

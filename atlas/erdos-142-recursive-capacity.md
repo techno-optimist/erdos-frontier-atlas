@@ -1056,6 +1056,50 @@ point.  Replacement cells, geometric deformation, recursive state, ordinary
 Euclidean transfer, and integer transfer remain open.  No new `r_3(N)` bound
 or solution of Problem 142 is claimed.
 
+### 4.21 The 117-cell four-dimensional lead has a six-deletion cell-offset wall
+
+A one-state four-dimensional alphabet was found with `117` distinct `q=6`
+cells.  In integer coordinates it is
+
+```text
+U_D = {(a_1,a_2,a_1+d_1,a_2+d_2) mod 6 : a in S0, d in D},
+```
+
+where `|S0|=9`, `|D|=13`, and the displayed map is injective.  Its density is
+
+```text
+117/6^4 = 13/144 = 52/576,
+```
+
+which exceeds the four-dimensional EHPS product baseline
+`(7/24)^2=49/576` by `1/192`.  Six whole-cell deletions leave density above
+the gate by exactly `1/1728`; seven deletions fall below it.
+
+The exact packet in
+`certificates/erdos-142-q6-117-cell-six-deletion-wall/` closes every such
+gate-preserving whole-cell deletion under the continuous potential ansatz
+
+```text
+F(x) = 2 ||x||_2^2 + g[cell(x)].
+```
+
+It reconstructs all `98,167` compatible ordered cell triples and their exact
+`6^2`-scaled continuous half-open branch suprema.  A ledger of `943` positive integral
+Farkas rays gives necessary deletion cuts: every feasible deletion must hit
+the semantic cell support of each ray.  A separate `29,980`-node exact
+branching/disjoint-packing certificate proves that no set of at most six cells
+hits all of them.  Consequently no whole-cell subcollection of this fixed
+alphabet can both preserve the supplied density gate and satisfy every
+continuous modular-torus coercivity row with a cell-offset potential.
+
+This is a sharp restricted repair fence, not the death of the `117`-cell
+geometry.  Within-cell piecewise functions, pair interactions, genuine
+graph-state/cocycle potentials, partial carving, replacement cells and
+geometric deformation remain open.  In particular the certificate neither
+constructs the synchronized triple-path potential needed by the Markov shell
+lemma nor rules one out.  It gives no integer construction, new `r_3(N)`
+bound, or solution of Problem 142.
+
 ## 5. What would count as progress
 
 A promotable positive result must include all of:
