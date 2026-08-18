@@ -868,6 +868,48 @@ of other supports, deformations, q, recursive mechanisms or non-product
 constructions.  It gives no ordinary Euclidean transfer, integer construction,
 new `r_3(N)` bound, or solution of Problem 142.
 
+### 4.17 A mass-positive selector escapes every order-three orbit
+
+The deletion fence identifies a precise support-design requirement: avoid the
+order-three quotient hypergraph before tuning a potential.  In the full q=6/M7
+universe there are 448 coarse cells `(word,residue)`, not 148; the latter is
+only the parity-pattern state count inside the older 24-cell candidate.  The
+research-fence packet in
+`certificates/erdos-142-q6-m7-orbit-free-selector/` freezes 28 cells with
+
+```text
+box count = 1,405,512,
+mass      = 241/373248,
+excess over (7/24)^6 = 5743/191102976 > 0.
+```
+
+An order-three q6 translation preserves every local parity bit and therefore
+the exact residue.  For a selected word triple let `v` count nonconstant
+coordinate columns and let `t` count those columns containing exactly one
+`1`.  Exhausting the 42 valid local increment/start configurations proves
+that a nontrivial orbit exists exactly when
+
+```text
+v > 0 and t <= residue <= t + 6 - v.
+```
+
+Both standard-library replays reconstruct this criterion and test every
+ordered selected word triple.  None passes.  The support consequently has
+zero nontrivial order-three physical orbits and zero matching, while the old
+deletion fence would need 65,417 disjoint families at this mass.  Thus the
+torsion/deletion mechanism that closes the eight-cell redesign genuinely does
+not close this selector.
+
+This is a narrowed next candidate, not a potential survivor.  Longer balanced
+families of modular midpoint rows can exist without a three-point translation
+orbit.  Restricted additive and parity-class potential screens are already
+negative, but their quotient rays do not cancel at actual physical vertices.
+The live bottleneck is therefore an arbitrary-physical-potential certificate
+or countercertificate for this selector, followed only after survival by
+continuum thickening and integer transfer.  A separate CP-SAT search reports
+that the displayed mass is optimal among orbit-free coarse selectors, but no
+solver-independent optimization proof is promoted here.
+
 ## 5. What would count as progress
 
 A promotable positive result must include all of:

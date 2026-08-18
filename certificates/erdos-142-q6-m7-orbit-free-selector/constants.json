@@ -1,0 +1,34 @@
+{
+  "format": "erdos142-q6-m7-orbit-free-selector-v1",
+  "scope": {
+    "finite_q": 6,
+    "ambient_group": "(Z/6Z)^12",
+    "selector_universe_cells": 448,
+    "potential_feasibility_claim": false,
+    "ordinary_euclidean_continuum_claim": false,
+    "integer_transfer_claim": false,
+    "new_r3_bound": false,
+    "erdos142_solved": false
+  },
+  "selector": {
+    "cells": 28,
+    "residue_cell_counts": [8,3,2,2,2,3,8],
+    "box_count": 1405512,
+    "mass": "241/373248",
+    "gate": "(7/24)^6",
+    "gate_excess_boxes": "4186647/64",
+    "normalized_gate_excess": "5743/191102976"
+  },
+  "order_three": {
+    "valid_local_increment_start_configurations": 42,
+    "criterion": "v>0 and t<=r<=t+6-v",
+    "nontrivial_hyperedges": 0,
+    "matching": 0
+  },
+  "sha256": {
+    "README.md": "2BC455CCE5F827F479662A7018E6953F454B1BAB860CA4997C3EE869D753CB2A",
+    "selector.cells": "671B69ED285B715499BA91766C5AB0ADE6BB68C10BBFB3FA569E5D32EE7E1F9F",
+    "verify.py": "C368E9FDCAEAE92547F8360B0282123B1D737269B981E475412C40576AA8A661",
+    "independent_replay.py": "FB9AB888F698A9F3227A2F25F62972A54BFE0D0A69B792FFC20FE0DAE797BDBA"
+  }
+}

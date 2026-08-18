@@ -72,6 +72,11 @@
    "boundary": "A construction-specific matching fence for the exact eight-cell q=6/M7 half-open union under the supplied raw-canonical modular-torus coercivity model. A frozen matching of 102636 pairwise box-disjoint order-three orbits forces at least 102636/6^12 measurable deletion, leaving mass at most 1326204/6^12 below the supplied (7/24)^6 gate. This uses finite-quotient torsion and explicit common-offset families; it is not an ordinary Euclidean-continuum theorem and does not cover deformed supports, different q, recursive state, other non-product constructions, integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved."
   },
   {
+   "path": "certificates/erdos-142-q6-m7-orbit-free-selector",
+   "classification": "research_fence",
+   "boundary": "A finite q=6/M7 full-cell selector lead only. The checked 28-cell selector has exact mass 1405512/6^12 above the supplied (7/24)^6 gate and zero nontrivial modular order-three translation orbits, so the order-three common-offset matching-deletion mechanism does not eliminate it. The separately reported orbit-free optimization is discovery evidence, not a promoted solver-independent maximum theorem. No potential feasibility, arbitrary-H statement, Euclidean-continuum lift, integer transfer, r_3(N) bound, or solution of Erdos Problem 142 is claimed."
+  },
+  {
    "path": "certificates/erdos-142-q6-m7-redesign-torsion-wall",
    "classification": "certified_local",
    "boundary": "An exact three-row arbitrary-global-potential wall for the displayed eight-cell q=6/M7 redesign and its common-offset half-open torus lift. The union has mass 245/373248 above the supplied (7/24)^6 gate, but three genuine physical midpoint rows cancel H and leave raw contradiction 0>=144. This excludes only the exact full union: the displayed step has 45 disjoint three-orbits, far below the 5679639/64-box gate slack, so no deletion-robust family claim is made. The rows use nonzero modular carries and are not ordinary Euclidean midpoint rows. No integer transfer or new r_3(N) bound is claimed; Erdos Problem 142 remains unsolved."
