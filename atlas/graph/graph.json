@@ -5,7 +5,7 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 379,
-   "evidenced_by": 38,
+   "evidenced_by": 39,
    "has_surface": 319,
    "learned_from": 5,
    "measures": 223,
@@ -18,8 +18,8 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 42,
-   "evidence_container": 56,
+   "evidence_claim": 43,
+   "evidence_container": 57,
    "external_claim": 91,
    "incident": 26,
    "move": 7,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 3950,
-   "validator-enforced": 55
+   "validator-enforced": 56
   }
  },
  "edges": [
@@ -5337,6 +5337,14 @@
   },
   {
    "dst": "E:claim:erdos-142-q6-117-cell-q12-halfcell-wall",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P142",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-142-q6-117-cell-q18-third-microbox-wall",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
    "src": "P142",
@@ -30098,6 +30106,59 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-142-q6-117-cell-q18-third-microbox-wall/README.md",
+     "sha256": "84eea562cb4959d206231d2273b21a8b75889617689ce7f38e800c8a039f5e88"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-q18-third-microbox-wall/frozen_semantic_certificate.json",
+     "sha256": "e445d0ca22b7c0dcca087bb6bfea60b94cdf30669e59d8b60ea4c9f96e95a18c"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-q18-third-microbox-wall/verify_frozen_semantic_certificate.py",
+     "sha256": "15273f83ef14c2ebc181b7e49129bc61ce3dabf6310a4a6084ff3b59c43f5d3a"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-q18-third-microbox-wall/verify_microbox_dilation_cover.py",
+     "sha256": "b9f5ad39e94d90500d5bda4d289210b5b94dd4a3de3a13707509a5454d83ea13"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-q18-third-microbox-wall/HOSTILE_AUDIT.md",
+     "sha256": "d8adf9cd4b149c1dd69d2e2105316a371bb27d21b92fd6475111078c34ddb4aa"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-q18-third-microbox-wall/independent_replay.py",
+     "sha256": "c466af4935b99a60d56d93b8d8eda1d2977775da976af7622a6938d105e3d883"
+    }
+   ],
+   "claim_id": "erdos-142-q6-117-cell-q18-third-microbox-wall",
+   "id": "E:claim:erdos-142-q6-117-cell-q18-third-microbox-wall",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-142-q6-117-cell-q18-third-microbox-wall/independent_replay.py",
+     "certificates/erdos-142-q6-117-cell-q18-third-microbox-wall/frozen_semantic_certificate.json"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "PASS_INDEPENDENT_Q18_MICROBOX_PACKING_WALL",
+     "GEOMETRY_OK coarse=117 microboxes=9477 physical_codes_unique",
+     "DILATION_OK matching=433 endpoints=866 strict_telescope",
+     "PACKETS_OK count=114 physical_incidence=0 raw_rhs_positive common_offset",
+     "DISJOINTNESS_OK obstruction_supports=547 mutually_disjoint",
+     "GATE_OK forced=547 allowed=546 retained=8930<35721/4",
+     "DEPENDENCIES_OK verifier=stdlib_only frozen_semantic_input",
+     "PLANTED_FAILURES_REJECTED"
+    ]
+   },
+   "scope": "The one-block physical universe consists of the 9,477 distinct half-open q=18 microboxes d=3c+s, where c ranges over the fixed 117 coarse q=6 cells and s ranges over {0,1,2}^4. The frozen certificate contains 433 pairwise vertex-disjoint componentwise-dilation supports and 114 mutually disjoint finite common-offset balanced midpoint packets, with no overlap between the two families. The dilation telescope uses boundedness; each packet uses exact positive integer weights that cancel an otherwise arbitrary single-valued physical potential while leaving positive raw endpoint-square cost. The 547 disjoint supports force 547 deletions, leaving at most 8,930 boxes below the exact 35,721/4-box gate. No completeness or optimality claim is made for either obstruction family. This theorem closes only complete globally aligned residual thirds in the one-block geometry. Proper or finer carving inside a q=18 box, deformation, non-axis-aligned or overlapping tiles, context/path-dependent word languages, coupled multi-block tiles, almost-everywhere-only coercivity, integer transfer and a new r_3(N) bound remain outside scope; Erdos Problem 142 remains unsolved.",
+   "statement": "Every union U of complete globally aligned q=18 residual-third microboxes refining the fixed 117-cell q=6 alphabet that supports a bounded single-valued physical potential satisfying every actual raw-canonical modular-torus midpoint coercivity inequality pointwise contains at most 8,930 of the 9,477 boxes; consequently mu(U)<=8930/18^4<49/576.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-142-q6-117-cell-six-deletion-wall/README.md",
      "sha256": "3c77212c1c7f02ad618855fb6e4914b866c76b4a21703fe91b1331820ece4aed"
     },
@@ -31278,6 +31339,13 @@
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-142-q6-117-cell-q12-halfcell-wall",
    "path": "certificates/erdos-142-q6-117-cell-q12-halfcell-wall",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "An exact one-block density wall for arbitrary unions of the 9,477 complete globally aligned q=18 residual-third microboxes refining the fixed 117-cell q=6 alphabet, under an arbitrary bounded single-valued physical potential satisfying every actual raw-canonical modular-torus midpoint coercivity inequality pointwise. A packing of 433 componentwise-dilation pairs and 114 finite balanced midpoint packets gives 547 mutually disjoint obstruction supports, forcing at least 547 deletions and at most 8,930 retained boxes, strictly below the exact 35,721/4-box gate. This closes complete q=18 third-microboxes only. Proper or finer carving, deformation, non-axis-aligned or overlapping tiles, context/path-dependent word languages, coupled multi-block tiles, almost-everywhere-only coercivity, integer transfer and a new r_3(N) bound remain outside scope. Erdos Problem 142 remains unsolved.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-142-q6-117-cell-q18-third-microbox-wall",
+   "path": "certificates/erdos-142-q6-117-cell-q18-third-microbox-wall",
    "type": "evidence_container"
   },
   {

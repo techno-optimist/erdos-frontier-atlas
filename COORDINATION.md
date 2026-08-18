@@ -60,6 +60,28 @@ objects were UNTRACKED working-tree files; a later run overwrote them and they a
 gone from both working copies — a result that was replayed-clean 2026-07-13 is now unbacked.
 Commit your certs.
 
+## 2026-08-18 — Erdős 142: complete q=18 third-microbox wall
+
+`certificates/erdos-142-q6-117-cell-q18-third-microbox-wall/` closes the next
+globally aligned one-block refinement.  The 117 coarse cells contain 9,477
+complete residual-third boxes.  A frozen packing gives 433 disjoint
+strict-dilation pairs plus 114 disjoint balanced midpoint packets, with all
+547 supports mutually disjoint.  Every feasible support for a bounded,
+single-valued physical potential satisfying the pointwise raw-canonical torus
+inequality must therefore delete at least 547 boxes and retain at most
+
+```text
+8930 < (49/576)*18^4 = 35721/4.
+```
+
+Primary and independent standard-library replays check the exact physical
+decoder, carries, raw costs, weighted coefficient cancellation,
+cross-obstruction disjointness, and planted failures.  Scope is complete
+globally aligned q=18 thirds in one block only.  Proper/finer carving,
+deformation, non-axis-aligned or overlapping tiles, context/path-dependent
+languages, non-word coupled multi-block tiles, almost-everywhere coercivity,
+integer transfer and a new `r_3(N)` bound remain open; Problem 142 is unsolved.
+
 ## 2026-08-18 — Erdős 142: complete q=12 half-microbox wall
 
 `certificates/erdos-142-q6-117-cell-q12-halfcell-wall/` closes the first

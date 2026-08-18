@@ -785,15 +785,18 @@ def render_card(graph, erdos_id):
     w("")
     if claims:
         # Dense evidence cards are context packs, not duplicate dossiers.
-        # Keep every claim id and replay command, but compress prose once the
-        # claim ledger itself would push a card over the enforced 12k budget.
+        # Keep every claim id and replay command, but compress prose and labels
+        # once the claim ledger itself would push a card over the 12k budget.
         dense_claims = len(claims) > 20
         statement_cap = 16 if 12 < len(claims) <= 20 else None
         for c in claims:
-            statement = ("[see contract]" if dense_claims
-                         else clip(c['statement'], statement_cap)
-                         if statement_cap is not None
-                         else c['statement'])
+            if dense_claims:
+                w(f"- claim `{c['claim_id']}` [{c['status']}]")
+                if c.get("replay"):
+                    w(f"  - replay: `{' '.join(c['replay']['argv'])}`")
+                continue
+            statement = (clip(c['statement'], statement_cap)
+                         if statement_cap is not None else c['statement'])
             w(f"- contract claim `{c['claim_id']}` [{c['status']}]: "
           f"{statement}")
             if c.get("replay"):

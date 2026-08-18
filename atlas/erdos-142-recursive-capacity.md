@@ -1483,6 +1483,50 @@ that do not expand into q=12 words.  Almost-everywhere-only coercivity,
 unbounded corrections, integer transfer and a new `r_3(N)` bound also remain
 outside scope; Erdős Problem 142 remains unsolved.
 
+### 4.29 Complete q=18 third-microbox supports also fail
+
+Split every residual coordinate of the same 117 cells into thirds.  The
+one-block universe then has
+
+```text
+117*3^4 = 9477
+```
+
+distinct complete half-open `q=18` microboxes, while the four-coordinate EHPS
+gate is
+
+```text
+(49/576)*18^4 = 35721/4 = 8930.25 boxes.
+```
+
+The frozen semantic certificate packs 433 two-box strict-dilation supports
+and 114 finite common-offset balanced midpoint packets.  All 547 supports are
+mutually disjoint.  The dilation rows give the finite bounded-potential
+telescope `D(3t)-D(t)>=K(72-48t)`, `K>=1`.  In every finite packet, positive
+integer row weights cancel the value of an arbitrary single-valued physical
+potential at each actual `q=18` point while leaving strictly positive total
+raw endpoint-square cost.  Thus every feasible complete-microbox support must
+delete at least one box from each obstruction, and hence retains at most
+
+```text
+9477-(433+114) = 8930 < 35721/4.
+```
+
+This proves `mu(U)<=8930/18^4<49/576` for an arbitrary union `U` of these
+complete boxes whenever `U` supports a bounded single-valued physical
+potential satisfying every actual raw-canonical modular-torus midpoint
+inequality pointwise.  The primary and independent standard-library replays
+in `certificates/erdos-142-q6-117-cell-q18-third-microbox-wall/` reconstruct
+the physical decoder, all carries and raw costs, exact coefficient
+cancellation, cross-support disjointness, and gate arithmetic.
+
+The boundary is exact: only complete globally aligned residual thirds in this
+one-block geometry are closed.  Proper or finer carving inside a `q=18` box,
+deformation, non-axis-aligned or overlapping tiles, context/path-dependent
+word languages, coupled multi-block tiles, almost-everywhere-only coercivity,
+integer transfer and a new `r_3(N)` bound remain open.  Erdős Problem 142 is
+unsolved.
+
 ## 5. What would count as progress
 
 A promotable positive result must include all of:

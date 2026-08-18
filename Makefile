@@ -82,6 +82,9 @@ verify-certs:
 	python3 -I certificates/erdos-142-q6-117-cell-fullword-bounded-wall/verify_carving_audit.py
 	python3 -I certificates/erdos-142-q6-117-cell-q12-halfcell-wall/verify_halfcell_context_wall.py --self-test
 	python3 -I certificates/erdos-142-q6-117-cell-q12-halfcell-wall/independent_q12_halfcell_wall.py
+	python3 -I certificates/erdos-142-q6-117-cell-q18-third-microbox-wall/verify_frozen_semantic_certificate.py --self-test
+	python3 -I certificates/erdos-142-q6-117-cell-q18-third-microbox-wall/independent_replay.py certificates/erdos-142-q6-117-cell-q18-third-microbox-wall/frozen_semantic_certificate.json
+	python3 -I certificates/erdos-142-q6-117-cell-q18-third-microbox-wall/verify_microbox_dilation_cover.py
 	python3 -I certificates/erdos-142-q6-m7-cellu-restricted-wall/verify.py
 	python3 -I certificates/erdos-142-q6-m7-cellu-restricted-wall/independent_replay.py
 	python3 -I certificates/erdos-142-q6-m7-deletion-fence/verify.py --self-test
