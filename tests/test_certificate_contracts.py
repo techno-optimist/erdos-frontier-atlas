@@ -33,7 +33,7 @@ def test_cli_check_passes():
 
 def test_python_replay_uses_current_interpreter():
     argv = contracts.replay_argv(["python3", "-I", "certificate.py"])
-    assert argv == [sys.executable, "-I", "certificate.py"]
+    assert argv == [sys.executable, "-X", "utf8", "-I", "certificate.py"]
 
 
 def test_nonexistent_artifact_cannot_count_as_evidence():

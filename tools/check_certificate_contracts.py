@@ -185,10 +185,10 @@ def tree_hashes(root: Path) -> dict[str, str]:
 
 
 def replay_argv(argv: list[str]) -> list[str]:
-    """Run Python contracts with the interpreter executing this gate."""
+    """Run Python contracts with this interpreter and deterministic UTF-8 I/O."""
     command = list(argv)
     if command and command[0] in {"python", "python3"}:
-        command[0] = sys.executable
+        command[0:1] = [sys.executable, "-X", "utf8"]
     return command
 
 
@@ -215,7 +215,7 @@ def run_replays(root: Path, data: dict, profile: str, claim_id: str | None) -> l
             try:
                 proc = subprocess.run(
                     replay_argv(replay["argv"]), cwd=sandbox, env=env,
-                    capture_output=True, text=True,
+                    capture_output=True, text=True, encoding="utf-8",
                     timeout=replay["timeout_seconds"],
                 )
             except subprocess.TimeoutExpired:

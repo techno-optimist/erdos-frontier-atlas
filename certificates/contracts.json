@@ -69,7 +69,7 @@
   {
    "path": "certificates/erdos-142-q6-117-cell-loopless-transition-wall",
    "classification": "certified_local",
-    "boundary": "An exact continuous wall for the complete loopless directed path language on the fixed 117-cell q=6 alphabet and the position- and length-independent endpoint/transition potential P_m=g[c_0]/2+sum H[c_i,c_(i+1)]+g[c_(m-1)]/2. Five positive two-block rows cancel every q^2-scaled endpoint and transition coefficient with RHS 1032, and a common alternating tail extends the obstruction to every m>=2. The graph has Perron density base 116/1296>(7/24)^2. This certificate is superseded for unweighted fixed-state graphs by the transition-spectral wall, but remains its own exact complete-loopless replay. It does not exclude weighted or repeated-label state lifts, endpoint-pruned languages, position- or length-dependent tables, within-cell or arbitrary physical potentials, partial carving, support deformation, integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved."
+    "boundary": "An exact continuous wall for the complete loopless directed path language on the fixed 117-cell q=6 alphabet and the position- and length-independent endpoint/transition potential P_m=g[c_0]/2+sum H[c_i,c_(i+1)]+g[c_(m-1)]/2. Five positive two-block rows cancel every q^2-scaled endpoint and transition coefficient with RHS 1032, and a common alternating tail extends the obstruction to every m>=2. The graph has Perron density base 116/1296>(7/24)^2. This certificate is superseded in the label-only unweighted lane by the endpoint-pruned label wall, but remains its own exact complete-loopless replay. It does not exclude weighted or repeated-label state lifts, residual-dependent potentials, coupled edge tiles, partial carving, support deformation, integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved."
   },
   {
    "path": "certificates/erdos-142-q6-117-cell-percell-affine-wall",
@@ -84,7 +84,12 @@
   {
    "path": "certificates/erdos-142-q6-117-cell-transition-spectral-wall",
    "classification": "certified_local",
-   "boundary": "An exact dichotomy wall for every unweighted directed graph on the fixed 117 q=6 cell states with unrestricted relevant endpoints and a position-independent endpoint/edge potential. A common successor of any of 187 bad cell pairs gives a two-row G,J Farkas contradiction; avoiding those walls and summing over a 27-edge bad-pair matching forces adjacency Perron root rho<=90<441/4, below the four-dimensional density gate. This does not cover weighted or repeated-label state lifts, endpoint-pruned languages omitting the two-block witnesses, position- or length-dependent tables, within-edge residual functions, carving/deformation, integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved."
+    "boundary": "An exact dichotomy wall for every unweighted directed graph on the fixed 117 q=6 cell states with unrestricted relevant endpoints and a position-independent endpoint/edge potential. A common successor of any of 187 bad cell pairs gives a two-row G,J Farkas contradiction; avoiding those walls and summing over a 27-edge bad-pair matching forces adjacency Perron root rho<=90<441/4, below the four-dimensional density gate. The endpoint-pruned label wall supersedes the endpoint/table restrictions in the label-only lane. This certificate does not cover weighted or repeated-label state lifts, residual-dependent functions, coupled edge tiles, carving/deformation, integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved."
+   },
+   {
+    "path": "certificates/erdos-142-q6-117-cell-endpoint-pruned-label-wall",
+    "classification": "certified_local",
+    "boundary": "An exact endpoint-pruned asymptotic wall for every fixed unweighted directed graph on the 117 q=6 cell labels, fixed start/end masks, and arbitrary finite real correction constant on each complete accepted label path, even when it is position-, length- and path-dependent. Every infinite wall-free horizon set has path-count growth at most 103<441/4. This does not cover residual-dependent potentials, weighted or repeated-label lifts, coupled edge tiles, horizon-varying supports or endpoint masks, carving/deformation, integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved."
   },
   {
    "path": "certificates/erdos-142-q6-m7-cellu-restricted-wall",
@@ -1810,7 +1815,7 @@
    "id": "erdos-142-q6-117-cell-loopless-transition-wall",
    "status": "promoted",
    "statement": "For every length m>=2, the complete loopless directed path language on the fixed 117-cell q=6 four-dimensional alphabet admits no position- and length-independent potential P_m=g[c_0]/2+sum H[c_i,c_(i+1)]+g[c_(m-1)]/2 satisfying every required continuous raw-canonical modular-torus midpoint coercivity row.",
-    "scope": "The loopless language has exact path count 117*116^(m-1) and asymptotic density base 116/1296=29/324>(7/24)^2. In equivalent q^2-scaled variables G=36g and J=36H, five legal two-block rows with positive weights (1,2,1,1,1) cancel every endpoint and directed-transition coefficient and leave RHS 1032. Appending the common alternating diagonal tail 0,1,0,... preserves looplessness, coefficient cancellation and RHS, extending the same exact obstruction to every m>=2. Additive cell offsets are contained in this class. The later transition-spectral certificate supersedes this result for unweighted fixed-state graphs. Weighted or repeated-label state lifts, endpoint-pruned languages, position- or length-dependent tables, within-cell and arbitrary physical potentials, partial carving, support deformation, integer transfer and a new r_3(N) bound remain outside scope; Erdos Problem 142 remains unsolved.",
+    "scope": "The loopless language has exact path count 117*116^(m-1) and asymptotic density base 116/1296=29/324>(7/24)^2. In equivalent q^2-scaled variables G=36g and J=36H, five legal two-block rows with positive weights (1,2,1,1,1) cancel every endpoint and directed-transition coefficient and leave RHS 1032. Appending the common alternating diagonal tail 0,1,0,... preserves looplessness, coefficient cancellation and RHS, extending the same exact obstruction to every m>=2. Additive cell offsets are contained in this class. The later endpoint-pruned label certificate supersedes this result throughout the label-only unweighted lane. Weighted or repeated-label state lifts, residual-dependent functions, coupled edge tiles, partial carving, support deformation, integer transfer and a new r_3(N) bound remain outside scope; Erdos Problem 142 remains unsolved.",
    "machine_verdict": "FARKAS_OK weighted_rhs=1032 scaled_contradiction=0>=1032",
    "publication_bindings": [
     {
@@ -2074,7 +2079,7 @@
     "id": "erdos-142-q6-117-cell-transition-spectral-wall",
     "status": "promoted",
     "statement": "Every unweighted directed graph on the fixed 117 q=6 cell states either contains an exact common-neighbor two-row obstruction for the position-independent endpoint/edge potential class, or has adjacency Perron root at most 90, below the four-dimensional EHPS gate 441/4.",
-    "scope": "The exact closure census has 187 bad unordered cell pairs. A common successor or predecessor for a bad pair gives two synchronized rows whose endpoint and directed-edge features cancel with positive RHS. Avoiding all such walls, a 27-edge matching of bad pairs groups the Perron eigenvector into 90 blocks and proves rho<=90<441/4 for arbitrary reducible 0/1 digraphs and arbitrary loops. The theorem assumes unrestricted relevant endpoints and the required two-block constraints. It does not cover weighted or repeated-label state lifts, endpoint-pruned languages that omit those witnesses, position- or length-dependent tables, within-edge residual functions, carving/deformation, integer transfer or a new r_3(N) bound; Erdos Problem 142 remains unsolved.",
+     "scope": "The exact closure census has 187 bad unordered cell pairs. A common successor or predecessor for a bad pair gives two synchronized rows whose endpoint and directed-edge features cancel with positive RHS. Avoiding all such walls, a 27-edge matching of bad pairs groups the Perron eigenvector into 90 blocks and proves rho<=90<441/4 for arbitrary reducible 0/1 digraphs and arbitrary loops. The later endpoint-pruned label certificate supersedes the unrestricted-endpoint and fixed-table restrictions in the label-only unweighted lane. Weighted or repeated-label state lifts, residual-dependent functions, coupled edge tiles, carving/deformation, integer transfer and a new r_3(N) bound remain outside scope; Erdos Problem 142 remains unsolved.",
     "machine_verdict": "PASS_TRANSITION_SPECTRAL_WALL",
     "publication_bindings": [
      {
@@ -2156,9 +2161,98 @@
       }
      }
     ]
-   },
-   {
-    "id": "erdos-142-q6-m7-cellu-restricted-wall",
+    },
+    {
+     "id": "erdos-142-q6-117-cell-endpoint-pruned-label-wall",
+     "status": "promoted",
+     "statement": "For every fixed unweighted directed graph on the 117 q=6 cell labels and fixed start/end masks, any infinite set of sufficiently large horizons without the exact two-path coercivity wall has path-count growth at most 103, below the four-dimensional EHPS gate 441/4, even for arbitrary finite corrections on complete label paths.",
+     "scope": "The proof selects a reachable/co-reachable Perron SCC. If none of the 27 matched bad pairs in the core has both a common predecessor and common successor, mixed right/left Perron grouping gives rho<=103. Otherwise two accepted paths with a common prefix and suffix differ in one bad-pair label, and the two required closure inequalities cancel any finite real correction Phi_m constant on a complete label path, including nonadditive, position- and length-dependent tables. SCC cyclic classes give an exact same-length branch pair at every sufficiently large active residue; isolated short horizons may evade. Literal path-union volume uses 0/1 endpoint indicators; fixed positive endpoint weights have the same exponential rate only as a partition function. Residual-dependent potentials, weighted or repeated-label lifts, coupled edge tiles, horizon-varying supports or endpoint masks, carving/deformation, integer transfer and a new r_3(N) bound remain outside scope; Erdos Problem 142 remains unsolved.",
+     "machine_verdict": "PASS_ENDPOINT_PRUNED_EXTENSION",
+     "publication_bindings": [
+      {
+       "path": "certificates/erdos-142-q6-117-cell-endpoint-pruned-label-wall/README.md",
+       "contains": "A sandwich-pair Perron lemma"
+      },
+      {
+       "path": "atlas/erdos-142-recursive-capacity.md",
+       "contains": "Endpoint pruning and arbitrary whole-label-path corrections still fail"
+      }
+     ],
+     "artifacts": [
+      {
+       "path": "certificates/erdos-142-q6-117-cell-endpoint-pruned-label-wall/README.md",
+       "sha256": "140628a1756655815a6f08e182e8e10303b65d30e7620ad893dc7e764a3f8a23"
+      },
+      {
+       "path": "certificates/erdos-142-q6-117-cell-endpoint-pruned-label-wall/verify_endpoint_pruned_extension.py",
+       "sha256": "d4f449df31fd439f6740d9100750537e4dddbba8c84d9f4d5418787a36cb3ede"
+      },
+      {
+       "path": "certificates/erdos-142-q6-117-cell-endpoint-pruned-label-wall/independent_replay.py",
+       "sha256": "d30c8f9fd94c8eb72f0c6e456b5f42a35c218f63351b600547a101798d5daa4c"
+      },
+      {
+       "path": "certificates/erdos-142-q6-117-cell-endpoint-pruned-label-wall/HOSTILE_AUDIT.md",
+       "sha256": "3a230888e228fe7aa257d8ae43f75b798133c26742ee46a3401ac20303b8e8e1"
+      }
+     ],
+     "replays": [
+      {
+       "profile": "fast",
+       "certifies_claim": true,
+       "entrypoint": "certificates/erdos-142-q6-117-cell-endpoint-pruned-label-wall/verify_endpoint_pruned_extension.py",
+       "argv": [
+        "python3",
+        "-I",
+        "certificates/erdos-142-q6-117-cell-endpoint-pruned-label-wall/verify_endpoint_pruned_extension.py"
+       ],
+       "timeout_seconds": 30,
+       "exit_code": 0,
+       "stdout_contains": [
+        "PASS_ENDPOINT_PRUNED_EXTENSION",
+        "CENSUS_OK cells=117 bad_pairs=187 matching=27",
+        "SANDWICH_FREE_CORE_BOUND rho<=103<441/4",
+        "POSITION_DEPENDENT_LABEL_TABLES_OK exact_two_path_cancellation",
+        "FINITE_HORIZON_CAVEAT_OK complete112_fixed_endpoint_horizon1"
+       ],
+       "stdout_not_contains": [
+        "Traceback (most recent call last)"
+       ],
+       "failure_control": {
+        "kind": "embedded",
+        "evidence": "The primary stdlib replay rebuilds the 117-cell closure costs and 27 matched gaps, exhausts every allowed core-size/completed-pair/left-right designation, proves the rho<=103 maximum, and checks the complete-looped 112-state short-horizon control."
+       }
+      },
+      {
+       "profile": "fast",
+       "certifies_claim": false,
+       "entrypoint": "certificates/erdos-142-q6-117-cell-endpoint-pruned-label-wall/independent_replay.py",
+       "argv": [
+        "python3",
+        "-I",
+        "certificates/erdos-142-q6-117-cell-endpoint-pruned-label-wall/independent_replay.py"
+       ],
+       "timeout_seconds": 30,
+       "exit_code": 0,
+       "stdout_contains": [
+        "PASS_INDEPENDENT_ENDPOINT_PRUNED_REPLAY",
+        "MIXED_LEFT_RIGHT_PERRON_OK sandwich_free_rho<=103<441/4",
+        "LABEL_PATH_CANCELLATION_OK arbitrary_Phi_m_and_position_tables",
+        "SCC_RESIDUE_OK exact_length_branch_exists_on_eventual_residues",
+        "PLANTED_FAILURES_REJECTED"
+       ],
+       "stdout_not_contains": [
+        "Traceback (most recent call last)"
+       ],
+       "failure_control": {
+        "kind": "external",
+        "evidence": "A no-import replay rederives the matched gaps from the scalar quadratic identity, enumerates mixed left/right core patterns, checks whole-path and position-indexed cancellation plus SCC residues, and rejects matching, coefficient and cyclic-class corruptions."
+       }
+      }
+     ]
+    },
+    {
+     "id": "erdos-142-q6-m7-cellu-restricted-wall",
    "status": "promoted",
    "statement": "The continuous half-open q=6/M7 midpoint system admits no potential in the restricted class H=2||x||^2+G(cell,pattern)+sum_i U(cell,i,coarsepoint_i) satisfying every required coercivity row.",
    "scope": "The certificate reconstructs 24 selected cells, 148 cell/parity states and 358 positive integer Farkas rows. Exact half-open residual costs are checked; every G and cell-specific U coefficient cancels, while the weighted right side is strictly positive. This is only a wall for the displayed feature class. The independent replay finds 946 nonzero unrestricted physical aggregates and 60 nonzero symmetric-quadratic aggregates, so arbitrary H, general quadratic and pair interactions, richer or recursive potentials, support deformation, continuum-wide nonexistence, integer transfer and a new r_3(N) bound remain outside scope.",

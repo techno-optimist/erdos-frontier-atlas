@@ -75,6 +75,8 @@ verify-certs:
 	python3 -I certificates/erdos-142-q6-117-cell-bounded-dilation-wall/independent_replay.py
 	python3 -I certificates/erdos-142-q6-117-cell-transition-spectral-wall/verify.py --self-test
 	python3 -I certificates/erdos-142-q6-117-cell-transition-spectral-wall/independent_replay.py
+	python3 -I certificates/erdos-142-q6-117-cell-endpoint-pruned-label-wall/verify_endpoint_pruned_extension.py
+	python3 -I certificates/erdos-142-q6-117-cell-endpoint-pruned-label-wall/independent_replay.py
 	python3 -I certificates/erdos-142-q6-m7-cellu-restricted-wall/verify.py
 	python3 -I certificates/erdos-142-q6-m7-cellu-restricted-wall/independent_replay.py
 	python3 -I certificates/erdos-142-q6-m7-deletion-fence/verify.py --self-test

@@ -43,7 +43,7 @@ others don't touch it.
 | `claude/erdos-366-sweep-20260726` | Erdős #366 cubefull-side sweep — verified range 10^22 → 10^25, zero strict-orientation solutions | `certificates/erdos-366/`, gap_map #366 row, contracts claim `erdos-366-cubefull-sweep-1e25` | PR packaging 2026-07-26 |
 | `claude/attack-graph-20260726` | The attack graph — a generated agent-facing overlay over every ledger (`GRAPH.md` → `views/sorties.md` → per-problem cards). Adds no facts; organizes existing ones | `tools/build_graph.py`, `tools/validate_graph.py`, `tools/query_graph.py`, `atlas/graph/`, `views/graph/`, `views/sorties.md`, `GRAPH.md`, `CLAUDE.md`, `tests/test_graph.py` | PR packaging 2026-07-26 |
 | `claude/trees-993-743-20260727` | Tree lanes: Erdős #743 Gyárfás packing at K_10, and #993 independence unimodality to n=30 (incl. first replication of the n≤29 frontier) | `certificates/erdos-743/`, `certificates/erdos-993/`, gap_map #743 + #993 rows, contracts claims `erdos-743-k10-packing` + `erdos-993-unimodal-n30` | PR packaging 2026-07-27 |
-| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md`, `certificates/erdos-142-mirror-core-additive-wall/`, `certificates/erdos-142-d4-role-distinct-additive-wall/`, `certificates/erdos-142-q24-cylinder-hypograph-wall/`, `certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/`, `certificates/erdos-142-q6-pair-coordinate-walls/`, `certificates/erdos-142-q6-global-potential-walls/`, `certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/`, `certificates/erdos-142-q6-outer-code-tensor-wall/`, `certificates/erdos-142-q6-coordinate-d4-product-wall/`, `certificates/erdos-142-q6-117-cell-six-deletion-wall/`, `certificates/erdos-142-q6-117-cell-loopless-transition-wall/`, `certificates/erdos-142-q6-117-cell-percell-affine-wall/`, `certificates/erdos-142-q6-117-cell-bounded-dilation-wall/`, `certificates/erdos-142-q6-117-cell-transition-spectral-wall/`, `certificates/erdos-142-q6-m7-cellu-restricted-wall/`, `certificates/erdos-142-q6-m7-deletion-fence/`, `certificates/erdos-142-q6-m7-orbit-free-selector/`, `certificates/erdos-142-q6-m7-unit-girth-six-wall/`, `certificates/erdos-142-q6-m7-unit-k8-deletion-fence/`, `certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/`, `certificates/erdos-142-q6-m7-redesign-torsion-wall/`, `certificates/erdos-142-q4-affine-order4-line-wall/`, `certificates/erdos-142-q7-q8-unit-hypercycle-walls/`, `certificates/erdos-142-q3m-torsion-triangle-wall/`, `certificates/erdos-142-interior-torus-torsion-wall/` | q=4, q=6, q=7, and q=8 maximum-mass D4 lanes closed for arbitrary global potentials; the 117-cell lead is now closed for every bounded one-block potential and every unrestricted-endpoint unweighted transition graph with a fixed endpoint/edge table; state lifts, endpoint-pruned or position-dependent languages, carving and deformation remain live; no new bound, 2026-08-18 |
+| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md`, `certificates/erdos-142-mirror-core-additive-wall/`, `certificates/erdos-142-d4-role-distinct-additive-wall/`, `certificates/erdos-142-q24-cylinder-hypograph-wall/`, `certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/`, `certificates/erdos-142-q6-pair-coordinate-walls/`, `certificates/erdos-142-q6-global-potential-walls/`, `certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/`, `certificates/erdos-142-q6-outer-code-tensor-wall/`, `certificates/erdos-142-q6-coordinate-d4-product-wall/`, `certificates/erdos-142-q6-117-cell-six-deletion-wall/`, `certificates/erdos-142-q6-117-cell-loopless-transition-wall/`, `certificates/erdos-142-q6-117-cell-percell-affine-wall/`, `certificates/erdos-142-q6-117-cell-bounded-dilation-wall/`, `certificates/erdos-142-q6-117-cell-transition-spectral-wall/`, `certificates/erdos-142-q6-117-cell-endpoint-pruned-label-wall/`, `certificates/erdos-142-q6-m7-cellu-restricted-wall/`, `certificates/erdos-142-q6-m7-deletion-fence/`, `certificates/erdos-142-q6-m7-orbit-free-selector/`, `certificates/erdos-142-q6-m7-unit-girth-six-wall/`, `certificates/erdos-142-q6-m7-unit-k8-deletion-fence/`, `certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/`, `certificates/erdos-142-q6-m7-redesign-torsion-wall/`, `certificates/erdos-142-q4-affine-order4-line-wall/`, `certificates/erdos-142-q7-q8-unit-hypercycle-walls/`, `certificates/erdos-142-q3m-torsion-triangle-wall/`, `certificates/erdos-142-interior-torus-torsion-wall/` | q=4, q=6, q=7, and q=8 maximum-mass D4 lanes closed for arbitrary global potentials; the 117-cell lead is now closed for every bounded one-block potential and every fixed unweighted label graph with fixed endpoint masks, even with arbitrary finite complete-label-path corrections; weighted/repeated or residual-dependent state lifts, coupled edge tiles, carving and deformation remain live; no new bound, 2026-08-18 |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching
@@ -59,6 +59,34 @@ and replayable in `certificates/erdos-142/` (`python3 verify.py`).
 objects were UNTRACKED working-tree files; a later run overwrote them and they are
 gone from both working copies — a result that was replayed-clean 2026-07-13 is now unbacked.
 Commit your certs.
+
+## 2026-08-18 — Erdős 142: endpoint-pruned label-path wall
+
+`certificates/erdos-142-q6-117-cell-endpoint-pruned-label-wall/` removes the
+unrestricted-endpoint and additive-transition restrictions from the fixed
+unweighted label-graph lane.  For any fixed endpoint masks, every reachable and
+co-reachable Perron core which avoids a sandwiched bad pair has
+`rho<=103<441/4`.  The proof combines the certified 27-pair matching with left
+and right Perron-vector sums: if `h` matched pairs lie in a `k`-vertex core and
+`r` are out-disjoint, then
+
+```text
+rho <= min(k-r, k-h+r) <= k-ceil(h/2) <= 103.
+```
+
+Above the gate there is therefore a common predecessor and successor around a
+bad pair.  Common accepted prefix and suffix paths turn its two local rows into
+same-length accepted path triples whose two inequalities cancel any finite
+real correction `Phi_m` assigned to a complete label path.  `Phi_m` may be
+nonadditive, position-dependent, length-dependent and unbounded as `m` varies.
+The SCC cyclic-class argument supplies the same-length branches in every
+sufficiently large active residue; hence every infinite wall-free horizon set
+has restricted limsup growth at most `103`.
+
+The result is still label-only.  It does not cover weighted or repeated-label
+state pieces, residual-dependent functions, coupled edge tiles, changing
+endpoint masks, carving/deformation, integer transfer or a new `r_3(N)` bound.
+Problem 142 remains unsolved.
 
 ## 2026-08-18 — Erdős 142: bounded-potential dilation wall
 
@@ -93,10 +121,11 @@ outneighborhoods disjoint on a 27-edge bad-pair matching.  The solver-free
 Perron-vector sum then gives `rho<=90`, below the required `441/4` gate.  An
 independent replay needs only seven pairs and obtains `rho<=110<441/4`.
 
-Weighted/repeated-label state lifts, endpoint-pruned languages omitting the
-two-block witnesses, position-dependent tables, within-edge functions,
-carving/deformation and integer transfer remain live.  No new `r_3(N)` bound
-or solution of Problem 142 is claimed.
+The endpoint-pruned label-path wall above supersedes this result throughout the
+fixed unweighted label-only lane, including arbitrary complete-path corrections.
+Weighted/repeated-label state lifts, residual-dependent functions, coupled edge
+tiles, carving/deformation and integer transfer remain live.  No new `r_3(N)`
+bound or solution of Problem 142 is claimed.
 
 ## 2026-08-18 — Erdős 142: per-cell residual-affine wall
 
@@ -134,9 +163,10 @@ Primary and separately written standard-library replays reconstruct the
 117-cell decoder, continuous carry rows, exact Farkas incidence, density gate,
 and common-tail formula, with planted failures and input nonmutation.
 
-This complete-loopless certificate is superseded for unrestricted-endpoint
-0/1 graphs by the transition spectral wall above.  Endpoint-pruned languages,
-state lifts, position-dependent tables and within-edge functions remain open.
+This complete-loopless certificate is superseded throughout the fixed
+unweighted label-only lane by the endpoint-pruned wall above.  Weighted or
+repeated-label state lifts, residual-dependent functions and coupled edge tiles
+remain open.
 
 ## 2026-08-18 — Erdős 142: 117-cell six-deletion wall
 
@@ -156,8 +186,8 @@ Scope is deliberately narrow: this does not exclude within-cell, pair,
 graph-state/cocycle or arbitrary physical potentials, partial carving,
 replacement/deformation, another quotient, or another support.  It gives no
 integer construction or new `r_3(N)` bound; Problem 142 remains unsolved.  The
-next live tests are repeated-label/weighted state lifts, endpoint-pruned or
-position-dependent languages, and support carving/deformation.
+next live tests are repeated-label/weighted or residual-dependent state lifts,
+coupled edge tiles, and support carving/deformation.
 
 ## 2026-08-17 — Erdős 142: recursive signed-slack capacity lane opened
 

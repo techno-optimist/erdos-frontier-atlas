@@ -1278,12 +1278,78 @@ reconstructs the 187-pair census, 43,758 append/prepend cancellations, the
 matching and the solver-free Perron argument.  A separate replay needs only
 seven disjoint pairs and already gives `rho<=110<441/4`.
 
-The theorem assumes the full relevant two-block path language with unrestricted
-endpoints and a position-independent endpoint/edge table.  It does not cover
-weighted or repeated-label state lifts, endpoint-pruned languages that omit the
-two-block witnesses, position-dependent tables, within-edge residual functions,
-carving/deformation, integer transfer or a new `r_3(N)` bound.  Problem 142
-remains unsolved.
+This certificate itself assumes unrestricted endpoints and a fixed endpoint/
+edge table.  The next result supersedes those two restrictions throughout the
+label-only unweighted lane.  Weighted or repeated-label state lifts,
+residual-dependent functions, coupled edge tiles, carving/deformation, integer
+transfer and a new `r_3(N)` bound are not consequences of this certificate.
+
+### 4.26 Endpoint pruning and arbitrary whole-label-path corrections still fail
+
+Fix a zero-one adjacency matrix `A` on the same 117 cell labels and fixed
+nonempty start/end masks `u,v in {0,1}^117`.  The literal volume of the
+disjoint `(m+1)`-block path union is
+
+```text
+1296^(-(m+1)) u^T A^m v.
+```
+
+The relevant rate is the largest Perron root of a strongly connected component
+which is reachable from `supp(u)` and can reach `supp(v)`.  Fixed positive
+endpoint weights give a partition function with the same exponential rate,
+but are not themselves the literal union volume.
+
+Restrict the 27 disjoint bad pairs from Section 4.25 to such a Perron core `C`.
+Write `k=|C|` and let `h` be the number of matching pairs wholly inside `C`.
+Because 63 vertices are unmatched, `h>=max(0,k-90)`.  Call a pair sandwiched
+when its labels have both a common predecessor and a common successor in `C`.
+If there is no sandwiched pair, designate each completed pair either
+out-disjoint or in-disjoint.  If `r` pairs use the first designation, right and
+left Perron vectors give
+
+```text
+rho <= k-r,              rho <= k-(h-r).
+```
+
+Therefore
+
+```text
+rho <= k-ceil(h/2) <= 103 < 441/4.
+```
+
+An above-gate core consequently contains `q->a,b->p` for a matched bad pair.
+Reachability and co-reachability pad this branch with a common accepted prefix
+and suffix, producing two accepted label paths `A_path,B_path` which differ in
+only the `a/b` block.  The two required midpoint inequalities have correction
+terms
+
+```text
+Phi_m(A_path)-Phi_m(B_path),
+Phi_m(B_path)-Phi_m(A_path),
+```
+
+and exact summed right side 72 or 144.  Thus they contradict one another for
+**any finite real correction constant on a complete label path**.  The
+correction may be nonadditive, position-dependent, length-dependent, and have
+no uniform bound in `m`.
+
+SCC cyclic classes show that for every sufficiently large active horizon
+residue there exists a same-length sandwiched branch pair.  Endpoint pruning
+can suppress isolated short horizons—the complete looped 112-state graph with
+fixed start/end label has only one path at horizon one—but cannot preserve an
+above-gate wall-free subsequence.  More precisely, every infinite set `H` of
+sufficiently large wall-free horizons satisfies
+
+```text
+limsup_(m in H) (u^T A^m v)^(1/m) <= 103.
+```
+
+`certificates/erdos-142-q6-117-cell-endpoint-pruned-label-wall/` contains the
+primary exact replay and a separately written no-import audit.  The result is
+still label-only: it does not cover residual-dependent potentials, weighted or
+repeated-label automata, coupled edge tiles, horizon-varying graphs or endpoint
+masks, carving/deformation, integer transfer or a new `r_3(N)` bound.  Problem
+142 remains unsolved.
 
 ## 5. What would count as progress
 
