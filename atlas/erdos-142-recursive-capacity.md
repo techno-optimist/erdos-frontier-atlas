@@ -792,6 +792,40 @@ arbitrary `H`, a general cross-coordinate quadratic, or pair interactions.
 Richer and recursive potentials, support deformation, a complete continuum
 construction, integer transfer, and a new `r_3(N)` bound remain open.
 
+### 4.15 The eight-cell M7 redesign has an exact torsion wall
+
+A minimum-cardinality cell selector then found the mass-positive redesign
+
+```text
+(38,3), (41,3), (42,3), (44,3),
+(49,3), (50,3), (52,3), (56,3).
+```
+
+Every cell has count 178,605, so the disjoint union has exact mass
+`245/373248`, exceeding `(7/24)^6` by `2597/63700992`.  This exact full union
+nevertheless contains a three-row obstruction stronger than a restricted
+feature-class dual.  Three distinct physical vertices in cells `(38,3)` and
+`(41,3)` form a cyclic modular-midpoint triangle.  For an arbitrary single
+physical potential `H`, the three rows cancel every `H` coefficient and leave
+the raw contradiction `0>=144`, or `0>=4` after q=6 normalization.
+
+The packet in
+`certificates/erdos-142-q6-m7-redesign-torsion-wall/` also proves that this is
+not a grid-boundary accident.  Adding a common offset
+`delta in (0,1/6)^12` to all three vertices keeps them in strict interiors of
+their selected half-open boxes, preserves all modular carries, and leaves the
+same normalized contradiction.  Primary and independently written stdlib
+replays reconstruct the cells, mass, physical rows, carries, costs and open
+offset family.
+
+The deletion boundary is essential.  For the displayed order-three step the
+verifiers count only 45 disjoint three-orbits, far below the exact gate slack
+`5679639/64` measured in q=6 boxes.  Other steps and the minimum hitting set
+are not classified.  Thus this is an exact-union wall, not a fence against
+small excisions.  Its rows also use nonzero modular carries, so it is not an
+ordinary Euclidean-midpoint theorem and supplies no integer transfer or new
+`r_3(N)` bound.
+
 ## 5. What would count as progress
 
 A promotable positive result must include all of:

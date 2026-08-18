@@ -43,7 +43,7 @@ others don't touch it.
 | `claude/erdos-366-sweep-20260726` | Erdős #366 cubefull-side sweep — verified range 10^22 → 10^25, zero strict-orientation solutions | `certificates/erdos-366/`, gap_map #366 row, contracts claim `erdos-366-cubefull-sweep-1e25` | PR packaging 2026-07-26 |
 | `claude/attack-graph-20260726` | The attack graph — a generated agent-facing overlay over every ledger (`GRAPH.md` → `views/sorties.md` → per-problem cards). Adds no facts; organizes existing ones | `tools/build_graph.py`, `tools/validate_graph.py`, `tools/query_graph.py`, `atlas/graph/`, `views/graph/`, `views/sorties.md`, `GRAPH.md`, `CLAUDE.md`, `tests/test_graph.py` | PR packaging 2026-07-26 |
 | `claude/trees-993-743-20260727` | Tree lanes: Erdős #743 Gyárfás packing at K_10, and #993 independence unimodality to n=30 (incl. first replication of the n≤29 frontier) | `certificates/erdos-743/`, `certificates/erdos-993/`, gap_map #743 + #993 rows, contracts claims `erdos-743-k10-packing` + `erdos-993-unimodal-n30` | PR packaging 2026-07-27 |
-| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md`, `certificates/erdos-142-mirror-core-additive-wall/`, `certificates/erdos-142-d4-role-distinct-additive-wall/`, `certificates/erdos-142-q24-cylinder-hypograph-wall/`, `certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/`, `certificates/erdos-142-q6-pair-coordinate-walls/`, `certificates/erdos-142-q6-global-potential-walls/`, `certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/`, `certificates/erdos-142-q6-outer-code-tensor-wall/`, `certificates/erdos-142-q6-coordinate-d4-product-wall/`, `certificates/erdos-142-q6-m7-cellu-restricted-wall/`, `certificates/erdos-142-q4-affine-order4-line-wall/`, `certificates/erdos-142-q7-q8-unit-hypercycle-walls/`, `certificates/erdos-142-q3m-torsion-triangle-wall/`, `certificates/erdos-142-interior-torus-torsion-wall/` | q=4, q=6, q=7, and q=8 maximum-mass D4 lanes closed for arbitrary global potentials; q=6 Cartesian outer codes and arbitrary coordinate-dependent D4 full-product words have capacity-one walls; the q=6/M7 continuous cell-local offset ansatz is exactly closed but arbitrary H remains open; higher-q/deformed/non-product lanes remain open; no new bound, 2026-08-17 |
+| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md`, `certificates/erdos-142-mirror-core-additive-wall/`, `certificates/erdos-142-d4-role-distinct-additive-wall/`, `certificates/erdos-142-q24-cylinder-hypograph-wall/`, `certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/`, `certificates/erdos-142-q6-pair-coordinate-walls/`, `certificates/erdos-142-q6-global-potential-walls/`, `certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/`, `certificates/erdos-142-q6-outer-code-tensor-wall/`, `certificates/erdos-142-q6-coordinate-d4-product-wall/`, `certificates/erdos-142-q6-m7-cellu-restricted-wall/`, `certificates/erdos-142-q6-m7-redesign-torsion-wall/`, `certificates/erdos-142-q4-affine-order4-line-wall/`, `certificates/erdos-142-q7-q8-unit-hypercycle-walls/`, `certificates/erdos-142-q3m-torsion-triangle-wall/`, `certificates/erdos-142-interior-torus-torsion-wall/` | q=4, q=6, q=7, and q=8 maximum-mass D4 lanes closed for arbitrary global potentials; q=6 Cartesian outer codes and arbitrary coordinate-dependent D4 full-product words have capacity-one walls; the q=6/M7 continuous cell-local offset ansatz is exactly closed, and the exact eight-cell redesign has an arbitrary-H torus wall but not a deletion fence; higher-q/deformed/non-product lanes remain open; no new bound, 2026-08-17 |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching
@@ -309,6 +309,23 @@ quadratic aggregates.  Those are scope tripwires: this is not a wall for an
 arbitrary physical potential, a general quadratic or pair interaction,
 recursive state, support deformation, continuum-wide nonexistence, integer
 transfer, or an `r_3(N)` bound.
+
+Fifteenth exact branch result:
+`certificates/erdos-142-q6-m7-redesign-torsion-wall/` closes the exact
+eight-cell redesign `(38,3),(41,3),(42,3),(44,3),(49,3),(50,3),(52,3),
+(56,3)` for an arbitrary physical potential under the retained raw-canonical
+torus midpoint convention.  Its exact mass is `245/373248 > (7/24)^6`.
+Three distinct physical vertices give cyclic midpoint rows whose arbitrary-H
+coefficients cancel and whose raw right sides sum to 144.  Adding any common
+offset in `(0,1/6)^12` preserves strict box interiors, carries, and the
+normalized contradiction `0>=4`, so this is not a grid-boundary artifact.
+Primary and separately written stdlib replays agree.
+
+This is a wall for the exact full union, not a deletion fence.  The displayed
+order-three step has only 45 disjoint three-orbits, while the gate slack is
+`5679639/64` q=6 boxes; other steps and the minimum deletion needed to kill all
+cycles are not classified.  The rows use nonzero modular carries and make no
+ordinary-Euclidean, integer-transfer, or `r_3(N)` claim.
 
 A corrected q=8 pair-coordinate engine now prices both orbits in about five
 seconds per round rather than 85, but 40 rounds remain `iteration-limit` with

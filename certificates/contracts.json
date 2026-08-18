@@ -67,6 +67,11 @@
    "boundary": "An exact continuous half-open q=6/M7 Farkas obstruction only for potentials H=2||x||^2+G(cell,pattern)+sum_i U(cell,i,coarsepoint_i). The 358 positive rows cancel every displayed feature and leave a positive weighted right side. This does not exclude arbitrary physical potentials, general quadratic or pair interactions, richer or recursive potentials, deformed supports, integer transfer, or an r_3(N) bound. Erdos Problem 142 remains unsolved; erdos142_solved=false and new_r3_bound=false."
   },
   {
+   "path": "certificates/erdos-142-q6-m7-redesign-torsion-wall",
+   "classification": "certified_local",
+   "boundary": "An exact three-row arbitrary-global-potential wall for the displayed eight-cell q=6/M7 redesign and its common-offset half-open torus lift. The union has mass 245/373248 above the supplied (7/24)^6 gate, but three genuine physical midpoint rows cancel H and leave raw contradiction 0>=144. This excludes only the exact full union: the displayed step has 45 disjoint three-orbits, far below the 5679639/64-box gate slack, so no deletion-robust family claim is made. The rows use nonzero modular carries and are not ordinary Euclidean midpoint rows. No integer transfer or new r_3(N) bound is claimed; Erdos Problem 142 remains unsolved."
+  },
+  {
    "path": "certificates/erdos-142-q4-affine-order4-line-wall",
    "classification": "certified_local",
    "boundary": "An exact finite q=4 wall for all 256 maximum-mass D4 assignments. Every disjoint 320-point five-cylinder union contains a full affine order-four line whose four modular-midpoint coercivity rows cancel an arbitrary global potential and leave positive raw cost. This does not cover geometric deformation or thickening, continuum limits, correlated subcylinders, scalar digit carry, integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved."
@@ -1737,6 +1742,97 @@
      "failure_control": {
       "kind": "external",
       "evidence": "A separately written no-import stdlib replay reconstructs the packet, checks exact physical and quadratic scope tripwires against the committed audit ledger, and independently rejects the same four planted corruptions."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-142-q6-m7-redesign-torsion-wall",
+   "status": "promoted",
+   "statement": "The displayed eight-cell q=6/M7 full half-open union admits no real-valued physical potential H satisfying every required raw-canonical modular-torus midpoint coercivity row.",
+   "scope": "The eight disjoint cells each have exact count 178605, giving mass 245/373248 above the supplied (7/24)^6 gate. Three explicit distinct physical vertices in cells (38,3) and (41,3) form a cyclic modular-midpoint packet: the three arbitrary-H rows cancel exactly and leave raw contradiction 0>=144. A common offset delta in (0,1/6)^12 gives a strict-interior open torus family with unchanged carries and normalized contradiction 0>=4. This is an exact-full-union wall, not a deletion fence: the displayed step has only 45 disjoint three-orbits versus gate slack 5679639/64 boxes, and other steps/minimum deletion are not classified. The rows use nonzero modular carries, so no ordinary Euclidean-continuum, integer-transfer, or new r_3(N) claim is made.",
+   "machine_verdict": "PASS_Q6_M7_REDESIGN_PHYSICAL_TORSION_WALL",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-142-q6-m7-redesign-torsion-wall/README.md",
+     "contains": "Deletion caveat"
+    },
+    {
+     "path": "atlas/erdos-142-recursive-capacity.md",
+     "contains": "The eight-cell M7 redesign has an exact torsion wall"
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-142-q6-m7-redesign-torsion-wall/README.md",
+     "sha256": "8f8f3fcf1deb4a04508e7e4b8fff5ae242b6c33cccbb359a03aff9f3c16233db"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-redesign-torsion-wall/semantic_packet.json",
+     "sha256": "35e9b7a75b8c9bba469e9d4e93ad42d7199e0e9b5c3974be68f90bac541c93c9"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-redesign-torsion-wall/verify.py",
+     "sha256": "eb6c9dc0630226612c24b8da450fa5e2b508b4c31b25e39675018b1da831d8d4"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-redesign-torsion-wall/independent_replay.py",
+     "sha256": "56ef5b2a7c3468659c9d668741f895474a0a8907d4bd41b23d493b16ef37adb3"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-142-q6-m7-redesign-torsion-wall/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-q6-m7-redesign-torsion-wall/verify.py",
+      "--self-test"
+     ],
+     "timeout_seconds": 30,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_Q6_M7_REDESIGN_PHYSICAL_TORSION_WALL",
+      "\"mass\": \"245/373248\"",
+      "\"finite_q_contradiction_raw\"",
+      "\"disjoint_three_orbits_for_this_fixed_step\": 45",
+      "\"row-coefficients\": \"rejected\""
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "The primary stdlib replay reconstructs the eight-cell mass, all three physical rows, exact arbitrary-H cancellation, the strict common-offset lift and fixed-step orbit census, then rejects six planted semantic and arithmetic corruptions."
+     }
+    },
+    {
+     "profile": "fast",
+     "certifies_claim": false,
+     "entrypoint": "certificates/erdos-142-q6-m7-redesign-torsion-wall/independent_replay.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-q6-m7-redesign-torsion-wall/independent_replay.py",
+      "--self-test"
+     ],
+     "timeout_seconds": 30,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_INDEPENDENT_NO_IMPORT_REPLAY",
+      "\"normalized_rhs_sum\": \"4\"",
+      "\"disjoint_three_orbits\": 45",
+      "\"margin_in_q6_boxes\": \"5679639/64\"",
+      "\"deletion_robust\": false"
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "external",
+      "evidence": "A separately written no-import stdlib replay independently reconstructs supports, mass, physical rows, carries, costs, the open-offset torus lift and fixed-step deletion caveat, and rejects six live mutations."
      }
     }
    ]
