@@ -173,6 +173,12 @@ Every promoted claim replays in one command; the fastest way to learn the receip
 - `erdos-142-q6-all-maximizer-three-row-torsion-wall`: `python3 -I certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/verify.py --self-test`
 - `erdos-142-q6-coordinate-d4-product-wall`: `python3 -I certificates/erdos-142-q6-coordinate-d4-product-wall/verify.py --self-test`
 - `erdos-142-q6-global-potential-walls`: `python3 -I certificates/erdos-142-q6-global-potential-walls/verify.py --self-test`
+- `erdos-142-q6-m7-cellu-restricted-wall`: `python3 -I certificates/erdos-142-q6-m7-cellu-restricted-wall/verify.py`
+- `erdos-142-q6-m7-deletion-fence`: `python3 -I certificates/erdos-142-q6-m7-deletion-fence/verify.py --self-test`
+- `erdos-142-q6-m7-k8-microbox-deletion-fence`: `python3 -I certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/verify.py --self-test`
+- `erdos-142-q6-m7-redesign-torsion-wall`: `python3 -I certificates/erdos-142-q6-m7-redesign-torsion-wall/verify.py --self-test`
+- `erdos-142-q6-m7-unit-girth-six-wall`: `python3 -I certificates/erdos-142-q6-m7-unit-girth-six-wall/verify.py --self-test`
+- `erdos-142-q6-m7-unit-k8-deletion-fence`: `python3 -I certificates/erdos-142-q6-m7-unit-k8-deletion-fence/verify.py --self-test`
 - `erdos-142-q6-outer-code-tensor-wall`: `python3 -I certificates/erdos-142-q6-outer-code-tensor-wall/verify.py --self-test`
 - `erdos-142-q6-pair-coordinate-walls`: `python3 -I certificates/erdos-142-q6-pair-coordinate-walls/verify.py --self-test`
 - `erdos-142-q7-q8-unit-hypercycle-walls`: `python3 -I certificates/erdos-142-q7-q8-unit-hypercycle-walls/verify.py --self-test`

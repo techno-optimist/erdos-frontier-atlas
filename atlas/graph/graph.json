@@ -5,7 +5,7 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 379,
-   "evidenced_by": 24,
+   "evidenced_by": 30,
    "has_surface": 319,
    "learned_from": 5,
    "measures": 223,
@@ -18,8 +18,8 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 28,
-   "evidence_container": 41,
+   "evidence_claim": 34,
+   "evidence_container": 48,
    "external_claim": 91,
    "incident": 26,
    "move": 7,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 3950,
-   "validator-enforced": 41
+   "validator-enforced": 47
   }
  },
  "edges": [
@@ -5313,6 +5313,54 @@
   },
   {
    "dst": "E:claim:erdos-142-q6-global-potential-walls",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P142",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-142-q6-m7-cellu-restricted-wall",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P142",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-142-q6-m7-deletion-fence",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P142",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-142-q6-m7-k8-microbox-deletion-fence",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P142",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-142-q6-m7-redesign-torsion-wall",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P142",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-142-q6-m7-unit-girth-six-wall",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P142",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-142-q6-m7-unit-k8-deletion-fence",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
    "src": "P142",
@@ -29767,7 +29815,7 @@
    "artifacts": [
     {
      "path": "certificates/erdos-142-q6-coordinate-d4-product-wall/README.md",
-     "sha256": "863dd548367fb02ca16c9e6e5c54c52f1e45d31fa3491c5ff6cbb1dc926bcc4e"
+     "sha256": "d0e1515678c73efc5b649ae57cae9ffcf8cbfffef15721f8ea819d75808afd54"
     },
     {
      "path": "certificates/erdos-142-q6-coordinate-d4-product-wall/verify.py",
@@ -29849,6 +29897,297 @@
    },
    "scope": "Exactly two finite q=6 support assignments. Their five cylinders are pairwise disjoint, so the model has one unrestricted variable for each of 3,645 union vertices; it is not an additive or pair-coordinate ansatz. Each union has normalized mass 5/64, beating (7/24)^3 by 1080/343. Exact 3-row and 646-row Farkas combinations give contradictions. An exact 8^5 census finds 256 maximum-mass assignments, while global D4 transports of the tiny 3-row cycle hit only 32; no claim is made for the others. The result does not transfer to q=24/q=48, recursive state, jointly deformed supports, or continuum/integer transfer, and gives no r_3(N) bound.",
    "statement": "At q=6, neither D4 representative (P1,P2,P3,B,K)=(7,7,7,6,7) nor (7,6,7,6,7) admits any real-valued potential on its 3,645-point five-cylinder union satisfying every raw-Euclidean modular-midpoint coercivity inequality.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
+     "path": "certificates/erdos-142-q6-m7-cellu-restricted-wall/README.md",
+     "sha256": "ab21f95db327ccb2f29e6adefe72de443b9797b2ad4d498587a27625b5692bdf"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-cellu-restricted-wall/certificate.json",
+     "sha256": "fa9bdcbff7463df3729696b2e8f26a82fdc51a9a215e95e618e9c25432bdf087"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-cellu-restricted-wall/verify.py",
+     "sha256": "a1b558b5b3fed7c6fd2e7dac51d937916b7486fe3d8753011a0713f851b0a5bc"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-cellu-restricted-wall/independent_replay.py",
+     "sha256": "954ddc72499a69f23513d1aa19872695fc7fc24753f133c3d903a05a57029ae1"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-cellu-restricted-wall/audit_report.json",
+     "sha256": "97c30c118465d076fb444da78d067e6b16090d3521e469af02b60e921453a24c"
+    }
+   ],
+   "claim_id": "erdos-142-q6-m7-cellu-restricted-wall",
+   "id": "E:claim:erdos-142-q6-m7-cellu-restricted-wall",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-142-q6-m7-cellu-restricted-wall/verify.py"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "verified-q6-m7-cellu-restricted-wall",
+     "\"rows\": 358",
+     "\"states\": 148",
+     "\"cells\": 24",
+     "PASS_Q6_M7_CELLU_RESTRICTED_WALL"
+    ]
+   },
+   "scope": "The certificate reconstructs 24 selected cells, 148 cell/parity states and 358 positive integer Farkas rows. Exact half-open residual costs are checked; every G and cell-specific U coefficient cancels, while the weighted right side is strictly positive. This is only a wall for the displayed feature class. The independent replay finds 946 nonzero unrestricted physical aggregates and 60 nonzero symmetric-quadratic aggregates, so arbitrary H, general quadratic and pair interactions, richer or recursive potentials, support deformation, continuum-wide nonexistence, integer transfer and a new r_3(N) bound remain outside scope.",
+   "statement": "The continuous half-open q=6/M7 midpoint system admits no potential in the restricted class H=2||x||^2+G(cell,pattern)+sum_i U(cell,i,coarsepoint_i) satisfying every required coercivity row.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
+     "path": "certificates/erdos-142-q6-m7-deletion-fence/README.md",
+     "sha256": "cc79fe798a8aec57b6e6aee6a6e45560c7153977f5fd7978fec52f7a0bca5982"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-deletion-fence/constants.json",
+     "sha256": "4623f317e2e155f271c5f874a43db2b10dbe0f1bb8b60df1c5dbfa4f62af763d"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-deletion-fence/matching.txt",
+     "sha256": "f1030477a9613748b07256cb5c518d76b338b08b6625e4be0d60f9c7803dfbf0"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-deletion-fence/verify.py",
+     "sha256": "52bf19c1d7749cba14f9e3e5a17fafeb36d0ff6eec2fdce7d1bfb83a84d57562"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-deletion-fence/independent_replay.py",
+     "sha256": "42ae182d45098c70fdba1388ebd2122aadd5977b85e8e81e1c0c1001ebf92337"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-deletion-fence/generate_matching.cpp",
+     "sha256": "d1ca23a6339d049d1e003ac4d7751822c46d1912de44a4464ad479c343d7bb7a"
+    }
+   ],
+   "claim_id": "erdos-142-q6-m7-deletion-fence",
+   "id": "E:claim:erdos-142-q6-m7-deletion-fence",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-142-q6-m7-deletion-fence/verify.py",
+     "--self-test"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "PASS_Q6_M7_MATCHING_DELETION_FENCE",
+     "\"matching\": 102636",
+     "\"unique_vertices\": 307908",
+     "\"gate_gap\": \"98785/15479341056\"",
+     "\"corrupted_mass_or_gate\": \"rejected\""
+    ]
+   },
+   "scope": "A frozen matching contains 102636 pairwise box-disjoint order-three orbits, using 307908 genuine physical q=6 boxes. Every orbit carries three cyclic modular-midpoint rows whose physical-potential coefficients cancel and whose raw endpoint-square right sides are positive. The common-offset family forces at least one q=6 box-volume of measurable deletion per matched orbit; hence retained mass is at most 1326204/6^12 and misses the gate by 889065/(64*6^12). This is a construction-specific branch-sensitive torus fence. It is not an ordinary Euclidean-continuum theorem and makes no claim for deformed supports, different q, recursive state, other non-product constructions, integer transfer, a new r_3(N) bound, or a solution of Problem 142.",
+   "statement": "Every measurable retained subset of the displayed eight-cell q=6/M7 half-open union that admits one real-valued physical potential satisfying all retained raw-canonical modular-torus midpoint coercivity rows has mass at most 1326204/6^12, strictly below the supplied (7/24)^6 gate.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
+     "path": "certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/README.md",
+     "sha256": "5322e68ff9e255a69d5d0631a9825c8130dc6a37c5abd04f676e014fc7d88cb9"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/candidate.cells",
+     "sha256": "a4627aed32258cdf6b02382b815211d8ce252a314bffeebe1a30da0196a8ed07"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/constants.json",
+     "sha256": "82e375abd19c2a2d2069fb27e4733fdc498c26354ac85d1c3ccce0f5fb13da7b"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/independent_replay.py",
+     "sha256": "6087218bd890c8ea669b78c11056cbd95a2cc1e30af1ff39fdc186976270f28e"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/matching_ledger.json",
+     "sha256": "6d23ed9e75d6c9c0b75f7ce16378aec4cb314c78c185e9fe223bcfb85b6f96e7"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/template.json",
+     "sha256": "82b29011d876837d97862ef5954e2e367a102db231d90359f5403bfbbc239245"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/verify.py",
+     "sha256": "d0ef1af9286a63744e36cb876cf5617041e4046f2b6a59b0181f10e5a97b58f8"
+    }
+   ],
+   "claim_id": "erdos-142-q6-m7-k8-microbox-deletion-fence",
+   "id": "E:claim:erdos-142-q6-m7-k8-microbox-deletion-fence",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/verify.py",
+     "--self-test"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "PASS_CANDIDATE22_Q6_MICROBOX_DELETION_FENCE",
+     "\"packets\": 30425",
+     "\"physical_boxes\": 243400",
+     "\"retained_minus_gate_numerator\": -41",
+     "\"global_physical_box_overlap\": \"rejected\""
+    ]
+   },
+   "scope": "The frozen matching contains 30425 positive balanced eight-row packets on 243400 globally distinct physical q6^12 microboxes. For each packet, the full common offset cube D=[0,1/6)^12 preserves every modular midpoint carry and raw endpoint cost. If the eight retained offset slices had a common point, the eight potential inequalities would cancel and leave a positive contradiction. The union bound and Fubini therefore force at least 30425 box-volume units of deleted measure, leaving at most 1340095, with exact gate numerator -41. This is a measurable-volume statement and does not claim that whole boxes are deleted. The theorem covers only arbitrary measurable carving of the fixed 22-cell geometric union, not replacement cells, deformation, other supports, recursive state, ordinary Euclidean or integer transfer. No new r_3(N) bound is claimed; Erdos Problem 142 remains unsolved.",
+   "statement": "Every measurable subset of the displayed fixed 22-cell q=6/M7 half-open union whose normalized volume is strictly above (7/24)^6 contains a common-offset realization from one of 30425 frozen positive balanced eight-row packet families, and therefore admits no arbitrary real-valued physical potential H satisfying all required raw-canonical modular-torus coercivity rows.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
+     "path": "certificates/erdos-142-q6-m7-redesign-torsion-wall/README.md",
+     "sha256": "8f8f3fcf1deb4a04508e7e4b8fff5ae242b6c33cccbb359a03aff9f3c16233db"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-redesign-torsion-wall/semantic_packet.json",
+     "sha256": "35e9b7a75b8c9bba469e9d4e93ad42d7199e0e9b5c3974be68f90bac541c93c9"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-redesign-torsion-wall/verify.py",
+     "sha256": "eb6c9dc0630226612c24b8da450fa5e2b508b4c31b25e39675018b1da831d8d4"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-redesign-torsion-wall/independent_replay.py",
+     "sha256": "56ef5b2a7c3468659c9d668741f895474a0a8907d4bd41b23d493b16ef37adb3"
+    }
+   ],
+   "claim_id": "erdos-142-q6-m7-redesign-torsion-wall",
+   "id": "E:claim:erdos-142-q6-m7-redesign-torsion-wall",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-142-q6-m7-redesign-torsion-wall/verify.py",
+     "--self-test"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "PASS_Q6_M7_REDESIGN_PHYSICAL_TORSION_WALL",
+     "\"mass\": \"245/373248\"",
+     "\"finite_q_contradiction_raw\"",
+     "\"disjoint_three_orbits_for_this_fixed_step\": 45",
+     "\"row-coefficients\": \"rejected\""
+    ]
+   },
+   "scope": "The eight disjoint cells each have exact count 178605, giving mass 245/373248 above the supplied (7/24)^6 gate. Three explicit distinct physical vertices in cells (38,3) and (41,3) form a cyclic modular-midpoint packet: the three arbitrary-H rows cancel exactly and leave raw contradiction 0>=144. A common offset delta in (0,1/6)^12 gives a strict-interior open torus family with unchanged carries and normalized contradiction 0>=4. This is an exact-full-union wall, not a deletion fence: the displayed step has only 45 disjoint three-orbits versus gate slack 5679639/64 boxes, and other steps/minimum deletion are not classified. The rows use nonzero modular carries, so no ordinary Euclidean-continuum, integer-transfer, or new r_3(N) claim is made.",
+   "statement": "The displayed eight-cell q=6/M7 full half-open union admits no real-valued physical potential H satisfying every required raw-canonical modular-torus midpoint coercivity row.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
+     "path": "certificates/erdos-142-q6-m7-unit-girth-six-wall/README.md",
+     "sha256": "2a853e07a1f7d3c017b41625bf6bd34cb1c9bbe907c4f0c77977c84056bbc89c"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-unit-girth-six-wall/constants.json",
+     "sha256": "808fd7ec5ed6b840ca303a698d469f395150da2ad72463488f8159a3ef778b4d"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-unit-girth-six-wall/selector.cells",
+     "sha256": "671b69ed285b715499ba91766c5ab0ade6bb68c10bbfb3fa569e5d32ee7e1f9f"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-unit-girth-six-wall/witness.json",
+     "sha256": "12471ad202269c501ab770e917ab0ec5c3a6e0aef20935c5fe3026729eb9a94d"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-unit-girth-six-wall/verify.py",
+     "sha256": "6f2ea1b6a52cc2d146682f6064a4a42c1a9a78181eda6eb240a9b7d0144a4517"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-unit-girth-six-wall/independent_replay.py",
+     "sha256": "89f0d4f272749c31e0f8d165119d4826bf7f4707ca1a35ce158fc30cab826f75"
+    }
+   ],
+   "claim_id": "erdos-142-q6-m7-unit-girth-six-wall",
+   "id": "E:claim:erdos-142-q6-m7-unit-girth-six-wall",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-142-q6-m7-unit-girth-six-wall/verify.py",
+     "--self-test"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "PASS_Q6_M7_UNIT_GIRTH_SIX_WALL",
+     "\"normalized_contradiction\": \"0 >= 26/3\"",
+     "\"order3_edges\": 0",
+     "\"lower_bound\": 6",
+     "\"shifted-equation\": \"rejected\""
+    ]
+   },
+   "scope": "Six explicit distinct physical vertices lie in selected cells (49,0),(21,0),(45,0),(35,0),(7,0),(45,0). Six genuine modular midpoint rows cancel arbitrary physical H exactly and leave raw contradiction 0>=312, normalized 0>=26/3. A common delta in (0,1/6)^12 gives a strict-interior half-open torus family with unchanged carries and costs. Separately, all 6516 labelled endpoint-degree-two unit templates with 2<=k<=5 and all scalar Z/6 kernel assignments are exhausted: each of the 1511 positive templates forces a fixed order-three triple, while the selector has none. Thus the unit girth is exactly six only in this stated class. Non-unit weights, other supports, deformations, recursive state, ordinary Euclidean transfer, integer transfer and a new r_3(N) bound are outside scope; Erdos Problem 142 remains unsolved.",
+   "statement": "The displayed mass-positive 28-cell q=6/M7 full half-open union admits no real-valued physical potential H satisfying every required raw-canonical modular-torus midpoint coercivity row; within the endpoint-degree-two unit-balanced class its shortest positive physical packet has exactly six rows.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
+     "path": "certificates/erdos-142-q6-m7-unit-k8-deletion-fence/README.md",
+     "sha256": "4eba67427b9e747822be948c994d3246c36b4f7b34f0d157bb8e6a809737df54"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-unit-k8-deletion-fence/constants.json",
+     "sha256": "4ebef15d95e5a778fb8a8fff4c22ab5d2be72550d132651dc53c343d20ba3d56"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-unit-k8-deletion-fence/candidate.cells",
+     "sha256": "a4627aed32258cdf6b02382b815211d8ce252a314bffeebe1a30da0196a8ed07"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-unit-k8-deletion-fence/witnesses.json",
+     "sha256": "57443a2b49411d49141a23aa5eca835ffcaf1550006f227f6bbd5d1ec2333954"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-unit-k8-deletion-fence/verify.py",
+     "sha256": "8aeee9dbc2c395db12b7748f22c9d5c1a661853c57feea186073817cdba62a47"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-unit-k8-deletion-fence/independent_replay.py",
+     "sha256": "a712ad96eefb1d7cd3e5f7d07bae477a7b78ddaa9d1a7384c802636ea70b1fa7"
+    }
+   ],
+   "claim_id": "erdos-142-q6-m7-unit-k8-deletion-fence",
+   "id": "E:claim:erdos-142-q6-m7-unit-k8-deletion-fence",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-142-q6-m7-unit-k8-deletion-fence/verify.py",
+     "--self-test"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "PASS_Q6_M7_UNIT_K8_DELETION_FENCE",
+     "\"normalized_raw_totals\": [\"6\", \"4\", \"8\"]",
+     "\"maximum_packet_free_subset_mass\": 1288872",
+     "\"maximum_minus_gate_numerator\": -3278313",
+     "\"boundary_offset\": \"rejected\""
+    ]
+   },
+   "scope": "Three literal endpoint-degree-two unit packets have pairwise-disjoint required cell supports {33:3,45:0,49:0}, {45:1,19:6,26:6}, and {30:3,20:5,34:5}; their raw totals are 216,144,288 and their physical H coefficients cancel exactly. A common delta=1/12 gives strict-interior open torus families with unchanged carries and costs. Avoiding all three costs at least 81648 boxes, leaving at most 1288872, with exact gate numerator -3278313. The theorem covers only subcollections of these whole cells, not partial carving, geometric deformation, replacement cells, other supports, recursive state, ordinary Euclidean or integer transfer. No new r_3(N) bound is claimed; Erdos Problem 142 remains unsolved.",
+   "statement": "Every whole-cell subcollection of the displayed 22-cell q=6/M7 redesign whose normalized mass is strictly above (7/24)^6 contains one of three explicit positive eight-row modular-midpoint packets, and therefore admits no arbitrary real-valued physical potential H satisfying all required raw-canonical coercivity rows.",
    "status": "promoted",
    "type": "evidence_claim"
   },
@@ -30494,6 +30833,55 @@
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-142-q6-global-potential-walls",
    "path": "certificates/erdos-142-q6-global-potential-walls",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "An exact continuous half-open q=6/M7 Farkas obstruction only for potentials H=2||x||^2+G(cell,pattern)+sum_i U(cell,i,coarsepoint_i). The 358 positive rows cancel every displayed feature and leave a positive weighted right side. This does not exclude arbitrary physical potentials, general quadratic or pair interactions, richer or recursive potentials, deformed supports, integer transfer, or an r_3(N) bound. Erdos Problem 142 remains unsolved; erdos142_solved=false and new_r3_bound=false.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-142-q6-m7-cellu-restricted-wall",
+   "path": "certificates/erdos-142-q6-m7-cellu-restricted-wall",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "A construction-specific matching fence for the exact eight-cell q=6/M7 half-open union under the supplied raw-canonical modular-torus coercivity model. A frozen matching of 102636 pairwise box-disjoint order-three orbits forces at least 102636/6^12 measurable deletion, leaving mass at most 1326204/6^12 below the supplied (7/24)^6 gate. This uses finite-quotient torsion and explicit common-offset families; it is not an ordinary Euclidean-continuum theorem and does not cover deformed supports, different q, recursive state, other non-product constructions, integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-142-q6-m7-deletion-fence",
+   "path": "certificates/erdos-142-q6-m7-deletion-fence",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "An exact measurable-deletion fence for arbitrary measurable carving of the fixed 22-cell q=6/M7 geometric union. A frozen matching of 30425 positive balanced eight-row packet families uses 243400 globally distinct physical microboxes. The full common-offset family and a union-bound/Fubini argument force at least 30425 box-volume units of deleted measure, leaving at most 1340095, strictly below the supplied (7/24)^6 gate by numerator 41. This does not cover replacement cells, geometric deformation, other supports, recursive state, ordinary Euclidean or integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-142-q6-m7-k8-microbox-deletion-fence",
+   "path": "certificates/erdos-142-q6-m7-k8-microbox-deletion-fence",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "A finite q=6/M7 full-cell selector lead only. The checked 28-cell selector has exact mass 1405512/6^12 above the supplied (7/24)^6 gate and zero nontrivial modular order-three translation orbits, so the order-three common-offset matching-deletion mechanism does not eliminate it. The separately reported orbit-free optimization is discovery evidence, not a promoted solver-independent maximum theorem. No potential feasibility, arbitrary-H statement, Euclidean-continuum lift, integer transfer, r_3(N) bound, or solution of Erdos Problem 142 is claimed.",
+   "classification": "research_fence",
+   "id": "E:dir:certificates:erdos-142-q6-m7-orbit-free-selector",
+   "path": "certificates/erdos-142-q6-m7-orbit-free-selector",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "An exact three-row arbitrary-global-potential wall for the displayed eight-cell q=6/M7 redesign and its common-offset half-open torus lift. The union has mass 245/373248 above the supplied (7/24)^6 gate, but three genuine physical midpoint rows cancel H and leave raw contradiction 0>=144. This excludes only the exact full union: the displayed step has 45 disjoint three-orbits, far below the 5679639/64-box gate slack, so no deletion-robust family claim is made. The rows use nonzero modular carries and are not ordinary Euclidean midpoint rows. No integer transfer or new r_3(N) bound is claimed; Erdos Problem 142 remains unsolved.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-142-q6-m7-redesign-torsion-wall",
+   "path": "certificates/erdos-142-q6-m7-redesign-torsion-wall",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "An exact arbitrary-global-potential wall for the displayed mass-positive 28-cell q=6/M7 selector. Six distinct physical vertices support six unit modular-midpoint rows whose physical H coefficients cancel and whose raw right sides sum to 312, giving normalized contradiction 0>=26/3; a common strict box offset preserves the wall. Exhaustion of all endpoint-degree-two unit templates with at most five rows, combined with the selector's exact order-three-orbit-free property, proves this unit Farkas girth is exactly six. The girth classification does not cover non-unit weights or other supports. The rows use modular carries, so no ordinary Euclidean-continuum, integer-transfer, new r_3(N), or solution of Erdos Problem 142 is claimed.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-142-q6-m7-unit-girth-six-wall",
+   "path": "certificates/erdos-142-q6-m7-unit-girth-six-wall",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "An exact deletion-robust arbitrary-global-potential wall for whole-cell subcollections of the displayed 22-cell q=6/M7 redesign. Three explicit positive eight-row packets have pairwise-disjoint three-cell supports. Avoiding all three costs at least 81648 boxes and leaves at most 1288872 boxes, strictly below the supplied (7/24)^6 gate. A common strict box offset preserves each packet. This does not cover partial cell carving, geometric deformation, replacement cells, different supports, recursive state, ordinary Euclidean or integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-142-q6-m7-unit-k8-deletion-fence",
+   "path": "certificates/erdos-142-q6-m7-unit-k8-deletion-fence",
    "type": "evidence_container"
   },
   {
