@@ -900,15 +900,61 @@ deletion fence would need 65,417 disjoint families at this mass.  Thus the
 torsion/deletion mechanism that closes the eight-cell redesign genuinely does
 not close this selector.
 
-This is a narrowed next candidate, not a potential survivor.  Longer balanced
-families of modular midpoint rows can exist without a three-point translation
-orbit.  Restricted additive and parity-class potential screens are already
-negative, but their quotient rays do not cancel at actual physical vertices.
-The live bottleneck is therefore an arbitrary-physical-potential certificate
-or countercertificate for this selector, followed only after survival by
-continuum thickening and integer transfer.  A separate CP-SAT search reports
-that the displayed mass is optimal among orbit-free coarse selectors, but no
+This was a narrowed next candidate, not yet a potential survivor.  Longer
+balanced families of modular midpoint rows can exist without a three-point
+translation orbit.  Section 4.18 records the exact six-row physical family
+that closes this candidate.  A separate CP-SAT search reports that the
+displayed mass is optimal among orbit-free coarse selectors, but no
 solver-independent optimization proof is promoted here.
+
+### 4.18 The orbit-free selector has unit Farkas girth exactly six
+
+The packet in
+`certificates/erdos-142-q6-m7-unit-girth-six-wall/` resolves the selector's
+arbitrary-physical-potential bottleneck negatively.  It gives six distinct
+physical q6 vertices in cells
+
+```text
+(49,0), (21,0), (45,0), (35,0), (7,0), (45,0)
+```
+
+and the six rows `(endpoint_a,endpoint_b;center)`
+
+```text
+(1,2;0), (0,3;1), (4,5;2),
+(4,5;3), (0,3;4), (1,2;5).
+```
+
+Every row is a genuine modular midpoint relation at all six two-dimensional
+positions.  Each physical vertex occurs twice as an endpoint and once as a
+centre, so summing the rows cancels an arbitrary value of `H` at every actual
+physical vertex.  The raw canonical endpoint costs are
+
+```text
+68, 56, 32, 32, 56, 68,
+```
+
+and therefore leave `0 >= 312`, or the normalized contradiction
+`0 >= 26/3`.  A common offset in `(0,1/6)^12` puts all six points in the strict
+interiors of their selected half-open boxes while preserving every carry and
+endpoint difference.  The wall is consequently not a grid-boundary artifact,
+although its nonzero carries make it branch-sensitive rather than an ordinary
+Euclidean-midpoint theorem.
+
+The row count is exact in a natural finite class.  Two independent exhaustive
+replays enumerate all 6,516 labelled endpoint-degree-two unit templates with
+two through five rows and every scalar `Z/6` kernel assignment.  Exactly 1,511
+templates have a positive scalar mode.  Every one forces a fixed three-label
+order-three orbit, while Section 4.17 certifies that the selector contains no
+such orbit.  Hence no positive unit-balanced packet in the displayed class has
+fewer than six rows, and the explicit packet attains six.
+
+This closes the exact full 28-cell union for arbitrary physical potentials
+under the supplied raw-canonical torus convention.  It does not classify
+non-unit certificates on other supports, give a torsion-free Euclidean or
+integer construction, improve `r_3(N)`, or solve Problem 142.  The useful
+design lesson is sharper: removing all translation triangles raises the local
+obstruction girth, but does not by itself produce coercive capacity.
 
 ## 5. What would count as progress
 

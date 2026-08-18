@@ -77,6 +77,11 @@
    "boundary": "A finite q=6/M7 full-cell selector lead only. The checked 28-cell selector has exact mass 1405512/6^12 above the supplied (7/24)^6 gate and zero nontrivial modular order-three translation orbits, so the order-three common-offset matching-deletion mechanism does not eliminate it. The separately reported orbit-free optimization is discovery evidence, not a promoted solver-independent maximum theorem. No potential feasibility, arbitrary-H statement, Euclidean-continuum lift, integer transfer, r_3(N) bound, or solution of Erdos Problem 142 is claimed."
   },
   {
+   "path": "certificates/erdos-142-q6-m7-unit-girth-six-wall",
+   "classification": "certified_local",
+   "boundary": "An exact arbitrary-global-potential wall for the displayed mass-positive 28-cell q=6/M7 selector. Six distinct physical vertices support six unit modular-midpoint rows whose physical H coefficients cancel and whose raw right sides sum to 312, giving normalized contradiction 0>=26/3; a common strict box offset preserves the wall. Exhaustion of all endpoint-degree-two unit templates with at most five rows, combined with the selector's exact order-three-orbit-free property, proves this unit Farkas girth is exactly six. The girth classification does not cover non-unit weights or other supports. The rows use modular carries, so no ordinary Euclidean-continuum, integer-transfer, new r_3(N), or solution of Erdos Problem 142 is claimed."
+  },
+  {
    "path": "certificates/erdos-142-q6-m7-redesign-torsion-wall",
    "classification": "certified_local",
    "boundary": "An exact three-row arbitrary-global-potential wall for the displayed eight-cell q=6/M7 redesign and its common-offset half-open torus lift. The union has mass 245/373248 above the supplied (7/24)^6 gate, but three genuine physical midpoint rows cancel H and leave raw contradiction 0>=144. This excludes only the exact full union: the displayed step has 45 disjoint three-orbits, far below the 5679639/64-box gate slack, so no deletion-robust family claim is made. The rows use nonzero modular carries and are not ordinary Euclidean midpoint rows. No integer transfer or new r_3(N) bound is claimed; Erdos Problem 142 remains unsolved."
@@ -1850,6 +1855,103 @@
      "failure_control": {
       "kind": "external",
       "evidence": "A separately written no-import stdlib replay reconstructs both local supports and all eight cell counts, then independently verifies every orbit action, cyclic midpoint carry, positive raw cost, matching-disjointness condition, digest and exact measure margin."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-142-q6-m7-unit-girth-six-wall",
+   "status": "promoted",
+   "statement": "The displayed mass-positive 28-cell q=6/M7 full half-open union admits no real-valued physical potential H satisfying every required raw-canonical modular-torus midpoint coercivity row; within the endpoint-degree-two unit-balanced class its shortest positive physical packet has exactly six rows.",
+   "scope": "Six explicit distinct physical vertices lie in selected cells (49,0),(21,0),(45,0),(35,0),(7,0),(45,0). Six genuine modular midpoint rows cancel arbitrary physical H exactly and leave raw contradiction 0>=312, normalized 0>=26/3. A common delta in (0,1/6)^12 gives a strict-interior half-open torus family with unchanged carries and costs. Separately, all 6516 labelled endpoint-degree-two unit templates with 2<=k<=5 and all scalar Z/6 kernel assignments are exhausted: each of the 1511 positive templates forces a fixed order-three triple, while the selector has none. Thus the unit girth is exactly six only in this stated class. Non-unit weights, other supports, deformations, recursive state, ordinary Euclidean transfer, integer transfer and a new r_3(N) bound are outside scope; Erdos Problem 142 remains unsolved.",
+   "machine_verdict": "PASS_Q6_M7_UNIT_GIRTH_SIX_WALL",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-142-q6-m7-unit-girth-six-wall/README.md",
+     "contains": "the unit Farkas girth is therefore **six**"
+    },
+    {
+     "path": "atlas/erdos-142-recursive-capacity.md",
+     "contains": "The orbit-free selector has unit Farkas girth exactly six"
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-142-q6-m7-unit-girth-six-wall/README.md",
+     "sha256": "2a853e07a1f7d3c017b41625bf6bd34cb1c9bbe907c4f0c77977c84056bbc89c"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-unit-girth-six-wall/constants.json",
+     "sha256": "808fd7ec5ed6b840ca303a698d469f395150da2ad72463488f8159a3ef778b4d"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-unit-girth-six-wall/selector.cells",
+     "sha256": "671b69ed285b715499ba91766c5ab0ade6bb68c10bbfb3fa569e5d32ee7e1f9f"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-unit-girth-six-wall/witness.json",
+     "sha256": "12471ad202269c501ab770e917ab0ec5c3a6e0aef20935c5fe3026729eb9a94d"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-unit-girth-six-wall/verify.py",
+     "sha256": "6f2ea1b6a52cc2d146682f6064a4a42c1a9a78181eda6eb240a9b7d0144a4517"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-unit-girth-six-wall/independent_replay.py",
+     "sha256": "89f0d4f272749c31e0f8d165119d4826bf7f4707ca1a35ce158fc30cab826f75"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-142-q6-m7-unit-girth-six-wall/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-q6-m7-unit-girth-six-wall/verify.py",
+      "--self-test"
+     ],
+     "timeout_seconds": 30,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_Q6_M7_UNIT_GIRTH_SIX_WALL",
+      "\"normalized_contradiction\": \"0 >= 26/3\"",
+      "\"order3_edges\": 0",
+      "\"lower_bound\": 6",
+      "\"shifted-equation\": \"rejected\""
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "The primary stdlib replay reconstructs selector mass and zero order-three orbit count, verifies all six physical rows/carries/raw costs and exact arbitrary-H cancellation, proves the strict common-offset lift, exhausts every unit template through five rows, and rejects seven planted semantic and theorem corruptions."
+     }
+    },
+    {
+     "profile": "fast",
+     "certifies_claim": false,
+     "entrypoint": "certificates/erdos-142-q6-m7-unit-girth-six-wall/independent_replay.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-q6-m7-unit-girth-six-wall/independent_replay.py"
+     ],
+     "timeout_seconds": 180,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_INDEPENDENT_Q6_M7_UNIT_GIRTH_SIX_WALL",
+      "\"normalized_contradiction\": \"0 >= 26/3\"",
+      "\"order3_triples_checked\": 1102",
+      "\"unit_girth_rows\": 6"
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "external",
+      "evidence": "A separately written no-import stdlib replay uses Cartesian edge products and direct scalar enumeration rather than the primary bit-mask engine, and independently reconstructs the selector, physical wall, strict offset and exact girth census."
      }
     }
    ]
