@@ -1006,6 +1006,56 @@ replacement cells, geometric deformation, richer recursive support design,
 ordinary Euclidean transfer, and integer transfer remain open.  No new
 `r_3(N)` bound or solution of Problem 142 is claimed.
 
+### 4.20 A 30,425-packet matching also fences arbitrary measurable carving
+
+The remaining partial-carving caveat for this exact 22-cell support is closed
+by `certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/`.  A second
+balanced eight-row template has the endpoint rows
+
+```text
+(4,5;0), (4,7;1), (6,7;2), (5,6;3),
+(2,3;4), (1,2;5), (0,1;6), (0,3;7).
+```
+
+The frozen ledger contains `30,425` packets on `243,400` globally distinct
+physical `q6^12` microboxes.  Both stdlib replays reconstruct every selected
+cell, midpoint carry, raw endpoint cost, and physical-box code.  Every row has
+positive cost, and every vertex label occurs twice as an endpoint and once as
+a centre, so each packet cancels an arbitrary physical potential exactly.
+
+This gives a measure fence, not a whole-box deletion claim.  For one packet,
+identify each of its eight half-open microboxes with the common offset cube
+`D=[0,1/6)^12`.  If `A_i` is the retained offset slice in box `i`, then a
+common offset in all eight `A_i` would realize all eight midpoint rows and
+give a positive contradiction.  Hence their intersection is empty up to a
+null set, so
+
+```text
+sum_i measure(D minus A_i) >= measure(D).
+```
+
+The packet boxes are globally disjoint, so translation and Fubini let these
+losses add over the matching.  Any measurable packet-free carving therefore
+deletes at least `30,425` box-volume units and retains at most
+
+```text
+1,370,520 - 30,425 = 1,340,095 box-volume units.
+```
+
+The exact inherited-gate comparison is exceptionally tight but strict:
+
+```text
+1,340,095 * 64 - 85,766,121 = -41 < 0.
+```
+
+Thus the fixed 22-cell geometric union cannot be repaired by arbitrary
+measurable carving while preserving the supplied mass gate and the required
+raw-canonical modular-torus coercivity inequalities.  The theorem uses the
+full common-offset family for each packet, not merely one displayed interior
+point.  Replacement cells, geometric deformation, recursive state, ordinary
+Euclidean transfer, and integer transfer remain open.  No new `r_3(N)` bound
+or solution of Problem 142 is claimed.
+
 ## 5. What would count as progress
 
 A promotable positive result must include all of:

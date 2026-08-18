@@ -87,6 +87,11 @@
    "boundary": "An exact deletion-robust arbitrary-global-potential wall for whole-cell subcollections of the displayed 22-cell q=6/M7 redesign. Three explicit positive eight-row packets have pairwise-disjoint three-cell supports. Avoiding all three costs at least 81648 boxes and leaves at most 1288872 boxes, strictly below the supplied (7/24)^6 gate. A common strict box offset preserves each packet. This does not cover partial cell carving, geometric deformation, replacement cells, different supports, recursive state, ordinary Euclidean or integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved."
   },
   {
+   "path": "certificates/erdos-142-q6-m7-k8-microbox-deletion-fence",
+   "classification": "certified_local",
+   "boundary": "An exact measurable-deletion fence for arbitrary measurable carving of the fixed 22-cell q=6/M7 geometric union. A frozen matching of 30425 positive balanced eight-row packet families uses 243400 globally distinct physical microboxes. The full common-offset family and a union-bound/Fubini argument force at least 30425 box-volume units of deleted measure, leaving at most 1340095, strictly below the supplied (7/24)^6 gate by numerator 41. This does not cover replacement cells, geometric deformation, other supports, recursive state, ordinary Euclidean or integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved."
+  },
+  {
    "path": "certificates/erdos-142-q6-m7-redesign-torsion-wall",
    "classification": "certified_local",
    "boundary": "An exact three-row arbitrary-global-potential wall for the displayed eight-cell q=6/M7 redesign and its common-offset half-open torus lift. The union has mass 245/373248 above the supplied (7/24)^6 gate, but three genuine physical midpoint rows cancel H and leave raw contradiction 0>=144. This excludes only the exact full union: the displayed step has 45 disjoint three-orbits, far below the 5679639/64-box gate slack, so no deletion-robust family claim is made. The rows use nonzero modular carries and are not ordinary Euclidean midpoint rows. No integer transfer or new r_3(N) bound is claimed; Erdos Problem 142 remains unsolved."
@@ -2055,6 +2060,108 @@
      "failure_control": {
       "kind": "external",
       "evidence": "A separately written no-import stdlib replay transcribes the witnesses in an independent vertex order, enumerates cell weights directly from parity assignments, rechecks midpoint and open-offset semantics, and rejects point, cut and gate mutations."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-142-q6-m7-k8-microbox-deletion-fence",
+   "status": "promoted",
+   "statement": "Every measurable subset of the displayed fixed 22-cell q=6/M7 half-open union whose normalized volume is strictly above (7/24)^6 contains a common-offset realization from one of 30425 frozen positive balanced eight-row packet families, and therefore admits no arbitrary real-valued physical potential H satisfying all required raw-canonical modular-torus coercivity rows.",
+   "scope": "The frozen matching contains 30425 positive balanced eight-row packets on 243400 globally distinct physical q6^12 microboxes. For each packet, the full common offset cube D=[0,1/6)^12 preserves every modular midpoint carry and raw endpoint cost. If the eight retained offset slices had a common point, the eight potential inequalities would cancel and leave a positive contradiction. The union bound and Fubini therefore force at least 30425 box-volume units of deleted measure, leaving at most 1340095, with exact gate numerator -41. This is a measurable-volume statement and does not claim that whole boxes are deleted. The theorem covers only arbitrary measurable carving of the fixed 22-cell geometric union, not replacement cells, deformation, other supports, recursive state, ordinary Euclidean or integer transfer. No new r_3(N) bound is claimed; Erdos Problem 142 remains unsolved.",
+   "machine_verdict": "PASS_CANDIDATE22_Q6_MICROBOX_DELETION_FENCE",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/README.md",
+     "contains": "common-offset realization from one of the 30,425"
+    },
+    {
+     "path": "atlas/erdos-142-recursive-capacity.md",
+     "contains": "A 30,425-packet matching also fences arbitrary measurable carving"
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/README.md",
+     "sha256": "5322e68ff9e255a69d5d0631a9825c8130dc6a37c5abd04f676e014fc7d88cb9"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/candidate.cells",
+     "sha256": "a4627aed32258cdf6b02382b815211d8ce252a314bffeebe1a30da0196a8ed07"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/constants.json",
+     "sha256": "82e375abd19c2a2d2069fb27e4733fdc498c26354ac85d1c3ccce0f5fb13da7b"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/independent_replay.py",
+     "sha256": "6087218bd890c8ea669b78c11056cbd95a2cc1e30af1ff39fdc186976270f28e"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/matching_ledger.json",
+     "sha256": "6d23ed9e75d6c9c0b75f7ce16378aec4cb314c78c185e9fe223bcfb85b6f96e7"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/template.json",
+     "sha256": "82b29011d876837d97862ef5954e2e367a102db231d90359f5403bfbbc239245"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/verify.py",
+     "sha256": "d0ef1af9286a63744e36cb876cf5617041e4046f2b6a59b0181f10e5a97b58f8"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/verify.py",
+      "--self-test"
+     ],
+     "timeout_seconds": 30,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_CANDIDATE22_Q6_MICROBOX_DELETION_FENCE",
+      "\"packets\": 30425",
+      "\"physical_boxes\": 243400",
+      "\"retained_minus_gate_numerator\": -41",
+      "\"global_physical_box_overlap\": \"rejected\""
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "The primary stdlib replay reconstructs the 22-cell mass, all 30425 packets and 243400 globally distinct boxes, every midpoint carry and positive raw cost, endpoint balance, full common-offset identities and the exact measurable union-bound/Fubini arithmetic. It rejects digit, vertex, endpoint, midpoint, global-overlap, raw-cost, off-candidate, count, hash, boundary-offset, gate, and insufficient-matching mutations."
+     }
+    },
+    {
+     "profile": "fast",
+     "certifies_claim": false,
+     "entrypoint": "certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/independent_replay.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/independent_replay.py"
+     ],
+     "timeout_seconds": 30,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_INDEPENDENT_CANDIDATE22_MICROBOX_FENCE",
+      "\"boxes\": 243400",
+      "\"gate_gap_numerator\": -41",
+      "\"ledger_sha256\": \"6d23ed9e75d6c9c0b75f7ce16378aec4cb314c78c185e9fe223bcfb85b6f96e7\"",
+      "\"packets\": 30425"
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "external",
+      "evidence": "A separately written no-import stdlib replay reconstructs the digit map, cell map, mass loop, midpoint rows, physical-box encoding, matching disjointness, sidecar and manifest bindings, and the full common-offset measurable deletion calculation without importing the primary verifier or discovery code."
      }
     }
    ]
