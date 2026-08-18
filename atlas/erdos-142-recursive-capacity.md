@@ -822,9 +822,51 @@ The deletion boundary is essential.  For the displayed order-three step the
 verifiers count only 45 disjoint three-orbits, far below the exact gate slack
 `5679639/64` measured in q=6 boxes.  Other steps and the minimum hitting set
 are not classified.  Thus this is an exact-union wall, not a fence against
-small excisions.  Its rows also use nonzero modular carries, so it is not an
-ordinary Euclidean-midpoint theorem and supplies no integer transfer or new
-`r_3(N)` bound.
+small excisions by itself.  Section 4.16 records the subsequent cross-step
+matching that closes this deletion gap for the same support.  The rows use
+nonzero modular carries, so neither result is an ordinary Euclidean-midpoint
+theorem or supplies an integer transfer or new `r_3(N)` bound.
+
+### 4.16 The eight-cell redesign has a deletion fence
+
+The exact all-step orbit ledger contains 1,342,512 physical order-three
+orbits.  More importantly, the frozen certificate in
+`certificates/erdos-142-q6-m7-deletion-fence/` exhibits a deterministic
+matching of 102,636 pairwise box-disjoint orbits, using 307,908 distinct
+physical q=6 boxes.  Both replays check every matching record directly; the
+full orbit census is discovery provenance rather than a premise of the fence.
+
+For each matched orbit `(x,y,z)`, all three cyclic modular-midpoint rows have
+positive raw endpoint-square right sides while their arbitrary-`H`
+coefficients cancel at the physical vertices.  Translating the three boxes by
+one common `delta in (0,1/6)^12` preserves their carries and endpoint
+differences.  Hence, for every common offset, at least one of the three points
+must be deleted from any retained set that satisfies the coercivity rows.
+Pulling the three deletion sets back to the offset cube and using
+subadditivity costs at least one q=6 box-volume.  Because the matching's boxes
+are disjoint, these lower bounds add across all 102,636 orbits.
+
+The original union contains 1,428,840 boxes, so every compatible measurable
+retained subset has mass at most
+
+```text
+(1428840 - 102636)/6^12 = 1326204/6^12.
+```
+
+This is below the supplied gate by
+
+```text
+(7/24)^6 - 1326204/6^12
+  = 889065/(64*6^12)
+  = 98785/15479341056 > 0.
+```
+
+Thus the eight-cell redesign cannot be rescued by small measurable excisions
+within its boxes under the retained raw-canonical torus model.  This is a
+construction-specific finite-torsion/common-offset fence, not a classification
+of other supports, deformations, q, recursive mechanisms or non-product
+constructions.  It gives no ordinary Euclidean transfer, integer construction,
+new `r_3(N)` bound, or solution of Problem 142.
 
 ## 5. What would count as progress
 

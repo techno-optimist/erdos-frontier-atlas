@@ -1,0 +1,49 @@
+{
+  "format": "erdos142-q6-m7-matching-deletion-fence-v1",
+  "scope": {
+    "finite_q": 6,
+    "ambient_group": "(Z/6Z)^12",
+    "selected_cells": [[38, 3], [41, 3], [42, 3], [44, 3], [49, 3], [50, 3], [52, 3], [56, 3]],
+    "row_model": "raw-canonical modular-torus midpoint coercivity",
+    "deletion_model": "measurable subsets of the explicit eight-cell half-open union, tested through the frozen disjoint common-offset families",
+    "ordinary_euclidean_continuum_claim": false,
+    "integer_transfer_claim": false,
+    "new_r3_bound": false,
+    "erdos142_solved": false
+  },
+  "support": {
+    "vertices": 1428840,
+    "per_cell": 178605,
+    "physical_vertices_unique": true,
+    "mass": "245/373248",
+    "gate": "(7/24)^6",
+    "gate_slack_in_q6_boxes": "5679639/64"
+  },
+  "orbit_census": {
+    "canonical_steps": 265720,
+    "canonical_oriented_starts": 4027536,
+    "distinct_order3_orbits": 1342512
+  },
+  "matching": {
+    "count": 102636,
+    "unique_vertices": 307908,
+    "ordering": "ascending sign-canonical base-9 step code, then ascending sorted physical orbit key",
+    "fnv1a64": "E274395806684DE3",
+    "cyclic_total_raw_rhs": 6644592,
+    "witness": "matching.txt"
+  },
+  "measure_deletion": {
+    "minimum_deleted_mass": "102636/6^12",
+    "maximum_retained_mass": "1326204/6^12",
+    "maximum_retained_mass_reduced": "36839/60466176",
+    "positive_gap": "889065/(64*6^12)",
+    "positive_gap_reduced": "98785/15479341056"
+  },
+  "sha256": {
+    "README.md": "CC79FE798A8AEC57B6E6AEE6A6E45560C7153977F5FD7978FEC52F7A0BCA5982",
+    "matching.txt": "F1030477A9613748B07256CB5C518D76B338B08B6625E4BE0D60F9C7803DFBF0",
+    "verify.py": "52BF19C1D7749CBA14F9E3E5A17FAFEB36D0FF6EEC2FDCE7D1BFB83A84D57562",
+    "independent_replay.py": "42AE182D45098C70FDBA1388EBD2122AADD5977B85E8E81E1C0C1001EBF92337",
+    "generate_matching.cpp": "D1CA23A6339D049D1E003AC4D7751822C46D1912DE44A4464AD479C343D7BB7A"
+  }
+}
