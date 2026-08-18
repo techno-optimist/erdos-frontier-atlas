@@ -1144,6 +1144,51 @@ within-cell functions, partial carving, support deformation, or arbitrary
 physical potentials.  No integer construction, new `r_3(N)` bound, or
 solution of Problem 142 is claimed.
 
+### 4.23 Independent affine slopes in every one of the 117 cells also fail
+
+Return to the one-block 117-cell geometry, but give every cell its own affine
+function of the within-cell residual.  In scaled variables the potential is
+
+```text
+F(x) = 2 ||x||^2
+     + 36^-1 (h[cell(x)] + sum_j p[cell(x),j] r_j(x)),
+r_j(x) = 6 x_j - floor(6 x_j).
+```
+
+There are `117` independent offsets and `117*4` independent slopes, for `585`
+free features.  This strictly extends both cell offsets and a globally shared
+affine correction.
+
+The exact packet in
+`certificates/erdos-142-q6-117-cell-percell-affine-wall/` needs only two
+necessary one-sided closure inequalities.  For cell triples `(105,91,91)`
+and `(105,105,91)`, they reduce to
+
+```text
+h[105]-h[91]-p[91,1]-p[91,2]-p[91,3] >= 216,
+-h[105]+h[91]+p[91,1]+p[91,2]+p[91,3] >= -72.
+```
+
+Their positive sum is the exact contradiction `0>=144`, or `0>=4` before
+the uniform factor `36`.  Residual-one seam coordinates are used only as
+one-sided limits of required inequalities within the same half-open cells;
+cellwise affinity makes those limits necessary despite possible jumps between
+neighboring cell formulas.
+
+The primary standard-library replay reconstructs all `117` cells, all scalar
+closure vertices, one deterministic base-cost-maximizing row for each of the
+`98,167` compatible ordered cell triples, the two selected row indices, their
+geometry and every feature incidence.  A separate direct cross-check replays
+the two rows without importing or enumerating the primary ledger.  The
+`98,167` rows are a deterministic closure subledger, not the full all-vertex
+continuous ledger; infeasibility follows because the two selected rows are
+individually necessary.
+
+This closes only independent residual-affine functions on the fixed cells.
+Piecewise-affine refinements, pair/state interactions, arbitrary physical
+potentials, partial carving, support deformation and integer transfer remain
+open.  No new `r_3(N)` bound or solution of Problem 142 is claimed.
+
 ## 5. What would count as progress
 
 A promotable positive result must include all of:

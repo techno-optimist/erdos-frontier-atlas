@@ -5,7 +5,7 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 379,
-   "evidenced_by": 32,
+   "evidenced_by": 33,
    "has_surface": 319,
    "learned_from": 5,
    "measures": 223,
@@ -18,8 +18,8 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 36,
-   "evidence_container": 50,
+   "evidence_claim": 37,
+   "evidence_container": 51,
    "external_claim": 91,
    "incident": 26,
    "move": 7,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 3950,
-   "validator-enforced": 49
+   "validator-enforced": 50
   }
  },
  "edges": [
@@ -5297,6 +5297,14 @@
   },
   {
    "dst": "E:claim:erdos-142-q6-117-cell-loopless-transition-wall",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P142",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-142-q6-117-cell-percell-affine-wall",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
    "src": "P142",
@@ -29826,6 +29834,44 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-142-q6-117-cell-percell-affine-wall/README.md",
+     "sha256": "f2cd1401d9f3f78e037bf70114796c788c698870dd15019734ac514bb1a2553c"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-percell-affine-wall/crosscheck_percell_affine_ray.py",
+     "sha256": "f7e01f4e19c3c473d110c46a31a1df25f51ec2e2601154b42c98f817ac6f7be7"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-percell-affine-wall/verify_percell_affine_farkas.py",
+     "sha256": "7148e3ef095e73a986c9337e8c9b5e97df957cd3120a3d6212b412115c18bb14"
+    }
+   ],
+   "claim_id": "erdos-142-q6-117-cell-percell-affine-wall",
+   "id": "E:claim:erdos-142-q6-117-cell-percell-affine-wall",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-142-q6-117-cell-percell-affine-wall/verify_percell_affine_farkas.py"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "PASS_PERCELL_AFFINE_FARKAS",
+     "'ledger_rows': 98167",
+     "'ray_rows': 2",
+     "'weighted_rhs': Fraction(144, 1)",
+     "'features_cancelled': 585",
+     "'planted_semantic_residual_rejected': True"
+    ]
+   },
+   "scope": "The certificate reconstructs a deterministic 98167-row base-cost closure subledger with one necessary row per compatible ordered cell triple. Two selected one-sided closure rows, for triples (105,91,91) and (105,105,91), cancel all 585 q^2-scaled offset/slope features and have weighted RHS 216-72=144. Seam residuals are used only as one-sided limits within the same half-open cells. The 98167 rows are not claimed to be the full all-vertex continuous ledger. Piecewise-affine refinements, pair/state interactions, arbitrary physical potentials, partial carving, support deformation, integer transfer and a new r_3(N) bound remain outside scope; Erdos Problem 142 remains unsolved.",
+   "statement": "The fixed 117-cell q=6 four-dimensional support admits no potential F(x)=2||x||^2+36^-1(h[cell(x)]+sum_j p[cell(x),j]r_j(x)) with an independent offset and four residual-affine slopes in every cell that satisfies every required continuous raw-canonical modular-torus midpoint coercivity row.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-142-q6-117-cell-six-deletion-wall/README.md",
      "sha256": "3c77212c1c7f02ad618855fb6e4914b866c76b4a21703fe91b1331820ece4aed"
     },
@@ -30932,6 +30978,13 @@
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-142-q6-117-cell-loopless-transition-wall",
    "path": "certificates/erdos-142-q6-117-cell-loopless-transition-wall",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "An exact continuous closure wall for the fixed 117-cell q=6 alphabet and potentials with 117 cell offsets plus four independent within-cell residual-affine slopes per cell. Two necessary one-sided closure rows cancel all 585 q^2-scaled features and leave RHS 144. The 98167 reconstructed rows are a deterministic one-row-per-compatible-triple closure subledger, not the full all-vertex ledger. This does not exclude piecewise-affine refinements, pair/state interactions, arbitrary physical potentials, partial carving, support deformation, integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-142-q6-117-cell-percell-affine-wall",
+   "path": "certificates/erdos-142-q6-117-cell-percell-affine-wall",
    "type": "evidence_container"
   },
   {

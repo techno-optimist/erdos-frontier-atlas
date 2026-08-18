@@ -171,6 +171,7 @@ Every promoted claim replays in one command; the fastest way to learn the receip
 - `erdos-142-q3m-torsion-triangle-family`: `python3 -I certificates/erdos-142-q3m-torsion-triangle-wall/verify.py --self-test`
 - `erdos-142-q4-affine-order4-line-wall`: `python3 -I certificates/erdos-142-q4-affine-order4-line-wall/verify.py --self-test`
 - `erdos-142-q6-117-cell-loopless-transition-wall`: `python3 -I certificates/erdos-142-q6-117-cell-loopless-transition-wall/verify_markov_loopless_wall.py certificates/erdos-142-q6-117-cell-loopless-transition-wall/markov_loopless_wall.json --self-test --max-length 9`
+- `erdos-142-q6-117-cell-percell-affine-wall`: `python3 -I certificates/erdos-142-q6-117-cell-percell-affine-wall/verify_percell_affine_farkas.py`
 - `erdos-142-q6-117-cell-six-deletion-wall`: `python3 -I certificates/erdos-142-q6-117-cell-six-deletion-wall/verify.py certificates/erdos-142-q6-117-cell-six-deletion-wall/rays.json --self-test --find-hit --verify-certificate certificates/erdos-142-q6-117-cell-six-deletion-wall/hitting_proof.json`
 - `erdos-142-q6-all-maximizer-three-row-torsion-wall`: `python3 -I certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/verify.py --self-test`
 - `erdos-142-q6-coordinate-d4-product-wall`: `python3 -I certificates/erdos-142-q6-coordinate-d4-product-wall/verify.py --self-test`

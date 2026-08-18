@@ -69,6 +69,8 @@ verify-certs:
 	python3 -I certificates/erdos-142-q6-117-cell-six-deletion-wall/independent_replay.py certificates/erdos-142-q6-117-cell-six-deletion-wall/rays.json certificates/erdos-142-q6-117-cell-six-deletion-wall/hitting_proof.json --self-test
 	python3 -I certificates/erdos-142-q6-117-cell-loopless-transition-wall/verify_markov_loopless_wall.py certificates/erdos-142-q6-117-cell-loopless-transition-wall/markov_loopless_wall.json --self-test --max-length 9
 	python3 -I certificates/erdos-142-q6-117-cell-loopless-transition-wall/independent_replay.py certificates/erdos-142-q6-117-cell-loopless-transition-wall/markov_loopless_wall.json --self-test --max-length 9
+	python3 -I certificates/erdos-142-q6-117-cell-percell-affine-wall/verify_percell_affine_farkas.py
+	python3 -I certificates/erdos-142-q6-117-cell-percell-affine-wall/crosscheck_percell_affine_ray.py
 	python3 -I certificates/erdos-142-q6-m7-cellu-restricted-wall/verify.py
 	python3 -I certificates/erdos-142-q6-m7-cellu-restricted-wall/independent_replay.py
 	python3 -I certificates/erdos-142-q6-m7-deletion-fence/verify.py --self-test

@@ -16,7 +16,7 @@ spec.loader.exec_module(contracts)
 
 
 def load():
-    return json.loads(MANIFEST.read_text())
+    return json.loads(MANIFEST.read_text(encoding="utf-8"))
 
 
 def test_repository_contract_is_structurally_valid():
@@ -29,6 +29,11 @@ def test_cli_check_passes():
         capture_output=True, text=True,
     )
     assert proc.returncode == 0, proc.stdout + proc.stderr
+
+
+def test_python_replay_uses_current_interpreter():
+    argv = contracts.replay_argv(["python3", "-I", "certificate.py"])
+    assert argv == [sys.executable, "-I", "certificate.py"]
 
 
 def test_nonexistent_artifact_cannot_count_as_evidence():
