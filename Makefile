@@ -73,6 +73,8 @@ verify-certs:
 	python3 -I certificates/erdos-142-q6-m7-orbit-free-selector/independent_replay.py
 	python3 -I certificates/erdos-142-q6-m7-unit-girth-six-wall/verify.py --self-test
 	python3 -I certificates/erdos-142-q6-m7-unit-girth-six-wall/independent_replay.py
+	python3 -I certificates/erdos-142-q6-m7-unit-k8-deletion-fence/verify.py --self-test
+	python3 -I certificates/erdos-142-q6-m7-unit-k8-deletion-fence/independent_replay.py
 	python3 -I certificates/erdos-142-q6-m7-redesign-torsion-wall/verify.py --self-test
 	python3 -I certificates/erdos-142-q6-m7-redesign-torsion-wall/independent_replay.py --self-test
 	python3 -I certificates/erdos-142-q4-affine-order4-line-wall/verify.py --self-test

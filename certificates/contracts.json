@@ -82,6 +82,11 @@
    "boundary": "An exact arbitrary-global-potential wall for the displayed mass-positive 28-cell q=6/M7 selector. Six distinct physical vertices support six unit modular-midpoint rows whose physical H coefficients cancel and whose raw right sides sum to 312, giving normalized contradiction 0>=26/3; a common strict box offset preserves the wall. Exhaustion of all endpoint-degree-two unit templates with at most five rows, combined with the selector's exact order-three-orbit-free property, proves this unit Farkas girth is exactly six. The girth classification does not cover non-unit weights or other supports. The rows use modular carries, so no ordinary Euclidean-continuum, integer-transfer, new r_3(N), or solution of Erdos Problem 142 is claimed."
   },
   {
+   "path": "certificates/erdos-142-q6-m7-unit-k8-deletion-fence",
+   "classification": "certified_local",
+   "boundary": "An exact deletion-robust arbitrary-global-potential wall for whole-cell subcollections of the displayed 22-cell q=6/M7 redesign. Three explicit positive eight-row packets have pairwise-disjoint three-cell supports. Avoiding all three costs at least 81648 boxes and leaves at most 1288872 boxes, strictly below the supplied (7/24)^6 gate. A common strict box offset preserves each packet. This does not cover partial cell carving, geometric deformation, replacement cells, different supports, recursive state, ordinary Euclidean or integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved."
+  },
+  {
    "path": "certificates/erdos-142-q6-m7-redesign-torsion-wall",
    "classification": "certified_local",
    "boundary": "An exact three-row arbitrary-global-potential wall for the displayed eight-cell q=6/M7 redesign and its common-offset half-open torus lift. The union has mass 245/373248 above the supplied (7/24)^6 gate, but three genuine physical midpoint rows cancel H and leave raw contradiction 0>=144. This excludes only the exact full union: the displayed step has 45 disjoint three-orbits, far below the 5679639/64-box gate slack, so no deletion-robust family claim is made. The rows use nonzero modular carries and are not ordinary Euclidean midpoint rows. No integer transfer or new r_3(N) bound is claimed; Erdos Problem 142 remains unsolved."
@@ -1952,6 +1957,104 @@
      "failure_control": {
       "kind": "external",
       "evidence": "A separately written no-import stdlib replay uses Cartesian edge products and direct scalar enumeration rather than the primary bit-mask engine, and independently reconstructs the selector, physical wall, strict offset and exact girth census."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-142-q6-m7-unit-k8-deletion-fence",
+   "status": "promoted",
+   "statement": "Every whole-cell subcollection of the displayed 22-cell q=6/M7 redesign whose normalized mass is strictly above (7/24)^6 contains one of three explicit positive eight-row modular-midpoint packets, and therefore admits no arbitrary real-valued physical potential H satisfying all required raw-canonical coercivity rows.",
+   "scope": "Three literal endpoint-degree-two unit packets have pairwise-disjoint required cell supports {33:3,45:0,49:0}, {45:1,19:6,26:6}, and {30:3,20:5,34:5}; their raw totals are 216,144,288 and their physical H coefficients cancel exactly. A common delta=1/12 gives strict-interior open torus families with unchanged carries and costs. Avoiding all three costs at least 81648 boxes, leaving at most 1288872, with exact gate numerator -3278313. The theorem covers only subcollections of these whole cells, not partial carving, geometric deformation, replacement cells, other supports, recursive state, ordinary Euclidean or integer transfer. No new r_3(N) bound is claimed; Erdos Problem 142 remains unsolved.",
+   "machine_verdict": "PASS_Q6_M7_UNIT_K8_DELETION_FENCE",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-142-q6-m7-unit-k8-deletion-fence/README.md",
+     "contains": "Every subcollection of `C22`"
+    },
+    {
+     "path": "atlas/erdos-142-recursive-capacity.md",
+     "contains": "Three eight-row packets fence every above-gate subset of the 22-cell redesign"
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-142-q6-m7-unit-k8-deletion-fence/README.md",
+     "sha256": "4eba67427b9e747822be948c994d3246c36b4f7b34f0d157bb8e6a809737df54"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-unit-k8-deletion-fence/constants.json",
+     "sha256": "4ebef15d95e5a778fb8a8fff4c22ab5d2be72550d132651dc53c343d20ba3d56"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-unit-k8-deletion-fence/candidate.cells",
+     "sha256": "a4627aed32258cdf6b02382b815211d8ce252a314bffeebe1a30da0196a8ed07"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-unit-k8-deletion-fence/witnesses.json",
+     "sha256": "57443a2b49411d49141a23aa5eca835ffcaf1550006f227f6bbd5d1ec2333954"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-unit-k8-deletion-fence/verify.py",
+     "sha256": "8aeee9dbc2c395db12b7748f22c9d5c1a661853c57feea186073817cdba62a47"
+    },
+    {
+     "path": "certificates/erdos-142-q6-m7-unit-k8-deletion-fence/independent_replay.py",
+     "sha256": "a712ad96eefb1d7cd3e5f7d07bae477a7b78ddaa9d1a7384c802636ea70b1fa7"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-142-q6-m7-unit-k8-deletion-fence/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-q6-m7-unit-k8-deletion-fence/verify.py",
+      "--self-test"
+     ],
+     "timeout_seconds": 30,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_Q6_M7_UNIT_K8_DELETION_FENCE",
+      "\"normalized_raw_totals\": [\"6\", \"4\", \"8\"]",
+      "\"maximum_packet_free_subset_mass\": 1288872",
+      "\"maximum_minus_gate_numerator\": -3278313",
+      "\"boundary_offset\": \"rejected\""
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "The primary stdlib replay reconstructs all 22 cell weights, all 24 physical midpoint rows and carries, positive costs, arbitrary-H cancellation, strict common-offset lifts, disjoint hitting supports and exact gate arithmetic, then rejects five planted semantic and arithmetic corruptions."
+     }
+    },
+    {
+     "profile": "fast",
+     "certifies_claim": false,
+     "entrypoint": "certificates/erdos-142-q6-m7-unit-k8-deletion-fence/independent_replay.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-q6-m7-unit-k8-deletion-fence/independent_replay.py"
+     ],
+     "timeout_seconds": 30,
+     "exit_code": 0,
+     "stdout_contains": [
+      "PASS_INDEPENDENT_Q6_M7_UNIT_K8_DELETION_FENCE",
+      "\"canonical_sha256\": \"f821a81478ef5e9d7d1604708fff9484d8a7330a5f656014da321fcbdd981b7c\"",
+      "\"min_deletion\": 81648",
+      "\"remaining_excess_numerator\": -3278313",
+      "\"gate\": \"rejected\""
+     ],
+     "stdout_not_contains": [
+      "Traceback (most recent call last)"
+     ],
+     "failure_control": {
+      "kind": "external",
+      "evidence": "A separately written no-import stdlib replay transcribes the witnesses in an independent vertex order, enumerates cell weights directly from parity assignments, rechecks midpoint and open-offset semantics, and rejects point, cut and gate mutations."
      }
     }
    ]

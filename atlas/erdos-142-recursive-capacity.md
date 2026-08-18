@@ -956,6 +956,56 @@ integer construction, improve `r_3(N)`, or solve Problem 142.  The useful
 design lesson is sharper: removing all translation triangles raises the local
 obstruction girth, but does not by itself produce coercive capacity.
 
+### 4.19 Three eight-row packets fence every above-gate subset of the 22-cell redesign
+
+The next support screen removed the six-row mechanism and produced a 22-cell
+full-box candidate of mass
+
+```text
+1,370,520 / 6^12 = 235/373248 > (7/24)^6.
+```
+
+The packet in
+`certificates/erdos-142-q6-m7-unit-k8-deletion-fence/` closes not only that
+exact union but every above-gate subcollection of its cells.  Three literal
+eight-row physical packets use the same endpoint-degree-two template and have
+pairwise-disjoint required supports
+
+```text
+{33:3, 45:0, 49:0},
+{45:1, 19:6, 26:6},
+{30:3, 20:5, 34:5}.
+```
+
+Their raw right-side totals are respectively `216`, `144`, and `288`.  In
+each packet every one of the eight physical vertices occurs twice as an
+endpoint and once as a centre, so the eight rows cancel an arbitrary physical
+potential exactly and leave a positive contradiction.  A common offset in
+`(0,1/6)^12` moves every digit point into the strict interior of its original
+box without changing a carry or endpoint difference.
+
+Any subcollection avoiding all three packets must remove at least one cell
+from each displayed support.  Because the supports are disjoint, the exact
+minimum deletion is
+
+```text
+5,832 + 5,832 + 69,984 = 81,648 boxes.
+```
+
+It leaves at most `1,288,872` boxes, and
+
+```text
+1,288,872 * 64 - 85,766,121 = -3,278,313 < 0.
+```
+
+Thus no whole-cell deletion repair inside this 22-cell lane can retain the
+inherited mass gate and escape the displayed arbitrary-`H` walls.  This is a
+solver-free implication from three positive witnesses; it does not rely on
+the negative discovery searches that preceded them.  Partial carving,
+replacement cells, geometric deformation, richer recursive support design,
+ordinary Euclidean transfer, and integer transfer remain open.  No new
+`r_3(N)` bound or solution of Problem 142 is claimed.
+
 ## 5. What would count as progress
 
 A promotable positive result must include all of:
