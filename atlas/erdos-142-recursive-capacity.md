@@ -1431,6 +1431,58 @@ additional noncontracting gadgets would be needed to force the available
 `1/192` excess mass to disappear.  The theorem gives no integer transfer or
 new `r_3(N)` bound, and Erdős Problem 142 remains unsolved.
 
+### 4.28 Complete q=12 half-microbox languages also fail
+
+Split every residual coordinate of every cell in the fixed 117-cell `q=6`
+alphabet into lower and upper halves.  Equivalently, replace a coarse digit
+`c` and bit `beta` by the physical `q=12` digit `2c+beta`.  This gives
+1,872 distinct complete half-open microboxes.  For an arbitrary language
+`L_m` of microbox words, the decoded physical union has exact measure
+
+```text
+mu(P_m)=|L_m|/20736^m.
+```
+
+Assume `P_m` supports a bounded single-valued physical potential satisfying
+every actual pointwise raw-canonical torus midpoint coercivity inequality.
+The exact refined strict-dilation graph has 676 oriented edges.  A primary
+109-edge matching gives 1,763 quotient classes.  A separately written,
+solver-free replay scans the same frozen edge list lexicographically and
+greedily finds 148 disjoint edges, giving the stronger quotient
+
+```text
+1872-148=1724<1764=20736*(49/576).
+```
+
+For each matched edge, the same two strict-interior whole-word rows as in
+Section 4.27 now give, after writing `F=2||x||^2+h/144`,
+
+```text
+D(3t)-D(t) >= K(288-96t),                  K>=1.
+```
+
+Finite telescoping at `t=(1/4)/3^j` contradicts boundedness, so the quotient
+map is injective on `L_m`.  Consequently
+
+```text
+|L_m| <= 1724^m < 1764^m,
+mu(P_m) <= (1724/20736)^m < (49/576)^m.
+```
+
+The primary 109-edge construction independently proves the weaker sufficient
+bound `|L_m|<=1763^m`; no maximal-matching or solver claim is used.
+`certificates/erdos-142-q6-117-cell-q12-halfcell-wall/` freezes both replays,
+the 676-edge digest, both orientations, the global cancellation and the finite
+telescope.
+
+This closes arbitrary decoded languages of **complete q=12 half-microboxes**,
+including state/edge assignments and repeated abstract paths after physical
+deduplication.  It does not cover proper pieces inside one half-microbox,
+finer or non-axis-aligned carving, deformation, or coupled multi-block tiles
+that do not expand into q=12 words.  Almost-everywhere-only coercivity,
+unbounded corrections, integer transfer and a new `r_3(N)` bound also remain
+outside scope; Erdős Problem 142 remains unsolved.
+
 ## 5. What would count as progress
 
 A promotable positive result must include all of:

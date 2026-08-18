@@ -5,7 +5,7 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 379,
-   "evidenced_by": 37,
+   "evidenced_by": 38,
    "has_surface": 319,
    "learned_from": 5,
    "measures": 223,
@@ -18,8 +18,8 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 41,
-   "evidence_container": 55,
+   "evidence_claim": 42,
+   "evidence_container": 56,
    "external_claim": 91,
    "incident": 26,
    "move": 7,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 3950,
-   "validator-enforced": 54
+   "validator-enforced": 55
   }
  },
  "edges": [
@@ -5329,6 +5329,14 @@
   },
   {
    "dst": "E:claim:erdos-142-q6-117-cell-percell-affine-wall",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P142",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-142-q6-117-cell-q12-halfcell-wall",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
    "src": "P142",
@@ -30044,6 +30052,52 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-142-q6-117-cell-q12-halfcell-wall/README.md",
+     "sha256": "794e3fa008e1a77492d2263fbfbdd34d4deca5a9913ff32070c0c8f7b881cae9"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-q12-halfcell-wall/verify_halfcell_context_wall.py",
+     "sha256": "62e74f967a6c5ad384b712cce1170bd50fd11014eb181f510edeccef6fc85ecc"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-q12-halfcell-wall/AUDIT_Q12_HALFCELL_WALL.md",
+     "sha256": "b6253df2ba33ab7da44625132b7316165772967bef390c55f78216468354d47d"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-q12-halfcell-wall/independent_q12_halfcell_wall.py",
+     "sha256": "d86f7a7e385dda7db108cd17dfb52cc16314a77350ff280eb4dd95e27d3c0732"
+    }
+   ],
+   "claim_id": "erdos-142-q6-117-cell-q12-halfcell-wall",
+   "id": "E:claim:erdos-142-q6-117-cell-q12-halfcell-wall",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-142-q6-117-cell-q12-halfcell-wall/independent_q12_halfcell_wall.py"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "PASS_INDEPENDENT_Q12_HALFCELL_WALL",
+     "PHYSICAL_DECODER_OK coarse=117 halfcells=1872",
+     "DILATION_GRAPH_OK directed_edges=676 sha256=fe25fe2b765bef0f573ad96997e2fe007fa99e81726caf7bf34ace943e895434",
+     "CLAIMED_MATCHING_OK lifted=106 extras=3 total=109 quotient=1763",
+     "STRONGER_GREEDY_MATCHING_OK total=148 quotient=1724<1764",
+     "GREEDY_WRAPS_OK one_wrap=147 two_wraps=1 zero_wraps=0",
+     "BOTH_ORIENTATIONS_OK scalar_and_mixed_global",
+     "FINITE_TELESCOPE_OK recurrence=K*(288-96t)",
+     "PHYSICAL_DEDUP_OK repeated_abstract_paths_count_once",
+     "SCOPE full_q12_microboxes_only; proper_submicrobox_carving_open"
+    ]
+   },
+   "scope": "Each coarse q=6 cell is split coordinatewise into its 16 complete half-open residual microboxes, with physical q=12 digit d=2c+beta. The physical support is the union of distinct decoded q=12 word boxes, counted once even when abstract state paths repeat a decoding. The potential may be arbitrary, fully coupled across all 4m coordinates, residual-dependent, nonadditive, discontinuous, position-dependent and horizon-dependent; boundedness is required only at each fixed horizon. Exact enumeration gives 676 oriented dilation edges. The primary 109-edge matching gives a sufficient 1763-class quotient; a separately written solver-free lexicographic-greedy 148-edge matching strengthens this to 1724 classes, strictly below the exact 1764-class gate. Two simultaneous strict-interior word rows and a finite geometric-scale telescope force injectivity on quotient fibres. No maximality or solver claim is made. The theorem closes complete q=12 half-microboxes only. Proper measurable pieces inside a half-microbox, finer or non-axis-aligned carving, deformation, tiles coupled across blocks that do not expand into q=12 word boxes, almost-everywhere-only coercivity, wrapped/geodesic right sides, unbounded corrections, integer transfer and a new r_3(N) bound remain outside scope; Erdos Problem 142 remains unsolved.",
+   "statement": "For every horizon m>=1 and every language L_m over the 1,872 complete q=12 half-residual microboxes refining the fixed 117-cell q=6 alphabet, if the decoded union of complete microbox word boxes supports a bounded single-valued physical potential satisfying every actual raw-canonical modular-torus midpoint coercivity inequality pointwise, then |L_m|<=1724^m<1764^m and mu(P_m)<(49/576)^m.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-142-q6-117-cell-six-deletion-wall/README.md",
      "sha256": "3c77212c1c7f02ad618855fb6e4914b866c76b4a21703fe91b1331820ece4aed"
     },
@@ -31217,6 +31271,13 @@
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-142-q6-117-cell-percell-affine-wall",
    "path": "certificates/erdos-142-q6-117-cell-percell-affine-wall",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "An exact strict-interior dilation wall for arbitrary word languages over the 1,872 complete q=12 half-residual microboxes refining the fixed 117-cell q=6 alphabet, and arbitrary bounded, single-valued, fully coupled physical potentials satisfying every actual raw-canonical modular-torus midpoint inequality pointwise. The primary 109-edge matching gives |L_m|<=1763^m<1764^m; a solver-free independent lexicographic-greedy 148-edge matching strengthens this to |L_m|<=1724^m<1764^m. This closes complete half-microboxes only. Proper measurable pieces inside a half-microbox, finer or non-axis-aligned carving, deformed or multi-block tiles that do not expand into q=12 word boxes, almost-everywhere-only coercivity, unbounded corrections, integer transfer and a new r_3(N) bound remain outside scope. Erdos Problem 142 remains unsolved.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-142-q6-117-cell-q12-halfcell-wall",
+   "path": "certificates/erdos-142-q6-117-cell-q12-halfcell-wall",
    "type": "evidence_container"
   },
   {

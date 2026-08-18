@@ -43,7 +43,7 @@ others don't touch it.
 | `claude/erdos-366-sweep-20260726` | Erdős #366 cubefull-side sweep — verified range 10^22 → 10^25, zero strict-orientation solutions | `certificates/erdos-366/`, gap_map #366 row, contracts claim `erdos-366-cubefull-sweep-1e25` | PR packaging 2026-07-26 |
 | `claude/attack-graph-20260726` | The attack graph — a generated agent-facing overlay over every ledger (`GRAPH.md` → `views/sorties.md` → per-problem cards). Adds no facts; organizes existing ones | `tools/build_graph.py`, `tools/validate_graph.py`, `tools/query_graph.py`, `atlas/graph/`, `views/graph/`, `views/sorties.md`, `GRAPH.md`, `CLAUDE.md`, `tests/test_graph.py` | PR packaging 2026-07-26 |
 | `claude/trees-993-743-20260727` | Tree lanes: Erdős #743 Gyárfás packing at K_10, and #993 independence unimodality to n=30 (incl. first replication of the n≤29 frontier) | `certificates/erdos-743/`, `certificates/erdos-993/`, gap_map #743 + #993 rows, contracts claims `erdos-743-k10-packing` + `erdos-993-unimodal-n30` | PR packaging 2026-07-27 |
-| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md`, `certificates/erdos-142-mirror-core-additive-wall/`, `certificates/erdos-142-d4-role-distinct-additive-wall/`, `certificates/erdos-142-q24-cylinder-hypograph-wall/`, `certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/`, `certificates/erdos-142-q6-pair-coordinate-walls/`, `certificates/erdos-142-q6-global-potential-walls/`, `certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/`, `certificates/erdos-142-q6-outer-code-tensor-wall/`, `certificates/erdos-142-q6-coordinate-d4-product-wall/`, `certificates/erdos-142-q6-117-cell-six-deletion-wall/`, `certificates/erdos-142-q6-117-cell-loopless-transition-wall/`, `certificates/erdos-142-q6-117-cell-percell-affine-wall/`, `certificates/erdos-142-q6-117-cell-bounded-dilation-wall/`, `certificates/erdos-142-q6-117-cell-transition-spectral-wall/`, `certificates/erdos-142-q6-117-cell-endpoint-pruned-label-wall/`, `certificates/erdos-142-q6-117-cell-fullword-bounded-wall/`, `certificates/erdos-142-q6-m7-cellu-restricted-wall/`, `certificates/erdos-142-q6-m7-deletion-fence/`, `certificates/erdos-142-q6-m7-orbit-free-selector/`, `certificates/erdos-142-q6-m7-unit-girth-six-wall/`, `certificates/erdos-142-q6-m7-unit-k8-deletion-fence/`, `certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/`, `certificates/erdos-142-q6-m7-redesign-torsion-wall/`, `certificates/erdos-142-q4-affine-order4-line-wall/`, `certificates/erdos-142-q7-q8-unit-hypercycle-walls/`, `certificates/erdos-142-q3m-torsion-triangle-wall/`, `certificates/erdos-142-interior-torus-torsion-wall/` | q=4, q=6, q=7, and q=8 maximum-mass D4 lanes closed for arbitrary global potentials; the unchanged full 117-cell word-box lane is now closed for every decoded word language and every bounded single-valued residual-dependent physical potential, with `|L_m|<=96^m` and no Markov, additivity, transition or endpoint restriction; context-owned proper subtiles, carving/deformation, overlap kernels and coupled edge tiles remain live, subject to exact physical mass and potential bookkeeping; no new bound, 2026-08-18 |
+| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md`, `certificates/erdos-142-mirror-core-additive-wall/`, `certificates/erdos-142-d4-role-distinct-additive-wall/`, `certificates/erdos-142-q24-cylinder-hypograph-wall/`, `certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/`, `certificates/erdos-142-q6-pair-coordinate-walls/`, `certificates/erdos-142-q6-global-potential-walls/`, `certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/`, `certificates/erdos-142-q6-outer-code-tensor-wall/`, `certificates/erdos-142-q6-coordinate-d4-product-wall/`, `certificates/erdos-142-q6-117-cell-six-deletion-wall/`, `certificates/erdos-142-q6-117-cell-loopless-transition-wall/`, `certificates/erdos-142-q6-117-cell-percell-affine-wall/`, `certificates/erdos-142-q6-117-cell-bounded-dilation-wall/`, `certificates/erdos-142-q6-117-cell-transition-spectral-wall/`, `certificates/erdos-142-q6-117-cell-endpoint-pruned-label-wall/`, `certificates/erdos-142-q6-117-cell-fullword-bounded-wall/`, `certificates/erdos-142-q6-117-cell-q12-halfcell-wall/`, `certificates/erdos-142-q6-m7-cellu-restricted-wall/`, `certificates/erdos-142-q6-m7-deletion-fence/`, `certificates/erdos-142-q6-m7-orbit-free-selector/`, `certificates/erdos-142-q6-m7-unit-girth-six-wall/`, `certificates/erdos-142-q6-m7-unit-k8-deletion-fence/`, `certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/`, `certificates/erdos-142-q6-m7-redesign-torsion-wall/`, `certificates/erdos-142-q4-affine-order4-line-wall/`, `certificates/erdos-142-q7-q8-unit-hypercycle-walls/`, `certificates/erdos-142-q3m-torsion-triangle-wall/`, `certificates/erdos-142-interior-torus-torsion-wall/` | q=4, q=6, q=7, and q=8 maximum-mass D4 lanes closed for arbitrary global potentials; full q=6 word boxes and every complete q=12 half-microbox word language are now below gate for bounded single-valued pointwise physical potentials, with the q=12 solver-free bound `|L_m|<=1724^m<1764^m`; proper sub-half-microbox carving/deformation and non-word multi-block tiles remain live, subject to exact physical mass and potential bookkeeping; no new bound, 2026-08-18 |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching
@@ -59,6 +59,38 @@ and replayable in `certificates/erdos-142/` (`python3 verify.py`).
 objects were UNTRACKED working-tree files; a later run overwrote them and they are
 gone from both working copies — a result that was replayed-clean 2026-07-13 is now unbacked.
 Commit your certs.
+
+## 2026-08-18 — Erdős 142: complete q=12 half-microbox wall
+
+`certificates/erdos-142-q6-117-cell-q12-halfcell-wall/` closes the first
+context-subtile resolution beyond whole q=6 cells.  Splitting all four
+residual coordinates into halves gives 1,872 distinct complete q=12
+microboxes.  For any decoded word language `L_m`, a bounded single-valued
+physical potential satisfying every pointwise raw-canonical torus coercivity
+row forces
+
+```text
+|L_m| <= 1724^m < 1764^m,
+mu(P_m) <= (1724/20736)^m < (49/576)^m.
+```
+
+The primary replay enumerates 676 oriented dilation edges and constructs a
+109-edge matching, hence the already sufficient quotient
+`1872-109=1763<1764`.  A separately written no-import replay applies a
+deterministic lexicographic greedy rule to the same frozen edge census and
+finds 148 disjoint edges, strengthening the quotient to
+`1872-148=1724`.  This is solver-free and makes no maximality claim.
+
+For quotient-colliding words, two simultaneous strict-interior midpoint rows
+give `D(3t)-D(t)>=K(288-96t)`, `K>=1`; the finite geometric-scale telescope
+contradicts boundedness for an arbitrary fully coupled physical potential.
+Repeated state paths count once after physical decoding.
+
+Scope is exact: this closes complete q=12 half-microboxes only.  Proper
+measurable pieces inside one half-microbox, finer or non-axis-aligned carving,
+deformation, and multi-block tiles not expressible as q=12 word boxes remain
+live.  There is no integer transfer or new `r_3(N)` bound; Problem 142
+remains unsolved.
 
 ## 2026-08-18 — Erdős 142: every full-cell word language is below gate
 
