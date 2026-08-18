@@ -1527,6 +1527,59 @@ word languages, coupled multi-block tiles, almost-everywhere-only coercivity,
 integer transfer and a new `r_3(N)` bound remain open.  Erdős Problem 142 is
 unsolved.
 
+### 4.30 Complete q=24 quarter-microbox one-block supports also fail
+
+Split every residual coordinate of the fixed 117 cells into quarters.  The
+one-block universe then has
+
+```text
+117*4^4 = 29952
+```
+
+distinct complete half-open `q=24` microboxes.  The exact four-coordinate
+EHPS gate is
+
+```text
+(49/576)*24^4 = 28224 boxes.
+```
+
+The frozen semantic certificate packs 960 mutually disjoint two-box
+strict-dilation supports.  After reserving their 1,920 endpoints, it also
+packs 833 complete, mutually disjoint order-four orbits of the fine-digit
+translation `(0,0,6,12)`.  Those four-box supports avoid every dilation
+endpoint.  On each dilation pair, the exact strict-interior recurrence
+
+```text
+D(3t)-D(t) >= K(72-48t),                 K>=1,
+```
+
+gives a finite contradiction to boundedness.  On every order-four support,
+four actual common-offset torus midpoint rows have raw fine-digit cost 144
+each; their coefficients cancel every value of an arbitrary single-valued
+physical potential and leave positive total right side.  A feasible union
+must therefore omit at least one box from each of 1,793 disjoint supports, so
+
+```text
+|U| <= 29952-(960+833) = 28159 < 28224.
+```
+
+The margin is 65 complete boxes.  The primary and independent standard-library
+replays in
+`certificates/erdos-142-q6-117-cell-q24-quarter-microbox-wall/` reconstruct
+all 29,952 physical boxes, the 1,359-edge dilation graph, the 960-edge
+matching, all 833 order-four packets, exact carries and raw costs,
+cross-support disjointness, the density gate and planted failures.
+
+This is deliberately a **one-block support theorem**, not an all-horizon
+word-language capacity theorem.  The frozen warning already exhibits ten
+words in `Z_4^2` containing no direct affine order-four line, while a naive
+coordinatewise `3^2` quotient would allow only nine.  Thus the four-point
+packets cannot simply be exponentiated coordinate by coordinate.  Proper or
+finer carving inside a `q=24` box, deformation, non-axis-aligned or
+overlapping tiles, context/path-dependent languages, coupled multi-block
+tiles, almost-everywhere-only coercivity, unbounded corrections, integer
+transfer and a new `r_3(N)` bound remain open.  Erdős Problem 142 is unsolved.
+
 ## 5. What would count as progress
 
 A promotable positive result must include all of:
