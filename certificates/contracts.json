@@ -122,6 +122,11 @@
    "boundary": "An exact one-block density wall for arbitrary unions of the 151,632 complete globally aligned q=36 residual-sixth microboxes refining the fixed 117-cell q=6 alphabet, under an arbitrary bounded single-valued physical potential satisfying every actual raw-canonical modular-torus midpoint coercivity inequality pointwise. A packing of 2,986 strict-dilation pairs and 6,323 six-of-nine midpoint packets gives 9,309 mutually disjoint obstruction supports, forcing at least 9,309 deletions and at most 142,323 retained boxes, with obstruction margin 561 beyond the required 8,748 and strictly below the exact 142,884-box gate. This is a one-block support theorem, not a word-language or graph/path capacity theorem. Proper or finer carving, deformation, non-axis-aligned or overlapping tiles, context/path-dependent languages, coupled multi-block tiles, almost-everywhere-only coercivity, unbounded corrections, integer transfer and a new r_3(N) bound remain outside scope. Erdos Problem 142 remains unsolved."
   },
   {
+   "path": "certificates/erdos-142-q42-carving-wall",
+   "classification": "certified_local",
+   "boundary": "An exact one-block arbitrary-measurable-carving wall for the fixed 117-cell q=6 four-dimensional union. Every measurable E in that union carrying one single-valued physical potential satisfying every actual raw-canonical modular-torus midpoint coercivity inequality pointwise has mu(E)<=263277/42^4<49/576. Two disjoint q=42 common-offset packet layers contain 17,640 balanced supports; the union-bound/Fubini step forces at least 17,640/42^4 deleted volume even when every fine box is carved arbitrarily. No boundedness, continuity, additivity, finite-state, or full-box premise is used. The theorem does not cover an almost-everywhere midpoint hypothesis, multivalued or label/state/context-owned potentials, graph/path or multi-block capacity, overlapping/coupled tiles, EHPS shell or integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved."
+  },
+  {
    "path": "certificates/erdos-142-q6-117-cell-q42-seventh-microbox-wall",
    "classification": "certified_local",
    "boundary": "An exact one-block density wall for arbitrary unions of the 280,917 complete globally aligned q=42 residual-seventh microboxes refining the fixed 117-cell q=6 alphabet, under an arbitrary bounded single-valued physical potential satisfying every actual raw-canonical modular-torus midpoint coercivity inequality pointwise. A packing of 4,617 strict-dilation pairs, 11,534 first-layer packets, and 3,413 second-layer packets gives 19,564 mutually disjoint obstruction supports, forcing at least 19,564 deletions and at most 261,353 retained boxes, with obstruction margin 3,357 beyond the required 16,207 and strictly below the exact 1,058,841/4-box gate. This is a one-block support theorem, not a word-language or graph/path capacity theorem. Proper or finer carving, deformation, non-axis-aligned or overlapping tiles, context/path-dependent languages, coupled multi-block tiles, almost-everywhere-only coercivity, unbounded corrections, integer transfer and a new r_3(N) bound remain outside scope. Erdos Problem 142 remains unsolved."
@@ -2980,6 +2985,107 @@
       }
     ]
    },
+    {
+     "id": "erdos-142-q42-carving-wall",
+     "status": "promoted",
+     "statement": "Every measurable subset E of the fixed 117-cell q=6 four-dimensional union that supports a single-valued physical potential satisfying every actual raw-canonical modular-torus midpoint coercivity inequality pointwise obeys mu(E)<=263277/42^4<49/576.",
+     "scope": "The one-block physical universe is the fixed 117-cell half-open q=6 union, refined only as a bookkeeping grid into 280,917 q=42 boxes d=7c+s. The retained E may carve every box in an arbitrary measurable, non-axis-aligned way; it need not be a box union and no boundedness, continuity, additivity, finite-state, or piecewise form is assumed for the one physical function F:E->R. The frozen packet and two no-import, no-solver standard-library replays reconstruct 13,230 first-layer and 4,410 second-layer pairwise support-disjoint translation packets, with 92,610 total fine boxes and actual common-offset midpoint rows. Every packet has zero potential incidence and strictly positive raw endpoint cost. Pointwise coercivity makes the intersection of the packet's pulled-back retained-offset slices empty, so the union bound and Jacobian 42^-4 force at least one q=42-box-volume deleted per packet; the 17,640 losses add to leave at most 263,277/42^4, below the exact 1,058,841/(4*42^4) gate by 5,733/(4*42^4). This supersedes the complete-microbox-only carving gap for this fixed one-block union. No completeness or optimality claim is made for the packet packing. It is not an almost-everywhere theorem: pointwise coercivity on every actual triple is essential. It does not cover multivalued, label/state-indexed, context-owned, or path-dependent potentials; arbitrary word, graph, path, or multi-block capacity; overlapping/coupled tiles or overlap kernels; an EHPS shell construction; integer transfer; or a new r_3(N) bound. Erdos Problem 142 remains unsolved.",
+     "machine_verdict": "PASS_INDEPENDENT_Q42_FRACTIONAL_CARVING_AUDIT",
+     "publication_bindings": [
+      {
+       "path": "certificates/erdos-142-q42-carving-wall/HOSTILE_AUDIT_Q42_FRACTIONAL_CARVING.md",
+       "contains": "**APPROVE, conditional on the literal stated hypothesis:**"
+      },
+      {
+       "path": "atlas/erdos-142-recursive-capacity.md",
+       "contains": "Arbitrary measurable q=42 proper carving also fails in the fixed one-block union"
+      }
+     ],
+     "artifacts": [
+      {
+       "path": "certificates/erdos-142-q42-carving-wall/README.md",
+       "sha256": "886710a27e32e60192df641749cea5544764a7fff7b9298a8d0e79b1391f4136"
+      },
+      {
+       "path": "certificates/erdos-142-q42-carving-wall/q42_fractional_carving_certificate.json",
+       "sha256": "60d9d974aa23755615d159653508dbb38769fb0d883c974a4425e51b278119b4"
+      },
+      {
+       "path": "certificates/erdos-142-q42-carving-wall/q42_fractional_carving_wall.py",
+       "sha256": "c543e7fd118981c530ad81a1dd0c4e105c5c1eca253aefd50c6c007c5a818fac"
+      },
+      {
+       "path": "certificates/erdos-142-q42-carving-wall/HOSTILE_AUDIT_Q42_FRACTIONAL_CARVING.md",
+       "sha256": "ae4b96c9447478d487f94eb88ef69fe4126fdc8c60d41c59869fd0cc4ba63e6f"
+      },
+      {
+       "path": "certificates/erdos-142-q42-carving-wall/replay.py",
+       "sha256": "a712c72844b22517ff355f2f8462c873207083278cd6c31786226cb7eb687c3e"
+      }
+     ],
+     "replays": [
+      {
+       "profile": "fast",
+       "certifies_claim": false,
+       "entrypoint": "certificates/erdos-142-q42-carving-wall/q42_fractional_carving_wall.py",
+       "argv": [
+        "python3",
+        "-I",
+        "certificates/erdos-142-q42-carving-wall/q42_fractional_carving_wall.py"
+       ],
+       "timeout_seconds": 90,
+       "exit_code": 0,
+       "stdout_contains": [
+        "PASS_Q42_FRACTIONAL_PROPER_CARVING_WALL",
+        "GEOMETRY coarse=117 fine_boxes=280917",
+        "PACKETS first=13230 second=4410 disjoint_total=17640",
+        "ROWS actual_common_offset=92610 checked_all_packets",
+        "FRACTIONAL_DELETION lower_bound=17640 allowed_above_gate=16206",
+        "GATE max_retained=263277 gate=1058841/4",
+        "FROZEN_CERTIFICATE_NONMUTATION_OK",
+        "PLANTED_FAILURES_REJECTED",
+        "SCOPE one_block arbitrary_measurable_subsets pointwise_single_valued_potential"
+       ],
+       "stdout_not_contains": [
+        "Traceback (most recent call last)"
+       ],
+       "failure_control": {
+        "kind": "embedded",
+        "evidence": "The primary standard-library corroborating replay regenerates the q=42 geometry and both translation packet layers, checks all 92,610 actual common-offset rows, strict raw costs, cancellation, semantic digests, exact gate arithmetic, nonmutation of frozen bytes, and planted raw/support/gate failures."
+       }
+      },
+      {
+       "profile": "fast",
+       "certifies_claim": true,
+       "entrypoint": "certificates/erdos-142-q42-carving-wall/replay.py",
+       "argv": [
+        "python3",
+        "-I",
+        "certificates/erdos-142-q42-carving-wall/replay.py",
+        "--target",
+        "certificates/erdos-142-q42-carving-wall"
+       ],
+       "timeout_seconds": 90,
+       "exit_code": 0,
+       "stdout_contains": [
+        "PASS_INDEPENDENT_Q42_FRACTIONAL_CARVING_AUDIT",
+        "GEOMETRY coarse=117 q=42 fine_boxes=280917 half_open=[d/42,(d+1)/42)",
+        "PACKING first_packets=13230 second_packets=4410 disjoint_packets=17640 supports=92610",
+        "PHYSICAL_ROWS count=92610 zero_incidence=all strict_raw=all",
+        "FUBINI_POINTWISE forced_deletion=17640/42^4 retained=263277/42^4",
+        "GATE retained_boxes=263277 gate_boxes=1058841/4 strict_budget=16206 margin=5733/4",
+        "SCOPE one_block arbitrary_measurable_subtiles pointwise_single_valued_physical_potential"
+       ],
+       "stdout_not_contains": [
+        "Traceback (most recent call last)"
+       ],
+       "failure_control": {
+        "kind": "external",
+        "evidence": "The separately written hostile replay imports neither the candidate replay nor a candidate helper. It independently reconstructs the geometry, balanced packet rows, all-offset physical midpoint identities, exact carry and raw-cost checks, disjoint support layers, pointwise common-offset union-bound bookkeeping, and gate arithmetic while binding the package source and frozen-certificate bytes."
+       }
+      }
+     ]
+    },
     {
      "id": "erdos-142-q6-117-cell-q42-seventh-microbox-wall",
      "status": "promoted",

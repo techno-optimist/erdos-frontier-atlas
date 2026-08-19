@@ -43,7 +43,7 @@ others don't touch it.
 | `claude/erdos-366-sweep-20260726` | Erdős #366 cubefull-side sweep — verified range 10^22 → 10^25, zero strict-orientation solutions | `certificates/erdos-366/`, gap_map #366 row, contracts claim `erdos-366-cubefull-sweep-1e25` | PR packaging 2026-07-26 |
 | `claude/attack-graph-20260726` | The attack graph — a generated agent-facing overlay over every ledger (`GRAPH.md` → `views/sorties.md` → per-problem cards). Adds no facts; organizes existing ones | `tools/build_graph.py`, `tools/validate_graph.py`, `tools/query_graph.py`, `atlas/graph/`, `views/graph/`, `views/sorties.md`, `GRAPH.md`, `CLAUDE.md`, `tests/test_graph.py` | PR packaging 2026-07-26 |
 | `claude/trees-993-743-20260727` | Tree lanes: Erdős #743 Gyárfás packing at K_10, and #993 independence unimodality to n=30 (incl. first replication of the n≤29 frontier) | `certificates/erdos-743/`, `certificates/erdos-993/`, gap_map #743 + #993 rows, contracts claims `erdos-743-k10-packing` + `erdos-993-unimodal-n30` | PR packaging 2026-07-27 |
-| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md`, `certificates/erdos-142-mirror-core-additive-wall/`, `certificates/erdos-142-d4-role-distinct-additive-wall/`, `certificates/erdos-142-q24-cylinder-hypograph-wall/`, `certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/`, `certificates/erdos-142-q6-pair-coordinate-walls/`, `certificates/erdos-142-q6-global-potential-walls/`, `certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/`, `certificates/erdos-142-q6-outer-code-tensor-wall/`, `certificates/erdos-142-q6-coordinate-d4-product-wall/`, `certificates/erdos-142-q6-117-cell-six-deletion-wall/`, `certificates/erdos-142-q6-117-cell-loopless-transition-wall/`, `certificates/erdos-142-q6-117-cell-percell-affine-wall/`, `certificates/erdos-142-q6-117-cell-bounded-dilation-wall/`, `certificates/erdos-142-q6-117-cell-transition-spectral-wall/`, `certificates/erdos-142-q6-117-cell-endpoint-pruned-label-wall/`, `certificates/erdos-142-q6-117-cell-fullword-bounded-wall/`, `certificates/erdos-142-q6-117-cell-q12-halfcell-wall/`, `certificates/erdos-142-q6-117-cell-q18-third-microbox-wall/`, `certificates/erdos-142-q6-117-cell-q24-quarter-microbox-wall/`, `certificates/erdos-142-q6-117-cell-q30-fifth-microbox-wall/`, `certificates/erdos-142-q6-117-cell-q36-sixth-microbox-wall/`, `certificates/erdos-142-q6-117-cell-q42-seventh-microbox-wall/`, `certificates/erdos-142-q6-m7-cellu-restricted-wall/`, `certificates/erdos-142-q6-m7-deletion-fence/`, `certificates/erdos-142-q6-m7-orbit-free-selector/`, `certificates/erdos-142-q6-m7-unit-girth-six-wall/`, `certificates/erdos-142-q6-m7-unit-k8-deletion-fence/`, `certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/`, `certificates/erdos-142-q6-m7-redesign-torsion-wall/`, `certificates/erdos-142-q4-affine-order4-line-wall/`, `certificates/erdos-142-q7-q8-unit-hypercycle-walls/`, `certificates/erdos-142-q3m-torsion-triangle-wall/`, `certificates/erdos-142-interior-torus-torsion-wall/` | q=4, q=6, q=7, and q=8 maximum-mass D4 lanes closed for arbitrary global potentials; full q=6 word boxes and every complete q=12 half-microbox word language are below gate for bounded single-valued pointwise physical potentials, while complete globally aligned q=18, q=24, q=30, q=36, and q=42 one-block supports are also below gate; the q=24, q=30, q=36, and q=42 results are not word-language capacity theorems; proper/finer carving, context/path-dependent languages and non-word multi-block tiles remain live, subject to exact physical mass and potential bookkeeping; no new bound, 2026-08-18 |
+| `codex/erdos142-signed-slack-capacity` | P142 recursive outer-code / signed-slack capacity mechanism | `atlas/erdos-142-recursive-capacity.md`, `certificates/erdos-142-mirror-core-additive-wall/`, `certificates/erdos-142-d4-role-distinct-additive-wall/`, `certificates/erdos-142-q24-cylinder-hypograph-wall/`, `certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/`, `certificates/erdos-142-q6-pair-coordinate-walls/`, `certificates/erdos-142-q6-global-potential-walls/`, `certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/`, `certificates/erdos-142-q6-outer-code-tensor-wall/`, `certificates/erdos-142-q6-coordinate-d4-product-wall/`, `certificates/erdos-142-q6-117-cell-six-deletion-wall/`, `certificates/erdos-142-q6-117-cell-loopless-transition-wall/`, `certificates/erdos-142-q6-117-cell-percell-affine-wall/`, `certificates/erdos-142-q6-117-cell-bounded-dilation-wall/`, `certificates/erdos-142-q6-117-cell-transition-spectral-wall/`, `certificates/erdos-142-q6-117-cell-endpoint-pruned-label-wall/`, `certificates/erdos-142-q6-117-cell-fullword-bounded-wall/`, `certificates/erdos-142-q6-117-cell-q12-halfcell-wall/`, `certificates/erdos-142-q6-117-cell-q18-third-microbox-wall/`, `certificates/erdos-142-q6-117-cell-q24-quarter-microbox-wall/`, `certificates/erdos-142-q6-117-cell-q30-fifth-microbox-wall/`, `certificates/erdos-142-q6-117-cell-q36-sixth-microbox-wall/`, `certificates/erdos-142-q6-117-cell-q42-seventh-microbox-wall/`, `certificates/erdos-142-q42-carving-wall/`, `certificates/erdos-142-q6-m7-cellu-restricted-wall/`, `certificates/erdos-142-q6-m7-deletion-fence/`, `certificates/erdos-142-q6-m7-orbit-free-selector/`, `certificates/erdos-142-q6-m7-unit-girth-six-wall/`, `certificates/erdos-142-q6-m7-unit-k8-deletion-fence/`, `certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/`, `certificates/erdos-142-q6-m7-redesign-torsion-wall/`, `certificates/erdos-142-q4-affine-order4-line-wall/`, `certificates/erdos-142-q7-q8-unit-hypercycle-walls/`, `certificates/erdos-142-q3m-torsion-triangle-wall/`, `certificates/erdos-142-interior-torus-torsion-wall/` | q=4, q=6, q=7, and q=8 maximum-mass D4 lanes closed for arbitrary global potentials; full q=6 word boxes and every complete q=12 half-microbox word language are below gate; complete globally aligned q=18, q=24, q=30, q=36, and q=42 one-block supports are below gate; arbitrary measurable proper carving is now also below gate in the fixed q=42 one-block 117-cell union under pointwise single-valued physical coercivity, with no boundedness premise. This is not a word/path capacity theorem; context/path-dependent languages and non-word multi-block tiles remain live. No new bound, 2026-08-18 |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching
@@ -59,6 +59,36 @@ and replayable in `certificates/erdos-142/` (`python3 verify.py`).
 objects were UNTRACKED working-tree files; a later run overwrote them and they are
 gone from both working copies — a result that was replayed-clean 2026-07-13 is now unbacked.
 Commit your certs.
+
+## 2026-08-18 — Erdős 142: q=42 arbitrary-measurable proper-carving wall
+
+`certificates/erdos-142-q42-carving-wall/` closes
+the proper-carving gap for the fixed **one-block** 117-cell q=6 union.  Let
+`E` be any measurable subset, not necessarily a union of fine boxes, and
+let one physical single-valued `F:E->R` satisfy every pointwise
+raw-canonical torus-midpoint inequality.  The exact common-offset packet
+argument gives
+
+```text
+mu(E) <= 263277/42^4 < 49/576.
+```
+
+The two pairwise support-disjoint q=42 translation layers contain 13,230 and
+4,410 balanced packets, hence force deletion volume at least
+`17640/42^4`; the gate is missed by `5733/(4*42^4)`.  Each packet pulls
+arbitrarily shaped deletions back to offset slices `A_v`; pointwise
+coercivity makes their total intersection empty, and the union bound plus
+the `42^-4` Jacobian gives the loss.  No boundedness, full-microbox,
+continuity, additivity, or finite-state premise is used.  The primary
+corroborating replay and separately written claim-certifying hostile replay
+reconstruct all 92,610 actual common-offset rows, carries, raw costs,
+zero-incidence packets, support disjointness, and exact gate arithmetic.
+
+This supersedes the complete-microbox-only gap only for the fixed one-block
+union.  It does not cover an almost-everywhere inequality, multivalued or
+context-owned potentials, word/graph/path/multi-block capacity, coupled or
+overlapping tiles, EHPS shell construction, integer transfer, a new
+`r_3(N)` bound, or a solution to Erdős Problem 142.
 
 ## 2026-08-18 — Erdős 142: complete q=36 sixth-microbox one-block wall
 

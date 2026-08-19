@@ -1774,6 +1774,85 @@ coupled multi-block tiles, almost-everywhere-only coercivity, unbounded
 corrections, integer transfer and a new `r_3(N)` bound remain open.  Erdős
 Problem 142 is unsolved.
 
+### 4.34 Arbitrary measurable q=42 proper carving also fails in the fixed one-block union
+
+The complete-q=42-microbox wall above leaves a real logical gap: a retained
+set might remove a different arbitrarily shaped measurable piece of every
+fine box.  That gap is now closed for the same fixed one-block 117-cell q=6
+union.  Let `E` be any measurable subset of that union and suppose one
+single-valued physical function `F:E -> R` satisfies every actual,
+pointwise raw-canonical torus-midpoint inequality
+
+```text
+F(x)+F(z) >= 2F(y)+||x-z||_2^2.
+```
+
+Then
+
+```text
+mu(E) <= 263277/42^4 < 49/576.
+```
+
+This uses neither boundedness nor a full-box, continuity, additivity,
+finite-state, or piecewise-potential premise.  It is a different mechanism
+from strict dilation: each selected balanced q=42 packet is parameterized by
+a common offset `u in [0,1)^4`.  For its fine-box digits `d_v`, put
+
+```text
+p_v(u)=(d_v+u)/42,   A_v={u:p_v(u) in E}.
+```
+
+The common offset cancels from every row's modular midpoint equation.  If
+`intersection_v A_v` were nonempty, the pointwise rows at that same offset
+would cancel every occurrence of the physical `F` and leave a positive raw
+endpoint-square sum, impossible.  Thus that intersection is empty, and
+
+```text
+1 <= sum_v mu([0,1)^4 minus A_v).
+```
+
+Each parameter map has Jacobian `42^-4`, so each packet forces at least one
+q=42 box-volume of deletion even though its loss can be spread arbitrarily
+across its boxes.  This is an exact Fubini/union-bound argument, not an
+assertion that a whole microbox must disappear.
+
+The frozen two-layer packing has 13,230 first-layer and 4,410 second-layer
+packets, with pairwise-disjoint fine-box supports throughout.  Hence it
+forces measure loss at least
+
+```text
+17640/42^4.
+```
+
+Since the q=42 universe has `117*7^4=280917` boxes and the four-coordinate
+EHPS gate is `1058841/4` q=42-box-volume units, this gives
+
+```text
+mu(E) <= (280917-17640)/42^4 = 263277/42^4,
+```
+
+below the gate by `5733/(4*42^4)`.  The controlled collar carve retaining
+`[1/144,143/144]^4` residuals in every q=6 cell would numerically clear the
+mass gate, but the replay's packet offset lies at least `1/56` from every
+coarse face; it survives that collar and is already refuted by a finite
+packet.
+
+The package
+`certificates/erdos-142-q42-carving-wall/` contains
+the frozen semantic certificate, a primary corroborating replay, and a
+separately written claim-certifying hostile replay.  The latter reconstructs
+all 92,610 physical common-offset rows, carries, raw costs, packet
+disjointness, and exact measure arithmetic without importing the primary
+replay.
+
+This **supersedes the complete-microbox-only proper-carving gap** only for the
+fixed one-block 117-cell union.  It remains essential that coercivity is
+pointwise on every actual triple; no almost-everywhere version follows.
+Multivalued, label/state-indexed, context-owned, or path-dependent potentials;
+arbitrary word, graph, path, or multi-block capacity; overlap kernels and
+coupled tiles; EHPS shell construction; integer transfer; and a new
+`r_3(N)` bound remain open.  Erdős Problem 142 is unsolved.
+
 ## 5. What would count as progress
 
 A promotable positive result must include all of:
