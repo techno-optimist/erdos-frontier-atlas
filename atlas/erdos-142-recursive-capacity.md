@@ -1933,7 +1933,8 @@ this complete total deterministic model.
 
 A third theorem fixes the support-disjoint q42 packing, colors exactly one box
 red in each of its 17,640 packets, and colors the other 263,277 boxes blue.
-For every color-homogeneous partial deterministic interface with at most six
+For every color-homogeneous partial deterministic interface with at most
+fifteen live
 states, one fixed start, and a nonempty accepting set, define rate by accepted
 word growth, equivalently by the reachable/coaccessible live trim. If its
 binary language avoids every nondegenerate seven-multisunflower, then
@@ -1942,24 +1943,33 @@ binary language avoids every nondegenerate seven-multisunflower, then
 lambda <= B = 263277 < G = 1058841/4.
 ```
 
-The six-state product-first census checks all 2,058,472 strong S6 orbits and
-all 36 start/singleton-target pairs. Exactly 1,641 orbits miss a product goal;
-independent exact Perron arithmetic splits them as 1,640 below `B`, one equal,
-and none above. The maximum shortest witness horizon is 50. Lower-state and
-hostile replays are separately implemented. Reusing one explicitly verified
-actual size-seven packet at every unit column, with cyclic alignment to its
-chosen red role, turns every above-gate witness into a positive raw-canonical
-whole-word Farkas obstruction.
+The structural proof writes a strong live table as `W=BA+RC`. For an acyclic
+blue map, the positive integer tail vector
+`v=(I+A+...+A^(m-1))1` satisfies
+`Wv<=Bv-(B-mR)1<Bv` for `m<=14`. If the blue map has a directed cycle,
+strict Perron monotonicity leaves only the spanning blue-only cycle at
+equality; every other strong table has an explicit red-exit word whose power,
+paired with an all-blue cycle word, produces a unit-red seven-copy loop for
+every ordered start/target pair. Reusing one explicitly verified actual
+size-seven q42 packet at every unit column turns this into a positive
+raw-canonical whole-word Farkas obstruction. Separate native/WSL source and
+hostile replays check the live trim, equality case, word lift, all 441
+size-seven packets, and exact margin `B-14R=16317`. At fifteen states the only
+new acyclic shape is the Hamiltonian blue chain. Exact Collatz vectors leave
+only 16 above-`B` red maps; explicit words and an independent 232,560-state
+product replay cover all 3,600 ordered start/target pairs, while a hostile
+replay checks all 25,200 red-role physical lifts.
 
-The same package records a weighted multiset-sunflower boundary: exact
-tensor/uniformization, `M_1=6`, `M_2=42`, strengthened recursion, and rational
-LYM/cap arithmetic. The exact weighted optimum is 1 through dimension 28, and
-the gate is excluded through dimension 31. The relaxation failures at 29 and
-32 are not constructions, and packet avoidance alone is not a physical
-potential.
+The same package records a stronger weighted multiset-sunflower boundary.
+Sharp graph caps `A_2=42`, `B_2=33` and a two-level restricted-link argument
+give `A_3=672`, `B_3=560` and a coupled uniform recurrence. Independent exact
+LYM/cap primal-dual arithmetic keeps the weighted optimum at 1 through
+dimension 28 and excludes the gate through dimension 33. The relaxation
+failures at 29 and 34 are not constructions, and packet avoidance alone is
+not a physical potential.
 
 The separate horizon-two even-parity packet remains as a concrete supporting
-example. Seven or more homogeneous partial states, physical-symbol-dependent
+example. Sixteen or more homogeneous partial states, physical-symbol-dependent
 or arbitrarily state-carved transitions, arbitrary same-count colorings,
 nondeterministic/multiple ownership, arbitrary measurable overlap or carving,
 infinite or horizon-growing state systems, almost-everywhere coercivity,

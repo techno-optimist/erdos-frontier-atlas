@@ -7,7 +7,7 @@ with an all-state spectral argument under globally disjoint edge ownership.
 The second permits repeated full-box ownership and arbitrary transition
 memory, but requires a complete total deterministic q42 decoder with
 coaccessible reachable states. The third covers color-homogeneous partial
-deterministic interfaces through six states for one frozen q42 coloring.
+deterministic interfaces through fifteen states for one frozen q42 coloring.
 None is a positive construction or a new bound for `r_3(N)`.
 
 ## Exact theorem
@@ -180,43 +180,59 @@ state. Transitions depend only on the color, not on the individual physical
 box. Its rate is the accepted-language limsup, equivalently the Perron root
 after reachable/coaccessible live trimming.
 
-The exact source and hostile replays in
+The earlier exact source and hostile replays in
 `homogeneous-partial-six-state-extension/`, together with the byte-bound lower
-state packet in `homogeneous-partial-five-state-wall/`, prove that every such
-interface with at most six states and no nondegenerate seven-multisunflower
-has rate at most
+state packet in `homogeneous-partial-five-state-wall/`, remain finite-census
+corroboration. The structural theorem and its fifteen-state residual extension
+prove that every such interface with at most fifteen live states and no
+nondegenerate seven-multisunflower has rate at most
 
 ```text
 B = 263277 < G = 1058841/4.
 ```
 
-The six-state source enumerates 2,058,472 strong simultaneous-S6 orbits. Of
-these, 2,056,831 reach every start/target product goal; the remaining 1,641
-have exact rate at most `B`, with split `(below,equal,above)=(1640,1,0)`.
-The largest shortest sunflower horizon is 50. The independent hostile replay
-reconstructs the full 17,640-packet packing, all 441 size-seven packets, and
-strict positivity of every raw-canonical alignment cost. For the physical
-lift it is enough to reuse the one explicit actual size-seven packet checked
-by the source replay; cyclic alignment handles its arbitrarily chosen red
-role. Packet incidence cancels every whole-word potential value.
+The structural source and hostile replays in
+`homogeneous-partial-fourteen-state-wall/` supersede the finite S6 census, and
+`homogeneous-partial-fifteen-state-extension/` closes its sole new acyclic
+residual. On a strong live component write `W=BA+RC`. If the partial blue map
+is acyclic, the positive integer vector
+`v=(I+A+...+A^(m-1))1` gives
 
-The companion `weighted-multiset7-boundary/` is deliberately weaker and more
-general on the combinatorial side. It verifies the literal multiset
-sunflower reduction, tensor uniformization, `M_1=6`, `M_2=42`, the strengthened
-recursion, an exact weighted optimum of 1 through dimension 28, and exclusion
-of the gate through dimension 31. Relaxation failures at dimensions 29 and 32
-are not constructions. This weighted packet is a support-language boundary
-only: packet avoidance does not construct a physical potential.
+```text
+Wv <= Bv-(B-mR)1 < Bv                    (m<=14).
+```
 
-The certifying aggregate runs the six-state source, the first independent
-lower-state hostile replay, and the weighted boundary concurrently:
+If the blue map has a directed cycle, strict Perron monotonicity leaves only
+the spanning blue-only cycle at equality. Every other strong table has a red
+exit and an explicit closed word `u`; comparing `u^k` with an all-blue word
+of the same length gives a unit-red seven-copy loop for every ordered
+start/target pair. The independently replayed physical dependency reconstructs
+the full 17,640-packet packing and turns that abstract loop into a positive
+raw-canonical whole-word Farkas obstruction. At fifteen states, the only
+remaining blue shape is the Hamiltonian chain. Exact Collatz vectors reduce
+every above-`B` red completion to 16 maps, and explicit words plus an
+independent 232,560-state product replay find all 3,600 ordered witnesses
+(shortest horizon at most 18). A separate hostile replay checks all 25,200
+red-role physical lifts.
+
+The new `weighted-multiset7-twolevel/` companion strengthens the earlier
+support-language boundary. Chvatal--Hanson gives the sharp graph caps
+`A_2=42`, `B_2=33`; a restricted-link matching argument yields the coupled
+recurrence with `A_3=672`, `B_3=560`. Exact rational LYM/cap dual arithmetic
+keeps the optimum at 1 through dimension 28 and excludes the physical gate
+through dimension 33. The failures at dimensions 29 and 34 are relaxation
+failures only. Packet avoidance still does not construct a physical potential.
+
+The certifying aggregate runs the fourteen-state structural replay, the
+fifteen-state residual extension, and the two-level weighted replay
+concurrently with the legacy paths:
 
 ```text
 python3 -I certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/verify_all.py
 ```
 
-The two exhaustive corroborating paths are intentionally outside the fast
-Makefile target:
+The older exhaustive finite-state corroborating paths remain available outside
+the fast Makefile target:
 
 ```text
 python3 -I certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/homogeneous-partial-five-state-wall/independent_replay.py
@@ -225,7 +241,7 @@ python3 -I certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/homoge
 
 The aggregate retains the compatibility marker
 `PASS_DISJOINT_AND_TOTAL_OVERLAP_REUSE_WALLS` and ends with
-`PASS_DISJOINT_TOTAL_AND_PARTIAL_SIX_STATE_WALLS`.
+`PASS_DISJOINT_TOTAL_AND_PARTIAL_FIFTEEN_STATE_WALLS`.
 
 ## Scope
 
@@ -237,9 +253,9 @@ total deterministic decoders with unique physical-word ownership and an
 accepting suffix from every reachable state.
 
 The partial companion covers only the frozen one-red-per-packed-packet
-coloring, color-homogeneous partial deterministic interfaces with at most six
-states, and accepted-language/live-trim rate. Still not proved: seven or more
-states; physical-symbol-dependent or arbitrarily state-carved transitions;
+coloring, color-homogeneous partial deterministic interfaces with at most
+fifteen live states, and accepted-language/live-trim rate. Still not proved:
+sixteen or more live states; physical-symbol-dependent or arbitrarily state-carved transitions;
 an arbitrary same-count coloring; nondeterministic or multiple-path ownership;
 arbitrary overlapping or carved measurable subtiles; infinite or
 horizon-growing state systems; an

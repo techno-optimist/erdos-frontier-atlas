@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Aggregate disjoint, total, and bounded homogeneous-partial trust paths."""
+"""Aggregate disjoint, total, and structural homogeneous-partial trust paths."""
 
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -26,8 +26,13 @@ LEGACY_RUNS = (
 FAST_EXTENSION_RUNS = (
     (
         (sys.executable, "-I", str(
-            HERE / "homogeneous-partial-six-state-extension" / "verify.py")),
-        "PASS_PORTABLE_AT_MOST_SIX_STATE_SOURCE",
+            HERE / "homogeneous-partial-fourteen-state-wall" / "verify.py")),
+        "PASS_PORTABLE_AT_MOST_FOURTEEN_STATE_STRUCTURAL_WALL",
+    ),
+    (
+        (sys.executable, "-I", str(
+            HERE / "homogeneous-partial-fifteen-state-extension" / "verify.py")),
+        "PASS_PORTABLE_AT_MOST_FIFTEEN_STATE_CHAIN_EXTENSION",
     ),
     (
         (sys.executable, "-I", str(
@@ -37,8 +42,8 @@ FAST_EXTENSION_RUNS = (
     ),
     (
         (sys.executable, "-I", str(
-            HERE / "weighted-multiset7-boundary" / "verify.py")),
-        "PASS_PORTABLE_WEIGHTED_MULTISET7_BOUNDARY",
+            HERE / "weighted-multiset7-twolevel" / "verify.py")),
+        "PASS_PORTABLE_WEIGHTED_MULTISET7_TWO_LEVEL_BOUND",
     ),
 )
 
@@ -76,7 +81,7 @@ def main() -> None:
             print(output, end="" if output.endswith("\n") else "\n")
 
     print("PASS_DISJOINT_AND_TOTAL_OVERLAP_REUSE_WALLS")
-    print("PASS_DISJOINT_TOTAL_AND_PARTIAL_SIX_STATE_WALLS")
+    print("PASS_DISJOINT_TOTAL_AND_PARTIAL_FIFTEEN_STATE_WALLS")
 
 
 if __name__ == "__main__":
