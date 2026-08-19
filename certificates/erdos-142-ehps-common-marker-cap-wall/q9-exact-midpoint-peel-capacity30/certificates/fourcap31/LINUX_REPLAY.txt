@@ -1,0 +1,27 @@
+REPLAY platform=WSL-Ubuntu checker=drat-trim-linux
+CHECKER_SHA256 92f0aa9575ed519d66a99b8b1b3dde6ece4618ae4c202a3a4b200265dda0aa7a
+DRAT_VERIFIED case=case2_center_second_00 seconds=0.299
+DRAT_VERIFIED case=case2_center_second_01 seconds=0.299
+DRAT_VERIFIED case=case2_center_second_02 seconds=13.328
+DRAT_VERIFIED case=case2_center_second_03 seconds=0.409
+DRAT_VERIFIED case=case2_corner_second_00 seconds=0.271
+DRAT_VERIFIED case=case2_corner_second_01 seconds=0.273
+DRAT_VERIFIED case=case2_corner_second_02 seconds=0.291
+DRAT_VERIFIED case=case2_corner_second_03 seconds=0.293
+DRAT_VERIFIED case=case2_corner_second_04 seconds=0.298
+DRAT_VERIFIED case=case2_corner_second_05 seconds=0.353
+DRAT_VERIFIED case=case2_corner_second_06 seconds=1.136
+DRAT_VERIFIED case=case2_corner_second_07 seconds=6.548
+DRAT_VERIFIED case=case2_corner_second_08 seconds=31.078
+DRAT_VERIFIED case=case2_corner_second_09 seconds=2.046
+DRAT_VERIFIED case=case2_sat_second_00 seconds=0.284
+DRAT_VERIFIED case=case2_sat_second_01 seconds=0.290
+DRAT_VERIFIED case=case2_sat_second_02 seconds=0.267
+DRAT_VERIFIED case=case2_sat_second_03 seconds=0.263
+DRAT_VERIFIED case=case2_sat_second_04 seconds=0.260
+DRAT_VERIFIED case=case2_sat_second_05 seconds=29.064
+DRAT_VERIFIED case=case2_sat_second_06 seconds=99.748
+DRAT_VERIFIED case=case2_sat_second_07 seconds=102.788
+DRAT_VERIFIED case=case2_sat_second_08 seconds=6.534
+DRAT_VERIFIED case=case2_sat_second_09 seconds=54.880
+PASS_EXTERNAL_DRAT cases=24 elapsed=116.118

@@ -39,22 +39,22 @@ mu(M) <= 35/2916+2(4epsilon/3-2epsilon^2) < mu(T)^2/7
 
 for `0<=epsilon<=1/20000`.
 
-For `h=8`, the independent q=9 peelability theorem in
-`h8-q9-peel-cap-wall/` proves that every pointwise-potential plane slice has
-measure at most `31/81`. Hence
+For `h=8`, the exact q=9 peelability theorem in
+`q9-exact-midpoint-peel-capacity30/` proves that every pointwise-potential
+plane slice has measure at most `30/81`. Hence
 
 ```text
-mu(M) <= 31/2916+2(4epsilon/3-2epsilon^2) <= mu(T)^2/8
+mu(M) <= 30/2916+2(4epsilon/3-2epsilon^2) <= mu(T)^2/8
 ```
 
 through the first positive root
 
 ```text
-epsilon_* = 2/(1022544+sqrt(1045590073344)).
+epsilon_* = 258/(1022544+sqrt(1044801773568)).
 ```
 
 For `epsilon=1/n`, the certified strict range is every integer
-`n>=1022543`; the second inequality is strict before `epsilon_*`.
+`n>=7926`; the second inequality is strict before `epsilon_*`.
 
 ## Coverage dichotomy and same-phase caps
 
@@ -135,35 +135,49 @@ only needs a positive right side, so the entire h=7 bound transports through
 
 ## The q=9 h=8 sharpening
 
-Let `C_9` be the largest size of a subset of `(Z/9Z)^2` carrying a strict
-midpoint potential. The self-contained compact replay proves exactly
+Let `C_9` be the largest size of a midpoint-peelable subset of `(Z/9Z)^2`:
+one can repeatedly remove a point that is not the midpoint of two distinct
+remaining points. Equivalently, `C_9` is the largest support carrying a
+strict midpoint potential. The exact result is
 
 ```text
-30 <= C_9 <= 31.
+C_9 = 30.
 ```
 
 The lower bound is an explicit 30-point reverse-add order. For the upper
-bound, any hypothetical peelable 32-set has three saturated mod-3 fibres on
-a quotient line. Exhausting all `54^3=157,464` saturated slabs leaves two
-affine orbits, each of size 2,916. Separate direct six-fibre searches exclude
-a 20-point extension of both representatives in exactly 3,017,764 and
-1,989,055 recursion nodes. These searches use no SAT solver, proof checker,
-timeout, randomness, floating point, or precompiled binary. The value of
-`C_9` is not determined: no 31-point support is claimed.
+bound, the exact 1,278-profile census partitions every possible 31-set into
+1,224 saturated-slab profiles and 54 non-slab `4^4 3^5` profiles. Every
+peelable saturated slab normalizes to one of the two 2,916-element orbits
+from the `54^3=157,464` slab census; direct full-geometry order CNFs exclude
+both representatives. The 54 non-slab profiles form one quotient four-cap
+orbit, and a complete first/second-point stabilizer split gives 24 order-CNF
+cases. All 26 UNSAT claims have official binary DRAT proofs independently
+checked on native Windows and WSL/Linux. Their exact hashes, sizes, checker
+censuses, and logs are bound by the compact packet; raw proofs and compiled
+checkers remain external.
 
 For a measurable exceptional plane `E`, common-offset q=9 sections inherit
 every physical midpoint row and are therefore peelable. Finite-group Fubini
-gives `mu(E)<=31/81`, so the two exceptional factor planes contribute at most
-`31/2916`. Exact subtraction from the h=8 density gate gives
+gives `mu(E)<=30/81`, so the two exceptional factor planes contribute at most
+`30/2916`. Exact subtraction from the h=8 density gate gives
 
 ```text
-G(epsilon)=1/46656-(263/12)epsilon+33epsilon^2.
+G(epsilon)=43/15552-(263/12)epsilon+33epsilon^2
+          =(129-1022544epsilon+1539648epsilon^2)/46656.
 ```
 
 Thus `G>=0` on `0<=epsilon<=epsilon_*`; strict product improvement is
 impossible even at the endpoint because improvement itself requires a strict
-inequality. The adjacent rational checks are positive at `1/1022543` and
-negative at `1/1022542`.
+inequality. The adjacent rational checks are
+`G(1/7926)=7651/27138877632>0` and
+`G(1/7925)=-65309/976753080000<0`.
+
+The in-repo default replay is deliberately noncertifying: without the raw
+external proofs it ends with `STRUCTURE_READY_EXTERNAL_PROOFS_REQUIRED` and
+must never emit `CONCLUSION_EXACT_C9_30`. Only the explicit external mode that
+hashes and checks all 24 four-cap proofs and both direct-slab proofs may emit
+the exact conclusion. Consumers must require exit code zero and the terminal
+`PASS_NONMUTATION`; grepping the earlier conclusion line alone is invalid.
 
 ## Portable replays
 
@@ -176,6 +190,7 @@ python -I certificates\erdos-142-ehps-common-marker-cap-wall\h7-q9-cap-wall\veri
 python -I certificates\erdos-142-ehps-common-marker-cap-wall\h7-q9-cap-wall\independent_replay.py
 python -I certificates\erdos-142-ehps-common-marker-cap-wall\h8-q9-peel-cap-wall\verify_all.py
 python -I certificates\erdos-142-ehps-common-marker-cap-wall\h8-q9-peel-cap-wall-independent\independent_replay.py
+python -I -B certificates\erdos-142-ehps-common-marker-cap-wall\q9-exact-midpoint-peel-capacity30\verify_all.py
 ```
 
 Linux or WSL:
@@ -187,6 +202,7 @@ python3 -I certificates/erdos-142-ehps-common-marker-cap-wall/h7-q9-cap-wall/ver
 python3 -I certificates/erdos-142-ehps-common-marker-cap-wall/h7-q9-cap-wall/independent_replay.py
 python3 -I certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall/verify_all.py
 python3 -I certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall-independent/independent_replay.py
+python3 -I -B certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/verify_all.py
 ```
 
 The primary standard-library replay verifies the full eight-row cycle across
@@ -196,13 +212,18 @@ normalization, `L` symmetry, and exact density polynomials. The independently
 written bit-mask replay separately derives the folded coverage intervals,
 cap and plane-union bounds, normalization, and density arithmetic.
 
-Expected verdicts are `PASS_LITERAL_EHPS_COMMON_MARKER_H4_CAP_WALL` and
+Expected local subcomponent verdicts are
+`PASS_LITERAL_EHPS_COMMON_MARKER_H4_CAP_WALL` and
 `PASS_INDEPENDENT_COMMON_MARKER_H4_WALL`; the h=7 primary verdict is
 `PASS_H7_Q9_CAP_AUDIT`, and its independent verdict is
 `PASS_Q9_H7_CAP_WALL_INDEPENDENT`. The compact h=8 verdict is
 `PASS_Q9_COMBINED_PACKAGE`, after the finite theorem marker
 `PASS_Q9_CAPACITY_THEOREM 30<=C9<=31`; its implementation-diverse companion
-ends with `PASS_INDEPENDENT_Q9_HOSTILE_REPLAY 30<=C9<=31`.
+ends with `PASS_INDEPENDENT_Q9_HOSTILE_REPLAY 30<=C9<=31`. Those legacy
+markers certify the earlier weaker subtheorem only. The strengthened compact
+replay ends `STRUCTURE_READY_EXTERNAL_PROOFS_REQUIRED`; the external all-proof
+mode alone may emit `CONCLUSION_EXACT_C9_30` followed by terminal
+`PASS_NONMUTATION`.
 
 ## Scope
 
@@ -210,5 +231,6 @@ This is only the literal `A,B` chain with one common marker and a pointwise
 phase-labelled potential. It does not cover phase-specific markers
 `M_1,...,M_h`, common-marker horizons `h>=9`, context-owned/carved `A` or `B`
 pieces, other graph languages, target-35 q=9 infeasibility, the exact value of
-`C_9`, an almost-everywhere hypothesis, a new physical construction, EHPS
+`C_9` outside the finite midpoint-peelability model, an almost-everywhere
+hypothesis, a new physical construction, EHPS
 integer transfer, a new `r_3(N)` bound, or Erdős Problem 142.

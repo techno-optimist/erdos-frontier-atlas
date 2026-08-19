@@ -134,7 +134,7 @@
   {
    "path": "certificates/erdos-142-ehps-common-marker-cap-wall",
    "classification": "certified_local",
-   "boundary": "For the literal EHPS tiles A=T x T and B=L(A), one common measurable marker M used in every phase of A^(j-1) x M x B^(h-j), and arbitrary phase-labelled pointwise potentials, exact cap/Fubini arguments close h=4,5,6 for 0<epsilon<=1/4000, h=7 for 0<=epsilon<=1/20000, and h=8 through the exact first root 2/(1022544+sqrt(1045590073344)), including epsilon=1/n for every n>=1022543. The h=7 sharpening proves an arbitrary-measurable exceptional-plane cap of 35/81. The h=8 sharpening proves 30<=C9<=31 by a compact solver-independent two-template exhaustion and improves the plane cap to 31/81. This closes only the stated common-marker horizons. Common-marker horizons h>=9, phase-specific markers, context-owned or carved A/B pieces, the exact value of C9, other graph languages, almost-everywhere coercivity, EHPS integer transfer, and a new r_3(N) bound remain outside scope. Erdos Problem 142 remains unsolved."
+   "boundary": "For the literal EHPS tiles A=T x T and B=L(A), one common measurable marker M used in every phase of A^(j-1) x M x B^(h-j), and arbitrary phase-labelled pointwise potentials, exact cap/Fubini arguments close h=4,5,6 for 0<epsilon<=1/4000, h=7 for 0<=epsilon<=1/20000, and h=8 through 258/(1022544+sqrt(1044801773568)), including epsilon=1/n for every n>=7926. The h=7 exceptional-plane cap is 35/81. For h=8, C9 is the midpoint-peelable, equivalently strict-midpoint-potential, capacity of (Z/9Z)^2; the externally proof-checked exact value is C9=30, yielding plane cap 30/81. The compact in-repo replay is deliberately noncertifying without the raw DRAT payloads and ends STRUCTURE_READY_EXTERNAL_PROOFS_REQUIRED; only full external replay of all 26 proofs may emit CONCLUSION_EXACT_C9_30, followed by terminal PASS_NONMUTATION. Common-marker horizons h>=9, phase-specific markers, context-owned or carved A/B pieces, other graph languages, almost-everywhere coercivity, EHPS integer transfer, and a new r_3(N) bound remain outside scope. Erdos Problem 142 remains unsolved."
   },
   {
    "path": "certificates/erdos-142-q4-q7-affine-quadratic-capacity",
@@ -3612,24 +3612,24 @@
     },
     {
      "id": "erdos-142-ehps-common-marker-h4-h8-wall",
-     "status": "promoted",
-     "statement": "For the literal EHPS tiles A=T x T and B=L(A), a single common measurable marker M used in every phase A^(j-1) x M x B^(h-j), and arbitrary phase-labelled pointwise potentials, the marker density is below mu(T)^2/h for h=4,5,6 when 0<epsilon<=1/4000 and for h=7 when 0<=epsilon<=1/20000. For h=8 it is at most mu(T)^2/8 when 0<=epsilon<=2/(1022544+sqrt(1045590073344)), so no strict product improvement is possible; the gap is strict for epsilon=1/n, every integer n>=1022543.",
-     "scope": "For h=4,5,6, the eight-row whole-word cycle forces a surviving common marker wholly into C_A^c or C_B^c, same-phase H_3^4 lines force every marker fibre to be an affine cap, and the folded triangle/strip decomposition gives mu(M)<=1/81+2(4epsilon/3-2epsilon^2). For h=7, 2,916 exact q=9 six-point line packets plus a solver-free 716,176-node target-36 exhaustion give the arbitrary-measurable exceptional-plane bound 35/81. For h=8, the exact finite theorem 30<=C9<=31 follows from a size-30 witness, a 157,464-slab/two-orbit reduction, and direct solver-independent extension searches with 3,017,764 and 1,989,055 nodes. Common-offset Fubini gives the plane cap 31/81 and marker bound mu(M)<=31/2916+2(4epsilon/3-2epsilon^2); exact density subtraction gives the stated first-root interval. The Haar-preserving torus automorphism L transports the positive finite obstruction to the C_B branch without assuming metric invariance. Separate values are allowed for phase-labelled physical words. This covers only the literal A/B chain, one common marker, and the stated horizons. It does not cover common-marker horizons h>=9, phase-specific markers M_1,...,M_h, context-owned or carved A/B pieces, the exact value of C9, other graph languages, an almost-everywhere midpoint hypothesis, a new construction, EHPS integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved.",
-     "machine_verdict": "PASS_LITERAL_EHPS_COMMON_MARKER_H4_H8_WALL",
+     "status": "partial",
+     "statement": "Let C9 be the largest midpoint-peelable subset of (Z/9Z)^2, equivalently the largest support carrying a strict midpoint potential. Then C9=30. Consequently, for the literal EHPS tiles A=T x T and B=L(A), a single common measurable marker M used in every phase A^(j-1) x M x B^(h-j), and arbitrary phase-labelled pointwise potentials, the marker density is below mu(T)^2/h for h=4,5,6 when 0<epsilon<=1/4000 and for h=7 when 0<=epsilon<=1/20000. For h=8 it is at most mu(T)^2/8 when 0<=epsilon<=258/(1022544+sqrt(1044801773568)), so no strict product improvement is possible; the gap is strict for epsilon=1/n, every integer n>=7926.",
+     "scope": "For h=4,5,6, the eight-row whole-word cycle forces a surviving common marker wholly into C_A^c or C_B^c, same-phase H_3^4 lines force every marker fibre to be an affine cap, and the folded triangle/strip decomposition gives mu(M)<=1/81+2(4epsilon/3-2epsilon^2). For h=7, 2,916 exact q=9 six-point line packets plus a solver-free 716,176-node target-36 exhaustion give the arbitrary-measurable exceptional-plane bound 35/81. For h=8, the exact finite result C9=30 combines a 30-point witness, the 1,278=1,224+54 size-31 profile split, a 157,464-slab/two-orbit reduction, 24 normalized four-cap order-CNF cases, and two direct slab order-CNFs; all 26 external binary DRAT proofs were independently checked on Windows and Linux. Common-offset Fubini gives plane cap 30/81 and marker bound mu(M)<=30/2916+2(4epsilon/3-2epsilon^2); the exact gap is (129-1022544epsilon+1539648epsilon^2)/46656. The preserved claim is marked partial only because raw proofs are intentionally external: the compact replay binds and regenerates structure but is noncertifying. Only external full replay may emit CONCLUSION_EXACT_C9_30, and consumers must require exit zero plus terminal PASS_NONMUTATION. The Haar-preserving torus automorphism L transports the obstruction to C_B without metric invariance. This covers only the literal A/B chain, one common marker, and the stated horizons. It excludes common-marker horizons h>=9, phase-specific markers, context-owned or carved A/B pieces, other graph languages, almost-everywhere midpoint hypotheses, EHPS integer transfer, and any new r_3(N) bound. Erdos Problem 142 remains unsolved.",
+     "machine_verdict": "CONCLUSION_EXACT_C9_30",
      "publication_bindings": [
       {
        "path": "certificates/erdos-142-ehps-common-marker-cap-wall/README.md",
-       "contains": "Literal EHPS common-marker cap wall for h=4,5,6,7,8"
+       "contains": "C_9 = 30."
       },
       {
        "path": "atlas/erdos-142-recursive-capacity.md",
-       "contains": "The literal common-marker h=4,5,6,7,8 window is closed"
+       "contains": "C_9=30"
       }
      ],
      "artifacts": [
       {
        "path": "certificates/erdos-142-ehps-common-marker-cap-wall/README.md",
-       "sha256": "93ecd61c450ddd6d7c863947ae16f7ab94772ae3391e3c7add3faf3a6e1ab929"
+       "sha256": "07e8d4643d15fec0cb4dc262b23a9a14d954ae63facc9826dfd1b272d1ee912d"
       },
       {
        "path": "certificates/erdos-142-ehps-common-marker-cap-wall/verify.py",
@@ -3641,7 +3641,7 @@
       },
       {
        "path": "certificates/erdos-142-ehps-common-marker-cap-wall/verify_all.py",
-       "sha256": "b0d3ee6f3e73bab6b119d9947a7e282354062b7de5ae28baa6ea4acc8188028f"
+       "sha256": "172db0809d475f04497e106ae0b7c95f43361c7b3a2114b532fe6521bb52b147"
       },
       {
        "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h7-q9-cap-wall/README.md",
@@ -3770,55 +3770,363 @@
       {
        "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall-independent/SHA256SUMS.txt",
        "sha256": "12127df63fc4367bf4686b95fe56631bd5e0be9bd79c3c73754b0fc0eb711fa4"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/BINDINGS.json",
+       "sha256": "c683da619a6e6f6e6f8a2edba2e166c029730d305152edfc4e6fa028b34795c6"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/capacity32_base/COMMON_MARKER_H8_COROLLARY.md",
+       "sha256": "119909be9b6ae5edd58ff0051939e28821d48c268e28f6b9b53479c17e6e4d58"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/capacity32_base/compact_fibre_verify.cpp",
+       "sha256": "3c9cd3eaec0b7d603fc62f11291bf7415cc42b1db25e991d789ae58c776950e8"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/capacity32_base/data/template0_blockers.txt",
+       "sha256": "6616ff7d8262b7e5f597b606df09e71b60bb9edd34f43cfbd2a9d710fba58fa8"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/capacity32_base/data/template0.cnf",
+       "sha256": "e09943895dbfceb742d5addfd0263a433d6f7646c662d04e0e48fb25aacba456"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/capacity32_base/data/template1_blocker_reps.json",
+       "sha256": "f11ea7553f55ca5020c23ad949cd6d1e8330fd422e5af25d185d5262cd3d3335"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/capacity32_base/data/template1_blockers.txt",
+       "sha256": "4938f64aaac275f62eca702af1fb310ff9e7bf3448c460d1f32c250cd9ac75c6"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/capacity32_base/data/template1.cnf",
+       "sha256": "4100d2ab7501395107d4b23a746f741e4c403f74d17c644fcfb620ac0a0e1681"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/capacity32_base/DRAT_PROVENANCE.md",
+       "sha256": "76701a94ce36851ace57c117dceeabd814149fc9d22273526d0f015af563f6a2"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/capacity32_base/FILE_SIZES.tsv",
+       "sha256": "6f3f667d7e159797bdc7fefc0ec3b291c23ea008859cb0eae28f8a648ba4def9"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/capacity32_base/generate_template1_ledger.py",
+       "sha256": "1a7b41c3a0ab77a675ff360e492ecc15b6d6a12ea01ffb46525389564d8201fd"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/capacity32_base/README.md",
+       "sha256": "0207c812c71b132b5d7d6694112314fd6aa8cea5566158936ac12778dae73eb8"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/capacity32_base/run.ps1",
+       "sha256": "51cc5f91dac7b292d218412874bbae41770c4add2041726373ed4bd0c0d22b9f"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/capacity32_base/run.sh",
+       "sha256": "08141cce894db2d9f6cb87d5fa29d5008ab8e0b663145c4e0d53a2265510e61d"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/capacity32_base/SHA256SUMS.txt",
+       "sha256": "19cb6aacab9760b76a5c466b02bdfa554c1da5c1e7875d3fcf24e0bcbade4e4d"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/capacity32_base/SOURCE_BINDINGS.json",
+       "sha256": "56cc4f732d258eed679ab523a4382115592ecf609c9b88ace86087285b849ee9"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/capacity32_base/THEOREM.md",
+       "sha256": "4d09d9bd94c48fb20abb67be748746e621edfcac338e861726e42eb1eabb7414"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/capacity32_base/verify_all.py",
+       "sha256": "c2e7807bc59a32fa352a8f31cfa05332ffe7526e986707e7f4d208e3ea6f80f2"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/capacity32_base/verify_blocker_semantics.py",
+       "sha256": "9b9e09803633e7677153d2453eb3cc4dfe7a9793e7a8ea0545426d137e2e613c"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/capacity32_base/verify_finite_geometry.py",
+       "sha256": "cc09f10e29bc49dec536eb4170d330f8b2d30971e1d4656e6298dfe7079992b7"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/direct_slab31/checker/drat-trim.c",
+       "sha256": "78026871882de3f2fee66034e549e9c1a0a9a5291abd817d06f611f9ba0f355d"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/direct_slab31/cnf/case0_direct_unary31.cnf",
+       "sha256": "5f5b635ac07727751368bb766b91bacc9524f4c4818b95254e53bb62e03b0c15"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/direct_slab31/cnf/case1_direct_unary31.cnf",
+       "sha256": "54f931b253189be9b921fb83c1c1bdefffe425c1f340ff73fd2dcda8e2a3d8e8"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/direct_slab31/fopen_binary_shim.h",
+       "sha256": "b2cd6a3467adaf2f8bc8921a1189b8b5acc744ecc87fd1d7a7dbeb5b220799aa"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/direct_slab31/logs/case0_direct_cadical.log",
+       "sha256": "2b10d623f9b27f70f98ee7ecd70059a98b2c21201272d6d1c613bb38ed6555f8"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/direct_slab31/logs/case0_direct_drat_linux.log",
+       "sha256": "799c8bf7bfe58c995a0451c0da2bbe070d3206e921421f4daaef76cf360df025"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/direct_slab31/logs/case0_direct_drat_windows.log",
+       "sha256": "036264431530ff55d1b02ab72bb2c4bbec6e60d56d694e5701b69cae45ebc3cf"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/direct_slab31/logs/case1_direct_cadical.log",
+       "sha256": "23a246f0fb4a5bcdeabf04a5d18caa0e34eacf0d47c828981c8d0e93dd7e490f"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/direct_slab31/logs/case1_direct_drat_linux.log",
+       "sha256": "8b538884410a09a3da5ee5bfccc109e647b8e397f2574c7249b4c36171b5c162"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/direct_slab31/logs/case1_direct_drat_windows.log",
+       "sha256": "f9377a0e074f0a3e8774db41ee786e0074f888077709e279566921a26e4e86df"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/direct_slab31/SOURCE_README.md",
+       "sha256": "f61549109ba0c5af754355ba3dbbebf3fa1eb72d466fa86a9c844a1cc18c4f04"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/direct_slab31/SOURCE_SHA256SUMS.txt",
+       "sha256": "3325d2618ef5523c57849988ff9c1dc731ad53245a5039e714ac03df0e5baa9e"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/direct_slab31/verify_direct_cnf.py",
+       "sha256": "144041cfb13cb999c303f4fec3a8c5e0a04f7ff7bba1690f4df87dc0cac6f017"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/direct_slab31/verify_direct_structure_stdlib.py",
+       "sha256": "06c3b31386ed5c4e79d56522a669caaa45bc2260cf582ae8ec2ada508356ad7f"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/case2_unique_core6.cnf",
+       "sha256": "3d490be403585b03ddc30b7aff7445b4c4e9d3b7550e2e97077964b627a88108"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/CHECKER_PATCH.txt",
+       "sha256": "f851b8fd49e5a43ccc974686dfe784cd56183da15911b9de80f926e5f1f97bbf"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/CONTRACT.json",
+       "sha256": "3a87c8e63b69791295abde7df6bdd2befb386da5d7514a1e2f22042b82f2ade9"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/core_census_certificate/build_manifest.py",
+       "sha256": "3ca750e9089cd2bd110505584ea1042b11fccfbcaf01ad505e976646251128f7"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/core_census_certificate/enumerate_core6.cpp",
+       "sha256": "202ba7d0b6fc9d234a11d7263b54253af8f833345abce32a4e28ee740f860fc7"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/core_census_certificate/enumerate_core7.cpp",
+       "sha256": "106458a0029285b1f208e36552aadb5b76f40226f6cc7f25d1d398f92b38e5ad"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/core_census_certificate/enumerate_core8.cpp",
+       "sha256": "1c38368c4272d519640f4f1fb0699c49839cf9abfc13e5899319c2ee9f5625ab"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/core_census_certificate/FILE_SIZES.tsv",
+       "sha256": "325518f1637e19f0960e2f04b4df61e33a3db5ccd8c7d23f39020ee1ab981e7a"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/core_census_certificate/minimal_core6.txt",
+       "sha256": "19f85dd9a0274a216fde12b7d5666f6f2e709cff039b5285770835b9cf347136"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/core_census_certificate/minimal_core7.txt",
+       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/core_census_certificate/minimal_core8.txt",
+       "sha256": "20ca26eff2b48396934f067990016d953538295c02694b2673e06e8d4b6718b8"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/core_census_certificate/README.md",
+       "sha256": "d28d8e7632a3926680b2d7951eb5164194fb01a37419e779b3e2f125d732cea9"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/core_census_certificate/replay.py",
+       "sha256": "8b533d26e0ce2db02155f67249bbbcc9a70cf67ed344ab838664626ea0d26c32"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/core_census_certificate/RESULTS.txt",
+       "sha256": "de0a894f50730bb1a03003f2fbe9a291a3be4ca32e464e6e332a5235b90399ef"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/core_census_certificate/run.ps1",
+       "sha256": "7e4d46dbf59637c0cf7bec38a775bcc88ad295225edc3caa1c8196e3ba9ed5f8"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/core_census_certificate/run.sh",
+       "sha256": "78119461bb4a6529ec5296deace6c9067c0d18077459fb86a4dbbafca3c46e1d"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/core_census_certificate/SHA256SUMS.txt",
+       "sha256": "b8f441d155a430e8052aee0cf1d0e8e76fa0dc291d7a5dab743726096864ca27"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/core_census_certificate/THEOREM_NOTE.md",
+       "sha256": "071cca4062b604f35e5b863f0b3d0f5e580c3ad075e195f981fe3fe5ba213d24"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/core_census_certificate/verify_core6.py",
+       "sha256": "7b4aa995bd032f60ea4e0b7ba6fe41115261da05c931181fc16ef5fe349ed143"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/core_census_certificate/verify_core67_anchored.cpp",
+       "sha256": "92f0830c7833bc61b481d4442fcf0604c0cab7e1018eb09be8a0899cbb9645c8"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/core_census_certificate/verify_core8_anchored.cpp",
+       "sha256": "8b720df1d4149b5bb1b17ed22ffb282a4d71592cbf17b008c7517c0eb4746fe4"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/core_census_certificate/verify_core8.py",
+       "sha256": "68ce22c2f1cc3f3724167a7b929a0b1d7daea6ef41ee3b52fd998d2a162baf90"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/drat-trim-binary-windows.c",
+       "sha256": "543d615ac8e18516fef94a1e31c0f1b75982946bda4b8e2440eb8da820528a3c"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/generate_case2_core6_cnf.py",
+       "sha256": "781f6ef4910fa1e9266e46b97bcb821c9708999ff4003b6cd360c414c48e1df6"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/generate_orbit_cnfs.py",
+       "sha256": "188566d6f8912ad76122548671c24ab85468f72a6788c02e8c020feea633cc7d"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/LINUX_REPLAY.txt",
+       "sha256": "f6140e1fa07507293903921ddb45ed463ed11a2187c384f5b4d6b8d35bfa6699"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/minimal_core5.txt",
+       "sha256": "4967edf181d4942283110d961626167d1200774d9757940ed9c1475c5296c8e6"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/NATIVE_REPLAY.txt",
+       "sha256": "9338dfca860b3c1a33924f7f82eeb594dca6d4d325967613a90dee5a60610c52"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/PROOF_PROVENANCE.json",
+       "sha256": "d053fb506b5eccb8caaf832808883ccafb546a871f4b6da9cf40719966446798"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/README.md",
+       "sha256": "b4b65e6699f339b44153144f2899aedd24b36113c3d9342a2b7d47bd7b2c13af"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/SHA256SUMS.txt",
+       "sha256": "4eea352671abf93c9f83f5abdc3ae4512a7469f4e5d4bc6b7e78327d5166b8b7"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/THEOREM.md",
+       "sha256": "3f124171b03f5154224229e503a2954d9d4916075109589535cce331a65448ee"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/verify_all.py",
+       "sha256": "5f04a907fcf154f548bf235c8ddea4f04045df9ade619bf7a5316261667ec9f7"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/verify_external_drat.py",
+       "sha256": "851a15b9e2aef1dd0f9301210fbc78f2e7488c4cf541885545904348e051ec5f"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/verify_profile_reduction.py",
+       "sha256": "a3ac88302c85ea6b41f6252fceb60b602246153d8147be8638b13526de7bdcbb"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/COMMON_MARKER_H8_COROLLARY.md",
+       "sha256": "dbb0ead1bd5429074e378c8496a6b55aaf05b2fc789d3a199502fc4ef7e51b41"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/CONTRACT.json",
+       "sha256": "101f460a933602a47293803b855ec3694d78a8ecfcba6e35a075a2041c7e91d6"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/README.md",
+       "sha256": "b829664ccf8c575680cd64dfd449f66ee14ab1e4afa2462b88f1159dad12f89f"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/SHA256SUMS.txt",
+       "sha256": "24d196733646817cd1cb89da0ba052f9c3105295aab09bbba333f28f05f98b8d"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/THEOREM.md",
+       "sha256": "a7a162a11a1aae839afed58ee46199ba38e7d73521b517f375a38585472f2896"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/verify_all.py",
+       "sha256": "06faf7c183dd0ab982a2f88c5a834c2cf41aab8e27051eaa6103659d1f098105"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/verify_direct_cnf_stdlib.py",
+       "sha256": "4fd424cd3388c821696137c068ddfe4cfa460de5c9a68242f85801d50f35c64d"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/verify_h8_corollary.py",
+       "sha256": "91193b0a9b92037a725e64a07b8e7f1a9b7531bb3b0f08aa3f2c30d00f3c28e2"
       }
      ],
      "replays": [
       {
        "profile": "fast",
-       "certifies_claim": true,
+       "certifies_claim": false,
        "entrypoint": "certificates/erdos-142-ehps-common-marker-cap-wall/verify_all.py",
        "argv": [
         "python3",
         "-I",
         "certificates/erdos-142-ehps-common-marker-cap-wall/verify_all.py"
        ],
-       "timeout_seconds": 120,
+       "timeout_seconds": 180,
        "exit_code": 0,
        "stdout_contains": [
-        "PASS_LITERAL_EHPS_COMMON_MARKER_H4_H8_WALL",
         "PASS_LITERAL_EHPS_COMMON_MARKER_H4_CAP_WALL",
         "PASS_H7_Q9_CAP_AUDIT",
         "TARGET36_UNSAT nodes=716176",
         "H7_BOUND beta=35/2916 gate=7/576 margin=7/46656",
         "EPSILON_WINDOW endpoint=1/20000 gap=25606141/2041200000000",
+        "PASS_MANIFEST files=76",
+        "PASS_ROOT_CONTRACTS",
+        "PASS_NESTED_MANIFEST_BINDINGS",
         "PASS_Q9_COMBINED_FINITE_GEOMETRY",
         "SIZE30 rows=131 min_defect=18 raw_margin=1448 geodesic_margin=1448 fibre_profile=(4, 4, 4, 3, 3, 3, 3, 3, 3)",
         "SLAB choices=157464 peelable=5832 nonpeelable=151632 stabilizer=26244 orbits=(2916, 2916)",
-        "H8 section=31/81 margin=1/10368 marker0=31/2916 zero_gap=1/46656 round_epsilon=1/1100000 beta_upper=2344909599271/220522500000000 round_gap=121027187/80190000000000 integer_inside=1/1022543 inside_gap=517105/48783242381626944 integer_outside=1/1022542 outside_gap=-126359/12195786741535296 discriminant=1045590073344",
-        "H8_GAP (1-1022544*epsilon+1539648*epsilon^2)/46656",
-        "H8_POLYNOMIAL_POSITIVITY_INTERVAL root=2/(1022544+sqrt(1045590073344)) integer_epsilon=1/n_positive_for_n>=1022543",
-        "PASS_Q9_BLOCKER_SEMANTICS",
-        "TEMPLATE0 blockers_total=15108 blockers_nonsingleton=15093 cnf_variables=944 cnf_clauses=19336 sound=true minimal=true byte_exact=true relaxed_target19_residual_core=27",
-        "TEMPLATE1 blockers_total=4146 blockers_nonsingleton=4131 cnf_variables=944 cnf_clauses=8374 sound=true minimal=true byte_exact=true relaxed_target19_residual_core=31",
-        "PASS_COMPACT_TEMPLATE0_UNSAT",
-        "CONTROL_RELAXED_BLOCKER_MASTER_TARGET19_SAT nodes=1589725 profiles_visited=77 witness_mask=8249a6f861c not_a_peelability_witness=true",
-        "THEOREM profiles=126 nodes=3017764",
-        "PASS_COMPACT_TEMPLATE1_UNSAT",
-        "CONTROL_RELAXED_BLOCKER_MASTER_TARGET19_SAT nodes=971715 profiles_visited=17 witness_mask=9e88a829374 not_a_peelability_witness=true",
-        "THEOREM profiles=126 nodes=1989055",
-        "PASS_NEGATIVE_CONTROLS bad_argc bad_index malformed_ledger",
-        "PASS_HASH_MANIFEST_FINAL",
-        "PASS_Q9_CAPACITY_THEOREM 30<=C9<=31",
-        "LITERAL_COMMON_MARKER_H8_COROLLARY model=one_common_marker pointwise_physical epsilon=1/n n>=1022543",
-        "PASS_Q9_COMBINED_PACKAGE",
-        "SCOPE common_marker literal_EHPS_AB pointwise_phase_labelled_potential"
+        "PASS_Q9_SIZE31_QUOTIENT_PROFILE_REDUCTION",
+        "PROFILES total=1278 saturated_histogram=4:126,5:504,6:504,7:144",
+        "SLAB_PROFILES 1224",
+        "NONSLAB_PROFILES 54 all=4,4,4,4,3,3,3,3,3",
+        "PASS_REGENERATED_CASE_CNFS cases=24",
+        "FOUR_CAP_CERTIFICATE_READY external_drat_required_for_unsat_replay",
+        "PASS_DIRECT_SOURCE_PROJECTION payloads=19 copied=13 omitted=6",
+        "PASS_DIRECT_DOUBLE_VERIFIED_LOGS cases=2 platforms=2",
+        "PASS_STDLIB_DIRECT_CNF_REGEN_ALL cases=2",
+        "PASS_H8_C9_30_ARITHMETIC",
+        "H8_MAXIMAL_SMALL_INTERVAL root=258/(1022544+sqrt(1044801773568)) endpoint_included",
+        "H8_RECIPROCAL_STRICT n>=7926 inside_gap=7651/27138877632 outside_gap=-65309/976753080000",
+        "PASS_LITERAL_EHPS_COMMON_MARKER_H4_H7_LOCAL_SUBCOMPONENTS",
+        "SCOPE common_marker literal_EHPS_AB pointwise_phase_labelled_potential",
+        "STRUCTURE_READY_EXTERNAL_PROOFS_REQUIRED"
        ],
        "stdout_not_contains": [
-        "Traceback (most recent call last)"
+        "Traceback (most recent call last)",
+        "CONCLUSION_EXACT_C9_30"
        ],
        "failure_control": {
         "kind": "external",
-        "evidence": "The aggregate executes all three exact primary packets and requires their verdicts. The h=4,5,6 packet verifies whole-word coverage, phase-labelled cancellation, cap/Fubini normalization and density gaps; the h=7 packet reconstructs the q=9 packets, exact target-36 exhaustion, common-offset plane measure bound and epsilon window. The h=8 packet checks a closed hash and size inventory before and after replay, source provenance, the 157,464-case slab census, blocker soundness and minimality, byte-exact CNF reconstruction, and both compact searches with exact node fingerprints. Its positive/negative internal controls, explicitly relaxed target-19 SAT controls, rejected bad argv/index and malformed-ledger controls, and source nonmutation checks exercise failure paths. Separate implementation-diverse replays audit every component, including an alternate-order, profile-free h=8 cover with distinct node fingerprints and independently reconstructed finite geometry and density arithmetic."
+        "evidence": "This compact aggregate is explicitly noncertifying for the strengthened exact statement. It replays the locally certified h=4,5,6 and h=7 subcomponents, then checks the closed 77-file q9 binder, exact witness/slab/profile/orbit reductions, byte-exact standard-library regeneration of both direct CNFs, proof hashes and double-VERIFIED logs, and h8 arithmetic. It requires STRUCTURE_READY_EXTERNAL_PROOFS_REQUIRED, rejects any compact-mode CONCLUSION_EXACT_C9_30, requires the nested replay to terminate after PASS_NONMUTATION, and checks its own source nonmutation. The q9 verifier rejects partial external argv and invalid proof-job counts. Only explicit external mode that hashes and actually replays all 24 four-cap plus both direct proofs may print CONCLUSION_EXACT_C9_30; a valid consumer must require process exit zero and the later terminal PASS_NONMUTATION, never grep the conclusion alone. The contract is partial because those raw proofs are intentionally not shipped, not because the mathematical case split is unresolved."
        }
       },
       {

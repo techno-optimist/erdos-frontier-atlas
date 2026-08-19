@@ -1,0 +1,30 @@
+{
+  "schema": "q9-exact-c9-30-theorem-v1",
+  "claim": "the midpoint-peelability capacity of (Z/9Z)^2 is exactly C9=30",
+  "lower_bound": 30,
+  "upper_bound": 30,
+  "size31_profile_partition": {
+    "all": 1278,
+    "slab": 1224,
+    "fourcap": 54
+  },
+  "proof_branches": {
+    "slab": "every peelable saturated slab normalizes to T0 or T1; both direct size-31 order CNFs are proof-checked UNSAT",
+    "fourcap": "all 54 non-slab profiles normalize to 4^4 3^5; all 24 first/second point symmetry cases are proof-checked UNSAT"
+  },
+  "raw_proofs_shipped": false,
+  "full_replay_requires": "the externally hashed DRAT payloads and one pinned drat-trim binary",
+  "conditional_literal_h8_corollary": {
+    "gap": "(129-1022544*epsilon+1539648*epsilon^2)/46656",
+    "maximal_small_endpoint": "258/(1022544+sqrt(1044801773568))",
+    "strict_reciprocal_window": "epsilon=1/n for integers n>=7926"
+  },
+  "does_not_claim": [
+    "C9=31",
+    "an unconditional common-marker or continuum theorem",
+    "a phase-owned or packet-only marker theorem",
+    "an integer transfer",
+    "an improvement to r_3(N)",
+    "a solution of Erdos Problem 142"
+  ]
+}

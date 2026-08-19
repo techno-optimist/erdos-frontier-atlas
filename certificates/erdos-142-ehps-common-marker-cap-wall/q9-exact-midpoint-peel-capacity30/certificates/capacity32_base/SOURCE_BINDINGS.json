@@ -1,0 +1,27 @@
+{
+  "date": "2026-08-19",
+  "scope": "path-free provenance bindings only; combined replay is self-contained",
+  "template0_packet": {
+    "archive_label": "q9_q27_frontier_attack_20260819/template0_certificate",
+    "manifest_sha256": "eb932b89539793f564bee3c8ba03ab56b5d33c71a08afcd16f8e816362431794",
+    "copied_files": {
+      "blockers.txt": "6616ff7d8262b7e5f597b606df09e71b60bb9edd34f43cfbd2a9d710fba58fa8",
+      "template0.cnf": "e09943895dbfceb742d5addfd0263a433d6f7646c662d04e0e48fb25aacba456"
+    }
+  },
+  "template1_packet": {
+    "archive_label": "q9_q27_frontier_attack_20260819/template1_certificate",
+    "manifest_sha256": "54bf3b2ca4d5c93330b26be39e0c020c6fa0671441dd85be95f2668458250df6",
+    "copied_files": {
+      "blocker_reps.json": "f11ea7553f55ca5020c23ad949cd6d1e8330fd422e5af25d185d5262cd3d3335",
+      "template1.cnf": "4100d2ab7501395107d4b23a746f741e4c403f74d17c644fcfb620ac0a0e1681"
+    },
+    "generated_transparent_ledger_sha256": "4938f64aaac275f62eca702af1fb310ff9e7bf3448c460d1f32c250cd9ac75c6",
+    "slab_orbit_verifier_sha256": "01e2c0918e3e155846b67d137a0284876401562ea29c81774897d038f216718b"
+  },
+  "size30_packet": {
+    "archive_label": "q9_capacity32_independent_20260819/boundary_exact",
+    "manifest_sha256": "7a9dc265e802cc78e3b870cb82cf8209c453669bba83c232465641624ec6b76a",
+    "verifier_sha256": "9381da53cd746b233bbf8f2433dc48905f11ddbf52c599849dc3fdb39775e207"
+  }
+}

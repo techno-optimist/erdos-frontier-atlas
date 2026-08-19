@@ -50,7 +50,7 @@ The state of this edition, generated from the data:
 | data through | **2026-08-18** (latest provenance/evidence date in the gap map) |
 | the ledger | **225** bounded quantities |
 | confidence | C0 0 · C1 0 · C2 8 · C3 217 |
-| movements on the board | **13** (🟢 9 · 🔴 2 · 🟡 2) — corrected claims kept visible |
+| movements on the board | **14** (🟢 9 · 🟡 3 · 🔴 2) — corrected claims kept visible |
 
 ---
 
@@ -90,8 +90,8 @@ Movements against this ledger are recorded on the Frontier Board — the done-wo
 record, tiered by verification, with corrected claims kept in place so no one
 re-walks them:
 
-13 movements recorded on the
-[CHRONOS Frontier Board](../README.md#chronos-frontier-board) (🟢 9 · 🔴 2 · 🟡 2).
+14 movements recorded on the
+[CHRONOS Frontier Board](../README.md#chronos-frontier-board) (🟢 9 · 🟡 3 · 🔴 2).
 Corrected claims stay on the board by design (charter Tenet 5).
 
 | tier | problem | movement | certificate | when |
@@ -106,6 +106,7 @@ Corrected claims stay on the board by design (charter Tenet 5).
 | 🟢 | **#979** `f₃` / A385316 | **`a(6) > 10¹²` at C2** — exhaustively verified and replayable from this repo (`verify.py --cutoff 1e12`, ~80 s, ~11 GB; reproduces `a(1..5)` as a fail-closed self-check) — past the published `4.99·10¹¹`. A stronger `> 10¹³` sweep exists but its code and ledgers are **not tracked here**, so it is **quarantined from public promotion** pending a self-contained replay packet — see the entry note in the gap map. *(Corrected 2026-07-25: this row previously claimed `> 10¹³` at C1; the second "independent implementation" backing that class lives outside this repository, so a reader could not replay it.)* | [`certificates/erdos-979`](../certificates/erdos-979) | 2026-07-19 |
 | 🟡 | **#1107** Mollin–Walsh / A056828 | verified **no seventh exception below `10⁶`** to being a sum of ≤3 powerful numbers (`verify.py`, default `N = 10⁶`, ~10 s, dependency-free); the six known exceptions `{7,15,23,87,111,119}` are all `< 120` and are reproduced, powerful-counts cross-checked vs A118896. A wider `10¹⁰` run exists but is **not replayable from this repository**, so it is not the public claim. *(Corrected 2026-07-25: this row previously claimed `10¹⁰`.)* | [`certificates/erdos-1107`](../certificates/erdos-1107) | 2026-07-18 |
 | 🟡 | **#142** `r₃(N)` | complete 12,349-cell geometric enumeration superseding a flawed 976-cell subset, now certified in-repo as a **construction no-go** — a **foundation only**; self-declared no-bridge, **not** an `r₃(N)` bound | [`certificates/erdos-142`](../certificates/erdos-142) · PR #84 | 2026-07-13 |
+| 🟡 | **#142** literal common-marker wall | exact finite midpoint-peelability/strict-potential capacity **`C₉=30`**; conditional common-offset Fubini closes the literal one-marker `h=8` model for `epsilon=1/n`, `n>=7926`. The compact in-repo replay is structure-only because the checked DRAT payloads remain external; this is **not** an `r₃(N)` bound and excludes phase-owned and almost-everywhere variants | [`certificates/erdos-142-ehps-common-marker-cap-wall`](../certificates/erdos-142-ehps-common-marker-cap-wall) | 2026-08-19 |
 | 🔴 | **#142** / D15 lemmas | **refuted** `ker π ∩ D = 0` and `q ≥ dim ker π` (two lemmas a bridge attempt rested on) and proved Theorem A in their place — a dead path closed so the next agent does not re-walk it; explicitly **not** an `r₃(N)` bound | [`certificates/erdos-142-kerpi-refutation`](../certificates/erdos-142-kerpi-refutation) · PR #101, #102 | 2026-07-24 |
 | 🟢 | **#1029 / #77** `R(5,5)` | 42/42 DRAT-certified structural negatives (no witness; rigidity + prime-order orbit collapse), all consistent with `R(5,5) = 43` | [r55-rigidity-certificates](https://github.com/techno-optimist/r55-rigidity-certificates) · DOI [10.5281/zenodo.21305022](https://doi.org/10.5281/zenodo.21305022) | 2026-07-10 |
 | 🔴 | **#552** `R(C4,K1,39)` | the `=46` **new-value** claim was **retracted** — DS1 rev.18 lists `46 ≤ f(39) ≤ 47`, OPEN; the 45-vertex witness stands as a re-derivation of Wu–Sun–Radziszowski 2015 | [`certificates/erdos-552-f39`](../certificates/erdos-552-f39) | 2026-07-17 |

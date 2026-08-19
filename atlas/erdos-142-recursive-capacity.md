@@ -2011,29 +2011,34 @@ exact rich-incidence contradiction `18>12`.  The `C_B^c` branch follows by
 the Haar-preserving torus automorphism `L`, which preserves `H_9/H_3` cosets
 and midpoint rows; no metric invariance is used.
 
-For `h=8`, a separate compact q=9 theorem proves `30<=C_9<=31` for the
-strict midpoint-potential capacity of `(Z/9Z)^2`. Every hypothetical
-32-point peelable set reduces to one of two saturated-slab orbits; direct
-solver-independent six-fibre searches exclude both in 3,017,764 and
-1,989,055 nodes. Common-offset Fubini therefore improves the exceptional
-plane cap to `31/81` and gives
+For `h=8`, let `C_9` denote the largest midpoint-peelable subset of
+`(Z/9Z)^2`, equivalently the largest support carrying a strict midpoint
+potential. The exact finite theorem proves `C_9=30`. Its upper bound exhausts
+all 1,278 possible size-31 fibre profiles: 1,224 contain a saturated slab and
+54 normalize to one quotient four-cap. The slab census reduces the first
+branch to two 2,916-element orbits, while a complete stabilizer split reduces
+the second to 24 cases. All 26 resulting direct order CNFs have independently
+checked binary DRAT proofs. Common-offset Fubini therefore improves the
+exceptional plane cap to `30/81` and gives
 
 ```text
-mu(M) <= 31/2916+2(4epsilon/3-2epsilon^2) <= mu(T)^2/8
+mu(M) <= 30/2916+2(4epsilon/3-2epsilon^2) <= mu(T)^2/8
 ```
 
-for `0<=epsilon<=2/(1022544+sqrt(1045590073344))`. In particular, the
+for `0<=epsilon<=258/(1022544+sqrt(1044801773568))`. In particular, the
 rational EHPS choices `epsilon=1/n` are covered for every
-`n>=1022543`, with strict density gap. At the irrational endpoint equality
-is allowed, but a strict product improvement is still impossible. The replay
-includes an exact 30-point witness but does not decide whether a 31-point
-support exists.
+`n>=7926`, with strict density gap. At the irrational endpoint equality is
+allowed, but a strict product improvement is still impossible. The compact
+in-repo replay binds and regenerates every finite input but is deliberately
+noncertifying without the external DRAT payloads; it ends
+`STRUCTURE_READY_EXTERNAL_PROOFS_REQUIRED`. Only the external all-26-proof
+mode may emit `CONCLUSION_EXACT_C9_30`, and consumers must additionally
+require exit zero and terminal `PASS_NONMUTATION`.
 
 This is a common-marker theorem only.  Phase-specific markers,
 common-marker horizons `h>=9`, context-owned or carved `A/B` pieces,
-target-35 q=9 infeasibility, the exact value of `C_9`, other graph languages,
-almost-everywhere coercivity, EHPS integer transfer, and `r_3(N)` remain
-outside scope.
+target-35 q=9 infeasibility, other graph languages, almost-everywhere
+coercivity, EHPS integer transfer, and `r_3(N)` remain outside scope.
 
 ## 5. What would count as progress
 

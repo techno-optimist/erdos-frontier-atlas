@@ -1,0 +1,36 @@
+{
+  "claim": "no midpoint-peelable size-31 support has the normalized non-slab four-cap fibre profile 4^4 3^5",
+  "does_not_claim": [
+    "C9=30",
+    "C9=31",
+    "the universal four-per-fibre bound",
+    "the direct slab T0 or T1 cases"
+  ],
+  "base_cnf": {
+    "bytes": 2915646,
+    "clauses": 131681,
+    "sha256": "3d490be403585b03ddc30b7aff7445b4c4e9d3b7550e2e97077964b627a88108",
+    "variables": 11203
+  },
+  "external_drat": {
+    "cases": 24,
+    "proof_bytes": 265645848,
+    "result_each": "s VERIFIED"
+  },
+  "first_point_orbits": {
+    "center": 9,
+    "corner": 36,
+    "saturated": 36
+  },
+  "redundant_sound_blockers": {
+    "core3": 108,
+    "core5": 3402,
+    "core6": 2916
+  },
+  "schema": "q9-four-cap-certificate-v1",
+  "second_point_orbits": {
+    "center": [4, 4, 36, 36],
+    "corner": [1, 1, 2, 2, 2, 9, 9, 18, 18, 18],
+    "saturated": [1, 1, 2, 2, 2, 9, 9, 18, 18, 18]
+  }
+}

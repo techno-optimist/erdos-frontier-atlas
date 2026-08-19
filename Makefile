@@ -17,7 +17,7 @@
 #   make verify-certs        replay every fast in-repo certificate verifier
 #   make test                pytest over tests/
 
-.PHONY: hello-frontier state-of-frontier check-views book check-book graph check-graph validate verify-certs test check-contracts replay-contracts-fast replay-contracts-slow audit-fast audit-slow
+.PHONY: hello-frontier state-of-frontier check-views book check-book graph check-graph validate verify-certs verify-q9-exact-capacity30-structure test check-contracts replay-contracts-fast replay-contracts-slow audit-fast audit-slow
 
 hello-frontier:
 	bash scripts/hello_frontier.sh
@@ -122,6 +122,11 @@ verify-certs:
 	python3 -I certificates/erdos-142-q7-q8-unit-hypercycle-walls/verify.py --self-test
 	python3 -I certificates/erdos-142-q3m-torsion-triangle-wall/verify.py --self-test
 	python3 -I certificates/erdos-142-interior-torus-torsion-wall/verify.py --self-test
+
+# Compact structural replay only. Raw DRAT payloads are external, so this
+# target must not emit CONCLUSION_EXACT_C9_30.
+verify-q9-exact-capacity30-structure:
+	python3 -I -B certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/verify_all.py
 
 test:
 	python3 -m pytest tests/ -q

@@ -416,7 +416,7 @@ def build_graph():
                  artifacts=c.get("artifacts", []), replay=replay)
         # deterministic claim->problem link: erdos-<id>-... claim id prefix
         parts = c["id"].split("-")
-        if parts[0] == "erdos" and parts[1].isdigit():
+        if c["status"] == "promoted" and parts[0] == "erdos" and parts[1].isdigit():
             eid = int(parts[1])
             if eid in stub_by_id:
                 add_edge("evidenced_by", f"P{eid}", cid,
