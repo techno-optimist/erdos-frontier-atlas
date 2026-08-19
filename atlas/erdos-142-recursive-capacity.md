@@ -1635,6 +1635,74 @@ coupled multi-block tiles, almost-everywhere-only coercivity, unbounded
 corrections, integer transfer and a new `r_3(N)` bound remain open.  Erdős
 Problem 142 is unsolved.
 
+### 4.32 Complete q=36 sixth-microbox one-block supports also fail
+
+Split every residual coordinate of the fixed 117 cells into sixths.  The
+one-block universe then has
+
+```text
+117*6^4 = 151632
+```
+
+distinct complete half-open `q=36` microboxes.  The exact four-coordinate
+EHPS gate is
+
+```text
+(49/576)*36^4 = 142884 boxes.
+```
+
+The frozen packing contains 2,986 mutually disjoint two-box strict-dilation
+supports from the exact 3,811-edge graph.  After reserving their 5,972
+endpoints, it also contains 6,323 mutually disjoint six-box midpoint packets.
+The latter come from the 24 six-of-nine intersections of the last-pair
+prototype with the order-nine shift `(0,4)` modulo 36, lifted through all 324
+fixed-first-pair fibers.  Each packet has six actual common-offset torus
+midpoint rows.  Every vertex has total endpoint coefficient `+2` and centre
+coefficient `-2`, so the rows cancel an arbitrary single-valued physical
+potential and leave positive total raw endpoint-square cost.
+
+The dilation convention is also explicit.  For the original bounded
+potential `f`, set
+
+```text
+G(p) = 36*(f(p)-2*||p||_2^2),
+D(t) = G(A_t)+G(B_(1-t)).
+```
+
+Here `A_t` and `B_(1-t)` are the corresponding strict-interior low- and
+high-box points.  Adding the two physical rows at scales `t` and `3t` gives
+
+```text
+D(3t)-D(t) >= K*(72-48t)
+```
+
+for `K>=1` wrap coordinates, and the geometric sequence
+`t=(1/12)/3^j` contradicts boundedness.  The packet supports avoid every
+dilation endpoint, so a feasible one-block union must omit at least one box
+from each of 9,309 mutually disjoint supports.  Consequently
+
+```text
+|U| <= 151632-(2986+6323) = 142323 < 142884.
+```
+
+A strictly above-gate support may delete at most 8,747 boxes; the packing
+exceeds the required 8,748 obstructions by 561.  The certificate directory
+`certificates/erdos-142-q6-117-cell-q36-sixth-microbox-wall/` binds a compact
+frozen semantic packet, a primary corroborating replay, and a separately
+written claim-certifying hostile replay.  The latter uses a distinct bitmask
+component-matching algorithm and directly reconstructs the physical dilation
+and packet rows, exact carries and raw costs, cross-support disjointness and
+gate arithmetic.
+
+This is deliberately a **one-block support theorem**, not an all-horizon
+word-language or graph/path capacity theorem.  The six-point deletion packets
+do not automatically tensor into a coordinatewise quotient for arbitrary
+word languages.  Proper or finer carving inside a `q=36` box, deformation,
+non-axis-aligned or overlapping tiles, context/path-dependent languages,
+coupled multi-block tiles, almost-everywhere-only coercivity, unbounded
+corrections, integer transfer and a new `r_3(N)` bound remain open.  Erdős
+Problem 142 is unsolved.
+
 ## 5. What would count as progress
 
 A promotable positive result must include all of:

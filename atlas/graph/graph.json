@@ -5,7 +5,7 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 379,
-   "evidenced_by": 41,
+   "evidenced_by": 42,
    "has_surface": 319,
    "learned_from": 5,
    "measures": 223,
@@ -18,8 +18,8 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 45,
-   "evidence_container": 59,
+   "evidence_claim": 46,
+   "evidence_container": 60,
    "external_claim": 91,
    "incident": 26,
    "move": 7,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 3950,
-   "validator-enforced": 58
+   "validator-enforced": 59
   }
  },
  "edges": [
@@ -5361,6 +5361,14 @@
   },
   {
    "dst": "E:claim:erdos-142-q6-117-cell-q30-fifth-microbox-wall",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P142",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-142-q6-117-cell-q36-sixth-microbox-wall",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
    "src": "P142",
@@ -30279,6 +30287,59 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-142-q6-117-cell-q36-sixth-microbox-wall/README.md",
+     "sha256": "b507cc836a0d8b399479b99bb44f77bfb8550a2ddbceaf811669607c368bba88"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-q36-sixth-microbox-wall/frozen_semantic_certificate.json",
+     "sha256": "318bb7ac5cb3bac2dba1b10815c47d0997bf95c8b88f8dfd5d2da1f7a6720d5d"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-q36-sixth-microbox-wall/verify_r6_six_of_nine_packing.py",
+     "sha256": "f7a0b693220cf4891c954f8675ce78bcd6c40a68ec3ce59889ab1b22739576d9"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-q36-sixth-microbox-wall/HOSTILE_AUDIT_R6.md",
+     "sha256": "79f58c4be1ab09a527c0e9495c10de3832e84d7fab6fb773462b5ba966c9d43f"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-q36-sixth-microbox-wall/independent_r6_replay.py",
+     "sha256": "87c70609af2c43aeb113279cb2b7fe4ec167bd137bf602cf5beab2907cc06c0d"
+    }
+   ],
+   "claim_id": "erdos-142-q6-117-cell-q36-sixth-microbox-wall",
+   "id": "E:claim:erdos-142-q6-117-cell-q36-sixth-microbox-wall",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-142-q6-117-cell-q36-sixth-microbox-wall/independent_r6_replay.py",
+     "--target",
+     "certificates/erdos-142-q6-117-cell-q36-sixth-microbox-wall"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "PASS_INDEPENDENT_R6_Q36_ONE_BLOCK_WALL",
+     "GEOMETRY_OK coarse=117 microboxes=151632 codes_unique",
+     "DILATION_OK edges=3811 components=2785 max_component=9 matching=2986",
+     "PACKETS_OK full=7776 blocked=1453 retained=6323 rows=37938",
+     "INTERSECTION_HIST {1: 24, 2: 36, 3: 24, 4: 24, 5: 12, 6: 24}",
+     "RAW_HIST {16: 12164, 64: 23082, 784: 2210, 1024: 482}",
+     "CARRY_HIST {(0, 0, 0, -1): 7187, (0, 0, 0, 0): 23564, (0, 0, 0, 1): 7187}",
+     "DISJOINT_OK obstructions=9309 margin=561",
+     "GATE_OK total=151632 allowed_deletions=8747 max_retained=142323 gate=142884",
+     "DEPENDENCIES_OK stdlib_only no_import no_solver",
+     "SCOPE one_block_complete_aligned_q36_microbox_unions_only"
+    ]
+   },
+   "scope": "The one-block physical universe consists of the 151,632 distinct half-open q=36 microboxes d=6c+s, where c ranges over the fixed 117 coarse q=6 cells and s ranges over {0,1,2,3,4,5}^4. The frozen packet and two standard-library replays reconstruct 2,986 pairwise vertex-disjoint strict-dilation supports and 6,323 mutually disjoint six-box six-of-nine midpoint packets, with no overlap between the two families. With G(p)=36(f(p)-2||p||_2^2) and D(t)=G(A_t)+G(B_(1-t)), the two strict-interior rows give D(3t)-D(t)>=K(72-48t) and a finite boundedness contradiction. Each six-point packet has six actual common-offset torus midpoint rows whose coefficients cancel an otherwise arbitrary single-valued physical potential while leaving positive raw endpoint-square cost. The 9,309 disjoint supports force 9,309 deletions, leaving at most 142,323 boxes, with obstruction margin 561 beyond the required 8,748 and strictly below the exact 142,884-box gate. No completeness or optimality claim is made for either obstruction family. This is only a one-block support theorem: it does not imply an arbitrary horizon-dependent word-language or graph/path capacity bound. Proper or finer carving inside a q=36 box, deformation, non-axis-aligned or overlapping tiles, context/path-dependent languages, coupled multi-block tiles, almost-everywhere-only coercivity, unbounded corrections, integer transfer and a new r_3(N) bound remain outside scope; Erdos Problem 142 remains unsolved.",
+   "statement": "Every union U of complete globally aligned q=36 residual-sixth microboxes refining the fixed 117-cell q=6 alphabet that supports a bounded single-valued physical potential satisfying every actual raw-canonical modular-torus midpoint coercivity inequality pointwise contains at most 142,323 of the 151,632 boxes; consequently mu(U)<=142323/36^4<49/576.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-142-q6-117-cell-six-deletion-wall/README.md",
      "sha256": "3c77212c1c7f02ad618855fb6e4914b866c76b4a21703fe91b1331820ece4aed"
     },
@@ -31480,6 +31541,13 @@
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-142-q6-117-cell-q30-fifth-microbox-wall",
    "path": "certificates/erdos-142-q6-117-cell-q30-fifth-microbox-wall",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "An exact one-block density wall for arbitrary unions of the 151,632 complete globally aligned q=36 residual-sixth microboxes refining the fixed 117-cell q=6 alphabet, under an arbitrary bounded single-valued physical potential satisfying every actual raw-canonical modular-torus midpoint coercivity inequality pointwise. A packing of 2,986 strict-dilation pairs and 6,323 six-of-nine midpoint packets gives 9,309 mutually disjoint obstruction supports, forcing at least 9,309 deletions and at most 142,323 retained boxes, with obstruction margin 561 beyond the required 8,748 and strictly below the exact 142,884-box gate. This is a one-block support theorem, not a word-language or graph/path capacity theorem. Proper or finer carving, deformation, non-axis-aligned or overlapping tiles, context/path-dependent languages, coupled multi-block tiles, almost-everywhere-only coercivity, unbounded corrections, integer transfer and a new r_3(N) bound remain outside scope. Erdos Problem 142 remains unsolved.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-142-q6-117-cell-q36-sixth-microbox-wall",
+   "path": "certificates/erdos-142-q6-117-cell-q36-sixth-microbox-wall",
    "type": "evidence_container"
   },
   {
