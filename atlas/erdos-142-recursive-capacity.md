@@ -1889,7 +1889,7 @@ potentials, subcell refinements, four-dimensional superblocks, state/path or
 context-dependent potentials, other grids, EHPS shelling, integer transfer,
 or `r_3(N)`.
 
-### 4.36 Disjoint graph carving and complete total overlap/reuse are walled
+### 4.36 Disjoint, complete-total, and homogeneous-partial interfaces are walled
 
 Let a finite directed multigraph assign globally pairwise-disjoint measurable
 edge tiles inside the fixed q=6 117-cell union.  Suppose its ordered
@@ -1931,11 +1931,41 @@ and their exact positive cost is `L*16/7` for raw canonical coordinates
 state-aware pointwise coercive potential exists for any finite state count in
 this complete total deterministic model.
 
+A third theorem fixes the support-disjoint q42 packing, colors exactly one box
+red in each of its 17,640 packets, and colors the other 263,277 boxes blue.
+For every color-homogeneous partial deterministic interface with at most six
+states, one fixed start, and a nonempty accepting set, define rate by accepted
+word growth, equivalently by the reachable/coaccessible live trim. If its
+binary language avoids every nondegenerate seven-multisunflower, then
+
+```text
+lambda <= B = 263277 < G = 1058841/4.
+```
+
+The six-state product-first census checks all 2,058,472 strong S6 orbits and
+all 36 start/singleton-target pairs. Exactly 1,641 orbits miss a product goal;
+independent exact Perron arithmetic splits them as 1,640 below `B`, one equal,
+and none above. The maximum shortest witness horizon is 50. Lower-state and
+hostile replays are separately implemented. Reusing one explicitly verified
+actual size-seven packet at every unit column, with cyclic alignment to its
+chosen red role, turns every above-gate witness into a positive raw-canonical
+whole-word Farkas obstruction.
+
+The same package records a weighted multiset-sunflower boundary: exact
+tensor/uniformization, `M_1=6`, `M_2=42`, strengthened recursion, and rational
+LYM/cap arithmetic. The exact weighted optimum is 1 through dimension 28, and
+the gate is excluded through dimension 31. The relaxation failures at 29 and
+32 are not constructions, and packet avoidance alone is not a physical
+potential.
+
 The separate horizon-two even-parity packet remains as a concrete supporting
-example.  Partial or state-carved alphabets, reachable non-coaccessible dead
-sinks, nondeterministic/multiple ownership, arbitrary measurable overlap,
+example. Seven or more homogeneous partial states, physical-symbol-dependent
+or arbitrarily state-carved transitions, arbitrary same-count colorings,
+nondeterministic/multiple ownership, arbitrary measurable overlap or carving,
 infinite or horizon-growing state systems, almost-everywhere coercivity,
 shelling, integer transfer, and a new `r_3(N)` bound remain open.
+Accepted rate is the Perron root of the live trim; an ambient unreachable or
+noncoaccessible dead-sink Perron root is irrelevant.
 
 ### 4.37 The literal common-marker h=4,5,6,7 window is closed
 

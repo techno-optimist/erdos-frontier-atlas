@@ -30117,7 +30117,7 @@
    "artifacts": [
     {
      "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/README.md",
-     "sha256": "d6392db537225d2457ab5c712da2226c27f34f706545db57aaefb38d334b6256"
+     "sha256": "a83d6f0af8545cd64a1bc43cf1584d6bfc14c2130cf61c3665bfa526c6853975"
     },
     {
      "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/verify.py",
@@ -30125,7 +30125,7 @@
     },
     {
      "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/independent_replay.py",
-     "sha256": "010a24c1af11c5fc79867f85acd86f384f0d6e1118250b9193519a1a8c201263"
+     "sha256": "124fb5adc43393ae70b5da6348778b6f2d7d3c1c4a391f2b8cda1a6f07d09d01"
     },
     {
      "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/HOSTILE_AUDIT.md",
@@ -30133,7 +30133,7 @@
     },
     {
      "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/verify_all.py",
-     "sha256": "045ae6a134a699793a6b65469d556d0cac76713bbea3742ba938388aaf5f9a8d"
+     "sha256": "1ae33337f4adbfe486f1aeb8b4b68c12e5ff1a335fa85cc07cb1aabd41c2bc3c"
     },
     {
      "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/horizon2-parity-wall/README.md",
@@ -30166,6 +30166,86 @@
     {
      "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/universal-total-decoder-wall/SHA256SUMS",
      "sha256": "0bf3ee13935b5bb96600ea9516dd190ee0561b3890b4475f841dc912cee5a293"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/homogeneous-partial-five-state-wall/verify.py",
+     "sha256": "2c02a4d51d57232de8b7086aa4d126c3143aa1173ca2a195c8bf63c6a5a05d5a"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/homogeneous-partial-five-state-wall/fast_independent_replay.py",
+     "sha256": "bcf37be428c4f5bd8315e79dd57393084ed45f286cbc26256c177b4b9fadcef0"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/homogeneous-partial-five-state-wall/independent_replay.py",
+     "sha256": "7cec55cb73b08229eba1436b3d5eafef69d5405ecf9412bfaba78b3cd15e6211"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/homogeneous-partial-five-state-wall/source/AT_MOST_FIVE_STATE_SUNFLOWER_WALL.md",
+     "sha256": "6fa6b6b2fb2a113f837e37960a63edb17c759691af982fa24e3a6ab3c575eb72"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/homogeneous-partial-five-state-wall/source/SHA256SUMS",
+     "sha256": "2005c6c005f97393f0e69b1ea8ec9656b800e3731c409eaa67092e7d5d736d71"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/homogeneous-partial-five-state-wall/audit-a/HOSTILE_AUDIT.md",
+     "sha256": "7794162fc6406f16d1305f9a1ddcd11d3b5c20c5a362552949800bb223f7e0c5"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/homogeneous-partial-five-state-wall/audit-a/SHA256SUMS",
+     "sha256": "f841480d2b25adf06c4f3410435f25aaf79b99036bbf4f69c0612b7c833461b9"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/homogeneous-partial-five-state-wall/audit-b/HOSTILE_AUDIT_APPROVE.md",
+     "sha256": "a49a51173c28253517deeff48da919581414d68660e72869860feafe82703281"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/homogeneous-partial-five-state-wall/audit-b/SHA256SUMS.hostile",
+     "sha256": "721953b0646098f1531a0342c94c8e72f09fc9607da46fe231746f187783a105"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/homogeneous-partial-six-state-extension/verify.py",
+     "sha256": "1e4f59d8b281edcbb5e2fabdf11ef46a79e2d1eefb8ff5d5b97a3f720e457dd5"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/homogeneous-partial-six-state-extension/independent_replay.py",
+     "sha256": "ae4150a8acac32e8f607373b9c7dc067dd3e1996cd2afb6ec0f143f569a90e81"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/homogeneous-partial-six-state-extension/source/AT_MOST_SIX_STATE_SUNFLOWER_WALL.md",
+     "sha256": "4e0059d11babefbfe6a19853b2d0b1b1d464879727d99ea49d5c5e26e3fa1bbc"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/homogeneous-partial-six-state-extension/source/SHA256SUMS",
+     "sha256": "a62da6552877464d13c45f615f1d61e9b05cee7c52e81b472db3f6a77dc97d01"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/homogeneous-partial-six-state-extension/audit/HOSTILE_AUDIT.md",
+     "sha256": "24ca7957b267cdb37083d51d0113561dfb65a1c3404ff22be71e754e54886d6e"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/homogeneous-partial-six-state-extension/audit/SHA256SUMS.hostile",
+     "sha256": "9db4670f186bae130f85dd15c55c2bf3d2ea7f2c131b836a1330733adb8aefa2"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/weighted-multiset7-boundary/verify.py",
+     "sha256": "d73527d2a11b69f693b6fdd4838206bca3af0ccc84a8822ae59023ff22c00411"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/weighted-multiset7-boundary/erdos142_weighted_multiset7_sunflower_20260819/THEOREM.md",
+     "sha256": "37e9674e49d5fbeb3793cd2a21c06797082d8027c0b4ff2a63103020cf2a8692"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/weighted-multiset7-boundary/erdos142_weighted_multiset7_sunflower_20260819/SHA256SUMS",
+     "sha256": "c54c33d95df9979be73b683d42af4ab858c7791684252fba808b56bfa0c87f22"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/weighted-multiset7-boundary/audit/HOSTILE_AUDIT.md",
+     "sha256": "0e6fdf1b9cd1698d39dae4f8ccaba31564df00b4b693e552148588bfb783e88f"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/weighted-multiset7-boundary/audit/SHA256SUMS",
+     "sha256": "c116feb1a3c2e508b650501d8f0879329e24e597cd163fbcf0a2c35132f2eaa1"
     }
    ],
    "claim_id": "erdos-142-q6-117-cell-disjoint-graph-carving-wall",
@@ -30178,6 +30258,7 @@
     ],
     "profile": "fast",
     "stdout_contains": [
+     "PASS_DISJOINT_TOTAL_AND_PARTIAL_SIX_STATE_WALLS",
      "PASS_DISJOINT_AND_TOTAL_OVERLAP_REUSE_WALLS",
      "PASS_INDEPENDENT_DISJOINT_GRAPH_CARVING_WALL_AUDIT",
      "ALL_STATE_SPECTRAL_ARITHMETIC_OK rayleigh_trials=662 gate_polynomial=4825657053/16",
@@ -30186,11 +30267,19 @@
      "FOUR_STATE_INSTANCE monoid_size=8 minimum_rank=2 minimum_idempotents=2 common_order=2 geodesic_cost=22/7 raw_cost=32/7",
      "PASS_MINRANK_IDEMPOTENT_SANDWICH_AUDIT",
      "T3_ALL_MONOIDS 699 MINRANK_HIST {1: 660, 2: 33, 3: 6} MIN_IDEMPOTENTS 1623 SANDWICHES 12868",
-     "ASSUMPTION_SEAMS complete_untrimmed_min_idempotent_is_dead trimmed_partial_states_accessible_coaccessible trimmed_partial_has_no_seven_role_transformation_code"
+     "ASSUMPTION_SEAMS complete_untrimmed_min_idempotent_is_dead trimmed_partial_states_accessible_coaccessible trimmed_partial_has_no_seven_role_transformation_code",
+     "SIX_S6_ORBITS strong=2058472 fully_product_screened=2056831 incomplete_product=1641",
+     "SIX_PAIRS witnessed=74045916 missing=59076 incomplete_above_blue=0",
+     "INDEPENDENT_BOUNDARY orbits=1641 missing_pairs=59076 below=1640 equal=1 above=0",
+     "PASS_SIX_STATE_SCOPE_DEPENDENCY_AND_Q42_PHYSICAL_REPLAY",
+     "APPROVE_Q42_AT_MOST_FIVE_STATE_FAST_HOSTILE_REPLAY",
+     "PASS_EXACT_RATIONAL_LYM_CAP_HORIZONS",
+     "APPROVE_WEIGHTED_MULTISET7_SUNFLOWER_PACKET",
+     "PASS_PORTABLE_WEIGHTED_MULTISET7_BOUNDARY"
     ]
    },
-   "scope": "For globally disjoint measurable edge tiles, completeness represents every actual ordered torus-midpoint fibre, including x=z and diagonal branches; loop-function descent plus the q42 carving cap and an all-state Perron argument give rho(42^4 W)<=(263277+sqrt(263277^2+17640^2))/2<1058841/4. Separately, repeated q42 full boxes and arbitrary state transitions are allowed when every physical letter is one total map on a finite state set, decoding from one start gives a unique owned path, and every reachable state has an accepting suffix. A minimum-rank idempotent makes all seven packet-role sandwiches permutations of its image, so accepted words u(p_i u)^L s have zero whole-word potential incidence and exact positive raw cost L*16/7 (intrinsic cost L*11/7). The horizon-two parity packet remains a supporting special case. Not covered are partial or state-carved alphabets, totalizations with a reachable non-coaccessible dead sink, nondeterministic or multiple ownership, arbitrary overlapping measurable subtiles, infinite or horizon-growing state systems, almost-everywhere coercivity, another geometry, EHPS shell or integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved.",
-   "statement": "Two exact walls hold in the fixed 117-cell q=6 four-dimensional geometry: globally pairwise-disjoint measurable finite-state edge-tile systems have trimmed weighted adjacency matrix rho(W)<49/576 under the complete ordered triple-path hypotheses, while every finite complete total deterministic decoder over all 280917 q42 full boxes with unique fixed-start physical ownership and coaccessible reachable states has an exact whole-word packet contradiction to any arbitrary global pointwise raw-coercive potential.",
+   "scope": "The disjoint theorem uses loop-function descent, the q42 carving cap, and an all-state Perron bound. The complete-total theorem uses a minimum-rank idempotent so accepted words u(p_i u)^L s have zero whole-word potential incidence and positive raw cost. The homogeneous-partial theorem fixes exactly one red q42 box in each of 17640 support-disjoint packets, all other 263277 boxes blue; transition maps depend only on color; rate is the Perron root of the reachable/coaccessible live trim; and an exact S6 product-first census plus the byte-bound lower-state theorem proves every safe interface through six states has rate at most 263277<1058841/4. The source physical lift reuses one explicit actual size-seven packet and cyclically handles its selected red role; the hostile replay checks all 441 size-seven packets have positive raw cost. The weighted companion has exact optimum 1 through dimension 28 and excludes the gate through 31, while d29/d32 are relaxation failures only; packet avoidance is not a potential. The horizon-two parity packet remains supporting. Not covered are seven-plus homogeneous states, physical-symbol-dependent or arbitrarily state-carved transitions, arbitrary same-count colorings, nondeterministic ownership, arbitrary overlapping or carved measurable subtiles, infinite or horizon-growing state systems, almost-everywhere coercivity, another geometry, EHPS shell or integer transfer, or a new r_3(N) bound. Ambient unreachable/noncoaccessible dead-sink Perron roots are irrelevant to accepted-language rate. Erdos Problem 142 remains unsolved.",
+   "statement": "Three exact walls hold in the fixed 117-cell q=6 four-dimensional geometry: globally pairwise-disjoint measurable finite-state edge-tile systems have trimmed rho(W)<49/576 under the complete ordered triple-path hypotheses; every finite complete total deterministic decoder over all 280917 q42 full boxes has an exact whole-word packet contradiction under unique fixed-start ownership and coaccessible reachability; and for the frozen one-red-per-packed-packet coloring, every color-homogeneous partial deterministic interface with at most six states and accepted-language rate above 263277 contains an exact physical seven-multisunflower obstruction.",
    "status": "promoted",
    "type": "evidence_claim"
   },
@@ -31860,7 +31949,7 @@
    "type": "evidence_container"
   },
   {
-   "boundary": "Two exact finite-state walls in the fixed 117-cell q=6 geometry. Globally pairwise-disjoint measurable edge tiles with a complete ordered triple-path certificate have rho(W)<49/576 by q42 loop descent and an all-state Perron bound. Separately, every finite complete total deterministic decoder over all q42 full boxes, with unique fixed-start ownership and coaccessible reachable states, has a minimum-rank-idempotent seven-word packet contradiction even for arbitrary global state-aware potentials; the exact raw cost is L*16/7. Partial/state-carved alphabets, reachable non-coaccessible dead sinks, nondeterministic ownership, arbitrary overlapping measurable subtiles, infinite-state systems, almost-everywhere coercivity, other geometries, EHPS shell or integer transfer, and a new r_3(N) bound remain open. Erdos Problem 142 remains unsolved.",
+   "boundary": "Three exact finite-state walls in the fixed 117-cell q=6 geometry. Globally pairwise-disjoint measurable edge tiles have rho(W)<49/576 under the complete ordered triple-path hypotheses. Every finite complete total deterministic decoder over all q42 full boxes has a minimum-rank-idempotent whole-word packet contradiction under unique fixed-start ownership and coaccessibility. For the frozen one-red-per-each-of-17640-packets coloring, every color-homogeneous partial deterministic interface with at most six states and accepted-language rate above 263277 contains an exact seven-multisunflower physical obstruction. A separate weighted support theorem has exact optimum 1 through dimension 28 and excludes the gate through dimension 31; it does not construct a potential. Seven-plus homogeneous states, physical-symbol-dependent/state-carved transitions, arbitrary same-count colorings, nondeterministic ownership, arbitrary overlapping or carved measurable subtiles, infinite-state systems, almost-everywhere coercivity, other geometries, EHPS shell or integer transfer, and a new r_3(N) bound remain open. Erdos Problem 142 remains unsolved.",
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-142-q6-117-cell-disjoint-graph-carving-wall",
    "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall",

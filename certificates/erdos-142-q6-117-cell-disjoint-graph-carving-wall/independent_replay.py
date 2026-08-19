@@ -23,7 +23,7 @@ DEFAULT_GRAPH_VERIFIER = HERE / "verify.py"
 DEFAULT_Q42_SOURCE = HERE.parent / "erdos-142-q42-carving-wall" / "q42_fractional_carving_wall.py"
 DEFAULT_Q42_CERT = HERE.parent / "erdos-142-q42-carving-wall" / "q42_fractional_carving_certificate.json"
 EXPECTED = {
-    "note": "d6392db537225d2457ab5c712da2226c27f34f706545db57aaefb38d334b6256",
+    "note": "a83d6f0af8545cd64a1bc43cf1584d6bfc14c2130cf61c3665bfa526c6853975",
     "graph_verifier": "61e19c8b4c80c1ac2f862221b91b8e962f5a9b032a2dc7fecf5fdd2a9c6db4fd",
     "q42_source": "c543e7fd118981c530ad81a1dd0c4e105c5c1eca253aefd50c6c007c5a818fac",
     "q42_cert": "60d9d974aa23755615d159653508dbb38769fb0d883c974a4425e51b278119b4",

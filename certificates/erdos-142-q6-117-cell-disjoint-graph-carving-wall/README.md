@@ -1,12 +1,14 @@
-# Disjoint graph-carving and total-decoder overlap walls
+# Disjoint, total-decoder, and homogeneous-partial walls
 
-This package promotes two exact negative theorems for the fixed 117-cell q=6
-four-dimensional geometry. The first composes the arbitrary-measurable q=42
-one-block carving theorem with an all-state spectral argument under globally
-disjoint edge ownership. The second permits repeated full-box ownership and
-arbitrary transition memory, but requires a complete total deterministic q42
-decoder with coaccessible reachable states. Neither is a positive
-construction or a new bound for `r_3(N)`.
+This package promotes three exact negative theorems for the fixed 117-cell
+q=6 four-dimensional geometry, plus one abstract weighted-support boundary.
+The first composes the arbitrary-measurable q=42 one-block carving theorem
+with an all-state spectral argument under globally disjoint edge ownership.
+The second permits repeated full-box ownership and arbitrary transition
+memory, but requires a complete total deterministic q42 decoder with
+coaccessible reachable states. The third covers color-homogeneous partial
+deterministic interfaces through six states for one frozen q42 coloring.
+None is a positive construction or a new bound for `r_3(N)`.
 
 ## Exact theorem
 
@@ -168,6 +170,63 @@ python3 -I certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/univer
 Expected verdicts are `PASS_UNIVERSAL_TOTAL_DECODER_WALL` and
 `PASS_MINRANK_IDEMPOTENT_SANDWICH_AUDIT`.
 
+## Homogeneous partial and weighted-support boundaries
+
+Fix the support-disjoint q42 packet packing and choose exactly one red box in
+each of its 17,640 packets; color all remaining 263,277 boxes blue. A
+color-homogeneous partial deterministic interface has one fixed start, a
+nonempty accepting set, and at most one blue and one red successor at each
+state. Transitions depend only on the color, not on the individual physical
+box. Its rate is the accepted-language limsup, equivalently the Perron root
+after reachable/coaccessible live trimming.
+
+The exact source and hostile replays in
+`homogeneous-partial-six-state-extension/`, together with the byte-bound lower
+state packet in `homogeneous-partial-five-state-wall/`, prove that every such
+interface with at most six states and no nondegenerate seven-multisunflower
+has rate at most
+
+```text
+B = 263277 < G = 1058841/4.
+```
+
+The six-state source enumerates 2,058,472 strong simultaneous-S6 orbits. Of
+these, 2,056,831 reach every start/target product goal; the remaining 1,641
+have exact rate at most `B`, with split `(below,equal,above)=(1640,1,0)`.
+The largest shortest sunflower horizon is 50. The independent hostile replay
+reconstructs the full 17,640-packet packing, all 441 size-seven packets, and
+strict positivity of every raw-canonical alignment cost. For the physical
+lift it is enough to reuse the one explicit actual size-seven packet checked
+by the source replay; cyclic alignment handles its arbitrarily chosen red
+role. Packet incidence cancels every whole-word potential value.
+
+The companion `weighted-multiset7-boundary/` is deliberately weaker and more
+general on the combinatorial side. It verifies the literal multiset
+sunflower reduction, tensor uniformization, `M_1=6`, `M_2=42`, the strengthened
+recursion, an exact weighted optimum of 1 through dimension 28, and exclusion
+of the gate through dimension 31. Relaxation failures at dimensions 29 and 32
+are not constructions. This weighted packet is a support-language boundary
+only: packet avoidance does not construct a physical potential.
+
+The certifying aggregate runs the six-state source, the first independent
+lower-state hostile replay, and the weighted boundary concurrently:
+
+```text
+python3 -I certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/verify_all.py
+```
+
+The two exhaustive corroborating paths are intentionally outside the fast
+Makefile target:
+
+```text
+python3 -I certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/homogeneous-partial-five-state-wall/independent_replay.py
+python3 -I certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/homogeneous-partial-six-state-extension/independent_replay.py
+```
+
+The aggregate retains the compatibility marker
+`PASS_DISJOINT_AND_TOTAL_OVERLAP_REUSE_WALLS` and ends with
+`PASS_DISJOINT_TOTAL_AND_PARTIAL_SIX_STATE_WALLS`.
+
 ## Scope
 
 The measurable graph theorem is proved only for fixed finite-state systems,
@@ -177,9 +236,14 @@ automaton. The overlap/reuse companion instead covers complete q42 full-box
 total deterministic decoders with unique physical-word ownership and an
 accepting suffix from every reachable state.
 
-Still not proved: partial or state-carved transition alphabets; a totalization
-whose minimum-rank image is a reachable non-coaccessible dead sink;
-nondeterministic or multiple-path ownership; arbitrary overlapping measurable
-subtiles; infinite or horizon-growing state systems; an almost-everywhere
-midpoint hypothesis; a different physical geometry; an EHPS shell or integer
-transfer; a new `r_3(N)` bound; or Erdős Problem 142.
+The partial companion covers only the frozen one-red-per-packed-packet
+coloring, color-homogeneous partial deterministic interfaces with at most six
+states, and accepted-language/live-trim rate. Still not proved: seven or more
+states; physical-symbol-dependent or arbitrarily state-carved transitions;
+an arbitrary same-count coloring; nondeterministic or multiple-path ownership;
+arbitrary overlapping or carved measurable subtiles; infinite or
+horizon-growing state systems; an
+almost-everywhere midpoint hypothesis; a different physical geometry; an
+EHPS shell or integer transfer; a new `r_3(N)` bound; or Erdős Problem 142.
+The accepted rate is always the Perron root of the live trim; an ambient
+unreachable or noncoaccessible dead-sink Perron root is irrelevant.
