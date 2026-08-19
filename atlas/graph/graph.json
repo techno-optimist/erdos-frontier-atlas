@@ -5,7 +5,7 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 379,
-   "evidenced_by": 45,
+   "evidenced_by": 47,
    "has_surface": 319,
    "learned_from": 5,
    "measures": 223,
@@ -18,8 +18,8 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 49,
-   "evidence_container": 63,
+   "evidence_claim": 51,
+   "evidence_container": 65,
    "external_claim": 91,
    "incident": 26,
    "move": 7,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 3950,
-   "validator-enforced": 62
+   "validator-enforced": 64
   }
  },
  "edges": [
@@ -5232,6 +5232,14 @@
    "type": "evidenced_by"
   },
   {
+   "dst": "E:claim:erdos-142-ehps-common-marker-h4-h7-wall",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P142",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
    "dst": "E:claim:erdos-142-foundation",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
@@ -5313,6 +5321,14 @@
   },
   {
    "dst": "E:claim:erdos-142-q6-117-cell-bounded-dilation-wall",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P142",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-142-q6-117-cell-disjoint-graph-carving-wall",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
    "src": "P142",
@@ -29556,6 +29572,65 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-142-ehps-common-marker-cap-wall/README.md",
+     "sha256": "197f29ebd76af179e9ac027c27048c85b8160f3cab417e9c996edf570100355b"
+    },
+    {
+     "path": "certificates/erdos-142-ehps-common-marker-cap-wall/verify.py",
+     "sha256": "3fad3ddc3677f78e2efc6a05dc6391c9479ee1e68a9f781afbeb20d293e777e2"
+    },
+    {
+     "path": "certificates/erdos-142-ehps-common-marker-cap-wall/independent_replay.py",
+     "sha256": "ba6bb78721c0b6cb8dbe96e2e70427391da2768618982099bff7b3ad3b91136d"
+    },
+    {
+     "path": "certificates/erdos-142-ehps-common-marker-cap-wall/verify_all.py",
+     "sha256": "1880ad53405c39bec06cc0c5c3efe2ffdc1a48b82b974b1d1a2e63e6ddeaee86"
+    },
+    {
+     "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h7-q9-cap-wall/README.md",
+     "sha256": "99b129cca84d966c93c7c628deb977eb35d851ecc06317ed00bf38e1f8693b1a"
+    },
+    {
+     "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h7-q9-cap-wall/verify.py",
+     "sha256": "8d2ac2fa4ffd31fb2f17978ac8c31089e597f3154232022f47035a5ee32e3e86"
+    },
+    {
+     "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h7-q9-cap-wall/independent_replay.py",
+     "sha256": "3ff7601b06443221b77d916773e43469d45306ccde633b25fc7fb4ab7c58087b"
+    },
+    {
+     "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h7-q9-cap-wall/INDEPENDENT_AUDIT.md",
+     "sha256": "8a4c6c9629d98f6d2ba06f9e971d121a771b29b6ba0495f65d23260a3ffff8cf"
+    }
+   ],
+   "claim_id": "erdos-142-ehps-common-marker-h4-h7-wall",
+   "id": "E:claim:erdos-142-ehps-common-marker-h4-h7-wall",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-142-ehps-common-marker-cap-wall/verify_all.py"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "PASS_LITERAL_EHPS_COMMON_MARKER_H4_H7_WALL",
+     "PASS_LITERAL_EHPS_COMMON_MARKER_H4_CAP_WALL",
+     "PASS_H7_Q9_CAP_AUDIT",
+     "TARGET36_UNSAT nodes=716176",
+     "H7_BOUND beta=35/2916 gate=7/576 margin=7/46656",
+     "EPSILON_WINDOW endpoint=1/20000 gap=25606141/2041200000000",
+     "SCOPE common_marker literal_EHPS_AB pointwise_phase_labelled_potential"
+    ]
+   },
+   "scope": "For h=4,5,6, the eight-row whole-word cycle forces a surviving common marker wholly into C_A^c or C_B^c, same-phase H_3^4 lines force every marker fibre to be an affine cap, and the folded triangle/strip decomposition gives mu(M)<=1/81+2(4epsilon/3-2epsilon^2). For h=7, 2,916 exact q=9 six-point line packets plus a solver-free 716,176-node target-36 exhaustion give the arbitrary-measurable exceptional-plane bound 35/81 and hence mu(M)<=35/2916+2(4epsilon/3-2epsilon^2)<mu(T)^2/7. The Haar-preserving torus automorphism L preserves H_9/H_3 cosets and nontrivial midpoint rows, so positivity transports the finite packet to the C_B branch without assuming metric invariance. Separate values are allowed for phase-labelled physical words, making the theorem at least as permissive as a single-valued potential on overlaps. This covers only the literal A/B chain and one common marker. It does not cover phase-specific markers M_1,...,M_h, context-owned or carved A/B pieces, target-35 q=9 infeasibility, other graph languages, an almost-everywhere midpoint hypothesis, a new construction, EHPS integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved.",
+   "statement": "For the literal EHPS tiles A=T x T and B=L(A), a single common measurable marker M used in every phase A^(j-1) x M x B^(h-j), and arbitrary phase-labelled pointwise potentials, the marker density is below mu(T)^2/h for h=4,5,6 when 0<epsilon<=1/4000 and for h=7 when 0<=epsilon<=1/20000.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-142/verify.py",
      "sha256": "4c7532afd95c178665051dae3d869cc92cd1ccc188a5120c99eb413718379108"
     },
@@ -30035,6 +30110,57 @@
    },
    "scope": "Two strict-interior one-parameter row families in cells 93 and 91 imply D(3t)-D(t)>=144-96t for every 0<t<1/3. A finite telescope at t=(1/4)3^-n contradicts boundedness, with no closure, continuity, trace, affinity or limiting assumption. This is a pointwise theorem; it does not follow from a merely almost-everywhere coercivity hypothesis because the displayed curves may be null. It does not cover graph-restricted triples, partial carving, changed cell ownership, support deformation, wrapped/geodesic right sides, unbounded potentials, integer transfer or a new r_3(N) bound; Erdos Problem 142 remains unsolved.",
    "statement": "On the unchanged full 117-cell q=6 four-dimensional union, no bounded single-valued potential can satisfy the raw-canonical modular-torus midpoint coercivity inequality pointwise for every eligible triple.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
+     "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/README.md",
+     "sha256": "b8d98b2881a705a71fcc50afdff58b8168ed856b70d00d51df6ff660df7cb145"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/verify.py",
+     "sha256": "61e19c8b4c80c1ac2f862221b91b8e962f5a9b032a2dc7fecf5fdd2a9c6db4fd"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/independent_replay.py",
+     "sha256": "0eedcf9eecccdb82cc531de0290a21cd80c086bca3a27de6638249799f6da0be"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/HOSTILE_AUDIT.md",
+     "sha256": "628744628d5b75c9cb9c961dacc281497c4d8f11bd81bb39fd48e17e9f9fa378"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/horizon2-parity-wall/README.md",
+     "sha256": "705c44aadfc4a9d28666e7dd14884edd468d396b10e2453015a638f5e110dda4"
+    },
+    {
+     "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/horizon2-parity-wall/verify.py",
+     "sha256": "76d06d36b10107b0de795d95aa68bb50b3b69a9b1923bd529075252b14019637"
+    }
+   ],
+   "claim_id": "erdos-142-q6-117-cell-disjoint-graph-carving-wall",
+   "id": "E:claim:erdos-142-q6-117-cell-disjoint-graph-carving-wall",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/independent_replay.py",
+     "--full"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "PASS_INDEPENDENT_DISJOINT_GRAPH_CARVING_WALL_AUDIT",
+     "SOURCE_HASH_BINDINGS_OK",
+     "Q42_MEASURABLE_CAPACITY_REPLAY_OK",
+     "DIAGONAL_PRUNING_EXHAUSTIVE_OK cases=25234 live_states=55546",
+     "SINGLE_VALUED_DESCENT_OK midpoint_rows=30 overlap_rejected=true",
+     "ALL_STATE_SPECTRAL_ARITHMETIC_OK rayleigh_trials=662 gate_polynomial=4825657053/16"
+    ]
+   },
+   "scope": "The theorem permits any fixed finite number of states, parallel edges, and arbitrary measurable carving inside the fixed physical union. Completeness means every actual ordered torus-midpoint fibre is represented, including x=z and diagonal branches; trimming keeps only start-reachable, end-co-reachable, recurrent rate-contributing states. Global pairwise disjointness over all edge labels makes each loop union carry one single-valued physical function, so the exact q=42 measurable-carving theorem caps every diagonal mass by 263277/42^4. Total physical mass is at most 280917/42^4, and a state-count-independent Perron argument gives rho(42^4 W)<=(263277+sqrt(263277^2+17640^2))/2<1058841/4. A separately replayed seven-word packet closes the exact horizon-two q=42 one-red-per-packet even-parity full-box construction, but is not carving-stable. The general theorem does not cover repeated or overlapping physical ownership across contexts, transition memory not state-lifted with disjoint ownership, a separately decoded overlap kernel, infinite or horizon-growing state systems, an almost-everywhere midpoint hypothesis, another geometry, an EHPS shell construction, integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved.",
+   "statement": "Every finite directed multigraph whose globally pairwise-disjoint measurable edge tiles lie in the fixed 117-cell q=6 four-dimensional union has trimmed weighted adjacency matrix rho(W)<49/576 whenever its complete ordered physical triple-path automaton admits bounded edge-local residual potentials and finite state/endpoint coboundaries with no negative accepted defect cycle.",
    "status": "promoted",
    "type": "evidence_claim"
   },
@@ -31620,6 +31746,13 @@
    "type": "evidence_container"
   },
   {
+   "boundary": "For the literal EHPS tiles A=T x T and B=L(A), one common measurable marker M used in every phase of A^(j-1) x M x B^(h-j), and arbitrary phase-labelled pointwise potentials, exact cap/Fubini arguments close h=4,5,6 for 0<epsilon<=1/4000 and h=7 for 0<=epsilon<=1/20000. The h=7 sharpening proves an arbitrary-measurable exceptional-plane cap of 35/81 using 2,916 q=9 six-point packets and a solver-free target-36 exhaustion. This closes only the common-marker literal chain. Phase-specific markers, context-owned or carved A/B pieces, target-35 infeasibility, other graph languages, almost-everywhere coercivity, EHPS integer transfer, and a new r_3(N) bound remain outside scope. Erdos Problem 142 remains unsolved.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-142-ehps-common-marker-cap-wall",
+   "path": "certificates/erdos-142-ehps-common-marker-cap-wall",
+   "type": "evidence_container"
+  },
+  {
    "boundary": "A uniformly interior exact continuum coercivity wall for the D4 assignment (7,7,7,6,7) under the raw-canonical torus-midpoint convention of EHPS Proposition 2.2. Fixed rational points have tile-face margin >=1/30, seam margin 1/8, and three rows summing to 0>=4/3. This is not an ordinary Euclidean-midpoint wall, does not classify other assignments or deformed/recursive supports, and gives no r_3(N) bound; Erdos Problem 142 remains unsolved.",
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-142-interior-torus-torsion-wall",
@@ -31694,6 +31827,13 @@
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-142-q6-117-cell-bounded-dilation-wall",
    "path": "certificates/erdos-142-q6-117-cell-bounded-dilation-wall",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "An exact finite-state graph/path capacity wall for globally pairwise-disjoint measurable edge tiles inside the fixed 117-cell q=6 four-dimensional union. A complete ordered triple-path automaton with bounded edge-local residual potentials, finite state/endpoint coboundaries, and no negative accepted defect cycle forces the trimmed weighted adjacency matrix to satisfy rho(W)<49/576. The proof combines the q=42 arbitrary-measurable loop cap with a state-count-independent Perron bound. A supporting seven-row packet separately closes the exact horizon-two q=42 even-parity full-box escape. Repeated or overlapping physical ownership remains open beyond that one parity model, as do infinite or horizon-growing state systems, almost-everywhere coercivity, other geometries, EHPS shell or integer transfer, and a new r_3(N) bound. Erdos Problem 142 remains unsolved.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-142-q6-117-cell-disjoint-graph-carving-wall",
+   "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall",
    "type": "evidence_container"
   },
   {

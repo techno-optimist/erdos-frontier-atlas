@@ -1889,6 +1889,83 @@ potentials, subcell refinements, four-dimensional superblocks, state/path or
 context-dependent potentials, other grids, EHPS shelling, integer transfer,
 or `r_3(N)`.
 
+### 4.36 Globally disjoint finite-state graph carving is below the EHPS gate
+
+Let a finite directed multigraph assign globally pairwise-disjoint measurable
+edge tiles inside the fixed q=6 117-cell union.  Suppose its ordered
+triple-path automaton contains every actual physical torus-midpoint fibre and
+its bounded edge-local residual potentials and finite state/endpoint
+coboundaries have no negative accepted defect cycle.  After the usual
+reachable, co-reachable, recurrent trimming, its weighted adjacency matrix
+obeys
+
+```text
+rho(W) < 49/576.
+```
+
+Indeed, every retained diagonal triple state is itself reachable and
+co-reachable.  Global disjointness makes the loop-edge union carry one
+single-valued physical function, so the q=42 measurable-carving theorem caps
+each diagonal mass by `A/42^4`, `A=263277`.  Total mass is at most
+`N/42^4`, `N=280917`.  A state-count-independent Perron estimate then gives
+
+```text
+rho(42^4 W) <= (A+sqrt(A^2+(N-A)^2))/2 < 1058841/4,
+```
+
+with exact gate polynomial `4825657053/16>0`.  The primary and independently
+written replays in
+`certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/` audit the
+diagonal pruning, physical-function descent, q=42 dependency, and all-state
+spectral extremum.
+
+The same package contains a narrower horizon-two companion: every
+one-red-per-packet coloring of the q=42 full-box alphabet makes the even-red
+language contain an exact seven-word Farkas cycle.  This kills that parity
+escape, but not arbitrary overlap or physical-tile reuse.  Those models,
+infinite or horizon-growing state systems, almost-everywhere coercivity,
+shelling, integer transfer, and a new `r_3(N)` bound remain open.
+
+### 4.37 The literal common-marker h=4,5,6,7 window is closed
+
+For the literal EHPS tile `T`, put `A=T x T`, `B=L(A)`, and use the same
+measurable marker `M` in every phase `A^(j-1) x M x B^(h-j)`.  Even allowing
+separate values for every phase-labelled physical word, pointwise coercivity
+and `0<epsilon<=1/4000` force
+
+```text
+mu(M) <= 1/81+2(4epsilon/3-2epsilon^2) < mu(T)^2/h
+```
+
+for `h=4,5,6`.  An eight-row whole-word cycle first puts the common marker in
+`C_A^c` or `C_B^c`; same-phase `H_3^4` lines make every marker fibre an
+affine cap.  Splitting the folded complement into its epsilon-zero triangle
+and thin strip gives the displayed Fubini bound, and determinant-one `L`
+handles the second branch.  Both stdlib replays live in
+`certificates/erdos-142-ehps-common-marker-cap-wall/`.
+
+For `h=7`, an exact q=9 argument sharpens the exceptional-plane cap to
+`35/81`: 2,916 six-point positive balanced line packets and a solver-free
+716,176-node exhaustion rule out every 36-digit cap selector.  Common-offset
+Fubini then gives
+
+```text
+mu(M) <= 35/2916+2(4epsilon/3-2epsilon^2) < mu(T)^2/7
+```
+
+for `0<=epsilon<=1/20000`.  The replay also proves that invertible copies of
+the earlier square packet alone do not yield this loss; target 35 is not
+claimed.  A separately written replay replaces the target-36 search by the
+exact rich-incidence contradiction `18>12`.  The `C_B^c` branch follows by
+the Haar-preserving torus automorphism `L`, which preserves `H_9/H_3` cosets
+and midpoint rows; no metric invariance is used.
+
+This is a common-marker theorem only.  Phase-specific markers,
+context-owned or carved `A/B` pieces, target-35 q=9 infeasibility, other graph
+languages,
+almost-everywhere coercivity, EHPS integer transfer, and `r_3(N)` remain
+outside scope.
+
 ## 5. What would count as progress
 
 A promotable positive result must include all of:

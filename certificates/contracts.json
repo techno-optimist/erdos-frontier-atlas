@@ -127,6 +127,16 @@
    "boundary": "An exact one-block arbitrary-measurable-carving wall for the fixed 117-cell q=6 four-dimensional union. Every measurable E in that union carrying one single-valued physical potential satisfying every actual raw-canonical modular-torus midpoint coercivity inequality pointwise has mu(E)<=263277/42^4<49/576. Two disjoint q=42 common-offset packet layers contain 17,640 balanced supports; the union-bound/Fubini step forces at least 17,640/42^4 deleted volume even when every fine box is carved arbitrarily. No boundedness, continuity, additivity, finite-state, or full-box premise is used. The theorem does not cover an almost-everywhere midpoint hypothesis, multivalued or label/state/context-owned potentials, graph/path or multi-block capacity, overlapping/coupled tiles, EHPS shell or integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved."
   },
   {
+   "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall",
+   "classification": "certified_local",
+   "boundary": "An exact finite-state graph/path capacity wall for globally pairwise-disjoint measurable edge tiles inside the fixed 117-cell q=6 four-dimensional union. A complete ordered triple-path automaton with bounded edge-local residual potentials, finite state/endpoint coboundaries, and no negative accepted defect cycle forces the trimmed weighted adjacency matrix to satisfy rho(W)<49/576. The proof combines the q=42 arbitrary-measurable loop cap with a state-count-independent Perron bound. A supporting seven-row packet separately closes the exact horizon-two q=42 even-parity full-box escape. Repeated or overlapping physical ownership remains open beyond that one parity model, as do infinite or horizon-growing state systems, almost-everywhere coercivity, other geometries, EHPS shell or integer transfer, and a new r_3(N) bound. Erdos Problem 142 remains unsolved."
+  },
+  {
+   "path": "certificates/erdos-142-ehps-common-marker-cap-wall",
+   "classification": "certified_local",
+   "boundary": "For the literal EHPS tiles A=T x T and B=L(A), one common measurable marker M used in every phase of A^(j-1) x M x B^(h-j), and arbitrary phase-labelled pointwise potentials, exact cap/Fubini arguments close h=4,5,6 for 0<epsilon<=1/4000 and h=7 for 0<=epsilon<=1/20000. The h=7 sharpening proves an arbitrary-measurable exceptional-plane cap of 35/81 using 2,916 q=9 six-point packets and a solver-free target-36 exhaustion. This closes only the common-marker literal chain. Phase-specific markers, context-owned or carved A/B pieces, target-35 infeasibility, other graph languages, almost-everywhere coercivity, EHPS integer transfer, and a new r_3(N) bound remain outside scope. Erdos Problem 142 remains unsolved."
+  },
+  {
    "path": "certificates/erdos-142-q4-q7-affine-quadratic-capacity",
    "classification": "certified_local",
    "boundary": "Exact capacities 4,5,9,10 at q=4,5,6,7 only for unions of full two-dimensional q-adic cells and potentials in the displayed fixed-Hessian residual-affine ansatz. Exact Farkas packets give the upper bounds and integer coefficient tables attain them. This does not cover arbitrary potentials, subcell refinement or carving, four-dimensional tiles, state/path/context dependence, other q, EHPS shelling, integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved."
@@ -3089,6 +3099,320 @@
         "evidence": "The separately written hostile replay imports neither the candidate replay nor a candidate helper. It independently reconstructs the geometry, balanced packet rows, all-offset physical midpoint identities, exact carry and raw-cost checks, disjoint support layers, pointwise common-offset union-bound bookkeeping, and gate arithmetic while binding the package source and frozen-certificate bytes."
        }
      }
+     ]
+    },
+    {
+     "id": "erdos-142-q6-117-cell-disjoint-graph-carving-wall",
+     "status": "promoted",
+     "statement": "Every finite directed multigraph whose globally pairwise-disjoint measurable edge tiles lie in the fixed 117-cell q=6 four-dimensional union has trimmed weighted adjacency matrix rho(W)<49/576 whenever its complete ordered physical triple-path automaton admits bounded edge-local residual potentials and finite state/endpoint coboundaries with no negative accepted defect cycle.",
+     "scope": "The theorem permits any fixed finite number of states, parallel edges, and arbitrary measurable carving inside the fixed physical union. Completeness means every actual ordered torus-midpoint fibre is represented, including x=z and diagonal branches; trimming keeps only start-reachable, end-co-reachable, recurrent rate-contributing states. Global pairwise disjointness over all edge labels makes each loop union carry one single-valued physical function, so the exact q=42 measurable-carving theorem caps every diagonal mass by 263277/42^4. Total physical mass is at most 280917/42^4, and a state-count-independent Perron argument gives rho(42^4 W)<=(263277+sqrt(263277^2+17640^2))/2<1058841/4. A separately replayed seven-word packet closes the exact horizon-two q=42 one-red-per-packet even-parity full-box construction, but is not carving-stable. The general theorem does not cover repeated or overlapping physical ownership across contexts, transition memory not state-lifted with disjoint ownership, a separately decoded overlap kernel, infinite or horizon-growing state systems, an almost-everywhere midpoint hypothesis, another geometry, an EHPS shell construction, integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved.",
+     "machine_verdict": "PASS_INDEPENDENT_DISJOINT_GRAPH_CARVING_WALL_AUDIT",
+     "publication_bindings": [
+      {
+       "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/README.md",
+       "contains": "Globally disjoint finite-state graph-carving wall"
+      },
+      {
+       "path": "atlas/erdos-142-recursive-capacity.md",
+       "contains": "Globally disjoint finite-state graph carving is below the EHPS gate"
+      }
+     ],
+     "artifacts": [
+      {
+       "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/README.md",
+       "sha256": "b8d98b2881a705a71fcc50afdff58b8168ed856b70d00d51df6ff660df7cb145"
+      },
+      {
+       "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/verify.py",
+       "sha256": "61e19c8b4c80c1ac2f862221b91b8e962f5a9b032a2dc7fecf5fdd2a9c6db4fd"
+      },
+      {
+       "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/independent_replay.py",
+       "sha256": "0eedcf9eecccdb82cc531de0290a21cd80c086bca3a27de6638249799f6da0be"
+      },
+      {
+       "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/HOSTILE_AUDIT.md",
+       "sha256": "628744628d5b75c9cb9c961dacc281497c4d8f11bd81bb39fd48e17e9f9fa378"
+      },
+      {
+       "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/horizon2-parity-wall/README.md",
+       "sha256": "705c44aadfc4a9d28666e7dd14884edd468d396b10e2453015a638f5e110dda4"
+      },
+      {
+       "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/horizon2-parity-wall/verify.py",
+       "sha256": "76d06d36b10107b0de795d95aa68bb50b3b69a9b1923bd529075252b14019637"
+      }
+     ],
+     "replays": [
+      {
+       "profile": "fast",
+       "certifies_claim": false,
+       "entrypoint": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/verify.py",
+       "argv": [
+        "python3",
+        "-I",
+        "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/verify.py",
+        "--self-test"
+       ],
+       "timeout_seconds": 90,
+       "exit_code": 0,
+       "stdout_contains": [
+        "PASS_DISJOINT_FINITE_STATE_GRAPH_CARVING_WALL",
+        "Q42_CAPACITY_REPLAY_OK",
+        "SPECTRAL_EXTREMES_OK",
+        "EXACT_GATE_POLYNOMIAL value=4825657053/16",
+        "PLANTED_FAILURES_REJECTED count=2",
+        "SCOPE fixed_q6_117_cell_geometry arbitrary_measurable_disjoint_edge_tiles",
+        "AUTOMATON complete_ordered_triples no_negative_defect_cycles_required"
+       ],
+       "stdout_not_contains": [
+        "Traceback (most recent call last)"
+       ],
+       "failure_control": {
+        "kind": "embedded",
+        "evidence": "The primary standard-library replay hash-binds and executes the q=42 measurable-carving dependency, checks the exact all-state spectral extremum and strict gate polynomial, and rejects planted missing-loop-cap and repeated-physical-ownership failures."
+       }
+      },
+      {
+       "profile": "fast",
+       "certifies_claim": true,
+       "entrypoint": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/independent_replay.py",
+       "argv": [
+        "python3",
+        "-I",
+        "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/independent_replay.py",
+        "--full"
+       ],
+       "timeout_seconds": 90,
+       "exit_code": 0,
+       "stdout_contains": [
+        "PASS_INDEPENDENT_DISJOINT_GRAPH_CARVING_WALL_AUDIT",
+        "SOURCE_HASH_BINDINGS_OK",
+        "Q42_MEASURABLE_CAPACITY_REPLAY_OK",
+        "DIAGONAL_PRUNING_EXHAUSTIVE_OK cases=25234 live_states=55546",
+        "SINGLE_VALUED_DESCENT_OK midpoint_rows=30 overlap_rejected=true",
+        "ALL_STATE_SPECTRAL_ARITHMETIC_OK rayleigh_trials=662 gate_polynomial=4825657053/16"
+       ],
+       "stdout_not_contains": [
+        "Traceback (most recent call last)"
+       ],
+       "failure_control": {
+        "kind": "external",
+        "evidence": "The separately written hostile replay imports no primary module. It binds the frozen package and q=42 dependency hashes, exhaustively checks diagonal endpoint pruning on all directed graphs through three states and endpoint masks, audits physical-function descent with an overlapping-owner rejection, and independently proves the all-state spectral arithmetic."
+       }
+      },
+      {
+       "profile": "fast",
+       "certifies_claim": false,
+       "entrypoint": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/horizon2-parity-wall/verify.py",
+       "argv": [
+        "python3",
+        "-I",
+        "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/horizon2-parity-wall/verify.py"
+       ],
+       "timeout_seconds": 90,
+       "exit_code": 0,
+       "stdout_contains": [
+        "PASS_Q42_HORIZON2_PARITY_WALL",
+        "PACKETS first=13230 second=4410 total=17640 support=92610",
+        "SIZE7 prototype_index=6 lifts=441 roles=7",
+        "AUTOMORPHISMS cyclic=7 arbitrary_red_role_pairs_checked=49",
+        "GLOBAL_PACKET words=7 rows=7 exact_total_cost=32/7",
+        "CONCLUSION no_single_valued_global_coercive_potential_at_horizon_2",
+        "PLANTED_FAILURES_REJECTED"
+       ],
+       "stdout_not_contains": [
+        "Traceback (most recent call last)"
+       ],
+       "failure_control": {
+        "kind": "embedded",
+        "evidence": "The supporting standard-library replay reconstructs all packed q=42 fine-box packets, transports the unique seven-point balanced plan through all 441 lifts, checks all 49 red-role alignments as actual physical common-offset rows, and rejects mismatched-role, non-common-offset, sub-pigeonhole, and ownership-overlap controls."
+       }
+      }
+     ]
+    },
+    {
+     "id": "erdos-142-ehps-common-marker-h4-h7-wall",
+     "status": "promoted",
+     "statement": "For the literal EHPS tiles A=T x T and B=L(A), a single common measurable marker M used in every phase A^(j-1) x M x B^(h-j), and arbitrary phase-labelled pointwise potentials, the marker density is below mu(T)^2/h for h=4,5,6 when 0<epsilon<=1/4000 and for h=7 when 0<=epsilon<=1/20000.",
+     "scope": "For h=4,5,6, the eight-row whole-word cycle forces a surviving common marker wholly into C_A^c or C_B^c, same-phase H_3^4 lines force every marker fibre to be an affine cap, and the folded triangle/strip decomposition gives mu(M)<=1/81+2(4epsilon/3-2epsilon^2). For h=7, 2,916 exact q=9 six-point line packets plus a solver-free 716,176-node target-36 exhaustion give the arbitrary-measurable exceptional-plane bound 35/81 and hence mu(M)<=35/2916+2(4epsilon/3-2epsilon^2)<mu(T)^2/7. The Haar-preserving torus automorphism L preserves H_9/H_3 cosets and nontrivial midpoint rows, so positivity transports the finite packet to the C_B branch without assuming metric invariance. Separate values are allowed for phase-labelled physical words, making the theorem at least as permissive as a single-valued potential on overlaps. This covers only the literal A/B chain and one common marker. It does not cover phase-specific markers M_1,...,M_h, context-owned or carved A/B pieces, target-35 q=9 infeasibility, other graph languages, an almost-everywhere midpoint hypothesis, a new construction, EHPS integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved.",
+     "machine_verdict": "PASS_LITERAL_EHPS_COMMON_MARKER_H4_H7_WALL",
+     "publication_bindings": [
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/README.md",
+       "contains": "Literal EHPS common-marker cap wall for h=4,5,6,7"
+      },
+      {
+       "path": "atlas/erdos-142-recursive-capacity.md",
+       "contains": "The literal common-marker h=4,5,6,7 window is closed"
+      }
+     ],
+     "artifacts": [
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/README.md",
+       "sha256": "197f29ebd76af179e9ac027c27048c85b8160f3cab417e9c996edf570100355b"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/verify.py",
+       "sha256": "3fad3ddc3677f78e2efc6a05dc6391c9479ee1e68a9f781afbeb20d293e777e2"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/independent_replay.py",
+       "sha256": "ba6bb78721c0b6cb8dbe96e2e70427391da2768618982099bff7b3ad3b91136d"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/verify_all.py",
+       "sha256": "1880ad53405c39bec06cc0c5c3efe2ffdc1a48b82b974b1d1a2e63e6ddeaee86"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h7-q9-cap-wall/README.md",
+       "sha256": "99b129cca84d966c93c7c628deb977eb35d851ecc06317ed00bf38e1f8693b1a"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h7-q9-cap-wall/verify.py",
+       "sha256": "8d2ac2fa4ffd31fb2f17978ac8c31089e597f3154232022f47035a5ee32e3e86"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h7-q9-cap-wall/independent_replay.py",
+       "sha256": "3ff7601b06443221b77d916773e43469d45306ccde633b25fc7fb4ab7c58087b"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h7-q9-cap-wall/INDEPENDENT_AUDIT.md",
+       "sha256": "8a4c6c9629d98f6d2ba06f9e971d121a771b29b6ba0495f65d23260a3ffff8cf"
+      }
+     ],
+     "replays": [
+      {
+       "profile": "fast",
+       "certifies_claim": true,
+       "entrypoint": "certificates/erdos-142-ehps-common-marker-cap-wall/verify_all.py",
+       "argv": [
+        "python3",
+        "-I",
+        "certificates/erdos-142-ehps-common-marker-cap-wall/verify_all.py"
+       ],
+       "timeout_seconds": 90,
+       "exit_code": 0,
+       "stdout_contains": [
+        "PASS_LITERAL_EHPS_COMMON_MARKER_H4_H7_WALL",
+        "PASS_LITERAL_EHPS_COMMON_MARKER_H4_CAP_WALL",
+        "PASS_H7_Q9_CAP_AUDIT",
+        "TARGET36_UNSAT nodes=716176",
+        "H7_BOUND beta=35/2916 gate=7/576 margin=7/46656",
+        "EPSILON_WINDOW endpoint=1/20000 gap=25606141/2041200000000",
+        "SCOPE common_marker literal_EHPS_AB pointwise_phase_labelled_potential"
+       ],
+       "stdout_not_contains": [
+        "Traceback (most recent call last)"
+       ],
+       "failure_control": {
+        "kind": "external",
+        "evidence": "The aggregate standard-library replay executes both exact primary packets and requires their verdicts. The h=4,5,6 packet verifies whole-word coverage, phase-labelled cancellation, cap/Fubini normalization and density gaps; the h=7 packet reconstructs the q=9 packets, exact target-36 exhaustion, common-offset plane measure bound, and epsilon window. Separately written replays audit both components."
+       }
+      },
+      {
+       "profile": "fast",
+       "certifies_claim": false,
+       "entrypoint": "certificates/erdos-142-ehps-common-marker-cap-wall/verify.py",
+       "argv": [
+        "python3",
+        "-I",
+        "certificates/erdos-142-ehps-common-marker-cap-wall/verify.py"
+       ],
+       "timeout_seconds": 30,
+       "exit_code": 0,
+       "stdout_contains": [
+        "PASS_LITERAL_EHPS_COMMON_MARKER_H4_CAP_WALL",
+        "triangle cap mass bound=1/81",
+        "epsilon=1/4000 gaps h4,h5,h6="
+       ],
+       "stdout_not_contains": [
+        "Traceback (most recent call last)"
+       ],
+       "failure_control": {
+        "kind": "external",
+        "evidence": "The primary standard-library replay verifies the eight-row cycle, phase-labelled cancellation and deduplication, raw and intrinsic costs, same-phase torsion packet, affine cap extremum, Fubini normalization, L symmetry, and exact h=4,5,6 density polynomials; the separately written replay independently checks the measure arithmetic and combinatorial extrema."
+       }
+      },
+      {
+       "profile": "fast",
+       "certifies_claim": false,
+       "entrypoint": "certificates/erdos-142-ehps-common-marker-cap-wall/independent_replay.py",
+       "argv": [
+        "python3",
+        "-I",
+        "certificates/erdos-142-ehps-common-marker-cap-wall/independent_replay.py"
+       ],
+       "timeout_seconds": 30,
+       "exit_code": 0,
+       "stdout_contains": [
+        "PASS_INDEPENDENT_COMMON_MARKER_H4_WALL"
+       ],
+       "stdout_not_contains": [
+        "Traceback (most recent call last)"
+       ],
+       "failure_control": {
+        "kind": "external",
+        "evidence": "The independently written bit-mask replay derives the folded coverage intervals, affine cap and two-plane-union bounds, finite-group Fubini normalization, determinant-one symmetry, and exact density gaps without importing the primary verifier."
+       }
+      },
+      {
+       "profile": "fast",
+       "certifies_claim": false,
+       "entrypoint": "certificates/erdos-142-ehps-common-marker-cap-wall/h7-q9-cap-wall/verify.py",
+       "argv": [
+        "python3",
+        "-I",
+        "certificates/erdos-142-ehps-common-marker-cap-wall/h7-q9-cap-wall/verify.py"
+       ],
+       "timeout_seconds": 60,
+       "exit_code": 0,
+       "stdout_contains": [
+        "PASS_H7_Q9_CAP_AUDIT",
+        "AG23_CAPS 54 anchors=9 caps_per_anchor=6 direction_pairs=6",
+        "SIX_POINT_PROJECTIONS matrices=144 edges=2916",
+        "TARGET36_UNSAT nodes=716176 normalizers=54",
+        "LOWER_BOUND projected_packet_independent_set=34",
+        "H7_BOUND beta=35/2916 gate=7/576 margin=7/46656",
+        "EPSILON_WINDOW endpoint=1/20000 gap=25606141/2041200000000"
+       ],
+       "stdout_not_contains": [
+        "Traceback (most recent call last)"
+       ],
+       "failure_control": {
+        "kind": "external",
+        "evidence": "The primary h=7 replay deterministically reconstructs the exact cap classification and q=9 line packets, disproves the insufficient invertible-square orbit with an explicit selector, performs the solver-free target-36 search, checks a 34-point nonvacuity witness, and verifies the measure arithmetic. A separately written independent replay replaces that search by a rich-direction incidence contradiction and independently reconstructs every physical six-row packet and the continuum normalization."
+       }
+      },
+      {
+       "profile": "fast",
+       "certifies_claim": false,
+       "entrypoint": "certificates/erdos-142-ehps-common-marker-cap-wall/h7-q9-cap-wall/independent_replay.py",
+       "argv": [
+        "python3",
+        "-I",
+        "certificates/erdos-142-ehps-common-marker-cap-wall/h7-q9-cap-wall/independent_replay.py"
+       ],
+       "timeout_seconds": 30,
+       "exit_code": 0,
+       "stdout_contains": [
+        "PASS_Q9_H7_CAP_WALL_INDEPENDENT",
+        "FINITE caps=54 mod3_fibres=9 target_selector=36",
+        "LINES primitive_vectors=72 primitive_affine_lines=108 lifts_per_coarse_line=9",
+        "PACKETS per_line=27 total=2916 points_each=6 rows_each=6",
+        "COVER rich_incidences=18 avoidance_capacity=12 contradiction",
+        "CAPACITY every_potential_support_with_cap4_fibres_has_size_at_most_35",
+        "CONTINUUM triangle_common_marker_bound=35/2916",
+        "SCOPE q9_finite_cap_wall_and_common_marker_h7_not_erdos142_solution"
+       ],
+       "stdout_not_contains": [
+        "Traceback (most recent call last)"
+       ],
+       "failure_control": {
+        "kind": "external",
+        "evidence": "This implementation-diverse standard-library replay imports no primary module. It reconstructs the 54 caps, 108 primitive q=9 lines, 2,916 six-supports, exact carry/lift rows and costs, then proves target 36 impossible through the independent 18-versus-12 rich-incidence cover before checking the continuum and epsilon arithmetic."
+       }
+      }
      ]
     },
     {

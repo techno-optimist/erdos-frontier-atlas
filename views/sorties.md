@@ -162,6 +162,7 @@ Every promoted claim replays in one command; the fastest way to learn the receip
 - `erdos-1107-public-table`: `python3 -I certificates/erdos-1107/verify.py`
 - `erdos-13-table`: `python3 -I certificates/erdos-13/verify.py`
 - `erdos-142-cone-infeasible-objects`: `python3 -I certificates/erdos-142-cone-obstruction/verify.py`
+- `erdos-142-ehps-common-marker-h4-h7-wall`: `python3 -I certificates/erdos-142-ehps-common-marker-cap-wall/verify_all.py`
 - `erdos-142-foundation`: `python3 -I certificates/erdos-142/verify.py`
 - `erdos-142-interior-torus-torsion-wall`: `python3 -I certificates/erdos-142-interior-torus-torsion-wall/verify.py --self-test`
 - `erdos-142-q24-d4-cylinder-position-additive-wall`: `python3 -I certificates/erdos-142-q24-cylinder-hypograph-wall/verify.py --self-test`
@@ -173,6 +174,7 @@ Every promoted claim replays in one command; the fastest way to learn the receip
 - `erdos-142-q4-q7-affine-quadratic-capacities`: `python3 -I certificates/erdos-142-q4-q7-affine-quadratic-capacity/verify.py --self-test`
 - `erdos-142-q42-carving-wall`: `python3 -I certificates/erdos-142-q42-carving-wall/replay.py --target certificates/erdos-142-q42-carving-wall`
 - `erdos-142-q6-117-cell-bounded-dilation-wall`: `python3 -I certificates/erdos-142-q6-117-cell-bounded-dilation-wall/verify.py`
+- `erdos-142-q6-117-cell-disjoint-graph-carving-wall`: `python3 -I certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/independent_replay.py --full`
 - `erdos-142-q6-117-cell-endpoint-pruned-label-wall`: `python3 -I certificates/erdos-142-q6-117-cell-endpoint-pruned-label-wall/verify_endpoint_pruned_extension.py`
 - `erdos-142-q6-117-cell-fullword-bounded-wall`: `python3 -I certificates/erdos-142-q6-117-cell-fullword-bounded-wall/verify_dilation_word_wall.py --self-test`
 - `erdos-142-q6-117-cell-loopless-transition-wall`: `python3 -I certificates/erdos-142-q6-117-cell-loopless-transition-wall/verify_markov_loopless_wall.py certificates/erdos-142-q6-117-cell-loopless-transition-wall/markov_loopless_wall.json --self-test --max-length 9`
