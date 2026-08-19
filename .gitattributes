@@ -1,0 +1,7 @@
+# Preserve hash-bound solver/checker artifacts while accepting their original
+# CRLF and fixed-width trailing-space formatting in whitespace audits.
+certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/direct_slab31/checker/drat-trim.c whitespace=-blank-at-eol
+certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/direct_slab31/logs/*.log whitespace=-blank-at-eol
+certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/drat-trim-binary-windows.c whitespace=-blank-at-eol
+certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/minimal_core5.txt whitespace=-blank-at-eol
+certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/certificates/fourcap31/PROOF_PROVENANCE.json whitespace=-blank-at-eol

@@ -1,0 +1,20 @@
+UPSTREAM drat-trim.c
+SHA256 78026871882de3f2fee66034e549e9c1a0a9a5291abd817d06f611f9ba0f355d
+
+PATCHED drat-trim-binary-windows.c
+SHA256 543d615ac8e18516fef94a1e31c0f1b75982946bda4b8e2440eb8da820528a3c
+
+Exact portability changes:
+1. Under _WIN32, define getc_unlocked as getc.
+2. Open the binary DRAT proof with mode "rb" at both proof-file opens.
+
+The DIMACS input remains text mode. No checking logic changed.
+
+Build used for the recorded native replay:
+gcc.exe (Rev5, Built by MSYS2 project) 5.3.0
+gcc -O2 -std=gnu99 -o drat-trim-binary-windows.exe drat-trim-binary-windows.c
+
+Resulting external binary:
+BYTES 177927
+SHA256 2e0b1c770e64f3dd4e6e11616471c3e7bddab2c50c8c5660275edeadc1aeca66
+RESULT all 24 pinned proofs returned s VERIFIED

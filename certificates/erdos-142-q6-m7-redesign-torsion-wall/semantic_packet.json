@@ -1,0 +1,28 @@
+{
+  "format": "erdos142-q6-m7-redesign-physical-torsion-wall-v1",
+  "scope": {
+    "finite_q": 6,
+    "potential_model": "one arbitrary real value H(v) for every physical vertex v of the selected union",
+    "midpoint_model": "modular midpoint in (Z/6Z)^12 with raw-canonical endpoint-square RHS",
+    "half_open_lift": "the same modular branches on the q6 half-open boxes, with one common interior offset for X, Y, Z",
+    "ordinary_euclidean_continuum_claim": false,
+    "r3_claim": false,
+    "atlas_claim": false
+  },
+  "q": 6,
+  "blocks": 6,
+  "selected_cells": [[38, 3], [41, 3], [42, 3], [44, 3], [49, 3], [50, 3], [52, 3], [56, 3]],
+  "vertices": {
+    "X": [[5, 2], [2, 4], [2, 4], [5, 2], [3, 2], [0, 0]],
+    "Y": [[3, 2], [0, 0], [0, 0], [3, 2], [3, 2], [0, 0]],
+    "Z": [[1, 2], [4, 2], [4, 2], [1, 2], [3, 2], [0, 0]]
+  },
+  "vertex_cells": {"X": [38, 3], "Y": [38, 3], "Z": [41, 3]},
+  "rows": [
+    {"left": "X", "center": "Y", "right": "Z", "raw_rhs": 48, "carry": [[0, 0], [-1, -1], [-1, -1], [0, 0], [0, 0], [0, 0]]},
+    {"left": "Y", "center": "X", "right": "Z", "raw_rhs": 48, "carry": [[1, 0], [0, 1], [0, 1], [1, 0], [0, 0], [0, 0]]},
+    {"left": "X", "center": "Z", "right": "Y", "raw_rhs": 48, "carry": [[-1, 0], [1, 0], [1, 0], [-1, 0], [0, 0], [0, 0]]}
+  ],
+  "mass": {"per_cell": 178605, "total": 1428840, "fraction": [245, 373248], "gate_fraction": [117649, 191102976], "margin_fraction": [2597, 63700992]},
+  "open_common_offset": "delta in (0,1/6)^12, added identically to X, Y, and Z after division of every q6 digit by 6"
+}

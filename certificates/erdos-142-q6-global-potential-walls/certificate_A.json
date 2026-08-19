@@ -1,0 +1,309 @@
+{
+  "packet_format": "erdos-142-q6-global-potential-semantic-farkas-v1",
+  "scope": {
+    "finite_q": 6,
+    "continuum_claim": false,
+    "potential_ansatz": "one arbitrary potential value for each vertex of each of five codeword cylinders",
+    "ordered_word_triples_in_model": 125,
+    "all_even_q_midpoint_branches": true,
+    "cost": "raw canonical endpoint squared Euclidean cost / q^2"
+  },
+  "representative_label": "A",
+  "q": 6,
+  "assignment": [
+    7,
+    7,
+    7,
+    6,
+    7
+  ],
+  "support_size": 9,
+  "cylinder_count": 5,
+  "variable_count": 3645,
+  "actual_triple_count": 1128545,
+  "recovered_cegar": {
+    "status": "infeasible",
+    "iterations": 17,
+    "frozen_row_count": 1563
+  },
+  "source_row_indices": [
+    979,
+    1312,
+    1539
+  ],
+  "integer_multipliers": [
+    1,
+    1,
+    1
+  ],
+  "positive_contradiction_raw": 48,
+  "selected_rows": [
+    {
+      "source_row_index": 979,
+      "coefficients": [
+        [
+          1948,
+          1
+        ],
+        [
+          2673,
+          -2
+        ],
+        [
+          2681,
+          1
+        ]
+      ],
+      "rhs_numerator": 20,
+      "provenance": {
+        "word_indices": [
+          2,
+          3,
+          3
+        ],
+        "vertices": [
+          1948,
+          2673,
+          2681
+        ],
+        "points": [
+          [
+            [
+              4,
+              0
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          [
+            [
+              4,
+              0
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          [
+            [
+              4,
+              0
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              5,
+              5
+            ]
+          ]
+        ],
+        "raw_cost_numerator": 20,
+        "carries": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ]
+      }
+    },
+    {
+      "source_row_index": 1312,
+      "coefficients": [
+        [
+          1948,
+          -2
+        ],
+        [
+          2673,
+          1
+        ],
+        [
+          2681,
+          1
+        ]
+      ],
+      "rhs_numerator": 20,
+      "provenance": {
+        "word_indices": [
+          3,
+          2,
+          3
+        ],
+        "vertices": [
+          2673,
+          1948,
+          2681
+        ],
+        "points": [
+          [
+            [
+              4,
+              0
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              3
+            ]
+          ],
+          [
+            [
+              4,
+              0
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          [
+            [
+              4,
+              0
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              5,
+              5
+            ]
+          ]
+        ],
+        "raw_cost_numerator": 20,
+        "carries": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            1
+          ]
+        ]
+      }
+    },
+    {
+      "source_row_index": 1539,
+      "coefficients": [
+        [
+          1948,
+          1
+        ],
+        [
+          2673,
+          1
+        ],
+        [
+          2681,
+          -2
+        ]
+      ],
+      "rhs_numerator": 8,
+      "provenance": {
+        "word_indices": [
+          2,
+          3,
+          3
+        ],
+        "vertices": [
+          1948,
+          2681,
+          2673
+        ],
+        "points": [
+          [
+            [
+              4,
+              0
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              3,
+              1
+            ]
+          ],
+          [
+            [
+              4,
+              0
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              5,
+              5
+            ]
+          ],
+          [
+            [
+              4,
+              0
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              1,
+              3
+            ]
+          ]
+        ],
+        "raw_cost_numerator": 8,
+        "carries": [
+          [
+            0,
+            0
+          ],
+          [
+            0,
+            0
+          ],
+          [
+            -1,
+            -1
+          ]
+        ]
+      }
+    }
+  ]
+}

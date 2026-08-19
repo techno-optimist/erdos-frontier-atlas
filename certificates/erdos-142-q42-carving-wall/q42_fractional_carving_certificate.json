@@ -1,0 +1,27 @@
+{
+  "schema": "erdos142-q42-fractional-carving-wall-v1",
+  "geometry": {
+    "coarse_cells": 117,
+    "fine_q": 42,
+    "fine_boxes": 280917
+  },
+  "packet_families": {
+    "first_shift": [6, 12],
+    "first_packets": 13230,
+    "second_shift": [0, 6],
+    "second_packets": 4410,
+    "disjoint_total": 17640,
+    "actual_rows": 92610
+  },
+  "gate": {
+    "allowed_deletions_strictly_above": 16206,
+    "max_retained": 263277,
+    "gate_count": "1058841/4"
+  },
+  "digests": {
+    "first_support": "e91b67988985df24a69f9c7350df564fa1abf6e1ae308c71aaeb7761e9a089ec",
+    "second_support": "d59a81e0494937b1483952f49f1fbd099b4298f5d0b7fa6d2cc4a85ef456ca66",
+    "all_support": "4c8f6f00b67cf5e29f7ece22467ee40f4102491a92b5575fe734ffc389405357",
+    "expanded_rows": "2b83d3841ded7fd9329b625e493c1bae93145423f430da359fb3035ad4f61835"
+  }
+}

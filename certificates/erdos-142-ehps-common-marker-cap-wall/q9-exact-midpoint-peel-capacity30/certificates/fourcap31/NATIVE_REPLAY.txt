@@ -1,0 +1,28 @@
+REPLAY platform=Windows checker=drat-trim-binary-windows.exe
+CHECKER_SHA256 2e0b1c770e64f3dd4e6e11616471c3e7bddab2c50c8c5660275edeadc1aeca66
+CHECKER_SOURCE_SHA256 543d615ac8e18516fef94a1e31c0f1b75982946bda4b8e2440eb8da820528a3c
+DRAT_VERIFIED case=case2_center_second_00 seconds=0.234
+DRAT_VERIFIED case=case2_center_second_01 seconds=0.250
+DRAT_VERIFIED case=case2_center_second_02 seconds=11.828
+DRAT_VERIFIED case=case2_center_second_03 seconds=0.359
+DRAT_VERIFIED case=case2_corner_second_00 seconds=0.250
+DRAT_VERIFIED case=case2_corner_second_01 seconds=0.266
+DRAT_VERIFIED case=case2_corner_second_02 seconds=0.250
+DRAT_VERIFIED case=case2_corner_second_03 seconds=0.266
+DRAT_VERIFIED case=case2_corner_second_04 seconds=0.250
+DRAT_VERIFIED case=case2_corner_second_05 seconds=0.329
+DRAT_VERIFIED case=case2_corner_second_06 seconds=1.047
+DRAT_VERIFIED case=case2_corner_second_07 seconds=5.859
+DRAT_VERIFIED case=case2_corner_second_08 seconds=30.671
+DRAT_VERIFIED case=case2_corner_second_09 seconds=2.031
+DRAT_VERIFIED case=case2_sat_second_00 seconds=0.235
+DRAT_VERIFIED case=case2_sat_second_01 seconds=0.250
+DRAT_VERIFIED case=case2_sat_second_02 seconds=0.234
+DRAT_VERIFIED case=case2_sat_second_03 seconds=0.250
+DRAT_VERIFIED case=case2_sat_second_04 seconds=0.250
+DRAT_VERIFIED case=case2_sat_second_05 seconds=25.937
+DRAT_VERIFIED case=case2_sat_second_06 seconds=90.297
+DRAT_VERIFIED case=case2_sat_second_07 seconds=100.344
+DRAT_VERIFIED case=case2_sat_second_08 seconds=5.860
+DRAT_VERIFIED case=case2_sat_second_09 seconds=45.016
+PASS_EXTERNAL_DRAT cases=24 elapsed=112.172

@@ -416,7 +416,7 @@ def build_graph():
                  artifacts=c.get("artifacts", []), replay=replay)
         # deterministic claim->problem link: erdos-<id>-... claim id prefix
         parts = c["id"].split("-")
-        if parts[0] == "erdos" and parts[1].isdigit():
+        if c["status"] == "promoted" and parts[0] == "erdos" and parts[1].isdigit():
             eid = int(parts[1])
             if eid in stub_by_id:
                 add_edge("evidenced_by", f"P{eid}", cid,
@@ -784,9 +784,21 @@ def render_card(graph, erdos_id):
     w("## EVIDENCE — replayable, or it does not count")
     w("")
     if claims:
+        # Dense evidence cards are context packs, not duplicate dossiers.
+        # Keep every claim id and replay command, but compress prose and labels
+        # once the claim ledger itself would push a card over the 12k budget.
+        dense_claims = len(claims) > 20
+        statement_cap = 16 if 12 < len(claims) <= 20 else None
         for c in claims:
+            if dense_claims:
+                replay = (f" — `{' '.join(c['replay']['argv'])}`"
+                          if c.get("replay") else "")
+                w(f"- `{c['claim_id']}` [{c['status']}]{replay}")
+                continue
+            statement = (clip(c['statement'], statement_cap)
+                         if statement_cap is not None else c['statement'])
             w(f"- contract claim `{c['claim_id']}` [{c['status']}]: "
-          f"{c['statement']}")
+          f"{statement}")
             if c.get("replay"):
                 w(f"  - one-command replay: `{' '.join(c['replay']['argv'])}`")
     else:

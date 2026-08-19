@@ -59,7 +59,7 @@ def validate_data(root: Path, data: dict) -> list[str]:
         if not isinstance(item.get("boundary"), str) or not item["boundary"].strip():
             errors.append(f"{where}.boundary must be non-empty")
     actual = sorted(
-        str(p.relative_to(root))
+        p.relative_to(root).as_posix()
         for p in (root / "certificates").iterdir()
         if p.is_dir()
     )
@@ -100,10 +100,11 @@ def validate_data(root: Path, data: dict) -> list[str]:
             needle = binding.get("contains")
             if not path.is_file():
                 errors.append(f"{bwhere}.path does not exist")
-            elif not isinstance(needle, str) or needle not in path.read_text(errors="replace"):
+            elif not isinstance(needle, str) or needle not in path.read_text(
+                    encoding="utf-8", errors="replace"):
                 errors.append(f"{bwhere}: bound text is absent from {binding.get('path')}")
             if path.is_file():
-                text = path.read_text(errors="replace")
+                text = path.read_text(encoding="utf-8", errors="replace")
                 forbidden = binding.get("must_not_contain", [])
                 if not isinstance(forbidden, list) or not all(
                         isinstance(x, str) and x for x in forbidden):
@@ -183,6 +184,14 @@ def tree_hashes(root: Path) -> dict[str, str]:
     return out
 
 
+def replay_argv(argv: list[str]) -> list[str]:
+    """Run Python contracts with this interpreter and deterministic UTF-8 I/O."""
+    command = list(argv)
+    if command and command[0] in {"python", "python3"}:
+        command[0:1] = [sys.executable, "-X", "utf8"]
+    return command
+
+
 def run_replays(root: Path, data: dict, profile: str, claim_id: str | None) -> list[str]:
     failures: list[str] = []
     selected = []
@@ -205,8 +214,8 @@ def run_replays(root: Path, data: dict, profile: str, claim_id: str | None) -> l
             env = {**os.environ, "PYTHONDONTWRITEBYTECODE": "1"}
             try:
                 proc = subprocess.run(
-                    replay["argv"], cwd=sandbox, env=env,
-                    capture_output=True, text=True,
+                    replay_argv(replay["argv"]), cwd=sandbox, env=env,
+                    capture_output=True, text=True, encoding="utf-8",
                     timeout=replay["timeout_seconds"],
                 )
             except subprocess.TimeoutExpired:
@@ -240,7 +249,7 @@ def main() -> int:
     manifest = args.manifest.resolve()
     root = manifest.parent.parent if manifest.name == "contracts.json" else ROOT
     try:
-        data = json.loads(manifest.read_text())
+        data = json.loads(manifest.read_text(encoding="utf-8"))
     except (OSError, json.JSONDecodeError) as exc:
         print(f"certificate-contracts: cannot load manifest: {exc}", file=sys.stderr)
         return 2

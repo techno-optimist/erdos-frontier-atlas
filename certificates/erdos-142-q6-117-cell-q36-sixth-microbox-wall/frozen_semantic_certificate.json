@@ -1,0 +1,72 @@
+{
+  "schema": "erdos142-q6-r6-six-of-nine-one-block-wall-v1",
+  "geometry": {
+    "coarse_q": 6,
+    "residual_subdivision": 6,
+    "fine_q": 36,
+    "coarse_cells": 117,
+    "microboxes": 151632
+  },
+  "dilation": {
+    "edge_count": 3811,
+    "component_count": 2785,
+    "maximum_component_size": 9,
+    "matching_count": 2986,
+    "endpoint_count": 5972,
+    "algorithm": "lex-first maximum matching in each sorted component"
+  },
+  "six_of_nine": {
+    "shift_last_pair": [0, 4],
+    "translation_order": 9,
+    "prototype_intersection_histogram": {
+      "1": 24,
+      "2": 36,
+      "3": 24,
+      "4": 24,
+      "5": 12,
+      "6": 24
+    },
+    "full_six_packets": 7776,
+    "blocked_packets": 1453,
+    "retained_packets": 6323,
+    "packet_size": 6,
+    "rows_per_packet": 6,
+    "row_weight": 1
+  },
+  "packet_semantics": {
+    "expanded_rows": 37938,
+    "potential_incidence_per_vertex": 0,
+    "common_strict_interior_offset": ["1/7", "2/7", "3/7", "4/7"],
+    "raw_fine_digit_square_histogram": {
+      "16": 12164,
+      "64": 23082,
+      "784": 2210,
+      "1024": 482
+    },
+    "carry_histogram": {
+      "0,0,0,-1": 7187,
+      "0,0,0,0": 23564,
+      "0,0,0,1": 7187
+    },
+    "aggregate_raw_cost_strictly_positive": true
+  },
+  "gate": {
+    "numerator": 49,
+    "denominator": 576,
+    "gate_count": 142884,
+    "allowed_deletions_strictly_above": 8747,
+    "forced_deletions_one_block": 9309,
+    "max_retained_one_block": 142323
+  },
+  "scope": {
+    "one_block_complete_aligned_microbox_union": true,
+    "arbitrary_word_language_capacity": false,
+    "proper_submicrobox_carving": false
+  },
+  "digests": {
+    "dilation_semantic": "d520ceaf418068665a166617e747da23b970d701c71de1cf13b5eac8d368bff1",
+    "packet_support": "36c478be01b818a32980563b193ae2290e9db41048f6a2e757d77609cb0dd243",
+    "packet_expanded_semantic": "e8ae9b924fa16076ecf9a117f8a210c665bca1bc1c01d7490f3c7f97a90b5bfc",
+    "payload_semantic": "9aa110472ac2da97d919e30fea2cfdee1b308c2f743bca4b70d67781f819f544"
+  }
+}

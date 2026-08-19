@@ -1,0 +1,16 @@
+DIRECT_FULL_CENSUS
+CORE6 combinations=324540216 self=14688 deletion_minimal=2916
+CORE7 combinations=3477216600 self=129600 deletion_minimal=0
+CORE8 combinations=32164253550 self=1476549 deletion_minimal=17496 threads=12 seconds=544.964
+
+INDEPENDENT_ANCHORED_CENSUS
+CORE6 combinations=24040016 self=1088 deletion_minimal=216 ledger_match=true full_self=14688 full_minimal=2916
+CORE7 combinations=300500200 self=11200 deletion_minimal=0 full_self=129600 full_minimal=0
+CORE8 combinations=3176716400 self=145832 deletion_minimal=1728 ledger_match=true full_self=1476549 full_minimal=17496
+
+SEMANTIC_AND_ORBIT_REPLAY
+CORE6 rows=2916 all_deletions_peelable=true affine_orbits=1 orbit_size=2916
+CORE8 rows=17496 deletion_checks=139968 affine_orbits=1 orbit_size=17496
+
+SCOPE
+Sound exact blocker census only. No claim C9=30 or C9=31.

@@ -163,6 +163,41 @@ Every promoted claim replays in one command; the fastest way to learn the receip
 - `erdos-13-table`: `python3 -I certificates/erdos-13/verify.py`
 - `erdos-142-cone-infeasible-objects`: `python3 -I certificates/erdos-142-cone-obstruction/verify.py`
 - `erdos-142-foundation`: `python3 -I certificates/erdos-142/verify.py`
+- `erdos-142-interior-torus-torsion-wall`: `python3 -I certificates/erdos-142-interior-torus-torsion-wall/verify.py --self-test`
+- `erdos-142-q24-d4-cylinder-position-additive-wall`: `python3 -I certificates/erdos-142-q24-cylinder-hypograph-wall/verify.py --self-test`
+- `erdos-142-q24-d4-role-distinct-additive-wall`: `python3 -I certificates/erdos-142-d4-role-distinct-additive-wall/verify.py --self-test`
+- `erdos-142-q24-d4-second-orbit-cylinder-position-wall`: `python3 -I certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/verify.py --self-test`
+- `erdos-142-q24-mirror-core-additive-wall`: `python3 -I certificates/erdos-142-mirror-core-additive-wall/verify.py`
+- `erdos-142-q3m-torsion-triangle-family`: `python3 -I certificates/erdos-142-q3m-torsion-triangle-wall/verify.py --self-test`
+- `erdos-142-q4-affine-order4-line-wall`: `python3 -I certificates/erdos-142-q4-affine-order4-line-wall/verify.py --self-test`
+- `erdos-142-q4-q7-affine-quadratic-capacities`: `python3 -I certificates/erdos-142-q4-q7-affine-quadratic-capacity/verify.py --self-test`
+- `erdos-142-q42-carving-wall`: `python3 -I certificates/erdos-142-q42-carving-wall/replay.py --target certificates/erdos-142-q42-carving-wall`
+- `erdos-142-q6-117-cell-bounded-dilation-wall`: `python3 -I certificates/erdos-142-q6-117-cell-bounded-dilation-wall/verify.py`
+- `erdos-142-q6-117-cell-disjoint-graph-carving-wall`: `python3 -I certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/verify_all.py`
+- `erdos-142-q6-117-cell-endpoint-pruned-label-wall`: `python3 -I certificates/erdos-142-q6-117-cell-endpoint-pruned-label-wall/verify_endpoint_pruned_extension.py`
+- `erdos-142-q6-117-cell-fullword-bounded-wall`: `python3 -I certificates/erdos-142-q6-117-cell-fullword-bounded-wall/verify_dilation_word_wall.py --self-test`
+- `erdos-142-q6-117-cell-loopless-transition-wall`: `python3 -I certificates/erdos-142-q6-117-cell-loopless-transition-wall/verify_markov_loopless_wall.py certificates/erdos-142-q6-117-cell-loopless-transition-wall/markov_loopless_wall.json --self-test --max-length 9`
+- `erdos-142-q6-117-cell-percell-affine-wall`: `python3 -I certificates/erdos-142-q6-117-cell-percell-affine-wall/verify_percell_affine_farkas.py`
+- `erdos-142-q6-117-cell-q12-halfcell-wall`: `python3 -I certificates/erdos-142-q6-117-cell-q12-halfcell-wall/independent_q12_halfcell_wall.py`
+- `erdos-142-q6-117-cell-q18-third-microbox-wall`: `python3 -I certificates/erdos-142-q6-117-cell-q18-third-microbox-wall/independent_replay.py certificates/erdos-142-q6-117-cell-q18-third-microbox-wall/frozen_semantic_certificate.json`
+- `erdos-142-q6-117-cell-q24-quarter-microbox-wall`: `python3 -I certificates/erdos-142-q6-117-cell-q24-quarter-microbox-wall/independent_r4_replay.py`
+- `erdos-142-q6-117-cell-q30-fifth-microbox-wall`: `python3 -I certificates/erdos-142-q6-117-cell-q30-fifth-microbox-wall/verify_r5_four_of_five_packing.py --self-test`
+- `erdos-142-q6-117-cell-q36-sixth-microbox-wall`: `python3 -I certificates/erdos-142-q6-117-cell-q36-sixth-microbox-wall/independent_r6_replay.py --target certificates/erdos-142-q6-117-cell-q36-sixth-microbox-wall`
+- `erdos-142-q6-117-cell-q42-seventh-microbox-wall`: `python3 -I certificates/erdos-142-q6-117-cell-q42-seventh-microbox-wall/independent_r7_audit.py --self-test`
+- `erdos-142-q6-117-cell-six-deletion-wall`: `python3 -I certificates/erdos-142-q6-117-cell-six-deletion-wall/verify.py certificates/erdos-142-q6-117-cell-six-deletion-wall/rays.json --self-test --find-hit --verify-certificate certificates/erdos-142-q6-117-cell-six-deletion-wall/hitting_proof.json`
+- `erdos-142-q6-117-cell-transition-spectral-wall`: `python3 -I certificates/erdos-142-q6-117-cell-transition-spectral-wall/verify.py --self-test`
+- `erdos-142-q6-all-maximizer-three-row-torsion-wall`: `python3 -I certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/verify.py --self-test`
+- `erdos-142-q6-coordinate-d4-product-wall`: `python3 -I certificates/erdos-142-q6-coordinate-d4-product-wall/verify.py --self-test`
+- `erdos-142-q6-global-potential-walls`: `python3 -I certificates/erdos-142-q6-global-potential-walls/verify.py --self-test`
+- `erdos-142-q6-m7-cellu-restricted-wall`: `python3 -I certificates/erdos-142-q6-m7-cellu-restricted-wall/verify.py`
+- `erdos-142-q6-m7-deletion-fence`: `python3 -I certificates/erdos-142-q6-m7-deletion-fence/verify.py --self-test`
+- `erdos-142-q6-m7-k8-microbox-deletion-fence`: `python3 -I certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/verify.py --self-test`
+- `erdos-142-q6-m7-redesign-torsion-wall`: `python3 -I certificates/erdos-142-q6-m7-redesign-torsion-wall/verify.py --self-test`
+- `erdos-142-q6-m7-unit-girth-six-wall`: `python3 -I certificates/erdos-142-q6-m7-unit-girth-six-wall/verify.py --self-test`
+- `erdos-142-q6-m7-unit-k8-deletion-fence`: `python3 -I certificates/erdos-142-q6-m7-unit-k8-deletion-fence/verify.py --self-test`
+- `erdos-142-q6-outer-code-tensor-wall`: `python3 -I certificates/erdos-142-q6-outer-code-tensor-wall/verify.py --self-test`
+- `erdos-142-q6-pair-coordinate-walls`: `python3 -I certificates/erdos-142-q6-pair-coordinate-walls/verify.py --self-test`
+- `erdos-142-q7-q8-unit-hypercycle-walls`: `python3 -I certificates/erdos-142-q7-q8-unit-hypercycle-walls/verify.py --self-test`
 - `erdos-366-cubefull-sweep-1e25`: `python3 -I certificates/erdos-366/verify.py --quick`
 - `erdos-552-f39-lower`: `python3 -I certificates/erdos-552-f39/verify.py`
 - `erdos-552-n12-n16`: `python3 -I certificates/erdos-552/verify.py`

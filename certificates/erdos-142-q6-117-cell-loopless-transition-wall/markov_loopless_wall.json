@@ -1,0 +1,19 @@
+{
+  "schema": "erdos142-q6-synchronized-transition-wall-v1",
+  "q": 6,
+  "alphabet_cells": 117,
+  "transition_graph": "all ordered distinct pairs of alphabet cells",
+  "scaled_variables": "G=36*g and J=36*H",
+  "potential": "P(c0,...,c_{m-1})=g[c0]/2+sum(i=0..m-2) H[c_i,c_(i+1)]+g[c_(m-1)]/2; replay rows use G=36g, J=36H",
+  "scope": "position- and length-independent endpoint table G and directed transition table J on the full loopless graph; common-tail padding gives a contradiction for every m>=2",
+  "rows": [
+    {"weight": 1, "left": [41, 67, 80, 168], "right": [83, 80, 41, 60]},
+    {"weight": 2, "left": [41, 80, 83, 60], "right": [67, 41, 80, 60]},
+    {"weight": 1, "left": [41, 83, 80, 108], "right": [83, 80, 41, 60]},
+    {"weight": 1, "left": [67, 41, 80, 60], "right": [80, 67, 41, 168]},
+    {"weight": 1, "left": [67, 41, 80, 60], "right": [80, 83, 41, 108]}
+  ],
+  "expected_weighted_rhs": 1032,
+  "expected_active_cells": [41, 67, 80, 83],
+  "expected_active_transitions": [[41, 67], [41, 83], [67, 80], [80, 41], [83, 80]]
+}

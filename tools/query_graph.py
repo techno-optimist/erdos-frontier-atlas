@@ -140,6 +140,11 @@ COMMANDS = {"plan": cmd_plan, "card": cmd_card, "neighbors": cmd_neighbors,
 
 
 def main():
+    # Keep the executable examples deterministic on Windows, where redirected
+    # stdout otherwise defaults to a legacy code page that cannot encode the
+    # Unicode punctuation used by the rendered graph.
+    if hasattr(sys.stdout, "reconfigure"):
+        sys.stdout.reconfigure(encoding="utf-8")
     if len(sys.argv) < 2 or sys.argv[1] not in COMMANDS:
         print(__doc__.strip())
         raise SystemExit(2)

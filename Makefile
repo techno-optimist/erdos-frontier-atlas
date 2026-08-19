@@ -17,7 +17,7 @@
 #   make verify-certs        replay every fast in-repo certificate verifier
 #   make test                pytest over tests/
 
-.PHONY: hello-frontier state-of-frontier check-views book check-book graph check-graph validate verify-certs test check-contracts replay-contracts-fast replay-contracts-slow audit-fast audit-slow
+.PHONY: hello-frontier state-of-frontier check-views book check-book graph check-graph validate verify-certs verify-q9-exact-capacity30-structure test check-contracts replay-contracts-fast replay-contracts-slow audit-fast audit-slow
 
 hello-frontier:
 	bash scripts/hello_frontier.sh
@@ -56,6 +56,77 @@ verify-certs:
 	python3 certificates/erdos-13/verify.py
 	python3 certificates/erdos-1107/verify.py 200000
 	python3 -I certificates/erdos-142-cone-obstruction/verify.py
+	python3 -I certificates/erdos-142-mirror-core-additive-wall/verify.py
+	python3 -I certificates/erdos-142-d4-role-distinct-additive-wall/verify.py --self-test
+	python3 -I certificates/erdos-142-q24-cylinder-hypograph-wall/verify.py --self-test
+	python3 -I certificates/erdos-142-q24-second-orbit-cylinder-hypograph-wall/verify.py --self-test
+	python3 -I certificates/erdos-142-q6-pair-coordinate-walls/verify.py --self-test
+	python3 -I certificates/erdos-142-q6-global-potential-walls/verify.py --self-test
+	python3 -I certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/verify.py --self-test
+	python3 -I certificates/erdos-142-q6-outer-code-tensor-wall/verify.py --self-test
+	python3 -I certificates/erdos-142-q6-coordinate-d4-product-wall/verify.py --self-test
+	python3 -I certificates/erdos-142-q6-117-cell-six-deletion-wall/verify.py certificates/erdos-142-q6-117-cell-six-deletion-wall/rays.json --self-test --find-hit --verify-certificate certificates/erdos-142-q6-117-cell-six-deletion-wall/hitting_proof.json
+	python3 -I certificates/erdos-142-q6-117-cell-six-deletion-wall/independent_replay.py certificates/erdos-142-q6-117-cell-six-deletion-wall/rays.json certificates/erdos-142-q6-117-cell-six-deletion-wall/hitting_proof.json --self-test
+	python3 -I certificates/erdos-142-q6-117-cell-loopless-transition-wall/verify_markov_loopless_wall.py certificates/erdos-142-q6-117-cell-loopless-transition-wall/markov_loopless_wall.json --self-test --max-length 9
+	python3 -I certificates/erdos-142-q6-117-cell-loopless-transition-wall/independent_replay.py certificates/erdos-142-q6-117-cell-loopless-transition-wall/markov_loopless_wall.json --self-test --max-length 9
+	python3 -I certificates/erdos-142-q6-117-cell-percell-affine-wall/verify_percell_affine_farkas.py
+	python3 -I certificates/erdos-142-q6-117-cell-percell-affine-wall/crosscheck_percell_affine_ray.py
+	python3 -I certificates/erdos-142-q6-117-cell-bounded-dilation-wall/verify.py
+	python3 -I certificates/erdos-142-q6-117-cell-bounded-dilation-wall/independent_replay.py
+	python3 -I certificates/erdos-142-q6-117-cell-transition-spectral-wall/verify.py --self-test
+	python3 -I certificates/erdos-142-q6-117-cell-transition-spectral-wall/independent_replay.py
+	python3 -I certificates/erdos-142-q6-117-cell-endpoint-pruned-label-wall/verify_endpoint_pruned_extension.py
+	python3 -I certificates/erdos-142-q6-117-cell-endpoint-pruned-label-wall/independent_replay.py
+	python3 -I certificates/erdos-142-q6-117-cell-fullword-bounded-wall/verify_dilation_word_wall.py --self-test
+	python3 -I certificates/erdos-142-q6-117-cell-fullword-bounded-wall/independent_fullword_replay.py
+	python3 -I certificates/erdos-142-q6-117-cell-fullword-bounded-wall/verify_carving_audit.py
+	python3 -I certificates/erdos-142-q6-117-cell-q12-halfcell-wall/verify_halfcell_context_wall.py --self-test
+	python3 -I certificates/erdos-142-q6-117-cell-q12-halfcell-wall/independent_q12_halfcell_wall.py
+	python3 -I certificates/erdos-142-q6-117-cell-q18-third-microbox-wall/verify_frozen_semantic_certificate.py --self-test
+	python3 -I certificates/erdos-142-q6-117-cell-q18-third-microbox-wall/independent_replay.py certificates/erdos-142-q6-117-cell-q18-third-microbox-wall/frozen_semantic_certificate.json
+	python3 -I certificates/erdos-142-q6-117-cell-q18-third-microbox-wall/verify_microbox_dilation_cover.py
+	python3 -I certificates/erdos-142-q6-117-cell-q24-quarter-microbox-wall/verify_r4_order4_packing.py --self-test
+	python3 -I certificates/erdos-142-q6-117-cell-q24-quarter-microbox-wall/independent_r4_replay.py
+	python3 -I certificates/erdos-142-q6-117-cell-q30-fifth-microbox-wall/verify_q30_fourpoint_packing.py --self-test
+	python3 -I certificates/erdos-142-q6-117-cell-q30-fifth-microbox-wall/verify_r5_four_of_five_packing.py --self-test
+	python3 -I certificates/erdos-142-q6-117-cell-q36-sixth-microbox-wall/verify_r6_six_of_nine_packing.py --self-test
+	python3 -I certificates/erdos-142-q6-117-cell-q36-sixth-microbox-wall/independent_r6_replay.py --target certificates/erdos-142-q6-117-cell-q36-sixth-microbox-wall
+	python3 -I certificates/erdos-142-q42-carving-wall/q42_fractional_carving_wall.py
+	python3 -I certificates/erdos-142-q42-carving-wall/replay.py --target certificates/erdos-142-q42-carving-wall
+	python3 -I certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/verify.py --self-test
+	python3 -I certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/horizon2-parity-wall/verify.py
+	python3 -I certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/verify_all.py
+	python3 -I certificates/erdos-142-ehps-common-marker-cap-wall/verify_all.py
+	python3 -I certificates/erdos-142-ehps-common-marker-cap-wall/independent_replay.py
+	python3 -I certificates/erdos-142-ehps-common-marker-cap-wall/h7-q9-cap-wall/independent_replay.py
+	python3 -I certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall-independent/independent_replay.py
+	python3 -I certificates/erdos-142-q4-q7-affine-quadratic-capacity/verify.py --self-test
+	python3 -I certificates/erdos-142-q4-q7-affine-quadratic-capacity/independent_replay.py --self-test
+	python3 -I certificates/erdos-142-q6-117-cell-q42-seventh-microbox-wall/verify_r7_two_layer_packing.py --self-test
+	python3 -I certificates/erdos-142-q6-117-cell-q42-seventh-microbox-wall/independent_r7_audit.py --self-test
+	python3 -I certificates/erdos-142-q6-m7-cellu-restricted-wall/verify.py
+	python3 -I certificates/erdos-142-q6-m7-cellu-restricted-wall/independent_replay.py
+	python3 -I certificates/erdos-142-q6-m7-deletion-fence/verify.py --self-test
+	python3 -I certificates/erdos-142-q6-m7-deletion-fence/independent_replay.py
+	python3 -I certificates/erdos-142-q6-m7-orbit-free-selector/verify.py --self-test
+	python3 -I certificates/erdos-142-q6-m7-orbit-free-selector/independent_replay.py
+	python3 -I certificates/erdos-142-q6-m7-unit-girth-six-wall/verify.py --self-test
+	python3 -I certificates/erdos-142-q6-m7-unit-girth-six-wall/independent_replay.py
+	python3 -I certificates/erdos-142-q6-m7-unit-k8-deletion-fence/verify.py --self-test
+	python3 -I certificates/erdos-142-q6-m7-unit-k8-deletion-fence/independent_replay.py
+	python3 -I certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/verify.py --self-test
+	python3 -I certificates/erdos-142-q6-m7-k8-microbox-deletion-fence/independent_replay.py
+	python3 -I certificates/erdos-142-q6-m7-redesign-torsion-wall/verify.py --self-test
+	python3 -I certificates/erdos-142-q6-m7-redesign-torsion-wall/independent_replay.py --self-test
+	python3 -I certificates/erdos-142-q4-affine-order4-line-wall/verify.py --self-test
+	python3 -I certificates/erdos-142-q7-q8-unit-hypercycle-walls/verify.py --self-test
+	python3 -I certificates/erdos-142-q3m-torsion-triangle-wall/verify.py --self-test
+	python3 -I certificates/erdos-142-interior-torus-torsion-wall/verify.py --self-test
+
+# Compact structural replay only. Raw DRAT payloads are external, so this
+# target must not emit CONCLUSION_EXACT_C9_30.
+verify-q9-exact-capacity30-structure:
+	python3 -I -B certificates/erdos-142-ehps-common-marker-cap-wall/q9-exact-midpoint-peel-capacity30/verify_all.py
 
 test:
 	python3 -m pytest tests/ -q
