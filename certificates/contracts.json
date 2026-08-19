@@ -129,7 +129,7 @@
   {
    "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall",
    "classification": "certified_local",
-   "boundary": "An exact finite-state graph/path capacity wall for globally pairwise-disjoint measurable edge tiles inside the fixed 117-cell q=6 four-dimensional union. A complete ordered triple-path automaton with bounded edge-local residual potentials, finite state/endpoint coboundaries, and no negative accepted defect cycle forces the trimmed weighted adjacency matrix to satisfy rho(W)<49/576. The proof combines the q=42 arbitrary-measurable loop cap with a state-count-independent Perron bound. A supporting seven-row packet separately closes the exact horizon-two q=42 even-parity full-box escape. Repeated or overlapping physical ownership remains open beyond that one parity model, as do infinite or horizon-growing state systems, almost-everywhere coercivity, other geometries, EHPS shell or integer transfer, and a new r_3(N) bound. Erdos Problem 142 remains unsolved."
+   "boundary": "Two exact finite-state walls in the fixed 117-cell q=6 geometry. Globally pairwise-disjoint measurable edge tiles with a complete ordered triple-path certificate have rho(W)<49/576 by q42 loop descent and an all-state Perron bound. Separately, every finite complete total deterministic decoder over all q42 full boxes, with unique fixed-start ownership and coaccessible reachable states, has a minimum-rank-idempotent seven-word packet contradiction even for arbitrary global state-aware potentials; the exact raw cost is L*16/7. Partial/state-carved alphabets, reachable non-coaccessible dead sinks, nondeterministic ownership, arbitrary overlapping measurable subtiles, infinite-state systems, almost-everywhere coercivity, other geometries, EHPS shell or integer transfer, and a new r_3(N) bound remain open. Erdos Problem 142 remains unsolved."
   },
   {
    "path": "certificates/erdos-142-ehps-common-marker-cap-wall",
@@ -3104,23 +3104,23 @@
     {
      "id": "erdos-142-q6-117-cell-disjoint-graph-carving-wall",
      "status": "promoted",
-     "statement": "Every finite directed multigraph whose globally pairwise-disjoint measurable edge tiles lie in the fixed 117-cell q=6 four-dimensional union has trimmed weighted adjacency matrix rho(W)<49/576 whenever its complete ordered physical triple-path automaton admits bounded edge-local residual potentials and finite state/endpoint coboundaries with no negative accepted defect cycle.",
-     "scope": "The theorem permits any fixed finite number of states, parallel edges, and arbitrary measurable carving inside the fixed physical union. Completeness means every actual ordered torus-midpoint fibre is represented, including x=z and diagonal branches; trimming keeps only start-reachable, end-co-reachable, recurrent rate-contributing states. Global pairwise disjointness over all edge labels makes each loop union carry one single-valued physical function, so the exact q=42 measurable-carving theorem caps every diagonal mass by 263277/42^4. Total physical mass is at most 280917/42^4, and a state-count-independent Perron argument gives rho(42^4 W)<=(263277+sqrt(263277^2+17640^2))/2<1058841/4. A separately replayed seven-word packet closes the exact horizon-two q=42 one-red-per-packet even-parity full-box construction, but is not carving-stable. The general theorem does not cover repeated or overlapping physical ownership across contexts, transition memory not state-lifted with disjoint ownership, a separately decoded overlap kernel, infinite or horizon-growing state systems, an almost-everywhere midpoint hypothesis, another geometry, an EHPS shell construction, integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved.",
-     "machine_verdict": "PASS_INDEPENDENT_DISJOINT_GRAPH_CARVING_WALL_AUDIT",
+     "statement": "Two exact walls hold in the fixed 117-cell q=6 four-dimensional geometry: globally pairwise-disjoint measurable finite-state edge-tile systems have trimmed weighted adjacency matrix rho(W)<49/576 under the complete ordered triple-path hypotheses, while every finite complete total deterministic decoder over all 280917 q42 full boxes with unique fixed-start physical ownership and coaccessible reachable states has an exact whole-word packet contradiction to any arbitrary global pointwise raw-coercive potential.",
+     "scope": "For globally disjoint measurable edge tiles, completeness represents every actual ordered torus-midpoint fibre, including x=z and diagonal branches; loop-function descent plus the q42 carving cap and an all-state Perron argument give rho(42^4 W)<=(263277+sqrt(263277^2+17640^2))/2<1058841/4. Separately, repeated q42 full boxes and arbitrary state transitions are allowed when every physical letter is one total map on a finite state set, decoding from one start gives a unique owned path, and every reachable state has an accepting suffix. A minimum-rank idempotent makes all seven packet-role sandwiches permutations of its image, so accepted words u(p_i u)^L s have zero whole-word potential incidence and exact positive raw cost L*16/7 (intrinsic cost L*11/7). The horizon-two parity packet remains a supporting special case. Not covered are partial or state-carved alphabets, totalizations with a reachable non-coaccessible dead sink, nondeterministic or multiple ownership, arbitrary overlapping measurable subtiles, infinite or horizon-growing state systems, almost-everywhere coercivity, another geometry, EHPS shell or integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved.",
+     "machine_verdict": "PASS_DISJOINT_AND_TOTAL_OVERLAP_REUSE_WALLS",
      "publication_bindings": [
       {
        "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/README.md",
-       "contains": "Globally disjoint finite-state graph-carving wall"
+       "contains": "Disjoint graph-carving and total-decoder overlap walls"
       },
       {
        "path": "atlas/erdos-142-recursive-capacity.md",
-       "contains": "Globally disjoint finite-state graph carving is below the EHPS gate"
+       "contains": "Disjoint graph carving and complete total overlap/reuse are walled"
       }
      ],
      "artifacts": [
       {
        "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/README.md",
-       "sha256": "b8d98b2881a705a71fcc50afdff58b8168ed856b70d00d51df6ff660df7cb145"
+       "sha256": "d6392db537225d2457ab5c712da2226c27f34f706545db57aaefb38d334b6256"
       },
       {
        "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/verify.py",
@@ -3128,11 +3128,15 @@
       },
       {
        "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/independent_replay.py",
-       "sha256": "0eedcf9eecccdb82cc531de0290a21cd80c086bca3a27de6638249799f6da0be"
+       "sha256": "010a24c1af11c5fc79867f85acd86f384f0d6e1118250b9193519a1a8c201263"
       },
       {
        "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/HOSTILE_AUDIT.md",
        "sha256": "628744628d5b75c9cb9c961dacc281497c4d8f11bd81bb39fd48e17e9f9fa378"
+      },
+      {
+       "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/verify_all.py",
+       "sha256": "045ae6a134a699793a6b65469d556d0cac76713bbea3742ba938388aaf5f9a8d"
       },
       {
        "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/horizon2-parity-wall/README.md",
@@ -3141,6 +3145,30 @@
       {
        "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/horizon2-parity-wall/verify.py",
        "sha256": "76d06d36b10107b0de795d95aa68bb50b3b69a9b1923bd529075252b14019637"
+      },
+      {
+       "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/universal-total-decoder-wall/README.md",
+       "sha256": "3ad69252f6337e5817e7928321d598f08f3804c698a8cc752d5ba3e0b5192c6c"
+      },
+      {
+       "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/universal-total-decoder-wall/verify.py",
+       "sha256": "f7dd1fc627ff10801fe310408ca535962eebc67215e48ba3059f3fc35dd9a699"
+      },
+      {
+       "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/universal-total-decoder-wall/INDEPENDENT_AUDIT.md",
+       "sha256": "d2b5cde8fc8a280916437a2821ce09fb1d9a02d5991f85009be7db885dc48ade"
+      },
+      {
+       "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/universal-total-decoder-wall/independent_replay.py",
+       "sha256": "fe1268c717ebc6ec805f4783cc5e94945911a72aa855de9a0872618f18b2fa2b"
+      },
+      {
+       "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/universal-total-decoder-wall/run.ps1",
+       "sha256": "3d20a32dcba0be13322837e5068e7e2acf3c495366d91c3096fa4cbb650ecc2f"
+      },
+      {
+       "path": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/universal-total-decoder-wall/SHA256SUMS",
+       "sha256": "0bf3ee13935b5bb96600ea9516dd190ee0561b3890b4475f841dc912cee5a293"
       }
      ],
      "replays": [
@@ -3175,7 +3203,7 @@
       },
       {
        "profile": "fast",
-       "certifies_claim": true,
+       "certifies_claim": false,
        "entrypoint": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/independent_replay.py",
        "argv": [
         "python3",
@@ -3227,6 +3255,36 @@
        "failure_control": {
         "kind": "embedded",
         "evidence": "The supporting standard-library replay reconstructs all packed q=42 fine-box packets, transports the unique seven-point balanced plan through all 441 lifts, checks all 49 red-role alignments as actual physical common-offset rows, and rejects mismatched-role, non-common-offset, sub-pigeonhole, and ownership-overlap controls."
+       }
+      },
+      {
+       "profile": "fast",
+       "certifies_claim": true,
+       "entrypoint": "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/verify_all.py",
+       "argv": [
+        "python3",
+        "-I",
+        "certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/verify_all.py"
+       ],
+       "timeout_seconds": 120,
+       "exit_code": 0,
+       "stdout_contains": [
+        "PASS_DISJOINT_AND_TOTAL_OVERLAP_REUSE_WALLS",
+        "PASS_INDEPENDENT_DISJOINT_GRAPH_CARVING_WALL_AUDIT",
+        "ALL_STATE_SPECTRAL_ARITHMETIC_OK rayleigh_trials=662 gate_polynomial=4825657053/16",
+        "PASS_UNIVERSAL_TOTAL_DECODER_WALL",
+        "Q42_PACKET actual_roles=((21, 14, 23, 1), (21, 14, 29, 13), (21, 14, 35, 25), (21, 14, 41, 37), (21, 14, 5, 7), (21, 14, 11, 19), (21, 14, 17, 31)) geodesic_cost=11/7 raw_cost=16/7",
+        "FOUR_STATE_INSTANCE monoid_size=8 minimum_rank=2 minimum_idempotents=2 common_order=2 geodesic_cost=22/7 raw_cost=32/7",
+        "PASS_MINRANK_IDEMPOTENT_SANDWICH_AUDIT",
+        "T3_ALL_MONOIDS 699 MINRANK_HIST {1: 660, 2: 33, 3: 6} MIN_IDEMPOTENTS 1623 SANDWICHES 12868",
+        "ASSUMPTION_SEAMS complete_untrimmed_min_idempotent_is_dead trimmed_partial_states_accessible_coaccessible trimmed_partial_has_no_seven_role_transformation_code"
+       ],
+       "stdout_not_contains": [
+        "Traceback (most recent call last)"
+       ],
+       "failure_control": {
+        "kind": "external",
+        "evidence": "The aggregate entrypoint executes two separately written claim-bearing trust paths. The disjoint-graph hostile replay independently binds and audits physical descent and the all-state spectral wall. The minimum-rank hostile replay independently enumerates all 699 T3 monoids, 1,623 minimum-rank idempotents and 12,868 sandwiches, reconstructs the physical packet and both costs, and exercises dead-sink and trimmed-partial boundary controls."
        }
       }
      ]

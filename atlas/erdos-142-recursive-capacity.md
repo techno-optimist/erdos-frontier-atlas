@@ -1889,7 +1889,7 @@ potentials, subcell refinements, four-dimensional superblocks, state/path or
 context-dependent potentials, other grids, EHPS shelling, integer transfer,
 or `r_3(N)`.
 
-### 4.36 Globally disjoint finite-state graph carving is below the EHPS gate
+### 4.36 Disjoint graph carving and complete total overlap/reuse are walled
 
 Let a finite directed multigraph assign globally pairwise-disjoint measurable
 edge tiles inside the fixed q=6 117-cell union.  Suppose its ordered
@@ -1919,10 +1919,21 @@ written replays in
 diagonal pruning, physical-function descent, q=42 dependency, and all-state
 spectral extremum.
 
-The same package contains a narrower horizon-two companion: every
-one-red-per-packet coloring of the q=42 full-box alphabet makes the even-red
-language contain an exact seven-word Farkas cycle.  This kills that parity
-escape, but not arbitrary overlap or physical-tile reuse.  Those models,
+The same package now closes a broader repeated-ownership interface.  Let every
+one of the 280,917 q42 full boxes induce a total map on a finite state set,
+decode deterministically from one start, and require every reachable state to
+have an accepting suffix.  For a minimum-rank idempotent `e`, each sandwich
+`e tau_i e` of the seven packet-role maps permutes `im(e)`.  If `u` realizes
+`e`, a common exponent `L` and accepting suffix `s` make the seven physical
+words `u (p_i u)^L s` accepted.  Their whole-word potential incidence cancels
+and their exact positive cost is `L*16/7` for raw canonical coordinates
+(`L*11/7` intrinsically).  Thus no arbitrary global, nonadditive, unbounded,
+state-aware pointwise coercive potential exists for any finite state count in
+this complete total deterministic model.
+
+The separate horizon-two even-parity packet remains as a concrete supporting
+example.  Partial or state-carved alphabets, reachable non-coaccessible dead
+sinks, nondeterministic/multiple ownership, arbitrary measurable overlap,
 infinite or horizon-growing state systems, almost-everywhere coercivity,
 shelling, integer transfer, and a new `r_3(N)` bound remain open.
 

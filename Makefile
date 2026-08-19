@@ -96,6 +96,8 @@ verify-certs:
 	python3 -I certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/verify.py --self-test
 	python3 -I certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/independent_replay.py --full
 	python3 -I certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/horizon2-parity-wall/verify.py
+	python3 -I certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/universal-total-decoder-wall/verify.py
+	python3 -I certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/universal-total-decoder-wall/independent_replay.py
 	python3 -I certificates/erdos-142-ehps-common-marker-cap-wall/verify_all.py
 	python3 -I certificates/erdos-142-ehps-common-marker-cap-wall/independent_replay.py
 	python3 -I certificates/erdos-142-ehps-common-marker-cap-wall/h7-q9-cap-wall/independent_replay.py

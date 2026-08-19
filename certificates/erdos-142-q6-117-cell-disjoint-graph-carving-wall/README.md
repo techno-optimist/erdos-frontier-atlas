@@ -1,9 +1,12 @@
-# Globally disjoint finite-state graph-carving wall
+# Disjoint graph-carving and total-decoder overlap walls
 
-This package promotes an exact negative theorem for the fixed 117-cell q=6
-four-dimensional geometry. It composes the existing arbitrary-measurable
-q=42 one-block carving theorem with an all-state spectral argument. It is not
-a positive construction and gives no new bound for `r_3(N)`.
+This package promotes two exact negative theorems for the fixed 117-cell q=6
+four-dimensional geometry. The first composes the arbitrary-measurable q=42
+one-block carving theorem with an all-state spectral argument under globally
+disjoint edge ownership. The second permits repeated full-box ownership and
+arbitrary transition memory, but requires a complete total deterministic q42
+decoder with coaccessible reachable states. Neither is a positive
+construction or a new bound for `r_3(N)`.
 
 ## Exact theorem
 
@@ -124,20 +127,59 @@ alignment on the unique seven-point packet and the exact positive cost.
 python3 -I certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/horizon2-parity-wall/verify.py
 ```
 
-This companion kills only that exact full-fine-box parity construction. It
-does not extend the graph theorem to arbitrary overlapping or reused tiles,
-and it is not carving-stable.
+This parity companion by itself kills only that exact full-fine-box
+construction and is not carving-stable. The next section gives the broader
+complete-total full-box theorem.
+
+## Complete total deterministic overlap/reuse companion
+
+The exact packet in `universal-total-decoder-wall/` closes every finite state
+count when all 280,917 q42 full boxes remain available as total state maps.
+The decoder has one fixed start, deterministic physical-word ownership, and
+every reachable state has an accepting suffix. The potential on accepted
+words may be arbitrary, global, nonadditive, unbounded, and state-aware.
+
+For a minimum-rank idempotent `e` of the transition monoid, put `I=im(e)`.
+For each of the seven packet-role maps `tau_i`, minimum rank makes
+`e tau_i e` a permutation of `I`. If the physical word `u` realizes `e`, a
+common exponent `L` and one accepting suffix `s` make all seven words
+
+```text
+u (p_i u)^L s
+```
+
+accepted. Common positions are diagonal and each of the `L` role positions
+is the exact physical seven-point packet. The whole-word potential incidence
+cancels, while the exact positive costs are `L*16/7` in raw canonical
+coordinates and `L*11/7` for intrinsic torus-geodesic distance.
+
+The primary replay reconstructs the actual translated four-dimensional q42
+roles, audits both costs, exhausts the sandwich implication through five
+states, and checks a four-state nonsynchronizing nonpermutation example. The
+separately written hostile replay enumerates all 699 three-state submonoids,
+1,623 minimum-rank idempotents, and 12,868 sandwiches, and also tests the dead
+sink and partial-decoder seams.
+
+```text
+python3 -I certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/universal-total-decoder-wall/verify.py
+python3 -I certificates/erdos-142-q6-117-cell-disjoint-graph-carving-wall/universal-total-decoder-wall/independent_replay.py
+```
+
+Expected verdicts are `PASS_UNIVERSAL_TOTAL_DECODER_WALL` and
+`PASS_MINRANK_IDEMPOTENT_SANDWICH_AUDIT`.
 
 ## Scope
 
-Proved only for fixed finite-state systems, globally pairwise-disjoint
-physical edge ownership, edge-local potentials plus finite state/endpoint
-corrections, a complete pointwise ordered-triple automaton, and the fixed
-117-cell geometry.
+The measurable graph theorem is proved only for fixed finite-state systems,
+globally pairwise-disjoint physical edge ownership, edge-local potentials plus
+finite state/endpoint corrections, and a complete pointwise ordered-triple
+automaton. The overlap/reuse companion instead covers complete q42 full-box
+total deterministic decoders with unique physical-word ownership and an
+accepting suffix from every reachable state.
 
-Not proved: repeated or overlapping physical tiles across contexts;
-transition-memory not state-lifted with disjoint ownership; a separately
-decoded overlap kernel; infinite or horizon-growing state systems; an
-almost-everywhere midpoint hypothesis; a different physical geometry; an
-EHPS shell construction or integer transfer; a new `r_3(N)` bound; or Erdős
-Problem 142.
+Still not proved: partial or state-carved transition alphabets; a totalization
+whose minimum-rank image is a reachable non-coaccessible dead sink;
+nondeterministic or multiple-path ownership; arbitrary overlapping measurable
+subtiles; infinite or horizon-growing state systems; an almost-everywhere
+midpoint hypothesis; a different physical geometry; an EHPS shell or integer
+transfer; a new `r_3(N)` bound; or Erdős Problem 142.
