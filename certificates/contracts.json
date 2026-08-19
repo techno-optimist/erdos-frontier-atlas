@@ -134,7 +134,7 @@
   {
    "path": "certificates/erdos-142-ehps-common-marker-cap-wall",
    "classification": "certified_local",
-   "boundary": "For the literal EHPS tiles A=T x T and B=L(A), one common measurable marker M used in every phase of A^(j-1) x M x B^(h-j), and arbitrary phase-labelled pointwise potentials, exact cap/Fubini arguments close h=4,5,6 for 0<epsilon<=1/4000 and h=7 for 0<=epsilon<=1/20000. The h=7 sharpening proves an arbitrary-measurable exceptional-plane cap of 35/81 using 2,916 q=9 six-point packets and a solver-free target-36 exhaustion. This closes only the common-marker literal chain. Phase-specific markers, context-owned or carved A/B pieces, target-35 infeasibility, other graph languages, almost-everywhere coercivity, EHPS integer transfer, and a new r_3(N) bound remain outside scope. Erdos Problem 142 remains unsolved."
+   "boundary": "For the literal EHPS tiles A=T x T and B=L(A), one common measurable marker M used in every phase of A^(j-1) x M x B^(h-j), and arbitrary phase-labelled pointwise potentials, exact cap/Fubini arguments close h=4,5,6 for 0<epsilon<=1/4000, h=7 for 0<=epsilon<=1/20000, and h=8 through the exact first root 2/(1022544+sqrt(1045590073344)), including epsilon=1/n for every n>=1022543. The h=7 sharpening proves an arbitrary-measurable exceptional-plane cap of 35/81. The h=8 sharpening proves 30<=C9<=31 by a compact solver-independent two-template exhaustion and improves the plane cap to 31/81. This closes only the stated common-marker horizons. Common-marker horizons h>=9, phase-specific markers, context-owned or carved A/B pieces, the exact value of C9, other graph languages, almost-everywhere coercivity, EHPS integer transfer, and a new r_3(N) bound remain outside scope. Erdos Problem 142 remains unsolved."
   },
   {
    "path": "certificates/erdos-142-q4-q7-affine-quadratic-capacity",
@@ -3611,25 +3611,25 @@
      ]
     },
     {
-     "id": "erdos-142-ehps-common-marker-h4-h7-wall",
+     "id": "erdos-142-ehps-common-marker-h4-h8-wall",
      "status": "promoted",
-     "statement": "For the literal EHPS tiles A=T x T and B=L(A), a single common measurable marker M used in every phase A^(j-1) x M x B^(h-j), and arbitrary phase-labelled pointwise potentials, the marker density is below mu(T)^2/h for h=4,5,6 when 0<epsilon<=1/4000 and for h=7 when 0<=epsilon<=1/20000.",
-     "scope": "For h=4,5,6, the eight-row whole-word cycle forces a surviving common marker wholly into C_A^c or C_B^c, same-phase H_3^4 lines force every marker fibre to be an affine cap, and the folded triangle/strip decomposition gives mu(M)<=1/81+2(4epsilon/3-2epsilon^2). For h=7, 2,916 exact q=9 six-point line packets plus a solver-free 716,176-node target-36 exhaustion give the arbitrary-measurable exceptional-plane bound 35/81 and hence mu(M)<=35/2916+2(4epsilon/3-2epsilon^2)<mu(T)^2/7. The Haar-preserving torus automorphism L preserves H_9/H_3 cosets and nontrivial midpoint rows, so positivity transports the finite packet to the C_B branch without assuming metric invariance. Separate values are allowed for phase-labelled physical words, making the theorem at least as permissive as a single-valued potential on overlaps. This covers only the literal A/B chain and one common marker. It does not cover phase-specific markers M_1,...,M_h, context-owned or carved A/B pieces, target-35 q=9 infeasibility, other graph languages, an almost-everywhere midpoint hypothesis, a new construction, EHPS integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved.",
-     "machine_verdict": "PASS_LITERAL_EHPS_COMMON_MARKER_H4_H7_WALL",
+     "statement": "For the literal EHPS tiles A=T x T and B=L(A), a single common measurable marker M used in every phase A^(j-1) x M x B^(h-j), and arbitrary phase-labelled pointwise potentials, the marker density is below mu(T)^2/h for h=4,5,6 when 0<epsilon<=1/4000 and for h=7 when 0<=epsilon<=1/20000. For h=8 it is at most mu(T)^2/8 when 0<=epsilon<=2/(1022544+sqrt(1045590073344)), so no strict product improvement is possible; the gap is strict for epsilon=1/n, every integer n>=1022543.",
+     "scope": "For h=4,5,6, the eight-row whole-word cycle forces a surviving common marker wholly into C_A^c or C_B^c, same-phase H_3^4 lines force every marker fibre to be an affine cap, and the folded triangle/strip decomposition gives mu(M)<=1/81+2(4epsilon/3-2epsilon^2). For h=7, 2,916 exact q=9 six-point line packets plus a solver-free 716,176-node target-36 exhaustion give the arbitrary-measurable exceptional-plane bound 35/81. For h=8, the exact finite theorem 30<=C9<=31 follows from a size-30 witness, a 157,464-slab/two-orbit reduction, and direct solver-independent extension searches with 3,017,764 and 1,989,055 nodes. Common-offset Fubini gives the plane cap 31/81 and marker bound mu(M)<=31/2916+2(4epsilon/3-2epsilon^2); exact density subtraction gives the stated first-root interval. The Haar-preserving torus automorphism L transports the positive finite obstruction to the C_B branch without assuming metric invariance. Separate values are allowed for phase-labelled physical words. This covers only the literal A/B chain, one common marker, and the stated horizons. It does not cover common-marker horizons h>=9, phase-specific markers M_1,...,M_h, context-owned or carved A/B pieces, the exact value of C9, other graph languages, an almost-everywhere midpoint hypothesis, a new construction, EHPS integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved.",
+     "machine_verdict": "PASS_LITERAL_EHPS_COMMON_MARKER_H4_H8_WALL",
      "publication_bindings": [
       {
        "path": "certificates/erdos-142-ehps-common-marker-cap-wall/README.md",
-       "contains": "Literal EHPS common-marker cap wall for h=4,5,6,7"
+       "contains": "Literal EHPS common-marker cap wall for h=4,5,6,7,8"
       },
       {
        "path": "atlas/erdos-142-recursive-capacity.md",
-       "contains": "The literal common-marker h=4,5,6,7 window is closed"
+       "contains": "The literal common-marker h=4,5,6,7,8 window is closed"
       }
      ],
      "artifacts": [
       {
        "path": "certificates/erdos-142-ehps-common-marker-cap-wall/README.md",
-       "sha256": "197f29ebd76af179e9ac027c27048c85b8160f3cab417e9c996edf570100355b"
+       "sha256": "93ecd61c450ddd6d7c863947ae16f7ab94772ae3391e3c7add3faf3a6e1ab929"
       },
       {
        "path": "certificates/erdos-142-ehps-common-marker-cap-wall/verify.py",
@@ -3641,7 +3641,7 @@
       },
       {
        "path": "certificates/erdos-142-ehps-common-marker-cap-wall/verify_all.py",
-       "sha256": "1880ad53405c39bec06cc0c5c3efe2ffdc1a48b82b974b1d1a2e63e6ddeaee86"
+       "sha256": "b0d3ee6f3e73bab6b119d9947a7e282354062b7de5ae28baa6ea4acc8188028f"
       },
       {
        "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h7-q9-cap-wall/README.md",
@@ -3658,6 +3658,118 @@
       {
        "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h7-q9-cap-wall/INDEPENDENT_AUDIT.md",
        "sha256": "8a4c6c9629d98f6d2ba06f9e971d121a771b29b6ba0495f65d23260a3ffff8cf"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall/COMMON_MARKER_H8_COROLLARY.md",
+       "sha256": "119909be9b6ae5edd58ff0051939e28821d48c268e28f6b9b53479c17e6e4d58"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall/compact_fibre_verify.cpp",
+       "sha256": "3c9cd3eaec0b7d603fc62f11291bf7415cc42b1db25e991d789ae58c776950e8"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall/data/template0_blockers.txt",
+       "sha256": "6616ff7d8262b7e5f597b606df09e71b60bb9edd34f43cfbd2a9d710fba58fa8"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall/data/template0.cnf",
+       "sha256": "e09943895dbfceb742d5addfd0263a433d6f7646c662d04e0e48fb25aacba456"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall/data/template1_blocker_reps.json",
+       "sha256": "f11ea7553f55ca5020c23ad949cd6d1e8330fd422e5af25d185d5262cd3d3335"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall/data/template1_blockers.txt",
+       "sha256": "4938f64aaac275f62eca702af1fb310ff9e7bf3448c460d1f32c250cd9ac75c6"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall/data/template1.cnf",
+       "sha256": "4100d2ab7501395107d4b23a746f741e4c403f74d17c644fcfb620ac0a0e1681"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall/DRAT_PROVENANCE.md",
+       "sha256": "76701a94ce36851ace57c117dceeabd814149fc9d22273526d0f015af563f6a2"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall/FILE_SIZES.tsv",
+       "sha256": "6f3f667d7e159797bdc7fefc0ec3b291c23ea008859cb0eae28f8a648ba4def9"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall/generate_template1_ledger.py",
+       "sha256": "1a7b41c3a0ab77a675ff360e492ecc15b6d6a12ea01ffb46525389564d8201fd"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall/README.md",
+       "sha256": "0207c812c71b132b5d7d6694112314fd6aa8cea5566158936ac12778dae73eb8"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall/run.ps1",
+       "sha256": "51cc5f91dac7b292d218412874bbae41770c4add2041726373ed4bd0c0d22b9f"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall/run.sh",
+       "sha256": "08141cce894db2d9f6cb87d5fa29d5008ab8e0b663145c4e0d53a2265510e61d"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall/SHA256SUMS.txt",
+       "sha256": "19cb6aacab9760b76a5c466b02bdfa554c1da5c1e7875d3fcf24e0bcbade4e4d"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall/SOURCE_BINDINGS.json",
+       "sha256": "56cc4f732d258eed679ab523a4382115592ecf609c9b88ace86087285b849ee9"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall/THEOREM.md",
+       "sha256": "4d09d9bd94c48fb20abb67be748746e621edfcac338e861726e42eb1eabb7414"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall/verify_all.py",
+       "sha256": "c2e7807bc59a32fa352a8f31cfa05332ffe7526e986707e7f4d208e3ea6f80f2"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall/verify_blocker_semantics.py",
+       "sha256": "9b9e09803633e7677153d2453eb3cc4dfe7a9793e7a8ea0545426d137e2e613c"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall/verify_finite_geometry.py",
+       "sha256": "cc09f10e29bc49dec536eb4170d330f8b2d30971e1d4656e6298dfe7079992b7"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall-independent/cover_independent.cpp",
+       "sha256": "97b5e533ed2f10386d13c4ab4899f47140042e69719a6059c0098249da7d002c"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall-independent/data/template0_blockers.txt",
+       "sha256": "6616ff7d8262b7e5f597b606df09e71b60bb9edd34f43cfbd2a9d710fba58fa8"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall-independent/data/template1_blockers.txt",
+       "sha256": "4938f64aaac275f62eca702af1fb310ff9e7bf3448c460d1f32c250cd9ac75c6"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall-independent/HOSTILE_AUDIT.md",
+       "sha256": "728f4767dffe5775859f917fd1d1db9ace4d5945bd599de220c781e4ccf78a59"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall-independent/independent_replay.py",
+       "sha256": "c426ac9526a9449bb6d11e9d8e7d65ee70cf1e9d80d48ec6b4923566462b7be0"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall-independent/README.md",
+       "sha256": "3c132094601c2c8bd58e79058e4f21a2d56ba7aa10d7352b3c0e8c09dcf774ab"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall-independent/run.ps1",
+       "sha256": "e9baf7e37dc7fcdb763e6e02252dba3655dc0d44deccca3c6b9fef7fa8d04e5f"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall-independent/run.sh",
+       "sha256": "6d2bfc8c2d8f29beca40f89279d7e38c5a57368bb1db4a11e1f706d8effdf915"
+      },
+      {
+       "path": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall-independent/SHA256SUMS.txt",
+       "sha256": "12127df63fc4367bf4686b95fe56631bd5e0be9bd79c3c73754b0fc0eb711fa4"
       }
      ],
      "replays": [
@@ -3670,15 +3782,35 @@
         "-I",
         "certificates/erdos-142-ehps-common-marker-cap-wall/verify_all.py"
        ],
-       "timeout_seconds": 90,
+       "timeout_seconds": 120,
        "exit_code": 0,
        "stdout_contains": [
-        "PASS_LITERAL_EHPS_COMMON_MARKER_H4_H7_WALL",
+        "PASS_LITERAL_EHPS_COMMON_MARKER_H4_H8_WALL",
         "PASS_LITERAL_EHPS_COMMON_MARKER_H4_CAP_WALL",
         "PASS_H7_Q9_CAP_AUDIT",
         "TARGET36_UNSAT nodes=716176",
         "H7_BOUND beta=35/2916 gate=7/576 margin=7/46656",
         "EPSILON_WINDOW endpoint=1/20000 gap=25606141/2041200000000",
+        "PASS_Q9_COMBINED_FINITE_GEOMETRY",
+        "SIZE30 rows=131 min_defect=18 raw_margin=1448 geodesic_margin=1448 fibre_profile=(4, 4, 4, 3, 3, 3, 3, 3, 3)",
+        "SLAB choices=157464 peelable=5832 nonpeelable=151632 stabilizer=26244 orbits=(2916, 2916)",
+        "H8 section=31/81 margin=1/10368 marker0=31/2916 zero_gap=1/46656 round_epsilon=1/1100000 beta_upper=2344909599271/220522500000000 round_gap=121027187/80190000000000 integer_inside=1/1022543 inside_gap=517105/48783242381626944 integer_outside=1/1022542 outside_gap=-126359/12195786741535296 discriminant=1045590073344",
+        "H8_GAP (1-1022544*epsilon+1539648*epsilon^2)/46656",
+        "H8_POLYNOMIAL_POSITIVITY_INTERVAL root=2/(1022544+sqrt(1045590073344)) integer_epsilon=1/n_positive_for_n>=1022543",
+        "PASS_Q9_BLOCKER_SEMANTICS",
+        "TEMPLATE0 blockers_total=15108 blockers_nonsingleton=15093 cnf_variables=944 cnf_clauses=19336 sound=true minimal=true byte_exact=true relaxed_target19_residual_core=27",
+        "TEMPLATE1 blockers_total=4146 blockers_nonsingleton=4131 cnf_variables=944 cnf_clauses=8374 sound=true minimal=true byte_exact=true relaxed_target19_residual_core=31",
+        "PASS_COMPACT_TEMPLATE0_UNSAT",
+        "CONTROL_RELAXED_BLOCKER_MASTER_TARGET19_SAT nodes=1589725 profiles_visited=77 witness_mask=8249a6f861c not_a_peelability_witness=true",
+        "THEOREM profiles=126 nodes=3017764",
+        "PASS_COMPACT_TEMPLATE1_UNSAT",
+        "CONTROL_RELAXED_BLOCKER_MASTER_TARGET19_SAT nodes=971715 profiles_visited=17 witness_mask=9e88a829374 not_a_peelability_witness=true",
+        "THEOREM profiles=126 nodes=1989055",
+        "PASS_NEGATIVE_CONTROLS bad_argc bad_index malformed_ledger",
+        "PASS_HASH_MANIFEST_FINAL",
+        "PASS_Q9_CAPACITY_THEOREM 30<=C9<=31",
+        "LITERAL_COMMON_MARKER_H8_COROLLARY model=one_common_marker pointwise_physical epsilon=1/n n>=1022543",
+        "PASS_Q9_COMBINED_PACKAGE",
         "SCOPE common_marker literal_EHPS_AB pointwise_phase_labelled_potential"
        ],
        "stdout_not_contains": [
@@ -3686,7 +3818,7 @@
        ],
        "failure_control": {
         "kind": "external",
-        "evidence": "The aggregate standard-library replay executes both exact primary packets and requires their verdicts. The h=4,5,6 packet verifies whole-word coverage, phase-labelled cancellation, cap/Fubini normalization and density gaps; the h=7 packet reconstructs the q=9 packets, exact target-36 exhaustion, common-offset plane measure bound, and epsilon window. Separately written replays audit both components."
+        "evidence": "The aggregate executes all three exact primary packets and requires their verdicts. The h=4,5,6 packet verifies whole-word coverage, phase-labelled cancellation, cap/Fubini normalization and density gaps; the h=7 packet reconstructs the q=9 packets, exact target-36 exhaustion, common-offset plane measure bound and epsilon window. The h=8 packet checks a closed hash and size inventory before and after replay, source provenance, the 157,464-case slab census, blocker soundness and minimality, byte-exact CNF reconstruction, and both compact searches with exact node fingerprints. Its positive/negative internal controls, explicitly relaxed target-19 SAT controls, rejected bad argv/index and malformed-ledger controls, and source nonmutation checks exercise failure paths. Separate implementation-diverse replays audit every component, including an alternate-order, profile-free h=8 cover with distinct node fingerprints and independently reconstructed finite geometry and density arithmetic."
        }
       },
       {
@@ -3790,6 +3922,88 @@
        "failure_control": {
         "kind": "external",
         "evidence": "This implementation-diverse standard-library replay imports no primary module. It reconstructs the 54 caps, 108 primitive q=9 lines, 2,916 six-supports, exact carry/lift rows and costs, then proves target 36 impossible through the independent 18-versus-12 rich-incidence cover before checking the continuum and epsilon arithmetic."
+       }
+      },
+      {
+       "profile": "fast",
+       "certifies_claim": false,
+       "entrypoint": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall/verify_all.py",
+       "argv": [
+        "python3",
+        "-I",
+        "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall/verify_all.py"
+       ],
+       "timeout_seconds": 90,
+       "exit_code": 0,
+       "stdout_contains": [
+        "PASS_HASH_MANIFEST_INITIAL",
+        "PASS_SOURCE_BINDINGS_JSON",
+        "PASS_Q9_COMBINED_FINITE_GEOMETRY",
+        "PEELABILITY strict_midpoint_potential_equivalent_to_empty_core",
+        "SIZE30 rows=131 min_defect=18 raw_margin=1448 geodesic_margin=1448 fibre_profile=(4, 4, 4, 3, 3, 3, 3, 3, 3)",
+        "AG23 caps4=54 caps5=0",
+        "SLAB choices=157464 peelable=5832 nonpeelable=151632 stabilizer=26244 orbits=(2916, 2916)",
+        "TARGET32_REDUCTION at_least_five_saturated_fibres_then_quotient_line_then_two_templates",
+        "H8 section=31/81 margin=1/10368 marker0=31/2916 zero_gap=1/46656 round_epsilon=1/1100000 beta_upper=2344909599271/220522500000000 round_gap=121027187/80190000000000 integer_inside=1/1022543 inside_gap=517105/48783242381626944 integer_outside=1/1022542 outside_gap=-126359/12195786741535296 discriminant=1045590073344",
+        "H8_GAP (1-1022544*epsilon+1539648*epsilon^2)/46656",
+        "H8_POLYNOMIAL_POSITIVITY_INTERVAL root=2/(1022544+sqrt(1045590073344)) integer_epsilon=1/n_positive_for_n>=1022543",
+        "PASS_Q9_BLOCKER_SEMANTICS",
+        "TEMPLATE0 blockers_total=15108 blockers_nonsingleton=15093 cnf_variables=944 cnf_clauses=19336 sound=true minimal=true byte_exact=true relaxed_target19_residual_core=27",
+        "TEMPLATE1 blockers_total=4146 blockers_nonsingleton=4131 cnf_variables=944 cnf_clauses=8374 sound=true minimal=true byte_exact=true relaxed_target19_residual_core=31",
+        "PASS_TEMPLATE1_LEDGER_REGENERATION",
+        "PASS_COMPACT_TEMPLATE0_UNSAT",
+        "CONTROL_RELAXED_BLOCKER_MASTER_TARGET19_SAT nodes=1589725 profiles_visited=77 witness_mask=8249a6f861c not_a_peelability_witness=true",
+        "THEOREM profiles=126 nodes=3017764",
+        "PASS_COMPACT_TEMPLATE1_UNSAT",
+        "CONTROL_RELAXED_BLOCKER_MASTER_TARGET19_SAT nodes=971715 profiles_visited=17 witness_mask=9e88a829374 not_a_peelability_witness=true",
+        "THEOREM profiles=126 nodes=1989055",
+        "PASS_NEGATIVE_CONTROLS bad_argc bad_index malformed_ledger",
+        "PASS_HASH_MANIFEST_FINAL",
+        "PASS_Q9_CAPACITY_THEOREM 30<=C9<=31",
+        "LITERAL_COMMON_MARKER_H8_COROLLARY model=one_common_marker pointwise_physical epsilon=1/n n>=1022543",
+        "PASS_Q9_COMBINED_PACKAGE"
+       ],
+       "stdout_not_contains": [
+        "Traceback (most recent call last)"
+       ],
+       "failure_control": {
+        "kind": "external",
+        "evidence": "The primary h=8 package binds every shipped byte and file size, validates path-free provenance, independently rebuilds the finite geometry and each minimal blocker, reconstructs the frozen CNFs byte-for-byte, regenerates the template-1 ledger, and compiles a solver-independent C++14 exact cover for both normalized templates. Internal SAT and UNSAT controls, target-19 relaxed-master SAT controls explicitly marked as non-peelability witnesses, rejected bad argv/index and malformed-ledger inputs, and before/after nonmutation checks test failure behavior. This is the primary h=8 trust path, not an implementation-diverse independent proof, and it proves only 30<=C9<=31 plus the stated literal common-marker corollary."
+       }
+      },
+      {
+       "profile": "fast",
+       "certifies_claim": false,
+       "entrypoint": "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall-independent/independent_replay.py",
+       "argv": [
+        "python3",
+        "-I",
+        "certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall-independent/independent_replay.py"
+       ],
+       "timeout_seconds": 60,
+       "exit_code": 0,
+       "stdout_contains": [
+        "PASS_HOSTILE_MANIFEST_INITIAL",
+        "PASS_HOSTILE_LEDGER_SEMANTICS [(15108, 15093, 28, 27), (4146, 4131, 31, 31)]",
+        "PASS_HOSTILE_SIZE30 (131, 18, 1448, 1448, (4, 4, 4, 3, 3, 3, 3, 3, 3))",
+        "PASS_HOSTILE_SLAB_ORBITS (54, 5832, 26244, (2916, 2916))",
+        "PASS_HOSTILE_H8_ARITHMETIC (Fraction(31, 81), Fraction(31, 2916), Fraction(1, 46656), Fraction(121027187, 80190000000000), Fraction(1, 1022543), Fraction(1, 1022542))",
+        "PASS_INDEPENDENT_TEMPLATE0_COVER",
+        "RELAXED_TARGET19 nodes=261597 witness_mask=2092080ab4d945 not_a_peelability_claim=true",
+        "THEOREM_TARGET20 profiles=126 nodes=1624151 result=UNSAT",
+        "PASS_INDEPENDENT_TEMPLATE1_COVER",
+        "RELAXED_TARGET19 nodes=67782 witness_mask=11638c01264c7 not_a_peelability_claim=true",
+        "THEOREM_TARGET20 profiles=126 nodes=1192358 result=UNSAT",
+        "PASS_HOSTILE_COVER_NEGATIVE_CONTROLS",
+        "PASS_HOSTILE_MANIFEST_FINAL",
+        "PASS_INDEPENDENT_Q9_HOSTILE_REPLAY 30<=C9<=31"
+       ],
+       "stdout_not_contains": [
+        "Traceback (most recent call last)"
+       ],
+       "failure_control": {
+        "kind": "external",
+        "evidence": "The independent h=8 replay imports no primary module and carries only the two transparent blocker ledgers. It uses a separate fixed-point core implementation, independently reconstructs every blocker, the size-30 physical ledger, all 157,464 slabs and both affine orbits, then compiles an alternate-order profile-free C++14 cover with distinct target-19 and target-20 fingerprints. It checks both the producer and independent relaxed masks as non-peelability witnesses, exercises negative controls, rederives the exact Fubini and density arithmetic, and verifies its closed manifest before and after replay."
        }
       }
      ]

@@ -1977,7 +1977,7 @@ shelling, integer transfer, and a new `r_3(N)` bound remain open.
 Accepted rate is the Perron root of the live trim; an ambient unreachable or
 noncoaccessible dead-sink Perron root is irrelevant.
 
-### 4.37 The literal common-marker h=4,5,6,7 window is closed
+### 4.37 The literal common-marker h=4,5,6,7,8 window is closed
 
 For the literal EHPS tile `T`, put `A=T x T`, `B=L(A)`, and use the same
 measurable marker `M` in every phase `A^(j-1) x M x B^(h-j)`.  Even allowing
@@ -2011,9 +2011,27 @@ exact rich-incidence contradiction `18>12`.  The `C_B^c` branch follows by
 the Haar-preserving torus automorphism `L`, which preserves `H_9/H_3` cosets
 and midpoint rows; no metric invariance is used.
 
+For `h=8`, a separate compact q=9 theorem proves `30<=C_9<=31` for the
+strict midpoint-potential capacity of `(Z/9Z)^2`. Every hypothetical
+32-point peelable set reduces to one of two saturated-slab orbits; direct
+solver-independent six-fibre searches exclude both in 3,017,764 and
+1,989,055 nodes. Common-offset Fubini therefore improves the exceptional
+plane cap to `31/81` and gives
+
+```text
+mu(M) <= 31/2916+2(4epsilon/3-2epsilon^2) <= mu(T)^2/8
+```
+
+for `0<=epsilon<=2/(1022544+sqrt(1045590073344))`. In particular, the
+rational EHPS choices `epsilon=1/n` are covered for every
+`n>=1022543`, with strict density gap. At the irrational endpoint equality
+is allowed, but a strict product improvement is still impossible. The replay
+includes an exact 30-point witness but does not decide whether a 31-point
+support exists.
+
 This is a common-marker theorem only.  Phase-specific markers,
-context-owned or carved `A/B` pieces, target-35 q=9 infeasibility, other graph
-languages,
+common-marker horizons `h>=9`, context-owned or carved `A/B` pieces,
+target-35 q=9 infeasibility, the exact value of `C_9`, other graph languages,
 almost-everywhere coercivity, EHPS integer transfer, and `r_3(N)` remain
 outside scope.
 

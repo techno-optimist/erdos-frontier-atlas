@@ -99,6 +99,7 @@ verify-certs:
 	python3 -I certificates/erdos-142-ehps-common-marker-cap-wall/verify_all.py
 	python3 -I certificates/erdos-142-ehps-common-marker-cap-wall/independent_replay.py
 	python3 -I certificates/erdos-142-ehps-common-marker-cap-wall/h7-q9-cap-wall/independent_replay.py
+	python3 -I certificates/erdos-142-ehps-common-marker-cap-wall/h8-q9-peel-cap-wall-independent/independent_replay.py
 	python3 -I certificates/erdos-142-q4-q7-affine-quadratic-capacity/verify.py --self-test
 	python3 -I certificates/erdos-142-q4-q7-affine-quadratic-capacity/independent_replay.py --self-test
 	python3 -I certificates/erdos-142-q6-117-cell-q42-seventh-microbox-wall/verify_r7_two_layer_packing.py --self-test

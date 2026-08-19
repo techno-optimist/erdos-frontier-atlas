@@ -162,7 +162,7 @@ Every promoted claim replays in one command; the fastest way to learn the receip
 - `erdos-1107-public-table`: `python3 -I certificates/erdos-1107/verify.py`
 - `erdos-13-table`: `python3 -I certificates/erdos-13/verify.py`
 - `erdos-142-cone-infeasible-objects`: `python3 -I certificates/erdos-142-cone-obstruction/verify.py`
-- `erdos-142-ehps-common-marker-h4-h7-wall`: `python3 -I certificates/erdos-142-ehps-common-marker-cap-wall/verify_all.py`
+- `erdos-142-ehps-common-marker-h4-h8-wall`: `python3 -I certificates/erdos-142-ehps-common-marker-cap-wall/verify_all.py`
 - `erdos-142-foundation`: `python3 -I certificates/erdos-142/verify.py`
 - `erdos-142-interior-torus-torsion-wall`: `python3 -I certificates/erdos-142-interior-torus-torsion-wall/verify.py --self-test`
 - `erdos-142-q24-d4-cylinder-position-additive-wall`: `python3 -I certificates/erdos-142-q24-cylinder-hypograph-wall/verify.py --self-test`
