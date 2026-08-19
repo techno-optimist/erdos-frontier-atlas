@@ -180,6 +180,7 @@ Every promoted claim replays in one command; the fastest way to learn the receip
 - `erdos-142-q6-117-cell-q24-quarter-microbox-wall`: `python3 -I certificates/erdos-142-q6-117-cell-q24-quarter-microbox-wall/independent_r4_replay.py`
 - `erdos-142-q6-117-cell-q30-fifth-microbox-wall`: `python3 -I certificates/erdos-142-q6-117-cell-q30-fifth-microbox-wall/verify_r5_four_of_five_packing.py --self-test`
 - `erdos-142-q6-117-cell-q36-sixth-microbox-wall`: `python3 -I certificates/erdos-142-q6-117-cell-q36-sixth-microbox-wall/independent_r6_replay.py --target certificates/erdos-142-q6-117-cell-q36-sixth-microbox-wall`
+- `erdos-142-q6-117-cell-q42-seventh-microbox-wall`: `python3 -I certificates/erdos-142-q6-117-cell-q42-seventh-microbox-wall/independent_r7_audit.py --self-test`
 - `erdos-142-q6-117-cell-six-deletion-wall`: `python3 -I certificates/erdos-142-q6-117-cell-six-deletion-wall/verify.py certificates/erdos-142-q6-117-cell-six-deletion-wall/rays.json --self-test --find-hit --verify-certificate certificates/erdos-142-q6-117-cell-six-deletion-wall/hitting_proof.json`
 - `erdos-142-q6-117-cell-transition-spectral-wall`: `python3 -I certificates/erdos-142-q6-117-cell-transition-spectral-wall/verify.py --self-test`
 - `erdos-142-q6-all-maximizer-three-row-torsion-wall`: `python3 -I certificates/erdos-142-q6-all-maximizer-three-row-torsion-wall/verify.py --self-test`

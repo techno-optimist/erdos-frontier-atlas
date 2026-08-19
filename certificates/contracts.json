@@ -122,6 +122,11 @@
    "boundary": "An exact one-block density wall for arbitrary unions of the 151,632 complete globally aligned q=36 residual-sixth microboxes refining the fixed 117-cell q=6 alphabet, under an arbitrary bounded single-valued physical potential satisfying every actual raw-canonical modular-torus midpoint coercivity inequality pointwise. A packing of 2,986 strict-dilation pairs and 6,323 six-of-nine midpoint packets gives 9,309 mutually disjoint obstruction supports, forcing at least 9,309 deletions and at most 142,323 retained boxes, with obstruction margin 561 beyond the required 8,748 and strictly below the exact 142,884-box gate. This is a one-block support theorem, not a word-language or graph/path capacity theorem. Proper or finer carving, deformation, non-axis-aligned or overlapping tiles, context/path-dependent languages, coupled multi-block tiles, almost-everywhere-only coercivity, unbounded corrections, integer transfer and a new r_3(N) bound remain outside scope. Erdos Problem 142 remains unsolved."
   },
   {
+   "path": "certificates/erdos-142-q6-117-cell-q42-seventh-microbox-wall",
+   "classification": "certified_local",
+   "boundary": "An exact one-block density wall for arbitrary unions of the 280,917 complete globally aligned q=42 residual-seventh microboxes refining the fixed 117-cell q=6 alphabet, under an arbitrary bounded single-valued physical potential satisfying every actual raw-canonical modular-torus midpoint coercivity inequality pointwise. A packing of 4,617 strict-dilation pairs, 11,534 first-layer packets, and 3,413 second-layer packets gives 19,564 mutually disjoint obstruction supports, forcing at least 19,564 deletions and at most 261,353 retained boxes, with obstruction margin 3,357 beyond the required 16,207 and strictly below the exact 1,058,841/4-box gate. This is a one-block support theorem, not a word-language or graph/path capacity theorem. Proper or finer carving, deformation, non-axis-aligned or overlapping tiles, context/path-dependent languages, coupled multi-block tiles, almost-everywhere-only coercivity, unbounded corrections, integer transfer and a new r_3(N) bound remain outside scope. Erdos Problem 142 remains unsolved."
+  },
+  {
    "path": "certificates/erdos-142-q6-m7-cellu-restricted-wall",
    "classification": "certified_local",
    "boundary": "An exact continuous half-open q=6/M7 Farkas obstruction only for potentials H=2||x||^2+G(cell,pattern)+sum_i U(cell,i,coarsepoint_i). The 358 positive rows cancel every displayed feature and leave a positive weighted right side. This does not exclude arbitrary physical potentials, general quadratic or pair interactions, richer or recursive potentials, deformed supports, integer transfer, or an r_3(N) bound. Erdos Problem 142 remains unsolved; erdos142_solved=false and new_r3_bound=false."
@@ -2971,6 +2976,110 @@
        "failure_control": {
         "kind": "external",
         "evidence": "The separately written hostile replay imports and executes neither the discovery program nor the primary verifier. It uses a bitmask component-matching algorithm and directly reconstructs the strict-interior dilation rows, finite boundedness telescope, all six-of-nine packet rows, carries, raw costs, potential cancellation, disjointness and exact gate arithmetic while binding the frozen package hashes."
+       }
+      }
+    ]
+   },
+    {
+     "id": "erdos-142-q6-117-cell-q42-seventh-microbox-wall",
+     "status": "promoted",
+     "statement": "Every union U of complete globally aligned q=42 residual-seventh microboxes refining the fixed 117-cell q=6 alphabet that supports a bounded single-valued physical potential satisfying every actual raw-canonical modular-torus midpoint coercivity inequality pointwise contains at most 261,353 of the 280,917 boxes; consequently mu(U)<=261353/42^4<49/576.",
+     "scope": "The one-block physical universe consists of the 280,917 distinct half-open q=42 microboxes d=7c+s, where c ranges over the fixed 117 coarse q=6 cells and s ranges over {0,1,2,3,4,5,6}^4. The frozen packet and two standard-library replays reconstruct 4,617 pairwise vertex-disjoint strict-dilation supports, 11,534 first-layer balanced midpoint packets, and 3,413 second-layer balanced midpoint packets, with no overlap among the three families. With G(p)=36f(p)-72||p||_2^2 and D(t)=G(A_t)+G(B_(1-t)), the two strict-interior rows give D(3t)-D(t)>=K(72-48t) and a finite boundedness contradiction. The first layer contains five-, six-, and seven-point packets and the second layer five-point packets; every packet has actual common-offset torus midpoint rows whose coefficients cancel an otherwise arbitrary single-valued physical potential while leaving positive raw endpoint-square cost. The 19,564 disjoint supports force 19,564 deletions, leaving at most 261,353 boxes, with obstruction margin 3,357 beyond the required 16,207 and strictly below the exact 1,058,841/4-box gate. No completeness or optimality claim is made for any obstruction family. This is only a one-block support theorem: it does not imply an arbitrary horizon-dependent word-language or graph/path capacity bound. Proper or finer carving inside a q=42 box, deformation, non-axis-aligned or overlapping tiles, context/path-dependent languages, coupled multi-block tiles, almost-everywhere-only coercivity, unbounded corrections, integer transfer and a new r_3(N) bound remain outside scope; Erdos Problem 142 remains unsolved.",
+     "machine_verdict": "PASS_INDEPENDENT_R7_Q42_TWO_LAYER_ONE_BLOCK_AUDIT",
+     "publication_bindings": [
+      {
+       "path": "certificates/erdos-142-q6-117-cell-q42-seventh-microbox-wall/HOSTILE_AUDIT_R7.md",
+       "contains": "**APPROVE — no release blocker found.**"
+      },
+      {
+       "path": "atlas/erdos-142-recursive-capacity.md",
+       "contains": "Complete q=42 seventh-microbox one-block supports also fail"
+      }
+     ],
+     "artifacts": [
+      {
+       "path": "certificates/erdos-142-q6-117-cell-q42-seventh-microbox-wall/README.md",
+       "sha256": "01ce2ef4218b70f59b1b71af74feaff56e2a617beb13cbf97d3d8ff9c4972850"
+      },
+      {
+       "path": "certificates/erdos-142-q6-117-cell-q42-seventh-microbox-wall/frozen_semantic_certificate.json",
+       "sha256": "3eb6de036e2f8294f49f282e5f98769351ffe55fe25155a2dbf3077e14bbafa3"
+      },
+      {
+       "path": "certificates/erdos-142-q6-117-cell-q42-seventh-microbox-wall/verify_r7_two_layer_packing.py",
+       "sha256": "6bb6368296d4030cc2a4ee262345c67eaa5226bd9ad8cee33a13f972fe1bcccd"
+      },
+      {
+       "path": "certificates/erdos-142-q6-117-cell-q42-seventh-microbox-wall/HOSTILE_AUDIT_R7.md",
+       "sha256": "622cb800d07512a89d562ba36b9406444ba8fa5cae8e65909e9fdd4d0d6163a5"
+      },
+      {
+       "path": "certificates/erdos-142-q6-117-cell-q42-seventh-microbox-wall/independent_r7_audit.py",
+       "sha256": "373d9c59cbee4a9334db54bcbd7eeead90bee3509ea58d8c5cdd166fd45dc092"
+      }
+     ],
+     "replays": [
+      {
+       "profile": "fast",
+       "certifies_claim": false,
+       "entrypoint": "certificates/erdos-142-q6-117-cell-q42-seventh-microbox-wall/verify_r7_two_layer_packing.py",
+       "argv": [
+        "python3",
+        "-I",
+        "certificates/erdos-142-q6-117-cell-q42-seventh-microbox-wall/verify_r7_two_layer_packing.py",
+        "--self-test"
+       ],
+       "timeout_seconds": 90,
+       "exit_code": 0,
+       "stdout_contains": [
+        "PASS_R7_TWO_LAYER_ONE_BLOCK_PACKING_WALL",
+        "GEOMETRY_OK coarse=117 q42_microboxes=280917",
+        "DILATION_OK edges=5712 components=4368 matching=4617 endpoints=9234 wrap_hist={1: 4617}",
+        "FIRST_LAYER_OK shift=(0,0,6,12) order=7 prototype=30 full=13230 blocked=1696 retained=11534 incidence=0",
+        "SECOND_LAYER_OK shift=(0,0,0,6) order=7 prototype=28 full=12348 blocked=8935 retained=3413 incidence=0",
+        "DISJOINT_PACKING_OK forced=19564 required=16207 margin=3357",
+        "GATE_OK allowed_deletions=16206 max_retained=261353 gate_count=1058841/4",
+        "CERTIFICATE_SHA256 3eb6de036e2f8294f49f282e5f98769351ffe55fe25155a2dbf3077e14bbafa3",
+        "FROZEN_CERTIFICATE_NONMUTATION_OK",
+        "SCOPE_ONE_BLOCK_ONLY no_arbitrary_word_language_capacity_claim",
+        "PLANTED_FAILURES_REJECTED"
+       ],
+       "stdout_not_contains": [
+        "Traceback (most recent call last)"
+       ],
+       "failure_control": {
+        "kind": "embedded",
+        "evidence": "The primary no-import, no-solver standard-library replay reconstructs all 280,917 physical boxes, the exact componentwise matching, both retained packet layers and all 78,517 physical rows, checks the corrected-potential dilation telescope, carries, raw costs, cancellation, cross-family disjointness and gate arithmetic, binds the frozen bytes and rejects planted failures. It is retained as a corroborating replay because the separately written hostile reconstruction is the designated claim-certifying route."
+       }
+      },
+      {
+       "profile": "fast",
+       "certifies_claim": true,
+       "entrypoint": "certificates/erdos-142-q6-117-cell-q42-seventh-microbox-wall/independent_r7_audit.py",
+       "argv": [
+        "python3",
+        "-I",
+        "certificates/erdos-142-q6-117-cell-q42-seventh-microbox-wall/independent_r7_audit.py",
+        "--self-test"
+       ],
+       "timeout_seconds": 90,
+       "exit_code": 0,
+       "stdout_contains": [
+        "PASS_INDEPENDENT_R7_Q42_TWO_LAYER_ONE_BLOCK_AUDIT",
+        "GEOMETRY_OK coarse=117 microboxes=280917",
+        "DILATION_OK edges=5712 components=4368 max_component=9 matching=4617 wraps={1: 4617}",
+        "PACKETS_OK first=11534 second=3413 supports=61452+17065 rows=78517",
+        "PHYSICAL_OK carries=9 raw_total=39815496 incidence=zero common_offset=(1/8,2/8,3/8,4/8)",
+        "DISJOINT_OK forced=19564 required=16207 margin=3357",
+        "GATE_OK total=280917 allowed_deletions=16206 max_retained=261353 gate=1058841/4",
+        "SCOPE one_block_complete_aligned_q42_microbox_unions_only"
+       ],
+       "stdout_not_contains": [
+        "Traceback (most recent call last)"
+       ],
+       "failure_control": {
+        "kind": "external",
+        "evidence": "The separately written hostile replay imports and executes neither the discovery program nor the primary verifier. It uses an independent exhaustive component-matching implementation and directly reconstructs the strict-interior dilation rows, finite boundedness telescope, both packet layers, carries, raw costs, potential cancellation, disjointness and exact gate arithmetic while binding the frozen package bytes and semantic digests."
        }
       }
      ]

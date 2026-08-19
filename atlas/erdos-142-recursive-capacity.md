@@ -1703,6 +1703,77 @@ coupled multi-block tiles, almost-everywhere-only coercivity, unbounded
 corrections, integer transfer and a new `r_3(N)` bound remain open.  Erdős
 Problem 142 is unsolved.
 
+### 4.33 Complete q=42 seventh-microbox one-block supports also fail
+
+Split every residual coordinate of the fixed 117 cells into sevenths.  The
+one-block universe then has
+
+```text
+117*7^4 = 280917
+```
+
+distinct complete half-open `q=42` microboxes.  The exact four-coordinate
+EHPS gate is
+
+```text
+(49/576)*42^4 = 1058841/4 = 264710.25 boxes.
+```
+
+The frozen two-layer packing contains 4,617 mutually disjoint two-box
+strict-dilation supports from the exact 5,712-edge graph.  The first layer
+then contains 11,534 mutually disjoint balanced midpoint packets, of sizes
+five, six, and seven, after avoiding all 9,234 dilation endpoints.  It comes
+from the 30 usable intersections for the order-seven last-pair shift `(6,12)`
+modulo 42, lifted through 441 fixed-first-pair fibers.  A disjoint second
+layer contains 3,413 five-point packets: it uses the 28 usable intersections
+for shift `(0,6)` and avoids both the dilation endpoints and the first-layer
+supports.  Every packet has one actual common-offset torus midpoint row per
+vertex.  The endpoint coefficient `+2` and centre coefficient `-2` cancel an
+arbitrary single-valued physical potential, while the total raw
+endpoint-square cost is strictly positive.
+
+For the original bounded potential `f`, the strict-dilation convention is
+
+```text
+G(p) = 36*f(p) - 72*||p||_2^2,
+D(t) = G(A_t)+G(B_(1-t)).
+```
+
+Adding its two physical midpoint rows at scales `t` and `3t` gives
+
+```text
+D(3t)-D(t) >= K*(72-48t)
+```
+
+with `K>=1` wrap coordinates; the geometric sequence
+`t=(1/14)/3^j` contradicts boundedness.  Across the two packet layers the
+replay reconstructs 78,517 physical rows, exact carries, zero potential
+incidence at every packet vertex, and positive total raw cost.  Because all
+three support families are disjoint, a feasible one-block union must omit at
+least one box from each of 19,564 supports.  Consequently
+
+```text
+|U| <= 280917-(4617+11534+3413) = 261353 < 1058841/4.
+```
+
+A strictly above-gate support may delete at most 16,206 boxes; the packing
+exceeds the required 16,207 obstructions by 3,357.  The certificate directory
+`certificates/erdos-142-q6-117-cell-q42-seventh-microbox-wall/` binds a
+frozen semantic packet, a primary corroborating replay, and a separately
+written claim-certifying hostile replay.  The latter independently rebuilds
+the componentwise matching, both translation-orbit packet layers, all
+physical midpoint rows, carries, cancellation, disjointness, and gate
+arithmetic.
+
+This is deliberately a **one-block support theorem**, not an all-horizon
+word-language or graph/path capacity theorem.  These seventh-microbox packets
+do not automatically tensor into a coordinatewise quotient for arbitrary word
+languages.  Proper or finer carving inside a `q=42` box, deformation,
+non-axis-aligned or overlapping tiles, context/path-dependent languages,
+coupled multi-block tiles, almost-everywhere-only coercivity, unbounded
+corrections, integer transfer and a new `r_3(N)` bound remain open.  Erdős
+Problem 142 is unsolved.
+
 ## 5. What would count as progress
 
 A promotable positive result must include all of:

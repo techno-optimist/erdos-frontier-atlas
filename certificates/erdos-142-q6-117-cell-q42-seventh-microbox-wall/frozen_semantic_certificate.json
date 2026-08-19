@@ -1,0 +1,129 @@
+{
+  "schema": "erdos142-q6-r7-two-layer-one-block-wall-v1",
+  "geometry": {
+    "coarse_q": 6,
+    "residual_subdivision": 7,
+    "fine_q": 42,
+    "coarse_cells": 117,
+    "microboxes": 280917
+  },
+  "dilation": {
+    "edge_count": 5712,
+    "component_count": 4368,
+    "maximum_component_size": 9,
+    "matching_count": 4617,
+    "endpoint_count": 9234,
+    "algorithm": "lex-first maximum matching in each sorted component"
+  },
+  "packet_layers": [
+    {
+      "name": "first",
+      "shift_last_pair": [6, 12],
+      "translation_order": 7,
+      "prototype_intersection_histogram": {
+        "1": 51,
+        "2": 44,
+        "3": 58,
+        "4": 41,
+        "5": 21,
+        "6": 8,
+        "7": 1
+      },
+      "prototype_packet_size_histogram": {
+        "5": 21,
+        "6": 8,
+        "7": 1
+      },
+      "full_packets": 13230,
+      "blocked_packets": 1696,
+      "retained_packets": 11534,
+      "retained_packet_size_histogram": {
+        "5": 8151,
+        "6": 2984,
+        "7": 399
+      },
+      "retained_vertices": 61452,
+      "rows": 61452
+    },
+    {
+      "name": "second",
+      "shift_last_pair": [0, 6],
+      "translation_order": 7,
+      "prototype_intersection_histogram": {
+        "1": 70,
+        "2": 70,
+        "3": 49,
+        "4": 35,
+        "5": 28
+      },
+      "prototype_packet_size_histogram": {
+        "5": 28
+      },
+      "full_packets": 12348,
+      "blocked_by_dilation_or_first_layer": 8935,
+      "retained_packets": 3413,
+      "retained_packet_size_histogram": {
+        "5": 3413
+      },
+      "retained_vertices": 17065,
+      "rows": 17065
+    }
+  ],
+  "gate": {
+    "density_numerator": 49,
+    "density_denominator": 576,
+    "gate_count_numerator": 1058841,
+    "gate_count_denominator": 4,
+    "allowed_deletions_strictly_above": 16206,
+    "forced_deletions_one_block": 19564,
+    "max_retained_one_block": 261353,
+    "margin_below_gate_in_deletions": 3357
+  },
+  "packet_semantics": {
+    "expanded_rows": 78517,
+    "potential_incidence_per_vertex": 0,
+    "common_strict_interior_offset": ["1/8", "2/8", "3/8", "4/8"],
+    "aggregate_raw_fine_digit_square_cost": 39815496,
+    "raw_fine_digit_square_histogram": {
+      "36": 6456,
+      "144": 9575,
+      "180": 14661,
+      "360": 11143,
+      "468": 8353,
+      "612": 8010,
+      "720": 6225,
+      "900": 664,
+      "936": 4512,
+      "1224": 1219,
+      "1296": 370,
+      "1440": 3103,
+      "1476": 1352,
+      "1620": 1835,
+      "1872": 772,
+      "2196": 267
+    },
+    "carry_histogram": {
+      "0,0,-1,-1": 5266,
+      "0,0,-1,0": 7828,
+      "0,0,-1,1": 4267,
+      "0,0,0,-1": 11215,
+      "0,0,0,0": 20045,
+      "0,0,0,1": 12535,
+      "0,0,1,-1": 3831,
+      "0,0,1,0": 10020,
+      "0,0,1,1": 3510
+    },
+    "aggregate_raw_cost_strictly_positive": true
+  },
+  "scope": {
+    "one_block_complete_aligned_microbox_union": true,
+    "arbitrary_word_language_capacity": false,
+    "proper_submicrobox_carving": false
+  },
+  "digests": {
+    "dilation_semantic": "0730b2e7730bd144b86b3299311a530ab3608f4777e9e3b257e7a4eddd2412a5",
+    "packet_support": "96dc66ed94ae58bc485cc35169da46361b71aa226e4bb2173b8266ecd9a2f3af",
+    "packet_expanded_semantic": "fd74a90da1a372c482c8a82acfbeed94765cff659b708ed30db1c8ed9284af6c",
+    "payload_semantic": "cee9ba92386faac163476dd41c7aee1d5776a149eeb9bf5ebf1b8348bd6b10bd"
+  }
+}
