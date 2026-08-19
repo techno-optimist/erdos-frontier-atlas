@@ -127,6 +127,11 @@
    "boundary": "An exact one-block arbitrary-measurable-carving wall for the fixed 117-cell q=6 four-dimensional union. Every measurable E in that union carrying one single-valued physical potential satisfying every actual raw-canonical modular-torus midpoint coercivity inequality pointwise has mu(E)<=263277/42^4<49/576. Two disjoint q=42 common-offset packet layers contain 17,640 balanced supports; the union-bound/Fubini step forces at least 17,640/42^4 deleted volume even when every fine box is carved arbitrarily. No boundedness, continuity, additivity, finite-state, or full-box premise is used. The theorem does not cover an almost-everywhere midpoint hypothesis, multivalued or label/state/context-owned potentials, graph/path or multi-block capacity, overlapping/coupled tiles, EHPS shell or integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved."
   },
   {
+   "path": "certificates/erdos-142-q4-q7-affine-quadratic-capacity",
+   "classification": "certified_local",
+   "boundary": "Exact capacities 4,5,9,10 at q=4,5,6,7 only for unions of full two-dimensional q-adic cells and potentials in the displayed fixed-Hessian residual-affine ansatz. Exact Farkas packets give the upper bounds and integer coefficient tables attain them. This does not cover arbitrary potentials, subcell refinement or carving, four-dimensional tiles, state/path/context dependence, other q, EHPS shelling, integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved."
+  },
+  {
    "path": "certificates/erdos-142-q6-117-cell-q42-seventh-microbox-wall",
    "classification": "certified_local",
    "boundary": "An exact one-block density wall for arbitrary unions of the 280,917 complete globally aligned q=42 residual-seventh microboxes refining the fixed 117-cell q=6 alphabet, under an arbitrary bounded single-valued physical potential satisfying every actual raw-canonical modular-torus midpoint coercivity inequality pointwise. A packing of 4,617 strict-dilation pairs, 11,534 first-layer packets, and 3,413 second-layer packets gives 19,564 mutually disjoint obstruction supports, forcing at least 19,564 deletions and at most 261,353 retained boxes, with obstruction margin 3,357 beyond the required 16,207 and strictly below the exact 1,058,841/4-box gate. This is a one-block support theorem, not a word-language or graph/path capacity theorem. Proper or finer carving, deformation, non-axis-aligned or overlapping tiles, context/path-dependent languages, coupled multi-block tiles, almost-everywhere-only coercivity, unbounded corrections, integer transfer and a new r_3(N) bound remain outside scope. Erdos Problem 142 remains unsolved."
@@ -3082,6 +3087,135 @@
        "failure_control": {
         "kind": "external",
         "evidence": "The separately written hostile replay imports neither the candidate replay nor a candidate helper. It independently reconstructs the geometry, balanced packet rows, all-offset physical midpoint identities, exact carry and raw-cost checks, disjoint support layers, pointwise common-offset union-bound bookkeeping, and gate arithmetic while binding the package source and frozen-certificate bytes."
+       }
+     }
+     ]
+    },
+    {
+     "id": "erdos-142-q4-q7-affine-quadratic-capacities",
+     "status": "promoted",
+     "statement": "For unions of full two-dimensional q-adic cells and potentials satisfying q^2 F((a+u)/q)=h[a]+p[a] dot u+2||u||_2^2, the exact support capacities at q=4,5,6,7 are respectively 4,5,9,10; all four maximum densities are strictly below 7/24.",
+     "scope": "The theorem is only for the displayed single-valued fixed-Hessian residual-affine ansatz on unions of complete half-open two-dimensional q-adic cells, with every physical raw-canonical modular-torus midpoint row imposed. Exact positive-integer Farkas packets rule out supports of sizes 5,6,10,11, and exact integer coefficient tables attain sizes 4,5,9,10. The replays reconstruct every residual-polytope closure vertex, including nontrivial x=z half-period branches at even q, and use two independent solver-free Boolean exhaustions. It does not cover arbitrary potentials, different Hessians, subcell refinement or measurable carving, four-dimensional tiles or superblocks, state/label/edge/path/context-dependent potentials, graph-directed languages, any q outside 4,5,6,7, an EHPS shell construction, integer transfer, or a new r_3(N) bound. Erdos Problem 142 remains unsolved.",
+     "machine_verdict": "PASS_Q4_Q7_AFFINE_QUADRATIC_EXACT_CAPACITIES",
+     "publication_bindings": [
+      {
+       "path": "certificates/erdos-142-q4-q7-affine-quadratic-capacity/README.md",
+       "contains": "The largest `|A|`"
+      },
+      {
+       "path": "atlas/erdos-142-recursive-capacity.md",
+       "contains": "The full-cell fixed-Hessian ansatz has exact small-grid capacities"
+      }
+     ],
+     "artifacts": [
+      {
+       "path": "certificates/erdos-142-q4-q7-affine-quadratic-capacity/README.md",
+       "sha256": "f86d1d2dae34f6503c983d9d3544b9d3568c1087b3b882617524c91ce432274c"
+      },
+      {
+       "path": "certificates/erdos-142-q4-q7-affine-quadratic-capacity/candidates.json",
+       "sha256": "7fc6d9811d70c5251560018d2f18c4e69d3248d7fb2eb7601b8dc7ae17472e94"
+      },
+      {
+       "path": "certificates/erdos-142-q4-q7-affine-quadratic-capacity/upper_q4.json",
+       "sha256": "cc58d26fb4a147a85aa6cc5a20bc9a0c250d944f95fb16c575c9a51061d5238a"
+      },
+      {
+       "path": "certificates/erdos-142-q4-q7-affine-quadratic-capacity/upper_q5.json",
+       "sha256": "fabbd0fb039a56a264ee9007a37f34122642fe6a9abb5f4da9af449bd5fba277"
+      },
+      {
+       "path": "certificates/erdos-142-q4-q7-affine-quadratic-capacity/upper_q6.json",
+       "sha256": "78fe83d0108c8283786b6744a6c060eaea45c394b61c5a6a043b7a2898ae9d8b"
+      },
+      {
+       "path": "certificates/erdos-142-q4-q7-affine-quadratic-capacity/upper_q7.json",
+       "sha256": "c4a62ff76b62d051347335fe19716cffb24212f4cf1da6b8f71ce687bf183ca3"
+      },
+      {
+       "path": "certificates/erdos-142-q4-q7-affine-quadratic-capacity/verify.py",
+       "sha256": "c90910d2def224f50e9dd9c1a64f1104eb83875fd5d4d53e133d4e8ceb7f8d52"
+      },
+      {
+       "path": "certificates/erdos-142-q4-q7-affine-quadratic-capacity/fixed_order_replay.cpp",
+       "sha256": "a62e51f9c8963f9acd8b03501ec4baf7009778cf2acd689c3fb8eb1303c70311"
+      },
+      {
+       "path": "certificates/erdos-142-q4-q7-affine-quadratic-capacity/independent_replay.py",
+       "sha256": "b145d2cd88762cde8e58a92d3b01784bc2f446bd4fdc0d4108abd517a3a8c928"
+      },
+      {
+       "path": "certificates/erdos-142-q4-q7-affine-quadratic-capacity/boolean_replay.cpp",
+       "sha256": "24232a9648bbe5d8b2cf245b2e3409d503afae1608ddbfd5d52e0990b1dda9c4"
+      }
+     ],
+     "replays": [
+      {
+       "profile": "fast",
+       "certifies_claim": true,
+       "entrypoint": "certificates/erdos-142-q4-q7-affine-quadratic-capacity/verify.py",
+       "argv": [
+        "python3",
+        "-I",
+        "certificates/erdos-142-q4-q7-affine-quadratic-capacity/verify.py",
+        "--self-test"
+       ],
+       "timeout_seconds": 120,
+       "exit_code": 0,
+       "stdout_contains": [
+        "PASS_Q4_Q7_AFFINE_QUADRATIC_EXACT_CAPACITIES",
+        "PLANTED_FAILURES_REJECTED 2",
+        "\"capacity\": 4",
+        "\"capacity\": 5",
+        "\"capacity\": 9",
+        "\"capacity\": 10",
+        "\"candidate_active_rows\": 1194",
+        "\"boolean_nodes\": 100391048",
+        "\"fixed_hessian_full_cell_scope\": true",
+        "\"arbitrary_potential_claim\": false",
+        "\"new_r3_bound\": false",
+        "\"erdos142_solved\": false"
+       ],
+       "stdout_not_contains": [
+        "Traceback (most recent call last)"
+       ],
+       "failure_control": {
+        "kind": "embedded",
+        "evidence": "The primary replay rejects a zero Farkas weight and a duplicate candidate cell, rebuilds every exact continuum row and packet with Python integers, checks all four feasible witnesses, and compiles an exact fixed-order C++17 coverage backtracker in a temporary directory."
+       }
+      },
+      {
+       "profile": "fast",
+       "certifies_claim": false,
+       "entrypoint": "certificates/erdos-142-q4-q7-affine-quadratic-capacity/independent_replay.py",
+       "argv": [
+        "python3",
+        "-I",
+        "certificates/erdos-142-q4-q7-affine-quadratic-capacity/independent_replay.py",
+        "--self-test"
+       ],
+       "timeout_seconds": 120,
+       "exit_code": 0,
+       "stdout_contains": [
+        "PASS_INDEPENDENT_Q4_Q7_AFFINE_QUADRATIC_CAPACITY_AUDIT",
+        "HOSTILE_CONTROLS_REJECTED 2",
+        "\"cpp_capacity_verdict\": 4",
+        "\"cpp_capacity_verdict\": 5",
+        "\"cpp_capacity_verdict\": 9",
+        "\"cpp_capacity_verdict\": 10",
+        "\"packets\": 10710",
+        "\"candidate_active_rows\": 1194",
+        "\"primary_imported\": false",
+        "\"floating_point_used\": false",
+        "\"arbitrary_potential_claim\": false",
+        "\"erdos142_solved\": false"
+       ],
+       "stdout_not_contains": [
+        "Traceback (most recent call last)"
+       ],
+       "failure_control": {
+        "kind": "external",
+        "evidence": "A no-import implementation uses a dense variable encoding and direct middle-cell enumeration, rejects a wrong ledger triple, and proves an intentionally incomplete q=4 wall exposes an uncovered support. Its distinct C++17 search uses unit exclusions, dynamic branching and memoization."
        }
       }
      ]

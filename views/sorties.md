@@ -170,6 +170,7 @@ Every promoted claim replays in one command; the fastest way to learn the receip
 - `erdos-142-q24-mirror-core-additive-wall`: `python3 -I certificates/erdos-142-mirror-core-additive-wall/verify.py`
 - `erdos-142-q3m-torsion-triangle-family`: `python3 -I certificates/erdos-142-q3m-torsion-triangle-wall/verify.py --self-test`
 - `erdos-142-q4-affine-order4-line-wall`: `python3 -I certificates/erdos-142-q4-affine-order4-line-wall/verify.py --self-test`
+- `erdos-142-q4-q7-affine-quadratic-capacities`: `python3 -I certificates/erdos-142-q4-q7-affine-quadratic-capacity/verify.py --self-test`
 - `erdos-142-q42-carving-wall`: `python3 -I certificates/erdos-142-q42-carving-wall/replay.py --target certificates/erdos-142-q42-carving-wall`
 - `erdos-142-q6-117-cell-bounded-dilation-wall`: `python3 -I certificates/erdos-142-q6-117-cell-bounded-dilation-wall/verify.py`
 - `erdos-142-q6-117-cell-endpoint-pruned-label-wall`: `python3 -I certificates/erdos-142-q6-117-cell-endpoint-pruned-label-wall/verify_endpoint_pruned_extension.py`

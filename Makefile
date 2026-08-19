@@ -93,6 +93,8 @@ verify-certs:
 	python3 -I certificates/erdos-142-q6-117-cell-q36-sixth-microbox-wall/independent_r6_replay.py --target certificates/erdos-142-q6-117-cell-q36-sixth-microbox-wall
 	python3 -I certificates/erdos-142-q42-carving-wall/q42_fractional_carving_wall.py
 	python3 -I certificates/erdos-142-q42-carving-wall/replay.py --target certificates/erdos-142-q42-carving-wall
+	python3 -I certificates/erdos-142-q4-q7-affine-quadratic-capacity/verify.py --self-test
+	python3 -I certificates/erdos-142-q4-q7-affine-quadratic-capacity/independent_replay.py --self-test
 	python3 -I certificates/erdos-142-q6-117-cell-q42-seventh-microbox-wall/verify_r7_two_layer_packing.py --self-test
 	python3 -I certificates/erdos-142-q6-117-cell-q42-seventh-microbox-wall/independent_r7_audit.py --self-test
 	python3 -I certificates/erdos-142-q6-m7-cellu-restricted-wall/verify.py

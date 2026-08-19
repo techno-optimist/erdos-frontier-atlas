@@ -791,9 +791,9 @@ def render_card(graph, erdos_id):
         statement_cap = 16 if 12 < len(claims) <= 20 else None
         for c in claims:
             if dense_claims:
-                w(f"- claim `{c['claim_id']}` [{c['status']}]")
-                if c.get("replay"):
-                    w(f"  - replay: `{' '.join(c['replay']['argv'])}`")
+                replay = (f" — `{' '.join(c['replay']['argv'])}`"
+                          if c.get("replay") else "")
+                w(f"- `{c['claim_id']}` [{c['status']}]{replay}")
                 continue
             statement = (clip(c['statement'], statement_cap)
                          if statement_cap is not None else c['statement'])

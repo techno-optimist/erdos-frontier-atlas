@@ -1853,6 +1853,42 @@ arbitrary word, graph, path, or multi-block capacity; overlap kernels and
 coupled tiles; EHPS shell construction; integer transfer; and a new
 `r_3(N)` bound remain open.  Erdős Problem 142 is unsolved.
 
+### 4.35 The full-cell fixed-Hessian ansatz has exact small-grid capacities
+
+There is also a clean classification of the two-dimensional full-cell ansatz
+
+```text
+q^2 F((a+u)/q)=h[a]+p[a] dot u+2||u||_2^2.
+```
+
+For unions of full q-adic cells, with the coercivity inequality imposed on
+every physical torus-midpoint triple, its exact support capacities are
+
+```text
+q:          4   5   6   7
+capacity:   4   5   9  10
+```
+
+Thus its maximum local densities are `1/4,1/5,1/4,10/49`, all strictly below
+the EHPS density `7/24`.  For the upper bounds, the scaled defect is affine on
+each exact residual polytope.  Frozen positive integral Farkas packets rule
+out every support of the next size, and solver-free Boolean searches prove
+that the packets cover all such supports.  Exact integer coefficient tables
+attain the four lower bounds.  The ledgers retain wrap/carry information and
+all `x=z` branches; no cyclic-translation symmetry is assumed.
+
+The package
+`certificates/erdos-142-q4-q7-affine-quadratic-capacity/` contains a
+pair of separately implemented integer replays.  Each uses standard-library
+Python for the continuum algebra and compiles a standalone C++17 Boolean
+backtracker.
+
+This is only a **two-dimensional, full-cell, fixed-Hessian
+affine-quadratic-ansatz theorem**.  It is not a theorem for arbitrary
+potentials, subcell refinements, four-dimensional superblocks, state/path or
+context-dependent potentials, other grids, EHPS shelling, integer transfer,
+or `r_3(N)`.
+
 ## 5. What would count as progress
 
 A promotable positive result must include all of:

@@ -1,0 +1,6351 @@
+{
+  "certified_cuts": [
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 656,
+          "triple": [
+            0,
+            0,
+            7
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 723,
+          "triple": [
+            0,
+            7,
+            7
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 1,
+      "support": [
+        0,
+        7
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 1216,
+          "triple": [
+            0,
+            0,
+            13
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 1337,
+          "triple": [
+            0,
+            13,
+            13
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 2,
+      "support": [
+        0,
+        13
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 2633,
+          "triple": [
+            1,
+            1,
+            12
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 2735,
+          "triple": [
+            1,
+            12,
+            12
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 3,
+      "support": [
+        1,
+        12
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 4418,
+          "triple": [
+            2,
+            2,
+            15
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 4539,
+          "triple": [
+            2,
+            15,
+            15
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 4,
+      "support": [
+        2,
+        15
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 4637,
+          "triple": [
+            3,
+            3,
+            4
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 4648,
+          "triple": [
+            3,
+            4,
+            4
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 5,
+      "support": [
+        3,
+        4
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 5675,
+          "triple": [
+            3,
+            3,
+            14
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 5777,
+          "triple": [
+            3,
+            14,
+            14
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 6,
+      "support": [
+        3,
+        14
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 10584,
+          "triple": [
+            8,
+            8,
+            15
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10651,
+          "triple": [
+            8,
+            15,
+            15
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 7,
+      "support": [
+        8,
+        15
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 12165,
+          "triple": [
+            11,
+            11,
+            12
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 12176,
+          "triple": [
+            11,
+            12,
+            12
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 8,
+      "support": [
+        11,
+        12
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 2119,
+          "triple": [
+            1,
+            6,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 2148,
+          "triple": [
+            1,
+            9,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8297,
+          "triple": [
+            6,
+            1,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8345,
+          "triple": [
+            6,
+            6,
+            9
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 9,
+      "support": [
+        1,
+        6,
+        9
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 3405,
+          "triple": [
+            2,
+            5,
+            5
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 3455,
+          "triple": [
+            2,
+            10,
+            5
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7492,
+          "triple": [
+            5,
+            2,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7520,
+          "triple": [
+            5,
+            5,
+            10
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 10,
+      "support": [
+        2,
+        5,
+        10
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 6365,
+          "triple": [
+            4,
+            6,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 6388,
+          "triple": [
+            4,
+            9,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8331,
+          "triple": [
+            6,
+            4,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8374,
+          "triple": [
+            6,
+            9,
+            9
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 11,
+      "support": [
+        4,
+        6,
+        9
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 7542,
+          "triple": [
+            5,
+            7,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7565,
+          "triple": [
+            5,
+            10,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 9348,
+          "triple": [
+            7,
+            5,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 9391,
+          "triple": [
+            7,
+            10,
+            10
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 12,
+      "support": [
+        5,
+        7,
+        10
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 7278,
+          "triple": [
+            5,
+            5,
+            8
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7330,
+          "triple": [
+            5,
+            10,
+            8
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7518,
+          "triple": [
+            5,
+            5,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7550,
+          "triple": [
+            5,
+            8,
+            10
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 13,
+      "support": [
+        5,
+        8,
+        10
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 7563,
+          "triple": [
+            5,
+            10,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7592,
+          "triple": [
+            5,
+            13,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11661,
+          "triple": [
+            10,
+            5,
+            13
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11709,
+          "triple": [
+            10,
+            10,
+            13
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 14,
+      "support": [
+        5,
+        10,
+        13
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 8343,
+          "triple": [
+            6,
+            6,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8395,
+          "triple": [
+            6,
+            11,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8583,
+          "triple": [
+            6,
+            6,
+            11
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8615,
+          "triple": [
+            6,
+            9,
+            11
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 15,
+      "support": [
+        6,
+        9,
+        11
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 8369,
+          "triple": [
+            6,
+            9,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8419,
+          "triple": [
+            6,
+            14,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11176,
+          "triple": [
+            9,
+            6,
+            14
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11204,
+          "triple": [
+            9,
+            9,
+            14
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 16,
+      "support": [
+        6,
+        9,
+        14
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 133,
+          "triple": [
+            0,
+            9,
+            1
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 146,
+          "triple": [
+            0,
+            10,
+            1
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10729,
+          "triple": [
+            9,
+            0,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10742,
+          "triple": [
+            9,
+            1,
+            10
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 17,
+      "support": [
+        0,
+        1,
+        9,
+        10
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 358,
+          "triple": [
+            0,
+            6,
+            4
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 384,
+          "triple": [
+            0,
+            10,
+            4
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8434,
+          "triple": [
+            6,
+            0,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8460,
+          "triple": [
+            6,
+            4,
+            10
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 18,
+      "support": [
+        0,
+        4,
+        6,
+        10
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 3237,
+          "triple": [
+            2,
+            9,
+            3
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 3250,
+          "triple": [
+            2,
+            10,
+            3
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10753,
+          "triple": [
+            9,
+            2,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10766,
+          "triple": [
+            9,
+            3,
+            10
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 19,
+      "support": [
+        2,
+        3,
+        9,
+        10
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 5016,
+          "triple": [
+            3,
+            5,
+            7
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 5045,
+          "triple": [
+            3,
+            9,
+            7
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7388,
+          "triple": [
+            5,
+            3,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7417,
+          "triple": [
+            5,
+            7,
+            9
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 20,
+      "support": [
+        3,
+        5,
+        7,
+        9
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 7129,
+          "triple": [
+            5,
+            12,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7142,
+          "triple": [
+            5,
+            13,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 12629,
+          "triple": [
+            12,
+            5,
+            13
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 12642,
+          "triple": [
+            12,
+            6,
+            13
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 21,
+      "support": [
+        5,
+        6,
+        12,
+        13
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 7153,
+          "triple": [
+            5,
+            14,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7166,
+          "triple": [
+            5,
+            15,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 13173,
+          "triple": [
+            14,
+            5,
+            15
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 13186,
+          "triple": [
+            14,
+            6,
+            15
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 22,
+      "support": [
+        5,
+        6,
+        14,
+        15
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 7438,
+          "triple": [
+            5,
+            11,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7464,
+          "triple": [
+            5,
+            15,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 12474,
+          "triple": [
+            11,
+            5,
+            15
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 12500,
+          "triple": [
+            11,
+            9,
+            15
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 23,
+      "support": [
+        5,
+        9,
+        11,
+        15
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 8480,
+          "triple": [
+            6,
+            8,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8509,
+          "triple": [
+            6,
+            12,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10212,
+          "triple": [
+            8,
+            6,
+            12
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10241,
+          "triple": [
+            8,
+            10,
+            12
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 24,
+      "support": [
+        6,
+        8,
+        10,
+        12
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 2022,
+          "triple": [
+            1,
+            9,
+            5
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 2406,
+          "triple": [
+            1,
+            5,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7379,
+          "triple": [
+            5,
+            1,
+            9
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 25,
+      "support": [
+        1,
+        5,
+        9
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 3570,
+          "triple": [
+            2,
+            10,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 3926,
+          "triple": [
+            2,
+            6,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8447,
+          "triple": [
+            6,
+            2,
+            10
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 26,
+      "support": [
+        2,
+        6,
+        10
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 5986,
+          "triple": [
+            4,
+            6,
+            5
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 6061,
+          "triple": [
+            4,
+            5,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7081,
+          "triple": [
+            5,
+            4,
+            6
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 27,
+      "support": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 7118,
+          "triple": [
+            5,
+            7,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7197,
+          "triple": [
+            5,
+            6,
+            7
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8117,
+          "triple": [
+            6,
+            5,
+            7
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 28,
+      "support": [
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 7454,
+          "triple": [
+            5,
+            13,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7846,
+          "triple": [
+            5,
+            9,
+            13
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11051,
+          "triple": [
+            9,
+            5,
+            13
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 29,
+      "support": [
+        5,
+        9,
+        13
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 8522,
+          "triple": [
+            6,
+            14,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8886,
+          "triple": [
+            6,
+            10,
+            14
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11799,
+          "triple": [
+            10,
+            6,
+            14
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 30,
+      "support": [
+        6,
+        10,
+        14
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 10002,
+          "triple": [
+            8,
+            10,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10061,
+          "triple": [
+            8,
+            9,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10777,
+          "triple": [
+            9,
+            8,
+            10
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 31,
+      "support": [
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 10814,
+          "triple": [
+            9,
+            11,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10877,
+          "triple": [
+            9,
+            10,
+            11
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11493,
+          "triple": [
+            10,
+            9,
+            11
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 32,
+      "support": [
+        9,
+        10,
+        11
+      ]
+    },
+    {
+      "constant_defect": -96,
+      "entries": [
+        {
+          "ledger_row": 76,
+          "triple": [
+            0,
+            1,
+            1
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 474,
+          "triple": [
+            0,
+            6,
+            5
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 477,
+          "triple": [
+            0,
+            6,
+            5
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 561,
+          "triple": [
+            0,
+            1,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 589,
+          "triple": [
+            0,
+            5,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 2064,
+          "triple": [
+            1,
+            0,
+            6
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 2070,
+          "triple": [
+            1,
+            0,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7088,
+          "triple": [
+            5,
+            5,
+            6
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 33,
+      "support": [
+        0,
+        1,
+        5,
+        6
+      ]
+    },
+    {
+      "constant_defect": -96,
+      "entries": [
+        {
+          "ledger_row": 346,
+          "triple": [
+            0,
+            4,
+            4
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 501,
+          "triple": [
+            0,
+            9,
+            5
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 502,
+          "triple": [
+            0,
+            9,
+            5
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 867,
+          "triple": [
+            0,
+            4,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 881,
+          "triple": [
+            0,
+            5,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 6304,
+          "triple": [
+            4,
+            0,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 6306,
+          "triple": [
+            4,
+            0,
+            9
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 7405,
+          "triple": [
+            5,
+            5,
+            9
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 34,
+      "support": [
+        0,
+        4,
+        5,
+        9
+      ]
+    },
+    {
+      "constant_defect": -96,
+      "entries": [
+        {
+          "ledger_row": 3193,
+          "triple": [
+            2,
+            2,
+            3
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 3389,
+          "triple": [
+            2,
+            3,
+            5
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 3395,
+          "triple": [
+            2,
+            3,
+            5
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 4766,
+          "triple": [
+            3,
+            2,
+            5
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 4798,
+          "triple": [
+            3,
+            6,
+            5
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 4897,
+          "triple": [
+            3,
+            5,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 4900,
+          "triple": [
+            3,
+            5,
+            6
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 7102,
+          "triple": [
+            5,
+            6,
+            6
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 35,
+      "support": [
+        2,
+        3,
+        5,
+        6
+      ]
+    },
+    {
+      "constant_defect": -96,
+      "entries": [
+        {
+          "ledger_row": 4941,
+          "triple": [
+            3,
+            10,
+            6
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 4942,
+          "triple": [
+            3,
+            10,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 5030,
+          "triple": [
+            3,
+            7,
+            7
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 5275,
+          "triple": [
+            3,
+            6,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 5289,
+          "triple": [
+            3,
+            7,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8472,
+          "triple": [
+            6,
+            6,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 9323,
+          "triple": [
+            7,
+            3,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 9325,
+          "triple": [
+            7,
+            3,
+            10
+          ],
+          "weight": 2
+        }
+      ],
+      "source_cut": 36,
+      "support": [
+        3,
+        6,
+        7,
+        10
+      ]
+    },
+    {
+      "constant_defect": -96,
+      "entries": [
+        {
+          "ledger_row": 7343,
+          "triple": [
+            5,
+            12,
+            8
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 7344,
+          "triple": [
+            5,
+            12,
+            8
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7426,
+          "triple": [
+            5,
+            9,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7763,
+          "triple": [
+            5,
+            8,
+            12
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7777,
+          "triple": [
+            5,
+            9,
+            12
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10228,
+          "triple": [
+            8,
+            8,
+            12
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10925,
+          "triple": [
+            9,
+            5,
+            12
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10927,
+          "triple": [
+            9,
+            5,
+            12
+          ],
+          "weight": 2
+        }
+      ],
+      "source_cut": 37,
+      "support": [
+        5,
+        8,
+        9,
+        12
+      ]
+    },
+    {
+      "constant_defect": -96,
+      "entries": [
+        {
+          "ledger_row": 8494,
+          "triple": [
+            6,
+            10,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8667,
+          "triple": [
+            6,
+            15,
+            11
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8668,
+          "triple": [
+            6,
+            15,
+            11
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 8971,
+          "triple": [
+            6,
+            10,
+            15
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8985,
+          "triple": [
+            6,
+            11,
+            15
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11910,
+          "triple": [
+            10,
+            6,
+            15
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11912,
+          "triple": [
+            10,
+            6,
+            15
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 12513,
+          "triple": [
+            11,
+            11,
+            15
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 38,
+      "support": [
+        6,
+        10,
+        11,
+        15
+      ]
+    },
+    {
+      "constant_defect": -96,
+      "entries": [
+        {
+          "ledger_row": 10781,
+          "triple": [
+            9,
+            9,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10972,
+          "triple": [
+            9,
+            10,
+            12
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 10978,
+          "triple": [
+            9,
+            10,
+            12
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11570,
+          "triple": [
+            10,
+            9,
+            12
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11602,
+          "triple": [
+            10,
+            13,
+            12
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11728,
+          "triple": [
+            10,
+            12,
+            13
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11731,
+          "triple": [
+            10,
+            12,
+            13
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 12674,
+          "triple": [
+            12,
+            13,
+            13
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 39,
+      "support": [
+        9,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "constant_defect": -96,
+      "entries": [
+        {
+          "ledger_row": 10792,
+          "triple": [
+            9,
+            10,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11259,
+          "triple": [
+            9,
+            15,
+            14
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 11262,
+          "triple": [
+            9,
+            15,
+            14
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11325,
+          "triple": [
+            9,
+            10,
+            15
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11353,
+          "triple": [
+            9,
+            14,
+            15
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11937,
+          "triple": [
+            10,
+            9,
+            15
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 11943,
+          "triple": [
+            10,
+            9,
+            15
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 13228,
+          "triple": [
+            14,
+            14,
+            15
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 40,
+      "support": [
+        9,
+        10,
+        14,
+        15
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 441,
+          "triple": [
+            0,
+            2,
+            5
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 464,
+          "triple": [
+            0,
+            5,
+            5
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 3367,
+          "triple": [
+            2,
+            0,
+            5
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 3410,
+          "triple": [
+            2,
+            5,
+            5
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 41,
+      "support": [
+        0,
+        2,
+        5
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 462,
+          "triple": [
+            0,
+            5,
+            5
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 491,
+          "triple": [
+            0,
+            8,
+            5
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7232,
+          "triple": [
+            5,
+            0,
+            8
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7280,
+          "triple": [
+            5,
+            5,
+            8
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 42,
+      "support": [
+        0,
+        5,
+        8
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 2098,
+          "triple": [
+            1,
+            3,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 2121,
+          "triple": [
+            1,
+            6,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 4864,
+          "triple": [
+            3,
+            1,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 4907,
+          "triple": [
+            3,
+            6,
+            6
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 43,
+      "support": [
+        1,
+        3,
+        6
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 4902,
+          "triple": [
+            3,
+            6,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 4952,
+          "triple": [
+            3,
+            11,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8557,
+          "triple": [
+            6,
+            3,
+            11
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8585,
+          "triple": [
+            6,
+            6,
+            11
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 44,
+      "support": [
+        3,
+        6,
+        11
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 6386,
+          "triple": [
+            4,
+            9,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 6415,
+          "triple": [
+            4,
+            12,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10916,
+          "triple": [
+            9,
+            4,
+            12
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10964,
+          "triple": [
+            9,
+            9,
+            12
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 45,
+      "support": [
+        4,
+        9,
+        12
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 9386,
+          "triple": [
+            7,
+            10,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 9436,
+          "triple": [
+            7,
+            15,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11921,
+          "triple": [
+            10,
+            7,
+            15
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11949,
+          "triple": [
+            10,
+            10,
+            15
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 46,
+      "support": [
+        7,
+        10,
+        15
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 10962,
+          "triple": [
+            9,
+            9,
+            12
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11014,
+          "triple": [
+            9,
+            14,
+            12
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11202,
+          "triple": [
+            9,
+            9,
+            14
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11234,
+          "triple": [
+            9,
+            12,
+            14
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 47,
+      "support": [
+        9,
+        12,
+        14
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 11707,
+          "triple": [
+            10,
+            10,
+            13
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11759,
+          "triple": [
+            10,
+            15,
+            13
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11947,
+          "triple": [
+            10,
+            10,
+            15
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11979,
+          "triple": [
+            10,
+            13,
+            15
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 48,
+      "support": [
+        10,
+        13,
+        15
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 1834,
+          "triple": [
+            1,
+            1,
+            4
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 1886,
+          "triple": [
+            1,
+            6,
+            4
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 2074,
+          "triple": [
+            1,
+            1,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 2106,
+          "triple": [
+            1,
+            4,
+            6
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 49,
+      "support": [
+        1,
+        4,
+        6
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 1860,
+          "triple": [
+            1,
+            4,
+            4
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 1910,
+          "triple": [
+            1,
+            9,
+            4
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 6315,
+          "triple": [
+            4,
+            1,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 6343,
+          "triple": [
+            4,
+            4,
+            9
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 50,
+      "support": [
+        1,
+        4,
+        9
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 3379,
+          "triple": [
+            2,
+            2,
+            5
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 3431,
+          "triple": [
+            2,
+            7,
+            5
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 3619,
+          "triple": [
+            2,
+            2,
+            7
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 3651,
+          "triple": [
+            2,
+            5,
+            7
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 51,
+      "support": [
+        2,
+        5,
+        7
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 3664,
+          "triple": [
+            2,
+            7,
+            7
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 3693,
+          "triple": [
+            2,
+            10,
+            7
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 9314,
+          "triple": [
+            7,
+            2,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 9362,
+          "triple": [
+            7,
+            7,
+            10
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 52,
+      "support": [
+        2,
+        7,
+        10
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 7304,
+          "triple": [
+            5,
+            8,
+            8
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7354,
+          "triple": [
+            5,
+            13,
+            8
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10319,
+          "triple": [
+            8,
+            5,
+            13
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10347,
+          "triple": [
+            8,
+            8,
+            13
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 53,
+      "support": [
+        5,
+        8,
+        13
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 8628,
+          "triple": [
+            6,
+            11,
+            11
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8657,
+          "triple": [
+            6,
+            14,
+            11
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 12358,
+          "triple": [
+            11,
+            6,
+            14
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 12406,
+          "triple": [
+            11,
+            11,
+            14
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 54,
+      "support": [
+        6,
+        11,
+        14
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 10369,
+          "triple": [
+            8,
+            10,
+            13
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10392,
+          "triple": [
+            8,
+            13,
+            13
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11695,
+          "triple": [
+            10,
+            8,
+            13
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11738,
+          "triple": [
+            10,
+            13,
+            13
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 55,
+      "support": [
+        8,
+        10,
+        13
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 11226,
+          "triple": [
+            9,
+            11,
+            14
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11249,
+          "triple": [
+            9,
+            14,
+            14
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 12392,
+          "triple": [
+            11,
+            9,
+            14
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 12435,
+          "triple": [
+            11,
+            14,
+            14
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 56,
+      "support": [
+        9,
+        11,
+        14
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 2873,
+          "triple": [
+            1,
+            1,
+            14
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 2994,
+          "triple": [
+            1,
+            14,
+            14
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 57,
+      "support": [
+        1,
+        14
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 4178,
+          "triple": [
+            2,
+            2,
+            13
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 4280,
+          "triple": [
+            2,
+            13,
+            13
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 58,
+      "support": [
+        2,
+        13
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 6580,
+          "triple": [
+            4,
+            4,
+            11
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 6647,
+          "triple": [
+            4,
+            11,
+            11
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 59,
+      "support": [
+        4,
+        11
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 9121,
+          "triple": [
+            7,
+            7,
+            8
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 9132,
+          "triple": [
+            7,
+            8,
+            8
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 60,
+      "support": [
+        7,
+        8
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 2167,
+          "triple": [
+            1,
+            11,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 2581,
+          "triple": [
+            1,
+            6,
+            11
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8537,
+          "triple": [
+            6,
+            1,
+            11
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 61,
+      "support": [
+        1,
+        6,
+        11
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 3436,
+          "triple": [
+            2,
+            8,
+            5
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 3750,
+          "triple": [
+            2,
+            5,
+            8
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7252,
+          "triple": [
+            5,
+            2,
+            8
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 62,
+      "support": [
+        2,
+        5,
+        8
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 6434,
+          "triple": [
+            4,
+            14,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 6885,
+          "triple": [
+            4,
+            9,
+            14
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11156,
+          "triple": [
+            9,
+            4,
+            14
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 63,
+      "support": [
+        4,
+        9,
+        14
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 9417,
+          "triple": [
+            7,
+            13,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 9686,
+          "triple": [
+            7,
+            10,
+            13
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11681,
+          "triple": [
+            10,
+            7,
+            13
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 64,
+      "support": [
+        7,
+        10,
+        13
+      ]
+    },
+    {
+      "constant_defect": -96,
+      "entries": [
+        {
+          "ledger_row": 1994,
+          "triple": [
+            1,
+            5,
+            5
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 2158,
+          "triple": [
+            1,
+            10,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 2159,
+          "triple": [
+            1,
+            10,
+            6
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 2479,
+          "triple": [
+            1,
+            5,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 2493,
+          "triple": [
+            1,
+            6,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7481,
+          "triple": [
+            5,
+            1,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7483,
+          "triple": [
+            5,
+            1,
+            10
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 8473,
+          "triple": [
+            6,
+            6,
+            10
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 65,
+      "support": [
+        1,
+        5,
+        6,
+        10
+      ]
+    },
+    {
+      "constant_defect": -96,
+      "entries": [
+        {
+          "ledger_row": 3444,
+          "triple": [
+            2,
+            9,
+            5
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 3445,
+          "triple": [
+            2,
+            9,
+            5
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 3542,
+          "triple": [
+            2,
+            6,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 3823,
+          "triple": [
+            2,
+            5,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 3837,
+          "triple": [
+            2,
+            6,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7404,
+          "triple": [
+            5,
+            5,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8306,
+          "triple": [
+            6,
+            2,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8308,
+          "triple": [
+            6,
+            2,
+            9
+          ],
+          "weight": 2
+        }
+      ],
+      "source_cut": 66,
+      "support": [
+        2,
+        5,
+        6,
+        9
+      ]
+    },
+    {
+      "constant_defect": -96,
+      "entries": [
+        {
+          "ledger_row": 5964,
+          "triple": [
+            4,
+            5,
+            5
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 6398,
+          "triple": [
+            4,
+            10,
+            9
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 6401,
+          "triple": [
+            4,
+            10,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 6473,
+          "triple": [
+            4,
+            5,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 6501,
+          "triple": [
+            4,
+            9,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7508,
+          "triple": [
+            5,
+            4,
+            10
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 7514,
+          "triple": [
+            5,
+            4,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10784,
+          "triple": [
+            9,
+            9,
+            10
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 67,
+      "support": [
+        4,
+        5,
+        9,
+        10
+      ]
+    },
+    {
+      "constant_defect": -96,
+      "entries": [
+        {
+          "ledger_row": 7085,
+          "triple": [
+            5,
+            5,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7288,
+          "triple": [
+            5,
+            6,
+            8
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 7294,
+          "triple": [
+            5,
+            6,
+            8
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8218,
+          "triple": [
+            6,
+            5,
+            8
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8250,
+          "triple": [
+            6,
+            9,
+            8
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8364,
+          "triple": [
+            6,
+            8,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8367,
+          "triple": [
+            6,
+            8,
+            9
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 9986,
+          "triple": [
+            8,
+            9,
+            9
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 68,
+      "support": [
+        5,
+        6,
+        8,
+        9
+      ]
+    },
+    {
+      "constant_defect": -96,
+      "entries": [
+        {
+          "ledger_row": 7096,
+          "triple": [
+            5,
+            6,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7575,
+          "triple": [
+            5,
+            11,
+            10
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 7578,
+          "triple": [
+            5,
+            11,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7653,
+          "triple": [
+            5,
+            6,
+            11
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7681,
+          "triple": [
+            5,
+            10,
+            11
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8573,
+          "triple": [
+            6,
+            5,
+            11
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 8579,
+          "triple": [
+            6,
+            5,
+            11
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11500,
+          "triple": [
+            10,
+            10,
+            11
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 69,
+      "support": [
+        5,
+        6,
+        10,
+        11
+      ]
+    },
+    {
+      "constant_defect": -96,
+      "entries": [
+        {
+          "ledger_row": 7426,
+          "triple": [
+            5,
+            9,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7602,
+          "triple": [
+            5,
+            14,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7603,
+          "triple": [
+            5,
+            14,
+            10
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 7935,
+          "triple": [
+            5,
+            9,
+            14
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7949,
+          "triple": [
+            5,
+            10,
+            14
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11165,
+          "triple": [
+            9,
+            5,
+            14
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11167,
+          "triple": [
+            9,
+            5,
+            14
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 11825,
+          "triple": [
+            10,
+            10,
+            14
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 70,
+      "support": [
+        5,
+        9,
+        10,
+        14
+      ]
+    },
+    {
+      "constant_defect": -96,
+      "entries": [
+        {
+          "ledger_row": 8121,
+          "triple": [
+            6,
+            6,
+            7
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8353,
+          "triple": [
+            6,
+            7,
+            9
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 8359,
+          "triple": [
+            6,
+            7,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 9238,
+          "triple": [
+            7,
+            6,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 9270,
+          "triple": [
+            7,
+            10,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 9381,
+          "triple": [
+            7,
+            9,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 9384,
+          "triple": [
+            7,
+            9,
+            10
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 10798,
+          "triple": [
+            9,
+            10,
+            10
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 71,
+      "support": [
+        6,
+        7,
+        9,
+        10
+      ]
+    },
+    {
+      "constant_defect": -96,
+      "entries": [
+        {
+          "ledger_row": 8408,
+          "triple": [
+            6,
+            13,
+            9
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 8409,
+          "triple": [
+            6,
+            13,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8494,
+          "triple": [
+            6,
+            10,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8799,
+          "triple": [
+            6,
+            9,
+            13
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8813,
+          "triple": [
+            6,
+            10,
+            13
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11076,
+          "triple": [
+            9,
+            9,
+            13
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11670,
+          "triple": [
+            10,
+            6,
+            13
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11672,
+          "triple": [
+            10,
+            6,
+            13
+          ],
+          "weight": 2
+        }
+      ],
+      "source_cut": 72,
+      "support": [
+        6,
+        9,
+        10,
+        13
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 510,
+          "triple": [
+            0,
+            10,
+            5
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 965,
+          "triple": [
+            0,
+            5,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7472,
+          "triple": [
+            5,
+            0,
+            10
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 73,
+      "support": [
+        0,
+        5,
+        10
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 4933,
+          "triple": [
+            3,
+            9,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 5206,
+          "triple": [
+            3,
+            6,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8317,
+          "triple": [
+            6,
+            3,
+            9
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 74,
+      "support": [
+        3,
+        6,
+        9
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 7611,
+          "triple": [
+            5,
+            15,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8021,
+          "triple": [
+            5,
+            10,
+            15
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11901,
+          "triple": [
+            10,
+            5,
+            15
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 75,
+      "support": [
+        5,
+        10,
+        15
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 8400,
+          "triple": [
+            6,
+            12,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8710,
+          "triple": [
+            6,
+            9,
+            12
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10936,
+          "triple": [
+            9,
+            6,
+            12
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 76,
+      "support": [
+        6,
+        9,
+        12
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 227,
+          "triple": [
+            0,
+            0,
+            3
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 267,
+          "triple": [
+            0,
+            3,
+            3
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 77,
+      "support": [
+        0,
+        3
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 1121,
+          "triple": [
+            0,
+            0,
+            12
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 1198,
+          "triple": [
+            0,
+            12,
+            12
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 78,
+      "support": [
+        0,
+        12
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 5805,
+          "triple": [
+            3,
+            3,
+            15
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 5882,
+          "triple": [
+            3,
+            15,
+            15
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 79,
+      "support": [
+        3,
+        15
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 12819,
+          "triple": [
+            12,
+            12,
+            15
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 12859,
+          "triple": [
+            12,
+            15,
+            15
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 80,
+      "support": [
+        12,
+        15
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 1721,
+          "triple": [
+            1,
+            8,
+            2
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 1734,
+          "triple": [
+            1,
+            9,
+            2
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 9941,
+          "triple": [
+            8,
+            1,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 9954,
+          "triple": [
+            8,
+            2,
+            9
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 81,
+      "support": [
+        1,
+        2,
+        8,
+        9
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 1745,
+          "triple": [
+            1,
+            10,
+            2
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 1758,
+          "triple": [
+            1,
+            11,
+            2
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11445,
+          "triple": [
+            10,
+            1,
+            11
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11458,
+          "triple": [
+            10,
+            2,
+            11
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 82,
+      "support": [
+        1,
+        2,
+        10,
+        11
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 2006,
+          "triple": [
+            1,
+            7,
+            5
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 2032,
+          "triple": [
+            1,
+            11,
+            5
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 9442,
+          "triple": [
+            7,
+            1,
+            11
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 9468,
+          "triple": [
+            7,
+            5,
+            11
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 83,
+      "support": [
+        1,
+        5,
+        7,
+        11
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 3528,
+          "triple": [
+            2,
+            4,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 3557,
+          "triple": [
+            2,
+            8,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 6220,
+          "triple": [
+            4,
+            2,
+            8
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 6249,
+          "triple": [
+            4,
+            6,
+            8
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 84,
+      "support": [
+        2,
+        4,
+        6,
+        8
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 6021,
+          "triple": [
+            4,
+            13,
+            5
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 6034,
+          "triple": [
+            4,
+            14,
+            5
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 12937,
+          "triple": [
+            13,
+            4,
+            14
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 12950,
+          "triple": [
+            13,
+            5,
+            14
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 85,
+      "support": [
+        4,
+        5,
+        13,
+        14
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 6270,
+          "triple": [
+            4,
+            10,
+            8
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 6296,
+          "triple": [
+            4,
+            14,
+            8
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11786,
+          "triple": [
+            10,
+            4,
+            14
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11812,
+          "triple": [
+            10,
+            8,
+            14
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 86,
+      "support": [
+        4,
+        8,
+        10,
+        14
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 8165,
+          "triple": [
+            6,
+            13,
+            7
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8178,
+          "triple": [
+            6,
+            14,
+            7
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 12961,
+          "triple": [
+            13,
+            6,
+            14
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 12974,
+          "triple": [
+            13,
+            7,
+            14
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 87,
+      "support": [
+        6,
+        7,
+        13,
+        14
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 9488,
+          "triple": [
+            7,
+            9,
+            11
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 9517,
+          "triple": [
+            7,
+            13,
+            11
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11060,
+          "triple": [
+            9,
+            7,
+            13
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11089,
+          "triple": [
+            9,
+            11,
+            13
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 88,
+      "support": [
+        7,
+        9,
+        11,
+        13
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 1919,
+          "triple": [
+            1,
+            10,
+            4
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 2467,
+          "triple": [
+            1,
+            4,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 6449,
+          "triple": [
+            4,
+            1,
+            10
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 89,
+      "support": [
+        1,
+        4,
+        10
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 3684,
+          "triple": [
+            2,
+            9,
+            7
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 3849,
+          "triple": [
+            2,
+            7,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 9214,
+          "triple": [
+            7,
+            2,
+            9
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 90,
+      "support": [
+        2,
+        7,
+        9
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 7705,
+          "triple": [
+            5,
+            14,
+            11
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7960,
+          "triple": [
+            5,
+            11,
+            14
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 12350,
+          "triple": [
+            11,
+            5,
+            14
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 91,
+      "support": [
+        5,
+        11,
+        14
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 8270,
+          "triple": [
+            6,
+            13,
+            8
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8788,
+          "triple": [
+            6,
+            8,
+            13
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10327,
+          "triple": [
+            8,
+            6,
+            13
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 92,
+      "support": [
+        6,
+        8,
+        13
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 140,
+          "triple": [
+            0,
+            10,
+            1
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 563,
+          "triple": [
+            0,
+            1,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 2490,
+          "triple": [
+            1,
+            6,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8433,
+          "triple": [
+            6,
+            0,
+            10
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 93,
+      "support": [
+        0,
+        1,
+        6,
+        10
+      ]
+    },
+    {
+      "constant_defect": -80,
+      "entries": [
+        {
+          "ledger_row": 321,
+          "triple": [
+            0,
+            0,
+            4
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 344,
+          "triple": [
+            0,
+            4,
+            4
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 381,
+          "triple": [
+            0,
+            10,
+            4
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 391,
+          "triple": [
+            0,
+            10,
+            4
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 867,
+          "triple": [
+            0,
+            4,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 871,
+          "triple": [
+            0,
+            4,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 6496,
+          "triple": [
+            4,
+            9,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 6505,
+          "triple": [
+            4,
+            9,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10720,
+          "triple": [
+            9,
+            0,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10723,
+          "triple": [
+            9,
+            0,
+            10
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 94,
+      "support": [
+        0,
+        4,
+        9,
+        10
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 3210,
+          "triple": [
+            2,
+            3,
+            3
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 3237,
+          "triple": [
+            2,
+            9,
+            3
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 3820,
+          "triple": [
+            2,
+            5,
+            9
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 4764,
+          "triple": [
+            3,
+            2,
+            5
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 7391,
+          "triple": [
+            5,
+            3,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7426,
+          "triple": [
+            5,
+            9,
+            9
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 95,
+      "support": [
+        2,
+        3,
+        5,
+        9
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 5044,
+          "triple": [
+            3,
+            9,
+            7
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 5291,
+          "triple": [
+            3,
+            7,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 9260,
+          "triple": [
+            7,
+            10,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10762,
+          "triple": [
+            9,
+            3,
+            10
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 96,
+      "support": [
+        3,
+        7,
+        9,
+        10
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 7102,
+          "triple": [
+            5,
+            6,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7129,
+          "triple": [
+            5,
+            12,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7760,
+          "triple": [
+            5,
+            8,
+            12
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 8216,
+          "triple": [
+            6,
+            5,
+            8
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 10215,
+          "triple": [
+            8,
+            6,
+            12
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10250,
+          "triple": [
+            8,
+            12,
+            12
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 97,
+      "support": [
+        5,
+        6,
+        8,
+        12
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 7160,
+          "triple": [
+            5,
+            15,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7655,
+          "triple": [
+            5,
+            6,
+            11
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8982,
+          "triple": [
+            6,
+            11,
+            15
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 12473,
+          "triple": [
+            11,
+            5,
+            15
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 98,
+      "support": [
+        5,
+        6,
+        11,
+        15
+      ]
+    },
+    {
+      "constant_defect": -80,
+      "entries": [
+        {
+          "ledger_row": 7401,
+          "triple": [
+            5,
+            5,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7424,
+          "triple": [
+            5,
+            9,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7461,
+          "triple": [
+            5,
+            15,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7471,
+          "triple": [
+            5,
+            15,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7935,
+          "triple": [
+            5,
+            9,
+            14
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7939,
+          "triple": [
+            5,
+            9,
+            14
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11348,
+          "triple": [
+            9,
+            14,
+            15
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11357,
+          "triple": [
+            9,
+            14,
+            15
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 13164,
+          "triple": [
+            14,
+            5,
+            15
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 13167,
+          "triple": [
+            14,
+            5,
+            15
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 99,
+      "support": [
+        5,
+        9,
+        14,
+        15
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 8508,
+          "triple": [
+            6,
+            12,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8815,
+          "triple": [
+            6,
+            10,
+            13
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11592,
+          "triple": [
+            10,
+            13,
+            12
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 12638,
+          "triple": [
+            12,
+            6,
+            13
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 100,
+      "support": [
+        6,
+        10,
+        12,
+        13
+      ]
+    },
+    {
+      "constant_defect": -240,
+      "entries": [
+        {
+          "ledger_row": 192,
+          "triple": [
+            0,
+            9,
+            2
+          ],
+          "weight": 3
+        },
+        {
+          "ledger_row": 205,
+          "triple": [
+            0,
+            9,
+            2
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 211,
+          "triple": [
+            0,
+            11,
+            2
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 223,
+          "triple": [
+            0,
+            11,
+            2
+          ],
+          "weight": 3
+        },
+        {
+          "ledger_row": 10821,
+          "triple": [
+            9,
+            0,
+            11
+          ],
+          "weight": 5
+        },
+        {
+          "ledger_row": 10835,
+          "triple": [
+            9,
+            2,
+            11
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10841,
+          "triple": [
+            9,
+            2,
+            11
+          ],
+          "weight": 3
+        },
+        {
+          "ledger_row": 10847,
+          "triple": [
+            9,
+            2,
+            11
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 101,
+      "support": [
+        0,
+        2,
+        9,
+        11
+      ]
+    },
+    {
+      "constant_defect": -240,
+      "entries": [
+        {
+          "ledger_row": 816,
+          "triple": [
+            0,
+            6,
+            8
+          ],
+          "weight": 4
+        },
+        {
+          "ledger_row": 819,
+          "triple": [
+            0,
+            6,
+            8
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 852,
+          "triple": [
+            0,
+            14,
+            8
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 863,
+          "triple": [
+            0,
+            14,
+            8
+          ],
+          "weight": 4
+        },
+        {
+          "ledger_row": 8833,
+          "triple": [
+            6,
+            0,
+            14
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8836,
+          "triple": [
+            6,
+            0,
+            14
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 8839,
+          "triple": [
+            6,
+            0,
+            14
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 8869,
+          "triple": [
+            6,
+            8,
+            14
+          ],
+          "weight": 5
+        }
+      ],
+      "source_cut": 102,
+      "support": [
+        0,
+        6,
+        8,
+        14
+      ]
+    },
+    {
+      "constant_defect": -240,
+      "entries": [
+        {
+          "ledger_row": 1792,
+          "triple": [
+            1,
+            8,
+            3
+          ],
+          "weight": 3
+        },
+        {
+          "ledger_row": 1805,
+          "triple": [
+            1,
+            8,
+            3
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 1811,
+          "triple": [
+            1,
+            10,
+            3
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 1823,
+          "triple": [
+            1,
+            10,
+            3
+          ],
+          "weight": 3
+        },
+        {
+          "ledger_row": 10021,
+          "triple": [
+            8,
+            1,
+            10
+          ],
+          "weight": 5
+        },
+        {
+          "ledger_row": 10035,
+          "triple": [
+            8,
+            3,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10041,
+          "triple": [
+            8,
+            3,
+            10
+          ],
+          "weight": 3
+        },
+        {
+          "ledger_row": 10047,
+          "triple": [
+            8,
+            3,
+            10
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 103,
+      "support": [
+        1,
+        3,
+        8,
+        10
+      ]
+    },
+    {
+      "constant_defect": -240,
+      "entries": [
+        {
+          "ledger_row": 2416,
+          "triple": [
+            1,
+            7,
+            9
+          ],
+          "weight": 4
+        },
+        {
+          "ledger_row": 2419,
+          "triple": [
+            1,
+            7,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 2452,
+          "triple": [
+            1,
+            15,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 2463,
+          "triple": [
+            1,
+            15,
+            9
+          ],
+          "weight": 4
+        },
+        {
+          "ledger_row": 9793,
+          "triple": [
+            7,
+            1,
+            15
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 9796,
+          "triple": [
+            7,
+            1,
+            15
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 9799,
+          "triple": [
+            7,
+            1,
+            15
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 9829,
+          "triple": [
+            7,
+            9,
+            15
+          ],
+          "weight": 5
+        }
+      ],
+      "source_cut": 104,
+      "support": [
+        1,
+        7,
+        9,
+        15
+      ]
+    },
+    {
+      "constant_defect": -240,
+      "entries": [
+        {
+          "ledger_row": 3904,
+          "triple": [
+            2,
+            4,
+            10
+          ],
+          "weight": 4
+        },
+        {
+          "ledger_row": 3907,
+          "triple": [
+            2,
+            4,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 3940,
+          "triple": [
+            2,
+            12,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 3951,
+          "triple": [
+            2,
+            12,
+            10
+          ],
+          "weight": 4
+        },
+        {
+          "ledger_row": 6705,
+          "triple": [
+            4,
+            2,
+            12
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 6708,
+          "triple": [
+            4,
+            2,
+            12
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 6711,
+          "triple": [
+            4,
+            2,
+            12
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 6741,
+          "triple": [
+            4,
+            10,
+            12
+          ],
+          "weight": 5
+        }
+      ],
+      "source_cut": 105,
+      "support": [
+        2,
+        4,
+        10,
+        12
+      ]
+    },
+    {
+      "constant_defect": -240,
+      "entries": [
+        {
+          "ledger_row": 5344,
+          "triple": [
+            3,
+            5,
+            11
+          ],
+          "weight": 4
+        },
+        {
+          "ledger_row": 5347,
+          "triple": [
+            3,
+            5,
+            11
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 5380,
+          "triple": [
+            3,
+            13,
+            11
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 5391,
+          "triple": [
+            3,
+            13,
+            11
+          ],
+          "weight": 4
+        },
+        {
+          "ledger_row": 7825,
+          "triple": [
+            5,
+            3,
+            13
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7828,
+          "triple": [
+            5,
+            3,
+            13
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 7831,
+          "triple": [
+            5,
+            3,
+            13
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 7861,
+          "triple": [
+            5,
+            11,
+            13
+          ],
+          "weight": 5
+        }
+      ],
+      "source_cut": 106,
+      "support": [
+        3,
+        5,
+        11,
+        13
+      ]
+    },
+    {
+      "constant_defect": -240,
+      "entries": [
+        {
+          "ledger_row": 6080,
+          "triple": [
+            4,
+            13,
+            6
+          ],
+          "weight": 3
+        },
+        {
+          "ledger_row": 6093,
+          "triple": [
+            4,
+            13,
+            6
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 6099,
+          "triple": [
+            4,
+            15,
+            6
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 6111,
+          "triple": [
+            4,
+            15,
+            6
+          ],
+          "weight": 3
+        },
+        {
+          "ledger_row": 13029,
+          "triple": [
+            13,
+            4,
+            15
+          ],
+          "weight": 5
+        },
+        {
+          "ledger_row": 13043,
+          "triple": [
+            13,
+            6,
+            15
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 13049,
+          "triple": [
+            13,
+            6,
+            15
+          ],
+          "weight": 3
+        },
+        {
+          "ledger_row": 13055,
+          "triple": [
+            13,
+            6,
+            15
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 107,
+      "support": [
+        4,
+        6,
+        13,
+        15
+      ]
+    },
+    {
+      "constant_defect": -240,
+      "entries": [
+        {
+          "ledger_row": 7200,
+          "triple": [
+            5,
+            12,
+            7
+          ],
+          "weight": 3
+        },
+        {
+          "ledger_row": 7213,
+          "triple": [
+            5,
+            12,
+            7
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 7219,
+          "triple": [
+            5,
+            14,
+            7
+          ],
+          "weight": 2
+        },
+        {
+          "ledger_row": 7231,
+          "triple": [
+            5,
+            14,
+            7
+          ],
+          "weight": 3
+        },
+        {
+          "ledger_row": 12709,
+          "triple": [
+            12,
+            5,
+            14
+          ],
+          "weight": 5
+        },
+        {
+          "ledger_row": 12723,
+          "triple": [
+            12,
+            7,
+            14
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 12729,
+          "triple": [
+            12,
+            7,
+            14
+          ],
+          "weight": 3
+        },
+        {
+          "ledger_row": 12735,
+          "triple": [
+            12,
+            7,
+            14
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 108,
+      "support": [
+        5,
+        7,
+        12,
+        14
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 98,
+          "triple": [
+            0,
+            2,
+            1
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 173,
+          "triple": [
+            0,
+            1,
+            2
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 1673,
+          "triple": [
+            1,
+            0,
+            2
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 109,
+      "support": [
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 374,
+          "triple": [
+            0,
+            8,
+            4
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 806,
+          "triple": [
+            0,
+            4,
+            8
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 6211,
+          "triple": [
+            4,
+            0,
+            8
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 110,
+      "support": [
+        0,
+        4,
+        8
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 1710,
+          "triple": [
+            1,
+            3,
+            2
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 1789,
+          "triple": [
+            1,
+            2,
+            3
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 3189,
+          "triple": [
+            2,
+            1,
+            3
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 111,
+      "support": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 5058,
+          "triple": [
+            3,
+            11,
+            7
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 5366,
+          "triple": [
+            3,
+            7,
+            11
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 9455,
+          "triple": [
+            7,
+            3,
+            11
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 112,
+      "support": [
+        3,
+        7,
+        11
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 6286,
+          "triple": [
+            4,
+            12,
+            8
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 6726,
+          "triple": [
+            4,
+            8,
+            12
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10203,
+          "triple": [
+            8,
+            4,
+            12
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 113,
+      "support": [
+        4,
+        8,
+        12
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 9530,
+          "triple": [
+            7,
+            15,
+            11
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 9846,
+          "triple": [
+            7,
+            11,
+            15
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 12487,
+          "triple": [
+            11,
+            7,
+            15
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 114,
+      "support": [
+        7,
+        11,
+        15
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 12690,
+          "triple": [
+            12,
+            14,
+            13
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 12749,
+          "triple": [
+            12,
+            13,
+            14
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 12985,
+          "triple": [
+            13,
+            12,
+            14
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 115,
+      "support": [
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "constant_defect": -32,
+      "entries": [
+        {
+          "ledger_row": 13022,
+          "triple": [
+            13,
+            15,
+            14
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 13085,
+          "triple": [
+            13,
+            14,
+            15
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 13221,
+          "triple": [
+            14,
+            13,
+            15
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 116,
+      "support": [
+        13,
+        14,
+        15
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 2769,
+          "triple": [
+            1,
+            1,
+            13
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 2846,
+          "triple": [
+            1,
+            13,
+            13
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 117,
+      "support": [
+        1,
+        13
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 4317,
+          "triple": [
+            2,
+            2,
+            14
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 4394,
+          "triple": [
+            2,
+            14,
+            14
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 118,
+      "support": [
+        2,
+        14
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 6115,
+          "triple": [
+            4,
+            4,
+            7
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 6155,
+          "triple": [
+            4,
+            7,
+            7
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 119,
+      "support": [
+        4,
+        7
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 10131,
+          "triple": [
+            8,
+            8,
+            11
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 10171,
+          "triple": [
+            8,
+            11,
+            11
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 120,
+      "support": [
+        8,
+        11
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 613,
+          "triple": [
+            0,
+            9,
+            6
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 892,
+          "triple": [
+            0,
+            6,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8289,
+          "triple": [
+            6,
+            0,
+            9
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 121,
+      "support": [
+        0,
+        6,
+        9
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 4818,
+          "triple": [
+            3,
+            10,
+            5
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 5264,
+          "triple": [
+            3,
+            5,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7500,
+          "triple": [
+            5,
+            3,
+            10
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 122,
+      "support": [
+        3,
+        5,
+        10
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 7583,
+          "triple": [
+            5,
+            12,
+            10
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 7789,
+          "triple": [
+            5,
+            10,
+            12
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11546,
+          "triple": [
+            10,
+            5,
+            12
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 123,
+      "support": [
+        5,
+        10,
+        12
+      ]
+    },
+    {
+      "constant_defect": -64,
+      "entries": [
+        {
+          "ledger_row": 8428,
+          "triple": [
+            6,
+            15,
+            9
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 8959,
+          "triple": [
+            6,
+            9,
+            15
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 11301,
+          "triple": [
+            9,
+            6,
+            15
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 124,
+      "support": [
+        6,
+        9,
+        15
+      ]
+    },
+    {
+      "constant_defect": -128,
+      "entries": [
+        {
+          "ledger_row": 1456,
+          "triple": [
+            0,
+            0,
+            15
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 1595,
+          "triple": [
+            0,
+            15,
+            15
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 125,
+      "support": [
+        0,
+        15
+      ]
+    },
+    {
+      "constant_defect": -128,
+      "entries": [
+        {
+          "ledger_row": 5437,
+          "triple": [
+            3,
+            3,
+            12
+          ],
+          "weight": 1
+        },
+        {
+          "ledger_row": 5520,
+          "triple": [
+            3,
+            12,
+            12
+          ],
+          "weight": 1
+        }
+      ],
+      "source_cut": 126,
+      "support": [
+        3,
+        12
+      ]
+    }
+  ],
+  "checkpoint_cuts": 126,
+  "distinct_cuts": 126,
+  "failures": [],
+  "ledger_rows": 13312,
+  "processed_cuts": 126,
+  "q": 4,
+  "schema": "affine-quadratic-cegar-farkas-v2",
+  "scope": "q=4 full-cell ansatz 16 F=h+p.u+2||u||^2, target 5",
+  "target": 5,
+  "vertex_order": [
+    [
+      0,
+      0
+    ],
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      0,
+      3
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      1
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      1,
+      3
+    ],
+    [
+      2,
+      0
+    ],
+    [
+      2,
+      1
+    ],
+    [
+      2,
+      2
+    ],
+    [
+      2,
+      3
+    ],
+    [
+      3,
+      0
+    ],
+    [
+      3,
+      1
+    ],
+    [
+      3,
+      2
+    ],
+    [
+      3,
+      3
+    ]
+  ]
+}
