@@ -5,7 +5,7 @@
 > [Frontier Board](../README.md#chronos-frontier-board). Do not edit by hand —
 > regenerate with `make state-of-frontier`; `make check-views` fails if this file
 > is stale. Deterministic: no generation timestamp — every date below comes from
-> the data. **Data through 2026-07-27** (latest provenance/evidence date).
+> the data. **Data through 2026-08-18** (latest provenance/evidence date).
 
 The gap map is the versioned `[L, U]` ledger over bounded quantities of open
 problems (charter Tenet 2: the bracket is the unit of progress). This report is

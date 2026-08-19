@@ -1878,6 +1878,9 @@ superblocks. It adds one new attack surface: weighted coercivity capacity.
 - Elsholtz, Hunter, Proske, Sauermann,
   [*Improving Behrend's construction*](https://arxiv.org/html/2406.12290),
   especially Proposition 2.2 and the note on Naslund at lines 77--78.
+- Raghavan,
+  [*Improved Bounds for 3-Progressions*](https://arxiv.org/abs/2603.27045),
+  the 2026 upper-bound record; this lane does not improve it.
 - Naslund,
   [*Lower Bounds for the Shannon Capacity of Hypergraphs*](https://drive.google.com/file/d/1pW4FreiLm6DV9CHg3FBpGCtfjRr7ZYdp/view?usp=drive_link),
   OeMG 2023 slides.

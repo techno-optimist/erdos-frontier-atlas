@@ -1209,7 +1209,7 @@
    "witness_feasibility": "plausible",
    "exact_feasibility": "cell",
    "status": "open",
-   "notes": "Run structure (a(209..211)=43,43,43; recent runs of length 3-10) suggests a(212)=43, so the likely record is the closure certificate, not a size-44 set. The named $10000 problem (asymptotic formula for r_k(N)) is a wall: best upper bounds Kelley-Meka 2023 (k=3), Green-Tao 2017 (k=4), Leng-Sah-Sawhney 2024 (k>=5), per erdosproblems.com/142 (page dated 2026-04-04). Companion next cells: A003003(143) [r_4, table to 142], A003004(116) [r_5, to 115], A003005(148) [r_6, to 147], all Cariboni 2018 with witness sets published on OEIS.",
+   "notes": "Runs ending a(209..211)=43 suggest a(212)=43, so the likely record is a closure certificate. The $10000 asymptotic problem remains a wall. For k=3, EHPS give r_3(N) ≥ N·2^{-(2√log_2(24/7)+o(1))√log_2 N} (arXiv:2406.12290), while Raghavan gives r_3(N) ≤ N exp(-Ω((log N / log log N)^{1/6})) (arXiv:2603.27045, Theorem 1.4). The erdosproblems.com/142 page is stale and still names Kelley–Meka.",
    "provenance": {
     "added_by": "gap-map miner chunk 141-170",
     "date": "2026-07-18",
@@ -1218,14 +1218,16 @@
      "OEIS A003003 (b-file to 142, a(142)=58)",
      "OEIS A003004",
      "OEIS A003005",
-     "erdosproblems.com/142 (paraphrased, accessed 2026-07-18)"
+     "EHPS, arXiv:2406.12290, Theorem 1.1 (verified 2026-08-18)",
+     "Raghavan, arXiv:2603.27045v3, Theorem 1.4 (verified 2026-08-18)",
+     "erdosproblems.com/142 (accessed 2026-08-18; stale, still names Kelley–Meka)"
     ]
    },
    "evidence": [
     {
      "type": "literature",
-     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
-     "date": "2026-07-18"
+     "artifact": "Primary-source check: https://arxiv.org/abs/2406.12290 and https://arxiv.org/abs/2603.27045",
+     "date": "2026-08-18"
     }
    ],
    "confidence": "C3"

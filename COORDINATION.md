@@ -55,6 +55,15 @@ vertex-Farkas) VERIFIED ⇒ any working potential must be genuinely quadratic. N
 `r_3(N)` bound; #142 headline is an asymptotic WALL. All this is packaged, frozen,
 and replayable in `certificates/erdos-142/` (`python3 verify.py`).
 
+Literature record checked 2026-08-18: the integer lower bound is EHPS,
+`r_3(N) >= N 2^{-(2 sqrt(log_2(24/7))+o(1)) sqrt(log_2 N)}`
+([arXiv:2406.12290](https://arxiv.org/abs/2406.12290)); the current posted upper
+bound is Raghavan,
+`r_3(N) <= N exp(-Omega((log N / log log N)^(1/6)))`
+([arXiv:2603.27045](https://arxiv.org/abs/2603.27045)). The
+erdosproblems.com/142 page is stale and still names Kelley–Meka; use these
+primary sources for the 2026 record.
+
 **The incident (why rule 3 exists):** the stronger "additive-local no-go" proof
 objects were UNTRACKED working-tree files; a later run overwrote them and they are
 gone from both working copies — a result that was replayed-clean 2026-07-13 is now unbacked.
