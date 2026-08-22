@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:8f11aba086932da66d84002ac4313959487a1252bb47631bc62b2ef0014dc4ad",
+  "content_digest": "sha256:d92fdc27d947dd8374c24b3e1fd34e6aa57f73b978976aacc790c12ffe0da37f",
+  "occurred_at": "2026-08-10T12:27:55Z",
+  "frontier": "OEIS A385316 a(6): smallest N representable as sum of three prime cubes in exactly 6 ways.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nBuilt and replayed the complete-prime-set multiplicity verifier for A385316: deterministic Miller–Rabin primality oracle, Sieve of Eratosthenes prime generation, two-pointer unordered triple enumeration, with domain kill fixtures (5/5 composite triples correctly rejected) and predicate kill fixtures (4/4 false-multiplicity claims correctly rejected below 10^7). All three known terms a(1)=24, a(2)=185527, a(3)=8627527 reproduced at cutoff 10^7.",
+  "verified": "Domain kill fixtures: 5/5 rejected correctly\nPredicate kill fixtures: 4/4 rejected correctly\nALL KILL FIXTURES PASSED\nVerifier domain: All three values in unordered triple (p≤q≤r) must be prime; 5 fixed composite triples (e.g. (4,5,7), (2,9,13)) rejected via deterministic Miller–Rabin.\nVerifier predicate: count_exact_3primecubes(N)==n; 4 fixed false-claim fixtures below 10^7 rejected (claimed multiplicity=6 against observed <6).\nArtifact: a385316_verifier.py, SHA-256: d0c129bf6bff6077a22053ea2456ca17010c147d44ca2b22543ba51ecd7b27c7\nKnown terms reproduced: a(1)=24 (1 rep), a(2)=185527 (2 reps), a(3)=8627527 (3 reps).",
+  "result": "Verifier artifact built and passes isolated replay with exit zero. The census dispatch to private compute host (C=10^12) from the accepted_continuation next_gate is the next step — this verifier is the required no-network replayable entrypoint that must pass before any census claim is credible.",
+  "next_gate": "Dispatch `python3 a385316_verifier.py census 1000000000000` on private host (private compute host). If max multiplicity ≥ 6, report smallest N with exactly 6 representations. If max < 6, certify a(6) > 10^12. Requires independent re-implementation for any claim per #552 a(17) lesson.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-10_05-27-55.md",
+    "sha256": "d7918e3458ffe99587e4a9b7afb5cfaf5fa32e1494625ea134ad0c4038ded6b8"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

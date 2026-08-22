@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:9198b2b644bd5ed7f41dc1a99ec41747221854f3b786359c595a31d46d6c8a3f",
+  "content_digest": "sha256:27cf31dbf8996689276d78d9d667bf255d18847e4a955eee9c313591ba2e6fc2",
+  "occurred_at": "2026-08-04T22:50:58Z",
+  "frontier": "What is OEIS A385316 a(6) — the smallest integer expressible as p³+q³+r³ (unordered prime triples) in exactly 6 representations? Lower bound currently known > 4.99×10¹¹, but unproven from this lane.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nReplayed verifier_a385316.py from prior session res_20260804_110522, confirmed all kill fixtures pass and all four known terms a(1)..a(4) reproduce exactly. Independently reconfirmed census at C=10⁹ shows max_mult=4 (one value at multiplicity 4, zero at ≥6). Filled experiment.json hypothesis. The private compute host farm-lane census at C=10¹² requires operator SSH approval and remains blocked.",
+  "verified": "Artifact: verifier_a385316.py, SHA-256: 297d117b509c87316d85ec5a03e7f2ad77b661cf3a12623ffb50d04129c0093d\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nKnown terms: a(1)=24 (rep=1) OK, a(2)=185527 (rep=2) OK, a(3)=8627527 (rep=3) OK, a(4)=999979163 (rep=4) OK\nCensus C=10⁹: max_mult=4, one value at multiplicity 4, none at multiplicity ≥6\nPrior session accepted continuation (sha256:ae30d7f80914e4f659fd8b9c6027bb66e240f4af18437dddeaca9b1d51f81025) is consistent with this replay.",
+  "result": "Negative result: scout lane has no private compute host SSH path. Verifier replay confirms all fixtures and known terms are clean, and census at C=10⁹ still shows max_mult=4. The next primitive (census at C=10¹²) requires private compute host operator SSH approval — same blocker as the accepted continuation. No route delta.",
+  "next_gate": "Operator to grant private compute host SSH access to the scout lane, then run census_a385316.py --cutoff 1000000000000 on private compute host. Promotion condition: find multiplicity ≥ 6 (certify a(6)=N) or certify a(6) > 10¹².",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. One verifier artifact copied and replayed. One experiment.json filled. Census bounded to C=10⁹ (run locally); C=10¹² deferred to private compute host.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-04_15-50-58.md",
+    "sha256": "ac6cbfe534212a3b5ec2536085eebe3c6e032cd6d348926d0804179b43f7cae2"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

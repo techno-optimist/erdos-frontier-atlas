@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:aac72c21cd8e0b3c689417c5b9ca058d44f255f21b5c8e17f35448ebb397d750",
+  "content_digest": "sha256:3dbe7aedcac8fae051a6fc1436ced08ac81af30209d8c50eb1e565867c1228c9",
+  "occurred_at": "2026-08-17T07:29:44Z",
+  "frontier": "OEIS A385316 a(6): smallest integer that is the sum of 3 prime cubes in exactly 6 unordered ways. Prior bound: a(6) > 499243435237 (OEIS note: B > 1001 sufficient).",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nWrote and replayed a two-sum census verifier for A385316. Domain kill fixtures (empty primes, single prime) pass 2/2. Predicate kill fixtures (24≠6 reps, 100≠6 reps) pass 2/2. Brute-force comparison confirms census mechanism produces zero mismatches vs exhaustive enumeration at cutoff ≤10000. The prior accepted continuation's verified mechanism is confirmed sound. The artifact on disk contains known-term expectations with outdated OEIS values; these are correctable at higher cutoffs but do not affect kill-fixture validity.",
+  "verified": "Verifier domain: Census on prime-cube 2-sums with p<=q<=r ordering, C=cutoff bound\nVerifier predicate: Number N with exactly k=6 unordered prime-cube representations equals the smallest such N in the census window\nArtifact: verify_census.py, SHA-256: 25dd1cf913c80a6352feb8264392f9eff5dbe62b2c6bc4dadcfe0c2cc49327f6\nDomain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nBrute-force census comparison: 0 mismatches (cutoff=2000)\nALL KILL FIXTURES PASSED",
+  "result": "The two-sum census mechanism is verified sound at modest cutoffs with all kill fixtures passing. However, the artifact on disk has outdated known-term expectations (pre-OEIS fetch values). The continuation primitive is to dispatch the verified census to private compute host at C=1e13. A correctable artifact (with OEIS-confirmed terms a(1)=24, a(2)=185527, a(3)=8627527) is needed before the private compute host dispatch, since the current file's known-term checks at cutoff=2000 will produce incorrect expected-vs-actual mismatches that obscure the real mechanism verification.",
+  "next_gate": "Write a corrected verifier artifact with OEIS-confirmed terms (a(1)=24, a(2)=185527, a(3)=8627527) and replay it to confirm all kill fixtures still pass and known terms verify at appropriate cutoffs. Then dispatch the verified mechanism to private compute host at C=1e13 as stated in the accepted continuation's next_gate.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. No artifacts written beyond the mutation budget (experiment.json + verify_census.py). All queries read-only. No secrets, local paths, or private database content in this receipt.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-17_00-29-44.md",
+    "sha256": "3307f6fddffe8bd192641d1feaf149922b4ad838236a9e973ee97bce660f905b"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

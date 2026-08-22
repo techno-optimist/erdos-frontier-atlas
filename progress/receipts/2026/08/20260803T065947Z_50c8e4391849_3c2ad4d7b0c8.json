@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:3c2ad4d7b0c8d7ee3b34f3eb7ee2388352fb7d3755e8575acad12f00437f9522",
+  "content_digest": "sha256:56be1f5df3fb78f3a8232951a26feb53ecb06ff7921c5ca5e283646b249811c1",
+  "occurred_at": "2026-08-03T06:59:47Z",
+  "frontier": "A385316: smallest N = sum of 3 prime cubes in exactly 6 ways (a(6)); current state: a(6) > 10^6 from local census at C=10^6, census at C=10^12 stalled awaiting private compute host connectivity.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nRepaired the standalone verifier artifact to pass the operator-owned runtime quarantine: rebuilt verifier_a385316.py as a no-argument replay entrypoint, executed domain kill fixture (composite input rejected), predicate kill fixture (N=24 claimed mult 2 vs actual 1), and verified all 5 known OEIS anchor terms a(1)..a(5) reproduce with exact multiplicity.",
+  "verified": "Verifier domain: triples (p,q,r) of primes with p <= q <= r, repetition allowed.\nVerifier predicate: count unordered triples with p^3+q^3+r^3 == N and verify count equals n.\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 1/1 rejected correctly\nArtifact: verifier_a385316.py, SHA-256: edaf0ffb5802f932b8cb0a90e5c571ab21c0d02d67c295ebb66a1bf0a6471b60\nExit code: 0. All 5 OEIS terms a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419 reproduced with exact claimed multiplicities.",
+  "result": "Verifier is sound and publication-ready: all kill fixtures reject with stated reasons, all 5 OEIS anchors confirmed, replay exits zero with required summary lines. The private compute host-dispatched census at C=10^12 remains blocked by SSH connectivity — this is the same operational blocker from the prior accepted continuation. No mathematical progress beyond a(6)>10^6 (already established).",
+  "next_gate": "If private compute host SSH remains unreachable past 2026-08-06, escalate to operator for connectivity. When connectivity returns, dispatch: `ssh private compute host 'python3 ~/cultural-soliton-observatory/research_sessions/res_20260803_055245_erdos-979-prime-cubes-a385316/verifier_a385316.py --cutoff 1000000000000 --census'` and record whether max multiplicity exceeds 5.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-02_23-59-47.md",
+    "sha256": "19887c9c61e9dc3480fa89d4169d9b6c2e04399336d92d15e0773264299e986b"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

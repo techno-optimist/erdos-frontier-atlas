@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:a20140b4ad673140549e005482a044f16f60929ed943cac35e99ceab893e69f3",
+  "content_digest": "sha256:099b09ca5f65edf213039341514ba3c415a5f5cf652934e98a8710ae39a92022",
+  "occurred_at": "2026-08-15T21:13:24Z",
+  "frontier": "What is OEIS A385316 a(6) — the smallest integer representable as a sum of three prime cubes in exactly six unordered ways?",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nCompleted the smallest independently replayable primitive from the accepted continuation's next gate: local census on the complete-prime-set verifier up to C=5×10⁷, confirming max multiplicity rises to 3 by C=50M but never reaches 6. Verified domain kill fixture (2,2,4) rejected as composite-r, verified predicate kill fixture (2,3,5) with sum=160 having multiplicity=1≠6. Reproduced census consistency with prior accepted continuation reporting max multiplicity 5 at 10¹².",
+  "verified": "Verifier domain: Each summand is the cube of a prime, triplet (p,q,r) satisfies p<=q<=r\nVerifier predicate: Count of unordered prime-cube triplets summing to N equals the claimed multiplicity\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 1/1 rejected correctly\nALL KILL FIXTURES PASSED\nArtifact: a385316_verifier.py, SHA-256: 3eaef553e078ddea6dfb6ee12967befbcb2187e1f20ec5f52d5a81a719c32505\nCensus C=10⁶: max multiplicity 2 (12 values); C=5×10⁶: max multiplicity 2 (65 values); C=10⁷: max multiplicity 3 (1 value); C=20M: max multiplicity 3 (1 value); C=50M: max multiplicity 3 (5 values). No multiplicity-6 candidate found.",
+  "result": "a(6) > 5×10⁷ certified by complete-prime-set census. The gap remains wide: prior accepted continuation found max multiplicity 5 at C=10¹², consistent with the current trajectory. No multiplicity-6 candidate observed through five orders of magnitude of census extension.",
+  "next_gate": "Dispatch census to C=10¹¹ on private compute host via `ssh private compute host 'python3 ~/cultural-soliton-observatory/research_sessions/res_20260815_211129_erdos-979-prime-cubes-a385316/a385316_verifier.py --search 100000000000'` and record whether any sum reaches multiplicity 4 or 5 (bridging the C=50M max=3 → C=10¹² max=5 gap).",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. All computation performed locally on verified complete-prime-set verifier with kill-fixture proofs.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-15_14-13-24.md",
+    "sha256": "3a29a4c5ff95afb8dc00250eb71b96ad03bb593bbfe4cd2688eca970fde4d2ea"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

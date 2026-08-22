@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:aeaee923c307a1d5ca53ae13f7fcce765d71f3c841f8477a36df27572932bebe",
+  "content_digest": "sha256:9c436d481b18c8ca12ddde8eccb8a287859d9129b41b702b70494d7446bb0af8",
+  "occurred_at": "2026-08-13T09:02:37Z",
+  "frontier": "Smallest N expressible as a sum of three prime cubes (p³+q³+r³, p≤q≤r primes) in exactly 6 ways — OEIS A385316 a(6). No candidate exists below C=200,000; max multiplicity in that range is 2. The a(6) lower bound sits at ~4.99×10¹¹ pending a private compute host census at C=2×10¹².",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nConstructed and replayed a385316_verifier.py — a no-argument, no-network, deterministic Python entrypoint that verifies (1) domain membership by rejecting out-of-domain numbers with zero prime-cube decompositions, and (2) the target predicate by rejecting incorrect multiplicity claims. Census at C=200,000 reproduces a(1)=24 and a(2)=185527 with exact representations matching the accepted continuation (13³+43³+47³ and 19³+31³+53³).",
+  "verified": "Domain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nArtifact: a385316_verifier.py, SHA-256: a93eb05895a07e3728e99da6ea7a26d2a58f2ef0e1fe2b56f607f66d9e55df7c\nVerifier domain: N must be expressible as p³+q³+r³ for primes p≤q≤r; fixtures N=23, N=25, N=30 each have zero prime-cube decompositions and are correctly rejected (N=23: 8+8+8=24>23; N=25: 8+8+8=24<25<43; N=30: only 8 available, 8+8+8=24, 8+8+27=43)\nVerifier predicate: multiplicity(N)==k asserts exactly k unordered (p,q,r) prime-cube triples sum to N; fixtures (N=24, claimed k=2) and (N=24, claimed k=0) both mismatch truth k=1 (2³+2³+2³ only)\nCensus at C=200000: a(1)=24 (717 numbers with multiplicity 1), a(2)=185527 (1 number: 2 representations confirmed: 13³+43³+47³=185527, 19³+31³+53³=185527). Max multiplicity below 200000 is 2. Zero multiplicity-6 candidates below 200000. Replay exits 0 deterministically with ALL KILL FIXTURES PASSED.",
+  "result": "Verifier construction milestone completed and independently replayed. All kill fixtures pass. Census confirms prior results: max multiplicity below 200,000 is 2. No multiplicity-6 candidate exists below 200,000. The next discriminating step (private compute host census at C=2×10¹²) remains deferred — it requires remote dispatch and cannot be executed locally from this Mac. The verifier artifact is production-ready for the private compute host census verification step.",
+  "next_gate": "Dispatch census at C=2×10¹² to private compute host (private host), then cross-verify any multiplicity-5 or multiplicity-6 candidates found in the 4.99×10¹¹–2×10¹² window using a385316_verifier.py. If no candidates appear, promote the certificate a(6)>2×10¹² pending independent reproduction.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Only local file writes: experiment.json (filled once), a385316_verifier.py (evidence artifact). No mutations to next_gate.md or frontier_queue.json.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-13_02-02-37.md",
+    "sha256": "3202845692641fdb664d541a5f56576d6a29aa40d06348d868eb60c7bde84e2e"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

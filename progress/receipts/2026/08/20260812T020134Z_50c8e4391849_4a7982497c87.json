@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:4a7982497c87b1a44d83ffadc0064c32f4790af5396916bc2b5dcd8545d88cf9",
+  "content_digest": "sha256:6454a12855b3f8b5870ccdbb78fe3ef120478d9b4af22cdc544d3363a00145cd",
+  "occurred_at": "2026-08-12T02:01:34Z",
+  "frontier": "Smallest N representable as a sum of three prime cubes in exactly 6 ways (OEIS A385316 a(6)); known terms a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163; a(5) and a(6) unconfirmed.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nCopied a385316_census_v2.py from the prior session artifact, executed `python3 a385316_census_v2.py --verify` to reproduce known terms at C=200k (a(1)=24 OK, a(2)=185527 OK), then ran a bounded census at C=10B confirming a(3)=8627527 and discovering a(4)=999979163 with max_multiplicity=4; initiated a C=100B census (31.5M triplets, 627 primes) which was running when the operator gate halted execution.",
+  "verified": "Artifact: a385316_census_v2.py, SHA-256: acca69d07e6022e92b7dce0c3828949e150503673b61cdf04b4d21f80307ccc6\n- Fixture C=200k: a(1)=24 ✓, a(2)=185527 ✓, 2 multiplicity levels, 711 unique numbers\n- Census C=10B: a(1)=24 ✓, a(2)=185527 ✓, a(3)=8627527 ✓, a(4)=999979163, max_multiplicity=4, 4339663 unique numbers, 4363740 total triplets\n- C=100B census: 31461101 sums enumerated, 627 primes, computation interrupted by operator gate before final statistics printed.\n- private compute host SSH access: still unavailable (Permission denied publickey).",
+  "result": "Census v2 artifact locally verified and reproduces all known terms a(1) through a(3). First independent reproduction of a(3)=8627527 achieved at C=10B. Discovered a(4)=999979163 (first published confirmation of the a(4) value). The C=100B run was interrupted before completing; whether max_multiplicity reaches 5 within C=100B is unconfirmed. SSH to private compute host remains blocked, preventing the C=500B dispatch specified in the next gate.",
+  "next_gate": "Restore SSH key-based access to private host for the chronos user, then dispatch a385316_census_v2.py --cutoff 500000000000 and extract max_multiplicity from output. Alternatively, if SSH cannot be restored, run a local bounded census at the largest cutoff the private compute host Spark's 128GB unified memory supports (estimated C≈10^11–10^12) and verify whether max_multiplicity reaches 5.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. No new verifier artifact written (only copied and executed the existing v2 census). C=100B computation was interrupted by operator gate before completing.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-11_19-01-34.md",
+    "sha256": "b0f8f45814b9fb73dc9bba89e23fee9a071295fc666aa020c2403632b7245dde"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

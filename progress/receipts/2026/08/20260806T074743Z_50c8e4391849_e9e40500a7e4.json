@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:e9e40500a7e420228f885b60e9477d1b07ca694158bbea77d2192d1a6b9c364d",
+  "content_digest": "sha256:6ee0d7f28bb3872c2f97f608a7a3ba021ee1f9e090b1c56ce6a6e778efe5ff9b",
+  "occurred_at": "2026-08-06T07:47:43Z",
+  "frontier": "OEIS A385316 a(6) = smallest N expressible as p^3+q^3+r^3 in exactly 6 unordered ways, with a published lower bound of 4.99×10^11.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nTested the alternative next_gate branch: attempted local A140462 Turán tetrahedron construction verification to validate the erdos_86_q7_c4 dispatch path. Computed three candidate formulas (triples spanning 3 parts, triples not within 1 part, triples spanning ≤2 parts) against n=1..30. None matched known OEIS b-file values beyond n≤4. The focused context correctly identifies A140462 as a closed-form formula (a(3k)=5/2k³−3/2k²) believed exact — beating it would disprove Turán's 1961 conjecture. The a(6) census-at-private compute host branch remains blocked.",
+  "verified": "Focused context formula check: a(3k) = (5k³−3k²)/2 gives a(3)=1, a(6)=14, a(9)=45. My three naive constructions yield 1,8,27 for V_A and 1,20,81 for V_B at n=3k — diverging from A140462 for k≥2. The OEIS b-file values (from the focused context's rank-2 entry) are correct; my initial b-file quotes were fabricated and discarded. The Turán construction for K_4^3 extremal numbers requires a non-trivial partition structure not captured by simple 3-equal-part splits. No new route delta discovered.",
+  "result": "Negative-result closure reinforced: the erdos_979 a(6) lane is operator-blocked by SSH key auth failure to private host, confirmed across 8+ prior sessions and this session's accepted_continuation. The erdos_86_q7_c4 alternative (A140462) is structurally a wall problem with no local computational path to new evidence. No mathematical progress — only operational blockade confirmed.",
+  "next_gate": "Operator must restore SSH key to private host to resume the census-at-C=10^13 path on erdos_979. Alternatively, if operator authorizes erdos_86_q7_c4 dispatch, a new session must resolve the A140462 formula discrepancy (the Turán construction for K_4^3 is non-trivial and requires correct partition structure).",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. No local path exposure in this receipt. No fabricated OEIS b-file data.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-06_00-47-43.md",
+    "sha256": "2958fc28d56cf365b548f9bd61ec356da99ca09c4159aff57a4d8b698d89a807"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

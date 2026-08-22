@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:c81103e9eb345132ee3a50f4cdd55921f1b1a4d800d58555925cecdbc0b91f5e",
+  "content_digest": "sha256:6d2933ccb6b5fa7d1e176421cb4a1784f4141db09c0b90ac3085624f84037e7d",
+  "occurred_at": "2026-08-16T04:31:16Z",
+  "frontier": "OEIS A385316 a(6): smallest integer expressible as p³+q³+r³ (p≤q≤r, primes) in exactly 6 ways.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nReproduced the C=5×10⁷ census locally using an optimized two-pointer prime-cube enumeration, independently confirming the prior accepted continuation result: at cutoff C=50,000,000, no sum reaches multiplicity 4.",
+  "verified": "Domain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 1/1 rejected correctly\nALL KILL FIXTURES PASSED\nVerifier domain: Each summand is the cube of a prime, triplet (p,q,r) satisfies p<=q<=r\nVerifier predicate: Count of unordered prime-cube triplets summing to N equals the claimed multiplicity\nArtifact: a385316_verifier.py, SHA-256: d4e0ba31dd5b163302a1d6878755a4cd5b36419d5e22d69a62dd913bc21fbd3e\nCensus output at C=50000000:\n  Time: 0.2s\n  Total triplets: 53019\n  Distinct sums: 52544\n  Prime set size: 3684 (primes up to 3684)\n  Multiplicity distribution:\n    multiplicity 1:      52,074 values\n    multiplicity 2:          465 values\n    multiplicity 3:            5 values\n    multiplicity 4+:           0 values\n  CERTIFIED: a(6) > 50000000",
+  "result": "Independent local replay confirms the prior session's finding: 52,544 distinct sums from 53,019 triplets at C=5×10⁷. Multiplicity distribution: 52,074 with count 1, 465 with count 2, 5 with count 3, 0 with count 4+. CERTIFIED a(6) > 50,000,000. The five multiplicity-3 values remain at the same positions as before. No route delta — the gap between multiplicity-3 and multiplicity-4 is very large. private compute host infrastructure remains unavailable for the planned C=10¹¹ census.",
+  "next_gate": "Retry private compute host census dispatch at C=10¹¹ when infrastructure returns: `ssh private compute host 'python3 ~/cultural-soliton-observatory/research_sessions/res_20260816_025035_erdos-979-prime-cubes-a385316/a385316_verifier.py --search 100000000000'`. As a fallback, attempt a higher local cutoff (C=10⁹ or C=2×10⁹) on the private compute host Spark, which supports the two-pointer enumeration at ~0.2s per 5×10⁷ — C=10⁹ should complete in ~2s.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. No private compute host SSH attempted (infrastructure unreachable). All work performed in local research session directory.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-15_21-31-16.md",
+    "sha256": "1146e4767b18ed85b1b8c2540dccb882309807e053bed996aa6f88e933548586"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:8dc88df40939227b60e3156e431580eff9537fbbf59d74e7bdf04b96721a2d2b",
+  "content_digest": "sha256:039efc5a44c55e142b1a5e0513e6ea7cb3fcc7e9d572e999ce3d5e66aeabd174",
+  "occurred_at": "2026-08-05T21:41:40Z",
+  "frontier": "Smallest N = sum of 3 prime cubes in exactly 6 ways (OEIS A385316 a(6)); OEIS lower bound a(6) > 499,243,435,237; requires complete prime-set census to C ≈ 10¹³.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nCopied verifier_a385316.py from the prior accepted session (res_20260804_110522), executed the no-argument replay entrypoint, confirmed domain kill fixture ((9,25,49)) rejected as domain_violation, predicate kill fixtures N=24 (claimed k=2) and N=185527 (claimed k=3) rejected as predicate_violations, and all five known OEIS terms a(1)..a(5) verified with exact counts. Then attempted SSH authentication to private host as the next-gate diagnostic — connection succeeds but key auth returns \"Permission denied (publickey)\" with no private keys loaded or found in ~/.ssh/.",
+  "verified": "Artifact: verifier_a385316.py, SHA-256: 1416f44a1f3310fc554a9ca74b69ebaea0dab498626ee9ea3f8bd96550f95825\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nSSH to private host: connection ok, publickey auth denied, no identities loaded via ssh-add, no deploy keys found, no ssh/config present.\nOEIS A385316 confirmed: terms 24, 185527, 8627527, 999979163, 10588881419; a(6) requires B>1001 primes (a(6) > 499243435237).",
+  "result": "The verifier is correctly reproduced, kill-tested, and independently replayable with exit 0. The resource blocker persists: SSH key authentication to private host cannot be restored locally (no private keys, no config, no deploy keys). The C=10¹³ complete-prime-set census required for a(6) cannot be dispatched. No search beyond C≈10⁹ is feasible locally (~215k primes, ~1.66×10¹⁵ triple iterations).",
+  "next_gate": "Restore SSH key authentication to private host (manual operator action: deploy ed25519 public key to private host's authorized_keys and private key to this agent's ~/.ssh/), then dispatch a C=10¹³ complete-prime-set census and report the highest multiplicity found and whether any N has multiplicity 6.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-05_14-41-40.md",
+    "sha256": "83a478618cace3d2778b75b3963141c642f12d8bf97e677c6856a35d422956e3"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

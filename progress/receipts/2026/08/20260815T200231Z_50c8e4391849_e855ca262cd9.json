@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:e855ca262cd97d48751015946f1ceed9a034e398cca6998b10e8a7d6fb0f4f6b",
+  "content_digest": "sha256:f9e049c0408bcf0e85fa6e0ba58dffdda76eb916787a60166c603d741bcd05be",
+  "occurred_at": "2026-08-15T20:02:31Z",
+  "frontier": "Erdos #979: smallest N that is a sum of three prime cubes in exactly 6 representations (OEIS A385316 a(6)).",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nBuilt a385316_verifier.py as a deterministic no-argument, no-network Python entrypoint that censuses all sums of three prime cubes up to cutoff C using complete prime set (all p with p³≤C), validates domain well-formedness (representable as p³+q³+r³) and the exact-n target predicate (exactly n unordered triples), replays domain and predicate kill fixtures with correct rejection branches, and reproduces known census terms a(1)=24 and a(2)=185527. Census to C=500,000 finds max multiplicity 2, consistent with prior census at 10¹² reporting max multiplicity 5. The gap to multiplicity 6 is wide.",
+  "verified": "Domain kill fixture: 792 = 4³+6³+8³ (composites) correctly rejected — not representable as p³+q³+r³ for primes p,q,r.\nPredicate kill fixture: 24 = 2³+2³+2³ correctly rejected for target=6 — valid prime-cube sum with multiplicity 1 ≠ 6.\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 1/1 rejected correctly\nVerifier domain: PASS — composite-sum 792 not representable as 3 prime cubes (demonstrated by exhaustive check up to p³≤792)\nVerifier predicate: PASS — prime-cube sum 24 has multiplicity 1, not 6 (correct rejection branch for target=6)\nKnown terms: a(1)=24 ✓, a(2)=185527 ✓\nArtifact: a385316_verifier.py, SHA-256: 0d63acec0a2227f5fdd2fb60c1a17f22181bc9a38f55fb700c535559355ae1f1",
+  "result": "Verifier constructed and passes isolated no-network replay with complete domain and predicate kill fixtures and proper summary lines. Census to C=500,000 confirms max multiplicity 2, consistent with prior accepted continuation reporting max multiplicity 5 at 10¹². The gap to multiplicity 6 is wide — a(6) > 10¹² likely.",
+  "next_gate": "Dispatch census to C=5×10¹² on private compute host via: `ssh private compute host 'python3 ~/cultural-soliton-observatory/research_sessions/res_20260815_195932_erdos-979-prime-cubes-a385316/a385316_verifier.py --cutoff 5000000000000'`; record max multiplicity and whether any sum reaches multiplicity 6.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Mutation gate exhausted after experiment.json fill and single verifier artifact write.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-15_13-02-31.md",
+    "sha256": "984cbd19b6fc451180fc3c211fd190053ab7054ab6782edb9f2138107a986791"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

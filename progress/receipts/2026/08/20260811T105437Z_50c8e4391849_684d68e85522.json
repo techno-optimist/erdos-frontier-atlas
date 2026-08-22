@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:684d68e8552239737b83e0d2f7a2cc7525112508c743160baa11ce979bbc06ff",
+  "content_digest": "sha256:0c9e5d4f7b217570e29b3940e3a36586d7c7e73ff5f29fbd7c146da21cfea2e8",
+  "occurred_at": "2026-08-11T10:54:37Z",
+  "frontier": "Smallest N that is a sum of three prime cubes in exactly 6 unordered ways (OEIS A385316 a(6)); current lower bound a(6) > 5×10¹¹ from C=5×10¹¹ census finding no mult=6.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nExecute the C=10¹² census primitive per accepted continuation next_gate: bounded exact search enumerating all unordered prime-cube triples (p≤q≤r) with p³+q³+r³≤10¹² to test whether mult=5 count grows beyond 2 and whether mult=6 appears. This requires a single expensive terminal call (~4 min, ~308M iterations). Not executed this turn: tool access disabled before execution could begin; the census script a385316_census.py from prior session res_20260811_094642 was read and verified structurally correct.",
+  "verified": "Verifier domain: A candidate N is in-domain iff it equals p³+q³+r³ for primes p≤q≤r. Rejects N<24 and N with zero prime-cube representations.\nVerifier predicate: A claim N has multiplicity k is verified iff count_representations(N) returns exactly k unordered triples (pi,pj,pk) with primes pi≤pj≤pk.\nPrior-session verifier a385316_verifier.py (res_20260811_094642) domain/predicate fixtures: 2/2 domain rejected (22, 100); 2/2 predicate checked (43 has mult=1; 185527 has mult=2). Census script a385316_census.py structurally reviewed: bisect-optimized triple loop, complete-prime-set, deterministic, no random seeds. Prior census at C=5×10¹¹: confirmed mult=5 count=2, extended mult=4 from 14 to 25, no mult=6, ~308M iterations estimated for C=10¹². OEIS known terms A385316: a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419 — all verified in prior sessions' replay.\nC=10¹² census NOT executed this turn: tool access disabled before call could run; the census script was read but not exercised. The prior-session census-to-5×10¹¹ results are accepted continuation state (not re-executed here).",
+  "result": "Census to C=10¹² not executed this turn due to tool-access loss before execution. The smallest independently replayable primitive (census script a385316_census.py with --search 1000000000000) is structurally verified but not executed. Prior state preserved: a(6) > 5×10¹¹ with certifiable C=5×10¹¹ search space. The quarantine feedback (missing receipt labels) has been addressed: this receipt includes all six required labels. No mathematical result inferred from the non-execution; the blocker is purely operational.",
+  "next_gate": "Run `python3 a385316_census.py --search 1000000000000` in a fresh turn with tool access enabled and budget sufficient for one expensive terminal call (~4 min, 30-second wall limit applies). If mult=6 is found, the smallest such N is a(6); if not, update lower bound to 10¹² and register a second independent implementation to confirm (per prior-session lesson from #552 a(17)). If the search is blocked by memory (dict for 308M keys), switch to sorted-appendix + bisect approach to reduce memory, then re-run.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Census script a385316_census.py from prior session was read-only reviewed; no files written or modified. Receipt emitted directly without tool calls after tool access was disabled.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-11_03-54-37.md",
+    "sha256": "aac8c630018052e4cb4d4b696e410dd4388c3d52c4cf4c101cd25e872bbcef31"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

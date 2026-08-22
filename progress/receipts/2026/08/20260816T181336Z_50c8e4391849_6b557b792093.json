@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:6b557b792093dd3c3ba4b674c8a59477c088889d50bcf8f08da40f77cd2ba72f",
+  "content_digest": "sha256:2fb271a7aa1608c69e9266d5039ec869fa9b02a18d45e2bed20e1ab7313dba6e",
+  "occurred_at": "2026-08-16T18:13:36Z",
+  "frontier": "OEIS A385316 a(6): smallest N that is the sum of 3 prime cubes in exactly 6 different ways.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nObtained verified OEIS A385316 a(1..5) terms from the OEIS b-file (b385316.txt), built and ran a kill-fixture verifier that reproduces a(1)=24 and a(2)=185527 computationally and cites a(3..5) from the OEIS source, and independently verified all five triples for a(5)=10588881419 listed in the OEIS example section.",
+  "verified": "Domain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 4/4 rejected correctly\nArtifact: verifier_a385316.py, SHA-256: 3ff2285e59724fe65416a72c8c2c46fba8aa44cfcf98c57f87c0a8aaf31e1e40\nSource: https://oeis.org/A385316/b385316.txt — n=1:24, n=2:185527, n=3:8627527, n=4:999979163, n=5:10588881419. All five a(5) triples verified arithmetically. a(1) and a(2) verified computationally by the verifier; a(3), a(4), a(5) cited from OEIS.",
+  "result": "The critical blocker for prior sessions was fabricated reference terms. The verified OEIS terms are now obtained and the verifier artifact passes all kill fixtures (domain: 3/3 correct rejection; predicate: 4/4 correct rejection; exit code 0). This unblocks the next gate: a C=1e12 census search can now run with trusted reference terms and a wall budget >300s.",
+  "next_gate": "Implement and run a memory-optimized two-sum lookup (compute all pairwise prime-cube sums, sort + count multiplicity) up to C=1e12 to search for a(6), using the verified OEIS a(1..5) as ground truth for validation. Budget: >300s wall time, dedicated session.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Only read-only OEIS fetch and local Python execution.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-16_11-13-36.md",
+    "sha256": "3aa512208a89343060699b62e9a2e23b96d03d2e52085371862a36f2d09f0d17"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

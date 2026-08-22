@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:73fe8ab2308f02ad996e102dc6aef90b0a7dc35e77062773ae568c5f455731f7",
+  "content_digest": "sha256:eef71769fd84e4b3d31ba0ce6876a77f55ac520ef4664b92d9bc9c0da55c69f1",
+  "occurred_at": "2026-08-05T09:36:47Z",
+  "frontier": "Smallest N that is the sum of three prime cubes in exactly 6 ways (OEIS A385316 a(6)); current known terms a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163; a(5) and a(6) unknown.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nReproduced the complete-prime-set multiplicity verifier locally with full kill fixtures and replayed census at C=1000.",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nVerifier domain: N = p^3 + q^3 + r^3 where p, q, r are positive primes, unordered (p<=q<=r)\nVerifier predicate: A claimed witness N for a(n) must have exactly n distinct unordered prime-cube representations, and no smaller N' < N has exactly n representations\nArtifact: verifier_prime_cubes_multiplicity.py, SHA-256: 5d1ca1aca44edad530b55f2adba93f1641bc942cfe234302ca49a61b747ca387\nReplay confirmed: a(1)=24 (1 rep), a(2)=185527 (2 reps), a(3)=8627527 (3 reps), a(4)=999979163 (4 reps), max_mult=4 at C=1000. private compute host farm-lane SSH unavailable (DNS failure and key auth failure); no C=10^12 or C=10^13 census possible.",
+  "result": "Verifier artifact written, killed, and replayed with full fixture pass. Census confirms max multiplicity = 4 at C=1000 (consistent with prior accepted continuation's max_mult=3 at C=10^8 — the a(4) witness 999979163 is within C=1000's range so it appears; at C=10^8 the window excluded a(4) which is at ~10^9, so max_mult=3 there is correct). a(5) and a(6) not found. Frontier remains resource-blocked: no private compute host farm-lane connectivity, no C=10^12 anchor values available locally.",
+  "next_gate": "Restore SSH connectivity to private compute host (private host or farm-lane) to dispatch C=10^13 full census or obtain C=10^12 max_mult=5 anchor values. Without connectivity, no further bounded primitive is executable.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-05_02-36-47.md",
+    "sha256": "f567a4f009a6cb7d19ce8606e0870579e716bc0e1cdad9bf1026dfbcbbddccaf"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

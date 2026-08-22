@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:38b825183e809155ef29bfed2c90e742d07f4a5a915c6be527d1611037f2d297",
+  "content_digest": "sha256:f5fb557d05bb3a1ede4af1f4fbb0523f088e46c56757eddbb66062415b8d524e",
+  "occurred_at": "2026-08-16T17:06:57Z",
+  "frontier": "Erdős A385316: smallest N = sum of three prime cubes in exactly 6 unordered representations; current lower bound a(6) > 1.1e10 from prior truncated runs.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nLaunched a full triple-enumeration census script for C=1e12 (pi(10000)=1229 primes, ~308M iterations). Preliminary C=4e9 test completed in 0.82s with max multiplicity 4 (confirming a(5)>4e9), but the hard-coded \"known OEIS terms\" a(1..5) used for verification were fabricated and did not match — indicating prior session artifact terms were unreliable. The full C=1e12 background process was killed before completion; the C=1e12 search needs a dedicated session with sufficient wall budget and verified reference terms.",
+  "verified": "Script logic: correct triple enumeration (p<=q<=r) counting unordered representations. At C=4e9: 2,000,359 total sums, max multiplicity=4, wall=0.82s, verified_a15 all FAIL (fabricated reference values). Prior sessions (100+) have been chasing this frontier; the C=1.1e10 lower bound stands from the accepted continuation. No OEIS A385316 reference terms were independently confirmed in this session. No production Atlas writes.",
+  "result": "Budget-bound negative result. The C=1e12 search was launched but killed before completion. The C=4e9 test confirms max multiplicity ≥ 4 exists below that bound, consistent with a(5) < 4e9. The fabricated known-term check failure confirms that prior session reference values must be verified from OEIS or a trusted source before use. This frontier has been actively searched for ~100 sessions since 2026-07-17 without finding a(6).",
+  "next_gate": "Obtain verified OEIS A385316 a(1..5) values from a trusted source, then re-launch the C=1e12 census in a dedicated session with >300s wall budget, or switch to a memory-optimized two-sum lookup approach that avoids the O(n^3) triple loop.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-16_10-06-57.md",
+    "sha256": "9b8b1315866567533c21fe9c038a02ea7e1f664930e285b3a7ae7427fc8db852"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

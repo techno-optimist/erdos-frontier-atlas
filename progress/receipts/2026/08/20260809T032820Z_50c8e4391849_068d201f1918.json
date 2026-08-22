@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:068d201f19185b15c4165c046b194e7330d98293f4c7958db6b259e3bb00330b",
+  "content_digest": "sha256:a9dedb990fb8876a9354095e263c70f4e43cc6ac868b85700532122f5eaaec41",
+  "occurred_at": "2026-08-09T03:28:20Z",
+  "frontier": "Erdős #979: Smallest N = sum of 3 prime cubes in exactly 6 ways (OEIS A385316 a(6)). The operational bottleneck is private compute host SSH/DNS unreachability preventing census search at C=10¹².",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nIndependently wrote the a385316_verifier.py artifact to the current session directory (no copy from prior session — authored fresh from the same algorithm), then ran a complete no-network isolated replay.",
+  "verified": "Domain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nArtifact: a385316_verifier.py, SHA-256: 01fa63a355939a8250ed1cfac07e9370c6ad33a904bee99f02306e3c7691b76f\nReplay ran twice with identical output and exit code 0. All five OEIS A385316 terms (a(1)..a(5)) reproduced with correct representations. Domain kill fixture (N=27, no 3-prime-cube decomposition) correctly rejected. Predicate kill fixtures (N=24 claimed k=2, N=185527 claimed k=3, N=8627527 claimed k=2) all correctly rejected with mismatched multiplicity.",
+  "result": "The verifier artifact is present in this session and passes clean replay. The operational blocker from the accepted continuation persists: private compute host (private host) is unreachable from the Mac host, preventing the census search at C=10¹² needed to find a(6) or a certified lower bound. No mathematical progress on a(6) this session.",
+  "next_gate": "Operator action required: restore SSH/DNS connectivity to private host. Upon success, dispatch census at C=10¹² on private compute host, then a second independent implementation must reproduce the census result before registering a(6) or a certified lower bound (per #552 a(17) and f(39) single-source rejection lessons).",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-08_20-28-20.md",
+    "sha256": "abb2ce8f6be9af6cbd16834a8daf4032ce80989697f217106390634f8595b4f5"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

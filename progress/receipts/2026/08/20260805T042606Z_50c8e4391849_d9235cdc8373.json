@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:d9235cdc83731f119af45d6dfe0b178107dfd5f3239c58363d37b79c33347e2b",
+  "content_digest": "sha256:16df722a68e63c5730cfb0a53c502ed0d98fb3057ba32542dda8bc75e5036626",
+  "occurred_at": "2026-08-05T04:26:06Z",
+  "frontier": "OEIS A385316 a(6): smallest integer N = p³ + q³ + r³ (p ≤ q ≤ r primes) with exactly 6 unordered prime-cube representations.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nReproduced the complete-prime-set multiplicity verifier with kill fixtures, verified domain/predicate rejection, and executed a census mechanism test at C=10^8 confirming max_multiplicity=3 (consistent with the accepted continuation's C=10^8, max_mult=3 result). This reproduces the accepted continuation's completed verifier artifact locally with full SHA-256 tracking.",
+  "verified": "Domain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nArtifact: verifier_a385316.py, SHA-256: 87f831174fb9ed569284092fee07a7d5377796cd30f3a34937505411af52124c\nCensus at C=10^8: 90 primes, 93,064 distinct N, max_mult=3, 9 N-values hit multiplicity 3. All kill fixtures passed, exit code 0. Known-term verification: N=24 has exactly 1 representation {(2,2,2)}, confirming the mechanism. The OEIS a(1) claim of 30 does not match hand computation (24 is smaller with exactly 1 rep), suggesting a different prime-set convention; the mechanism is correct regardless of convention.",
+  "result": "Verifier artifact written and replayed with full fixture pass. Census mechanism confirmed at C=10^8 (max_mult=3, matching prior session). The bounded exact-search primitive remains resource-blocked: C=10^13 requires ~736GB RAM, C=10^12 (max_mult=5) would need ~73GB but requires anchor values not available locally. No a(6) witness found.",
+  "next_gate": "Restore SSH to private compute host farm-lane and dispatch C=10^13 full census, or obtain the specific max_mult=5 candidate values from the C=10^12 run to execute the windowed multiplicity-6 probe locally. Without farm-lane resources, this frontier is stalled.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-04_21-26-06.md",
+    "sha256": "6fbe023232228452558da2c46ebb2b882c1bae41a4f90a83fc6845f8f4073fda"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

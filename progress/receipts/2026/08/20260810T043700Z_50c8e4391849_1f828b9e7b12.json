@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:1f828b9e7b1270a0929c9d37077b5aae8d4a130bb4a2b46d7f8bf1c1b0f88af8",
+  "content_digest": "sha256:18053f91066ac0924b8c167fae8ca856a00a0a47113d45c297a58eab4ce02fec",
+  "occurred_at": "2026-08-10T04:37:00Z",
+  "frontier": "Erdos #979: smallest N = sum of 3 prime cubes in exactly 6 ways (OEIS A385316 a(6)).",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nBuilt and replayed the complete-prime-set multiplicity verifier for A385316: domain rejection of composite triples, predicate rejection of wrong multiplicity claims, and exact reproduction of all five known OEIS anchor terms a(1)..a(5).",
+  "verified": "Domain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 1/1 rejected correctly\nALL KILL FIXTURES PASSED\na(1)=24: 1/1 OK | a(2)=185527: 2/2 OK | a(3)=8627527: 3/3 OK | a(4)=999979163: 4/4 OK | a(5)=10588881419: 5/5 OK\nALL OEIS ANCHORS VERIFIED\nArtifact: a385316_verifier.py, SHA-256: 11bceab8a9fe29cd285430724e332a6987a06c06a510dcf9680ccc7a4d336e85\nVerifier domain: triples (p,q,r) where is_prime(p), is_prime(q), is_prime(r) — rejects composite 4 in fixture (4,3,3) with domain_violation\nVerifier predicate: count_representations(N) returns exact multiplicity of unordered prime-cube sums == N — rejects claimed=2 at N=24 (actual=1) with predicate_violation",
+  "result": "Verifier construction complete and operationally verified: replay exits zero with all kill fixtures passing and all five OEIS anchors reproduced. The census engine is verified and ready for private compute host dispatch. The prior quarantine (exit-1 replay failure) is resolved. Next step requires private compute host dispatch at C=10^12 which is beyond local scope.",
+  "next_gate": "Dispatch census run to private compute host: `python3 a385316_verifier.py --cutoff 1000000000000 --census` on private host. If max multiplicity >= 6, report smallest N with exactly 6 representations. If max multiplicity < 6, certify a(6) > 10^12. Requires independent re-implementation for any claim.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-09_21-37-00.md",
+    "sha256": "3c371e8d2e2620b0ab371232374ca879721db313341f18293c946e36d5d7c8e8"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:c42e1b4c98e05466ad312ac1a2a683dfebd88710fd6200d60d2e64fb0047d5c3",
+  "content_digest": "sha256:a48e916812847bde9f711b59b1ab36258d186f70b514743a4b8a6040eb09464a",
+  "occurred_at": "2026-08-08T19:54:21Z",
+  "frontier": "OEIS A385316 a(6): smallest number that is the sum of 3 prime cubes in exactly 6 unordered ways. Current lower bound 4.99×10¹¹. The operational blocker persists: private compute host DNS resolution (private host) is unresolvable from the Mac host, preventing dispatch of the census search at C=10¹².",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nBuilt and verified a self-contained Python verifier for A385316 with complete kill fixtures and known-term reproduction. Ran isolated no-network replay confirming: (1) domain kill fixture N=27 rejected (no 3-prime-cube decomposition exists), (2) predicate kill fixture N=24 claimed k=2 (actual k=1) rejected, (3) predicate kill fixture N=185527 claimed k=3 (actual k=2) rejected, (4) predicate kill fixture N=8627527 claimed k=2 (actual k=3) rejected, (5) all five known OEIS terms a(1..5)=24,185527,8627527,999979163,10588881419 reproduced with correct multiplicities, exit zero.",
+  "verified": "Artifact: a385316_verifier.py, SHA-256: b400dd70e81beff647e4a3ee504ce38fb53f092390a41b242d46e083da751d29\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nALL KILL FIXTURES PASSED\nKnown terms a(1..5): 5/5 reproduced correctly\nVerifier domain: N must be representable as p^3+q^3+r^3 for primes p<=q<=r\nVerifier predicate: multiplicity of unordered prime-cube triple sums equals n",
+  "result": "Negative result: no mathematical progress on a(6). The verifier is confirmed correct, self-contained, and reproducible with a clean SHA-256. The operational blocker persists: private compute host DNS resolution (private host) is unresolvable from the Mac host, preventing dispatch of the census search at C=10^12. This is the same blocker recorded in the accepted continuation (sha256:496feefa).",
+  "next_gate": "Operator-action: restore SSH/DNS connectivity to private host, then dispatch census at C=10^12 on private compute host. Upon success, a second independent implementation must reproduce the census result before registering a(6) or a certified lower bound (per #552 a(17) and f(39) single-source rejection lessons).",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-08_12-54-21.md",
+    "sha256": "bfa46f4a99a3b19da140520237e6b77ff37670f4f1efced41ea1688fc232e197"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

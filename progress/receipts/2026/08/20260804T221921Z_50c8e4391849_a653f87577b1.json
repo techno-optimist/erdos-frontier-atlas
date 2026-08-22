@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:a653f87577b1b91df8fe758ae37353a4323b64c76d80974e4844601a24633044",
+  "content_digest": "sha256:fc60fa581ef51d2dde988b71a2cd7ae2a6642381fb1a35af4ff86221ad06395d",
+  "occurred_at": "2026-08-04T22:19:21Z",
+  "frontier": "Erdős #979 finite frontier: smallest N that is a sum of three prime cubes in exactly 6 unordered ways (OEIS A385316 a(6)). Prior work confirmed a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, and that no integer below 10⁹ has multiplicity ≥ 5.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nCopied verifier_a385316.py from prior session res_20260804_110522 into current artifact directory, replayed all kill fixtures (domain: 1/1, predicate: 2/2 — all rejected with correct branch reasons), verified four known terms a(1)..a(4) reproduce exactly, and confirmed census at C=10⁹ still shows max_mult=4 (one value). Filled experiment.json hypothesis field. private compute host farm-lane dispatch of census at C=10¹² requires operator SSH approval and is deferred to Next gate.",
+  "verified": "Domain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nArtifact: verifier_a385316.py, SHA-256: 297d117b509c87316d85ec5a03e7f2ad77b661cf3a12623ffb50d04129c0093d\nReplay exit: 0 (success)\nAll known terms verified: a(1)=24 (mult=1), a(2)=185527 (mult=2), a(3)=8627527 (mult=3), a(4)=999979163 (mult=4)\nCensus C=10⁹: max_mult=4, one value at that level (reproduces accepted_continuation result)\nNo broad context packet loaded (gated_focused_only policy not triggered; focused evidence sufficed)\nNo strategy_advice present in foundry.gate",
+  "result": "Negative result confirmed at C=10⁹ (max_mult=4). Verifier artifact is clean and reproducible. private compute host farm-lane dispatch (next gate) is pending operator approval — scout-lane has no SSH path to private compute host without approval. The search at C=10¹² is the smallest next primitive but requires private compute host compute resources.",
+  "next_gate": "Obtain operator approval for private compute host SSH dispatch, then run census_a385316.py --cutoff 1000000000000 on private compute host. Promotion condition: find multiplicity ≥ 6 or certify a(6) > 10¹².",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. No private compute host dispatch executed without operator approval. Single mutation (experiment.json). No artifact beyond the copied verifier.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-04_15-19-21.md",
+    "sha256": "7c731d5789ed9e287f3177d46adfde527badf01876d0bdc365523fd49227eaa9"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

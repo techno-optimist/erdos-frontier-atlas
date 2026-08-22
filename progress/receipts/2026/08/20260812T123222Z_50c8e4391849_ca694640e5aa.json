@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:ca694640e5aa2236d0f965d5718ff6a1f4cfccab907d0f8a6b8a06a988789064",
+  "content_digest": "sha256:9b89b8e4f8272eb1f92ae54829c962cbed947b723ad6c6a563df2cd6641cdb76",
+  "occurred_at": "2026-08-12T12:32:22Z",
+  "frontier": "Erdős #979: Smallest N = sum of three prime cubes in exactly 6 ways (A385316 a(6)) — lower bound beyond 5×10¹¹ and 10¹² via private compute host census, but exact value unknown.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nReproduced C=5×10¹¹ bounded exact census on Mac using bisect-optimized triple loop over prime cubes, confirming max_multiplicity=5 with 127,574,422 distinct sums across 127,988,582 triplets, no multiplicity-6 found. The C=10¹² census via dict-based approach requires ~16-20 GB and hits OOM (exit 137) on this Mac; a numpy-based census (~3.2 GB) was identified as the fix but tool access ended before implementation.",
+  "verified": "C=5×10¹¹ census executed in 65.1 seconds, 1003 prime cubes enumerated, max_mult=5 confirmed, no mult=6 found. Known terms a(1)=24 through a(5)=10588881419 reproduced by the verifier (sha256 of prior a385316_verifier_final.py). Memory analysis: dict-based census at C=10¹² requires ~16-20 GB, exceeds 20 GB available; numpy-based approach estimated at ~3.2 GB. Frontier advice: none provided (strategy_advice=null).",
+  "result": "Confirmed: at C=5×10¹¹, max_multiplicity=5, no multiplicity-6 found (negative result, bounds a(6) > 5×10¹¹). C=10¹² census fails OOM on Mac with dict approach; numpy rewrite needed (~3.2 GB) but was not implemented within call budget.",
+  "next_gate": "Implement numpy-based census (a385316_census_numpy.py) at C=10¹²: use int64 arrays for sum enumeration and a sorted-array binning approach for multiplicity counting, targeting ~3 GB RAM. Or dispatch the census_v3 script to private compute host with `ssh private compute host 'python3 ~/cultural-soliton-observatory/research_sessions/res_20260812_041334_erdos-979-prime-cubes-a385316/a385316_census_v2.py --cutoff 1000000000000'` as previously specified.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. C=10¹² census sorted+rank extraction remains private compute host-bound.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-12_05-32-22.md",
+    "sha256": "09b7e43c7f752d3b27fd9bed924d7da6133702bb71b3c9a448b191cb9e8a06d2"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:02f7ad5323e727dd2d8f20cad9ce639220c2711e894f8356119457c4218915bd",
+  "content_digest": "sha256:cc8317ca5298199f40a8c2bc001f0982f7dbb7be14a1594d4e6686fd8fdbd95e",
+  "occurred_at": "2026-08-16T12:32:48Z",
+  "frontier": "OEIS A385316: smallest integer expressible as sum of three prime cubes (p³+q³+r³, p≤q≤r, repetitions allowed) in exactly 6 representations. Current state: OEIS convention resolved, a(1)–a(4) reproduced, a(5)=10588881419 target, a(6) lower bound > 4.99×10¹¹.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nBuilt `verifier_a385316.py`: a no-argument, no-network Python replay entrypoint that (1) validates domain membership by rejecting any N<24 (impossible as sum of three prime cubes p≤q≤r with p≥2), and (2) validates the multiplicity predicate by rejecting claimed multiplicities that disagree with exact enumeration. Replayed four domain kill fixtures (N∈{0,3,7,23}) and two predicate kill fixtures (N=24 with actual multiplicity 1 claimed as 2; N=185527 with actual multiplicity 2 claimed as 1). The predicate witness N=185527 = 13³+43³+47³ = 19³+31³+53³ was independently verified.",
+  "verified": "Domain kill fixtures: 4/4 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nArtifact: verifier_a385316.py, SHA-256: 2f5ed1efd1b52509d11389406be6490a25a91495b9fc091b5a4c9cea7977965b\nVerifier domain: Validates N >= 24 and that N is expressible as p³+q³+r³ with p≤q≤r, prime, all >= 2. Out-of-domain rejection via count_representations(N)=0 for N∈{0,3,7,23}.\nVerifier predicate: Validates that exact multiplicity count equals claimed multiplicity. Rejects N=24 (actual=1, claimed=2) and N=185527 (actual=2, claimed=1).\nReplay: exit 0, two summary lines, all pass. Independent cross-check: 13³+43³+47³ = 19³+31³+53³ = 185527 confirmed.",
+  "result": "Verifier constructed and fully replayed. All kill fixtures pass. The domain branch correctly rejects all N<24. The predicate branch correctly rejects both N=24 (smallest sum, single representation, wrong claim) and N=185527 (smallest number with multiplicity ≥2, confirmed via two distinct prime-cube representations). The verifier is a standalone replayable artifact ready for no-network, read-only container rerun by the publisher. No mathematical result claimed — verifier construction only.",
+  "next_gate": "Execute bounded exact search: reproduce a(5)=10588881419 using the verifier with cutoff ~1.1×10¹⁰ (≈2200 primes, C(2200,3)≈1.78×10⁹ triples). Requires two-sum table optimization to fit in 30s terminal action budget. The prior accepted continuation identified this as the next discriminating test.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. No mutation calls beyond the 3 allowed. Tool access exhausted by operator gate. All tool results under 12,000 characters. No over-budget terminal action.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-16_05-32-48.md",
+    "sha256": "a9322fa2ab3aadd3797b9531a43b3ffdb382e665b661cb6ab82761cf19130d8a"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

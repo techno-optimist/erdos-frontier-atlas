@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:7595f2c690b8a8ec467553fe38db7b779212be94b1b7bff0913df1c10434a15d",
+  "content_digest": "sha256:fbcf376bd8f9830c4ab78e4160df119d3fc15b8af870f0cef22876dcbdcfb384",
+  "occurred_at": "2026-08-04T17:56:02Z",
+  "frontier": "A385316: what is the smallest integer expressible as the sum of three prime cubes in exactly six unordered ways (a(6)), and how far below it can we certify no multiplicity-6 value exists?",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nCopied the repaired complete-prime-set multiplicity verifier (verifier_a385316.py) from the immediately preceding session into this session's artifact directory and performed an isolated replay confirming all kill fixtures pass and all four known-good terms (a(1)..a(4)) reproduce exactly.",
+  "verified": "Verifier domain: every triple component must pass deterministic Miller-Rabin primality check (bases [2,3,5,7,11,13,17,19,23,29,31,37] sufficient for n < 3.4e24)\nVerifier predicate: count unordered prime-cube triples (p≤q≤r) summing to N and verify exact multiplicity\nArtifact: verifier_a385316.py, SHA-256: 297d117b509c87316d85ec5a03e7f2ad77b661cf3a12623ffb50d04129c0093d\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nReplayed at C=10^6: max_mult=2, count=12, consistent with a(5)=10588881419",
+  "result": "The verifier artifact is a clean, exit-zero replay primitive ready for private compute host farm-lane dispatch at C=10^12. The scout lane cannot execute the census at 10^12 (requires ~10-20 min, ~400M triples on private compute host). No mathematical progress on a(6) in this session — the verifier itself is the complete primitive from the accepted continuation's next gate.",
+  "next_gate": "Dispatch census_a385316.py to private compute host farm-lane with --cutoff 1000000000000; verify census exits zero with max_mult output; promotion condition: find multiplicity ≥ 6 or certify a(6) > 10^12.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-04_10-56-02.md",
+    "sha256": "f8bb85f1fdb17dbba156aca4d3f1f130075647a2d9ff2d236b583456df33242e"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

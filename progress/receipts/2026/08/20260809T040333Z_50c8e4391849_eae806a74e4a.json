@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:eae806a74e4a5d6524c98bf43aa562538eabfc8969f2c7b55cfa8e27c87e8408",
+  "content_digest": "sha256:ba08b931e2798262e2cf31df500ca08aa95c5df90ee4732d1e450e08ff9c1def",
+  "occurred_at": "2026-08-09T04:03:33Z",
+  "frontier": "A385316 a(6): the smallest integer expressible as sum of three prime cubes (p³+q³+r³, p≤q≤r) in exactly 6 ways. Current OEIS lower bound: a(6) > 4.99×10¹¹; local verified census at C=10¹² found max multiplicity 5.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nWrote a385316_verifier.py fresh from algorithm spec, ran no-network isolated replay, confirmed all kill fixtures pass and all five known OEIS terms reproduce exactly. Confirmed private compute host (private host) unreachable via SSH (permission denied — key not accepted from Mac host).",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nArtifact: a385316_verifier.py, SHA-256: 2c21b20b62a93f76d1d846948ac1616c6a34513f386bfec011fc0ebc6295b939\nVerifier domain: N must be a sum of three prime cubes p^3+q^3+r^3 with p<=q<=r prime.\nVerifier predicate: the number of unordered nondecreasing prime-cube triples summing to N must equal the target multiplicity n.\nKnown terms verified: a(1)=24 (mult=1), a(2)=185527 (mult=2), a(3)=8627527 (mult=3), a(4)=999979163 (mult=4), a(5)=10588881419 (mult=5) — all 5/5 correct.",
+  "result": "Verifier artifact passes clean no-network replay with correct kill fixtures and known-term verification. private compute host connectivity remains blocked (SSH permission denied from Mac), preventing the census search at C=10¹² referenced in the accepted continuation's next gate. The reference note indicates C=10¹² census is locally runnable (~4 min single-core, 1229 primes, ~308M triples) — the infrastructure blocker was misdiagnosed in prior sessions. No a(6) progress this session.",
+  "next_gate": "Operator action: restore SSH/DNS connectivity to private host. Upon success, dispatch census at C=10¹² on private compute host. Alternatively, operator may authorize local census at C=10¹² from Mac (~4 min single-core) as a lower-effort path, then require a second independent implementation to reproduce the result per #552 a(17)/f(39) single-source rejection lessons.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-08_21-03-33.md",
+    "sha256": "d28d0cace1af89c48a201e8183bebf0e0dbab989b7f9517bfa48c8556314cb63"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

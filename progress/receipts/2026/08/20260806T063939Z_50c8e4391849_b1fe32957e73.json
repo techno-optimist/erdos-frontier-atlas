@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:b1fe32957e73016784933ee46863f55dbdd6143cc2d1b0ba90341f899ad625e5",
+  "content_digest": "sha256:4317388d9a125acc50e51908c8c01f851d2c6aa436b7ebaed91b16567a899c4e",
+  "occurred_at": "2026-08-06T06:39:39Z",
+  "frontier": "Erdős #979 (A385316): smallest N that is sum of 3 prime cubes in exactly 6 ways (a(6)). The a(6) search lane is blocked by (1) memory constraints on this Mac for C≥10^12 census (~107GB for 10^13) and (2) broken SSH key auth to private compute host (private host).",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nTested SSH key auth to private host (the decision gate from accepted_continuation.next_gate). Command `ssh -o ConnectTimeout=5 -o BatchMode=yes chronos@private host 'echo ssh_ok'` returned `Permission denied (publickey)` — same failure as in the three prior blocked receipts (sha256:fa234d…c, sha256:c8d0b6…d, sha256:35c9b3…0). The \"escalate to next-ranked unblocked frontier\" branch of the next gate is triggered.",
+  "verified": "Verifier replay artifact: verifier_a385316.py, SHA-256: 1416f44a1f3310fc554a9ca74b69ebaea0dab498626ee9ea3f8bd96550f95825 (confirmed identical to accepted_continuation's artifact).\n- SSH test: repeated 3x across sessions, consistently fails with publickey rejection. No key rotation or regeneration path available from this Mac.\n- The next-ranked unblocked frontier in the queue: erdos_86_q7_c4 (effective_priority=0.07, age=474.4h).\n- No production Atlas writes, no external submissions, no git operations performed.",
+  "result": "SSH to private compute host remains broken after 8+ attempts across this and prior sessions. The a(6) search lane on this frontier is externally blocked: requires private compute host connectivity for census dispatch. No mathematical progress possible on this frontier without restoring the SSH key tunnel. This is a negative-result closure: the frontier is operator-blocked, not mathematically exhausted.",
+  "next_gate": "Escalate: dispatch this frontier's next attempt to erdos_86_q7_c4 (Turán tetrahedron / A140462 lower-bound search). Alternatively, if operator restores SSH key to private host, resume a(6) census at C=10^13 on private compute host.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-05_23-39-39.md",
+    "sha256": "3b21bd785db5771210fb24bfd313af25398f0ba662946c96f4da93126351818f"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

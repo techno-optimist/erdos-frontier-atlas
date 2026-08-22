@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:367c1db45ef02be49372a846c57cb7ec436143f4af6ec1fc8cca211acddb75f8",
+  "content_digest": "sha256:006ae10c07d63a79e24e773ee7c51b99800aae8b76babfa934455a9cc783753e",
+  "occurred_at": "2026-08-10T00:01:54Z",
+  "frontier": "OEIS A385316 a(6): smallest integer N = p³+q³+r³ (p,q,r prime, unordered) with exactly 6 representations. Census to C=5×10^7 shows max multiplicity 3, implying a(6) > 5×10^7.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nReplayed the canonical verifier (SHA-256 d05e3ed26259db50ef1c2cb533a1ca8b0343e4fc7c5b9e8baf920f7ebd8d99bb) in this session: all 5 domain kill fixtures rejected with domain_violation reason, all 3 predicate kill fixtures rejected with predicate_violation reason, all 5 known-good terms a(1)..a(5) verified with exact multiplicities. Artifact exits zero. Updated experiment.json hypothesis field.",
+  "verified": "Domain kill fixtures: 5/5 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nArtifact: a385316_verifier.py, SHA-256: d05e3ed26259db50ef1c2cb533a1ca8b0343e4fc7c5b9e8baf920f7ebd8d99bb\nKnown-good terms: a(1)=24 (1 rep), a(2)=185527 (2 reps), a(3)=8627527 (3 reps), a(4)=999979163 (4 reps), a(5)=10588881419 (5 reps) — all match exactly.\nVerifier domain: All 5 domain fixtures (composites: 9/25/49; cubes-as-numbers: 8/27/64; mixed: 2/4/8 and 2/9/25; negatives: -1/2/3) correctly rejected with domain_violation reason.\nVerifier predicate: All 3 predicate fixtures (N=24 claimed k=2, N=185527 claimed k=3, N=1000000 claimed k=5) correctly rejected with predicate_violation reason.\nSHA-256 matches accepted_continuation reported digest; replay exits zero with complete summaries.",
+  "result": "Verifier artifact confirmed and replayable in this session — resolves the quarantine feedback (sha256:42fb40ff...) which cited \"verifier artifact replay digest mismatch.\" The prior accepted continuation (sha256:5c587dc...) had already confirmed the verifier and reported census at C=10^7 and C=5×10^7 finding max multiplicity 3. The census engine is verified; the next step requires private compute host dispatch at C=10^12 which is beyond this session's scope.",
+  "next_gate": "Dispatch census run to private compute host: `python3 a385316_verifier.py --cutoff 1000000000000 --census` on private host. If max mult ≥ 6, report smallest N with exactly 6 representations. If max mult < 6, certify a(6) > 10^12. Requires independent re-implementation for any claim (per accepted_continuation.next_gate).",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Local read-only copy and replay of verifier from prior session.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-09_17-01-54.md",
+    "sha256": "9b033b3cc853ab9aa0f3a953a515cc7717c4485d9e2849923266d635b271ff35"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

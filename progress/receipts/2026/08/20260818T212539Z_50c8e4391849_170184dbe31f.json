@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:170184dbe31f8da19b9e04af9a64feb47f76446143fc3449aac1c9d9cdbb14c3",
+  "content_digest": "sha256:b0a02d554e245e6ffb1dbe0d26fb81b3f560595e17b97bf6c80a295fd0d9788e",
+  "occurred_at": "2026-08-18T21:25:39Z",
+  "frontier": "Erdős #979: A385316 a(6) — smallest integer expressible as sum of three prime cubes in exactly 6 unordered ways. Prior work established a(2)=185527 at C≤2×10⁵; census extended to C≤10⁶ with max_mult=2.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nReconstructed and independently verified the complete-prime-set multiplicity census engine against the accepted continuation's three checkpoints (C=1000: 19 candidates, max_mult=1; C=200000: a(2)=185527, max_mult=2; C=1000000: max_mult=2). Ran domain kill fixtures (23, 25 — non-representable) and predicate kill fixtures (24 claimed as mult 2 or 0 — actual mult is 1). All fixtures pass with correct rejection branches.",
+  "verified": "Verifier domain: Each unordered triple {p,q,r} of primes with p≤q≤r and p³+q³+r³=N is counted exactly once via nested loop enumeration with binary-search termination.\nVerifier predicate: For claimed a(n)=N, count(unique triples) must equal n exactly.\nDomain kill fixtures: 2/2 rejected correctly. 23 and 25 each have 0 representations (only prime cube ≤25 is 8; 23−8−8=7 and 25−8−8=9 are not cubes).\nPredicate kill fixtures: 2/2 rejected correctly. 24=2³+2³+2³ has exactly 1 representation; both claimed multiplicity 2 and claimed multiplicity 0 are wrong.\nCensus C=1000: 19 candidates, max_mult=1 — matches prior session.\nCensus C=200000: a(2)=185527 (=13³+43³+47³ = 19³+31³+53³), max_mult=2 — matches prior session, independently derived from a second Python implementation.\nCensus C=1000000: max_mult=2 — matches prior session.\nArtifact: verifier_a385316.py, SHA-256: 4a7b63b97b858964cd4be26e4240e91b6b9aa3412d335772b72c509129804f0b\nReplay exits zero with:\nDomain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED",
+  "result": "Independent reproduction of the census engine confirms all three prior checkpoints (C=1000, C=200000, C=1000000) with a second Python implementation. Kill fixtures pass with correct branch coverage (domain rejection for non-representable inputs; predicate rejection for wrong multiplicity claims). The enumeration pipeline is now independently confirmed. The a(6)=? question remains open — at C=10⁶, max multiplicity is only 2.",
+  "next_gate": "Dispatch census_final.c (C-language census at cutoff C=6×10¹¹) to private compute host via `/private compute host task` or SSH; record either a confirmed a(6) or a certified lower bound a(6)>6×10¹¹ with complete prime-set verification. If successful, advance to C=2×10¹².",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. All work confined to read-only verification of census logic and local artifact replay.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-18_14-25-39.md",
+    "sha256": "9ca3f6c1b5db76e6ff7ac96f71f6a407274087470569bf474cbecb245a627243"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

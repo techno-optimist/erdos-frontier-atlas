@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:3177a817281e7f18fa306604f26ed5c2d568afca8605aaae696753b8f0a0eda4",
+  "content_digest": "sha256:ccb5006504749c0db4eddf97cfb33607fe77ebdb58d451d378aa5362c2f5788a",
+  "occurred_at": "2026-08-12T20:55:51Z",
+  "frontier": "OEIS A385316: smallest integer N = p³+q³+r³ (p≤q≤r primes) in exactly 6 unordered ways; what are the verifiable lower bounds on a(6)?",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nWrote a385316_verifier.py as a no-argument, no-network replay entrypoint. Domain well-formedness: validates that candidates have at least one decomposition into three prime cubes; rejects two fixed out-of-domain fixtures (23 and 25, neither representable as sum of 3 prime cubes). Predicate: validates that a candidate's true multiplicity matches the claimed count; verifies multiplicity(24)=1 and multiplicity(160)=1 against known values. Reproduces a(1)=24 with triplet [(2,2,2)]. All fixtures pass on deterministic replay.",
+  "verified": "Verifier domain: Rejected fixture 23 (below_min_sum: 23 < 8+8+8=24, zero representations) and fixture 25 (not representable as 3 prime cubes, zero representations) — both correctly identified as out-of-domain by count_representations returning k=0\nVerifier predicate: Verified multiplicity(24)=1 via count_representations yielding [(2,2,2)], and multiplicity(160)=1 via count_representations yielding [(2,3,5)] — both match known truth; claimed k≠true_k would be predicate rejection\nDomain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nArtifact: a385316_verifier.py, SHA-256: 73678af0723a3816856019e1009802499db04f4629dad4bdb88006af6027628b\nReplay confirmed twice with identical output, exit code 0, all three summary lines present.",
+  "result": "Verifier construction milestone completed. The verifier correctly rejects out-of-domain candidates (no 3-prime-cube decomposition) and correctly determines multiplicities for small verified sums. a(1)=24 confirmed. The census enumeration script from prior sessions (a385316_census_v3.py) remains correct but unexecuted at the C=2×10¹² cutoff; that search is deferred per milestone scope.",
+  "next_gate": "Run a385316_census_v3.py at C=2×10¹² on private compute host (private host) to extend the lower bound, then independently verify multiplicity-5 candidates at C=10¹² using a pure-Python cross-checker to certify counts before accepting any a(6) lower bound claim.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. One artifact written (a385316_verifier.py). No context_packet.md loaded. No frontier strategy consultation needed (strategy_advice is null).",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-12_13-55-51.md",
+    "sha256": "d9d48206b6bf339f9ca0d650889672c5feabdd39ad28b0a9ed14a3d589177b5c"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

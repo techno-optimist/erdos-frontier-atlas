@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:b9d554659ed1603930812b3159bcb846978c7a8515ca75dec8fc56f5f667edec",
+  "content_digest": "sha256:700c5ea989738ce67f9b5edaebe85b7aca1fc13c7d6f63d38e4d5a4e1c94d8e2",
+  "occurred_at": "2026-08-12T01:28:55Z",
+  "frontier": "A385316 a(6): smallest N that is a sum of three prime cubes in exactly 6 unordered ways; lower bound a(6) > 4.99e11.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nIndependent local replay of a385316_census_v2.py --verify to confirm the artifact reproduces known terms; attempted SSH key-based dispatch to private compute host for next-gate cutoff=500000000000 census.",
+  "verified": "Artifact: a385316_census_v2.py, SHA-256: acca69d07e6022e92b7dce0c3828949e150503673b61cdf04b4d21f80307ccc6\nFixture C=200k: a(1)=24 OK. Fixture C=200k: a(2)=185527 OK. Exit code 0. Local v2 census independently verified. private compute host SSH dispatch blocked: no private key in ~/.ssh/, ssh-agent has no identities, SCP and SSH both return Permission denied (publickey). Render bridge /api/private compute host/health returns online but /api/private compute host/private compute host-status 405 — no task-dispatch endpoint available.",
+  "result": "Continuation primitive blocked at the same gate as prior accepted continuation (sha256:006e0026a204edd90f6e7ef0464d72277af90e49649cc99a20c759d820b5aea8): private compute host SSH key unavailability. The v2 census artifact is locally verified and ready; the dispatch path requires private compute host SSH access to be restored.",
+  "next_gate": "Restore SSH key-based access to private host for the chronos user, then dispatch a385316_census_v2.py --cutoff 500000000000 and extract max_multiplicity from output.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-11_18-28-55.md",
+    "sha256": "3127b72df8d164917a84ca9c68c31ecd1611df77cb1e173009ba32827390d4ad"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:3e99dbcdf6ac374e04c5733d60a2d6bc5db76e6384f046b978ca9ea0c3dab400",
+  "content_digest": "sha256:d04ccf32efb4103ce2a814debd68f8ceb783dda30604461d7d050705b5c948cd",
+  "occurred_at": "2026-08-05T14:34:14Z",
+  "frontier": "A385316 a(6): smallest integer N representable as p³+q³+r³ in exactly six unordered ways, where p,q,r are primes. Current knowledge: five known terms a(1)=24 through a(5)=10588881419; lower bound a(6) > 4.99×10¹¹; maximum multiplicity ≤ 4 at C=1000.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nCopied the complete-prime-set multiplicity verifier from prior session, placed it in the current session directory, and executed the no-argument replay entrypoint: domain kill fixtures (22 rejected as too small, 100 rejected as having zero prime-cube representations), predicate kill fixtures (N=43 confirmed multiplicity=1, N=185527 confirmed multiplicity=2), and verification of all five known OEIS terms a(1)..a(5) with exact representation counts.",
+  "verified": "Verifier domain: every triple component must be prime (deterministic Miller-Rabin, correct bases for n < 3.4e15); out-of-domain N rejected with reason string.\nVerifier predicate: unordered prime-cube triple enumeration counts exact multiplicity of N = p³+q³+r³ with p≤q≤r; incorrect multiplicity rejected with reason string.\nDomain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nArtifact: a385316_verifier.py, SHA-256: 34a11eaead53076fd7c12340b802272d899d2c513997cddc20364cea251bcac5\nReplay exits 0; all five known terms a(1)..a(5) reproduced with correct representation counts. Census at C=1000: 19 triplets, max_mult=1.\nprivate compute host SSH connectivity: private host returns Permission denied (publickey); private compute host alias does not resolve. Resource blocker confirmed.",
+  "result": "Verifier artifact is correct, kill-tested, and independently replayable with exit code 0. The C=1000 census is consistent with the accepted continuation's max_mult=1 result. a(6) remains unresolved. The resource blocker persists — no search beyond C=1000 is executable locally.",
+  "next_gate": "Restore SSH key authentication to private host to dispatch C=10¹³ full census or obtain C=10¹² max_mult=5 anchor values.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-05_07-34-14.md",
+    "sha256": "e8646f93d357e6e04e994577c80cd3caf8afd6d37c0612a3732bd6066f02cec8"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

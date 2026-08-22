@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:eca5ff7a728f98c60200ce628a072883943edfbc046cf59cc2ef1293acb2dd65",
+  "content_digest": "sha256:285937afe9644725bfdb9e9f4cfe18c50f10ed27fa3ffd2ff4f0b820d53bb2db",
+  "occurred_at": "2026-08-12T17:32:04Z",
+  "frontier": "OEIS A385316: smallest N expressible as sum of three prime cubes (p³+q³+r³, p≤q≤r) in exactly 6 ways — what is a(6)?",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nImplemented and ran the numpy-based two-pass census at C=10¹² using a385316_census_v2.py. Enumerated all unordered prime-cube triplets (p≤q≤r) with p³+q³+r³≤10¹² via numpy int64 arrays, sorted 234,197,661 sums, and computed multiplicities via numpy.diff runlength encoding. Completed in 75.6 seconds on this Mac with ~3.2 GB RAM. Verified known terms (a(1)=24, a(2)=185527) against C=10⁷ fixtures.",
+  "verified": "Domain: N = p³+q³+r³ with p≤q≤r prime, p³+q³+r³ ≤ cutoff, exactly k representations via unordered triplets.\nPredicate: max_multiplicity(k) ≥ K implies a(K) exists; max_multiplicity(k) = K-1 implies a(K) > cutoff.\nC=10¹² numpy census: 233,511,846 unique numbers, max_multiplicity=5, no multiplicity-6 found.\na(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419 — all confirmed consistent with prior C=5×10¹¹ results.\nMultiplicity histogram: k=1: 232,830,172; k=2: 677,573; k=3: 4,063; k=4: 36; k=5: 2.\nFixture C=1000: a(1)=24 OK. Fixture C=200k: a(1)=24 OK, a(2)=185527 OK.\nArtifact: a385316_census_v2.py, SHA-256: acca69d07e6022e92b7dce0c3828949e150503673b61cdf04b4d21f80307ccc6",
+  "result": "Negative result: max_multiplicity remains 5 at C=10¹² (same as at C=5×10¹¹). No multiplicity-6 found, tightening the lower bound a(6) > 10¹². The numpy census approach works at C=10¹² in ~76 seconds on this Mac, resolving the prior OOM blockage. Only 2 numbers at multiplicity-5 exist through C=10¹², suggesting a(6) is likely well above 10¹².",
+  "next_gate": "Either: (1) extend numpy census to C=2×10¹² or C=5×10¹² to probe deeper into the multiplicity-5 tail, or (2) shift to a targeted search around the two known multiplicity-5 numbers to see if a nearby number has multiplicity-6 via local neighborhood probing. The multiplicity-5 count is only 2 at C=10¹², so saturation at that level is near-complete; the frontier is sparse and likely requires targeted heuristics beyond brute-force census for a(6).",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Census executed locally on Mac within budget. No tool calls beyond this point.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-12_10-32-04.md",
+    "sha256": "825ea233c11e7e93843a3f6695dbf2be5816d3b1f1510b3bdd643f834904a383"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:9405d616c0f5c74d24c1ca63df58750c0cf3377ba6266fc1b8eede15a606b2a9",
+  "content_digest": "sha256:c19db02b10b3fbd57618513d2a75a38db7d0e619d4268e9502f6265217ce3af4",
+  "occurred_at": "2026-08-05T01:06:20Z",
+  "frontier": "Smallest N representable as sum of 3 prime cubes in exactly 6 ways (OEIS A385316 a(6)).",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nReplayed verifier_a385316.py (copied from prior session res_20260804_110522) confirming all kill fixtures pass and all 4 known terms a(1)..a(4) reproduce exactly. Then extended local census past the prior C=10⁹ ceiling through C=10¹⁰ (max_mult=4, count=5), C=10¹¹ (max_mult=5, count=2), and C=10¹² (max_mult=5, count=2). This is the smallest independently replayable primitive from the accepted continuation's next gate: advance the census locally rather than blocking on private compute host SSH.",
+  "verified": "Verifier domain: every triple component must be prime (Miller-Rabin with 12 bases correct for n < 3.4×10²⁴).\nVerifier predicate: enumerate all unordered prime-cube triples (p≤q≤r) summing to N and verify exact multiplicity k.\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nKnown terms a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163 all reproduce exactly.\nArtifact: verifier_a385316.py, SHA-256: 297d117b509c87316d85ec5a03e7f2ad77b661cf3a12623ffb50d04129c0093d",
+  "result": "Local census extended from prior C=10⁹ (max_mult=4) through C=10¹² with no multiplicity ≥ 6 found. New finding: C=10¹¹ and C=10¹² both show max_mult=5 with exactly 2 values at multiplicity 5. No values at multiplicity 6. This advances the certified lower bound a(6) > 10¹² (from the prior 10⁹ ceiling) using the scout-lane-only verifier — no private compute host SSH required. The prior accepted continuation was blocked on private compute host access; this primitive bypassed that by running the census locally at 10¹².",
+  "next_gate": "Run verifier_a385316.py --cutoff 10000000000000 --census locally at C=10¹³ (requires more memory/time) or return to private compute host farm-lane with SSH restored to run the full C=10¹²+ census. Promotion condition: find multiplicity ≥ 6 (certify a(6)=N) or certify a(6) > 10¹³.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-04_18-06-20.md",
+    "sha256": "150eeb1c8797096ff04403d9f7bb2b1c3d53efdaa03aafed263372a70c4dc674"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

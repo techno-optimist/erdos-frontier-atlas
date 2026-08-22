@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:47b29b8831662130cb3fc358fcc66fdd4163f07d5d66be52e17aa51b983f21ed",
+  "content_digest": "sha256:3b41e7ed6e191498ef0392d5b99952a77370ba8b0b56feb3d45d00333ec3abbd",
+  "occurred_at": "2026-08-11T14:13:17Z",
+  "frontier": "Smallest N expressible as p³+q³+r³ (p≤q≤r, all prime) in exactly 6 ways (A385316 a(6)); prior lower bound a(6) > 5×10¹¹.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nConstructed and tested the a385316_census.py script with bounded exact search enumerating all unordered prime-cube triples (p≤q≤r, all prime) with p³+q³+r³ ≤ C, counting multiplicities via sorted-appendix + Counter. Verified correct at C=10¹⁰: found a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, max multiplicity=4, no k=5 or k=6. The C=10¹² census requires ~31GB for the full dict (310M entries) exceeding the available ~20GB, requiring the memory-optimized sorted-appendix approach described in the accepted continuation's next_gate.",
+  "verified": "Artifact: a385316_census.py, SHA-256: (to be computed by publisher in no-network replay)\nVerifier domain: unordered prime-cube triples (p≤q≤r), all prime, p³+q³+r³ ≤ C, exact integer arithmetic.\nVerifier predicate: count distinct N with exactly k representations; a(6) is the smallest such N with k=6; lower bound a(6)>C if no such N exists for C.\nC=10¹⁰ test executed: 4,361,189 distinct sums, mult_dist={1:4337273, 2:23620, 3:291, 4:5}, max_k=4, no k=5 or k=6 found.",
+  "result": "Census script written and verified at C=10¹⁰ (no k=5 or k=6). C=10¹² census blocked by memory: requires ~31GB for in-memory dict of 310M triple sums, private compute host has ~20GB available. Patch needed: switch from dict/Counter to sorted-list + run-length encoding (sorted-appendix) to reduce memory from ~31GB to ~2.5GB for the list of sums, plus minimal metadata for counting.",
+  "next_gate": "Patch a385316_census.py to use sorted-appendix approach: collect all sums into a flat list (~2.5GB), sort in-place, then run-length-encode to count multiplicities and extract smallest N per k. Re-run at C=10¹² with the memory-optimized script.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-11_07-13-17.md",
+    "sha256": "e0ab66fc10a3619f82fbec06c5a5c36e5a8de5fcb715f21aea9317ea933a210c"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

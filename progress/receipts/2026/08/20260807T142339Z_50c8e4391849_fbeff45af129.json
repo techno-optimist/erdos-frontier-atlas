@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:fbeff45af12913305994c045d0c689703c4292a7da245dad6381fd7ed1dbc168",
+  "content_digest": "sha256:5d5b34e15c976e626a8207d46671489fba88e4a65aa309a41428d2b9fffdb034",
+  "occurred_at": "2026-08-07T14:23:39Z",
+  "frontier": "Smallest N expressible as p^3+q^3+r^3 (primes, p≤q≤r) in exactly 6 ways — OEIS A385316 a(6), current certified lower bound > 4.99×10^11.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nRebuilt a385316_verifier.py from scratch: complete-prime-set triple enumerator with dual-branch validation (domain: all p,q,r prime ≥2; ordered p≤q≤r with repetition; predicate: multiplicity census match). Ran 8 domain kill fixtures (4,3,3 / 1,5,5 / 0,2,2 / -1,3,3 / 6,6,6 / 2,4,6 / 9,9,9 / 10,10,10) and 2 predicate kill fixtures (N=24 claimed 2, actual 1; N=70 claimed 5, actual 1). Replay exits zero with all fixtures passing. Census at C=200000 confirms exactly one sum with multiplicity 2 (N=185527) and zero with multiplicity≥3.",
+  "verified": "Verifier domain: all of p,q,r are prime (>=2), unordered p<=q<=r (repetition allowed); predicate: count of such triples with p^3+q^3+r^3 == N equals claimed n\nArtifact: a385316_verifier.py, SHA-256: 76973d2e773d21f1209b93b33b6b28e0f7d57fbbea13588b34c7072678eda9b1\nDomain kill fixtures: 8/8 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\na(1)=24 claimed=1 observed=1 OK\na(2)=185527 claimed=2 observed=2 OK",
+  "result": "Verifier construction and replay complete. Census at C=200000 reproduces a(2)=185527 (2 ways), consistent with accepted continuation. Zero sums with multiplicity≥3 found below C=200000. The private compute host census dispatch at C=1e12 remains the next discriminating step to find any sum reaching multiplicity 3 (let alone 6) or certify a(6)>1e12.",
+  "next_gate": "Dispatch census run to private compute host: enumerate complete-prime-set triples up to C=1e12 using the rebuilt a385316_verifier.py census mode, recording all sums with multiplicity≥3. If none found, certify a(6)>1e12 as certified lower bound.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Local Mac replay only.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-07_07-23-39.md",
+    "sha256": "78e8a9dc0b24d7d5d1b860a81a8971e5e4080af575a5db5cbe4b7737b229acd3"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

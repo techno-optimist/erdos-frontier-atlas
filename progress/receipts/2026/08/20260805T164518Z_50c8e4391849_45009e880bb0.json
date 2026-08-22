@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:45009e880bb026796ed525aabbdedafedeb204699b8f3e4d0d286eaf3cefa99e",
+  "content_digest": "sha256:4571b3580ff04ca89f82e7160def110b20fe468835bdb18a583b33aeff1f4399",
+  "occurred_at": "2026-08-05T16:45:18Z",
+  "frontier": "Erdős #979: smallest N that is a sum of three prime cubes in exactly 6 ways (OEIS A385316 a(6)).",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nCopied the complete-prime-set multiplicity verifier from prior session (res_20260804_110522/verifier_a385316.py) into the current session directory and executed the no-argument replay entrypoint: domain kill fixture ((9,25,49)) rejected as domain violation, predicate kill fixtures (N=24 claimed k=2, N=185527 claimed k=3) rejected as predicate violations, and all five known OEIS terms a(1)..a(5) verified with exact representation counts.",
+  "verified": "Verifier domain: all components of each triple (p,q,r) must be prime (deterministic Miller-Rabin with bases [2,3,5,7,11,13,17,19,23,29,31,37], correct for n < 3.4e24)\nVerifier predicate: count_representations(N) enumerates all unordered p<=q<=r prime with p^3+q^3+r^3==N and confirms multiplicity == k\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nArtifact: verifier_a385316.py, SHA-256: 1416f44a1f3310fc554a9ca74b69ebaea0dab498626ee9ea3f8bd96550f95825\nReplay exited 0 with both summary lines matching required format.",
+  "result": "Verifier is correct, kill-tested, and independently replayable with exit code 0. Five known OEIS terms a(1)..a(5) reproduce exactly. The resource blocker persists: no search beyond C≈10⁹ is executable locally (C=10¹² would need ~4.64M primes and ~O(π(C¹/³))³ operations). The accepted continuation's next gate remains: restore SSH key authentication to private host to dispatch a C=10¹³ full census or obtain C=10¹² max_mult=5 anchor values.",
+  "next_gate": "Restore SSH key authentication to private host, dispatch a C=10¹³ complete-prime-set census, and report the highest multiplicity found and whether any N has multiplicity 6.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-05_09-45-18.md",
+    "sha256": "591745da25f6959353f438092c8a8888adb1cbf27cbef388ad9a5d5ee75a8e0c"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

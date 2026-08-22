@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:70e9aab7ea21b87c94600b42831cf0f7d0960b439f99aae5b55b16dd47a53dd8",
+  "content_digest": "sha256:f22e890f0ca000a00bf561770e9bf7a2f5a189a16149063f3f619c79ed6b7e1f",
+  "occurred_at": "2026-08-03T21:13:27Z",
+  "frontier": "What is OEIS A385316 a(6) — the smallest integer representable as p³+q³+r³ in exactly 6 unordered ways with p,q,r prime? Current lower bound: a(6) > 10⁹ (max multiplicity = 4 at C=10⁹).",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nWrote verifier_a385316.py as a self-contained, no-network Python replay entrypoint in the current session. Prior-session artifacts are evidence not live programs, so the verifier was freshly authored. Implemented two independent rejection branches: (1) domain validation — deterministic Miller-Rabin checks every triple component is prime (correct bases for n < 3.4e15); (2) predicate validation — enumerates all unordered prime-cube triples summing to N and verifies exact multiplicity k. Ran kill-fixture replay: one domain kill fixture (composite triple 9,25,49 → rejected with domain violation), two predicate kill fixtures (N=24 claimed k=2, actual 1; N=185527 claimed k=3, actual 2 → both rejected with predicate violations). All 4 known-good terms reproduce exactly: a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163. Census at C=10⁹ confirms max multiplicity = 4 (one value at multiplicity 4).",
+  "verified": "Domain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nArtifact: verifier_a385316.py, SHA-256: 7bb8c0f3cce23746050a45e8e7b9ccbfa32eb5e1296d8737c492dfc5b34ca27e\nKnown-good: a(1)=24 (1 rep), a(2)=185527 (2 reps), a(3)=8627527 (3 reps), a(4)=999979163 (4 reps) — all match. Census at C=10⁹: 168 prime cubes, 620691 total values, max multiplicity 4.\nVerifier domain: triple (9,25,49) correctly rejected — 9=3², 25=5², 49=7² are all composite, sum 133993 rejected with \"domain violation: non-prime components [9, 25, 49]\"\nVerifier predicate: N=24 k=2 correctly rejected — actual count is 1 (only 2³+2³+2³); N=185527 k=3 correctly rejected — actual count is 2 (19³+23³+53³ and 17³+37³+53³)",
+  "result": "Verifier construction complete and verified in this session. Isolated no-network replay exits zero with all kill fixtures and all 4 known-good terms reproducing. Census at C=10⁹ confirms max multiplicity = 4; a(5) and a(6) not found below C=10⁹, consistent with prior lower bounds.",
+  "next_gate": "Dispatch `python3 verifier_a385316.py --cutoff 1000000000000 --census` to private compute host farm-lane (ssh private compute host) to extend census to C=10¹². Record whether max multiplicity exceeds 4. If private compute host remains unreachable after 2026-08-06, escalate to operator for connectivity remediation.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. One terminal action (verifier replay, < 5 seconds). No tool results over 12,000 characters. Three artifact mutations used (experiment.json, verifier write, verifier patch via write).",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-03_14-13-27.md",
+    "sha256": "f4c82a3477ec49104d20f0a9edf55cd91829550a00f1a82b3ba6daa16e21bd8e"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

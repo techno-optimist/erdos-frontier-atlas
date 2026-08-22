@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:0bfc731f7c060134601e91dcd181a12706820b9529dc380f84b2eae9db21afe3",
+  "content_digest": "sha256:d2738d45f84634def6b930ebacce180fcfdf202fa8e6f267773c1849cd9c9c0b",
+  "occurred_at": "2026-08-04T03:48:12Z",
+  "frontier": "What is a(6), the smallest number expressible as a sum of three prime cubes in exactly 6 ways? Current lower bound: a(6) > 10^10.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nWrote verifier_a385316.py as a self-contained replay entrypoint with domain check (Miller-Rabin, bases [2,3,5,7,11,13,17,19,23,29,31,37] for n < 3.4e24) and exact multiplicity predicate. Ran census at C=10^10 (local, ~2.15M primes, ~5.6M triples).",
+  "verified": "Verifier domain: Deterministic Miller-Rabin with bases [2,3,5,7,11,13,17,19,23,29,31,37], correct for all n < 3.4e24. Verifier predicate: enumerates all unordered prime-cube triples (p<=q<=r) with p^3+q^3+r^3 == N and counts exact multiplicity.\nArtifact: verifier_a385316.py, SHA-256: de47db2e9b2e93228d1a773ab5beebaed973ef67154e29dcfe78695dd4bd95a6\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nKnown terms: a(1)=24 ✓, a(2)=185527 ✓, a(3)=8627527 ✓, a(4)=999979163 ✓",
+  "result": "Census at C=10^10: max multiplicity = 4 (5 values at mult=4; 4 additional values between 10^9 and 10^10, up from 1 at C=10^9). No value with multiplicity >= 5 found below 10^10. a(5) and a(6) remain > 10^10.",
+  "next_gate": "Extend census to C=10^11 (local, ~4.64M primes, ~42M triples, ~5-10 min wall time). If no multiplicity >= 5 found, escalate private compute host connectivity for farm-lane census to C=10^12.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-03_20-48-12.md",
+    "sha256": "bf4e08138f91bc994a0357aebbbc727e4e92e7e4a011683981cc73a12a7c6343"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

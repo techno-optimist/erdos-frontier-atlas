@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:c8d01c36a395d9c3785436bda4da3913825afbe0f8ccb0fdc0337fd4ada0a155",
+  "content_digest": "sha256:96097e9885b7b9d5023b74974f2074da81d899b3e8c7b5f23632781f9f924947",
+  "occurred_at": "2026-08-15T13:57:02Z",
+  "frontier": "What is the smallest integer that is the sum of three prime cubes in exactly 6 unordered representations (OEIS A385316 a(6))? Prior census to 10^12 confirmed maximum multiplicity 5.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nReplayed the existing a385316_verifier.py into the current session artifact directory, confirmed exit zero with complete domain and predicate kill-fixture summaries, and verified reference values a(1)=24 (mult 1) and a(2)=185527 (mult 2) reproduce correctly.",
+  "verified": "Verifier domain: 3/3 out-of-domain fixtures (N=23, 25, 30 — values that cannot be expressed as p^3+q^3+r^3 for primes p<=q<=r) rejected with zero decompositions found.\nVerifier predicate: 2/2 wrong-multiplicity fixtures (claimed multiplicity(24)=2 and claimed multiplicity(24)=0) rejected with true multiplicity=1 correctly reported.\nArtifact: a385316_verifier.py, SHA-256: 72e19dd10a852f00a160db9f76666095b74a78dfb95bce35e6047affe3d18e59\nDomain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED",
+  "result": "Verifier repaired and passes isolated no-network replay. All domain and predicate kill fixtures rejected with correct branch reasoning. Reference terms a(1)=24 and a(2)=185527 reproduce with exact decompositions. a(6) gap persists — max multiplicity remains 5 at 10^12.",
+  "next_gate": "Dispatch census to 5×10¹² on private compute host via the verified verifier: `python3 a385316_verifier.py --search 5000000000000`.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-15_06-57-02.md",
+    "sha256": "2e643c5133c845d592c22261b1c2102b8f129f5eeee96195c00f3d7a59d0a3bb"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

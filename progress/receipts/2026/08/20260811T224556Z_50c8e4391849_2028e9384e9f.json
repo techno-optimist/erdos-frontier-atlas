@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:2028e9384e9fe78b16b56c77f8efb0ed041d0e582dd2f78bc95a8c69e3a1f800",
+  "content_digest": "sha256:30cd57e58eed8ed3e2d78bb8f6374616511121a707d3af638ffc4a8b030bdc3f",
+  "occurred_at": "2026-08-11T22:45:56Z",
+  "frontier": "Smallest N representable as sum of three prime cubes (unordered, p≤q≤r) in exactly 6 ways (OEIS A385316 a(6)). Current lower bound: a(6) > 10¹⁰.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nComplete the smallest replayable primitive from accepted_continuation.next_gate: copy and locally verify the a385316_census_v2.py two-pass numpy census artifact from the prior session at C=10⁷, reproducing a(1)=24 and a(2)=185527.",
+  "verified": "Verifier domain: N = p³+q³+r³ with 2 ≤ p ≤ q ≤ r prime, p³+q³+r³ ≤ C\nVerifier predicate: count multiplicity (number of unordered prime-cube triples summing to N); a(k) = smallest N with multiplicity exactly k\nCensus v2 artifact: a385316_census_v2.py, SHA-256: acca69d07e6022e92b7dce0c3828949e150503673b61cdf04b4d21f80307ccc6\nReplay artifact: a385316_replay.py, SHA-256: 342893c0553142fed7802385554e98b67d697303e4274c70f7a5eb1c02ed11f1\nC=10⁷ replay: a(1)=24 OK, a(2)=185527 OK, a(3)=8627527 OK, max_multiplicity=3, 14694 unique numbers, 14824 total triplets\nC=200k spot-check: a(1)=24 OK, a(2)=185527 OK\nC=10¹⁰ replay: max_multiplicity=4, a(5)=N/A (not found), a(6) > 10¹⁰ confirmed\nALL FIXTURES PASSED (exit 0)",
+  "result": "Census v2 artifact copied from prior session and independently verified at C=10⁷ (a(1)=24, a(2)=185527, a(3)=8627527 — all match known terms). Lower bound at C=10¹⁰ confirmed: max multiplicity found = 4, so a(6) > 10¹⁰. The prior session's C=10¹⁰ claim of max multiplicity 4 is reproduced. No a(5) found at C=10¹⁰ either, consistent with prior session's a(5)=10588881419 being above this cutoff range or requiring higher precision — deferred to private compute host dispatch.",
+  "next_gate": "Dispatch a385316_census_v2.py at C=5×10¹¹ via private compute host SSH to search for numbers with multiplicity ≥ 5 (a(5) witness) and ≥ 6 (a(6) witness). Requires the 384GB private compute host shared memory for the 10⁸-sized arrays. Command: `ssh private compute host \"python3 ~/cultural-soliton-observatory/research_sessions/res_20260811_224228_erdos-979-prime-cubes-a385316/a385316_census_v2.py --cutoff 500000000000\"`",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. All writes scoped to research session artifact directory.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-11_15-45-56.md",
+    "sha256": "75ba9889baeeef5c6154f1bffa20729e9cf680ff65318a756e3a8621c42db75e"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

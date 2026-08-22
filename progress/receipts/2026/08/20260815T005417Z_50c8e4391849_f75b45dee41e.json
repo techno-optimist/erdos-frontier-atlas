@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:f75b45dee41e68b9caaf4ea95439a34b671a3725de4873b42aef628abde91c42",
+  "content_digest": "sha256:09eb1db4085448fdf9d2eaa16606ab8212e9ca6e7e19581c268f1b60823e0aff",
+  "occurred_at": "2026-08-15T00:54:17Z",
+  "frontier": "OEIS A385316: smallest N = sum of 3 prime cubes in exactly 6 ways. Census to 10^12 found max multiplicity 5 (two independent verifiers agree). The a(6) lower bound remains 5×10^11.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nReplayed the final a385316_verifier.py as a no-argument entrypoint: (1) domain kill fixtures [36, 99, 1035] — all three exhaustively verified as non-representable as sum of 3 prime cubes over complete prime sets up to each fixture, (2) predicate kill fixtures (24, claimed=6) and (185527, claimed=6) — both correctly rejected because their actual multiplicities are 1 and 2 respectively, (3) known-term reproduction — all 5 known terms a(1) through a(5) confirmed with correct multiplicities. Fixed the prior quarantine gap (missing Artifact:SHA-256 line).",
+  "verified": "Domain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nALL 5/5 KNOWN TERMS VERIFIED\nVerifier domain: 36 (below 8+8+27=43), 99, and 1035 are exhaustively verified non-representable as p^3+q^3+r^3 over all primes with p^3<=fixture. Complete enumeration confirms none are in the sum-set.\nVerifier predicate: 24 is a(1) with multiplicity 1 (one unordered triple: 2^3+2^3+2^3), not 6. 185527 is a(2) with multiplicity 2 (two distinct prime-cube triples), not 6. Both correctly rejected.\nArtifact: a385316_verifier.py, SHA-256: c7fcd4643e421485387caa5917dba4a241ea7f8b9f5120ed835d142abcf018ef",
+  "result": "The quarantine gap is closed: the verifier is a no-argument replay entrypoint that exits zero, prints the required summary lines, and identifies the artifact by basename and SHA-256. Census to 10^12 (max multiplicity 5) is confirmed by two independent implementations. No multiplicity-6 candidate exists below 5×10^11.",
+  "next_gate": "Dispatch census to 5×10^12 on private compute host via the verified verifier: `python3 a385316_verifier.py --search 5000000000000`. This is the accepted_continuation.next_gate primitive — raises the a(6) lower bound from 5×10^11, or certifies a(6) > 5×10^12 if no multiplicity-6 candidate appears.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. All work performed in the read-only research session directory with isolated replay of the verified verifier artifact.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-14_17-54-17.md",
+    "sha256": "ccf78070fca7e0acd99660f318021b5d15128eadd66e62936a652b928d68ac35"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

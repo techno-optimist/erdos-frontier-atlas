@@ -1,0 +1,25 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:7aacf328ac4032fd9f02f8039c482baaf375e3c011768d7d9a4064de652d46af",
+  "content_digest": "sha256:6d634870380cd1630b42d9315a39c9f915cce5f55f672d3b706ae832ef51942c",
+  "occurred_at": "2026-08-18T08:35:20Z",
+  "frontier": "GNFS constant-factor ledger: polynomial selection coefficient bound B = N^(1/(d+1)) — does the strategy-advised log-height estimator correspond to any known GNFS baseline?",
+  "action": "Milestone: next_experiment_design; contract=sha256:8f51055608cd87448dc0465787ec0c29684f1bdb3c8d9d4e4f45ef8ef7c42a8c\nImplemented and replayed gnfs_coefficient_bound_verifier.py: a no-factorer, pure-Python verifier computing B = N^(1/(d+1)) for degree-d GNFS polynomials. Ran 4 domain-kill fixtures (excessive coefficient 200, invalid N=1, degree=0, large negative coefficient) and 3 predicate-kill fixtures (discriminant below N^(2/3), zero leading coefficient, log-height exceeds log(B)). Replayed the accepted continuation test case (x^4+2x^3-x+1, N=100003): correct B = 10.0001 vs strategy claimed 3.7, ratio 2.70x.",
+  "verified": "Verifier domain: B = N^(1/(d+1)) for positive integer N > 1 and positive integer degree d >= 1; raises ValueError for N<=0 or degree<1.\nVerifier predicate: max|coeff_i| < B and log-height < log(B) and discriminant magnitude > N^(2/3) for degree>=2.\nDomain kill fixtures: 4/4 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nArtifact: gnfs_coefficient_bound_verifier.py, SHA-256: f7e741b933c03d03ff26db0a6906c3044d6f2b58accc1398cbec464ac05cea6e\nReproducible replay confirmed: ALL KILL FIXTURES PASSED on two independent runs.\nIndependent baseline: Montgomery (1995) and GNFS literature standard B = N^(1/(d+1)); strategy's expected_bound=3.7 does not correspond to any known GNFS normalization.\nUnits/conversion: B is a dimensionless count bound; log-height is natural-logarithm of coefficient+1.\nFrontier advice: sha256:83af128305ac18b97b91d2ed8b05c4e2abdaf63a06df6857658d94cabd9c4121; executed=yes; outcome=confirmed ratio=2.70x between strategy claimed bound 3.7 and correct B=10.0001 for N=100003, d=4.",
+  "result": "Negative result confirmed again: the strategy's log-height estimator (expected_bound=3.7) is an incompatible theoretical baseline for GNFS polynomial selection. The correct coefficient bound B=N^(1/(d+1)) for N=100003, d=4 is 10.0001 (ratio 2.70x). The polynomial passes the coefficient bound check (max_coeff=2 < B=10.0001) but the bound claim is 2.7x wrong. Discriminant=189.0 < N^(2/3)≈21544 for this polynomial at N=100003 — it is a valid candidate for relation collection at small N but the discriminant threshold matters at scale. The R3 test (genus-6 curves, Riemann-Roch) remains deferred per accepted_continuation and requires Sage/Magma.",
+  "next_gate": "Obtain SageMath or equivalent (pip install sageMath via conda or SINGULAR) and compare the Python B=N^(1/(d+1)) against Sage's `polynomial_selection()` output on a known GNFS target. Alternative: if no algebraic geometry tools become available within two sessions, rotate this frontier to shadow-only and promote another frontier with an executable first milestone.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. No factorization, relation collection, or baseline measurement executed. Pure Python coefficient bound computation only. Three-mutation budget: (1) experiment.json was pre-filled by prep script, (2) written one evidence artifact (gnfs_coefficient_bound_verifier.py), (3) one patch applied (Sylvester matrix type annotation). Tool access terminated at call limit.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "e97056701b6d",
+    "run_file": "2026-08-18_01-35-20.md",
+    "sha256": "c9f2649fb4ade5d1dc99620e02376cf4e4505235512939bbe175867f9e77382f"
+  },
+  "frontier_id": "fm_prime_factorization_gnfs",
+  "frontier_consult": {
+    "advice_digest": "sha256:83af128305ac18b97b91d2ed8b05c4e2abdaf63a06df6857658d94cabd9c4121",
+    "executed": true,
+    "outcome": "confirmed ratio=2.70x between strategy claimed bound 3.7 and correct B=10.0001 for N=100003, d=4."
+  }
+}

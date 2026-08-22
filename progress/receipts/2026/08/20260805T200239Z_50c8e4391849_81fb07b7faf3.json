@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:81fb07b7faf34a2169dd71171de596012a024a6d84cdab6acc70a74b530465d7",
+  "content_digest": "sha256:cff924a751961cfbb874c425d80102b3fe044f2180812a4644b97315abd0fa23",
+  "occurred_at": "2026-08-05T20:02:39Z",
+  "frontier": "OEIS A385316: find the smallest integer N expressible as a sum of three prime cubes in exactly 6 unordered ways — a(6).",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nReproduced the complete-prime-set multiplicity verifier (verifier_a385316.py) from the prior accepted session (res_20260804_110522) into the current session, executed the no-argument replay entrypoint, confirmed domain kill fixture ((9,25,49)) rejected as domain_violation, predicate kill fixtures N=24 (claimed k=2) and N=185527 (claimed k=3) rejected as predicate_violations with correct branch reason, and all five known OEIS terms a(1)..a(5) verified with exact representation counts; verifier exits 0.",
+  "verified": "Domain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nArtifact: verifier_a385316.py, SHA-256: 1416f44a1f3310fc554a9ca74b69ebaea0dab498626ee9ea3f8bd96550f95825\nVerifier domain: every triple component must be prime (Miller-Rabin deterministic for n < 3.4e24 via bases [2,3,5,7,11,13,17,19,23,29,31,37])\nVerifier predicate: enumerate all unordered prime-cube triples (p<=q<=r prime) summing to N and verify exact multiplicity k via bounded sieve + 3SUM scan\nKnown terms: a(1)=24 (k=1), a(2)=185527 (k=2), a(3)=8627527 (k=3), a(4)=999979163 (k=4), a(5)=10588881419 (k=5) — all verified.",
+  "result": "The verifier artifact is correctly reconstructed, kill-tested with branch-coverage, and independently replayable with exit code 0. The resource blocker persists: no local search beyond C≈10⁹ is executable (C=10¹³ needs ~4.64M primes and O(π(C^(1/3)))³ operations; C=10⁹ needs ~215k primes with ~O(215k³/6) ≈ 1.66e15 triple iterations, taking many hours even locally). The SSH key authentication to private host must be restored to dispatch the C=10¹³ complete-prime-set census that the accepted continuation's next gate requires.",
+  "next_gate": "Restore SSH key authentication to private host, dispatch a C=10¹³ complete-prime-set census, and report the highest multiplicity found and whether any N has multiplicity 6.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-05_13-02-39.md",
+    "sha256": "279d9c2968116b330d2e6f9803b4d7a8825db45802db16d2f712179a4cab9378"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

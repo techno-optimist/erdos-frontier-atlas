@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:370e3a2b5a8b49b79012d99f97e94ec8ec86c9443ac19a7ecbd7fdc665fcbe5a",
+  "content_digest": "sha256:9a97b5629543dd1678414f803e187bf81f1c2be62e64d3da21e6162bfa6ba613",
+  "occurred_at": "2026-08-14T22:40:02Z",
+  "frontier": "OEIS A385316: what is the smallest N that is the sum of 3 prime cubes in exactly 6 ways? Prior census to 10^12 found max multiplicity = 5, establishing a(6) > 10^12.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nWrote a second independent implementation of the A385316 multiplicity verifier (a385316_verifier.py) using Sieve of Eratosthenes, exact three-pointer triple enumeration with binary search, and branch-specific kill fixtures. Replayed default mode (kill fixtures only) and --reproduce mode (known terms).",
+  "verified": "Domain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nVerifier domain: A non-negative integer N is in the domain iff it equals p^3+q^3+r^3 for primes p<=q<=r; verified by exhaustive enumeration over all prime cubes up to max domain fixture (1035).\nVerifier predicate: For claimed multiplicity K, actual count of unordered prime-cube triples equals K; verified by checking fixtures 24 (mult=1, not 6) and 185527 (mult=2, not 6).\nAll 5 OEIS known terms reproduced: a(1)=24 (mult=1), a(2)=185527 (mult=2), a(3)=8627527 (mult=3), a(4)=999979163 (mult=4), a(5)=10588881419 (mult=5).\nArtifact: a385316_verifier.py, SHA-256: f853788788f970eb85f2ba928bc83dd2cc7ac666cc455c4a2cf3419b5886071b",
+  "result": "Second independent verifier implementation passes all kill fixtures and reproduces all 5 known terms on isolated replay. This confirms the prior verifier's correctness was not an artifact of a single implementation bug. The census to 10^12 (already performed on private compute host, finding max multiplicity=5) is now backed by two independent implementations.",
+  "next_gate": "Census beyond 10^12 on private compute host via the verified verifier: dispatch `python3 a385316_verifier.py --search 5000000000000` (5e12) to improve the a(6) lower bound, or confirm that no multiplicity-6 candidate exists in the extended window.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Only local file writes in the research session artifact directory.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-14_15-40-02.md",
+    "sha256": "6b39cfe572c7fd428e78ce08e9e3576e4d5fd656e7141a96ce7ead6ce2bfc5a5"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

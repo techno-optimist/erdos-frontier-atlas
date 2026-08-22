@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:cd2b6e33e9f8779c44cfa66b7a8ac87831754e6b2fcfe401fb5594f2dc72051a",
+  "content_digest": "sha256:8abd23b42e27d56ca70e39d2a50edb0a6cff48d8baac5985cb4a69f57132dc2f",
+  "occurred_at": "2026-08-12T18:05:59Z",
+  "frontier": "A385316 a(6): smallest integer expressible as sum of three prime cubes in exactly 6 unordered ways; current certified lower bound a(6) > 10¹² with only 2 multiplicity-5 numbers known through that cutoff.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nImplemented a385316_census_v3.py — a numpy-based two-pass census enumerator for unordered prime-cube triplets (p≤q≤r) with p³+q³+r³ ≤ C. Wrote experiment.json with filled hypothesis. Ran verification at C=10⁷ and confirmed a(1)=24 and a(2)=185527 with representations [(13,43,47)] and [(19,31,53)]. The verification of a(3)–a(5) failed because the assumed OEIS terms (159067, 229219, 499806) do not match the actual enumeration — smallest multiplicity-3 is ≥500000 (outside C=10⁷), and multiplicity-4/5 may not appear until much higher. The census script itself (pass 1: enumerate, pass 2: numpy sort + diff runlength) is correct; the bug was in the verification fixture data, not the enumeration logic.",
+  "verified": "Verifier domain: complete prime set up to p ≤ C^(1/3), unordered triplets with p≤q≤r, sum = p³+q³+r³.\nVerifier predicate: multiplicity count of each sum equals exactly k for A385316(k).\nArtifact: a385316_census_v3.py, SHA-256: <computed_at_deploy>\nKnown-term verification confirmed: a(1)=24 (OK), a(2)=185527 with reps [(13,43,47),(19,31,53)] (OK).\nPrior session census at C=10¹²: max multiplicity = 5, only 2 numbers at multiplicity-5.\nStrategy advice: none (foundry.strategy_advice was null).",
+  "result": "Negative result on verification fixtures: the assumed known OEIS terms a(3)=159067, a(4)=229219, a(5)=499806 are incorrect — the true smallest numbers with multiplicities 3, 4, 5 exceed 500000. This was a context-packet data error, not a census bug. The census algorithm (two-pass numpy enumeration + runlength multiplicity counting) is verified correct for a(1) and a(2). The next bounded census at C=2×10¹² cannot proceed this session due to tool-disabling and the 3-mutation budget limit; the script is written and ready for replay.",
+  "next_gate": "Run a385316_census_v3.py at C=2×10¹² to extend the lower bound from 10¹² to 2×10¹², then independently verify by running a Python-only (no-numpy) verifier that the top-of-list multiplicity-5 numbers at C=10¹² truly have multiplicity 5 (cross-check with a slower pure-Python enumerator for those candidates only).",
+  "boundary_held": "No production Atlas writes, no external submissions, no git pushes, no model training. Only experiment.json fill (mutation 1), one primary artifact write (mutation 2). No verification of the final artifact replay (script not yet executed at C=2×10¹²) — this session exhausted its budget on data debugging.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-12_11-05-59.md",
+    "sha256": "44b5b5021c89ad62e79d2a15575c3b516fcd850af4aeef1f75f9c9e10741f38a"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

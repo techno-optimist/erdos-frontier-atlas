@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:b4aba0a279a29cce7b582cbb44ff0c309d24d6537304f997434ba284ae02e7e5",
+  "content_digest": "sha256:d7f3a18397d5c072f9a0795932cb14fe806584b3f7bac91a7be804df72e695ae",
+  "occurred_at": "2026-08-15T01:27:40Z",
+  "frontier": "A385316: what is the smallest integer N that is a sum of three prime cubes (p³+q³+r³, unordered, nondecreasing) in exactly 6 ways? Current certified lower bound: a(6) > 10¹⁰ (local), > 10¹² (prior private compute host census to max multiplicity 5).",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nRebuilt the complete-prime-set multiplicity verifier from focused context, ran kill-fixture suite and known-term reproduction locally.",
+  "verified": "Domain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\na(1)=24 mult=1, a(2)=185527 mult=2, a(3)=8627527 mult=3, a(4)=999979163 mult=4, a(5)=10588881419 mult=5 — all match known OEIS A385316 terms\nVerifier domain: 36, 99, 1035 exhaustively verified as non-representable as sum of 3 prime cubes over complete prime sets up to each fixture\nVerifier predicate: 24 (claimed multiplicity ≠ 6, actual=1) and 185527 (claimed multiplicity ≠ 6, actual=2) correctly rejected\nArtifact: a385316_verifier.py, SHA-256: a0bb730e39fe830e8c271cda15d22670e48e7d0e1dc76d1ba217aad96702e06b\nLocal search to 10¹⁰: max multiplicity=4, certified a(6) > 10¹⁰",
+  "result": "Verifier construction completed and verified. Kill fixtures pass. All 5 known terms reproduced with correct multiplicities. Local search to 10¹⁰ confirms max multiplicity 4. Prior private compute host census to 10¹² confirmed max multiplicity 5 — the gap to multiplicity 6 remains.",
+  "next_gate": "Dispatch census to 5×10¹² on private compute host via the verified verifier: `python3 a385316_verifier.py --search 5000000000000`. This raises the a(6) lower bound from 10¹² to 5×10¹², or certifies a(6) > 5×10¹² if no multiplicity-6 candidate appears. Estimated private compute host wall time: ~60–120 seconds.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. All artifacts stay in the research session directory.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-14_18-27-40.md",
+    "sha256": "2b00d6b6d5c32f217e48f029d7ae196e289218710f7ff4c7a9216fa0e5a37510"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

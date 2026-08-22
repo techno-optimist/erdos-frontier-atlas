@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:6c8fafaf93dfcff5c15ebd0762476dea3c0a9b1bdbf0ece406a92a31005296b9",
+  "content_digest": "sha256:36a228e8d50e89612ad560ca0c3377f52eb9e4b66cf0b164ca595a4314679136",
+  "occurred_at": "2026-08-08T11:56:48Z",
+  "frontier": "OEIS A385316: smallest N that is a sum of three prime cubes in exactly 6 unordered ways — a(6). Current state: five terms known (a(1)=24 through a(5)=10588881419), a(6) unknown.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nRepaired and independently replayed the A385316 verifier artifact in the current session directory. Wrote a clean, no-dependency Python verifier with two-branch rejection (domain: Miller-Rabin primality check on triple components; predicate: exact 3SUM enumeration of unordered prime-cube triples). Ran isolated no-network replay confirming: (1) domain kill fixture composite triple (9,25,49) rejected for domain_violation, (2) predicate kill fixture N=24 (claimed k=2, actual 1) rejected for predicate_violation, (3) predicate kill fixture N=185527 (claimed k=3, actual 2) rejected for predicate_violation, (4) all five known OEIS terms a(1..5) reproduced with correct multiplicities.",
+  "verified": "Domain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nArtifact: verifier_a385316.py, SHA-256: 874ffc60985b31f5ee1aca73676b0e730fda1a3e0b4fc67b7dc89b2755c36007\nAll five OEIS anchor terms a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419 reproduce with correct multiplicities. Exit code 0. Prior session verifier (res_20260806, SHA-256: 1416f44a...) also passed independently, confirming reproducibility across implementations.",
+  "result": "Negative result: no mathematical progress on a(6) value. The verifier is confirmed correct, reproducible, and passes all kill fixtures and known-term verification. The operational blocker remains: private compute host DNS resolution (private host) is unresolvable from the Mac host, preventing dispatch of the C=10^12 census search. No route delta from prior accepted continuation (sha256:113e84cc).",
+  "next_gate": "Operator-action: restore SSH/DNS connectivity to private host, then dispatch census at C=10^12 on private compute host. Upon success, a second independent implementation must reproduce the census result before registering a(6) or a certified lower bound (per #552 a(17) and f(39) single-source rejection lessons).",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Only read-only verified evidence and one local verifier artifact written to the current session directory.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-08_04-56-48.md",
+    "sha256": "0384d3a22dcac77b93d9e994be271c55b8664626ced062c9e8acac7f65663d24"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:1340f793b272139faa05b38f0f6d402663cb396a562198f22f967d0d6aae324e",
+  "content_digest": "sha256:67907e861bce78b783e84102d1cc9e7d26a875e5960b2c1126eeeb8faf3fcd0a",
+  "occurred_at": "2026-08-09T06:53:29Z",
+  "frontier": "A385316: smallest integer representable as sum of three prime cubes in exactly six ways, a(6).",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nRebuilt a385316_verifier.py from scratch as a no-argument Python entrypoint with deterministic Miller-Rabin primality testing, two-pointer representation counting over a sorted prime-cube list, domain kill fixtures (22, 100 — not representable as sums of three prime cubes), and predicate kill fixtures (43 expected k=2 but actual k=1; 185527 expected k=3 but actual k=2). Ran isolated no-network replay confirming all five OEIS terms a(1)=24 (reps: {(2,2,2)}), a(2)=185527 (reps: {(13,43,47),(19,31,53)}), a(3)=8627527 (reps: {(19,151,173),(23,139,181),(71,73,199)}), a(4)=999979163 (k=4), a(5)=10588881419 (k=5) reproduced exactly, and both kill fixture suites passing.",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nArtifact: a385316_verifier.py, SHA-256: d3db8bbc0f081b15f958de41de07bc9a09c1f047b00b1c2da2c6ffdef292dcfc\nVerifier domain: a sum N=p^3+q^3+r^3 is well-formed iff p,q,r are primes and each p^3,q^3,r^3<=N; domain rejection confirms N cannot be expressed as any such triple.\nVerifier predicate: unordered representation count of N over prime-cube triples equals the target multiplicity k; rejection confirms actual multiplicity deviates from the claimed k.\nFrontier advice: none (strategy_advice was null in this session; executed=no; outcome=N/A)",
+  "result": "Verifier artifact rebuilt and passes isolated no-network replay: 2/2 domain kill fixtures rejected correctly, 2/2 predicate kill fixtures rejected correctly, all five OEIS terms a(1)..a(5) reproduced with exact multiplicity and verified representations. No a(6) progress — the census search at C=10^12 is blocked by SSH connectivity to private compute host. The verifier is deterministic, seedless (pure arithmetic), and exits zero.",
+  "next_gate": "Operator action: restore SSH connectivity to private host, then dispatch census at C=10^12 on private compute host producing the first-prime-set enumeration with cutoff p^3<=10^12 (1229 primes, ~308M triples). Alternative: operator authorizes local census at C=10^12 with requirement of second independent implementation for result validation.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-08_23-53-29.md",
+    "sha256": "26b7efd3733a33ae22c70357473d42b28f6ed1cba988f58f2a48ca5cc120950a"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

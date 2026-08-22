@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:ab6b0b0f707f6f4fdd4cb8d454465496cb77d57c55db3168138c750de644507b",
+  "content_digest": "sha256:1491c07673f264e32f6b60285468eb9e264b56797c99e96f1de87d70ee9b75f4",
+  "occurred_at": "2026-08-12T10:51:27Z",
+  "frontier": "What is a(6) for OEIS A385316 — the smallest integer N representable as p³+q³+r³ (p≤q≤r, all prime) in exactly 6 unordered ways — and does it exist below the C=10¹² census bound?",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nBuilt and replayed a self-contained no-argument verifier (a385316_verifier_final.py) that reproduces all five known A385316 terms (a(1)=24 through a(5)=10588881419) and runs two domain kill fixtures (N=22, N=100 — both rejected as having zero prime-cube representations) and two predicate kill fixtures (N=43 claimed k=2, actual=1; N=185527 claimed k=3, actual=2). The C=10^12 census sorting+rank extraction from the accepted continuation cannot be performed on this Mac (private compute host-only, 124 GB RAM required); the smallest independently replayable primitive achievable locally is the verifier.",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nArtifact: a385316_verifier_final.py, SHA-256: 0c36ae1da71a08001ae36777c3fa437dc550d118c7e4bdb23266a246d67a9b0f\nAll five known terms verified independently: a(1)=24 (rep: (2,2,2)), a(2)=185527 (reps: (13,43,47),(19,31,53)), a(3)=8627527 (3 reps), a(4)=999979163 (4 reps), a(5)=10588881419 (5 reps). Exit code 0. Replay is deterministic, offline, no-network required.\nFrontier advice: none; no strategy_advice present in this session's foundry gate.",
+  "result": "The verifier passes all kill fixtures and known-term checks. This resolves the quarantine feedback (missing domain/predicate fixture summaries) from prior session sha256:a7e65b. The C=10^12 census sorting+rank extraction remains private compute host-bound and unresolved on this Mac. Prior state stands: at C=500B, max_multiplicity=5, a(5)=10588881419, two numbers at multiplicity 5, no multiplicity-6 found. At C=10^12, 234,197,661 triplets were enumerated but sort+rank extraction was not permitted to finish.",
+  "next_gate": "Dispatch the C=10^12 census sorting + rank extraction to private compute host: `ssh private compute host 'python3 ~/cultural-soliton-observatory/research_sessions/res_20260812_031832_erdos-979-prime-cubes-a385316/a385316_census_v2.py --cutoff 1000000000000'` and record max_multiplicity and k_to_smallest. If max_multiplicity < 6, certify a(6) > 10^12.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. The only writes were experiment.json (scoped registration) and the verifier artifact (single evidence file).",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-12_03-51-27.md",
+    "sha256": "d44b73e32e829b9be43064fa8da5396f96f8a906b6a0c4e70f17c597220407e4"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

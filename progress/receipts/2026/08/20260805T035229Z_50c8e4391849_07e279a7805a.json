@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:07e279a7805a7797ea838f3395f94a3deccbcffe53d6483ab6d373fa2ea7609d",
+  "content_digest": "sha256:7456728096bbcf0804f51d82c932d695142d1a21a02a8eab27cb72f0656bdf9a",
+  "occurred_at": "2026-08-05T03:52:29Z",
+  "frontier": "OEIS A385316: smallest N = sum of 3 prime cubes in exactly 6 ways, denoted a(6). Current bound: a(6) > 10^12 (max multiplicity found = 5 at C=10^12 via farm-lane census).",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nReproduced the accepted-continuation verifier (verifier_a385316.py), ran all kill fixtures and known-term verification. Verified census mechanism at C=10^8 (max_mult=3). Confirmed memory wall: C=10^13 census requires ~736GB RAM vs ~23GB on private compute host Spark; no farm-lane SSH available for the windowed probe around C=10^12 max_mult=5 anchors (anchors not available locally).",
+  "verified": "Verifier domain: every element in the triple (p, q, r) is prime (deterministic Miller-Rabin, bases sufficient for n < 3.4e24).\nVerifier predicate: count unordered triples (p<=q<=r) of primes with p^3+q^3+r^3 == N and verify count == k.\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\na(1)=24: 1 way OK | a(2)=185527: 2 ways OK | a(3)=8627527: 3 ways OK | a(4)=999979163: 4 ways OK\nArtifact: verifier_a385316.py, SHA-256: 4a779f1713a1e4b08c2963f303b1032e9978bb5715d6a2c3c72d7c2bd1cf571a",
+  "result": "Negative-result closure: the bounded exact-search primitive is blocked by resource constraints. Farm-lane census to C=10^12 (max_mult=5) was completed by accepted continuation but C=10^13 requires 736GB RAM unavailable on private compute host Spark (~23GB). Windowed probe around C=10^12 anchors cannot proceed without those anchor values and farm-lane resources. No a(6) witness found in this session.",
+  "next_gate": "Restore SSH to private compute host farm-lane and dispatch C=10^13 full census, or obtain the specific max_mult=5 candidate values from the C=10^12 run to execute the windowed multiplicity-6 probe locally.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-04_20-52-29.md",
+    "sha256": "fa8678181bd1b109084a761e21abb1ca51c71acf45874f145491a3a345da2c86"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

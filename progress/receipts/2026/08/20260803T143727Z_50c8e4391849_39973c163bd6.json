@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:39973c163bd662ca887ab97af835f9cbd3e9e4ac50b1c82ff292facd659a3413",
+  "content_digest": "sha256:ae00435cd1576959c471b78040b58bddffef13d33f3dec98b99eca943e31bec7",
+  "occurred_at": "2026-08-03T14:37:27Z",
+  "frontier": "OEIS A385316: what is a(6), the smallest integer expressible as p³+q³+r³ (p≤q≤r prime) in exactly 6 unordered ways?",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nCopied the session's verified verifier_a385316.py into the current session directory, executed the no-network replay entrypoint, confirmed all 2 domain kill fixtures and all 3 predicate kill fixtures pass, and verified all 5 known terms a(1)..a(5) at C=10⁶. The C=10¹² census is blocked — private compute host SSH (hostname private compute host) failed DNS resolution today (2026-08-03), the first day of the outage that began before the 2026-08-06 escalation threshold.",
+  "verified": "Artifact: verifier_a385316.py, SHA-256: b8cef1261d2f385744cdc432cf4f5bd2618ad834e5ce6d608d9bc3629737fe64\nDomain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nALL KILL FIXTURES PASSED\na(1)=24: 1 rep [OK], a(2)=185527: 2 reps [OK], a(3)=8627527: 3 reps [OK], a(4)=999979163: 4 reps [OK], a(5)=10588881419: 5 reps [OK]\nprivate compute host SSH unreachable: ssh -o ConnectTimeout=5 private compute host 'echo ok' → \"Could not resolve hostname private compute host: Temporary failure in name resolution\" (2026-08-03 14:xx UTC)",
+  "result": "No mathematical progress beyond the established lower bound a(6) > 10⁶ (max multiplicity 2 at C=10⁶). The C=10¹² census determining whether max multiplicity exceeds 5 (i.e. whether a(6) ≤ 10¹²) is blocked by private compute host SSH connectivity failure that began on 2026-08-03. Escalation threshold per prior accepted continuation is 2026-08-06; today is day 0 of the outage.",
+  "next_gate": "If private compute host SSH remains unreachable on or after 2026-08-06, escalate to operator for connectivity. When connectivity returns, dispatch: `ssh private compute host 'python3 ~/cultural-soliton-observatory/research_sessions/res_20260803_055245_erdos-979-prime-cubes-a385316/verifier_a385316.py --cutoff 1000000000000 --census'` and record whether max multiplicity exceeds 5.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-03_07-37-27.md",
+    "sha256": "8cd76827f5e0711d17c1084831b39fd4f10062f833d688e736f69a44438b48cd"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

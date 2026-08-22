@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:f84473c70a356cb482132a0f43012827344d6b1cd5191d720975f8c0bd1821a7",
+  "content_digest": "sha256:2a7106b02140536f00524bc4ab1277db9a970cc23bd930a94c3d658bd52667bd",
+  "occurred_at": "2026-08-07T06:24:15Z",
+  "frontier": "Erdős #979: smallest N expressible as p³+q³+r³ (unordered prime triples, p≤q≤r) in exactly 6 representations — OEIS A385316 a(6). Known bounds: a(5)≈2.8×10¹¹, a(6)>4.99×10¹¹. The multiplicity gap persists — no k≥3 found through C=5M across 5 prior sessions.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nCopied the latest available a385316_census.py artifact into the current session directory, verified its SHA-256 (4a911a6e…), and executed the kill-fixture replay to confirm the verifier exits zero with complete domain and predicate kill-fixture summaries.",
+  "verified": "Artifact: a385316_census.py, SHA-256: 4a911a6ec957c73bb79cd91bf831f2338aec0efa3c7b6745ed713e483d261dd6\nDomain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nVerifier domain: N must be expressible as p³+q³+r³ where p,q,r are primes and p≤q≤r.\nVerifier predicate: multiplicity(N, 3-prime-cubes) == n means exactly n distinct unordered triples (p,q,r) of primes with p³+q³+r³ == N.\nNote: The accepted_continuation references artifact SHA dccf83b75918e1a0c84baf1da69dfb81052a9d5f42759ef31cabac51a7734ef8 which does not match any surviving artifact. The current artifact SHA differs by 40 hex characters; the prior session's integrity claim cannot be verified because the copied artifact was not persisted to the current session directory.",
+  "result": "The verifier's kill-fixture replay passes (exit 0, all fixtures rejected correctly). However, the artifact integrity chain is broken: the SHA from the accepted continuation cannot be matched to any file in the research session history. The current session must treat the available census script as an unverified copy. Local census at C=5M has been completed by the prior session (a(1)=160, a(2)=185527 confirmed, no multiplicity ≥3 found). No new mathematical evidence; the multiplicity gap persists.",
+  "next_gate": "Re-establish the artifact integrity chain by either (a) locating the exact file version with SHA dccf83b7 from the prior session's run history or (b) producing a fresh verifier from scratch in this session, running kill-fixture replay, and updating the accepted continuation with the new SHA. Then dispatch to private compute host for C=1e12 census.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. No private compute host dispatch attempted. Tool access disabled by operator gate.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-06_23-24-15.md",
+    "sha256": "58ed4228228949305389a172b87cb9a427752f00181417a8d0241449d86d32ff"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

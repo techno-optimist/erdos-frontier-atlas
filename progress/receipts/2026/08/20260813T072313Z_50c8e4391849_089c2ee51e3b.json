@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:089c2ee51e3bc310be457aea3c9664ea22cbdf3d24c57ec74759e0d2a5c776b0",
+  "content_digest": "sha256:fc10a21f1870fa4c788fca275d1c16991ac11d0adb679776a5f6038284cd9116",
+  "occurred_at": "2026-08-13T07:23:13Z",
+  "frontier": "OEIS A385316: smallest integer expressible as p³+q³+r³ (p≤q≤r primes) in exactly 6 unordered ways — a(6) lower bound status.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nReplayed the accepted-continuation verifier artifact (a385316_verifier.py) as a no-argument, no-network, deterministic entrypoint. Domain kill fixtures: 3/3 rejected (N=23, 25, 30 have zero prime-cube decompositions). Predicate kill fixtures: 2/2 rejected (claimed multiplicity(24)=2 and multiplicity(24)=0 both mismatch truth=1). Census at C=200000 reproduces a(1)=24 (mult 1: 2³+2³+2³), a(2)=185527 (mult 2: 13³+43³+47³, 19³+31³+53³). Max multiplicity below 200000 is 2; zero multiplicity-6 candidates exist below 200000.",
+  "verified": "Domain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nArtifact: a385316_verifier.py, SHA-256: 72e19dd10a852f00a160db9f76666095b74a78dfb95bce35e6047affe3d18e59\nVerifier domain: 23 rejected (no decomposition into three prime cubes); 25 rejected; 30 rejected. All three out-of-domain integers correctly produce zero decompositions.\nVerifier predicate: claimed multiplicity(24)=2 rejected (true=1, mismatch); claimed multiplicity(24)=0 rejected (true=1, mismatch). Both false multiplicity claims correctly fail.\nDeterministic replay: exit 0, ALL KILL FIXTURES PASSED. Census to C=200000: 718 candidate sums, max multiplicity=2, smallest mult-2 at 185527.\nPrior session receipt sha256:d276aa1a confirmed the same results. No broad context packet loaded; focused evidence sufficient for verifier replay.",
+  "result": "Verifier construction milestone confirmed: deterministic replay passes. The prior accepted continuation's verifier and census results are independently reproducible at exit 0. Max multiplicity below 200000 remains 2. No multiplicity-6 candidate exists below 200000. The next discriminating step (private compute host census at C=2×10¹²) remains deferred — it requires remote dispatch and cannot be executed locally.",
+  "next_gate": "Dispatch census at C=2×10¹² to private compute host (private host), then cross-verify any multiplicity-5 or multiplicity-6 candidates found in the 4.99×10¹¹–2×10¹² window using this verifier artifact.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. No broad context packet loaded. No mutation of next_gate.md or frontier_queue.json. Artifact write = 1 (experiment.json). Replayed prior-session code only; did not execute it in place without copy.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-13_00-23-13.md",
+    "sha256": "d28e7cc291774201101b78282dde7aa6aa1cd01465f500fccaa930a2461a43a8"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

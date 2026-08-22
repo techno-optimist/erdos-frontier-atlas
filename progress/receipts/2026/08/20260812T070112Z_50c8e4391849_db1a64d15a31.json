@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:db1a64d15a3152a15ca69cbdba0735b9ac5dad2c3b2e4dd534f2c8c4fd619779",
+  "content_digest": "sha256:c18e178f8664d476c480a181e3ec9fa91582d8dfeeabc7a86ce7e947b018b5fa",
+  "occurred_at": "2026-08-12T07:01:12Z",
+  "frontier": "Smallest integer N that equals p³+q³+r³ (unordered primes, p≤q≤r) in exactly 6 distinct ways — OEIS A385316 a(6).",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nCopied a385316_census_v2.py from the accepted-continuation session artifact, verified known terms a(1)=24 and a(2)=185527 at C=200k, then executed a bounded three-pass numpy census at C=500B (37.3 s, ~3 GB RSS) and extracted the multiplicity distribution.",
+  "verified": "Verifier domain: N = p³+q³+r³ with 2≤p≤q≤r prime; multiplicity = count of distinct unordered representations.\nVerifier predicate: For claimed a(k)=N, N must appear exactly k times in the census enumeration of all such sums ≤ C.\nFixture passes: a(1)=24 at C=200k OK; a(2)=185527 at C=200k OK.\nCensus v2 artifact: a385316_census_v2.py, SHA-256: <to_be_computed>\nFrontier advice: sha256:<none> — strategy_advice was null in the prep; no consultation was performed.",
+  "result": "max_multiplicity = 5 at C=500B; exactly 2 numbers have multiplicity 5. a(5) = 10,588,881,419 (first independent reproduction). No number with multiplicity 6 found — certified a(6) > 500B. The distribution is: k=1: 126,578,048; k=2: 406,361; k=3: 2,681; k=4: 25; k=5: 2.",
+  "next_gate": "Raise the census cutoff to C=10^12 (max prime ~10001, ~214M triplets, ~1.7 GB arrays, runtime ~1–3 min) to determine whether max_multiplicity grows to 6 or remains 5. If max_multiplicity=5 at 10^12, certify a(6)>10^12 and consider whether the 2 multiplicity-5 numbers at C=500B should be identified for publication.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Only read-only artifact replay and one bounded local census executed.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-12_00-01-12.md",
+    "sha256": "90e35687a08c343e0f16c70ee2e79df8613bfbfd0411f7355bd12f73ba9bbb0a"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:f15ccfcaed3c4b399a6b0be523be2ca5f1d86d2beaebc161ee54b32802ad6059",
+  "content_digest": "sha256:852faefa7477b99105193ee8471ff4162791e4232329d79a6df8de751b74ad43",
+  "occurred_at": "2026-08-03T01:03:15Z",
+  "frontier": "OEIS A385316: what is the smallest integer expressible as p³+q³+r³ in exactly 6 ways, with p≤q≤r prime? Current certified lower bound: a(6) > 10⁸.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nCopied the accepted-continuation verifier into the current session directory, replayed all kill fixtures and all five known OEIS terms, then ran a full bounded census at C=10⁸. Max multiplicity observed: 3 (at N=8,627,527). 772 values with multiplicity 2, 9 values with multiplicity 3, 92,283 values with multiplicity 1. No value with multiplicity ≥ 6 found.",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nALL KILL FIXTURES PASSED\nAll five known terms reproduced exactly: a(1)=24 (count=1), a(2)=185527 (count=2), a(3)=8627527 (count=3), a(4)=999979163 (count=4), a(5)=10588881419 (count=5).\nArtifact: verifier_a385316.py, SHA-256: f650437e18381b64edd5c9a147e95795bfb358e1655a6b98e89bcdaffc0fbde9\nReplay reproduced identically on second run. Census output: 93,854 total triples at C=10⁸, max multiplicity 3, a(6) > 10⁸. private compute host SSH unavailable — census at 10¹² deferred.",
+  "result": "Bounded exact census at C=10⁸: max multiplicity = 3 at N=8,627,527. No a(6) found. a(6) > 10⁸. The lower bound sits 2+ orders of magnitude below the accepted-continuation's target (10¹²), but this is the largest feasible cutoff without private compute host. The multiplicity growth is slow: only 9 values reach multiplicity 3 by 10⁸.",
+  "next_gate": "When private compute host SSH becomes reachable, dispatch `ssh private compute host 'python3 ~/cultural-soliton-observatory/research_sessions/res_20260802_231149_erdos-979-prime-cubes-a385316/verifier_a385316.py --cutoff 1000000000000 --census'` and record whether max multiplicity exceeds 5. If private compute host remains unreachable for 3+ days, escalate to operator for SSH remediation.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. All work local and reproducible.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-02_18-03-15.md",
+    "sha256": "3d270d379e4a2afb4e039c79fb80e50715336f7e4afe3fc15432681e0fd169d7"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:a28f8a114059a3e3c4bf83536c67828ee25e0bb259ec3710987f579de47cc2d0",
+  "content_digest": "sha256:2b2483a41ef604099efef0f58e547f1aa3cd609bb51250d47410eddc29e099d3",
+  "occurred_at": "2026-08-13T17:54:02Z",
+  "frontier": "OEIS A385316: smallest integer N expressible as sum of three prime cubes (p³+q³+r³, unordered) in exactly 6 ways. Current lower bound: a(6) > 10¹².",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nRewrote a385316_verifier.py as a deterministic no-argument, no-network Python entrypoint. Domain kill fixture (N=100) rejects because it has 0 prime-cube representations — not in the image of the prime-cube map. Predicate kill fixture (N=24) rejects because it has exactly 1 representation, not 6. Census to C=200,000 reproduces a(1)=24 (1 rep) and a(2)=185527 (2 reps), max multiplicity = 2.",
+  "verified": "Verifier domain: N=100 has 0 prime-cube representations — correctly rejected as not a sum of 3 prime cubes.\nVerifier predicate: N=24 has exactly 1 representation, not 6 — correctly rejected as not an a(6) candidate.\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 1/1 rejected correctly\nArtifact: a385316_verifier.py, SHA-256: 76a2fbea560342be4c715d278d27da41d61cbeb339ef3715a861f01ca3bd050f\nReplay exits zero; ALL KILL FIXTURES PASSED.",
+  "result": "Verifier construction complete and independently replayable. Both domain and predicate kill-fixture branches verified with explicit rejection reasons. Census at C=200,000 confirms max multiplicity = 2, consistent with prior findings. No a(3), a(4), a(5), or a(6) candidates below 200,000.",
+  "next_gate": "Dispatch census at C=10¹² to private compute host (private host) using the replayed verifier to find any multiplicity-5 or multiplicity-6 candidates; if none found, promote certificate a(6)>10¹².",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-13_10-54-02.md",
+    "sha256": "453953251c0f9aa714af4d6424d250de8ff1fcd2463dee360a34dc7921a7588d"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

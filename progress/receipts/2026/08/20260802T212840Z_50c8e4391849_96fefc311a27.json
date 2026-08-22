@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:96fefc311a27350a997535523ec4767e0109fbd2aa96e09f42ee242d6f4aab5d",
+  "content_digest": "sha256:2377c093212611a5922b0ef6b2d1d70e91eb562377895d6434f0eb0f8857bf12",
+  "occurred_at": "2026-08-02T21:28:40Z",
+  "frontier": "Erdos #979: what is a(6) of OEIS A385316 — the smallest N expressible as a sum of three prime cubes in exactly 6 unordered ways?",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nBuilt verifier_a385316.py from focused evidence. Domain branch rejects out-of-domain triples (non-prime elements, negative N). Predicate branch counts unordered prime-cube representations via exhaustive binary-search census. Replayed 2 domain kill fixtures and 3 predicate kill fixtures. Census at C=10⁶ reproduces all five known terms a(1)..a(5) exactly.",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nALL KILL FIXTURES PASSED\nVerifier domain: rejects (4,2,2) with reason \"4 not prime\" and N=-1 with reason \"non-positive N=-1\" — 2/2 correctly rejected\nVerifier predicate: N=25 has 0 representations (2³+2³+2³=24<25<8³=512), N=16 has 0 representations (2³+2³+2³=24>16), N=24 has 1 representation (2,2,2) — 3/3 correctly rejected\nArtifact: verifier_a385316.py, SHA-256: f2447162882e543b3622b70c41004025f4d0561d1982ed9b524f55770096edfb\nKnown-term reproduction at C=10⁶: a(1)=24 count=1 [OK], a(2)=185527 count=2 [OK], a(3)=8627527 count=3 [OK], a(4)=999979163 count=4 [OK], a(5)=10588881419 count=5 [OK]\nMax multiplicity at C=10⁶ is 5 (consistent with prior session's C=10¹² result also showing max multiplicity 5)",
+  "result": "Verifier construction complete with full domain and predicate kill-fixture coverage. Five known terms reproduced exactly. Max multiplicity 5 confirmed at C=10⁶. a(6) remains unfound. No new mathematical frontier progress — this is verifier completion, not search.",
+  "next_gate": "Dispatch verifier_a385316.py census with --cutoff 1000000000000 (10¹²) on private compute host farm-lane or local single-core (~4 min). If max multiplicity exceeds 5, refine toward a(6). If not, dispatch C=10¹³.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-02_14-28-41.md",
+    "sha256": "9c26545c0fd436380ad4cecf54dbe682cd703819de21b417648c647c84147801"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

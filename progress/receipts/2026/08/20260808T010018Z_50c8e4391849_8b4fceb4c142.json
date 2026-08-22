@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:8b4fceb4c1429b6ba7b424b3b4b866f8336aff52be60e25be4c1fe19aa6b5686",
+  "content_digest": "sha256:0cf7005b6c48c54c7524739c23f631d6322f6a95c4c191d31cace312c499a5e5",
+  "occurred_at": "2026-08-08T01:00:18Z",
+  "frontier": "OEIS A385316: smallest N that is the sum of three prime cubes in exactly 6 ways (a(6)); current certified lower bound is a(6) > 10^11, with the private compute host census at C=10^12 being the discriminating next step.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nRebuilt a385316_verifier.py with dual-branch kill fixtures (domain rejection of composite triple (9,25,49); predicate rejection of claimed multiplicities for N=24 at k=2 and N=185527 at k=3), replayed no-argument entrypoint — all 4 known terms a(1)..a(4) reproduced exactly, exit zero. Ran local census at C=1e9: max_mult=4, one value at multiplicity 4 (consistent with prior sessions). private compute host dispatch to census at C=1e12 remains the admitted next gate but is blocked: DNS resolution of \"private compute host\" fails consistently across 6+ prior sessions. a(5)=10588881419 cannot be locally verified (requires cutoff >= ~2193).",
+  "verified": "Domain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nArtifact: a385316_verifier.py, SHA-256: afa0f41f176623ce5d51e5c42942e1d483e94491b45680d6331b0665b1e72b67\nNo-argument replay exits zero. Prior census data: C=1e9 max_mult=4 (1 value), C=2e5 max_mult=0 (zero sums ≥3). All 4 known terms reproduced.",
+  "result": "Negative-result closure: the private compute host dispatch blocker (DNS resolution of \"private compute host\") persists unchanged across 6+ prior sessions. Local census cannot reach C=1e12 (would take ~400s+, exceeding the 30s terminal action budget and 900s wall budget for the full triple loop). No new mathematical evidence produced; verifier is sound and locally reproducible. The admitted next gate remains unchanged.",
+  "next_gate": "Resolve private compute host SSH connectivity (restore DNS/resolv.conf or SSH tunnel for private host). Once resolved, dispatch `python3 a385316_verifier.py --census --cutoff 1000000000000` to census complete-prime-set triples up to C=1e12. If no N with multiplicity≥6 is found, certify a(6)>10^12.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. No new files written beyond experiment.json and the single verifier artifact.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-07_18-00-18.md",
+    "sha256": "ce854468cc05bf47f2b9396a23455fae3281e901d6e4a60b5f6e6f85e881c305"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

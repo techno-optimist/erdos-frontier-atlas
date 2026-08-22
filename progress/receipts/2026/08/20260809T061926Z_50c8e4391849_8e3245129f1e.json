@@ -1,0 +1,25 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:8e3245129f1ec123287a45fd75768bca59dca31e22c2949f04cdac71b3ce4e6a",
+  "content_digest": "sha256:b256b58db6318594a6afce13da93952627516a2c53c831c03c22b800ef69d63d",
+  "occurred_at": "2026-08-09T06:19:26Z",
+  "frontier": "OEIS A385316: smallest N = p³+q³+r³ (p≤q≤r prime) in exactly n unordered ways. a(6) — currently unknown, lower bound ~4.99×10¹¹.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nWrote a385316_verifier.py from scratch with domain kill fixtures (22, 100 — not representable as prime-cube triples) and predicate kill fixtures (43 with expected k=2 but actual k=1; 185527 with expected k=3 but actual k=2). Ran isolated no-network replay: both kill fixture suites pass. Reproduced all five OEIS terms a(1)..a(5) with exact multiplicity. Verifier is a deterministic no-argument Python entrypoint that exits zero.",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nArtifact: a385316_verifier.py, SHA-256: 8260fae566130482d8ceaf599883975dd42f3e3e54d8d045cfcb91bbd68dbb86\nFrontier advice: sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc; executed=yes; outcome=verifier artifact passes clean no-network replay with correct kill fixtures and all five known OEIS terms a(1..5) verified; private compute host SSH connectivity to private host remains blocked (permission denied), census at C=10¹² cannot proceed.",
+  "result": "Verifier artifact rebuilt and passes isolated replay: 2/2 domain kill fixtures rejected, 2/2 predicate kill fixtures rejected, all five OEIS terms a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419 reproduced exactly. No a(6) progress — the census search at C=10¹² is blocked by SSH connectivity to private compute host.",
+  "next_gate": "Operator action: restore SSH connectivity to private host, then dispatch census at C=10¹² on private compute host. Alternative: operator authorizes local census at C=10¹² (~4 min single-core, 1229 primes, ~308M triples) with requirement of second independent implementation for result validation.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-08_23-19-26.md",
+    "sha256": "5aeaeb033a128be1847f0e0eefb954220e5191eda8c260765ebee3b5de208a63"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316",
+  "frontier_consult": {
+    "advice_digest": "sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc",
+    "executed": true,
+    "outcome": "verifier artifact passes clean no-network replay with correct kill fixtures and all five known OEIS terms a(1..5) verified; private compute host SSH connectivity to private host remains blocked (permission denied), census at C=10¹² cannot proceed."
+  }
+}

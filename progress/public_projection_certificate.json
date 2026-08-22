@@ -1,0 +1,15 @@
+{
+  "schema": "erdos-public-receipt-projection-certificate/v1",
+  "result": "PASS",
+  "rule_version": "public-receipt-projection-v1",
+  "projected": 187,
+  "rejected": 2,
+  "archive_members": 189,
+  "public_receipt_count": 188,
+  "public_projection_manifest_sha256": "f2ae451251c5852b0a256f14d70ef5e349a82bbe14862d8637252f38cfa4d749",
+  "index_sha256": "bf1a93b5d7dba3d8089c926619acbb17ddcbf56c3f3da66b2dfcbb549064dcee",
+  "raw_commit": "872c10ce34493677c8e5272cbf0d844a04b96375",
+  "raw_tree": "974e6c72b23841b9476c8b2b966ebfdc2ccebed5",
+  "vault_certificate_sha256": "ca94199b062c7a46ac3175bae6799fdfbf96998e44f6e347b7d1ab80136468ef",
+  "validation": "parsed claim-field redaction; preserved source/classification/evidence/frontier identifiers; canonical content and occurrence digests recomputed"
+}

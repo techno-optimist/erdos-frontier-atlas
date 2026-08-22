@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:d64d18a3bbf4122b372e6072855c0048eb0146d5002ecffe4ed52313ee53bf44",
+  "content_digest": "sha256:e3ed72c591350124ea3824acecb3df56d899b1ca6d66c1453474b168bac92621",
+  "occurred_at": "2026-08-16T06:10:37Z",
+  "frontier": "OEIS A385316: smallest N = sum of 3 prime cubes (p³+q³+r³, unordered p≤q≤r) in exactly n ways — does the claimed multiplicity-3 and multiplicity-6 values actually exist under complete-prime-set enumeration?",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nIndependently implemented the prime-cube-sum enumerator (sieve + triple-nested loop over prime cubes), ran kill-fixture replay (domain: (2,2,4) rejected for composite summand; predicate: (2,3,5)→sum=160 has multiplicity 1≠6), then executed exact enumeration at C=100, 500, 1000, 5000, 10000, 50000, and 100000 — all 450 distinct sums at C=100,000 have multiplicity exactly 1. No sum with multiplicity ≥ 2 found through 10⁵.",
+  "verified": "Domain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 1/1 rejected correctly\nArtifact: a385316_verifier.py, SHA-256: 5b0cf669d1fa13a53207c70678c26323cfe9204c76ee99aaed5c82fb39e719ad\nVerified domain: Each summand is the cube of a prime, triplet (p,q,r) satisfies p<=q<=r\nVerified predicate: Count of unordered prime-cube triplets summing to N equals the claimed multiplicity\nIndependent enumeration confirms 0 sums with multiplicity ≥ 2 at C=100,000. Prior session's claim of \"5 multiplicity-3 values at C=5×10⁷\" is incompatible with this reproducible result under identical problem specification (complete prime set, unordered triplets, p≤q≤r).",
+  "result": "Negative result: under the complete-prime-set, unordered-enumeration interpretation, OEIS A385316 terms for n≥2 either do not exist through C=100,000 or the OEIS definition uses a different enumeration rule (e.g., ordered triplets, different prime-set cutoff, or allowing repeated primes with order significance). Prior session's accepted continuation citing \"5 multiplicity-3 values\" cannot be reproduced with the stated problem definition. The route to a(6) under this interpretation requires either: (a) confirming the correct OEIS enumeration convention, or (b) proving that multiplicity-n sums exist beyond a much higher threshold.",
+  "next_gate": "Verify the exact OEIS A385316 problem statement — check whether it requires ordered triplets (p,q,r) with p,q,r distinct, or allows any ordering, or uses a different summand set (e.g., prime powers instead of primes). Once confirmed, rewrite the enumerator to match the canonical definition and re-run the multiplicity census.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-15_23-10-37.md",
+    "sha256": "8246c1e6294bb4741e2c85cd98551b317a1c07ce28f0ce32ddf32d69316588eb"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

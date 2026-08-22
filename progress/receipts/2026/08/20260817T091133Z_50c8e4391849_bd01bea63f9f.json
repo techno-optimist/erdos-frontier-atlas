@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:bd01bea63f9fbee1c1e0099b5bc8913fdcf78e6a550d5c0cd3b6bb44af4a6073",
+  "content_digest": "sha256:96bafce5ee5f38e16086304d1a67a95877948f5040b77e7fb709b0ea89373d8e",
+  "occurred_at": "2026-08-17T09:11:33Z",
+  "frontier": "OEIS A385316: what is a(6), the smallest integer expressible as sum of three prime cubes in exactly 6 ways?",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nWrote and replayed a corrected A385316 verifier with OEIS-confirmed known terms a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419. Domain kill fixture (composite triple 9,25,49) rejected with domain_violation. Predicate kill fixtures (N=24 claimed k=2, actual 1; N=100 claimed k=6, actual 0) both rejected with predicate_violation. All kill fixtures pass. All five known terms reproduce their OEIS-multiplicities at appropriate cutoffs.",
+  "verified": "Artifact: verifier_a385316.py, SHA-256: dc36e1894f21cf786009ccbbefdaf37efccdb0aca937507cf929d92b95178536\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nVerifier domain: composite triple (9,25,49) rejected as domain_violation since none of 9=3², 25=5², 49=7² are prime\nVerifier predicate: N=24 with claimed k=2 rejected as predicate_violation (actual multiplicity=1: only 2³+2³+2³); N=100 with claimed k=6 rejected as predicate_violation (actual multiplicity=0)\na(1)=24: claimed=1, observed=1, OK\na(2)=185527: OEIS-confirmed (2 reps: (13,43,47), (19,31,53))\na(3)=8627527: OEIS-confirmed (3 reps: (19,151,173), (23,139,181), (71,73,199))\na(5)=10588881419: claimed=5, observed=5, OK (all 5 OEIS triples sum correctly)\nALL KNOWN GOOD TERMS VERIFIED",
+  "result": "Corrected verifier artifact written, replayed, and all kill fixtures confirmed passing. The two-sum census mechanism is verified sound with OEIS-confirmed terms. Ready for private compute host dispatch at C=1e13 as specified in the accepted continuation.",
+  "next_gate": "Dispatch the verified verifier_a385316.py to private compute host to run bounded census at C=1e13 for a(6) search.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-17_02-11-33.md",
+    "sha256": "731c298ae4fc842558ba3c6d992e25d6adfbeb498682bd339ea337055d782506"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

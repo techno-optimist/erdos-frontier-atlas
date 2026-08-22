@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:50da9062a68fd281820a4bea9ced47ae9245e1a8183a6c9003bec64ae4b683d6",
+  "content_digest": "sha256:d1e659f287f215e5c4db4989bc3b31416ccfb8cfa9cbae7008732b8b5ba59a82",
+  "occurred_at": "2026-08-02T16:00:33Z",
+  "frontier": "OEIS A385316: smallest N that is the sum of three prime cubes in exactly 6 unordered ways.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nWrote verifier_a385316.py — an executable no-argument Python entrypoint. Domain branch rejects sums containing non-prime bases (1 is not prime). Predicate branch rejects sums whose representation count differs from target n. Kill-fixture replay: 2/2 domain fixtures rejected (value=3 uses base 1 which is not prime; value=8 cannot be expressed as sum of 3 prime cubes). 2/2 predicate fixtures rejected (value=24 has exactly 1 representation, fails predicate n=2 and n=6). Census at C=10^6: reproduced a(1)=24 (1 rep: 2^3+2^3+2^3) and a(2)=185527 (2 reps: 13^3+43^3+47^3 and 19^3+31^3+53^3). Max multiplicity at C=10^6 is 2. No a(3) below 10^6. Total distinct sums: 2442.",
+  "verified": "Verifier domain: value=3 correctly rejected — bases (1,1,1) fail primality check since 1 is not prime; value=8 correctly rejected — no triple of primes p<=q<=r satisfies p^3+q^3+r^3=8 (minimum is 2^3+2^3+2^3=24).\nVerifier predicate: value=24 correctly rejected for n=2 — observed 1 representation (2^3+2^3+2^3), target is 2; value=24 correctly rejected for n=6 — same observed count 1, target is 6.\nDomain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nArtifact: verifier_a385316.py, SHA-256: f203e425a1f7bdaec27adb242a566b3fc87ebfc6182668429b3ad94ed799515c",
+  "result": "Verifier construction and kill-fixture replay complete. Census at C=10^6 confirms max multiplicity is 2 — no a(3) exists below 10^6. The private compute host census dispatch at C=10^12 is operationally blocked by SSH name resolution failure for the private compute host host. This is an infrastructure blocker, not a mathematical convergence.",
+  "next_gate": "Restore private compute host SSH connectivity (private compute host name resolution failure) then dispatch: `python3 verifier_a385316.py --cutoff 1000000000000` on private compute host farm-lane. If a(6) still not found at C=10^12 (max multiplicity observed so far is 2 at C=10^6; prior session reported 5 at C=10^11), dispatch C=10^13.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-02_09-00-33.md",
+    "sha256": "a227ec9421d0a8ceed94a613c905ed8b10913112505e1f4baa1cb83c4674df10"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

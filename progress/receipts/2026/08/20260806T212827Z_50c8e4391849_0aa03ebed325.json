@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:0aa03ebed32520d743d43cb89544397188f042462eba276ba4c2bbec334763e9",
+  "content_digest": "sha256:077bbbc7e4b6734b73b14bbfb454b0fb6d9a4f0dceee0a215e0e7ba3c5e486da",
+  "occurred_at": "2026-08-06T21:28:27Z",
+  "frontier": "Erdős #979: What is a(6) in OEIS A385316 — the smallest integer representable as a sum of three prime cubes in exactly 6 unordered ways (p³+q³+r³, p≤q≤r)? Prior work established a(6) > 4.99e11.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nImplemented a C census enumerating all triples (p,q,r) with p≤q≤r and p³+q³+r³ ≤ C. Compiled and ran with C=6e11 (p_limit=8436, 1055 primes, 149,801,600 triples). Generated all sums, sorted, and counted multiplicities. Also ran C=2e11 (768 primes, 57.5M triples) for comparison.",
+  "verified": "Verifier: exact enumeration and sort-based multiplicity counting.\n- C=2e11: 57,508,471 triples generated, sorted, max multiplicity = 5, zero with multiplicity 6. Wall time 3.7s.\n- C=6e11: 149,801,600 triples generated, sorted, max multiplicity = 5 (two values), zero with multiplicity 6. Wall time 10.4s. Max sum = 599,999,998,807, covering the 4.99e11 lower bound.\n- Multiplicity distribution at C=6e11: 2 values with mult=5, 28 with mult=4, 2,973 with mult=3, 465,693 with mult=2, 148,861,173 with mult=1.\n- Artifact: census_final.c (SHA-256: TBD — the file exists at research_sessions/res_20260806_212127_erdos-979-prime-cubes-a385316/census_final.c; the publisher can recompile and rerun with `gcc -O2 census_final.c -o census_final -lm && ./census_final`).\n- The C code is deterministic, seed-free, and reproducible. No network, no randomness.",
+  "result": "Certified negative result: no integer ≤ 599,999,998,807 has exactly 6 unordered representations as a sum of three prime cubes. a(6) > 5.9999999988e11. The upper bound for a(6) is not established by this run (no candidate found), but the lower bound has been extended from 4.99e11 to approximately 6.0e11. Two numbers in the census range have exactly 5 representations (the next rung down).",
+  "next_gate": "Raise C to 1e12 (p_limit ~10000, ~308M triples, ~2.5GB RAM required) and repeat census to determine whether a(6) ≤ 1e12. This requires ~100GB contiguous virtual memory for the sorted sums array or a chunked/external-sort approach if memory is limited. Alternatively, run on private compute host which has more memory.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. All computation was local C enumeration and sort. The census_final.c artifact is public-safe (pure math, no secrets, no local paths in output).",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-06_14-28-27.md",
+    "sha256": "4d6e63d95fa8122b110b8120336410abc1382c4442102b501654da08254a22a7"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:8c0bb83593f5d98504927e88af42e29c23b08a0d2db465d0c5bd1cc9880f7605",
+  "content_digest": "sha256:cc45f51553bbea3eb3a8c3369ef696c676ccdd9d7bebedc46707c4cc2ea6b458",
+  "occurred_at": "2026-08-03T23:29:15Z",
+  "frontier": "Erdos #979 / OEIS A385316: what is a(6), the smallest integer expressible as a sum of three prime cubes in exactly 6 ways?",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nWrote verifier_a385316.py as a fresh, self-contained Python replay entrypoint (prior-session artifacts are evidence, not live programs). Implemented two independent rejection branches: (1) domain validation via deterministic Miller-Rabin with bases [2,3,5,7,11,13,17,19,23,29,31,37] for n < 3.4e24; (2) exact multiplicity predicate — enumerates all unordered prime-cube triples summing to N. Ran kill-fixture replay: 1/1 domain kill fixture (composite triple 9,25,49 → rejected with domain_violation), 2/2 predicate kill fixtures (N=24 claimed k=2, actual 1; N=185527 claimed k=3, actual 2 → both rejected with predicate_violation). All 4 known-good terms reproduce exactly. Census at C=10^9: max multiplicity = 4, one value at multiplicity 4. private compute host farm-lane unreachable for extended census to 10^12.",
+  "verified": "Domain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nArtifact: verifier_a385316.py, SHA-256: 297d117b509c87316d85ec5a03e7f2ad77b661cf3a12623ffb50d04129c0093d\nReplay exits zero, all kill fixtures pass, all 4 known-good terms a(1..4) verified. Census at C=10^9: max_mult=4, no value at multiplicity 5 or 6 below 10^9.\nVerifier domain: deterministic Miller-Rabin with bases [2,3,5,7,11,13,17,19,23,29,31,37] rejects non-prime triple components; domain_violation on composite triple (9,25,49)\nVerifier predicate: exact enumeration of unordered prime-cube triples (p≤q≤r) sums to N; rejected on (N=24,k=2→actual 1) and (N=185527,k=3→actual 2)",
+  "result": "Verifier construction complete and independently replayable. Census at C=10^9 confirms max multiplicity = 4 (one value, a(4)). a(5) and a(6) not found below C=10^9, consistent with prior lower bounds. private compute host farm-lane unreachable — cannot extend census to C=10^12 as prescribed by accepted continuation.",
+  "next_gate": "Either (a) retry private compute host dispatch `ssh private compute host 'bash -lc \"python3 ~/cultural-soliton-observatory/research_sessions/res_20260803_232707_erdos-979-prime-cubes-a385316/verifier_a385316.py --cutoff 1000000000000 --census\"'` for extended census to C=10^12, or (b) run local census at C=10^10 as a cheaper intermediate step to test whether any value exceeds multiplicity 4. Escalate private compute host connectivity to operator if unreachable after 2026-08-06.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Only local artifact write (verifier) and read-only census.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-03_16-29-15.md",
+    "sha256": "c8e7e83ccfe791d640a4de008034dc5968545e4947d013d354a1511f6b172ad6"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

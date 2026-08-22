@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:472ebf7b1aeea93aae69097d87bd9aca43c5fbdee206660b937959e5b56e6a5d",
+  "content_digest": "sha256:5a584dd7a4d389b1a0d5e1c834ff3666f0c5269db77fff2b32f020b58adc2e82",
+  "occurred_at": "2026-08-07T14:56:43Z",
+  "frontier": "OEIS A385316: smallest N = p^3+q^3+r^3 in exactly 6 unordered ways (p<=q<=r, primes). Known terms: a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419. Below C=200000, zero sums with multiplicity≥3.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nWrote definitive a385316_verifier.py with dual-branch validation (domain + predicate), executed kill fixtures and OEIS term replay locally, and verified census mode produces consistent output at C=200000.",
+  "verified": "Domain kill fixtures: 8/8 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\na(1)=24 claimed=1 observed=1 OK\na(2)=185527 claimed=2 observed=2 OK\nALL KILL FIXTURES PASSED\nArtifact: a385316_verifier.py, SHA-256: a4fb7fc9b2c2abe1a5b3ff2da6c7048c288ce8732b964b5074db94332df1359a\nCensus at C=200000: TOTAL_SUMS=718, MULT=1 COUNT=717, MULT=2 COUNT=1 (N=185527). Zero sums with multiplicity>=3.",
+  "result": "Verifier construction and kill-fixture replay complete. Census at C=200000 confirms zero sums with multiplicity≥3, consistent with accepted continuation. The private compute host census dispatch at C=1e12 remains the next discriminating step.",
+  "next_gate": "Dispatch census run to private compute host: enumerate complete-prime-set triples up to C=1e12 using the rebuilt a385316_verifier.py census mode, recording all sums with multiplicity≥3. If none found, certify a(6)>1e12 as certified lower bound.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-07_07-56-43.md",
+    "sha256": "c55395bee41d2ef6344e53213e0a5bd8b93dd7d7f69f29cee6158f51e22b53d1"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:a596a7b1d58781bc73ad000e5f1ba7f0815776c13d9cbf79b50a9c60bf89d5c8",
+  "content_digest": "sha256:32a0f1f76e64804a39dc485a1df6c6e04196065cec0643c7f114ae5d58914dca",
+  "occurred_at": "2026-08-04T19:02:21Z",
+  "frontier": "Smallest N = sum of three prime cubes (p³+q³+r³, p≤q≤r prime) with exactly 6 unordered representations — OEIS A385316 a(6). Current lower bound: a(6) > 4.99×10¹¹.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nCopied verifier_a385316.py from the immediately preceding session into this session's artifact directory and performed an isolated replay confirming all kill fixtures pass and all three locally verifiable known terms (a(1)..a(3)) reproduce exactly.",
+  "verified": "Verifier domain: N = p^3 + q^3 + r^3, p <= q <= r prime, multiplicity = #{unordered triples}\nVerifier predicate: For each k in {1..5}, the smallest N with multiplicity exactly k equals the known term a(k), verified by exhaustive census at C = a(k).\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 1/1 rejected correctly\nArtifact: verifier_a385316.py, SHA-256: 70a6756085f280e87118a44002d16aa053fc9ef93ac7df055d5a8b238ce96356",
+  "result": "Verifier artifact is a clean, exit-zero replay primitive ready for private compute host farm-lane dispatch. Scout lane cannot execute the census at 10¹² locally (requires ~10–20 min, ~400M triples on private compute host). No mathematical progress on a(6) in this session — the verifier itself is the complete primitive from the accepted continuation's next gate.",
+  "next_gate": "Dispatch census_a385316.py to private compute host farm-lane with --cutoff 1000000000000; verify census exits zero with max_mult output; promotion condition: find multiplicity ≥ 6 or certify a(6) > 10¹².",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-04_12-02-21.md",
+    "sha256": "1fb2efba713400fad2b56de7c744d0f8d7d6b9bdfd92aec20e73902377492d66"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

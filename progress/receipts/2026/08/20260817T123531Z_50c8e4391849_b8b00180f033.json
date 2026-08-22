@@ -1,0 +1,25 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:b8b00180f033efec2dfdeb269bfd61ceab256b3ef47a62d928780f4f4b850675",
+  "content_digest": "sha256:a4b0059c416a452de9b1869608716f6edcd84d0a584921ee184bab800bf0faec",
+  "occurred_at": "2026-08-17T12:35:31Z",
+  "frontier": "A385316: smallest N expressible as sum of 3 prime cubes in exactly k ways; finding a(6). Current certified bound: a(6) > 2×10¹¹.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nWrote verifier_a385316.py with corrected known terms (a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419), replayed domain kill fixtures rejecting composite triples (9,25,49) and (2,3,4), replayed predicate kill fixtures rejecting N=24 claimed k=2 (actual k=1) and N=185527 claimed k=3 (actual k=2), confirmed all five known terms reproduce exactly, and confirmed from census enumeration that a(6) is not found up to 2×10¹¹.",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nVerifier domain: Composite triples (9,25,49) and (2,3,4) correctly rejected as containing non-prime elements; domain requires all three addends be cubes of primes.\nVerifier predicate: N=24 with claimed k=2 correctly rejected (actual multiplicity 1); N=185527 with claimed k=3 correctly rejected (actual multiplicity 2); predicate requires exact match between claimed and observed unordered prime-cube representation count.\nArtifact: verifier_a385316.py, SHA-256: e38b3cd69d984e43acb97226507e7914e8673f5984d2b031b1605a9feb676c53\nCensus: enumeration of all unordered prime-cube triples with sum ≤ 2×10¹¹ confirms a(6) not present; max multiplicity observed is 5 at N=10588881419.\nFrontier advice: sha256:d139e8e355e288885e258260eb508db374a2ef47e5299439ca225732b4f48fd6; executed=yes; outcome=verifier corrected and fully replayed; census bound a(6)>2e11 established locally.",
+  "result": "Corrected known terms a(1)..a(5) from prior session's erroneous values (a(3)=8627527 not 2160913; a(4)=999979163 not 85373551). Verifier construction complete with full replay and domain/predicate kill-fixture coverage. Census locally executed to C=2×10¹¹ confirming a(6) not found. private compute host SSH/DNS resolution remains failed — census could not be dispatched to private compute host farm-lane at larger cutoffs. No mathematical progress on a(6) value; operational infrastructure blocker persists.",
+  "next_gate": "Either: (1) Restore private compute host SSH name resolution to dispatch census at C≥10¹³ on private compute host farm-lane, or (2) If DNS fix blocked, run a second independent implementation of the census verifier on this Mac (different algorithm / memory layout) to the same or larger cutoff, establishing the a(6)>2×10¹¹ bound with cross-implementation corroboration before seeking private compute host dispatch.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. All work local to research session artifact directory. private compute host census dispatch attempted but blocked by DNS failure.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-17_05-35-31.md",
+    "sha256": "568e88f883806626664ad4f914f6afd73b7445babe0528e0fb8fa61afa6da45c"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316",
+  "frontier_consult": {
+    "advice_digest": "sha256:d139e8e355e288885e258260eb508db374a2ef47e5299439ca225732b4f48fd6",
+    "executed": true,
+    "outcome": "verifier corrected and fully replayed; census bound a(6)>2e11 established locally."
+  }
+}

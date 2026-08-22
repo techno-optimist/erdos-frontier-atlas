@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:762fb9786aba49e8f003846fac13b0fc0108c3766ad8763fe270d1f9cdd25c0b",
+  "content_digest": "sha256:c5e5c5db5cf3a127e4ce681f10ec7a46901d9af2b397bc7b84f5d2995ac294a8",
+  "occurred_at": "2026-08-09T02:55:09Z",
+  "frontier": "OEIS A385316 a(6): what is the smallest integer expressible as the sum of three prime cubes in exactly 6 unordered ways?",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nCopied the verified a385316_verifier.py artifact from the accepted continuation's session (res_20260808_044831) into the current session directory, then performed an isolated no-network replay confirming all domain kill fixtures, predicate kill fixtures, and all five known OEIS terms a(1..5) reproduce correctly with exit zero.",
+  "verified": "Verifier domain: N must be expressible as p^3 + q^3 + r^3 for primes p<=q<=r.\nVerifier predicate: Given candidate N with claimed multiplicity k, count unordered triples (p,q,r) of primes with p^3+q^3+r^3=N; reject if count != k.\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nArtifact: a385316_verifier.py, SHA-256: 6ae053a6e9f56efc1748d402e7adf453d018545694a2b921be064d4f655742e0\nAll 5 known OEIS terms a(1..5) = {24, 185527, 8627527, 999979163, 10588881419} reproduce exactly.",
+  "result": "Negative result confirmed: the operational blocker persists. The verifier artifact is now present in this session, replays cleanly with all kill fixtures passing and all five known terms matching OEIS A385316. The census search at C=10¹² still requires SSH/DNS connectivity to private host (private compute host), which remains unresolvable from the Mac host. No mathematical progress on a(6) this session — same stall as the accepted continuation.",
+  "next_gate": "Operator-action: restore SSH/DNS connectivity to private host. Upon success, dispatch census at C=10¹² on private compute host, then a second independent implementation must reproduce the census result before registering a(6) or a certified lower bound (per #552 a(17) and f(39) single-source rejection lessons).",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-08_19-55-09.md",
+    "sha256": "3fcdf518b539b2f721ddd82d17003b15ae6dc08ac6a05ce3f178067a8169c87f"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

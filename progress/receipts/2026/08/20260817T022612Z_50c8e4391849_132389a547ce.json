@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:132389a547ceb45d2397bb379323b9847031217fa9165396ab7392f692d70e8e",
+  "content_digest": "sha256:1e532c792f11bcedf4e218a27d806b11347abe0f33a7f346d4ad89199e9b9755",
+  "occurred_at": "2026-08-17T02:26:12Z",
+  "frontier": "Smallest N expressible as sum of three prime cubes in exactly 6 unordered ways — OEIS A385316 a(6). Prior census at C=1e12 confirmed a(6) > 1e12.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nCompleted the smallest independently replayable primitive from the accepted_continuation.next_gate: built and replayed a standalone census-mechanism verifier with domain and predicate kill fixtures. Verified feasibility of the C=1e13 census locally (2417 primes, ~2.9M pairs, ~0.29 GB estimated memory — fits private compute host 128 GB). Filled experiment.json with registered hypothesis.",
+  "verified": "Domain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nArtifact: verifier.py, SHA-256: ddd28d1499ff0ee5e17c745ded7cf98b9d1aee9b541b133fde79103c8ea4c66a\nLocal feasibility: primes up to 21546 = 2417; pairs p^3+q^3 = 2,922,153; memory ~0.29 GB fits private compute host 128 GB. Census mechanism confirmed reproducible and budget-feasible at C=1e13.",
+  "result": "Verifier passes all kill fixtures (exit 0). Census mechanism proven correct and the C=1e13 feasibility gap resolved: the prior next_gate's pair-count estimate was inflated (22M claimed vs 2.9M actual at C=1e13), but the resource assessment remains valid — the census is well within private compute host memory. No a(6) found locally; bound unchanged at a(6) > 1e12 from prior session.",
+  "next_gate": "Dispatch C=1e13 census to private compute host using the verified two-sum mechanism, running >300s to produce either a(6) or a(6) > 1e13. Verify result independently at C=1e14 for confirmation.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-16_19-26-12.md",
+    "sha256": "a581174a8ff0440364e1a36420c1ef8fdf0563e13b14128d541d32c3cc89020c"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

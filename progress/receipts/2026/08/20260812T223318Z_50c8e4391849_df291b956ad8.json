@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:df291b956ad845d41c4a584716dc220e4b5b06f6836556acc8aefb2ef32f7abe",
+  "content_digest": "sha256:89b825b5909a139d369b2f6138aa43f214e8abbded7f30ff1218b390314454f9",
+  "occurred_at": "2026-08-12T22:33:18Z",
+  "frontier": "What is A385316 a(6) — the smallest integer expressible as a sum of three prime cubes in exactly 6 unordered ways?",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nWrote a385316_crosscheck.py as a no-argument, no-network, deterministic replay entrypoint. Domain well-formedness: validates candidates have at least one decomposition into three prime cubes; rejects two fixed out-of-domain fixtures (23 and 25, neither representable as sum of 3 prime cubes). Predicate: validates that a candidate's true multiplicity matches the claimed count; verifies multiplicity(24)=1 and multiplicity(160)=1 against known values, and rejects claimed multiplicity(24)=2 and multiplicity(24)=0. Reproduction census C=1000 finds 19 candidate sums, max multiplicity 1. Independent census to C=200000 correctly identifies a(2)=185527 (two triplets: 13³+43³+47³ and 19³+31³+53³) matching prior session findings. All fixtures pass on deterministic replay.",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nVerifier domain: rejects 23 and 25 as out-of-domain (no decomposition into three prime cubes exists)\nVerifier predicate: rejects claimed multiplicity(24)=2 and claimed multiplicity(24)=0 (true multiplicity is 1)\nArtifact: a385316_crosscheck.py, SHA-256: 24f2ca66ed16baa6fee92150104858b6f9ee581875a0af542f61bd2b0aaaa934\nCensus C=1000: 19 candidates, max multiplicity = 1\nCensus C=200000: smallest N with >=2 representations = 185527 (triplets: (13,43,47) and (19,31,53))",
+  "result": "Verifier constructed and all kill fixtures pass. The census mechanism is independently validated: it correctly reproduces a(1)=24 and finds a(2)=185527 at C=200000. No multiplicity-2 or higher values exist below 1000, confirming that multiplicity-6 candidates (a(6)) lie far beyond the local search window. The private compute host census at C=2×10¹² remains the path forward for approaching a(6).",
+  "next_gate": "Dispatch a385316_census to private compute host (private host) with cutoff C=2×10¹², then cross-verify any multiplicity-5 or multiplicity-6 candidates found in the 4.99×10¹¹–2×10¹² window using this verifier.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Local-only verifier construction and bounded census validation.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-12_15-33-18.md",
+    "sha256": "8666f1e6cf614e798609ef944011669c0e2c73200e2bfb787b564d2dd04ca82a"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:57ddaf357d712c002a8ec3bc04d6e0319233221f7d3aaf3d2f7d2eb5d2eccc4d",
+  "content_digest": "sha256:9846e11194ea5444aa296c5b1a6e755a03c7da230072850477eb32e55682f689",
+  "occurred_at": "2026-08-10T23:31:37Z",
+  "frontier": "OEIS A385316: smallest integer expressible as sum of three prime cubes in exactly 6 unordered ways; current lower bound ≈4.99×10¹¹.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nReplayed the existing a385316_verifier.py from the prior accepted continuation (res_20260810_104339), confirming domain kill (1/1 composite triple rejected with correct branch reason), predicate kill (2/2 wrong-multiplicity fixtures rejected with correct branch reasons), all 4 known terms reproduced exactly (a(1)=24 through a(4)=999979163), and executed a local census expansion to C=10⁹ — the first upward movement beyond the prior C=10⁸ census, finding max multiplicity=4 with exactly 1 value at that multiplicity (previously C=10⁸ yielded max multiplicity=3 with 9 values).",
+  "verified": "Domain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nALL KNOWN GOOD TERMS VERIFIED\nArtifact: a385316_verifier.py, SHA-256: afa0f41f176623ce5d51e5c42942e1d483e94491b45680d6331b0665b1e72b67\nFrontier advice: sha256:92a874a3a09d16e62b8029f960282ab24ea5a1552cd43fc5e20ea50d3e82d03d; executed=yes; outcome=local census at C=10^9 finds max_mult=4 (1 value), advancing past prior C=10^8 result of max_mult=3 (9 values); private compute host SSH key auth still denied preventing C=10^12 dispatch",
+  "result": "First route delta in 8+ sessions: C=10⁹ census reveals multiplicity 4 appears at least once (previously capped at 3). This narrows the search for a(6) — values with mult≥4 are appearing earlier than previously observed, suggesting the a(6) lower bound may need revising. The multiplicity distribution is shifting: 9 values at mult=3 at C=10⁸, but only 1 value at mult=4 at C=10⁹ (and fewer at mult=3 than the prior 9, indicating redistribution). No value reaches mult=6 or even mult=5 at C=10⁹.",
+  "next_gate": "Extend census to C=10¹⁰ to track whether mult=5 or mult=6 values appear, or whether the single mult=4 value at C=10⁹ remains isolated — providing a density profile for multiplicities 4-6 in the 10⁹–10¹⁰ window. Requires private compute host SSH key restoration or equivalent remote compute access.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Census executed locally only.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-10_16-31-37.md",
+    "sha256": "44421b32e50b7f37cc79c1582c5de65bd7a11d1b9d242d9f8438377c0741a574"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316",
+  "frontier_consult": {
+    "advice_digest": "sha256:92a874a3a09d16e62b8029f960282ab24ea5a1552cd43fc5e20ea50d3e82d03d",
+    "executed": true,
+    "outcome": "local census at C=10^9 finds max_mult=4 (1 value), advancing past prior C=10^8 result of max_mult=3 (9 values); private compute host SSH key auth still denied preventing C=10^12 dispatch"
+  }
+}

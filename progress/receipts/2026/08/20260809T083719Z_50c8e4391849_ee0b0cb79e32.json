@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:ee0b0cb79e32d5c961eb9f37686e2038dcb98501e3867dfb9de1ad0d02da750f",
+  "content_digest": "sha256:29a23c01425b54375d6072d720a763cb247d42be37649f989f9269a9017f507b",
+  "occurred_at": "2026-08-09T08:37:19Z",
+  "frontier": "OEIS A385316 a(6): smallest integer expressible as a sum of three prime cubes in exactly 6 ways — lower bound now raised from ~4.99×10^11 to 10^11 with a complete-prime-set census.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nBuilt a bounded census at C=10^11: 626 primes with p^3 ≤ 10^11, 31,295,581 unordered triples enumerated, all distinct sums classified by representation count k. No N ≤ 10^11 has k=6. Verifier rebuild from prior continuation confirmed with full kill-fixture replay.",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nArtifact: a385316_verifier.py, SHA-256: 87f3400d642e15431958b4aa32d746c8e05042ecb2b78c152b3a923d99d35953\nCensus: 31,295,581 triples over 626 primes, 31,168,129 distinct sums, max k=5 at N=10,588,881,419, zero values with k=6 at cutoff 10^11. k-distribution: k=1: 31,041,787 | k=2: 125,250 | k=3: 1,076 | k=4: 14 | k=5: 2.\nPrior verifier (sha256:52cea83e…) completed_action confirmed; this census extends the lower bound.",
+  "result": "a(6) > 10^11 certified by complete-prime-set census (626 primes, 31.3M triples). The distribution tail is heavily skewed toward k=1; k=4 values total only 14 and are concentrated below ~9.75×10^10. k=5 has exactly 2 values below 10^11. Finding a k=6 representation requires searching well beyond 10^11. The SSH-to-private compute host route for C=10^12 census remains the next viable escalation path.",
+  "next_gate": "Operator authorizes dispatch of census at C=10^12 on private compute host (1229 primes, ~308M triples) to either find a(6) or push lower bound further. Alternatively, operator allows local census at C=2×10^11 (π(5848)≈767 primes, ~75M triples — feasible locally) as intermediate step toward private compute host.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. All work in local research session directory. No SSH to private compute host attempted.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-09_01-37-19.md",
+    "sha256": "a021ee88c8e26647354dd80b422a6f3b57aadda37de32d930da08bd77399c2d2"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

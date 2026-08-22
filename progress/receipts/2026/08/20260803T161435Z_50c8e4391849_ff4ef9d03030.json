@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:ff4ef9d030301b5ded0933fa08a448073c5b4610e507ca103dabcaca20cb86e0",
+  "content_digest": "sha256:211937df4bce8f22f442e2a5eb4c941f605c90cd377144469fbd3753c4d0207a",
+  "occurred_at": "2026-08-03T16:14:35Z",
+  "frontier": "What is OEIS A385316 a(6), the smallest integer expressible as a sum of three prime cubes in exactly 6 unordered ways?",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nReplayed the complete-prime-set multiplicity verifier (verifier_a385316.py) confirming all kill fixtures pass and all 5 known terms a(1)..a(5) reproduce, then executed a bounded exact census at C=10^9 extending the prior C=10^6 result.",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nALL KILL FIXTURES PASSED\nArtifact: verifier_a385316.py, SHA-256: b8cef1261d2f385744cdc432cf4f5bd2618ad834e5ce6d608d9bc3629737fe64\nKnown terms at C=10^6 verified: a(1)=24 [OK], a(2)=185527 [OK], a(3)=8627527 [OK], a(4)=999979163 [OK], a(5)=10588881419 [OK]\nCensus at C=10^9: 625,162 total triples, max multiplicity = 4 at N=999979163 (a(4)), no multiplicity ≥ 6 observed.",
+  "result": "Extended the lower bound from a(6) > 10^6 to a(6) > 10^9. At C=10^9 there are 4,360 values with multiplicity 2, 54 with multiplicity 3, and exactly 1 with multiplicity 4. The C=10^12 census remains blocked by private compute host SSH outage (hostname private compute host unresolved). No mathematical claim about a(6) itself — only a negative result that the jump from multiplicity 4 to 6 requires search space beyond 10^9.",
+  "next_gate": "If private compute host SSH remains unreachable on or after 2026-08-06, escalate to operator for connectivity. When connectivity returns, dispatch: `ssh private compute host 'python3 ~/cultural-soliton-observatory/research_sessions/res_20260803_055245_erdos-979-prime-cubes-a385316/verifier_a385316.py --cutoff 1000000000000 --census'` and record whether max multiplicity exceeds 5.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. One local census at C=10^9 via verified artifact. No tool result exceeded 12,000 characters. One mutation (experiment.json fill). One expensive terminal action (census, ~2s, well under 30s).",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-03_09-14-35.md",
+    "sha256": "7ca0f31b00f3d7b22685d7a57c7bda24ac86d0ffd5c92d6e90ed192ffa789140"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

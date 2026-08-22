@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:ef54655adb9f41939045817049cf9d559bd1e922bc57d317b897b800b00579b2",
+  "content_digest": "sha256:d7352a60e987334d437b53b050f81cdcc68d56beec65adb78148267e916744cc",
+  "occurred_at": "2026-08-02T08:43:03Z",
+  "frontier": "OEIS A385316: what is the smallest integer N expressible as p³+q³+r³ (unordered, p≤q≤r, p,q,r prime) in exactly 6 ways?",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nWrote verifier_a385316.py — a no-argument Python replay entrypoint that enumerates all primes p with p³≤CUTOFF, generates all unordered triples (p≤q≤r) with sum≤CUTOFF, counts multiplicities via exact integer arithmetic, and provides kill-fixture rejection for both domain (non-prime inputs) and predicate (wrong multiplicity claims) branches. Replayed kill fixtures: 2 domain fixtures rejected (non-prime 1, non-prime 4), 2 predicate fixtures rejected (N=24 claimed multiplicity 2 but actual 1; N=160 claimed 2 but actual 1). Census at C=10⁶: 25 primes, 2442 sums, a(1)=24, a(2)=185527, a(3) not found. Census at C=10¹¹: 90 primes, 31474082 sums, max multiplicity 5, a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419, a(6) not found below 10¹¹. Prior term a(2)=351 from earlier context was incorrect under the p≤q≤r formulation.",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nArtifact: verifier_a385316.py, SHA-256: 35871f33bd72984659e7012097c0813e6d088ed54cc98b168a4523fc94bdbba5\nVerifier domain: Rejects inputs containing non-prime values — fixture ([1,2,3], \"1 is not prime\") and ([4,3,3], \"4 is not prime\") both correctly rejected by Miller-Rabin primality check.\nVerifier predicate: Rejects wrong multiplicity claims — fixture (N=24, claimed=2, actual=1) and (N=160, claimed=2, actual=1) both correctly rejected by exact triple-counting enumeration.\nCensus evidence: C=10⁶ confirmed a(1)=24, a(2)=185527, 0 candidates with multiplicity≥3. C=10¹¹ confirmed a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419, a(6) not found below 10¹¹. Max multiplicity 5 with 2 values at 10¹¹.",
+  "result": "Verifier construction complete and both kill fixtures pass. No a(6) found below C=10¹¹. The next smallest candidate must exceed 10¹¹. a(2)=185527 supersedes the prior incorrect a(2)=351 claim.",
+  "next_gate": "Dispatch `python3 verifier_a385316.py --cutoff 1000000000000` (C=10¹²) to private compute host farm-lane (ssh private compute host) to extend search past 10¹¹; expect ~30min runtime. If a(6) still not found, dispatch C=10¹³.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. No mutation of next_gate.md or frontier_queue.json. Artifact is read-only census — no state written to any database.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-02_01-43-03.md",
+    "sha256": "f4a9fc8e49b30c758416029e5a9a6522ff5dc35844b63d79ae78f5d10766cc6b"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

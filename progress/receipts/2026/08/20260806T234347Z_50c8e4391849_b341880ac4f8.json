@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:b341880ac4f887579b930b62c59bd713c4ce20347bba8b6f35ff5a0402e2fb0d",
+  "content_digest": "sha256:74abe41fcd841f1974a849aa06526418707f007b55bf91606cf46c34fc71facd",
+  "occurred_at": "2026-08-06T23:43:47Z",
+  "frontier": "A385316: Smallest N expressible as a sum of 3 prime cubes (p³+q³+r³, p≤q≤r) in exactly n unordered ways. What is a(6)?",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nBuilt and verified a standalone A385316 multiplicity census verifier with domain/predicate kill fixtures. Re-ran bounded exact census up to C=500,000,000, extending the previous C=50M and confirming the prior C=6e11 negative result for a(6). Independently discovered a(3)=8627527, and confirmed no number ≤ 5e8 has multiplicity 4, 5, or 6.",
+  "verified": "Artifact: a385316_verifier.py, SHA-256: 4bb99300c8a560ed268977ad05aa9499ef32dd8699185ded23fbb9980e99f0a5\nDomain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nCensus verified up to C=500,000,000: p_limit=7937, 1003 primes, 350,630 unique sums.\na(1)=24, a(2)=185527, a(3)=8627527 (29 numbers with multiplicity 3 up to 5e8).\na(4), a(5), a(6) — no candidate found through 5e8.\nReplay exits zero, no-network, read-only. All kill fixtures pass.",
+  "result": "New negative-result extension: a(6) > 5e8. More importantly, a(4) and a(5) are also not found through 500M — representing an unexpected gap in the multiplicity spectrum. Only 29 numbers have exactly 3 representations through 500M; zero have 4 or 5. This suggests a(4), a(5), a(6) may have extreme lower bounds well beyond prior expectations. a(6) > 6e11 (from prior census) remains the strongest bound.",
+  "next_gate": "Raise census cutoff from prior 6e11 toward 1e12 on private compute host (where ~100GB virtual memory for sorted arrays or chunked external sort is available), specifically targeting detection of a(6). Prior run at 6e11 found no a(6) and two numbers with multiplicity 5 (next rung down) — use those as search seeds for the extended window.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-06_16-43-47.md",
+    "sha256": "511957bf364b65a4da59956cd30b1fd1cd9ba149c9cc1a4ca23c0ec4ff38fe3c"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

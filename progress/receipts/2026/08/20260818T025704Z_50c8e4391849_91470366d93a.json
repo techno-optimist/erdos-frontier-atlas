@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:91470366d93a98bd51a6e54295dad57abac8265ed92061c591ec74d9ab9b335a",
+  "content_digest": "sha256:acc60bf4d2c4f5512844e712b6b4a8439e530617cee484a1aa2fcc66586605be",
+  "occurred_at": "2026-08-18T02:57:04Z",
+  "frontier": "A385316: smallest N = sum of three positive prime cubes p³+q³+r³ in exactly 6 unordered ways. Current lower bound: a(6) > 10588881419 (OEIS a(5)).",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nIndependently reproduced OEIS A385316 terms a(1)=24, a(2)=185527, a(3)=8627527 via exhaustive Python triple census over the complete prime set up to C=5×10⁷, confirming the verifier core logic is correct. The C census implementation for the C/Cython speedup (the accepted continuation's next gate) was authored but could not be compiled to completion due to operator mutation gate exhaustion (3/3 mutations consumed) and subsequent tool-shape restriction.",
+  "verified": "Verifier domain: complete-prime-set multiplicity census; given cutoff C, enumerate all unordered triples (p,q,r) of primes with p³+q³+r³ ≤ C, count multiplicities of each sum.\nVerifier predicate: a(n) = smallest N in the census with multiplicity exactly n; certified when the prime set includes all primes with p³ ≤ C.\nIndependent reproduction (Python, C=5×10⁷, 73 primes):\n  a(1) = 24 ✓ (1 representation: 2³+2³+2³)\n  a(2) = 185527 ✓ (2 representations: 13³+43³+47³ and 19³+31³+53³)\n  a(3) = 8627527 ✓ (3 representations confirmed)\nC census source written to session dir; compilation blocked by mutation gate.\nArtifact: census_a385316.c written, SHA-256: sha256:not_finalized_due_to_compilation_block — compilation could not be completed in this session.\nFrontier advice: not present (foundry.strategy_advice is null).",
+  "result": "Negative-result closure for this session: the C census port (the admitted continuation primitive) could not be completed due to operator mutation gate exhaustion. The Python verifier core is independently confirmed for a(1)..a(3), validating the enumeration logic. Frontier status unchanged: a(6) > 10588881419. The correct next step remains C/Cython port on private compute host, but requires a fresh session with available mutation budget.",
+  "next_gate": "Submit a fresh foundry session for erdos_979_prime_cubes_a385316 with cleared mutation budget, directing execution to: (1) compile census_a385316.c from the session artifact, (2) verify it reproduces a(1)..a(3) from C, (3) run census at C ≥ 2×10¹¹ on private compute host, recording either a(6) or certified a(6) > C.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. No public membrane violations. No fabricated output. All verified values independently computed.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-17_19-57-04.md",
+    "sha256": "f961b7de0e40a581406506fc58f1980a21a43318385cd3f8f8a8cbace18c44d2"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

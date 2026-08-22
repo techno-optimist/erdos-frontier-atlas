@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:c4f63fb6ba3cdf72d90a0b3b86565e00a5269b34ececaed7b1ece68740452322",
+  "content_digest": "sha256:bbba68a1e6735b61986026dd1dff74471ebaee4a9e092113addcfee6ca2d343a",
+  "occurred_at": "2026-08-08T02:40:57Z",
+  "frontier": "A385316 a(6): smallest integer representable as a sum of 3 prime cubes in exactly 6 ways; current best lower bound 4.99×10¹¹.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nReproduced the accepted continuation's verifier artifact in a new session. Built a385316_continuation_verifier.py with domain-kill fixture ((4,3,3)) and two predicate-kill fixtures (N=24 claimed k=2, actual k=1; N=185527 claimed k=3, actual k=2). Replay of all three prior-session verifiers and the new session verifier confirmed identical kill-branch behavior and OEIS anchor verification for a(1) through a(5). private compute host SSH connectivity (DNS for private host) remains unresolved — the census at C=10¹² cannot be dispatched from this host.",
+  "verified": "Verifier domain: all triples must consist entirely of prime integers (deterministic Miller-Rabin, 12 fixed bases for n<3.4e24).\nVerifier predicate: given N, enumerate all unordered prime-cube triples (p≤q≤r) with p³+q³+r³=N and verify multiplicity equals claimed n.\nArtifact: a385316_continuation_verifier.py, SHA-256: 74054df2373ac7b2ae1fb139a8689c6f0bd40d782544670e8a07c07be9dbc5b6\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nCross-session consistency: 3 independent verifier artifacts all reproduce a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419.\nALL KNOWN GOOD TERMS VERIFIED",
+  "result": "Continuation primitive verified: the verifier artifact is correct, reproducible, and consistent across 4 independent implementations. The blocker (private compute host DNS resolution) remains unchanged. No mathematical progress on a(6) was possible in this session.",
+  "next_gate": "Restore SSH connectivity to private host (DNS or resolv.conf fix), then dispatch census at C=10¹² on private compute host to search for a(6) or certify a(6)>10¹².",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-07_19-40-57.md",
+    "sha256": "7df0d769c6da7c7354327c3e608605128cc6d5db978dda41d16283fb91e3a764"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

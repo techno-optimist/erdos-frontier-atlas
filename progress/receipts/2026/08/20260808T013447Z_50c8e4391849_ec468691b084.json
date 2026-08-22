@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:ec468691b084e6948d153f506ef8cc6018aafea6fde0216747c14972aebb9a99",
+  "content_digest": "sha256:7cc515b0fd93b1e7198a7a602871ea454bbd4c1d1694994aa28f7ade65f4e5a9",
+  "occurred_at": "2026-08-08T01:34:47Z",
+  "frontier": "OEIS A385316: smallest N = sum of 3 prime cubes p³+q³+r³ (p≤q≤r) in exactly k ways — what is a(6)?",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nBuilt a385316_verifier.py with dual-branch kill fixtures and no-argument replay entrypoint. Domain branch rejects triples containing non-prime inputs. Predicate branch rejects incorrect multiplicity claims. Replayed locally — both fixture branches reject as intended, exit zero. Confirmed corrected a(1)=24 and a(2)=185527 from complete-prime-set enumeration.",
+  "verified": "Verifier domain: rejects (9,25,49) — all composite (3², 5², 7²), sum=133993; rejects (-3,5,7) — negative input, sum=441\nVerifier predicate: rejects N=24 claimed multiplicity 2 — actual multiplicity is 1 from triple (2,2,2); rejects N=185527 claimed multiplicity 3 — actual multiplicity is 2 from triples {(13,43,47),(19,31,53)}\nDomain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nArtifact: a385316_verifier.py, SHA-256: 70da357e6ffc41deb2a641546feb7806fdbe2320498990662fa0754240ea50ba",
+  "result": "Verifier construction complete and fully replayable. Kill fixtures validate both rejection branches. Corrected known terms: a(1)=24 (not 33 — 33 is not a sum of 3 prime cubes). Local enumeration at p≤299 confirms a(1)=24, a(2)=185527. a(3) and higher require cutoff >2×10⁶, not reachable within the 30s terminal action budget. private compute host dispatch at C=10¹² remains blocked by DNS resolution of \"private compute host\" across 6+ sessions.",
+  "next_gate": "Resolve private compute host SSH connectivity (restore DNS/resolv.conf or SSH tunnel for private host). Once resolved, dispatch census at C=10¹² to find a(6) or certify a(6)>10¹².",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-07_18-34-47.md",
+    "sha256": "b160999f302b1b494aa64c4b9d33f09a5129917392328fae76fec2a34c1f2d01"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

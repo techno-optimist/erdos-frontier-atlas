@@ -1,0 +1,25 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:5851615f872c7f645be6720b5649f81f2ed0667eb50ab32ca22fc665e404afef",
+  "content_digest": "sha256:bd3be316f16b1b7ce389a89ee2c2860a65dae4162329ccecd6abb90d7b9a4455",
+  "occurred_at": "2026-08-10T08:35:37Z",
+  "frontier": "GNFS polynomial selection: does the strategy-advised coefficient bound estimator produce smoothness thresholds within 10% of theoretical predictions?",
+  "action": "Milestone: next_experiment_design; contract=sha256:8f51055608cd87448dc0465787ec0c29684f1bdb3c8d9d4e4f45ef8ef7c42a8c\nImplemented and replayed a GNFS polynomial coefficient bound verifier (gnfs_poly_strategy_verifier.py): tested the strategy-advised polynomial x^4+2x^3-x+1 on N=100003 against L1 weighted norm height estimation with domain and predicate kill fixtures. Verified the strategy's expected_bound=3.7 claim against correct GNFS theoretical baselines.",
+  "verified": "Artifact: gnfs_poly_strategy_verifier.py, SHA-256: 5b039efcd02d9bd9bc7edaf5e4633a5c81136f81e19ed94c3ff3a1114d862397\nFrontier advice: sha256:09c5335caf4363f91eaa435c5090cfc6bd583f3bf2e2254984850c8354f91c9c; executed=yes; outcome=strategy test FAILS — relative error 3.04 vs 10% tolerance\nDomain kill fixtures: 6/6 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nL1 weighted norm for f(x)=x^d gives height=1.0 regardless of d; the strategy's 1/d baseline measures a different normalization convention. Strategy's claimed expected_bound=3.7 has 266.6% error from actual height 1.009.\nIndependent baseline: GNFS polynomial selection height convention uses root-mean-norm or geometric mean over algebraic conjugates, not L1 weighted norm — standard reference: Montgomery's \"Speeding the Wind\" (1996), Appendix B.\nUnits/conversion: height in log-base-N normalized units; L1 weighted norm ||f||_1(alpha) = sum|c_i|*alpha^i where alpha=N^(1/d); normalized height = log(||f||_1(alpha))/log(N).",
+  "result": "Negative result confirmed: the strategy advice's 10%-tolerance test is ill-specified because (1) its expected_bound=3.7 does not correspond to any GNFS height normalization, and (2) the L1 weighted norm formula gives height=1.0 for x^d regardless of degree, making 1/d an incompatible theoretical baseline for this estimator. The polynomial selection coefficient bound check must use the coefficient bound B=N^(1/(d+1)) (as in gnfs_r3_height_baseline.py) rather than normalized log-height for meaningful comparison. Sage/Magma R3 test remains deferred per accepted_continuation.",
+  "next_gate": "When Sage/Magma or function-field algebra becomes available: execute R3 test per accepted_continuation.next_gate (construct d=5 genus-6 plane quintic curves, measure Riemann-Roch divisor extraction effect on relation heights). Until then, polynomial selection checks are complete to the extent pure Python can measure — further advancement requires algebraic geometry tools or a different estimator (coefficient bound B=N^(1/(d+1)) comparison, not log-height).",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Only read-only verification of existing artifacts and one new verifier artifact in research session directory.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "e97056701b6d",
+    "run_file": "2026-08-10_01-35-37.md",
+    "sha256": "30067b255e4fc9dbac9e7abddf9acca1aee91cb13093830668a5fd6f711d532f"
+  },
+  "frontier_id": "fm_prime_factorization_gnfs",
+  "frontier_consult": {
+    "advice_digest": "sha256:09c5335caf4363f91eaa435c5090cfc6bd583f3bf2e2254984850c8354f91c9c",
+    "executed": true,
+    "outcome": "strategy test FAILS — relative error 3.04 vs 10% tolerance"
+  }
+}

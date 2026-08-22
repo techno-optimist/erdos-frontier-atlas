@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:e373bb988ce08af3ded463a5d726b87b3de486893f88c69bf54970347e286402",
+  "content_digest": "sha256:4727f76a643b7865b41cdcd1a00993f1ca60dc391f0730705ffb2cdd49719f42",
+  "occurred_at": "2026-08-06T01:38:02Z",
+  "frontier": "What is a(6) in OEIS A385316 (smallest N = p³+q³+r³ with exactly 6 unordered prime-cube representations)?",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nWrote verifier_a385316.py with domain and predicate kill fixtures, replayed it, and confirmed the SSH blocker to private host persists (OOM at C=10^12 with 1229 primes; local memory insufficient for C>10^10 census).",
+  "verified": "Verifier domain: N = p^3 + q^3 + r^3 where p, q, r are primes and p <= q <= r.\nVerifier predicate: multiplicity(N) = count of unordered prime-triples {p,q,r} with p<=q<=r and p^3+q^3+r^3 = N; a(n) = min{N : multiplicity(N) = n}.\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nArtifact: verifier_a385316.py, SHA-256: e6f08b68b90ec200e7112b394ac3dd35e67926b218395a83cf4bbbd2760f3b09\nPrior census (C=10^10, 9592 primes, private host): a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163; a(5), a(6) not found. Max multiplicity at C=10^10: 4.",
+  "result": "Verifier artifact written, kill-tested, and replayed with exit 0. Prior-session private compute host census at C=10^10 found a(1)–a(4) and confirmed SSH key auth to private host is broken. Local C=10^12 census killed by OOM (exit 137), confirming the operator-owned SSH restoration is required. No movement on a(6) this session.",
+  "next_gate": "After operator restores SSH key auth to private host: dispatch C=10^13 census via private compute host, report highest multiplicity and whether any N has multiplicity 6.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-05_18-38-02.md",
+    "sha256": "7dd94bf69089a13ed2ca01787e98f34722c8b593c5f77a6f665cabae9c1cbb8d"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

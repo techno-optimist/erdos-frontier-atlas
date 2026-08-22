@@ -1,0 +1,2448 @@
+{
+  "schema": "erdos-public-receipt-projection-manifest/v1",
+  "rule_version": "public-receipt-projection-v1",
+  "raw_commit": "872c10ce34493677c8e5272cbf0d844a04b96375",
+  "raw_tree": "974e6c72b23841b9476c8b2b966ebfdc2ccebed5",
+  "vault_certificate_sha256": "ca94199b062c7a46ac3175bae6799fdfbf96998e44f6e347b7d1ab80136468ef",
+  "vault_capture_manifest_sha256": "58f83b4de29a982da666c40c893b9f97ad242efd73f739a78de33e360b13108c",
+  "vault_archive_sha256": "96d8badee50cc8fa1bfc198061e02c1e66f57a8c7f33e98a958a6ca2592849d4",
+  "totals": {
+    "archive_members": 189,
+    "projected": 187,
+    "rejected": 2,
+    "skipped": 0
+  },
+  "records": [
+    {
+      "raw_receipt_hash": "2c6bdd05f71f2eba04eb00ab90f014ab642577db083196ff7bc345d03795fb77",
+      "raw_receipt_id": "sha256:9be34c1159ea91d844815e4b439e0b0574fc3c0befe9df66627c482a853618ab",
+      "public_receipt_hash": "46ef0c7bcabe665f0e8afe2635089366a3c2d5ffdc46b8958cf5cf34860b8251",
+      "public_receipt_id": "sha256:bef2b1fd3d2933d2b391045144c523a42a6735c9a5a72325c81a537cd9117f94",
+      "destination_path": "progress/receipts/2026/08/20260801T071507Z_50c8e4391849_bef2b1fd3d29.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "572216a9c9821512c13f06fedbc7c39dd116c7148c80a3547a0da25bcfd42345",
+      "raw_receipt_id": "sha256:cdf484ba4a18c920673077ca719b2995806b9f12d977d1c104975dc658cdcaa4",
+      "public_receipt_hash": "ce6085503e9658d1451851dadf465ceda7ba565e3b67999c3bc8d8d3e77e099d",
+      "public_receipt_id": "sha256:050dde139c0859d08216f972446a0c872dc64615e43c1952ec27967f46271822",
+      "destination_path": "progress/receipts/2026/08/20260801T075212Z_50c8e4391849_050dde139c08.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "64aa02941229bf7f3fc4b67909280dbcdaa5e05882c5fb667ce70f6fca7d8c8c",
+      "raw_receipt_id": "sha256:97ec0d16551eecbef9daced4047a71e20b166228ca33a9050c2f5e3a32b76805",
+      "public_receipt_hash": "bf46b09f0b4319d4032a00b83b552ca7aadd4197dda3f2b853de8f47f37b2265",
+      "public_receipt_id": "sha256:a409526844992dd3dd66a3713bfad52f30cd99f769dcc84e56b029852bdd0680",
+      "destination_path": "progress/receipts/2026/08/20260801T190630Z_50c8e4391849_a40952684499.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "ef958dad98e249d61d10bc151c55026b3bc359bdfaadedd3c909fd41e7206476",
+      "raw_receipt_id": "sha256:2c608f2d59662a3ddedf67b72d72916a2ea3da216abf602f86bb229af892ccc4",
+      "public_receipt_hash": "285deb88fdfb091744fd01175c517ea58f79bee3779bf0f344950be6813df7f6",
+      "public_receipt_id": "sha256:057dd4f7596aa4def92168c72ec6558a9aa61249c9e86ff0c4d2afb0069ec5b3",
+      "destination_path": "progress/receipts/2026/08/20260801T214411Z_50c8e4391849_057dd4f7596a.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "3d7c06998c00f15bab94373b31d1fe1953200f16db56ba4decd606594d346438",
+      "raw_receipt_id": "sha256:92d053c1aec4e5c51ceba21896acaa653c1621861c5f272bd320a4c0df2d730e",
+      "public_receipt_hash": "428791ff0b160cb9850a33906da45256de8a27d72f43c4cad624f6ad1b8c30a1",
+      "public_receipt_id": "sha256:98c141daee70231e9d69674f2f02da180363cce4042ee1e550529078d4b028d0",
+      "destination_path": "progress/receipts/2026/08/20260801T233531Z_50c8e4391849_98c141daee70.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "7901ab74d4d0f09a0c72153cbb9372efae551581e5558e54faa3fc6b8772cb0e",
+      "raw_receipt_id": "sha256:e6ec73146c1be7276627ef295b630eda8e211682a2a974edcd09acad660ed979",
+      "public_receipt_hash": "b3846d7f68f0638aeea6fd45afdd9680bfab6d1d3df1127e55971d83d920d0cc",
+      "public_receipt_id": "sha256:ef3f1e12d4d0d523bb89f31f7c40a56e4d3fc19798b282a55629e5aba1139617",
+      "destination_path": "progress/receipts/2026/08/20260802T020530Z_50c8e4391849_ef3f1e12d4d0.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "f319a001b57bcb04aa5616780badcb9ecce521d9baa3dc0efdf0e0a4bf76c552",
+      "raw_receipt_id": "sha256:1b686f211cf5ffb520fd3df01aafdc3bcd6c1a889818efc63239b9a6c44dbde8",
+      "public_receipt_hash": "14468dcd56b8a7b2dd70c70bdf315110a873b496da6345ec39a865a95b9cc206",
+      "public_receipt_id": "sha256:111c99ffa4053f096d11e7c3d5cdf0969c4aba65ba9eb1ceb6e3eec3de9dcb71",
+      "destination_path": "progress/receipts/2026/08/20260802T042906Z_50c8e4391849_111c99ffa405.json",
+      "changed_fields": [
+        "action",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "c9bfbb4e6bf76c308fd6f8d1042bd232673aa9ad8a9e783e422c2a549a3ab03f",
+      "raw_receipt_id": "sha256:a384f6dd378cd61116db7a93a36f08d577a6a91463191394a31e68210cc74549",
+      "public_receipt_hash": "a3a21756134911ec14e1fef9e1520579af4d15a05c9911ca8d79125ba58c6acc",
+      "public_receipt_id": "sha256:ef54655adb9f41939045817049cf9d559bd1e922bc57d317b897b800b00579b2",
+      "destination_path": "progress/receipts/2026/08/20260802T084303Z_50c8e4391849_ef54655adb9f.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "6dafb6d1ce0fee900b2a452a803f170691d9d90361579ab675b45c7a107dda58",
+      "raw_receipt_id": "sha256:4843d44b248ddad936da7c48154a2b05b597f4990d27313905b8e3bfeeb732ae",
+      "public_receipt_hash": "ff287b3e7506721cb1a8ef2dddf577fa21557c1d5376516bb383050abfe5e539",
+      "public_receipt_id": "sha256:a276a5488141e4367aed408eb0989c5fec09a034d83aa0cc6d5f665fc4df2016",
+      "destination_path": "progress/receipts/2026/08/20260802T095824Z_50c8e4391849_a276a5488141.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "ef54e8602beae82d0841c7a430539db57aa05aa631383b6a259c748ecd6daf1e",
+      "raw_receipt_id": "sha256:4276e2a27e41138678bdb7e211e9c8ecc6a02547d9a590051d462e111f6a9ee1",
+      "public_receipt_hash": "6cfcd5e184c5326bcd855752f6896b1ac171a44845460669db113d7baf31fbda",
+      "public_receipt_id": "sha256:f80983e4065df224a451d760711f9d1d91daa8802bc7d483c7a03c8c8ebdbc7b",
+      "destination_path": "progress/receipts/2026/08/20260802T121858Z_50c8e4391849_f80983e4065d.json",
+      "changed_fields": [
+        "action",
+        "result",
+        "next_gate",
+        "boundary_held"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "89402a7edd18ba54e0ad8dbf2adaf9e28d7b1ede3711d89da9b087293f11722a",
+      "raw_receipt_id": "sha256:ad496e9e2fb419985853c2f97cdf58ad5458d1ae0891908ba9798176c4561bc1",
+      "public_receipt_hash": "9e9651e49a1df9ebbc8562eb8544e2aa4602c6efb8a1542b0359718be8f7b04b",
+      "public_receipt_id": "sha256:50da9062a68fd281820a4bea9ced47ae9245e1a8183a6c9003bec64ae4b683d6",
+      "destination_path": "progress/receipts/2026/08/20260802T160033Z_50c8e4391849_50da9062a68f.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "38b2c73f55e92e6d8752f002f0b3a4e01a8772bb10246553c7cb6f961b8edda4",
+      "raw_receipt_id": "sha256:2a1042aa768cc46f7a7b82434c9103e50dd6381af9f66049a98f7f90a2c7f7c9",
+      "public_receipt_hash": "b1d5a7bf40739f449e89998572b557bad8bcbd59a7482e0f72b612ea8b0d0db7",
+      "public_receipt_id": "sha256:522ad7a9c0a9c8d689559db94425a127bdb14b61e381f5ea5e048575abe3aa1c",
+      "destination_path": "progress/receipts/2026/08/20260802T171302Z_50c8e4391849_522ad7a9c0a9.json",
+      "changed_fields": [
+        "frontier",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "d8353f18e03b905b98da2fdc50081ce0f3a793b161e520a2bd0a3185a0a88468",
+      "raw_receipt_id": "sha256:0013e28d7c7591c79ee3de6c8656803d52a202a3c43f4496b25d5ea863dea649",
+      "public_receipt_hash": "75cc8e6dca659eb91ab2416a80c3a279ab1e82928079e9b586c02f9d13a9ff42",
+      "public_receipt_id": "sha256:ee04427f672a5e219fb0971e5143e3cd221225eb1d0a80b07ee4d640931d2a3b",
+      "destination_path": "progress/receipts/2026/08/20260802T190051Z_50c8e4391849_ee04427f672a.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "eadef9dc05503ee8d6874cd1899383333e9eb5b49de0883110e6f4011eb7be90",
+      "raw_receipt_id": "sha256:97e7799648be6ef24fb21b7481d3f5aa064521e559753c1e8d572076d10482fe",
+      "public_receipt_hash": "22e48230a21f7eaccb8633bc2df02ffd9d44ebc1a53a9c6ab052e62a951a4162",
+      "public_receipt_id": "sha256:877d24ea5916f13d38ee613e3c60cd773a7007334f568886cc557498e1b68fa4",
+      "destination_path": "progress/receipts/2026/08/20260802T205339Z_50c8e4391849_877d24ea5916.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "a70db87009dd9b3884dd7f813620173eee0b653c2da7c622ec480ebf1524d957",
+      "raw_receipt_id": "sha256:2358ccedb4dd54c922054fddb7a441aead145db3472833307c4a2b9383180325",
+      "public_receipt_hash": "6ecfac0c07d0e425663f0e51d5e6ffdd78de539f633e2909c2a78ef09c721069",
+      "public_receipt_id": "sha256:96fefc311a27350a997535523ec4767e0109fbd2aa96e09f42ee242d6f4aab5d",
+      "destination_path": "progress/receipts/2026/08/20260802T212840Z_50c8e4391849_96fefc311a27.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "0c643103d9c35ea85955ee9b9677fb0bd764edf4d61edddd490a09cf60930129",
+      "raw_receipt_id": "sha256:753f8ac4e9b3b0e833162628a346d57f1770ce15cea7ce93168f54153d7531ba",
+      "public_receipt_hash": "1197ff95860ed0f3723c666192f04a9c33110853db3b6b6f15abc899c15c7547",
+      "public_receipt_id": "sha256:4721e6ce5430beaf8cc9a32160603890bae8d34c4d3cdf6450669ca6b02b5f45",
+      "destination_path": "progress/receipts/2026/08/20260802T224106Z_50c8e4391849_4721e6ce5430.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "4072457858407cb88ee2b66eee106ca6e0adc03cb74c8ad98aa15c1f8fba80da",
+      "raw_receipt_id": "sha256:9766b21580e03f7b022e5be3afe2ab9447c8742b88ed088f9db82dbefb5efa99",
+      "public_receipt_hash": "e1197b82d3280590916c24e7a31c5a9eaaeafd271f0ec42274ede9d35f486cbf",
+      "public_receipt_id": "sha256:15bab5dc14b89c6e38ddd302fee75fbf929da8e56417486dc150ba17ee40f6f1",
+      "destination_path": "progress/receipts/2026/08/20260802T231528Z_50c8e4391849_15bab5dc14b8.json",
+      "changed_fields": [
+        "action",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "d3f82b21fe711963a52a717b4181d4ac381ba50fc4de9fd78c0f2c2ecdbe5eae",
+      "raw_receipt_id": "sha256:6e61ff4448d06d746cad433cfc8ea3581a2ca57fa654d69a7cb300e7253de21f",
+      "public_receipt_hash": "c17413dd297c6b06bfa51b8b2f956b01065fb267dc0ee12ff4bd1c6b90e22b2b",
+      "public_receipt_id": "sha256:f15ccfcaed3c4b399a6b0be523be2ca5f1d86d2beaebc161ee54b32802ad6059",
+      "destination_path": "progress/receipts/2026/08/20260803T010315Z_50c8e4391849_f15ccfcaed3c.json",
+      "changed_fields": [
+        "verified",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "f4fc744421426aa69a0c74f3d786d82a099c0836ea9badf5238535254caf3d1c",
+      "raw_receipt_id": "sha256:0ef2c37b8ba5257452e2250c228d359e21dc5cfe0dada4a32555fe66517308da",
+      "public_receipt_hash": "1ba9b44bb07d07498aa2eef5df72d41389949e0cef3332d28037c496f04ffee5",
+      "public_receipt_id": "sha256:eafed8bbc74647ff55074f8986e219302a36f2a54d210beb0d64ab62ced6a4e8",
+      "destination_path": "progress/receipts/2026/08/20260803T013817Z_50c8e4391849_eafed8bbc746.json",
+      "changed_fields": [
+        "action",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "cfca820a69a241da31c8af1f8765eb55f2a202df8e3542b4a3b69951da77604b",
+      "raw_receipt_id": "sha256:6030d7ea2afffad3c085f805bef24b04945fcc511afe78dbe64a8d8ccad135b2",
+      "public_receipt_hash": "2e4924376887cd840bdf715e64501c178accc47d717aab6c4fd96caef0ee12cb",
+      "public_receipt_id": "sha256:0b0e4994d4e2d416dc947946c694e41152a468c701c845614759782a27de496b",
+      "destination_path": "progress/receipts/2026/08/20260803T052153Z_50c8e4391849_0b0e4994d4e2.json",
+      "changed_fields": [
+        "action",
+        "verified",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "112bff10a6ecdc06527a76bcd961ec7ebd92b0afa7b8512bf53837b0a78b8672",
+      "raw_receipt_id": "sha256:0e78991d3345e1eea192130adbbc0b3c20046d4171448cfde254318366dfe4ae",
+      "public_receipt_hash": "e0cd410963e009fb3504034089d4cfedfdb032aa5b23bd1df4ae4c0eeb84e290",
+      "public_receipt_id": "sha256:7ffccaba4fb3f97fbb24c4e3a84fcba00a33d04e7bd7c384cef3bc53e6531faa",
+      "destination_path": "progress/receipts/2026/08/20260803T055532Z_50c8e4391849_7ffccaba4fb3.json",
+      "changed_fields": [
+        "action",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "bfc9184114b49bf5a7ad8e51386c6621175f6fddce7e98a2f2d3baf1d97b00f5",
+      "raw_receipt_id": "sha256:88f776f1e57891423c15111746db875572f0ee4f58b7982fdefab8a6865c0983",
+      "public_receipt_hash": "6393a5d87b37acbc332703cb04b93b7667e9ea7b2202e04c201ad881c5fa636a",
+      "public_receipt_id": "sha256:3c2ad4d7b0c8d7ee3b34f3eb7ee2388352fb7d3755e8575acad12f00437f9522",
+      "destination_path": "progress/receipts/2026/08/20260803T065947Z_50c8e4391849_3c2ad4d7b0c8.json",
+      "changed_fields": [
+        "frontier",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "a820f0f48000145acd638580c353d9faac2a1eaf2286ccb0b3ac953c250b52d5",
+      "raw_receipt_id": "sha256:c87f9d98d9fa62c1bd26e8403db8505dca04a4120199ba76b33da007e39403a7",
+      "public_receipt_hash": "364293850d71e0100bd86892f58fab9a16ec2af0bf90ccf54a798ea59c73c655",
+      "public_receipt_id": "sha256:9cd03b534d176af5bed7dee08e9eeee486c88a8cb8e78f620a85f12e5fdf35c4",
+      "destination_path": "progress/receipts/2026/08/20260803T091236Z_50c8e4391849_9cd03b534d17.json",
+      "changed_fields": [
+        "frontier",
+        "action",
+        "verified",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "d83af2e8d857360aaeb4d615ffaec09518efd5263309c88b3d6bc4be76ea536f",
+      "raw_receipt_id": "sha256:478a0d8bc709f9bb74efd5ff29c08c3b9d5dd7d0fa2c9c66d2b7fff39fc126a5",
+      "public_receipt_hash": "ca4130fee742035f32f8db61eb8fc7c6bd12c27d2516deb827114e633acc5403",
+      "public_receipt_id": "sha256:cc55ab58f232983d34cfc337aec8dba977b23cc421dbef19b75a0e9f7a11987c",
+      "destination_path": "progress/receipts/2026/08/20260803T130010Z_50c8e4391849_cc55ab58f232.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "e415f2f7e71899a7d4668392d06f38a2f7a60335e342d1def92d9e45b2f5b3d6",
+      "raw_receipt_id": "sha256:f5c1b1b9be5b1e7fe2b85855b8789e736595a79166cbf2d672e716ad7c303a66",
+      "public_receipt_hash": "4e98c1223e6d9c0ee19e855d78d2ffb80ff8bdc1d84dbb23765146dbc1c08d47",
+      "public_receipt_id": "sha256:aa50204d9e59279cae77c95e4421dc30f71afe5ebcb9928177fc50d66c3348b2",
+      "destination_path": "progress/receipts/2026/08/20260803T140504Z_50c8e4391849_aa50204d9e59.json",
+      "changed_fields": [
+        "verified",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "8c7c1378c611a600bf01773e0cf10d8c4c328b042f19366b635ebd5353d48205",
+      "raw_receipt_id": "sha256:2fa7e84b86e06c605f4c0bab5c0856efa9c18b1f0ed1b92546b04c392e15cea5",
+      "public_receipt_hash": "080104a8d25a23face65a25293283dc4aba8ac45f98a466e10ba42b7a2b7351a",
+      "public_receipt_id": "sha256:39973c163bd662ca887ab97af835f9cbd3e9e4ac50b1c82ff292facd659a3413",
+      "destination_path": "progress/receipts/2026/08/20260803T143727Z_50c8e4391849_39973c163bd6.json",
+      "changed_fields": [
+        "action",
+        "verified",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "147dda1188420eb2d5c75f8d40f376c6ee9a853a40f4787b53d4466ca66d5d07",
+      "raw_receipt_id": "sha256:2c35b1d32a8b053f7c20300777b31f0a60df0eb66314e08bdbe954b6e041a067",
+      "public_receipt_hash": "d79344f812a6f43eb1a85e6cc30d2878ee4ede97550d98ebc5aed07a4af7d17d",
+      "public_receipt_id": "sha256:6ec40b4d987f915154957506398c2abad371b68a469a21d4c7c82b6c2a6acd41",
+      "destination_path": "progress/receipts/2026/08/20260803T150916Z_50c8e4391849_6ec40b4d987f.json",
+      "changed_fields": [
+        "action",
+        "verified",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "b66fbbfeb799ed15f33d73440df67f63f62f8e00a926bdff4a0bc67741900c4b",
+      "raw_receipt_id": "sha256:f2624c37873d379d055cc62b1024af7ce779a7e3601bcc44d4a4c81c8f438cff",
+      "public_receipt_hash": "7af9b2cd6686040913ee977b36ee3cc1a7f82341a7c118f26f935bb18ce176ef",
+      "public_receipt_id": "sha256:062318588c84efe2cb7313d121eb8bf3990c07c6168bffeff5f4f691cb161547",
+      "destination_path": "progress/receipts/2026/08/20260803T154226Z_50c8e4391849_062318588c84.json",
+      "changed_fields": [
+        "action",
+        "verified",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "798283464cad74ad6fcbe09484a6152b63f31979e165cba7f91612a2e720373a",
+      "raw_receipt_id": "sha256:017241d4515e4325a2444b18b6e1d6b8b652839bc5ff0fc54631f2b9a80260ac",
+      "public_receipt_hash": "947a168e4e6ca0006807d306cd23429c679a435049653844da8b157a74c22c9e",
+      "public_receipt_id": "sha256:ff4ef9d030301b5ded0933fa08a448073c5b4610e507ca103dabcaca20cb86e0",
+      "destination_path": "progress/receipts/2026/08/20260803T161435Z_50c8e4391849_ff4ef9d03030.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "7bb9ec2330eeab957881eca6b3d6e81d89b7b96a5c0094f706efaa3d5da99f5d",
+      "raw_receipt_id": "sha256:9a90b098a21719dea61cc2347be0a9b415e9788e9768cfbf2182f23fbbe53ee0",
+      "public_receipt_hash": "71c0e0a70c94c6aa2da1c0226a9ae31450912cf5a7cfc4793532bf292c9d72d6",
+      "public_receipt_id": "sha256:8fa09abbbd9ccdecf318e305071cff54f43dbc69d262d671f685e7de4caef74e",
+      "destination_path": "progress/receipts/2026/08/20260803T182648Z_50c8e4391849_8fa09abbbd9c.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "aa2c7c7d3a085199bd01ece88a3051c90e32a639c92bfe2e74ce3ea1821131ec",
+      "raw_receipt_id": "sha256:6c99765ef865252719546859d6975b5692d9955681eddd72199785a2b547dc5e",
+      "public_receipt_hash": "c1f0158ce6847d7660c7e0db53b4571f40dd2f00ac336f5c55ef7633c18604a8",
+      "public_receipt_id": "sha256:275e0b68a39252151887b765ad542a5e9482523f6d50c22bcaeb853bbc5081ac",
+      "destination_path": "progress/receipts/2026/08/20260803T204029Z_50c8e4391849_275e0b68a392.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "4cf3011ffcc5e7f5ebb136eea70212559aa6ebb96876442898b30f3e8aca41d6",
+      "raw_receipt_id": "sha256:aeb7741f103f42290763497995a96352216e8ced9a7418fbc8a985390a845498",
+      "public_receipt_hash": "ff6b5ecbabff2c16d08659e3a411afd35abfa87f380ca7b65c0bf7c51665ec75",
+      "public_receipt_id": "sha256:70e9aab7ea21b87c94600b42831cf0f7d0960b439f99aae5b55b16dd47a53dd8",
+      "destination_path": "progress/receipts/2026/08/20260803T211327Z_50c8e4391849_70e9aab7ea21.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "f30a104c1c4a49f75c45304a40705627ceb9d1be4da35a36855d19a5cce6af6c",
+      "raw_receipt_id": "sha256:d41e52ec0b484d460eba4536a784bab91204ade873982e4b1088fa5afaf64e74",
+      "public_receipt_hash": "46dff4d1c3fd78ca2b7535720def8af7b49a34723ceaf4ce23ee3134b893cbf4",
+      "public_receipt_id": "sha256:8c0bb83593f5d98504927e88af42e29c23b08a0d2db465d0c5bd1cc9880f7605",
+      "destination_path": "progress/receipts/2026/08/20260803T232915Z_50c8e4391849_8c0bb83593f5.json",
+      "changed_fields": [
+        "action",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "f969cdc28848d1a75e281fb874ed28d3b99402aba51d027d572cebeb4f51c5b7",
+      "raw_receipt_id": "sha256:93b9df863ca06558bfd78fcecacf313f8126dad25caf368c12d776ab82350f63",
+      "public_receipt_hash": "23db9b947ee4f1a7072745e81c20919f3885ab8c7c85952e80eb83f2e2ea1e52",
+      "public_receipt_id": "sha256:0bfc731f7c060134601e91dcd181a12706820b9529dc380f84b2eae9db21afe3",
+      "destination_path": "progress/receipts/2026/08/20260804T034812Z_50c8e4391849_0bfc731f7c06.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "a32dc187dee8b10d8005c69c0108cad4a9d3860bd7d05ea68e3d9f9af46a2044",
+      "raw_receipt_id": "sha256:695cfb6a473b7f2f82578a52c86c7f4abc251106df11604fb5f89be62c7e7ff9",
+      "public_receipt_hash": "6763968b173097778d7233577d4d0a2e92f511d338c66b46c0336c2a64e534f3",
+      "public_receipt_id": "sha256:04b6d726a8cea4f187eaffabff0b4a0c4e40cf694910962489b4a0e8736f3d15",
+      "destination_path": "progress/receipts/2026/08/20260804T161715Z_50c8e4391849_04b6d726a8ce.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "129d0de2ab1d210c7e28add0b9658a75b976b1e817ae80dfef54ead65befe377",
+      "raw_receipt_id": "sha256:9f913edeae00209657fd2ba952a31dee5c043bee9c735d338409b88d2c0526d2",
+      "public_receipt_hash": "8d4cf38d3c9c6cc567991f1fbbc716a65c0705faedb370d49a044f10a073d8f8",
+      "public_receipt_id": "sha256:d4b427ac87ce038e8daea272975f24150ced01e9ee324b53917547b4e3adb17b",
+      "destination_path": "progress/receipts/2026/08/20260804T165052Z_50c8e4391849_d4b427ac87ce.json",
+      "changed_fields": [
+        "result",
+        "next_gate",
+        "boundary_held"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "e6af5724fb58f3835644beca887c235a2275fee36b32f117e4cb0c17f10386ff",
+      "raw_receipt_id": "sha256:df017d0111f6274c07bae2ae05a66ca8f9b1955bd11444fcbfb63e60e559dc77",
+      "public_receipt_hash": "dc9569d05c86d93d6613cc23c27487d8d526f3e9661411916e466da52ce2055d",
+      "public_receipt_id": "sha256:7595f2c690b8a8ec467553fe38db7b779212be94b1b7bff0913df1c10434a15d",
+      "destination_path": "progress/receipts/2026/08/20260804T175602Z_50c8e4391849_7595f2c690b8.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "1219d3b04da36abc870c1a4850d4e7deab7d2dc1e2730675d6b11b4073365743",
+      "raw_receipt_id": "sha256:8f19df3a2d58232893e1c31fe8d1a4ccf0c6b720f029ad3ffd30935cda34f76c",
+      "public_receipt_hash": "79e9d5de57c6d1fef70863c256bcdbc3d5118f6acd50a63ed383ed08d22221a6",
+      "public_receipt_id": "sha256:a596a7b1d58781bc73ad000e5f1ba7f0815776c13d9cbf79b50a9c60bf89d5c8",
+      "destination_path": "progress/receipts/2026/08/20260804T190221Z_50c8e4391849_a596a7b1d587.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "e622cee6c242e130d849acf8b8365c0e5ac1fbdd8e3b39d84036b7f76a63c6a5",
+      "raw_receipt_id": "sha256:97b230f5db7f929b207a068e7e6fb3b1c7a906d30c677871e0f182081d6c638d",
+      "public_receipt_hash": "7f28c8d406aed770f3cc48a68dc8409a2239da4772673e08946e22841313841f",
+      "public_receipt_id": "sha256:612a8f4eb5ba0d1bdf02dbcf3caca8a55c38c45941e7b15a4e7274b7e9f96f64",
+      "destination_path": "progress/receipts/2026/08/20260804T214715Z_50c8e4391849_612a8f4eb5ba.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "7d55da8e86b1ee0635a94b9b6089734751c74605ac77b75326d566296b641c16",
+      "raw_receipt_id": "sha256:ae30d7f80914e4f659fd8b9c6027bb66e240f4af18437dddeaca9b1d51f81025",
+      "public_receipt_hash": "942d2923c0d4b9fffca9392b1733f8f768057b0140ce0a22b2531dbd52f32c10",
+      "public_receipt_id": "sha256:a653f87577b1b91df8fe758ae37353a4323b64c76d80974e4844601a24633044",
+      "destination_path": "progress/receipts/2026/08/20260804T221921Z_50c8e4391849_a653f87577b1.json",
+      "changed_fields": [
+        "action",
+        "result",
+        "next_gate",
+        "boundary_held"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "d1b657bed6793593d7f189cb48dc739873942013c83454f95f351bee767d0283",
+      "raw_receipt_id": "sha256:2c71e17a5b2eb11594a31387e2443ecfc061f727893113ca1b1d756d5283ba1f",
+      "public_receipt_hash": "1e291f529c647de15e3f9484f2b1065e61ee3f8d435563bbb931b034c2d8f5a4",
+      "public_receipt_id": "sha256:9198b2b644bd5ed7f41dc1a99ec41747221854f3b786359c595a31d46d6c8a3f",
+      "destination_path": "progress/receipts/2026/08/20260804T225058Z_50c8e4391849_9198b2b644bd.json",
+      "changed_fields": [
+        "action",
+        "result",
+        "next_gate",
+        "boundary_held"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "1909b29f256ce946f1d20432777d756974490f2ebbd5cf3ec008837c4edc8c5c",
+      "raw_receipt_id": "sha256:64ee5cb0e0d0af24a22a0d04f31b46197f509c2e53de85271780dfb925585fb4",
+      "public_receipt_hash": "8312c969f472b0969c0534249eb44a9b611764acf4276187968fa420a1aa9805",
+      "public_receipt_id": "sha256:9405d616c0f5c74d24c1ca63df58750c0cf3377ba6266fc1b8eede15a606b2a9",
+      "destination_path": "progress/receipts/2026/08/20260805T010620Z_50c8e4391849_9405d616c0f5.json",
+      "changed_fields": [
+        "action",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "6055d921acfc11abacb18771f9dcf88d12b1cc2a01ea072dc050704ff0a890f6",
+      "raw_receipt_id": "sha256:8e8a291c13925780f0389b225fa0160537b3225117673832a8cb2bd7fc47c5bd",
+      "public_receipt_hash": "11809beb705f158bfad55016e505327f255781aa54d4a370dc8be60f2df9678f",
+      "public_receipt_id": "sha256:09f40539d8c44f2f341e2f6112d1684f3166cc63b85ad10c868963744188aa33",
+      "destination_path": "progress/receipts/2026/08/20260805T021147Z_50c8e4391849_09f40539d8c4.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "13e460e4d3263c3be05c129e06905a021a2ce40ddb65b1925470bf0f3e31df9b",
+      "raw_receipt_id": "sha256:3637da7ca15ca4fcd1ee20aefea504ee34a0c9f8aae0844275d64e473357a0da",
+      "public_receipt_hash": "67b964c1c1a660193ce5db0190e5d258d5e1344d6ec5e11a0701868965582976",
+      "public_receipt_id": "sha256:07e279a7805a7797ea838f3395f94a3deccbcffe53d6483ab6d373fa2ea7609d",
+      "destination_path": "progress/receipts/2026/08/20260805T035229Z_50c8e4391849_07e279a7805a.json",
+      "changed_fields": [
+        "action",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "faba5188a4c45ce61e50b557d537084a857651761ee474d2b3714e1e17ba8c7e",
+      "raw_receipt_id": "sha256:4a14e6c69d52964b6237de7195a2aaa630502c2ec951d557dbd14736e283acb4",
+      "public_receipt_hash": "61d4393bd850943aa7cd8c5ae4d90441847b39aea2351cc9a6588836d669b430",
+      "public_receipt_id": "sha256:d9235cdc83731f119af45d6dfe0b178107dfd5f3239c58363d37b79c33347e2b",
+      "destination_path": "progress/receipts/2026/08/20260805T042606Z_50c8e4391849_d9235cdc8373.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "6eb3142be39c15846c43fcefb8011891bfaee7b4a88a19402881b1265d5cc863",
+      "raw_receipt_id": "sha256:5eaa85a389baf8951beaef658beec42609d239eced32b2b164a26b689fd4736e",
+      "public_receipt_hash": "6eb3142be39c15846c43fcefb8011891bfaee7b4a88a19402881b1265d5cc863",
+      "public_receipt_id": "sha256:5eaa85a389baf8951beaef658beec42609d239eced32b2b164a26b689fd4736e",
+      "destination_path": "progress/receipts/2026/08/20260805T083423Z_e97056701b6d_5eaa85a389ba.json",
+      "changed_fields": [],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "55e5836459daea043bfadcc4e52c7b6a4e14aa90fe297df229997de1d78bf0a3",
+      "raw_receipt_id": "sha256:6d8cbcc709fa49d987a4f0e1a8a51d11ef498b9816bbf09ef5aeb965a7648152",
+      "public_receipt_hash": "6edc50e1a576eff345f052d7a9d372e062645322c016cfb3d9bccf499e6330ff",
+      "public_receipt_id": "sha256:73fe8ab2308f02ad996e102dc6aef90b0a7dc35e77062773ae568c5f455731f7",
+      "destination_path": "progress/receipts/2026/08/20260805T093647Z_50c8e4391849_73fe8ab2308f.json",
+      "changed_fields": [
+        "verified",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "bb95b0ead7211cc7ec060626b121250ff1f2d73413c4d9b58a126f2437095f73",
+      "raw_receipt_id": "sha256:e82b7acb8dbe56776bf2d11ed31c0bc910c98b618def3b7640f1a377d18e5dd6",
+      "public_receipt_hash": "736b1ab3f96433c629c03889b09fd13c9e852f278291e750cb2d1847eac36e4c",
+      "public_receipt_id": "sha256:3e99dbcdf6ac374e04c5733d60a2d6bc5db76e6384f046b978ca9ea0c3dab400",
+      "destination_path": "progress/receipts/2026/08/20260805T143414Z_50c8e4391849_3e99dbcdf6ac.json",
+      "changed_fields": [
+        "verified",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "bd0ecbc4e33f33b92fac3a8e62c0fc340ef2278433313537e2fa3364e8a77253",
+      "raw_receipt_id": "sha256:8b35ce3454c341211fc6a768e2a13fb90ef0686cc6f772a7575b3ea1a9cbcccb",
+      "public_receipt_hash": "0de5d4d2a17e72a52ac287297101b7c76956d3c300d91fd2293f80a54d2b7c94",
+      "public_receipt_id": "sha256:45009e880bb026796ed525aabbdedafedeb204699b8f3e4d0d286eaf3cefa99e",
+      "destination_path": "progress/receipts/2026/08/20260805T164518Z_50c8e4391849_45009e880bb0.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "aceed8c977f0fbd7258592a6f0ddb5f46f1cf1f14dbfb7014cc1c6b6a31b1e0b",
+      "raw_receipt_id": "sha256:c8b119e5d5338bf73b44bb5c4933601422057be4748b003608681e43c0e7345e",
+      "public_receipt_hash": "f1db446b1626f13325e649ca1db59aaa17a75b556692a10d6479f735ec3c97be",
+      "public_receipt_id": "sha256:d0034765f25b6c0d55aed4778d42efd7507da6af2557701df958614440dd671e",
+      "destination_path": "progress/receipts/2026/08/20260805T175219Z_50c8e4391849_d0034765f25b.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "8bdfe0858508766a8a62c1c2a8dff4ed2393abb6277a846e684fa05e1be59d84",
+      "raw_receipt_id": "sha256:3ecc7ba3298438e67a761bac7d9f3c586cc2b8213ce3f23638edc61872648f83",
+      "public_receipt_hash": "b9eaab7f53f3993774671f6e4a82da45aaab657ba51814547d526e0ff0526174",
+      "public_receipt_id": "sha256:81fb07b7faf34a2169dd71171de596012a024a6d84cdab6acc70a74b530465d7",
+      "destination_path": "progress/receipts/2026/08/20260805T200239Z_50c8e4391849_81fb07b7faf3.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "d0510cdb5eea91a81b14b07c0c7a54ec0e7398a069c99231ed1bd5bf6461b6d5",
+      "raw_receipt_id": "sha256:ddf2467d56ef0e7e2e70834911b2dff0534da041868492a0be28f210cc0fbee4",
+      "public_receipt_hash": "c3f391781d55bd69524a96669bd0c411d167c523b3267386fd896d08692dd351",
+      "public_receipt_id": "sha256:8dc88df40939227b60e3156e431580eff9537fbbf59d74e7bdf04b96721a2d2b",
+      "destination_path": "progress/receipts/2026/08/20260805T214140Z_50c8e4391849_8dc88df40939.json",
+      "changed_fields": [
+        "action",
+        "verified",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "c8e79e5b15e1b58113309d7fc5e5ad0a01a10da54ea819badf0246e17ce469f0",
+      "raw_receipt_id": "sha256:8768a11033e42639f2cae738fab4729681ac96640af45b85020308635f971b13",
+      "public_receipt_hash": "bd2b8c4ccb4cff78e3bb07fc17944f59617f23a568a16445ba8189a9917d96eb",
+      "public_receipt_id": "sha256:8a72da6fabf3c61ef1ec35c70c9120dead53af4897b7e2865b8799441c40276a",
+      "destination_path": "progress/receipts/2026/08/20260805T221355Z_50c8e4391849_8a72da6fabf3.json",
+      "changed_fields": [
+        "action",
+        "verified",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "086d8116cd594f335bec0ac02b250211497783530df39ef53a99fa1de70550fb",
+      "raw_receipt_id": "sha256:9adabf921bb80bc0bc5eb50fc3ec09162ea29d5b73e16a06342c73cf3347df95",
+      "public_receipt_hash": "9af91ac66adb28d7622bfe457136ced40190770948bafe72bc8d14fb2adc89d1",
+      "public_receipt_id": "sha256:141c7e2a352cf8dc9da39b5710f297eb4c5105c81c293133801a171efe303a1a",
+      "destination_path": "progress/receipts/2026/08/20260805T224702Z_50c8e4391849_141c7e2a352c.json",
+      "changed_fields": [
+        "action",
+        "verified",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "8716b3111271c47a09fe8c2966ea9bd9e5fb0d6d6388a433e113392b193b8e50",
+      "raw_receipt_id": "sha256:27fa8182a14e6e9b535c68a889e12e9038d792ab11df07f64a01fab20e9ff2d8",
+      "public_receipt_hash": "08c375cf94207c6cdba3db17c5975c33accaf004df0b203d18180767c8490476",
+      "public_receipt_id": "sha256:e373bb988ce08af3ded463a5d726b87b3de486893f88c69bf54970347e286402",
+      "destination_path": "progress/receipts/2026/08/20260806T013802Z_50c8e4391849_e373bb988ce0.json",
+      "changed_fields": [
+        "action",
+        "verified",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "62d724e9794bf0a47976a41a278ec599899e26f88b02bbfd29c3f9a39cb6777d",
+      "raw_receipt_id": "sha256:2546533275cad1332f70a7e8a8ace7782fefa42a51474b44e4bf0a684ecff47c",
+      "public_receipt_hash": "987ac55479dd81a6a91df6bf024a4703d6c8abb7810d158102291242474917eb",
+      "public_receipt_id": "sha256:9d5ef47c7b2ad7625a8f35fdd7d7e972a8a6a5cec27fe0bab8aa52a8af713d10",
+      "destination_path": "progress/receipts/2026/08/20260806T024153Z_50c8e4391849_9d5ef47c7b2a.json",
+      "changed_fields": [
+        "action",
+        "verified",
+        "result",
+        "next_gate",
+        "boundary_held"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "dee7789adf2acd1e5c19e0be7f06da1c6120d8e5714074dd265d17851030de16",
+      "raw_receipt_id": "sha256:fa234dec20b4309eb1863d1efefeee3fabd500705a243350bc1ab114e58150de",
+      "public_receipt_hash": "96b9065f5d35d2c99cac6dd570a0c27bb31500a721dbe850bfd7338e9fdfd20e",
+      "public_receipt_id": "sha256:41ae270452eca9d21b36a808428f5129bef6f09a52dbd5f95b14613e56469858",
+      "destination_path": "progress/receipts/2026/08/20260806T031349Z_50c8e4391849_41ae270452ec.json",
+      "changed_fields": [
+        "action",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "ae70dccacf57879fd7f0effee48c030d6f7ef3474c9915a1343e42c561a08776",
+      "raw_receipt_id": "sha256:c8d0b6e3091657dd9005f6ce7970d3763838cd0cb051e68831557ae5de12326d",
+      "public_receipt_hash": "1321d6f4e6dda8bb8c4cb7cde35f3d1af868c472afad889d47cfe5483e87fbbc",
+      "public_receipt_id": "sha256:b8d294de1d14793db325a61f484b0e04884329d80dbabb2c016dd59889b10372",
+      "destination_path": "progress/receipts/2026/08/20260806T034554Z_50c8e4391849_b8d294de1d14.json",
+      "changed_fields": [
+        "action",
+        "verified",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "dbc051f6db2586dca9c50253f1b7a33068e151f41b6e2a9f13ffabd816801b72",
+      "raw_receipt_id": "sha256:35c9b37da144d49bfb9c5473fbabc21f178cf4f831e67cfe4b7e37868333bd20",
+      "public_receipt_hash": "f3c1e60be59543f3b21d35127fafd52e80a0e13beb6d73740989bbf376b9e2d0",
+      "public_receipt_id": "sha256:6acee62ad345ea04414ec6bce39d2f2e1e594b9f3d52d2d4af0940c899626a41",
+      "destination_path": "progress/receipts/2026/08/20260806T053608Z_50c8e4391849_6acee62ad345.json",
+      "changed_fields": [
+        "action",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "4263c6924bd94cb9e4977536596f5dab67d0085d527c57a29a941c501c9af1c6",
+      "raw_receipt_id": "sha256:79a72ecb30a669b9cb90b61ce0897c9c3e7101b06cccd6a55747ddf6f2c0bc53",
+      "public_receipt_hash": "ff725201e0fab5007553a8404523ffd6f4f21019734f7db891225fdb75a44967",
+      "public_receipt_id": "sha256:b1fe32957e73016784933ee46863f55dbdd6143cc2d1b0ba90341f899ad625e5",
+      "destination_path": "progress/receipts/2026/08/20260806T063939Z_50c8e4391849_b1fe32957e73.json",
+      "changed_fields": [
+        "frontier",
+        "action",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "e92e975821d49fad3aba64e17ee933fa9d81a3d8e1ca29b52dc693e16c7e77d0",
+      "raw_receipt_id": "sha256:b4e99d00d409ef8db767d1d2ae825f2914ac07e56cff4f65f92dcb431e60bc5c",
+      "public_receipt_hash": "8f60d13b99122f8f18c7581414ad70bbf6ef0e336d7fd29d38f61ef9c68e5f62",
+      "public_receipt_id": "sha256:f211a84f5e0758f8b2cffcf2896572cbaaf3fadf747bc5f99b27359dfb2e3b29",
+      "destination_path": "progress/receipts/2026/08/20260806T071141Z_50c8e4391849_f211a84f5e07.json",
+      "changed_fields": [
+        "frontier",
+        "action",
+        "verified",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "107a3f22ca6628a7533b92b52543b4c6f392facb81ca8259e6dbc9b3b3838668",
+      "raw_receipt_id": "sha256:4e6e1ebdb59229b82f00e6ac52f7147e63e6c5d53f92c5888680ca74fc929092",
+      "public_receipt_hash": "c9ac73bcdbbd59c417f752d302eb1ca1b7d268c7bfd3c9a39b154f9e93f04a1e",
+      "public_receipt_id": "sha256:e9e40500a7e420228f885b60e9477d1b07ca694158bbea77d2192d1a6b9c364d",
+      "destination_path": "progress/receipts/2026/08/20260806T074743Z_50c8e4391849_e9e40500a7e4.json",
+      "changed_fields": [
+        "action",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "50a291e093cb3d569c9659e12f535ced57a4fd632b5aeabcc22529c7fe0d84de",
+      "raw_receipt_id": "sha256:3554cb64c3f63d5cf6198578e60edea4fdce8cb240fdc1a1795ed0488b1a5d64",
+      "public_receipt_hash": "38372b9ad418a0a0e31313a3d121186a2fb3fc4b31fd97055874c7f39a0e7efa",
+      "public_receipt_id": "sha256:767c3a43ce358eb790b2fcdf8dc78da63cc9c91f4f8cb7c16528aa52aa994474",
+      "destination_path": "progress/receipts/2026/08/20260806T082338Z_50c8e4391849_767c3a43ce35.json",
+      "changed_fields": [
+        "action",
+        "verified",
+        "next_gate",
+        "boundary_held"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "8fd2f44736a1311ce45b55bb26e233b6e66a96ea076d8a1658c5931e705db69d",
+      "raw_receipt_id": "sha256:3a0e655516f9d77d1233925ca206d8d2c91db669f4f435da97f1964e5c07da95",
+      "public_receipt_hash": "53ed572de771bcf84adde641bf9d84be34e38162669a7585a8964e20dabf2dbe",
+      "public_receipt_id": "sha256:fc7d3c5deae5d6bfe23efbdefdcd3caf6118a40f995c3f9d142608c6a02df4e1",
+      "destination_path": "progress/receipts/2026/08/20260806T104557Z_50c8e4391849_fc7d3c5deae5.json",
+      "changed_fields": [
+        "boundary_held"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "6fd0c6146a4794311d1ba6df46db726520fea7405cf70876adad982665b847b0",
+      "raw_receipt_id": "sha256:b6f461e7e709ac77cb89edb43cefd43ca819059f8ac5a4eafa29127b3dd46e8a",
+      "public_receipt_hash": "414e13b5d1dd94837051dc79f6de0176710a4db45aa1cba01202bc543a6cd80e",
+      "public_receipt_id": "sha256:f26b557a2ce0471e1af20e87fb04775aaec8cc594230dbfc8a9503af2206a781",
+      "destination_path": "progress/receipts/2026/08/20260806T140439Z_50c8e4391849_f26b557a2ce0.json",
+      "changed_fields": [
+        "result",
+        "next_gate",
+        "boundary_held"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "3b03b8c366069997de5d797a6ad6087dbdad84ebebd4531778512e024e23c579",
+      "raw_receipt_id": "sha256:a580f761d08406a13cecd2932b3faa7bb4291b51ae44a8175e1e5c4a1e45af0b",
+      "public_receipt_hash": "7160b1c044d1b8630a29649731ae43f93367bd4d2dc48e8b63da0f8f71e8c8c3",
+      "public_receipt_id": "sha256:0aa03ebed32520d743d43cb89544397188f042462eba276ba4c2bbec334763e9",
+      "destination_path": "progress/receipts/2026/08/20260806T212827Z_50c8e4391849_0aa03ebed325.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "ad1b72847692fb8669617bcb6b2eadfa9c81d8a6b05362ffe22a8e9f58d10904",
+      "raw_receipt_id": "sha256:d9e04f63e59d8e4e2bd8fe9e8a536ed26363b4c9fb581a5e86fc1f3c898c9cef",
+      "public_receipt_hash": "4fb09aaa334effc11f15eb2285ac56992bb13c2cf655c8a87486195b1c4a3976",
+      "public_receipt_id": "sha256:b341880ac4f887579b930b62c59bd713c4ce20347bba8b6f35ff5a0402e2fb0d",
+      "destination_path": "progress/receipts/2026/08/20260806T234347Z_50c8e4391849_b341880ac4f8.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "86dfbcfe7048ce39d4c136538fd3845ac7fdc13efb3acb4789444529056a7820",
+      "raw_receipt_id": "sha256:4be65deade932ccae3c29e9a3a8a5c227d69852494b58841fce813bd3ac919a7",
+      "public_receipt_hash": "1c3a054d01f7aaf708bfec7d4f84d13489fd4eae89ad3fa13b19607d19732374",
+      "public_receipt_id": "sha256:1179cc8059fa3de05e73af4b028e6b7fc960360efad09e1537b1a9460bafe810",
+      "destination_path": "progress/receipts/2026/08/20260807T001802Z_50c8e4391849_1179cc8059fa.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "ea3774b6d82287426ec24b59bb08113f3621ab824875017dfc057b9e7d0ff5e0",
+      "raw_receipt_id": "sha256:cc4da08981d3b8f3d89cdd3f74c5d495a190117622a62d9aee9ede51f7e80770",
+      "public_receipt_hash": "b0f6fdf73db8d338d7c75c4e3d7b5b9da35dd6dd00f9bfd12383d32010cf3aad",
+      "public_receipt_id": "sha256:914785e035e508e590af4637ce91b41d97180c26f3e3565d97bcea5e00cbf599",
+      "destination_path": "progress/receipts/2026/08/20260807T030728Z_50c8e4391849_914785e035e5.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "124ce3aa7908c09c6b68556e556d45c7e2df71437ba98c722ff5130fc7a333f6",
+      "raw_receipt_id": "sha256:881706812b86e58605a88bf029427cc25fe656f44b610731e1c63a66c9a78448",
+      "public_receipt_hash": "30dae4e845f7cfbc5a6faede414a0240b996275584c17f591562224e8bce7bf8",
+      "public_receipt_id": "sha256:d8fcdb9d18d9a97a516fa0d69e400bf63f305d83da5a0cc12d08580a875614cb",
+      "destination_path": "progress/receipts/2026/08/20260807T041414Z_50c8e4391849_d8fcdb9d18d9.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "e6c884cde6a2474834662e2d6eeeb3a15ecc2d5875b0903a0fcaf2c87c90421b",
+      "raw_receipt_id": "sha256:351585e366698cf219b66a51d0de551e43506d95d2e83aedb854b1c344f8f14e",
+      "public_receipt_hash": "19ad5860d2b8ddd0ca21e5c3430c83b331da3a3af3a3ef3636453d4927e90434",
+      "public_receipt_id": "sha256:f84473c70a356cb482132a0f43012827344d6b1cd5191d720975f8c0bd1821a7",
+      "destination_path": "progress/receipts/2026/08/20260807T062415Z_50c8e4391849_f84473c70a35.json",
+      "changed_fields": [
+        "next_gate",
+        "boundary_held"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "89c12d7283c2bf098f4d1daf5281f8fb636a5df2cfd704a8bf5337de1f22f392",
+      "raw_receipt_id": "sha256:b1e2775124176c6209480badeae2fd5f22f8c33f67377241e165540fe90a9a20",
+      "public_receipt_hash": "6bb118e8321f9aec3d7b27990a8838d7f9d488b0aca6b569e11414e9714e600e",
+      "public_receipt_id": "sha256:30a5791193b298cbaa60018d8a975e3dadd31fc5c8f69c168bb0d91e825cc409",
+      "destination_path": "progress/receipts/2026/08/20260807T094328Z_50c8e4391849_30a5791193b2.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "b83c09738c11090199c1d63eb5d5c6adedf5e348b31456186a9349d4c244489e",
+      "raw_receipt_id": "sha256:b90f7dd91d33606a3b027de060f91f6c4daf6b1e0bb3d6da55c4358411f41ef5",
+      "public_receipt_hash": "af1dea37598a5513087f72d90a053f1e7993e1d7a2ffb34fb3790b1f3fd46b90",
+      "public_receipt_id": "sha256:413f157e34aac961f5270609916bd44f0c49838b3332658746ea86a9d6b52356",
+      "destination_path": "progress/receipts/2026/08/20260807T105024Z_50c8e4391849_413f157e34aa.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "a77c97d31ee026c8e39fd668bdb23338baf702635e8f6b3979082f4c57a62694",
+      "raw_receipt_id": "sha256:3fdb86073ba420b98addbf469212124793f7d01d1b23c3fafd041bf8ef06c1b7",
+      "public_receipt_hash": "7d18cfe572c128fa420694dfdf92e1a385e541efdbdcb207fa78b247453b5410",
+      "public_receipt_id": "sha256:fbeff45af12913305994c045d0c689703c4292a7da245dad6381fd7ed1dbc168",
+      "destination_path": "progress/receipts/2026/08/20260807T142339Z_50c8e4391849_fbeff45af129.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "2faf2b770eda96bb5182dce1ccb4cbaec4f7fa0ffd5f8246f13c80cf87994779",
+      "raw_receipt_id": "sha256:ba9b4a65f3031b8ddfc64bff3f119e3de69e895b3ebc41a4bd9d410a59943a58",
+      "public_receipt_hash": "7e552d90c5a5fa0e8d79d83bb22a72c3d0f131da50137d01b0c397b0d706cf52",
+      "public_receipt_id": "sha256:472ebf7b1aeea93aae69097d87bd9aca43c5fbdee206660b937959e5b56e6a5d",
+      "destination_path": "progress/receipts/2026/08/20260807T145643Z_50c8e4391849_472ebf7b1aee.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "5823eb01fab1f275fafa589152fa4fe795e20535e0edce852aedea253c32927d",
+      "raw_receipt_id": "sha256:ccb42b3dcd49628216cebbf66005292c35bd3dad374034e9564747e7d124dfc9",
+      "public_receipt_hash": "504ba568b8e03f2498e3fdf5d8b568b9861ac90a79ac4d263ed2b11da37a04bb",
+      "public_receipt_id": "sha256:8b4fceb4c1429b6ba7b424b3b4b866f8336aff52be60e25be4c1fe19aa6b5686",
+      "destination_path": "progress/receipts/2026/08/20260808T010018Z_50c8e4391849_8b4fceb4c142.json",
+      "changed_fields": [
+        "frontier",
+        "action",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "5c0865b4353da590822c2dbc0f074e1513ec90bf93e69669d0fd12ce446dc7f5",
+      "raw_receipt_id": "sha256:44c13cd581a928e820d0e97a0bba9e3d0a33f2f767cfc8e95f4aeb50be268699",
+      "public_receipt_hash": "3648cbf2a6b8c3251a7bbb683135c373b862c33e43e0b1da3d631ef02db4e554",
+      "public_receipt_id": "sha256:ec468691b084e6948d153f506ef8cc6018aafea6fde0216747c14972aebb9a99",
+      "destination_path": "progress/receipts/2026/08/20260808T013447Z_50c8e4391849_ec468691b084.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "1f18ede5849dad85188b52e741509e83d2cf51a09439a8eddbe6f3319e7d167f",
+      "raw_receipt_id": "sha256:fe6d94ae4aa0462b31cc1144e2254b5099d5914590009bbe27133bfbdf6c52d3",
+      "public_receipt_hash": "e9ab4b4860d1f0865dc7739bfd4bebf0491873bd0d3c48ef74c5b1050310df74",
+      "public_receipt_id": "sha256:c4f63fb6ba3cdf72d90a0b3b86565e00a5269b34ececaed7b1ece68740452322",
+      "destination_path": "progress/receipts/2026/08/20260808T024057Z_50c8e4391849_c4f63fb6ba3c.json",
+      "changed_fields": [
+        "action",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "f06d5660c77ccec1f67ab47298d5da120ddc54c71ad32c02f57ae1b6c4ba2379",
+      "raw_receipt_id": "sha256:113e84cc4508b0c3b68cadbcdbe6a3a80ba3ae0506d2b6c96f245ec2496fbfc4",
+      "public_receipt_hash": "c39c24b1ceaf18f70e446b217a40c9f3de82b13906499cbcaeed1983d16bd920",
+      "public_receipt_id": "sha256:7df91a1639ecb0231e0a6d2440e94da9ac369ac73989e740336a3498db9fa6a3",
+      "destination_path": "progress/receipts/2026/08/20260808T055726Z_50c8e4391849_7df91a1639ec.json",
+      "changed_fields": [
+        "action",
+        "verified",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "53251fd0ca4c3a9414098ec8ce2986294d70c72350fea8d3d3c6592e0a32e0eb",
+      "raw_receipt_id": "sha256:496feefa278253c3c350e793874984a6693df986c74c00929d8543a358391b9f",
+      "public_receipt_hash": "5f0d1eb05e4082611f23a3e9ff55d01560a82122700051a55b5920fdac323f7f",
+      "public_receipt_id": "sha256:6c8fafaf93dfcff5c15ebd0762476dea3c0a9b1bdbf0ece406a92a31005296b9",
+      "destination_path": "progress/receipts/2026/08/20260808T115648Z_50c8e4391849_6c8fafaf93df.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "5c2d3c9bc9af4ea9a12f847a8ca8922a6df9e6f40b2ef08fc83cb58ae9204885",
+      "raw_receipt_id": "sha256:62689c7ac00c90c74667175afe4798511f873069f565d5fd670fa6bd0d06126a",
+      "public_receipt_hash": "f0e7db3d722c958723b592c2d181719aa533f08aa65dc5cf4df68c805bd34c54",
+      "public_receipt_id": "sha256:f676ef437cce0ab068ada1d530dc325f3eb064496c669be5e0789ebac9a7c2e6",
+      "destination_path": "progress/receipts/2026/08/20260808T141934Z_50c8e4391849_f676ef437cce.json",
+      "changed_fields": [
+        "frontier",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "f6764dd1ea541ac719674c2c86f24b1d5bcb7fac4049ad382b4a3fd48ff8e550",
+      "raw_receipt_id": "sha256:5892b523fbee24ef9354d589c7da16b7cdf550b5667498d42bd31cbdb9eeba40",
+      "public_receipt_hash": "ac4e13536f084b9b4bdf0567afa2b3e013c38f2cf63ba9df58eaaa13388e7e43",
+      "public_receipt_id": "sha256:c42e1b4c98e05466ad312ac1a2a683dfebd88710fd6200d60d2e64fb0047d5c3",
+      "destination_path": "progress/receipts/2026/08/20260808T195421Z_50c8e4391849_c42e1b4c98e0.json",
+      "changed_fields": [
+        "frontier",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "67ecce2e1832cf448b251ec6145a0be03ff129c41db1218f9e37b8cf8c587059",
+      "raw_receipt_id": "sha256:87628ff3f4afad8ebde16182dd52a6f638da2df2268788614f0dc8eb8306366a",
+      "public_receipt_hash": "05a3a45f78dd42c86d487ecb050e4b0e23d8a4ad93b926f4dbbe74af82c5ffd0",
+      "public_receipt_id": "sha256:336dd992a2301dc62d6361f3238d9e74a3df389a244701948fae6edeb4a26174",
+      "destination_path": "progress/receipts/2026/08/20260809T011937Z_50c8e4391849_336dd992a230.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "9224eb88c4b080aff51bf92248dd63566376c998ed7f3a8b0a36def99101ba73",
+      "raw_receipt_id": "sha256:6a330d15b814dffb1577c6e9084e56b1d38e23a01496c97bc9729e41da10cf5f",
+      "public_receipt_hash": "530f723a06e04875ee848d5d4e9eea36f4e4d74d714b9e2932ffa468305c3652",
+      "public_receipt_id": "sha256:762fb9786aba49e8f003846fac13b0fc0108c3766ad8763fe270d1f9cdd25c0b",
+      "destination_path": "progress/receipts/2026/08/20260809T025509Z_50c8e4391849_762fb9786aba.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "a5b0a804875fbe3fbe42a4bad410daf5514d9422750c582a47822111eae755a8",
+      "raw_receipt_id": "sha256:037f79970b907e8b908e08bddee3d50e7ecd963a6182f72821fb94f5d24f9b4c",
+      "public_receipt_hash": "80f228b14506c96dc836c3cc0bf4cba01e1c646b5bbb69066b6bb9304034999c",
+      "public_receipt_id": "sha256:068d201f19185b15c4165c046b194e7330d98293f4c7958db6b259e3bb00330b",
+      "destination_path": "progress/receipts/2026/08/20260809T032820Z_50c8e4391849_068d201f1918.json",
+      "changed_fields": [
+        "frontier",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "1b436011f4d7576e42878cf604515f3f6e12df3db563afc06917262fa58dffa7",
+      "raw_receipt_id": "sha256:8e566049992392d3a1280f2de697e6be18c782b1ba0f8d0ecaf974d0e972ff33",
+      "public_receipt_hash": "52e7714a5fc738566e65c550a3a0237cbe927439449346534e1daca4486b35e9",
+      "public_receipt_id": "sha256:eae806a74e4a5d6524c98bf43aa562538eabfc8969f2c7b55cfa8e27c87e8408",
+      "destination_path": "progress/receipts/2026/08/20260809T040333Z_50c8e4391849_eae806a74e4a.json",
+      "changed_fields": [
+        "action",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "fb87662edeb1a2f9005fd34ee0a590e5c520171f90de7df72c16981074c9366b",
+      "raw_receipt_id": "sha256:e593724eb21521854cbd53c57b4527f5221b4bb0c93dfe45678845c7df4308b4",
+      "public_receipt_hash": "82fe05be26a910bbd4c65ce72500d65b3dddd65640e76814edf812e7d2a0d095",
+      "public_receipt_id": "sha256:8e3245129f1ec123287a45fd75768bca59dca31e22c2949f04cdac71b3ce4e6a",
+      "destination_path": "progress/receipts/2026/08/20260809T061926Z_50c8e4391849_8e3245129f1e.json",
+      "changed_fields": [
+        "verified",
+        "result",
+        "next_gate",
+        "frontier_consult.outcome"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "e102e3156ccbe977f1dc87411ef9e239fc3a753268827b685a98b2075fe4a51e",
+      "raw_receipt_id": "sha256:52cea83e7c7adb0927fb5dce16ebecd051b2083f34058354566411bb13cfb5c7",
+      "public_receipt_hash": "0b2aa06656825658df3cbbc424c6b76603c49e6dd3ba9a91d1645fe7f0833cfa",
+      "public_receipt_id": "sha256:1340f793b272139faa05b38f0f6d402663cb396a562198f22f967d0d6aae324e",
+      "destination_path": "progress/receipts/2026/08/20260809T065329Z_50c8e4391849_1340f793b272.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "14b1ed1a72752c3125f4a3b4cc56529031db74ad4d7c4e52caca01c580488b34",
+      "raw_receipt_id": "sha256:2ab2fa9a2092d93f89c16334c17c7abe3879762dd75846355696d7ce2aabe4bf",
+      "public_receipt_hash": "e74ce70fc88aead21dff102ad19787e2ef717fa061dca6eecd86d1b6be3be429",
+      "public_receipt_id": "sha256:ee0b0cb79e32d5c961eb9f37686e2038dcb98501e3867dfb9de1ad0d02da750f",
+      "destination_path": "progress/receipts/2026/08/20260809T083719Z_50c8e4391849_ee0b0cb79e32.json",
+      "changed_fields": [
+        "result",
+        "next_gate",
+        "boundary_held"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "4892fb5cb940b7669f29eac1124a317aee00ce7ce3767bd7e1680d6241e8ace7",
+      "raw_receipt_id": "sha256:7aba67c00dfb137e8ab4000f18259d05e239bbe39a62d00372f344440804a3b9",
+      "public_receipt_hash": "93a19f5f9b6076a5b16f9db53c040a85e9d91568f1363a4ce8c05755021c332c",
+      "public_receipt_id": "sha256:26b7a0877522c736743d665dffce0d1097a5e24420f2544d4a6f9b09fa736970",
+      "destination_path": "progress/receipts/2026/08/20260809T094355Z_50c8e4391849_26b7a0877522.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "14540b8623be5299c38f80ba24682e1faac02a18cc68865b4929e07f399bf349",
+      "raw_receipt_id": "sha256:c8967dc5a6b8dfacb003cf8d8f02aadcce092892a210fde800fa3e895389d26e",
+      "public_receipt_hash": "8e67970e01b2de0ca7bdf73736296c1db6fd8e628bf3ce7175d951f1fa1ff3fe",
+      "public_receipt_id": "sha256:7853cfb898564f9753de98a8efaf839223f95db2017a6e04d24a358fa23f2c39",
+      "destination_path": "progress/receipts/2026/08/20260809T101631Z_50c8e4391849_7853cfb89856.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "30a18b84b26eaae6e7f4ed84aadb96ec20fbff40776386286a42f6409bf62ff8",
+      "raw_receipt_id": "sha256:a65e608fc6ce6f24b926048f70b33a629ef74cf7d5be5ebadc0a33b2d66fc637",
+      "public_receipt_hash": "f78df3a77cd469d9e0fdd8657072748fc760ef170ad9d529daf9703376405774",
+      "public_receipt_id": "sha256:a163d6c7b92078c68ee12b3e35398e79242a6476625a44af6e3532f393222d18",
+      "destination_path": "progress/receipts/2026/08/20260809T165522Z_50c8e4391849_a163d6c7b920.json",
+      "changed_fields": [
+        "action",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "e7a1ddc530e738ec6a7442127645bf30785a535a6f8d3b8f835d8f3bb2cf5c3f",
+      "raw_receipt_id": "sha256:0bc76deefb5903c863cd77b88dd82b81bee253eb22cbe97b3a877172eca8806a",
+      "public_receipt_hash": "0e3563ee7d76f1f424cf4e5f8fb195469135a787ce2335e2a98d6448ba20dfdc",
+      "public_receipt_id": "sha256:697d19d27dd1a30c773f2960a6053daa413a78dce7611a3ea5e673a0050ecbb4",
+      "destination_path": "progress/receipts/2026/08/20260809T172747Z_50c8e4391849_697d19d27dd1.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "14c3f82a7890cae23095fec7f530405a104c602b460ceb62d669e9541d87e91b",
+      "raw_receipt_id": "sha256:dd809440e5ab71038b9872ead5eb544963cfdb23ee161636f4b822dfd3708145",
+      "public_receipt_hash": "6361fb7a6874910677c9f455edc1074bbd664a4827d1051827355c26ea8606ac",
+      "public_receipt_id": "sha256:c64a16d67e3a9c1735dc0a567988b90a2eb36165f3ba804ce4687c1a2c33f347",
+      "destination_path": "progress/receipts/2026/08/20260809T190719Z_50c8e4391849_c64a16d67e3a.json",
+      "changed_fields": [
+        "frontier",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "28dbb576ab219b5a2a5e1d2392ee183649daf7652f34fb09cdade623f0eb338c",
+      "raw_receipt_id": "sha256:5c587dc95cd21ece9b873c7e75b322d9885b2975e1ea36c64712917c984a7ecb",
+      "public_receipt_hash": "a13aedb69a90c245242b053102d55d8c24bcf44fb6c20b91e0894f8976ffa5a3",
+      "public_receipt_id": "sha256:3f9c3342840b9b01723641dfacbb2637aa614ab7083938f66a746df14be46097",
+      "destination_path": "progress/receipts/2026/08/20260809T233008Z_50c8e4391849_3f9c3342840b.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "bac05d6ec6cc1cb302ca15ad429274e0c0b3ad3c930164ab79c80796c90f88a7",
+      "raw_receipt_id": "sha256:0e5e36e3c9a91c4de89b661460fadfb9013639a4fd953fe3562c92632bf52243",
+      "public_receipt_hash": "20fb4e9326bcbb7ae8a1dd587dd916de921d882c321b5c2d71d635bb89f5e362",
+      "public_receipt_id": "sha256:367c1db45ef02be49372a846c57cb7ec436143f4af6ec1fc8cca211acddb75f8",
+      "destination_path": "progress/receipts/2026/08/20260810T000154Z_50c8e4391849_367c1db45ef0.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "a610c55f070c4441194a34073ee379d7f8c187689c1af715c4f696e0493551ac",
+      "raw_receipt_id": "sha256:35f5852079474022f607ce091cc1249b0f62a74f07d3fe8bec82ab4834c77f9d",
+      "public_receipt_hash": "5009aaf1d6e7f791943177ada1e75e2dd5ff6be7e46cf6a2ec775654f089db9e",
+      "public_receipt_id": "sha256:1f828b9e7b1270a0929c9d37077b5aae8d4a130bb4a2b46d7f8bf1c1b0f88af8",
+      "destination_path": "progress/receipts/2026/08/20260810T043700Z_50c8e4391849_1f828b9e7b12.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "bb77e16db625f448348da8e9e8b1341241b312973ae71c23887e57ea84dab8c2",
+      "raw_receipt_id": "sha256:5851615f872c7f645be6720b5649f81f2ed0667eb50ab32ca22fc665e404afef",
+      "public_receipt_hash": "bb77e16db625f448348da8e9e8b1341241b312973ae71c23887e57ea84dab8c2",
+      "public_receipt_id": "sha256:5851615f872c7f645be6720b5649f81f2ed0667eb50ab32ca22fc665e404afef",
+      "destination_path": "progress/receipts/2026/08/20260810T083537Z_e97056701b6d_5851615f872c.json",
+      "changed_fields": [],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "41182bdd83752c18d39f8dc96c0d08c27d83e350cd6d172865ddd3c0289cdcb9",
+      "raw_receipt_id": "sha256:50eaeb512d1150a2573981effaaf15b56fbef72554aba0e87f561b3e3bff757e",
+      "public_receipt_hash": "785968c8df740414994320d9b45500e18cf3a7a23d2cc2568e9d7d2c2c7fcf6e",
+      "public_receipt_id": "sha256:dbd4f977f5972f9f047d620c5e32af218dc524d4229d18d2176a8dd3fefb9b41",
+      "destination_path": "progress/receipts/2026/08/20260810T111836Z_50c8e4391849_dbd4f977f597.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "00ac3eb9eaa8e182dbdbd60beba88acd4882007a146f71e339353b780fec83aa",
+      "raw_receipt_id": "sha256:6880cbeb7f547ba9efd4b01e26a0c6e7d952b15f7781fee6aabfa0cafdbc3ef3",
+      "public_receipt_hash": "4bdd6484b8e530b8efa86088afdf8643eb363b250bf738df3f9872a1a5f94451",
+      "public_receipt_id": "sha256:8f11aba086932da66d84002ac4313959487a1252bb47631bc62b2ef0014dc4ad",
+      "destination_path": "progress/receipts/2026/08/20260810T122755Z_50c8e4391849_8f11aba08693.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "e669f18b0d68b839245e1e3c42e540d578f040016d95816a682910b1e67a3517",
+      "raw_receipt_id": "sha256:1c96aa5099187664c717c6e17d98d2df0c2708c7932bf21b4144309a4af47fde",
+      "public_receipt_hash": "1259d8c1c88f8c32cf0610e4ae11d5502619f7a1c2980b49eb03d1d3a9aae6e6",
+      "public_receipt_id": "sha256:204f972229198b1a5be892287f04ca6a3d6df7a741ce1d381ad9d50fbe3223f9",
+      "destination_path": "progress/receipts/2026/08/20260810T183543Z_50c8e4391849_204f97222919.json",
+      "changed_fields": [
+        "action",
+        "result",
+        "next_gate",
+        "boundary_held"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "28e7c5a9ab4dcd156ac6a666da0290e4af4e9d7c9d78eca23df1ce4d744c66bd",
+      "raw_receipt_id": "sha256:6dc17abc0440ef7eb0ca47028aec622348228230ce50140b44460bc81221e89d",
+      "public_receipt_hash": "65e243133774c123288ffa5a9b9d951a717ecf49ca1aa788ff0d18efe9487dbd",
+      "public_receipt_id": "sha256:1374150356dc468aa772f82c22eee473b4883f9c5f20b10723f6862d7869a52c",
+      "destination_path": "progress/receipts/2026/08/20260810T201715Z_50c8e4391849_1374150356dc.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "fbff9c49383982d319e5cc22388dd30a8a30922ab96139011f11cf16e4c090bb",
+      "raw_receipt_id": "sha256:e85829386b5b877fb0ad8a1cd706edaed41b5c18e848093c27200aa4ea28af3e",
+      "public_receipt_hash": "31ab7660991941a1e319959f4ce5f9ab6b4afad1fbea30212f58c8c8b3af6a84",
+      "public_receipt_id": "sha256:3fe8a35207af08553a36147a0b667ac5c7e4d5d5826b10dc88bb6175027dbdff",
+      "destination_path": "progress/receipts/2026/08/20260810T215327Z_50c8e4391849_3fe8a35207af.json",
+      "changed_fields": [
+        "action",
+        "verified",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "ad55c7509c774a5a8721644c4aa755984eb67ba790029807852f5f3d5b347bf9",
+      "raw_receipt_id": "sha256:a048e7b8552ac6491de2dff727f594077e7a646f0999b9393bfb9d13303c1edb",
+      "public_receipt_hash": "33c6e900b526599098fdb6342ebac0e6ff76dcf8b97654e997e3f08eba5ce8e4",
+      "public_receipt_id": "sha256:57ddaf357d712c002a8ec3bc04d6e0319233221f7d3aaf3d2f7d2eb5d2eccc4d",
+      "destination_path": "progress/receipts/2026/08/20260810T233137Z_50c8e4391849_57ddaf357d71.json",
+      "changed_fields": [
+        "verified",
+        "next_gate",
+        "frontier_consult.outcome"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "c732995fd91043720b06c58f48540d285f4c5a66fd566a34c937aa84b99a52c7",
+      "raw_receipt_id": "sha256:5e37438aecec6528548805b6b416708a8a72078bbc7fa3103997edfa023fb844",
+      "public_receipt_hash": "2e2a99c69f9022aafa6ce7d9ecbfed466100f945ec28717dc31d24e24927c83d",
+      "public_receipt_id": "sha256:ae0b1ffbcf2036b55c6588812614ca4e9765093dc0c926500adf8715fbc263e7",
+      "destination_path": "progress/receipts/2026/08/20260811T040222Z_50c8e4391849_ae0b1ffbcf20.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "16f7ffe8c3c41feeeb4fcf348b76256a1a244badbf277f0400815a4c6c821cbc",
+      "raw_receipt_id": "sha256:c8968f4dd5e05d8f621b4430f2b9d6e8430cec532f36a7576b79032b372d0134",
+      "public_receipt_hash": "16f7ffe8c3c41feeeb4fcf348b76256a1a244badbf277f0400815a4c6c821cbc",
+      "public_receipt_id": "sha256:c8968f4dd5e05d8f621b4430f2b9d6e8430cec532f36a7576b79032b372d0134",
+      "destination_path": "progress/receipts/2026/08/20260811T073301Z_50c8e4391849_c8968f4dd5e0.json",
+      "changed_fields": [],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "afdbc7e53ab74b7c1d0c3e2b0e3cd8e6212e4ca852b8320502adae5a79d0ecb7",
+      "raw_receipt_id": "sha256:684d68e8552239737b83e0d2f7a2cc7525112508c743160baa11ce979bbc06ff",
+      "public_receipt_hash": "afdbc7e53ab74b7c1d0c3e2b0e3cd8e6212e4ca852b8320502adae5a79d0ecb7",
+      "public_receipt_id": "sha256:684d68e8552239737b83e0d2f7a2cc7525112508c743160baa11ce979bbc06ff",
+      "destination_path": "progress/receipts/2026/08/20260811T105437Z_50c8e4391849_684d68e85522.json",
+      "changed_fields": [],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "922334be549279efa4129f506512ea30bb7ae1043fde433b413a9f1244495680",
+      "raw_receipt_id": "sha256:b9b280ce2953c5accd8c385a999613f5a19f4474e94fb167ca0aaa87b854cb04",
+      "public_receipt_hash": "2511bf7fb7b68c20a7f1a12c1eba21503206051654e8b89c229190ffba790350",
+      "public_receipt_id": "sha256:47b29b8831662130cb3fc358fcc66fdd4163f07d5d66be52e17aa51b983f21ed",
+      "destination_path": "progress/receipts/2026/08/20260811T141317Z_50c8e4391849_47b29b883166.json",
+      "changed_fields": [
+        "result"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "c2b1bcefaa39633d00f968c53993cf961d39e7685a918f917dd0e397fa981201",
+      "raw_receipt_id": "sha256:e2f87e67e4031798e5eb9faf1ee6d1e372e5d3e11c635830bfd2286bc542db13",
+      "public_receipt_hash": "89a0712b7508ff829926dca7f35e856ef0a48d83663276afbcd0043c5a8852fe",
+      "public_receipt_id": "sha256:92e3387fd70f0dbca30a82cda7157c52a2cf1a9b929f55968f33dbc9d931056d",
+      "destination_path": "progress/receipts/2026/08/20260811T152202Z_50c8e4391849_92e3387fd70f.json",
+      "changed_fields": [
+        "frontier",
+        "result"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "0ada775fe7382f98754396429fc527359cb588dad93d2d802beeb81db81b51d5",
+      "raw_receipt_id": "sha256:c6684e2a0e3e4435a5afc26a62b09a3dab1e91e49a9a188ba2857ed15b3cb6cf",
+      "public_receipt_hash": "e96cbb2607b8e3c7aecc2d4519ea22a5b8436f6244fa7bc753996e5280e3db8e",
+      "public_receipt_id": "sha256:03e3aa4e6dd37cf0f2ec55ab14b9372be31ec87c6d6c989d1a1a18a2b11c02d7",
+      "destination_path": "progress/receipts/2026/08/20260811T162836Z_50c8e4391849_03e3aa4e6dd3.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "2ee03b3fc5b7f2a018728173cc7389599b16b493981b492147d4c0eaae10bee1",
+      "raw_receipt_id": "sha256:458b641e5d01bbeb5d52ff23ecbdb5420a24685289a43539bde3a0a90f7800d8",
+      "public_receipt_hash": "8734cb52a3bfad66022f5ec6537962d816ed4fecf37a9ee477eee24cdaab27e3",
+      "public_receipt_id": "sha256:f0e2c18d87759b7b5bf2c3c9c8c6043bfbde3b2f74802e7162264711e6386695",
+      "destination_path": "progress/receipts/2026/08/20260811T210442Z_50c8e4391849_f0e2c18d8775.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "966ea33dd56c73a2469dbb2978ed087a8e66cdc950d7dc01309e22e7a3fc5956",
+      "raw_receipt_id": "sha256:caa4199a5d054ae391d9ac829d3e9d6c909d933b550fab58f317b853d194ea28",
+      "public_receipt_hash": "ca008da0001fe29c3798c9333f7cb5a5c90a95796fcfb2dc69fbddaa804aed42",
+      "public_receipt_id": "sha256:2028e9384e9fe78b16b56c77f8efb0ed041d0e582dd2f78bc95a8c69e3a1f800",
+      "destination_path": "progress/receipts/2026/08/20260811T224556Z_50c8e4391849_2028e9384e9f.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "c976bad27b13b03ce6e8ada5d2663714b629144d8da4c3c3abd334fe65e4a768",
+      "raw_receipt_id": "sha256:439b786f556904ffe6413786cb68e84ef392208af8a65cd7ca8563748667822f",
+      "public_receipt_hash": "617b74ff1630523bedd7ac64726a6dc952d5f4041d5606032e7ea97402169577",
+      "public_receipt_id": "sha256:07d281bd64245f342d23180ab99013f7b8a8b4e60f50bd59ce01bd58bd359631",
+      "destination_path": "progress/receipts/2026/08/20260811T231804Z_50c8e4391849_07d281bd6424.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "1615bac17eb491ebdea09a79710c3e8278110030e2edb6781b3d63e81e6d0a22",
+      "raw_receipt_id": "sha256:006e0026a204edd90f6e7ef0464d72277af90e49649cc99a20c759d820b5aea8",
+      "public_receipt_hash": "6b6671857763934ae4cf5df32091b052d216e44cecfaf5ba419b1db2b14bf7b8",
+      "public_receipt_id": "sha256:1384670e58fcba71b3cb2fbe1447a152e60740f203179947f273ebddefee08fb",
+      "destination_path": "progress/receipts/2026/08/20260812T005609Z_50c8e4391849_1384670e58fc.json",
+      "changed_fields": [
+        "action",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "22740b8f8f111cfcd06a5265cfb8e1fb408573e0dcceedf65de03789cd2f0b34",
+      "raw_receipt_id": "sha256:62aadda1133a15643af8100a016bf2243f25d44bc9f693cdea730b3cdec70175",
+      "public_receipt_hash": "4a1159e260c29c495c63ccfd0903e652e3d475fb2b15980e54351c52e50dc7d2",
+      "public_receipt_id": "sha256:b9d554659ed1603930812b3159bcb846978c7a8515ca75dec8fc56f5f667edec",
+      "destination_path": "progress/receipts/2026/08/20260812T012855Z_50c8e4391849_b9d554659ed1.json",
+      "changed_fields": [
+        "action",
+        "verified",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "08399c97296452d36a4c56ea9ffdac15d0a234ece609bac745180f8082fdc046",
+      "raw_receipt_id": "sha256:eb81d5a8f189728ecfac47d05344355452e59bc3b9d3668bef994a2738852217",
+      "public_receipt_hash": "f98b3a3986f188f4766bd03b6fa04ee0dea57509b7f88aaea801728ef59f14cd",
+      "public_receipt_id": "sha256:4a7982497c87b1a44d83ffadc0064c32f4790af5396916bc2b5dcd8545d88cf9",
+      "destination_path": "progress/receipts/2026/08/20260812T020134Z_50c8e4391849_4a7982497c87.json",
+      "changed_fields": [
+        "verified",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "7cc0587d74668c94c49b84065351fb72c163a6fe2703ed5a61ef406630d95997",
+      "raw_receipt_id": "sha256:db1a64d15a3152a15ca69cbdba0735b9ac5dad2c3b2e4dd534f2c8c4fd619779",
+      "public_receipt_hash": "7cc0587d74668c94c49b84065351fb72c163a6fe2703ed5a61ef406630d95997",
+      "public_receipt_id": "sha256:db1a64d15a3152a15ca69cbdba0735b9ac5dad2c3b2e4dd534f2c8c4fd619779",
+      "destination_path": "progress/receipts/2026/08/20260812T070112Z_50c8e4391849_db1a64d15a31.json",
+      "changed_fields": [],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "8db0b36b6f3cc449106014f5e02814c7afc5a763f144f6e9d016cff8a00b28a2",
+      "raw_receipt_id": "sha256:fa6bb7188667a2789e8e026c8e1c5169b6c2d92326ff178f285a7231496b0076",
+      "public_receipt_hash": "8db0b36b6f3cc449106014f5e02814c7afc5a763f144f6e9d016cff8a00b28a2",
+      "public_receipt_id": "sha256:fa6bb7188667a2789e8e026c8e1c5169b6c2d92326ff178f285a7231496b0076",
+      "destination_path": "progress/receipts/2026/08/20260812T083312Z_e97056701b6d_fa6bb7188667.json",
+      "changed_fields": [],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "5c98a334e319d44cadb49faf16b33c02a07347814dc630c64e04eb72afd83273",
+      "raw_receipt_id": "sha256:306c0520e5ac520d4c4f1e4128f5c934b1d6949da4fdcf1f5e76e747d2e4ac2d",
+      "public_receipt_hash": "eb7aee1cc9c62853bb363d4d30552256999c766aaf2ed80c365d437c20ada129",
+      "public_receipt_id": "sha256:acab0093160b455d18490c1d6ac435788477dd2f4922200d2fae0d6e80b80ed8",
+      "destination_path": "progress/receipts/2026/08/20260812T083937Z_50c8e4391849_acab0093160b.json",
+      "changed_fields": [
+        "boundary_held"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "4bf829fc64e9c391cc5ea925bb2e521ea2e157d6f8284c33dc4e43232575d645",
+      "raw_receipt_id": "sha256:c699a24fd616b9c5c1d3c654c38be0baa1a9db95b0570ab0d689d31b87ad4d7b",
+      "public_receipt_hash": "b7eb8fc019002881eccbf605b1d60de2f2363cb2cab34dd1530cabeba4f6d735",
+      "public_receipt_id": "sha256:e9077c71a9e1976de7edb84b7cd6ec589ec900678c51c44bf8b2190a6da018d4",
+      "destination_path": "progress/receipts/2026/08/20260812T101832Z_50c8e4391849_e9077c71a9e1.json",
+      "changed_fields": [
+        "action"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "73c925c66466cc9c097c05abfad14a2ec8d6ea2791b95c32f8b190d594ca4b11",
+      "raw_receipt_id": "sha256:1e38db6399ef8723421dd39abf68c10e801b2f5d8149ca6dee1ebac68268c5e5",
+      "public_receipt_hash": "ca9cf7bf58527beef8da57bf128d1177f34124ccdb5ccb93a997f6bc3cc8ee1d",
+      "public_receipt_id": "sha256:ab6b0b0f707f6f4fdd4cb8d454465496cb77d57c55db3168138c750de644507b",
+      "destination_path": "progress/receipts/2026/08/20260812T105127Z_50c8e4391849_ab6b0b0f707f.json",
+      "changed_fields": [
+        "action",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "36c6c1c9b2b6274164401859c4b8979f558e3c7e57b91c4ff84fda8e9624305e",
+      "raw_receipt_id": "sha256:63f1895b0fbc645c70fb9f5ae68e45cda884d990d4716d2e5bbe23a6c5bf2b61",
+      "public_receipt_hash": "776d51d6cbabae5490e5b6a331afda2909cdf53d26b576ddf5e9c0bf26718576",
+      "public_receipt_id": "sha256:ca694640e5aa2236d0f965d5718ff6a1f4cfccab907d0f8a6b8a06a988789064",
+      "destination_path": "progress/receipts/2026/08/20260812T123222Z_50c8e4391849_ca694640e5aa.json",
+      "changed_fields": [
+        "frontier",
+        "next_gate",
+        "boundary_held"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "069ec339c398d080e2be55ce1e5fe89f4f7fbbfdb1bec65c365c09e6d22bb8f1",
+      "raw_receipt_id": "sha256:eca5ff7a728f98c60200ce628a072883943edfbc046cf59cc2ef1293acb2dd65",
+      "public_receipt_hash": "069ec339c398d080e2be55ce1e5fe89f4f7fbbfdb1bec65c365c09e6d22bb8f1",
+      "public_receipt_id": "sha256:eca5ff7a728f98c60200ce628a072883943edfbc046cf59cc2ef1293acb2dd65",
+      "destination_path": "progress/receipts/2026/08/20260812T173204Z_50c8e4391849_eca5ff7a728f.json",
+      "changed_fields": [],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "eeb89a92c3fb58917a980ec51768ce8a7479030c071f35e00ac918b4452ac2a2",
+      "raw_receipt_id": "sha256:cd2b6e33e9f8779c44cfa66b7a8ac87831754e6b2fcfe401fb5594f2dc72051a",
+      "public_receipt_hash": "eeb89a92c3fb58917a980ec51768ce8a7479030c071f35e00ac918b4452ac2a2",
+      "public_receipt_id": "sha256:cd2b6e33e9f8779c44cfa66b7a8ac87831754e6b2fcfe401fb5594f2dc72051a",
+      "destination_path": "progress/receipts/2026/08/20260812T180559Z_50c8e4391849_cd2b6e33e9f8.json",
+      "changed_fields": [],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "292ecd77a13ca758d083fd45ba4bcc11cf26a1d0a3d901401a4e908c19ec9627",
+      "raw_receipt_id": "sha256:ad0e556fc8353d6cffda200d7d859d921e44e96f07502fc950fc4b9ca542cc43",
+      "public_receipt_hash": "7a149c2cca139b182d2c10d88417f1289c95122a72d5a40812578f79e09c66da",
+      "public_receipt_id": "sha256:3177a817281e7f18fa306604f26ed5c2d568afca8605aaae696753b8f0a0eda4",
+      "destination_path": "progress/receipts/2026/08/20260812T205551Z_50c8e4391849_3177a817281e.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "3071f3548b0747478468c09ff95a7f63b9658a0c9bb03b4c58d27fe0c8fd256e",
+      "raw_receipt_id": "sha256:9db5e2a35bd5369d1bae1287969243bd16ed3cdc1b9a031826b68afac7386fef",
+      "public_receipt_hash": "ec3d9851268b23c2a902b84cde0c91bb071f6a1935459b80e47c7c7a1bcb871a",
+      "public_receipt_id": "sha256:bc44ee7421188b383a8304dfaa0ec1e485a2977c089dc7a90459b605cbaebc00",
+      "destination_path": "progress/receipts/2026/08/20260812T212809Z_50c8e4391849_bc44ee742118.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "9a68f5791fa4bb8c9a3296c751333ca09e9568f1dcc9d6689a95c87308203aa2",
+      "raw_receipt_id": "sha256:a371c132cc1f97ccb763fa0a793530ae75813f59251b348fd474e7106a1a764b",
+      "public_receipt_hash": "d0c599bd35cf5e9f9800ed1c2d75ba2b844267db5221333b6314443fea1ef436",
+      "public_receipt_id": "sha256:df291b956ad845d41c4a584716dc220e4b5b06f6836556acc8aefb2ef32f7abe",
+      "destination_path": "progress/receipts/2026/08/20260812T223318Z_50c8e4391849_df291b956ad8.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "a9eab4cb704493fdf81e61ede4717837aef3f6bb0bbb81bfff16bdf1ccabb264",
+      "raw_receipt_id": "sha256:d276aa1a198ad3e285868b8d4ee1113dac0a3bdf4779dded4f87c3ba9f309403",
+      "public_receipt_hash": "943adc6fa37a2f6b932f53de3962cd7ff7d8903b81d07e3d6be9c5f6469af0d8",
+      "public_receipt_id": "sha256:1067c03a3edbca12d92533a35a21633e8385312273da07333c9e927604810eb3",
+      "destination_path": "progress/receipts/2026/08/20260813T061729Z_50c8e4391849_1067c03a3edb.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "e25f78fed76e1ff7db0eb31e47be280e0cafc0c7e97e5665238f1d0b1a2f540b",
+      "raw_receipt_id": "sha256:7ebabd479b477b7b20bd220e1cc70a0f23f310c4e5fcb45bacd8fa511e020bc5",
+      "public_receipt_hash": "8012dcfdce73d1b5114c61bc2dcab26df52487cdf8847d464b6e59929285ec91",
+      "public_receipt_id": "sha256:089c2ee51e3bc310be457aea3c9664ea22cbdf3d24c57ec74759e0d2a5c776b0",
+      "destination_path": "progress/receipts/2026/08/20260813T072313Z_50c8e4391849_089c2ee51e3b.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "5c0b6095fc4211e98b6e7ab356fee2b7f82e434e63dd5dd187d30b13e5a0d585",
+      "raw_receipt_id": "sha256:e695f41e71565d61b49caff8bbaa9a3ace4ee139e4dfad3110b37d53a10ba1d4",
+      "public_receipt_hash": "24c6b7a816912799f49f2783ab502250400ac9900b10110f63c535f455ed3bfe",
+      "public_receipt_id": "sha256:aeaee923c307a1d5ca53ae13f7fcce765d71f3c841f8477a36df27572932bebe",
+      "destination_path": "progress/receipts/2026/08/20260813T090237Z_50c8e4391849_aeaee923c307.json",
+      "changed_fields": [
+        "frontier",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "31e1dc3f5e2042aa70e3b5e85d233714832207a54bd3e810d93ff77aa858d283",
+      "raw_receipt_id": "sha256:9277ec7bc2a5fe6e916d72fc0dfb73e7eb4a9fba29132aac7d03e44a7f8493aa",
+      "public_receipt_hash": "64814cc5449abc21204db525c0bb2c4e7e5f5be476fcf632c5c39aeb810ce090",
+      "public_receipt_id": "sha256:6f7bd428ce1c1fe6d6c0cf4e7a17ef4f9f69a033608635d450662f51f2d11152",
+      "destination_path": "progress/receipts/2026/08/20260813T104231Z_50c8e4391849_6f7bd428ce1c.json",
+      "changed_fields": [
+        "frontier",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "2091ccb78f0944c4270993220d7ba9cdd4a922c29abc23ee75439433fffbc5ab",
+      "raw_receipt_id": "sha256:7ce60686543c5ee694814028028f9562500fafe2ba9c315ab027b0acdae25678",
+      "public_receipt_hash": "f85e3166e8eeb018c39941efc20aafd0c3add95e4af2f4090d6673c73d66db95",
+      "public_receipt_id": "sha256:cd45affe666c5b031de0da635b8f79eed25b0c31508b5517003cc2c6e2982e0b",
+      "destination_path": "progress/receipts/2026/08/20260813T114855Z_50c8e4391849_cd45affe666c.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "93aafe24236e472808c0706b510e3d9c7a5197eacee0447f464d098be8b4f42b",
+      "raw_receipt_id": "sha256:92239b82ec5162c249ac39e9ea6f00ca393e30bea60c9b3cda727edc62d9da1b",
+      "public_receipt_hash": "499a44f8798f2e484ea72ae6ed97297b3b4a239365ed3f53a45e56e2f4115cb2",
+      "public_receipt_id": "sha256:64912294161e6c9dd5f9adce7444d5578a946696221ac7e3a5bb0d583865c75a",
+      "destination_path": "progress/receipts/2026/08/20260813T122215Z_50c8e4391849_64912294161e.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "ab8567224e55c70021797570b2496b6248adb59197068bb072ada5f4751e5936",
+      "raw_receipt_id": "sha256:199ae88009b7c023fc23e85f9d998ce4f1ce738787692a9c8e19f05c51179c13",
+      "public_receipt_hash": "ef774edd1aa8965861e317f2321f6cca396012e05ce93ca22ba2790740774bd5",
+      "public_receipt_id": "sha256:2037ad8756feef9d4e4f336bf8aa7ce16691b2012a032d398be3a4f0e21537ff",
+      "destination_path": "progress/receipts/2026/08/20260813T151002Z_50c8e4391849_2037ad8756fe.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "f51a230d99ce4611ec0fb037454abf5c84e6d8c78f9d6fa19cb3d72e1cdeeab8",
+      "raw_receipt_id": "sha256:0a4496310c1515d0a6aaa9239ab742fc419f2009eb089046de2303351b0b903b",
+      "public_receipt_hash": "90fb5b067039bef643f5acf68de26819760653fede5c0468fdd4078718a18431",
+      "public_receipt_id": "sha256:a28f8a114059a3e3c4bf83536c67828ee25e0bb259ec3710987f579de47cc2d0",
+      "destination_path": "progress/receipts/2026/08/20260813T175402Z_50c8e4391849_a28f8a114059.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "2974c05e8ded0d3fbe95a3c3d16123f2211906ab33442d8601d8b68967fd9ad5",
+      "raw_receipt_id": "sha256:cdd0827b6bd7c685813e3615025d4d5e7a75b6d9cd40437b7d94ec5bcce572a5",
+      "public_receipt_hash": "43366339c2ba4e799225c78702194e45381902b70fa104d9e37563d1982100d1",
+      "public_receipt_id": "sha256:c1ca49c7d45c457ca9741b38ef8b7b2405e6003a29a85df40eab3e03f7aeb6a4",
+      "destination_path": "progress/receipts/2026/08/20260813T232744Z_50c8e4391849_c1ca49c7d45c.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "1efc6837cb63e0e7f940a55796d7f82276028ac06b8530d5de63eaf047d0d39f",
+      "raw_receipt_id": "sha256:f6e0c06513cc4cfb545d2f12024ffa83c855a6dbf742df4c6fa9cf60c36af3c0",
+      "public_receipt_hash": "fefb19c7b93971f7ea6351a5588d019e91cb0f63184c78f00487418789a49cb1",
+      "public_receipt_id": "sha256:34190b38a0f4d6f5d75b911a6156b85495530529f04cd55c58e40d3ef608c16d",
+      "destination_path": "progress/receipts/2026/08/20260814T000159Z_50c8e4391849_34190b38a0f4.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "f92997b52cc9e0233a6343851a036f930912c84e5a68b8aa762c1dce2aa84a59",
+      "raw_receipt_id": "sha256:44628975979752f3bbc5c4bb89753b890363f5e341159c7683ab0c1351db16be",
+      "public_receipt_hash": "4789264c601792db7012dc8e0473ff471b63a5f8f3ad97abe4a9d890dec8582a",
+      "public_receipt_id": "sha256:0e48469b29eb675cb31ab1db3265e88aa3357be3058d4a57d2aba2bca742bf2a",
+      "destination_path": "progress/receipts/2026/08/20260814T021231Z_50c8e4391849_0e48469b29eb.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "72a51a4c7d180d02b99a84944b1bd82163880440b526d0499f2b97dfcdc1b703",
+      "raw_receipt_id": "sha256:d60fab22731cce06bda54b34c3a72ba8a2c0dc872977f821d01d0d9e9e383fae",
+      "public_receipt_hash": "06a00c4bbeb3e5066a65faac9ddb295f1229fa8c0d8b1b592c3f1da265fe2f42",
+      "public_receipt_id": "sha256:2a1bea0642faa527beec1af24ed1634fd6dcb4df2a506a4b571de7d92244bc31",
+      "destination_path": "progress/receipts/2026/08/20260814T024639Z_50c8e4391849_2a1bea0642fa.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "5c7870a0255bb40f7f7dcba1f21309c01f25f5b57e31fec7ac81c2150638e3d5",
+      "raw_receipt_id": "sha256:1e806ae8f61184ad4521c82df5cafff4a97b867224c722eedabb47b698a76eaf",
+      "public_receipt_hash": "c381136852bff856011f27c23091b61412f431049eb5309c862e1cb7d49769cf",
+      "public_receipt_id": "sha256:5ee2688c021ec13401c3f48d9dcc6ef4a01aadabe0066dfd3940aba8f3c55625",
+      "destination_path": "progress/receipts/2026/08/20260814T035243Z_50c8e4391849_5ee2688c021e.json",
+      "changed_fields": [
+        "frontier",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "2a2a0590d6051041965da20dd9c7bef7ab008c3c70387f4e8ff6029f72462790",
+      "raw_receipt_id": "sha256:5d56fa0af61bf57c30d01307fefb9d27c74d4d7bdf4156b1a7301885cc7d08b7",
+      "public_receipt_hash": "f02a5990cb74feaf1252f4a5ca0f2202cd99d7cf3b141d7a9625ad8238c73ff7",
+      "public_receipt_id": "sha256:f60252723d2ef63abc5e1632d2fc479f22e570fe18e52bd2ca101aa38b7d95b5",
+      "destination_path": "progress/receipts/2026/08/20260814T081748Z_50c8e4391849_f60252723d2e.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "901b8a4bcaf49ad757cb285f9fd012c7a73377f16e69e41d5747a3cb465a692f",
+      "raw_receipt_id": "sha256:97f41b84e9b6973028379c6cb0e37ea3504e175e29e5fc43e0fa3708677c12ce",
+      "public_receipt_hash": "93d60fed41734308c3422329919d48d2ef1d9387cdb53a9e7bdf3b37a53a7325",
+      "public_receipt_id": "sha256:4f231fe429aa65e262cb090ea4473ba4051113cf61c5f4103e49bfe35cbd6e53",
+      "destination_path": "progress/receipts/2026/08/20260814T095458Z_50c8e4391849_4f231fe429aa.json",
+      "changed_fields": [
+        "frontier",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "cd1c4a0df72407231eb5f3461129c3986df8d1dec6185b3c6a2a8ff32b32e998",
+      "raw_receipt_id": "sha256:f29b76337c598325c10d4eb3f0a23f6d601e150ab127e926280a878271a40aef",
+      "public_receipt_hash": "f3d88c7edd3cabf43bb73300d88ed98bd72c645ab06683a07e095ec9f50cafc5",
+      "public_receipt_id": "sha256:937beaf70c6e9766514a5baea7ce06ab1ff2ed242b9f1e037673cfd336741f42",
+      "destination_path": "progress/receipts/2026/08/20260814T102758Z_50c8e4391849_937beaf70c6e.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "f116825cd72f45c34013be0b4bce7ead4f22802b53dd0da018000588b838e873",
+      "raw_receipt_id": "sha256:c14dfea4cd9c444a7b9e9a2d536dea76116263182ad983178e85c864f1c16e89",
+      "public_receipt_hash": "fdfc77d38654ac2f81033d0dfcc016096d1e7a589ef67972ec6f78ca6956e208",
+      "public_receipt_id": "sha256:c6346ecb84e71b26d0eac6fbbbec5b68ad16dad5d678134bb27d24e20647844f",
+      "destination_path": "progress/receipts/2026/08/20260814T120751Z_50c8e4391849_c6346ecb84e7.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "76620413a71644b4fb19112aa40bdbe95e5cf200d61aed4c800ba150d5293ce4",
+      "raw_receipt_id": "sha256:6a41a289d8c2662a1de9b808235ec89f970c67fd8e821149fd3373c0450726cc",
+      "public_receipt_hash": "339550443638d697706b321087d04ff9c217ebc15c33b87635bf46a5b1e9d63e",
+      "public_receipt_id": "sha256:34e2c947d0102cae2c5ec7dce7db80858ff58f1f9cec2cbf8b335e668b2f1fb0",
+      "destination_path": "progress/receipts/2026/08/20260814T181143Z_50c8e4391849_34e2c947d010.json",
+      "changed_fields": [
+        "next_gate",
+        "boundary_held"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "9897923df903a5bdc0ae0b6eacfe52bac46f3e54f2a5c35cb3232dd0e70397d0",
+      "raw_receipt_id": "sha256:03f2c0a3964ac516638e1ba8060925d12e7878f2ef7d144c82e14060ee2228e8",
+      "public_receipt_hash": "3b4007d2fbf74c4e24aa69b23dbbd5ba9a1700144fd0d70b1a719758c4e75e89",
+      "public_receipt_id": "sha256:92ee04879264f0ff1032d0f240aee15db6439f933e498a8985edfb18cff0984b",
+      "destination_path": "progress/receipts/2026/08/20260814T192015Z_50c8e4391849_92ee04879264.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "1cd28ca2d9445928066c47d81154f44307d81fd8c075d5e887fdbb048dada20f",
+      "raw_receipt_id": "sha256:9e8dd0dab8723aa50785bf2d9fe780549be4853b43bb6d21d84cd6f20a751234",
+      "public_receipt_hash": "2cfdcc9e15c4222421793d8319dd5c8fc6b122e292cd2c534414872c630cfe10",
+      "public_receipt_id": "sha256:57bda54a71072e1a4d8fa83e6a3f5d18c8a29e79f3a87b8c66fbf111a7c11e26",
+      "destination_path": "progress/receipts/2026/08/20260814T195332Z_50c8e4391849_57bda54a7107.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "2902e744df22abb4449fa6a7aa7cc963599ffa546e2fcb262d21b962dd3cf353",
+      "raw_receipt_id": "sha256:53f61cf3fd53f80cdc5c37a42b652c042797aeccb32c47c11adad3169a07c73c",
+      "public_receipt_hash": "9ba74ebdf4e922a1f79aba09392c456fdd1c68fb7d82c6b97471757253768de6",
+      "public_receipt_id": "sha256:370e3a2b5a8b49b79012d99f97e94ec8ec86c9443ac19a7ecbd7fdc665fcbe5a",
+      "destination_path": "progress/receipts/2026/08/20260814T224002Z_50c8e4391849_370e3a2b5a8b.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "1f59b7bd314805b36f0bbd7fdb59a92d903b9e0b0b3b4fbc9c5994e00031ded1",
+      "raw_receipt_id": "sha256:80ba7450e2b80279a4617564acc64edf449ae3f79027d934e30bdde9a4d67c32",
+      "public_receipt_hash": "310dc16fb0902187cf858d129c4c884d99e31fe9fe262a3c1db4f6d3d037e6d5",
+      "public_receipt_id": "sha256:f75b45dee41e68b9caaf4ea95439a34b671a3725de4873b42aef628abde91c42",
+      "destination_path": "progress/receipts/2026/08/20260815T005417Z_50c8e4391849_f75b45dee41e.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "a170b3525a0883a0a788d9a07e41c1fff0c238440401713bbae9f4c6da543ab8",
+      "raw_receipt_id": "sha256:5865a9ed919d324770d9d621147aaf788a8308adcec0525a3f827bb67963349e",
+      "public_receipt_hash": "e5af765fd226bcd8665bdaabd372ec95d603b22599d08b7d1a6cd9d4dd041205",
+      "public_receipt_id": "sha256:b4aba0a279a29cce7b582cbb44ff0c309d24d6537304f997434ba284ae02e7e5",
+      "destination_path": "progress/receipts/2026/08/20260815T012740Z_50c8e4391849_b4aba0a279a2.json",
+      "changed_fields": [
+        "frontier",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "bfa9a0afe323d716cebbb6371adfcfa0ed016ff3c22eeb1af9ee2271a2724c06",
+      "raw_receipt_id": "sha256:328602ed9d1d4eb2757668df49f29d41feddbf9056fb6c6879a4200e5e74dae3",
+      "public_receipt_hash": "fb7f0d7650e26c64a6f9c87ba9c75ef0f3979d8985c84bfa49e7f1f83aee5e05",
+      "public_receipt_id": "sha256:c8d01c36a395d9c3785436bda4da3913825afbe0f8ccb0fdc0337fd4ada0a155",
+      "destination_path": "progress/receipts/2026/08/20260815T135702Z_50c8e4391849_c8d01c36a395.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "36f236e0e4a91466e9a7ee488d4879cc75e390a32f6e2683c7da94b28454deee",
+      "raw_receipt_id": "sha256:4411d4e50674eb7dd7c0560760e32a3e5afbedcd5ffa9de6fa3d5ab476feef5a",
+      "public_receipt_hash": "f25269313980fe20dcf7ed136aa2064548dd432ae05e6809e95531dcc9d3f6ef",
+      "public_receipt_id": "sha256:27fa4ea2142972013904b675697fe03611f8f999ab9de4c6a995e46ed09312a8",
+      "destination_path": "progress/receipts/2026/08/20260815T143017Z_50c8e4391849_27fa4ea21429.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "611a6296169cd786c5642581c5e77e8a51def46644ec41cee0dcf311d7a49844",
+      "raw_receipt_id": "sha256:62cab7ebd9e932b27ba177229ee73bd130157bc864c65bf0a5ea2bf60cb286c3",
+      "public_receipt_hash": "c521d01d0944fde02f19c0db764883707d022d292f4b2184374c71b99dce856b",
+      "public_receipt_id": "sha256:506d0fddf91f644a7fb24962abf9c1dbb4a37ff09dc8d784bf9d07d08c4a5359",
+      "destination_path": "progress/receipts/2026/08/20260815T150300Z_50c8e4391849_506d0fddf91f.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "33fd88f875bc2543fa08a8d3f222c87ff8e78cfac1503430440360d8f7cf1438",
+      "raw_receipt_id": "sha256:1ad17a9f560fcad498d52e56aac3ad86c67dcd372856663181a2136a2697fb64",
+      "public_receipt_hash": "7b821489fe0e8b316520362982e778accffa87617fdb0553a18de2450fbe3883",
+      "public_receipt_id": "sha256:3b8e5266fc6fa4ff2f3a1b2d6e125082b9c2754805c8f382554f0f8535c72d85",
+      "destination_path": "progress/receipts/2026/08/20260815T153559Z_50c8e4391849_3b8e5266fc6f.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "3dd3ccf83cbc092ada565db348e3d33a349a5504369f8ddd5fd65df173508007",
+      "raw_receipt_id": "sha256:ae898cd52a7b28c55153a44466408f6f786317e04ea0c99b8de4a4d0efdb95ea",
+      "public_receipt_hash": "52f2941512a9a594607171b302ca75b1e521b7c3876f8078fc15b7a18608899a",
+      "public_receipt_id": "sha256:e855ca262cd97d48751015946f1ceed9a034e398cca6998b10e8a7d6fb0f4f6b",
+      "destination_path": "progress/receipts/2026/08/20260815T200231Z_50c8e4391849_e855ca262cd9.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "6e789b25225462cf5d3e71e5f01e030a5e357519a56614d012f35a7a33c20303",
+      "raw_receipt_id": "sha256:9d415d0090373f9a24301b87b57da76fb12b8a512675612a4e03f3af103d2474",
+      "public_receipt_hash": "5eef796766b82d50b384dc1d57169a61f6443f6458565079bf08a68d12578dcc",
+      "public_receipt_id": "sha256:a20140b4ad673140549e005482a044f16f60929ed943cac35e99ceab893e69f3",
+      "destination_path": "progress/receipts/2026/08/20260815T211324Z_50c8e4391849_a20140b4ad67.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "901318668994752ecd39970ad4424ceddf6f417dfb19d8d7b39f046a6cab916a",
+      "raw_receipt_id": "sha256:01b5f1f112061ae8f769cce1ff24234abb40a9a296978baeffdb5c9f16ba3887",
+      "public_receipt_hash": "5d4b3e36ec3245193d34266305fb8d63856734d61251680fe9eb4ff12577c737",
+      "public_receipt_id": "sha256:1c0935fda211503451f3c89611d14c16e3cbf5d37648d9dac7696134efd6d8a8",
+      "destination_path": "progress/receipts/2026/08/20260815T235736Z_50c8e4391849_1c0935fda211.json",
+      "changed_fields": [
+        "action",
+        "verified",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "6b727d3294f144c1b9255d3ebbeeec8eb9764517148d64d0b386d4a9e9ef3c00",
+      "raw_receipt_id": "sha256:7339affa934d61d13ac3caf76a54a619fc40012b30ce890d803703240d20d193",
+      "public_receipt_hash": "44fe4900f437d551891cec24e377345b2d3d14013d42c18b290852fa6bd2eed4",
+      "public_receipt_id": "sha256:ba2cf91787d08e020a50d3df787b1c885a02c1d8692f0f4f451bf6e99061b3a3",
+      "destination_path": "progress/receipts/2026/08/20260816T032606Z_50c8e4391849_ba2cf91787d0.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "c347af28a69652246e81f7555da8a4c54e94af6049c04b9ece5ec34b03336706",
+      "raw_receipt_id": "sha256:1d0f8153a637900fc72b39be7ace2813d21fae3c12852a921332957fffb245fe",
+      "public_receipt_hash": "dae00ce7f18a218c7d4d70011eadb08b628b75e9379e4a4d55806c7e8b69c91b",
+      "public_receipt_id": "sha256:c81103e9eb345132ee3a50f4cdd55921f1b1a4d800d58555925cecdbc0b91f5e",
+      "destination_path": "progress/receipts/2026/08/20260816T043116Z_50c8e4391849_c81103e9eb34.json",
+      "changed_fields": [
+        "result",
+        "next_gate",
+        "boundary_held"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "fd72a7816231c2b253d46ccd418273bc986772ca4e055eedc6cb4fceef4b32bd",
+      "raw_receipt_id": "sha256:d64d18a3bbf4122b372e6072855c0048eb0146d5002ecffe4ed52313ee53bf44",
+      "public_receipt_hash": "fd72a7816231c2b253d46ccd418273bc986772ca4e055eedc6cb4fceef4b32bd",
+      "public_receipt_id": "sha256:d64d18a3bbf4122b372e6072855c0048eb0146d5002ecffe4ed52313ee53bf44",
+      "destination_path": "progress/receipts/2026/08/20260816T061037Z_50c8e4391849_d64d18a3bbf4.json",
+      "changed_fields": [],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "cc62af711c5cc3122fe7f5d85c27d6fe56610e4934d5f7baf101674010e9214a",
+      "raw_receipt_id": "sha256:7fcb8fa266a29ec8eb21fe936f14fcd9a5fd149914721289d56f334419e38030",
+      "public_receipt_hash": "cc62af711c5cc3122fe7f5d85c27d6fe56610e4934d5f7baf101674010e9214a",
+      "public_receipt_id": "sha256:7fcb8fa266a29ec8eb21fe936f14fcd9a5fd149914721289d56f334419e38030",
+      "destination_path": "progress/receipts/2026/08/20260816T082617Z_50c8e4391849_7fcb8fa266a2.json",
+      "changed_fields": [],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "30ecdc5824dd8047d3327293282635c91d2a6d01f7a121f72d89b32b2107a34b",
+      "raw_receipt_id": "sha256:1165b75a7f568a9666623ad7187f0aa46a2cb77c6562071bd7df68e7174ff4ff",
+      "public_receipt_hash": "30ecdc5824dd8047d3327293282635c91d2a6d01f7a121f72d89b32b2107a34b",
+      "public_receipt_id": "sha256:1165b75a7f568a9666623ad7187f0aa46a2cb77c6562071bd7df68e7174ff4ff",
+      "destination_path": "progress/receipts/2026/08/20260816T085949Z_50c8e4391849_1165b75a7f56.json",
+      "changed_fields": [],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "b163f59a1c975539f62311031c54a2f95678a13bbfeb30f00e5a5322adf4e7ba",
+      "raw_receipt_id": "sha256:85bc8b22674c4d85d619905e4e0d54412c217c1aae0d38bcffbec84e324552e6",
+      "public_receipt_hash": "b163f59a1c975539f62311031c54a2f95678a13bbfeb30f00e5a5322adf4e7ba",
+      "public_receipt_id": "sha256:85bc8b22674c4d85d619905e4e0d54412c217c1aae0d38bcffbec84e324552e6",
+      "destination_path": "progress/receipts/2026/08/20260816T104651Z_50c8e4391849_85bc8b22674c.json",
+      "changed_fields": [],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "bb10d693725d4adb44348048bc426dc882bab1c3f8cb6f55f1ebdba1b679196c",
+      "raw_receipt_id": "sha256:02f7ad5323e727dd2d8f20cad9ce639220c2711e894f8356119457c4218915bd",
+      "public_receipt_hash": "bb10d693725d4adb44348048bc426dc882bab1c3f8cb6f55f1ebdba1b679196c",
+      "public_receipt_id": "sha256:02f7ad5323e727dd2d8f20cad9ce639220c2711e894f8356119457c4218915bd",
+      "destination_path": "progress/receipts/2026/08/20260816T123248Z_50c8e4391849_02f7ad5323e7.json",
+      "changed_fields": [],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "8b6146cb4eed60a00d35f872caf1d209e92eec47a60e1e2d05b2acd64f74e595",
+      "raw_receipt_id": "sha256:87f76711dfe5ceb745e338f9bf3e99710419bd4fb12547f7e56878a83ff783dc",
+      "public_receipt_hash": "8b6146cb4eed60a00d35f872caf1d209e92eec47a60e1e2d05b2acd64f74e595",
+      "public_receipt_id": "sha256:87f76711dfe5ceb745e338f9bf3e99710419bd4fb12547f7e56878a83ff783dc",
+      "destination_path": "progress/receipts/2026/08/20260816T133908Z_50c8e4391849_87f76711dfe5.json",
+      "changed_fields": [],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "2065a7db772c945ea37e870a127d6a81ee9b6d5521bdf4f2750e5aad85ede0ea",
+      "raw_receipt_id": "sha256:b091ad9df3d1e956fa5d64f14c235eeeef11bc99d7b48f048848ac937c3957a4",
+      "public_receipt_hash": "2065a7db772c945ea37e870a127d6a81ee9b6d5521bdf4f2750e5aad85ede0ea",
+      "public_receipt_id": "sha256:b091ad9df3d1e956fa5d64f14c235eeeef11bc99d7b48f048848ac937c3957a4",
+      "destination_path": "progress/receipts/2026/08/20260816T141222Z_50c8e4391849_b091ad9df3d1.json",
+      "changed_fields": [],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "39a37088ca6c022a71f67d2e1026f3b5538d9d45d8d004a379e5537f28e823a7",
+      "raw_receipt_id": "sha256:38b825183e809155ef29bfed2c90e742d07f4a5a915c6be527d1611037f2d297",
+      "public_receipt_hash": "39a37088ca6c022a71f67d2e1026f3b5538d9d45d8d004a379e5537f28e823a7",
+      "public_receipt_id": "sha256:38b825183e809155ef29bfed2c90e742d07f4a5a915c6be527d1611037f2d297",
+      "destination_path": "progress/receipts/2026/08/20260816T170657Z_50c8e4391849_38b825183e80.json",
+      "changed_fields": [],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "a7278c5c67352e4eb9345b8310091df1f6e2dade6c4b19c71bd1cb7696fd8403",
+      "raw_receipt_id": "sha256:6b557b792093dd3c3ba4b674c8a59477c088889d50bcf8f08da40f77cd2ba72f",
+      "public_receipt_hash": "a7278c5c67352e4eb9345b8310091df1f6e2dade6c4b19c71bd1cb7696fd8403",
+      "public_receipt_id": "sha256:6b557b792093dd3c3ba4b674c8a59477c088889d50bcf8f08da40f77cd2ba72f",
+      "destination_path": "progress/receipts/2026/08/20260816T181336Z_50c8e4391849_6b557b792093.json",
+      "changed_fields": [],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "5539f75b4bcee1d9f7a261797a69351846d93db30b37e799c8c936d31bdde329",
+      "raw_receipt_id": "sha256:23843e56c04485c2709dee113d236f5d178dfd4e7f2b136e13acd6a1322d16f0",
+      "public_receipt_hash": "5539f75b4bcee1d9f7a261797a69351846d93db30b37e799c8c936d31bdde329",
+      "public_receipt_id": "sha256:23843e56c04485c2709dee113d236f5d178dfd4e7f2b136e13acd6a1322d16f0",
+      "destination_path": "progress/receipts/2026/08/20260816T184700Z_50c8e4391849_23843e56c044.json",
+      "changed_fields": [],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "be3e91458aec1579fe83952ddf86f1b3d3da5313d464482b63eee29da47e56b8",
+      "raw_receipt_id": "sha256:dea86b1353a81e0126648e3957e75de5659e057228acd658042012726209303b",
+      "public_receipt_hash": "cb5081885c7c7ca0267c80cfba94945dca024d1240cdea7d33235e342ff8ba86",
+      "public_receipt_id": "sha256:7585a4ced02591e95d4d3ade9c4720012e20d0c14296ce50328bce9d3c25c60c",
+      "destination_path": "progress/receipts/2026/08/20260816T211416Z_50c8e4391849_7585a4ced025.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "ca3f8ef6cfa7686ea764e1ff0745e68a8389826dad2159b998acfb670e868d62",
+      "raw_receipt_id": "sha256:f8b3ba337f397c982b66ec1b5f8a6082aef0eb071e726d557827d4589ad20c42",
+      "public_receipt_hash": "7155c3464c5f9553d9418052a2e6cb729067a8521e70d0c2823334cf04d1e272",
+      "public_receipt_id": "sha256:132389a547ceb45d2397bb379323b9847031217fa9165396ab7392f692d70e8e",
+      "destination_path": "progress/receipts/2026/08/20260817T022612Z_50c8e4391849_132389a547ce.json",
+      "changed_fields": [
+        "action",
+        "verified",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "6dd6a9a2bae67155d1e5480c250e8381f26d9a1adfefb61c279ba05f42bb34ae",
+      "raw_receipt_id": "sha256:2689a6f203d6d85feed21fba5932d5d1d1ddf66dd6d77a219c95c037c473a90c",
+      "public_receipt_hash": "c984dcabf3492a17b34465a032d6632ac8bced6743fbec4e29a0ec3588c13355",
+      "public_receipt_id": "sha256:9fc8145656d8386202967a12bf479bdb772d7d2d1d5d0d31547554a3fee72c4c",
+      "destination_path": "progress/receipts/2026/08/20260817T043717Z_50c8e4391849_9fc8145656d8.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "b019a2ff414b82001b78c98430fc7a7bfe3698dee71c131104fb0414c4908a5e",
+      "raw_receipt_id": "sha256:e4d4e8c550a2143300d4e068fa67916681797d9291a17ee76c9990738fc48cd6",
+      "public_receipt_hash": "07fe9cf68ad515e3af228ae4d9a56a3dcbb7a64d2d26198326a17cfc0ca9758e",
+      "public_receipt_id": "sha256:aac72c21cd8e0b3c689417c5b9ca058d44f255f21b5c8e17f35448ebb397d750",
+      "destination_path": "progress/receipts/2026/08/20260817T072944Z_50c8e4391849_aac72c21cd8e.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "82a6caf8efc0cc64a03501110fb50654394ead6ef79f1d2f050e514e28d7fabd",
+      "raw_receipt_id": "sha256:244952d1e51734b75033aa5949c3edd57aed41acb19d606c9b2da68a96b5c4e4",
+      "public_receipt_hash": "b20b350f9800916f108d08080c629269b658e6a9f44ac8d9f5387307169b88ca",
+      "public_receipt_id": "sha256:bd01bea63f9fbee1c1e0099b5bc8913fdcf78e6a550d5c0cd3b6bb44af4a6073",
+      "destination_path": "progress/receipts/2026/08/20260817T091133Z_50c8e4391849_bd01bea63f9f.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "a0d88bf5367621fc99fb7887c59ecfe1e546609570b8fdc3235ff2597de64001",
+      "raw_receipt_id": "sha256:e895867a81128ba431e45af7db926a51c8465d42ff68311aab56e1df7799e4a2",
+      "public_receipt_hash": "5871fedfd23cf19bcc46d5aa25fdc00f718465d263e13fdee5729edc3be3cd7a",
+      "public_receipt_id": "sha256:f79513bb6327a5b49159c29539a63f5e245765579c68f2b67e97d05a75b0c8ce",
+      "destination_path": "progress/receipts/2026/08/20260817T094405Z_50c8e4391849_f79513bb6327.json",
+      "changed_fields": [
+        "action",
+        "verified",
+        "result",
+        "next_gate",
+        "boundary_held"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "4e049a1ef660e99e89a9a52f1fbaed8a5b7ee195c26c61503b51c786b806b3be",
+      "raw_receipt_id": "sha256:94586eb1ce8b93e3ed8daf16ca89f244202d4f6f8330771284421c9f57fc2b2f",
+      "public_receipt_hash": "a68913b11900cfe0672fda9c5441c8be7bb24e411dbd5a51d2ed67d60fa69f26",
+      "public_receipt_id": "sha256:664e7314e55c3cbf36e255a4121bcdf37ef265548ec0a5184c2dd1be7805d778",
+      "destination_path": "progress/receipts/2026/08/20260817T101730Z_50c8e4391849_664e7314e55c.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "a8635cbd8ec16dda7d3c3f6855659e5a146d79d1dacea78e83c696aea851abf8",
+      "raw_receipt_id": "sha256:1b3df8a032f42dc54a2a1a807a2848bd244833c9adbc5e4495fca38e3b48bb7e",
+      "public_receipt_hash": "92c5da10f985e4c916055e4c0ef4ee6ebb86c130859c9c4afcf3bfa376d77ee1",
+      "public_receipt_id": "sha256:b8b00180f033efec2dfdeb269bfd61ceab256b3ef47a62d928780f4f4b850675",
+      "destination_path": "progress/receipts/2026/08/20260817T123531Z_50c8e4391849_b8b00180f033.json",
+      "changed_fields": [
+        "result",
+        "next_gate",
+        "boundary_held"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "826d0f49b807837449f587e107da2056ddfad0df46c4118a81a3a2beaed6ac98",
+      "raw_receipt_id": "sha256:97c3f929812053dea2d5e9b7d4ce487154c96e75a02db1196fcc05539dfe608b",
+      "public_receipt_hash": "047d76d0e1efd01d1782f43ff140b8f7c4b7086e050e5562dce90d23aed65559",
+      "public_receipt_id": "sha256:37c1ddb80a866216fae4386faea8a87b174570c15e8cdac90054eedba8bb2941",
+      "destination_path": "progress/receipts/2026/08/20260817T195938Z_50c8e4391849_37c1ddb80a86.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "9af360ff752e0990b3f5c35e16e9ac45607845bc20869f83c250759922a0c4a6",
+      "raw_receipt_id": "sha256:2397aee99a67e332a99b82ee659301c4f48d62aa89c96e4b00e59aab718ffaed",
+      "public_receipt_hash": "9af360ff752e0990b3f5c35e16e9ac45607845bc20869f83c250759922a0c4a6",
+      "public_receipt_id": "sha256:2397aee99a67e332a99b82ee659301c4f48d62aa89c96e4b00e59aab718ffaed",
+      "destination_path": "progress/receipts/2026/08/20260817T203232Z_50c8e4391849_2397aee99a67.json",
+      "changed_fields": [],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "5fd4c22d717a6105900dd91e72dd11011bebd1ea9bff009b7b699265e255b167",
+      "raw_receipt_id": "sha256:0cecd056a84861a0f7c192de813150fc0a02f7764fe32db4ee5f0cdeb48a79ce",
+      "public_receipt_hash": "63438a966579607bd9eeee18cec26e336323fff9ce7bf9689eb355e553292173",
+      "public_receipt_id": "sha256:655909e3f18e944629428cdca076f256ef38527f398f33f424374306da35f70e",
+      "destination_path": "progress/receipts/2026/08/20260818T014948Z_50c8e4391849_655909e3f18e.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "0cbcd8fc5180c6da3ee07be3376ebe128f23aa7d20b1f0a5c7895077852e1831",
+      "raw_receipt_id": "sha256:1fd2f8f3bfe479b52de1446e7ebcb82d3010e602f0c39843aad47fccaf6d24f5",
+      "public_receipt_hash": "ee1298d666e142f49840085b449bff5bf668ba3cff1f721dec01e9537351f731",
+      "public_receipt_id": "sha256:91470366d93a98bd51a6e54295dad57abac8265ed92061c591ec74d9ab9b335a",
+      "destination_path": "progress/receipts/2026/08/20260818T025704Z_50c8e4391849_91470366d93a.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "6eeb7f0bef7973b301e4c08f26fb8f981c0188458de41d9d3277f08bb424b72a",
+      "raw_receipt_id": "sha256:7aacf328ac4032fd9f02f8039c482baaf375e3c011768d7d9a4064de652d46af",
+      "public_receipt_hash": "6eeb7f0bef7973b301e4c08f26fb8f981c0188458de41d9d3277f08bb424b72a",
+      "public_receipt_id": "sha256:7aacf328ac4032fd9f02f8039c482baaf375e3c011768d7d9a4064de652d46af",
+      "destination_path": "progress/receipts/2026/08/20260818T083520Z_e97056701b6d_7aacf328ac40.json",
+      "changed_fields": [],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "76beab50e247bffc1d29d923d4c5c990a70ece161093ab5e11c6505796c23265",
+      "raw_receipt_id": "sha256:fc626737015ce2668d22a58019da02b5e86f7d1466c53dd2ee7f9b5f386e99bf",
+      "public_receipt_hash": "78b44dee81ad006578e5d516df86eff54b70e0be0adbe8ba902815adf02cd86f",
+      "public_receipt_id": "sha256:161cb1daf3f29d613a8d78a31d1f382fbbc031fa0bec6d7e84ea5927398dc8a0",
+      "destination_path": "progress/receipts/2026/08/20260818T112036Z_50c8e4391849_161cb1daf3f2.json",
+      "changed_fields": [
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "57a248920ded87142c664d682776fb24bc79ee5486d9c4ccab77578d8607a9c5",
+      "raw_receipt_id": "sha256:5c53c61dfcac21d3b603253cfe77b876825a3588f9a7f5a9372b0b1e10a681f1",
+      "public_receipt_hash": "95379d8205dd8d60c92165f517ceb5477c6592b27964d99d69f25bdfab810259",
+      "public_receipt_id": "sha256:8a5c86b9eaa19e72029ef6fe642bea1915e341344b5f6d047398306852f32964",
+      "destination_path": "progress/receipts/2026/08/20260818T201836Z_50c8e4391849_8a5c86b9eaa1.json",
+      "changed_fields": [
+        "action",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "1eba346dceea74b1cf218cfaeb00196a6f15fb188ec8618300fbac37852d8bc4",
+      "raw_receipt_id": "sha256:fa033be96fbb8a5d829cc03ebddbf50800ef070012bf753b9feb0b703d6cd759",
+      "public_receipt_hash": "90ef997d7d302ca938dde24a2d611c04d499cc9644595f87eb6f5171c9977032",
+      "public_receipt_id": "sha256:170184dbe31f8da19b9e04af9a64feb47f76446143fc3449aac1c9d9cdbb14c3",
+      "destination_path": "progress/receipts/2026/08/20260818T212539Z_50c8e4391849_170184dbe31f.json",
+      "changed_fields": [
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "1fa949e6050999d5f7c6c5c81dd026d87a3976ec52cae71e7ee0df084eae2b29",
+      "raw_receipt_id": "sha256:96d0e0d6fdaef53596ea7eadf932ac68c3681efc4fe1d0860934a7ae01b55c34",
+      "public_receipt_hash": "3fa875dd0deafbe055ce8418fd8c22eb9472d58fd72f5705209c4d67e7d0cd0b",
+      "public_receipt_id": "sha256:db2c4139a34b2a79ff2012062c8c0aba102a5277cb9fe21ee4cd3ff0819a13d4",
+      "destination_path": "progress/receipts/2026/08/20260818T215817Z_50c8e4391849_db2c4139a34b.json",
+      "changed_fields": [
+        "action",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_receipt_hash": "477fcffa2ec1e88e59d024a031c5b667589d6539d597266143ebea45fc3df302",
+      "raw_receipt_id": "sha256:a8a58e9046e5e9b8b173d968ec2b169ba12fac1127709ab1cd1e3fa9f6a59cb8",
+      "public_receipt_hash": "11dca40459bd5e5715d53e89857134612638a3f31b355369ba31c047ca771d2b",
+      "public_receipt_id": "sha256:9999a3909689f073d312c3b457be1e28c7fc3c20caf72fe78c2e8fe74028f52a",
+      "destination_path": "progress/receipts/2026/08/20260818T223019Z_50c8e4391849_9999a3909689.json",
+      "changed_fields": [
+        "action",
+        "verified",
+        "result",
+        "next_gate"
+      ],
+      "rule_version": "public-receipt-projection-v1",
+      "status": "projected"
+    },
+    {
+      "raw_member_hash": "70c0c995e3da4a97734477c508e40d3678b95c6d14d5907fc6db52b87860a408",
+      "status": "rejected",
+      "reason": "backup_or_unexpected_root"
+    },
+    {
+      "raw_member_hash": "01a22a6897636f857dc2218893c9214e6c85d30ee636425244a2a93d442aa67f",
+      "status": "rejected",
+      "reason": "backup_or_unexpected_root"
+    }
+  ]
+}

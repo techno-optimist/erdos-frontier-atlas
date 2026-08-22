@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:1c0935fda211503451f3c89611d14c16e3cbf5d37648d9dac7696134efd6d8a8",
+  "content_digest": "sha256:3b39d986108bbaebc0f10c6bcc91744b6c06c61835e161cabfe335599e81ff71",
+  "occurred_at": "2026-08-15T23:57:36Z",
+  "frontier": "Smallest N that is a sum of three prime cubes (p³+q³+r³, p≤q≤r) in exactly 6 ways — OEIS A385316 a(6).",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nVerified the complete-prime-set verifier (a385316_verifier.py) runs locally: domain kill fixture (2,2,4) correctly rejected as composite r, predicate kill fixture (2,3,5) with sum=160 multiplicity=1≠6 correctly rejected. Reproduced a(1)=24 (2³+2³+2³) at C=10⁵. Attempted to dispatch the accepted continuation's next gate — census to C=10¹¹ on private compute host — but private compute host (private host, SSH alias private compute host) is unreachable from this runtime environment.",
+  "verified": "Verifier domain: Each summand is the cube of a prime, triplet (p,q,r) satisfies p<=q<=r\nVerifier predicate: Count of unordered prime-cube triplets summing to N equals the claimed multiplicity\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 1/1 rejected correctly\nArtifact: a385316_verifier.py, SHA-256: 3eaef553e078ddea6dfb6ee12967befbcb2187e1f20ec5f52d5a81a719c32505\nAll kill fixtures passed. Census dispatch to private compute host failed — host unreachable.",
+  "result": "Verifier construction verified locally (kill fixtures pass, SHA-256 registered). Census to C=10¹¹ blocked: private compute host infrastructure unavailable from this runtime environment. Cannot advance the multiplicity-3 → multiplicity-5 gap (currently a(6) > 5×10⁷ certified by prior session; extending to 10¹¹ requires private compute host compute). This is a resource-blocked negative result, not a mathematical finding.",
+  "next_gate": "Retry private compute host dispatch when infrastructure is available: `ssh private compute host 'python3 ~/cultural-soliton-observatory/research_sessions/res_20260815_235532_erdos-979-prime-cubes-a385316/a385316_verifier.py --search 100000000000'` and record whether any sum reaches multiplicity 4 or 5.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Census dispatch was attempted but blocked by infrastructure unavailability.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-15_16-57-36.md",
+    "sha256": "39fc9bbcb4606fc386b1d5551a4d35433101e347770fce8cc73e975ac313ade7"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

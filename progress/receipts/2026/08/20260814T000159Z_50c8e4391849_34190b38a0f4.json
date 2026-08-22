@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:34190b38a0f4d6f5d75b911a6156b85495530529f04cd55c58e40d3ef608c16d",
+  "content_digest": "sha256:2648310968e875feda5eb813e6609cc818f3f91c68d11f418fcc688af4f991f2",
+  "occurred_at": "2026-08-14T00:01:59Z",
+  "frontier": "OEIS A385316: smallest N expressible as sum of three prime cubes in exactly 6 unordered ways.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nRewrote a385316_verifier.py as a deterministic no-argument, no-network Python entrypoint. Domain kill fixture (N=100) rejects because it has 0 prime-cube representations — not in the image of the prime-cube map. Predicate kill fixture (N=24) rejects because it has exactly 1 representation, not 6. Census to C=200,000 reproduces a(1)=24 (1 rep) and a(2)=185527 (2 reps), max multiplicity = 2.",
+  "verified": "Verifier domain: N=100 has 0 representations in the image of the prime-cube map — rejected correctly\nVerifier predicate: N=24 has exactly 1 representation (2,2,2), not 6 — rejected correctly\nArtifact: a385316_verifier.py, SHA-256: 4b5fb6223861ef1680ed72a8b5811f76dda63f6110d97038ad477f49fccff997\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 1/1 rejected correctly",
+  "result": "Verifier construction complete. Both domain and predicate kill-fixture branches verified with explicit rejection reasons. Census at C=200,000 confirms max multiplicity = 2, consistent with prior findings. No a(3), a(4), a(5), or a(6) candidates below 200,000. Only 718 unique prime-cube sums exist below 200,000.",
+  "next_gate": "Dispatch census at C=10^12 to private compute host (private host) using the replayed verifier to find any multiplicity-5 or multiplicity-6 candidates; if none found, promote certificate a(6)>10^12.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-13_17-01-59.md",
+    "sha256": "089d311d947bbb18ab9a69645a6ae1d9231d1fc6a33e90dccbb0791e18c316fb"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

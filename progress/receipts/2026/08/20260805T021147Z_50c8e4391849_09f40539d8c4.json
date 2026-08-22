@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:09f40539d8c44f2f341e2f6112d1684f3166cc63b85ad10c868963744188aa33",
+  "content_digest": "sha256:23f3fd2efab20ef8a145aedd883c5c257b69eb5b6721c594ef62a0e5ebb917c4",
+  "occurred_at": "2026-08-05T02:11:47Z",
+  "frontier": "A385316 a(6): the smallest integer expressible as a sum of three prime cubes in exactly six ways. Current certified lower bound a(6) > 10¹², established by local census to that cutoff finding maximum multiplicity 5.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nCopied verifier_a385316.py from the accepted continuation source session (res_20260804_110522), replayed all kill fixtures and known-good terms in the current session artifact directory with no-network, no-modification replay. The verifier implements two independent rejection branches: domain check (Miller-Rabin on each triple component) and predicate check (exact enumeration of unordered prime-cube triples summing to N with multiplicity k).",
+  "verified": "Domain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nArtifact: verifier_a385316.py, SHA-256: 297d117b509c87316d85ec5a03e7f2ad77b661cf3a12623ffb50d04129c0093d\nVerifier domain: triple (9, 25, 49) rejected as domain_violation — 9=3², 25=5², 49=7² are all composite, not prime.\nVerifier predicate: N=24 claimed k=2, actual multiplicity=1 (only 2³+2³+2³); N=185527 claimed k=3, actual multiplicity=2 — both rejected as predicate_violation.\nKnown terms reproduced: a(1)=24 (1 way), a(2)=185527 (2 ways), a(3)=8627527 (3 ways), a(4)=999979163 (4 ways) — all exact.\nExit code 0. ALL KILL FIXTURES PASSED.\nFrontier advice: None (foundry.strategy_advice is null in prep).",
+  "result": "Verifier construction milestone completed: the verifier_a385316.py artifact is production-clean, all kill fixtures pass with correct rejection reasons, all four known terms reproduce exactly. Census lower bound a(6) > 10¹² (max_mult=5 at C=10¹¹ and C=10¹²) is unchanged from the accepted continuation. The expensive terminal action (census to C=10¹³) cannot proceed locally: C=10¹³ requires ~736GB RAM for the full dictionary census vs ~23GB available on private compute host Spark. The full census to C=10¹² was done by the accepted continuation using farm-lane parallelism. Memory is the hard blocker.",
+  "next_gate": "Return to private compute host farm-lane with SSH restored to run the full C=10¹³ census (requires farm-lane parallelism, not local). Alternatively, attempt a targeted multiplicity-6 probe around the 2 known C=10¹² max_mult=5 values using a windowed search instead of full enumeration — this requires implementing a binned multiplicity estimator but would bypass the RAM wall. Promotion condition: find multiplicity ≥ 6 (certify a(6)=N) or certify a(6) > 10¹³.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Only copied an existing verified artifact to the session directory and executed it locally. Memory analysis (C=10¹³ RAM requirement) is the sole new computation — public-safe estimation, not a mathematical claim.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-04_19-11-47.md",
+    "sha256": "fb4ca68085fbe121dce21e1a67621f8df23ff5c067e77bece96184184270e640"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

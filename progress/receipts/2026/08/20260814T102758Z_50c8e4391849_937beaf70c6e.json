@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:937beaf70c6e9766514a5baea7ce06ab1ff2ed242b9f1e037673cfd336741f42",
+  "content_digest": "sha256:661727e6971bd8eeb89deff6b9cdf0468cbbdcd11f8f07ca56c4bd00e370e76d",
+  "occurred_at": "2026-08-14T10:27:58Z",
+  "frontier": "Erdos #979: Find A385316 a(6) — the smallest integer expressible as p³+q³+r³ (unordered primes) in exactly 6 ways.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nReconstructed the complete-prime-set multiplicity verifier as a deterministic no-argument Python entrypoint. Domain validation rejects out-of-domain fixtures (N=100 has 0 prime-cube representations). Predicate validation rejects fixture violations (N=24 has 1 rep, not 6; N=185527 has 2 reps, not 6). Census to C=200,000 reproduces a(1)=24 and a(2)=185527. Deterministic replay confirmed on second run.",
+  "verified": "Domain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nKnown terms reproduced: YES\nALL KILL FIXTURES PASSED\nArtifact: a385316_verifier.py, SHA-256: 3c63cab8c7b507980d54a571ab743bf470353824ca66b1fe0c3ea8a7a0624d3c\nDeterministic replay confirmed: second run identical output and SHA-256.\nVerifier domain: N=100 rejected (0 prime-cube representations; max sum of primes with p³≤100 is 27+27+27=81)\nVerifier predicate: N=24 rejected (1 rep: 2³+2³+2³, not 6); N=185527 rejected (2 reps, not 6)",
+  "result": "Verifier artifact passes all kill fixtures with correct rejection reasons, reproduces known terms, and is deterministically reproducible. Census at C=200,000 confirms max multiplicity=2 consistent with prior private compute host census. The verifier artifact is ready for private compute host dispatch at C=10^12 to search for multiplicity-6 candidates. No new mathematical result; the verifier is the operational deliverable.",
+  "next_gate": "Dispatch census at C=10^12 to private compute host (private host) using the replayed verifier to find any multiplicity-6 candidates; if none found, promote certificate a(6)>10^12. Require a second independent implementation to reproduce the certificate before claiming.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-14_03-27-58.md",
+    "sha256": "f086534cc81be190e7cb738f28ca6a2c6ce4aaaedf6124e42f5630fd6f4d4111"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

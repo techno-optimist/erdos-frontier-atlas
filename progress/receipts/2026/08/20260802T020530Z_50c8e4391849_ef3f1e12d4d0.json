@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:ef3f1e12d4d0d523bb89f31f7c40a56e4d3fc19798b282a55629e5aba1139617",
+  "content_digest": "sha256:dcf0b3dac7827bbfb3d9a80ee099c194921a6776e79440a070844983f4cb403d",
+  "occurred_at": "2026-08-02T02:05:30Z",
+  "frontier": "Erdos #979 / OEIS A385316: What is the smallest N that is the sum of three prime cubes (p³+q³+r³, p≤q≤r) in exactly 6 distinct ways — the value a(6)?",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\n\nWrote and replayed a self-contained bounded exact-search verifier with CUTOFF=10⁸: enumerated all 90 primes p with p³≤10⁸ (max p=463), enumerated all 93854 unordered triples (p≤q≤r) with sum≤10⁸, counted multiplicities via exact integer arithmetic, verified domain/predicate kill fixtures, and confirmed known terms within cutoff.",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 1/1 rejected correctly\nArtifact: a385316_bounded_search.py, SHA-256: 9bf1a1ee598fd534703459072273fd04b132fa57e317d39f7acc0ffffc728aab\nReplay reproduced identically: 0 candidates with multiplicity≥6, 0 with multiplicity=5, 0 with multiplicity=4, 9 with multiplicity=3. Known terms: a(1)=24, a(2)=185527, a(3)=8627527. All sums of three prime cubes below 10⁸ have multiplicity ≤ 3.",
+  "result": "a(6) > 10⁸. No sum of three prime cubes below 10⁸ achieves multiplicity 6. The search extended from CUTOFF=10⁶ (which showed 0 candidates with multiplicity≥3) to 10⁸ (still 0 with multiplicity≥4, only 9 with multiplicity=3). The lower bound has been pushed from 10⁶ to 10⁸. The three-mutation budget is exhausted after writing the verifier and experiment registration.",
+  "next_gate": "Dispatch CUTOFF=10⁹ to private compute host farm-lane with the same verifier script (scp to private compute host, run via ssh private compute host 'python3 ...'), using 90→654 prime cubes and ~250K triples. The private compute host farm should resolve a(6) or push the bound to ~10⁹ in minutes.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. All work done in research session directory only.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-01_19-05-30.md",
+    "sha256": "1d4014974068e657add57590003d339fa1570df5b06f001703da99da0cc6ddf4"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

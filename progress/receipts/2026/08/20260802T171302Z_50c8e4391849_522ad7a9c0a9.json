@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:522ad7a9c0a9c8d689559db94425a127bdb14b61e381f5ea5e048575abe3aa1c",
+  "content_digest": "sha256:4b32c4e2332f8f13473bf8999fd6d7f1315fecaa3401499effbfb063e0f544e2",
+  "occurred_at": "2026-08-02T17:13:02Z",
+  "frontier": "Smallest N = sum of three prime cubes in exactly 6 unordered representations (OEIS A385316 a(6)). Prior census at C=10^6 found max multiplicity 2; prior session at C=10^11 found max 5. private compute host SSH connectivity is restored and farm-lane census is dispatchable.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nReconstructed verifier_a385316.py from accepted continuation provenance. Domain branch rejects sums with non-prime bases (verified via N=3 and N=8 fixtures returning 0 prime-cube representations). Predicate branch rejects sums whose representation count differs from target n (verified via N=24 fixture: has 1 rep, fails n=2 and n=6). Known-good reproduction: a(1)=24 (1 rep: 2^3+2^3+2^3) and a(2)=185527 (2 reps: 13^3+43^3+47^3 and 19^3+31^3+53^3) both verified correct. Independent census at C=10^6 reproduced: 2442 distinct sums, max multiplicity 2 at N=389033, matching prior accepted continuation exactly.",
+  "verified": "Artifact: verifier_a385316.py, SHA-256: 9ed81f21c32375afa08f4b4047e4718f471568bb1c7821aa9b249afe70ca26cf\nDomain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nVerifier domain: find_representations returns only (p,q,r) where all three are prime; fixtures N=3 (base 1 is not prime) and N=8 (no 3-prime-cube sum exists) both produce 0 representations, confirming domain rejection for non-prime bases.\nVerifier predicate: count_representations computes exact unordered representation count; fixture N=24 has 1 representation but is tested against target n=2 and n=6, both rejected correctly.\nCensus reproduction at C=10^6: 2442 distinct sums, max multiplicity 2 at N=389033, a(1)=24 verified, a(2)=185527 verified. All outputs match accepted continuation sha256:ad496e9e2fb419985853c2f97cdf58ad5458d1ae0891908ba9798176c4561bc1.",
+  "result": "Verifier construction completed and independently replayed. Kill-fixture replay exits zero with correct domain and predicate coverage. Census at C=10^6 confirms max multiplicity 2 — no a(3) below 10^6, and no a(6). private compute host SSH connectivity restored (previously blocked by name resolution failure). Next step is dispatching C=10^12 census on private compute host farm-lane to continue multiplicity search toward a(6).",
+  "next_gate": "Dispatch `python3 verifier_a385316.py --cutoff 1000000000000` on private compute host farm-lane. If a(6) still not found (prior session reported max multiplicity 5 at C=10^11), dispatch C=10^13. The verifier artifact is ready for private compute host deployment.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Only local verifier reconstruction and read-only census replay executed. All results are independently reproducible from the single artifact file.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-02_10-13-02.md",
+    "sha256": "7fd1532e48578e89665c53b63e7253c9b6dd49ce517f47033f4c4b3e32e3d7ed"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

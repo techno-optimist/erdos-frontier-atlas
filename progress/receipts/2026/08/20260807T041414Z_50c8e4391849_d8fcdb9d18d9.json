@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:d8fcdb9d18d9a97a516fa0d69e400bf63f305d83da5a0cc12d08580a875614cb",
+  "content_digest": "sha256:0dbcf3efb9bcf5d6318598e2753d7af91809cb3b0dccf8332a726e6c311496e9",
+  "occurred_at": "2026-08-07T04:14:14Z",
+  "frontier": "OEIS A385316: what is a(6), the smallest integer expressible as p³+q³+r³ (distinct primes p<q<r) in exactly 6 ways? Current lower bound a(6) > 4.99×10¹¹; no multiplicity-5 or -6 value found through C=5M (max multiplicity=2).",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nCopied the accepted-continuation verified a385316_census.py artifact into the current session, verified SHA-256 integrity match (dccf83b75918e1a0c84baf1da69dfb81052a9d5f42759ef31cabac51a7734ef8), ran kill-fixture replay (exit 0), and ran local census at C=5,000,000 confirming a(1)=160, a(2)=185,527, and persistent multiplicity gap (no k≥3 through 5M).",
+  "verified": "Domain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nArtifact: a385316_census.py, SHA-256: dccf83b75918e1a0c84baf1da69dfb81052a9d5f42759ef31cabac51a7734ef8\nCensus at C=5,000,000: 39 prime cubes, 7,329 distinct sums, 7,268 with mult=1, 61 with mult=2, 0 with mult≥3. Reproduction of a(1)=160 and a(2)=185,527 confirmed. Multiplicity gap (no k=3,4,5,6) persists.\nFrontier advice: not provided (foundry.strategy_advice was null in this session).",
+  "result": "Artifact integrity confirmed; local replay passes fully. The continuation primitive (artifact integrity check before private compute host dispatch) is complete. No new mathematical evidence — the multiplicity gap persists through C=5M, consistent with all prior negative-result sessions.",
+  "next_gate": "Dispatch a385316_census.py (SHA-256: dccf83b75918e1a0c84baf1da69dfb81052a9d5f42759ef31cabac51a7734ef8) to private compute host for bounded census at C=1e12 with ~100GB vmem, targeting detection of a(4), a(5), or a(6).",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-06_21-14-14.md",
+    "sha256": "feb85b561abc98595453f104d7ec26fbae8ea5ffd61cf8d09ae0de4ee05be1e6"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

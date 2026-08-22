@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:c8968f4dd5e05d8f621b4430f2b9d6e8430cec532f36a7576b79032b372d0134",
+  "content_digest": "sha256:56dcc8b9b11ee5d17d8369a0c93bef6f49ecc60cf3650100f94fffea7b9feb01",
+  "occurred_at": "2026-08-11T07:33:01Z",
+  "frontier": "What is a(6), the smallest number expressible as a sum of three prime cubes in exactly 6 ways?",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nExecuted the next-gate census primitive: bounded exact search to C=5×10¹¹ using the a385316_census.py verifier, completing the independently replayable continuation from the accepted continuation (which ended at C=10¹¹). The census enumerates all unordered prime-cube triples (p≤q≤r) with p³+q³+r³≤C, counts multiplicities, and checks known terms. The verifier's kill fixtures (domain: rejects non-prime-cube sums; predicate: rejects wrong multiplicity claims) pass deterministically. All five OEIS known terms a(1)..a(5) are reproduced with correct multiplicities.",
+  "verified": "Artifact: a385316_census.py, SHA-256: bfae8047040daf2c2166112e91c21aeb519680a04e222418936a7e0b78901751\nDomain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nCensus to C=5×10¹¹: π(7937)=1003 primes, 127,574,422 distinct sums, max multiplicity = 5\nMult=5 values: 2 total — [10588881419, 13604651997] (stable: same 2 values as at C=10¹¹)\nMult=4 values: 25 total (grew from 14 at C=10¹¹ to 25 at C=5×10¹¹)\nMult=6: zero values found\nAll five known terms reproduced exactly (a(1)..a(5) with correct multiplicities)",
+  "result": "Confirmed the prior session's mult=5 count of 2 at C=5×10¹¹ (unchanged from C=10¹¹), extended mult=4 from 14 to 25 values, and extended the a(6) lower bound from 4.99×10¹¹ to 5×10¹¹. No mult=6 found — the density of high-multiplicity values remains sparse (~6×10⁻⁸). a(6) > 5×10¹¹.",
+  "next_gate": "Run census to C=10¹² (π(10000)=1229 primes, ~308M iterations, ~4 min single-core) to test whether mult=5 count grows beyond 2 and whether mult=6 appears at the next power-of-ten boundary. This is the smallest increment that maintains independent reproducibility.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. All work is local, read-only on existing state, and fully replayable via the published verifier artifact.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-11_00-33-01.md",
+    "sha256": "72cf0a5f963d7a14a73bc622396fcb10fa2d8dff3f7cbb3e6ab3911963810c21"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

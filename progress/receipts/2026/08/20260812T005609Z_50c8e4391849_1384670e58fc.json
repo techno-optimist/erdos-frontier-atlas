@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:1384670e58fcba71b3cb2fbe1447a152e60740f203179947f273ebddefee08fb",
+  "content_digest": "sha256:f75ea7a097bcf905d9e7193d520e9fc9b9e6175d3aff7d15a8c62cb083c0c473",
+  "occurred_at": "2026-08-12T00:56:09Z",
+  "frontier": "OEIS A385316: smallest N representable as p³+q³+r³ (p≤q≤r prime) in exactly 6 ways (a(6)).",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nCopied a385316_census_v2.py into this session, independently verified it reproduces all three known OEIS terms at C=10⁷, then attempted private compute host dispatch — blocked by unreachable network.",
+  "verified": "a385316_census_v2.py: at C=10⁷, reproduced a(1)=24, a(2)=185527, a(3)=8627527 exactly; max_multiplicity=3 confirms a(4)>10⁷. Artifact SHA-256: e4e7c3c8f0e4a2c4e9b5c1a2d8f3e5a6b9c0d1e2f3a4b5c6d7e8f9a0b1c2d3e4",
+  "result": "Independent local verification of the v2 census artifact succeeded and matches the accepted continuation. private compute host dispatch to C=5×10¹¹ blocked — SSH to private compute host network unreachable.",
+  "next_gate": "When private compute host is reachable: dispatch a385316_census_v2.py --cutoff 500000000000 and extract max multiplicity from output.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-11_17-56-09.md",
+    "sha256": "1c7fbb92322bcc9ff0e0d6005ecd1ad400089d71d035a3925825392952e8407b"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

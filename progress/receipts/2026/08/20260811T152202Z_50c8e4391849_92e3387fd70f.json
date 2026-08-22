@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:92e3387fd70f0dbca30a82cda7157c52a2cf1a9b929f55968f33dbc9d931056d",
+  "content_digest": "sha256:8704d9a25f6c83fe8a1d08a929a93545cac4d18311bae9a1af8741076a135c00",
+  "occurred_at": "2026-08-11T15:22:02Z",
+  "frontier": "OEIS A385316: what is the smallest N that is the sum of three prime cubes (p³+q³+r³) in exactly 6 unordered ways? Prior census at C=5×10¹¹ found max multiplicity 4 (a(4)=999979163). No k=5 or k=6 found in 6 prior sessions at C up to 10¹²-equivalent scale; C=10¹² census blocked by ~31GB memory (private compute host ~20GB avail).",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nWrote a385316_census.py v2 with sorted-appendix approach using numpy int64 arrays and two-pass enumeration (count then preallocate) to reduce memory from ~31GB dict to ~2.5GB flat array for 310M triple sums. Attempted to verify at C=5e11 via --verify-only; script contains logic conflict (old chunked collection code remains alongside new two-pass path), preventing clean verification execution in this session. The written artifact exists but was not successfully replayed in this session due to the mutation budget exhaustion occurring mid-implementation.",
+  "verified": "Artifact: a385316_census.py, written to research_sessions/res_20260811_151830_erdos-979-prime-cubes-a385316/a385316_census.py\n- Prior-session verifier (res_20260811_141029/a385316_census.py, sha256 e0ab66fc...) verified correct at C=5e11: a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419, max multiplicity=4, no k=5 or k=6. That verified census used dict/Counter.\n- Current v2 script contains conflicting logic paths (chunked list collection + two-pass numpy). The two-pass numpy approach is mathematically correct: (1) count triples via searchsorted for O(n² log n) enumeration, (2) preallocate int64 array, (3) fill then sort, (4) numpy.diff run-length encoding. However, the script was not successfully run to completion before mutation budget was exhausted.\n- No SHA-256 of a successfully replayed v2 artifact available; mutation gate disabled after 3rd mutation call.",
+  "result": "The v2 patch was written but not successfully verified in this session. The two-pass numpy approach (count via searchsorted, preallocate, fill, sort, diff-runlength) is the correct continuation primitive per the accepted next_gate. It should reduce memory from ~31GB to ~2.5GB for C=10¹². The prior verified census confirmed max multiplicity 4 at C=5e11. At C=10¹², the prime set extends to ~1M primes with ~310M triple sums; the sorted-appendix approach should fit in 20GB private compute host memory. However, the written script has a bug: the old chunked collection loop (lines 72-92) runs unconditionally before the two-pass path, and if chunks flush fully, `total_sums` remains 0 causing the `sums_arr` to be empty. This needs a clean rewrite that removes the old chunked code.",
+  "next_gate": "Write a clean a385316_census.py v2 that contains only the two-pass numpy path: (1) searchsorted count, (2) preallocated int64 fill, (3) sort, (4) numpy.diff run-length-encode, with no leftover chunked code. Verify at C=5e11 reproduces a(1..5) exactly and max mult=4. Then run at C=10¹² to search for k=5 and k=6.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Mutation budget exhausted; no further file edits possible. Final receipt emitted directly.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-11_08-22-02.md",
+    "sha256": "56aaecbd3c2593048dfd231e92286e7cd1114287537cc22ab974191e27eecea1"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

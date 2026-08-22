@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:26b7a0877522c736743d665dffce0d1097a5e24420f2544d4a6f9b09fa736970",
+  "content_digest": "sha256:53c12a488a8ce81b770de1aa96546f241387cc20b429a5a02cf5cfa54d563164",
+  "occurred_at": "2026-08-09T09:43:55Z",
+  "frontier": "Smallest N = sum of 3 prime cubes in exactly 6 unordered ways — OEIS A385316 a(6). Prior census at C=10^11 certified a(6) > 10^11 (626 primes, 31.3M triples, zero k=6 values).",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nBuilt verifier.py as a no-argument Python replay entrypoint with domain kill fixtures (5 values rejected as non-representable) and predicate kill fixtures (3 valid prime-cube sums rejected for wrong claimed multiplicity).",
+  "verified": "Verifier domain: nonnegative integers N expressible as sum of 3 prime cubes\nVerifier predicate: count of unordered prime-cube triples (p,q,r) with p^3+q^3+r^3=N equals claimed k\nDomain kill fixtures: 5/5 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nALL KILL FIXTURES PASSED\nArtifact: verifier.py, SHA-256: 9fd221e9327ff9d03972e8be55021290a2383936413df2673715f65fc5d6ec36",
+  "result": "Verifier passes kill-fixture replay (5 domain, 3 predicate). Census at C=10^11 already certified a(6) > 10^11. Local census at C=2×10^11 (~75M triples) is the next step but exceeds local time budget without private compute host dispatch or optimized C implementation. The prior-session census receipt was rejected by membrane for missing verifier artifact line — now repaired.",
+  "next_gate": "Operator authorizes private compute host dispatch of census at C=10^12 (1229 primes, ~308M triples) to either find a(6) or push certified lower bound to 10^12. The verifier artifact is now production-ready for replay-based attestation.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-09_02-43-55.md",
+    "sha256": "e8ee901585a795036ac7fc2c65e782db14cc6f7c03259c6bc9ddea3bf84d70fe"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

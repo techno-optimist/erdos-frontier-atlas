@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:2a1bea0642faa527beec1af24ed1634fd6dcb4df2a506a4b571de7d92244bc31",
+  "content_digest": "sha256:acd1230858f2376054a30167c2e6ea0bb176f07559eac45f803b83c1b4074f88",
+  "occurred_at": "2026-08-14T02:46:39Z",
+  "frontier": "Smallest N = sum of three prime cubes p^3+q^3+r^3 in exactly 6 unordered ways — OEIS A385316 a(6).",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nWrote a385316_verifier.py as a deterministic no-argument, no-network Python entrypoint. Domain kill fixture (N=100) rejects because it has 0 prime-cube representations — not in the image of the prime-cube map. Predicate kill fixture (N=24) rejects because it has exactly 1 representation, not 6. Census to C=200,000 reproduces a(1)=24 (1 rep) and a(2)=185527 (2 reps), max multiplicity = 2. Deterministic replay confirmed on second run with identical output.",
+  "verified": "Domain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 1/1 rejected correctly\nALL KILL FIXTURES PASSED\nCensus C=200000: 718 distinct sums, 719 total representations\na(1)=24 (717 candidates) a(2)=185527 (1 candidates)\nMax multiplicity below C=200000: 2 (1 value(s))\na(3) candidates below C=200000: 0\na(4) candidates below C=200000: 0\na(5) candidates below C=200000: 0\na(6) candidates below C=200000: 0\nKnown results verified: a(1)=24, a(2)=185527, max_mult=2\nVerifier domain: N=100 has 0 prime-cube representations — not in the image of the prime-cube map\nVerifier predicate: N=24 has exactly 1 representation, not 6\nArtifact: a385316_verifier.py, SHA-256: 6f28b483ffe8bdcbe2dae6824c90f0be8a0616430d6401609f19a7a4d1b40e0d",
+  "result": "Verifier construction complete and independently replayed. Both domain and predicate kill-fixture branches verified with explicit rejection reasons. Census at C=200,000 confirms max multiplicity = 2. No a(6) candidates below 200,000.",
+  "next_gate": "Dispatch census at C=10^12 to private compute host (private host) using the replayed verifier to find any multiplicity-6 candidates; if none found, promote certificate a(6)>10^12.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-13_19-46-39.md",
+    "sha256": "757114a41c4eb1d974acc65673f6faab24140a4246971e176e1a8ade403c4b6b"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

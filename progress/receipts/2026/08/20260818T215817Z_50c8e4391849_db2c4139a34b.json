@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:db2c4139a34b2a79ff2012062c8c0aba102a5277cb9fe21ee4cd3ff0819a13d4",
+  "content_digest": "sha256:e4ef7a24944b30f9ff962a27a47889c6829234189e61b9651740342c4374cf82",
+  "occurred_at": "2026-08-18T21:58:17Z",
+  "frontier": "Erdős #979: A385316 a(6) — smallest integer expressible as sum of three prime cubes in exactly 6 unordered ways. At C=10⁶, max multiplicity is only 2; a(6) remains unknown.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nBuilt and independently verified a complete-prime-set multiplicity census verifier with kill fixtures. Ran domain kill fixtures (N=23, N=25 — non-representable), predicate kill fixtures (N=24 claimed mult 0 or 2 — actual mult is 1), and verified known-good fixture N=185527 has mult=2. Census at C=1000: 19 candidates, max_mult=1. Census at C=200000: a(2)=185527, max_mult=2. Both match the accepted continuation's checkpoints. The C-language census dispatch at C=6×10¹¹ to private compute host is deferred to Next gate as it is not locally replayable.",
+  "verified": "Verifier domain: Each unordered triple {p,q,r} of primes with p≤q≤r and p³+q³+r³=N is counted exactly once via nested loop enumeration with binary-search termination.\nVerifier predicate: For claimed a(n)=N, count(unique triples) must equal n exactly.\nDomain kill fixtures: 2/2 rejected correctly. N=23 and N=25 each have 0 representations (only prime cube ≤25 is 8; 23−8−8=7 and 25−8−8=9 are not prime cubes).\nPredicate kill fixtures: 2/2 rejected correctly. N=24=2³+2³+2³ has exactly 1 representation; both claimed multiplicity 0 and claimed multiplicity 2 are wrong.\nCensus C=1000: 19 candidates, max_mult=1 — matches accepted continuation.\nCensus C=200000: a(2)=185527 (=13³+43³+47³ = 19³+31³+53³), max_mult=2 — matches accepted continuation.\nArtifact: verifier_a385316.py, SHA-256: cb9ec97711e152122411278bfde9d4e13b85c06e2e96d1db38df868a9be5a6c7\nReplay exits zero with:\nDomain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED",
+  "result": "New independent implementation of the census verifier passes all kill fixtures with correct branch coverage and reproduces the accepted continuation's C=1000 and C=200000 checkpoints. Two distinct implementations (prior Python + this Python) agree on all checkpoints. The a(6)=? question remains open — at C=10⁶, max multiplicity is only 2.",
+  "next_gate": "Dispatch census_final.c (C-language census at cutoff C=6×10¹¹) to private compute host via `/private compute host task` or SSH; record either a confirmed a(6) or a certified lower bound a(6)>6×10¹¹ with complete prime-set verification. If successful, advance to C=2×10¹².",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. All work confined to read-only verification of census logic and local artifact replay.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-18_14-58-17.md",
+    "sha256": "62b03f9b96fd7f5237f8dae12ccc72a287dc3a144cf4f50fc7cbf2fa2731d8a6"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

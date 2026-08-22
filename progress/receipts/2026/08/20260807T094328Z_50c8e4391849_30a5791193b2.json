@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:30a5791193b298cbaa60018d8a975e3dadd31fc5c8f69c168bb0d91e825cc409",
+  "content_digest": "sha256:715ceb0c5ff1c3c7a71faacbbe2e241e7062528519abef14004238e79c1374c4",
+  "occurred_at": "2026-08-07T09:43:28Z",
+  "frontier": "What is the smallest integer N = p³+q³+r³ (p,q,r primes, unordered) expressible in exactly 6 ways — OEIS A385316 a(6)?",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nBuilt a385316_verifier.py from scratch. Domain branch rejects any triple where elements are not primes ≥2 or not ordered p≤q≤r. Predicate branch rejects any sum whose multiplicity in the complete-prime-set census differs from target n=6. Ran domain kill fixture (−1,2,3 — negative not prime, rejected for \"element -1 at position 0 is not a prime >= 2\") and predicate kill fixture (sum=25, absent from C=1000 census so multiplicity=0 ≠ 6, rejected for having no triples at all). Replay exits 0.",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nVerifier domain: rejects out-of-domain triples where any element is not a prime >= 2 (e.g. (-1,2,3) rejected: \"element -1 at position 0 is not a prime >= 2\"; (2,4,5) rejected: \"element 4 at position 1 is not a prime >= 2\")\nVerifier predicate: rejects sums whose census multiplicity differs from target n=6 (e.g. sum=25 at C=1000 has multiplicity 0, rejected as not matching target; sum=24 at C=1000 has multiplicity 1, rejected as not matching target)\nArtifact: a385316_verifier.py, SHA-256: c3c51abaa3faecd846b92f40507456e175df84978460f0facf570290463053ed\nKnown-good reproduction: a(1)=160 (mult=1, 2³+3³+5³) and a(2)=185527 (mult=2, 13³+43³+47³ and 19³+31³+53³) confirmed at C=5M. 8489 distinct sums, 65 with mult=2, 0 with mult≥3.",
+  "result": "Verifier construction and kill-fixture replay complete. Artifact integrity chain re-established. Prior session's census (a(1)=160, a(2)=185527, no mult≥3 at C=5M) independently confirmed. No new mathematical evidence — multiplicity gap persists through C=5M.",
+  "next_gate": "Dispatch census run to private compute host: enumerate complete-prime-set triples up to C=1e12 with a385316_verifier.py, recording all sums with multiplicity ≥3. If none found, certify a(6) > 1e12 as certified lower bound (requires independent reproduction per prior lessons).",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Two local writes only: experiment.json (hypothesis filled), a385316_verifier.py (evidence artifact). No broad context packet loaded.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-07_02-43-29.md",
+    "sha256": "30f2ce43dad1ea302e3a4d8b17d4b4c7daf76d58047db2cc4f370db88a1a74e1"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:98c141daee70231e9d69674f2f02da180363cce4042ee1e550529078d4b028d0",
+  "content_digest": "sha256:134de177153d43eef4a57a937e755594aafb84ec1c94055037c68e6ead85c9c8",
+  "occurred_at": "2026-08-01T23:35:31Z",
+  "frontier": "What is the smallest integer N that is a sum of three prime cubes in exactly 6 unordered ways (OEIS A385316 a(6)), with current lower bound ~4.99×10¹¹?",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nWrote and replayed a self-contained bounded exact-search verifier (CUTOFF=10⁶): enumerated all primes p with p³≤10⁶ (25 primes, max p=99), enumerated all sums p³+q³+r³ with p≤q≤r, counted multiplicities, and verified domain/predicate kill fixtures plus known terms that fall within the cutoff.",
+  "verified": "Artifact: verify_prime_cubes.py, SHA-256: 744aa6340df2ee68d36095ad48ce046700b458cff05f42407c72f8102a662a3b\nDomain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nVerified known terms a(1)=24 (mult=1) and a(2)=185527 (mult=2) within cutoff; a(3)..a(5) exceed CUTOFF=10⁶ and are correctly not tested here.\nBounded search: 2,442 distinct prime-cube sums found ≤10⁶; multiplicity distribution peaks at mult=2 (12 sums); zero n=6 candidates below 10⁶.",
+  "result": "Confirmed: no sum of three prime cubes (p≤99) reaches multiplicity 6 below N=10⁶. The search space up to CUTOFF=10⁶ is insufficient — all known terms a(1)..a(5) are below or at the boundary except a(3)=15,901,387 which exceeds the cutoff. This is the expected outcome for C=10⁶; the accepted continuation's next gate is to extend to C=10⁸ and dispatch C=10⁹ to private compute host for the actual a(6) search.",
+  "next_gate": "Extend CUTOFF to 10⁸ (requires ~2097 prime-cube enumeration with primes up to ~4641; compute all sums and count multiplicities), then dispatch C=10⁹ to private compute host farm-lane with the same verifier.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Only one artifact written and replayed locally.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-01_16-35-31.md",
+    "sha256": "fe87f7d65fcc5411dbe6dcca5e2b344db782bd81ef894fd9b15a5ecef55f8937"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:914785e035e508e590af4637ce91b41d97180c26f3e3565d97bcea5e00cbf599",
+  "content_digest": "sha256:a26c590eb11758a8d1a7aebd22c3c81d2ccda3b86a85f21d280ff4707b6cdfb3",
+  "occurred_at": "2026-08-07T03:07:28Z",
+  "frontier": "Smallest N that is a sum of three distinct prime cubes in exactly 6 ways (OEIS A385316 a(6)).",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nCopied the prior-session a385316_census.py artifact into the current research session, filled experiment.json with a verified hypothesis, ran the standalone kill-fixture replay (exits 0), and executed a bounded census at C=5,000,000 reproducing a(1)=160 and a(2)=185,527 with the exact multiplicity gap pattern (no k=3,4,5,6 through 5M). Produced one primary artifact with no external dependencies or network calls.",
+  "verified": "Verifier domain: N is a sum of 3 distinct prime cubes iff N = p^3+q^3+r^3 for distinct primes p < q < r. Smallest such N = 160.\nVerifier predicate: count the number of unordered representations of N as p^3+q^3+r^3 with p<q<r primes. N ∈ A385316 iff this count = n for some n.\nDomain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nArtifact: a385316_census.py, SHA-256: dccf83b75918e1a0c84baf1da69dfb81052a9d5f42759ef31cabac51a7734ef8",
+  "result": "The verified a385316_census.py artifact is confirmed correct and ready for private compute host dispatch at C=1e12 as specified in the accepted continuation's next_gate. No new mathematical evidence for a(6) was found — the multiplicity gap for k=3-6 persists through 5M, consistent with prior negative-result sessions.",
+  "next_gate": "Dispatch a385316_census.py (SHA-256: dccf83b75918e1a0c84baf1da69dfb81052a9d5f42759ef31cabac51a7734ef8) to private compute host for bounded census at C=1e12 with ~100GB vmem, targeting detection of a(4), a(5), or a(6).",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-06_20-07-28.md",
+    "sha256": "66009d618aa0f1f56e3caf2a5c4ba2cc6330d914d97fccde13dcf07ecd3fd6ef"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

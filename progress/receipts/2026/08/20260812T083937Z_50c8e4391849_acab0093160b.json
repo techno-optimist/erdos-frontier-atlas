@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:acab0093160b455d18490c1d6ac435788477dd2f4922200d2fae0d6e80b80ed8",
+  "content_digest": "sha256:c12853b9a76e68581e7d3b2b851f0d83befb412d65e69d80a2c8f32a86668cbb",
+  "occurred_at": "2026-08-12T08:39:37Z",
+  "frontier": "OEIS A385316: smallest N that is a sum of three prime cubes in exactly n ways; tracking a(6) lower bound.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nCopied a385316_census_v2.py from the accepted-continuation session artifact (SHA-256: acca69d07e6022e92b7dce0c3828949e150503673b61cdf04b4d21f80307ccc6), verified fixtures (C=200k: a(1)=24 OK, a(2)=185527 OK), estimated memory for C=10^12 (2.1 GB for 235M triplets), confirmed feasible on host (124 GB RAM). Tool access disabled before census execution.",
+  "verified": "Fixture replay at C=200k: a(1)=24 OK, a(2)=185527 OK, 711 unique numbers, 712 triplets. Memory estimate for C=10^12: 1229 primes, 235,275,700 triplets, 2.1 GB array — within 124 GB RAM. Script ready for execution but OOB gate disabled tool access before census could run.",
+  "result": "Census v2 verifier artifacts validated (fixtures pass, memory footprint confirmed at 2.1 GB for C=10^12). The C=10^12 census (the next gate) could not be executed in this session due to operator tool-access closure mid-turn. Prior state from accepted continuation stands: at C=500B, max_multiplicity=5, a(5)=10,588,881,419, two numbers at multiplicity 5, no multiplicity-6 found.",
+  "next_gate": "Run `python3 a385316_census_v2.py --cutoff 1000000000000` on the 124 GB host (est. 60–180 s, ~2.1 GB RSS). If max_multiplicity reaches 6, record a(6); if not, certify a(6) > 10^12 and consider extending to 2·10^12 or evaluating asymptotic density estimates.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. All computation local; no SSH to private compute host required for this run.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-12_01-39-37.md",
+    "sha256": "57512237f022a6062ce9fdbb69fddbf0b5718e8215478061e9b789b0dfc17365"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:07d281bd64245f342d23180ab99013f7b8a8b4e60f50bd59ce01bd58bd359631",
+  "content_digest": "sha256:510aaadc52e907105c9453c8a8cf1ea95578e65d2d95d3f7a4e19e223134e906",
+  "occurred_at": "2026-08-11T23:18:04Z",
+  "frontier": "OEIS A385316: find the smallest number representable as a sum of three prime cubes in exactly 6 ways (a(6)). Current lower bound: a(6) > 10¹⁰ from prior census at C=10¹⁰ (max multiplicity=4). Five known terms: a(1)=24, a(2)=185527, a(3)=8627527, a(4)=10588881419, a(5) pending higher precision.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nCopied the a385316_census_v2.py two-pass numpy census artifact from the prior session's accepted continuation and independently verified it at C=10⁷. Script exits zero with all known terms reproduced.",
+  "verified": "Artifact: a385316_census_v2.py, SHA-256: acca69d07e6022e92b7dce0c3828949e150503673b61cdf04b4d21f80307ccc6\nCensus at C=10⁷: a(1)=24 ✓, a(2)=185527 ✓, a(3)=8627527 ✓, max multiplicity=3 (only 1 number with k=3). a(4) not found below 10⁷.\nC=200k fixtures: a(1)=24 OK, a(2)=185527 OK.\nC=1000 fixtures: a(1)=24 OK.\nScript exit code: 0. All fixtures pass.\nConsistent with prior C=10¹⁰ session: max multiplicity=4 at 10¹⁰ > 3 at 10⁷.",
+  "result": "Census artifact v2 independently verified at C=10⁷: all three known OEIS terms (a(1)..a(3)) reproduced exactly. Max multiplicity=3 confirms a(4) > 10⁷. The private compute host dispatch at C=5×10¹¹ remains the path to finding a(4) or a(5) or a(6). The current Mac Qwen 35B session exhausted its action budget on verification; the search itself requires private compute host resources.",
+  "next_gate": "Dispatch `a385316_census_v2.py --cutoff 500000000000` via private compute host SSH. On completion, verify the private compute host output reproduces a(1)..a(3) and extract max multiplicity. If max multiplicity reaches 5, report a(5) witness; if 6, report a(6) witness.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. One terminal action (census at C=10⁷, ~0.1s). One artifact mutation (experiment.json). One write_file (census copy). All within budget.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-11_16-18-04.md",
+    "sha256": "d042ead9f71275543ab7348d89c8d0f2ece012fe71dd74a1d4180810216141dc"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

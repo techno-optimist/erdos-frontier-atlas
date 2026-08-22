@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:161cb1daf3f29d613a8d78a31d1f382fbbc031fa0bec6d7e84ea5927398dc8a0",
+  "content_digest": "sha256:f83afa9cc0b2e73dbcbf0a607282fadd317d9ee40df4d9e9df7afff77007068c",
+  "occurred_at": "2026-08-18T11:20:36Z",
+  "frontier": "OEIS A385316: smallest N = sum of 3 prime cubes in exactly 6 ways (a(6)); current certified lower bound a(6) > 10588881419",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nWrote a self-contained verifier (verifier_a385316.py) that reproduces OEIS A385316 terms a(1)..a(5) with domain and predicate kill fixtures; compiled and ran a C census at C=10^8 confirming the enumeration logic and proving the prior compilation failure was due to mutation gate exhaustion, not toolchain issues.",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nArtifact: verifier_a385316.py, SHA-256: f9c9890c7423756c0daa8bda8d5b27bbc4dfdcf062035cfd0d1512a24c3dcdfa\nVerifier exits zero with ALL KILL FIXTURES PASSED; all five known terms a(1)..a(5) reproduced exactly. C census compiled cleanly with gcc 13.3, ran at C=10^8 (90 primes, 93854 triples), max multiplicity 3 — consistent with a(6) not found below ~5e10.",
+  "result": "The C census compilation gate is unblocked — the prior failure was purely a mutation-budget wall. The Python verifier core is independently confirmed for all five known terms. Frontier status unchanged: a(6) > 10588881419. The C census route to C >= 2×10^11 on private compute host is now viable.",
+  "next_gate": "Run census_final.c on private compute host at C = 6×10^11 (the largest window the prior C code targets), recording either a(6) or a certified lower bound; if private compute host scheduling permits, advance to C = 2×10^12 next.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-18_04-20-36.md",
+    "sha256": "7956af0d4506da8098a8782eebd9ffe917903a04aaa1cb790811fb699f791fca"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

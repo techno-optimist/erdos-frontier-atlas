@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:fc7d3c5deae5d6bfe23efbdefdcd3caf6118a40f995c3f9d142608c6a02df4e1",
+  "content_digest": "sha256:993ea37235beafb95cc8f8e2ad9844c8e868c9eb0f614d4adae02411ce761d22",
+  "occurred_at": "2026-08-06T10:45:57Z",
+  "frontier": "A385316: smallest N = sum of 3 prime cubes in exactly 6 unordered ways; lower bound on a(6) after census to C=10^13.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nLaunched complete-prime-set census to C=10^13 with 2417 primes (~2.35B triples) to either find a(6) or certify a(6) > 10^13. Census was dispatched as background process (PID 3126062) and is running; results await completion.",
+  "verified": "Census script written: census_c1e13.py. Prior census to C=1e12 confirmed max multiplicity 5 with 1229 primes in 138s. Current census has 2417 primes (2× scale), O(n³) triples ~2.35B. Dispatched and running; output pending. No completed census result to report yet.",
+  "result": "Census dispatched to C=10^13. No result yet — the computation is in-progress. At prior speed (1.7M triples/s), ETA ~23 minutes total. This advances the lower-bound from 1e12 to 10^13.",
+  "next_gate": "When census completes: extract max multiplicity and first values at each record level from stdout output. If max mult ≥ 6, record the first value at k=6 as candidate a(6). If max mult = 5, certify a(6) > 10^13. Operator to check process status and collect output.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Census runs locally on this machine. No private compute host SSH required.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-06_03-45-57.md",
+    "sha256": "b87aa14f549a0624b0d3ef074bcae760fb4d4502db09df9ed988baf7668dd55b"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

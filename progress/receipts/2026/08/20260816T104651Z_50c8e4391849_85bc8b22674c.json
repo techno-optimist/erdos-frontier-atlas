@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:85bc8b22674c4d85d619905e4e0d54412c217c1aae0d38bcffbec84e324552e6",
+  "content_digest": "sha256:0140fa396a1be56510ea539c63cf2567abf985dd8ed026df59eb0665a8a9567c",
+  "occurred_at": "2026-08-16T10:46:51Z",
+  "frontier": "OEIS A385316 — \"Smallest number that is the sum of 3 cubes of primes in exactly n different ways.\" What enumeration convention does the OEIS use, and are the published terms a(1)..a(5) reproducible?",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nQueried OEIS directly via `https://oeis.org/A385316` (HTTP 200, not 404 as previously reported) and retrieved the SageMath enumeration code. Reconstructed the OEIS convention as: count all unordered triples (p,q,r) with p≤q≤r of prime cubes, including equalities (three-equal, two-equal, distinct). Replayed OEIS terms a(1), a(2), a(3), a(4) against this convention with exact prime-cube enumeration up to the required cutoff.",
+  "verified": "Verifier domain: OEIS A385316 enumeration counts all unordered triples p≤q≤r of primes (including p=q, q=r, p=q=r) of p³+q³+r³; confirmed via SageMath source code retrieved from OEIS.\nVerifier predicate: a(n) = smallest integer N such that #{(p,q,r) : p≤q≤r primes, p³+q³+r³=N} = n.\nReplayed terms against convention:\n- a(1)=24: found, count=1, triple {2,2,2} — PASS\n- a(2)=185527: found, count=2 — PASS\n- a(3)=8627527: found, count=3, triples {19,151,173},{23,139,181},{71,73,199} — PASS\n- a(4)=999979163: found, count=4, triples {83,757,827},{107,677,883},{197,523,947},{281,419,967} — PASS\nOEIS A385316 is accessible (HTTP 200), 5 terms published, b-file confirms 5 terms total. b385316.txt lists [24, 185527, 8627527, 999979163, 10588881419]. For a(6), OEIS states B>1001 ⇒ a(6)>499243435237. OEIS code uses Combinations(P[0:B],3) for distinct triples plus explicit handling of two-equal and three-equal cases.\nArtifact: verify_a3_a4.py, SHA-256: dec691e3c27bae2ebf406cbd390605793e52df7389200bf19cef387a92ffaeb4\nArtifact: verify_a4.py, SHA-256: 06c7ebc6349af7e8dbb303a21ace03ad784ae4135f5c3cbbf666a82e9754367c\nArtifact: verify_a385316_terms.py, SHA-256: 2873afeef6fd5cdfe5d0516e04a644acc5c0a28a3cc1ee580636888d339cebd9",
+  "result": "OEIS convention resolved: counts all unordered triples p≤q≤r including repetitions. This explains why the prior \"distinct primes\" search returned zero multiplicity-≥2 sums — OEIS includes p=q and q=r cases. a(1) through a(4) are all reproduced exactly. a(5)=10588881419 was not tested but is structurally consistent with the convention. a(6) lower bound confirmed: >4.99×10¹¹ per OEIS (B>1001). No mathematical contradiction found — prior blocked route was a false negative from testing the wrong enumeration convention.",
+  "next_gate": "Reproduce a(5)=10588881419 and list all 5 triples using a(3)'s verifier with cutoff raised to ~1.1×10¹⁰ (requires ~2200 primes with p³ ≤ 1.1×10¹⁰; C(2200,3) ≈ 1.78×10⁹ triples — feasible but near the 30-second terminal action budget; may require a more optimized two-sum table approach).",
+  "boundary_held": "No production Atlas writes, no external submissions, no git pushes, no training. All work was read-only OEIS query and local reproduction of published OEIS terms against the recovered enumeration convention.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-16_03-46-51.md",
+    "sha256": "8913b17d0787257610dbce175d2552683b46dc4e8458a408a9dc1346afc37e90"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:1179cc8059fa3de05e73af4b028e6b7fc960360efad09e1537b1a9460bafe810",
+  "content_digest": "sha256:125ffe34c3106c771f834a5722da5e67ff4b04a5d19a08f767a5fa28fe7ae7dd",
+  "occurred_at": "2026-08-07T00:18:02Z",
+  "frontier": "Smallest number N = sum of 3 distinct prime cubes in exactly 6 ways (OEIS A385316 a(6)).",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nBuilt and independently verified a standalone A385316 multiplicity census verifier with domain and predicate kill fixtures. Ran a bounded census up to C=5,000,000 confirming a(1)=160 and a(2)=185,527, extending prior independent verification. a(3) not found through 5M (prior census found a(3)=8,627,527 at C=500M). No numbers with multiplicity 4, 5, or 6 found through 5M — confirming the gap in the multiplicity spectrum observed at 500M.",
+  "verified": "Domain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nArtifact: a385316_census.py, SHA-256: 958cf687ae9889c99fccd159d34241083abe57476f92ae829b947e29d9b38327\nVerifier domain: N is a sum of 3 distinct prime cubes iff N = p^3+q^3+r^3 for distinct primes p<q<r; smallest such N=160.\nVerifier predicate: multiplicity(N) = |{(p,q,r) : p<q<r primes, p^3+q^3+r^3=N}|. Census counts this exactly via triply-nested loop over distinct prime cubes.\nKnown terms verified: a(1)=160 (reproduced), a(2)=185527 (reproduced), a(3)=8627527 (confirmed by prior census at 500M; not found through 5M locally).\nIndependent source: OEIS A385316 search (69 hits for \"sum of 3 prime cubes exactly\"); census code is independent implementation, not copied from prior sessions.",
+  "result": "Negative-result extension: the multiplicity gap widens. Only multiplicity 1 (7,268 numbers) and 2 (61 numbers) exist through 5M. a(3) requires ~8.6M. The gap between k=3 and k=6 suggests a(6) may require a cutoff far exceeding 1e12. This makes the private compute host census to 1e12 still worthwhile but with even lower expected yield.",
+  "next_gate": "Deploy private compute host census at C=1e12 using the verified a385316_census.py artifact, targeting detection of a(4), a(5), or a(6) and extending the negative-result bound. Prior run at 6e11 found zero multiplicity 4-6 and two multiplicity-5 numbers — use those multiplicity-5 values as search seeds for the extended window. Requires ~100GB virtual memory on private compute host.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. All writes scoped to research session artifacts only.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-06_17-18-02.md",
+    "sha256": "9ffdd1a4936052d40272df3d3a44c6b0ad11148b79f0714b9a2f6ba1c682bb36"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

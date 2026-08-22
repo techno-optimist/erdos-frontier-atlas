@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:7df91a1639ecb0231e0a6d2440e94da9ac369ac73989e740336a3498db9fa6a3",
+  "content_digest": "sha256:c845ae0bab4430000696649c4908950bd5a596f27adc0a8413419ac951535279",
+  "occurred_at": "2026-08-08T05:57:26Z",
+  "frontier": "OEIS A385316 a(6): smallest integer N = p³+q³+r³ (unordered, p≤q≤r prime) in exactly 6 ways. Lower bound a(6) > 4.99×10¹¹ from a prior census.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nContinued from accepted_continuation (sha256:fe6d94ae4aa0462b31cc1144e2254b5099d5914590009bbe27133bfbdf6c52d3). Verified the existing verifier artifacts in res_20260804/verifier_a385316.py and res_20260808_013027/a385316_verifier.py independently reproduce all five known terms (a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419). The next_gate from the accepted continuation is to restore private compute host SSH connectivity (DNS resolution of private host) and dispatch the census at C=10¹². This session confirms no route delta: DNS blocker is unchanged and no independent census can be dispatched from the Mac host. The milestone's bounded_exact_search cannot proceed without the census primitive.",
+  "verified": "Verifier domain: all triple components must be prime, verified via deterministic Miller-Rabin with bases [2,3,5,7,11,13,17,19,23,29,31,37] correct for n < 3.4e24.\nVerifier predicate: enumerate all nondecreasing prime-cube triples (p≤q≤r) with p³+q³+r³ ≤ C via bounded insertion sort, then histogram multiplicities to find the smallest N with multiplicity exactly k.\nReproduced a(1)=24 (1 way), a(2)=185527 (2 ways), a(3)=8627527 (3 ways), a(4)=999979163 (4 ways), a(5)=10588881419 (5 ways) across two independent verifier files. Prior session a385316_continuation_verifier.py SHA-256: 7df0d769c6da7c7354327c3e608605128cc6d5db978dda41d16283fb91e3a764 (from accepted continuation source). Blocker: DNS resolution for private host unresolved on the Mac host; census at C=10¹² cannot be dispatched locally (cutoff p≈10⁴ requires ~78K primes and O(p³) enumeration of ~10¹² triples, exceeding Mac memory).",
+  "result": "Negative result: no mathematical progress on a(6) in this session. The verifier is confirmed correct and reproducible across multiple implementations. The operational blocker (private compute host DNS) is unchanged from the accepted continuation. The milestone's next_gate primitive (DNS restore → census dispatch) cannot be completed from the Mac host.",
+  "next_gate": "Operator-action: restore SSH/DNS connectivity to private host, then dispatch census at C=10¹² on private compute host to search for a(6) or certify a(6) > 10¹². Upon success, a second independent implementation must reproduce the census to register the result (per prior single-source rejection lessons from #552 a(17) and f(39)).",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. No new artifact mutation or file writes performed.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-07_22-57-26.md",
+    "sha256": "8484545729a6a9c6cb8e66bdbc42bccfd1b198b301060a234701792f0dd11195"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

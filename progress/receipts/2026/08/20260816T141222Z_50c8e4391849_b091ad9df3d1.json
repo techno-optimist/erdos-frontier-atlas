@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:b091ad9df3d1e956fa5d64f14c235eeeef11bc99d7b48f048848ac937c3957a4",
+  "content_digest": "sha256:a2c42f5baf4b1119842afebcaf0b51716355eb2ddf05f47fd2d08c0cc3c3c928",
+  "occurred_at": "2026-08-16T14:12:22Z",
+  "frontier": "Smallest N = sum of three distinct prime cubes p³+q³+r³ in exactly 6 unordered representations (OEIS A385316 a(6)). Current lower bound: a(6) > 1.1e10.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nExtended bounded exact search using the verified two-sum table optimization from C=1.1e10 to C=1e12 (1229 primes), capturing full JSON summary including max_multiplicity, m5_count/m5_smallest, and m6_count/m6_smallest. Search was initiated but did not complete within the 16-call budget (background process still running at the point of operator finalization). The prior C=1.1e10 run already reproduced all five known terms a(1)..a(5) exactly.",
+  "verified": "Verifier mechanism confirmed: two-sum table optimization with complete-prime-set sieve, nondecreasing p<=q<=r enumeration. Prior run at C=1.1e10 (session cron_50c8e4391849, accepted continuation sha256:87f76711dfe5ceb745e338f9bf3e99710419bd4fb12547f7e56878a83ff783dc) reproduced all five known terms a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419 exactly. The C=1e12 search script erdos_979_a385316_search_c1e12.py was written and initiated as artifact SHA-256: sha256:<pending_final> — incomplete because the terminal action exceeded the call budget. No independent second-implementation reproduction of the C=1e12 result exists yet (per next_gate warning from prior session #552).",
+  "result": "The C=1e12 bounded search was launched but did not complete within the 16-call budget window. The background process had initialized the sieve (max prime 10000) at the point of operator finalization. The lower bound a(6) > 1.1e10 from the prior truncated run stands but needs the C=1e12 completion to confirm improvement. This is a budget-bound negative result, not evidence about the mathematical frontier.",
+  "next_gate": "Re-launch the C=1e12 search (erdos_979_a385316_search_c1e12.py) in a dedicated session with sufficient wall-clock budget (~248s estimated), capture the full JSON summary, extract max_multiplicity/m6_smallest, and verify all five known terms pass. Only then promote to a(6) lower-bound certification.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. The C=1e12 search did not complete; no new lower-bound claim is published without the full JSON summary.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-16_07-12-22.md",
+    "sha256": "6ae563fa6d302673fa4712863ab5d708d26ebfe11cdba412a4d9451ef1faabc9"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

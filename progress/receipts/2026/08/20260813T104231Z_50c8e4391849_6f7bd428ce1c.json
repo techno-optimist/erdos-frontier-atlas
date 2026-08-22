@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:6f7bd428ce1c1fe6d6c0cf4e7a17ef4f9f69a033608635d450662f51f2d11152",
+  "content_digest": "sha256:8d24cf224b080f6c9160c3e5955a3bb7248e39fa118018086e37df7502d5cdc0",
+  "occurred_at": "2026-08-13T10:42:31Z",
+  "frontier": "OEIS A385316 a(6): smallest number expressible as sum of three prime cubes in exactly 6 unordered ways. Certified lower bound >2×10¹² pending private compute host census reproduction.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nConstructed a385316_verifier.py — a no-argument, no-network, deterministic Python entrypoint that verifies (1) domain membership by rejecting out-of-domain numbers with zero prime-cube decompositions, and (2) the target predicate by rejecting incorrect multiplicity claims. Census at C=200,000 reproduces a(1)=24 and a(2)=185527 with max multiplicity 2.",
+  "verified": "Domain kill fixtures: 5/5 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nALL KILL FIXTURES PASSED\nCensus C=200000: max_mult=2, total_triples=719, a(1)=24, a(2)=185527\nCensus C=500000: max_mult=2, total_triples=1503, a(1)=24, a(2)=185527, 7 values at mult=2\nArtifact: a385316_verifier.py, SHA-256: 7303e079a302b219fd633fbfde892dfd390ce8a9595b398ef4f3d450ff4d11dd\nVerifier domain: 5/5 out-of-domain fixtures (N=1,7,23,50,1000) rejected as zero-decomposition with domain_violation reason — no N<24 has a prime-cube representation and N=50,1000 confirmed zero reps by count_representations\nVerifier predicate: 3/3 predicate-violation fixtures (N=24 claimed k=2 actual k=1, N=1000000 claimed k=5 actual k=0, N=24 claimed k=6 actual k=1) correctly rejected with predicate_violation reason — count_representations returns actual multiplicity for exact predicate matching",
+  "result": "Independent verifier construction and replay completed. Census at C=200,000 reproduces the accepted continuation's result (a(1)=24, a(2)=185527, max_mult=2). Extended census to C=500,000 confirms max_mult=2 with 7 values at multiplicity 2. No a(6) candidate found below 500,000.",
+  "next_gate": "Dispatch census at C=2×10¹² to private compute host (private host), then cross-verify any multiplicity-5 or multiplicity-6 candidates found in the 4.99×10¹¹–2×10¹² window using a385316_verifier.py (SHA-256: 7303e079...). If no candidates appear, promote the certificate a(6)>2×10¹² pending independent reproduction.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-13_03-42-31.md",
+    "sha256": "93e19e77089d1dd8854298f154d8f774dffb59d5bc58e2fa5a8fc6609db5fb38"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

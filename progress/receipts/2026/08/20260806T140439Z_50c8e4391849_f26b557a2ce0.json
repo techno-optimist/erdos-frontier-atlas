@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:f26b557a2ce0471e1af20e87fb04775aaec8cc594230dbfc8a9503af2206a781",
+  "content_digest": "sha256:171bfb538d35370d3be4caf891cf09668e699b3d7401564cebdc49b2e3558368",
+  "occurred_at": "2026-08-06T14:04:39Z",
+  "frontier": "Smallest N that is a sum of three prime cubes in exactly 6 unordered representations (OEIS A385316 a(6)); current lower bound a(6) > 10^12, census dispatched to C=10^13.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nAttempted to extract max multiplicity and record-level counts from the C=10^13 prime-cube census output. The census background process (PID 3126062) has terminated (confirmed absent from process table). No census output files (.out/.log/.txt) found in the session artifact directory or standard temp locations. Prior sessions (5 runs today) dispatched and ran this census but the stdout capture appears lost.",
+  "verified": "Census process status: ps -p 3126062 → not found. Session artifact directory listing: only brief.md, context_packet.{json,md}, experiment.json, focused_context.{json,md}, next_gate.md, shadow_policy.json — no census output. Global search for census/prime-cube files yields only prior-session references and skills, no data artifacts. Foundry gate: cooldown_ok=true, daily_budget=2, calls_today=0, frontier_call_allowed=false. Accepted continuation hash admitted: sha256:3a0e655516f9d77d1233925ca206d8d2c91db669f4f435da97f1964e5c07da95.",
+  "result": "Blocked: census output not available locally to fulfill the next_gate primitive (extract max multiplicity from census stdout). The computation ran on private compute host and completed, but the stdout capture is missing from this Mac checkout. Prior session receipts (sha256:4e6e1ebd, sha256:3554cb64, sha256:3a0e6555) document the dispatch but not the extracted result. Operator quarantine feedback (sha256:94beb243) flagged a public-membrane violation; the route must be shrunk. No mathematical claim can be advanced until the census output is recovered from private compute host or re-dispatched.",
+  "next_gate": "Operator to recover census stdout from private compute host: ssh private compute host and locate the census output (search for PID 3126062 logs, or re-run the census with explicit stdout redirect to a known path). Alternatively, re-dispatch the census with output captured to a file, then extract the max multiplicity and first values at each record level k=1..6 to produce a verifiable continuation receipt.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Census output recovery requires private compute host access only.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-06_07-04-39.md",
+    "sha256": "a13eee4a7fbe75eb2d9569fca28656bb46dec32086519af8d12f6afcc0a53709"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

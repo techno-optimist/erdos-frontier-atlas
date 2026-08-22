@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:37c1ddb80a866216fae4386faea8a87b174570c15e8cdac90054eedba8bb2941",
+  "content_digest": "sha256:a16686176f18690a3238bf1ba66b9acc2ce78788cfc1215ec439c2c0a348c206",
+  "occurred_at": "2026-08-17T19:59:38Z",
+  "frontier": "OEIS A385316 a(6): smallest integer expressible as a sum of three prime cubes in exactly six unordered ways.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nBuilt verifier_a385316_independent.py using sorted-pair enumeration with bisect lookup (different algorithm and memory layout from the primary hash-dict verifier). Domain check verifies each component of an input triple is a prime cube (p³ for prime p). Predicate check verifies the exact count of unordered prime-cube triples summing to N equals the claimed multiplicity k. Replayed domain kill fixtures ((9,25,49) rejected because 9=3²,25=5²,49=7² are squares not prime cubes; (2,3,4) rejected because 4 is not prime). Replayed predicate kill fixtures (N=24 claimed k=2 actual k=1; N=185527 claimed k=5 actual k=2). Verified all five known terms a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419 reproduce exactly. Clean no-network replay exits zero with matching SHA-256.",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nArtifact: verifier_a385316_independent.py, SHA-256: af8f56b3fc5dafcd118324b2f0381941539be6a2b89e283ea0921c7646cab9a9\nIndependent replay from /tmp confirmed identical output and SHA-256.\nVerifier domain: Each input component must be p³ for some prime p; fixture (9,25,49) rejected — 9=3², 25=5², 49=7² are squares not prime cubes (none in prime-cube set); fixture (2,3,4) rejected — 4 is not prime so 4³=64 is not a prime cube (none in prime-cube set).\nVerifier predicate: The exact count of unordered prime-cube triples summing to N must equal claimed k; fixture N=24 claimed k=2 rejected actual k=1 (only 2³+2³+2³); fixture N=185527 claimed k=5 rejected actual k=2.",
+  "result": "Independent verifier construction complete with full cross-implementation corroboration. Domain and predicate branches show full kill-fixture coverage with correct rejection reasons. All five known OEIS terms confirmed with corrected values from accepted continuation. Algorithm differs from primary verifier (bisect-based vs. hash-dict), memory layout differs, providing algorithm-level corroboration.",
+  "next_gate": "Run the independent verifier to census cutoff C=2×10¹¹ (matching the primary verifier's cutoff) to establish a(6)>2×10¹¹ with cross-implementation corroboration. If private compute host SSH remains unavailable, this Mac-based cross-verification completes the accepted continuation's next gate.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. No network access used.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-17_12-59-38.md",
+    "sha256": "276b3da147d0efc21b5c015149dc0b7581ec75cb3bef1e8c3683df1c885b8daa"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

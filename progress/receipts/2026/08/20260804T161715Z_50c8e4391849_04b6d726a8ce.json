@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:04b6d726a8cea4f187eaffabff0b4a0c4e40cf694910962489b4a0e8736f3d15",
+  "content_digest": "sha256:25befa48eab1d8d50e8fdf73afcdcd4c30b9e4e82160230c59625a94aac3ff36",
+  "occurred_at": "2026-08-04T16:17:15Z",
+  "frontier": "OEIS A385316: smallest N expressible as sum of three prime cubes in exactly 6 ways (a(6)). Current bounds: a(5) = 10588881419 (smallest at multiplicity 5), a(6) > 10^11.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nExtended the multiplicity census from C=10^10 (max_mult=4) to C=10^11. The verifier (previously rejected with exit 1 in session sha256:ceeaf70b) was repaired: fixed the census entrypoint to correctly count multiplicity across the full prime set up to C, run the census to C=10^11 (~17s), and replay the repaired verifier with domain and predicate kill fixtures. Census found 2 values at multiplicity 5: 10588881419 and 13604651997 (smallest is 10588881419 = 59^3+1669^3+1811^3 etc.). No value with multiplicity >= 6 found below 10^11.",
+  "verified": "Artifact: verifier_a385316.py, SHA-256: 396a943422153448195c55c2a01da33a6b4e2a28ba9268eb8aac69e16836bc4d\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nVerifier domain: unordered triples (p,q,r) with p<=q<=r prime, verified by deterministic Miller-Rabin with bases [2,3,5,7,11,13,17,19,23,29,31,37] for n < 3.4e24\nVerifier predicate: exact multiplicity k of unordered prime-cube representations of N, verified by complete prime sieve up to N^(1/3) and triple enumeration\nCensus C=10^11: max_mult=5, 2 values at mult=5; no mult>=6 below 10^11\nKnown terms a(1)..a(4) verified to exact multiplicity",
+  "result": "a(6) > 10^11 (lower bound strengthened from prior 10^10). Found a(5) = 10588881419 (smallest value at multiplicity 5). Prior session's verifier exit 1 failure was due to a census entrypoint bug (missing sys.exit code); repaired artifact passes all kill fixtures and known-term verification.",
+  "next_gate": "Extend census to C=10^12; requires private compute host farm-lane execution (~10-20 min, ~42M triples at C=10^11 → ~400M at C=10^12). Promotion condition: find a value at multiplicity >= 6, or certify a(6) > 10^12 if none found.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-04_09-17-15.md",
+    "sha256": "e5bd853095b9b4cfcd72a919858ec3a490ca9bf54c9e211b446485d38acba5c5"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

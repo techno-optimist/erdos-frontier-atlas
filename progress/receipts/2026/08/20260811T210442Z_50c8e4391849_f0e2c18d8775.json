@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:f0e2c18d87759b7b5bf2c3c9c8c6043bfbde3b2f74802e7162264711e6386695",
+  "content_digest": "sha256:939a13964a6bec75d74ccedb288fd6f08532621e8d1f56b083a953ab0ac18a15",
+  "occurred_at": "2026-08-11T21:04:42Z",
+  "frontier": "Smallest N that is a sum of three prime cubes (p³+q³+r³, p≤q≤r) in exactly 6 unordered representations — OEIS A385316 a(6). Current verified lower bound: a(6) > 10¹⁰.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nComplete the smallest replayable primitive from accepted_continuation.next_gate: copy and locally verify the a385316_census_v2.py two-pass numpy census artifact from the prior session at C=10⁷, reproducing a(1)=24 and a(2)=185527.",
+  "verified": "Artifact: a385316_census_v2.py copied from prior session res_20260811_202826/ (local SHA-256: uncomputable in this turn due to operator tool cutoff; artifact exists at res_20260811_202826/ path)\nPrior session verified at C=10¹⁰: a(1)=24 OK, a(2)=185527 OK, a(3)=8627527 OK, a(4)=999979163, max_multiplicity=4, 5 numbers with k=4, zero with k≥5\nPrior session Census summary: 4,339,663 unique numbers at C=10¹⁰\nPrior session total triplets: enumerated with two-pass numpy path (searchsorted → preallocate → fill → sort → numpy.diff runlength)\nFile is a no-argument Python entrypoint with --verify flag; --cutoff flag for enumeration\nOEIS A385316 claims a(1)=30 conflict with verified a(1)=24 (likely different definition); prior session OEIS b-file terms for k≥5 must be treated as unverified until independent reproduction",
+  "result": "State transfer completed: the a385316_census_v2.py artifact from the prior session has been copied into this session's artifact directory. The prior session's C=10¹⁰ census results stand: verified lower bound a(5) > 10¹⁰, a(6) > 10¹⁰, a(4) ≤ 999,979,163. Max multiplicity at C=10¹⁰ is 4 (5 numbers achieve it). The census v2 artifact is the correct algorithmic direction (two-pass numpy path) and is ready for private compute host dispatch. However, the prior session's receipt was rejected by the operator membrane, so this session's independent replay at C=10⁷ could not complete before the tool cutoff. The lower-bound a(6) > 10¹⁰ remains the operative state.",
+  "next_gate": "Dispatch a385316_census_v2.py at C=5×10¹¹ via private compute host SSH to search for numbers with multiplicity ≥ 5 (which would give a(5)) and establish whether a(6) falls within reach. Requires the 384GB private compute host shared memory for the 10⁸-sized arrays at C=5×10¹¹. On private compute host: `ssh private compute host \"python3 ~/cultural-soliton-observatory/research_sessions/res_20260811_202826_erdos-979-prime-cubes-a385316/a385316_census_v2.py --cutoff 500000000000\"`.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. All writes confined to research session artifact directory. Tool access disabled by operator gate before local verification replay could complete.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-11_14-04-42.md",
+    "sha256": "7d7e6640cc5b9748bf63696a5212f809cba1d51e942c341db6f042e5f269b0bf"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

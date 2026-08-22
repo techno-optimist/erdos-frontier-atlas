@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:655909e3f18e944629428cdca076f256ef38527f398f33f424374306da35f70e",
+  "content_digest": "sha256:7bcc62b310ce9757a92873bc3edb83f65f60b3086db913f5f3f1e7435c378b1a",
+  "occurred_at": "2026-08-18T01:49:48Z",
+  "frontier": "OEIS A385316: smallest N = p³+q³+r³ (p,q,r prime) with exactly 6 representations.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nImplemented census_a385316.py (complete-prime-set multiplicity census at C=2×10¹¹ over 766 primes ≤ 5848), then initiated execution. Script reproduces OEIS a(1..5) as baseline, then enumerates all p≤q≤r triples, counts multiplicities, finds smallest sum with count==6.",
+  "verified": "Artifact: census_a385316.py written. Algorithm correct (bisect-bounded triple enumeration, O(π³) dict increments). Prior independent bisect-based verifier (sha256:2397aee99) confirmed all five OEIS terms. Execution exceeded 30-second expensive terminal budget (75M Python dict ops, estimated >120s).",
+  "result": "Bounded search runtime-blocked: census did not complete within budget. No a(6) found or certified. Frontier status unchanged: a(6) > 10588881419 (OEIS a(5)).",
+  "next_gate": "Run census on private compute host with larger wall-time allocation or port to C/Cython for ≥10× speedup.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-17_18-49-48.md",
+    "sha256": "7b29b16377934476eb40a86e8861933144d2f735984be67bbf394dd691acf62d"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

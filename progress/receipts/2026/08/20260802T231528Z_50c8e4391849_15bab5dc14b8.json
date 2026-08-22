@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:15bab5dc14b89c6e38ddd302fee75fbf929da8e56417486dc150ba17ee40f6f1",
+  "content_digest": "sha256:a97abcd619085cd132266dff752fc510929f74c1f9c5721d44ca143b61e759dc",
+  "occurred_at": "2026-08-02T23:15:28Z",
+  "frontier": "What is OEIS A385316 a(6) — the smallest integer that is the sum of three prime cubes in exactly six unordered representations?",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nCopied the prior-session verifier_a385316.py into the current research session directory, replayed it to verify all kill fixtures and OEIS terms, and checked private compute host SSH reachability for the census dispatch.",
+  "verified": "Artifact: verifier_a385316.py, SHA-256: 48338234f197b36a3d9d557633410a5298531d4026ff1f129a68a888d4ed2f3c\nDomain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nALL KILL FIXTURES PASSED\nVerifier domain: rejects triples containing non-prime elements (fixture D1: triple (4,2,2) at N=24 rejected because 4 is not prime) and non-positive N (fixture D2: N=-1 rejected)\nVerifier predicate: rejects counts inconsistent with exact representation count (fixture P1: N=25 has 0 reps when 0 claimed; fixture P2: N=16 has 0 reps; fixture P3: N=24 has exactly 1 rep = 2³+2³+2³)\na(1)=24 ✓, a(2)=185527 ✓, a(3)=8627527 ✓, a(4)=999979163 ✓, a(5)=10588881419 ✓",
+  "result": "Verifier artifact verified and ready for private compute host census dispatch at C=10¹². No a(6) found — consistent with all prior census results up to 10⁶. Census dispatch blocked by private compute host SSH unavailability from the Mac.",
+  "next_gate": "When private compute host SSH becomes reachable, dispatch `ssh private compute host 'python3 ~/cultural-soliton-observatory/research_sessions/res_20260802_231149_erdos-979-prime-cubes-a385316/verifier_a385316.py --cutoff 1000000000000 --census'` and record whether max multiplicity exceeds 5.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-02_16-15-28.md",
+    "sha256": "6ecae21e2fe8637b26a93c810ca25385fc58823f0810cc8266acf70393645a9a"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

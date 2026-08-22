@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:057dd4f7596aa4def92168c72ec6558a9aa61249c9e86ff0c4d2afb0069ec5b3",
+  "content_digest": "sha256:367781f02b80b10a20f8657693a35dabdff1dfd4954a2f476fae67bfdf43d4ae",
+  "occurred_at": "2026-08-01T21:44:11Z",
+  "frontier": "Smallest N = sum of 3 prime cubes in exactly 6 ways (OEIS A385316 a(6)). Known terms: a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nBuilt corrected multiplicity verifier with triple enumeration pruning s2+cj > N (fixing prior s2*2 > N bug). Domain kill fixtures: 22, 100 (neither is a prime-cube sum). Predicate kill fixtures: 43 has multiplicity 1, 185527 has multiplicity 2. All 5 known terms verified.",
+  "verified": "Artifact: a385316_verifier.py, SHA-256: 34a11eaead53076fd7c12340b802272d899d2c513997cddc20364cea251bcac5\nDomain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nALL KNOWN TERMS VERIFIED\na(1)=24 reps: (2,2,2); a(2)=185527 reps: (13,43,47),(19,31,53); a(3)=8627527 reps: (19,151,173),(23,139,181),(71,73,199); a(4)=999979163 reps: (83,757,827),(107,677,883),(197,523,947),(281,419,967); a(5)=10588881419 reps: (59,1669,1811),(83,1567,1889),(139,1427,1973),(349,1091,2099),(479,929,2131)\nVerifier domain: 22 rejected — N=22 < 24 smallest prime-cube-sum; 100 rejected — zero prime-cube representations (8+8+8=24, 8+8+27=43, 27+27+27=81, 8+8+125=141, 100 falls in gaps)\nVerifier predicate: 43 has multiplicity 1 (2,2,3), expected 1 — correct; 185527 has multiplicity 2 (13,43,47)(19,31,53), expected 2 — correct",
+  "result": "Corrected verifier exits 0. Prior-session verifier bug identified: count_representations() pruned on s2*2 > N which rejected (2,2,2)=24 because s2=16, 16*2=32>24 broke before finding the sole triple. Fixed to s2+cj > N (minimum r³=cj since r≥q). Domain and predicate kill fixtures both pass. All 5 known terms reproduce exactly. No bounded search performed — deferred per milestone contract scope.",
+  "next_gate": "Run C=10⁶ bounded search with the corrected verifier to independently reproduce all 5 known terms from scratch, then extend to C=10⁸ and dispatch C=10⁹ to private compute host.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. One artifact mutation (verifier.py), one experiment.json mutation. Verified replay: exit 0, all kill fixtures pass, all known terms match.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-01_14-44-12.md",
+    "sha256": "b6de9a797b3cf3e0697f9cfbcbdf3fdd617a3f25397946ca8df07e0794c571ee"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

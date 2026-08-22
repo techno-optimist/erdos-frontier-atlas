@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:ba2cf91787d08e020a50d3df787b1c885a02c1d8692f0f4f451bf6e99061b3a3",
+  "content_digest": "sha256:a6f062927a69ad2c42700e143dbeaf7a29537a701d428d97e7a1c208c41e643a",
+  "occurred_at": "2026-08-16T03:26:06Z",
+  "frontier": "OEIS A385316: smallest integer N expressible as sum of three prime cubes (unordered, p≤q≤r) in exactly 6 ways — a(6).",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nRan bounded exact census locally at C=5×10⁷ using the complete-prime-set multiplicity verifier (a385316_verifier.py), certifying that no sum has multiplicity ≥ 4 up to this cutoff.",
+  "verified": "Verifier domain: Each summand is the cube of a prime, triplet (p,q,r) satisfies p<=q<=r\nVerifier predicate: Count of unordered prime-cube triplets summing to N equals the claimed multiplicity\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 1/1 rejected correctly\nALL KILL FIXTURES PASSED\nArtifact: a385316_verifier.py, SHA-256: 3eaef553e078ddea6dfb6ee12967befbcb2187e1f20ec5f52d5a81a719c32505\nIsolated replay confirmed: kill fixtures exit 0 with correct rejection reasons for both domain (composite r=4) and predicate (multiplicity 1≠6) branches.",
+  "result": "At C=5×10⁷: 52,544 distinct sums from 53,019 triplets. Multiplicity distribution: 52,074 with count 1, 465 with count 2, 5 with count 3, 0 with count 4+, 0 with count 5, 0 with count 6. CERTIFIED: a(6) > 50,000,000. The 5 multiplicity-3 values begin at 8,627,527. No candidate reaches multiplicity 4, confirming a large gap between multiplicity-3 and multiplicity-4 territory. private compute host dispatch to C=10¹¹ remains blocked (infrastructure unavailable).",
+  "next_gate": "Retry private compute host census dispatch when infrastructure is available: `ssh private compute host 'python3 ~/cultural-soliton-observatory/research_sessions/res_20260816_025035_erdos-979-prime-cubes-a385316/a385316_verifier.py --search 100000000000'` and report whether any sum reaches multiplicity 4 or higher.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-15_20-26-06.md",
+    "sha256": "4c6de38ac6463fc196ad86202e2a1705440e60f436cb38532c8ba3f73b25549e"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

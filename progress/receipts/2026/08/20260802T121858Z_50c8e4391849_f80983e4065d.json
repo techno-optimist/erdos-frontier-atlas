@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:f80983e4065df224a451d760711f9d1d91daa8802bc7d483c7a03c8c8ebdbc7b",
+  "content_digest": "sha256:ce5176f4109b39becb9319ea009170a68cbbaaab16364382a7fb95a2b884ca66",
+  "occurred_at": "2026-08-02T12:18:58Z",
+  "frontier": "OEIS A385316: What is the smallest integer expressible as a sum of three prime cubes in exactly six unordered ways? (a(6))",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nWrote verifier_a385316.py to the current session artifact directory, ran kill-fixture replay (2/2 domain, 2/2 predicate), and executed census at C=10^6. Verified reproduction of a(1)=24 and a(2)=185527 from accepted continuation. Corrected total sum count matches prior (2454). Max multiplicity at C=10^6 is 2. No a(3) found below 10^6. The smallest independently replayable primitive from accepted_continuation.next_gate (verify the verifier) was completed. private compute host census dispatch at C=10^12 is blocked: SSH name resolution failed for private compute host host.",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nCensus at C=10^6: a(1)=24, a(2)=185527, total_sums=2454, max_multiplicity=2, no a(3)\nArtifact: verifier_a385316.py, SHA-256: d8af9a273f6d6f9246a8153d0f0e7f1586673d334ae32de785debee6812fe90c\nVerifier domain: Rejects triples with non-prime elements (fixtures (1,2,3) and (4,5,7) correctly rejected for non-prime element(s))\nVerifier predicate: Rejects wrong multiplicity claims (fixtures N=24 claim=2 and N=160 claim=2 correctly rejected; actual multiplicities are both 1)\nCensus reproduction verified: a(1)=24 and a(2)=185527 match accepted continuation; total_sums=2454 matches corrected count",
+  "result": "Verifier construction complete and replayed successfully at C=10^6. Kill-fixture replay exits zero with correct rejection on both domain and predicate branches. Census reproduces all known verified terms from accepted continuation. No a(3) below 10^6 (max mult=2). The next gate — private compute host census dispatch at C=10^12 — is operationally blocked by private compute host SSH connectivity failure. This is an infrastructure blocker, not a mathematical convergence.",
+  "next_gate": "Restore private compute host SSH connectivity (private compute host name resolution failure) then dispatch: `python3 verifier_a385316.py --cutoff 1000000000000` to farm-lane on private compute host. If a(6) still not found at C=10^12 (max multiplicity observed so far is 5 at C=10^11), dispatch C=10^13.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. private compute host census dispatch blocked by SSH connectivity; no farm-lane execution attempted.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-02_05-18-58.md",
+    "sha256": "3d802612f80f4fafce96a6d61cc2f59f0d143fdf3b51d009f0eded52d87b7327"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

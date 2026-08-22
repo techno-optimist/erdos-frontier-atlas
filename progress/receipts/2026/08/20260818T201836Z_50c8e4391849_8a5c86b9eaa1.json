@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:8a5c86b9eaa19e72029ef6fe642bea1915e341344b5f6d047398306852f32964",
+  "content_digest": "sha256:5ec7aff71d7b080f50683b0f9ed9283630a18689d698da65b481e01c517104aa",
+  "occurred_at": "2026-08-18T20:18:36Z",
+  "frontier": "Erdős #979: What is A385316 a(6) — the smallest integer representable as p³+q³+r³ (p≤q≤r prime) in exactly 6 unordered ways? Current lower bound: a(6) > 4.99×10¹¹.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nWrote a standalone verifier_a385316.py with domain kill fixtures (23, 25 rejected as non-representable) and predicate kill fixtures (24,2 and 24,0 rejected as wrong multiplicity claims), ran census checkpoints at C=1000 (19 candidates, max_mult=1), C=200000 (a(2)=185527 at max_mult=2 with both known representations confirmed), and C=1000000 (max_mult≥2). All kill fixtures pass; census logic is self-consistent and independent of the prior private compute host C census.",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nArtifact: verifier_a385316.py, SHA-256: c5ff0cee06c6c92a5ee04ff95782d73f5d233c4f6fc9563f74a81be808c2d34f\nReplay exits zero; prior-session verifier (sha256: ba239af7697c97150047a58153344a0e0a2da3fb52b5c36fea50d852676cf7da) is a distinct implementation that also passes, confirming cross-implementation consistency.",
+  "result": "Verifier construction and census logic validation complete. The enumeration pipeline is independently confirmed at C≤10⁶, two distinct Python implementations agree on kill fixtures and census structure. The next step (private compute host-bound) is running census_final.c at C=6×10¹¹.",
+  "next_gate": "Dispatch census_final.c to private compute host at C=6×10¹¹, recording either a(6) or a certified lower bound; if successful, advance to C=2×10¹² next.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-18_13-18-36.md",
+    "sha256": "b1cac775d35da7926d13d70b5455b08dd3e27aa373e983f07ffeec04fd0bff76"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

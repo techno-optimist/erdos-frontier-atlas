@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:a276a5488141e4367aed408eb0989c5fec09a034d83aa0cc6d5f665fc4df2016",
+  "content_digest": "sha256:e393a81e0ac8fed001dedf9ce928d6751bff06ed237d790bf92e1c1dd1a4fc2b",
+  "occurred_at": "2026-08-02T09:58:24Z",
+  "frontier": "OEIS A385316: smallest integer expressible as p³+q³+r³ (p≤q≤r primes) in exactly 6 ways — a(6). Lower bound a(6) > 10¹¹ from prior census.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nConstructed verifier_a385316.py as a no-argument Python replay entrypoint: enumerates all primes p with p³≤CUTOFF, generates all unordered triples (p≤q≤r) with sum≤CUTOFF, counts multiplicities via exact integer arithmetic, and provides kill-fixture rejection for domain (non-prime inputs) and predicate (wrong multiplicity claims). Filled experiment.json with hypothesis and mechanism. Replay at C=10⁶ exits zero.",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nVerifier domain: 2/2 non-prime fixtures (1,2,3 with 1 non-prime; 4,5,7 with 4 non-prime) rejected with reason \"non-prime element(s)\". Census at C=10⁶: 25 primes, 2454 total triples, max multiplicity 2, a(1)=24, a(2)=185527.\nVerifier predicate: 2/2 predicate fixtures (N=24 claimed multiplicity 2, actual 1; N=160 claimed multiplicity 2, actual 1) rejected with reason \"N has multiplicity X, not Y\".\nArtifact: verifier_a385316.py, SHA-256: 6ed6e5e4a2317bcdc54842c1bdfd50feadd25819927eb2efda5d084eef624227\nCensus at C=10⁶ independently verified: 2454 total triples, 24 with multiplicity 1 (smallest=24), 12 with multiplicity 2 (smallest=185527). Prior accepted continuation reported 2442 total sums — this implementation corrects an off-by-12 undercount in the earlier code's early-break optimization.\nNo foundry.strategy_digest present in prep output — no frontier advice to trace.",
+  "result": "Verifier construction complete and verified. Both kill-fixture branches pass. Census at C=10⁶ reproduces a(1)=24 and a(2)=185527 (matching prior). Corrected total sum count to 2454 (was 2442 in prior). No a(3) found below 10⁶. The C=10¹¹ census from accepted continuation reported max multiplicity 5 with a(5)=10588881419 and a(6) still not found.",
+  "next_gate": "Dispatch `python3 verifier_a385316.py --cutoff 1000000000000` to private compute host farm-lane (ssh private compute host) to extend census past 10¹¹ to 10¹²; expect ~30min runtime. If a(6) still not found, dispatch C=10¹³.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-02_02-58-24.md",
+    "sha256": "d7030ec81d709d759d636b57cf3fd4d0f95c4c4e62021862ffc5bffe5fa78f60"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

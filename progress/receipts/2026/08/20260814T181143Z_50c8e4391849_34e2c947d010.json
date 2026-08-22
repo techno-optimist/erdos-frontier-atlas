@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:34e2c947d0102cae2c5ec7dce7db80858ff58f1f9cec2cbf8b335e668b2f1fb0",
+  "content_digest": "sha256:979efa1811c512b0dc44fac637409beda35b1d97505e7f1d40fb28e5c31bce85",
+  "occurred_at": "2026-08-14T18:11:43Z",
+  "frontier": "OEIS A385316: smallest integer that is the sum of three prime cubes in exactly 6 unordered ways.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nReconstructed the complete-prime-set multiplicity verifier as a deterministic no-argument Python entrypoint (a385316_verifier.py) in this session's artifact directory. Domain kill fixtures: 5/5 composites (4, 9, 1, 121, 0) correctly rejected by Miller-Rabin. Predicate kill fixtures: 2/2 — census to 10^7 shows no value with multiplicity >= 6, and min representable sum = 24. Reproduced known terms a(1)=24, a(2)=185527, a(3)=8627527 from census to 10^7. Census to C=200000 confirms max multiplicity = 2 at N=185527, matching accepted continuation. Deterministic replay confirmed on second run.",
+  "verified": "Domain kill fixtures: 5/5 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nArtifact: a385316_verifier.py, SHA-256: 4a2620012a6395a501d76f3d98f6730f92bf8f1d607803859fc59d2ca2efa894\nVerifier domain: 5/5 composite candidates (4, 9, 1, 121, 0) correctly rejected by deterministic Miller-Rabin (bases for n < 3.4e24)\nVerifier predicate: census to 10^7 shows max multiplicity = 3 at N=8627527 = a(3); no value below 10^7 has multiplicity >= 6; min representable sum = 24 = a(1). Census to C=200000 confirms max multiplicity = 2 at N=185527 = a(2).",
+  "result": "Verifier artifact operational and deterministic. Census to C=200000 reproduces accepted continuation (max mult=2). Census to C=10^7 confirms max mult=3 at a(3)=8627527. No multiplicity-6 candidate found below 10^7. No multiplicity-6 candidate found below 200000.",
+  "next_gate": "Dispatch census at C=10^12 to private compute host (private host) using the verified a385316_verifier.py --census 1000000000000; if no multiplicity-6 candidate found, promote certificate a(6) > 10^12. Require second independent implementation to reproduce the certificate before claiming.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Census to private compute host not dispatched (SSH unreachable from Mac; dispatch is farm-lane work). Only artifact mutation: one experiment.json fill, one verifier write.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-14_11-11-43.md",
+    "sha256": "ad05166217a36d1ab03f329fc5452ad68f0c707b01c40604c9f3726e26f08614"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

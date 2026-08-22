@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:e9077c71a9e1976de7edb84b7cd6ec589ec900678c51c44bf8b2190a6da018d4",
+  "content_digest": "sha256:2012b3a3ca114fcc9374120e2d0ed55ef6c0fbbbf7a5dd832fcba425a62153ab",
+  "occurred_at": "2026-08-12T10:18:32Z",
+  "frontier": "What is OEIS A385316 a(6) — the smallest integer representable as a sum of three prime cubes in exactly six unordered ways?",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nRan the complete-prime-set two-pass numpy census (a385316_census_v2.py) at cutoff C=10^12 on the 124 GB private compute host host. Fixtures at C=200k verified correctly (a(1)=24 OK, a(2)=185527 OK). The census enumerated 234,197,661 triplets with primes up to 10,001 and began sorting/rank analysis; process was still running at the operator hard-stop.",
+  "verified": "Fixtures at C=200k: a(1)=24 OK, a(2)=185527 OK\n- Census v2 artifact: a385316_census_v2.py, SHA-256: acca69d07e6022e92b7dce0c3828949e150503673b61cdf04b4d21f80307ccc6 (per accepted continuation)\n- Enumerated 234,197,661 triplets, primes <= 10001\n- Process was still executing sorting when operator tool access was terminated mid-run",
+  "result": "Inconclusive — the C=10^12 census enumeration completed successfully but analysis (sort + multiplicity extraction) was not permitted to finish. Prior state stands: at C=500B, max_multiplicity=5, a(5)=10,588,881,419, two numbers at multiplicity 5, no multiplicity-6 found. This run extends the bound to C=10^12 with 234M triplets processed. If max_multiplicity remains 5 at C=10^12, a(6) > 10^12; if it reaches 6, the smallest such N is a(6).",
+  "next_gate": "Complete the C=10^12 census run (sorting + rank extraction is the remaining ~30-120s). Record max_multiplicity and k_to_smallest. If max_multiplicity < 6, certify a(6) > 10^12. If max_multiplicity = 6, extract a(6).",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-12_03-18-32.md",
+    "sha256": "ee22be74373617f9431421ce7b01eb62f6633acc7c8004b2e102436832cb0b73"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

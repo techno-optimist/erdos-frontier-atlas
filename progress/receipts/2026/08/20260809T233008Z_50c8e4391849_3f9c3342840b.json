@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:3f9c3342840b9b01723641dfacbb2637aa614ab7083938f66a746df14be46097",
+  "content_digest": "sha256:fd7464d75c23d57f2e65d435fd51a96c7db9bcf703046d4a8d1fba14d888a81b",
+  "occurred_at": "2026-08-09T23:30:08Z",
+  "frontier": "Smallest N that is the sum of three prime cubes in exactly 6 ways (OEIS A385316 a(6)). Known terms: a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419. a(6) is unknown; census at C≤5×10^7 shows max multiplicity 3.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nCopied the canonical Mac verifier (SHA-256 d05e3ed26259db50ef1c2cb533a1ca8b0343e4fc7c5b9e8baf920f7ebd8d99bb) from session res_20260809_162016 into this session, replayed it with kill fixtures and known-term checks, and confirmed the isolated no-network entrypoint exits zero with complete domain and predicate summaries. Also ran census at C=10^7 and C=5×10^7 confirming max multiplicity 3.",
+  "verified": "Domain kill fixtures: 5/5 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nALL KILL FIXTURES PASSED\nALL KNOWN GOOD TERMS VERIFIED\nArtifact: a385316_verifier.py, SHA-256: d05e3ed26259db50ef1c2cb533a1ca8b0343e4fc7c5b9e8baf920f7ebd8d99bb\nCensus C=10^7: max_mult=3, count=1; Census C=5×10^7: max_mult=3, count=5\nVerifier domain: 5 out-of-domain fixtures (composites, non-primes, negatives) rejected with domain_violation reason\nVerifier predicate: 3 false-multiplicity claims (N=24 claimed k=2, N=185527 claimed k=3, N=1000000 claimed k=5) rejected with predicate_violation reason",
+  "result": "Verifier confirmed and independently replayed. Census engine verified at C=10^7 and C=5×10^7; max multiplicity remains 3 in both runs, consistent with a(6) > 5×10^7. No a(6) found; this session did not run the full private compute host census at C=10^12 (deferred per milestone scope).",
+  "next_gate": "Dispatch census run to private compute host: `python3 a385316_verifier.py --cutoff 1000000000000 --census` on private host. If max mult ≥ 6, report smallest N with exactly 6 representations. If max mult < 6, certify a(6) > 10^12. Requires independent re-implementation for any claim.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-09_16-30-08.md",
+    "sha256": "765f40500da3dbe9d872602d2e1622e71fe0d014fba7e3d8e1c038f81d29ede0"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

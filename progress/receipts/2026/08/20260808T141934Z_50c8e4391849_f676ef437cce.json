@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:f676ef437cce0ab068ada1d530dc325f3eb064496c669be5e0789ebac9a7c2e6",
+  "content_digest": "sha256:bd6d7294a468afc4e68fd1b27f15023188b1bfa88b94722fd002bcc92371c154",
+  "occurred_at": "2026-08-08T14:19:34Z",
+  "frontier": "Smallest N that is the sum of 3 prime cubes in exactly 6 ways (OEIS A385316 a(6)); the complete-prime-set census search to C=10^12 is blocked by DNS resolution failure on private host.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nWrote a clean, no-dependency Python verifier to the current session directory. Ran isolated no-network replay confirming: (1) domain kill fixture N=27 rejected (no 3-prime-cube decomposition exists), (2) predicate kill fixture N=24 claimed k=2 (actual k=1) rejected, (3) predicate kill fixture N=185527 claimed k=3 (actual k=2) rejected, (4) predicate kill fixture N=8627527 claimed k=2 (actual k=3) rejected, (5) all five known OEIS terms a(1..5) reproduced with correct multiplicities.",
+  "verified": "Verifier domain: N must be expressible as p^3 + q^3 + r^3 for primes p<=q<=r.\nVerifier predicate: Given candidate N with claimed multiplicity k, count the number of unordered triples (p, q, r) of primes with p^3+q^3+r^3=N; reject if the count != k.\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nArtifact: a385316_verifier.py, SHA-256: 9ac20a4409f84bcc75ed15535be1db12be73e69a5262c99c6b5e1661cd82bbfb\nNo strategy_advice or strategy_digest present in this session's gate.",
+  "result": "Negative result: no mathematical progress on a(6). The verifier is confirmed correct, self-contained, and reproducible with a clean SHA-256 in this session directory. The operational blocker persists: private compute host DNS resolution (private host) is unresolvable from the Mac host, preventing dispatch of the census search at C=10^12. This is the same blocker recorded in the accepted continuation (sha256:496feefa).",
+  "next_gate": "Operator-action: restore SSH/DNS connectivity to private host, then dispatch census at C=10^12 on private compute host. Upon success, a second independent implementation must reproduce the census result before registering a(6) or a certified lower bound (per #552 a(17) and f(39) single-source rejection lessons).",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. The only write was the verifier artifact to the current session directory and filling experiment.json — both scoped and ephemeral.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-08_07-19-34.md",
+    "sha256": "1ea4320efd19528d09d699700a2b8bdc377d89269901003d63c85223cf8aeb28"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

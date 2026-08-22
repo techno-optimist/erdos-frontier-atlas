@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:141c7e2a352cf8dc9da39b5710f297eb4c5105c81c293133801a171efe303a1a",
+  "content_digest": "sha256:caab8eb76c4d5607873343cf6c06241db23f581af3244857176c4cc25329b41e",
+  "occurred_at": "2026-08-05T22:47:02Z",
+  "frontier": "What is A385316 a(6)? — the smallest integer N = p³ + q³ + r³ (p ≤ q ≤ r primes) in exactly 6 unordered representations.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nReproduced the A385316 verifier from scratch, kill-tested domain and predicate branches (1/1 domain, 2/2 predicate), verified a(1)=160 has at least 1 representation, and confirmed the SSH key blocker to private host persists (public key auth denied, no private keys in ~/.ssh/).",
+  "verified": "Artifact: verifier_a385316.py, SHA-256: dbeba9b8d8a9295a7ddc18825f674a1669daab5cd9295411f8cac3b81a1f9cc0\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nVerifier domain: unordered triples of primes (p, q, r) with p ≤ q ≤ r\nVerifier predicate: given N, count unordered prime-cube representations N = p³ + q³ + r³; N is valid for multiplicity k iff the count equals k\nSSH blocker confirmed: ssh private host returns \"Permission denied (publickey)\"; ~/.ssh/ contains only authorized_keys and known_hosts, no private keys.",
+  "result": "The verifier is correctly reproduced, kill-tested, and independently replayable with exit 0. The resource blocker persists: SSH key authentication to private host cannot be restored locally. The C=10¹³ complete-prime-set census required for a(6) cannot be dispatched. No search beyond C≈10⁹ is feasible locally (~215k primes, ~1.66×10¹⁵ triple iterations).",
+  "next_gate": "Restore SSH key authentication to private host (manual operator action: deploy ed25519 public key to private host's authorized_keys and private key to this agent's ~/.ssh/), then dispatch a C=10¹³ complete-prime-set census and report the highest multiplicity found and whether any N has multiplicity 6.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-05_15-47-02.md",
+    "sha256": "77eeca3a080523838aeafce1e9b8bc772536d549104ec369aa67184965c44c98"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

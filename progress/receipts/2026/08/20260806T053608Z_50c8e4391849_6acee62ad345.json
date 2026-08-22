@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:6acee62ad345ea04414ec6bce39d2f2e1e594b9f3d52d2d4af0940c899626a41",
+  "content_digest": "sha256:ccea8016ea67669b89cc0fb845b3f618e5dcbbdb9115cb312859da249fa09868",
+  "occurred_at": "2026-08-06T05:36:08Z",
+  "frontier": "OEIS A385316 a(6): the smallest integer expressible as a sum of three prime cubes in exactly 6 ways.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nCopied the verified verifier_a385316.py (SHA-256: 1416f44a1f3310fc554a9ca74b69ebaea0dab498626ee9ea3f8bd96550f95825) into this session's artifact directory and ran a full no-argument replay. All 5 known terms a(1)..a(5) verified with exact multiplicities. Domain kill fixture (9,25,49) rejected with \"domain_violation: 9 is not prime\". Predicate kill fixtures N=24 (claimed k=2, actual=1) and N=185527 (claimed k=3, actual=2) both rejected with \"predicate_violation\". Also confirmed SSH key auth to private host remains broken.",
+  "verified": "Domain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nArtifact: verifier_a385316.py, SHA-256: 1416f44a1f3310fc554a9ca74b69ebaea0dab498626ee9ea3f8bd96550f95825\nVerified\nVerifier domain: every triple component must pass deterministic Miller-Rabin primality test (bases [2..37] correct for n < 3.4e24, covers all prime cubes below 1e12).\nVerifier predicate: count unordered prime-cube triples (p<=q<=r) with p^3+q^3+r^3 == N via bounded sieve + 3SUM scan.",
+  "result": "Verifier confirmed reproducible and fully replayable. The a(6) search lane is blocked by two orthogonal conditions: (1) C=10^12 census requires ~60+ seconds locally and 107GB RAM for C=10^13, exceeding both budget and hardware. (2) SSH key auth to private host (private compute host) remains broken, preventing the farm-lane census dispatch. No mathematical progress on a(6) from this Mac; the negative result is that further local extension is infeasible and private compute host connectivity is required.",
+  "next_gate": "If SSH to private host is restored: dispatch C=10^13 census via private compute host farm-lane and report highest multiplicity (whether mult=6 is found below 10^13, yielding a(6), or certifying a(6)>10^13). If SSH restoration is not forthcoming: escalate to the next-ranked unblocked frontier in the queue (erdos_86_q7_c4).",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-05_22-36-08.md",
+    "sha256": "3572c92f088ebdab5d6e67079c14224f2640d2dfc20345c33339f6bc4b150362"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

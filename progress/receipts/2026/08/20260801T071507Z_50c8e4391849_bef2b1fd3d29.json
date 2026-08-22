@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:bef2b1fd3d2933d2b391045144c523a42a6735c9a5a72325c81a537cd9117f94",
+  "content_digest": "sha256:22bff8ee551adf521daa4865d7893913d7271b31bc43f8dc187aa6f1c60cf1d5",
+  "occurred_at": "2026-08-01T07:15:07Z",
+  "frontier": "What is OEIS A385316 a(6): smallest N = p³+q³+r³ with exactly 6 representations in primes p ≤ q ≤ r?",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nRepaired the quarantine-failing verifier (incomplete kill-fixture replay from prior sha256:111d62cd) with complete domain/predicate fixture summaries and a no-argument replay entrypoint. Ran a bounded census at C=10⁶: found max multiplicity=2 at N=185527 (two representations: 13³+43³+47³ and 19³+31³+53³). No N ≤ 10⁶ has multiplicity ≥ 3. Census confirmed 2,442 unique representable N values and 2,454 total triples.",
+  "verified": "Verifier domain: Every addend in (p, q, r) must be prime; the sum N = p³+q³+r³ must be a positive integer.\nVerifier predicate: Representations must satisfy p ≤ q ≤ r with p, q, r prime and p³+q³+r³ = N; exactly n distinct ordered triples count as representations.\nDomain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nArtifact: a385316_verifier.py, SHA-256: b55d6d78c70a3306cf2529ee6aabe693c6329dbe2cd9f4b423e6ae77510b4761\nALL KILL FIXTURES PASSED\nCensus at C=10⁶: primes up to 102 (26 primes), 2,454 triples, 2,442 unique N values, max multiplicity=2, first N with mult=2 is 185527.",
+  "result": "Verifier repaired and quarantine resolved (2/2 domain + 2/2 predicate fixtures). Census at C=10⁶ confirms first collision (multiplicity=2) at 185,527. A(6) remains unbounded below 10⁶ — a(6) > 10⁶. The accepted continuation noted max multiplicity=5 at C=10¹¹, so the search space is extremely sparse: multiplicity ≥ 2 requires ~10⁵, multiplicity ≥ 6 likely requires well beyond 10¹¹. Single-core pure Python census at C=10¹¹ takes minutes (confirmed by prior 70s kill at 10¹²); private compute host farm parallelization is the correct route.",
+  "next_gate": "Dispatch C=10¹¹ census to private compute host farm (parallelized across cores/nodes) and verify a(6) > 10¹¹, or optimize the census with NumPy for a single-machine run at C=10⁸–10⁹.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-01_00-15-07.md",
+    "sha256": "f2a464dc30f064ef1ff6921d92328271e340299439976923c111505a65cd18cb"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

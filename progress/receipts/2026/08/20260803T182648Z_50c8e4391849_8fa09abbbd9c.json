@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:8fa09abbbd9ccdecf318e305071cff54f43dbc69d262d671f685e7de4caef74e",
+  "content_digest": "sha256:c013307e8d20fb23553cdb9bfad2bad116be95dcad88b74ec872093a17224256",
+  "occurred_at": "2026-08-03T18:26:48Z",
+  "frontier": "OEIS A385316: smallest N that is a sum of three prime cubes in exactly 6 unordered ways. Current bound a(6) > 10^9 with max multiplicity 4 observed at C=10^9.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nReplayed the complete-prime-set multiplicity verifier (verifier_a385316.py) confirming all kill fixtures pass and all 5 known terms reproduce, then executed a bounded exact census at C=10^9 extending the prior C=10^6 result.",
+  "verified": "Verifier domain: The verifier accepts triples of primes p<=q<=r and rejects non-prime addends (e.g., 4) and non-positive N. Verified by D1: (4,2,2) → rejected as \"4 not prime\"; D2: N=-1 → rejected as \"non-positive N=-1\".\nVerifier predicate: count_representations enumerates nondecreasing prime-cube triples via sieve + cubic root check, counting exact representations. Verified by P1: N=25 → count=0; P2: N=16 → count=0; P3: N=24 → count=1.\nKnown terms reproduced exactly at C=10^9: a(1)=24 (1 rep), a(2)=185527 (2 rep), a(3)=8627527 (3 rep), a(4)=999979163 (4 rep), a(5)=10588881419 (5 rep).\nArtifact: verifier_a385316.py, SHA-256: 48338234f197b36a3d9d557633410a5298531d4026ff1f129a68a888d4ed2f3c\nNo-argument replay: Domain kill fixtures: 2/2 rejected correctly; Predicate kill fixtures: 3/3 rejected correctly; ALL KILL FIXTURES PASSED; exit=0.\nDomain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly",
+  "result": "Census at C=10^9: 625,162 total triples, max multiplicity 4 at N=999,979,163 (a(4)). 54 values with multiplicity 3, 4,360 with multiplicity 2, 616,276 with multiplicity 1. No value reaches multiplicity 5 or 6. Confirmed a(6) > 10^9 — same bound as prior accepted continuation, verified independently on local hardware. The gap between multiplicity 4 and 6 is real and persistent across the full range; the jump likely requires much larger search.",
+  "next_gate": "Dispatch `python3 verifier_a385316.py --cutoff 1000000000000 --census` to private compute host farm-lane (ssh private compute host) when SSH connectivity is restored (target: on or after 2026-08-06). Record whether max multiplicity exceeds 5 at C=10^12. If private compute host remains unreachable after that date, escalate to operator for connectivity remediation.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-03_11-26-48.md",
+    "sha256": "17ecf496ec23d87d33b39afe457dfd512c0ee2115f47c938564e90a8be142392"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

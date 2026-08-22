@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:eafed8bbc74647ff55074f8986e219302a36f2a54d210beb0d64ab62ced6a4e8",
+  "content_digest": "sha256:363e8c707f0d5855ebf690458156f5af5be324689bb6c87a73b9fad375410b5b",
+  "occurred_at": "2026-08-03T01:38:17Z",
+  "frontier": "Smallest N that is a sum of three prime cubes p³+q³+r³ in exactly 6 unordered ways (OEIS A385316 a(6)).",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nCopied the accepted-continuation verifier into the current session directory, replayed all kill fixtures and all five known OEIS terms (a(1)..a(5)), and ran an independent bounded census at C=10⁸ confirming the prior result. The private compute host-dispatched census at C=10¹² required by the accepted continuation's next gate is blocked — private compute host SSH (private host) is unreachable from this Mac environment (DNS resolution failure for \"private compute host\" alias; key auth denied for private host). No broader context packet was loaded; focused evidence fully supported the registered falsifier.",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nALL KILL FIXTURES PASSED\nVerifier domain: triple = (p, q, r) where each is a prime ≥ 2; N > 0\nVerifier predicate: count_representations(N, C) counts unordered sums N = p³+q³+r³ with p≤q≤r and p³+q³+r³ = N via binary-search census over complete prime set\nArtifact: verifier_a385316.py, SHA-256: 48338234f197b36a3d9d557633410a5298531d4026ff1f129a68a888d4ed2f3c\nAll five known OEIS terms reproduced exactly at cutoff 10⁶. Independent census at C=10⁸: 93,854 total triples, max multiplicity = 3 at N=8,627,527 (9 values at multiplicity 3, 772 at multiplicity 2, 92,283 at multiplicity 1). No value with multiplicity ≥ 6 found.",
+  "result": "Bounded exact census at C=10⁸ confirmed: a(6) > 10⁸, max multiplicity remains 3. The next discriminating test (C=10¹² census via private compute host) is blocked by SSH unavailability. This is a resource blocker, not a mathematical negative result — the multiplicity growth trajectory (only 9 values at mult 3 by 10⁸ out of 93,854 triples) is consistent with a(6) lying well above 10⁸ but potentially within 10¹².",
+  "next_gate": "Escalate private compute host SSH remediation to operator if unreachable beyond 3 days. When connectivity returns, dispatch: `ssh private compute host 'python3 ~/cultural-soliton-observatory/research_sessions/res_20260802_231149_erdos-979-prime-cubes-a385316/verifier_a385316.py --cutoff 1000000000000 --census'` and record whether max multiplicity exceeds 5.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-02_18-38-18.md",
+    "sha256": "11478116e9ec4a988abbb1ed38690f14d66d22fe28e92119c649acfd81b6715f"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

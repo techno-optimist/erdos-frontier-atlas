@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:bc44ee7421188b383a8304dfaa0ec1e485a2977c089dc7a90459b605cbaebc00",
+  "content_digest": "sha256:bfab705a3f03b4d9bc186cf88f15629dedca84bed61dfac41ca6af197a342008",
+  "occurred_at": "2026-08-12T21:28:09Z",
+  "frontier": "OEIS A385316: What is the smallest integer representable as p³+q³+r³ (p≤q≤r, primes) in exactly 6 ways?",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nWrote a385316_crosscheck.py as a no-argument, no-network replay entrypoint. Domain well-formedness: validates candidates have at least one decomposition into three prime cubes; rejects two fixed out-of-domain fixtures (23 and 25, neither representable as sum of 3 prime cubes). Predicate: validates that a candidate's true multiplicity matches the claimed count; verifies multiplicity(24)=1 and multiplicity(160)=1 against known values, and rejects claimed multiplicity(24)=2 and multiplicity(24)=0. Reproduces a(1)=24 with triplet [(2,2,2)]. Local cross-check finds multiplicity(185527)=2 consistent with a(2) being smallest multiplicity-2 sum. All fixtures pass on deterministic replay.",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nVerifier domain: rejects 23 and 25 as non-decomposable into 3 prime cubes (smallest sum is 2³+2³+2³=24)\nVerifier predicate: rejects claimed multiplicity(24)=2 (observed=1) and claimed multiplicity(24)=0 (observed=1); confirms multiplicity(24)=1 and multiplicity(160)=1\nArtifact: a385316_crosscheck.py, SHA-256: efb27f00c73e3354adf02183aa6a8c555afba7ecdd206557190df9cbac535a55\nCross-check: multiplicity(185527)=2 confirmed locally at prime cutoff ~57 (consistent with a(2))",
+  "result": "Independent cross-checker verifies core properties: domain rejection (2/2), predicate rejection (2/2), and correct multiplicity for a(1)=24 and a(2)=185527. The census search at C=2×10¹² remains deferred to private compute host as per accepted continuation next gate.",
+  "next_gate": "Execute a385316_census at C=2×10¹² on private compute host (private host) to extend the lower bound for a(6), then independently cross-verify any multiplicity-5 or multiplicity-6 candidates using this cross-checker at the target values.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Local Python only, no network access.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-12_14-28-09.md",
+    "sha256": "00f7325e2fa401a5cc8f65f45a5e2c827b95d25ce5bfb301f48e8e1700816d44"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

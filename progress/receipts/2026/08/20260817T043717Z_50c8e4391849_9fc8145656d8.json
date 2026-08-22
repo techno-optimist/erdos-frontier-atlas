@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:9fc8145656d8386202967a12bf479bdb772d7d2d1d5d0d31547554a3fee72c4c",
+  "content_digest": "sha256:82e12ba554f8817bf0c36e0124da7566975a10abeafb933bba6cc1c2a736a824",
+  "occurred_at": "2026-08-17T04:37:17Z",
+  "frontier": "Smallest N = sum of 3 prime cubes p^3+q^3+r^3 in exactly 6 unordered ways (A385316 a(6)); known bound a(6) > 1e12.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nWrote and replayed a standalone census-mechanism verifier with domain and predicate kill fixtures. Verified C=1e13 census feasibility (2417 primes, 2.9M pairs, ~47 MB memory). Confirmed census mechanism is sound by brute-force comparison on N < 50000 — zero mismatches between census and exhaustive triple enumeration.",
+  "verified": "Domain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 5/5 rejected correctly\nALL KILL FIXTURES PASSED\nArtifact: verifier_a385316.py, SHA-256: b24d552d358d61c5cb81cced099730ef8106ccef82b8822c080ad420caa9e869\nBrute-force census to 10^8 (primes to 1000): exact-6 not found. Exact-1: N=24. Exact-2: N=185527. Exact-3: N=8627527. No exact-4, exact-5, or exact-6 below 10^8.",
+  "result": "Brute-force census to 10^8 confirms a(6) > 10^8. Combined with prior session's a(6) > 1e12 bound, the a(6) value exceeds 1e12. The C=1e13 private compute host dispatch remains the next discriminating step. The verifier artifact is self-contained, reproducible, and passes all kill fixtures.",
+  "next_gate": "Dispatch the verified two-sum census to private compute host at C=1e13 (primes up to ~21546, ~2.9M pair lookups, ~50 MB memory, >300s runtime) to produce a(6) or certify a(6) > 1e13.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-16_21-37-17.md",
+    "sha256": "e809bfdbb21e0350ab0c3aa666155446378899cad87bb10e3cbb0bd4709cc3fd"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

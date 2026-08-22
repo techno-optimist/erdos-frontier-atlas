@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:1165b75a7f568a9666623ad7187f0aa46a2cb77c6562071bd7df68e7174ff4ff",
+  "content_digest": "sha256:29fe1ed1ff62efb0e15616f43a3beb06a65d58375cde183775db07a8ea4438f6",
+  "occurred_at": "2026-08-16T08:59:49Z",
+  "frontier": "Erdős #979: smallest N that is sum of three prime cubes in exactly 6 ways (OEIS A385316 a(6), lower bound 4.99e11).",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nTested ordered-triplet convention (all permutations counted separately) through C=1,000,000. Reproduced unordered distinct and with-repetition conventions through C=100,000 as cross-check against accepted continuation (sha256:7fcb8fa...).",
+  "verified": "Ordered search (a385316_ordered_search.py, SHA-256: 3a217dc527a46e1d5a919dbc84df12fb27962dd7d235e56373458bb6c4539ae5): 13174 ordered triplets → 2442 distinct sums. 1927 sums with exactly-6 ordered representations; smallest = 160 = 2³+3³+5³ (one unordered distinct triplet × 6 permutations). 11 sums with exactly-12 (two distinct unordered triplets). All multiplicity-6 sums correspond to exactly one unordered distinct triplet — trivially true for ordered enumeration.\n\nUnordered verify (a385316_unordered_verify.py, SHA-256: b7659c84dca7e262eb2abd46c0b5a58f7ab2a0e35998b3f56b8d1512db801a29): C=100,000 → 302 sums (distinct), 0 with multiplicity ≥2; 450 sums (with repetition), 0 with multiplicity ≥2. Exactly reproduces accepted continuation counts.\n\nNo frontier strategy_digest was provided in this session.",
+  "result": "Ordered-triplet convention makes \"exactly 6 representations\" trivially true for every single-way sum (1927 sums through C=1M), confirming it is not the intended OEIS convention. Unordered conventions produce zero multiplicity-≥2 sums through C=100,000, confirming the previously-blocked route. OEIS A385316 is inaccessible (404) and its enumeration convention remains unknown. The claim of \"5 multiplicity-3 values\" from prior sessions cannot be reproduced under any standard enumeration through C=100,000.",
+  "next_gate": "Search OEIS directly for the correct sequence number for \"smallest number that is sum of three distinct prime cubes in exactly n ways\" by querying OEIS with descriptive text; or test OEIS sequence A385316 variants (e.g. sum of three primes cubes allowing repetition, or sum of three cubes of primes p≤q≤r) to find the sequence that matches the known terms and the 4.99e11 lower bound.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-16_01-59-49.md",
+    "sha256": "f3fe9d825f3fa6366b536a8d004527a44b52916251c92c37c4b8a3123c0f29ab"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

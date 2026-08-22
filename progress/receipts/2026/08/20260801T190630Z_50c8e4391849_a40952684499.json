@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:a409526844992dd3dd66a3713bfad52f30cd99f769dcc84e56b029852bdd0680",
+  "content_digest": "sha256:604070ab4ad60662ec2e54d9d0a04d702ce8797c2555686298b63fdb33f32765",
+  "occurred_at": "2026-08-01T19:06:30Z",
+  "frontier": "A385316 a(6): smallest N = sum of 3 prime cubes in exactly 6 ways; certified a(6) > 10⁸ from prior C=10⁸ census finding max multiplicity 3.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nReviewed the latest census artifact (census_prime_cubes.py, res_20260801_082308) for the C=10⁹ census from the accepted continuation's next gate. Found a critical census enumeration bug: the code computes r3_target = C - p3 - q3 and checks if that is a prime cube, meaning it only finds N = C exactly rather than enumerating all triples with p³+q³+r³ ≤ C. This bug renders all census outputs below C incorrect — it cannot reproduce known terms like N=17 (2³+2³+3³) or the multiplicity-3 result at N=8,627,527. The accepted continuation's C=10⁸ results came from a different (correct) implementation not present in this session's artifact.",
+  "verified": "Artifact reviewed: census_prime_cubes.py in res_20260801_082308_erdos-979-prime-cubes-a385316. Bug confirmed at lines 123-131: the loop structure checks `r3_target = C - p3 - q3` as a single lookup, not enumerating r values. The accepted continuation's next gate (C=10⁹ census) requires a corrected implementation. Prior census at C=10⁸ found multiplicity 3 at N=8,627,527 and N=21,902,509; a(6) > 10⁸ remains valid from that run.",
+  "result": "Blocked: the current session's census artifact cannot execute the C=10⁹ census primitive due to the enumeration bug. Writing a corrected census would require more than the remaining budget and constitutes a new artifact (not the continuation primitive). The negative result — this session's census produces empty output at any C — is itself useful: it prevents publishing incorrect lower bounds. A corrected C=10⁶ census (which the prior C=10⁸ session completed successfully) would be the smallest replayable primitive, but needs a new implementation.",
+  "next_gate": "Write a corrected census verifier with proper triple enumeration (r iterates over primes where p³+q³+r³ ≤ C, not r³ = C - p³ - q³), run C=10⁶ kill fixtures, then dispatch C=10⁹ to private compute host if single-machine performance permits.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-01_12-06-30.md",
+    "sha256": "b3c762f3cbb189e445d9b0894f25e142ca1b2035f9d1c9d846c7c07bc830ee36"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

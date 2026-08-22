@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:41ae270452eca9d21b36a808428f5129bef6f09a52dbd5f95b14613e56469858",
+  "content_digest": "sha256:43cc4d61f24727f20c841a6ddfd7a7459dc3bc4e86212c73c158b6a6b146ca14",
+  "occurred_at": "2026-08-06T03:13:49Z",
+  "frontier": "A385316: smallest N that is the sum of three prime cubes in exactly 6 unordered ways (a(6)); current known terms are a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419, with a(6)>4.99e11 from prior census work.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nCopied the verifier artifact verifier_a385316.py from the prior session (res_20260806_024018) into this session's artifact directory and executed a full no-argument replay. The verifier's domain branch rejected triple (9,25,49) with reason \"domain_violation: 9 is not prime\". Its predicate branch rejected N=24 claimed k=2 (actual multiplicity=1) and N=185527 claimed k=3 (actual multiplicity=2), both with reason \"predicate_violation\". All five known-good terms a(1) through a(5) were verified to have exactly their claimed multiplicities. Also confirmed SSH key authentication to private host (private compute host) remains broken — Permission denied (publickey).",
+  "verified": "Verifier domain: Every component of a candidate triple must be prime (deterministic Miller-Rabin with bases [2,3,5,7,11,13,17,19,23,29,31,37], correct for n < 3.4e24).\nVerifier predicate: Count all unordered triples (p,q,r) with p<=q<=r prime and p^3+q^3+r^3 == N; exact multiplicity must equal claimed k.\nArtifact: verifier_a385316.py, SHA-256: 1416f44a1f3310fc554a9ca74b69ebaea0dab498626ee9ea3f8bd96550f95825\nReplay output:\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\na(1)=24: claimed=1, observed=1, OK\na(2)=185527: claimed=2, observed=2, OK\na(3)=8627527: claimed=3, observed=3, OK\na(4)=999979163: claimed=4, observed=4, OK\na(5)=10588881419: claimed=5, observed=5, OK\nALL KNOWN GOOD TERMS VERIFIED\nExit code: 0",
+  "result": "The verifier artifact is confirmed sound and fully replayable locally. The accepted_continuation's next gate — dispatching C=10^13 prime-cube census via private compute host — remains blocked by the same SSH key auth failure to private host that was reported in the prior session. No advancement on a(6) is possible until the operator restores private compute host SSH access or the census computation is moved to this Mac (impractical at C=10^13: the prime list would require ~10^13/ln(10^13) ≈ 2.9e11 primes, exceeding available RAM). The milestone primitive is complete: verifier confirmed reproducible, SSH blocker confirmed persistent.",
+  "next_gate": "If SSH to private host is restored: dispatch C=10^13 census via private compute host and report highest multiplicity. If SSH restoration is not forthcoming: escalate to consider the next-ranked frontier in the queue (erdos_86_q7_c4), since the a(6) lane is resource-blocked and cannot proceed further from this Mac.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-05_20-13-49.md",
+    "sha256": "cb1a7dbdbebf32326e4defa324267c52afa11e58d0d195c23b17dfbc42c8e968"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

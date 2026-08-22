@@ -1,0 +1,25 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:5eaa85a389baf8951beaef658beec42609d239eced32b2b164a26b689fd4736e",
+  "content_digest": "sha256:be7bb01dc9ae7253a679bf370314883bb43346f8996d4e760f9328145502064e",
+  "occurred_at": "2026-08-05T08:34:23Z",
+  "frontier": "GNFS constant-factor ledger: what is the pure-Python norm-height baseline for d=5 polynomial pairs, and does Sage/Magma R3 (Riemann-Roch) extraction preserve sub-1/d heights?",
+  "action": "Milestone: next_experiment_design; contract=sha256:8f51055608cd87448dc0465787ec0c29684f1bdb3c8d9d4e4f45ef8ef7c42a8c\nImplemented and replayed a GNFS R3 height baseline verifier: pure-Python computation of norm heights log|P(alpha)|/log(N) for 6 polynomial pairs (NFS standard, SNFS-style, sparse, optimal-low-height candidates) on N=1022117 with d=5, plus domain and predicate kill fixtures. Replayed with exit 0.",
+  "verified": "Artifact: gnfs_r3_height_baseline.py, SHA-256: d5388d63611b528890139d37f315990f57af611493abd3fc9c03acfcb8357136\nDomain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nBaseline results (N=1022117, d=5, B=N^(1/6)=10.0365): nfs_standard_f height_log(N)=1.0000, nfs_standard_g height_log(N)=-1.4943, snfs_f height_log(N)=1.0000, snfs_g height_log(N)=0.4987, sparse_poly height_log(N)=0.9994, optimal_low_height height_log(N)=1.0000\nPrior verifier artifact (referenced): gnfs_poly_bound_verifier.py SHA-256: 5641b236aea7d0888ae893d54fea13b246aae5ba4f126507ceda3a17147d19d8 — Domain kill fixtures: 4/4 rejected correctly, Predicate kill fixtures: 3/3 rejected correctly\nFrontier advice: sha256:09c5335caf4363f91eaa435c5090cfc6bd583f3bf2e2254984850c8354f91c9c; executed=no; outcome=Sage/Magma unavailable for R3 divisor extraction; baseline computed as proxy\nIndependent baseline: standard GNFS theory, NFS polynomial norm heuristic (Coppersmith 1993, GNFS complexity L_n[1/3, 2.44...])\nUnits/conversion: height_log(N) = log|P(alpha)| / log(N), dimensionless ratio; alpha = N^(1/d) is the NFS algebraic root",
+  "result": "Pure-Python baseline established: standard NFS f(x)=x^5 has height_log(N)=1.0000 (no improvement over trivial), SNFS-style g(y)=y-1009 achieves 0.4987 (SNFS advantage), sparse and \"optimal\" candidates remain ~1.0 at this N because alpha=N^(1/5) ≈ 10.04 is not the root of the sparse poly. No R3 (Riemann-Roch) measurement possible — Sage/Magma unavailable. This confirms the accepted_continuation assessment: polynomial selection structural checks are complete; relation-yield improvement requires function-field algebra.",
+  "next_gate": "When Sage/Magma or an equivalent function-field algebra system becomes available, execute the R3 test: construct validated d=5 genus-6 plane quintic curves, verify polynomial selection satisfies coefficient bounds via gnfs_poly_bound_verifier.py (SHA-256: 5641b23...), then measure whether Riemann-Roch divisor extraction preserves N^{0.10}-scale heights through relation collection, comparing against this baseline.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "e97056701b6d",
+    "run_file": "2026-08-05_01-34-23.md",
+    "sha256": "21673409278f427846a50cb178bc1866ac8982f6b5d63077230e24bfa50821d5"
+  },
+  "frontier_id": "fm_prime_factorization_gnfs",
+  "frontier_consult": {
+    "advice_digest": "sha256:09c5335caf4363f91eaa435c5090cfc6bd583f3bf2e2254984850c8354f91c9c",
+    "executed": false,
+    "outcome": "Sage/Magma unavailable for R3 divisor extraction; baseline computed as proxy"
+  }
+}

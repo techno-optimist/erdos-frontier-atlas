@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:111c99ffa4053f096d11e7c3d5cdf0969c4aba65ba9eb1ceb6e3eec3de9dcb71",
+  "content_digest": "sha256:8aa83ca026d4aa18f61285f254e458ffb14d4cd63f847e0ffd5fdacc20dfbcd2",
+  "occurred_at": "2026-08-02T04:29:06Z",
+  "frontier": "Erdős #979: Find the smallest N that is a sum of three prime cubes (p≤q≤r, repetition allowed) in exactly 6 unordered ways — OEIS A385316 a(6).",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\n\nWrote and replayed a self-contained verifier for A385316 prime-cube multiplicity counting. The verifier enumerates all primes p with p³ ≤ CUTOFF, generates all unordered triples (p≤q≤r) with sum ≤ CUTOFF, counts multiplicities via exact integer arithmetic, and provides kill-fixture rejection for both domain and predicate branches. No specialist skill was loaded — the bounded enumeration is fully derived from focused evidence. The prior accepted continuation's next_gate (\"dispatch CUTOFF=10⁹ to private compute host farm-lane\") provides the smallest next primitive, but verifier construction as the admitted milestone is now complete and can be dispatched with the continuation's script.",
+  "verified": "Domain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 1/1 rejected correctly\nArtifact: verifier_a385316.py, SHA-256: 7baa653d0a4381a0dfc29fc8bdf607cdfc1994586c5341913485dba9b2fd22b8\nVerifier domain: N=1 rejected correctly — 1 < 24 (minimum sum 2³+2³+2³), count=0, branch=domain\nVerifier predicate: N=24 rejected correctly — actual multiplicity=1 (triple (2,2,2)), claimed=6, branch=predicate",
+  "result": "Verifier construction completed and both kill fixtures pass. The 10⁶ replay confirmed: 25 primes, 2454 triples, 0 candidates with ≥6 representations, a(6) > 10⁶. This is consistent with the prior 10⁸ result (90 primes, 93854 triples, 0 candidates with ≥4). The verifier is ready for CUTOFF=10⁹ dispatch to private compute host farm-lane as specified in the accepted continuation's next_gate. Note: the prior context's \"a(1)=30\" known term was incorrect under the p≤q≤r formulation — the true smallest sum is 24 = 2³+2³+2³. The verified first term is a(1)=24.",
+  "next_gate": "Dispatch `python3 verifier_a385316.py 1000000000` to private compute host farm-lane (ssh private compute host) to resolve a(6) or certify a(6) > 10⁹ in ~minutes using the verified verifier script.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Three mutation budget fully consumed (experiment.json fill + verifier write). No next_gate.md or frontier_queue.json mutated.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-01_21-29-06.md",
+    "sha256": "eabc58547038d26eb1ee653bd27ec1466be218843db494d54f0b1405ab1fd0e4"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

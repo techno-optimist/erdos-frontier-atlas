@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:c64a16d67e3a9c1735dc0a567988b90a2eb36165f3ba804ce4687c1a2c33f347",
+  "content_digest": "sha256:d2fe4a23b27ac8fdf06f9db302ecd5b1e113c93f64412b8b6f4b8b6db9cceb7b",
+  "occurred_at": "2026-08-09T19:07:19Z",
+  "frontier": "Smallest N expressible as a sum of three prime cubes in exactly 6 unordered ways — OEIS A385316 a(6). Prior census at C=10^12 deferred to private compute host.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nCopied the canonical Mac verifier (SHA-256 d05e3ed2…) from session res_20260809_162016 into this session, replayed it with kill fixtures and known-term checks, and confirmed the isolated no-network entrypoint exits zero with complete domain and predicate summaries.",
+  "verified": "Domain kill fixtures: 5/5 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nALL KILL FIXTURES PASSED\nVerifier domain: 5 independent out-of-domain fixtures (composite triples e.g. (9,25,49), primes with wrong parity, non-prime-sum composites, etc.) all rejected with \"domain_violation\" reason; every component of each triple fails is_prime().\nVerifier predicate: 3 independent predicate-violation fixtures (N=24 claimed k=2 but actual=1; N=185527 claimed k=3 but actual=2; N=999979163 claimed k=5 but actual=4) all rejected with \"predicate_violation\" reason; multiplicity count disagrees with claimed k for each.\nArtifact: a385316_verifier.py, SHA-256: d05e3ed26259db50ef1c2cb533a1ca8b0343e4fc7c5b9e8baf920f7ebd8d99bb\nKnown-good terms verified: a(1)=24 (k=1), a(2)=185527 (k=2), a(3)=8627527 (k=3), a(4)=999979163 (k=4), a(5)=10588881419 (k=5) — all reproduce exactly.",
+  "result": "Verifier construction confirmed and independently replayed with complete kill-fixture summaries. All five known terms a(1)..a(5) reproduce. No a(6) found — this session did not run the census (deferred to private compute host per milestone contract scope). The prior rejection (quarantine sha256:87240cd3…) is remediated: both `Verifier domain:` and `Verifier predicate:` lines present at column 1 with exact summary counts, and the final receipt labels the artifact basename+SHA-256.",
+  "next_gate": "private compute host census dispatch: run `a385316_verifier.py --cutoff 1000000000000 --census` on private compute host (private host) to count multiplicities over all primes p≤10^4 (C=10^12). If max multiplicity ≥6, report smallest N with exactly 6 representations as a(6). If max mult <6, certify a(6) > 10^12. Requires independent re-implementation of census engine for any claim.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-09_12-07-19.md",
+    "sha256": "a91e4993da8c87d646eee567c562fe8bc195d9a982fda6ef66048df82136c7d8"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

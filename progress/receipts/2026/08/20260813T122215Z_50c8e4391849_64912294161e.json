@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:64912294161e6c9dd5f9adce7444d5578a946696221ac7e3a5bb0d583865c75a",
+  "content_digest": "sha256:2353a9c4da19af242c62f22691f79b03175777504552781678d84a6a4796e2e3",
+  "occurred_at": "2026-08-13T12:22:15Z",
+  "frontier": "OEIS A385316: what is the smallest integer N that can be written as p³+q³+r³ (p≤q≤r, all prime) in exactly 6 unordered ways — i.e. a(6)?",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nBuilt a385316_verifier.py as a no-argument, no-network, deterministic Python entrypoint. Census at C=200,000 reproduces a(1)=24 and a(2)=185527 with max multiplicity 2. Domain kill fixtures reject out-of-domain inputs (1, 2, 23). Predicate kill fixtures reject incorrect multiplicity claims (24 claimed as 2 reps, 24 claimed as 3 reps, 35 claimed as 1 rep).",
+  "verified": "Domain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nVerifier domain: N must be >=24 (minimum sum 2³+2³+2³); fixtures 1, 2, 23 all yield zero prime-cube representations and are correctly rejected as out-of-domain\nVerifier predicate: count_unordered_representations(N) must equal the claimed multiplicity; fixtures (24,2), (24,3), (35,1) all yield actual counts different from claimed counts and are correctly rejected\nArtifact: a385316_verifier.py, SHA-256: 2e51380b12ff5b9ec882030023ec68fb36c6968aa0e7ca8b3f8985489750d41f",
+  "result": "Verifier construction completed and independently replayed. Census at C=200,000 confirms max multiplicity = 2. No a(6) candidate below 200,000; the window is far too small given the prior lower bound >4.99×10¹¹.",
+  "next_gate": "Dispatch census at C=2×10¹² to private compute host (private host); cross-verify any multiplicity-5 or multiplicity-6 candidates using the replayed verifier; if none found, promote certificate a(6)>2×10¹² pending independent reproduction.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-13_05-22-15.md",
+    "sha256": "0de62a4b9e850497b9f4622aa2e3d5d1ce6972e371307e062b4e683c08132cdb"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

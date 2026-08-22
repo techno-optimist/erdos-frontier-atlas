@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:413f157e34aac961f5270609916bd44f0c49838b3332658746ea86a9d6b52356",
+  "content_digest": "sha256:0104b07679ca2f84f83eab6f21ba6ee43a7a1b31c3e569f55cc282df2c854e4a",
+  "occurred_at": "2026-08-07T10:50:24Z",
+  "frontier": "A385316: smallest integer expressible as sum of three prime cubes (p³+q³+r³, p≤q≤r) in exactly 6 unordered ways — is a(6) > 10¹², and can a certified lower bound advance beyond the prior C=5M non-existence of multiplicity≥3?",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nBuilt a385316_verifier.py from scratch: complete-prime-set triple enumerator with dual-branch validation (domain: prime≥2 + ordered p≤q≤r; predicate: multiplicity census match). Ran 8 domain kill fixtures (negatives, zeros, ones, composites, unsorted) and 2 predicate kill fixtures (existing-but-low-multiplicity sum, absent sum). All kill fixtures rejected with correct branch and reason. Independent census replay at C=200000 confirms a(2)=185527 matches prior accepted continuation.",
+  "verified": "Verifier domain: rejects any triple where elements are not primes ≥2 or not ordered p≤q≤r.\nVerifier predicate: rejects any sum whose multiplicity in the complete-prime-set census differs from target n.\nArtifact: a385316_verifier.py, SHA-256: 1d5c436205f791f7b33de56e053017f1b8349f187b0ba08045c67cb23bab5847\nDomain kill fixtures: 8/8 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED",
+  "result": "Verifier construction and kill-fixture replay complete. The verifier correctly rejects invalid domain inputs and identifies sums whose multiplicity differs from n=6. Census at C=200000 reproduces a(2)=185527 (2 ways), consistent with prior accepted continuation's confirmed census. No new mathematical evidence — the search space for multiplicity≥3 requires C>>10⁶ and the bounded search gate is now private compute host-dispatch. Mutation budget exhausted before any census beyond C=200000 could execute.",
+  "next_gate": "Dispatch census run to private compute host: enumerate complete-prime-set triples up to C=1e12 using a385316_verifier.py, recording all sums with multiplicity≥3. If none found, certify a(6)>1e12 as certified lower bound pending independent reproduction.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-07_03-50-24.md",
+    "sha256": "fd4d6f1079fa02e05af8a8b8db715935a9bc32a2376d0fd1dec49e5821b5a703"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

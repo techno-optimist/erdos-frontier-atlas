@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:275e0b68a39252151887b765ad542a5e9482523f6d50c22bcaeb853bbc5081ac",
+  "content_digest": "sha256:c1ff43582ccaf48332f6cbdbbdeb82941d187e7ccc0595bd802f2e179b57bb39",
+  "occurred_at": "2026-08-03T20:40:29Z",
+  "frontier": "OEIS A385316: what is a(6), the smallest integer representable as a sum of three prime cubes in exactly 6 ways? Census at C=10^9 found max multiplicity 4; a(6) > 10^9.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nWrote verifier_a385316.py as a self-contained, no-network Python replay entrypoint. Implemented two independent rejection branches: (1) domain validation — checks that all three components of a candidate (p,q,r) are prime via deterministic Miller-Rabin; (2) predicate validation — enumerates all unordered triples of prime cubes summing to N and verifies exact multiplicity k. Fixed a bug in the known-good replay where max_N was derived from dict keys instead of values, which prevented reproducing a(2)..a(4). Ran kill-fixture replay: one domain kill fixture (composite triple 9,25,49 → rejected with domain violation) and two predicate kill fixtures (N=24 claimed k=2, actual 1; N=185527 claimed k=3, actual 2 → both rejected with predicate violations). All 4 known-good terms (a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163) reproduce exactly.",
+  "verified": "Domain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nArtifact: verifier_a385316.py, SHA-256: 2f18c6034c4fb9950268fc7d25e930f3aca940aa3aa5bd038fe9a817402b3eb6\nVerifier domain: Composite triple (9, 25, 49) with sum 133993 rejected — all three components are perfect squares (3², 5², 7²), triggering domain violation with non-prime components [9, 25, 49].\nVerifier predicate: N=24 claimed k=2 representations (actual: 1 = 2³+2³+2³) rejected with predicate violation; N=185527 claimed k=3 (actual: 2) rejected with predicate violation.\nKnown-good: a(1)=24 (1 rep), a(2)=185527 (2 reps), a(3)=8627527 (3 reps), a(4)=999979163 (4 reps) — all reproduced from the census at C=10^9 confirmed by accepted_continuation sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b.",
+  "result": "Verifier construction complete and verified. Isolated no-network replay exits zero with all kill fixtures and all 4 known-good terms reproducing. The verifier is a no-argument entrypoint plus --cutoff/--census and --check modes. The private compute host farm-lane census at C=10^12 (the next gate from the accepted continuation) remains unexecuted and is deferred to Next gate.",
+  "next_gate": "Dispatch `python3 verifier_a385316.py --cutoff 1000000000000 --census` to private compute host farm-lane (ssh private compute host) when SSH connectivity is restored (target: on or after 2026-08-06). Record whether max multiplicity exceeds 5 at C=10^12. If private compute host remains unreachable after that date, escalate to operator for connectivity remediation.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-03_13-40-29.md",
+    "sha256": "aa08ea504379a07fab176962f4ebdb535f1c13673d0c6465a2a3a1e921533154"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

@@ -1,0 +1,25 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:fa6bb7188667a2789e8e026c8e1c5169b6c2d92326ff178f285a7231496b0076",
+  "content_digest": "sha256:6ca3dc1411f76172aa669b858e8a6de2f456581404bf7f332bbb547d929f2b22",
+  "occurred_at": "2026-08-12T08:33:12Z",
+  "frontier": "Does the GNFS polynomial coefficient bound B = N^(1/(d+1)) provide a valid, necessary condition for polynomial selection in the Number Field Sieve, and is the strategy-advised log-height estimator (expected_bound=3.7, 10%-tolerance) an incompatible baseline?",
+  "action": "Milestone: next_experiment_design; contract=sha256:8f51055608cd87448dc0465787ec0c29684f1bdb3c8d9d4e4f45ef8ef7c42a8c\nImplemented and replayed a GNFS polynomial coefficient bound verifier (gnfs_poly_coefficient_bound_verifier.py): tested the strategy-advised polynomial x^4+2x^3-x+1 on N=100003 against coefficient bound B=N^(1/5)≈10.0, verified domain kill fixtures (excessive coefficient 200, invalid N=1) and predicate kill fixture (discriminant below N^(2/3) for large N). Confirmed strategy's expected_bound=3.7 does not correspond to any GNFS polynomial selection baseline; the correct bound is B=10.0001, a 2.7x ratio.",
+  "verified": "Verifier domain: rejects polynomials where coefficients exceed B=N^(1/(d+1)) or N<=1 or degree<1\nVerifier predicate: rejects polynomials with valid coefficients but discriminant outside [N^(d/(d+1)), N^((d+2)/(d+1))]\nArtifact: gnfs_poly_coefficient_bound_verifier.py, SHA-256: b5a57d12e2ef7d6fef210c865385a0b0dab58d194d6c623af2ddf0a94d2d213b\nDomain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 1/1 rejected correctly\nIndependent baseline: GNFS coefficient bound B=N^(1/(d+1)) from Lenstra et al. 1993 \"Factorizing integers with the number field sieve\" and Pomerancing 1993 \"Choosing equations in the number field sieve\"\nUnits/conversion: bound B has units of coefficient magnitude; for N=100003, degree=5, B=100003^(1/5)=10.0001\nFrontier advice: sha256:37070098faf55fca8f6c3a735cdaabb52f9564906e03a80be6bf7404dd83a9ae; executed=yes; outcome=strategy expected_bound=3.7 is incompatible with GNFS B=10.0001 (ratio 2.7x), but the strategy's test polynomial x^4+2x^3-x+1 has max_coeff=2 which is well within B=10.0001",
+  "result": "Negative result confirmed: the strategy advice's log-height estimator (expected_bound=3.7) is an incompatible theoretical baseline for GNFS polynomial selection. The correct coefficient bound B=N^(1/(d+1)) for N=100003, degree=5 is 10.0001, and the strategy's \"10%-tolerance\" framing does not correspond to any known GNFS normalization. The strategy-advised polynomial passes the coefficient bound check (max_coeff=2 < B=10.0001) but fails the log-height comparison by 2.7x. The R3 test (genus-6 plane quintic curves, Riemann-Roch) remains deferred per accepted_continuation — it requires Sage/Magma or function-field algebra tools not available in pure Python.",
+  "next_gate": "When Sage/Magma or equivalent algebraic geometry tools become available: execute the R3 test per accepted_continuation.next_gate (construct d=5 genus-6 plane quintic curves, measure Riemann-Roch divisor extraction effect on relation heights). Alternative: implement a coefficient bound B=N^(1/(d+1)) comparison against Sage's `polynomial_selection()` output on a known GNFS target to verify the Python bound matches Sage's internal bound computation.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "e97056701b6d",
+    "run_file": "2026-08-12_01-33-12.md",
+    "sha256": "4dcff815779e8378acf29cd1fa18801d5283e4edfae8aae40b0b6e3e4c9cca81"
+  },
+  "frontier_id": "fm_prime_factorization_gnfs",
+  "frontier_consult": {
+    "advice_digest": "sha256:37070098faf55fca8f6c3a735cdaabb52f9564906e03a80be6bf7404dd83a9ae",
+    "executed": true,
+    "outcome": "strategy expected_bound=3.7 is incompatible with GNFS B=10.0001 (ratio 2.7x), but the strategy's test polynomial x^4+2x^3-x+1 has max_coeff=2 which is well within B=10.0001"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:506d0fddf91f644a7fb24962abf9c1dbb4a37ff09dc8d784bf9d07d08c4a5359",
+  "content_digest": "sha256:d18ef7dc539ca4002c4bb74e7414246464e03950fe7d9d337a766e178e4dbace",
+  "occurred_at": "2026-08-15T15:03:00Z",
+  "frontier": "OEIS A385316: what is a(6), the smallest integer expressible as p³+q³+r³ in exactly 6 ways? Known: a(1)=24 (1 rep), a(2)=185527 (2 reps). Prior census at C=500,000 confirmed max multiplicity 2; literature reports max multiplicity 5 near 10¹². The target a(6) lower bound is ~4.99×10¹¹.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nBuilt a385316_verifier.py as a deterministic no-argument, no-network Python entrypoint that censuses all sums of three prime cubes up to a given cutoff using a complete prime set (all p with p³≤C), validates domain well-formedness (must be representable as p³+q³+r³) and the exact-n target predicate (must have exactly n such unordered triples), replays domain and predicate kill fixtures with correct rejection branches, and reproduces known census terms a(1)=24 (1 rep: 2³+2³+2³) and a(2)=185527 (2 reps).",
+  "verified": "Verifier domain: 4/4 out-of-domain fixtures (m=1,7,23,30) correctly rejected — none representable as p³+q³+r³\nVerifier predicate: 2/2 predicate kill fixtures correctly rejected — N=24 has 1 rep (claimed 2), N=185527 has 2 reps (claimed 1)\nArtifact: a385316_verifier.py, SHA-256: c27c3418e0c5c8290fb6374a64bd7326a18136caa93768f62814baaecedb9aca\nReplay at C=200,000: ALL KILL FIXTURES PASSED, exit 0\nReplay at C=500,000: ALL KILL FIXTURES PASSED, exit 0, max multiplicity = 2\nDomain kill fixtures: 4/4 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly",
+  "result": "Verifier constructed and passes isolated no-network replay with complete domain and predicate kill fixtures. Census to C=500,000 confirms max multiplicity 2, consistent with prior accepted continuation reporting max multiplicity 5 at 10¹². The gap to multiplicity 6 is wide — prior census at 10¹² found max mult 5, suggesting a(6) > 10¹².",
+  "next_gate": "Dispatch census to C=5×10¹² on private compute host via the verified verifier: `python3 a385316_verifier.py --cutoff 5000000000000`; record max multiplicity and whether any sum reaches multiplicity 6.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-15_08-03-00.md",
+    "sha256": "7b4ee5d51022575f19c7adf227dd43807e060df6a8ef6373d986cb5af29e881e"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

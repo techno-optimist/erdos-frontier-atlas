@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:050dde139c0859d08216f972446a0c872dc64615e43c1952ec27967f46271822",
+  "content_digest": "sha256:5f2030e7045a0d64127872c76d2095872c375dfce1abbd4a5a25644a654849a4",
+  "occurred_at": "2026-08-01T07:52:12Z",
+  "frontier": "What is the smallest integer N representable as a sum of three prime cubes in exactly six unordered ways (OEIS A385316 a(6))?",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nBuilt a complete-prime-set multiplicity census verifier for sums of three prime cubes (p³+q³+r³ ≤ C). Constructed and verified domain kill fixtures (non-prime elements, out-of-range sum) and predicate kill fixtures (wrong multiplicity count, non-smallest claim). Ran a bounded exact census at C=10⁸ using the no-argument entrypoint.",
+  "verified": "Domain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nArtifact: a385316_census.py, SHA-256: 286cba3f9fbb90c26f2fd6d32772f37eb342fdb5135b6e10d7d2e4afc441abd5\nCensus C=10⁸: max multiplicity=3 at N=8,627,527 (three representations: 19³+151³+173³, 23³+139³+181³, 71³+73³+199³). 93,854 total triples, 93,064 unique representable N values. All kill fixtures replayed identically across two runs.",
+  "result": "First exact multiplicity=3 found at N=8,627,527, pushing certified lower bound on a(6) past 10⁸. The sequence of max multiplicity at increasing cutoffs: 2 at C=10⁶ (N=185,527), 3 at C=10⁸ (N=8,627,527). A(6) remains unbounded below 10⁸ — a(6) > 10⁸. A third N with multiplicity 3 was also found at 21,902,509. The growth rate from multiplicity 2→3 between 10⁶→10⁸ suggests multiplicity ≥ 6 requires well beyond 10¹¹, consistent with the accepted continuation's assessment.",
+  "next_gate": "Run census at C=10⁹ to test whether multiplicity ≥ 4 appears (the gap from multiplicity 3 to 4 is the critical bottleneck — if multiplicity 4 stays past 10⁹, multiplicity 6 may require > 10¹⁵). If C=10⁹ completes in ≤60 seconds on single-core Python, dispatch C=10¹¹ private compute host farm census next. Otherwise, optimize with NumPy vectorization for single-machine C=10⁹.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. All writes scoped to research_session artifact directory.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-01_00-52-12.md",
+    "sha256": "45c0cd55e4fd4964bf9371d160e68b6e5c92d6703943d67aec58dfd22ab9d9d1"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

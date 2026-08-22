@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:3fe8a35207af08553a36147a0b667ac5c7e4d5d5826b10dc88bb6175027dbdff",
+  "content_digest": "sha256:6f3ce0eb83a6d0672c7650d76f07ab28290a40dc30fff271ded6af97aae97e85",
+  "occurred_at": "2026-08-10T21:53:27Z",
+  "frontier": "OEIS A385316 a(6): smallest N expressible as p³+q³+r³ in exactly 6 unordered ways with p≤q≤r prime.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nReplayed the existing a385316_verifier.py from the prior accepted continuation (res_20260810_104339), confirming domain kill (1/1 composite triple rejected), predicate kill (2/2 wrong-multiplicity fixtures rejected), all 4 known terms reproduced exactly (a(1)=24 through a(4)=999979163), and local census at C=10⁸ finds max multiplicity=3 with 9 values at mult=3. Attempted private compute host SSH to private host (192.168.0.15) — ping succeeds but SSH key authentication is rejected (publickey denied). No strategy_advice was provided by the scheduler.",
+  "verified": "Artifact: a385316_verifier.py, SHA-256: afa0f41f176623ce5d51e5c42942e1d483e94491b45680d6331b0665b1e72b67\nVerifier replay exits zero. Domain kill: 1/1 composite triple (9,25,49) rejected with \"domain_violation: 9 is not prime.\" Predicate kill: 2/2 (N=24 claimed k=2, actual 1; N=185527 claimed k=3, actual 2) rejected with \"predicate_violation.\" Known terms: a(1)=24 (obs=1), a(2)=185527 (obs=2), a(3)=8627527 (obs=3), a(4)=999979163 (obs=4). Census C=10⁸: max_mult=3, 9 values at mult=3, 639 values at mult=2. private compute host SSH to 192.168.0.15: network reachable, authentication denied (publickey). Prior accepted continuation sha256:6dc17abc census to 10¹² was also blocked by SSH.",
+  "result": "No mathematical progress on a(6) beyond confirming the verifier replay passes and local census at C=10⁸ (max mult=3) is consistent with prior results at C=10⁷ (max mult=3) and C=10⁸. The continuation primitive — restoring the missing artifact SHA-256 from the prior rejected receipt — succeeds here. However, the substantive next gate (private compute host census at C=10¹²) remains blocked: SSH to private host is network-reachable but key auth is denied. Eight prior sessions on this frontier have produced no route delta (repeated census runs, verifier rebuilds, all blocked by private compute host connectivity or exhausted by local compute limits).",
+  "next_gate": "Either: (1) restore SSH key access to private compute host (add deploy key to private host:~/.ssh/authorized_keys or fix existing key) then dispatch census at C=10¹²; or (2) if SSH cannot be restored this cycle, escalate to operator for private compute host access remediation and park this frontier until the connectivity blocker is lifted. Any census claim requires the independent cross-check mandated by #552 a(17) lesson.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Only read-only verification and local census replay performed.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-10_14-53-27.md",
+    "sha256": "d03e65b9ea73f5a75e5144f644c03d2c87d5751db7001cbd948b0e0a276aa3dc"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

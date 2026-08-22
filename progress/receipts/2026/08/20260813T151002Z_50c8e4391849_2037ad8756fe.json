@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:2037ad8756feef9d4e4f336bf8aa7ce16691b2012a032d398be3a4f0e21537ff",
+  "content_digest": "sha256:875e2968a89bafd091954a35adc64c170a39aa31e0ae7b518afa505cdcc66800",
+  "occurred_at": "2026-08-13T15:10:02Z",
+  "frontier": "Smallest integer N = p³+q³+r³ (p ≤ q ≤ r prime) with exactly 6 representations — OEIS A385316 a(6). Known: a(1)=24 (1 way), a(2)=185527 (2 ways). Prior census to C=200,000 confirms max multiplicity=2; the largest window is below 4.99×10¹¹.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nBuilt a385316_verifier.py as a no-argument, no-network, deterministic Python entrypoint. Domain kill fixtures reject out-of-domain inputs (1, 2, 10, 23 — all below 24). Predicate kill fixtures reject incorrect multiplicity claims (24 claimed as 2 reps, 24 claimed as 3 reps, 160 claimed as 2 reps). Census at C=200,000 reproduces a(1)=24 and a(2)=185527 with max multiplicity 2.",
+  "verified": "Domain kill fixtures: 4/4 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nVerifier domain: all inputs < 24 rejected as below minimum sum of three prime cubes (2³+2³+2³=24)\nVerifier predicate: values 24 and 160 correctly rejected for false multiplicity claims\nArtifact: a385316_verifier.py, SHA-256: 440e9473d67cf61495911d134a147e9b13c09b21518c0ea83669234f263a7ad0\nCensus confirmed: 16 primes with p³≤200000; 718 distinct sums; max multiplicity=2 at C=200000.",
+  "result": "Verifier construction complete and independently replayed. Census at C=200,000 confirms max multiplicity = 2 (one value, 185527). No a(6) candidate below 200,000 — the window is far too small given the prior lower bound >4.99×10¹¹. No a(3), a(4), or a(5) exist below 200,000.",
+  "next_gate": "Dispatch census at C=2×10¹² to private compute host (private host); cross-verify any multiplicity-5 or multiplicity-6 candidates using the replayed verifier (artifact SHA-256: 440e9473d67cf61495911d134a147e9b13c09b21518c0ea83669234f263a7ad0); if none found, promote certificate a(6)>2×10¹² pending independent reproduction.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-13_08-10-02.md",
+    "sha256": "32b1f03fefd79a3e8d582aff44a6d20b88f0554b13d6f47d7af4b5e36645f685"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

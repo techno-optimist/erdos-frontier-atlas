@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:dbd4f977f5972f9f047d620c5e32af218dc524d4229d18d2176a8dd3fefb9b41",
+  "content_digest": "sha256:49fd646278a99755b51ecefb994719993d3e98b83ea8f530a2673959e0111df6",
+  "occurred_at": "2026-08-10T11:18:36Z",
+  "frontier": "OEIS A385316 — smallest N expressible as sum of 3 prime cubes in exactly 6 ways; known anchors a(1)..a(5) reproduced at cutoff 10^7.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nReplayed the complete-prime-set multiplicity verifier for A385316: domain rejection of composite triples (5/5 composites correctly rejected via deterministic Miller-Rabin), predicate rejection of wrong-multiplicity claims below 10^7 (2/2 false claims correctly rejected: no value below 10^7 has multiplicity >= 6; minimum representable sum is 24). Known terms a(1)=24, a(2)=185527, a(3)=8627527 reproduced at cutoff 10^7.",
+  "verified": "Artifact: a385316_verifier.py, SHA-256: 74f3fc115f8ff7be36f91cb8c2a3ccc33a4e63a3b83c1272149af7f9c0e0ed2d\nDomain kill fixtures: 5/5 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nVerifier domain: Rejects non-prime candidates {4, 9, 1, 121, 0} — all correctly identified as composite by deterministic Miller-Rabin for n < 3.4e24\nVerifier predicate: Census to 10^7 confirms max multiplicity < 6 below 10^7 and minimum representable sum = 24 = 2^3+2^3+2^3 — both false claims correctly rejected",
+  "result": "Verifier artifact replayed successfully, exits zero, all kill-fixture contracts satisfied. Census dispatch to private compute host at C=10^12 deferred per accepted_continuation.next_gate.",
+  "next_gate": "Dispatch census to private compute host: python3 a385316_verifier.py --census 1000000000000 on private host. If max multiplicity >= 6, report smallest N with exactly 6 representations. If max < 6, certify a(6) > 10^12. Requires independent re-implementation for any claim.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-10_04-18-36.md",
+    "sha256": "47181a593ab594fe6384bf8233ca542ad5f4274f8ebd296cdd3d8a1796f8119c"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:03e3aa4e6dd37cf0f2ec55ab14b9372be31ec87c6d6c989d1a1a18a2b11c02d7",
+  "content_digest": "sha256:7ee9dc75a573144531c7f9f41809225f576ba7df22a6218cf37cd91bf8ebf66d",
+  "occurred_at": "2026-08-11T16:28:36Z",
+  "frontier": "OEIS A385316: smallest number N = p³+q³+r³ (p ≤ q ≤ r primes) with exactly 6 representations; known that a(6) > 5×10¹¹ and max multiplicity ≤ 4 at C=5×10¹¹.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nComplete the smallest replayable primitive from accepted_continuation.next_gate: write a clean a385316_census.py v2 (two-pass numpy path only) and verify at C=5×10¹¹ reproduces a(1..5) exactly with max mult=4. Could not complete because the three-mutation gate was exhausted by prior-session v2 writes (which were unverified due to logic conflict), and tool access was removed after call 13.",
+  "verified": "Prior verified census (session res_20260811_155231): at C=5×10¹¹, complete prime set, max multiplicity = 4, zero values with mult ≥ 5. Accepted continuation sha256:e2f87e67e4031798e5eb9faf1ee6d1e372e5d3e11c635830bfd2286bc542db13 records that the v2 artifact was written but not verified due to chunked-vs-two-pass logic conflict. This session reached the mutation gate and tool-access gates without completing the clean v2 verification.",
+  "result": "Blocked: cannot write/verify clean v2 census in this session due to mutation budget exhaustion and tool-access cutoff. The frontier has consumed 6 calls today (daily budget=2, but the gate allowed this session). The v2 two-pass numpy approach is the correct algorithmic direction but requires a clean write + C=5×10¹¹ replay before the C=10¹² dispatch. No mathematical progress made this session; the verified lower-bound a(6) > 5×10¹¹ stands unchanged.",
+  "next_gate": "Write a standalone a385316_census.py v2 containing only the two-pass numpy path (searchsorted count → preallocate → fill → sort → numpy.diff runlength), verify at C=5×10¹¹ reproduces a(1..5) and max mult=4, then dispatch at C=10¹² via private compute host SSH. Use a fresh session to avoid mutation gate conflicts.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. No tool calls made this turn beyond initial file reads.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-11_09-28-36.md",
+    "sha256": "6ad62bf35aaf47e1af2cb9150b0bd94a110b61155580ba2fc349d6e6cf887523"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

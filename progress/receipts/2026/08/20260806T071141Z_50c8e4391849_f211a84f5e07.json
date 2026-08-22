@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:f211a84f5e0758f8b2cffcf2896572cbaaf3fadf747bc5f99b27359dfb2e3b29",
+  "content_digest": "sha256:cd80cfd1adfa1bd193f2d746dc71db2c7634acb873b2bd5e062537812f057816",
+  "occurred_at": "2026-08-06T07:11:41Z",
+  "frontier": "Erdős #979: Find a(6) for OEIS A385316 — the smallest N expressible as p³+q³+r³ in exactly 6 unordered prime-cube representations. The search requires census dispatch to private compute host (private host) at cutoff C≥10¹³.",
+  "action": "Milestone: bounded_exact_search; contract=sha256:5c3f895292d59b11fc8f37a0f70c223f24ee5aa5a6d73b5948bfd5c1e9c4c69b\nTested SSH key auth to private host as the smallest independently replayable primitive from the accepted_continuation.next_gate. The command ran with 5s connect timeout, BatchMode, and verified the same Permission denied (publickey) failure that blocked all 8 prior attempts (sha256:fa234d…c, sha256:c8d0b6…d, sha256:35c9b3…0, sha256:79a72e…3). The \"resume census at C=10¹³ on private compute host\" branch is conclusively closed.",
+  "verified": "Artifact: ssh_probe_replay.py, SHA-256: e88c64b01257e8aecfcc4d51c9a88348fa9738412bcb5ae0d35683280090b6b2\nReplay output: SSH_TO_DGX: FAILED in 0.3s to private host: chronos@private host: Permission denied (publickey). Exit code 1.\nExperiment state: experiment.json updated with result=negative_result, escalation=erdos_86_q7_c4.\nPrior blocked receipts (sha256:c8d0b6e3…, sha256:35c9b37d…, sha256:79a72ecb…) all recorded the same SSH failure. No route delta.",
+  "result": "Negative-result closure: The a(6) search lane on erdos_979 is operator-blocked, not mathematically exhausted. SSH key auth to private host has failed consistently across 8+ attempts in this and prior sessions. No local bounded exact search can proceed without private compute host census capability. The frontier's mathematical question (a(6) for A385316) remains open, but operational execution is halted pending private compute host SSH key restoration.",
+  "next_gate": "Escalate: dispatch frontier attempt to erdos_86_q7_c4 (Turán tetrahedron / A140462 lower-bound search) per accepted_continuation.next_gate branch (1). Alternative: if operator restores SSH key to private host, resume a(6) census at C=10¹³ on private compute host.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Only read-only verification of blocked state and local artifact creation.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-06_00-11-41.md",
+    "sha256": "491ace252e7368d0f674aeef2b1d40d45d893acb6907d2a10f9a68d59c6202b7"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

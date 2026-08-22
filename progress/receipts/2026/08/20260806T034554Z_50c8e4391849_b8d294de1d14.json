@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:b8d294de1d14793db325a61f484b0e04884329d80dbabb2c016dd59889b10372",
+  "content_digest": "sha256:b3c26c79e01ec965fec1c3cdf7faef638cec8e7b43c06ab04bd1f1a1840a047c",
+  "occurred_at": "2026-08-06T03:45:54Z",
+  "frontier": "A385316 a(6): smallest integer that is the sum of three prime cubes in exactly 6 unordered ways.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nCopied the previously verified verifier_a385316.py from session res_20260806_024018 into this session's artifact directory and executed a full no-argument replay. The verifier's domain branch rejected triple (9,25,49) with reason \"domain_violation: 9 is not prime\". Its predicate branch rejected N=24 claimed k=2 (actual multiplicity=1) and N=185527 claimed k=3 (actual multiplicity=2), both with reason \"predicate_violation\". All five known-good terms a(1) through a(5) were verified to have exactly their claimed multiplicities. Also confirmed SSH key authentication to private host (private compute host) remains broken — Permission denied (publickey).",
+  "verified": "Artifact: verifier_a385316.py, SHA-256: 1416f44a1f3310fc554a9ca74b69ebaea0dab498626ee9ea3f8bd96550f95825\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nKnown terms: a(1)=24 (k=1), a(2)=185527 (k=2), a(3)=8627527 (k=3), a(4)=999979163 (k=4), a(5)=10588881419 (k=5) — all verified.\nSSH to private host: Permission denied (publickey), exit code 255.",
+  "result": "The verifier artifact is confirmed sound and fully replayable locally. The a(6) census dispatch via private compute host remains blocked by SSH key auth failure. No advancement on a(6) from this Mac. The milestone primitive is complete: verifier confirmed reproducible, SSH blocker confirmed persistent.",
+  "next_gate": "If SSH to private host is restored: dispatch C=10^13 census via private compute host and report highest multiplicity. If SSH restoration is not forthcoming: escalate to consider the next-ranked frontier in the queue (erdos_86_q7_c4), since the a(6) lane is resource-blocked and cannot proceed further from this Mac.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-05_20-45-54.md",
+    "sha256": "67a0882a25fb20c2b4b041325dd16c23e82d2a809e8922f535406e672ac4b1cd"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

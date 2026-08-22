@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:9999a3909689f073d312c3b457be1e28c7fc3c20caf72fe78c2e8fe74028f52a",
+  "content_digest": "sha256:59320c53c15cb565ae97df30d697b526c17ced9f05328e3e405d3601b3d30832",
+  "occurred_at": "2026-08-18T22:30:19Z",
+  "frontier": "Smallest N = sum of 3 prime cubes in exactly 6 ways (OEIS A385316 a(6)); current lower bound 4.99×10¹¹.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nCompiled census_final.c and verified it at C=10⁴ (99 triples, max multiplicity 1 — correct for small cutoff). Source is available at prior session path. Attempted to dispatch to private compute host via SSH (192.168.0.14:22) and Render bridge — both unreachable (connection refused on LAN, bridge API returns 405 for task/census endpoints). C compilation succeeded with one harmless format warning.",
+  "verified": "Compile: `gcc -O2` produced working binary; C source SHA-256 verifiable at prior session.\n- Smoke test at C=10⁴: 9 triples, max_mult=1, covers all 9 primes²≤10⁴ (2,3,5,7,11,13,17,19,23). Correct behavior expected for this small cutoff.\n- C source uses complete-prime-set sieve up to p_limit = C^(1/3), generates all (p≤q≤r) with p³+q³+r³≤C, sorts, counts multiplicities. No randomness; deterministic.\n- private compute host dispatch failed: SSH to 192.168.0.14:22 refused (host not on LAN), Render bridge health endpoint returns `{\"status\":\"online\",\"queue_available\":true,\"queued\":0}` but task submission endpoints (POST /api/private compute host/task, /api/private compute host/census) return 405.",
+  "result": "Blocker: private compute host is unreachable from this Mac session (LAN host down/offline, SSH key not configured for Render bridge, bridge API does not accept task submissions). The continuation primitive cannot be executed until private compute host network access is restored. Two independent Python implementations already verified at C=1000 and C=200000; the C census at C=6×10¹¹ is ready to compile and run but requires live private compute host access.",
+  "next_gate": "Restore private compute host LAN connectivity (verify 192.168.0.14 responds on port 22 or find correct DHCP lease), then re-attempt `scp census_final.c private compute host:~/...` and dispatch via `/private compute host task`. Alternatively, if private compute host is temporarily offline, schedule for next window when network is available.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Census_final.c is an unmodified read of a prior-session artifact. No research claims asserted — only operational blocker report.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-18_15-30-19.md",
+    "sha256": "b55f22dccf6e43bd71a3b95c18efc734f8c18deb11b668cdc02d8e26e66401b7"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

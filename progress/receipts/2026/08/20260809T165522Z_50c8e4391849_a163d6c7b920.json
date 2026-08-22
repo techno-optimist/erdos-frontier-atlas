@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:a163d6c7b92078c68ee12b3e35398e79242a6476625a44af6e3532f393222d18",
+  "content_digest": "sha256:a2836ee3b20ec80cef8cf686225d62f94f2e2477d733e54c76e0573c80d44409",
+  "occurred_at": "2026-08-09T16:55:22Z",
+  "frontier": "OEIS A385316 a(6): smallest N that is the sum of three prime cubes in exactly 6 unordered ways. Five terms are known to N≈10^10; next term location unknown.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nCopied the latest Mac verifier (res_20260809_162016) into this session, replayed it with kill fixtures and known-term checks. The private compute host-built canonical verifier (session 50c8e4391849, 2026-08-09T10:16:31Z, SHA-256:8d51fc61…) was already verified in the accepted continuation. This session's copy (SHA-256:d05e3ed26259db50ef1c2cb533a1ca8b0343e4fc7c5b9e8baf920f7ebd8d99bb) independently confirmed all fixtures pass.",
+  "verified": "Domain kill fixtures: 5/5 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nALL KILL FIXTURES PASSED\nArtifact: a385316_verifier.py, SHA-256: d05e3ed26259db50ef1c2cb533a1ca8b0343e4fc7c5b9e8baf920f7ebd8d99bb\nVerifier domain: N must be expressible as p^3+q^3+r^3 for primes p<=q<=r; fixture N=27 (no decomposition possible between 2^3+2^3+2^3=24 and 2^3+2^3+3^3=43) rejected with count=0\nVerifier predicate: Claimed multiplicity k must equal actual count of unordered prime-cube triples; fixtures N=24 claimed k=2 (actual k=1), N=185527 claimed k=3 (actual k=2), N=8627527 claimed k=2 (actual k=3) all correctly rejected\nAll 5 known terms a(1..5) verified against OEIS A385316",
+  "result": "Verifier construction confirmed: 5 domain kill fixtures + 3 predicate kill fixtures pass, all 5 known A385316 terms reproduced. The next-gate census at C=10^12 (1229 primes, ~308M triples) is a heavy farm-lane operation requiring private compute host dispatch and >200s wall time; it is deferred to the next gate per the scout milestone contract. No a(6) found in this session.",
+  "next_gate": "private compute host census dispatch: run a385316_verifier.py's enumeration engine at cutoff C=10^12 over the complete prime set (primes p≤10^4) counting prime-cube-sum multiplicities; record the maximum multiplicity observed. If max multiplicity ≥6 and a value with exactly 6 representations exists, report the smallest such N as a(6). If max multiplicity <6, certify a(6) > 10^12. Requires independent re-implementation for confirmation before claiming.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. No tools used in final response.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-09_09-55-22.md",
+    "sha256": "1920e733f60ede9981d2c6b517d15e256e1b3bea3cca646b3f2d47bcbe64258e"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

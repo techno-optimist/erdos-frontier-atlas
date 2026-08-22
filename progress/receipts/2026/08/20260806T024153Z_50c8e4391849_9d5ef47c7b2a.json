@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:9d5ef47c7b2ad7625a8f35fdd7d7e972a8a6a5cec27fe0bab8aa52a8af713d10",
+  "content_digest": "sha256:3243a936d0b38cbb1ead71f4e1aac89dd1ca1a98956ba61e7f42f2d53b9f45df",
+  "occurred_at": "2026-08-06T02:41:53Z",
+  "frontier": "What is a(6) of OEIS A385316 — the smallest integer that is a sum of three prime cubes in exactly 6 ways?",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nCopied the prior-session verifier artifact (verifier_a385316.py from res_20260805_221210) into this session's artifact directory and replayed it. The verifier performs two rejection branches: (1) domain kill fixture — rejects triple (9,25,49) because none of {9,25,49} are prime; (2) predicate kill fixtures — rejects N=24 claimed k=2 (actual multiplicity=1) and N=185527 claimed k=3 (actual multiplicity=2). It also verifies all five known-good terms a(1) through a(5) reproduce exactly. Additionally checked SSH connectivity to private host (the private compute host machine needed for C=10^13 census dispatch).",
+  "verified": "Artifact: verifier_a385316.py, SHA-256: 1416f44a1f3310fc554a9ca74b69ebaea0dab498626ee9ea3f8bd96550f95825\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nSSH to private host: Permission denied (publickey), exit 255 — blocker persists.",
+  "result": "The verifier artifact from the prior session is confirmed reproducible and correctly rejects all kill fixtures with the right branches. All five known-good terms a(1) through a(5) are reproduced. However, the SSH key authentication to private host remains broken (Permission denied), so the C=10^13 census dispatch from the accepted continuation's next_gate cannot be executed this session. This session advances nothing on a(6) itself but confirms the verifier artifact is sound and the SSH blocker is the sole active constraint.",
+  "next_gate": "After operator restores SSH key auth to private host: dispatch C=10^13 prime-cube census via private compute host, report highest multiplicity and whether any N has multiplicity 6. If SSH restoration is not forthcoming, escalate to consider the next-ranked frontier (erdos_86_q7_c4) in the queue.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Only copied a prior-session verifier artifact and ran it locally. SSH check to private host confirmed block.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-05_19-41-53.md",
+    "sha256": "d1bd140460ac944ddd4c562bdf301e6a9e0b5729b31a556c75b172c16b93e519"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

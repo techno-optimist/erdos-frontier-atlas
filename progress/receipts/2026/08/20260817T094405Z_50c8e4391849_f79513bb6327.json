@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:f79513bb6327a5b49159c29539a63f5e245765579c68f2b67e97d05a75b0c8ce",
+  "content_digest": "sha256:10b9a4516feee452875d1062d47a1c67e935841763e45423eec9f5998b12e068",
+  "occurred_at": "2026-08-17T09:44:05Z",
+  "frontier": "OEIS A385316 a(6): smallest N = sum of 3 prime cubes in exactly 6 ways. Current known terms: a(1)=24, a(2)=185527, a(3)=8627527, a(4)=999979163, a(5)=10588881419. Next term > 4.99×10¹¹.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nWrote verifier_a385316.py from accepted-continuation state to this session's artifact dir, replayed no-argument kill-fixture test (domain: 23, 25 rejected; predicate: (24,2), (24,0) rejected), confirmed census checkpoints C=1000 (19 candidates, max_mult=1) and C=200000 (a(2)=185527 with both known decompositions found), verified private compute host SSH connectivity — DNS resolution fails, blocking the C=1e13 census dispatch specified in the accepted continuation's next_gate.",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nArtifact: verifier_a385316.py, SHA-256: 1705992d98e80061baab50ea134c25e25d8292bdf6d72cd1e9e268c8fea4cfff\nVerifier domain: all domain kill fixtures (23,25) rejected — composite/non-prime-cube sums rejected\nVerifier predicate: all predicate kill fixtures ((24,2),(24,0)) rejected — claimed≠true multiplicity detected\nCensus C=1000: 19 candidates, max_mult=1 (confirmed)\nCensus C=200000: a(2)=185527 found, both known representations (13,43,47) and (19,31,53) present\nprivate compute host SSH: `ssh private compute host` fails with DNS resolution error — persistent across prior sessions",
+  "result": "Verifier intact and reproducible. private compute host connectivity lost — census dispatch at C=1e13 blocked. This is the same DNS blocker seen in res_20260802, res_20260803, res_20260808 across 4+ prior attempts. No mathematical progress on a(6); operational block.",
+  "next_gate": "Restore private compute host SSH name resolution (DNS/SSH config on Mac), then dispatch `python3 verifier_a385316.py --cutoff 10000000000000` for census. If DNS fix unavailable within 2 sessions, escalate to network-layer investigation or alternative dispatch route.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. private compute host census not dispatched due to connectivity failure.",
+  "classification": "blocked",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-17_02-44-05.md",
+    "sha256": "1f6706e7943c908146dcf90e9b1048f54d24518d2b162a623f397ae96088cee0"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

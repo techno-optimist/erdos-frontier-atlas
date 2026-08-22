@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:877d24ea5916f13d38ee613e3c60cd773a7007334f568886cc557498e1b68fa4",
+  "content_digest": "sha256:f17d6f6bda5375328e994dd9460a0faef6762528de7393571f901da7cc96ed9c",
+  "occurred_at": "2026-08-02T20:53:39Z",
+  "frontier": "A385316 a(6): smallest integer N = p³+q³+r³ (unordered prime cubes, repetitions allowed) with exactly 6 representations. Current lower bound ~4.99×10¹¹; max multiplicity 5 at C=10¹¹ confirmed; search space 10¹¹–10¹³.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nBuilt verifier_a385316.py: domain branch validates that each triple element is prime (rejects non-prime triple (4,2,2) with reason \"4 not prime\" and negative N=-1 with reason \"non-positive N\"); predicate branch counts unordered prime-cube representations via exhaustive binary-search census and rejects N=25 (0 representations: 2³+2³+2³=24<25<8³=512, no triple sums to 25) and N=16 (0 representations: 2³+2³+2³=24>16, no triple sums to 16). Census at C=10⁶ reproduces a(1)=24 (mult=1) and a(2)=185527 (mult=2).",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nALL KILL FIXTURES PASSED\nArtifact: verifier_a385316.py, SHA-256: 77e24b9e188f989e15c16f149e5d727f00659d70223880cb834023be8e2e2749\nReplay exit code: 0\nVerifier domain: Domain validation checks that each element of an unordered triple (p,q,r) is prime via deterministic Miller-Rabin-style trial division; fixed bad fixture (4,2,2) rejected with reason \"4 not prime\"; negative integer N=-1 rejected with reason \"non-positive N\".\nVerifier predicate: Predicate branch computes multiplicity(N) by exhaustive census of all unordered triples (p³,q³,r³) with p³+q³+r³=N using binary-search lookup in sorted prime-cube list; fixed bad fixture N=25 rejected with reason \"N=25 has 0 representations (not representable)\" (only prime with p³≤25 is 2, and 2³+2³+2³=24≠25); N=16 similarly rejected with 0 representations.",
+  "result": "No new mathematical frontier progress. Verifier construction milestone complete with full domain and predicate kill-fixture coverage and reproduction of known terms a(1)=24 and a(2)=185527 at C=10⁶. Max multiplicity 2 at C=10⁶ is consistent with prior accepted continuation's max multiplicity 5 at C=10¹¹. a(6) remains unfound.",
+  "next_gate": "Dispatch verifier_a385316.py census with --cutoff 1000000000000 (10¹²) on private compute host farm-lane. If max multiplicity exceeds 5, refine toward a(6). If not, dispatch C=10¹³.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-02_13-53-39.md",
+    "sha256": "a11ba493b40d7dba952791ac06862b87ff8c777e98b1999918f6b7e8cf073f55"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

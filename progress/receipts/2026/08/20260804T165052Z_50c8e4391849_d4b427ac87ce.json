@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:d4b427ac87ce038e8daea272975f24150ced01e9ee324b53917547b4e3adb17b",
+  "content_digest": "sha256:5125dcf15e528e731c08e5bc8aa6b6fdb1b1c3c888625732c74dac8bacc9e658",
+  "occurred_at": "2026-08-04T16:50:52Z",
+  "frontier": "OEIS A385316: what is a(6), the smallest N = p^3+q^3+r^3 (p≤q≤r prime) with exactly 6 representations? Current lower bound a(6) > 10^11.",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nRepaired the complete-prime-set multiplicity census verifier with kill-fixture replay entrypoint. Domain kill fixtures (composite primes: (4,3,3), (9,5,7)) and predicate kill fixtures (wrong multiplicity claims for N=24 and N=6) both pass. Verified that a small census (C=10^6) is structurally consistent: max multiplicity=2 at this cutoff, smallest mult-1 value=24 (2^3+2^3+2^3), consistent with a(5)=10588881419 far above this range. The repaired verifier exits zero with deterministic SHA-256, replacing the prior exit-1 failure (missing sys.exit in census entrypoint).",
+  "verified": "Domain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nArtifact: a385316_census_verifier.py, SHA-256: 7fcc482dd6fe81019b58102505a10798ee92ae778fe8ec80923420a791df14b1\nCensus at C=10^6: max_mult=2, 2430 values at mult 1, 12 values at mult 2, no values at mult ≥ 3. Structure consistent with a(5) ≈ 10^10 far above census range.",
+  "result": "Verifier repaired and passes all kill fixtures at exit 0. The C=10^6 census is structurally consistent but too small to resolve a(6); no progress on the C=10^12 lower bound. The census extension to C=10^12 requires private compute host farm-lane execution (~10-20 min, ~400M triples) and cannot be completed in this scout lane budget. This session's primitive is the repaired verifier itself — the smallest replayable artifact from the next gate.",
+  "next_gate": "Dispatch census_a385316.py to private compute host farm-lane with --cutoff 1000000000000; verify the census exits zero with max_mult output and smallest values at multiplicity 5 and 6; promotion condition: find multiplicity ≥ 6 or certify a(6) > 10^12.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. Census to C=10^12 deferred to private compute host farm-lane.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-04_09-50-52.md",
+    "sha256": "3edaf7f8b4db8219802308399b203342d3cec886d0a0c01cc37f3300d4eeb98e"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

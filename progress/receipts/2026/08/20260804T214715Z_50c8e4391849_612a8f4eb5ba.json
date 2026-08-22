@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:612a8f4eb5ba0d1bdf02dbcf3caca8a55c38c45941e7b15a4e7274b7e9f96f64",
+  "content_digest": "sha256:8bfa4d054560ed398ec6d6f730df54e96b329d1ba2037b679d393560ae11ae12",
+  "occurred_at": "2026-08-04T21:47:15Z",
+  "frontier": "Smallest integer N that is the sum of three prime cubes in exactly 6 unordered ways (OEIS A385316, a(6)).",
+  "action": "Milestone: continuation_primitive; contract=sha256:efdb15e2811252ca8abf69175faf3ed7226e1f5d48a73867ef6ed06e3c9805dc\nCopied verifier_a385316.py from prior session res_20260804_110522 into the current artifact directory, replayed kill fixtures (domain and predicate branches, all rejected correctly), verified four known terms a(1)..a(4) reproduce exactly, and executed a bounded census at C=10⁹ confirming max multiplicity = 4 with one value at that level.",
+  "verified": "Artifact: verifier_a385316.py, SHA-256: 297d117b509c87316d85ec5a03e7f2ad77b661cf3a12623ffb50d04129c0093d\nDomain kill fixtures: 1/1 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly\nKnown-term replay: a(1)=24 (k=1, match), a(2)=185527 (k=2, match), a(3)=8627527 (k=3, match), a(4)=999979163 (k=4, match)\nCensus C=10⁹: max_mult=4, count=1 (the value a(4)=999979163)\nExit status: 0 (all kill fixtures pass, all known terms verified)",
+  "result": "Negative result: census at C=10⁹ confirms no integer below 10⁹ is a sum of three prime cubes in 5 or more ways. a(5) and a(6) both exceed 10⁹. The verifier is a clean, reproducible primitive ready for private compute host farm-lane dispatch. No mathematical progress on a(6) was possible from scout-lane resources.",
+  "next_gate": "Dispatch census_a385316.py to private compute host farm-lane with --cutoff 1000000000000; verify census exits zero with max_mult output; promotion condition: find multiplicity ≥ 6 or certify a(6) > 10¹².",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training. All work was read-only replay of a prior-session verifier with bounded local census output.",
+  "classification": "negative_result",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-04_14-47-15.md",
+    "sha256": "b8bc67d96299c0e12638682698a4ecd0d729757fe444247065ec7f030efc390e"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

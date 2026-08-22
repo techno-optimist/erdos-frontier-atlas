@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:f60252723d2ef63abc5e1632d2fc479f22e570fe18e52bd2ca101aa38b7d95b5",
+  "content_digest": "sha256:f5ea21aceee65cd6c63cbef4eaf53bc134a4fdc541f4fe8724cd7adf1290fcdd",
+  "occurred_at": "2026-08-14T08:17:48Z",
+  "frontier": "OEIS A385316: what is a(6), the smallest integer expressible as a sum of three prime cubes p³+q³+r³ (unordered) in exactly six distinct ways?",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nWrote a385316_verifier.py as a deterministic no-argument, no-network Python entrypoint. Census to C=200,000 with complete prime set. Domain kill fixture (N=100) rejected because it has 0 prime-cube representations. Predicate kill fixtures (N=24 with 1 rep, N=185527 with 2 reps) rejected because neither has exactly 6 representations. Reproduced a(1)=24 (1 rep) and a(2)=185527 (2 reps), max multiplicity=2. Deterministic replay confirmed on second run.",
+  "verified": "Verifier domain: Domain kill fixture N=100 rejected — 0 representations as sum of 3 prime cubes, not in the image of the prime-cube map.\nVerifier predicate: Predicate kill fixtures N=24 (1 rep) and N=185527 (2 reps) rejected — neither has exactly 6 representations.\nArtifact: a385316_verifier.py, SHA-256: 99c65c81f2bde3de2c8c45a060a6f277fff255427afad8dc4f7da301eba120e3\nCensus: 718 sums of 3 prime cubes ≤ 200000, max multiplicity 2, no a(6) candidates below 200K.\nDomain kill fixtures: 2/2 rejected correctly\nPredicate kill fixtures: 2/2 rejected correctly",
+  "result": "Verifier construction verified and replayed. Census at C=200,000 reproduces known terms a(1)=24 and a(2)=185527, max multiplicity=2. Consistent with prior private compute host census result a(6)>10^12. No new mathematical result; the verifier artifact is ready for private compute host dispatch.",
+  "next_gate": "Dispatch census at C=10^12 to private compute host (private host) using the replayed verifier to find any multiplicity-6 candidates; if none found, promote certificate a(6)>10^12. Require a second independent implementation to reproduce the certificate before claiming.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-14_01-17-48.md",
+    "sha256": "05f0c283b7c4235228082feeeca45d9287252a02bf58a18faf365e6a4a23adc4"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}

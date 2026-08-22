@@ -1,0 +1,20 @@
+{
+  "schema": "p42-foundry-receipt-v1",
+  "receipt_id": "sha256:cd45affe666c5b031de0da635b8f79eed25b0c31508b5517003cc2c6e2982e0b",
+  "content_digest": "sha256:8e97557428439bcf4b0b0ec50dabefef892cd586f6d5006eec2cf4f52935bc91",
+  "occurred_at": "2026-08-13T11:48:55Z",
+  "frontier": "A385316: smallest N = sum of 3 prime cubes in exactly 6 ways — current lower bound a(6) > 4.99×10¹¹ with census to C=200,000 confirming max multiplicity 2.",
+  "action": "Milestone: verifier_construction; contract=sha256:8d51fc61fba0b1e156ad8e3f452b419d28072672bca2b1a6f006cf81817c23cc\nReconstructed a385316_verifier.py as a no-argument, no-network, deterministic Python entrypoint. Census at C=200,000 reproduces a(1)=24 and a(2)=185527 with max multiplicity 2. Domain kill fixtures reject out-of-domain inputs (1, 2, 23 — all zero prime-cube representations). Predicate kill fixtures reject incorrect multiplicity claims (24 claimed as 2 reps, 24 claimed as 3 reps, 35 claimed as 1 rep).",
+  "verified": "Artifact: a385316_verifier.py, SHA-256: d7605adeace4da903f4464eede047cad9d1dc97595acfe5dc652cdebb22af529\nDomain kill fixtures: 3/3 rejected correctly\nPredicate kill fixtures: 3/3 rejected correctly\nALL KILL FIXTURES PASSED\nVerifier domain: n is in domain iff it has ≥1 decomposition as p³+q³+r³ with p≤q≤r prime and p³+q³+r³≤200000; fixtures 1, 2, 23 each have zero such decompositions and are correctly rejected.\nVerifier predicate: n has exactly k representations for the claimed k; 24 has exactly 1 but was tested with claimed k=2 and k=3 (both rejected), and 35 has 0 but was tested with claimed k=1 (rejected).",
+  "result": "Verifier construction completed and independently replayed. Census at C=200,000 confirms max multiplicity = 2 (no a(6) candidate exists below 200,000). The census window is far too small for the a(6) frontier (lower bound > 4.99×10¹¹). No local search is viable at the required scale; the private compute host census dispatch at C=2×10¹² is required next.",
+  "next_gate": "Dispatch census at C=2×10¹² to private compute host (private host); cross-verify any multiplicity-5 or multiplicity-6 candidates found in the 4.99×10¹¹–2×10¹² window using the replayed a385316_verifier.py; if no candidates appear, promote certificate a(6)>2×10¹² pending independent reproduction.",
+  "boundary_held": "No production Atlas writes, external submissions, git pushes, or training.",
+  "classification": "progress",
+  "evidence_class": "provisional",
+  "source": {
+    "job_id": "50c8e4391849",
+    "run_file": "2026-08-13_04-48-55.md",
+    "sha256": "beb01275e4ee0505f228c140f4966eb1fb94f38cf9e770367d582013b0038915"
+  },
+  "frontier_id": "erdos_979_prime_cubes_a385316"
+}
