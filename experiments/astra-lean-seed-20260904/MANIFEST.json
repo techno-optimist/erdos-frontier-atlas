@@ -2,8 +2,8 @@
   "scope": "File integrity only. Rebuild with Lean to check statements and axioms.",
   "files": {
     ".gitignore": {
-      "sha256": "fde850d24186b6e99c8c0debd641fb3ab85198b109eb66f71a1fea02bd6ea1b3",
-      "bytes": 7
+      "sha256": "d4e3917adcfaaa8d53ccc3eb2c9c3423307b0de18d8efbb32e3a92aa53ffb0f9",
+      "bytes": 6
     },
     "AdjacentBinomialGcd.lean": {
       "sha256": "33788641bfef72784fe0f54390327f0c702b64e22a5dd6bb1d9fff51d57e06d0",
