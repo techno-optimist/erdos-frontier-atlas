@@ -8,7 +8,7 @@
     "exit_code": 0,
     "expected_exit_code": 0,
     "stdout": "",
-    "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.070s\n\nOK\n"
+    "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.066s\n\nOK\n"
   },
   {
     "command": [
@@ -42,7 +42,8 @@
     "exit_code": 1,
     "expected_exit_code": 1,
     "stdout": "",
-    "stderr": "Traceback (most recent call last):\n  File \"/Users/kevinmbp/erdos-astra-lab/experiments/astra-20260904/check_699_lemmas.py\", line 29, in <module>\n    assert r+s < i, ('planted over-lift', n, i, j, p, a, M, r, s)\n           ^^^^^^^\nAssertionError: ('planted over-lift', 18, 3, 9, 3, 1, 27, 9, 9)\n"
+    "stderr": "Traceback (most recent call last):\n  File \"<repo>/experiments/astra-20260904/check_699_lemmas.py\", line 29, in <module>\n    assert r+s < i, ('planted over-lift', n, i, j, p, a, M, r, s)\n           ^^^^^^^\nAssertionError: ('planted over-lift', 18, 3, 9, 3, 1, 27, 9, 9)\n",
+    "stderr_sanitization": "Absolute repository root replaced with <repo>; all remaining stderr is unchanged."
   },
   {
     "command": [
@@ -61,7 +62,7 @@
       "-I",
       "audit_699_receipt.py",
       "--repo",
-      "/Users/kevinmbp/erdos-astra-lab"
+      "../.."
     ],
     "exit_code": 0,
     "expected_exit_code": 0,

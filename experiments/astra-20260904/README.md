@@ -61,14 +61,24 @@ python3 -I test_probe.py
 python3 -I probe.py
 python3 -I check_699_lemmas.py
 python3 -I check_993_block.py
-python3 -I audit_699_receipt.py --repo /path/to/erdos-frontier-atlas
+python3 -I audit_699_receipt.py --repo ../..
 ```
 
-The last command needs the baseline repository; the other checks are standalone. This deliberately wrong control **must exit nonzero**:
+The last command uses the containing repository; for a standalone bundle, replace
+`../..` with the baseline repository location. The other checks are standalone.
+This deliberately wrong control **must exit nonzero**:
 
 ```sh
 python3 -I check_699_lemmas.py --negative-control
 ```
+
+[`verification.json`](verification.json) records fresh executions of all six
+checks from this directory on 2026-09-04 with Python 3.11.16. Commands are recorded
+as invoked, with repository-relative paths. The negative-control traceback is
+explicitly path-sanitized: only the absolute checkout root is replaced by
+`<repo>`; every other output byte and all exit codes are preserved. The historical
+raw report from commit `4831f560255c294474f84bc4b5a815aed86ca83f` and the fresh raw
+streams are retained outside the repository, not presented as sanitized originals.
 
 At repository root, the existing graph validation passed, and:
 

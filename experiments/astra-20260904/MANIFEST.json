@@ -6,7 +6,7 @@
     "699-strip.md": "f3eaf51c8c385c1df94617bd71f156b44e30e716557451c7ca476fbf4982f97c",
     "993-block-result.json": "2117b2b9145ac967b7b95110616c7463ddb898e658e21b85716b7398245c8625",
     "993-block.md": "56d814219dc46c926552b98e6464775a8f575df01b2f35ec01c2cb1343d45290",
-    "README.md": "17eaf483c22d7005e4259cefe262fc7beefccb90adc993384086df20a39eead1",
+    "README.md": "e1032a0be0a5e7f803f88b0fffe423fc88dde062f3714dc1c4c78dcf22e41f50",
     "RESULT.json": "20f2718db75b3200470bb6a01e1c6076382aa3f831e7f63afdfe8b71e96fce3a",
     "audit_699_receipt.py": "e4b93381d36c72018d0be80de88ff67685131ff0995dee3964e1d42f90d2849a",
     "check_699_lemmas.py": "8a29dbb6e45261dbde76c23e8d45bb58c11180c711eb488ce086ca9fb4b545ba",
@@ -23,6 +23,6 @@
     "threehub-random-batch1.json": "ec92b85d0217c6b34d05bd4355c17750f09fe93a4a39302ad88d06759ab839e2",
     "topology-control.json": "86c2d4ea96a4b4062dca0f38c294a2a6e7afa9114b20b6fe51b955d25304c690",
     "upstream-diff.json": "754e17f5c3a4c1ea1aa7e8acd3bcba503c11ecc28ef5fd812cc093d60ae1e1c5",
-    "verification.json": "65f225087b8f8e49abea357995364489796280a2123937cf6f9d4c657af99ce8"
+    "verification.json": "a57c6775c4e2dfaacb10e8d14e2e7efd4cfa90fa0b2f1ec98c91df9035185143"
   }
 }
