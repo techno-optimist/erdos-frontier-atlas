@@ -1,0 +1,299 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://www.erdosproblems.com/993",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 2,
+      "url": "https://www.erdosproblems.com/699",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 3,
+      "url": "https://www.erdosproblems.com/366",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 4,
+      "url": "https://github.com/techno-optimist/erdos-frontier-atlas/tree/0394e3d3b249439ffabec7d96a3311aa441651b8",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 5,
+      "url": "https://www.erdosproblems.com/forum/thread/993",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 6,
+      "url": "https://github.com/BrettRey/erdos-problem-993/blob/95f86d96dd89e5ddfff16b65f500fa9c85cb661d/formalization/clan_normalization_aristotle/RESULT.md",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 7,
+      "url": "https://arxiv.org/abs/2603.03025",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 8,
+      "url": "https://arxiv.org/abs/2603.14204",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 9,
+      "url": "https://www.erdosproblems.com/1",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 10,
+      "url": "https://github.com/tadamcz/erdos1",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 11,
+      "url": "https://www.overleaf.com/read/fptssppkmgpr",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 12,
+      "url": "https://users.renyi.hu/~p_erdos/1978-31.pdf",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 13,
+      "url": "https://www.erdosproblems.com/forum/thread/699/proof-claims",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 14,
+      "url": "https://www.overleaf.com/read/ywsndhgyrzsx",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 15,
+      "url": "https://www.erdosproblems.com/forum/thread/699",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 16,
+      "url": "https://erdosproblems.com",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 17,
+      "url": "https://erdosproblems.com/993",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 18,
+      "url": "https://erdosproblems.com/743",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 19,
+      "url": "https://erdosproblems.com/366",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 20,
+      "url": "https://erdosproblems.com/699",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 21,
+      "url": "https://openai.com/index/ten-advances-in-mathematics",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 22,
+      "url": "https://openai.com/index/gpt-6-astra",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 23,
+      "url": "https://cdn.openai.com/pdf/ten-proofs-oai.pdf",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 24,
+      "url": "https://cdn.openai.com/pdf/51126fac-1b68-4128-9666-c908bcc16033/short_gaps.pdf",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 25,
+      "url": "https://cdn.openai.com/pdf/51126fac-1b68-4128-9666-c908bcc16033/long_gaps.pdf",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 26,
+      "url": "https://www.erdosproblems.com/forum/thread/743",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 27,
+      "url": "https://github.com/Tyorden/erdos-993-trees-n31",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 28,
+      "url": "https://combinatorialpress.com/jcmcc-articles/volume-008/a-note-on-packing-complete-graphs-with-trees",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 29,
+      "url": "https://github.com/tadamcz/erdos548",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 30,
+      "url": "https://www.erdosproblems.com/106",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 31,
+      "url": "https://www.erdosproblems.com/193",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 32,
+      "url": "https://www.erdosproblems.com/548",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 33,
+      "url": "https://www.erdosproblems.com/547",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 34,
+      "url": "https://www.erdosproblems.com/730",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 35,
+      "url": "https://www.erdosproblems.com/1005",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 36,
+      "url": "https://www.erdosproblems.com/501",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 37,
+      "url": "https://github.com/teorth/erdosproblems/blob/2512c2739787e42b0a8821a49a838497c1a2fff6/data/problems.yaml",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 38,
+      "url": "https://github.com/openai/PrimeGaps186",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 39,
+      "url": "https://github.com/openai/LongGapsBetweenPrimes",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 40,
+      "url": "https://github.com/google-deepmind/formal-conjectures/blob/main/FormalConjectures/ErdosProblems/699.lean",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 41,
+      "url": "https://www.erdosproblems.com/static/1-proof.pdf",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 42,
+      "url": "https://www.erdosproblems.com/static/548copy.pdf",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 43,
+      "url": "https://www.erdosproblems.com/146",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 44,
+      "url": "https://www.erdosproblems.com/180",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 45,
+      "url": "https://www.erdosproblems.com/183",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 46,
+      "url": "https://www.erdosproblems.com/575",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 47,
+      "url": "https://github.com/teorth/erdosproblems/commit/99c392535c69420e7e09b2ced731423a0c83ebc0",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 48,
+      "url": "https://github.com/teorth/erdosproblems/blob/2a4d12b8be30a0483f49259654d10fcb0e2f08eb/data/problems.yaml",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 49,
+      "url": "https://www.erdosproblems.com/forum/thread/366/proof-claims",
+      "title": "",
+      "accessed": "2026-09-04"
+    }
+  ]
+}

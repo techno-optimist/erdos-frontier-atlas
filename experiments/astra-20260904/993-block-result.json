@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "lemma_test_cases": 256,
+  "general_block_identity_cases": 27,
+  "range_s": [
+    1,
+    64
+  ],
+  "all_arithmetic": "exact rational",
+  "negative_control": {
+    "s": 4,
+    "c": 1,
+    "d": 0,
+    "e": 1,
+    "coefficient_z0": 0,
+    "coefficient_z2": 4
+  },
+  "scope": "Checks identities and examples; unbounded proof is in 993-block.md."
+}
