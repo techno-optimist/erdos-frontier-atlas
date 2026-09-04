@@ -1,0 +1,27 @@
+{
+  "small_diagonal_cases": [
+    {
+      "n": 17,
+      "i": 4,
+      "j": 7,
+      "prime": 17
+    },
+    {
+      "n": 25,
+      "i": 6,
+      "j": 11,
+      "prime": 23
+    }
+  ],
+  "i2_identity_checks": 998,
+  "i2_j_range": [
+    3,
+    1000
+  ],
+  "upper_endpoint_margin_coefficients": [
+    "2/5",
+    "-7/5"
+  ],
+  "scope": "Finite implementation checks only; all-parameter completion uses the cited Nagura theorem and exact binomial identity.",
+  "reference_pdf_sha256": "bff8b55085b83c9473efdc1cb2b60013e3698c400ca1de800180f978f3a31c17"
+}
