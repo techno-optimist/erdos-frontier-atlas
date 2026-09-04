@@ -1,6 +1,6 @@
 # Astra research sortie — 2026-09-04
 
-Local, unpromoted research attached to the Erdős frontier graph. Baseline atlas: `0394e3d3b249439ffabec7d96a3311aa441651b8`. No remote publication, production graph edit, frozen-certificate change, or claimed Erdős-problem solution.
+Unpromoted research attached to the Erdős frontier graph. Baseline atlas: `0394e3d3b249439ffabec7d96a3311aa441651b8`. No production graph edit, frozen-certificate change, or claimed Erdős-problem solution. Repository publication does not promote these notes into the atlas certificate contracts or submit a claim to the Erdős Problems proof register.
 
 ## 1. Freshness: 16 informal status changes
 
