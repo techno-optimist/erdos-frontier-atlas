@@ -44,6 +44,7 @@ others don't touch it.
 | `claude/attack-graph-20260726` | The attack graph — a generated agent-facing overlay over every ledger (`GRAPH.md` → `views/sorties.md` → per-problem cards). Adds no facts; organizes existing ones | `tools/build_graph.py`, `tools/validate_graph.py`, `tools/query_graph.py`, `atlas/graph/`, `views/graph/`, `views/sorties.md`, `GRAPH.md`, `CLAUDE.md`, `tests/test_graph.py` | PR packaging 2026-07-26 |
 | `claude/trees-993-743-20260727` | Tree lanes: Erdős #743 Gyárfás packing at K_10, and #993 independence unimodality to n=30 (incl. first replication of the n≤29 frontier) | `certificates/erdos-743/`, `certificates/erdos-993/`, gap_map #743 + #993 rows, contracts claims `erdos-743-k10-packing` + `erdos-993-unimodal-n30` | PR packaging 2026-07-27 |
 | `agent/astra-structural-probes-20260904` | Official-source freshness, P699 near-central strip, P993 structural probes | [Research bundle](experiments/astra-20260904/README.md) — `experiments/astra-20260904/` only | ready for repository review; unpromoted |
+| `agent/astra-briefcase-transfers-20260904` | Proof transfer: compressed P993 tree tails, general hub blocks, arithmetic bridges, P699 residual strip | [Research bundle](experiments/astra-briefcase-20260904/README.md) — `experiments/astra-briefcase-20260904/` only | reviewed and replayed; PR stacked on #135; no promoted claims |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching

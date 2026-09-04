@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "counts": {
+    "claimed_theorem_triples": 132438,
+    "d2_nonwrap": 88404,
+    "d2_triples": 88696,
+    "d2_wrap": 292,
+    "d3_nonwrap": 43584,
+    "d3_triples": 43846,
+    "d3_wrap": 262,
+    "excluded_diagonal_triples": 104,
+    "excluded_diagonal_with_common_prime": 104,
+    "excluded_diagonal_wraps": 45,
+    "general_absent_prime_powers": 76106,
+    "general_boundary_prime_powers": 377,
+    "general_localization_triples": 66729,
+    "line_absent_prime_powers": 1386171,
+    "line_boundary_prime_powers": 90,
+    "line_higher_exponents": 461
+  },
+  "domain": {
+    "exhaustive_j_max": 420,
+    "exhaustive_i": "2<=i<j; d=3 only even i>=4",
+    "extra_draws": 1500,
+    "seed": 699,
+    "extra_j": [
+      421,
+      1600
+    ],
+    "extra_i_max": 700,
+    "unique_line_triples": 132542,
+    "general_localization_n_max": 120,
+    "EEES_exception_check_n_max": 120
+  },
+  "line_records_sha256": "739e841cb32075b43639cdab41775f9e8161af1260df8ce81b22c8206f116728",
+  "EEES_admissible_exceptions": [
+    {
+      "n": 21,
+      "i": 8,
+      "j": 9,
+      "d": 3,
+      "common_prime": 17
+    },
+    {
+      "n": 30,
+      "i": 7,
+      "j": 14,
+      "d": 2,
+      "common_prime": 29
+    },
+    {
+      "n": 33,
+      "i": 14,
+      "j": 15,
+      "d": 3,
+      "common_prime": 23
+    },
+    {
+      "n": 36,
+      "i": 13,
+      "j": 17,
+      "d": 2,
+      "common_prime": 29
+    },
+    {
+      "n": 56,
+      "i": 13,
+      "j": 27,
+      "d": 2,
+      "common_prime": 17
+    }
+  ],
+  "scope": "Independent exact finite checks; does not establish infinite claims or novelty."
+}

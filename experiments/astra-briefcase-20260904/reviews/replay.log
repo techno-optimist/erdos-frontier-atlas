@@ -1,0 +1,781 @@
+test_bound_one_checks_one_block (test_block_cli.BlockCliTest) ... ok
+test_negative_bound_is_rejected (test_block_cli.BlockCliTest) ... ok
+test_zero_bound_is_rejected (test_block_cli.BlockCliTest) ... ok
+test_current_valid_tables_pass (test_block_tables.BlockTablesTest) ... ok
+test_decimal_values_are_rejected (test_block_tables.BlockTablesTest) ... ok
+test_junk_after_literal_headers_is_rejected (test_block_tables.BlockTablesTest) ... ok
+test_junk_line_before_first_small_entry_is_rejected (test_block_tables.BlockTablesTest) ... ok
+test_junk_lines_at_table_ends_are_rejected (test_block_tables.BlockTablesTest) ... ok
+test_leading_junk_is_rejected (test_block_tables.BlockTablesTest) ... ok
+test_malformed_extra_duplicate_entries_are_rejected (test_block_tables.BlockTablesTest) ... ok
+test_other_unconsumed_suffixes_are_rejected (test_block_tables.BlockTablesTest) ... ok
+test_trailing_negative_values_are_rejected (test_block_tables.BlockTablesTest) ... ok
+test_valid_extra_duplicate_entries_are_rejected (test_block_tables.BlockTablesTest) ... ok
+test_whitespace_and_multiple_entries_per_line_pass (test_block_tables.BlockTablesTest) ... ok
+test_readonly_replay_and_poisoned_count (test_bridge_receipt.BridgeReceiptTest) ... ok
+test_exact_tail_against_subset_enumeration (test_tail.TailTest) ... ok
+test_saved_witnesses_replay_and_poisoned_coefficient_fails (test_tail.TailTest) ... ok
+test_transferred_obstruction_matches_full_tree_dp (test_tail.TailTest) ... ok
+
+----------------------------------------------------------------------
+Ran 18 tests in 8.379s
+
+OK
+{
+  "verified": true,
+  "compiled_cores": 40,
+  "unimodal_witnesses": 40,
+  "large_tree_order": 2000004,
+  "large_tail_depth": 6,
+  "scope": "finite witnesses and exact tails only; not an Erdos 993 solution"
+}
+{
+  "verified": true,
+  "counts": {
+    "d2_triples": 19411,
+    "d2_wraps": 195,
+    "d3_even_triples": 9512,
+    "d3_even_wraps": 167,
+    "d3_theorem_triples": 9483,
+    "d3_diagonal_wraps": 16,
+    "exception_triples": 5,
+    "symbolic_inequality_samples": 54
+  },
+  "crude_bound_counterexample": {
+    "n": 42,
+    "i": 10,
+    "j": 20,
+    "p": 11,
+    "N": 1471442973,
+    "B": 4845,
+    "C": 20349,
+    "crude_bound_squared": 2840357025,
+    "corrected_bound": 10659
+  },
+  "integrality_counterexample": {
+    "n": 18,
+    "i": 4,
+    "j": 8,
+    "absent_prime": 5,
+    "shifted_binomial": 36
+  },
+  "scope": "Exact bounded lemma checks plus sampled symbolic inequalities; all-parameter proofs are in result.md; no novelty, formalization, or publication claim."
+}
+
+{
+  "passed": true,
+  "counts": {
+    "claimed_theorem_triples": 132438,
+    "d2_nonwrap": 88404,
+    "d2_triples": 88696,
+    "d2_wrap": 292,
+    "d3_nonwrap": 43584,
+    "d3_triples": 43846,
+    "d3_wrap": 262,
+    "excluded_diagonal_triples": 104,
+    "excluded_diagonal_with_common_prime": 104,
+    "excluded_diagonal_wraps": 45,
+    "general_absent_prime_powers": 76106,
+    "general_boundary_prime_powers": 377,
+    "general_localization_triples": 66729,
+    "line_absent_prime_powers": 1386171,
+    "line_boundary_prime_powers": 90,
+    "line_higher_exponents": 461
+  },
+  "domain": {
+    "exhaustive_j_max": 420,
+    "exhaustive_i": "2<=i<j; d=3 only even i>=4",
+    "extra_draws": 1500,
+    "seed": 699,
+    "extra_j": [
+      421,
+      1600
+    ],
+    "extra_i_max": 700,
+    "unique_line_triples": 132542,
+    "general_localization_n_max": 120,
+    "EEES_exception_check_n_max": 120
+  },
+  "line_records_sha256": "739e841cb32075b43639cdab41775f9e8161af1260df8ce81b22c8206f116728",
+  "EEES_admissible_exceptions": [
+    {
+      "n": 21,
+      "i": 8,
+      "j": 9,
+      "d": 3,
+      "common_prime": 17
+    },
+    {
+      "n": 30,
+      "i": 7,
+      "j": 14,
+      "d": 2,
+      "common_prime": 29
+    },
+    {
+      "n": 33,
+      "i": 14,
+      "j": 15,
+      "d": 3,
+      "common_prime": 23
+    },
+    {
+      "n": 36,
+      "i": 13,
+      "j": 17,
+      "d": 2,
+      "common_prime": 29
+    },
+    {
+      "n": 56,
+      "i": 13,
+      "j": 27,
+      "d": 2,
+      "common_prime": 17
+    }
+  ],
+  "scope": "Independent exact finite checks; does not establish infinite claims or novelty."
+}
+{
+  "status": "PASS",
+  "checked": 13824,
+  "bound": 24,
+  "counterexamples": [],
+  "tight": [],
+  "independent_state_identities": 192,
+  "negative_control": [
+    [
+      0,
+      0,
+      4
+    ]
+  ],
+  "proof": {
+    "single_boundary": [
+      {
+        "a": 1,
+        "b": 0,
+        "differences": [
+          6,
+          14,
+          28
+        ]
+      },
+      {
+        "a": 1,
+        "b": 2,
+        "differences": [
+          6,
+          21,
+          14
+        ]
+      },
+      {
+        "a": 1,
+        "b": 4,
+        "differences": [
+          13,
+          14,
+          7
+        ]
+      },
+      {
+        "a": 1,
+        "b": 6,
+        "differences": [
+          6,
+          7,
+          14
+        ]
+      },
+      {
+        "a": 2,
+        "b": 1,
+        "differences": [
+          6,
+          21,
+          28
+        ]
+      },
+      {
+        "a": 2,
+        "b": 3,
+        "differences": [
+          13,
+          21,
+          7
+        ]
+      },
+      {
+        "a": 2,
+        "b": 5,
+        "differences": [
+          13,
+          7,
+          7
+        ]
+      },
+      {
+        "a": 3,
+        "b": 0,
+        "differences": [
+          6,
+          28,
+          42
+        ]
+      },
+      {
+        "a": 3,
+        "b": 2,
+        "differences": [
+          13,
+          28,
+          21
+        ]
+      },
+      {
+        "a": 3,
+        "b": 4,
+        "differences": [
+          20,
+          14,
+          0
+        ]
+      },
+      {
+        "a": 4,
+        "b": 1,
+        "differences": [
+          13,
+          42,
+          49
+        ]
+      },
+      {
+        "a": 4,
+        "b": 3,
+        "differences": [
+          27,
+          28,
+          7
+        ]
+      },
+      {
+        "a": 5,
+        "b": 0,
+        "differences": [
+          20,
+          70,
+          84
+        ]
+      },
+      {
+        "a": 5,
+        "b": 2,
+        "differences": [
+          34,
+          56,
+          42
+        ]
+      },
+      {
+        "a": 6,
+        "b": 1,
+        "differences": [
+          48,
+          112,
+          112
+        ]
+      },
+      {
+        "a": 7,
+        "b": 0,
+        "differences": [
+          90,
+          210,
+          210
+        ]
+      }
+    ],
+    "double_boundary": [
+      {
+        "r": 1,
+        "s": 5,
+        "t": 1,
+        "differences": [
+          48,
+          112,
+          112
+        ]
+      },
+      {
+        "r": 1,
+        "s": 4,
+        "t": 2,
+        "differences": [
+          34,
+          56,
+          42
+        ]
+      },
+      {
+        "r": 1,
+        "s": 3,
+        "t": 3,
+        "differences": [
+          27,
+          28,
+          7
+        ]
+      },
+      {
+        "r": 1,
+        "s": 2,
+        "t": 4,
+        "differences": [
+          20,
+          14,
+          0
+        ]
+      },
+      {
+        "r": 1,
+        "s": 1,
+        "t": 5,
+        "differences": [
+          13,
+          7,
+          7
+        ]
+      },
+      {
+        "r": 2,
+        "s": 4,
+        "t": 1,
+        "differences": [
+          34,
+          56,
+          42
+        ]
+      },
+      {
+        "r": 2,
+        "s": 3,
+        "t": 2,
+        "differences": [
+          20,
+          28,
+          28
+        ]
+      },
+      {
+        "r": 2,
+        "s": 2,
+        "t": 3,
+        "differences": [
+          13,
+          14,
+          21
+        ]
+      },
+      {
+        "r": 2,
+        "s": 1,
+        "t": 4,
+        "differences": [
+          6,
+          14,
+          14
+        ]
+      },
+      {
+        "r": 3,
+        "s": 3,
+        "t": 1,
+        "differences": [
+          27,
+          28,
+          7
+        ]
+      },
+      {
+        "r": 3,
+        "s": 2,
+        "t": 2,
+        "differences": [
+          13,
+          14,
+          21
+        ]
+      },
+      {
+        "r": 3,
+        "s": 1,
+        "t": 3,
+        "differences": [
+          6,
+          7,
+          28
+        ]
+      },
+      {
+        "r": 4,
+        "s": 2,
+        "t": 1,
+        "differences": [
+          20,
+          14,
+          0
+        ]
+      },
+      {
+        "r": 4,
+        "s": 1,
+        "t": 2,
+        "differences": [
+          6,
+          14,
+          14
+        ]
+      },
+      {
+        "r": 5,
+        "s": 1,
+        "t": 1,
+        "differences": [
+          13,
+          7,
+          7
+        ]
+      }
+    ],
+    "small_blocks": [
+      {
+        "r": 1,
+        "s": 1,
+        "t": 1,
+        "differences": [
+          15
+        ]
+      },
+      {
+        "r": 1,
+        "s": 1,
+        "t": 2,
+        "differences": [
+          15,
+          8
+        ]
+      },
+      {
+        "r": 1,
+        "s": 2,
+        "t": 1,
+        "differences": [
+          15,
+          12
+        ]
+      },
+      {
+        "r": 2,
+        "s": 1,
+        "t": 1,
+        "differences": [
+          15,
+          8
+        ]
+      },
+      {
+        "r": 1,
+        "s": 1,
+        "t": 3,
+        "differences": [
+          18,
+          16
+        ]
+      },
+      {
+        "r": 1,
+        "s": 2,
+        "t": 2,
+        "differences": [
+          15,
+          18
+        ]
+      },
+      {
+        "r": 1,
+        "s": 3,
+        "t": 1,
+        "differences": [
+          19,
+          20
+        ]
+      },
+      {
+        "r": 2,
+        "s": 1,
+        "t": 2,
+        "differences": [
+          15,
+          16
+        ]
+      },
+      {
+        "r": 2,
+        "s": 2,
+        "t": 1,
+        "differences": [
+          15,
+          18
+        ]
+      },
+      {
+        "r": 3,
+        "s": 1,
+        "t": 1,
+        "differences": [
+          18,
+          16
+        ]
+      },
+      {
+        "r": 1,
+        "s": 1,
+        "t": 4,
+        "differences": [
+          21,
+          30,
+          16
+        ]
+      },
+      {
+        "r": 1,
+        "s": 2,
+        "t": 3,
+        "differences": [
+          18,
+          26,
+          11
+        ]
+      },
+      {
+        "r": 1,
+        "s": 3,
+        "t": 2,
+        "differences": [
+          19,
+          26,
+          14
+        ]
+      },
+      {
+        "r": 1,
+        "s": 4,
+        "t": 1,
+        "differences": [
+          23,
+          36,
+          16
+        ]
+      },
+      {
+        "r": 2,
+        "s": 1,
+        "t": 3,
+        "differences": [
+          18,
+          24,
+          13
+        ]
+      },
+      {
+        "r": 2,
+        "s": 2,
+        "t": 2,
+        "differences": [
+          15,
+          24,
+          12
+        ]
+      },
+      {
+        "r": 2,
+        "s": 3,
+        "t": 1,
+        "differences": [
+          19,
+          26,
+          14
+        ]
+      },
+      {
+        "r": 3,
+        "s": 1,
+        "t": 2,
+        "differences": [
+          18,
+          24,
+          13
+        ]
+      },
+      {
+        "r": 3,
+        "s": 2,
+        "t": 1,
+        "differences": [
+          18,
+          26,
+          11
+        ]
+      },
+      {
+        "r": 4,
+        "s": 1,
+        "t": 1,
+        "differences": [
+          21,
+          30,
+          16
+        ]
+      }
+    ],
+    "boundary_counts": [
+      16,
+      15,
+      20
+    ],
+    "shifted_scalar_identity_checks": 216
+  }
+}
+{
+  "status": "PASS",
+  "replayed_blocks": 13824,
+  "receipt_matches_replay": true,
+  "independent_base_counts": [
+    16,
+    15,
+    20
+  ],
+  "printed_tables_match": true,
+  "symbolic_shift_identity_terms": 50,
+  "diagnostic_margin_rows": 94,
+  "diagnostic_a1_single_cases": 2444,
+  "diagnostic_s1_double_cases": 4841
+}
+{
+  "crt_vs_period_cells": 150,
+  "inclusion_exclusion_cells": 60,
+  "wheel_recurrence_coefficients": 25,
+  "tables": [
+    {
+      "k": 2,
+      "P": 6,
+      "max_gap": 4,
+      "first_missing_even": 6,
+      "gap_counts": {
+        "2": 1,
+        "4": 1
+      }
+    },
+    {
+      "k": 3,
+      "P": 30,
+      "max_gap": 6,
+      "first_missing_even": 8,
+      "gap_counts": {
+        "2": 3,
+        "4": 3,
+        "6": 2
+      }
+    },
+    {
+      "k": 4,
+      "P": 210,
+      "max_gap": 10,
+      "first_missing_even": 12,
+      "gap_counts": {
+        "2": 15,
+        "4": 15,
+        "6": 14,
+        "8": 2,
+        "10": 2
+      }
+    },
+    {
+      "k": 5,
+      "P": 2310,
+      "max_gap": 14,
+      "first_missing_even": 16,
+      "gap_counts": {
+        "2": 135,
+        "4": 135,
+        "6": 142,
+        "8": 28,
+        "10": 30,
+        "12": 8,
+        "14": 2
+      }
+    },
+    {
+      "k": 6,
+      "P": 30030,
+      "max_gap": 22,
+      "first_missing_even": 20,
+      "gap_counts": {
+        "2": 1485,
+        "4": 1485,
+        "6": 1690,
+        "8": 394,
+        "10": 438,
+        "12": 188,
+        "14": 58,
+        "16": 12,
+        "18": 8,
+        "22": 2
+      }
+    }
+  ],
+  "gap22_witness": {
+    "a": 9439,
+    "b": 9461,
+    "residues": {
+      "2": 1,
+      "3": 2,
+      "5": 1,
+      "7": 4,
+      "11": 10,
+      "13": 12
+    },
+    "interior_gcds": [
+      10,
+      3,
+      2,
+      7,
+      6,
+      5,
+      2,
+      3,
+      2,
+      11,
+      210,
+      13,
+      2,
+      3,
+      2,
+      5,
+      6,
+      7,
+      2,
+      3,
+      110
+    ]
+  },
+  "obstruction_t20": {
+    "endpoint_constrained_count": 0,
+    "unrestricted_cover_count": 6
+  },
+  "negative_control_rejected": true,
+  "scope": "Periodic gaps, including wrap gap 2. No asymptotic or novelty claim."
+}
+PASS: independent exact oracles and planted endpoint mutation

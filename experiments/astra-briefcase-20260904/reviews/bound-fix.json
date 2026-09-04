@@ -1,0 +1,61 @@
+{
+  "status": "PASS",
+  "change": "Reject args.bound<1 via argparse.ArgumentParser.error immediately after argument parsing, before any checks. No features or refactoring.",
+  "files_modified": ["experiments/astra-briefcase-20260904/block/check.py"],
+  "files_created": ["experiments/astra-briefcase-20260904/test_block_cli.py"],
+  "regression_command": "python3 -I -B experiments/astra-briefcase-20260904/test_block_cli.py -v",
+  "red": {
+    "exit_code": 1,
+    "tests_run": 3,
+    "passed": ["test_bound_one_checks_one_block"],
+    "failed": ["test_negative_bound_is_rejected", "test_zero_bound_is_rejected"],
+    "failure_for_each": "AssertionError: 0 != 2 : ",
+    "runner_summary": "Ran 3 tests in 0.397s; FAILED (failures=2)",
+    "observed_cli": [
+      {"bound": 0, "exit_code": 0, "status": "PASS", "checked": 0, "stderr": ""},
+      {"bound": -1, "exit_code": 0, "status": "PASS", "checked": 0, "stderr": ""},
+      {"bound": 1, "exit_code": 0, "status": "PASS", "checked": 1, "stderr": ""}
+    ]
+  },
+  "green": {
+    "exit_code": 0,
+    "tests_run": 3,
+    "failures": 0,
+    "runner_summary": "Ran 3 tests in 0.254s; OK",
+    "observed_cli": [
+      {"bound": 0, "exit_code": 2, "stdout": "", "stderr": "usage: check.py [-h] [--bound BOUND]\ncheck.py: error: --bound must be at least 1\n"},
+      {"bound": -1, "exit_code": 2, "stdout": "", "stderr": "usage: check.py [-h] [--bound BOUND]\ncheck.py: error: --bound must be at least 1\n"},
+      {"bound": 1, "exit_code": 0, "status": "PASS", "checked": 1, "stderr": ""}
+    ]
+  },
+  "experiment_suite": {
+    "command": "python3 -I -B -m unittest discover -s experiments/astra-briefcase-20260904 -p 'test_*.py' -v",
+    "exit_code": 0,
+    "runner_summary": "Ran 7 tests in 0.720s; OK"
+  },
+  "replay": {
+    "command": "python3 -I -B experiments/astra-briefcase-20260904/block/check.py --bound 24",
+    "exit_code": 0,
+    "status": "PASS",
+    "bound": 24,
+    "checked": 13824,
+    "stderr": "",
+    "receipt": "experiments/astra-briefcase-20260904/block/receipt.json",
+    "receipt_byte_match": true,
+    "receipt_json_match": true,
+    "receipt_unchanged": true,
+    "receipt_mtime_unchanged": true,
+    "receipt_sha256_before": "eb6f9725a39c6a22bf5d51fef1152909fe39152c46fd8849a1fc9f2dab6569fb",
+    "receipt_sha256_after": "eb6f9725a39c6a22bf5d51fef1152909fe39152c46fd8849a1fc9f2dab6569fb",
+    "replay_sha256": "eb6f9725a39c6a22bf5d51fef1152909fe39152c46fd8849a1fc9f2dab6569fb"
+  },
+  "scope": {
+    "only_allowed_repo_files_edited": true,
+    "git_diff_check_exit_code": 0,
+    "staged_changes_unchanged": true,
+    "index_diff_sha256_before_and_after": "8bef256f6d2a6bf2fdb24f2fd060a7088599e7f27e66ec4b6cb15d81b6b70fae",
+    "committed": false,
+    "pushed": false
+  },
+  "issues": []
+}

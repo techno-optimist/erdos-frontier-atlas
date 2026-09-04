@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "replayed_blocks": 13824,
+  "receipt_matches_replay": true,
+  "independent_base_counts": [
+    16,
+    15,
+    20
+  ],
+  "printed_tables_match": true,
+  "symbolic_shift_identity_terms": 50,
+  "diagnostic_margin_rows": 94,
+  "diagnostic_a1_single_cases": 2444,
+  "diagnostic_s1_double_cases": 4841
+}
