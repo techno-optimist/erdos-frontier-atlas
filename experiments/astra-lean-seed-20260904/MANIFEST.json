@@ -1,0 +1,145 @@
+{
+  "scope": "File integrity only. Rebuild with Lean to check statements and axioms.",
+  "files": {
+    ".gitignore": {
+      "sha256": "d4e3917adcfaaa8d53ccc3eb2c9c3423307b0de18d8efbb32e3a92aa53ffb0f9",
+      "bytes": 6
+    },
+    "AdjacentBinomialGcd.lean": {
+      "sha256": "33788641bfef72784fe0f54390327f0c702b64e22a5dd6bb1d9fff51d57e06d0",
+      "bytes": 1550
+    },
+    "AxiomAudit.lean": {
+      "sha256": "7ca52b25a89b08befad704a445398c15789b688e7062ab235e3f751957bd37df",
+      "bytes": 527
+    },
+    "DivisorTransferCheck.lean": {
+      "sha256": "53f3071b03687c07e1f12d140dc9e49707428811e075b9eee4b686a065452e1e",
+      "bytes": 320
+    },
+    "ExactStatement.lean": {
+      "sha256": "def0b5a7e77797b46bb9d3be173dd464aa608f2718f4a95a7b0c686fb5c95737",
+      "bytes": 442
+    },
+    "LibraryChecks.lean": {
+      "sha256": "2a414a5e6b29e9ff8e82830b64d4b72e8553bbbdf9b16d9f385391cd162a29b8",
+      "bytes": 508
+    },
+    "README.md": {
+      "sha256": "54b6caac60edf455f8cc559ec0b7192e46431dc2fe5d69d30897d419d82b5dbe",
+      "bytes": 6037
+    },
+    "execution.json": {
+      "sha256": "63000ba7b913cdb035d219c931139353a850909406172a5a8b7b3325a38118bf",
+      "bytes": 1202
+    },
+    "lake-manifest.json": {
+      "sha256": "c465e7fec66a9cba8375067d15a571feba65322c5dcd3226501c2798c9c72f47",
+      "bytes": 3564
+    },
+    "lakefile.toml": {
+      "sha256": "4f7847a1135f11aa2efdd3f76c99562c203ca878e2d7359c441d96ea48ee0e27",
+      "bytes": 492
+    },
+    "lean-toolchain": {
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "bytes": 25
+    },
+    "logs/axiom-audit.txt": {
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "bytes": 1
+    },
+    "logs/build.txt": {
+      "sha256": "f704daafb115d703b1e5cd7e5515bcccf2cbf5d7013a8093fc9e2f187dc6e291",
+      "bytes": 2491
+    },
+    "logs/divisor-transfer.txt": {
+      "sha256": "7636f866b5e8fb77afc5d9aece8a8d8780dcd322276bc1ea879097387ae937aa",
+      "bytes": 80
+    },
+    "logs/exact-statement.txt": {
+      "sha256": "10f28b8445eaba6487abd668ec8104f2cdc1c97429495574afadf32949e571c0",
+      "bytes": 170
+    },
+    "logs/lean-version.txt": {
+      "sha256": "4762d596346ad354e28668de62b7eeae7de5d531b9a7b1c182ca59cfacd81bdd",
+      "bytes": 106
+    },
+    "logs/negative-control.txt": {
+      "sha256": "e39cf204c1296115255132cb83705a6b3af97c49a396aabb34944ab1dfee573f",
+      "bytes": 174
+    },
+    "logs/poisoned-guard.txt": {
+      "sha256": "a70afc0603eebf6a220f6f611d3cb4b532128ae73546c9fd74483b6582008a05",
+      "bytes": 401
+    },
+    "logs/qualified.txt": {
+      "sha256": "315cbffccfebb88002ad98fce5dfabb2576df74b9fccb5ab7c49b9aa215b6d9a",
+      "bytes": 1610
+    },
+    "logs/repository-tests.txt": {
+      "sha256": "237f35d4c74b447f641e17fa4d4c4cc245bb2fe771c01b9e497fc6516b80b116",
+      "bytes": 272
+    },
+    "negative/AlteredIdentity.lean": {
+      "sha256": "23866c4d724731172c18898d5cc93c1ce63e806175d64e8c40e953338023007c",
+      "bytes": 267
+    },
+    "proof-obligations.json": {
+      "sha256": "31825e00a642359de4a6fdb9491afbd7c1b8eb73ac6080627b1b50a63921e7fc",
+      "bytes": 2234
+    },
+    "review/AdjacentBinomialGcd.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "review/AxiomAudit.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "review/DivisorTransferCheck.log": {
+      "sha256": "7636f866b5e8fb77afc5d9aece8a8d8780dcd322276bc1ea879097387ae937aa",
+      "bytes": 80
+    },
+    "review/ExactStatement.log": {
+      "sha256": "10f28b8445eaba6487abd668ec8104f2cdc1c97429495574afadf32949e571c0",
+      "bytes": 170
+    },
+    "review/FullyQualified.lean": {
+      "sha256": "8d19e3f797963de96e62855199d1fbcf36e2b21d5fa2b03693442c26e72f143b",
+      "bytes": 892
+    },
+    "review/FullyQualified.log": {
+      "sha256": "315cbffccfebb88002ad98fce5dfabb2576df74b9fccb5ab7c49b9aa215b6d9a",
+      "bytes": 1610
+    },
+    "review/LibraryChecks.log": {
+      "sha256": "adc56f74882e4227a40c736d25e607efe3d22d4bd52c95cc06326130ea8109f4",
+      "bytes": 1668
+    },
+    "review/PoisonedGuard.lean": {
+      "sha256": "74d2d1a622653af7cd74b42541717f726a1e2c7001c994041db60d325c3dbcc1",
+      "bytes": 593
+    },
+    "review/PoisonedGuard.log": {
+      "sha256": "451d747df3cea4780df0da91fe9c2553a644b56ccbbb77c105805f7f97cf729b",
+      "bytes": 394
+    },
+    "review/REVIEW.md": {
+      "sha256": "7c6dfe2bf8ca15641fae434c4679d30c271739d55af209be5365e95c6af1468f",
+      "bytes": 7134
+    },
+    "review/negative_AlteredIdentity.log": {
+      "sha256": "e39cf204c1296115255132cb83705a6b3af97c49a396aabb34944ab1dfee573f",
+      "bytes": 174
+    },
+    "review/results.json": {
+      "sha256": "83b4c58a5d81a59eab48209f364ef1d0d6214849ad5a37c54c726d715224473b",
+      "bytes": 1662
+    },
+    "review/source-sha256.json": {
+      "sha256": "369a1f7865eea3cc3b15ae1d6cc35c1de4a7658f9703d0230639ccc6f6ac63c6",
+      "bytes": 752
+    }
+  }
+}

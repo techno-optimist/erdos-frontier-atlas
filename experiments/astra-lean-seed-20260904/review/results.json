@@ -1,0 +1,71 @@
+{
+  "runs": [
+    {
+      "module": "AdjacentBinomialGcd.lean",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "log": "AdjacentBinomialGcd.log"
+    },
+    {
+      "module": "ExactStatement.lean",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "log": "ExactStatement.log"
+    },
+    {
+      "module": "DivisorTransferCheck.lean",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "log": "DivisorTransferCheck.log"
+    },
+    {
+      "module": "AxiomAudit.lean",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "log": "AxiomAudit.log"
+    },
+    {
+      "module": "LibraryChecks.lean",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "log": "LibraryChecks.log"
+    },
+    {
+      "module": "FullyQualified.lean",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "log": "FullyQualified.log"
+    },
+    {
+      "module": "PoisonedGuard.lean",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "passed": true,
+      "log": "PoisonedGuard.log"
+    },
+    {
+      "module": "negative/AlteredIdentity.lean",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "passed": true,
+      "log": "negative_AlteredIdentity.log"
+    }
+  ],
+  "reviewed_sources_unchanged": {
+    "AdjacentBinomialGcd.lean": true,
+    "ExactStatement.lean": true,
+    "DivisorTransferCheck.lean": true,
+    "AxiomAudit.lean": true,
+    "LibraryChecks.lean": true,
+    "negative/AlteredIdentity.lean": true,
+    "lakefile.toml": true,
+    "lean-toolchain": true
+  },
+  "passed": true
+}

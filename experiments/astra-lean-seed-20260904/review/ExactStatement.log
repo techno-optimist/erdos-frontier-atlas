@@ -1,0 +1,2 @@
+'AdjacentBinomialGcd.mul_gcd_of_mul_eq_mul' depends on axioms: [propext, Quot.sound]
+'AdjacentBinomialGcd.adjacent_binomial_gcd' depends on axioms: [propext, Quot.sound]

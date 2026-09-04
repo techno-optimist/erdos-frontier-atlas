@@ -1,0 +1,5 @@
+'ReviewPoison.poisoned_adjacent_binomial_gcd' depends on axioms: [propext, Quot.sound, poison]
+review/PoisonedGuard.lean:15:0: error: ❌️ Docstring on `#guard_msgs` does not match generated message:
+
+- info: 'ReviewPoison.poisoned_adjacent_binomial_gcd' depends on axioms: [propext, Quot.sound]
++ info: 'ReviewPoison.poisoned_adjacent_binomial_gcd' depends on axioms: [propext, Quot.sound, poison]
