@@ -1,0 +1,30 @@
+{
+  "scope": "standalone semantic checker only; repository hash gates not tested",
+  "frozen_files_modified": false,
+  "mutated_receipt_counterexamples": 1,
+  "original_checker": {
+    "exit_code": 0,
+    "verdict": {
+      "claim": "Erdos 699 holds for 10000000 <= n < 100000000",
+      "verified": true,
+      "rows": 90000000,
+      "counterexamples": 0
+    }
+  },
+  "proposed_guard_mutated_receipt": {
+    "exit_code": 1,
+    "verdict": {
+      "verified": false,
+      "failures": 1
+    }
+  },
+  "proposed_guard_clean_receipt": {
+    "exit_code": 0,
+    "verdict": {
+      "claim": "Erdos 699 holds for 10000000 <= n < 100000000",
+      "verified": true,
+      "rows": 90000000,
+      "counterexamples": 0
+    }
+  }
+}

@@ -1,0 +1,71 @@
+[
+  {
+    "command": [
+      "python3",
+      "-I",
+      "test_probe.py"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "",
+    "stderr": "...\n----------------------------------------------------------------------\nRan 3 tests in 0.070s\n\nOK\n"
+  },
+  {
+    "command": [
+      "python3",
+      "-I",
+      "probe.py"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "{\n  \"batches\": [\n    {\n      \"hubs\": 3,\n      \"lc_failures\": 0,\n      \"max_order\": 154,\n      \"min_order\": 18,\n      \"samples\": 1500,\n      \"unimodality_failures\": 0\n    },\n    {\n      \"hubs\": 3,\n      \"lc_failures\": 0,\n      \"max_order\": 185,\n      \"min_order\": 20,\n      \"samples\": 5000,\n      \"unimodality_failures\": 0\n    },\n    {\n      \"hubs\": 4,\n      \"lc_failures\": 0,\n      \"max_order\": 224,\n      \"min_order\": 28,\n      \"samples\": 5000,\n      \"unimodality_failures\": 0\n    },\n    {\n      \"hubs\": 5,\n      \"lc_failures\": 0,\n      \"max_order\": 278,\n      \"min_order\": 44,\n      \"samples\": 5000,\n      \"unimodality_failures\": 0\n    },\n    {\n      \"hubs\": 8,\n      \"lc_failures\": 0,\n      \"max_order\": 415,\n      \"min_order\": 104,\n      \"samples\": 5000,\n      \"unimodality_failures\": 0\n    }\n  ],\n  \"distinct_trees\": 21500,\n  \"failures\": [],\n  \"log_concavity_failures\": 0,\n  \"problem\": \"P993\",\n  \"samples\": 21500,\n  \"seed\": 99320260904,\n  \"status\": \"exploratory finite samples; no theorem or frontier promotion\",\n  \"stream_sha256\": \"029e0aa9528a5af18c5125d4ff210d91bda43034381ffd4b2ee508df05408646\",\n  \"surface\": \"S:triage:993\",\n  \"unimodality_failures\": 0\n}\n\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "-I",
+      "check_699_lemmas.py"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "{\n  \"verified\": true,\n  \"n_bound\": 240,\n  \"counts\": {\n    \"localized_prime_powers\": 1078287,\n    \"boundary_prime_lifts\": 1488,\n    \"refined_euclidean_products\": 554659,\n    \"strip_products\": 18815,\n    \"strip_gcd_checks\": 18815,\n    \"exception_triples\": 41,\n    \"inequality_checks\": 4704\n  },\n  \"boundary_lift_examples\": [\n    {\n      \"n\": 12,\n      \"i\": 2,\n      \"j\": 4,\n      \"p\": 2,\n      \"a\": 1,\n      \"M\": 4,\n      \"r\": 0,\n      \"s\": 0\n    },\n    {\n      \"n\": 13,\n      \"i\": 2,\n      \"j\": 4,\n      \"p\": 2,\n      \"a\": 1,\n      \"M\": 4,\n      \"r\": 0,\n      \"s\": 1\n    },\n    {\n      \"n\": 13,\n      \"i\": 2,\n      \"j\": 5,\n      \"p\": 2,\n      \"a\": 1,\n      \"M\": 4,\n      \"r\": 1,\n      \"s\": 0\n    },\n    {\n      \"n\": 18,\n      \"i\": 3,\n      \"j\": 9,\n      \"p\": 3,\n      \"a\": 1,\n      \"M\": 9,\n      \"r\": 0,\n      \"s\": 0\n    },\n    {\n      \"n\": 19,\n      \"i\": 3,\n      \"j\": 9,\n      \"p\": 3,\n      \"a\": 1,\n      \"M\": 9,\n      \"r\": 0,\n      \"s\": 1\n    },\n    {\n      \"n\": 20,\n      \"i\": 2,\n      \"j\": 4,\n      \"p\": 2,\n      \"a\": 1,\n      \"M\": 4,\n      \"r\": 0,\n      \"s\": 0\n    },\n    {\n      \"n\": 20,\n      \"i\": 3,\n      \"j\": 9,\n      \"p\": 3,\n      \"a\": 1,\n      \"M\": 9,\n      \"r\": 0,\n      \"s\": 2\n    },\n    {\n      \"n\": 20,\n      \"i\": 3,\n      \"j\": 10,\n      \"p\": 3,\n      \"a\": 1,\n      \"M\": 9,\n      \"r\": 1,\n      \"s\": 1\n    }\n  ],\n  \"scope\": \"bounded lemma tests; no all-n computational claim\"\n}\n\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "-I",
+      "check_699_lemmas.py",
+      "--negative-control"
+    ],
+    "exit_code": 1,
+    "expected_exit_code": 1,
+    "stdout": "",
+    "stderr": "Traceback (most recent call last):\n  File \"/Users/kevinmbp/erdos-astra-lab/experiments/astra-20260904/check_699_lemmas.py\", line 29, in <module>\n    assert r+s < i, ('planted over-lift', n, i, j, p, a, M, r, s)\n           ^^^^^^^\nAssertionError: ('planted over-lift', 18, 3, 9, 3, 1, 27, 9, 9)\n"
+  },
+  {
+    "command": [
+      "python3",
+      "-I",
+      "check_993_block.py"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "{\n  \"status\": \"PASS\",\n  \"lemma_test_cases\": 256,\n  \"general_block_identity_cases\": 27,\n  \"range_s\": [\n    1,\n    64\n  ],\n  \"all_arithmetic\": \"exact rational\",\n  \"negative_control\": {\n    \"s\": 4,\n    \"c\": 1,\n    \"d\": 0,\n    \"e\": 1,\n    \"coefficient_z0\": 0,\n    \"coefficient_z2\": 4\n  },\n  \"scope\": \"Checks identities and examples; unbounded proof is in 993-block.md.\"\n}\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "python3",
+      "-I",
+      "audit_699_receipt.py",
+      "--repo",
+      "/Users/kevinmbp/erdos-astra-lab"
+    ],
+    "exit_code": 0,
+    "expected_exit_code": 0,
+    "stdout": "{\n  \"scope\": \"standalone semantic checker only; repository hash gates not tested\",\n  \"frozen_files_modified\": false,\n  \"mutated_receipt_counterexamples\": 1,\n  \"original_checker\": {\n    \"exit_code\": 0,\n    \"verdict\": {\n      \"claim\": \"Erdos 699 holds for 10000000 <= n < 100000000\",\n      \"verified\": true,\n      \"rows\": 90000000,\n      \"counterexamples\": 0\n    }\n  },\n  \"proposed_guard_mutated_receipt\": {\n    \"exit_code\": 1,\n    \"verdict\": {\n      \"verified\": false,\n      \"failures\": 1\n    }\n  },\n  \"proposed_guard_clean_receipt\": {\n    \"exit_code\": 0,\n    \"verdict\": {\n      \"claim\": \"Erdos 699 holds for 10000000 <= n < 100000000\",\n      \"verified\": true,\n      \"rows\": 90000000,\n      \"counterexamples\": 0\n    }\n  }\n}\n",
+    "stderr": ""
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "mutation": "constant_unimodality",
+    "exit_code": 1,
+    "rejected": true,
+    "output": "F..\n======================================================================\nFAIL: test_hub_path_and_real_logconcavity_control (__main__.ProbeTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/folders/fy/77hsk9l14fv_m47f4717flxh0000gn/T/erdos-astra-mutant-glcubxch/test_probe.py\", line 79, in test_hub_path_and_real_logconcavity_control\n    self.assertFalse(probe.classify([1, 3, 2, 4])['unimodal'])\nAssertionError: True is not false\n\n----------------------------------------------------------------------\nRan 3 tests in 0.104s\n\nFAILED (failures=1)\n"
+  },
+  {
+    "mutation": "constant_log_concavity",
+    "exit_code": 1,
+    "rejected": true,
+    "output": "F..\n======================================================================\nFAIL: test_hub_path_and_real_logconcavity_control (__main__.ProbeTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/folders/fy/77hsk9l14fv_m47f4717flxh0000gn/T/erdos-astra-mutant-zbba__jg/test_probe.py\", line 77, in test_hub_path_and_real_logconcavity_control\n    self.assertFalse(probe.classify(p)['log_concave'])\nAssertionError: True is not false\n\n----------------------------------------------------------------------\nRan 3 tests in 0.101s\n\nFAILED (failures=1)\n"
+  },
+  {
+    "mutation": "dropped_selected_root",
+    "exit_code": 1,
+    "rejected": true,
+    "output": "F.F\n======================================================================\nFAIL: test_hub_path_and_real_logconcavity_control (__main__.ProbeTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/folders/fy/77hsk9l14fv_m47f4717flxh0000gn/T/erdos-astra-mutant-umvmrd4t/test_probe.py\", line 66, in test_hub_path_and_real_logconcavity_control\n    self.assertEqual(probe.tree_polynomial(parent), brute(parent))\nAssertionError: Lists differ: [1, 11, 47, 100, 113, 67, 19, 2] != [1, 12, 55, 123, 143, 87, 26, 3]\n\nFirst differing element 1:\n11\n12\n\n- [1, 11, 47, 100, 113, 67, 19, 2]\n+ [1, 12, 55, 123, 143, 87, 26, 3]\n\n======================================================================\nFAIL: test_tree_polynomial_matches_actual_independent_sets (__main__.ProbeTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/folders/fy/77hsk9l14fv_m47f4717flxh0000gn/T/erdos-astra-mutant-umvmrd4t/test_probe.py\", line 38, in test_tree_polynomial_matches_actual_independent_sets\n    self.assertEqual(probe.tree_polynomial(parent), brute(parent))\nAssertionError: Lists differ: [1] != [1, 1]\n\nSecond list contains 1 additional elements.\nFirst extra element 1:\n1\n\n- [1]\n+ [1, 1]\n\n----------------------------------------------------------------------\nRan 3 tests in 0.054s\n\nFAILED (failures=2)\n"
+  },
+  {
+    "mutation": "ignored_connectors",
+    "exit_code": 1,
+    "rejected": true,
+    "output": "F..\n======================================================================\nFAIL: test_hub_path_and_real_logconcavity_control (__main__.ProbeTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"/var/folders/fy/77hsk9l14fv_m47f4717flxh0000gn/T/erdos-astra-mutant-5xptv3c6/test_probe.py\", line 65, in test_hub_path_and_real_logconcavity_control\n    self.assertEqual(len(parent), 1 + sum(joins) + sum(map(sum, arms)))\nAssertionError: 11 != 12\n\n----------------------------------------------------------------------\nRan 3 tests in 0.089s\n\nFAILED (failures=1)\n"
+  }
+]
