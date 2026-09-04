@@ -1,0 +1,33 @@
+✔ [490/499] Built AdjacentBinomialGcd (3.2s)
+ℹ [492/499] Built ExactStatement (876ms)
+info: ExactStatement.lean:11:0: 'AdjacentBinomialGcd.mul_gcd_of_mul_eq_mul' depends on axioms: [propext, Quot.sound]
+info: ExactStatement.lean:12:0: 'AdjacentBinomialGcd.adjacent_binomial_gcd' depends on axioms: [propext, Quot.sound]
+ℹ [494/499] Built DivisorTransferCheck (876ms)
+info: DivisorTransferCheck.lean:10:0: 'AdjacentBinomialGcd.divisor_transfer' depends on axioms: [propext, Quot.sound]
+✔ [496/499] Built AxiomAudit (875ms)
+ℹ [498/499] Built LibraryChecks (895ms)
+info: LibraryChecks.lean:3:0: Nat.gcd_mul_left (m n k : ℕ) : (m * n).gcd (m * k) = m * n.gcd k
+info: LibraryChecks.lean:4:0: Nat.add_one_mul_choose_eq (n k : ℕ) : (n + 1) * n.choose k = (n + 1).choose (k + 1) * (k + 1)
+info: LibraryChecks.lean:5:0: Nat.gcd_mul_right_right_of_gcd_eq_one {n m k : ℕ} : n.gcd m = 1 → n.gcd (m * k) = n.gcd k
+info: LibraryChecks.lean:6:0: Nat.dvd_mul_left_of_dvd {a b : ℕ} (h : a ∣ b) (c : ℕ) : a ∣ c * b
+info: LibraryChecks.lean:7:0: theorem AdjacentBinomialGcd.mul_gcd_of_mul_eq_mul : ∀ (a b c d : ℕ), a * c = b * d → a * b.gcd c = b * a.gcd d :=
+fun a b c d h =>
+  Trans.trans
+    (Trans.trans (Eq.symm (Nat.gcd_mul_left a b c))
+      (Eq.mpr (id (congrArg (fun _a => (a * b).gcd _a = (b * a).gcd (b * d)) h))
+        (Eq.mpr (id (congrArg (fun _a => _a.gcd (b * d) = (b * a).gcd (b * d)) (Nat.mul_comm a b)))
+          (Eq.refl ((b * a).gcd (b * d))))))
+    (Nat.gcd_mul_left b a d)
+info: LibraryChecks.lean:8:0: theorem AdjacentBinomialGcd.adjacent_binomial_gcd : ∀ (j k : ℕ),
+  (k + 1) * (j.choose k).gcd ((j + 1).choose (k + 1)) = j.choose k * (k + 1).gcd (j + 1) :=
+fun j k =>
+  AdjacentBinomialGcd.mul_gcd_of_mul_eq_mul (k + 1) (j.choose k) ((j + 1).choose (k + 1)) (j + 1)
+    (Trans.trans (Trans.trans (Nat.mul_comm (k + 1) ((j + 1).choose (k + 1))) (Eq.symm (Nat.add_one_mul_choose_eq j k)))
+      (Nat.mul_comm (j + 1) (j.choose k)))
+info: LibraryChecks.lean:9:0: theorem AdjacentBinomialGcd.divisor_transfer : ∀ (U A B C j : ℕ), U ∣ B → U.gcd A = 1 → A * C = (j + 1) * B → U ∣ C :=
+fun U A B C j hUB hUA hprod =>
+  have hUC := Eq.mpr (id (congrArg (fun _a => U ∣ _a) hprod)) (Nat.dvd_mul_left_of_dvd hUB (j + 1));
+  have hg := Nat.dvd_gcd (Nat.dvd_refl U) hUC;
+  Nat.dvd_trans (Eq.mp (congrArg (fun _a => U ∣ _a) (Nat.gcd_mul_right_right_of_gcd_eq_one hUA)) hg)
+    (Nat.gcd_dvd_right U C)
+Build completed successfully (499 jobs).

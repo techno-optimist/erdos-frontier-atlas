@@ -1,0 +1,10 @@
+{
+  "AdjacentBinomialGcd.lean": "33788641bfef72784fe0f54390327f0c702b64e22a5dd6bb1d9fff51d57e06d0",
+  "ExactStatement.lean": "def0b5a7e77797b46bb9d3be173dd464aa608f2718f4a95a7b0c686fb5c95737",
+  "DivisorTransferCheck.lean": "53f3071b03687c07e1f12d140dc9e49707428811e075b9eee4b686a065452e1e",
+  "AxiomAudit.lean": "7ca52b25a89b08befad704a445398c15789b688e7062ab235e3f751957bd37df",
+  "LibraryChecks.lean": "2a414a5e6b29e9ff8e82830b64d4b72e8553bbbdf9b16d9f385391cd162a29b8",
+  "negative/AlteredIdentity.lean": "23866c4d724731172c18898d5cc93c1ce63e806175d64e8c40e953338023007c",
+  "lakefile.toml": "4f7847a1135f11aa2efdd3f76c99562c203ca878e2d7359c441d96ea48ee0e27",
+  "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+}

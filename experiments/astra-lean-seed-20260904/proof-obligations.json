@@ -1,0 +1,69 @@
+{
+  "scope": "Partial hand-maintained roadmap, not a complete machine-extracted proof DAG. kernel_checked labels refer only to named local declarations checked by the default Lake build. Library dependencies are pinned separately. Metadata never promotes P699 to formalized.",
+  "nodes": [
+    {
+      "id": "homogeneous-gcd",
+      "status": "kernel_checked",
+      "declaration": "AdjacentBinomialGcd.mul_gcd_of_mul_eq_mul",
+      "artifact": "AdjacentBinomialGcd.lean",
+      "depends_on": []
+    },
+    {
+      "id": "adjacent-binomial-gcd",
+      "status": "kernel_checked",
+      "declaration": "AdjacentBinomialGcd.adjacent_binomial_gcd",
+      "artifact": "AdjacentBinomialGcd.lean",
+      "depends_on": [
+        "homogeneous-gcd"
+      ]
+    },
+    {
+      "id": "coprime-divisor-transfer",
+      "status": "kernel_checked",
+      "declaration": "AdjacentBinomialGcd.divisor_transfer",
+      "artifact": "AdjacentBinomialGcd.lean",
+      "depends_on": []
+    },
+    {
+      "id": "lifted-localization",
+      "status": "informal_reviewed",
+      "artifact": "../astra-20260904/699-strip.md",
+      "depends_on": []
+    },
+    {
+      "id": "wrap-bound",
+      "status": "informal_reviewed",
+      "artifact": "../astra-briefcase-20260904/699/result.md",
+      "depends_on": [
+        "adjacent-binomial-gcd",
+        "coprime-divisor-transfer",
+        "lifted-localization"
+      ]
+    },
+    {
+      "id": "binomial-size-bounds",
+      "status": "informal_reviewed",
+      "artifact": "../astra-briefcase-20260904/699/result.md",
+      "depends_on": []
+    },
+    {
+      "id": "EEES-and-exceptions",
+      "status": "external_theorem_and_unformalized_application",
+      "artifact": "../astra-briefcase-20260904/699/result.md",
+      "source_url": "https://users.renyi.hu/~p_erdos/1978-31.pdf",
+      "depends_on": []
+    },
+    {
+      "id": "P699-d2",
+      "status": "informal_reviewed",
+      "statement": "For natural i,j with 2<=i<j and n=2j+2, some prime p>=i divides both C(n,i) and C(n,j).",
+      "artifact": "../astra-briefcase-20260904/699/result.md",
+      "depends_on": [
+        "wrap-bound",
+        "lifted-localization",
+        "binomial-size-bounds",
+        "EEES-and-exceptions"
+      ]
+    }
+  ]
+}
