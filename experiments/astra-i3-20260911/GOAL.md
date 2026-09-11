@@ -20,7 +20,7 @@ That inequality holds **only for \(i\le 3\)**. So i=2 and i=3 are the last eleme
 | i | Status | What's left |
 |---|---|---|
 | 2 | kernel-checked gcd ≥ 2 for every pair | prime-factor Init gap only |
-| 3 | Type A + Type B1 cracked; (10,5),(16,7),(65,15) all odd-prime-bearing | Type B2 P+≤n/6 |
+| 3 | Type A + B1 + B2a; three odd-prime gcds | Type B2b P+≤n/8 |
 | ≥ 4 | size bound dead | primes, EEES, localization |
 
 ## This lane's theorem

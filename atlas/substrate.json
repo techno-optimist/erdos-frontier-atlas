@@ -94,6 +94,16 @@
       "remaining": ["Type B2 P+ <= n/6", "i>=4"]
     },
     {
+      "id": "i3-typeB2a",
+      "statement": "If n/8 < P+(odd_part(C(n,3))) <= n/6 then o never divides j(j-1)(j-2).",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-i3-20260911/typeB2a.md"],
+      "replay": ["python3 -I -B -m unittest discover -s experiments/astra-i3-20260911 -p test_typeB2a.py"],
+      "discharges": [{"problem": 699, "note": "Type B2a of the i=3 2-adic residual; Type B2b P+<=n/8 open; does not close P699"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["Type B2b P+ <= n/8", "i>=4"]
+    },
+    {
       "id": "p699-d2-line",
       "statement": "For 2<=i<j and n=2j+2, some prime p>=i divides both C(n,i) and C(n,j).",
       "status": "informal_reviewed",
