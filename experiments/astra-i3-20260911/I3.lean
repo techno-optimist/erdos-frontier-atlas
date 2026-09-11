@@ -298,4 +298,52 @@ theorem i3_gcd_ge_three_of_mod4_of_gt (n j : Nat) (hj : 3 ≤ j) (hjn : j ≤ n)
       rw [← heq]; exact ⟨1, rfl⟩
     exact False.elim (hodd (Nat.dvd_trans this (Nat.gcd_dvd_left _ _)))
 
+theorem fac_dvd_succ (k : Nat) : fac k ∣ fac (k + 1) :=
+  ⟨k + 1, by rw [fac_succ, Nat.mul_comm]⟩
+
+theorem fac_dvd_fac_of_le (a b : Nat) (h : a ≤ b) : fac a ∣ fac b := by
+  induction h with
+  | refl => exact Nat.dvd_refl _
+  | step h ih => exact Nat.dvd_trans ih (fac_dvd_succ _)
+
+theorem fac_three_n (n : Nat) (h : 3 ≤ n) :
+    fac n = n * (n - 1) * (n - 2) * fac (n - 3) :=
+  fac_three_le n h
+
+theorem three_falling_dvd (n j : Nat) (hj : 3 ≤ j) (hjn : j ≤ n) :
+    n * (n - 1) * (n - 2) ∣ binom n j * fac j := by
+  have hn3 : 3 ≤ n := Nat.le_trans hj hjn
+  have hmul := binom_mul_fac n j hjn
+  have hfacn := fac_three_n n hn3
+  have hle : n - j ≤ n - 3 := by omega
+  rcases fac_dvd_fac_of_le (n - j) (n - 3) hle with ⟨k, hk⟩
+  have hpos : 0 < fac (n - j) := fac_pos _
+  have : binom n j * fac j * fac (n - j)
+      = (n * (n - 1) * (n - 2) * k) * fac (n - j) := by
+    calc
+      binom n j * fac j * fac (n - j) = fac n := hmul
+      _ = n * (n - 1) * (n - 2) * fac (n - 3) := hfacn
+      _ = n * (n - 1) * (n - 2) * (k * fac (n - j)) := by
+        rw [hk]; ac_rfl
+      _ = (n * (n - 1) * (n - 2) * k) * fac (n - j) := by ac_rfl
+  have : binom n j * fac j = n * (n - 1) * (n - 2) * k :=
+    Nat.eq_of_mul_eq_mul_right hpos this
+  exact ⟨k, this⟩
+
+theorem cancel_coprime_fac (n j d : Nat) (hj : 3 ≤ j) (hjn : j ≤ n)
+    (hd : d ∣ binom n 3) (hc : Nat.Coprime d (fac j)) :
+    d ∣ binom n j := by
+  have h6 := six_mul_binom_three n
+  have hdN : d ∣ n * (n - 1) * (n - 2) := by
+    rcases hd with ⟨t, ht⟩
+    refine ⟨6 * t, ?_⟩
+    calc
+      n * (n - 1) * (n - 2) = 6 * binom n 3 := h6.symm
+      _ = 6 * (d * t) := by rw [ht]
+      _ = d * (6 * t) := by ac_rfl
+  have hf := three_falling_dvd n j hj hjn
+  have : d ∣ binom n j * fac j := Nat.dvd_trans hdN hf
+  exact hc.dvd_of_dvd_mul_right this
+
 end P699I3
+

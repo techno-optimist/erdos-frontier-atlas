@@ -13,5 +13,6 @@
   "axioms": ["propext", "Quot.sound"],
   "pairs_checked": 1369,
   "mod4_eq_3_pairs": 342,
-  "scope": "i=3 transfer from size bound; odd gcd when n=3 mod 4. Size inequality is Python. Not full P699."
+  "op_divides_P": [[10, 5], [16, 7], [65, 15]],
+  "scope": "i=3 transfer, odd slice, coprime-to-j! cancel. o|P three pairs through n=1500. Not full P699."
 }
