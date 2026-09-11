@@ -345,5 +345,21 @@ theorem cancel_coprime_fac (n j d : Nat) (hj : 3 ≤ j) (hjn : j ≤ n)
   have : d ∣ binom n j * fac j := Nat.dvd_trans hdN hf
   exact hc.dvd_of_dvd_mul_right this
 
+theorem coprime_six_dvd_binom_three (n : Nat) (h : Nat.Coprime n 6) :
+    n ∣ binom n 3 := by
+  have h6 := six_mul_binom_three n
+  have hn : n ∣ n * (n - 1) * (n - 2) :=
+    ⟨(n - 1) * (n - 2), by ac_rfl⟩
+  have : n ∣ 6 * binom n 3 := by
+    rw [h6]; exact hn
+  exact h.dvd_of_dvd_mul_left this
+
+theorem coprime_six_cancel (n j : Nat) (hj : 3 ≤ j) (hjn : j < n)
+    (h6 : Nat.Coprime n 6) (hf : Nat.Coprime n (fac j)) :
+    n ∣ binom n j :=
+  cancel_coprime_fac n j n hj (Nat.le_of_lt hjn)
+    (coprime_six_dvd_binom_three n h6) hf
+
 end P699I3
+
 

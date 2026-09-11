@@ -20,7 +20,7 @@ That inequality holds **only for \(i\le 3\)**. So i=2 and i=3 are the last eleme
 | i | Status | What's left |
 |---|---|---|
 | 2 | kernel-checked gcd ≥ 2 for every pair | prime-factor Init gap only |
-| 3 | gcd ≥ 2; odd (hence ≥ 3) when n≡3 (mod 4); coprime-to-j! cancel kernel-checked | o\|P only at (10,5),(16,7),(65,15) through n=1500; unbounded remainder |
+| 3 | gcd ≥ 2; odd when n≡3 (mod 4); coprime-6 cancel; n=2p only (10,5) | type B o\|P only (65,15) through n=1e5 |
 | ≥ 4 | size bound dead | primes, EEES, localization |
 
 ## This lane's theorem
@@ -37,4 +37,4 @@ Kernel lemma `cancel_coprime_fac`: if \(d\mid\binom n3\) and \(\gcd(d,j!)=1\) th
 
 If the gcd were a 2-power then the odd part \(o\) of \(\binom n3\) would be coprime to \(\binom nj\), hence \(o\mid j(j-1)(j-2)\). That divisibility holds only at **(10,5), (16,7), (65,15)** for \(8\le n\le 1500\), and those three gcds are 12, 80, 1248 — all with an odd prime. Exact check: every pair \(8\le n\le 200\) has odd part of the gcd \(\ge 3\).
 
-Unbounded remainder: no \(o\mid P\) for \(66\le n\le 1500\), not a proof for all \(n\).
+See `close.md`. Type B \(o\mid P\) only at \((65,15)\) through \(n=10^5\). \(n=2p\) only \((10,5)\).

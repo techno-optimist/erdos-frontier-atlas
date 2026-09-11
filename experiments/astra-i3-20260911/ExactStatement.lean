@@ -12,3 +12,7 @@ example : ∀ n j d : Nat, 3 ≤ j → j ≤ n →
     d ∣ binom n 3 → Nat.Coprime d (fac j) → d ∣ binom n j :=
   cancel_coprime_fac
 #print axioms cancel_coprime_fac
+example : ∀ n j : Nat, 3 ≤ j → j < n →
+    Nat.Coprime n 6 → Nat.Coprime n (fac j) → n ∣ binom n j :=
+  coprime_six_cancel
+#print axioms coprime_six_cancel
