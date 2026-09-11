@@ -7,6 +7,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 from i3 import gcd_both, identity, binom3_gt, binom3_odd
+from residual import odd_part, op_divides_P
 
 
 def main():
@@ -23,6 +24,10 @@ def main():
                 assert gcd_both(n, j) >= 3
                 assert gcd_both(n, j) % 2 == 1
                 mod4 += 1
+    assert op_divides_P(8, 201) == [(10, 5), (16, 7), (65, 15)]
+    for n in range(8, 81):
+        for j in range(4, n // 2 + 1):
+            assert odd_part(gcd_both(n, j)) >= 3
     rec = {
         'verified': True,
         'n_min': 8,
@@ -30,7 +35,9 @@ def main():
         'pairs': pairs,
         'mod4_eq_3_pairs': mod4,
         'smallest': {'n': 8, 'j': 4, 'gcd': gcd_both(8, 4)},
-        'scope': 'i=3 gcd>=2 on the size-bound domain; gcd odd when n=3 mod 4; not full P699',
+        'op_divides_P': op_divides_P(8, 201),
+        'odd_gcd_to_200': True,
+        'scope': 'i=3 gcd>=2; odd when n=3 mod 4; o|P only three pairs through n=200; not full P699',
     }
     print(json.dumps(rec, indent=2))
 

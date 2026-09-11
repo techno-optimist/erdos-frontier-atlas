@@ -50,6 +50,7 @@ others don't touch it.
 | `agent/astra-substrate-20260911` | Reusable method substrate over the attack graph (queryable; no generated-graph edits) | `atlas/substrate.json`, `tools/query_substrate.py`, `tests/test_substrate.py`, `experiments/astra-substrate-20260911/` | overlay, not a status change |
 | `agent/astra-i2-complete-20260911` | Elementary complete i=2 case of P699: gcd(C(n,2),C(n,j))>1 | `experiments/astra-i2-complete-20260911/` | kernel-checked gcd form; not full P699 |
 | `agent/astra-i3-20260911` | Elementary i=3 slice of P699: gcd≥2 always; p≥3 when n≡3 (mod 4) | `experiments/astra-i3-20260911/` | gcd form kernel-checked; 2-adic residual open |
+| `agent/astra-i3-residual-20260911` | i=3 2-adic residual: coprime-to-j! cancel; o|P only three pairs | `experiments/astra-i3-20260911/` (residual files + I3 cancel lemmas) | not full P699; o\|P unbounded remainder |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching

@@ -54,6 +54,16 @@
       "remaining": ["size bound not kernel-checked", "n not 3 mod 4", "i>=4"]
     },
     {
+      "id": "i3-cancel-coprime-fac",
+      "statement": "If 3<=j<=n, d|C(n,3) and gcd(d,j!)=1 then d|C(n,j).",
+      "status": "kernel_checked",
+      "artifacts": ["experiments/astra-i3-20260911/I3.lean"],
+      "replay": ["lean experiments/astra-i3-20260911/I3.lean"],
+      "discharges": [{"problem": 699, "note": "kills i=3 whenever C(n,3) has a factor coprime to j!; o|P only three pairs through n=1500; does not close P699"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["o|P for n>1500 unproved", "i>=4"]
+    },
+    {
       "id": "p699-d2-line",
       "statement": "For 2<=i<j and n=2j+2, some prime p>=i divides both C(n,i) and C(n,j).",
       "status": "informal_reviewed",

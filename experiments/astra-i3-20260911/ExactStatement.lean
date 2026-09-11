@@ -8,3 +8,7 @@ example : ∀ n j : Nat, 3 ≤ j → j ≤ n →
 #print axioms binom_pred3_identity
 #print axioms binom_three_odd_of_mod4
 #print axioms i3_gcd_ge_three_of_mod4_of_gt
+example : ∀ n j d : Nat, 3 ≤ j → j ≤ n →
+    d ∣ binom n 3 → Nat.Coprime d (fac j) → d ∣ binom n j :=
+  cancel_coprime_fac
+#print axioms cancel_coprime_fac
