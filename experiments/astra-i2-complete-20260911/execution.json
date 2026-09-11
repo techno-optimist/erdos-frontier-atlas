@@ -1,0 +1,16 @@
+{
+  "lean": "4.33.1",
+  "lean_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "archive_sha256": "88c45aad985b5d2a8d925fe10bd1296bd35f66f408480ab182d3facccd065a9d",
+  "mathlib": "not used",
+  "commands": [
+    {"label": "python-tests", "exit_code": 0},
+    {"label": "lean-main", "command": "lean I2All.lean", "exit_code": 0},
+    {"label": "exact-statement", "exit_code": 0},
+    {"label": "axiom-audit", "exit_code": 0},
+    {"label": "negative-control", "exit_code": 0, "note": "binom 6 2 does not divide 6"}
+  ],
+  "axioms": ["propext", "Classical.choice", "Quot.sound"],
+  "pairs_checked": 1444,
+  "scope": "Complete i=2 slice of P699 in gcd form. Prime-factor existence is not kernel-checked. Not full P699."
+}

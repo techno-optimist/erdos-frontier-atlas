@@ -34,6 +34,16 @@
       "remaining": ["prime-factor existence in Init", "other i", "other d"]
     },
     {
+      "id": "i2-complete-gcd",
+      "statement": "For 3≤j and 2j≤n, gcd(C(n,2), C(n,j))≥2.",
+      "status": "kernel_checked",
+      "artifacts": ["experiments/astra-i2-complete-20260911/I2All.lean"],
+      "replay": ["lean experiments/astra-i2-complete-20260911/I2All.lean"],
+      "discharges": [{"problem": 699, "note": "complete i=2 slice in gcd form; prime-factor step is an Init gap; does not close P699"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["prime-factor existence in Init", "i≥3"]
+    },
+    {
       "id": "p699-d2-line",
       "statement": "For 2<=i<j and n=2j+2, some prime p>=i divides both C(n,i) and C(n,j).",
       "status": "informal_reviewed",
