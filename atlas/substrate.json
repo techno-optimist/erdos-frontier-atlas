@@ -74,6 +74,16 @@
       "remaining": ["n-1 and n-2 prime cases as instances of cancel", "i>=4"]
     },
     {
+      "id": "i3-typeA",
+      "statement": "If P+(odd_part(C(n,3)))>n/4 then o|j(j-1)(j-2) only at (10,5) and (16,7), both with odd gcd.",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-i3-20260911/typeA.md"],
+      "replay": ["python3 -I -B -m unittest discover -s experiments/astra-i3-20260911 -p test_typeA.py"],
+      "discharges": [{"problem": 699, "note": "Type A of the i=3 2-adic residual; Type B open; does not close P699"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["Type B P+ <= n/4", "i>=4"]
+    },
+    {
       "id": "p699-d2-line",
       "statement": "For 2<=i<j and n=2j+2, some prime p>=i divides both C(n,i) and C(n,j).",
       "status": "informal_reviewed",
