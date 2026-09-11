@@ -15,7 +15,8 @@ All open, CI green, unmerged. Not a solution of #699.
 | [#144](https://github.com/techno-optimist/erdos-frontier-atlas/pull/144) | `agent/astra-i3-close-20260911` | coprime-6 cancel; n=2p only (10,5) |
 | [#145](https://github.com/techno-optimist/erdos-frontier-atlas/pull/145) | `agent/astra-i3-typeA-20260911` | Type A: P+(o)>n/4 only (10,5),(16,7) |
 | [#146](https://github.com/techno-optimist/erdos-frontier-atlas/pull/146) | `agent/astra-i3-typeB1-20260911` | Type B1: n/6<p≤n/4 only (65,15); STACK.md |
+| [#147](https://github.com/techno-optimist/erdos-frontier-atlas/pull/147) | `agent/astra-i3-typeB2a-20260911` | Type B2a: n/8<p≤n/6 empty |
 
-Stack: 135 ← 136 ← 137 ← 139 ← 140 ← 141 ← 142 ← 143 ← 144 ← 145 ← 146.
+Stack: 135 ← 136 ← 137 ← 139 ← 140 ← 141 ← 142 ← 143 ← 144 ← 145 ← 146 ← 147.
 
-Open for i=3: Type B2b \(P^+(o)\le n/8\). Then i≥4.
+Open for i=3: residual only for \(n\not\equiv 3\pmod 4\), and Type B2b \(P^+\le n/10\). Then i≥4.

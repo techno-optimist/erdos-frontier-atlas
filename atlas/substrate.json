@@ -104,6 +104,26 @@
       "remaining": ["Type B2b P+ <= n/8", "i>=4"]
     },
     {
+      "id": "i3-mod4-residual-empty",
+      "statement": "If n=4t+3>=7 then C(n,3) is odd and exceeds (n/2)(n/2-1)(n/2-2), so odd_part(C(n,3)) never divides j(j-1)(j-2).",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-i3-20260911/mod4.md"],
+      "replay": ["python3 -I -B -m unittest discover -s experiments/astra-i3-20260911 -p test_mod4.py"],
+      "discharges": [{"problem": 699, "note": "i=3 2-adic residual empty on n=3 mod 4; does not close P699"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["n not 3 mod 4", "i>=4"]
+    },
+    {
+      "id": "i3-p-band",
+      "statement": "o|P forces n=mp+r, r in {0,1,2}. Band 8p<=n<10p is empty (m=9 only overlaps (65,15)).",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-i3-20260911/bands.md"],
+      "replay": ["python3 -I -B -m unittest discover -s experiments/astra-i3-20260911 -p test_bands.py"],
+      "discharges": [{"problem": 699, "note": "reusable p-band scanner for the i=3 residual; P+<=n/10 open; does not close P699"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["P+ <= n/10", "i>=4"]
+    },
+    {
       "id": "p699-d2-line",
       "statement": "For 2<=i<j and n=2j+2, some prime p>=i divides both C(n,i) and C(n,j).",
       "status": "informal_reviewed",

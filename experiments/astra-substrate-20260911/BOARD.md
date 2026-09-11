@@ -13,6 +13,8 @@ DISCHARGE / OBSTRUCTION (reviewed or kernel-checked on that problem)
   #699   DISCHARGE    i3-cancel-coprime-fac  kills i=3 whenever C(n,3) has a factor coprime to j!; o|P only three pairs through n=1500; does not close P699
   #699   DISCHARGE    i3-coprime-six-cancel  covers prime n>3 in the i=3 slice; does not close P699
   #699   DISCHARGE    i3-gcd-of-size  i=3 transfer plus odd slice; size bound is elementary/Python; 2-adic residual open; does not close P699
+  #699   DISCHARGE    i3-mod4-residual-empty  i=3 2-adic residual empty on n=3 mod 4; does not close P699
+  #699   DISCHARGE    i3-p-band  reusable p-band scanner for the i=3 residual; P+<=n/10 open; does not close P699
   #699   DISCHARGE    i3-typeA  Type A of the i=3 2-adic residual; Type B open; does not close P699
   #699   DISCHARGE    i3-typeB1  Type B1 of the i=3 2-adic residual; Type B2 P+<=n/6 open; does not close P699
   #699   DISCHARGE    i3-typeB2a  Type B2a of the i=3 2-adic residual; Type B2b P+<=n/8 open; does not close P699
@@ -33,6 +35,8 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #376   CANDIDATE    i3-cancel-coprime-fac  tag/OEIS shape match only; not an implication
   #376   CANDIDATE    i3-coprime-six-cancel  tag/OEIS shape match only; not an implication
   #376   CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
+  #376   CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
+  #376   CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
   #376   CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #376   CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #376   CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
@@ -44,6 +48,8 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #377   CANDIDATE    i3-cancel-coprime-fac  tag/OEIS shape match only; not an implication
   #377   CANDIDATE    i3-coprime-six-cancel  tag/OEIS shape match only; not an implication
   #377   CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
+  #377   CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
+  #377   CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
   #377   CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #377   CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #377   CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
@@ -55,6 +61,8 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #386   CANDIDATE    i3-cancel-coprime-fac  tag/OEIS shape match only; not an implication
   #386   CANDIDATE    i3-coprime-six-cancel  tag/OEIS shape match only; not an implication
   #386   CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
+  #386   CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
+  #386   CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
   #386   CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #386   CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #386   CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
@@ -66,6 +74,8 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #396   CANDIDATE    i3-cancel-coprime-fac  tag/OEIS shape match only; not an implication
   #396   CANDIDATE    i3-coprime-six-cancel  tag/OEIS shape match only; not an implication
   #396   CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
+  #396   CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
+  #396   CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
   #396   CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #396   CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #396   CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
@@ -77,6 +87,8 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #683   CANDIDATE    i3-cancel-coprime-fac  tag/OEIS shape match only; not an implication
   #683   CANDIDATE    i3-coprime-six-cancel  tag/OEIS shape match only; not an implication
   #683   CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
+  #683   CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
+  #683   CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
   #683   CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #683   CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #683   CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
@@ -89,6 +101,8 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #684   CANDIDATE    i3-cancel-coprime-fac  tag/OEIS shape match only; not an implication
   #684   CANDIDATE    i3-coprime-six-cancel  tag/OEIS shape match only; not an implication
   #684   CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
+  #684   CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
+  #684   CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
   #684   CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #684   CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #684   CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
@@ -101,6 +115,8 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #685   CANDIDATE    i3-cancel-coprime-fac  tag/OEIS shape match only; not an implication
   #685   CANDIDATE    i3-coprime-six-cancel  tag/OEIS shape match only; not an implication
   #685   CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
+  #685   CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
+  #685   CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
   #685   CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #685   CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #685   CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
@@ -113,6 +129,8 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #700   CANDIDATE    i3-cancel-coprime-fac  tag/OEIS shape match only; not an implication
   #700   CANDIDATE    i3-coprime-six-cancel  tag/OEIS shape match only; not an implication
   #700   CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
+  #700   CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
+  #700   CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
   #700   CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #700   CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #700   CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
@@ -124,6 +142,8 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #730   CANDIDATE    i3-cancel-coprime-fac  tag/OEIS shape match only; not an implication
   #730   CANDIDATE    i3-coprime-six-cancel  tag/OEIS shape match only; not an implication
   #730   CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
+  #730   CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
+  #730   CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
   #730   CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #730   CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #730   CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
@@ -135,6 +155,8 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #731   CANDIDATE    i3-cancel-coprime-fac  tag/OEIS shape match only; not an implication
   #731   CANDIDATE    i3-coprime-six-cancel  tag/OEIS shape match only; not an implication
   #731   CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
+  #731   CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
+  #731   CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
   #731   CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #731   CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #731   CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
@@ -146,6 +168,8 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #849   CANDIDATE    i3-cancel-coprime-fac  tag/OEIS shape match only; not an implication
   #849   CANDIDATE    i3-coprime-six-cancel  tag/OEIS shape match only; not an implication
   #849   CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
+  #849   CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
+  #849   CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
   #849   CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #849   CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #849   CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
@@ -159,6 +183,8 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #1093  CANDIDATE    i3-cancel-coprime-fac  tag/OEIS shape match only; not an implication
   #1093  CANDIDATE    i3-coprime-six-cancel  tag/OEIS shape match only; not an implication
   #1093  CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
+  #1093  CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
+  #1093  CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
   #1093  CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #1093  CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #1093  CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
@@ -170,6 +196,8 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #1094  CANDIDATE    i3-cancel-coprime-fac  tag/OEIS shape match only; not an implication
   #1094  CANDIDATE    i3-coprime-six-cancel  tag/OEIS shape match only; not an implication
   #1094  CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
+  #1094  CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
+  #1094  CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
   #1094  CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #1094  CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #1094  CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
@@ -181,9 +209,11 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #1095  CANDIDATE    i3-cancel-coprime-fac  tag/OEIS shape match only; not an implication
   #1095  CANDIDATE    i3-coprime-six-cancel  tag/OEIS shape match only; not an implication
   #1095  CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
+  #1095  CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
+  #1095  CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
   #1095  CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #1095  CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #1095  CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
   #1095  CANDIDATE    p699-d2-line  tag/OEIS shape match only; not an implication
 
-18 discharge/obstruction rows, 159 candidate rows.
+20 discharge/obstruction rows, 187 candidate rows.
