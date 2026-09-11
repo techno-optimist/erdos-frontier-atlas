@@ -61,7 +61,17 @@
       "replay": ["lean experiments/astra-i3-20260911/I3.lean"],
       "discharges": [{"problem": 699, "note": "kills i=3 whenever C(n,3) has a factor coprime to j!; o|P only three pairs through n=1500; does not close P699"}],
       "selectors": {"tags_all": ["binomial coefficients"]},
-      "remaining": ["o|P for n>1500 unproved", "i>=4"]
+      "remaining": ["o|P for n>1e5 type B unproved", "i>=4"]
+    },
+    {
+      "id": "i3-coprime-six-cancel",
+      "statement": "If gcd(n,6)=1 and gcd(n,j!)=1 then n|C(n,3) and n|C(n,j).",
+      "status": "kernel_checked",
+      "artifacts": ["experiments/astra-i3-20260911/I3.lean"],
+      "replay": ["lean experiments/astra-i3-20260911/I3.lean"],
+      "discharges": [{"problem": 699, "note": "covers prime n>3 in the i=3 slice; does not close P699"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["n-1 and n-2 prime cases as instances of cancel", "i>=4"]
     },
     {
       "id": "p699-d2-line",

@@ -51,6 +51,7 @@ others don't touch it.
 | `agent/astra-i2-complete-20260911` | Elementary complete i=2 case of P699: gcd(C(n,2),C(n,j))>1 | `experiments/astra-i2-complete-20260911/` | kernel-checked gcd form; not full P699 |
 | `agent/astra-i3-20260911` | Elementary i=3 slice of P699: gcd≥2 always; p≥3 when n≡3 (mod 4) | `experiments/astra-i3-20260911/` | gcd form kernel-checked; 2-adic residual open |
 | `agent/astra-i3-residual-20260911` | i=3 2-adic residual: coprime-to-j! cancel; o|P only three pairs | `experiments/astra-i3-20260911/` (residual files + I3 cancel lemmas) | not full P699; o\|P unbounded remainder |
+| `agent/astra-i3-close-20260911` | Close i=3 gcd form: Case1 kernel; n=2p only (10,5); type B to 1e5 | `experiments/astra-i3-20260911/` | i=3 gcd-odd not fully unbounded |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching

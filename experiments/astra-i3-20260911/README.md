@@ -12,4 +12,4 @@ Kernel-checked (Lean 4.33.1 Init, axioms `[propext, Quot.sound]`):
 
 Python supplies the size bound on \(8\le n\le 80\) (**1369** pairs, **342** with \(n\equiv 3\pmod 4\)). Odd part of every gcd \(\ge 3\) through \(n=200\). The only \(o\mid j^{\underline 3}\) hits through \(n=1500\) are (10,5), (16,7), (65,15).
 
-\(i\ge 4\) cannot use the size bound (\(2^i\le i!\)). See `residual.md`.
+See `close.md`. Kernel `coprime_six_cancel` for \(\gcd(n,6)=1\). \(n=2p\) only \((10,5)\). Type B only \((65,15)\) through \(n=10^5\).

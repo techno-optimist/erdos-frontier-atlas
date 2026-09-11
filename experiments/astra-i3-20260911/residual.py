@@ -31,3 +31,33 @@ def op_divides_P(n_min, n_max):
             if j * (j - 1) * (j - 2) % o == 0:
                 hits.append((n, j))
     return hits
+
+
+def _is_prime(n):
+    if n < 2:
+        return False
+    if n % 2 == 0:
+        return n == 2
+    i = 3
+    while i * i <= n:
+        if n % i == 0:
+            return False
+        i += 2
+    return True
+
+
+def twice_prime_hits(p_min, p_max):
+    """o|P pairs among n=2p, p prime in [p_min, p_max)."""
+    hits = []
+    for p in range(p_min, p_max):
+        if not _is_prime(p):
+            continue
+        n = 2 * p
+        if n < 8:
+            continue
+        o = odd_part(math.comb(n, 3))
+        m = n // 2
+        for j in range(4, m + 1):
+            if j * (j - 1) * (j - 2) % o == 0:
+                hits.append((n, j))
+    return hits
