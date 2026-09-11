@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 """RED tests: complete 0-1 base-3 search reconstructs the A030979 prefix."""
+import pathlib
+import shutil
+import subprocess
 import unittest
 
 from kummer105 import digits_ok, search_base3
@@ -31,6 +34,20 @@ class SearchBase3Test(unittest.TestCase):
     def test_oeis_45e9_terms_satisfy_kummer(self):
         for n in (45773612811, 45775397187):
             self.assertTrue(digits_ok(n), n)
+
+    def test_oeis_2e14_term_satisfies_kummer(self):
+        self.assertTrue(digits_ok(237617431723407))
+
+    @unittest.skipUnless(shutil.which('clang') or shutil.which('gcc'), 'no C compiler')
+    def test_c_search_d12_matches_python(self):
+        src = pathlib.Path(__file__).resolve().parent / 'search_base3.c'
+        cc = shutil.which('clang') or shutil.which('gcc')
+        self.assertIsNotNone(cc)
+        bin_path = pathlib.Path('/tmp/erdos376-search_base3-d12')
+        subprocess.check_call([cc, '-O3', '-o', str(bin_path), str(src)])
+        out = subprocess.check_output([str(bin_path), '12'], text=True)
+        got = [int(x) for x in out.split() if x.strip()]
+        self.assertEqual(got, search_base3(12))
 
 
 if __name__ == '__main__':

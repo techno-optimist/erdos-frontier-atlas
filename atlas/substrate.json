@@ -129,7 +129,7 @@
       "status": "informal_reviewed",
       "artifacts": ["experiments/astra-376-20260911/README.md", "experiments/astra-376-20260911/search.md"],
       "replay": ["python3 -I -B -m unittest discover -s experiments/astra-376-20260911 -p 'test_*.py'"],
-      "discharges": [{"problem": 376, "note": "Kummer checker; complete A030979 prefix through 3^24 (17 terms); infinitude and >10^70 remain; does not close P376"}],
+      "discharges": [{"problem": 376, "note": "Kummer checker; complete A030979 prefix through 3^31 (18 terms, C replay); infinitude and >10^70 remain; does not close P376"}],
       "selectors": {"tags_all": ["binomial coefficients"]},
       "remaining": ["infinitude of 3-prime case", "next term > 10^70"]
     },
