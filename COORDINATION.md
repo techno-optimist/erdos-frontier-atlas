@@ -49,6 +49,7 @@ others don't touch it.
 | `agent/astra-i2-family-20260911` | Kernel-checked P699 i=2, n=2j+3 infinite family; official-status delta since 2026-09-04 | `experiments/astra-i2-family-20260911/` only | formal family, not full P699; stacked on lean-seed lane |
 | `agent/astra-substrate-20260911` | Reusable method substrate over the attack graph (queryable; no generated-graph edits) | `atlas/substrate.json`, `tools/query_substrate.py`, `tests/test_substrate.py`, `experiments/astra-substrate-20260911/` | overlay, not a status change |
 | `agent/astra-i2-complete-20260911` | Elementary complete i=2 case of P699: gcd(C(n,2),C(n,j))>1 | `experiments/astra-i2-complete-20260911/` | kernel-checked gcd form; not full P699 |
+| `agent/astra-i3-20260911` | Elementary i=3 slice of P699: gcd≥2 always; p≥3 when n≡3 (mod 4) | `experiments/astra-i3-20260911/` | gcd form kernel-checked; 2-adic residual open |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching

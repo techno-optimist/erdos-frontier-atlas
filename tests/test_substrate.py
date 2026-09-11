@@ -23,6 +23,7 @@ def test_cli_for_699_names_kernel_methods_and_remaining_gap():
     assert "adjacent-binomial-gcd" in out
     assert "i2-d3-divisor" in out
     assert "i2-complete-gcd" in out
+    assert "i3-gcd-of-size" in out
     assert "kernel_checked" in out
     assert "not a solution of #699" in out.lower() or "does not close P699" in out
     assert "EEES" in out
