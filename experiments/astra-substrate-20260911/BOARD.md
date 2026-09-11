@@ -6,7 +6,7 @@ Method substrate — open/movable problems only.
 A CANDIDATE match is not an implication.
 
 DISCHARGE / OBSTRUCTION (reviewed or kernel-checked on that problem)
-  #376   DISCHARGE    kummer-105-digits  Kummer checker; complete A030979 prefix through 3^24 (17 terms); infinitude and >10^70 remain; does not close P376
+  #376   DISCHARGE    kummer-105-digits  Kummer checker; complete A030979 prefix through 3^31 (18 terms, C replay); infinitude and >10^70 remain; does not close P376
   #699   DISCHARGE    adjacent-binomial-gcd  used in the wrap-size bound; does not close P699
   #699   DISCHARGE    coprime-divisor-transfer  transfers the residual wrap factor; does not close P699
   #699   DISCHARGE    i2-complete-gcd  complete i=2 slice in gcd form; prime-factor step is an Init gap; does not close P699

@@ -18,7 +18,8 @@ All open, CI green, unmerged. Not a solution of #699.
 | [#147](https://github.com/techno-optimist/erdos-frontier-atlas/pull/147) | `agent/astra-i3-typeB2a-20260911` | Type B2a: n/8<p≤n/6 empty |
 | [#148](https://github.com/techno-optimist/erdos-frontier-atlas/pull/148) | `agent/astra-i3-mod4-band89-20260911` | n≡3 (mod 4) residual empty; p-band 8–9 |
 | [#149](https://github.com/techno-optimist/erdos-frontier-atlas/pull/149) | `agent/astra-freshness-376-20260911` | catalog delta 477/625/501; #376 Kummer checker |
+| [#150](https://github.com/techno-optimist/erdos-frontier-atlas/pull/150) | `agent/astra-376-search-20260911` | #376 A030979 complete through 3^24 |
 
-Stack: 135 ← … ← 148 ← 149.
+Stack: 135 ← … ← 149 ← 150.
 
-Open for i=3: residual only for \(n\not\equiv 3\pmod 4\), and Type B2b \(P^+\le n/10\). #376: A030979 complete through 3^24; infinitude and >10^70 remain.
+Open for i=3: residual only for \(n\not\equiv 3\pmod 4\), and Type B2b \(P^+\le n/10\). #376: A030979 complete through \(3^{31}\); infinitude and >10^70 remain.
