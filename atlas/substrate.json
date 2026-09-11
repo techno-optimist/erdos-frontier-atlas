@@ -41,7 +41,17 @@
       "replay": ["lean experiments/astra-i2-complete-20260911/I2All.lean"],
       "discharges": [{"problem": 699, "note": "complete i=2 slice in gcd form; prime-factor step is an Init gap; does not close P699"}],
       "selectors": {"tags_all": ["binomial coefficients"]},
-      "remaining": ["prime-factor existence in Init", "i≥3"]
+      "remaining": ["prime-factor existence in Init", "i>=3"]
+    },
+    {
+      "id": "i3-gcd-of-size",
+      "statement": "If j(j-1)(j-2)<C(n,3) then gcd(C(n,3),C(n,j))>=2. If also n=3 mod 4, the gcd is odd and >=3.",
+      "status": "kernel_checked",
+      "artifacts": ["experiments/astra-i3-20260911/I3.lean"],
+      "replay": ["lean experiments/astra-i3-20260911/I3.lean"],
+      "discharges": [{"problem": 699, "note": "i=3 transfer plus odd slice; size bound is elementary/Python; 2-adic residual open; does not close P699"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["size bound not kernel-checked", "n not 3 mod 4", "i>=4"]
     },
     {
       "id": "p699-d2-line",
