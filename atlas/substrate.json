@@ -1,0 +1,108 @@
+{
+  "schema": "erdos-frontier-atlas-substrate-v1",
+  "purpose": "Reusable lemmas and operators that an agent can try on other Erdős problems. The attack graph stays the strike map; this ledger is the toolbox. A candidate match is not an implication and never sets a status.",
+  "trust": "relation=discharges means the method is a kernel-checked or independently reviewed lemma used on that problem, still possibly partial. relation=candidate is a tag or OEIS shape match only. relation=obstruction is a proved failure of a naive transfer.",
+  "methods": [
+    {
+      "id": "adjacent-binomial-gcd",
+      "statement": "For all natural j,k: (k+1)*gcd(C(j,k), C(j+1,k+1)) = C(j,k)*gcd(k+1,j+1).",
+      "status": "kernel_checked",
+      "artifacts": ["experiments/astra-lean-seed-20260904/AdjacentBinomialGcd.lean"],
+      "replay": ["lean experiments/astra-lean-seed-20260904/AdjacentBinomialGcd.lean"],
+      "discharges": [{"problem": 699, "note": "used in the wrap-size bound; does not close P699"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["EEES", "prime-power localization", "full P699"]
+    },
+    {
+      "id": "coprime-divisor-transfer",
+      "statement": "If U|B, gcd(U,A)=1 and A*C=(j+1)*B then U|C.",
+      "status": "kernel_checked",
+      "artifacts": ["experiments/astra-lean-seed-20260904/AdjacentBinomialGcd.lean"],
+      "replay": ["lean experiments/astra-lean-seed-20260904/AdjacentBinomialGcd.lean"],
+      "discharges": [{"problem": 699, "note": "transfers the residual wrap factor; does not close P699"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["size bound W < C is informal"]
+    },
+    {
+      "id": "i2-d3-divisor",
+      "statement": "For j>=3, n=2j+3, m=n/gcd(n,j) satisfies m>=3 and m divides both C(n,2) and C(n,j).",
+      "status": "kernel_checked",
+      "artifacts": ["experiments/astra-i2-family-20260911/P699I2.lean"],
+      "replay": ["lean experiments/astra-i2-family-20260911/P699I2.lean"],
+      "discharges": [{"problem": 699, "note": "infinite i=2, n=2j+3 family in divisor form; prime-factor step is an Init gap"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["prime-factor existence in Init", "other i", "other d"]
+    },
+    {
+      "id": "p699-d2-line",
+      "statement": "For 2<=i<j and n=2j+2, some prime p>=i divides both C(n,i) and C(n,j).",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-briefcase-20260904/699/result.md"],
+      "replay": ["python3 -I experiments/astra-briefcase-20260904/699/check_shifted.py"],
+      "discharges": [{"problem": 699, "note": "entire d=2 line, conditional on EEES; does not close P699"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["EEES unformalized"]
+    },
+    {
+      "id": "prime-window",
+      "statement": "If 2<=i<j<=n/2 and n-i < p <= n with p prime, then p divides both C(n,i) and C(n,j).",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-briefcase-20260904/699/diagonal-completion.md"],
+      "replay": ["python3 -I experiments/astra-briefcase-20260904/699/independent_check.py"],
+      "discharges": [{"problem": 699, "note": "even-i n=2j+3 diagonal, using Nagura for i>=8"}],
+      "selectors": {"tags_all": ["binomial coefficients", "primes"]},
+      "remaining": ["Nagura not formalized"]
+    },
+    {
+      "id": "crt-endpoint-safe",
+      "statement": "Periodic reduced-residue gap counts equal an inclusion-exclusion over residue covers that forbid both endpoints.",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-briefcase-20260904/bridge/REPORT.md"],
+      "replay": ["python3 -I experiments/astra-briefcase-20260904/bridge/check_bridge.py"],
+      "discharges": [{"problem": 687, "note": "exact counting identity, not an asymptotic"}, {"problem": 854, "note": "same operator; does not determine the missing-gap spectrum"}],
+      "selectors": {"oeis_any": ["A048670", "A389839"]},
+      "remaining": ["no new missing-gap theorem"]
+    },
+    {
+      "id": "wheel-gap-operator",
+      "statement": "If H_P(z)=sum z^{g_i}, B_P(z)=sum z^{g_i+g_{i+1}} and max g_i < 2q then H_{Pq}(z)=(q-2)H_P(z)+B_P(z).",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-briefcase-20260904/bridge/REPORT.md"],
+      "replay": ["python3 -I experiments/astra-briefcase-20260904/bridge/check_bridge.py"],
+      "discharges": [{"problem": 687, "note": "wheel recurrence"}, {"problem": 854, "note": "wheel recurrence"}],
+      "obstructions": [{"problem": 854, "note": "at P=30030 a 22-gap exists but no 20-gap; endpoint-oblivious covers do not imply a 20-gap"}],
+      "selectors": {"oeis_any": ["A048670", "A389839"]},
+      "remaining": ["known antecedents; no novelty claim"]
+    },
+    {
+      "id": "nonpath-lc-obstruction",
+      "statement": "Every finite non-path tree H occurs as the exact branch skeleton of some tree whose independence polynomial is not log-concave.",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-briefcase-20260904/transfer-theorem.md"],
+      "replay": ["python3 -I experiments/astra-briefcase-20260904/verify.py"],
+      "discharges": [{"problem": 993, "note": "not non-unimodality; not a tree theorem"}],
+      "selectors": {"ids": [993]},
+      "remaining": ["path-core decorations", "unimodality"]
+    },
+    {
+      "id": "laurent-hub-block",
+      "statement": "The three-hub Laurent block B(r,s,t;c,d,e) is centrally unimodal for integers r,s,t>=1 and real c,d,e>=1.",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-briefcase-20260904/block/RESULT.md"],
+      "replay": ["python3 -I experiments/astra-briefcase-20260904/block/check.py --bound 24"],
+      "discharges": [{"problem": 993, "note": "algebraic block only; global tree partition missing"}],
+      "selectors": {"ids": [993]},
+      "remaining": ["combinatorial partition", "connectors", "outside factors"]
+    },
+    {
+      "id": "tail-compression",
+      "statement": "Leading independence-polynomial coefficients of a pendant-P2 decoration are an exact sum over independent sets of the core, without building the huge tree.",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-briefcase-20260904/tail.py"],
+      "replay": ["python3 -I experiments/astra-briefcase-20260904/test_tail.py"],
+      "discharges": [{"problem": 993, "note": "exact tails, not a full polynomial"}],
+      "selectors": {"ids": [993]},
+      "remaining": ["not a unimodality proof"]
+    }
+  ]
+}
