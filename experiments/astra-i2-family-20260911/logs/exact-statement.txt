@@ -1,0 +1,3 @@
+'P699I2.erdos699_i2_divisor' depends on axioms: [propext, Quot.sound]
+'P699I2.i2_m_divides' depends on axioms: [propext, Quot.sound]
+'P699I2.mul_binom_eq' depends on axioms: [propext, Quot.sound]

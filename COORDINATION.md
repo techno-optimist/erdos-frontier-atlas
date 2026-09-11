@@ -46,6 +46,7 @@ others don't touch it.
 | `agent/astra-structural-probes-20260904` | Official-source freshness, P699 near-central strip, P993 structural probes | [Research bundle](experiments/astra-20260904/README.md) — `experiments/astra-20260904/` only | ready for repository review; unpromoted |
 | `agent/astra-briefcase-transfers-20260904` | Proof transfer: compressed P993 tree tails, general hub blocks, arithmetic bridges, P699 residual strip | [Research bundle](experiments/astra-briefcase-20260904/README.md) — `experiments/astra-briefcase-20260904/` only | reviewed and replayed; PR stacked on #135; no promoted claims |
 | `agent/astra-lean-seed-20260904` | Lean-checked adjacent-binomial gcd and divisor transfer; explicit proof obligations | `experiments/astra-lean-seed-20260904/` only | formal seed, not full P699; stacked on briefcase lane |
+| `agent/astra-i2-family-20260911` | Kernel-checked P699 i=2, n=2j+3 infinite family; official-status delta since 2026-09-04 | `experiments/astra-i2-family-20260911/` only | formal family, not full P699; stacked on lean-seed lane |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching
