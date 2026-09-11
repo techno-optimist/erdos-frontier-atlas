@@ -8,7 +8,9 @@ The attack graph points here: binomial + base-representation cell, witness = any
 
 Kummer: gcd(C(2n,n), 105)=1 iff those digit bounds (no carry in n+n in bases 3,5,7). Independent exact-integer equivalence through n=400. Negative control: n=5=12_3 fails.
 
-All such n < 1000: **0, 1, 10, 756, 757**. Sparse, as Pomerance’s x^{0.02595} heuristic says. Does **not** claim a term > 10^70 (Thompson’s A030979 frontier).
+All such n < 1000: **0, 1, 10, 756, 757**. Sparse, as Pomerance’s x^{0.02595} heuristic says.
+
+See `search.md`: complete independent search through 3^24 matches OEIS A030979 with 17 terms, no extras. Does **not** claim a term > 10^70 or infinitude.
 
 Replay:
 

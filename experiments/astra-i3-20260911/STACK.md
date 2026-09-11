@@ -17,7 +17,8 @@ All open, CI green, unmerged. Not a solution of #699.
 | [#146](https://github.com/techno-optimist/erdos-frontier-atlas/pull/146) | `agent/astra-i3-typeB1-20260911` | Type B1: n/6<p≤n/4 only (65,15); STACK.md |
 | [#147](https://github.com/techno-optimist/erdos-frontier-atlas/pull/147) | `agent/astra-i3-typeB2a-20260911` | Type B2a: n/8<p≤n/6 empty |
 | [#148](https://github.com/techno-optimist/erdos-frontier-atlas/pull/148) | `agent/astra-i3-mod4-band89-20260911` | n≡3 (mod 4) residual empty; p-band 8–9 |
+| [#149](https://github.com/techno-optimist/erdos-frontier-atlas/pull/149) | `agent/astra-freshness-376-20260911` | catalog delta 477/625/501; #376 Kummer checker |
 
-Stack: 135 ← … ← 147 ← 148.
+Stack: 135 ← … ← 148 ← 149.
 
-Open for i=3: residual only for \(n\not\equiv 3\pmod 4\), and Type B2b \(P^+\le n/10\). Then i≥4. Next binomial cell on the graph: **#376** (Kummer 105).
+Open for i=3: residual only for \(n\not\equiv 3\pmod 4\), and Type B2b \(P^+\le n/10\). #376: A030979 complete through 3^24; infinitude and >10^70 remain.

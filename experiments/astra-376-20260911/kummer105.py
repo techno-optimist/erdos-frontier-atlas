@@ -38,3 +38,29 @@ def coprime_105(n):
 
 def enumerate_below(limit):
     return [n for n in range(int(limit)) if digits_ok(n)]
+
+
+def search_base3(max_digits):
+    """All n whose base-3 digits are in {0,1} with at most max_digits, and digits_ok.
+
+    Completeness: every such n < 3**max_digits is visited exactly once.
+    """
+    max_digits = int(max_digits)
+    if max_digits < 0:
+        return []
+    pow3 = [3 ** i for i in range(max_digits)]
+    hits = []
+    limit = 1 << max_digits
+    for mask in range(limit):
+        n = 0
+        m = mask
+        i = 0
+        while m:
+            if m & 1:
+                n += pow3[i]
+            m >>= 1
+            i += 1
+        if digits_ok(n):
+            hits.append(n)
+    hits.sort()
+    return hits
