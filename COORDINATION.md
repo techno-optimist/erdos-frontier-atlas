@@ -56,6 +56,7 @@ others don't touch it.
 | `agent/astra-i3-typeB1-20260911` | Type B1: n/6<p≤n/4 only (65,15); campaign STACK.md | `experiments/astra-i3-20260911/typeB1.*`, `STACK.md` | Type B2 P+≤n/6 |
 | `agent/astra-i3-typeB2a-20260911` | Type B2a: n/8<p≤n/6 empty | `experiments/astra-i3-20260911/typeB2a.*` | Type B2b P+≤n/8 |
 | `agent/astra-i3-mod4-band89-20260911` | n≡3 (mod 4) o\|P empty; band m=8,9 | `experiments/astra-i3-20260911/mod4.*`, `bands.*` | B2b P+≤n/10 |
+| `agent/astra-freshness-376-20260911` | YAML freshness 477/625/501; #376 Kummer digit checker | `experiments/astra-freshness-20260911/`, `experiments/astra-376-20260911/` | #376 infinitude / 10^70 cell |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching
