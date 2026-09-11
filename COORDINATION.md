@@ -55,6 +55,7 @@ others don't touch it.
 | `agent/astra-i3-typeA-20260911` | Type A cracked: P+(o)>n/4 implies o|P only (10,5),(16,7) | `experiments/astra-i3-20260911/typeA.*` | Type B last i=3 class |
 | `agent/astra-i3-typeB1-20260911` | Type B1: n/6<p≤n/4 only (65,15); campaign STACK.md | `experiments/astra-i3-20260911/typeB1.*`, `STACK.md` | Type B2 P+≤n/6 |
 | `agent/astra-i3-typeB2a-20260911` | Type B2a: n/8<p≤n/6 empty | `experiments/astra-i3-20260911/typeB2a.*` | Type B2b P+≤n/8 |
+| `agent/astra-i3-mod4-band89-20260911` | n≡3 (mod 4) o\|P empty; band m=8,9 | `experiments/astra-i3-20260911/mod4.*`, `bands.*` | B2b P+≤n/10 |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching

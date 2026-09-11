@@ -29,6 +29,8 @@ def test_cli_for_699_names_kernel_methods_and_remaining_gap():
     assert "i3-typeA" in out
     assert "i3-typeB1" in out
     assert "i3-typeB2a" in out
+    assert "i3-mod4-residual-empty" in out
+    assert "i3-p-band" in out
     assert "kernel_checked" in out
     assert "not a solution of #699" in out.lower() or "does not close P699" in out
     assert "EEES" in out
