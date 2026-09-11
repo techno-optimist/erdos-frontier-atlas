@@ -124,6 +124,16 @@
       "remaining": ["P+ <= n/10", "i>=4"]
     },
     {
+      "id": "kummer-105-digits",
+      "statement": "gcd(C(2n,n),105)=1 iff n has base-3 digits in {0,1}, base-5 digits in {0,1,2}, base-7 digits in {0,1,2,3}.",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-376-20260911/README.md"],
+      "replay": ["python3 -I -B -m unittest discover -s experiments/astra-376-20260911 -p test_kummer.py"],
+      "discharges": [{"problem": 376, "note": "Kummer checker and small enumeration; infinitude and A030979(1375)>10^70 remain; does not close P376"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["infinitude of 3-prime case", "next term > 10^70"]
+    },
+    {
       "id": "p699-d2-line",
       "statement": "For 2<=i<j and n=2j+2, some prime p>=i divides both C(n,i) and C(n,j).",
       "status": "informal_reviewed",
