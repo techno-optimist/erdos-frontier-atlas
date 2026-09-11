@@ -53,6 +53,7 @@ others don't touch it.
 | `agent/astra-i3-residual-20260911` | i=3 2-adic residual: coprime-to-j! cancel; o|P only three pairs | `experiments/astra-i3-20260911/` (residual files + I3 cancel lemmas) | not full P699; o\|P unbounded remainder |
 | `agent/astra-i3-close-20260911` | Close i=3 gcd form: Case1 kernel; n=2p only (10,5); type B to 1e5 | `experiments/astra-i3-20260911/` | i=3 gcd-odd not fully unbounded |
 | `agent/astra-i3-typeA-20260911` | Type A cracked: P+(o)>n/4 implies o|P only (10,5),(16,7) | `experiments/astra-i3-20260911/typeA.*` | Type B last i=3 class |
+| `agent/astra-i3-typeB1-20260911` | Type B1: n/6<p≤n/4 only (65,15); campaign STACK.md | `experiments/astra-i3-20260911/typeB1.*`, `STACK.md` | Type B2 P+≤n/6 |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching
