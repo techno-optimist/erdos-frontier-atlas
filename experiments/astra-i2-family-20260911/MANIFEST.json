@@ -1,0 +1,69 @@
+{
+  "scope": "File integrity only. Rebuild with Lean 4.33.1 to check the kernel theorem.",
+  "files": {
+    ".gitignore": {
+      "sha256": "16406ebaa621356d85aa728b2d9d5b231f61916743cd3c590bef3efbaab4cb7e",
+      "bytes": 31
+    },
+    "AxiomAudit.lean": {
+      "sha256": "e3b1e6d03fa804e854b13fc56acec1fe42325f056c45042bf899a70ec9f02aff",
+      "bytes": 160
+    },
+    "ExactStatement.lean": {
+      "sha256": "42acc238661b0555112ddeb01bbcad497f3ffe66e3ee727a75afc82f3bf78cc6",
+      "bytes": 256
+    },
+    "P699I2.lean": {
+      "sha256": "4dae604ab5cffc42c49816588c71262b75fe010c17b94dc2879b59f8d8b9bd02",
+      "bytes": 8363
+    },
+    "README.md": {
+      "sha256": "30ecae3fce54cc94d2375f328b5bfb2db36c8774003d436c30f456be5c7f3070",
+      "bytes": 3060
+    },
+    "execution.json": {
+      "sha256": "3c7beede1657adede2c362f4b2939f30d789e4688533b8e7875f5ba1995a7a76",
+      "bytes": 675
+    },
+    "i2.py": {
+      "sha256": "257710dd473941f61f904c3707cfe0fec3f73effc9fe2d3244aa15d5adff62dd",
+      "bytes": 619
+    },
+    "logs/axiom-audit.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "logs/exact-statement.txt": {
+      "sha256": "c703ded6a4a20edbd4c119a30bb46759eb617367c48d16f2cb1a3b0ef0bf43e0",
+      "bytes": 196
+    },
+    "logs/lean-version.txt": {
+      "sha256": "4762d596346ad354e28668de62b7eeae7de5d531b9a7b1c182ca59cfacd81bdd",
+      "bytes": 106
+    },
+    "logs/main.txt": {
+      "sha256": "c0a1906107c37e9704635d34d7b76b892e73bafe5b4ebbbf1351da8358531d03",
+      "bytes": 24
+    },
+    "logs/negative-control.txt": {
+      "sha256": "5ec3b476fb5fae462a9589dab4b2ca704e8b5d5fab2cf6792235bf06b39e8fd9",
+      "bytes": 134
+    },
+    "negative/AlteredIdentity.lean": {
+      "sha256": "138c675ca208d1d4662688ccf43e19009af1d0d3a3096cc5fc9209b27d9ae6d9",
+      "bytes": 200
+    },
+    "official-delta.json": {
+      "sha256": "0d82eed4393e2cd42d8e839bbd8bafe4926242980fcc9e32cd629ba30190ba24",
+      "bytes": 21094
+    },
+    "test_i2.py": {
+      "sha256": "b1a57244c7732bf947cb0a5aa4f4551bb5fb9cbcfd4729657685224e3e4a558f",
+      "bytes": 2242
+    },
+    "verify.py": {
+      "sha256": "0146a799713c0e577b8c20028e4b8395916e1725dbd52384fd38b84315f380d1",
+      "bytes": 1094
+    }
+  }
+}

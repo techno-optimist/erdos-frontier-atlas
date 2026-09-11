@@ -1,0 +1,2 @@
+lean P699I2.lean
+exit 0

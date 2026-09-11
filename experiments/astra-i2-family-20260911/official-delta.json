@@ -1,0 +1,1013 @@
+{
+  "prev_commit": "2a4d12b8be30a0483f49259654d10fcb0e2f08eb",
+  "now_commit": "3c68e941162f81d650fc886eed34e58bed3a6a01",
+  "now_date": "2026-09-09T17:51:07Z",
+  "n_prev": 1217,
+  "n_now": 1217,
+  "added": [],
+  "removed": [],
+  "raw_field_changes": 55,
+  "mathematical_status_changes": [
+    {
+      "id": 1,
+      "prev": {
+        "id": 1,
+        "status": "disproved (formalized)",
+        "informal": "disproved",
+        "formal": "formalized",
+        "formalized": "yes"
+      },
+      "now": {
+        "id": 1,
+        "status": "disproved (Lean)",
+        "informal": "disproved",
+        "formal": "Lean",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 74,
+      "prev": {
+        "id": 74,
+        "status": "disproved (formalized)",
+        "informal": "disproved",
+        "formal": "formalized",
+        "formalized": "yes"
+      },
+      "now": {
+        "id": 74,
+        "status": "disproved (Lean)",
+        "informal": "disproved",
+        "formal": "Lean",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 126,
+      "prev": {
+        "id": 126,
+        "status": "proved (formalized)",
+        "informal": "proved",
+        "formal": "formalized",
+        "formalized": "yes"
+      },
+      "now": {
+        "id": 126,
+        "status": "proved (Lean)",
+        "informal": "proved",
+        "formal": "Lean",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 477,
+      "prev": {
+        "id": 477,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      },
+      "now": {
+        "id": 477,
+        "status": "solved",
+        "informal": "solved",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 501,
+      "prev": {
+        "id": 501,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      },
+      "now": {
+        "id": 501,
+        "status": "independent",
+        "informal": "independent",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 548,
+      "prev": {
+        "id": 548,
+        "status": "proved (formalized)",
+        "informal": "proved",
+        "formal": "formalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 548,
+        "status": "proved (Lean)",
+        "informal": "proved",
+        "formal": "Lean",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 557,
+      "prev": {
+        "id": 557,
+        "status": "proved (formalized)",
+        "informal": "proved",
+        "formal": "formalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 557,
+        "status": "proved (Lean)",
+        "informal": "proved",
+        "formal": "Lean",
+        "formalized": "no"
+      }
+    },
+    {
+      "id": 571,
+      "prev": {
+        "id": 571,
+        "status": "proved (formalized)",
+        "informal": "proved",
+        "formal": "formalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 571,
+        "status": "proved (Lean)",
+        "informal": "proved",
+        "formal": "Lean",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 625,
+      "prev": {
+        "id": 625,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 625,
+        "status": "solved",
+        "informal": "solved",
+        "formal": "unformalized",
+        "formalized": "no"
+      }
+    }
+  ],
+  "formal_or_other_only": [
+    {
+      "id": 57,
+      "prev": {
+        "id": 57,
+        "status": "proved (Lean)",
+        "informal": "proved",
+        "formal": "Lean",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 57,
+        "status": "proved (Lean)",
+        "informal": "proved",
+        "formal": "Lean",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 58,
+      "prev": {
+        "id": 58,
+        "status": "proved",
+        "informal": "proved",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 58,
+        "status": "proved",
+        "informal": "proved",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 63,
+      "prev": {
+        "id": 63,
+        "status": "proved (Lean)",
+        "informal": "proved",
+        "formal": "Lean",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 63,
+        "status": "proved (Lean)",
+        "informal": "proved",
+        "formal": "Lean",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 65,
+      "prev": {
+        "id": 65,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 65,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 73,
+      "prev": {
+        "id": 73,
+        "status": "proved",
+        "informal": "proved",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 73,
+        "status": "proved",
+        "informal": "proved",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 77,
+      "prev": {
+        "id": 77,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 77,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 79,
+      "prev": {
+        "id": 79,
+        "status": "proved",
+        "informal": "proved",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 79,
+        "status": "proved",
+        "informal": "proved",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 86,
+      "prev": {
+        "id": 86,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 86,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 87,
+      "prev": {
+        "id": 87,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 87,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 104,
+      "prev": {
+        "id": 104,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 104,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 159,
+      "prev": {
+        "id": 159,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 159,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 163,
+      "prev": {
+        "id": 163,
+        "status": "proved",
+        "informal": "proved",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 163,
+        "status": "proved",
+        "informal": "proved",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 166,
+      "prev": {
+        "id": 166,
+        "status": "proved",
+        "informal": "proved",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 166,
+        "status": "proved",
+        "informal": "proved",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 181,
+      "prev": {
+        "id": 181,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 181,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 322,
+      "prev": {
+        "id": 322,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 322,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 478,
+      "prev": {
+        "id": 478,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 478,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 544,
+      "prev": {
+        "id": 544,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 544,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 545,
+      "prev": {
+        "id": 545,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 545,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 546,
+      "prev": {
+        "id": 546,
+        "status": "proved",
+        "informal": "proved",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 546,
+        "status": "proved",
+        "informal": "proved",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 547,
+      "prev": {
+        "id": 547,
+        "status": "decidable",
+        "informal": "decidable",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 547,
+        "status": "decidable",
+        "informal": "decidable",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 549,
+      "prev": {
+        "id": 549,
+        "status": "disproved",
+        "informal": "disproved",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 549,
+        "status": "disproved",
+        "informal": "disproved",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 550,
+      "prev": {
+        "id": 550,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 550,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 551,
+      "prev": {
+        "id": 551,
+        "status": "decidable",
+        "informal": "decidable",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 551,
+        "status": "decidable",
+        "informal": "decidable",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 552,
+      "prev": {
+        "id": 552,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 552,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 563,
+      "prev": {
+        "id": 563,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 563,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 568,
+      "prev": {
+        "id": 568,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 568,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 569,
+      "prev": {
+        "id": 569,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 569,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 570,
+      "prev": {
+        "id": 570,
+        "status": "proved",
+        "informal": "proved",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 570,
+        "status": "proved",
+        "informal": "proved",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 572,
+      "prev": {
+        "id": 572,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 572,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 583,
+      "prev": {
+        "id": 583,
+        "status": "falsifiable",
+        "informal": "falsifiable",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 583,
+        "status": "falsifiable",
+        "informal": "falsifiable",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 609,
+      "prev": {
+        "id": 609,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 609,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 713,
+      "prev": {
+        "id": 713,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 713,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 714,
+      "prev": {
+        "id": 714,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 714,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 773,
+      "prev": {
+        "id": 773,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 773,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 800,
+      "prev": {
+        "id": 800,
+        "status": "proved",
+        "informal": "proved",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 800,
+        "status": "proved",
+        "informal": "proved",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 883,
+      "prev": {
+        "id": 883,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 883,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 921,
+      "prev": {
+        "id": 921,
+        "status": "proved",
+        "informal": "proved",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 921,
+        "status": "proved",
+        "informal": "proved",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 970,
+      "prev": {
+        "id": 970,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 970,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 986,
+      "prev": {
+        "id": 986,
+        "status": "proved",
+        "informal": "proved",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 986,
+        "status": "proved",
+        "informal": "proved",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 1020,
+      "prev": {
+        "id": 1020,
+        "status": "falsifiable",
+        "informal": "falsifiable",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 1020,
+        "status": "falsifiable",
+        "informal": "falsifiable",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 1029,
+      "prev": {
+        "id": 1029,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 1029,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 1030,
+      "prev": {
+        "id": 1030,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 1030,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 1083,
+      "prev": {
+        "id": 1083,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 1083,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 1159,
+      "prev": {
+        "id": 1159,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 1159,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 1206,
+      "prev": {
+        "id": 1206,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 1206,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    },
+    {
+      "id": 1207,
+      "prev": {
+        "id": 1207,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "no"
+      },
+      "now": {
+        "id": 1207,
+        "status": "open",
+        "informal": "open",
+        "formal": "unformalized",
+        "formalized": "yes"
+      }
+    }
+  ],
+  "P699": {
+    "prev": {
+      "id": 699,
+      "status": "falsifiable",
+      "informal": "falsifiable",
+      "formal": "unformalized",
+      "formalized": "yes"
+    },
+    "now": {
+      "id": 699,
+      "status": "falsifiable",
+      "informal": "falsifiable",
+      "formal": "unformalized",
+      "formalized": "yes"
+    }
+  },
+  "P993": {
+    "prev": {
+      "id": 993,
+      "status": "falsifiable",
+      "informal": "falsifiable",
+      "formal": "unformalized",
+      "formalized": "no"
+    },
+    "now": {
+      "id": 993,
+      "status": "falsifiable",
+      "informal": "falsifiable",
+      "formal": "unformalized",
+      "formalized": "no"
+    }
+  },
+  "P366": {
+    "prev": {
+      "id": 366,
+      "status": "verifiable",
+      "informal": "verifiable",
+      "formal": "unformalized",
+      "formalized": "yes"
+    },
+    "now": {
+      "id": 366,
+      "status": "verifiable",
+      "informal": "verifiable",
+      "formal": "unformalized",
+      "formalized": "yes"
+    }
+  },
+  "P743": {
+    "prev": {
+      "id": 743,
+      "status": "falsifiable",
+      "informal": "falsifiable",
+      "formal": "unformalized",
+      "formalized": "no"
+    },
+    "now": {
+      "id": 743,
+      "status": "falsifiable",
+      "informal": "falsifiable",
+      "formal": "unformalized",
+      "formalized": "no"
+    }
+  }
+}
