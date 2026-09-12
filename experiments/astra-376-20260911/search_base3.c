@@ -1,6 +1,6 @@
 /* Complete 0-1 base-3 search for Erdős #376 / A030979.
- * Usage: search_base3 [max_digits]
- * Prints n with base-3 digits in {0,1} and Kummer constraints in bases 5 and 7.
+ * Usage: search_base3 [max_digits] [mask_start] [mask_end]
+ * Mask range is half-open [start, end). Defaults: start=0, end=2^D.
  * Not a solution of #376.
  */
 #include <stdio.h>
@@ -32,7 +32,13 @@ int main(int argc, char **argv) {
         if (pow3[i] / 3ULL != pow3[i - 1]) return 3; /* overflow */
     }
     uint64_t limit = (D == 0) ? 1ULL : (1ULL << D);
-    for (uint64_t mask = 0; mask < limit; mask++) {
+    uint64_t start = 0;
+    uint64_t end = limit;
+    if (argc > 2) start = strtoull(argv[2], NULL, 10);
+    if (argc > 3) end = strtoull(argv[3], NULL, 10);
+    if (start > end) return 4;
+    if (end > limit) end = limit;
+    for (uint64_t mask = start; mask < end; mask++) {
         uint64_t n = 0, m = mask;
         int i = 0;
         while (m) {

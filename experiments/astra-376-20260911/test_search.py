@@ -35,8 +35,17 @@ class SearchBase3Test(unittest.TestCase):
         for n in (45773612811, 45775397187):
             self.assertTrue(digits_ok(n), n)
 
-    def test_oeis_2e14_term_satisfies_kummer(self):
-        self.assertTrue(digits_ok(237617431723407))
+    def test_committed_d35_hits_are_kummer_and_below_cutoff(self):
+        path = pathlib.Path(__file__).resolve().parent / 'hits-d35.txt'
+        hits = [int(x) for x in path.read_text().split()]
+        self.assertEqual(len(hits), 43)
+        self.assertEqual(hits, sorted(set(hits)))
+        cutoff = 3 ** 35
+        for n in hits:
+            self.assertTrue(digits_ok(n), n)
+            self.assertLess(n, cutoff)
+        # next OEIS term after this cutoff
+        self.assertGreater(673333777170421930, cutoff)
 
     @unittest.skipUnless(shutil.which('clang') or shutil.which('gcc'), 'no C compiler')
     def test_c_search_d12_matches_python(self):
@@ -47,6 +56,18 @@ class SearchBase3Test(unittest.TestCase):
         subprocess.check_call([cc, '-O3', '-o', str(bin_path), str(src)])
         out = subprocess.check_output([str(bin_path), '12'], text=True)
         got = [int(x) for x in out.split() if x.strip()]
+        self.assertEqual(got, search_base3(12))
+
+    @unittest.skipUnless(shutil.which('clang') or shutil.which('gcc'), 'no C compiler')
+    def test_c_search_d12_split_ranges_cover(self):
+        src = pathlib.Path(__file__).resolve().parent / 'search_base3.c'
+        cc = shutil.which('clang') or shutil.which('gcc')
+        self.assertIsNotNone(cc)
+        bin_path = pathlib.Path('/tmp/erdos376-search_base3-d12')
+        subprocess.check_call([cc, '-O3', '-o', str(bin_path), str(src)])
+        a = subprocess.check_output([str(bin_path), '12', '0', '2048'], text=True)
+        b = subprocess.check_output([str(bin_path), '12', '2048', '4096'], text=True)
+        got = sorted(int(x) for x in (a + b).split() if x.strip())
         self.assertEqual(got, search_base3(12))
 
 

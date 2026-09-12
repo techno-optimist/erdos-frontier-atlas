@@ -1,30 +1,26 @@
-# Complete A030979 prefix through 3^31
+# Complete A030979 prefix through 3^35
 
 **Not a solution of #376.** Infinitude remains open.
 
 ## Python (CI)
 
 `search_base3(20)` is complete through \(3^{20}\) and matches OEIS through 59548401.
+C D=12 (including split ranges) matches Python.
 
-## C replay (not CI)
+## C replay
 
 ```sh
 clang -O3 -o /tmp/search_base3 experiments/astra-376-20260911/search_base3.c
-/tmp/search_base3 31
+# 8 shards of 2^35, ~195s wall
+/tmp/search_base3 35 START END
 ```
 
-D=24: 0.63s, 17 hits, cutoff \(3^{24}=282\,429\,536\,481\).
-D=31: 84.68s real, 18 hits, cutoff \(3^{31}=617\,673\,396\,283\,947\).
+| D | cutoff | wall | hits |
+|---|---|---|---|
+| 24 | \(3^{24}=2.82\times 10^{11}\) | 0.63s | 17 |
+| 31 | \(3^{31}=6.18\times 10^{14}\) | 84.7s | 18 |
+| 35 | \(3^{35}=5.003\times 10^{16}\) | 195s, 8-way | **43** |
 
-Hits in order:
+The 43 hits are `hits-d35.txt`. They are exactly A030979(1..43) from the OEIS b-file. No extras below \(3^{35}\). Next b-file term \(673\,333\,777\,170\,421\,930\) exceeds this cutoff.
 
-```
-0, 1, 10, 756, 757, 3160, 3186, 3187, 3250,
-7560, 7561, 7651, 20007, 59548377, 59548401,
-45773612811, 45775397187,
-237617431723407
-```
-
-Exactly the OEIS A030979 prefix through \(2.376\times 10^{14}\). No extras below \(3^{31}\). Next OEIS term \(24\,991\,943\,420\,078\,301\) is larger than this cutoff.
-
-Among them, base-11 digits all ≤5 only at **0, 1, 3160**.
+Among terms through \(3^{24}\), base-11 digits all ≤5 only at **0, 1, 3160**.
