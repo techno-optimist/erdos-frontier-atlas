@@ -59,6 +59,7 @@ others don't touch it.
 | `agent/astra-freshness-376-20260911` | YAML freshness 477/625/501; #376 Kummer digit checker | `experiments/astra-freshness-20260911/`, `experiments/astra-376-20260911/` | #376 infinitude / 10^70 cell |
 | `agent/astra-376-search-20260911` | #376 complete A030979 prefix through 3^24 | `experiments/astra-376-20260911/search.md` | infinitude; next >10^70 |
 | `agent/astra-376-csearch-20260911` | #376 C search complete through 3^31 (18 terms) | `experiments/astra-376-20260911/search_base3.c` | infinitude; >10^70 |
+| `agent/astra-376-d35-20260911` | #376 C search complete through 3^35 (43 terms) | `experiments/astra-376-20260911/hits-d35.txt` | infinitude; >10^70 |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching
