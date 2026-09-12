@@ -131,7 +131,7 @@
       "replay": ["python3 -I -B -m unittest discover -s experiments/astra-i3-20260911 -p test_typeB2b.py"],
       "discharges": [{"problem": 699, "note": "structural split of the i=3 residual; does not close P699"}],
       "selectors": {"tags_all": ["binomial coefficients"]},
-      "remaining": ["n=1 mod 4", "n=4 mod 6", "smooth n-1 dividing P"]
+      "remaining": ["n=1 mod 4", "n=4 mod 6", "n-1 with at least two distinct odd primes"]
     },
     {
       "id": "kummer-105-digits",
