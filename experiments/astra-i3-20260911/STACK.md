@@ -20,7 +20,10 @@ All open, CI green, unmerged. Not a solution of #699.
 | [#149](https://github.com/techno-optimist/erdos-frontier-atlas/pull/149) | `agent/astra-freshness-376-20260911` | catalog delta 477/625/501; #376 Kummer checker |
 | [#150](https://github.com/techno-optimist/erdos-frontier-atlas/pull/150) | `agent/astra-376-search-20260911` | #376 A030979 complete through 3^24 |
 | [#151](https://github.com/techno-optimist/erdos-frontier-atlas/pull/151) | `agent/astra-376-csearch-20260911` | #376 C search complete through 3^31 |
+| [#152](https://github.com/techno-optimist/erdos-frontier-atlas/pull/152) | `agent/astra-376-d35-20260911` | #376 C search complete through 3^35 (bounded replay; do not extend D) |
 
-Stack: 135 ← … ← 150 ← 151.
+Stack: 135 ← … ← 151 ← 152.
 
-Open for i=3: residual only for \(n\not\equiv 3\pmod 4\), and Type B2b \(P^+\le n/10\). #376: A030979 complete through \(3^{35}\) (43 terms); infinitude and >10^70 remain.
+**Goal:** method substrate, not a scoreboard. See `GOAL.md`.
+
+Open for i=3: Type B2b structural leftover (`typeB2b.md`), not more p-bands. #376: infinitude idea, not \(D=36\).

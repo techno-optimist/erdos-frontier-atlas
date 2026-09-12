@@ -124,6 +124,16 @@
       "remaining": ["P+ <= n/10", "i>=4"]
     },
     {
+      "id": "i3-typeB2b-struct",
+      "statement": "Even n>=6 with 3 not dividing n-1 implies n-1 divides C(n,3). Type B2b leftover is smoothness of n-1 vs a 3-consecutive product, not further p-bands.",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-i3-20260911/typeB2b.md", "experiments/astra-i3-20260911/GOAL.md"],
+      "replay": ["python3 -I -B -m unittest discover -s experiments/astra-i3-20260911 -p test_typeB2b.py"],
+      "discharges": [{"problem": 699, "note": "structural split of the i=3 residual; does not close P699"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["n=1 mod 4", "n=4 mod 6", "smooth n-1 dividing P"]
+    },
+    {
       "id": "kummer-105-digits",
       "statement": "gcd(C(2n,n),105)=1 iff n has base-3 digits in {0,1}, base-5 digits in {0,1,2}, base-7 digits in {0,1,2,3}.",
       "status": "informal_reviewed",
@@ -131,7 +141,7 @@
       "replay": ["python3 -I -B -m unittest discover -s experiments/astra-376-20260911 -p 'test_*.py'"],
       "discharges": [{"problem": 376, "note": "Kummer checker; complete A030979 prefix through 3^35 (43 terms, C replay); infinitude and >10^70 remain; does not close P376"}],
       "selectors": {"tags_all": ["binomial coefficients"]},
-      "remaining": ["infinitude of 3-prime case", "next term > 10^70"]
+      "remaining": ["infinitude of 3-prime case"]
     },
     {
       "id": "p699-d2-line",
