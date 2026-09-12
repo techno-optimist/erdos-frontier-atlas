@@ -60,6 +60,7 @@ others don't touch it.
 | `agent/astra-376-search-20260911` | #376 complete A030979 prefix through 3^24 | `experiments/astra-376-20260911/search.md` | infinitude; next >10^70 |
 | `agent/astra-376-csearch-20260911` | #376 C search complete through 3^31 (18 terms) | `experiments/astra-376-20260911/search_base3.c` | infinitude; >10^70 |
 | `agent/astra-376-d35-20260911` | #376 C search complete through 3^35 (43 terms) | `experiments/astra-376-20260911/hits-d35.txt` | infinitude; >10^70 |
+| `agent/astra-goal-b2b-20260911` | Campaign GOAL north star; Type B2b structural leftover | `experiments/astra-i3-20260911/GOAL.md`, `typeB2b.*` | smoothness of n-1 vs 3-consecutive P |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching

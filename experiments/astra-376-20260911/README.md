@@ -10,7 +10,7 @@ Kummer: gcd(C(2n,n), 105)=1 iff those digit bounds (no carry in n+n in bases 3,5
 
 All such n < 1000: **0, 1, 10, 756, 757**. Sparse, as Pomerance’s x^{0.02595} heuristic says.
 
-See `search.md`: complete independent search through \(3^{35}\) (C, 8-way, 195s) matches A030979 **43** terms, no extras. CI replays Python through \(3^{20}\) and compiles C at D=12 with split ranges. Does **not** claim a term > 10^70 or infinitude.
+See `search.md` for the bounded A030979 replay through \(3^{35}\) (43 terms). **Do not extend \(D\).** Remaining #376 work is a pumping/automaton idea for three-prime infinitude, not a larger complete search. Thompson already enumerated to \(10^{70}\).
 
 Replay:
 

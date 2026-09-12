@@ -1,8 +1,20 @@
-# Campaign: crack P699 by i, then stop pretending the size bound works forever
+# Campaign working doc
 
-Not a solution of #699. Live page remains FALSIFIABLE.
+Not a solution of #699 or #376. Live #699 remains FALSIFIABLE; live #376 remains OPEN.
 
-## Why this cut
+## North star
+
+The atlas is a **method substrate and strike map**, not a solution scoreboard.
+
+Famous problems are landmarks for *methods* — lemmas, remaining obligations, transferable operators — then a long digestion, not a planted flag. That is the same misalignment the 2026-09-11 Tao/Fields declaration names for lab incentives; at this repo’s scale it means: do not farm a known OEIS prefix to a larger cutoff (A030979 through \(3^{24}\), \(3^{31}\), \(3^{35}\) was that failure). Thompson already enumerated to \(10^{70}\). Completeness of a known list is not a crack.
+
+**Do:** kernel or exact-arithmetic lemmas; explicit remaining gaps; operators other problems can query; official-status overlays; production `atlas/graph/` frozen.
+
+**Don’t:** claim an Erdős solution; silently rewrite cards; double a computational cutoff because “keep at the wheel” was said.
+
+PRs 150–152 stay as a bounded replay of A030979(1..43). Do not extend \(D\).
+
+## P699 by i, then stop pretending the size bound works forever
 
 The Pascal identity
 \[
@@ -20,21 +32,17 @@ That inequality holds **only for \(i\le 3\)**. So i=2 and i=3 are the last eleme
 | i | Status | What's left |
 |---|---|---|
 | 2 | kernel-checked gcd ≥ 2 for every pair | prime-factor Init gap only |
-| 3 | Type A+B1+B2a; n≡3 (mod 4) residual empty; band 8–9 empty | n≢3 (mod 4) and P+≤n/10 |
+| 3 | Type A+B1+B2a; n≡3 (mod 4) residual empty; band 8–9 empty | Type B2b: consecutive \((n/10)\)-smooth leftover, not another band scan |
 | ≥ 4 | size bound dead | primes, EEES, localization |
 
-## This lane's theorem
+## i=3 leftover (structural)
 
-For \(4\le j\) and \(2j\le n\),
-\[
-\gcd\Bigl(\binom n3,\binom nj\Bigr)\ge 2.
-\]
-If additionally \(n\equiv 3\pmod 4\), then \(\binom n3\) is odd, so the gcd is odd and therefore \(\ge 3\). That is the i=3 prime condition on a positive-density set of n.
+Kernel `cancel_coprime_fac`: if \(d\mid\binom n3\) and \(\gcd(d,j!)=1\) then \(d\mid\binom nj\).
 
-## Residual (this crack)
+If the gcd were a 2-power then \(o=\mathrm{odd\_part}(\binom n3)\) would satisfy \(o\mid j(j-1)(j-2)\). Hits with an odd prime: (10,5), (16,7), (65,15).
 
-Kernel lemma `cancel_coprime_fac`: if \(d\mid\binom n3\) and \(\gcd(d,j!)=1\) then \(d\mid\binom nj\). So any factor of \(\binom n3\) made of primes \(>j\) also divides \(\binom nj\). In particular if \(n-2\), \(n-1\), or \(n\) is a prime \(>3\), that prime is \(>j\) and we are done.
+Type B2b (\(P^+(o)\le n/10\)) is not “scan m=10,11,…” forever. Remaining n have \(n,n-1,n-2\) free of odd primes \(>n/10\). For even n with \(3\nmid(n-1)\), \(n-1\mid P\).
 
-If the gcd were a 2-power then the odd part \(o\) of \(\binom n3\) would be coprime to \(\binom nj\), hence \(o\mid j(j-1)(j-2)\). That divisibility holds only at **(10,5), (16,7), (65,15)** for \(8\le n\le 1500\), and those three gcds are 12, 80, 1248 — all with an odd prime. Exact check: every pair \(8\le n\le 200\) has odd part of the gcd \(\ge 3\).
+## #376 leftover (idea, not search)
 
-See `close.md`. Type B \(o\mid P\) only at \((65,15)\) through \(n=10^5\). \(n=2p\) only \((10,5)\).
+Kummer: \(\gcd(\binom{2n}n,105)=1\) iff restricted digits in bases 3,5,7. EGRS 1975 already does any two odd primes. The wall is infinitude for three primes. Next method is a pumping/automaton argument, not \(D=36\).
