@@ -26,4 +26,4 @@ Stack: 135 ← … ← 151 ← 152.
 
 **Goal:** method substrate, not a scoreboard. See `GOAL.md`.
 
-Open for i=3: Type B2b structural leftover (`typeB2b.md`), not more p-bands. #376: infinitude idea, not \(D=36\).
+Open for i=3: Type B2b leftover is \(n-1\) with at least two distinct odd primes (or \(n\equiv 1\pmod 4\), or \(n\equiv 4\pmod 6\)). Prime-power \(n-1\) is empty. #376: infinitude idea, not \(D=36\).

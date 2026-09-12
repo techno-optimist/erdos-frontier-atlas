@@ -3,7 +3,12 @@
 import math
 import unittest
 
-from typeB2b import n_minus_1_divides_binom3, leftover_class
+from typeB2b import (
+    leftover_class,
+    n_minus_1_divides_binom3,
+    is_prime_power,
+    oP_hits,
+)
 
 
 class TypeB2bStructTest(unittest.TestCase):
@@ -25,6 +30,18 @@ class TypeB2bStructTest(unittest.TestCase):
         self.assertEqual(leftover_class(16), 'three_divides_n_minus_1')
         # n=8 ≡ 2 (mod 6): n-1=7 prime > n/10, not Type B2b
         self.assertEqual(leftover_class(8), 'n_minus_1_divides_C')
+
+    def test_nine_is_prime_power_but_lemma_excludes_n10(self):
+        self.assertTrue(is_prime_power(9))
+        self.assertTrue(oP_hits(10))  # known hit (10,5)
+
+    def test_prime_power_n_minus_1_has_no_oP_hits(self):
+        for n in range(6, 401, 2):
+            if (n - 1) % 3 == 0:
+                continue
+            if not is_prime_power(n - 1):
+                continue
+            self.assertFalse(oP_hits(n), n)
 
 
 if __name__ == '__main__':

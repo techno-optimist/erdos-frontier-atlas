@@ -32,7 +32,7 @@ That inequality holds **only for \(i\le 3\)**. So i=2 and i=3 are the last eleme
 | i | Status | What's left |
 |---|---|---|
 | 2 | kernel-checked gcd ≥ 2 for every pair | prime-factor Init gap only |
-| 3 | Type A+B1+B2a; n≡3 (mod 4) residual empty; band 8–9 empty | Type B2b: consecutive \((n/10)\)-smooth leftover, not another band scan |
+| 3 | Type A+B1+B2a; n≡3 (mod 4) residual empty; band 8–9 empty; prime-power n-1 empty | Type B2b: n-1 with ≥2 odd primes, or n≡1 (mod 4), or n≡4 (mod 6) |
 | ≥ 4 | size bound dead | primes, EEES, localization |
 
 ## i=3 leftover (structural)
