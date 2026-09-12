@@ -56,6 +56,17 @@ def test_cli_for_993_does_not_claim_unimodality():
     assert "not" in out.lower()
 
 
+def test_p327_fiber_method_is_partial_and_302_is_only_a_candidate():
+    result = _run("for", "327")
+    assert result.returncode == 0, result.stderr
+    assert "multiplier-sensitive-fiber-deficit" in result.stdout
+    assert "not a solution" in result.stdout.lower()
+    hits = query_substrate.applications_for(302)
+    ours = [h for h in hits if h["method"] == "multiplier-sensitive-fiber-deficit"]
+    assert len(ours) == 1
+    assert ours[0]["relation"] == "candidate"
+
+
 def test_open_board_separates_discharges_from_candidates():
     p = _run("open")
     assert p.returncode == 0, p.stderr

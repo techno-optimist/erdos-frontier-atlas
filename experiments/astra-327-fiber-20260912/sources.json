@@ -1,0 +1,55 @@
+{
+  "schema": "p327-fiber-source-context-v1",
+  "checked_on": "2026-09-12",
+  "upstream": {
+    "repository": "teorth/erdosproblems",
+    "sha": "3c68e941162f81d650fc886eed34e58bed3a6a01",
+    "commit_date": "2026-09-09T17:51:07Z",
+    "record_count": 1217,
+    "problem": "327",
+    "informal_state": "open",
+    "formal_state": "unformalized",
+    "unchanged_since_previous_freshness_overlay": true
+  },
+  "official_snapshot": {
+    "url": "https://www.erdosproblems.com/327",
+    "banner": "OPEN",
+    "comments": 11,
+    "proof_expositions": 0,
+    "proof_claim_count": 2,
+    "proof_claims": [
+      {
+        "author": "Donald Della Pietra",
+        "scope_in_register": "full",
+        "submitted_at_as_displayed": "2026-07-29 22:10:40",
+        "proof_url": "https://github.com/donalddellapietra/erdos-327-proof/releases/download/proof-claim-v1/erdos-327-positive-density-della-pietra-v1.pdf",
+        "audited_here": false,
+        "formalization_replayed_here": false
+      },
+      {
+        "author": "Will Sawin",
+        "scope_in_register": "partial",
+        "submitted_at_as_displayed": "2026-07-18 02:23:23",
+        "proof_url": "https://arxiv.org/abs/2607.15419",
+        "scope_read": "positive-density construction for k=2; second part only",
+        "analytic_proof_independently_audited_here": false
+      }
+    ],
+    "register_url": "https://www.erdosproblems.com/forum/thread/327/proof-claims",
+    "does_not_set_problem_status": true
+  },
+  "antecedent": {
+    "author": "Yu Leon Liu",
+    "title": "Upper bounds for Erdős Problem #327 and its k-variant",
+    "url": "https://leon2k2k2k.github.io/assets/pdf/erdos/erdos327.pdf",
+    "sha256": "cd119f32494a55fae31d77716ef041b079ca474c61462773f41946d59c46a4ac",
+    "used": "Theorem 19, smooth-rough prefix method",
+    "reported_bounds": {"k1": "0.7769", "k2": "0.7630"},
+    "reported_computation_replayed_here": false,
+    "linked_code_url": "https://github.com/leon2k2k2k/leon2k2k2k.github.io/blob/master/erdos327_cert.py",
+    "linked_code_sha256": "7095862a3fd6578f13e014466388a9f4a59ba2cd3c46059986c8030dd731be29"
+  },
+  "production_graph": "untouched",
+  "novelty_claim": false,
+  "third_party_manuscript_bundled": false
+}

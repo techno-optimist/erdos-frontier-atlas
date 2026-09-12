@@ -213,6 +213,16 @@
       "discharges": [{"problem": 993, "note": "exact tails, not a full polynomial"}],
       "selectors": {"ids": [993]},
       "remaining": ["not a unimodality proof"]
+    },
+    {
+      "id": "multiplier-sensitive-fiber-deficit",
+      "statement": "For r=(a+b)/gcd(a+b,kab), scaling by m makes {a,b} forbidden iff r|m. Partitioning rough m by gcd(m,L) yields an exact all-N prefix-deficit bound; L1|L2 cannot weaken it at fixed smooth cutoff.",
+      "status": "informal_proof_exact_checks",
+      "artifacts": ["experiments/astra-327-fiber-20260912/RESULT.md", "experiments/astra-327-fiber-20260912/fiber.py", "experiments/astra-327-fiber-20260912/receipt.json", "experiments/astra-327-fiber-20260912/FRESHNESS.md"],
+      "replay": ["python3 -I -B experiments/astra-327-fiber-20260912/verify.py --negative-controls"],
+      "discharges": [{"problem": 327, "note": "partial density-transfer lemma and exact small demonstration; not a solution, not a best bound, not a next-cell claim; human review/formalization remain"}],
+      "selectors": {"tags_all": ["unit fractions"]},
+      "remaining": ["human mathematical review/formalization", "best activation-state partition", "cross-fiber constraints", "no extremal density or novelty claim", "other unit-fraction problems need their own transfer proof"]
     }
   ]
 }
