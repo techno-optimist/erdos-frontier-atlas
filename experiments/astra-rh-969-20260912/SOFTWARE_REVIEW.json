@@ -1,0 +1,269 @@
+{
+  "schema": "rh-complete-software-review-v1",
+  "checked_at_utc": "2026-09-13T07:56:10.873590+00:00",
+  "base_commit": "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+  "scope": "Independent model software review of every staged Python file; no mathematical status or analytic proof promotion.",
+  "passed": true,
+  "security_concerns": [],
+  "logic_errors": [],
+  "full_manifest_sha256": "0b57c8a1abc0daf6f757be701056122e65f90f26eb0498eced0d82078c659ce7",
+  "live_manifest_sha256": "c5a4a0b87b2a26fcf022f1feae4e0ff783e5348a732c077eb3a4eb004d5b1df8",
+  "reviewed_file_count": 33,
+  "source_lines": 4256,
+  "exact_staged_python_set_reconciled": true,
+  "all_source_index_and_diff_pins_current": true,
+  "reviews": [
+    {
+      "subset": "live",
+      "files": 13,
+      "verdict": "LIVE_CODE_REVIEW.json",
+      "public_sha256": "e54f2c3ff9dd439a097ebcfde15fe8b4588daf5f739cb1b52e9972b82ac4ed18",
+      "intake": "LIVE_CODE_REVIEW_INTAKE.json"
+    },
+    {
+      "subset": "archive",
+      "files": 20,
+      "verdict": "../astra-rh-crt-20260912/ARCHIVE_CODE_REVIEW.json",
+      "public_sha256": "a3535c962879d2953403852c2d586e84d8900b82ab522e87b7518bab77b88d32",
+      "intake": "../astra-rh-crt-20260912/ARCHIVE_CODE_REVIEW_INTAKE.json"
+    }
+  ],
+  "reviewed_files": [
+    {
+      "path": "experiments/astra-rh-969-20260912/floor_transfer.py",
+      "source_sha256": "8af97120b6e1a23e1605569d9477f8460f15743db36586b526689dc5bad207f5",
+      "diff_sha256": "4aa2dc49c2db131998b6f36e629375f9d370468ff7f1db1014bbe0ce798bfede",
+      "source_lines": 82,
+      "review_subset": "live"
+    },
+    {
+      "path": "experiments/astra-rh-969-20260912/test_floor.py",
+      "source_sha256": "0a3fa5e8fd28a487e7639867864db91b7e01ac15d1260b1fbce677fe101de65c",
+      "diff_sha256": "63baf1b097c02e73a247cfed0ed91f66315798eb421738207dc136226bbf3e7f",
+      "source_lines": 114,
+      "review_subset": "live"
+    },
+    {
+      "path": "experiments/astra-rh-969-20260912/test_persistence.py",
+      "source_sha256": "b5135118c61f5feb0aa8e6f0cabfb23088366b69219ec10f7d79749acfc6c876",
+      "diff_sha256": "e011170881def55bf4d148386da74a7417525cb123ca0792fe914cf380a5e057",
+      "source_lines": 37,
+      "review_subset": "live"
+    },
+    {
+      "path": "experiments/astra-rh-969-20260912/test_receipt.py",
+      "source_sha256": "86ad957b6f39c4c6e43424eb3933e1e8cccdcbc1ca87ab89ef49cfab71c926e6",
+      "diff_sha256": "3d0e34c0f7f71f624fe5dc4e359abac2db2e87d2980aa2364dc730f3b2d3909b",
+      "source_lines": 162,
+      "review_subset": "live"
+    },
+    {
+      "path": "experiments/astra-rh-969-20260912/verify.py",
+      "source_sha256": "e28bf251ea88bad0865a11d1ae2368dd2e14c499159a87297a7a5b0bfa786517",
+      "diff_sha256": "825df6993daf2adcaa0e7953f7323fe687e26d221c18debe85de867626cc9a9f",
+      "source_lines": 139,
+      "review_subset": "live"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/crt-variance/audit.py",
+      "source_sha256": "f40ef90e83109d227b598237ef873d9db8f81baff1e59355fece47847c29186b",
+      "diff_sha256": "ae0fc84fe6251fa767020234c5b96290db3a35e2b511758fd67206bfb3723ed1",
+      "source_lines": 74,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/crt-variance/endpoints.py",
+      "source_sha256": "0f4242c4f49a48f1f4bacd5fb0304a43de7886f63a6ad4a64d77aecabb24a594",
+      "diff_sha256": "af23a626dc4deb95a0d4f33422a45d17ffceebcf682447d9b1a601be9d95753c",
+      "source_lines": 79,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/crt-variance/finalize.py",
+      "source_sha256": "3870a3ead3b9378ab1dfbf3f51ca5ad5e4e3029e0be56b41f674a3b132fa8543",
+      "diff_sha256": "072daf2290f4ae40fef73a22b50e17baabeb6d5dab66296e9998f8d1648333bf",
+      "source_lines": 57,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/crt-variance/r-free.py",
+      "source_sha256": "432978f7cb65a0f08ba5a5cfb150411f8f98bcfe7924ab01930303cdb39578d2",
+      "diff_sha256": "418129dbfccf716ab3238c23c7e6726c053b7238f0428844a7211f2209018723",
+      "source_lines": 54,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/gm-candidate/check_exponents.py",
+      "source_sha256": "0c9c28de1173719462695cb67fd650fcbeaa2dd9d76764e2d1b5bfebd42c5825",
+      "diff_sha256": "404d49dd5e74f78f80b50ca7e8233d6fe8f9880f384567a40271ed834c6cef25",
+      "source_lines": 98,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/gm-first/independent_checks.py",
+      "source_sha256": "750c6684f71e56e13adb8e6f290b0c9ff61fb2d057e91d7b965f8ff8b61fc3e0",
+      "diff_sha256": "1c103080f4df3fd11a9b29a84c667b53f563172f6246c5f9dcc936c8d8919ada",
+      "source_lines": 162,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/gm-first/original_check_exponents.py",
+      "source_sha256": "0c9c28de1173719462695cb67fd650fcbeaa2dd9d76764e2d1b5bfebd42c5825",
+      "diff_sha256": "53b3ddb120cd0f9c248cd5b62b5a63684e31af93075965b9475e83122b8985bd",
+      "source_lines": 98,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/gm-second/check_second_audit.py",
+      "source_sha256": "ced6ac2dee45d77ac4aa1142771d2320cb5647783d56d01f826fc09581eb3ac5",
+      "diff_sha256": "875945025a6b6a248bcad1c585c7b2e2c3c605f2f4ccaab193b36ea90f6d7623",
+      "source_lines": 202,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/gm-second/compare_critical_bounds.py",
+      "source_sha256": "078ce849142c6b702d07248d50d6bad83013a2b38e775729d7eee5587efd68ef",
+      "diff_sha256": "d793e9468048868aa1e0c8a656da960b15caa49bbe2e65b8de510c9e636653d0",
+      "source_lines": 126,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/mellin-transfer/verify_arithmetic.py",
+      "source_sha256": "6d72d01acbb93396196bf4456c7523d1537eb87bcef0f37452f13219376283a1",
+      "diff_sha256": "181c5fbce83a0ab2fb2319a61d24597423f69a003cd86a32ce87a4b68219aff0",
+      "source_lines": 88,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/mobius-factorization/check_ledger.py",
+      "source_sha256": "f27b81e5e2e9971522e6618706238d1cbf3fe8025cf5f0a5d27d6d79c5b4e41b",
+      "diff_sha256": "074039bd1e35f3397fae027cfdfbf328a087098f8c05985b26c6df2288089065",
+      "source_lines": 131,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/mobius-typeI/independent_checks.py",
+      "source_sha256": "217d0eae5144c338c288e4bfb60397d80f69a30e05cc52532d56bb48c282e269",
+      "diff_sha256": "cdb851b0c7aa69a9cf4f92bb3a74858b77c0a443b2794c0c2c7b950a841b141a",
+      "source_lines": 316,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/phase-transfer/check_actual_intervals.py",
+      "source_sha256": "497f3bd07733f2939dddb2242fed3064d13b823abd014b56d1efedb15e11b7fc",
+      "diff_sha256": "0feb35edf373da9a91f44ecb0080c2f800286794bceed25c8dd9150a0552993f",
+      "source_lines": 94,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/phase-transfer/check_arithmetic.py",
+      "source_sha256": "7bbee94bef5119ffb1d7cf1c2ff9fa8c56b7fba40e0894c912db9c4dd53f32cb",
+      "diff_sha256": "1cceccb98f44793a96a650eb4f7bda101b6871728df7697876cc1d47829e9555",
+      "source_lines": 182,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/replay.py",
+      "source_sha256": "294923e23504d6f2a85f99005a6d41f722dcc8eea2889c891af14d6f53f97b17",
+      "diff_sha256": "d38c429ac44a8d87cdeaeb6489fb5864246cee39a6cb7de62336fb46f7a53349",
+      "source_lines": 213,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/sparse-square/independent_checks.py",
+      "source_sha256": "3fb4a7d6634f30465fc127f909986f470ae652b9fd7b09fb2f18acb2b7f5f1ac",
+      "diff_sha256": "2c14aea94bfc76c06477bc6ab59aaa14ea1c3304ee9917ef0e09a7fd910a820c",
+      "source_lines": 253,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/sparse-square/replayed-original/check_algebra.py",
+      "source_sha256": "fbea9d1bfbf26048978857b6eb65ae0f3b607b38fa4efd54f2ef5def56d697ca",
+      "diff_sha256": "599074068b92307ce5c06d2194b003d7695bd34524d634113936a0edde0aafb6",
+      "source_lines": 95,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/test_replay.py",
+      "source_sha256": "150cd7c3a40d3d25fb0348522d0cf87fed411baa8ba2c6190b6456d817cba3bb",
+      "diff_sha256": "d9f72aa0bdb55e63098db5efbdd6d88bf4dc6fe5ddd131004fb5e81e7fd26d97",
+      "source_lines": 210,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/twisted-square/check_algebra.py",
+      "source_sha256": "fbea9d1bfbf26048978857b6eb65ae0f3b607b38fa4efd54f2ef5def56d697ca",
+      "diff_sha256": "d630d23e8444a2e9ec43c4f56faa43418e864fd8a52b2863fe3fdfef6c082536",
+      "source_lines": 95,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/kernel.py",
+      "source_sha256": "b2bdb37c08ff54a9de164b28e5a6b994a6d79c06b862c4a5369e9a2778ce8ee9",
+      "diff_sha256": "4b96a566614201106a967a7fdd33d1e28327911288ff1e4531f87bc5d8e0ffe9",
+      "source_lines": 111,
+      "review_subset": "live"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/test_kernel.py",
+      "source_sha256": "3124ad7bbb26b6b7e7f0d3b129434c1bd1c4d2ba89589f0bd861802b7f331ba4",
+      "diff_sha256": "f43a48bbfbef8495f3ed91d8e00c1c99c6d0925d52a4bc0b9d09b6a18bc8a448",
+      "source_lines": 100,
+      "review_subset": "live"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/test_receipt.py",
+      "source_sha256": "1ae8aad201b22f9ee10a830bed2b3aa630cb882bc683f40c1605360994aa6a1e",
+      "diff_sha256": "bf5cf870af6d44a0ca2fb0fe89648ba9c92281c53e551bdb780312bf8d34e457",
+      "source_lines": 142,
+      "review_subset": "live"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/verify.py",
+      "source_sha256": "73c66dd1595d4cce52bf50e107fcec3759891c6b16babb25531347089c4c275c",
+      "diff_sha256": "84e67a7553a4e752fdd9546a4c6c7ad3d34e30eb55aa36208fb6aa052dfa0b3b",
+      "source_lines": 141,
+      "review_subset": "live"
+    },
+    {
+      "path": "tests/test_readme.py",
+      "source_sha256": "62509a8ef2749ade0838a739c3a12ef70d4fd393601790ed0599e058c84e7703",
+      "diff_sha256": "cb40ff0b636b55a93be2a5afefaf9c3de137cb06bfd9168490de4af521ec033e",
+      "source_lines": 166,
+      "review_subset": "live"
+    },
+    {
+      "path": "tests/test_rh969.py",
+      "source_sha256": "01f65ec9fa6069b8ab49bfe67805dfb9fba9eb64df1ef06f14f06cb1e764cdc4",
+      "diff_sha256": "8e71df452884ad3451bcc3054529cd0c532bd975834a5dc20399b09c9bc3cf3a",
+      "source_lines": 47,
+      "review_subset": "live"
+    },
+    {
+      "path": "tests/test_rh_audit_archive.py",
+      "source_sha256": "e722efb1f29e25e178ebbe19ed6dc3a68906e484310a31991b0b0553ab04690c",
+      "diff_sha256": "a3e7a98c011520cbdb19ff51fbb4c151fba4fed13affeb3191ea0f49cf0d77ba",
+      "source_lines": 92,
+      "review_subset": "archive"
+    },
+    {
+      "path": "tests/test_rh_crt.py",
+      "source_sha256": "2dd4335c3531a78a87141140b9448257821a776cfa31068801bcd3c745e00f8a",
+      "diff_sha256": "bca1b843e47a97af1d2ef3b0a6a6c9160a4239e13abde7ba13888df878b008d2",
+      "source_lines": 121,
+      "review_subset": "live"
+    },
+    {
+      "path": "tests/test_substrate.py",
+      "source_sha256": "9d6189ce072f6267ecb0cab737cc31d3b202764f12fd426c87c576eba3999845",
+      "diff_sha256": "460d3d9a0bb6ac365124103fbf6cdad768327b76a2d12b28610d26c8483461f3",
+      "source_lines": 175,
+      "review_subset": "live"
+    }
+  ],
+  "human_peer_review": false,
+  "formal_kernel_verification": false,
+  "rh_proved": false,
+  "publication_verified": false,
+  "publication_note": "Commit, remote branch, PR and CI are a separate subsequent step; see the repository progress map for publication state."
+}

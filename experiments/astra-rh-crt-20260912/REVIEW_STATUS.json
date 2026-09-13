@@ -1,0 +1,735 @@
+{
+  "schema": "rh-crt-review-intake-v1",
+  "scope": "Historical research/model-review intake. Not human peer review, kernel verification, an RH proof, or a record of subsequent repository publication.",
+  "snapshot_note": "Existing source/report hashes pin their original reviewed snapshots. Root review files have path-only public copies; portability.json maps original and public hashes. The current repository integration record is ../astra-rh-969-20260912/REPOSITORY_STATUS.md.",
+  "CRT_operator": {
+    "status": "passed-independent-model-mathematical-review",
+    "report_filename": "audit-report.md",
+    "report_sha256": "4165011cfa65877a7c5aa7d151386c2db5488fc61bc19197ebc81138930dc32f",
+    "reviewed_claims": [
+      "finite-prime positive divisor formula",
+      "uniform phase square-root bound",
+      "real-length interpolation and fractional-phase interpretation",
+      "prime-addition recurrence",
+      "density-normalized count martingale",
+      "finite-average counterexamples and fixed-H limit caveat",
+      "r-free extension"
+    ],
+    "child_reported_executable_counts_not_parent_replayed": {
+      "direct_squarefree": 198,
+      "rational_squarefree": 8414,
+      "endpoint_identities": 144,
+      "real_endpoint_identities": 288,
+      "martingale_fibers": 260,
+      "direct_r_free": 155,
+      "rational_r_free": 3872,
+      "weighted_covariance": 8
+    },
+    "parent_replayed_controls": {
+      "scope": "Parent exact scratch replay; no repository kernel import. These examples supplement, not prove, the general statements.",
+      "raw_CRT_variance_decrease": {
+        "P": [
+          3
+        ],
+        "Q": [
+          2,
+          3
+        ],
+        "H": 4,
+        "V_P": "20/81",
+        "V_Q": "2/9"
+      },
+      "finite_density_normalized_energy_decrease": {
+        "P": [
+          3
+        ],
+        "Q": [
+          2,
+          3
+        ],
+        "H": 3,
+        "residues": [
+          1,
+          2
+        ],
+        "energy_P": "9/64",
+        "energy_Q": "0"
+      },
+      "weighted_covariance_identity": {
+        "primes": [
+          2,
+          3,
+          5
+        ],
+        "weights": [
+          [
+            -2,
+            "2"
+          ],
+          [
+            0,
+            "-3"
+          ],
+          [
+            1,
+            "1"
+          ],
+          [
+            5,
+            "2/3"
+          ]
+        ],
+        "direct_period_energy": "72428/16875",
+        "positive_divisor_energy": "72428/16875",
+        "all_divisor_forms_nonnegative": true
+      }
+    }
+  },
+  "other_reviews": {
+    "quantitative_Mellin_transfer": "passed independent model review, with necessary qualifications reconciled",
+    "supplemental_actual_integer_norm_transfer": "passed independent model review; notation and small-X qualifications clarified",
+    "code_review": "passed complete independent software review; a second complete verdict also matched all four current source snapshots"
+  },
+  "repository_scope": {
+    "staging_or_commit_in_this_intake": false,
+    "push_or_proof_submission": false,
+    "full_repository_gate_claimed": false
+  },
+  "Mellin_transfer": {
+    "status": "passed-independent-model-review-with-qualifications",
+    "delegation_id": "deleg_f6380d70",
+    "reviewed_scope": "Proposed transfer lemma and independently reconstructed proof; parent then reconciled the local document.",
+    "report_filename": "audit.md",
+    "report_sha256": "db0171ddf9b3d30ed81acbd62856efd6eb1a5a240c29ea1dc0661f861771877c",
+    "parent_reconciled_document_sha256": "36cb34d860629b6476abafb10f66da98f0557e4422b2a33f9ce710774e11d671",
+    "required_qualifications_addressed": {
+      "continuation_not_original_integral_convergence": "Explicit introduction and normally convergent partition construction.",
+      "compact_initial_term": "Explicit I_init retained and used in the identification with -sF.",
+      "enlarged_remainder_support": "Explicit [X/2,2X+Kh] subset [X/2,5X/2].",
+      "small_scales_and_fixed_parameters": "h=0 and pre-hypothesis scales kept as entire terms; parameters independent of dyadic index.",
+      "pole_cancellation": "Only the invariant open strip is excluded at fixed a, with boundaries not included.",
+      "theta_threshold": "theta>8/9 gives a partial strip, not RH from one fixed exponent.",
+      "global_energy": "An entire-continuation counterexample prevents a bare continuation-to-L2 inference."
+    },
+    "parent_replay": {
+      "exit_code": 0,
+      "script_sha256": "6d72d01acbb93396196bf4456c7523d1537eb87bcef0f37452f13219376283a1",
+      "original_inputs_unchanged": true,
+      "method": "Unmodified script copied to a new external scratch directory; generated receipt parsed and compared with stdout.",
+      "results": {
+        "stencil": "K=1..16: moments, monomials, leading error all passed",
+        "parameters": [
+          {
+            "theta": "1/10",
+            "a": "37/40",
+            "K": 1,
+            "nu": "1/100",
+            "main_exponent": "-1/2000",
+            "remainder_exponent": "-663/500"
+          },
+          {
+            "theta": "1/2",
+            "a": "5/8",
+            "K": 1,
+            "nu": "1/500",
+            "main_exponent": "-1/2000",
+            "remainder_exponent": "-313/500"
+          },
+          {
+            "theta": "2/3",
+            "a": "1/2",
+            "K": 1,
+            "nu": "3/2000",
+            "main_exponent": "-1/2000",
+            "remainder_exponent": "-1003/3000"
+          },
+          {
+            "theta": "8/9",
+            "a": "1/3",
+            "K": 2,
+            "nu": "9/8000",
+            "main_exponent": "-1/2000",
+            "remainder_exponent": "-509/9000"
+          },
+          {
+            "theta": "9/10",
+            "a": "13/40",
+            "K": 2,
+            "nu": "1/900",
+            "main_exponent": "-1/2000",
+            "remainder_exponent": "-13/500"
+          },
+          {
+            "theta": "19/20",
+            "a": "23/80",
+            "K": 5,
+            "nu": "1/950",
+            "main_exponent": "-1/2000",
+            "remainder_exponent": "-77/2000"
+          },
+          {
+            "theta": "99/100",
+            "a": "103/400",
+            "K": 25,
+            "nu": "1/990",
+            "main_exponent": "-1/2000",
+            "remainder_exponent": "-17/2000"
+          }
+        ],
+        "threshold": "8/9",
+        "invariant_strip": "exact endpoint and 40-step orbit checks passed",
+        "RH_choice": "theta > max((4-2 beta)/3,(beta+2)/3), always possible for 1/2<beta<1",
+        "sharpness": "E(x)=x^a_theta meets abstract nu=0 variance for theta>=2/3 and has a Mellin pole at a_theta",
+        "analytic_only_L2_countercheck": "Fourier antiderivative verified: integral_X^(2X) x*sin^2(2*pi*x) dx = 3X^2/4 for integer X"
+      }
+    },
+    "parent_addition": {
+      "claim": "The effective generic continuation threshold min(1/2,1-3theta/4) is sharp under the growth and increment hypotheses alone.",
+      "proof": "Use E_b(x)=x^b and the mean-value theorem; 3theta/2+2b-2<=0; Mellin transform has a pole at b.",
+      "scope": "Elementary parent extension of the reviewed theta>=2/3 power control; not the actual squarefree error or a separately audited new arithmetic theorem.",
+      "exact_reference_rows": [
+        {
+          "theta": "4/7",
+          "a_theta": "4/7",
+          "generic_threshold": "1/2",
+          "increment_exponent_slack": "1/7"
+        },
+        {
+          "theta": "2/3",
+          "a_theta": "1/2",
+          "generic_threshold": "1/2",
+          "increment_exponent_slack": "0"
+        },
+        {
+          "theta": "8/9",
+          "a_theta": "1/3",
+          "generic_threshold": "1/3",
+          "increment_exponent_slack": "0"
+        },
+        {
+          "theta": "9/10",
+          "a_theta": "13/40",
+          "generic_threshold": "13/40",
+          "increment_exponent_slack": "0"
+        },
+        {
+          "theta": "19/20",
+          "a_theta": "23/80",
+          "generic_threshold": "23/80",
+          "increment_exponent_slack": "0"
+        }
+      ]
+    },
+    "unproved": "No new instance of the required squarefree variance hypothesis or unconditional zero exclusion is established."
+  },
+  "phase_to_interval_transfer": {
+    "status": "passed-independent-model-mathematical-review",
+    "delegation_id": "deleg_42a6801d",
+    "critical_issues": [],
+    "report_filename": "audit.json",
+    "report_sha256": "977a231926fb296cebb5fa14dfd5aa280de2fd0adcfa1b1f2467cfb4bee67fab",
+    "reviewer_result_document_sha256": "b1fe23da9b3e47dac8458896a59ed988d2e726de3c3c99b8f3c2aac10852f7a0",
+    "parent_clarified_result_document_sha256": "74d4db708fbba083ebfd1632e591eda71a0e44ca1b7836367a7ab1bad63cc06a",
+    "reviewed_scope": [
+      "continuous fractional-phase formula and interpolation",
+      "normalized conditional expectation with fractional phase retained",
+      "unnormalized centered defect variance",
+      "arbitrary real interval periodicity cost",
+      "both directions of the RH-equivalent centered-defect energy criterion",
+      "fixed-H versus growing-H limits",
+      "r-free density and period generalization"
+    ],
+    "parent_clarifications": [
+      "Defined D_(P,Q) explicitly as the difference of density-centered filter counts.",
+      "Defined Q for x>=0 and the integer-periodic extension of f_P.",
+      "Stated X>=1 for any choice with L_P<=X, including empty P.",
+      "Displayed the two energy inequalities and constant transfer 2C+4.",
+      "Stated rho_(P,r) and L_(P,r)=M^r; no r-free RH equivalence was inferred."
+    ],
+    "parent_exact_replay": {
+      "exit_code": 0,
+      "script_sha256": "e05b85ccb9e68b9b16510deb451bf61609b84999c9c7b6f1111f06487c965fcf",
+      "original_inputs_unchanged": true,
+      "scope": "Unmodified independent checker copied to new external scratch. Exact rational phase and surrogate-transfer cases only; no numerical actual-squarefree cases included.",
+      "counts_verified_from_saved_records": {
+        "records": 13151,
+        "counts": {
+          "direct_phase": 317,
+          "conditional_fiber": 12204,
+          "refinement_and_defect": 90,
+          "arbitrary_interval": 480,
+          "norm_transfer_exact": 60
+        },
+        "no_duplicate_records": true
+      },
+      "negative_controls": {
+        "floor_only_noninteger": {
+          "correct": "1/4",
+          "incorrect_floor_only": "0"
+        },
+        "drop_fractional_conditioning": {
+          "P": [],
+          "Q": [
+            2
+          ],
+          "H": "1/2",
+          "u": "1/4",
+          "S_P": "-1/2",
+          "conditional_on_integer_phase_only": "0"
+        },
+        "unnormalized_variance_difference": {
+          "P": [
+            2
+          ],
+          "Q": [
+            2,
+            3
+          ],
+          "H": "1",
+          "correct": "11/144",
+          "incorrect_VQ_minus_VP": "5/144"
+        },
+        "pointwise_phase_bound": {
+          "P": [
+            2,
+            3,
+            5
+          ],
+          "x": "547",
+          "H": "3",
+          "squared_error": "2304/625",
+          "exceeds_sqrt_H": true
+        },
+        "remove_periodicity_cost": {
+          "P": [
+            2
+          ],
+          "H": "1",
+          "interval": [
+            "3",
+            "7/2"
+          ],
+          "energy": "9/16",
+          "phase_variance": "3/16"
+        }
+      }
+    },
+    "separate_numerical_checks_reported_by_reviewer_only": {
+      "actual_squarefree_cases": 396,
+      "cases_with_L_at_most_X": 198,
+      "precision_digits": 70,
+      "assertion_tolerance": "1e-55",
+      "parent_replayed": false,
+      "interval_certified": false
+    },
+    "limitations": [
+      "Model mathematical review, not formal verification or human peer review.",
+      "The Mellin document received only an earlier consistency spot-check in this review; its separate analytic review and subsequent parent clarifications are recorded separately.",
+      "External RH-equivalence and classical correlation inputs were checked, not reproved.",
+      "The required actual centered-defect energy estimate remains unproved."
+    ]
+  },
+  "GM_GMRR_transfer": {
+    "status": "passed-two-independent-model-analytic-audits-with-qualifications-reconciled",
+    "delegation_id": "deleg_c0d06a11",
+    "claim": "Actual squarefree variance equals C*sqrt(H)+O_epsilon(H^(1/2-epsilon/16)) uniformly for 1<=H<=X^(4/7-epsilon), 0<epsilon<1/100, using pinned analytic theorem inputs.",
+    "deep_inputs": [
+      "GMRR Proposition 1 and low-H Theorem 1",
+      "Guth–Maynard Theorem 1.1",
+      "Classical Weyl and zeta fourth-moment estimates",
+      "Localized Saffari–Vaughan lemma and justified Mellin–Plancherel"
+    ],
+    "qualifications_incorporated": [
+      "Fixed masks preserve pointwise coefficient bounds; length D, rescaled time.",
+      "Localize before invoking a globally-L2 lemma.",
+      "Handle actual squares above 2X separately.",
+      "One aggregate subpower/logarithm budget, including block Cauchy–Schwarz.",
+      "Low-H overlap, far heights and final density centering included.",
+      "The 4/7 ceiling applies only to specified sufficient majorants, not actual arithmetic.",
+      "Pointwise subconvexity below exponent 1/8 would improve the critical-set treatment."
+    ],
+    "source_sha256": {
+      "first_report": "a5d5e92ab641eece617167ae4d7e80f56ff9c9b134d4b5a618f3775cabf06617",
+      "second_report": "4cd3e701d6e7f97cdb976d4e3ae1316e374346eb59b3c86fb56018dcf4a6f4d2",
+      "first_checker": "d24322f1e7ddee343a8739b8966bcfc543b6c3024e39dd7c55bf600b2491bd1a",
+      "second_checker": "ced6ac2dee45d77ac4aa1142771d2320cb5647783d56d01f826fc09581eb3ac5",
+      "consolidated_note": "70b16422b82407167615edd94b7c3a87acd10095597be6f5550459f08d17c85e",
+      "parent_parameter_ledger": "0ba2355a52ab914b5482d222281a248de48b80eed8960b1dfe8d266004446387"
+    },
+    "parent_replays": {
+      "first": {
+        "exit_code": 0,
+        "continuous_epsilon_certificates": 36,
+        "integer_dyadic_partition_checks": 15,
+        "script_unchanged": true,
+        "analytic_proof_certified_by_code": false
+      },
+      "second": {
+        "exit_code": 0,
+        "continuous_epsilon_certificates": 21,
+        "negative_majorant_gate": {
+          "h": "4007/7000",
+          "a": "9993/14000",
+          "gate_result": false,
+          "powers": {
+            "low": "1207/5600",
+            "Weyl": "1207/4200",
+            "GM_middle": "40217/140000",
+            "GM_T": "5021/17500",
+            "Prop12_critical": "16077/56000",
+            "target": "4007/14000"
+          }
+        },
+        "negative_epsilon_loss_budget": {
+          "gate_result": false,
+          "certificate": {
+            "epsilon_factor": 1,
+            "power_coefficients": [
+              "0",
+              "-1/4"
+            ],
+            "bernstein_coefficients_after_factor": [
+              "-1/4"
+            ],
+            "positive_lower_bound_after_factor": "-1/4"
+          }
+        },
+        "script_unchanged": true
+      }
+    },
+    "scope": "The original derivation and source statements were model-audited. The parent reconciled the final note and replayed the arithmetic scripts; deep input proofs were not rebuilt.",
+    "novelty_certified": false,
+    "current_record_certified": false,
+    "expert_peer_review": false,
+    "kernel_verified": false,
+    "RH_proved": false,
+    "new_zero_exclusion_from_this_range": false,
+    "consolidated_proof": "GM_TRANSFER.md",
+    "initial_candidate_intake": {
+      "status": "candidate-awaiting-two-independent-adversarial-audits",
+      "candidate_full_variance_range": "1<=H<=X^(4/7-epsilon), 0<epsilon<1/100",
+      "candidate_error": "O_epsilon(H^(1/2-epsilon/16)); same main constant as GMRR Theorem 1",
+      "existing_full_variance_range": "1<=H<=X^(6/11-epsilon)",
+      "mechanism": "Lower the large-divisor cutoff from H^(4/3+epsilon) to H^(5/4+epsilon), not merely reuse the original Proposition 2 at a forbidden cutoff.",
+      "original_report_filename": "audit.md",
+      "original_report_sha256": "e61abeaf8f060178f259f613d540399119f00910119885d396551f64ae176b2d",
+      "arithmetic_check": "gm_parameter_check.json",
+      "primary_inputs": [
+        {
+          "url": "https://arxiv.org/pdf/2006.04060v2",
+          "tex_sha256": "2ecca25d89675cec8451978a9f7541e69c25d07d09a87023748ea061cb9b051e"
+        },
+        {
+          "url": "https://arxiv.org/pdf/2405.20552v2",
+          "tex_sha256": "36d64e4ec02f0cee8baccd6ee1dbf5ea73f0dfde55827e00ad2566a142ffa428"
+        }
+      ],
+      "no_novelty_record_or_RH_claim": true,
+      "barrier_scope": "Only the tested black-box inequalities, not impossibility for the true mixed moment.",
+      "historical_only": true
+    },
+    "locator_correction": {
+      "pinned_TeX_sha256": "2ecca25d89675cec8451978a9f7541e69c25d07d09a87023748ea061cb9b051e",
+      "verification": "Enumerated the independent lemma counter after removing comments; no section reset.",
+      "Saffari_Vaughan": {
+        "number": 10,
+        "label": "le:SV"
+      },
+      "fourth_moment": {
+        "number": 3,
+        "label": "le:ZetaFourth"
+      },
+      "Weyl": {
+        "number": 5,
+        "label": "le:ZetaSC"
+      },
+      "mean_value": {
+        "number": 7,
+        "label": "le:hmvt",
+        "specialization": "q=1"
+      },
+      "previous_parent_note_sha256": "52eae4d28b0ae78fc67a4f112fd099bb3b72b4d86b3bc78866fc7294f50f41f6",
+      "mathematical_formulas_changed": false,
+      "corrected_parent_note_sha256": "70b16422b82407167615edd94b7c3a87acd10095597be6f5550459f08d17c85e"
+    }
+  },
+  "code_review": {
+    "status": "passed-complete-independent-model-software-review",
+    "delegation_id": "deleg_634d50b9",
+    "report": "code_review.json",
+    "report_sha256": "018bcdee5368f3f8ecbdf4132f7c352755d8697f4a16752d59b5dd8634cc1c12",
+    "fully_reviewed_file_count": 4,
+    "parent_validated": [
+      "Complete JSON parsed with passed=true and both blocking arrays empty.",
+      "Exact four-file path coverage and source-line ranges matched the snapshot manifest.",
+      "Current source hashes and original snapshot hashes matched the reviewed inputs."
+    ],
+    "transport_issue_resolved": "The earlier live-log truncation was resolved by the complete deferred completion message; the passing prefix alone was not accepted.",
+    "redundant_review": "The second complete verdict arrived and was independently matched to all four current source files and original snapshots.",
+    "source_sha256": {
+      "kernel.py": "b2bdb37c08ff54a9de164b28e5a6b994a6d79c06b862c4a5369e9a2778ce8ee9",
+      "verify.py": "73c66dd1595d4cce52bf50e107fcec3759891c6b16babb25531347089c4c275c",
+      "test_kernel.py": "3124ad7bbb26b6b7e7f0d3b129434c1bd1c4d2ba89589f0bd861802b7f331ba4",
+      "test_receipt.py": "1ae8aad201b22f9ee10a830bed2b3aa630cb882bc683f40c1605360994aa6a1e"
+    },
+    "suggestions": [
+      {
+        "files": [
+          "test_kernel.py",
+          "test_receipt.py"
+        ],
+        "suggestion": "Promote the additional review probes into regression tests: exact 512-bit boundaries, maximum-size receipt acceptance, symlink collision rejection, and concurrent exclusive creation. Add subprocess timeouts to prevent test hangs."
+      },
+      {
+        "files": [
+          "verify.py:55-96"
+        ],
+        "suggestion": "Document that verification accepts any valid, sorted cohort of 1–128 cases, not necessarily the producer's fixed 70-case cohort. A reduced one-case receipt correctly reports case_count=1 and passes. Downstream consumers requiring the fixed cohort should separately enforce its exact case keys."
+      }
+    ],
+    "suggestion_disposition": {
+      "cohort_documentation": "Clarified explicitly in README.md.",
+      "additional_regression_probes_and_timeouts": "Nonblocking follow-up; reviewed executable snapshot left unchanged."
+    },
+    "scope": "Software contracts only. The detailed extra-probe counts in code_review.json are reviewer-reported; the separate parent standalone gate is recorded independently. No mathematical proof or RH verdict.",
+    "secondary_review": {
+      "delegation_id": "deleg_07da44ee",
+      "passed": true,
+      "report_sha256": "7b235151d47ae1b4c840276d2370c84617af130eb9747644a6ddd70ff65126cf",
+      "source_and_snapshot_hashes_matched_to_current_files": true,
+      "reviewed_files": [
+        {
+          "file": "kernel.py",
+          "source_sha256": "b2bdb37c08ff54a9de164b28e5a6b994a6d79c06b862c4a5369e9a2778ce8ee9",
+          "snapshot_sha256": "4b96a566614201106a967a7fdd33d1e28327911288ff1e4531f87bc5d8e0ffe9",
+          "lines": [
+            1,
+            111
+          ]
+        },
+        {
+          "file": "verify.py",
+          "source_sha256": "73c66dd1595d4cce52bf50e107fcec3759891c6b16babb25531347089c4c275c",
+          "snapshot_sha256": "84e67a7553a4e752fdd9546a4c6c7ad3d34e30eb55aa36208fb6aa052dfa0b3b",
+          "lines": [
+            1,
+            141
+          ]
+        },
+        {
+          "file": "test_kernel.py",
+          "source_sha256": "3124ad7bbb26b6b7e7f0d3b129434c1bd1c4d2ba89589f0bd861802b7f331ba4",
+          "snapshot_sha256": "f43a48bbfbef8495f3ed91d8e00c1c99c6d0925d52a4bc0b9d09b6a18bc8a448",
+          "lines": [
+            1,
+            100
+          ]
+        },
+        {
+          "file": "test_receipt.py",
+          "source_sha256": "1ae8aad201b22f9ee10a830bed2b3aa630cb882bc683f40c1605360994aa6a1e",
+          "snapshot_sha256": "bf5cf870af6d44a0ca2fb0fe89648ba9c92281c53e551bdb780312bf8d34e457",
+          "lines": [
+            1,
+            142
+          ]
+        }
+      ],
+      "summary": "Passed code-contract review of all 4 complete diffs (494 added lines): no security concerns or logic errors found; 9 supplied test methods, 9 independent probe groups, and the supplemental exhaustive bounded-prime-domain run passed. Repository sources were unchanged; no repository gates or commits were run. Only scratch artifacts and non-repository review-skill documentation were written. No mathematical-proof verdict is implied.",
+      "scope": "Software review only; extra probe totals are reviewer-reported, not a parent rerun."
+    }
+  },
+  "protected_graph_and_certificate_paths_unchanged": true,
+  "next_arithmetic_audits": {
+    "status": "complete and reconciled",
+    "proposal_dispatch": "deleg_07da44ee",
+    "adversarial_dispatch": "deleg_814d1bce",
+    "remaining_open_input": "Neighborhood-uniform joint residual or aggregate signed off-diagonal saving; no further variance range was established."
+  },
+  "Arithmetic_followup": {
+    "full_moment_fixed_saving_established": false,
+    "variance_extension_beyond_4_over_7_established": false,
+    "parent_replays": {
+      "mobius": {
+        "script_sha256": "55c1934a23ff633e7da07b49d19471da48bea87129e6bac02b693edac15bf22f",
+        "exit_code": 0,
+        "summary": {
+          "identity_cases": 16,
+          "coefficient_checks": 1270,
+          "negative_cutoff_control": {
+            "U": 2,
+            "k": 2,
+            "n": 9,
+            "mu": 0,
+            "truncated_rhs": -1,
+            "remainder": 1,
+            "insufficient_cutoff_rejected": true
+          },
+          "negative_saving_controls": {
+            "C_at_7_over_12_not_strict": true,
+            "aggregate_loss_2_eta_not_strict": true
+          },
+          "pinned_inputs_materialized": 7
+        },
+        "replay_mode": "pinned archival input replay",
+        "original_artifacts_unchanged": true
+      },
+      "diagonal": {
+        "script_sha256": "fbea9d1bfbf26048978857b6eb65ae0f3b607b38fa4efd54f2ef5def56d697ca",
+        "exit_code": 0,
+        "summary": {
+          "finite_algebra_cases": 7,
+          "rational_exponent_entries": 29,
+          "diagnostic_float_not_used_as_evidence": "D_times_Q"
+        },
+        "replay_mode": "isolated unmodified-script replay",
+        "original_artifacts_unchanged": true
+      }
+    },
+    "failed_patch_accounting": {
+      "assumed_successful": false,
+      "current_mathematical_body_embedded_in_final_report": true,
+      "correct_q1_mean_value_comment_present_in_both": true
+    },
+    "analytic_review_dispatch": "deleg_814d1bce",
+    "dispatch_manifest_verified": true,
+    "audit_jobs_completed": true,
+    "complete_verdicts_reconciled": true,
+    "verification_scope": "Informal analytic reconstruction using named theorem inputs, plus isolated finite checker replay. Numerical sanity diagnostics are not analytic evidence; no formal or human peer-review claim.",
+    "source_sha256": {
+      "mobius_report": "3c9b48fadae6501cae8418213fd281edd2cbc5f45d4acd016acb3115cce98e32",
+      "sparse_report": "e8ab36422d02bc2b7d611163730744a4472d5a724d838dca074b6bc3cb8fa6b8",
+      "sparse_math": "b443e1de695eac45061c3bea1fd728514b885bae7160b316d26d2dca5c558021"
+    },
+    "status": "passed independent adversarial subproof audits; full signed saving remains open",
+    "audited_positive_components": [
+      "Truncated reciprocal-zeta identity and long-free-factor Type I estimate",
+      "Full signed diagonal via the Jordan-totient Gram identity",
+      "Signed off-diagonal target and unsigned near-core comparison"
+    ],
+    "adversarial_reviews": {
+      "typeI": {
+        "verdict_file": "typeI_review.json",
+        "verdict_sha256": "78c01a5e71847b3d0c70afa97f0d846e17912b9361d3bda82b2ed9ad7cb8aa95",
+        "required_qualifications": [
+          "Pass applies only to the exact decomposition and sharp long-factor Type I partial saving. No complete Mobius mixed-moment saving, variance extension, or RH result is established.",
+          "Keep k=2 fixed for the audited split, U=sqrt(2D) exactly, and D>2. The sufficient whole-block support condition is U^k>=2D; k may not grow with T without new uniform accounting.",
+          "Interpret TI in its stated context D comparable to T^(5/6), or in the explicitly justified small fixed neighborhood 1/2<d<1. Fixed support widths and comparability constants are part of the constant ledger.",
+          "Use real imaginary-part shifts |u|<=T^(1/2+eta), with zeta at its original argument and |2t+u| comparable to T. There is no real-part-shift, near-zero-height, or arbitrary time-dependent-coefficient extension.",
+          "The dual coefficient-1 factor is real. Modulus conjugation does not preserve arbitrary complex dual coefficients unchanged. The other polynomial may have any fixed complex tau_2-bounded coefficients.",
+          "Retain endpoint terms, the inside-supported taper, and its T^epsilon(1+T/D^2) sharp error. Arbitrary oscillatory product masks are not covered by bounded endpoint-mask uniformity.",
+          "The allowed C0 threshold has fixed eta>0. At eta=0, or after spending the full 2eta margin, this argument gives no strict saving. All dyadic, Mellin, maximal, moment, and divisor losses share one budget.",
+          "No AFE application with a dual cutoff below 1, no low-height shell, and no unrestricted C0~T or larger regime is certified by this proof.",
+          "J-rem remains an unproved bound for the whole exact sharp residual. A termwise route needs controlled common shifts and loss slack; u=0 alone is insufficient.",
+          "A variance extension requires uniform full-residual saving in an open height-length neighborhood plus all tail blocks, cumulative heights, masks, and the remaining spectral/endpoint/centering reductions.",
+          "The classical AFE, polynomial mean-value theorem, and zeta fourth moment are accepted theorem inputs read in the supplied archived statements. Fresh DLMF retrieval was blocked by 403; no successful fresh source inspection is claimed.",
+          "This is an informal independent mathematical audit. Exact finite checks and phase diagnostics verify bounded algebra/accounting, not an asymptotic missing joint estimate or the deep theorem inputs."
+        ],
+        "reviewed_claim_count": 14,
+        "parent_replay": {
+          "exit_code": 0,
+          "unmodified_script_sha256": "217d0eae5144c338c288e4bfb60397d80f69a30e05cc52532d56bb48c282e269",
+          "original_artifacts_unchanged": true,
+          "original_artifact_sha256": {
+            "independent_checks.py": "217d0eae5144c338c288e4bfb60397d80f69a30e05cc52532d56bb48c282e269",
+            "report.md": "a40fcfe8622ab0cb7de1dca37e3a01dffe7d8073c609eee9a49ff6d52429a0c3",
+            "verdict.json": "78c01a5e71847b3d0c70afa97f0d846e17912b9361d3bda82b2ed9ad7cb8aa95"
+          },
+          "summary": {
+            "identity_cases": 28,
+            "sharp_split_cases": 70,
+            "canonical_intervals_checked": 528,
+            "floating_phase_diagnostics_not_analytic_evidence": 18
+          },
+          "scope": "Finite algebra/accounting and separately labeled numerical diagnostics; analytic review and theorem inputs are distinct."
+        }
+      },
+      "diagonal": {
+        "verdict_file": "diagonal_review.json",
+        "verdict_sha256": "af6f49acecc77dd0be41b8768a89e9c5724acc3ecb4e26c1a780766e757f2355",
+        "required_qualifications": [
+          "The outer shell weight w is nonnegative; the AFE weight W changes sign. Only local W->1 or W>=1/2 on x<=1 is used for the near-core lower bound.",
+          "The positive diagonal scale is for the full Mobius block and fixed nonzero nonnegative w. Bounded masks retain the uniform upper bound, not a uniform lower bound; uniform lower constants for a weight family would need its integral bounded below.",
+          "Neither the positive diagonal nor the positive unsigned near-core is a lower bound for the full mixed moment or its signed off-diagonal.",
+          "The T^(5/3) count is a genuine actual-cloud lower bound after subtracting O(ND) exact collisions, not an asymptotic pair count and not a lower bound for every taper.",
+          "The actual missing bound is the aggregate weighted signed combination. The stated per-N bound with a delta reserve is sufficient and stronger, not necessary.",
+          "Retain all N from order 1 through T^(1/2+eps), bounded comparable dyadic partners, and the exact interval masks and coefficient conjugates needed by the application.",
+          "Require fixed open-neighborhood uniformity and eta+rho<1/6, with one paid aggregate loss budget; eta+rho+delta<1/6 is a stronger sufficient separation.",
+          "Use the valid fixed smooth shell majorant, or genuinely overlapping rescaled covering weights; do not interpret the alternative wording as finite smooth majorization with support confined exactly to the closed sharp shell.",
+          "This pass concerns Sections 1-4 as an interface audit. The off-diagonal saving itself, a new variance theorem, literature exhaustiveness, novelty, and RH are not certified."
+        ],
+        "reviewed_claim_count": 13,
+        "parent_replay": {
+          "exit_code": 0,
+          "unmodified_script_sha256": "0362f455d1ed6887fc8dde0b4ff1a11dfa4ba8b09a680a9520a9bec4c985b55c",
+          "original_artifacts_unchanged": true,
+          "original_artifact_sha256": {
+            "independent_checks.py": "0362f455d1ed6887fc8dde0b4ff1a11dfa4ba8b09a680a9520a9bec4c985b55c",
+            "report.md": "1c2079a0d45e8782541f9c0251af9aba1dbd13704108eff444685582cf2fdf18",
+            "verdict.json": "af6f49acecc77dd0be41b8768a89e9c5724acc3ecb4e26c1a780766e757f2355"
+          },
+          "summary": {
+            "gram": 11,
+            "masked_gram": 12,
+            "jordan": 200,
+            "collisions": 5,
+            "point_cloud": 3,
+            "exponents": 21,
+            "source_archive_checks": 3,
+            "floating_weight_diagnostics_not_analytic_evidence": 5
+          },
+          "scope": "Finite algebra/accounting and separately labeled numerical diagnostics; analytic review and theorem inputs are distinct."
+        }
+      }
+    },
+    "consolidated_note": "ARITHMETIC_FRONTIER.md",
+    "consolidated_note_sha256": "bcd92679af4eff1372e6cbfdd6eb553c35f71aa174df11e7468d34db6db03ee8"
+  },
+  "source_retrieval_limits": {
+    "DLMF": "Archived formula-preserving material used after fresh retrieval was blocked by 403.",
+    "BCR": "Pinned v1 source and archive payloads inspected; no uninspected publisher-final statement substituted."
+  },
+  "delivery_scope": {
+    "experiment_only": true,
+    "source_root": "experiments/astra-rh-crt-20260912",
+    "raw_audit_workspaces_bundled": false,
+    "primary_theorem_proofs_rebuilt": false,
+    "formal_or_human_peer_review": false,
+    "novelty_or_current_record_certified": false,
+    "full_repository_gate_run_in_this_extension": false,
+    "commit_created": false,
+    "pushed": false,
+    "production_graph_promoted": false,
+    "post_archive_checks_recorded_separately": true
+  },
+  "pre_packaging_parent_standalone_gate": {
+    "tests": 9,
+    "verifier": {
+      "adverse_phase_verified": true,
+      "case_count": 70,
+      "distinct_prime_sets": 7,
+      "passed": true,
+      "rh_proved": false,
+      "sampled_phase_bounds_checked": true,
+      "scope": "uniform-residue-phase-only"
+    },
+    "case_count": 70,
+    "prime_sets": 7,
+    "fresh_emission_identical": true,
+    "originals_unchanged": true,
+    "replay_files_unchanged": true,
+    "receipt_sha256": "479d623dd4c59050368cb5a4cc4a58d34d2b03eaa8ecb42f76c5affcb74ffb72",
+    "source_sha256": {
+      "kernel.py": "b2bdb37c08ff54a9de164b28e5a6b994a6d79c06b862c4a5369e9a2778ce8ee9",
+      "verify.py": "73c66dd1595d4cce52bf50e107fcec3759891c6b16babb25531347089c4c275c",
+      "test_kernel.py": "3124ad7bbb26b6b7e7f0d3b129434c1bd1c4d2ba89589f0bd861802b7f331ba4",
+      "test_receipt.py": "1ae8aad201b22f9ee10a830bed2b3aa630cb882bc683f40c1605360994aa6a1e",
+      "receipt.json": "479d623dd4c59050368cb5a4cc4a58d34d2b03eaa8ecb42f76c5affcb74ffb72"
+    }
+  },
+  "citation_gate": {
+    "status": "passed number, URL and evidence checks for all five notes",
+    "strict_mode": false,
+    "warnings": "Per-note unused sources in a shared multi-document ledger; not a mathematical proof validator."
+  }
+}

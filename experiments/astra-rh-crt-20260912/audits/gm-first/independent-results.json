@@ -1,0 +1,501 @@
+{
+  "all_assertions_passed": true,
+  "analytic_proof_certified_by_code": false,
+  "positivity_domain": "all 0<epsilon<1/100, epsilon<=h<=4/7-epsilon",
+  "reason_h_endpoints_suffice": "every tested slack is affine in h for fixed epsilon",
+  "GM_normalized_D_V_T": [
+    [
+      "0",
+      "-2",
+      "0"
+    ],
+    [
+      "-2/5",
+      "-4",
+      "0"
+    ],
+    [
+      "-8/5",
+      "-4",
+      "1"
+    ]
+  ],
+  "after_fourth_D_V_T": [
+    [
+      "-1/5",
+      "0",
+      "-1/2"
+    ],
+    [
+      "-4/5",
+      "0",
+      "0"
+    ]
+  ],
+  "strict_positivity_certificates": {
+    "h=epsilon": {
+      "P1 H upper": {
+        "polynomial_coefficients": [
+          "2/3",
+          "-2"
+        ],
+        "epsilon_factors_removed": 0,
+        "positive_Bernstein_coefficients": [
+          "2/3",
+          "97/150"
+        ]
+      },
+      "P1 z lower": {
+        "polynomial_coefficients": [
+          "0",
+          "1/4"
+        ],
+        "epsilon_factors_removed": 1,
+        "positive_Bernstein_coefficients": [
+          "1/4"
+        ]
+      },
+      "P1 z upper 1": {
+        "polynomial_coefficients": [
+          "1",
+          "-7/4",
+          "-2"
+        ],
+        "epsilon_factors_removed": 0,
+        "positive_Bernstein_coefficients": [
+          "1",
+          "793/800",
+          "9823/10000"
+        ]
+      },
+      "P1 z upper 2": {
+        "polynomial_coefficients": [
+          "1/2",
+          "-3/4",
+          "-2"
+        ],
+        "epsilon_factors_removed": 0,
+        "positive_Bernstein_coefficients": [
+          "1/2",
+          "397/800",
+          "4923/10000"
+        ]
+      },
+      "stricter internal P1 z upper": {
+        "polynomial_coefficients": [
+          "1",
+          "-11/4",
+          "-1"
+        ],
+        "epsilon_factors_removed": 0,
+        "positive_Bernstein_coefficients": [
+          "1",
+          "789/800",
+          "2431/2500"
+        ]
+      },
+      "height witness": {
+        "polynomial_coefficients": [
+          "1",
+          "-7/4",
+          "-3"
+        ],
+        "epsilon_factors_removed": 0,
+        "positive_Bernstein_coefficients": [
+          "1",
+          "793/800",
+          "4911/5000"
+        ]
+      },
+      "original pre-(42) small-level bound vs tail target": {
+        "polynomial_coefficients": [
+          "0",
+          "1/8",
+          "7/64",
+          "-1/16"
+        ],
+        "epsilon_factors_removed": 1,
+        "positive_Bernstein_coefficients": [
+          "1/8",
+          "1607/12800",
+          "10087/80000"
+        ]
+      },
+      "centering cross vs final target": {
+        "polynomial_coefficients": [
+          "1/2",
+          "-3/4",
+          "-1/16"
+        ],
+        "epsilon_factors_removed": 0,
+        "positive_Bernstein_coefficients": [
+          "1/2",
+          "397/800",
+          "78799/160000"
+        ]
+      },
+      "centering square vs final target": {
+        "polynomial_coefficients": [
+          "1",
+          "-3/2",
+          "-1/16"
+        ],
+        "epsilon_factors_removed": 0,
+        "positive_Bernstein_coefficients": [
+          "1",
+          "397/400",
+          "157599/160000"
+        ]
+      },
+      "endpoint sliver H/X is o(1)": {
+        "polynomial_coefficients": [
+          "1",
+          "-1"
+        ],
+        "epsilon_factors_removed": 0,
+        "positive_Bernstein_coefficients": [
+          "1",
+          "99/100"
+        ]
+      },
+      "endpoint sliver H^3/X^2 is o(1)": {
+        "polynomial_coefficients": [
+          "2",
+          "-3"
+        ],
+        "epsilon_factors_removed": 0,
+        "positive_Bernstein_coefficients": [
+          "2",
+          "197/100"
+        ]
+      },
+      "O(1) endpoint vs tail target": {
+        "polynomial_coefficients": [
+          "0",
+          "1/2",
+          "-1/4"
+        ],
+        "epsilon_factors_removed": 1,
+        "positive_Bernstein_coefficients": [
+          "1/2",
+          "199/400"
+        ]
+      },
+      "P1 error vs final target": {
+        "polynomial_coefficients": [
+          "0",
+          "0",
+          "3/80"
+        ],
+        "epsilon_factors_removed": 2,
+        "positive_Bernstein_coefficients": [
+          "3/80"
+        ]
+      },
+      "I1-I2 cross vs final target": {
+        "polynomial_coefficients": [
+          "0",
+          "0",
+          "1/16"
+        ],
+        "epsilon_factors_removed": 2,
+        "positive_Bernstein_coefficients": [
+          "1/16"
+        ]
+      },
+      "low values after aggregate X^(epsilon^2/10) loss": {
+        "polynomial_coefficients": [
+          "0",
+          "1/8",
+          "3/20"
+        ],
+        "epsilon_factors_removed": 1,
+        "positive_Bernstein_coefficients": [
+          "1/8",
+          "253/2000"
+        ]
+      },
+      "Weyl after aggregate X^(epsilon^2/10) loss": {
+        "polynomial_coefficients": [
+          "2/3",
+          "-7/6",
+          "-7/20"
+        ],
+        "epsilon_factors_removed": 0,
+        "positive_Bernstein_coefficients": [
+          "2/3",
+          "793/1200",
+          "130993/200000"
+        ]
+      },
+      "GM middle after aggregate X^(epsilon^2/10) loss": {
+        "polynomial_coefficients": [
+          "1/2",
+          "-7/8",
+          "-1/4"
+        ],
+        "epsilon_factors_removed": 0,
+        "positive_Bernstein_coefficients": [
+          "1/2",
+          "793/1600",
+          "19649/40000"
+        ]
+      },
+      "GM T term after aggregate X^(epsilon^2/10) loss": {
+        "polynomial_coefficients": [
+          "0",
+          "0",
+          "1/20"
+        ],
+        "epsilon_factors_removed": 2,
+        "positive_Bernstein_coefficients": [
+          "1/20"
+        ]
+      }
+    },
+    "h=4/7-epsilon": {
+      "P1 H upper": {
+        "polynomial_coefficients": [
+          "2/21"
+        ],
+        "epsilon_factors_removed": 0,
+        "positive_Bernstein_coefficients": [
+          "2/21"
+        ]
+      },
+      "P1 z lower": {
+        "polynomial_coefficients": [
+          "1/7",
+          "-1/4"
+        ],
+        "epsilon_factors_removed": 0,
+        "positive_Bernstein_coefficients": [
+          "1/7",
+          "393/2800"
+        ]
+      },
+      "P1 z upper 1": {
+        "polynomial_coefficients": [
+          "0",
+          "17/28",
+          "2"
+        ],
+        "epsilon_factors_removed": 1,
+        "positive_Bernstein_coefficients": [
+          "17/28",
+          "439/700"
+        ]
+      },
+      "P1 z upper 2": {
+        "polynomial_coefficients": [
+          "1/14",
+          "-11/28",
+          "2"
+        ],
+        "epsilon_factors_removed": 0,
+        "positive_Bernstein_coefficients": [
+          "1/14",
+          "389/5600",
+          "677/10000"
+        ]
+      },
+      "stricter internal P1 z upper": {
+        "polynomial_coefficients": [
+          "0",
+          "5/28",
+          "1"
+        ],
+        "epsilon_factors_removed": 1,
+        "positive_Bernstein_coefficients": [
+          "5/28",
+          "33/175"
+        ]
+      },
+      "height witness": {
+        "polynomial_coefficients": [
+          "0",
+          "1/28",
+          "3"
+        ],
+        "epsilon_factors_removed": 1,
+        "positive_Bernstein_coefficients": [
+          "1/28",
+          "23/350"
+        ]
+      },
+      "original pre-(42) small-level bound vs tail target": {
+        "polynomial_coefficients": [
+          "1/14",
+          "-1/16",
+          "-65/448",
+          "1/16"
+        ],
+        "epsilon_factors_removed": 0,
+        "positive_Bernstein_coefficients": [
+          "1/14",
+          "2393/33600",
+          "190867/2688000",
+          "566313/8000000"
+        ]
+      },
+      "centering cross vs final target": {
+        "polynomial_coefficients": [
+          "1/14",
+          "5/7",
+          "1/16"
+        ],
+        "epsilon_factors_removed": 0,
+        "positive_Bernstein_coefficients": [
+          "1/14",
+          "3/40",
+          "88007/1120000"
+        ]
+      },
+      "centering square vs final target": {
+        "polynomial_coefficients": [
+          "1/7",
+          "41/28",
+          "1/16"
+        ],
+        "epsilon_factors_removed": 0,
+        "positive_Bernstein_coefficients": [
+          "1/7",
+          "841/5600",
+          "25201/160000"
+        ]
+      },
+      "endpoint sliver H/X is o(1)": {
+        "polynomial_coefficients": [
+          "3/7",
+          "1"
+        ],
+        "epsilon_factors_removed": 0,
+        "positive_Bernstein_coefficients": [
+          "3/7",
+          "307/700"
+        ]
+      },
+      "endpoint sliver H^3/X^2 is o(1)": {
+        "polynomial_coefficients": [
+          "2/7",
+          "3"
+        ],
+        "epsilon_factors_removed": 0,
+        "positive_Bernstein_coefficients": [
+          "2/7",
+          "221/700"
+        ]
+      },
+      "O(1) endpoint vs tail target": {
+        "polynomial_coefficients": [
+          "2/7",
+          "-9/14",
+          "1/4"
+        ],
+        "epsilon_factors_removed": 0,
+        "positive_Bernstein_coefficients": [
+          "2/7",
+          "113/400",
+          "78207/280000"
+        ]
+      },
+      "P1 error vs final target": {
+        "polynomial_coefficients": [
+          "0",
+          "3/140",
+          "-3/80"
+        ],
+        "epsilon_factors_removed": 1,
+        "positive_Bernstein_coefficients": [
+          "3/140",
+          "1179/56000"
+        ]
+      },
+      "I1-I2 cross vs final target": {
+        "polynomial_coefficients": [
+          "0",
+          "1/28",
+          "-1/16"
+        ],
+        "epsilon_factors_removed": 1,
+        "positive_Bernstein_coefficients": [
+          "1/28",
+          "393/11200"
+        ]
+      },
+      "low values after aggregate X^(epsilon^2/10) loss": {
+        "polynomial_coefficients": [
+          "1/14",
+          "1/56",
+          "-7/20"
+        ],
+        "epsilon_factors_removed": 0,
+        "positive_Bernstein_coefficients": [
+          "1/14",
+          "801/11200",
+          "100201/1400000"
+        ]
+      },
+      "Weyl after aggregate X^(epsilon^2/10) loss": {
+        "polynomial_coefficients": [
+          "0",
+          "43/42",
+          "3/20"
+        ],
+        "epsilon_factors_removed": 1,
+        "positive_Bernstein_coefficients": [
+          "43/42",
+          "43063/42000"
+        ]
+      },
+      "GM middle after aggregate X^(epsilon^2/10) loss": {
+        "polynomial_coefficients": [
+          "0",
+          "221/280",
+          "1/20"
+        ],
+        "epsilon_factors_removed": 1,
+        "positive_Bernstein_coefficients": [
+          "221/280",
+          "11057/14000"
+        ]
+      },
+      "GM T term after aggregate X^(epsilon^2/10) loss": {
+        "polynomial_coefficients": [
+          "0",
+          "3/35",
+          "-1/4"
+        ],
+        "epsilon_factors_removed": 1,
+        "positive_Bernstein_coefficients": [
+          "3/35",
+          "233/2800"
+        ]
+      }
+    }
+  },
+  "number_of_positive_polynomial_certificates": 36,
+  "integer_dyadic_partition_tests": 15,
+  "primary_hashes": [
+    {
+      "file": "gmrr-v2.pdf",
+      "sha256": "f59fafc77d44d9f78e34a234d716b9e5d7b38619f7f327b2c506c1e2a841ddab",
+      "matches": true
+    },
+    {
+      "file": "gmrr-source/squfv.tex",
+      "sha256": "2ecca25d89675cec8451978a9f7541e69c25d07d09a87023748ea061cb9b051e",
+      "matches": true
+    },
+    {
+      "file": "gm-v2.pdf",
+      "sha256": "915392cf7d0ecd108479814a9a1481e23423ef63415776471cec3975ae482cae",
+      "matches": true
+    },
+    {
+      "file": "gm-source/LargevaluesDirichlet17.tex",
+      "sha256": "36d64e4ec02f0cee8baccd6ee1dbf5ea73f0dfde55827e00ad2566a142ffa428",
+      "matches": true
+    }
+  ]
+}

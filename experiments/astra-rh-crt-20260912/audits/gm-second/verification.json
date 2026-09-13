@@ -1,0 +1,89 @@
+{
+  "all_delivery_gates_pass": true,
+  "scope": "Checks and reviewed-input identity only, not a formal mathematical proof",
+  "commands": [
+    {
+      "name": "independent_checker",
+      "exit_code": 0,
+      "log": "execution.log"
+    },
+    {
+      "name": "critical_comparison_and_parent_replay",
+      "exit_code": 0,
+      "log": "critical-comparison.log"
+    },
+    {
+      "name": "citation_evidence_gate",
+      "exit_code": 0,
+      "log": "citation-verification.log"
+    }
+  ],
+  "original_input_count": 5,
+  "original_inputs_unchanged": true,
+  "changed_inputs": [],
+  "parent_parameter_file": "<repo>/experiments/astra-rh-crt-20260912/gm_parameter_check.json",
+  "parent_parameter_file_sha256": "0ba2355a52ab914b5482d222281a248de48b80eed8960b1dfe8d266004446387",
+  "parent_parameter_file_unchanged": true,
+  "artifact_manifest": {
+    "check_second_audit.py": {
+      "sha256": "ced6ac2dee45d77ac4aa1142771d2320cb5647783d56d01f826fc09581eb3ac5",
+      "bytes": 8704
+    },
+    "citation-verification.log": {
+      "sha256": "71b643212bde22a26c5bfc9ccaa4c9b32adae401069d5c88351888e6b9b7a894",
+      "bytes": 209
+    },
+    "citations.json": {
+      "sha256": "dec33bd9716e7d5102f5f49013eb85b2e987403e619c466c416195cfb8b4be4b",
+      "bytes": 2949
+    },
+    "collect_evidence.py": {
+      "sha256": "e55e1bd9f02fe9c6e300387af9678482ffddd325214fa99165a3d1d71917b1d2",
+      "bytes": 2829
+    },
+    "compare_critical_bounds.py": {
+      "sha256": "abc66a282119a62ae31f899f365935a5d28f3ea3fa2c3491502f45d3e57f295c",
+      "bytes": 4933
+    },
+    "critical-comparison.json": {
+      "sha256": "177ddb130f0b6abd772a4966e63ea6f2fcfdbf650bc3e7430d6b60787e7d7f01",
+      "bytes": 3170
+    },
+    "critical-comparison.log": {
+      "sha256": "177ddb130f0b6abd772a4966e63ea6f2fcfdbf650bc3e7430d6b60787e7d7f01",
+      "bytes": 3170
+    },
+    "execution.log": {
+      "sha256": "6db1eed7b1e9f6b52053ecefe8c5db0cc8f3e5146538dc4a33e3510f5fcbe318",
+      "bytes": 9008
+    },
+    "input-hashes-final.json": {
+      "sha256": "0bf7a06caaacdf7f4dadcf250501581c51e8e03e1770e0e58d31bea85df36e08",
+      "bytes": 476
+    },
+    "input-hashes-initial.json": {
+      "sha256": "0bf7a06caaacdf7f4dadcf250501581c51e8e03e1770e0e58d31bea85df36e08",
+      "bytes": 476
+    },
+    "report.md": {
+      "sha256": "4cd3e701d6e7f97cdb976d4e3ae1316e374346eb59b3c86fb56018dcf4a6f4d2",
+      "bytes": 26765
+    },
+    "results.json": {
+      "sha256": "6db1eed7b1e9f6b52053ecefe8c5db0cc8f3e5146538dc4a33e3510f5fcbe318",
+      "bytes": 9008
+    },
+    "source-excerpts.md": {
+      "sha256": "dbf613641fc5e2bd39e62e5f3656e1ac66f9e612084f773dfc494da998759b9a",
+      "bytes": 13782
+    },
+    "source-locators.json": {
+      "sha256": "4b7a1671f7fe576f1e1891754c21011deed5189ef38a4462894f29e8deb2b582",
+      "bytes": 2983
+    },
+    "verify_bundle.py": {
+      "sha256": "69fb64e76cd0e0fbda0c910c3a5170387a716d2693a346454af00d3f6590b9a6",
+      "bytes": 2559
+    }
+  }
+}

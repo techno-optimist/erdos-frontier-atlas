@@ -1,0 +1,42 @@
+python3 tools/validate_gap_map.py
+  WARN: entry[145] (problem 743): oeis A000055 not among stub's refs (ok if better-sourced)
+  WARN: entry[187] (problem 993): oeis A000055 not among stub's refs (ok if better-sourced)
+gap_map VALID: 225 entries; witness_feasibility {'hard': 51, 'plausible': 42, 'none': 86, 'open-easy': 42, 'historic': 4}; confidence {'C2': 8, 'C3': 217}; 2 warn(s)
+python3 tools/validate_ai_claims.py
+ai-claim overlay OK: 89 claims recorded, 21 against problems we still record open/wall; 0 statuses changed by a claim
+python3 tools/validate_atlas.py
+atlas integrity: 51 entries, counts and routing invariants verified
+python3 tools/state_of_frontier.py --check
+OK: views/state_of_frontier.md is current with the data
+python3 book/build_book.py --check
+OK: book/BOOK.md is current with the data
+python3 tools/build_graph.py --check
+graph up to date (299 files).
+python3 tools/validate_graph.py
+validate_graph: OK — 2415 nodes, 4007 edges, 296 rendered files, 0 quarantined.
+python3 tools/check_certificate_contracts.py
+certificate-contracts: 28 directories inventoried; 15 claims bound
+certificate-contracts OK
+python3 tools/check_certificate_contracts.py --profile fast
+certificate-contracts: 28 directories inventoried; 15 claims bound
+contract replay erdos-552-n12-n16: PASS
+contract replay erdos-552-f39-lower: PASS
+contract replay erdos-13-table: PASS
+contract replay erdos-142-foundation: PASS
+contract replay erdos-979-a6-public: PASS
+contract replay erdos-1107-public-table: PASS
+contract replay graffiti-284-hoffman-singleton: PASS
+contract replay jacobian-n3-counterexample: PASS
+contract replay graffiti-290-finite-verification: PASS
+contract replay keller-power-weighted-lifts-replay: PASS
+contract replay erdos-142-cone-infeasible-objects: PASS
+contract replay erdos-366-cubefull-sweep-1e25: PASS
+contract replay erdos-743-k10-packing: PASS
+contract replay erdos-993-unimodal-n30: PASS
+contract replay erdos-699-rowsweep-1e8: PASS
+certificate-contracts OK
+python3 -m pytest tests/ -q
+........................................................................ [ 48%]
+........................................................................ [ 96%]
+s..s..                                                                   [100%]
+148 passed, 2 skipped in 41.22s

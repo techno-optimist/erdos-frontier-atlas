@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "identity_case_count": 28,
+  "truncated_coefficients_checked": 774,
+  "full_identity_coefficients_checked": 1728,
+  "sharp_split_case_count": 70,
+  "sharp_block_coefficients_checked": 1547,
+  "tuple_assignments_checked": 12278,
+  "marked_boxes_across_cases": 883,
+  "binary_levels_checked": 6,
+  "canonical_intervals_checked": 528,
+  "phase_diagnostic_count": 18,
+  "negative_controls": [
+    "insufficient cutoff",
+    "missing exact threshold",
+    "complex dual coefficient conjugation",
+    "frozen interval cancellation",
+    "eta=0 gives no saving",
+    "exhausted aggregate saving"
+  ],
+  "checks_path": "mobius-typeI/checks.json"
+}

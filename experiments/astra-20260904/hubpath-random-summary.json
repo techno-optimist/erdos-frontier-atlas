@@ -1,0 +1,41 @@
+{
+  "note": "continuation of RNG after threehub-random-batch1; finite samples only",
+  "summary": [
+    {
+      "hubs": 3,
+      "samples": 5000,
+      "min_order": 20,
+      "max_order": 185,
+      "lc_failures": 0,
+      "unimodality_failures": 0,
+      "examples": []
+    },
+    {
+      "hubs": 4,
+      "samples": 5000,
+      "min_order": 28,
+      "max_order": 224,
+      "lc_failures": 0,
+      "unimodality_failures": 0,
+      "examples": []
+    },
+    {
+      "hubs": 5,
+      "samples": 5000,
+      "min_order": 44,
+      "max_order": 278,
+      "lc_failures": 0,
+      "unimodality_failures": 0,
+      "examples": []
+    },
+    {
+      "hubs": 8,
+      "samples": 5000,
+      "min_order": 104,
+      "max_order": 415,
+      "lc_failures": 0,
+      "unimodality_failures": 0,
+      "examples": []
+    }
+  ]
+}

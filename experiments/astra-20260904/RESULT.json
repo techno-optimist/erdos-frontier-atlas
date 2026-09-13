@@ -1,0 +1,54 @@
+{
+  "batches": [
+    {
+      "hubs": 3,
+      "lc_failures": 0,
+      "max_order": 154,
+      "min_order": 18,
+      "samples": 1500,
+      "unimodality_failures": 0
+    },
+    {
+      "hubs": 3,
+      "lc_failures": 0,
+      "max_order": 185,
+      "min_order": 20,
+      "samples": 5000,
+      "unimodality_failures": 0
+    },
+    {
+      "hubs": 4,
+      "lc_failures": 0,
+      "max_order": 224,
+      "min_order": 28,
+      "samples": 5000,
+      "unimodality_failures": 0
+    },
+    {
+      "hubs": 5,
+      "lc_failures": 0,
+      "max_order": 278,
+      "min_order": 44,
+      "samples": 5000,
+      "unimodality_failures": 0
+    },
+    {
+      "hubs": 8,
+      "lc_failures": 0,
+      "max_order": 415,
+      "min_order": 104,
+      "samples": 5000,
+      "unimodality_failures": 0
+    }
+  ],
+  "distinct_trees": 21500,
+  "failures": [],
+  "log_concavity_failures": 0,
+  "problem": "P993",
+  "samples": 21500,
+  "seed": 99320260904,
+  "status": "exploratory finite samples; no theorem or frontier promotion",
+  "stream_sha256": "029e0aa9528a5af18c5125d4ff210d91bda43034381ffd4b2ee508df05408646",
+  "surface": "S:triage:993",
+  "unimodality_failures": 0
+}

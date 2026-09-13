@@ -1,0 +1,5 @@
+{
+  "identical": true,
+  "v1": "\\begin{thrm}[Large values estimate]\\label{thrm:LargeValues}\nSuppose $(b_n)$ is a sequence of complex numbers with $|b_n| \\le 1$,  and $(t_r)_{r\\le R}$ is a sequence of $1$-separated points in $[0,T]$ such that\n\\[\n\\Bigl|\\sum_{n= N}^{2N}b_n n^{it_r}\\Bigr|\\ge V\n\\]\n\nfor all $r\\le R$. Then we have\n\\[\nR\\le T^{o(1)}\\Bigl(N^2V^{-2}+N^{18/5}V^{-4}+TN^{12/5}V^{-4}\\Bigr).\n\\]\n\n\\end{thrm}",
+  "v2": "\\begin{thrm}[Large values estimate]\\label{thrm:LargeValues}\nSuppose $(b_n)$ is a sequence of complex numbers with $|b_n| \\le 1$,  and $(t_r)_{r\\le R}$ is a sequence of $1$-separated points in $[0,T]$ such that\n\\[\n\\Bigl|\\sum_{n= N}^{2N}b_n n^{it_r}\\Bigr|\\ge V\n\\]\n\nfor all $r\\le R$. Then we have\n\\[\nR\\le T^{o(1)}\\Bigl(N^2V^{-2}+N^{18/5}V^{-4}+TN^{12/5}V^{-4}\\Bigr).\n\\]\n\n\\end{thrm}"
+}

@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://arxiv.org/html/2006.04060v2",
+      "title": "GMRR, On the variance of squarefree integers, v2",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "The Riemann Hypothesis holds if and only if",
+          "added": "2026-09-12"
+        }
+      ]
+    }
+  ]
+}

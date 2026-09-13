@@ -1,0 +1,96 @@
+{
+  "verified": true,
+  "n_bound": 240,
+  "counts": {
+    "localized_prime_powers": 1078287,
+    "boundary_prime_lifts": 1488,
+    "refined_euclidean_products": 554659,
+    "strip_products": 18815,
+    "strip_gcd_checks": 18815,
+    "exception_triples": 41,
+    "inequality_checks": 4704
+  },
+  "boundary_lift_examples": [
+    {
+      "n": 12,
+      "i": 2,
+      "j": 4,
+      "p": 2,
+      "a": 1,
+      "M": 4,
+      "r": 0,
+      "s": 0
+    },
+    {
+      "n": 13,
+      "i": 2,
+      "j": 4,
+      "p": 2,
+      "a": 1,
+      "M": 4,
+      "r": 0,
+      "s": 1
+    },
+    {
+      "n": 13,
+      "i": 2,
+      "j": 5,
+      "p": 2,
+      "a": 1,
+      "M": 4,
+      "r": 1,
+      "s": 0
+    },
+    {
+      "n": 18,
+      "i": 3,
+      "j": 9,
+      "p": 3,
+      "a": 1,
+      "M": 9,
+      "r": 0,
+      "s": 0
+    },
+    {
+      "n": 19,
+      "i": 3,
+      "j": 9,
+      "p": 3,
+      "a": 1,
+      "M": 9,
+      "r": 0,
+      "s": 1
+    },
+    {
+      "n": 20,
+      "i": 2,
+      "j": 4,
+      "p": 2,
+      "a": 1,
+      "M": 4,
+      "r": 0,
+      "s": 0
+    },
+    {
+      "n": 20,
+      "i": 3,
+      "j": 9,
+      "p": 3,
+      "a": 1,
+      "M": 9,
+      "r": 0,
+      "s": 2
+    },
+    {
+      "n": 20,
+      "i": 3,
+      "j": 10,
+      "p": 3,
+      "a": 1,
+      "M": 9,
+      "r": 1,
+      "s": 1
+    }
+  ],
+  "scope": "bounded lemma tests; no all-n computational claim"
+}

@@ -1,0 +1,32 @@
+{
+  "verified": true,
+  "counts": {
+    "d2_triples": 19411,
+    "d2_wraps": 195,
+    "d3_even_triples": 9512,
+    "d3_even_wraps": 167,
+    "d3_theorem_triples": 9483,
+    "d3_diagonal_wraps": 16,
+    "exception_triples": 5,
+    "symbolic_inequality_samples": 54
+  },
+  "crude_bound_counterexample": {
+    "n": 42,
+    "i": 10,
+    "j": 20,
+    "p": 11,
+    "N": 1471442973,
+    "B": 4845,
+    "C": 20349,
+    "crude_bound_squared": 2840357025,
+    "corrected_bound": 10659
+  },
+  "integrality_counterexample": {
+    "n": 18,
+    "i": 4,
+    "j": 8,
+    "absent_prime": 5,
+    "shifted_binomial": 36
+  },
+  "scope": "Exact bounded lemma checks plus sampled symbolic inequalities; all-parameter proofs are in result.md; no novelty, formalization, or publication claim."
+}

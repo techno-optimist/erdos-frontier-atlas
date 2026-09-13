@@ -1,0 +1,12 @@
+[
+  {
+    "original": "gm-second/report.md",
+    "copy": "twisted-square/baseline/second-audit.md",
+    "sha256": "4cd3e701d6e7f97cdb976d4e3ae1316e374346eb59b3c86fb56018dcf4a6f4d2"
+  },
+  {
+    "original": "<repo>/experiments/astra-rh-crt-20260912/GM_TRANSFER.md",
+    "copy": "twisted-square/baseline/GM_TRANSFER.md",
+    "sha256": "52eae4d28b0ae78fc67a4f112fd099bb3b72b4d86b3bc78866fc7294f50f41f6"
+  }
+]

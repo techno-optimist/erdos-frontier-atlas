@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://arxiv.org/pdf/2006.04060v2",
+      "title": "GMRR, On the variance of squarefree integers, v2",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "\\begin{proposition} \\label{pr:prop1}\n  Let $\\varepsilon \\in (0, \\tfrac{1}{100})$ be given.\n  Let $X \\geq 1$ and $X^{\\varepsilon} \\leq H \\leq X^{2/3 - \\varepsilon}$. Let $H^{1+\\varepsilon} \\leq z \\leq \\min\\{X/H^{1/2+\\varepsilon}, H^{1/2-\\varepsilon}X^{1/2}\\}$. Then, as $X \\rightarrow \\infty$, \n  \\begin{equation} \\label{eq:prop1}  \\frac{1}{X} \\int_{X}^{2X} \\Big | \\sum_{\\substack{x < n d^2 \\leq x + H \\\\ d^2 \\le z}} \\mu(d) - H \\sum_{d^2 \\le z} \\frac{\\mu(d)}{d^2} \\Big |^2 \\, dx = C \\sqrt{H} + O(H^{1/2-\\varepsilon/10})\n    \\end{equation}\n    with $C$ as in~\\eqref{eq:C_dfn}.\n\\end{proposition}",
+          "added": "2026-09-12"
+        },
+        {
+          "text": "Let us now prove the unconditional part of the proposition. \nFirst notice that the values of $t$ for which $|M(1+2it)| \\leq D^{-1/2 + \\varepsilon/16}$ contribute to~\\eqref{eq:final} by Cauchy-Schwarz and the fourth moment bound (Lemma~\\ref{le:ZetaFourth}) $O(H^{1+\\varepsilon/16}D^{-1+\\varepsilon/8}) = O(H^{1/2-\\varepsilon/4})$, and therefore their contribution is always acceptable.\nWriting \n\\[\nS(V) = \\{t \\in [-T, T] \\colon V \\leq |M(1+2it)| < 2V\\},\n\\]\nby dyadic splitting, it suffices to show that, for each $V \\in [D^{-1/2}, 1]$ and $T \\in [X/H, X^2]$, we have\n\\[\n\\frac{H}{T} V^2 \\int_{S(V)} |\\zeta(1/2+it)|^2 dt \\ll H^{1/2-\\varepsilon/3}.\n\\]\nNow by Lemma~\\ref{le:LVT} we have\n\\begin{equation}\n\\label{eq:S(V)bound}\n|S(V)| \\ll (V^{-2} + T\\min\\{D^{-1}V^{-2}, D^{-2} V^{-6}\\}) (\\log 2X)^6.",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "url": "https://arxiv.org/pdf/2405.20552v2",
+      "title": "Guth–Maynard, New large value estimates, v2",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "\\begin{thrm}[Large values estimate]\\label{thrm:LargeValues}\nSuppose $(b_n)$ is a sequence of complex numbers with $|b_n| \\le 1$,  and $(t_r)_{r\\le R}$ is a sequence of $1$-separated points in $[0,T]$ such that\n\\[\n\\Bigl|\\sum_{n= N}^{2N}b_n n^{it_r}\\Bigr|\\ge V\n\\]\n\nfor all $r\\le R$. Then we have\n\\[\nR\\le T^{o(1)}\\Bigl(N^2V^{-2}+N^{18/5}V^{-4}+TN^{12/5}V^{-4}\\Bigr).\n\\]\n\n\\end{thrm}",
+          "added": "2026-09-12"
+        },
+        {
+          "text": "\\begin{rmk}\nMany earlier results on large values of Dirichlet polynomials (such as those stemming from the Mean Value Theorem or the Montgomery-Huxley-Hal\\'asz large values estimate) allowed one to relax the $\\ell^\\infty$ constraint $|b_n|\\le 1$ on the coefficients to a weaker $\\ell^2$ constraint $(\\sum_{n=N}^{2N}|b_n|^2)^{1/2}=O(N^{1/2})$. Our argument crucially relies on the stronger $\\ell^\\infty$ assumption to bound the additive energy $E(W)$ efficiently, and we do not know how to obtain Theorem \\ref{thrm:LargeValues} if we only have $\\ell^2$ bounds on the coefficients. The remark after Lemma \\ref{lmm:Energy1} highlights where we use this assumption.\n\\end{rmk}",
+          "added": "2026-09-12"
+        }
+      ]
+    }
+  ]
+}

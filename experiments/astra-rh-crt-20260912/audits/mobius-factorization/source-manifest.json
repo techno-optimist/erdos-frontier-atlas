@@ -1,0 +1,91 @@
+[
+  {
+    "file": "gmrr.tex",
+    "original": "gm-candidate/gmrr-source/squfv.tex",
+    "sha256": "2ecca25d89675cec8451978a9f7541e69c25d07d09a87023748ea061cb9b051e",
+    "bytes": 131422
+  },
+  {
+    "file": "gm.tex",
+    "original": "gm-candidate/gm-source/LargevaluesDirichlet17.tex",
+    "sha256": "36d64e4ec02f0cee8baccd6ee1dbf5ea73f0dfde55827e00ad2566a142ffa428",
+    "bytes": 140000
+  },
+  {
+    "file": "gmrr.bbl",
+    "original": "gm-candidate/gmrr-source/squfv.bbl",
+    "sha256": "f1cab043a6126434083f635060cc54c54192d6fe15bbf29614e53c0b48cee573",
+    "bytes": 6946
+  },
+  {
+    "file": "prior-audit.md",
+    "original": "gm-candidate/audit.md",
+    "sha256": "e61abeaf8f060178f259f613d540399119f00910119885d396551f64ae176b2d",
+    "bytes": 14491
+  },
+  {
+    "file": "independent-audit.md",
+    "original": "gm-first/report.md",
+    "sha256": "a5d5e92ab641eece617167ae4d7e80f56ff9c9b134d4b5a618f3775cabf06617",
+    "bytes": 16440
+  },
+  {
+    "file": "second-audit.md",
+    "original": "gm-second/report.md",
+    "sha256": "4cd3e701d6e7f97cdb976d4e3ae1316e374346eb59b3c86fb56018dcf4a6f4d2",
+    "bytes": 26765
+  },
+  {
+    "file": "bcr-extracted.md",
+    "original": "<excluded-cache>/web/www.math.mcgill.ca-8146f4e13e.md",
+    "sha256": "76f83bd7c8e3e09956c1e44a4dc5c235a1669eeb778a60eaa669da10bc051025",
+    "bytes": 56075
+  },
+  {
+    "file": "dlmf-25.9.html",
+    "url": "https://dlmf.nist.gov/25.9",
+    "final_url": "https://dlmf.nist.gov/25.9",
+    "sha256": "0f29e4a7fed5ce5e269c4a8488900c7b2f0ae73fc33cab82d28aa0a62f9de050",
+    "bytes": 38404
+  },
+  {
+    "file": "dlmf-afe.tex",
+    "url": "https://dlmf.nist.gov/25.9.E1.tex",
+    "final_url": "https://dlmf.nist.gov/25.9.E1.tex",
+    "sha256": "4bedafa8dd322f234d3189cadab354e574c50b05800cbac378b4f719886aaab8",
+    "bytes": 192
+  },
+  {
+    "file": "ivic-watt.html",
+    "url": "https://arxiv.org/html/math/0305179",
+    "final_url": "https://arxiv.org/html/math/0305179",
+    "sha256": "fd25956fbb7cda3b919e50deb04adad1ffe5946f5ee24e7d248ca9e4d5d408c2",
+    "bytes": 186479
+  },
+  {
+    "file": "bcr.pdf",
+    "url": "https://www.math.mcgill.ca/radziwill/BCR.pdf",
+    "final_url": "https://www.math.mcgill.ca/radziwill/BCR.pdf",
+    "sha256": "2d7277ddbe338cb30acbd6f53b2e1eb538cf1630297a13522697a6683758af81",
+    "bytes": 479831
+  },
+  {
+    "file": "heath-brown-1982.pdf",
+    "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/D6C21FF61C1489E5856AA5ED276CB0A9/S0008414X00033307a.pdf/div-class-title-prime-numbers-in-short-intervals-and-a-generalized-vaughan-identity-div.pdf",
+    "final_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/D6C21FF61C1489E5856AA5ED276CB0A9/S0008414X00033307a.pdf/div-class-title-prime-numbers-in-short-intervals-and-a-generalized-vaughan-identity-div.pdf",
+    "sha256": "4791c3603967c595485bf410711b0e44b77d0bece7235599a9eef55149560a92",
+    "bytes": 926939
+  },
+  {
+    "file": "consolidated-GM_TRANSFER.md",
+    "original": "<repo>/experiments/astra-rh-crt-20260912/GM_TRANSFER.md",
+    "sha256": "fccc3023e6fe7f5708a60f174cfc3bad3c7e8c55491f494fcf781f6190fa5fa9",
+    "bytes": 15464
+  },
+  {
+    "file": "ivic-zhai.html",
+    "url": "https://ar5iv.labs.arxiv.org/html/1305.2685",
+    "bytes": 437203,
+    "sha256": "f15f9cbbbacf93cfabd4a9657ee2976eea4ca76328c664e0de3b3521b6519273"
+  }
+]

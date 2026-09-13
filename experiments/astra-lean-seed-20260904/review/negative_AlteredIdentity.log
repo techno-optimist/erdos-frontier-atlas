@@ -1,0 +1,3 @@
+negative/AlteredIdentity.lean:7:2: error: Tactic `decide` proved that the proposition
+  (1 + 1) * (Nat.choose 3 1).gcd ((3 + 1).choose (1 + 1)) = Nat.choose 3 1 * 1
+is false

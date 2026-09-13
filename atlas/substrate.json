@@ -1,0 +1,386 @@
+{
+  "schema": "erdos-frontier-atlas-substrate-v1",
+  "purpose": "Reusable lemmas and operators that an agent can try on other Erdős problems. The attack graph stays the strike map; this ledger is the toolbox. A candidate match is not an implication and never sets a status.",
+  "trust": "relation=discharges means the method is a kernel-checked or independently reviewed lemma used on that problem, still possibly partial. relation=candidate is a tag or OEIS shape match only. relation=obstruction is a proved failure of a naive transfer.",
+  "methods": [
+    {
+      "id": "adjacent-binomial-gcd",
+      "statement": "For all natural j,k: (k+1)*gcd(C(j,k), C(j+1,k+1)) = C(j,k)*gcd(k+1,j+1).",
+      "status": "kernel_checked",
+      "artifacts": ["experiments/astra-lean-seed-20260904/AdjacentBinomialGcd.lean"],
+      "replay": ["lean experiments/astra-lean-seed-20260904/AdjacentBinomialGcd.lean"],
+      "discharges": [{"problem": 699, "note": "used in the wrap-size bound; does not close P699"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["EEES", "prime-power localization", "full P699"]
+    },
+    {
+      "id": "coprime-divisor-transfer",
+      "statement": "If U|B, gcd(U,A)=1 and A*C=(j+1)*B then U|C.",
+      "status": "kernel_checked",
+      "artifacts": ["experiments/astra-lean-seed-20260904/AdjacentBinomialGcd.lean"],
+      "replay": ["lean experiments/astra-lean-seed-20260904/AdjacentBinomialGcd.lean"],
+      "discharges": [{"problem": 699, "note": "transfers the residual wrap factor; does not close P699"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["size bound W < C is informal"]
+    },
+    {
+      "id": "i2-d3-divisor",
+      "statement": "For j>=3, n=2j+3, m=n/gcd(n,j) satisfies m>=3 and m divides both C(n,2) and C(n,j).",
+      "status": "kernel_checked",
+      "artifacts": ["experiments/astra-i2-family-20260911/P699I2.lean"],
+      "replay": ["lean experiments/astra-i2-family-20260911/P699I2.lean"],
+      "discharges": [{"problem": 699, "note": "infinite i=2, n=2j+3 family in divisor form; prime-factor step is an Init gap"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["prime-factor existence in Init", "other i", "other d"]
+    },
+    {
+      "id": "i2-complete-gcd",
+      "statement": "For 3≤j and 2j≤n, gcd(C(n,2), C(n,j))≥2.",
+      "status": "kernel_checked",
+      "artifacts": ["experiments/astra-i2-complete-20260911/I2All.lean"],
+      "replay": ["lean experiments/astra-i2-complete-20260911/I2All.lean"],
+      "discharges": [{"problem": 699, "note": "complete i=2 slice in gcd form; prime-factor step is an Init gap; does not close P699"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["prime-factor existence in Init", "i>=3"]
+    },
+    {
+      "id": "i3-gcd-of-size",
+      "statement": "If j(j-1)(j-2)<C(n,3) then gcd(C(n,3),C(n,j))>=2. If also n=3 mod 4, the gcd is odd and >=3.",
+      "status": "kernel_checked",
+      "artifacts": ["experiments/astra-i3-20260911/I3.lean"],
+      "replay": ["lean experiments/astra-i3-20260911/I3.lean"],
+      "discharges": [{"problem": 699, "note": "i=3 transfer plus odd slice; size bound is elementary/Python; 2-adic residual open; does not close P699"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["size bound not kernel-checked", "n not 3 mod 4", "i>=4"]
+    },
+    {
+      "id": "i3-cancel-coprime-fac",
+      "statement": "If 3<=j<=n, d|C(n,3) and gcd(d,j!)=1 then d|C(n,j).",
+      "status": "kernel_checked",
+      "artifacts": ["experiments/astra-i3-20260911/I3.lean"],
+      "replay": ["lean experiments/astra-i3-20260911/I3.lean"],
+      "discharges": [{"problem": 699, "note": "kills i=3 whenever C(n,3) has a factor coprime to j!; o|P only three pairs through n=1500; does not close P699"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["o|P for n>1e5 type B unproved", "i>=4"]
+    },
+    {
+      "id": "i3-coprime-six-cancel",
+      "statement": "If gcd(n,6)=1 and gcd(n,j!)=1 then n|C(n,3) and n|C(n,j).",
+      "status": "kernel_checked",
+      "artifacts": ["experiments/astra-i3-20260911/I3.lean"],
+      "replay": ["lean experiments/astra-i3-20260911/I3.lean"],
+      "discharges": [{"problem": 699, "note": "covers prime n>3 in the i=3 slice; does not close P699"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["n-1 and n-2 prime cases as instances of cancel", "i>=4"]
+    },
+    {
+      "id": "i3-typeA",
+      "statement": "If P+(odd_part(C(n,3)))>n/4 then o|j(j-1)(j-2) only at (10,5) and (16,7), both with odd gcd.",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-i3-20260911/typeA.md"],
+      "replay": ["python3 -I -B -m unittest discover -s experiments/astra-i3-20260911 -p test_typeA.py"],
+      "discharges": [{"problem": 699, "note": "Type A of the i=3 2-adic residual; Type B open; does not close P699"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["Type B P+ <= n/4", "i>=4"]
+    },
+    {
+      "id": "i3-typeB1",
+      "statement": "If n/6 < P+(odd_part(C(n,3))) <= n/4 then o|j(j-1)(j-2) only at (65,15).",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-i3-20260911/typeB1.md"],
+      "replay": ["python3 -I -B -m unittest discover -s experiments/astra-i3-20260911 -p test_typeB1.py"],
+      "discharges": [{"problem": 699, "note": "Type B1 of the i=3 2-adic residual; Type B2 P+<=n/6 open; does not close P699"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["Type B2 P+ <= n/6", "i>=4"]
+    },
+    {
+      "id": "i3-typeB2a",
+      "statement": "If n/8 < P+(odd_part(C(n,3))) <= n/6 then o never divides j(j-1)(j-2).",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-i3-20260911/typeB2a.md"],
+      "replay": ["python3 -I -B -m unittest discover -s experiments/astra-i3-20260911 -p test_typeB2a.py"],
+      "discharges": [{"problem": 699, "note": "Type B2a of the i=3 2-adic residual; Type B2b P+<=n/8 open; does not close P699"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["Type B2b P+ <= n/8", "i>=4"]
+    },
+    {
+      "id": "i3-mod4-residual-empty",
+      "statement": "If n=4t+3>=7 then C(n,3) is odd and exceeds (n/2)(n/2-1)(n/2-2), so odd_part(C(n,3)) never divides j(j-1)(j-2).",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-i3-20260911/mod4.md"],
+      "replay": ["python3 -I -B -m unittest discover -s experiments/astra-i3-20260911 -p test_mod4.py"],
+      "discharges": [{"problem": 699, "note": "i=3 2-adic residual empty on n=3 mod 4; does not close P699"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["n not 3 mod 4", "i>=4"]
+    },
+    {
+      "id": "i3-p-band",
+      "statement": "o|P forces n=mp+r, r in {0,1,2}. Band 8p<=n<10p is empty (m=9 only overlaps (65,15)).",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-i3-20260911/bands.md"],
+      "replay": ["python3 -I -B -m unittest discover -s experiments/astra-i3-20260911 -p test_bands.py"],
+      "discharges": [{"problem": 699, "note": "reusable p-band scanner for the i=3 residual; P+<=n/10 open; does not close P699"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["P+ <= n/10", "i>=4"]
+    },
+    {
+      "id": "i3-typeB2b-struct",
+      "statement": "Even n>=6 with 3 not dividing n-1 implies n-1 divides C(n,3). Type B2b leftover is smoothness of n-1 vs a 3-consecutive product, not further p-bands.",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-i3-20260911/typeB2b.md", "experiments/astra-i3-20260911/GOAL.md"],
+      "replay": ["python3 -I -B -m unittest discover -s experiments/astra-i3-20260911 -p test_typeB2b.py"],
+      "discharges": [{"problem": 699, "note": "structural split of the i=3 residual; does not close P699"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["n=1 mod 4", "n=4 mod 6", "n-1 with at least two distinct odd primes"]
+    },
+    {
+      "id": "kummer-105-digits",
+      "statement": "gcd(C(2n,n),105)=1 iff n has base-3 digits in {0,1}, base-5 digits in {0,1,2}, base-7 digits in {0,1,2,3}.",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-376-20260911/README.md", "experiments/astra-376-20260911/search.md", "experiments/astra-376-20260911/hits-d35.txt"],
+      "replay": ["python3 -I -B -m unittest discover -s experiments/astra-376-20260911 -p 'test_*.py'"],
+      "discharges": [{"problem": 376, "note": "Kummer checker; complete A030979 prefix through 3^35 (43 terms, C replay); infinitude and >10^70 remain; does not close P376"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["infinitude of 3-prime case"]
+    },
+    {
+      "id": "p699-d2-line",
+      "statement": "For 2<=i<j and n=2j+2, some prime p>=i divides both C(n,i) and C(n,j).",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-briefcase-20260904/699/result.md"],
+      "replay": ["python3 -I experiments/astra-briefcase-20260904/699/check_shifted.py"],
+      "discharges": [{"problem": 699, "note": "entire d=2 line, conditional on EEES; does not close P699"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["EEES unformalized"]
+    },
+    {
+      "id": "prime-window",
+      "statement": "If 2<=i<j<=n/2 and n-i < p <= n with p prime, then p divides both C(n,i) and C(n,j).",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-briefcase-20260904/699/diagonal-completion.md"],
+      "replay": ["python3 -I experiments/astra-briefcase-20260904/699/independent_check.py"],
+      "discharges": [{"problem": 699, "note": "even-i n=2j+3 diagonal, using Nagura for i>=8"}],
+      "selectors": {"tags_all": ["binomial coefficients", "primes"]},
+      "remaining": ["Nagura not formalized"]
+    },
+    {
+      "id": "crt-endpoint-safe",
+      "statement": "Periodic reduced-residue gap counts equal an inclusion-exclusion over residue covers that forbid both endpoints.",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-briefcase-20260904/bridge/REPORT.md"],
+      "replay": ["python3 -I experiments/astra-briefcase-20260904/bridge/check_bridge.py"],
+      "discharges": [{"problem": 687, "note": "exact counting identity, not an asymptotic"}, {"problem": 854, "note": "same operator; does not determine the missing-gap spectrum"}],
+      "selectors": {"oeis_any": ["A048670", "A389839"]},
+      "remaining": ["no new missing-gap theorem"]
+    },
+    {
+      "id": "wheel-gap-operator",
+      "statement": "If H_P(z)=sum z^{g_i}, B_P(z)=sum z^{g_i+g_{i+1}} and max g_i < 2q then H_{Pq}(z)=(q-2)H_P(z)+B_P(z).",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-briefcase-20260904/bridge/REPORT.md"],
+      "replay": ["python3 -I experiments/astra-briefcase-20260904/bridge/check_bridge.py"],
+      "discharges": [{"problem": 687, "note": "wheel recurrence"}, {"problem": 854, "note": "wheel recurrence"}],
+      "obstructions": [{"problem": 854, "note": "at P=30030 a 22-gap exists but no 20-gap; endpoint-oblivious covers do not imply a 20-gap"}],
+      "selectors": {"oeis_any": ["A048670", "A389839"]},
+      "remaining": ["known antecedents; no novelty claim"]
+    },
+    {
+      "id": "nonpath-lc-obstruction",
+      "statement": "Every finite non-path tree H occurs as the exact branch skeleton of some tree whose independence polynomial is not log-concave.",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-briefcase-20260904/transfer-theorem.md"],
+      "replay": ["python3 -I experiments/astra-briefcase-20260904/verify.py"],
+      "discharges": [{"problem": 993, "note": "not non-unimodality; not a tree theorem"}],
+      "selectors": {"ids": [993]},
+      "remaining": ["path-core decorations", "unimodality"]
+    },
+    {
+      "id": "laurent-hub-block",
+      "statement": "The three-hub Laurent block B(r,s,t;c,d,e) is centrally unimodal for integers r,s,t>=1 and real c,d,e>=1.",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-briefcase-20260904/block/RESULT.md"],
+      "replay": ["python3 -I experiments/astra-briefcase-20260904/block/check.py --bound 24"],
+      "discharges": [{"problem": 993, "note": "algebraic block only; global tree partition missing"}],
+      "selectors": {"ids": [993]},
+      "remaining": ["combinatorial partition", "connectors", "outside factors"]
+    },
+    {
+      "id": "tail-compression",
+      "statement": "Leading independence-polynomial coefficients of a pendant-P2 decoration are an exact sum over independent sets of the core, without building the huge tree.",
+      "status": "informal_reviewed",
+      "artifacts": ["experiments/astra-briefcase-20260904/tail.py"],
+      "replay": ["python3 -I experiments/astra-briefcase-20260904/test_tail.py"],
+      "discharges": [{"problem": 993, "note": "exact tails, not a full polynomial"}],
+      "selectors": {"ids": [993]},
+      "remaining": ["not a unimodality proof"]
+    },
+    {
+      "id": "multiplier-sensitive-fiber-deficit",
+      "statement": "For r=(a+b)/gcd(a+b,kab), scaling by m makes {a,b} forbidden iff r|m. Partitioning rough m by gcd(m,L) yields an exact all-N prefix-deficit bound; L1|L2 cannot weaken it at fixed smooth cutoff.",
+      "status": "informal_proof_exact_checks",
+      "artifacts": ["experiments/astra-327-fiber-20260912/RESULT.md", "experiments/astra-327-fiber-20260912/fiber.py", "experiments/astra-327-fiber-20260912/receipt.json", "experiments/astra-327-fiber-20260912/FRESHNESS.md"],
+      "replay": ["python3 -I -B experiments/astra-327-fiber-20260912/verify.py --negative-controls"],
+      "discharges": [{"problem": 327, "note": "partial density-transfer lemma and exact small demonstration; not a solution, not a best bound, not a next-cell claim; human review/formalization remain"}],
+      "selectors": {"tags_all": ["unit fractions"]},
+      "remaining": ["human mathematical review/formalization", "best activation-state partition", "cross-fiber constraints", "no extremal density or novelty claim", "other unit-fraction problems need their own transfer proof"]
+    },
+    {
+      "id": "reciprocal-square-phase-obstruction",
+      "statement": "For bounded generic signed coefficients with square-root partial sums, the square-divisor error has optimal pointwise exponent 2/5; a fixed sequence also has cumulative mean square Omega(X^(8/5)). These coefficients are not Mobius.",
+      "status": "informal_proof_exact_checks",
+      "artifacts": ["experiments/astra-rh-969-20260912/RESULT.md", "experiments/astra-rh-969-20260912/receipt.json"],
+      "replay": ["python3 -I -B experiments/astra-rh-969-20260912/verify.py", "python3 -I -B -m unittest discover -s experiments/astra-rh-969-20260912 -p 'test_*.py'"],
+      "obstructions": [{"problem": 969, "note": "ordinary prefix cancellation alone cannot imply quarter-power or RH-scale mean-square error for generic coefficients; not an obstruction to RH or arithmetic methods"}],
+      "selectors": {"ids": [969]},
+      "remaining": ["Mobius-specific phase cancellation or a suitable arithmetic averaged substitute", "human mathematical review/formalization", "no new bound for squarefree numbers or RH"]
+    },
+    {
+      "id": "squarefree-energy-rh-bridge",
+      "statement": "RH iff integral_1^X |Q(x)-x/zeta(2)|^2 dx = O_epsilon(X^(3/2+epsilon)) for every epsilon>0; the proof uses classical analytic inputs and an explicit no-pole Mellin inversion argument.",
+      "status": "informal_proof_classical_inputs",
+      "artifacts": ["experiments/astra-rh-969-20260912/ANALYTIC_TARGET.md", "experiments/astra-rh-969-20260912/FRESHNESS.md"],
+      "replay": [],
+      "discharges": [{"problem": 969, "note": "equivalence only, not the unconditional energy estimate; does not solve P969 or RH; not human peer-reviewed or formalized; no novelty claim"}],
+      "selectors": {"ids": [969]},
+      "remaining": ["unconditional uniform weighted squarefree energy bound for every delta>0", "classical analytic inputs not formalized", "human mathematical review/formalization", "new zero proportions and zero-density bounds do not exclude every exceptional pole"]
+    },
+    {
+      "id": "squarefree-crt-defect-transfer",
+      "status": "informal_model_reviewed_exact_checks",
+      "statement": "Finite-prime squarefree variance has a positive divisor expansion and a uniform sqrt(H) phase bound. Density-normalized prime refinement is orthogonal. The real-interval cost is L*ceil(X/L)/X; for L<=X the actual squarefree increment bound is equivalent to a centered omitted-prime defect-energy obligation.",
+      "artifacts": [
+        "experiments/astra-rh-crt-20260912/RESULT.md",
+        "experiments/astra-rh-crt-20260912/receipt.json",
+        "experiments/astra-rh-crt-20260912/REVIEW_STATUS.json"
+      ],
+      "replay": [
+        "python3 -I -B experiments/astra-rh-crt-20260912/verify.py experiments/astra-rh-crt-20260912/receipt.json"
+      ],
+      "discharges": [
+        {
+          "problem": 969,
+          "note": "Phase operator and norm-transfer equivalence only, not the required actual arithmetic energy bound. Independent model audit only; not human peer review or formal verification; does not solve P969 or RH."
+        }
+      ],
+      "selectors": {
+        "ids": [
+          969
+        ]
+      },
+      "remaining": [
+        "unconditional actual centered-defect energy bound, uniform for 1<=H<=X^(1-epsilon)",
+        "fixed-H product-phase limits do not provide growing-H finite-interval uniformity",
+        "human mathematical review/formalization"
+      ]
+    },
+    {
+      "id": "increment-mellin-continuation",
+      "status": "informal_model_reviewed_conditional",
+      "statement": "For fixed 0<theta<1, integer-shift squarefree increment variance << H^(1/2+nu) for every nu>0 through H<=X^theta yields holomorphic continuation to Re(s)>1-3theta/4, not original integral convergence or global L2. The fixed-theta invariant zero strip is nonempty only for theta>8/9; a cofinal family theta->1 yields RH.",
+      "artifacts": [
+        "experiments/astra-rh-crt-20260912/MELLIN_TRANSFER.md",
+        "experiments/astra-rh-crt-20260912/mellin_arithmetic.json",
+        "experiments/astra-rh-crt-20260912/REVIEW_STATUS.json"
+      ],
+      "replay": [],
+      "discharges": [
+        {
+          "problem": 969,
+          "note": "Conditional analytic transfer; no new instance of the variance hypothesis or unconditional zero exclusion. Independent model audit only; not human peer review or formal verification; does not solve P969 or RH."
+        }
+      ],
+      "selectors": {
+        "ids": [
+          969
+        ]
+      },
+      "remaining": [
+        "required variance hypothesis at exponents cofinal in 1",
+        "fixed-theta cancellation only excludes its invariant open strip",
+        "human mathematical review/formalization; named analytic inputs not rebuilt"
+      ]
+    },
+    {
+      "id": "gm-gmrr-variance-transfer",
+      "status": "informal_model_reviewed_external_inputs",
+      "statement": "From pinned GMRR and Guth-Maynard large-value inputs, the assembled centered squarefree variance asymptotic has range 1<=H<=X^(4/7-epsilon), error O_epsilon(H^(1/2-epsilon/16)), 0<epsilon<1/100, and the GMRR main constant. This is a research deduction, not a novelty/current-record claim.",
+      "artifacts": [
+        "experiments/astra-rh-crt-20260912/GM_TRANSFER.md",
+        "experiments/astra-rh-crt-20260912/gm_parameter_check.json",
+        "experiments/astra-rh-crt-20260912/REVIEW_STATUS.json"
+      ],
+      "replay": [],
+      "discharges": [
+        {
+          "problem": 969,
+          "note": "Two model analytic audits of the full deduction, including localization, endpoints, centering and aggregate losses. Independent model audit only; not human peer review or formal verification; does not solve P969 or RH."
+        }
+      ],
+      "selectors": {
+        "ids": [
+          969
+        ]
+      },
+      "remaining": [
+        "expert verification of the deduction from the version-pinned external inputs",
+        "4/7 is a ceiling only of the checked sufficient majorants, not an impossibility theorem",
+        "full mixed-moment saving with height-length neighborhood, masks and tail uniformity",
+        "no additional zero exclusion from this variance range"
+      ]
+    },
+    {
+      "id": "mobius-long-factor-typeI",
+      "status": "informal_model_reviewed_partial",
+      "statement": "At D comparable to T^(5/6), the exact sharp Mobius split with fixed k=2, U^2=2D and D>2 isolates a coefficient-one factor c>=T^(7/12+eta). For fixed 0<eta<1/48 its marked family has zeta-weighted mixed energy << T^(1/3-eta), with common real imaginary-part shifts, fixed support widths and aggregate losses paid as specified in the note.",
+      "artifacts": [
+        "experiments/astra-rh-crt-20260912/ARITHMETIC_FRONTIER.md",
+        "experiments/astra-rh-crt-20260912/typeI_review.json"
+      ],
+      "replay": [],
+      "discharges": [
+        {
+          "problem": 969,
+          "note": "Controls the actual sharp long-factor part only, not a full Mobius mixed-moment saving. Independent model audit only; not human peer review or formal verification; does not solve P969 or RH."
+        }
+      ],
+      "selectors": {
+        "ids": [
+          969
+        ]
+      },
+      "remaining": [
+        "J-rem: fixed saving for the whole exact sharp complementary residual",
+        "open height-length neighborhood and all required masks, tails and heights",
+        "u=0 alone does not supply common-shift uniformity with zeta fixed",
+        "human mathematical review/formalization"
+      ]
+    },
+    {
+      "id": "sparse-square-signed-moment-interface",
+      "status": "informal_model_reviewed_partial",
+      "statement": "At D comparable to T^(5/6), a localized product AFE and gcd/Jordan Gram identity give the entire signed diagonal scale T*log(T)/D for a full Mobius block and fixed nonzero nonnegative smooth shell weight. This is not a lower bound for the full moment. The actual-cloud unsigned near-core count does not lower-bound signed cancellation.",
+      "artifacts": [
+        "experiments/astra-rh-crt-20260912/ARITHMETIC_FRONTIER.md",
+        "experiments/astra-rh-crt-20260912/diagonal_review.json"
+      ],
+      "replay": [],
+      "discharges": [
+        {
+          "problem": 969,
+          "note": "Full-diagonal calculation and signed residual interface only; the AFE weight can change sign. Independent model audit only; not human peer review or formal verification; does not solve P969 or RH."
+        }
+      ],
+      "selectors": {
+        "ids": [
+          969
+        ]
+      },
+      "remaining": [
+        "aggregate signed off-diagonal saving, not an unsigned absolute majorant",
+        "common-frequency square support has cutoff D^2 in an ordinary-index twisted theorem",
+        "uniformity over all needed dyadic partners, masks, heights and neighboring lengths",
+        "human mathematical review/formalization"
+      ]
+    }
+  ]
+}

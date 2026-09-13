@@ -1,0 +1,18 @@
+{
+  "lean": "4.33.1",
+  "lean_commit": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "archive_sha256": "88c45aad985b5d2a8d925fe10bd1296bd35f66f408480ab182d3facccd065a9d",
+  "mathlib": "not used",
+  "commands": [
+    {"label": "python-tests", "exit_code": 0},
+    {"label": "lean-main", "command": "lean I3.lean", "exit_code": 0},
+    {"label": "exact-statement", "exit_code": 0},
+    {"label": "axiom-audit", "exit_code": 0},
+    {"label": "negative-control", "exit_code": 0, "note": "binom 8 3 does not divide 24"}
+  ],
+  "axioms": ["propext", "Quot.sound"],
+  "pairs_checked": 1369,
+  "mod4_eq_3_pairs": 342,
+  "op_divides_P": [[10, 5], [16, 7], [65, 15]],
+  "scope": "i=3 transfer, odd slice, coprime-to-j! cancel. o|P three pairs through n=1500. Not full P699."
+}

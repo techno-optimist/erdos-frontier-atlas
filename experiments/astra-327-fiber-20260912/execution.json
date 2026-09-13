@@ -1,0 +1,30 @@
+{
+  "working_directory": "repository root",
+  "records": [
+    {
+      "command": "python3 -I -B experiments/astra-327-fiber-20260912/verify.py --negative-controls",
+      "exit_code": 0,
+      "output": "{\n  \"bounds\": [\n    {\n      \"L\": 1,\n      \"coefficient\": \"11/12\",\n      \"k\": 1\n    },\n    {\n      \"L\": 5,\n      \"coefficient\": \"317/360\",\n      \"k\": 1\n    },\n    {\n      \"L\": 1,\n      \"coefficient\": \"11/12\",\n      \"k\": 2\n    },\n    {\n      \"L\": 5,\n      \"coefficient\": \"79/90\",\n      \"k\": 2\n    },\n    {\n      \"L\": 1,\n      \"coefficient\": \"53/72\",\n      \"k\": 3\n    },\n    {\n      \"L\": 5,\n      \"coefficient\": \"13/18\",\n      \"k\": 3\n    }\n  ],\n  \"formal_proof\": false,\n  \"full_problem_solution\": false,\n  \"graphs\": 9,\n  \"prefixes\": 72,\n  \"read_only\": true,\n  \"rejected_controls\": [\n    \"wrong_alpha\",\n    \"invented_edge\",\n    \"wrong_weight\",\n    \"wrong_bound\",\n    \"wrong_witness\",\n    \"wrong_delta\",\n    \"bool_for_integer\",\n    \"missing_state\",\n    \"missing_case\"\n  ],\n  \"verdict\": \"PASS\"\n}"
+    },
+    {
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-327-fiber-20260912 -p 'test_*.py' -v",
+      "exit_code": 0,
+      "output": "test_activation_modulus_matches_original_divisibility (test_fiber.FiberTest) ... ok\ntest_bound_dominates_direct_small_extremal_values (test_fiber.FiberTest) ... ok\ntest_finite_bound_is_fiber_deficit_sum_at_every_endpoint (test_fiber.FiberTest) ... ok\ntest_hand_certificates_and_closed_floor_formulas (test_fiber.FiberTest) ... ok\ntest_invalid_hypotheses_are_rejected_not_normalized (test_fiber.FiberTest) ... ok\ntest_prefix_deficits_match_independent_subset_oracle (test_fiber.FiberTest) ... ok\ntest_prime_power_activation_is_not_truncated_to_the_state (test_fiber.FiberTest) ... ok\ntest_state_counts_and_weights_match_direct_enumeration (test_fiber.FiberTest) ... ok\ntest_cli_emit_readonly_replay_and_corruption_rejection (test_receipt.ReceiptTest) ... ok\ntest_compiler_receipt_passes_independent_gate (test_receipt.ReceiptTest) ... ok\ntest_poisoned_evidence_uses_same_acceptance_gate (test_receipt.ReceiptTest) ... ok\n\n----------------------------------------------------------------------\nRan 11 tests in 0.792s\n\nOK"
+    },
+    {
+      "command": "uv run --python 3.11 --with-requirements requirements-dev.lock python -m pytest tests/ -q",
+      "exit_code": 0,
+      "output": "........................................................................ [ 44%]\n........................................................................ [ 89%]\n..s..s...........                                                        [100%]\n159 passed, 2 skipped in 42.23s"
+    },
+    {
+      "command": "make check-graph",
+      "exit_code": 0,
+      "output": "python3 tools/build_graph.py --check\ngraph up to date (299 files).\npython3 tools/validate_graph.py\nvalidate_graph: OK \u2014 2415 nodes, 4007 edges, 296 rendered files, 0 quarantined."
+    },
+    {
+      "command": "git diff --cached --check",
+      "exit_code": 0,
+      "output": ""
+    }
+  ]
+}

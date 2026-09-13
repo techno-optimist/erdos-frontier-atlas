@@ -1,0 +1,19 @@
+{
+  "floor_discrepancy_checks": 144,
+  "finite_real_phase_endpoint_checks": 288,
+  "conditional_martingale_fibers": 260,
+  "finite_X_normalized_counterexample": {
+    "A": 1,
+    "X": 2,
+    "H": 3,
+    "P": [
+      3
+    ],
+    "Q": [
+      2,
+      3
+    ],
+    "P_value": "9/64",
+    "Q_value": "0"
+  }
+}

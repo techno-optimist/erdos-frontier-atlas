@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://www.erdosproblems.com/327",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 4,
+      "url": "https://www.erdosproblems.com/forum/discuss/327",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 5,
+      "url": "https://www.erdosproblems.com/forum/thread/327/proof-claims",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 8,
+      "url": "https://leon2k2k2k.github.io/assets/pdf/erdos/erdos327.pdf",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 9,
+      "url": "https://arxiv.org/abs/2607.15419",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 10,
+      "url": "https://github.com/leon2k2k2k/leon2k2k2k.github.io/blob/master/erdos327_cert.py",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 12,
+      "url": "https://github.com/teorth/erdosproblems/blob/3c68e941162f81d650fc886eed34e58bed3a6a01/data/problems.yaml",
+      "title": "",
+      "accessed": "2026-09-12"
+    }
+  ]
+}

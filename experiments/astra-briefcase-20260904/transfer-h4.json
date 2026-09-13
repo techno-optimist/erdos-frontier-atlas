@@ -1,0 +1,81 @@
+[
+  {
+    "core": [
+      -1,
+      0,
+      1,
+      1
+    ],
+    "claw": [
+      1,
+      0,
+      2,
+      3
+    ],
+    "offsets": [
+      3,
+      0,
+      3,
+      3
+    ],
+    "counts": [
+      5,
+      2,
+      5,
+      5
+    ],
+    "N": 2,
+    "order": 38,
+    "index": 19,
+    "coefficients": [
+      50721,
+      448,
+      4
+    ],
+    "defect": -2180,
+    "weighted_coefficients": [
+      "11/8",
+      "3/64",
+      "1/512"
+    ],
+    "weighted_defect": "-1/2048",
+    "attempts": [
+      {
+        "N": 1,
+        "defect_negative": false
+      },
+      {
+        "N": 2,
+        "defect_negative": true
+      }
+    ],
+    "scope": "non-log-concavity only; unimodality not decided here",
+    "core_index": 1,
+    "full_dp_checked": true,
+    "full_polynomial_unimodal": true,
+    "polynomial_sha256": "55e2f547589bc91a8985ec75541779175742c169ab86067231cc9aa02cec78e7",
+    "polynomial_coefficients": [
+      1,
+      38,
+      666,
+      7176,
+      53406,
+      292150,
+      1219420,
+      3975733,
+      10272377,
+      21198745,
+      35020994,
+      46177939,
+      48178808,
+      39152741,
+      24158737,
+      10866255,
+      3328617,
+      612527,
+      50721,
+      448,
+      4
+    ]
+  }
+]

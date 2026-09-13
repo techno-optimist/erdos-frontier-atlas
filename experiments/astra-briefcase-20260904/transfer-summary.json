@@ -1,0 +1,20 @@
+{
+  "compiled": 40,
+  "core_orders": [
+    4,
+    5,
+    6,
+    7,
+    8
+  ],
+  "excluded_paths": 6,
+  "min_tree_order": 38,
+  "max_tree_order": 194,
+  "all_lc_failures_verified": true,
+  "unimodal_true": 40,
+  "N_distribution": {
+    "2": 1,
+    "4": 39
+  },
+  "scope": "all non-path unlabelled tree cores in orders3..8, via frozen generator; NOT exhaustive decorated trees"
+}

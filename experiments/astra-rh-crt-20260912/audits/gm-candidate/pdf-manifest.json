@@ -1,0 +1,24 @@
+[
+  {
+    "file": "gm-v2.pdf",
+    "sha256": "915392cf7d0ecd108479814a9a1481e23423ef63415776471cec3975ae482cae",
+    "bytes": 656298,
+    "pages": 52,
+    "text_chars": 148617,
+    "text_lines": 3172,
+    "encrypted": false,
+    "empty_pages": [],
+    "metadata": "{'/Author': 'Larry Guth; James Maynard', '/Creator': 'arXiv GenPDF (tex2pdf:a6404ea)', '/DOI': 'https://doi.org/10.48550/arXiv.2405.20552', '/License': 'http://creativecommons.org/licenses/by/4.0/', '/PTEX.Fullbanner': 'This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) kpathsea version 6.4.1', '/Producer': 'pikepdf 8.15.1', '/Title': 'New large value estimates for Dirichlet polynomials', '/Trapped': '/False', '/arXivID': 'https://arxiv.org/abs/2405.20552v2'}"
+  },
+  {
+    "file": "gmrr-v2.pdf",
+    "sha256": "f59fafc77d44d9f78e34a234d716b9e5d7b38619f7f327b2c506c1e2a841ddab",
+    "bytes": 471375,
+    "pages": 40,
+    "text_chars": 100219,
+    "text_lines": 1683,
+    "encrypted": false,
+    "empty_pages": [],
+    "metadata": "{'/Producer': 'dvips + GPL Ghostscript GIT PRERELEASE 9.22', '/CreationDate': \"D:20201210212240-05'00'\", '/ModDate': \"D:20201210212240-05'00'\", '/Creator': 'LaTeX with hyperref', '/Title': '', '/Subject': '', '/Author': '', '/Keywords': ''}"
+  }
+]

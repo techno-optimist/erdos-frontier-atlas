@@ -1,0 +1,501 @@
+{
+  "checks": {
+    "authentication": {
+      "artifacts": [
+        {
+          "bytes": 11607,
+          "path": "<independent-review-scratch>/authentication-start.json",
+          "sha256": "6b5d06cd5b0b5bbac2394ceb04c261e410f2e49c3447ae25b25e1ed8beecdce8"
+        },
+        {
+          "bytes": 11607,
+          "path": "<independent-review-scratch>/authentication-end.json",
+          "sha256": "6b5d06cd5b0b5bbac2394ceb04c261e410f2e49c3447ae25b25e1ed8beecdce8"
+        },
+        {
+          "bytes": 4816,
+          "path": "<independent-review-scratch>/support-fixtures.json",
+          "sha256": "de362eda35efd3234d0da65b9a356a791ca3346fa7b4bed8d172bcc120631ecc"
+        }
+      ],
+      "ast_parse_passed_file_count": 13,
+      "begin_end_pin_records_identical": true,
+      "complete_native_patches": true,
+      "manifest_sha256": "c5a4a0b87b2a26fcf022f1feae4e0ff783e5348a732c077eb3a4eb004d5b1df8",
+      "native_staged_diff_bytes_match_supplied_patches": true,
+      "pinned_base_hunk_context_and_counts_verified": true,
+      "scratch_subject_and_fixture_bytes_unchanged_after_execution": true,
+      "scratch_support_fixture_count": 29,
+      "source_reconstruction_hashes_and_line_counts_verified": true,
+      "static_added_line_findings": [],
+      "worktree_and_matching_index_blob_bytes_match_reconstruction": true
+    },
+    "bounded_tests": {
+      "all_selected_suites_passed": true,
+      "artifacts": [
+        {
+          "bytes": 5129,
+          "path": "<independent-review-scratch>/retry-bounded-suite-results.json",
+          "sha256": "360fa155bcaae397dac457ddcc32e6e6458346cc7702a54dc9f36c227b4f8505"
+        },
+        {
+          "bytes": 9438,
+          "path": "<independent-review-scratch>/retry-pytest.xml",
+          "sha256": "a5608ec5b25a1d5575dec4fc92d611d12436c67256166c5a6bed3c72d67b646a"
+        }
+      ],
+      "bytecode_disabled_and_pytest_cacheprovider_disabled": true,
+      "ci_module_counts": {
+        "tests.test_readme": 50,
+        "tests.test_rh969": 3,
+        "tests.test_rh_crt": 8,
+        "tests.test_substrate": 12
+      },
+      "declared_dependency_versions": {
+        "jsonschema": "4.26.0",
+        "numpy": "2.3.5",
+        "pytest": "9.0.2",
+        "sympy": "1.14.0"
+      },
+      "dependency_file": "requirements-dev.lock",
+      "initial_harness_issue": {
+        "correction": "Restored only the scratch support fixture to the actual repository mode 0644; source bytes unchanged. All 73 selected CI nodes then passed.",
+        "initial_results": {
+          "bytes": 16817,
+          "path": "<independent-review-scratch>/bounded-suite-results.json",
+          "sha256": "7aba031572a391077618f23193d987a9fb29cb2692b9d76f18bf50272db53b83"
+        },
+        "interpreter_discovery": "Bare python3 was 3.9.6; no subject code was run with it. All subject execution used the explicitly discovered Python 3.11.16.",
+        "kind": "Reviewer scratch-fixture permission mismatch, not a covered-code defect",
+        "observed": "Initial CI run had 69 passed and 4 PermissionError setup failures before poisoning: reviewer forced REVIEW_STATUS.json to 0444, and copytree preserved it."
+      },
+      "python_runtime_verified": "3.11.16 (main, Sep  1 2026, 14:08:22) [Clang 22.1.3 ]",
+      "python_version": "3.11.16",
+      "results": [
+        {
+          "command": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-I",
+            "-B",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "experiments/astra-rh-969-20260912",
+            "-p",
+            "test_*.py",
+            "-v"
+          ],
+          "elapsed_seconds": 1.141,
+          "name": "floor-unit-suite",
+          "returncode": 0,
+          "stderr": "test_balanced_cells_give_exact_countermodels (test_floor.FloorTransferTests.test_balanced_cells_give_exact_countermodels) ... ok\ntest_emitter_creates_explicit_receipt_without_overwriting (test_floor.FloorTransferTests.test_emitter_creates_explicit_receipt_without_overwriting) ... ok\ntest_family_parameters_are_validated_before_allocation (test_floor.FloorTransferTests.test_family_parameters_are_validated_before_allocation) ... ok\ntest_hyperbola_rejects_lossy_parameters (test_floor.FloorTransferTests.test_hyperbola_rejects_lossy_parameters) ... ok\ntest_hyperbola_split_matches_direct_definition (test_floor.FloorTransferTests.test_hyperbola_split_matches_direct_definition) ... ok\ntest_energy_and_persistence_constant_algebra (test_persistence.PersistenceTests.test_energy_and_persistence_constant_algebra) ... ok\ntest_interval_jump_bound_with_rational_offsets (test_persistence.PersistenceTests.test_interval_jump_bound_with_rational_offsets) ... ok\ntest_cli_rejects_deep_json (test_receipt.ReceiptTests.test_cli_rejects_deep_json) ... ok\ntest_cli_rejects_duplicate_json_keys (test_receipt.ReceiptTests.test_cli_rejects_duplicate_json_keys) ... ok\ntest_cli_replay_is_read_only_and_fails_under_optimization (test_receipt.ReceiptTests.test_cli_replay_is_read_only_and_fails_under_optimization) ... ok\ntest_corrupted_receipts_fail_the_real_gate (test_receipt.ReceiptTests.test_corrupted_receipts_fail_the_real_gate) ... ok\ntest_semantic_gate_replays_and_rejects_false_promotion (test_receipt.ReceiptTests.test_semantic_gate_replays_and_rejects_false_promotion) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 1.100s\n\nOK\n",
+          "stdout": "",
+          "timed_out": false,
+          "timeout_seconds": 30
+        },
+        {
+          "command": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-I",
+            "-B",
+            "-m",
+            "unittest",
+            "discover",
+            "-s",
+            "experiments/astra-rh-crt-20260912",
+            "-p",
+            "test_*.py",
+            "-v"
+          ],
+          "elapsed_seconds": 0.406,
+          "name": "crt-unit-suite",
+          "returncode": 0,
+          "stderr": "test_normalized_refinement_is_an_orthogonal_increment (test_kernel.KernelTests.test_normalized_refinement_is_an_orthogonal_increment) ... ok\ntest_real_kernel_obeys_prime_addition (test_kernel.KernelTests.test_real_kernel_obeys_prime_addition) ... ok\ntest_variance_matches_direct_residue_averaging (test_kernel.KernelTests.test_variance_matches_direct_residue_averaging) ... ok\ntest_variance_rejects_invalid_or_lossy_parameters (test_kernel.KernelTests.test_variance_rejects_invalid_or_lossy_parameters) ... ok\ntest_accepts_exact_independently_enumerated_fixture (test_receipt.ReceiptTests.test_accepts_exact_independently_enumerated_fixture) ... ok\ntest_cli_is_read_only_and_rejects_ambiguous_json (test_receipt.ReceiptTests.test_cli_is_read_only_and_rejects_ambiguous_json) ... ok\ntest_deep_json_rejection_still_returns_a_machine_verdict (test_receipt.ReceiptTests.test_deep_json_rejection_still_returns_a_machine_verdict) ... ok\ntest_explicit_producer_replays_and_refuses_overwrite (test_receipt.ReceiptTests.test_explicit_producer_replays_and_refuses_overwrite) ... ok\ntest_rejects_false_values_domains_counts_and_promotion (test_receipt.ReceiptTests.test_rejects_false_values_domains_counts_and_promotion) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.370s\n\nOK\n",
+          "stdout": "",
+          "timed_out": false,
+          "timeout_seconds": 90
+        },
+        {
+          "command": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-I",
+            "-B",
+            "-m",
+            "pytest",
+            "-q",
+            "-p",
+            "no:cacheprovider",
+            "--confcutdir",
+            "<independent-review-scratch>/tree",
+            "--basetemp",
+            "<independent-review-scratch>/retry-pytest-tmp",
+            "--junitxml",
+            "<independent-review-scratch>/retry-pytest.xml",
+            "tests/test_readme.py",
+            "tests/test_rh969.py",
+            "tests/test_rh_crt.py",
+            "tests/test_substrate.py"
+          ],
+          "elapsed_seconds": 2.623,
+          "name": "four-selected-ci-modules",
+          "returncode": 0,
+          "stderr": "",
+          "stdout": "........................................................................ [ 98%]\n.                                                                        [100%]\n73 passed in 2.38s\n",
+          "timed_out": false,
+          "timeout_seconds": 180
+        }
+      ],
+      "subprocess_group_timeout_cleanup": true,
+      "suite_test_counts": {
+        "crt-unit-suite": 9,
+        "floor-unit-suite": 12,
+        "four-selected-ci-modules": 73
+      },
+      "suite_timeouts_seconds": {
+        "crt-unit-suite": 90,
+        "floor-unit-suite": 30,
+        "four-selected-ci-modules": 180
+      },
+      "total_direct_test_nodes": 94,
+      "uv_no_cache_install_into_external_virtual_environment": true
+    },
+    "created_files": {
+      "contents": "Authenticated scratch sources and real support fixtures, isolated pinned-dependency environment, bounded test/adverse-control harnesses and complete outputs, verdict and authentication sidecar.",
+      "external_workspace": "<independent-review-scratch>",
+      "repository_changes": []
+    },
+    "scope": {
+      "archive_harness_twenty_files_reviewed_or_executed": false,
+      "base_commit": "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+      "canonical_evidence_regenerated": false,
+      "covered_paths": 13,
+      "mathematical_proof_human_review_or_formal_verification_claimed": false,
+      "prior_review_json_used_only_as_real_hash_guard_fixture": true,
+      "prior_review_verdicts_used_as_approval": false,
+      "repository": "<repo>",
+      "repository_or_skills_modified": false,
+      "scope_only_index_authentication": true,
+      "source_lines": 1537,
+      "stage_commit_push_performed": false,
+      "whole_repository_gates_run": false
+    },
+    "security_and_logic_review": {
+      "examined": [
+        "Exact integer/boolean distinctions, schema and nested-key whitelists, duplicate decoded JSON keys, non-finite/floating inputs, deep JSON, UTF-8 and I/O failures.",
+        "Preallocation/preenumeration limits; exact floor split and balanced-cell reconstruction; CRT period reduction, rational moments and sampled scope.",
+        "Standalone verifier imports, normal and optimized rejection, read-only files and directories, explicit exclusive emit, existing and dangling links, concurrent output creation.",
+        "Fixed producer cohort versus general semantic receipt acceptance, truthful counts, complete historical source set, public hash and semantic-change guards.",
+        "Substrate scope disclaimers, remaining obligations, real artifacts and neighbor exclusion.",
+        "Actual README syntax and expressly top-level backtick/tilde fence filtering: marker length, up-to-three-space indentation, closing whitespace, invalid closers/info, EOF, heading/id/name anchors and duplicate-heading suffixes."
+      ],
+      "findings": [],
+      "no_general_commonmark_parser_requirement_added": true
+    },
+    "targeted_adverse_controls": {
+      "all_passed": true,
+      "artifacts": [
+        {
+          "bytes": 2963,
+          "path": "<independent-review-scratch>/adverse-results.json",
+          "sha256": "3d1374491d2b80d9606a483bf1633e6228905f933af0bf9a41491e4e4efe0c4b"
+        },
+        {
+          "bytes": 82210,
+          "path": "<independent-review-scratch>/adverse-cli.json",
+          "sha256": "0db3a840b323020e48f634866bdb9b0fa4593e7009ded5d72baeaf0dc1fc9645"
+        },
+        {
+          "bytes": 25630,
+          "path": "<independent-review-scratch>/adverse_controls.py",
+          "sha256": "da4c7029200946a9c9a083da5dc25ba447d53138ea2ede2977e512196c042565"
+        }
+      ],
+      "cli_executions_logged": 101,
+      "group_timeout_seconds": 45,
+      "groups": 10,
+      "per_cli_timeout_seconds": 10,
+      "results": [
+        {
+          "details": {
+            "independent_direct_sum_comparisons": 1266,
+            "input_mutations": 0
+          },
+          "elapsed_seconds": 0.0826,
+          "name": "exact_hyperbola_random_and_square_boundaries",
+          "passed": true
+        },
+        {
+          "details": {
+            "all_valid_h_values_replayed": 16,
+            "bins_checked": 136,
+            "input_unchanged": true,
+            "preallocation_rejections": 15
+          },
+          "elapsed_seconds": 0.0685,
+          "name": "floor_domain_ceiling_and_preallocation_rejection",
+          "passed": true
+        },
+        {
+          "details": {
+            "malformed_schema_type_scope_and_value_rejections": 156
+          },
+          "elapsed_seconds": 0.0049,
+          "name": "strict_structural_and_scope_rejections",
+          "passed": true
+        },
+        {
+          "details": {
+            "12_prime_kernel_boundary": true,
+            "direct_oracle_comparisons": 56,
+            "max_512_bit_integer_and_denominator_boundaries": true,
+            "preenumeration_rejections": 16
+          },
+          "elapsed_seconds": 0.3108,
+          "name": "crt_resources_exact_boundaries_and_independent_oracle",
+          "passed": true
+        },
+        {
+          "details": {
+            "crt_exact_byte_limit_tested": true,
+            "missing_directory_symlink_inputs": true,
+            "normal_and_optimized": true,
+            "producer_absent": true,
+            "read_only_files_and_directory_unchanged": true,
+            "standalone_cli_executions": 75
+          },
+          "elapsed_seconds": 3.3809,
+          "name": "standalone_read_only_malformed_json_normal_and_optimized",
+          "passed": true
+        },
+        {
+          "details": {
+            "emission_attempts": 26,
+            "existing_files_symlinks_dangling_links_hardlinks_directories_preserved": true,
+            "fresh_canonical_byte_equality": true,
+            "invalid_parameters_create_no_file": true,
+            "two_writer_exclusive_creation": true
+          },
+          "elapsed_seconds": 0.5923,
+          "name": "explicit_emit_no_overwrite_links_and_two_writer_race",
+          "passed": true
+        },
+        {
+          "details": {
+            "coverage_and_portability_mutations_rejected": 10,
+            "positive_guards_restored_before_additional_mutations": true,
+            "valid_but_wrong_fixed_cohorts_rejected": 3
+          },
+          "elapsed_seconds": 0.3124,
+          "name": "fixed_cohort_coverage_and_public_hash_guards",
+          "passed": true
+        },
+        {
+          "details": {
+            "positive_registry_unchanged": true,
+            "scope_selector_and_obligation_mutations_rejected": 28
+          },
+          "elapsed_seconds": 0.323,
+          "name": "substrate_scope_obligations_and_neighbor_exclusion",
+          "passed": true
+        },
+        {
+          "details": {
+            "actual_readme_passed": true,
+            "general_commonmark_container_parsing_not_claimed_or_required": true,
+            "top_level_fence_anchor_trials": 224
+          },
+          "elapsed_seconds": 0.0356,
+          "name": "top_level_fence_lengths_indentation_closers_eof_and_anchors",
+          "passed": true
+        },
+        {
+          "details": {
+            "authenticated_source_and_real_fixture_bytes_unchanged": true,
+            "cache_paths": []
+          },
+          "elapsed_seconds": 0.0142,
+          "name": "scratch_integrity_after_adverse_controls",
+          "passed": true
+        }
+      ]
+    }
+  },
+  "logic_errors": [],
+  "passed": true,
+  "reviewed_files": [
+    {
+      "complete_patch_read": true,
+      "diff_sha256": "4aa2dc49c2db131998b6f36e629375f9d370468ff7f1db1014bbe0ce798bfede",
+      "final_source_and_diff_and_index_unchanged": true,
+      "hunks": 1,
+      "index_entry": "100644 2974a36699c20e72c5c7691e7f507d977449311c 0\texperiments/astra-rh-969-20260912/floor_transfer.py",
+      "index_sha256": "8af97120b6e1a23e1605569d9477f8460f15743db36586b526689dc5bad207f5",
+      "patch_lines": 88,
+      "path": "experiments/astra-rh-969-20260912/floor_transfer.py",
+      "reconstructed_from_pinned_base": true,
+      "source_lines": 82,
+      "source_sha256": "8af97120b6e1a23e1605569d9477f8460f15743db36586b526689dc5bad207f5"
+    },
+    {
+      "complete_patch_read": true,
+      "diff_sha256": "63baf1b097c02e73a247cfed0ed91f66315798eb421738207dc136226bbf3e7f",
+      "final_source_and_diff_and_index_unchanged": true,
+      "hunks": 1,
+      "index_entry": "100644 87739b8d5d925f40730503d39dc470ac06e447fb 0\texperiments/astra-rh-969-20260912/test_floor.py",
+      "index_sha256": "0a3fa5e8fd28a487e7639867864db91b7e01ac15d1260b1fbce677fe101de65c",
+      "patch_lines": 120,
+      "path": "experiments/astra-rh-969-20260912/test_floor.py",
+      "reconstructed_from_pinned_base": true,
+      "source_lines": 114,
+      "source_sha256": "0a3fa5e8fd28a487e7639867864db91b7e01ac15d1260b1fbce677fe101de65c"
+    },
+    {
+      "complete_patch_read": true,
+      "diff_sha256": "e011170881def55bf4d148386da74a7417525cb123ca0792fe914cf380a5e057",
+      "final_source_and_diff_and_index_unchanged": true,
+      "hunks": 1,
+      "index_entry": "100644 75d34c4dc0e3f0cd7e63cbc387ec033e1a7e753c 0\texperiments/astra-rh-969-20260912/test_persistence.py",
+      "index_sha256": "b5135118c61f5feb0aa8e6f0cabfb23088366b69219ec10f7d79749acfc6c876",
+      "patch_lines": 43,
+      "path": "experiments/astra-rh-969-20260912/test_persistence.py",
+      "reconstructed_from_pinned_base": true,
+      "source_lines": 37,
+      "source_sha256": "b5135118c61f5feb0aa8e6f0cabfb23088366b69219ec10f7d79749acfc6c876"
+    },
+    {
+      "complete_patch_read": true,
+      "diff_sha256": "3d0e34c0f7f71f624fe5dc4e359abac2db2e87d2980aa2364dc730f3b2d3909b",
+      "final_source_and_diff_and_index_unchanged": true,
+      "hunks": 1,
+      "index_entry": "100644 0315e26e5fcf15f01967d843e8dc4767b0ca553c 0\texperiments/astra-rh-969-20260912/test_receipt.py",
+      "index_sha256": "86ad957b6f39c4c6e43424eb3933e1e8cccdcbc1ca87ab89ef49cfab71c926e6",
+      "patch_lines": 168,
+      "path": "experiments/astra-rh-969-20260912/test_receipt.py",
+      "reconstructed_from_pinned_base": true,
+      "source_lines": 162,
+      "source_sha256": "86ad957b6f39c4c6e43424eb3933e1e8cccdcbc1ca87ab89ef49cfab71c926e6"
+    },
+    {
+      "complete_patch_read": true,
+      "diff_sha256": "825df6993daf2adcaa0e7953f7323fe687e26d221c18debe85de867626cc9a9f",
+      "final_source_and_diff_and_index_unchanged": true,
+      "hunks": 1,
+      "index_entry": "100644 8f0535ca6ca6745f3484ac7b8df3b1f53db8da75 0\texperiments/astra-rh-969-20260912/verify.py",
+      "index_sha256": "e28bf251ea88bad0865a11d1ae2368dd2e14c499159a87297a7a5b0bfa786517",
+      "patch_lines": 145,
+      "path": "experiments/astra-rh-969-20260912/verify.py",
+      "reconstructed_from_pinned_base": true,
+      "source_lines": 139,
+      "source_sha256": "e28bf251ea88bad0865a11d1ae2368dd2e14c499159a87297a7a5b0bfa786517"
+    },
+    {
+      "complete_patch_read": true,
+      "diff_sha256": "4b96a566614201106a967a7fdd33d1e28327911288ff1e4531f87bc5d8e0ffe9",
+      "final_source_and_diff_and_index_unchanged": true,
+      "hunks": 1,
+      "index_entry": "100644 345afbac06b207d351dbaaaa0d13b7c2e49703d5 0\texperiments/astra-rh-crt-20260912/kernel.py",
+      "index_sha256": "b2bdb37c08ff54a9de164b28e5a6b994a6d79c06b862c4a5369e9a2778ce8ee9",
+      "patch_lines": 117,
+      "path": "experiments/astra-rh-crt-20260912/kernel.py",
+      "reconstructed_from_pinned_base": true,
+      "source_lines": 111,
+      "source_sha256": "b2bdb37c08ff54a9de164b28e5a6b994a6d79c06b862c4a5369e9a2778ce8ee9"
+    },
+    {
+      "complete_patch_read": true,
+      "diff_sha256": "f43a48bbfbef8495f3ed91d8e00c1c99c6d0925d52a4bc0b9d09b6a18bc8a448",
+      "final_source_and_diff_and_index_unchanged": true,
+      "hunks": 1,
+      "index_entry": "100644 f8fa6fb3292a7abc7a9b48a2c1fad96d07c91038 0\texperiments/astra-rh-crt-20260912/test_kernel.py",
+      "index_sha256": "3124ad7bbb26b6b7e7f0d3b129434c1bd1c4d2ba89589f0bd861802b7f331ba4",
+      "patch_lines": 106,
+      "path": "experiments/astra-rh-crt-20260912/test_kernel.py",
+      "reconstructed_from_pinned_base": true,
+      "source_lines": 100,
+      "source_sha256": "3124ad7bbb26b6b7e7f0d3b129434c1bd1c4d2ba89589f0bd861802b7f331ba4"
+    },
+    {
+      "complete_patch_read": true,
+      "diff_sha256": "bf5cf870af6d44a0ca2fb0fe89648ba9c92281c53e551bdb780312bf8d34e457",
+      "final_source_and_diff_and_index_unchanged": true,
+      "hunks": 1,
+      "index_entry": "100644 ef1c6d8e0c4be0fd61833a4dba384a02bdc0c774 0\texperiments/astra-rh-crt-20260912/test_receipt.py",
+      "index_sha256": "1ae8aad201b22f9ee10a830bed2b3aa630cb882bc683f40c1605360994aa6a1e",
+      "patch_lines": 148,
+      "path": "experiments/astra-rh-crt-20260912/test_receipt.py",
+      "reconstructed_from_pinned_base": true,
+      "source_lines": 142,
+      "source_sha256": "1ae8aad201b22f9ee10a830bed2b3aa630cb882bc683f40c1605360994aa6a1e"
+    },
+    {
+      "complete_patch_read": true,
+      "diff_sha256": "84e67a7553a4e752fdd9546a4c6c7ad3d34e30eb55aa36208fb6aa052dfa0b3b",
+      "final_source_and_diff_and_index_unchanged": true,
+      "hunks": 1,
+      "index_entry": "100644 5508fa8d7b9763c3ac3aa22ef8a7b51fcf895f0b 0\texperiments/astra-rh-crt-20260912/verify.py",
+      "index_sha256": "73c66dd1595d4cce52bf50e107fcec3759891c6b16babb25531347089c4c275c",
+      "patch_lines": 147,
+      "path": "experiments/astra-rh-crt-20260912/verify.py",
+      "reconstructed_from_pinned_base": true,
+      "source_lines": 141,
+      "source_sha256": "73c66dd1595d4cce52bf50e107fcec3759891c6b16babb25531347089c4c275c"
+    },
+    {
+      "complete_patch_read": true,
+      "diff_sha256": "cb40ff0b636b55a93be2a5afefaf9c3de137cb06bfd9168490de4af521ec033e",
+      "final_source_and_diff_and_index_unchanged": true,
+      "hunks": 1,
+      "index_entry": "100644 3b2cc35992ddac27922d65e0c7f7c7d047bd4c71 0\ttests/test_readme.py",
+      "index_sha256": "62509a8ef2749ade0838a739c3a12ef70d4fd393601790ed0599e058c84e7703",
+      "patch_lines": 172,
+      "path": "tests/test_readme.py",
+      "reconstructed_from_pinned_base": true,
+      "source_lines": 166,
+      "source_sha256": "62509a8ef2749ade0838a739c3a12ef70d4fd393601790ed0599e058c84e7703"
+    },
+    {
+      "complete_patch_read": true,
+      "diff_sha256": "8e71df452884ad3451bcc3054529cd0c532bd975834a5dc20399b09c9bc3cf3a",
+      "final_source_and_diff_and_index_unchanged": true,
+      "hunks": 1,
+      "index_entry": "100644 ec5826466af156b3ae3c3e75ad9b97d080ad7bd7 0\ttests/test_rh969.py",
+      "index_sha256": "01f65ec9fa6069b8ab49bfe67805dfb9fba9eb64df1ef06f14f06cb1e764cdc4",
+      "patch_lines": 53,
+      "path": "tests/test_rh969.py",
+      "reconstructed_from_pinned_base": true,
+      "source_lines": 47,
+      "source_sha256": "01f65ec9fa6069b8ab49bfe67805dfb9fba9eb64df1ef06f14f06cb1e764cdc4"
+    },
+    {
+      "complete_patch_read": true,
+      "diff_sha256": "bca1b843e47a97af1d2ef3b0a6a6c9160a4239e13abde7ba13888df878b008d2",
+      "final_source_and_diff_and_index_unchanged": true,
+      "hunks": 1,
+      "index_entry": "100644 7efdd65971f10ad4e80f1e627b1400075606d5f8 0\ttests/test_rh_crt.py",
+      "index_sha256": "2dd4335c3531a78a87141140b9448257821a776cfa31068801bcd3c745e00f8a",
+      "patch_lines": 127,
+      "path": "tests/test_rh_crt.py",
+      "reconstructed_from_pinned_base": true,
+      "source_lines": 121,
+      "source_sha256": "2dd4335c3531a78a87141140b9448257821a776cfa31068801bcd3c745e00f8a"
+    },
+    {
+      "complete_patch_read": true,
+      "diff_sha256": "460d3d9a0bb6ac365124103fbf6cdad768327b76a2d12b28610d26c8483461f3",
+      "final_source_and_diff_and_index_unchanged": true,
+      "hunks": 2,
+      "index_entry": "100644 03a87dc51c1988b42dc5fb3571e77a249433542d 0\ttests/test_substrate.py",
+      "index_sha256": "9d6189ce072f6267ecb0cab737cc31d3b202764f12fd426c87c576eba3999845",
+      "patch_lines": 78,
+      "path": "tests/test_substrate.py",
+      "reconstructed_from_pinned_base": true,
+      "source_lines": 175,
+      "source_sha256": "9d6189ce072f6267ecb0cab737cc31d3b202764f12fd426c87c576eba3999845"
+    }
+  ],
+  "security_concerns": [],
+  "suggestions": [],
+  "summary": "Passed independent review of all 13 complete authenticated live-code/CI/README-guard diffs: 94 direct supplied test nodes and all 10 independent adverse-control groups passed; no security/logic blockers or covered-source/index/diff drift. No repository code, skills or canonical evidence changed.",
+  "verdict_file": "<independent-review-scratch>/final-verdict.json"
+}

@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://doi.org/10.3792/pja/1195570997",
+      "title": "Nagura (1952), On the interval containing at least one prime number",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 2,
+      "url": "https://nntdm.net/papers/nntdm-08/NNTDM-08-4-145-148.pdf",
+      "title": "Intervals containing prime numbers, Notes on Number Theory and Discrete Mathematics 8 (2002), 145–148",
+      "accessed": "2026-09-04"
+    }
+  ]
+}

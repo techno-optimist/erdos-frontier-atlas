@@ -1,0 +1,28 @@
+{
+  "description": "SHA-256 of unpromoted research bundle files; integrity only, not proof validation",
+  "files": {
+    "699-audit-result.json": "5b2976c8bcdb248e674096374bf3548555930b1a084cf949394c4a3215166ee0",
+    "699-independent-audit.md": "f5dc141ecc0d7a01a5883679f164f0506da574c4b17c32fe5172a533b228a26f",
+    "699-strip.md": "f3eaf51c8c385c1df94617bd71f156b44e30e716557451c7ca476fbf4982f97c",
+    "993-block-result.json": "2117b2b9145ac967b7b95110616c7463ddb898e658e21b85716b7398245c8625",
+    "993-block.md": "56d814219dc46c926552b98e6464775a8f575df01b2f35ec01c2cb1343d45290",
+    "README.md": "e1032a0be0a5e7f803f88b0fffe423fc88dde062f3714dc1c4c78dcf22e41f50",
+    "RESULT.json": "20f2718db75b3200470bb6a01e1c6076382aa3f831e7f63afdfe8b71e96fce3a",
+    "audit_699_receipt.py": "e4b93381d36c72018d0be80de88ff67685131ff0995dee3964e1d42f90d2849a",
+    "check_699_lemmas.py": "8a29dbb6e45261dbde76c23e8d45bb58c11180c711eb488ce086ca9fb4b545ba",
+    "check_993_block.py": "5a97d7b973cd74d630ba8b97ffd20b4b541fdc16e61ada127d08a9d52ac9005a",
+    "code-review.json": "ad76b9d440ee87a77aeb3ac2a6c720649b6f33cf399080b4785ea9d8320d48c5",
+    "freshness.md": "d5fbcbec745544aef62185bef2c39461b9f6e38ff641163aaa417ba2ac4dffd2",
+    "hubpath-random-summary.json": "02135715a656314b8bd51ec6023bbecab3e75b51045d690d0aaf434674a95222",
+    "lemma-checks.json": "c8e42c9ca982ff9a0956f13f72569880a5ffff3bef9e9f1cf73a8ee6f178c792",
+    "manuscript-pin.json": "29777e09b15bbbf4d8d9e7d4e765ae1aea05d0ecaa8d5243e1583868f04ef308",
+    "mutation-results.json": "12f76b72a1896f27dc26b4f5b1d1970cc1211de6fcd960c1b82748664d5d3c93",
+    "probe.py": "765f6933860c9bd732066dfb5792f0ce199fa072ff1483be9e1296326df11afd",
+    "sources.json": "6ebb4ff0c4afa5f922c2f887eaf207d9a9b3c7d3b4594d9898974fd82742851f",
+    "test_probe.py": "f09804e5bfe93993e72660d1762a5b28cf8a31870230184df61af3548b93b90d",
+    "threehub-random-batch1.json": "ec92b85d0217c6b34d05bd4355c17750f09fe93a4a39302ad88d06759ab839e2",
+    "topology-control.json": "86c2d4ea96a4b4062dca0f38c294a2a6e7afa9114b20b6fe51b955d25304c690",
+    "upstream-diff.json": "754e17f5c3a4c1ea1aa7e8acd3bcba503c11ecc28ef5fd812cc093d60ae1e1c5",
+    "verification.json": "a57c6775c4e2dfaacb10e8d14e2e7efd4cfa90fa0b2f1ec98c91df9035185143"
+  }
+}

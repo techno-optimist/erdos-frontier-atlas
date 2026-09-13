@@ -1,0 +1,19 @@
+name = "erdos699-lean-seed"
+version = "0.1.0"
+defaultTargets = ["AdjacentBinomialGcd", "ExactStatement", "DivisorTransferCheck", "AxiomAudit", "LibraryChecks"]
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4.git"
+rev = "0df444a360eaa60ab8c11dca51a86af692955474"
+
+[[lean_lib]]
+name = "AdjacentBinomialGcd"
+[[lean_lib]]
+name = "ExactStatement"
+[[lean_lib]]
+name = "DivisorTransferCheck"
+[[lean_lib]]
+name = "AxiomAudit"
+[[lean_lib]]
+name = "LibraryChecks"

@@ -1,0 +1,4 @@
+search_base3
+*.o
+*.olean
+__pycache__/

@@ -1,0 +1,8 @@
+{
+  "original": "<repo>/experiments/astra-rh-crt-20260912/GM_TRANSFER.md",
+  "initial_sha256": "fccc3023e6fe7f5708a60f174cfc3bad3c7e8c55491f494fcf781f6190fa5fa9",
+  "observed_sha256": "52eae4d28b0ae78fc67a4f112fd099bb3b72b4d86b3bc78866fc7294f50f41f6",
+  "classification": "External append-only Sources block; mathematical body unchanged",
+  "archive_file": "consolidated-GM_TRANSFER-final-read.md",
+  "exact_append": "\n## Sources\n\n[3] https://arxiv.org/html/2006.04060v2\n[5] https://arxiv.org/pdf/2405.20552v2 — Guth–Maynard, New large value estimates for Dirichlet polynomials, v2\n"
+}

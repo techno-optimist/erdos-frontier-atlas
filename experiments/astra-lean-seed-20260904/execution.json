@@ -1,0 +1,41 @@
+{
+  "build": {
+    "command": "lake build",
+    "exit_code": 0,
+    "jobs": 499
+  },
+  "commands": [
+    {
+      "label": "lean-version",
+      "command": "lean --version",
+      "exit_code": 0
+    },
+    {
+      "label": "exact-statement",
+      "command": "lake env lean ExactStatement.lean",
+      "exit_code": 0
+    },
+    {
+      "label": "divisor-transfer",
+      "command": "lake env lean DivisorTransferCheck.lean",
+      "exit_code": 0
+    },
+    {
+      "label": "axiom-audit",
+      "command": "lake env lean AxiomAudit.lean",
+      "exit_code": 0
+    },
+    {
+      "label": "negative-control",
+      "command": "lake env lean negative/AlteredIdentity.lean",
+      "exit_code": 1
+    }
+  ],
+  "dependency_pins_verified": 9,
+  "axioms": [
+    "propext",
+    "Quot.sound"
+  ],
+  "build_scope": "New local proof modules rebuilt; transitive dependency binaries reused. No fresh bootstrap or second-kernel audit claimed.",
+  "lockfile_provenance": "Transitive entries copied from the setup-generated Lake manifest; direct Mathlib dependency converted to an immutable git pin, then accepted by lake build and each repository HEAD checked. lake update timed out twice; not reported successful."
+}

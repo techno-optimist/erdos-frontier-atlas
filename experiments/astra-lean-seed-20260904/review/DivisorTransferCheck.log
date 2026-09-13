@@ -1,0 +1,1 @@
+'AdjacentBinomialGcd.divisor_transfer' depends on axioms: [propext, Quot.sound]

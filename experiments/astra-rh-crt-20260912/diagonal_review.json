@@ -1,0 +1,107 @@
+{
+  "passed": true,
+  "blocking_issues": [],
+  "required_qualifications": [
+    "The outer shell weight w is nonnegative; the AFE weight W changes sign. Only local W->1 or W>=1/2 on x<=1 is used for the near-core lower bound.",
+    "The positive diagonal scale is for the full Mobius block and fixed nonzero nonnegative w. Bounded masks retain the uniform upper bound, not a uniform lower bound; uniform lower constants for a weight family would need its integral bounded below.",
+    "Neither the positive diagonal nor the positive unsigned near-core is a lower bound for the full mixed moment or its signed off-diagonal.",
+    "The T^(5/3) count is a genuine actual-cloud lower bound after subtracting O(ND) exact collisions, not an asymptotic pair count and not a lower bound for every taper.",
+    "The actual missing bound is the aggregate weighted signed combination. The stated per-N bound with a delta reserve is sufficient and stronger, not necessary.",
+    "Retain all N from order 1 through T^(1/2+eps), bounded comparable dyadic partners, and the exact interval masks and coefficient conjugates needed by the application.",
+    "Require fixed open-neighborhood uniformity and eta+rho<1/6, with one paid aggregate loss budget; eta+rho+delta<1/6 is a stronger sufficient separation.",
+    "Use the valid fixed smooth shell majorant, or genuinely overlapping rescaled covering weights; do not interpret the alternative wording as finite smooth majorization with support confined exactly to the closed sharp shell.",
+    "This pass concerns Sections 1-4 as an interface audit. The off-diagonal saving itself, a new variance theorem, literature exhaustiveness, novelty, and RH are not certified."
+  ],
+  "reviewed_claims": [
+    {
+      "claim": "standalone versus common-frequency lengths and norms",
+      "status": "pass",
+      "candidate_lines": "30-46"
+    },
+    {
+      "claim": "baseline critical exponents and local target",
+      "status": "pass from supplied baseline",
+      "candidate_lines": "48-64"
+    },
+    {
+      "claim": "BCR AFE hypotheses and paid error",
+      "status": "pass",
+      "candidate_lines": "76-108"
+    },
+    {
+      "claim": "entire signed diagonal collision parametrization",
+      "status": "pass",
+      "candidate_lines": "112-155"
+    },
+    {
+      "claim": "uniform gcd and logarithmic estimates",
+      "status": "pass",
+      "candidate_lines": "157-181"
+    },
+    {
+      "claim": "contour residue and summed uniform remainder",
+      "status": "pass",
+      "candidate_lines": "183-219"
+    },
+    {
+      "claim": "Jordan Gram identity and full-block positive lower bound",
+      "status": "pass",
+      "candidate_lines": "221-244"
+    },
+    {
+      "claim": "diagonal asymptotic-scale T log(T)/D with explicit Q_D",
+      "status": "pass",
+      "candidate_lines": "246-256"
+    },
+    {
+      "claim": "kernel decay, dyadic N ranges, masks, and normalization",
+      "status": "pass with explicit scope qualifications",
+      "candidate_lines": "260-295,359"
+    },
+    {
+      "claim": "aggregate target versus stronger boxwise sufficient input",
+      "status": "pass",
+      "candidate_lines": "297-327"
+    },
+    {
+      "claim": "actual-cloud near-core count and exact-collision subtraction",
+      "status": "pass; unsigned-majorant method cost only",
+      "candidate_lines": "329-347"
+    },
+    {
+      "claim": "neighborhood separation and hypothetical loss budget",
+      "status": "pass",
+      "candidate_lines": "349-359"
+    },
+    {
+      "claim": "open-target is explicitly unproved and properly normalized",
+      "status": "pass with stated qualifications",
+      "candidate_lines": "open-target.md:5-36"
+    }
+  ],
+  "checks": {
+    "status": "PASS",
+    "counts": {
+      "full_block_Gram_checks": 11,
+      "masked_Gram_checks": 12,
+      "Jordan_divisor_identities": 200,
+      "direct_parametrized_collision_checks": 5,
+      "actual_finite_point_cloud_checks": 3,
+      "independent_exponent_entries": 21,
+      "source_payload_byte_checks": 3,
+      "replayed_original_finite_checks": 7,
+      "replayed_original_exponent_entries": 29,
+      "evidence_attachments": 6,
+      "unchanged_original_files": 83
+    },
+    "independent_output_path": "<historical-diagonal-audit>/independent-checks.json",
+    "verification_path": "<historical-diagonal-audit>/verification.json",
+    "evidence_path": "<historical-diagonal-audit>/primary-evidence.md",
+    "originals_unchanged": true,
+    "finite_check_limit": "No finite computation is treated as evidence of asymptotic signed cancellation."
+  },
+  "report_path": "<historical-diagonal-audit>/report.md",
+  "summary": "Sections 1-4 pass as a bounded interface audit. The full signed diagonal is T log(T) Q_D int(w)+O(T/D), with Q_D asymp 1/D. The BCR AFE error is correctly paid. The unsigned T^(5/3) near-core pair lower bound is real for the actual integer-entry cloud after exact-collision subtraction, but its weighted T^(1/2) cost obstructs only a completely absolute majorant approach. The aggregate signed saving remains unproved. Existing final contents were audited; no candidate or repository edits were made.",
+  "verdict_path": "<historical-diagonal-audit>/verdict.json",
+  "analytic_saving_proved": false
+}

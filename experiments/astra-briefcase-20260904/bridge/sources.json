@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://www.erdosproblems.com/854",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 2,
+      "url": "https://www.erdosproblems.com/687",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 3,
+      "url": "https://www.erdosproblems.com/860",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 4,
+      "url": "https://www.erdosproblems.com/forum/thread/854/proof-claims",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 5,
+      "url": "https://www.erdosproblems.com/forum/thread/854",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 6,
+      "url": "https://oeis.org/A389839",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 7,
+      "url": "https://arxiv.org/pdf/1402.1970",
+      "title": "",
+      "accessed": "2026-09-04"
+    },
+    {
+      "id": 8,
+      "url": "https://github.com/DottedCalculator/ai-math/blob/main/Erdos_854_GPT_5.6_Sol.pdf",
+      "title": "",
+      "accessed": "2026-09-04"
+    }
+  ]
+}
