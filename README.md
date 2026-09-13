@@ -42,7 +42,10 @@ artifacts, evidence level, and unresolved step.
 | **P993 and CRT bridges** | [Tail compression, Laurent blocks and endpoint-safe transfers](experiments/astra-briefcase-20260904/README.md) | Block properties and candidate matches are not proofs of tree unimodality or an entire gap spectrum. |
 | **P376** | [Kummer/digit checks and bounded historical replay](experiments/astra-376-20260911/README.md) | The infinitude question needs a method, not another extension of a known sequence's cutoff. The [working goal](experiments/astra-i3-20260911/GOAL.md) records that correction. |
 
-The RH update does not solve P969 or RH. Its [portable audit archive](experiments/astra-rh-crt-20260912/audits/README.md)
+The RH update is published for review in
+[PR #156](https://github.com/techno-optimist/erdos-frontier-atlas/pull/156), stacked
+on the P327 method PR. It does not solve P969 or RH. Its
+[portable audit archive](experiments/astra-rh-crt-20260912/audits/README.md)
 separates exact arithmetic from numerical diagnostics, model review from human
 review, and replayed checkers from those needing excluded source files. The
 [progress map](experiments/astra-rh-969-20260912/REPOSITORY_STATUS.md) carries the

@@ -75,7 +75,14 @@ check. All **676 protected tracked paths** match the base commit, and all
 the gate. Both independent software reviews have passed. The
 [combined review record](SOFTWARE_REVIEW.json) reconciles their disjoint 13-file
 live-code and 20-file archive scopes against all 33 submitted Python files.
-Publication and remote CI verification are a separate subsequent step.
+The update is published for review in
+[PR #156](https://github.com/techno-optimist/erdos-frontier-atlas/pull/156), from
+`agent/astra-rh-969-20260912` into the P327 branch in PR #155. Initial research
+commit: `e991fc95dec8006a651c3e661a7d4bdb64422001`. Publication does not mean
+merge or mathematical acceptance. The PR's
+[Checks tab](https://github.com/techno-optimist/erdos-frontier-atlas/pull/156/checks)
+is the live record of remote CI; the receipts here preserve their dated local
+runs rather than promising CI status for future commits.
 
 The [earlier 170-pass gate](repository-verification.json) and
 [intermediate 180-pass gate](repository-verification-hardened.json) are retained
