@@ -22,8 +22,8 @@ The predecessor [P327 multiplier-sensitive fiber method](../astra-327-fiber-2026
 is published separately in [PR #155](https://github.com/techno-optimist/erdos-frontier-atlas/pull/155),
 stacked on #154 at commit `68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc`.
 Its GitHub `fast-claim-gate` passed; the scheduled/manual-only `receipt-drift`
-job was skipped as configured for a PR. It is not merged or folded into an RH
-proof claim.
+job was skipped as configured for a PR. For current merge status, see that PR;
+neither publication nor merging folds the method into an RH proof claim.
 
 ## Find the work through the substrate
 
