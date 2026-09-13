@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "critical_issues": [
+    "Fixed-a holomorphy does not yield exclusion of all beta>2a by cancellation alone.",
+    "State holomorphic continuation, not new convergence of the original integral.",
+    "Require explicit support/initial-piece treatment and ignore finitely many h=0 scales.",
+    "theta>8/9 only makes the partial zero-free strip nonempty; a single such theta does not establish RH by this argument.",
+    "No automatic global L2 error conclusion and no proof of the starting variance hypothesis."
+  ],
+  "a_theta": "1-3theta/4",
+  "zero_free_strip": "2-3theta/2 < beta < 3theta-2",
+  "nonempty_threshold": "theta>8/9",
+  "all_theta_implication": "RH, with no simplicity assumption",
+  "proof": "mellin-transfer/audit.md",
+  "verification": "mellin-transfer/verified_arithmetic.json"
+}

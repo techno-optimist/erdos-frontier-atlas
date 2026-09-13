@@ -1,0 +1,103 @@
+{
+  "passed": true,
+  "critical_issues": [],
+  "claims_reviewed": [
+    {
+      "claim": "Continuous-phase divisor formula and interpolation",
+      "location": "RESULT.md:21-110",
+      "status": "passed",
+      "finding": "For H=m+alpha, the two window lengths have probabilities 1-alpha and alpha, independently of the integer residue. The additional term is rho_P^2*alpha*(1-alpha), not rho_P*alpha*(1-alpha). Every divisor-kernel breakpoint is integral, so the curvature argument is valid. The decreasing integral majorant gives the stated unit constant. Empty P, H=0, fractional H, and period multiples are covered."
+    },
+    {
+      "claim": "Normalized conditional expectation",
+      "location": "RESULT.md:123-144",
+      "status": "passed",
+      "finding": "Conditioning on both floor(x) modulo L_P and {x} gives E[A_Q|phase]=(rho_Q/rho_P)A_P. Consequently E[S_Q|phase]=S_P and E|S_Q-S_P|^2=U_Q-U_P. The conditioning and nesting P subset Q are essential; no temporal independence is used."
+    },
+    {
+      "claim": "Unnormalized omitted-prime defect variance",
+      "location": "RESULT.md:146-156",
+      "status": "passed_with_notation_clarification",
+      "finding": "With C_P=A_P-rho_P*H and D_(P,Q)=C_P-C_Q, the cross moment is E[C_P*C_Q]=(rho_Q/rho_P)V_P. This gives exactly V_Q+(1-2*rho_Q/rho_P)V_P. The density ratio is at least 1/zeta(2)>1/2, hence the energy is at most V_Q, while nonnegativity comes from its squared-norm definition. D_(P,Q) should be explicitly defined."
+    },
+    {
+      "claim": "Arbitrary-real-interval periodicity cost and norm transfer",
+      "location": "RESULT.md:160-190",
+      "status": "passed",
+      "finding": "Any interval of length X>0 decomposes into floor(X/L) complete periods and a residual arc contributing at most one period integral; if the residual is empty, no extra period is charged. Thus the exact ceiling factor is valid without alignment assumptions. The identity C_true=C_P-D_P and the reverse L2 triangle inequality prove TRANSFER. These empirical energies use density centering, not subtraction of their empirical means."
+    },
+    {
+      "claim": "Both directions of the RH-equivalent defect obligation",
+      "location": "RESULT.md:192-211",
+      "status": "passed",
+      "finding": "For any fixed selection rule with L_P<=X, the norm discrepancy is at most sqrt(2)*H^(1/4). Hence D_energy<=2*V_energy+4*sqrt(H) and V_energy<=2*D_energy+4*sqrt(H). For H>=1 each H^(1/2+delta) bound transfers with constant at most 2*C+4, independently of the prime rule. GMRR Theorem 3 has the stated epsilon, delta, range and both directions.[1] Choosing L_P<=X requires X>=1, already forced by the nonempty RH range."
+    },
+    {
+      "claim": "Fixed-H versus growing-H limits",
+      "location": "RESULT.md:213-225",
+      "status": "passed",
+      "finding": "On the common product-phase space the fixed-H normalized counts are bounded by ceil(H)/rho+H and converge as primes are exhausted. The divisor majorant is summable for fixed H. Fixed-shift correlations identify the fixed-H empirical limit, including real H by fractional-phase interpolation. None of these statements supplies the missing uniform finite-X rate when H grows."
+    },
+    {
+      "claim": "r-free extension",
+      "location": "RESULT.md:242-256",
+      "status": "passed_with_notation_clarification",
+      "finding": "For integer r>=2, define rho_(P,r)=product(1-p^(-r)) and use period L_r=M^r. The divisor formula, interpolation curvature -2*rho_(P,r)^2, and constant r/(r-1)*4^(1/r-1) are correct. The corresponding elementary norm transfer uses L_r, not M^2. This does not itself establish an r-free analogue of the cited RH equivalence."
+    },
+    {
+      "claim": "Consistency with the Mellin interface",
+      "location": "MELLIN_TRANSFER.md:10-49,206-234",
+      "status": "passed_spot_check",
+      "finding": "E(x+H)-E(x) is exactly the true centered count used in RESULT.md. Its integer-H hypothesis is compatible with the stronger real-H formulation: replacing H>=1 by floor(H) changes the centered count by at most 1 pointwise. The displayed rational parameter table agrees with a_theta=1-3*theta/4. Neither document substitutes phase variance for the required actual finite-X variance."
+    }
+  ],
+  "checks": {
+    "exact_rational": {
+      "direct_phase_and_interpolation_cases": 317,
+      "conditional_phase_fibers": 12204,
+      "refinement_and_defect_cases": 90,
+      "arbitrary_interval_cases": 480,
+      "periodic_surrogate_norm_transfer_cases": 60,
+      "tested_r": [2, 3, 4, 5],
+      "result": "All assertions passed. These are independent scratch checks, not repository gates."
+    },
+    "actual_squarefree_numeric": {
+      "cases": 396,
+      "cases_with_period_at_most_X": 198,
+      "decimal_precision": 70,
+      "assertion_tolerance": "1e-55",
+      "result": "All assertions passed; these checks are numerical, not interval-certified."
+    },
+    "negative_controls": [
+      "Empty P and H=1/2: continuous variance is 1/4, whereas floor-only averaging gives 0.",
+      "Empty P, Q={2}, H=1/2 and fractional phase 1/4: S_P=-1/2, whereas conditioning only on the integer phase gives conditional mean 0.",
+      "P={2}, Q={2,3}, H=1: centered defect energy is 11/144, not V_Q-V_P=5/144.",
+      "P={2}, H=1 on [3,7/2]: empirical energy is 9/16 versus phase variance 3/16, showing why a periodicity cost is necessary.",
+      "The supplied selected-phase example has squared error 2304/625>sqrt(3). These refute invalid shortcuts, not the stated theorems."
+    ],
+    "sources": [
+      {
+        "id": "[1]",
+        "url": "https://arxiv.org/html/2006.04060v2",
+        "evidence": "Theorem 3 was checked in primary HTML with MathML alttext retained after the clean extraction omitted the theorem."
+      }
+    ],
+    "reviewed_sha256": {
+      "RESULT.md": "b1fe23da9b3e47dac8458896a59ed988d2e726de3c3c99b8f3c2aac10852f7a0",
+      "MELLIN_TRANSFER.md": "0fd566437e9def10c1baa194798a7e84ac64ff687f4f4792d5e2cb3dda6b0902"
+    },
+    "files": {
+      "repository_modified_by_reviewer": false,
+      "scratch_directory": "phase-transfer",
+      "artifacts": "Independent checker scripts, JSON records and summaries, source excerpt and citation ledger, and this audit report.",
+      "procedural_memory": "Added an arithmetic phase-to-interval audit workflow to the default-profile erdos-frontier-research skill, outside the repository."
+    }
+  },
+  "limitations": [
+    "This is model mathematical review, not formal verification or peer review. No substantive counterexample was found; finite checks do not prove the all-parameter statements.",
+    "Minor self-containment fixes: explicitly define D_(P,Q), define Q(x)=sum_(1<=n<=x) mu(n)^2 in RESULT.md itself, and state the r-free density and period rather than leaving their replacement implicit.",
+    "The Mellin argument received only a consistency spot-check; its separate analytic review remains distinct. Classical fixed-shift correlation results and the external RH-equivalence theorem were not reproved here.",
+    "Both input hashes changed during the audit because source sections were appended. Both files were reread; their mathematical text was unchanged. The final reviewed hashes are recorded above.",
+    "The centered-defect energy estimate remains unproved. Passing this audit is not an RH estimate, an RH proof, or a novelty assessment."
+  ]
+}

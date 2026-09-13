@@ -1,0 +1,72 @@
+{
+  "schema": "rh-audit-preservation-checks-v1",
+  "checked_at_utc": "2026-09-13T05:25:03.177330+00:00",
+  "scope": "Local preservation, exact byte transformations, syntax, dependency accounting and actual finite replay-output checks. Not analytic proof, literature, formal or full repository verification.",
+  "originals_before_and_after": {
+    "inventory_entries": 264,
+    "raw_pinned_copies": 148,
+    "reference_snapshots": 10,
+    "all_hashes_match": true,
+    "raw_originals_modified": false
+  },
+  "public_original_files_verified": 107,
+  "path_edited_original_files": 45,
+  "substantive_main_component_and_target_files": 14,
+  "main_workspaces_covered": 10,
+  "inventory_coverage_complete": true,
+  "path_transform_reconstruction_matches_all_public_originals": true,
+  "source_claims_numeric_assertions_and_historical_hashes_changed": false,
+  "byte_identical_aliases_verified": 9,
+  "syntax_checks": {
+    "python_files_parsed": 19,
+    "json_files_parsed": 74,
+    "jsonl_lines_parsed": 28,
+    "status": "passed"
+  },
+  "public_path_hygiene": {
+    "repository_rule": "tests/test_no_private_infrastructure.py",
+    "rule_sha256": "af1854e41f398a92df11b04e5dea4f77eea1dd1785d775a2bb9688cfb4d0c6d8",
+    "discovery": "recursive file traversal (includes untracked archive files); scoped to audits only",
+    "repository_rule_status": "passed",
+    "strict_absolute_private_path_scan": "passed",
+    "symlinks_caches_full_manuscript_and_capture_suffix_scan": "passed"
+  },
+  "saved_replay_totals": {
+    "selected_checker_files": 17,
+    "attempted": 13,
+    "passed": 13,
+    "failed": 0,
+    "timeouts": 0,
+    "input_integrity_failures": 0,
+    "not_replayed_excluded_dependencies": 4,
+    "duplicate_copy_executions": 2,
+    "distinct_original_checker_hashes_executed": 11
+  },
+  "fresh_output_readback": {
+    "streams_verified": 26,
+    "generated_output_files_verified": 16,
+    "copied_input_hashes_rechecked": 20,
+    "runtime_edits_only_actual_scratch_prefix": true,
+    "phase_full_arrays_match_historical_raw": true,
+    "unexpected_math_or_numeric_output_differences": []
+  },
+  "harness_smoke_test": {
+    "command": [
+      "python3",
+      "-B",
+      "test_replay.py"
+    ],
+    "tests": 1,
+    "passed": 1,
+    "checker_invocations_not_in_saved_replay_totals": 1
+  },
+  "known_limitations": [
+    "four preserved source-dependent checkers not replayed; no synthetic sources or partial arithmetic extraction",
+    "historical phase summary input hashes refer to older document snapshots; final pinned first-party inputs used for current replay",
+    "mixed Decimal/cmath diagnostics not wholly exact",
+    "one malformed historical extraction-output JSON omitted without repair",
+    "full repository integration and tests owned by parent, not run here"
+  ],
+  "write_scope": "Only experiments/astra-rh-crt-20260912/audits within the repository; fresh raw replay and packaging scratch kept externally. No commit or push.",
+  "checksum_note": "SHA256SUMS covers this record, MANIFEST.json and all other published files except itself; its validation is a separate final integrity readback."
+}

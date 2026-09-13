@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "file://mobius-factorization/report.md",
+      "title": "Proposed Möbius factorization report; reviewed local bytes",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "A fixed-order, exact Möbius identity does give a genuine power-saving treatment of its long-smooth-factor Type I terms.",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "url": "file://<repo>/experiments/astra-rh-crt-20260912/GM_TRANSFER.md",
+      "title": "Reconciled baseline, GM_TRANSFER",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "uniform in a neighborhood of that critical length-height relation.",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "url": "https://dlmf.nist.gov/25.9",
+      "title": "DLMF 25.9, AFE and chi, archived formula-preserving source",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "If  $x\\geq 1$ ,  $y\\geq 1$ ,  $2\\pi xy=t$ , and  $0\\leq\\sigma\\leq 1$ , then as",
+          "added": "2026-09-12"
+        },
+        {
+          "text": "Titchmarsh (1986b, (4.12.4), p. 79)",
+          "added": "2026-09-12"
+        },
+        {
+          "text": "\\[\\zeta\\left(\\sigma+it\\right)=\\sum_{1\\leq n\\leq x}\\frac{1}{n^{s}}+\\chi(s)\\sum_{1%\n\\leq n\\leq y}\\frac{1}{n^{1-s}}+O\\left(x^{-\\sigma}\\right)+O\\left(y^{\\sigma-1}t^%\n{\\frac{1}{2}-\\sigma}\\right),\\]",
+          "added": "2026-09-12"
+        },
+        {
+          "text": "where  $s=\\sigma+it$  and\n25.9.2\n$\\chi(s)\\equiv\\pi^{s-\\frac{1}{2}}\\Gamma\\left(\\tfrac{1}{2}-\\tfrac{1}{2}s\\right)/%\n\\Gamma\\left(\\tfrac{1}{2}s\\right).$",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "url": "https://arxiv.org/src/2006.04060v2",
+      "title": "GMRR v2, archived TeX, Lemmas 3 and 7",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "Let $a(n)$ be an arbitrary sequence of coefficients and $N, q \\geq 1$ be integers and $T \\geq 1$ real.",
+          "added": "2026-09-12"
+        },
+        {
+          "text": "\\int_{|t| \\leq T} |\\zeta(\\tfrac 12 + it)|^4 dt \\ll T (\\log T)^4.",
+          "added": "2026-09-12"
+        },
+        {
+          "text": "\\sum_{\\chi \\Mod{q}} \\int_{|t| \\leq T} \\Big | \\sum_{n \\leq N} a(n) \\chi^2(n) n^{it} \\Big |^2 dt \\ll q^{\\varepsilon} (q T + N) \\sum_{n \\leq N} |a(n)|^2.",
+          "added": "2026-09-12"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "scope": "command replay, not verification of RH or analytic proof",
+  "gates": [
+    {
+      "label": "TDD RED: square-divisor hyperbola identity",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-969-20260912 -p 'test_floor.py' -v",
+      "expected_exit_code": 1,
+      "exit_code": 1,
+      "output": "test_hyperbola_split_matches_direct_definition (test_floor.FloorTransferTests) ... FAIL\n\n======================================================================\nFAIL: test_hyperbola_split_matches_direct_definition (test_floor.FloorTransferTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<repo>/experiments/astra-rh-969-20260912/test_floor.py\", line 21, in test_hyperbola_split_matches_direct_definition\n    self.assertTrue((HERE / \"floor_transfer.py\").is_file(),\nAssertionError: False is not true : floor_transfer.py is not implemented\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (failures=1)",
+      "path_sanitized": true
+    },
+    {
+      "label": "TDD GREEN: square-divisor hyperbola identity",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-969-20260912 -p 'test_floor.py' -v",
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "output": "test_hyperbola_split_matches_direct_definition (test_floor.FloorTransferTests) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.007s\n\nOK",
+      "path_sanitized": true
+    },
+    {
+      "label": "TDD RED: reject invalid hyperbola hypotheses",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-969-20260912 -p 'test_floor.py' -v",
+      "expected_exit_code": 1,
+      "exit_code": 1,
+      "output": "test_hyperbola_rejects_lossy_parameters (test_floor.FloorTransferTests) ... test_hyperbola_split_matches_direct_definition (test_floor.FloorTransferTests) ... ok\n\n======================================================================\nERROR: test_hyperbola_rejects_lossy_parameters (test_floor.FloorTransferTests) (args=({1: 1}, 4.0, 1))\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<repo>/experiments/astra-rh-969-20260912/test_floor.py\", line 45, in test_hyperbola_rejects_lossy_parameters\n    transfer.hyperbola_sum(*args)\n  File \"<repo>/experiments/astra-rh-969-20260912/floor_transfer.py\", line 20, in hyperbola_sum\n    for m in range(1, k + 1))\nTypeError: 'float' object cannot be interpreted as an integer\n\n======================================================================\nERROR: test_hyperbola_rejects_lossy_parameters (test_floor.FloorTransferTests) (args=({1: 1}, 4, 0))\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<repo>/experiments/astra-rh-969-20260912/test_floor.py\", line 45, in test_hyperbola_rejects_lossy_parameters\n    transfer.hyperbola_sum(*args)\n  File \"<repo>/experiments/astra-rh-969-20260912/floor_transfer.py\", line 18, in hyperbola_sum\n    k = x // (cutoff * cutoff)\nZeroDivisionError: integer division or modulo by zero\n\n======================================================================\nERROR: test_hyperbola_rejects_lossy_parameters (test_floor.FloorTransferTests) (args=({0: 1}, 4, 1))\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<repo>/experiments/astra-rh-969-20260912/test_floor.py\", line 45, in test_hyperbola_rejects_lossy_parameters\n    transfer.hyperbola_sum(*args)\n  File \"<repo>/experiments/astra-rh-969-20260912/floor_transfer.py\", line 16, in hyperbola_sum\n    head = sum(a * (x // (n * n))\n  File \"<repo>/experiments/astra-rh-969-20260912/floor_transfer.py\", line 16, in <genexpr>\n    head = sum(a * (x // (n * n))\nZeroDivisionError: integer division or modulo by zero\n\n======================================================================\nERROR: test_hyperbola_rejects_lossy_parameters (test_floor.FloorTransferTests) (args=([], 4, 1))\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<repo>/experiments/astra-rh-969-20260912/test_floor.py\", line 45, in test_hyperbola_rejects_lossy_parameters\n    transfer.hyperbola_sum(*args)\n  File \"<repo>/experiments/astra-rh-969-20260912/floor_transfer.py\", line 17, in hyperbola_sum\n    for n, a in coefficients.items() if n <= cutoff)\nAttributeError: 'list' object has no attribute 'items'\n\n======================================================================\nFAIL: test_hyperbola_rejects_lossy_parameters (test_floor.FloorTransferTests) (args=({1: 1}, True, 1))\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<repo>/experiments/astra-rh-969-20260912/test_floor.py\", line 45, in test_hyperbola_rejects_lossy_parameters\n    transfer.hyperbola_sum(*args)\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_hyperbola_rejects_lossy_parameters (test_floor.FloorTransferTests) (args=({1: 1}, -1, 1))\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<repo>/experiments/astra-rh-969-20260912/test_floor.py\", line 45, in test_hyperbola_rejects_lossy_parameters\n    transfer.hyperbola_sum(*args)\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_hyperbola_rejects_lossy_parameters (test_floor.FloorTransferTests) (args=({1: 1}, 4, True))\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<repo>/experiments/astra-rh-969-20260912/test_floor.py\", line 45, in test_hyperbola_rejects_lossy_parameters\n    transfer.hyperbola_sum(*args)\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_hyperbola_rejects_lossy_parameters (test_floor.FloorTransferTests) (args=({True: 1}, 4, 1))\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<repo>/experiments/astra-rh-969-20260912/test_floor.py\", line 45, in test_hyperbola_rejects_lossy_parameters\n    transfer.hyperbola_sum(*args)\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_hyperbola_rejects_lossy_parameters (test_floor.FloorTransferTests) (args=({1: True}, 4, 1))\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<repo>/experiments/astra-rh-969-20260912/test_floor.py\", line 45, in test_hyperbola_rejects_lossy_parameters\n    transfer.hyperbola_sum(*args)\nAssertionError: ValueError not raised\n\n======================================================================\nFAIL: test_hyperbola_rejects_lossy_parameters (test_floor.FloorTransferTests) (args=({1: 1.0}, 4, 1))\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<repo>/experiments/astra-rh-969-20260912/test_floor.py\", line 45, in test_hyperbola_rejects_lossy_parameters\n    transfer.hyperbola_sum(*args)\nAssertionError: ValueError not raised\n\n----------------------------------------------------------------------\nRan 2 tests in 0.007s\n\nFAILED (failures=6, errors=4)",
+      "path_sanitized": true
+    },
+    {
+      "label": "TDD GREEN: reject invalid hyperbola hypotheses",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-969-20260912 -p 'test_floor.py' -v",
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "output": "test_hyperbola_rejects_lossy_parameters (test_floor.FloorTransferTests) ... ok\ntest_hyperbola_split_matches_direct_definition (test_floor.FloorTransferTests) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.006s\n\nOK",
+      "path_sanitized": true
+    },
+    {
+      "label": "TDD RED: balanced reciprocal-square countermodels",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-969-20260912 -p 'test_floor.py' -v",
+      "expected_exit_code": 1,
+      "exit_code": 1,
+      "output": "test_balanced_cells_give_exact_countermodels (test_floor.FloorTransferTests) ... FAIL\ntest_hyperbola_rejects_lossy_parameters (test_floor.FloorTransferTests) ... ok\ntest_hyperbola_split_matches_direct_definition (test_floor.FloorTransferTests) ... ok\n\n======================================================================\nFAIL: test_balanced_cells_give_exact_countermodels (test_floor.FloorTransferTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<repo>/experiments/astra-rh-969-20260912/test_floor.py\", line 51, in test_balanced_cells_give_exact_countermodels\n    self.assertTrue(hasattr(transfer, \"make_family\"),\nAssertionError: False is not true : countermodel constructor is not implemented\n\n----------------------------------------------------------------------\nRan 3 tests in 0.006s\n\nFAILED (failures=1)",
+      "path_sanitized": true
+    },
+    {
+      "label": "TDD GREEN: balanced reciprocal-square countermodels",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-969-20260912 -p 'test_floor.py' -v",
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "output": "test_balanced_cells_give_exact_countermodels (test_floor.FloorTransferTests) ... ok\ntest_hyperbola_rejects_lossy_parameters (test_floor.FloorTransferTests) ... ok\ntest_hyperbola_split_matches_direct_definition (test_floor.FloorTransferTests) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.008s\n\nOK",
+      "path_sanitized": true
+    },
+    {
+      "label": "TDD RED: validate family domain before allocation",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-969-20260912 -p 'test_floor.py' -v",
+      "expected_exit_code": 1,
+      "exit_code": 1,
+      "output": "test_balanced_cells_give_exact_countermodels (test_floor.FloorTransferTests) ... ok\ntest_family_parameters_are_validated_before_allocation (test_floor.FloorTransferTests) ... test_hyperbola_rejects_lossy_parameters (test_floor.FloorTransferTests) ... ok\ntest_hyperbola_split_matches_direct_definition (test_floor.FloorTransferTests) ... ok\n\n======================================================================\nFAIL: test_family_parameters_are_validated_before_allocation (test_floor.FloorTransferTests) (h=0)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<repo>/experiments/astra-rh-969-20260912/test_floor.py\", line 89, in test_family_parameters_are_validated_before_allocation\n    transfer.make_family(bad)\nAssertionError: ValueError not raised\n\n----------------------------------------------------------------------\nRan 4 tests in 0.008s\n\nFAILED (failures=1)",
+      "path_sanitized": true
+    },
+    {
+      "label": "TDD GREEN: validate family domain before allocation",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-969-20260912 -p 'test_floor.py' -v",
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "output": "test_balanced_cells_give_exact_countermodels (test_floor.FloorTransferTests) ... ok\ntest_family_parameters_are_validated_before_allocation (test_floor.FloorTransferTests) ... ok\ntest_hyperbola_rejects_lossy_parameters (test_floor.FloorTransferTests) ... ok\ntest_hyperbola_split_matches_direct_definition (test_floor.FloorTransferTests) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.007s\n\nOK",
+      "path_sanitized": true
+    },
+    {
+      "label": "TDD RED: independent semantic receipt gate",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-969-20260912 -p 'test_receipt.py' -v",
+      "expected_exit_code": 1,
+      "exit_code": 1,
+      "output": "test_semantic_gate_replays_and_rejects_false_promotion (test_receipt.ReceiptTests) ... FAIL\n\n======================================================================\nFAIL: test_semantic_gate_replays_and_rejects_false_promotion (test_receipt.ReceiptTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<repo>/experiments/astra-rh-969-20260912/test_receipt.py\", line 23, in test_semantic_gate_replays_and_rejects_false_promotion\n    self.assertTrue((HERE / \"verify.py\").is_file(),\nAssertionError: False is not true : independent receipt checker is not implemented\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (failures=1)",
+      "path_sanitized": true
+    },
+    {
+      "label": "TDD GREEN: independent semantic receipt gate",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-969-20260912 -p 'test_receipt.py' -v",
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "output": "test_semantic_gate_replays_and_rejects_false_promotion (test_receipt.ReceiptTests) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.011s\n\nOK",
+      "path_sanitized": true
+    },
+    {
+      "label": "TDD RED: read-only checker CLI and optimized rejection",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-969-20260912 -p 'test_receipt.py' -v",
+      "expected_exit_code": 1,
+      "exit_code": 1,
+      "output": "test_cli_replay_is_read_only_and_fails_under_optimization (test_receipt.ReceiptTests) ... FAIL\ntest_semantic_gate_replays_and_rejects_false_promotion (test_receipt.ReceiptTests) ... ok\n\n======================================================================\nFAIL: test_cli_replay_is_read_only_and_fails_under_optimization (test_receipt.ReceiptTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<repo>/experiments/astra-rh-969-20260912/test_receipt.py\", line 53, in test_cli_replay_is_read_only_and_fails_under_optimization\n    self.assertTrue(completed.stdout.strip().startswith(\"{\"),\nAssertionError: False is not true : checker CLI did not return JSON\n\n----------------------------------------------------------------------\nRan 2 tests in 0.069s\n\nFAILED (failures=1)",
+      "path_sanitized": true
+    },
+    {
+      "label": "TDD GREEN: read-only checker CLI and optimized rejection",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-969-20260912 -p 'test_receipt.py' -v",
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "output": "test_cli_replay_is_read_only_and_fails_under_optimization (test_receipt.ReceiptTests) ... ok\ntest_semantic_gate_replays_and_rejects_false_promotion (test_receipt.ReceiptTests) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.196s\n\nOK",
+      "path_sanitized": true
+    },
+    {
+      "label": "TDD RED: explicit non-overwriting evidence emission",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-969-20260912 -p 'test_floor.py' -v",
+      "expected_exit_code": 1,
+      "exit_code": 1,
+      "output": "test_balanced_cells_give_exact_countermodels (test_floor.FloorTransferTests) ... ok\ntest_emitter_creates_explicit_receipt_without_overwriting (test_floor.FloorTransferTests) ... FAIL\ntest_family_parameters_are_validated_before_allocation (test_floor.FloorTransferTests) ... ok\ntest_hyperbola_rejects_lossy_parameters (test_floor.FloorTransferTests) ... ok\ntest_hyperbola_split_matches_direct_definition (test_floor.FloorTransferTests) ... ok\n\n======================================================================\nFAIL: test_emitter_creates_explicit_receipt_without_overwriting (test_floor.FloorTransferTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<repo>/experiments/astra-rh-969-20260912/test_floor.py\", line 103, in test_emitter_creates_explicit_receipt_without_overwriting\n    self.assertTrue(path.is_file(), \"explicit emitter is not implemented\")\nAssertionError: False is not true : explicit emitter is not implemented\n\n----------------------------------------------------------------------\nRan 5 tests in 0.038s\n\nFAILED (failures=1)",
+      "path_sanitized": true
+    },
+    {
+      "label": "TDD GREEN: explicit non-overwriting evidence emission",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-969-20260912 -p 'test_floor.py' -v",
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "output": "test_balanced_cells_give_exact_countermodels (test_floor.FloorTransferTests) ... ok\ntest_emitter_creates_explicit_receipt_without_overwriting (test_floor.FloorTransferTests) ... ok\ntest_family_parameters_are_validated_before_allocation (test_floor.FloorTransferTests) ... ok\ntest_hyperbola_rejects_lossy_parameters (test_floor.FloorTransferTests) ... ok\ntest_hyperbola_split_matches_direct_definition (test_floor.FloorTransferTests) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.183s\n\nOK",
+      "path_sanitized": true
+    },
+    {
+      "label": "Expanded corruption regression through the same gate",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-969-20260912 -p 'test_receipt.py' -v",
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "output": "test_cli_replay_is_read_only_and_fails_under_optimization (test_receipt.ReceiptTests) ... ok\ntest_corrupted_receipts_fail_the_real_gate (test_receipt.ReceiptTests) ... ok\ntest_semantic_gate_replays_and_rejects_false_promotion (test_receipt.ReceiptTests) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.227s\n\nOK",
+      "path_sanitized": true
+    },
+    {
+      "label": "Emit the new bounded receipt explicitly",
+      "command": "python3 -I -B experiments/astra-rh-969-20260912/floor_transfer.py --emit experiments/astra-rh-969-20260912/receipt.json",
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "output": "{\"emitted_families\": 6, \"path\": \"experiments/astra-rh-969-20260912/receipt.json\", \"rh_proved\": false}",
+      "path_sanitized": true
+    },
+    {
+      "label": "Independent default receipt replay",
+      "command": "python3 -I -B experiments/astra-rh-969-20260912/verify.py",
+      "expected_exit_code": 0,
+      "exit_code": 0,
+      "output": "{\"accepted\": true, \"bins_checked\": 24, \"families\": [{\"bins_checked\": 1, \"floor_sum\": 0, \"h\": 4, \"maximum_absolute_prefix\": 5, \"negative_error_lower_bound\": \"1/16\", \"nonzero_coefficients\": 10, \"pair_bound\": \"25/16\", \"prefix_positions_checked\": 32, \"x\": 1024}, {\"bins_checked\": 2, \"floor_sum\": 0, \"h\": 8, \"maximum_absolute_prefix\": 12, \"negative_error_lower_bound\": \"1/4\", \"nonzero_coefficients\": 38, \"pair_bound\": \"193/32\", \"prefix_positions_checked\": 128, \"x\": 32768}, {\"bins_checked\": 3, \"floor_sum\": 0, \"h\": 12, \"maximum_absolute_prefix\": 19, \"negative_error_lower_bound\": \"9/16\", \"nonzero_coefficients\": 84, \"pair_bound\": \"105/8\", \"prefix_positions_checked\": 288, \"x\": 248832}, {\"bins_checked\": 4, \"floor_sum\": 0, \"h\": 16, \"maximum_absolute_prefix\": 27, \"negative_error_lower_bound\": \"1\", \"nonzero_coefficients\": 146, \"pair_bound\": \"1459/64\", \"prefix_positions_checked\": 512, \"x\": 1048576}, {\"bins_checked\": 6, \"floor_sum\": 0, \"h\": 24, \"maximum_absolute_prefix\": 43, \"negative_error_lower_bound\": \"9/4\", \"nonzero_coefficients\": 336, \"pair_bound\": \"855/16\", \"prefix_positions_checked\": 1152, \"x\": 7962624}, {\"bins_checked\": 8, \"floor_sum\": 0, \"h\": 32, \"maximum_absolute_prefix\": 59, \"negative_error_lower_bound\": \"4\", \"nonzero_coefficients\": 596, \"pair_bound\": \"6075/64\", \"prefix_positions_checked\": 2048, \"x\": 33554432}], \"families_checked\": 6, \"scope\": {\"generic_coefficients\": true, \"mobius_coefficients\": false, \"new_mobius_bound\": false, \"rh_proved\": false}}",
+      "path_sanitized": true
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "passed": true,
+  "verdict_has_exact_required_fields": true,
+  "reviewed_claim_count": 14,
+  "required_qualification_count": 12,
+  "blocking_issue_count": 0,
+  "input_preservation_passed": true,
+  "input_count": 37,
+  "citation_verification_exit_code": 0,
+  "artifacts": [
+    {
+      "path": "mobius-typeI/report.md",
+      "bytes": 34489,
+      "sha256": "a40fcfe8622ab0cb7de1dca37e3a01dffe7d8073c609eee9a49ff6d52429a0c3"
+    },
+    {
+      "path": "mobius-typeI/verdict.json",
+      "bytes": 9354,
+      "sha256": "78c01a5e71847b3d0c70afa97f0d846e17912b9361d3bda82b2ed9ad7cb8aa95"
+    },
+    {
+      "path": "mobius-typeI/independent_checks.py",
+      "bytes": 14273,
+      "sha256": "217d0eae5144c338c288e4bfb60397d80f69a30e05cc52532d56bb48c282e269"
+    },
+    {
+      "path": "mobius-typeI/checks.json",
+      "bytes": 25562,
+      "sha256": "0bdaf9cc751c18a9b717ab934679b89e61098dbe65827cbdec4625dedd75f1d4"
+    },
+    {
+      "path": "mobius-typeI/checks-summary.json",
+      "bytes": 699,
+      "sha256": "c4db4b4e670176c09bc551a495808f0ff60b3fba89185ef76f758ad51c2b3f47"
+    },
+    {
+      "path": "mobius-typeI/execution.log",
+      "bytes": 712,
+      "sha256": "06fdc83b54140ebc69f4ebe364b40c3d4809ee2d96a3ef55feab88bcc4483a7f"
+    },
+    {
+      "path": "mobius-typeI/input-manifest-start.json",
+      "bytes": 7351,
+      "sha256": "6befef26376bee5553e359010e252505a909ab35bad9543422502b5b5e69a667"
+    },
+    {
+      "path": "mobius-typeI/input-preservation.json",
+      "bytes": 11552,
+      "sha256": "8873572fc1e5af415e32480555e2e5b70d6ec0ec0b6ca953dc6cfd4bf88acc09"
+    },
+    {
+      "path": "mobius-typeI/citations.json",
+      "bytes": 2630,
+      "sha256": "b09786c50e41759f24962cb536b28fc3664762c96c877b75c1eb9dff72c6aeb5"
+    },
+    {
+      "path": "mobius-typeI/citation-verification.log",
+      "bytes": 740,
+      "sha256": "2d81f419b9c7eb26af31a83343ee469df1546e21b8ce5152e7023bb5793f8157"
+    },
+    {
+      "path": "mobius-typeI/fresh-fetches.json",
+      "bytes": 443,
+      "sha256": "a5b58179e50ba4bcf239542bf199b3a8d5362454ccf2ba57e409d5f115c59501"
+    },
+    {
+      "path": "mobius-typeI/finalize.py",
+      "bytes": 11402,
+      "sha256": "17cc68baa4aec3aa803c2abc55e87c07fb2e2575f8ed938d8334e55435921628"
+    }
+  ],
+  "write_scope": "mobius-typeI",
+  "repository_or_supplied_file_writes": false
+}

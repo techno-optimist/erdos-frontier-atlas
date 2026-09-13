@@ -4,6 +4,8 @@ import pathlib
 import subprocess
 import sys
 
+import pytest
+
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "tools"))
 
@@ -56,6 +58,17 @@ def test_cli_for_993_does_not_claim_unimodality():
     assert "not" in out.lower()
 
 
+def test_p327_fiber_method_is_partial_and_302_is_only_a_candidate():
+    result = _run("for", "327")
+    assert result.returncode == 0, result.stderr
+    assert "multiplier-sensitive-fiber-deficit" in result.stdout
+    assert "not a solution" in result.stdout.lower()
+    hits = query_substrate.applications_for(302)
+    ours = [h for h in hits if h["method"] == "multiplier-sensitive-fiber-deficit"]
+    assert len(ours) == 1
+    assert ours[0]["relation"] == "candidate"
+
+
 def test_open_board_separates_discharges_from_candidates():
     p = _run("open")
     assert p.returncode == 0, p.stderr
@@ -99,3 +112,64 @@ def test_board_is_deterministic():
 def test_committed_board_matches_renderer():
     path = ROOT / "experiments/astra-substrate-20260911/BOARD.md"
     assert path.read_text(encoding="utf-8") == query_substrate.render_board()
+
+def test_rh969_methods_separate_generic_obstruction_from_equivalence():
+    hits = query_substrate.applications_for(969)
+    ours = {h["method"]: h for h in hits if h["method"] in {
+        "reciprocal-square-phase-obstruction", "squarefree-energy-rh-bridge"}}
+    assert set(ours) == {"reciprocal-square-phase-obstruction", "squarefree-energy-rh-bridge"}
+    assert ours["reciprocal-square-phase-obstruction"]["relation"] == "obstructions"
+    bridge = ours["squarefree-energy-rh-bridge"]
+    assert bridge["relation"] == "discharges"
+    assert "equivalence only" in bridge["note"]
+    assert "does not solve P969 or RH" in bridge["note"]
+    assert any("unconditional" in s for s in bridge["remaining"])
+    # Do not spray this cross-domain bridge onto prime-tag neighbors.
+    for pid in (968, 970):
+        assert not any(h["method"] in ours for h in query_substrate.applications_for(pid))
+
+
+def test_rh_scope_guard_rejects_positive_human_and_formal_claims(monkeypatch):
+    original = query_substrate.applications_for
+
+    def poisoned(problem):
+        hits = original(problem)
+        for hit in hits:
+            if hit["method"] == "gm-gmrr-variance-transfer":
+                hit["note"] = (
+                    "Independent model audit; human peer review and formal verification "
+                    "have established this transfer; does not solve P969 or RH."
+                )
+        return hits
+
+    monkeypatch.setattr(query_substrate, "applications_for", poisoned)
+    with pytest.raises(AssertionError):
+        test_rh_arithmetic_methods_are_discoverable_and_scope_limited()
+
+
+def test_rh_arithmetic_methods_are_discoverable_and_scope_limited():
+    expected = {
+        "squarefree-crt-defect-transfer",
+        "increment-mellin-continuation",
+        "gm-gmrr-variance-transfer",
+        "mobius-long-factor-typeI",
+        "sparse-square-signed-moment-interface",
+    }
+    hits = query_substrate.applications_for(969)
+    ours = {h["method"]: h for h in hits if h["method"] in expected}
+    assert set(ours) == expected
+    for hit in ours.values():
+        assert hit["relation"] == "discharges"
+        assert "does not solve P969 or RH" in hit["note"]
+        assert "Independent model audit only" in hit["note"]
+        assert "not human peer review or formal verification" in hit["note"]
+        assert hit["remaining"]
+        assert hit["artifacts"]
+        assert all((ROOT / artifact).is_file() for artifact in hit["artifacts"])
+    assert "actual centered-defect energy" in " ".join(ours["squarefree-crt-defect-transfer"]["remaining"])
+    assert "not original integral convergence" in ours["increment-mellin-continuation"]["statement"]
+    assert "4/7-epsilon" in ours["gm-gmrr-variance-transfer"]["statement"]
+    assert "k=2" in ours["mobius-long-factor-typeI"]["statement"]
+    assert "not a lower bound for the full moment" in ours["sparse-square-signed-moment-interface"]["statement"]
+    for pid in (121, 968, 970):
+        assert not any(h["method"] in expected for h in query_substrate.applications_for(pid))

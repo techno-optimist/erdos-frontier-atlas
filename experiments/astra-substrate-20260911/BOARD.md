@@ -6,6 +6,7 @@ Method substrate — open/movable problems only.
 A CANDIDATE match is not an implication.
 
 DISCHARGE / OBSTRUCTION (reviewed or kernel-checked on that problem)
+  #327   DISCHARGE    multiplier-sensitive-fiber-deficit  partial density-transfer lemma and exact small demonstration; not a solution, not a best bound, not a next-cell claim; human review/formalization remain
   #376   DISCHARGE    kummer-105-digits  Kummer checker; complete A030979 prefix through 3^35 (43 terms, C replay); infinitude and >10^70 remain; does not close P376
   #699   DISCHARGE    adjacent-binomial-gcd  used in the wrap-size bound; does not close P699
   #699   DISCHARGE    coprime-divisor-transfer  transfers the residual wrap factor; does not close P699
@@ -25,11 +26,37 @@ DISCHARGE / OBSTRUCTION (reviewed or kernel-checked on that problem)
   #854   DISCHARGE    crt-endpoint-safe  same operator; does not determine the missing-gap spectrum
   #854   DISCHARGE    wheel-gap-operator  wheel recurrence
   #854   OBSTRUCTION  wheel-gap-operator  at P=30030 a 22-gap exists but no 20-gap; endpoint-oblivious covers do not imply a 20-gap
+  #969   DISCHARGE    gm-gmrr-variance-transfer  Two model analytic audits of the full deduction, including localization, endpoints, centering and aggregate losses. Independent model audit only; not human peer review or formal verification; does not solve P969 or RH.
+  #969   DISCHARGE    increment-mellin-continuation  Conditional analytic transfer; no new instance of the variance hypothesis or unconditional zero exclusion. Independent model audit only; not human peer review or formal verification; does not solve P969 or RH.
+  #969   DISCHARGE    mobius-long-factor-typeI  Controls the actual sharp long-factor part only, not a full Mobius mixed-moment saving. Independent model audit only; not human peer review or formal verification; does not solve P969 or RH.
+  #969   OBSTRUCTION  reciprocal-square-phase-obstruction  ordinary prefix cancellation alone cannot imply quarter-power or RH-scale mean-square error for generic coefficients; not an obstruction to RH or arithmetic methods
+  #969   DISCHARGE    sparse-square-signed-moment-interface  Full-diagonal calculation and signed residual interface only; the AFE weight can change sign. Independent model audit only; not human peer review or formal verification; does not solve P969 or RH.
+  #969   DISCHARGE    squarefree-crt-defect-transfer  Phase operator and norm-transfer equivalence only, not the required actual arithmetic energy bound. Independent model audit only; not human peer review or formal verification; does not solve P969 or RH.
+  #969   DISCHARGE    squarefree-energy-rh-bridge  equivalence only, not the unconditional energy estimate; does not solve P969 or RH; not human peer-reviewed or formalized; no novelty claim
   #993   DISCHARGE    laurent-hub-block  algebraic block only; global tree partition missing
   #993   DISCHARGE    nonpath-lc-obstruction  not non-unimodality; not a tree theorem
   #993   DISCHARGE    tail-compression  exact tails, not a full polynomial
 
 CANDIDATE (tag/OEIS shape match only; not an implication)
+  #148   CANDIDATE    multiplier-sensitive-fiber-deficit  tag/OEIS shape match only; not an implication
+  #242   CANDIDATE    multiplier-sensitive-fiber-deficit  tag/OEIS shape match only; not an implication
+  #282   CANDIDATE    multiplier-sensitive-fiber-deficit  tag/OEIS shape match only; not an implication
+  #287   CANDIDATE    multiplier-sensitive-fiber-deficit  tag/OEIS shape match only; not an implication
+  #288   CANDIDATE    multiplier-sensitive-fiber-deficit  tag/OEIS shape match only; not an implication
+  #289   CANDIDATE    multiplier-sensitive-fiber-deficit  tag/OEIS shape match only; not an implication
+  #291   CANDIDATE    multiplier-sensitive-fiber-deficit  tag/OEIS shape match only; not an implication
+  #293   CANDIDATE    multiplier-sensitive-fiber-deficit  tag/OEIS shape match only; not an implication
+  #295   CANDIDATE    multiplier-sensitive-fiber-deficit  tag/OEIS shape match only; not an implication
+  #301   CANDIDATE    multiplier-sensitive-fiber-deficit  tag/OEIS shape match only; not an implication
+  #302   CANDIDATE    multiplier-sensitive-fiber-deficit  tag/OEIS shape match only; not an implication
+  #304   CANDIDATE    multiplier-sensitive-fiber-deficit  tag/OEIS shape match only; not an implication
+  #306   CANDIDATE    multiplier-sensitive-fiber-deficit  tag/OEIS shape match only; not an implication
+  #307   CANDIDATE    multiplier-sensitive-fiber-deficit  tag/OEIS shape match only; not an implication
+  #311   CANDIDATE    multiplier-sensitive-fiber-deficit  tag/OEIS shape match only; not an implication
+  #312   CANDIDATE    multiplier-sensitive-fiber-deficit  tag/OEIS shape match only; not an implication
+  #313   CANDIDATE    multiplier-sensitive-fiber-deficit  tag/OEIS shape match only; not an implication
+  #317   CANDIDATE    multiplier-sensitive-fiber-deficit  tag/OEIS shape match only; not an implication
+  #319   CANDIDATE    multiplier-sensitive-fiber-deficit  tag/OEIS shape match only; not an implication
   #376   CANDIDATE    adjacent-binomial-gcd  tag/OEIS shape match only; not an implication
   #376   CANDIDATE    coprime-divisor-transfer  tag/OEIS shape match only; not an implication
   #376   CANDIDATE    i2-complete-gcd  tag/OEIS shape match only; not an implication
@@ -246,4 +273,4 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #1095  CANDIDATE    kummer-105-digits  tag/OEIS shape match only; not an implication
   #1095  CANDIDATE    p699-d2-line  tag/OEIS shape match only; not an implication
 
-22 discharge/obstruction rows, 215 candidate rows.
+30 discharge/obstruction rows, 234 candidate rows.

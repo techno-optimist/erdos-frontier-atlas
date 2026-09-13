@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "file": "twisted-square/primary/bcr-v1/main.tex",
+    "start_line": 460,
+    "end_line": 475,
+    "quote_passed": true,
+    "tool_output": "[1] evidence attached (1 quote(s))\n"
+  },
+  {
+    "id": 1,
+    "file": "twisted-square/primary/bcr-v1/main.tex",
+    "start_line": 477,
+    "end_line": 485,
+    "quote_passed": true,
+    "tool_output": "[1] evidence attached (2 quote(s))\n"
+  },
+  {
+    "id": 2,
+    "file": "twisted-square/primary/lr-v1/draft.tex",
+    "start_line": 994,
+    "end_line": 1009,
+    "quote_passed": true,
+    "tool_output": "[2] evidence attached (1 quote(s))\n"
+  },
+  {
+    "id": 2,
+    "file": "twisted-square/primary/lr-v1/draft.tex",
+    "start_line": 1032,
+    "end_line": 1064,
+    "quote_passed": true,
+    "tool_output": "[2] evidence attached (2 quote(s))\n"
+  },
+  {
+    "id": 3,
+    "file": "twisted-square/primary/bcr-deposited.txt",
+    "start_line": 460,
+    "end_line": 478,
+    "quote_passed": true,
+    "tool_output": "[3] evidence attached (1 quote(s))\n"
+  },
+  {
+    "id": 4,
+    "file": "twisted-square/primary/gmrr-v2/squfv.tex",
+    "start_line": 392,
+    "end_line": 403,
+    "quote_passed": true,
+    "tool_output": "[4] evidence attached (1 quote(s))\n"
+  }
+]

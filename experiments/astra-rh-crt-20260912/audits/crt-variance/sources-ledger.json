@@ -1,0 +1,135 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://arxiv.org/pdf/2006.04060v2",
+      "title": "",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "Theorem 3.  The Riemann Hypothesis holds if and only if for everyε ∈ (0,    1100) and\nevery 1 ≤H ≤X1−ε,∫   2X\n                                 ⏐⏐⏐  ∑                        ⏐⏐⏐2dx ≪ε,δ H1/2+δ\n(7)                           1X              µ2(m) − 6Hπ2\n                            X      x<m≤x+H\nfor every δ > 0.",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "url": "https://arxiv.org/html/2112.12234v1",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 3,
+      "url": "https://link.springer.com/article/10.1007/s00039-021-00557-5",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 4,
+      "url": "https://arxiv.org/pdf/2112.12234v1",
+      "title": "",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "We begin with a useful expression for C2(H). Throughout this subsection we use the notation\n\n                                                 V (t) = sinπtπt .\n\nLemma 3.4.  We have                                   ∏   (       )∑\n(3.5)              C2(H) = 2H2 ∑                   1       1− 2         |V (Hλ/d)|2.\n                                            d∈[B] d2  b∤d       b   λ≥1\n\n                                                     b∈B",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "url": "https://statslab.cam.ac.uk/~grg1000/papers/math38-285.pdf",
+      "title": "",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "The definition is as follows. Let A_1, A_2, ... be independent random variables, A_i being uniform on the set {1, 2, ..., s_i}.",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "url": "https://doi.org/10.4171/jems/394",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 7,
+      "url": "https://ar5iv.labs.arxiv.org/html/1512.00149",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 8,
+      "url": "https://www.cambridge.org/core/journals/mathematika/article/squarefree-numbers-on-short-intervals/18BC455C6CF7BEE478E4642532123CB8",
+      "title": "",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "Squarefree numbers on short intervals",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "url": "https://arxiv.org/pdf/1112.4691",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 10,
+      "url": "https://arxiv.org/pdf/1512.00149",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 11,
+      "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/18BC455C6CF7BEE478E4642532123CB8/S0025579300012110a.pdf/div-class-title-squarefree-numbers-on-short-intervals-div.pdf",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 12,
+      "url": "https://arxiv.org/pdf/1112.4691v2",
+      "title": "",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "is the frequency of square-free integers  $n\\leq N$  for which  $n+k_{1},n+k_{2},\\ldots,n+k_{r}$  are also square-free. It also gives the expectation (hence the notation  $\\mathbb{E}$ ) of the product  $\\mu^{2}(n)\\mu^{2}(n+k_{1})\\cdots\\mu^{2}(n+k_{r})$  with respect to the uniform measure on  $\\{1,2,\\ldots,N\\}$ . Notice, by taking  $r=1$  and  $k_{1}=0$ , that  $\\mathcal{Q}_{N}(0)$  is simply the set of all square-free numbers not greater than  $N$ . It is well known that",
+          "added": "2026-09-12"
+        },
+        {
+          "text": "Let  $\\mathbb{B}$  be the natural  $\\sigma$ -algebra on  $\\mathbb{G}$ , and let us put the uniform measure on each  $\\mathbb{Z}/p^{2}\\mathbb{Z}$ . The corresponding product measure  $\\mathbb{P}$  on  $\\mathbb{B}$  is invariant under translations, and therefore it is the Haar measure.",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "url": "https://arxiv.org/pdf/1512.00149v1",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 14,
+      "url": "https://archive.org/download/proceedingsofthe032881mbp/proceedingsofthe032881mbp.pdf",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 15,
+      "url": "https://archive.org/download/proceedingsofthe032881mbp/proceedingsofthe032881mbp_djvu.txt",
+      "title": "",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "We  shall  here  be  concerned  with  a  still  more  general  question,  namely  the \nfrequency  of  occurrence  of  certain  patterns  of  numbers  whose  character \nwith  regard  to  divisibility  by  rth  powers  is  prescribed.  Let  als . . . ,  e^;  6lt . . . ,  6m \nbe  any  distinct  positive  integers. ||  We  denote  by  H(x)  —  Hr(x;  c^,  ...,0^; \nblt...,bm)  the  number  of  systems  of  positive  integers  n-\\-a^  ...,?i-faz; \nn  4-  &!, . . . ,  n  +  bm,  not  exceeding  x,  and  such  that  the  first  Z  of  these  numbers \nare  r-free  whilst  the  remaining  ra  are  not.",
+          "added": "2026-09-12"
+        }
+      ]
+    }
+  ]
+}

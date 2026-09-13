@@ -1,0 +1,57 @@
+{
+  "passed": true,
+  "numeric_actual_squarefree_checks": {
+    "rho": "0.6079271018540266286632767792583658334261526480334792930736541913650404",
+    "precision": 70,
+    "arithmetic_assertion_tolerance": "1e-55",
+    "actual_squarefree_cases": 396,
+    "cases_L_le_X": 198
+  },
+  "mellin_table": [
+    {
+      "theta": "6/11",
+      "a": "13/22",
+      "zero_strip": null
+    },
+    {
+      "theta": "2/3",
+      "a": "1/2",
+      "zero_strip": null
+    },
+    {
+      "theta": "3/4",
+      "a": "7/16",
+      "zero_strip": null
+    },
+    {
+      "theta": "4/5",
+      "a": "2/5",
+      "zero_strip": null
+    },
+    {
+      "theta": "8/9",
+      "a": "1/3",
+      "zero_strip": null
+    },
+    {
+      "theta": "9/10",
+      "a": "13/40",
+      "zero_strip": [
+        "13/20",
+        "7/10"
+      ]
+    },
+    {
+      "theta": "19/20",
+      "a": "23/80",
+      "zero_strip": [
+        "23/40",
+        "17/20"
+      ]
+    }
+  ],
+  "input_hashes": {
+    "RESULT.md": "b1fe23da9b3e47dac8458896a59ed988d2e726de3c3c99b8f3c2aac10852f7a0",
+    "MELLIN_TRANSFER.md": "0fd566437e9def10c1baa194798a7e84ac64ff687f4f4792d5e2cb3dda6b0902"
+  }
+}

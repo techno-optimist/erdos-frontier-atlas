@@ -1,0 +1,3 @@
+Sources block rewritten in sparse-square/report.md
+info: stats: 266 prose sentence(s), 6 with declared provenance (2%) — 6 cited, 0 marked [unverified] (a sentence may be both); 4 distinct source(s) cited, 4 in ledger (4 with evidence quotes)
+citations OK

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "fresh-dlmf-25.9.html",
+    "url": "https://dlmf.nist.gov/25.9",
+    "ok": false,
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "name": "fresh-dlmf-E1.tex",
+    "url": "https://dlmf.nist.gov/25.9.E1.tex",
+    "ok": false,
+    "error": "HTTP Error 403: Forbidden"
+  },
+  {
+    "name": "fresh-dlmf-E2.tex",
+    "url": "https://dlmf.nist.gov/25.9.E2.tex",
+    "ok": false,
+    "error": "HTTP Error 403: Forbidden"
+  }
+]

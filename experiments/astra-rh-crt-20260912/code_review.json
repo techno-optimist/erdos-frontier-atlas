@@ -1,0 +1,50 @@
+{
+  "passed": true,
+  "security_concerns": [],
+  "logic_errors": [],
+  "suggestions": [
+    {
+      "files": ["test_kernel.py", "test_receipt.py"],
+      "suggestion": "Promote the additional review probes into regression tests: exact 512-bit boundaries, maximum-size receipt acceptance, symlink collision rejection, and concurrent exclusive creation. Add subprocess timeouts to prevent test hangs."
+    },
+    {
+      "files": ["verify.py:55-96"],
+      "suggestion": "Document that verification accepts any valid, sorted cohort of 1–128 cases, not necessarily the producer's fixed 70-case cohort. A reduced one-case receipt correctly reports case_count=1 and passes. Downstream consumers requiring the fixed cohort should separately enforce its exact case keys."
+    }
+  ],
+  "reviewed_files": [
+    {
+      "path": "experiments/astra-rh-crt-20260912/kernel.py",
+      "fully_reviewed": true,
+      "source_lines": "1-111"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/verify.py",
+      "fully_reviewed": true,
+      "source_lines": "1-141"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/test_kernel.py",
+      "fully_reviewed": true,
+      "source_lines": "1-100"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/test_receipt.py",
+      "fully_reviewed": true,
+      "source_lines": "1-142"
+    }
+  ],
+  "checks": {
+    "snapshot_integrity": "All four complete patches matched their supplied SHA256 hashes. Addition counts matched hunk declarations, and reconstructed source matched the copied repository files.",
+    "static_security": "Reviewed every source line and repeated the supplied security-pattern scan. No matching secrets, shell injection, eval/exec calls, or pickle loading. Producer and verifier use standard-library imports only.",
+    "supplied_tests": "All 9 tests passed under Python 3.11.16 and Python 3.9.6.",
+    "exact_arithmetic": "167 additional cases across 19 prime sets matched an exact cyclic-prefix oracle, including maximum 512-bit H. Rational boundaries, equal-set refinement, and maximum producer parameters passed.",
+    "receipt_coverage": "The supplied receipt independently replayed successfully: 70 actual and unique cases, 7 distinct prime sets, canonical ordering, and exact agreement with the producer's expected cohort.",
+    "independence_and_read_only": "Verifier succeeded in a separate directory containing no producer. Input and directory file hashes remained unchanged.",
+    "input_validation": "187 typed mutations were rejected with ValueError. Additional malformed-JSON, duplicate-key, float, nonfinite-number, oversized-integer, nesting, encoding, and file-size probes returned machine-readable rejection. Exactly 262144 bytes were accepted; 262145 were rejected.",
+    "resource_limits": "A 128-case receipt using the largest admissible period, 96100, and 512-bit H values verified in approximately 5.6 seconds under Python 3.11.16.",
+    "file_emission": "Fresh emission matched the supplied receipt byte-for-byte. Existing files, existing and dangling symlinks, directories, and missing parent directories were rejected without overwriting targets. Concurrent creation produced one success and one refusal; the resulting receipt replayed successfully.",
+    "artifacts_and_scope": "Created copies and review_checks.py/resource_checks.py only in <historical-software-audit>. The reviewed source files and supplied receipt remained hash-identical. No repository edits, staging, commits, full repository gates, or earlier-lane actions were performed. The outstanding approval remains unresolved."
+  },
+  "summary": "Software review passed with no blocking security or logic findings after complete snapshot review and isolated execution. No mathematical RH, proof, or novelty verdict is given."
+}

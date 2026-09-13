@@ -1,0 +1,159 @@
+{
+  "passed": true,
+  "blocking_issues": [],
+  "required_qualifications": [
+    "Pass applies only to the exact decomposition and sharp long-factor Type I partial saving. No complete Mobius mixed-moment saving, variance extension, or RH result is established.",
+    "Keep k=2 fixed for the audited split, U=sqrt(2D) exactly, and D>2. The sufficient whole-block support condition is U^k>=2D; k may not grow with T without new uniform accounting.",
+    "Interpret TI in its stated context D comparable to T^(5/6), or in the explicitly justified small fixed neighborhood 1/2<d<1. Fixed support widths and comparability constants are part of the constant ledger.",
+    "Use real imaginary-part shifts |u|<=T^(1/2+eta), with zeta at its original argument and |2t+u| comparable to T. There is no real-part-shift, near-zero-height, or arbitrary time-dependent-coefficient extension.",
+    "The dual coefficient-1 factor is real. Modulus conjugation does not preserve arbitrary complex dual coefficients unchanged. The other polynomial may have any fixed complex tau_2-bounded coefficients.",
+    "Retain endpoint terms, the inside-supported taper, and its T^epsilon(1+T/D^2) sharp error. Arbitrary oscillatory product masks are not covered by bounded endpoint-mask uniformity.",
+    "The allowed C0 threshold has fixed eta>0. At eta=0, or after spending the full 2eta margin, this argument gives no strict saving. All dyadic, Mellin, maximal, moment, and divisor losses share one budget.",
+    "No AFE application with a dual cutoff below 1, no low-height shell, and no unrestricted C0~T or larger regime is certified by this proof.",
+    "J-rem remains an unproved bound for the whole exact sharp residual. A termwise route needs controlled common shifts and loss slack; u=0 alone is insufficient.",
+    "A variance extension requires uniform full-residual saving in an open height-length neighborhood plus all tail blocks, cumulative heights, masks, and the remaining spectral/endpoint/centering reductions.",
+    "The classical AFE, polynomial mean-value theorem, and zeta fourth moment are accepted theorem inputs read in the supplied archived statements. Fresh DLMF retrieval was blocked by 403; no successful fresh source inspection is claimed.",
+    "This is an informal independent mathematical audit. Exact finite checks and phase diagnostics verify bounded algebra/accounting, not an asymptotic missing joint estimate or the deep theorem inputs."
+  ],
+  "reviewed_claims": [
+    {
+      "id": "identity",
+      "status": "passed_with_stated_scope",
+      "proposal_lines": "27–71",
+      "audit_sections": "2",
+      "finding": "The finite binomial identity is exact; the remainder has index at least (floor(U)+1)^k>U^k."
+    },
+    {
+      "id": "fixed_order_and_cutoff",
+      "status": "passed_with_stated_scope",
+      "proposal_lines": "52, 71, 75–83",
+      "audit_sections": "2",
+      "finding": "The actual split keeps k=2 fixed and U^2=2D, covers the full half-open block, and deletes 2A_U only because D>2."
+    },
+    {
+      "id": "marked_boxes",
+      "status": "passed_with_stated_scope",
+      "proposal_lines": "84–103",
+      "audit_sections": "3",
+      "finding": "All c>=C* tuples are assigned once, with singleton and threshold intervals retained; beta is tau_2-bounded and RC0 is comparable to D."
+    },
+    {
+      "id": "fourier_separation",
+      "status": "passed_with_stated_scope",
+      "proposal_lines": "105–124",
+      "audit_sections": "4",
+      "finding": "The exact Mellin measure du/(2pi), phase D^(iu), common +u shift, logarithmic L1 cost, and fixed-order tail are correct."
+    },
+    {
+      "id": "sharp_unsmoothing",
+      "status": "passed_with_stated_scope",
+      "proposal_lines": "109–114, 249",
+      "audit_sections": "4, 7",
+      "finding": "The actual sharp boundary error is T^epsilon(1+T/D^2) in squared mixed norm and is O(T^epsilon) near d=5/6; not just a smooth-model result."
+    },
+    {
+      "id": "sharp_AFE",
+      "status": "passed_with_stated_scope",
+      "proposal_lines": "141–147, 165–170",
+      "audit_sections": "5",
+      "finding": "Both x cutoffs meet x,y>=1; their dual interval is v/(2pi C1)<ell<=v/(2pi C0), with O(C0^-1+T^-1/2) error."
+    },
+    {
+      "id": "gamma_and_phases",
+      "status": "passed_with_stated_scope",
+      "proposal_lines": "165–177",
+      "audit_sections": "5",
+      "finding": "The squared chi amplitude is (2pi/|v|)coth(pi|v|/2); both phase signs, modulus-only conjugation, and dt=dv/2 are accounted for."
+    },
+    {
+      "id": "coefficient_norm",
+      "status": "passed_with_stated_scope",
+      "proposal_lines": "179–191",
+      "audit_sections": "6",
+      "finding": "The exact intermediate norm is sum_m|d_J(m)|^2 <= max tau_4(m) * W_B^2 * |J|^2, with W_B=sum |beta_r|^2/r^2."
+    },
+    {
+      "id": "moving_dual_interval",
+      "status": "passed_with_stated_scope",
+      "proposal_lines": "194–196",
+      "audit_sections": "6",
+      "finding": "A binary-interval maximal fourth moment costs at most log^4(2L), using summed norms at each disjoint level; no factor L is lost."
+    },
+    {
+      "id": "full_Type_I_bound",
+      "status": "passed_with_stated_scope",
+      "proposal_lines": "198–213",
+      "audit_sections": "6",
+      "finding": "Reconstructed the actual three terms 1+T/D+T^(3/2)/C0^2 from the uncompressed norm and amplitude formula."
+    },
+    {
+      "id": "aggregate_saving",
+      "status": "passed_with_stated_scope",
+      "proposal_lines": "215–235",
+      "audit_sections": "7",
+      "finding": "Every marked sharp Type I box sums to a saving for C0>=T^(7/12+eta); fixed log^20 and an explicit divisor-loss allocation fit strictly inside eta."
+    },
+    {
+      "id": "transition_ranges",
+      "status": "passed_with_stated_scope",
+      "proposal_lines": "165–170, 194–196, 215–235",
+      "audit_sections": "5–7",
+      "finding": "Integer endpoint crossings, very short intervals, R~1, and RL~sqrt(T) are covered; low heights, C~T with y<1, and d<=1/2 are not silently extrapolated."
+    },
+    {
+      "id": "exact_J_rem",
+      "status": "passed_with_stated_scope",
+      "proposal_lines": "237–266",
+      "audit_sections": "8",
+      "finding": "The two original sharp residuals partition the exact finite identity; weighted L2 triangles give the stated fixed-saving equivalence, but J-rem is unproved."
+    },
+    {
+      "id": "neighborhood_uniformity",
+      "status": "passed_with_stated_scope",
+      "proposal_lines": "360–385",
+      "audit_sections": "9",
+      "finding": "The Type I formula is uniform in a small neighborhood, but the full residual and all-height/all-block variance interface still require new estimates."
+    }
+  ],
+  "checks": {
+    "independent_execution_exit_code": 0,
+    "summary": {
+      "passed": true,
+      "identity_case_count": 28,
+      "truncated_coefficients_checked": 774,
+      "full_identity_coefficients_checked": 1728,
+      "sharp_split_case_count": 70,
+      "sharp_block_coefficients_checked": 1547,
+      "tuple_assignments_checked": 12278,
+      "marked_boxes_across_cases": 883,
+      "binary_levels_checked": 6,
+      "canonical_intervals_checked": 528,
+      "phase_diagnostic_count": 18,
+      "negative_controls": [
+        "insufficient cutoff",
+        "missing exact threshold",
+        "complex dual coefficient conjugation",
+        "frozen interval cancellation",
+        "eta=0 gives no saving",
+        "exhausted aggregate saving"
+      ],
+      "checks_path": "<historical-typeI-audit>/checks.json"
+    },
+    "detailed_checks_path": "<historical-typeI-audit>/checks.json",
+    "checker_path": "<historical-typeI-audit>/independent_checks.py",
+    "execution_log_path": "<historical-typeI-audit>/execution.log",
+    "input_manifest_path": "<historical-typeI-audit>/input-manifest-start.json",
+    "input_preservation_path": "<historical-typeI-audit>/input-preservation.json",
+    "supplied_inputs_unchanged": true,
+    "supplied_input_count": 37,
+    "citation_verification_exit_code": 0,
+    "citation_log_path": "<historical-typeI-audit>/citation-verification.log",
+    "proposal_sha256": "3c9b48fadae6501cae8418213fd281edd2cbc5f45d4acd016acb3115cce98e32",
+    "baseline_sha256": "52eae4d28b0ae78fc67a4f112fd099bb3b72b4d86b3bc78866fc7294f50f41f6",
+    "report_sha256": "a40fcfe8622ab0cb7de1dca37e3a01dffe7d8073c609eee9a49ff6d52429a0c3",
+    "verdict_path": "<historical-typeI-audit>/verdict.json",
+    "scope_limit": "Finite checks are not proofs of analytic moment estimates. Full normalization, sharp-transfer, and uniformity deductions are given in report.md."
+  },
+  "report_path": "<historical-typeI-audit>/report.md",
+  "summary": "The exact fixed-order Mobius decomposition and the claimed T^epsilon(1+T/D+T^(3/2)/C0^2) long-factor estimate pass this adversarial reconstruction. All marked sharp Type I boxes save a fixed power for C0>=T^(7/12+eta), after paid Mellin, moving-cutoff, endpoint, and aggregate losses. J-rem is an exact sharp residual, but its joint saving and the required full neighborhood/all-height transfer remain unproved."
+}

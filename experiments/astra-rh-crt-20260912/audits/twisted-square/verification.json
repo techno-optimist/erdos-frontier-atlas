@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "verified_at_utc": "2026-09-13T00:55:47.923821+00:00",
+  "report": "twisted-square/report.md",
+  "report_bytes": 46201,
+  "report_lines": 740,
+  "report_sha256": "e8ab36422d02bc2b7d611163730744a4472d5a724d838dca074b6bc3cb8fa6b8",
+  "finite_full_block_checks": 7,
+  "critical_exponent_entries": 29,
+  "local_input_files_unchanged": [
+    {
+      "path": "gm-second/report.md",
+      "sha256": "4cd3e701d6e7f97cdb976d4e3ae1316e374346eb59b3c86fb56018dcf4a6f4d2",
+      "unchanged": true
+    },
+    {
+      "path": "gm-candidate/gm-source/LargevaluesDirichlet17.tex",
+      "sha256": "36d64e4ec02f0cee8baccd6ee1dbf5ea73f0dfde55827e00ad2566a142ffa428",
+      "unchanged": true
+    },
+    {
+      "path": "gm-candidate/gmrr-source/squfv.tex",
+      "sha256": "2ecca25d89675cec8451978a9f7541e69c25d07d09a87023748ea061cb9b051e",
+      "unchanged": true
+    },
+    {
+      "path": "<repo>/experiments/astra-rh-crt-20260912/GM_TRANSFER.md",
+      "sha256": "52eae4d28b0ae78fc67a4f112fd099bb3b72b4d86b3bc78866fc7294f50f41f6",
+      "unchanged": true
+    }
+  ],
+  "retrieved_original_files_hash_verified": 28,
+  "retrieval_records": 28,
+  "evidence_excerpts_verified": 24,
+  "cited_source_ids": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    17,
+    18,
+    19,
+    21,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28
+  ],
+  "cited_sources_with_evidence": 17,
+  "equation_tags_verified": 36,
+  "citation_verifier_exit": 0,
+  "amplified_version_difference_detected": true,
+  "analytic_saving_proved": false,
+  "verification_limit": "Exact algebra, citations, artifacts and source preservation; not formal verification of asymptotic analytic estimates."
+}

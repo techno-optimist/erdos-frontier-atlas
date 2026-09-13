@@ -1,0 +1,40 @@
+{
+  "results": [
+    {
+      "r": 2,
+      "direct_checks": 38,
+      "real_checks": 968,
+      "bound_constant_power_r": "1"
+    },
+    {
+      "r": 3,
+      "direct_checks": 37,
+      "real_checks": 968,
+      "bound_constant_power_r": "27/128"
+    },
+    {
+      "r": 4,
+      "direct_checks": 40,
+      "real_checks": 968,
+      "bound_constant_power_r": "4/81"
+    },
+    {
+      "r": 5,
+      "direct_checks": 40,
+      "real_checks": 968,
+      "bound_constant_power_r": "3125/262144"
+    }
+  ],
+  "r3_raw_decrease": {
+    "P": [
+      3
+    ],
+    "Q": [
+      2,
+      3
+    ],
+    "H": 8,
+    "old": "152/729",
+    "new": "140/729"
+  }
+}

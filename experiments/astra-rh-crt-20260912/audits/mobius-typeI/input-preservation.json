@@ -1,0 +1,229 @@
+{
+  "passed": true,
+  "input_count": 37,
+  "unchanged_count": 37,
+  "inputs": [
+    {
+      "path": "mobius-factorization/check_ledger.py",
+      "before_sha256": "55c1934a23ff633e7da07b49d19471da48bea87129e6bac02b693edac15bf22f",
+      "after_sha256": "55c1934a23ff633e7da07b49d19471da48bea87129e6bac02b693edac15bf22f",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/checks.json",
+      "before_sha256": "0bdd9861011bca2c8ba226df53a9b8f27f1e1c6cb796aad6ed644f9b520463cb",
+      "after_sha256": "0bdd9861011bca2c8ba226df53a9b8f27f1e1c6cb796aad6ed644f9b520463cb",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/citation-verification.log",
+      "before_sha256": "d3f1a89d39bb6d56ed751c8d5b5c45a0c641acd9295d09a15a4ce908762f0649",
+      "after_sha256": "d3f1a89d39bb6d56ed751c8d5b5c45a0c641acd9295d09a15a4ce908762f0649",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/citations.json",
+      "before_sha256": "7d86eca964f0ad53994fb5a03be048f6c52124c1481527a6dda862c1d7ce3c5f",
+      "after_sha256": "7d86eca964f0ad53994fb5a03be048f6c52124c1481527a6dda862c1d7ce3c5f",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/collect_evidence.py",
+      "before_sha256": "e4ec292f581d11bee9e5b02a948077190fc60e075e27258ba67df7e60745334f",
+      "after_sha256": "e4ec292f581d11bee9e5b02a948077190fc60e075e27258ba67df7e60745334f",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/collect_sources.py",
+      "before_sha256": "a9a02646e665f5e9b4f8383820631c31b48d7f16403aa9c797532d7d5f49e8d0",
+      "after_sha256": "a9a02646e665f5e9b4f8383820631c31b48d7f16403aa9c797532d7d5f49e8d0",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/evidence-execution.log",
+      "before_sha256": "9464bc9530769999098c7d9af95a54cb6fa1c07e898d1d8e0b3c071dbf84df22",
+      "after_sha256": "9464bc9530769999098c7d9af95a54cb6fa1c07e898d1d8e0b3c071dbf84df22",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/execution.log",
+      "before_sha256": "d7933949fbb8acf72a4e258a921edaedd7ce1c56a236fe3d18143e610d97fbb9",
+      "after_sha256": "d7933949fbb8acf72a4e258a921edaedd7ce1c56a236fe3d18143e610d97fbb9",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/external-baseline-update.json",
+      "before_sha256": "6ddd1406dc3463e7f76d05d09d6f1d1b2a7a29d49613507cf4801000c75658ff",
+      "after_sha256": "6ddd1406dc3463e7f76d05d09d6f1d1b2a7a29d49613507cf4801000c75658ff",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/report.md",
+      "before_sha256": "3c9b48fadae6501cae8418213fd281edd2cbc5f45d4acd016acb3115cce98e32",
+      "after_sha256": "3c9b48fadae6501cae8418213fd281edd2cbc5f45d4acd016acb3115cce98e32",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/source-excerpts.md",
+      "before_sha256": "d9724021a8f614ece3a7cb8bbd72c685935ac71cfa78240bd13ee489ed18f43e",
+      "after_sha256": "d9724021a8f614ece3a7cb8bbd72c685935ac71cfa78240bd13ee489ed18f43e",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/source-locators.json",
+      "before_sha256": "ab85730ceea7528e8a7a49ba21b351ddbdb2e08be76856fbe87ba38dadef96be",
+      "after_sha256": "ab85730ceea7528e8a7a49ba21b351ddbdb2e08be76856fbe87ba38dadef96be",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/source-manifest.json",
+      "before_sha256": "fb5c3844b524766a635daf7d3d097fd488e80a7f6dc66f38178124a19ac5fc6a",
+      "after_sha256": "fb5c3844b524766a635daf7d3d097fd488e80a7f6dc66f38178124a19ac5fc6a",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/sources/bcr-extracted.md",
+      "before_sha256": "76f83bd7c8e3e09956c1e44a4dc5c235a1669eeb778a60eaa669da10bc051025",
+      "after_sha256": "76f83bd7c8e3e09956c1e44a4dc5c235a1669eeb778a60eaa669da10bc051025",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/sources/bcr.pdf",
+      "before_sha256": "2d7277ddbe338cb30acbd6f53b2e1eb538cf1630297a13522697a6683758af81",
+      "after_sha256": "2d7277ddbe338cb30acbd6f53b2e1eb538cf1630297a13522697a6683758af81",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/sources/bcr.pdf.txt",
+      "before_sha256": "bec692c7c137d9b5a782c817665f69b3d297ff07ac1933bfce5008f39537273d",
+      "after_sha256": "bec692c7c137d9b5a782c817665f69b3d297ff07ac1933bfce5008f39537273d",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/sources/consolidated-GM_TRANSFER-final-read.md",
+      "before_sha256": "52eae4d28b0ae78fc67a4f112fd099bb3b72b4d86b3bc78866fc7294f50f41f6",
+      "after_sha256": "52eae4d28b0ae78fc67a4f112fd099bb3b72b4d86b3bc78866fc7294f50f41f6",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/sources/consolidated-GM_TRANSFER.md",
+      "before_sha256": "fccc3023e6fe7f5708a60f174cfc3bad3c7e8c55491f494fcf781f6190fa5fa9",
+      "after_sha256": "fccc3023e6fe7f5708a60f174cfc3bad3c7e8c55491f494fcf781f6190fa5fa9",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/sources/dlmf-25.9.html",
+      "before_sha256": "0f29e4a7fed5ce5e269c4a8488900c7b2f0ae73fc33cab82d28aa0a62f9de050",
+      "after_sha256": "0f29e4a7fed5ce5e269c4a8488900c7b2f0ae73fc33cab82d28aa0a62f9de050",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/sources/dlmf-25.9.html.txt",
+      "before_sha256": "bd570ee694d1fa6de57c9f7e2330a61d212b9a6dab6daf62c9d7c56bf58cc7a5",
+      "after_sha256": "bd570ee694d1fa6de57c9f7e2330a61d212b9a6dab6daf62c9d7c56bf58cc7a5",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/sources/dlmf-afe.tex",
+      "before_sha256": "4bedafa8dd322f234d3189cadab354e574c50b05800cbac378b4f719886aaab8",
+      "after_sha256": "4bedafa8dd322f234d3189cadab354e574c50b05800cbac378b4f719886aaab8",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/sources/gm.tex",
+      "before_sha256": "36d64e4ec02f0cee8baccd6ee1dbf5ea73f0dfde55827e00ad2566a142ffa428",
+      "after_sha256": "36d64e4ec02f0cee8baccd6ee1dbf5ea73f0dfde55827e00ad2566a142ffa428",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/sources/gmrr.bbl",
+      "before_sha256": "f1cab043a6126434083f635060cc54c54192d6fe15bbf29614e53c0b48cee573",
+      "after_sha256": "f1cab043a6126434083f635060cc54c54192d6fe15bbf29614e53c0b48cee573",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/sources/gmrr.tex",
+      "before_sha256": "2ecca25d89675cec8451978a9f7541e69c25d07d09a87023748ea061cb9b051e",
+      "after_sha256": "2ecca25d89675cec8451978a9f7541e69c25d07d09a87023748ea061cb9b051e",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/sources/hb-images/page003.png",
+      "before_sha256": "f1bf561a6f8b0b8359bf2769ba9082e72b5af8ddec84ca77bc9fa6233990abc1",
+      "after_sha256": "f1bf561a6f8b0b8359bf2769ba9082e72b5af8ddec84ca77bc9fa6233990abc1",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/sources/heath-brown-1982.pdf",
+      "before_sha256": "4791c3603967c595485bf410711b0e44b77d0bece7235599a9eef55149560a92",
+      "after_sha256": "4791c3603967c595485bf410711b0e44b77d0bece7235599a9eef55149560a92",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/sources/heath-brown-1982.pdf.txt",
+      "before_sha256": "db266ceab2a248b42c15ca276a1295a5ef2280bb6d3bdc0ae8183d650bf1e0c0",
+      "after_sha256": "db266ceab2a248b42c15ca276a1295a5ef2280bb6d3bdc0ae8183d650bf1e0c0",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/sources/independent-audit.md",
+      "before_sha256": "a5d5e92ab641eece617167ae4d7e80f56ff9c9b134d4b5a618f3775cabf06617",
+      "after_sha256": "a5d5e92ab641eece617167ae4d7e80f56ff9c9b134d4b5a618f3775cabf06617",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/sources/ivic-watt.html",
+      "before_sha256": "fd25956fbb7cda3b919e50deb04adad1ffe5946f5ee24e7d248ca9e4d5d408c2",
+      "after_sha256": "fd25956fbb7cda3b919e50deb04adad1ffe5946f5ee24e7d248ca9e4d5d408c2",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/sources/ivic-watt.html.txt",
+      "before_sha256": "aa2be29b27f18b9d3c181e9b91b0c6bea8862789b36f8447eec67880bcc20860",
+      "after_sha256": "aa2be29b27f18b9d3c181e9b91b0c6bea8862789b36f8447eec67880bcc20860",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/sources/ivic-zhai.html",
+      "before_sha256": "f15f9cbbbacf93cfabd4a9657ee2976eea4ca76328c664e0de3b3521b6519273",
+      "after_sha256": "f15f9cbbbacf93cfabd4a9657ee2976eea4ca76328c664e0de3b3521b6519273",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/sources/ivic-zhai.html.txt",
+      "before_sha256": "aed39ae2a7108355159c37bdddb601c33f59ef6d5be1105e6f791d6033f62862",
+      "after_sha256": "aed39ae2a7108355159c37bdddb601c33f59ef6d5be1105e6f791d6033f62862",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/sources/prior-audit.md",
+      "before_sha256": "e61abeaf8f060178f259f613d540399119f00910119885d396551f64ae176b2d",
+      "after_sha256": "e61abeaf8f060178f259f613d540399119f00910119885d396551f64ae176b2d",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/sources/second-audit.md",
+      "before_sha256": "4cd3e701d6e7f97cdb976d4e3ae1316e374346eb59b3c86fb56018dcf4a6f4d2",
+      "after_sha256": "4cd3e701d6e7f97cdb976d4e3ae1316e374346eb59b3c86fb56018dcf4a6f4d2",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/verification.json",
+      "before_sha256": "0fc462ba957b92374f9235147c3a6f4576444ee9497f5b6f6b1d92809f52bcc9",
+      "after_sha256": "0fc462ba957b92374f9235147c3a6f4576444ee9497f5b6f6b1d92809f52bcc9",
+      "unchanged": true
+    },
+    {
+      "path": "mobius-factorization/verify_bundle.py",
+      "before_sha256": "5b21adc6c6e9451c85a59e2241206ed37b867ba37d45be49bf15185574909749",
+      "after_sha256": "5b21adc6c6e9451c85a59e2241206ed37b867ba37d45be49bf15185574909749",
+      "unchanged": true
+    },
+    {
+      "path": "<repo>/experiments/astra-rh-crt-20260912/GM_TRANSFER.md",
+      "before_sha256": "52eae4d28b0ae78fc67a4f112fd099bb3b72b4d86b3bc78866fc7294f50f41f6",
+      "after_sha256": "52eae4d28b0ae78fc67a4f112fd099bb3b72b4d86b3bc78866fc7294f50f41f6",
+      "unchanged": true
+    }
+  ]
+}

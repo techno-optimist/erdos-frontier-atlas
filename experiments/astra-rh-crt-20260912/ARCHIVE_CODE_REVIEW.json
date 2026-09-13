@@ -1,0 +1,2604 @@
+{
+  "passed": true,
+  "security_concerns": [],
+  "logic_errors": [],
+  "suggestions": [],
+  "reviewed_files": [
+    {
+      "file": "experiments/astra-rh-crt-20260912/audits/crt-variance/audit.py",
+      "source_sha256": "f40ef90e83109d227b598237ef873d9db8f81baff1e59355fece47847c29186b",
+      "diff_sha256": "ae0fc84fe6251fa767020234c5b96290db3a35e2b511758fd67206bfb3723ed1"
+    },
+    {
+      "file": "experiments/astra-rh-crt-20260912/audits/crt-variance/endpoints.py",
+      "source_sha256": "0f4242c4f49a48f1f4bacd5fb0304a43de7886f63a6ad4a64d77aecabb24a594",
+      "diff_sha256": "af23a626dc4deb95a0d4f33422a45d17ffceebcf682447d9b1a601be9d95753c"
+    },
+    {
+      "file": "experiments/astra-rh-crt-20260912/audits/crt-variance/finalize.py",
+      "source_sha256": "3870a3ead3b9378ab1dfbf3f51ca5ad5e4e3029e0be56b41f674a3b132fa8543",
+      "diff_sha256": "072daf2290f4ae40fef73a22b50e17baabeb6d5dab66296e9998f8d1648333bf"
+    },
+    {
+      "file": "experiments/astra-rh-crt-20260912/audits/crt-variance/r-free.py",
+      "source_sha256": "432978f7cb65a0f08ba5a5cfb150411f8f98bcfe7924ab01930303cdb39578d2",
+      "diff_sha256": "418129dbfccf716ab3238c23c7e6726c053b7238f0428844a7211f2209018723"
+    },
+    {
+      "file": "experiments/astra-rh-crt-20260912/audits/gm-candidate/check_exponents.py",
+      "source_sha256": "0c9c28de1173719462695cb67fd650fcbeaa2dd9d76764e2d1b5bfebd42c5825",
+      "diff_sha256": "404d49dd5e74f78f80b50ca7e8233d6fe8f9880f384567a40271ed834c6cef25"
+    },
+    {
+      "file": "experiments/astra-rh-crt-20260912/audits/gm-first/independent_checks.py",
+      "source_sha256": "750c6684f71e56e13adb8e6f290b0c9ff61fb2d057e91d7b965f8ff8b61fc3e0",
+      "diff_sha256": "1c103080f4df3fd11a9b29a84c667b53f563172f6246c5f9dcc936c8d8919ada"
+    },
+    {
+      "file": "experiments/astra-rh-crt-20260912/audits/gm-first/original_check_exponents.py",
+      "source_sha256": "0c9c28de1173719462695cb67fd650fcbeaa2dd9d76764e2d1b5bfebd42c5825",
+      "diff_sha256": "53b3ddb120cd0f9c248cd5b62b5a63684e31af93075965b9475e83122b8985bd"
+    },
+    {
+      "file": "experiments/astra-rh-crt-20260912/audits/gm-second/check_second_audit.py",
+      "source_sha256": "ced6ac2dee45d77ac4aa1142771d2320cb5647783d56d01f826fc09581eb3ac5",
+      "diff_sha256": "875945025a6b6a248bcad1c585c7b2e2c3c605f2f4ccaab193b36ea90f6d7623"
+    },
+    {
+      "file": "experiments/astra-rh-crt-20260912/audits/gm-second/compare_critical_bounds.py",
+      "source_sha256": "078ce849142c6b702d07248d50d6bad83013a2b38e775729d7eee5587efd68ef",
+      "diff_sha256": "d793e9468048868aa1e0c8a656da960b15caa49bbe2e65b8de510c9e636653d0"
+    },
+    {
+      "file": "experiments/astra-rh-crt-20260912/audits/mellin-transfer/verify_arithmetic.py",
+      "source_sha256": "6d72d01acbb93396196bf4456c7523d1537eb87bcef0f37452f13219376283a1",
+      "diff_sha256": "181c5fbce83a0ab2fb2319a61d24597423f69a003cd86a32ce87a4b68219aff0"
+    },
+    {
+      "file": "experiments/astra-rh-crt-20260912/audits/mobius-factorization/check_ledger.py",
+      "source_sha256": "f27b81e5e2e9971522e6618706238d1cbf3fe8025cf5f0a5d27d6d79c5b4e41b",
+      "diff_sha256": "074039bd1e35f3397fae027cfdfbf328a087098f8c05985b26c6df2288089065"
+    },
+    {
+      "file": "experiments/astra-rh-crt-20260912/audits/mobius-typeI/independent_checks.py",
+      "source_sha256": "217d0eae5144c338c288e4bfb60397d80f69a30e05cc52532d56bb48c282e269",
+      "diff_sha256": "cdb851b0c7aa69a9cf4f92bb3a74858b77c0a443b2794c0c2c7b950a841b141a"
+    },
+    {
+      "file": "experiments/astra-rh-crt-20260912/audits/phase-transfer/check_actual_intervals.py",
+      "source_sha256": "497f3bd07733f2939dddb2242fed3064d13b823abd014b56d1efedb15e11b7fc",
+      "diff_sha256": "0feb35edf373da9a91f44ecb0080c2f800286794bceed25c8dd9150a0552993f"
+    },
+    {
+      "file": "experiments/astra-rh-crt-20260912/audits/phase-transfer/check_arithmetic.py",
+      "source_sha256": "7bbee94bef5119ffb1d7cf1c2ff9fa8c56b7fba40e0894c912db9c4dd53f32cb",
+      "diff_sha256": "1cceccb98f44793a96a650eb4f7bda101b6871728df7697876cc1d47829e9555"
+    },
+    {
+      "file": "experiments/astra-rh-crt-20260912/audits/replay.py",
+      "source_sha256": "294923e23504d6f2a85f99005a6d41f722dcc8eea2889c891af14d6f53f97b17",
+      "diff_sha256": "d38c429ac44a8d87cdeaeb6489fb5864246cee39a6cb7de62336fb46f7a53349"
+    },
+    {
+      "file": "experiments/astra-rh-crt-20260912/audits/sparse-square/independent_checks.py",
+      "source_sha256": "3fb4a7d6634f30465fc127f909986f470ae652b9fd7b09fb2f18acb2b7f5f1ac",
+      "diff_sha256": "2c14aea94bfc76c06477bc6ab59aaa14ea1c3304ee9917ef0e09a7fd910a820c"
+    },
+    {
+      "file": "experiments/astra-rh-crt-20260912/audits/sparse-square/replayed-original/check_algebra.py",
+      "source_sha256": "fbea9d1bfbf26048978857b6eb65ae0f3b607b38fa4efd54f2ef5def56d697ca",
+      "diff_sha256": "599074068b92307ce5c06d2194b003d7695bd34524d634113936a0edde0aafb6"
+    },
+    {
+      "file": "experiments/astra-rh-crt-20260912/audits/test_replay.py",
+      "source_sha256": "150cd7c3a40d3d25fb0348522d0cf87fed411baa8ba2c6190b6456d817cba3bb",
+      "diff_sha256": "d9f72aa0bdb55e63098db5efbdd6d88bf4dc6fe5ddd131004fb5e81e7fd26d97"
+    },
+    {
+      "file": "experiments/astra-rh-crt-20260912/audits/twisted-square/check_algebra.py",
+      "source_sha256": "fbea9d1bfbf26048978857b6eb65ae0f3b607b38fa4efd54f2ef5def56d697ca",
+      "diff_sha256": "d630d23e8444a2e9ec43c4f56faa43418e864fd8a52b2863fe3fdfef6c082536"
+    },
+    {
+      "file": "tests/test_rh_audit_archive.py",
+      "source_sha256": "e722efb1f29e25e178ebbe19ed6dc3a68906e484310a31991b0b0553ab04690c",
+      "diff_sha256": "a3e7a98c011520cbdb19ff51fbb4c151fba4fed13affeb3191ea0f49cf0d77ba"
+    }
+  ],
+  "checks": {
+    "scope": {
+      "base_commit": "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+      "full_manifest_files": 33,
+      "excluded_live_files": 13,
+      "reviewed_files": 20,
+      "full_and_live_overlap_source_diff_and_line_pins_matched": true,
+      "source_lines_read": 2719,
+      "all_addition_native_patches": 20,
+      "modified_native_patches": 0,
+      "modified_hunk_reconstruction": "Not applicable: all twenty selected paths are absent from the pinned base. Every full native addition hunk was recovered, length-checked and byte-compared with worktree/index/native diff."
+    },
+    "authentication": {
+      "initial": {
+        "file": "<independent-review-scratch>/authentication-initial.json",
+        "sha256": "01e5551f4dbf89f818d4986a12738695999d6142928122512b0ae8e7ca0a0786"
+      },
+      "final": {
+        "file": "<independent-review-scratch>/authentication-final.json",
+        "sha256": "cf29eea0ae722590474b0bf37980264873d4d53b11b36026fb5db6b0156a0f4b"
+      },
+      "covered_source_index_worktree_snapshot_and_native_diff_drift": false,
+      "manifest_pins_unchanged": true
+    },
+    "manual_review": {
+      "complete_source_and_patch_coverage": true,
+      "coverage_file": {
+        "file": "<independent-review-scratch>/manual-coverage.json",
+        "sha256": "8b3cbe5b7186ccf7b93f03b8e5f7ccaaded6fc1a40a9a6c34bdfc119e045af39"
+      },
+      "static_security_findings": [],
+      "file_notes": {
+        "experiments/astra-rh-crt-20260912/audits/crt-variance/audit.py": "Read complete patch: bounded Fraction recurrence/direct-period loops, assertion gates and sibling JSON writes. No external processes, network or deserialization; fresh standalone replay passed.",
+        "experiments/astra-rh-crt-20260912/audits/crt-variance/endpoints.py": "Read complete patch: CRT residue solver, direct finite intervals and martingale fibers; imports only its explicitly pinned audit.py dependency. Fresh standalone replay passed.",
+        "experiments/astra-rh-crt-20260912/audits/crt-variance/finalize.py": "Read complete patch including top-level browser JSON reads, citation-tool subprocess argv, weighted checks and report writes. Source/citation gates remain intact; this complete source-dependent checker was never executed.",
+        "experiments/astra-rh-crt-20260912/audits/crt-variance/r-free.py": "Read complete patch: bounded exact r-free loops and sibling results write; real audit.py dependency is copied by the runner. Fresh standalone replay passed.",
+        "experiments/astra-rh-crt-20260912/audits/gm-candidate/check_exponents.py": "Read complete patch: exact fixed-polytope vertex enumeration, epsilon expressions and finite negative controls; no arbitrary input execution. Fresh output matched historical JSON.",
+        "experiments/astra-rh-crt-20260912/audits/gm-first/independent_checks.py": "Read complete patch: polynomial operations, positivity/partition checks and mandatory four-primary-file SHA gates. No gate was removed or imitated; complete checker remains unreplayed.",
+        "experiments/astra-rh-crt-20260912/audits/gm-first/original_check_exponents.py": "Read complete duplicate patch independently and authenticated source identity with the candidate. Fresh copy replay passed; missing-source and timeout controls verified distinct execution accounting.",
+        "experiments/astra-rh-crt-20260912/audits/gm-second/check_second_audit.py": "Read complete patch: fixed polynomial certificates, majorant/scalar controls, rational metadata and local JSON output. Software execution passed; no analytic or arithmetic-counterexample claim inferred.",
+        "experiments/astra-rh-crt-20260912/audits/gm-second/compare_critical_bounds.py": "Read complete patch: real parameter JSON consumption, exact exposed-field assertions and path-bearing output. Valid replay passed; independent poisoned lower-bound input failed under parent optimization 0/1/2 and explicit -OO.",
+        "experiments/astra-rh-crt-20260912/audits/mellin-transfer/verify_arithmetic.py": "Read complete patch: bounded rational stencil, parameter, orbit and exponent checks with sibling JSON output. Fresh output matched historical JSON; no analytic proof classification performed.",
+        "experiments/astra-rh-crt-20260912/audits/mobius-factorization/check_ledger.py": "Read complete patch including source-manifest reads and the exact historical append exception. Original-source gates and external-byte comparisons remain mandatory; checker not executed or partially extracted.",
+        "experiments/astra-rh-crt-20260912/audits/mobius-typeI/independent_checks.py": "Read complete patch: bounded coefficient/support/norm accounting, rational bounds and explicitly noncertifying cmath diagnostics. Fresh full and summary outputs reconciled, including case counts and path-only summary difference.",
+        "experiments/astra-rh-crt-20260912/audits/phase-transfer/check_actual_intervals.py": "Read complete patch: rational segmentation and 70-digit Decimal diagnostics with explicit tolerances. Real reference snapshots retained; fresh complete array matched original array hash and contained 396 records.",
+        "experiments/astra-rh-crt-20260912/audits/phase-transfer/check_arithmetic.py": "Read complete patch: bounded periodic patterns, rational segment integration, conditional fibers and shortcut controls. Fresh complete array matched original array hash; all 13151 records and per-kind totals independently reconciled.",
+        "experiments/astra-rh-crt-20260912/audits/replay.py": "Read complete patch: output containment/exclusive creation, input pins, exact dependency seeding, explicit child assertion environment, bounded child calls, path-only byte edits, raw/public hashes and separate totals. Adverse success/failure/integrity/timeout/duplicate/non-replay and concurrent-writer cases passed within the supplied trusted-manifest scope.",
+        "experiments/astra-rh-crt-20260912/audits/sparse-square/independent_checks.py": "Read complete patch including exact source-archive membership reads; tarfile.extractfile reads members without filesystem extraction. Omitted archive/TeX gates are preserved. Entire checker remains unreplayed.",
+        "experiments/astra-rh-crt-20260912/audits/sparse-square/replayed-original/check_algebra.py": "Read complete duplicate patch and authenticated its identity with twisted-square/check_algebra.py. Fresh output passed; corrupted-byte pin rejection did not inflate execution or duplicate counts.",
+        "experiments/astra-rh-crt-20260912/audits/test_replay.py": "Read all six complete unittest methods/helpers. Tests use real scratch-copied sources, isolated poison fixtures, intact checksum gates and exact path-byte comparisons. All six passed; fixture writes never touched the reviewed archive.",
+        "experiments/astra-rh-crt-20260912/audits/twisted-square/check_algebra.py": "Read complete patch: bounded exact Gram/collision/exponent calculations; float conversion is display-only. Fresh checker and preserved duplicate returned equal result bytes.",
+        "tests/test_rh_audit_archive.py": "Read all four complete integration tests: full archive checksum membership, explicit inventory/exclusions, assertion/path unittest wrapper and fresh full replay. Four scoped pytest cases passed; no whole-repository gate was invoked."
+      }
+    },
+    "environment": {
+      "executable": "<independent-review-scratch>/venv/bin/python",
+      "real_executable": "<python3.11>",
+      "version": "3.11.16 (main, Sep  1 2026, 14:08:22) [Clang 22.1.3 ]",
+      "platform": "macOS-26.6.1-arm64-arm-64bit",
+      "optimize": 0,
+      "assertions_enabled": true,
+      "dont_write_bytecode": true,
+      "requirements_dev_lock_sha256": "c5013ea586ef8af85be0f9099d424aa59659efc40eb2fe5465159d90c7b7bd91",
+      "dependencies": {
+        "Pygments": "2.21.0",
+        "attrs": "26.1.0",
+        "iniconfig": "2.3.0",
+        "jsonschema": "4.26.0",
+        "jsonschema-specifications": "2025.9.1",
+        "mpmath": "1.3.0",
+        "numpy": "2.3.5",
+        "packaging": "26.3",
+        "pluggy": "1.6.0",
+        "pytest": "9.0.2",
+        "referencing": "0.37.0",
+        "rpds-py": "2026.6.3",
+        "sympy": "1.14.0",
+        "typing_extensions": "4.16.0"
+      },
+      "environment": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONNOUSERSITE": "1",
+        "PYTHONHASHSEED": "0",
+        "PYTHONOPTIMIZE": "0",
+        "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+        "TMPDIR": "<independent-review-scratch>/tmp"
+      }
+    },
+    "regressions": {
+      "scoped_pytest_passed": 4,
+      "supplied_unittest_methods_passed": 6,
+      "skipped": 0,
+      "whole_repository_gate_executed": false,
+      "pytest_command": {
+        "label": "regressions",
+        "argv": [
+          "<independent-review-scratch>/venv/bin/python",
+          "-B",
+          "-m",
+          "pytest",
+          "-p",
+          "no:cacheprovider",
+          "-vv",
+          "tests/test_rh_audit_archive.py",
+          "--basetemp",
+          "<independent-review-scratch>/pytest-tmp"
+        ],
+        "cwd": "<independent-review-scratch>/subject",
+        "timeout_seconds": 330,
+        "process_group_bounded": true,
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_seconds": 11.212634374999999,
+        "stdout_file": "<independent-review-scratch>/commands/regressions.stdout",
+        "stderr_file": "<independent-review-scratch>/commands/regressions.stderr",
+        "stdout_sha256": "6becc5304a2645d0f12194381425710c365d766475ace4bc4b3e1644e9b546d1",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "environment_overrides": {
+          "PYTHONDONTWRITEBYTECODE": "1",
+          "PYTHONNOUSERSITE": "1",
+          "PYTHONHASHSEED": "0",
+          "PYTHONOPTIMIZE": "0",
+          "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+          "TMPDIR": "<independent-review-scratch>/tmp"
+        }
+      },
+      "unittest_command": {
+        "label": "harness",
+        "argv": [
+          "<independent-review-scratch>/venv/bin/python",
+          "-B",
+          "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912/audits/test_replay.py",
+          "-v"
+        ],
+        "cwd": "<independent-review-scratch>/subject",
+        "timeout_seconds": 120,
+        "process_group_bounded": true,
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_seconds": 0.766696041,
+        "stdout_file": "<independent-review-scratch>/commands/harness.stdout",
+        "stderr_file": "<independent-review-scratch>/commands/harness.stderr",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "616ad7cb4957bfe7156a29c12367b244598891058ac0b0584b74d0b747101211",
+        "environment_overrides": {
+          "PYTHONDONTWRITEBYTECODE": "1",
+          "PYTHONNOUSERSITE": "1",
+          "PYTHONHASHSEED": "0",
+          "PYTHONOPTIMIZE": "0",
+          "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+          "TMPDIR": "<independent-review-scratch>/tmp"
+        }
+      }
+    },
+    "fresh_replay": {
+      "totals": {
+        "selected_checker_files": 17,
+        "attempted": 13,
+        "passed": 13,
+        "failed": 0,
+        "timeouts": 0,
+        "input_integrity_failures": 0,
+        "not_replayed_excluded_dependencies": 4,
+        "duplicate_copy_executions": 2,
+        "distinct_original_checker_hashes_executed": 11
+      },
+      "record": {
+        "file": "<independent-review-scratch>/fresh-replay/REPLAY.json",
+        "sha256": "5764fd811453d68da332fefe1d1bd885abea0d0c723cc64ffea623b87a40663e"
+      },
+      "verification": {
+        "file": "<independent-review-scratch>/replay-authentication.json",
+        "sha256": "892feab1f1b07bedd02c9cc2f3f4f51768048d7f75ef955e2c6bfd27396187e4"
+      },
+      "raw_public_streams_authenticated": 26,
+      "generated_outputs_authenticated": 16,
+      "historical_arrays_byte_matched": [
+        {
+          "output": "phase-transfer/check_records.json",
+          "records": 13151,
+          "sha256": "2935981f4d281554875f14ea97583e4b2988b20c7763903dc5f371fe6220d3b3"
+        },
+        {
+          "output": "phase-transfer/actual_interval_records.json",
+          "records": 396,
+          "sha256": "87702ee5b55ca549cdf6a9425066ea70a096012a6e9f5cc9f56aec41b32424d8"
+        }
+      ],
+      "historical_json_differences": [
+        {
+          "output": "phase-transfer/check_summary.json",
+          "paths": [
+            "$.input_hashes.MELLIN_TRANSFER.md",
+            "$.input_hashes.RESULT.md"
+          ]
+        },
+        {
+          "output": "phase-transfer/actual_interval_summary.json",
+          "paths": [
+            "$.input_hashes.MELLIN_TRANSFER.md",
+            "$.input_hashes.RESULT.md"
+          ]
+        },
+        {
+          "output": "gm-second/critical-comparison.json",
+          "paths": [
+            "$.parent_input"
+          ]
+        },
+        {
+          "output": "mobius-typeI/checks-summary.json",
+          "paths": [
+            "$.checks_path"
+          ]
+        }
+      ]
+    },
+    "adverse_controls": {
+      "passed": true,
+      "groups": 10,
+      "report": {
+        "file": "<independent-review-scratch>/adverse-controls.json",
+        "sha256": "4d91d9270d391cc83abf218500df667aff11c5b98a103906604f972fecb77b95"
+      },
+      "checks": [
+        {
+          "name": "missing-duplicate",
+          "passed": true,
+          "details": {
+            "totals": {
+              "selected_checker_files": 1,
+              "attempted": 0,
+              "passed": 0,
+              "failed": 0,
+              "timeouts": 0,
+              "input_integrity_failures": 1,
+              "not_replayed_excluded_dependencies": 0,
+              "duplicate_copy_executions": 0,
+              "distinct_original_checker_hashes_executed": 0
+            },
+            "error": "[Errno 2] No such file or directory: '<independent-review-scratch>/adverse/missing-duplicate/bundle/gm-first/original_check_exponents.py'",
+            "record": "<independent-review-scratch>/adverse/missing-duplicate/result/REPLAY.json"
+          }
+        },
+        {
+          "name": "hash-duplicate",
+          "passed": true,
+          "details": {
+            "totals": {
+              "selected_checker_files": 1,
+              "attempted": 0,
+              "passed": 0,
+              "failed": 0,
+              "timeouts": 0,
+              "input_integrity_failures": 1,
+              "not_replayed_excluded_dependencies": 0,
+              "duplicate_copy_executions": 0,
+              "distinct_original_checker_hashes_executed": 0
+            },
+            "error": "public input hash mismatch: sparse-square/replayed-original/check_algebra.py",
+            "record": "<independent-review-scratch>/adverse/hash-duplicate/result/REPLAY.json"
+          }
+        },
+        {
+          "name": "unrepinned-poison",
+          "passed": true,
+          "details": {
+            "totals": {
+              "selected_checker_files": 1,
+              "attempted": 0,
+              "passed": 0,
+              "failed": 0,
+              "timeouts": 0,
+              "input_integrity_failures": 1,
+              "not_replayed_excluded_dependencies": 0,
+              "duplicate_copy_executions": 0,
+              "distinct_original_checker_hashes_executed": 0
+            },
+            "error": "public input hash mismatch: inputs/gm_parameter_check.json",
+            "record": "<independent-review-scratch>/adverse/unrepinned-poison/result/REPLAY.json"
+          }
+        },
+        {
+          "name": "assertions-always-enabled",
+          "passed": true,
+          "details": {
+            "poison": {
+              "parameter": "inputs/gm_parameter_check.json",
+              "field": "margins[0].uniform_lower_bound_after_factoring",
+              "before": "17/28",
+              "after": "0",
+              "fixture_sha256": "1fb08bc598dfead198f1a657267c33f2c1d078720ac51cfe0e19ec170744ec7b",
+              "repinned_fixture_only": true
+            },
+            "executions": [
+              {
+                "parent_PYTHONOPTIMIZE": "0",
+                "parent_OO_flag": false,
+                "totals": {
+                  "selected_checker_files": 1,
+                  "attempted": 1,
+                  "passed": 0,
+                  "failed": 1,
+                  "timeouts": 0,
+                  "input_integrity_failures": 0,
+                  "not_replayed_excluded_dependencies": 0,
+                  "duplicate_copy_executions": 0,
+                  "distinct_original_checker_hashes_executed": 1
+                },
+                "record": "<independent-review-scratch>/adverse/assertion-opt-0/result/REPLAY.json"
+              },
+              {
+                "parent_PYTHONOPTIMIZE": "1",
+                "parent_OO_flag": false,
+                "totals": {
+                  "selected_checker_files": 1,
+                  "attempted": 1,
+                  "passed": 0,
+                  "failed": 1,
+                  "timeouts": 0,
+                  "input_integrity_failures": 0,
+                  "not_replayed_excluded_dependencies": 0,
+                  "duplicate_copy_executions": 0,
+                  "distinct_original_checker_hashes_executed": 1
+                },
+                "record": "<independent-review-scratch>/adverse/assertion-opt-1/result/REPLAY.json"
+              },
+              {
+                "parent_PYTHONOPTIMIZE": "2",
+                "parent_OO_flag": true,
+                "totals": {
+                  "selected_checker_files": 1,
+                  "attempted": 1,
+                  "passed": 0,
+                  "failed": 1,
+                  "timeouts": 0,
+                  "input_integrity_failures": 0,
+                  "not_replayed_excluded_dependencies": 0,
+                  "duplicate_copy_executions": 0,
+                  "distinct_original_checker_hashes_executed": 1
+                },
+                "record": "<independent-review-scratch>/adverse/assertion-opt-2/result/REPLAY.json"
+              }
+            ],
+            "bundle_unchanged": true
+          }
+        },
+        {
+          "name": "timeout-duplicate-counted-as-executed",
+          "passed": true,
+          "details": {
+            "totals": {
+              "selected_checker_files": 1,
+              "attempted": 1,
+              "passed": 0,
+              "failed": 0,
+              "timeouts": 1,
+              "input_integrity_failures": 0,
+              "not_replayed_excluded_dependencies": 0,
+              "duplicate_copy_executions": 1,
+              "distinct_original_checker_hashes_executed": 1
+            },
+            "record": "<independent-review-scratch>/adverse/timeout/result/REPLAY.json",
+            "source_unchanged": true,
+            "only_change": "reduced scratch timeout; real source and byte pins retained"
+          }
+        },
+        {
+          "name": "mixed-success-failure-and-integrity-totals",
+          "passed": true,
+          "details": {
+            "totals": {
+              "selected_checker_files": 17,
+              "attempted": 11,
+              "passed": 10,
+              "failed": 1,
+              "timeouts": 0,
+              "input_integrity_failures": 2,
+              "not_replayed_excluded_dependencies": 4,
+              "duplicate_copy_executions": 0,
+              "distinct_original_checker_hashes_executed": 11
+            },
+            "record": "<independent-review-scratch>/adverse/mixed/result/REPLAY.json",
+            "bundle_unchanged": true
+          }
+        },
+        {
+          "name": "four-source-dependent-checkers-never-launched",
+          "passed": true,
+          "details": [
+            {
+              "checker": "crt-variance/finalize.py",
+              "totals": {
+                "selected_checker_files": 1,
+                "attempted": 0,
+                "passed": 0,
+                "failed": 0,
+                "timeouts": 0,
+                "input_integrity_failures": 0,
+                "not_replayed_excluded_dependencies": 1,
+                "duplicate_copy_executions": 0,
+                "distinct_original_checker_hashes_executed": 0
+              },
+              "record": "<independent-review-scratch>/adverse/not-replayed-0/result/REPLAY.json"
+            },
+            {
+              "checker": "gm-first/independent_checks.py",
+              "totals": {
+                "selected_checker_files": 1,
+                "attempted": 0,
+                "passed": 0,
+                "failed": 0,
+                "timeouts": 0,
+                "input_integrity_failures": 0,
+                "not_replayed_excluded_dependencies": 1,
+                "duplicate_copy_executions": 0,
+                "distinct_original_checker_hashes_executed": 0
+              },
+              "record": "<independent-review-scratch>/adverse/not-replayed-1/result/REPLAY.json"
+            },
+            {
+              "checker": "mobius-factorization/check_ledger.py",
+              "totals": {
+                "selected_checker_files": 1,
+                "attempted": 0,
+                "passed": 0,
+                "failed": 0,
+                "timeouts": 0,
+                "input_integrity_failures": 0,
+                "not_replayed_excluded_dependencies": 1,
+                "duplicate_copy_executions": 0,
+                "distinct_original_checker_hashes_executed": 0
+              },
+              "record": "<independent-review-scratch>/adverse/not-replayed-2/result/REPLAY.json"
+            },
+            {
+              "checker": "sparse-square/independent_checks.py",
+              "totals": {
+                "selected_checker_files": 1,
+                "attempted": 0,
+                "passed": 0,
+                "failed": 0,
+                "timeouts": 0,
+                "input_integrity_failures": 0,
+                "not_replayed_excluded_dependencies": 1,
+                "duplicate_copy_executions": 0,
+                "distinct_original_checker_hashes_executed": 0
+              },
+              "record": "<independent-review-scratch>/adverse/not-replayed-3/result/REPLAY.json"
+            }
+          ]
+        },
+        {
+          "name": "scratch-output-guards",
+          "passed": true,
+          "details": {
+            "rejections": [
+              {
+                "case": "existing-dir",
+                "exit_code": 2,
+                "stderr": "usage: replay.py [-h] --output OUTPUT [--only ONLY]\nreplay.py: error: output must be a new nonexistent directory\n"
+              },
+              {
+                "case": "existing-file",
+                "exit_code": 2,
+                "stderr": "usage: replay.py [-h] --output OUTPUT [--only ONLY]\nreplay.py: error: output must be a new nonexistent directory\n"
+              },
+              {
+                "case": "existing-symlink",
+                "exit_code": 2,
+                "stderr": "usage: replay.py [-h] --output OUTPUT [--only ONLY]\nreplay.py: error: output must be a new nonexistent directory\n"
+              },
+              {
+                "case": "inside-archive",
+                "exit_code": 2,
+                "stderr": "usage: replay.py [-h] --output OUTPUT [--only ONLY]\nreplay.py: error: output must be outside this bundle and checkout\n"
+              },
+              {
+                "case": "inside-checkout",
+                "exit_code": 2,
+                "stderr": "usage: replay.py [-h] --output OUTPUT [--only ONLY]\nreplay.py: error: output must be outside this bundle and checkout\n"
+              },
+              {
+                "case": "symlink-into-checkout",
+                "exit_code": 2,
+                "stderr": "usage: replay.py [-h] --output OUTPUT [--only ONLY]\nreplay.py: error: output must be outside this bundle and checkout\n"
+              }
+            ],
+            "unknown_checker_exit_code": 2,
+            "sentinels_unchanged": true
+          }
+        },
+        {
+          "name": "concurrent-output-exclusive-creation",
+          "passed": true,
+          "details": {
+            "exit_codes": [
+              0,
+              1
+            ],
+            "one_writer_succeeded": true,
+            "record": "<independent-review-scratch>/adverse/concurrent-result/REPLAY.json"
+          }
+        },
+        {
+          "name": "escaped-and-control-character-paths",
+          "passed": true,
+          "details": {
+            "record": "<independent-review-scratch>/adverse/weird-\u03c0\"\\\n\troot/result/REPLAY.json",
+            "real_output_semantics_unchanged_except_parent_input": true,
+            "literal_and_both_json_forms_verified": true,
+            "unrelated_and_non_utf8_bytes_preserved": true
+          }
+        }
+      ]
+    },
+    "preservation": {
+      "historical_public_paths_verified": 110,
+      "scratch_archive_files_unchanged": 158,
+      "report": {
+        "file": "<independent-review-scratch>/preservation-final.json",
+        "sha256": "8db199d4adc915e0cff5769ec8a727a8e41498276cd7575ac95bd6190bf15105"
+      },
+      "repo_or_skills_modified_by_reviewer": false,
+      "canonical_evidence_regenerated": false
+    },
+    "not_replayed": [
+      "crt-variance/finalize.py",
+      "gm-first/independent_checks.py",
+      "mobius-factorization/check_ledger.py",
+      "sparse-square/independent_checks.py"
+    ],
+    "limits": [
+      "Review-only verdict for the exact full-manifest minus live-manifest set; the thirteen live-code files and parent full gate/publication are separate.",
+      "Four source-dependent complete checkers remain unreplayed; no source-gate bypass, arithmetic-only extraction, absent-manuscript stand-in or omitted-source regeneration was used.",
+      "Security conclusions concern the supplied authenticated sources, trusted real manifest and dependencies. No hostile-manifest sandbox, fully hermetic environment, analytic proof, mathematical novelty or RH claim is certified.",
+      "Historical input preservation here authenticates supplied archive inventory/reference bytes and their scratch copies; it does not redo the separate original packaging provenance audit of omitted source material."
+    ],
+    "commands_and_outputs": {
+      "index": {
+        "file": "<independent-review-scratch>/command-index.json",
+        "sha256": "d7f8c6ef76aa5f78667824bf73abba77f686093abbeeb47e7c485fd8d2f31d61"
+      },
+      "bounded_command_count": 32,
+      "commands": [
+        {
+          "label": "control-assertion-opt-0",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/adverse/assertion/bundle/replay.py",
+            "--output",
+            "<independent-review-scratch>/adverse/assertion-opt-0/result",
+            "--only",
+            "gm-second/compare_critical_bounds.py"
+          ],
+          "cwd": "<independent-review-scratch>/adverse/assertion",
+          "timeout_seconds": 60,
+          "process_group_bounded": true,
+          "exit_code": 1,
+          "timed_out": false,
+          "elapsed_seconds": 0.07275845808908343,
+          "stdout_file": "<independent-review-scratch>/commands/control-assertion-opt-0.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/control-assertion-opt-0.stderr",
+          "stdout_sha256": "3b1fa526174f6c6e8a34ee4544449acf210b3773d86c07f331709356dfe9826d",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "control-assertion-opt-1",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/adverse/assertion/bundle/replay.py",
+            "--output",
+            "<independent-review-scratch>/adverse/assertion-opt-1/result",
+            "--only",
+            "gm-second/compare_critical_bounds.py"
+          ],
+          "cwd": "<independent-review-scratch>/adverse/assertion",
+          "timeout_seconds": 60,
+          "process_group_bounded": true,
+          "exit_code": 1,
+          "timed_out": false,
+          "elapsed_seconds": 0.17987633403390646,
+          "stdout_file": "<independent-review-scratch>/commands/control-assertion-opt-1.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/control-assertion-opt-1.stderr",
+          "stdout_sha256": "617f364785ac69732fad445bf88fccf5d79bd2a10cddcd1491ec68f141c306ba",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "1",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "control-assertion-opt-2",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-OO",
+            "-B",
+            "<independent-review-scratch>/adverse/assertion/bundle/replay.py",
+            "--output",
+            "<independent-review-scratch>/adverse/assertion-opt-2/result",
+            "--only",
+            "gm-second/compare_critical_bounds.py"
+          ],
+          "cwd": "<independent-review-scratch>/adverse/assertion",
+          "timeout_seconds": 60,
+          "process_group_bounded": true,
+          "exit_code": 1,
+          "timed_out": false,
+          "elapsed_seconds": 0.13262833398766816,
+          "stdout_file": "<independent-review-scratch>/commands/control-assertion-opt-2.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/control-assertion-opt-2.stderr",
+          "stdout_sha256": "f373e1aa7d4bc0b835e2306bd2ca01fea4a421c0e5938550f4ef176980081285",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "2",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "control-concurrent-1",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912/audits/replay.py",
+            "--output",
+            "<independent-review-scratch>/adverse/concurrent-result",
+            "--only",
+            "gm-candidate/check_exponents.py"
+          ],
+          "cwd": "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912",
+          "timeout_seconds": 60,
+          "process_group_bounded": true,
+          "exit_code": 1,
+          "timed_out": false,
+          "elapsed_seconds": 0.04135604202747345,
+          "stdout_file": "<independent-review-scratch>/commands/control-concurrent-1.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/control-concurrent-1.stderr",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "ad71d788b6fed4bd916a78e2cca4b39489de8f9f87cd5a266daa56459120c1c1",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "control-concurrent-2",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912/audits/replay.py",
+            "--output",
+            "<independent-review-scratch>/adverse/concurrent-result",
+            "--only",
+            "gm-candidate/check_exponents.py"
+          ],
+          "cwd": "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912",
+          "timeout_seconds": 60,
+          "process_group_bounded": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "elapsed_seconds": 0.07195758307352662,
+          "stdout_file": "<independent-review-scratch>/commands/control-concurrent-2.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/control-concurrent-2.stderr",
+          "stdout_sha256": "271c76fe5448294ac7218e7cc9e1b566b680953250395aeec6d6a570e3e78429",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "control-guard-existing-dir",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912/audits/replay.py",
+            "--output",
+            "<independent-review-scratch>/adverse/guards/existing",
+            "--only",
+            "gm-candidate/check_exponents.py"
+          ],
+          "cwd": "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912",
+          "timeout_seconds": 60,
+          "process_group_bounded": true,
+          "exit_code": 2,
+          "timed_out": false,
+          "elapsed_seconds": 0.12998966686427593,
+          "stdout_file": "<independent-review-scratch>/commands/control-guard-existing-dir.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/control-guard-existing-dir.stderr",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "81f2948aebb362f37971ba1125a2c120ae9d0dbaf7fcce0466e2b115e2342850",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "control-guard-existing-file",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912/audits/replay.py",
+            "--output",
+            "<independent-review-scratch>/adverse/guards/file",
+            "--only",
+            "gm-candidate/check_exponents.py"
+          ],
+          "cwd": "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912",
+          "timeout_seconds": 60,
+          "process_group_bounded": true,
+          "exit_code": 2,
+          "timed_out": false,
+          "elapsed_seconds": 0.03884295909665525,
+          "stdout_file": "<independent-review-scratch>/commands/control-guard-existing-file.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/control-guard-existing-file.stderr",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "81f2948aebb362f37971ba1125a2c120ae9d0dbaf7fcce0466e2b115e2342850",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "control-guard-existing-symlink",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912/audits/replay.py",
+            "--output",
+            "<independent-review-scratch>/adverse/guards/existing-link",
+            "--only",
+            "gm-candidate/check_exponents.py"
+          ],
+          "cwd": "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912",
+          "timeout_seconds": 60,
+          "process_group_bounded": true,
+          "exit_code": 2,
+          "timed_out": false,
+          "elapsed_seconds": 0.038361791986972094,
+          "stdout_file": "<independent-review-scratch>/commands/control-guard-existing-symlink.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/control-guard-existing-symlink.stderr",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "81f2948aebb362f37971ba1125a2c120ae9d0dbaf7fcce0466e2b115e2342850",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "control-guard-inside-archive",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912/audits/replay.py",
+            "--output",
+            "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912/audits/forbidden-new-run",
+            "--only",
+            "gm-candidate/check_exponents.py"
+          ],
+          "cwd": "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912",
+          "timeout_seconds": 60,
+          "process_group_bounded": true,
+          "exit_code": 2,
+          "timed_out": false,
+          "elapsed_seconds": 0.039570625172927976,
+          "stdout_file": "<independent-review-scratch>/commands/control-guard-inside-archive.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/control-guard-inside-archive.stderr",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "df13f1f6b517aba67bf99215428666a38b3257d2832628f72eb3b5014ce79395",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "control-guard-inside-checkout",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912/audits/replay.py",
+            "--output",
+            "<independent-review-scratch>/subject/forbidden-new-run",
+            "--only",
+            "gm-candidate/check_exponents.py"
+          ],
+          "cwd": "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912",
+          "timeout_seconds": 60,
+          "process_group_bounded": true,
+          "exit_code": 2,
+          "timed_out": false,
+          "elapsed_seconds": 0.039377624867483974,
+          "stdout_file": "<independent-review-scratch>/commands/control-guard-inside-checkout.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/control-guard-inside-checkout.stderr",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "df13f1f6b517aba67bf99215428666a38b3257d2832628f72eb3b5014ce79395",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "control-guard-symlink-into-checkout",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912/audits/replay.py",
+            "--output",
+            "<independent-review-scratch>/adverse/guards/checkout-link/forbidden-new-run",
+            "--only",
+            "gm-candidate/check_exponents.py"
+          ],
+          "cwd": "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912",
+          "timeout_seconds": 60,
+          "process_group_bounded": true,
+          "exit_code": 2,
+          "timed_out": false,
+          "elapsed_seconds": 0.04010416683740914,
+          "stdout_file": "<independent-review-scratch>/commands/control-guard-symlink-into-checkout.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/control-guard-symlink-into-checkout.stderr",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "df13f1f6b517aba67bf99215428666a38b3257d2832628f72eb3b5014ce79395",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "control-guard-unknown-checker",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912/audits/replay.py",
+            "--output",
+            "<independent-review-scratch>/adverse/guard-unknown-checker/result",
+            "--only",
+            "not-a-checker.py"
+          ],
+          "cwd": "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912",
+          "timeout_seconds": 60,
+          "process_group_bounded": true,
+          "exit_code": 2,
+          "timed_out": false,
+          "elapsed_seconds": 0.038271583151072264,
+          "stdout_file": "<independent-review-scratch>/commands/control-guard-unknown-checker.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/control-guard-unknown-checker.stderr",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "37478c42407c188c2e9d842e4c2d6292afeed126089f0165174e7c4dabd20151",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "control-hash-duplicate",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/adverse/hash-duplicate/bundle/replay.py",
+            "--output",
+            "<independent-review-scratch>/adverse/hash-duplicate/result",
+            "--only",
+            "sparse-square/replayed-original/check_algebra.py"
+          ],
+          "cwd": "<independent-review-scratch>/adverse/hash-duplicate",
+          "timeout_seconds": 60,
+          "process_group_bounded": true,
+          "exit_code": 1,
+          "timed_out": false,
+          "elapsed_seconds": 0.038700500037521124,
+          "stdout_file": "<independent-review-scratch>/commands/control-hash-duplicate.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/control-hash-duplicate.stderr",
+          "stdout_sha256": "2eeb855ded003ecea65c547caabe1ca9f215d8b7f043c06904b73265bebd6ae5",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "control-missing-duplicate",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/adverse/missing-duplicate/bundle/replay.py",
+            "--output",
+            "<independent-review-scratch>/adverse/missing-duplicate/result",
+            "--only",
+            "gm-first/original_check_exponents.py"
+          ],
+          "cwd": "<independent-review-scratch>/adverse/missing-duplicate",
+          "timeout_seconds": 60,
+          "process_group_bounded": true,
+          "exit_code": 1,
+          "timed_out": false,
+          "elapsed_seconds": 0.03867954108864069,
+          "stdout_file": "<independent-review-scratch>/commands/control-missing-duplicate.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/control-missing-duplicate.stderr",
+          "stdout_sha256": "2eeb855ded003ecea65c547caabe1ca9f215d8b7f043c06904b73265bebd6ae5",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "control-mixed",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/adverse/mixed/bundle/replay.py",
+            "--output",
+            "<independent-review-scratch>/adverse/mixed/result"
+          ],
+          "cwd": "<independent-review-scratch>/adverse/mixed",
+          "timeout_seconds": 60,
+          "process_group_bounded": true,
+          "exit_code": 1,
+          "timed_out": false,
+          "elapsed_seconds": 10.40751324989833,
+          "stdout_file": "<independent-review-scratch>/commands/control-mixed.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/control-mixed.stderr",
+          "stdout_sha256": "e0a94c4909da5649a311de65682e1d9b1b5d5ee79c633935ce3160af85d77870",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "control-not-replayed-0",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912/audits/replay.py",
+            "--output",
+            "<independent-review-scratch>/adverse/not-replayed-0/result",
+            "--only",
+            "crt-variance/finalize.py"
+          ],
+          "cwd": "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912",
+          "timeout_seconds": 60,
+          "process_group_bounded": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "elapsed_seconds": 0.03747595800086856,
+          "stdout_file": "<independent-review-scratch>/commands/control-not-replayed-0.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/control-not-replayed-0.stderr",
+          "stdout_sha256": "bdf74bff850a7721915b587bff73b76e7f841ebb5e9cdf6d0ff6927505c2b993",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "control-not-replayed-1",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912/audits/replay.py",
+            "--output",
+            "<independent-review-scratch>/adverse/not-replayed-1/result",
+            "--only",
+            "gm-first/independent_checks.py"
+          ],
+          "cwd": "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912",
+          "timeout_seconds": 60,
+          "process_group_bounded": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "elapsed_seconds": 0.0390367500949651,
+          "stdout_file": "<independent-review-scratch>/commands/control-not-replayed-1.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/control-not-replayed-1.stderr",
+          "stdout_sha256": "bdf74bff850a7721915b587bff73b76e7f841ebb5e9cdf6d0ff6927505c2b993",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "control-not-replayed-2",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912/audits/replay.py",
+            "--output",
+            "<independent-review-scratch>/adverse/not-replayed-2/result",
+            "--only",
+            "mobius-factorization/check_ledger.py"
+          ],
+          "cwd": "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912",
+          "timeout_seconds": 60,
+          "process_group_bounded": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "elapsed_seconds": 0.03680912498384714,
+          "stdout_file": "<independent-review-scratch>/commands/control-not-replayed-2.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/control-not-replayed-2.stderr",
+          "stdout_sha256": "bdf74bff850a7721915b587bff73b76e7f841ebb5e9cdf6d0ff6927505c2b993",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "control-not-replayed-3",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912/audits/replay.py",
+            "--output",
+            "<independent-review-scratch>/adverse/not-replayed-3/result",
+            "--only",
+            "sparse-square/independent_checks.py"
+          ],
+          "cwd": "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912",
+          "timeout_seconds": 60,
+          "process_group_bounded": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "elapsed_seconds": 0.04079037508927286,
+          "stdout_file": "<independent-review-scratch>/commands/control-not-replayed-3.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/control-not-replayed-3.stderr",
+          "stdout_sha256": "bdf74bff850a7721915b587bff73b76e7f841ebb5e9cdf6d0ff6927505c2b993",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "control-timeout",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/adverse/timeout/bundle/replay.py",
+            "--output",
+            "<independent-review-scratch>/adverse/timeout/result",
+            "--only",
+            "gm-first/original_check_exponents.py"
+          ],
+          "cwd": "<independent-review-scratch>/adverse/timeout",
+          "timeout_seconds": 60,
+          "process_group_bounded": true,
+          "exit_code": 1,
+          "timed_out": false,
+          "elapsed_seconds": 0.03880350012332201,
+          "stdout_file": "<independent-review-scratch>/commands/control-timeout.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/control-timeout.stderr",
+          "stdout_sha256": "a6d17d1d11a9e2dc0043bac9eb5cdf21d910495651d5f9eaa397aa77cb13b296",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "control-unrepinned-poison",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/adverse/unrepinned-poison/bundle/replay.py",
+            "--output",
+            "<independent-review-scratch>/adverse/unrepinned-poison/result",
+            "--only",
+            "gm-second/compare_critical_bounds.py"
+          ],
+          "cwd": "<independent-review-scratch>/adverse/unrepinned-poison",
+          "timeout_seconds": 60,
+          "process_group_bounded": true,
+          "exit_code": 1,
+          "timed_out": false,
+          "elapsed_seconds": 0.03969725011847913,
+          "stdout_file": "<independent-review-scratch>/commands/control-unrepinned-poison.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/control-unrepinned-poison.stderr",
+          "stdout_sha256": "2eeb855ded003ecea65c547caabe1ca9f215d8b7f043c06904b73265bebd6ae5",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "control-weird-path",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912/audits/replay.py",
+            "--output",
+            "<independent-review-scratch>/adverse/weird-\u03c0\"\\\n\troot/result",
+            "--only",
+            "gm-second/compare_critical_bounds.py"
+          ],
+          "cwd": "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912",
+          "timeout_seconds": 60,
+          "process_group_bounded": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "elapsed_seconds": 0.0729791671037674,
+          "stdout_file": "<independent-review-scratch>/commands/control-weird-path.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/control-weird-path.stderr",
+          "stdout_sha256": "d80942eafaddd66f510ac08088698440cc022b8911d47abab2d22f63109baea6",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "dependencies",
+          "argv": [
+            "uv",
+            "pip",
+            "install",
+            "--python",
+            "<independent-review-scratch>/venv/bin/python",
+            "--requirements",
+            "<independent-review-scratch>/subject/requirements-dev.lock"
+          ],
+          "cwd": "<independent-review-scratch>/subject",
+          "timeout_seconds": 180,
+          "process_group_bounded": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "elapsed_seconds": 0.24154016699999997,
+          "stdout_file": "<independent-review-scratch>/commands/dependencies.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/dependencies.stderr",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "ce5b61cf3fa9bc51b9ca5b3e6b661576fe05b41cb4147d1b39a789ef7e2cc01f",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "environment",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/environment_probe.py"
+          ],
+          "cwd": "<independent-review-scratch>/subject",
+          "timeout_seconds": 30,
+          "process_group_bounded": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "elapsed_seconds": 0.07403987500000003,
+          "stdout_file": "<independent-review-scratch>/commands/environment.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/environment.stderr",
+          "stdout_sha256": "917291d718764b1209564b6ae46c7d59eb77a117d1026df33c2f0c4cb9d10211",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "final-authentication",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/authenticate.py",
+            "final"
+          ],
+          "cwd": "<independent-review-scratch>",
+          "timeout_seconds": 120,
+          "process_group_bounded": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "elapsed_seconds": 0.7635084169999999,
+          "stdout_file": "<independent-review-scratch>/commands/final-authentication.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/final-authentication.stderr",
+          "stdout_sha256": "588a880fc05d6c40939694519294f3dd2c7bc8b78c7b9e0df6057c7649ebe8e9",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "fresh-replay",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912/audits/replay.py",
+            "--output",
+            "<independent-review-scratch>/fresh-replay"
+          ],
+          "cwd": "<independent-review-scratch>/subject",
+          "timeout_seconds": 300,
+          "process_group_bounded": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "elapsed_seconds": 10.315087042,
+          "stdout_file": "<independent-review-scratch>/commands/fresh-replay.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/fresh-replay.stderr",
+          "stdout_sha256": "8e237c22a02274e2a2266ec24e363d2d58d6ad6b37684d47dd63f28c787abf83",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "harness",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/subject/experiments/astra-rh-crt-20260912/audits/test_replay.py",
+            "-v"
+          ],
+          "cwd": "<independent-review-scratch>/subject",
+          "timeout_seconds": 120,
+          "process_group_bounded": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "elapsed_seconds": 0.766696041,
+          "stdout_file": "<independent-review-scratch>/commands/harness.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/harness.stderr",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "616ad7cb4957bfe7156a29c12367b244598891058ac0b0584b74d0b747101211",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "independent-controls",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/independent_controls.py"
+          ],
+          "cwd": "<independent-review-scratch>",
+          "timeout_seconds": 300,
+          "process_group_bounded": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "elapsed_seconds": 11.823547083000001,
+          "stdout_file": "<independent-review-scratch>/commands/independent-controls.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/independent-controls.stderr",
+          "stdout_sha256": "3b873f2f7b8de83353439df7d02329629e8d78bccf680a588427b40fc9e23e00",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "regressions",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "-m",
+            "pytest",
+            "-p",
+            "no:cacheprovider",
+            "-vv",
+            "tests/test_rh_audit_archive.py",
+            "--basetemp",
+            "<independent-review-scratch>/pytest-tmp"
+          ],
+          "cwd": "<independent-review-scratch>/subject",
+          "timeout_seconds": 330,
+          "process_group_bounded": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "elapsed_seconds": 11.212634374999999,
+          "stdout_file": "<independent-review-scratch>/commands/regressions.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/regressions.stderr",
+          "stdout_sha256": "6becc5304a2645d0f12194381425710c365d766475ace4bc4b3e1644e9b546d1",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "uv-version",
+          "argv": [
+            "uv",
+            "--version"
+          ],
+          "cwd": "<independent-review-scratch>/subject",
+          "timeout_seconds": 180,
+          "process_group_bounded": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "elapsed_seconds": 0.038504082999999995,
+          "stdout_file": "<independent-review-scratch>/commands/uv-version.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/uv-version.stderr",
+          "stdout_sha256": "b14980e27edf89835c4bc4fe9cd699300bfff270f81af48606745b26aa0d6db4",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "venv",
+          "argv": [
+            "uv",
+            "venv",
+            "--python",
+            "3.11.16",
+            "<independent-review-scratch>/venv"
+          ],
+          "cwd": "<independent-review-scratch>/subject",
+          "timeout_seconds": 180,
+          "process_group_bounded": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "elapsed_seconds": 0.036251000000000005,
+          "stdout_file": "<independent-review-scratch>/commands/venv.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/venv.stderr",
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "9ba7c2cf96592f2789a17a63610dde93eb433282653822d329ac393c308478f5",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        },
+        {
+          "label": "verify-replay",
+          "argv": [
+            "<independent-review-scratch>/venv/bin/python",
+            "-B",
+            "<independent-review-scratch>/verify_replay.py"
+          ],
+          "cwd": "<independent-review-scratch>",
+          "timeout_seconds": 60,
+          "process_group_bounded": true,
+          "exit_code": 0,
+          "timed_out": false,
+          "elapsed_seconds": 0.12233433299999999,
+          "stdout_file": "<independent-review-scratch>/commands/verify-replay.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/verify-replay.stderr",
+          "stdout_sha256": "892feab1f1b07bedd02c9cc2f3f4f51768048d7f75ef955e2c6bfd27396187e4",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "environment_overrides": {
+            "PYTHONDONTWRITEBYTECODE": "1",
+            "PYTHONNOUSERSITE": "1",
+            "PYTHONHASHSEED": "0",
+            "PYTHONOPTIMIZE": "0",
+            "PYTEST_DISABLE_PLUGIN_AUTOLOAD": "1",
+            "TMPDIR": "<independent-review-scratch>/tmp"
+          }
+        }
+      ],
+      "final_source_authentication_commands": [
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc:experiments/astra-rh-crt-20260912/audits/crt-variance/audit.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 128,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e2dd4684c872db339e586ef493009e106828135b559bd8bab7fd2e0c4c10ad83",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/000.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/000.stderr",
+          "stderr": "fatal: path 'experiments/astra-rh-crt-20260912/audits/crt-variance/audit.py' exists on disk, but not in '68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc'\n"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            ":experiments/astra-rh-crt-20260912/audits/crt-variance/audit.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "f40ef90e83109d227b598237ef873d9db8f81baff1e59355fece47847c29186b",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/001.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/001.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "diff",
+            "--cached",
+            "--no-ext-diff",
+            "--binary",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+            "--",
+            "experiments/astra-rh-crt-20260912/audits/crt-variance/audit.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "ae0fc84fe6251fa767020234c5b96290db3a35e2b511758fd67206bfb3723ed1",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/002.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/002.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc:experiments/astra-rh-crt-20260912/audits/crt-variance/endpoints.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 128,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "d7dfe92bf71cbfb95f7c526e0a0a06872275b3bf450ec443ef000bed34eda4ec",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/003.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/003.stderr",
+          "stderr": "fatal: path 'experiments/astra-rh-crt-20260912/audits/crt-variance/endpoints.py' exists on disk, but not in '68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc'\n"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            ":experiments/astra-rh-crt-20260912/audits/crt-variance/endpoints.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "0f4242c4f49a48f1f4bacd5fb0304a43de7886f63a6ad4a64d77aecabb24a594",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/004.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/004.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "diff",
+            "--cached",
+            "--no-ext-diff",
+            "--binary",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+            "--",
+            "experiments/astra-rh-crt-20260912/audits/crt-variance/endpoints.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "af23a626dc4deb95a0d4f33422a45d17ffceebcf682447d9b1a601be9d95753c",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/005.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/005.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc:experiments/astra-rh-crt-20260912/audits/crt-variance/finalize.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 128,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "ec2aa920723154eda75c6968b3de8863c078ad6a350f02fc69fd3db8ffb1273c",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/006.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/006.stderr",
+          "stderr": "fatal: path 'experiments/astra-rh-crt-20260912/audits/crt-variance/finalize.py' exists on disk, but not in '68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc'\n"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            ":experiments/astra-rh-crt-20260912/audits/crt-variance/finalize.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "3870a3ead3b9378ab1dfbf3f51ca5ad5e4e3029e0be56b41f674a3b132fa8543",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/007.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/007.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "diff",
+            "--cached",
+            "--no-ext-diff",
+            "--binary",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+            "--",
+            "experiments/astra-rh-crt-20260912/audits/crt-variance/finalize.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "072daf2290f4ae40fef73a22b50e17baabeb6d5dab66296e9998f8d1648333bf",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/008.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/008.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc:experiments/astra-rh-crt-20260912/audits/crt-variance/r-free.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 128,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "aed257745a8086c88ebc8524ad0c4ecf457b8f5ed89c494d627db990474eea05",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/009.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/009.stderr",
+          "stderr": "fatal: path 'experiments/astra-rh-crt-20260912/audits/crt-variance/r-free.py' exists on disk, but not in '68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc'\n"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            ":experiments/astra-rh-crt-20260912/audits/crt-variance/r-free.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "432978f7cb65a0f08ba5a5cfb150411f8f98bcfe7924ab01930303cdb39578d2",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/010.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/010.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "diff",
+            "--cached",
+            "--no-ext-diff",
+            "--binary",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+            "--",
+            "experiments/astra-rh-crt-20260912/audits/crt-variance/r-free.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "418129dbfccf716ab3238c23c7e6726c053b7238f0428844a7211f2209018723",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/011.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/011.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc:experiments/astra-rh-crt-20260912/audits/gm-candidate/check_exponents.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 128,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "e220c0aac0fa3510715907f76e1a31a2b56772d86671546b323d4740192dd7d9",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/012.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/012.stderr",
+          "stderr": "fatal: path 'experiments/astra-rh-crt-20260912/audits/gm-candidate/check_exponents.py' exists on disk, but not in '68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc'\n"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            ":experiments/astra-rh-crt-20260912/audits/gm-candidate/check_exponents.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "0c9c28de1173719462695cb67fd650fcbeaa2dd9d76764e2d1b5bfebd42c5825",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/013.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/013.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "diff",
+            "--cached",
+            "--no-ext-diff",
+            "--binary",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+            "--",
+            "experiments/astra-rh-crt-20260912/audits/gm-candidate/check_exponents.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "404d49dd5e74f78f80b50ca7e8233d6fe8f9880f384567a40271ed834c6cef25",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/014.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/014.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc:experiments/astra-rh-crt-20260912/audits/gm-first/independent_checks.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 128,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "64895827ca7f89c2fd1ee4faaf2bcb66fe00e0f91a6b014c2365676641bcfef5",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/015.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/015.stderr",
+          "stderr": "fatal: path 'experiments/astra-rh-crt-20260912/audits/gm-first/independent_checks.py' exists on disk, but not in '68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc'\n"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            ":experiments/astra-rh-crt-20260912/audits/gm-first/independent_checks.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "750c6684f71e56e13adb8e6f290b0c9ff61fb2d057e91d7b965f8ff8b61fc3e0",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/016.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/016.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "diff",
+            "--cached",
+            "--no-ext-diff",
+            "--binary",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+            "--",
+            "experiments/astra-rh-crt-20260912/audits/gm-first/independent_checks.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "1c103080f4df3fd11a9b29a84c667b53f563172f6246c5f9dcc936c8d8919ada",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/017.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/017.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc:experiments/astra-rh-crt-20260912/audits/gm-first/original_check_exponents.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 128,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "b6178be019cbd5cb29de35c9994f15af8fbdb72aef1f78697f8ed09b13b1809b",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/018.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/018.stderr",
+          "stderr": "fatal: path 'experiments/astra-rh-crt-20260912/audits/gm-first/original_check_exponents.py' exists on disk, but not in '68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc'\n"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            ":experiments/astra-rh-crt-20260912/audits/gm-first/original_check_exponents.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "0c9c28de1173719462695cb67fd650fcbeaa2dd9d76764e2d1b5bfebd42c5825",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/019.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/019.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "diff",
+            "--cached",
+            "--no-ext-diff",
+            "--binary",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+            "--",
+            "experiments/astra-rh-crt-20260912/audits/gm-first/original_check_exponents.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "53b3ddb120cd0f9c248cd5b62b5a63684e31af93075965b9475e83122b8985bd",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/020.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/020.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc:experiments/astra-rh-crt-20260912/audits/gm-second/check_second_audit.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 128,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "41c60a8adf78a4e8e7bc4ddc700d96e8b6a9a5485414f2676eecc1097e86a23f",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/021.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/021.stderr",
+          "stderr": "fatal: path 'experiments/astra-rh-crt-20260912/audits/gm-second/check_second_audit.py' exists on disk, but not in '68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc'\n"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            ":experiments/astra-rh-crt-20260912/audits/gm-second/check_second_audit.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "ced6ac2dee45d77ac4aa1142771d2320cb5647783d56d01f826fc09581eb3ac5",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/022.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/022.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "diff",
+            "--cached",
+            "--no-ext-diff",
+            "--binary",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+            "--",
+            "experiments/astra-rh-crt-20260912/audits/gm-second/check_second_audit.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "875945025a6b6a248bcad1c585c7b2e2c3c605f2f4ccaab193b36ea90f6d7623",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/023.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/023.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc:experiments/astra-rh-crt-20260912/audits/gm-second/compare_critical_bounds.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 128,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "b4cab610afeb5506eca5f0eb6212b56f0f67425be1bbfd3bc655721555cbf84a",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/024.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/024.stderr",
+          "stderr": "fatal: path 'experiments/astra-rh-crt-20260912/audits/gm-second/compare_critical_bounds.py' exists on disk, but not in '68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc'\n"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            ":experiments/astra-rh-crt-20260912/audits/gm-second/compare_critical_bounds.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "078ce849142c6b702d07248d50d6bad83013a2b38e775729d7eee5587efd68ef",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/025.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/025.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "diff",
+            "--cached",
+            "--no-ext-diff",
+            "--binary",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+            "--",
+            "experiments/astra-rh-crt-20260912/audits/gm-second/compare_critical_bounds.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "d793e9468048868aa1e0c8a656da960b15caa49bbe2e65b8de510c9e636653d0",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/026.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/026.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc:experiments/astra-rh-crt-20260912/audits/mellin-transfer/verify_arithmetic.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 128,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "52b23e0dd444a6f6ad8e7d34f4da38eec8bb90551383d2fb48980d733c03c1d0",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/027.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/027.stderr",
+          "stderr": "fatal: path 'experiments/astra-rh-crt-20260912/audits/mellin-transfer/verify_arithmetic.py' exists on disk, but not in '68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc'\n"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            ":experiments/astra-rh-crt-20260912/audits/mellin-transfer/verify_arithmetic.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "6d72d01acbb93396196bf4456c7523d1537eb87bcef0f37452f13219376283a1",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/028.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/028.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "diff",
+            "--cached",
+            "--no-ext-diff",
+            "--binary",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+            "--",
+            "experiments/astra-rh-crt-20260912/audits/mellin-transfer/verify_arithmetic.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "181c5fbce83a0ab2fb2319a61d24597423f69a003cd86a32ce87a4b68219aff0",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/029.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/029.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc:experiments/astra-rh-crt-20260912/audits/mobius-factorization/check_ledger.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 128,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "25149fcbe5a1f1d1e647d713027c040eb16bf84f89bde7cf20221eb6e35a1c8e",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/030.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/030.stderr",
+          "stderr": "fatal: path 'experiments/astra-rh-crt-20260912/audits/mobius-factorization/check_ledger.py' exists on disk, but not in '68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc'\n"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            ":experiments/astra-rh-crt-20260912/audits/mobius-factorization/check_ledger.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "f27b81e5e2e9971522e6618706238d1cbf3fe8025cf5f0a5d27d6d79c5b4e41b",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/031.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/031.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "diff",
+            "--cached",
+            "--no-ext-diff",
+            "--binary",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+            "--",
+            "experiments/astra-rh-crt-20260912/audits/mobius-factorization/check_ledger.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "074039bd1e35f3397fae027cfdfbf328a087098f8c05985b26c6df2288089065",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/032.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/032.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc:experiments/astra-rh-crt-20260912/audits/mobius-typeI/independent_checks.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 128,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "a1918b216a399f3c2aa07b44797288098d660cdb8bc5c6133d79fb0e366fa3bb",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/033.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/033.stderr",
+          "stderr": "fatal: path 'experiments/astra-rh-crt-20260912/audits/mobius-typeI/independent_checks.py' exists on disk, but not in '68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc'\n"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            ":experiments/astra-rh-crt-20260912/audits/mobius-typeI/independent_checks.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "217d0eae5144c338c288e4bfb60397d80f69a30e05cc52532d56bb48c282e269",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/034.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/034.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "diff",
+            "--cached",
+            "--no-ext-diff",
+            "--binary",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+            "--",
+            "experiments/astra-rh-crt-20260912/audits/mobius-typeI/independent_checks.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "cdb851b0c7aa69a9cf4f92bb3a74858b77c0a443b2794c0c2c7b950a841b141a",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/035.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/035.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc:experiments/astra-rh-crt-20260912/audits/phase-transfer/check_actual_intervals.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 128,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "8419aea62f657aa7b58f659390283599c11cf47d6cb7cbe0d69a84c97edb51d6",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/036.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/036.stderr",
+          "stderr": "fatal: path 'experiments/astra-rh-crt-20260912/audits/phase-transfer/check_actual_intervals.py' exists on disk, but not in '68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc'\n"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            ":experiments/astra-rh-crt-20260912/audits/phase-transfer/check_actual_intervals.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "497f3bd07733f2939dddb2242fed3064d13b823abd014b56d1efedb15e11b7fc",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/037.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/037.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "diff",
+            "--cached",
+            "--no-ext-diff",
+            "--binary",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+            "--",
+            "experiments/astra-rh-crt-20260912/audits/phase-transfer/check_actual_intervals.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "0feb35edf373da9a91f44ecb0080c2f800286794bceed25c8dd9150a0552993f",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/038.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/038.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc:experiments/astra-rh-crt-20260912/audits/phase-transfer/check_arithmetic.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 128,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "8c73ef6373d9cf1b69969217365256c2bc589eb75a69e644593bc206ca932914",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/039.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/039.stderr",
+          "stderr": "fatal: path 'experiments/astra-rh-crt-20260912/audits/phase-transfer/check_arithmetic.py' exists on disk, but not in '68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc'\n"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            ":experiments/astra-rh-crt-20260912/audits/phase-transfer/check_arithmetic.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "7bbee94bef5119ffb1d7cf1c2ff9fa8c56b7fba40e0894c912db9c4dd53f32cb",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/040.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/040.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "diff",
+            "--cached",
+            "--no-ext-diff",
+            "--binary",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+            "--",
+            "experiments/astra-rh-crt-20260912/audits/phase-transfer/check_arithmetic.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "1cceccb98f44793a96a650eb4f7bda101b6871728df7697876cc1d47829e9555",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/041.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/041.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc:experiments/astra-rh-crt-20260912/audits/replay.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 128,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "0a5b886dade47dca5c54f724e9ff2731df0ec24240a9d0044a40a731c72f66ba",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/042.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/042.stderr",
+          "stderr": "fatal: path 'experiments/astra-rh-crt-20260912/audits/replay.py' exists on disk, but not in '68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc'\n"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            ":experiments/astra-rh-crt-20260912/audits/replay.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "294923e23504d6f2a85f99005a6d41f722dcc8eea2889c891af14d6f53f97b17",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/043.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/043.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "diff",
+            "--cached",
+            "--no-ext-diff",
+            "--binary",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+            "--",
+            "experiments/astra-rh-crt-20260912/audits/replay.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "d38c429ac44a8d87cdeaeb6489fb5864246cee39a6cb7de62336fb46f7a53349",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/044.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/044.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc:experiments/astra-rh-crt-20260912/audits/sparse-square/independent_checks.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 128,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "3f9034e9b3417b1649c5f42085de39e7c18a9bf6110efc6819a7a9bfb41840dc",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/045.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/045.stderr",
+          "stderr": "fatal: path 'experiments/astra-rh-crt-20260912/audits/sparse-square/independent_checks.py' exists on disk, but not in '68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc'\n"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            ":experiments/astra-rh-crt-20260912/audits/sparse-square/independent_checks.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "3fb4a7d6634f30465fc127f909986f470ae652b9fd7b09fb2f18acb2b7f5f1ac",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/046.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/046.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "diff",
+            "--cached",
+            "--no-ext-diff",
+            "--binary",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+            "--",
+            "experiments/astra-rh-crt-20260912/audits/sparse-square/independent_checks.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "2c14aea94bfc76c06477bc6ab59aaa14ea1c3304ee9917ef0e09a7fd910a820c",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/047.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/047.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc:experiments/astra-rh-crt-20260912/audits/sparse-square/replayed-original/check_algebra.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 128,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "f5556d8aa3d55528051bbe7d3388f712d253175de760ce35f1eeac7ce5b93dca",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/048.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/048.stderr",
+          "stderr": "fatal: path 'experiments/astra-rh-crt-20260912/audits/sparse-square/replayed-original/check_algebra.py' exists on disk, but not in '68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc'\n"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            ":experiments/astra-rh-crt-20260912/audits/sparse-square/replayed-original/check_algebra.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "fbea9d1bfbf26048978857b6eb65ae0f3b607b38fa4efd54f2ef5def56d697ca",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/049.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/049.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "diff",
+            "--cached",
+            "--no-ext-diff",
+            "--binary",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+            "--",
+            "experiments/astra-rh-crt-20260912/audits/sparse-square/replayed-original/check_algebra.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "599074068b92307ce5c06d2194b003d7695bd34524d634113936a0edde0aafb6",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/050.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/050.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc:experiments/astra-rh-crt-20260912/audits/test_replay.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 128,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "7845f2a5eb857ef41133a6b466450cebacd9198b27a7301bc5ab5422c3d2468e",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/051.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/051.stderr",
+          "stderr": "fatal: path 'experiments/astra-rh-crt-20260912/audits/test_replay.py' exists on disk, but not in '68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc'\n"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            ":experiments/astra-rh-crt-20260912/audits/test_replay.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "150cd7c3a40d3d25fb0348522d0cf87fed411baa8ba2c6190b6456d817cba3bb",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/052.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/052.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "diff",
+            "--cached",
+            "--no-ext-diff",
+            "--binary",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+            "--",
+            "experiments/astra-rh-crt-20260912/audits/test_replay.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "d9f72aa0bdb55e63098db5efbdd6d88bf4dc6fe5ddd131004fb5e81e7fd26d97",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/053.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/053.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc:experiments/astra-rh-crt-20260912/audits/twisted-square/check_algebra.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 128,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "93a6a9a48adc6c604035e4825e2585254a64405c6baa779394dbfe67c858bd1d",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/054.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/054.stderr",
+          "stderr": "fatal: path 'experiments/astra-rh-crt-20260912/audits/twisted-square/check_algebra.py' exists on disk, but not in '68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc'\n"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            ":experiments/astra-rh-crt-20260912/audits/twisted-square/check_algebra.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "fbea9d1bfbf26048978857b6eb65ae0f3b607b38fa4efd54f2ef5def56d697ca",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/055.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/055.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "diff",
+            "--cached",
+            "--no-ext-diff",
+            "--binary",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+            "--",
+            "experiments/astra-rh-crt-20260912/audits/twisted-square/check_algebra.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "d630d23e8444a2e9ec43c4f56faa43418e864fd8a52b2863fe3fdfef6c082536",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/056.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/056.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc:tests/test_rh_audit_archive.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 128,
+          "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stderr_sha256": "53383aff1d4ba296017beba7a6c3b620d36dd19d0986e1a0c0bccb015b84a8df",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/057.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/057.stderr",
+          "stderr": "fatal: path 'tests/test_rh_audit_archive.py' exists on disk, but not in '68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc'\n"
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "show",
+            ":tests/test_rh_audit_archive.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "e722efb1f29e25e178ebbe19ed6dc3a68906e484310a31991b0b0553ab04690c",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/058.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/058.stderr",
+          "stderr": ""
+        },
+        {
+          "argv": [
+            "git",
+            "--no-pager",
+            "diff",
+            "--cached",
+            "--no-ext-diff",
+            "--binary",
+            "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+            "--",
+            "tests/test_rh_audit_archive.py"
+          ],
+          "cwd": "<repo>",
+          "exit_code": 0,
+          "stdout_sha256": "a3e7a98c011520cbdb19ff51fbb4c151fba4fed13affeb3191ea0f49cf0d77ba",
+          "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "stdout_file": "<independent-review-scratch>/commands/authentication-final/059.stdout",
+          "stderr_file": "<independent-review-scratch>/commands/authentication-final/059.stderr",
+          "stderr": ""
+        }
+      ]
+    },
+    "created_artifacts": {
+      "directory": "<independent-review-scratch>",
+      "contents": [
+        "authenticated reconstructed Python sources and complete native patch reading batches",
+        "isolated subject/dependency environment and real scratch replay outputs",
+        "isolated adverse fixtures (intentionally poisoned copies retained)",
+        "actual command stdout/stderr, source authentication records, output verification, coverage notes and complete JSON verdict"
+      ]
+    }
+  },
+  "summary": "PASS: all 20 complete Python patches authenticated and reviewed; 4 archive regressions, 6 harness tests and 10 independent adverse-control groups passed. Fresh replay passed 13 checker executions covering 11 distinct original hashes and 2 duplicate copies; 4 source-dependent checkers remain explicitly unreplayed. Historical inputs and covered sources are unchanged. No repo/skill edits or whole-repository gate.",
+  "verdict_file": "<independent-review-scratch>/verdict.json"
+}

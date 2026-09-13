@@ -13,6 +13,8 @@ python3 tools/query_substrate.py methods
 python3 tools/query_substrate.py for 699
 python3 tools/query_substrate.py for 854
 python3 tools/query_substrate.py for 993
+python3 tools/query_substrate.py for 327
+python3 tools/query_substrate.py for 969
 python3 tools/query_substrate.py open
 python3 -I experiments/astra-substrate-20260911/verify.py
 ```
@@ -36,7 +38,17 @@ A **CANDIDATE** row is a tag or OEIS shape match. It is not a theorem about that
 | laurent-hub-block | informal_reviewed | #993 block only | #993 only |
 | tail-compression | informal_reviewed | #993 tails | #993 only |
 
-The committed board is [BOARD.md](BOARD.md). `verify.py` regenerates it and compares.
+The table above records the seed toolbox, not an exhaustive current inventory.
+The committed [BOARD.md](BOARD.md) and `methods` command reflect the full source
+ledger; `verify.py` regenerates the board in memory and compares without writing.
+
+The [P327 fiber transfer](../astra-327-fiber-20260912/README.md) retains the
+rough-multiplier state instead of increasing a known-sequence cutoff. The
+[RH/P969 progress map](../astra-rh-969-20260912/REPOSITORY_STATUS.md) separates
+energy equivalence, generic obstruction, CRT/defect and Mellin transfers, the
+GM/GMRR deduction, and partial Type I/signed-diagonal interfaces. Each registered
+method has its own artifact paths, hypotheses and unresolved step; none solves
+P969 or RH or changes a canonical status.
 
 ## Trust
 

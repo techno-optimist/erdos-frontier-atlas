@@ -1,0 +1,33 @@
+{
+  "schema": "rh-root-review-portability-v1",
+  "scope": "Path-only public copies of historical model-review verdicts; no re-review or mathematical promotion.",
+  "originals_preserved_outside_repository": true,
+  "hash_note": "Historical report hashes in REVIEW_STATUS.json refer to original bytes. These public hashes refer to the path-sanitized root copies.",
+  "public_audit_index": "audits/README.md",
+  "files": [
+    {
+      "file": "code_review.json",
+      "original_sha256": "018bcdee5368f3f8ecbdf4132f7c352755d8697f4a16752d59b5dd8634cc1c12",
+      "public_sha256": "1b8d2c18ab4228d53843b368943a0cee9d92a008b33b95a57fd44102d5e70d81",
+      "transformation": "Replace the original local review directory with <historical-software-audit>",
+      "replacement_count": 1,
+      "semantic_changes": false
+    },
+    {
+      "file": "typeI_review.json",
+      "original_sha256": "78c01a5e71847b3d0c70afa97f0d846e17912b9361d3bda82b2ed9ad7cb8aa95",
+      "public_sha256": "faf85d2f5b199a44a7fda2ec522edbeb835351cdc6558a5b43edf096707725ed",
+      "transformation": "Replace the original local review directory with <historical-typeI-audit>/",
+      "replacement_count": 9,
+      "semantic_changes": false
+    },
+    {
+      "file": "diagonal_review.json",
+      "original_sha256": "af6f49acecc77dd0be41b8768a89e9c5724acc3ecb4e26c1a780766e757f2355",
+      "public_sha256": "486f22d868f05cc551f3dc4ad7dbc101d76681d39a4bd22d4a86d215715978bb",
+      "transformation": "Replace the original local review directory with <historical-diagonal-audit>/",
+      "replacement_count": 5,
+      "semantic_changes": false
+    }
+  ]
+}

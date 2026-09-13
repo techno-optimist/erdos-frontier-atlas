@@ -62,6 +62,8 @@ others don't touch it.
 | `agent/astra-376-d35-20260911` | #376 C search complete through 3^35 (43 terms) | `experiments/astra-376-20260911/hits-d35.txt` | infinitude; >10^70 |
 | `agent/astra-goal-b2b-20260911` | Campaign GOAL north star; Type B2b structural leftover | `experiments/astra-i3-20260911/GOAL.md`, `typeB2b.*` | smoothness of n-1 vs 3-consecutive P |
 | `agent/astra-ppower-20260911` | prime-power n-1 ⇒ o∤P | `experiments/astra-i3-20260911/typeB2b.*` | two-prime n-1; n≡1 mod 4; n≡4 mod 6 |
+| `agent/astra-327-fiber-20260912` | P327 multiplier-sensitive smooth fibers: exact density-transfer operator, not a next-cell search | `experiments/astra-327-fiber-20260912/`; additive substrate entry | exact checker and hand certificates pass; independent model reviews; no status or production-graph changes |
+| `agent/astra-rh-969-20260912` | RH / P969: energy equivalence, generic obstruction, CRT/defect and Mellin transfers, GM/GMRR deduction, sharp Type I and signed-diagonal interfaces; README refresh | [Progress map](experiments/astra-rh-969-20260912/REPOSITORY_STATUS.md); both RH experiment directories, additive substrate entries, replay tests, root README and its freshness guards | [PR #156](https://github.com/techno-optimist/erdos-frontier-atlas/pull/156); independent software review passed (33 Python files); model-audited 4/7-epsilon variance deduction from named inputs; full signed residual and RH remain open; no canonical status, production-graph or frozen-certificate changes |
 | *(add your lane)* | | | |
 
 ## Erdős-142 — active multi-lane, read before touching

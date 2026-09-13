@@ -1,0 +1,38 @@
+{
+  "schema": "p327-fiber-review-v1",
+  "review_kind": "independent automated model reviews, not human peer review or formal proof",
+  "mathematical_review": {
+    "outcome": "no flaw found in the activation rule, exact state counts, finite fiber-deficit bound, or refinement monotonicity",
+    "scope": "independent argument assessment; not verification of literature record computations",
+    "follow_up": "explicit pair/triangle certificates and floor formulas incorporated and checked locally"
+  },
+  "core_code_review": {
+    "passed": true,
+    "security_concerns": [],
+    "logic_errors": [],
+    "suggestions": [
+      "Export future review snapshots directly from git because returned tool stdout may be truncated.",
+      "Define k-admissibility and f_k(N), including the distinct-pair condition."
+    ],
+    "disposition": [
+      "The reviewer recovered missing snapshot sections from the staged index; the export workflow now uses git's native output option.",
+      "The definition has been added at the beginning of RESULT.md."
+    ]
+  },
+  "supplement_review": {
+    "passed": true,
+    "security_concerns": [],
+    "logic_errors": [],
+    "scope": "hand-checkable matchings/triangle, exact floor formulas, prime-power activation control, definitions",
+    "suggestions": [
+      "Explicitly assert that every hand-certificate vertex belongs to the selected smooth prefix."
+    ],
+    "disposition": "The explicit prefix-membership assertion was added to the certificate test and exercised by the final local regression run."
+  },
+  "remaining": [
+    "independent human mathematical review",
+    "formalization if desired",
+    "literature-wide novelty assessment; none claimed",
+    "the full extremal-density problem"
+  ]
+}

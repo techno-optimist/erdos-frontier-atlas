@@ -1,0 +1,196 @@
+{
+  "scope": "New CRT lane only; no old repository gates or commits retried",
+  "interpreter": "Python 3.9.6",
+  "protected_paths_diff_exit": 0,
+  "runs": [
+    {
+      "label": "RED: exact variance API absent",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-crt-20260912 -p 'test_*.py' -v",
+      "cwd": "<repo>",
+      "expected_exit": 1,
+      "exit_code": 1,
+      "output": "test_variance_matches_direct_residue_averaging (test_kernel.KernelTests) ... FAIL\n\n======================================================================\nFAIL: test_variance_matches_direct_residue_averaging (test_kernel.KernelTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<repo>/experiments/astra-rh-crt-20260912/test_kernel.py\", line 37, in test_variance_matches_direct_residue_averaging\n    kernel = load_kernel(self)\n  File \"<repo>/experiments/astra-rh-crt-20260912/test_kernel.py\", line 12, in load_kernel\n    test.assertTrue(path.is_file(), \"Missing CRT variance implementation\")\nAssertionError: False is not true : Missing CRT variance implementation\n\n----------------------------------------------------------------------\nRan 1 test in 0.000s\n\nFAILED (failures=1)",
+      "path_sanitized": true
+    },
+    {
+      "label": "GREEN: exact variance agrees with independent residue oracle",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-crt-20260912 -p 'test_*.py' -v",
+      "cwd": "<repo>",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "output": "test_variance_matches_direct_residue_averaging (test_kernel.KernelTests) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.080s\n\nOK",
+      "path_sanitized": true
+    },
+    {
+      "label": "RED: parameter contract rejects boolean lengths",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-crt-20260912 -p 'test_*.py' -v",
+      "cwd": "<repo>",
+      "expected_exit": 1,
+      "exit_code": 1,
+      "output": "test_variance_matches_direct_residue_averaging (test_kernel.KernelTests) ... ok\ntest_variance_rejects_invalid_or_lossy_parameters (test_kernel.KernelTests) ... FAIL\n\n======================================================================\nFAIL: test_variance_rejects_invalid_or_lossy_parameters (test_kernel.KernelTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<repo>/experiments/astra-rh-crt-20260912/test_kernel.py\", line 56, in test_variance_rejects_invalid_or_lossy_parameters\n    kernel.variance(primes, h)\nAssertionError: ValueError not raised : ([2], True)\n\n----------------------------------------------------------------------\nRan 2 tests in 0.048s\n\nFAILED (failures=1)",
+      "path_sanitized": true
+    },
+    {
+      "label": "GREEN: bounded replay domain validated without coercion",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-crt-20260912 -p 'test_*.py' -v",
+      "cwd": "<repo>",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "output": "test_variance_matches_direct_residue_averaging (test_kernel.KernelTests) ... ok\ntest_variance_rejects_invalid_or_lossy_parameters (test_kernel.KernelTests) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.047s\n\nOK",
+      "path_sanitized": true
+    },
+    {
+      "label": "RED: real-parameter prime-addition API absent",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-crt-20260912 -p 'test_*.py' -v",
+      "cwd": "<repo>",
+      "expected_exit": 1,
+      "exit_code": 1,
+      "output": "test_real_kernel_obeys_prime_addition (test_kernel.KernelTests) ... FAIL\ntest_variance_matches_direct_residue_averaging (test_kernel.KernelTests) ... ok\ntest_variance_rejects_invalid_or_lossy_parameters (test_kernel.KernelTests) ... ok\n\n======================================================================\nFAIL: test_real_kernel_obeys_prime_addition (test_kernel.KernelTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<repo>/experiments/astra-rh-crt-20260912/test_kernel.py\", line 61, in test_real_kernel_obeys_prime_addition\n    self.assertTrue(hasattr(kernel, \"phase_kernel\"), \"Missing real kernel extension\")\nAssertionError: False is not true : Missing real kernel extension\n\n----------------------------------------------------------------------\nRan 3 tests in 0.048s\n\nFAILED (failures=1)",
+      "path_sanitized": true
+    },
+    {
+      "label": "GREEN: prime-addition recurrence checked with exact rationals",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-crt-20260912 -p 'test_*.py' -v",
+      "cwd": "<repo>",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "output": "test_real_kernel_obeys_prime_addition (test_kernel.KernelTests) ... ok\ntest_variance_matches_direct_residue_averaging (test_kernel.KernelTests) ... ok\ntest_variance_rejects_invalid_or_lossy_parameters (test_kernel.KernelTests) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.050s\n\nOK",
+      "path_sanitized": true
+    },
+    {
+      "label": "RED: normalized refinement energy API absent",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-crt-20260912 -p 'test_*.py' -v",
+      "cwd": "<repo>",
+      "expected_exit": 1,
+      "exit_code": 1,
+      "output": "test_normalized_refinement_is_an_orthogonal_increment (test_kernel.KernelTests) ... FAIL\ntest_real_kernel_obeys_prime_addition (test_kernel.KernelTests) ... ok\ntest_variance_matches_direct_residue_averaging (test_kernel.KernelTests) ... ok\ntest_variance_rejects_invalid_or_lossy_parameters (test_kernel.KernelTests) ... ok\n\n======================================================================\nFAIL: test_normalized_refinement_is_an_orthogonal_increment (test_kernel.KernelTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<repo>/experiments/astra-rh-crt-20260912/test_kernel.py\", line 78, in test_normalized_refinement_is_an_orthogonal_increment\n    self.assertTrue(hasattr(kernel, \"refinement_energy\"), \"Missing normalized refinement operator\")\nAssertionError: False is not true : Missing normalized refinement operator\n\n----------------------------------------------------------------------\nRan 4 tests in 0.050s\n\nFAILED (failures=1)",
+      "path_sanitized": true
+    },
+    {
+      "label": "GREEN: refinement agrees with independent squared increments",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-crt-20260912 -p 'test_*.py' -v",
+      "cwd": "<repo>",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "output": "test_normalized_refinement_is_an_orthogonal_increment (test_kernel.KernelTests) ... ok\ntest_real_kernel_obeys_prime_addition (test_kernel.KernelTests) ... ok\ntest_variance_matches_direct_residue_averaging (test_kernel.KernelTests) ... ok\ntest_variance_rejects_invalid_or_lossy_parameters (test_kernel.KernelTests) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.105s\n\nOK",
+      "path_sanitized": true
+    },
+    {
+      "label": "RED: independent receipt verifier absent",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-crt-20260912 -p 'test_*.py' -v",
+      "cwd": "<repo>",
+      "expected_exit": 1,
+      "exit_code": 1,
+      "output": "test_normalized_refinement_is_an_orthogonal_increment (test_kernel.KernelTests) ... ok\ntest_real_kernel_obeys_prime_addition (test_kernel.KernelTests) ... ok\ntest_variance_matches_direct_residue_averaging (test_kernel.KernelTests) ... ok\ntest_variance_rejects_invalid_or_lossy_parameters (test_kernel.KernelTests) ... ok\ntest_accepts_exact_independently_enumerated_fixture (test_receipt.ReceiptTests) ... FAIL\n\n======================================================================\nFAIL: test_accepts_exact_independently_enumerated_fixture (test_receipt.ReceiptTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<repo>/experiments/astra-rh-crt-20260912/test_receipt.py\", line 37, in test_accepts_exact_independently_enumerated_fixture\n    verifier = load_verifier(self)\n  File \"<repo>/experiments/astra-rh-crt-20260912/test_receipt.py\", line 14, in load_verifier\n    test.assertTrue(path.is_file(), \"Missing independent semantic verifier\")\nAssertionError: False is not true : Missing independent semantic verifier\n\n----------------------------------------------------------------------\nRan 5 tests in 0.108s\n\nFAILED (failures=1)",
+      "path_sanitized": true
+    },
+    {
+      "label": "GREEN: direct sliding-window checker accepts exact fixture",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-crt-20260912 -p 'test_*.py' -v",
+      "cwd": "<repo>",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "output": "test_normalized_refinement_is_an_orthogonal_increment (test_kernel.KernelTests) ... ok\ntest_real_kernel_obeys_prime_addition (test_kernel.KernelTests) ... ok\ntest_variance_matches_direct_residue_averaging (test_kernel.KernelTests) ... ok\ntest_variance_rejects_invalid_or_lossy_parameters (test_kernel.KernelTests) ... ok\ntest_accepts_exact_independently_enumerated_fixture (test_receipt.ReceiptTests) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.117s\n\nOK",
+      "path_sanitized": true
+    },
+    {
+      "label": "RED: semantic gate must reject a false RH promotion",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-crt-20260912 -p 'test_*.py' -v",
+      "cwd": "<repo>",
+      "expected_exit": 1,
+      "exit_code": 1,
+      "output": "test_normalized_refinement_is_an_orthogonal_increment (test_kernel.KernelTests) ... ok\ntest_real_kernel_obeys_prime_addition (test_kernel.KernelTests) ... ok\ntest_variance_matches_direct_residue_averaging (test_kernel.KernelTests) ... ok\ntest_variance_rejects_invalid_or_lossy_parameters (test_kernel.KernelTests) ... ok\ntest_accepts_exact_independently_enumerated_fixture (test_receipt.ReceiptTests) ... ok\ntest_rejects_false_values_domains_counts_and_promotion (test_receipt.ReceiptTests) ... FAIL\n\n======================================================================\nFAIL: test_rejects_false_values_domains_counts_and_promotion (test_receipt.ReceiptTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<repo>/experiments/astra-rh-crt-20260912/test_receipt.py\", line 68, in test_rejects_false_values_domains_counts_and_promotion\n    verifier.verify_receipt(doc)\nAssertionError: ValueError not raised : poison 0\n\n----------------------------------------------------------------------\nRan 6 tests in 0.173s\n\nFAILED (failures=1)",
+      "path_sanitized": true
+    },
+    {
+      "label": "GREEN: semantic, domain, scope, duplicate, and resource poisons rejected",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-crt-20260912 -p 'test_*.py' -v",
+      "cwd": "<repo>",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "output": "test_normalized_refinement_is_an_orthogonal_increment (test_kernel.KernelTests) ... ok\ntest_real_kernel_obeys_prime_addition (test_kernel.KernelTests) ... ok\ntest_variance_matches_direct_residue_averaging (test_kernel.KernelTests) ... ok\ntest_variance_rejects_invalid_or_lossy_parameters (test_kernel.KernelTests) ... ok\ntest_accepts_exact_independently_enumerated_fixture (test_receipt.ReceiptTests) ... ok\ntest_rejects_false_values_domains_counts_and_promotion (test_receipt.ReceiptTests) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.190s\n\nOK",
+      "path_sanitized": true
+    },
+    {
+      "label": "RED: read-only CLI must emit a machine verdict",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-crt-20260912 -p 'test_*.py' -v",
+      "cwd": "<repo>",
+      "expected_exit": 1,
+      "exit_code": 1,
+      "output": "test_normalized_refinement_is_an_orthogonal_increment (test_kernel.KernelTests) ... ok\ntest_real_kernel_obeys_prime_addition (test_kernel.KernelTests) ... ok\ntest_variance_matches_direct_residue_averaging (test_kernel.KernelTests) ... ok\ntest_variance_rejects_invalid_or_lossy_parameters (test_kernel.KernelTests) ... ok\ntest_accepts_exact_independently_enumerated_fixture (test_receipt.ReceiptTests) ... ok\ntest_cli_is_read_only_and_rejects_ambiguous_json (test_receipt.ReceiptTests) ... FAIL\ntest_rejects_false_values_domains_counts_and_promotion (test_receipt.ReceiptTests) ... ok\n\n======================================================================\nFAIL: test_cli_is_read_only_and_rejects_ambiguous_json (test_receipt.ReceiptTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<repo>/experiments/astra-rh-crt-20260912/test_receipt.py\", line 90, in test_cli_is_read_only_and_rejects_ambiguous_json\n    self.assertIn('\"passed\"', result.stdout, \"Missing machine verdict\")\nAssertionError: '\"passed\"' not found in '' : Missing machine verdict\n\n----------------------------------------------------------------------\nRan 7 tests in 0.248s\n\nFAILED (failures=1)",
+      "path_sanitized": true
+    },
+    {
+      "label": "GREEN: real CLI rejects malformed inputs without rewriting them",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-crt-20260912 -p 'test_*.py' -v",
+      "cwd": "<repo>",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "output": "test_normalized_refinement_is_an_orthogonal_increment (test_kernel.KernelTests) ... ok\ntest_real_kernel_obeys_prime_addition (test_kernel.KernelTests) ... ok\ntest_variance_matches_direct_residue_averaging (test_kernel.KernelTests) ... ok\ntest_variance_rejects_invalid_or_lossy_parameters (test_kernel.KernelTests) ... ok\ntest_accepts_exact_independently_enumerated_fixture (test_receipt.ReceiptTests) ... ok\ntest_cli_is_read_only_and_rejects_ambiguous_json (test_receipt.ReceiptTests) ... ok\ntest_rejects_false_values_domains_counts_and_promotion (test_receipt.ReceiptTests) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.654s\n\nOK",
+      "path_sanitized": true
+    },
+    {
+      "label": "RED: explicit producer absent",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-crt-20260912 -p 'test_*.py' -v",
+      "cwd": "<repo>",
+      "expected_exit": 1,
+      "exit_code": 1,
+      "output": "test_normalized_refinement_is_an_orthogonal_increment (test_kernel.KernelTests) ... ok\ntest_real_kernel_obeys_prime_addition (test_kernel.KernelTests) ... ok\ntest_variance_matches_direct_residue_averaging (test_kernel.KernelTests) ... ok\ntest_variance_rejects_invalid_or_lossy_parameters (test_kernel.KernelTests) ... ok\ntest_accepts_exact_independently_enumerated_fixture (test_receipt.ReceiptTests) ... ok\ntest_cli_is_read_only_and_rejects_ambiguous_json (test_receipt.ReceiptTests) ... ok\ntest_explicit_producer_replays_and_refuses_overwrite (test_receipt.ReceiptTests) ... FAIL\ntest_rejects_false_values_domains_counts_and_promotion (test_receipt.ReceiptTests) ... ok\n\n======================================================================\nFAIL: test_explicit_producer_replays_and_refuses_overwrite (test_receipt.ReceiptTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<repo>/experiments/astra-rh-crt-20260912/test_receipt.py\", line 113, in test_explicit_producer_replays_and_refuses_overwrite\n    self.assertTrue(path.is_file(), \"Explicit producer did not emit a receipt\")\nAssertionError: False is not true : Explicit producer did not emit a receipt\n\n----------------------------------------------------------------------\nRan 8 tests in 0.715s\n\nFAILED (failures=1)",
+      "path_sanitized": true
+    },
+    {
+      "label": "GREEN: fixed-cohort producer independently replayed; overwrite refused",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-crt-20260912 -p 'test_*.py' -v",
+      "cwd": "<repo>",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "output": "test_normalized_refinement_is_an_orthogonal_increment (test_kernel.KernelTests) ... ok\ntest_real_kernel_obeys_prime_addition (test_kernel.KernelTests) ... ok\ntest_variance_matches_direct_residue_averaging (test_kernel.KernelTests) ... ok\ntest_variance_rejects_invalid_or_lossy_parameters (test_kernel.KernelTests) ... ok\ntest_accepts_exact_independently_enumerated_fixture (test_receipt.ReceiptTests) ... ok\ntest_cli_is_read_only_and_rejects_ambiguous_json (test_receipt.ReceiptTests) ... ok\ntest_explicit_producer_replays_and_refuses_overwrite (test_receipt.ReceiptTests) ... ok\ntest_rejects_false_values_domains_counts_and_promotion (test_receipt.ReceiptTests) ... ok\n\n----------------------------------------------------------------------\nRan 8 tests in 0.885s\n\nOK",
+      "path_sanitized": true
+    },
+    {
+      "label": "Emit bounded CRT receipt explicitly",
+      "command": "python3 -I -B experiments/astra-rh-crt-20260912/kernel.py --emit experiments/astra-rh-crt-20260912/receipt.json",
+      "cwd": "<repo>",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "output": "{\"case_count\": 70, \"emitted\": \"experiments/astra-rh-crt-20260912/receipt.json\", \"scope\": \"uniform-residue-phase-only\"}",
+      "path_sanitized": true
+    },
+    {
+      "label": "Read-only independent replay of the emitted receipt",
+      "command": "python3 -I -B experiments/astra-rh-crt-20260912/verify.py experiments/astra-rh-crt-20260912/receipt.json",
+      "cwd": "<repo>",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "output": "{\"adverse_phase_verified\": true, \"case_count\": 70, \"distinct_prime_sets\": 7, \"passed\": true, \"rh_proved\": false, \"sampled_phase_bounds_checked\": true, \"scope\": \"uniform-residue-phase-only\"}",
+      "path_sanitized": true
+    },
+    {
+      "label": "RED: deep malformed JSON must fail with a machine verdict",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-crt-20260912 -p 'test_*.py' -v",
+      "cwd": "<repo>",
+      "expected_exit": 1,
+      "exit_code": 1,
+      "output": "test_normalized_refinement_is_an_orthogonal_increment (test_kernel.KernelTests) ... ok\ntest_real_kernel_obeys_prime_addition (test_kernel.KernelTests) ... ok\ntest_variance_matches_direct_residue_averaging (test_kernel.KernelTests) ... ok\ntest_variance_rejects_invalid_or_lossy_parameters (test_kernel.KernelTests) ... ok\ntest_accepts_exact_independently_enumerated_fixture (test_receipt.ReceiptTests) ... ok\ntest_cli_is_read_only_and_rejects_ambiguous_json (test_receipt.ReceiptTests) ... ok\ntest_deep_json_rejection_still_returns_a_machine_verdict (test_receipt.ReceiptTests) ... FAIL\ntest_explicit_producer_replays_and_refuses_overwrite (test_receipt.ReceiptTests) ... ok\ntest_rejects_false_values_domains_counts_and_promotion (test_receipt.ReceiptTests) ... ok\n\n======================================================================\nFAIL: test_deep_json_rejection_still_returns_a_machine_verdict (test_receipt.ReceiptTests)\n----------------------------------------------------------------------\nTraceback (most recent call last):\n  File \"<repo>/experiments/astra-rh-crt-20260912/test_receipt.py\", line 137, in test_deep_json_rejection_still_returns_a_machine_verdict\n    self.assertIn('\"passed\"',result.stdout,\"Deep JSON escaped the machine-verdict contract\")\nAssertionError: '\"passed\"' not found in '' : Deep JSON escaped the machine-verdict contract\n\n----------------------------------------------------------------------\nRan 9 tests in 0.984s\n\nFAILED (failures=1)",
+      "path_sanitized": true
+    },
+    {
+      "label": "GREEN: deep JSON is rejected without an uncaught traceback",
+      "command": "python3 -I -B -m unittest discover -s experiments/astra-rh-crt-20260912 -p 'test_*.py' -v",
+      "cwd": "<repo>",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "output": "test_normalized_refinement_is_an_orthogonal_increment (test_kernel.KernelTests) ... ok\ntest_real_kernel_obeys_prime_addition (test_kernel.KernelTests) ... ok\ntest_variance_matches_direct_residue_averaging (test_kernel.KernelTests) ... ok\ntest_variance_rejects_invalid_or_lossy_parameters (test_kernel.KernelTests) ... ok\ntest_accepts_exact_independently_enumerated_fixture (test_receipt.ReceiptTests) ... ok\ntest_cli_is_read_only_and_rejects_ambiguous_json (test_receipt.ReceiptTests) ... ok\ntest_deep_json_rejection_still_returns_a_machine_verdict (test_receipt.ReceiptTests) ... ok\ntest_explicit_producer_replays_and_refuses_overwrite (test_receipt.ReceiptTests) ... ok\ntest_rejects_false_values_domains_counts_and_promotion (test_receipt.ReceiptTests) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 0.981s\n\nOK",
+      "path_sanitized": true
+    },
+    {
+      "label": "Standalone directory replay",
+      "command": "python3 -I -B -m unittest discover -s . -p 'test_*.py' -v",
+      "cwd": "<bundle>",
+      "expected_exit": 0,
+      "exit_code": 0,
+      "output": "test_normalized_refinement_is_an_orthogonal_increment (test_kernel.KernelTests) ... ok\ntest_real_kernel_obeys_prime_addition (test_kernel.KernelTests) ... ok\ntest_variance_matches_direct_residue_averaging (test_kernel.KernelTests) ... ok\ntest_variance_rejects_invalid_or_lossy_parameters (test_kernel.KernelTests) ... ok\ntest_accepts_exact_independently_enumerated_fixture (test_receipt.ReceiptTests) ... ok\ntest_cli_is_read_only_and_rejects_ambiguous_json (test_receipt.ReceiptTests) ... ok\ntest_deep_json_rejection_still_returns_a_machine_verdict (test_receipt.ReceiptTests) ... ok\ntest_explicit_producer_replays_and_refuses_overwrite (test_receipt.ReceiptTests) ... ok\ntest_rejects_false_values_domains_counts_and_promotion (test_receipt.ReceiptTests) ... ok\n\n----------------------------------------------------------------------\nRan 9 tests in 1.034s\n\nOK",
+      "path_sanitized": true
+    }
+  ]
+}
