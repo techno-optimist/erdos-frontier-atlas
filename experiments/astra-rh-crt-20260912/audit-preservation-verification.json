@@ -1,0 +1,20 @@
+{
+  "schema": "rh-audit-parent-preservation-check-v1",
+  "checked_at_utc": "2026-09-13T05:40:15.996417+00:00",
+  "passed": true,
+  "scope": "Parent comparison against pinned originals, raw copies and declared path-only transformations; no analytic proof certification.",
+  "archive_manifest": "audits/MANIFEST.json",
+  "archive_manifest_sha256": "5c73d3d87e0e914e3c0df4a34713ba85019ba57be02bbcac4dde0545d320ef38",
+  "counts": {
+    "originals_verified": 264,
+    "raw_copies_verified": 148,
+    "preserved_originals_verified": 107,
+    "explicit_omissions": 157,
+    "path_edits_verified": 74,
+    "reference_snapshots_verified": 10,
+    "public_checksum_entries_verified": 157
+  },
+  "all_declared_path_edits_reconstructed_byte_for_byte": true,
+  "all_original_sources_match_prepackaging_pins": true,
+  "mathematical_claims_rechecked_by_this_script": false
+}

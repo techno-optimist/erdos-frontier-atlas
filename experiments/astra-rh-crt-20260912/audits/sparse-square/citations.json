@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://arxiv.org/src/1411.7764v1",
+      "title": "",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "We start by expressing $\\pmd{\\zeta\\pr{\\frac12+it}}^2$  as a sum of length approximately $T^{1+\\eps}$. Let $G(w)$ be an entire function with rapid decay along vertical lines, that is $G(x + iy) \\ll y^{-A}$ for any fixed $x$ and $A > 0.$ Suppose $G(-w) = G(w), G(0) =1, G(1/2) = 0$. \nWe will use the following form of the approximate functional equation for\n$|\\zeta(s)|^2$. \n\n\\begin{lemma}[Approximate functional equation] \\label{lem:fncofZetasq}For $T < t < 2T,$ we have\n\\est{\n\\pmd{\\zeta\\pr{\\frac12+it}}^2= 2 \\sum_{m_1, m_2}\\frac{1}{(m_1m_2)^{\\frac12}}\\pr{\\frac{m_1}{m_2}}^{it}W\\pr{\\frac{2\\pi m_1m_2}t} + O\\left(T^{-2/3} \\right),\n}\nwhere\n\\est{\nW(x):= \\frac{1}{2\\pi i} \\int_{(2)}x^{-w}G(w)\\frac{dw}w,\n}\nand where we use the notation $\\int_{(c)}$ to mean an integration up the vertical line from $c-i\\infty$ to $c+i\\infty$.\n\n\\end{lemma}\nThe proof of the lemma can be found in Lemma 3 of \\cite{LR}.",
+          "added": "2026-09-12"
+        },
+        {
+          "text": "Notice that $W^{(\\ell)}(x) \\ll_{\\ell,A} \\min\\pr{1,x^{-A}}$ for $x>0$ and all $\\ell\\in\\N$ .\n\\end{rem*}\n\n\nThe error term in Lemma~\\ref{lem:fncofZetasq} produces an error term bounded by $T^{\\frac 13 + \\eps}$, and thus\n\\est{\nI &= 2\\sum_{n_1, n_2, m_1, m_2} \\frac{a_{n_1}\\overline a_{n_2}}{(m_1m_2n_1n_2)^{\\frac12}}\\int_{\\R}\\pr{\\frac{m_1n_2}{m_2n_1}}^{it}W\\pr{\\frac{2\\pi m_1m_2}t}\\phi\\pr{\\frac tT}\\,dt  + O(T^{\\frac 13 + \\eps})\\\\\n&= \\mathcal D + \\s + O(T^{\\frac 13 + \\eps}),\n}",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "url": "https://arxiv.org/src/1208.2684v1",
+      "title": "",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "Let $G(\\cdot)$ be an entire function with rapid decay along vertical lines, \nthat is $G(x + iy) \\ll |y|^{-A}$ for any fixed $x$ and $A > 0$.\nSuppose also that $G(-w) = G(w)$, $G(0) = 1$\nand $\\overline{G(w)} = G(\\bar{w})$. An example of\nsuch a function is $G(w) = e^{w^2}$. For such a function $G(x)$\nwe define a smooth function \n$$\nW(x) := \\frac{1}{2\\pi} \\int_{(\\varepsilon)} x^{-w}  G(w) \\cdot \\frac{d w}{w}.\n$$\nNotice that $W$ is real.\n\\begin{lemma}[Approximate function equation]\nWe have, for $T < t < 2T$, \n  \\[ | \\zeta ( \\tfrac{1}{2} + i t) |^2 = 2 \\sum_{mn < T^{1 + \\varepsilon}}\n     \\frac{1}{\\sqrt{mn}} \\cdot \\bigg ( \\frac{m}{n} \\bigg )^{i t} \n     W \\bigg ( \\frac{2 \\pi mn}{t}\n\\bigg ) + O (T^{- 2 / 3}) . \\]",
+          "added": "2026-09-12"
+        },
+        {
+          "text": "with $g_t(w) = \\Gamma ( \\tfrac 14 + \\tfrac {it}{2} + \\tfrac{w}{2} )\n\\Gamma ( \\tfrac 14 - \\tfrac{it}{2} + \\tfrac{w}{2}) / \\big (\n\\Gamma ( \\tfrac 14 + \\tfrac{it}{2} ) \\Gamma (\\tfrac 14 - \\tfrac {it}{2}) \\big )\n$\nBy Stirling's formula $g_t(w) = (t/2)^{w} \\cdot (1 + O((1 + |w|^2)/t))$\nuniformly for $w$ lying in any fixed half-plane and $t$ large.\nUsing Weyl's subconvexity bound, \non the line $\\tRe w = \\varepsilon$ we have\n$\\zeta(\\tfrac 12 + it + w)\\zeta(\\tfrac 12 - it + w) \\ll |t|^{1/3} + |w|^{1/3}$.\nTherefore, the error term $O((1 + |w|^2)/t)$ \nin Stirling's approximation contributes\nan error term of $O(T^{-2/3})$ in (\\ref{standard}). Thus\n$$\n|\\zeta(\\tfrac 12 + it)|^2 = \\frac{2}{2\\pi i} \\int_{(\\varepsilon)} \n\\zeta(\\tfrac 12 + it + w)\\zeta(\\tfrac 12 - it + w)\n\\cdot \\bigg ( \\frac{t}{2\\pi} \\bigg )^{w} G(w) \\cdot \\frac{dw}{w}\n+ O(T^{-2/3}).\n$$\nShifting the line of integration to $\\tRe w = 1 + \\varepsilon$ we collect\na pole at $w = \\tfrac 12 \\pm it$, it is negligible because\n$G(\\tfrac 12 \\pm it) \\ll |t|^{-A}$. Expanding $\\zeta(\\tfrac 12 \n+ it + w)\\zeta(\\tfrac 12 - it + w)$ into a Dirichlet series on the line\n$\\tRe w = 1 + \\varepsilon$ we conclude that\n$$\n|\\zeta(\\tfrac 12 + it)|^2 = 2\\sum_{m , n \\geq 1} \\frac{1}{\\sqrt{m n}}\n\\cdot \\bigg ( \\frac{m}{n} \\bigg )^{it} W \\bigg ( \\frac{2\\pi m n}{t} \\bigg )\n+ O(T^{-2/3}).\n$$\nNotice that $W(x) = O_A(x^{-A})$ for $x > 1$. Since $T \\leq t \\leq 2T$\nif $m n > T^{1 + \\varepsilon}$ then $2\\pi m n / t \\gg T^{\\varepsilon}$. Therefore\nwe can truncate\nthe terms with $m n > T^{1 + \\varepsilon}$ making an error term of\nat most $\\ll T^{-A}$. The claim follows.",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "url": "https://unige.iris.cineca.it/bitstream/11567/896399/3/bettin2015.pdf",
+      "title": "",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "Lemma 1 (Approximate functional equation).",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "url": "https://arxiv.org/src/2006.04060v2",
+      "title": "",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "\\begin{lemma}[Hybrid mean-value theorem] \\label{le:hmvt}\n  Let $a(n)$ be an arbitrary sequence of coefficients and $N, q \\geq 1$ be integers and $T \\geq 1$ real. Then, for any given $\\varepsilon > 0$, \n  $$\n  \\sum_{\\chi \\Mod{q}} \\int_{|t| \\leq T} \\Big | \\sum_{n \\leq N} a(n) \\chi^2(n) n^{it} \\Big |^2 dt \\ll q^{\\varepsilon} (q T + N) \\sum_{n \\leq N} |a(n)|^2. \n  $$\n\\end{lemma}\n\\begin{proof}\n  We notice that given a character $\\psi \\Mod{q}$ there are at most $\\ll q^{\\varepsilon}$ characters $\\chi$ such that $\\chi^2 = \\psi$. Therefore the left-hand side of the claim is bounded by\n  $$\n  \\ll q^{\\varepsilon} \\sum_{\\psi \\Mod{q}} \\int_{|t| \\leq T} \\Big | \\sum_{n \\leq N} a(n) \\psi(n) n^{it} \\Big |^2 dt \n  $$\n  and the result follows from the standard hybrid mean-value theorem, see e.g. \\cite[Theorem 6.4]{Montgomery71}.",
+          "added": "2026-09-12"
+        }
+      ]
+    }
+  ]
+}

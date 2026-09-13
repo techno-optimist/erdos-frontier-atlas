@@ -1,0 +1,214 @@
+{
+  "scope": "Exact finite identity and rational exponent checks only; no numerical zeta experiment and no proof of a missing joint moment.",
+  "identity_cases": [
+    {
+      "U": 2,
+      "k": 1,
+      "checked_through": 2,
+      "pass": true
+    },
+    {
+      "U": 2,
+      "k": 2,
+      "checked_through": 4,
+      "pass": true
+    },
+    {
+      "U": 2,
+      "k": 3,
+      "checked_through": 8,
+      "pass": true
+    },
+    {
+      "U": 2,
+      "k": 4,
+      "checked_through": 16,
+      "pass": true
+    },
+    {
+      "U": 3,
+      "k": 1,
+      "checked_through": 3,
+      "pass": true
+    },
+    {
+      "U": 3,
+      "k": 2,
+      "checked_through": 9,
+      "pass": true
+    },
+    {
+      "U": 3,
+      "k": 3,
+      "checked_through": 27,
+      "pass": true
+    },
+    {
+      "U": 3,
+      "k": 4,
+      "checked_through": 81,
+      "pass": true
+    },
+    {
+      "U": 4,
+      "k": 1,
+      "checked_through": 4,
+      "pass": true
+    },
+    {
+      "U": 4,
+      "k": 2,
+      "checked_through": 16,
+      "pass": true
+    },
+    {
+      "U": 4,
+      "k": 3,
+      "checked_through": 64,
+      "pass": true
+    },
+    {
+      "U": 4,
+      "k": 4,
+      "checked_through": 256,
+      "pass": true
+    },
+    {
+      "U": 5,
+      "k": 1,
+      "checked_through": 5,
+      "pass": true
+    },
+    {
+      "U": 5,
+      "k": 2,
+      "checked_through": 25,
+      "pass": true
+    },
+    {
+      "U": 5,
+      "k": 3,
+      "checked_through": 125,
+      "pass": true
+    },
+    {
+      "U": 5,
+      "k": 4,
+      "checked_through": 625,
+      "pass": true
+    }
+  ],
+  "identity_case_count": 16,
+  "coefficient_checks": 1270,
+  "negative_cutoff_control": {
+    "U": 2,
+    "k": 2,
+    "n": 9,
+    "mu": 0,
+    "truncated_rhs": -1,
+    "remainder": 1,
+    "insufficient_cutoff_rejected": true
+  },
+  "critical": {
+    "d": "5/6",
+    "k2_U": "5/12",
+    "k3_U": "5/18",
+    "baseline_exponents": [
+      "1/6",
+      "1/3",
+      "1/3",
+      "1/3"
+    ],
+    "critical_V": "-5/24",
+    "critical_measure_exponent": "1/2",
+    "mixed_exponent": "1/3"
+  },
+  "type_I_example": {
+    "eta": "1/120",
+    "C": "71/120",
+    "R": "29/120",
+    "dual_L": "49/120",
+    "product_P": "13/20",
+    "raw_exponents": [
+      "1/6",
+      "19/60"
+    ],
+    "after_aggregate_eta_loss": "13/40",
+    "saving": "1/120"
+  },
+  "type_II_region": {
+    "short_min": "29/120",
+    "short_max": "5/12",
+    "long_max": "71/120"
+  },
+  "lengths": {
+    "standalone_polynomial": "5/6",
+    "ordinary_twist_index": "5/3",
+    "with_zeta_AFE": "13/6",
+    "critical_half_normalized_joint_target": "7/6"
+  },
+  "neighborhood_corners": [
+    {
+      "h_X": "4/7",
+      "a_X": "5/7",
+      "d_T": "5/6",
+      "h_T": "4/3",
+      "required_moment_exponent": "1/3"
+    },
+    {
+      "h_X": "4007/7000",
+      "a_X": "9993/14000",
+      "d_T": "9993/11972",
+      "h_T": "4007/2993",
+      "required_moment_exponent": "1979/5986"
+    }
+  ],
+  "negative_saving_controls": {
+    "C_at_7_over_12_not_strict": true,
+    "aggregate_loss_2_eta_not_strict": true
+  },
+  "supplied_inputs_unchanged": [
+    {
+      "original": "gm-candidate/gmrr-source/squfv.tex",
+      "sha256": "2ecca25d89675cec8451978a9f7541e69c25d07d09a87023748ea061cb9b051e",
+      "unchanged": true
+    },
+    {
+      "original": "gm-candidate/gm-source/LargevaluesDirichlet17.tex",
+      "sha256": "36d64e4ec02f0cee8baccd6ee1dbf5ea73f0dfde55827e00ad2566a142ffa428",
+      "unchanged": true
+    },
+    {
+      "original": "gm-candidate/gmrr-source/squfv.bbl",
+      "sha256": "f1cab043a6126434083f635060cc54c54192d6fe15bbf29614e53c0b48cee573",
+      "unchanged": true
+    },
+    {
+      "original": "gm-candidate/audit.md",
+      "sha256": "e61abeaf8f060178f259f613d540399119f00910119885d396551f64ae176b2d",
+      "unchanged": true
+    },
+    {
+      "original": "gm-first/report.md",
+      "sha256": "a5d5e92ab641eece617167ae4d7e80f56ff9c9b134d4b5a618f3775cabf06617",
+      "unchanged": true
+    },
+    {
+      "original": "gm-second/report.md",
+      "sha256": "4cd3e701d6e7f97cdb976d4e3ae1316e374346eb59b3c86fb56018dcf4a6f4d2",
+      "unchanged": true
+    }
+  ],
+  "externally_updated_inputs": [
+    {
+      "original": "<repo>/experiments/astra-rh-crt-20260912/GM_TRANSFER.md",
+      "initial_sha256": "fccc3023e6fe7f5708a60f174cfc3bad3c7e8c55491f494fcf781f6190fa5fa9",
+      "observed_sha256": "52eae4d28b0ae78fc67a4f112fd099bb3b72b4d86b3bc78866fc7294f50f41f6",
+      "classification": "External append-only Sources block; mathematical body unchanged",
+      "archive_file": "consolidated-GM_TRANSFER-final-read.md",
+      "exact_append": "\n## Sources\n\n[3] https://arxiv.org/html/2006.04060v2\n[5] https://arxiv.org/pdf/2405.20552v2 \u2014 Guth\u2013Maynard, New large value estimates for Dirichlet polynomials, v2\n"
+    }
+  ]
+}
+
+PASS: exact identities, rational ledger, fail-closed controls, and supplied-file hashes.

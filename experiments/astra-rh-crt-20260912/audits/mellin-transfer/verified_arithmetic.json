@@ -1,0 +1,66 @@
+{
+  "stencil": "K=1..16: moments, monomials, leading error all passed",
+  "parameters": [
+    {
+      "theta": "1/10",
+      "a": "37/40",
+      "K": 1,
+      "nu": "1/100",
+      "main_exponent": "-1/2000",
+      "remainder_exponent": "-663/500"
+    },
+    {
+      "theta": "1/2",
+      "a": "5/8",
+      "K": 1,
+      "nu": "1/500",
+      "main_exponent": "-1/2000",
+      "remainder_exponent": "-313/500"
+    },
+    {
+      "theta": "2/3",
+      "a": "1/2",
+      "K": 1,
+      "nu": "3/2000",
+      "main_exponent": "-1/2000",
+      "remainder_exponent": "-1003/3000"
+    },
+    {
+      "theta": "8/9",
+      "a": "1/3",
+      "K": 2,
+      "nu": "9/8000",
+      "main_exponent": "-1/2000",
+      "remainder_exponent": "-509/9000"
+    },
+    {
+      "theta": "9/10",
+      "a": "13/40",
+      "K": 2,
+      "nu": "1/900",
+      "main_exponent": "-1/2000",
+      "remainder_exponent": "-13/500"
+    },
+    {
+      "theta": "19/20",
+      "a": "23/80",
+      "K": 5,
+      "nu": "1/950",
+      "main_exponent": "-1/2000",
+      "remainder_exponent": "-77/2000"
+    },
+    {
+      "theta": "99/100",
+      "a": "103/400",
+      "K": 25,
+      "nu": "1/990",
+      "main_exponent": "-1/2000",
+      "remainder_exponent": "-17/2000"
+    }
+  ],
+  "threshold": "8/9",
+  "invariant_strip": "exact endpoint and 40-step orbit checks passed",
+  "RH_choice": "theta > max((4-2 beta)/3,(beta+2)/3), always possible for 1/2<beta<1",
+  "sharpness": "E(x)=x^a_theta meets abstract nu=0 variance for theta>=2/3 and has a Mellin pole at a_theta",
+  "analytic_only_L2_countercheck": "Fourier antiderivative verified: integral_X^(2X) x*sin^2(2*pi*x) dx = 3X^2/4 for integer X"
+}

@@ -1,0 +1,248 @@
+{
+  "schema": "rh-gm-parameter-arithmetic-v1",
+  "scope": "Exact rational exponent and epsilon-margin checks only; not verification of analytic inputs or an RH proof.",
+  "epsilon_domain": "0<epsilon<=1/100",
+  "total_subpower_budget": "X^(epsilon^2/1000)",
+  "margin_method": "Factor epsilon zeros, then bound every negative remaining coefficient by its endpoint contribution and drop nonnegative higher terms. Positive displayed rational lower bounds cover the whole epsilon interval, not a sample.",
+  "margins": [
+    {
+      "name": "small-divisor upper cutoff 1",
+      "epsilon_factor_power": 1,
+      "remaining_coefficients": [
+        "17/28",
+        "2"
+      ],
+      "uniform_lower_bound_after_factoring": "17/28"
+    },
+    {
+      "name": "small-divisor upper cutoff 2",
+      "epsilon_factor_power": 0,
+      "remaining_coefficients": [
+        "1/14",
+        "-11/28",
+        "2"
+      ],
+      "uniform_lower_bound_after_factoring": "27/400"
+    },
+    {
+      "name": "low-M level versus H^(1/2-eps/3)",
+      "epsilon_factor_power": 0,
+      "remaining_coefficients": [
+        "1/8",
+        "497/3000"
+      ],
+      "uniform_lower_bound_after_factoring": "1/8"
+    },
+    {
+      "name": "Weyl contribution versus H^(1/2-eps/3)",
+      "epsilon_factor_power": 1,
+      "remaining_coefficients": [
+        "2561/2625",
+        "1003/3000"
+      ],
+      "uniform_lower_bound_after_factoring": "2561/2625"
+    },
+    {
+      "name": "mixed GM contribution versus H^(1/2-eps/3)",
+      "epsilon_factor_power": 1,
+      "remaining_coefficients": [
+        "15563/21000",
+        "703/3000"
+      ],
+      "uniform_lower_bound_after_factoring": "15563/21000"
+    },
+    {
+      "name": "GM long-time contribution versus H^(1/2-eps/3)",
+      "epsilon_factor_power": 1,
+      "remaining_coefficients": [
+        "197/3000"
+      ],
+      "uniform_lower_bound_after_factoring": "197/3000"
+    },
+    {
+      "name": "density cross error versus H^(1/2-eps/16)",
+      "epsilon_factor_power": 0,
+      "remaining_coefficients": [
+        "1/14",
+        "5/7",
+        "1/16"
+      ],
+      "uniform_lower_bound_after_factoring": "1/14"
+    },
+    {
+      "name": "density square error versus H^(1/2-eps/16)",
+      "epsilon_factor_power": 0,
+      "remaining_coefficients": [
+        "1/7",
+        "41/28",
+        "1/16"
+      ],
+      "uniform_lower_bound_after_factoring": "1/7"
+    }
+  ],
+  "epsilon_free_polytopes": {
+    "original_black_box": {
+      "h_max": "6/11",
+      "cutoff_exponent": "8/11",
+      "feasible_vertex_count": 4,
+      "rows_Ah_plus_Ba_le_C": [
+        [
+          "-1",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "-1",
+          "0"
+        ],
+        [
+          "1/2",
+          "1",
+          "1"
+        ],
+        [
+          "-1/2",
+          "1",
+          "1/2"
+        ],
+        [
+          "1",
+          "-1",
+          "0"
+        ],
+        [
+          "4/3",
+          "-1",
+          "0"
+        ],
+        [
+          "1",
+          "0",
+          "4/7"
+        ]
+      ]
+    },
+    "GM_theorem_1_1_black_box": {
+      "h_max": "4/7",
+      "cutoff_exponent": "5/7",
+      "feasible_vertex_count": 4,
+      "rows_Ah_plus_Ba_le_C": [
+        [
+          "-1",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "-1",
+          "0"
+        ],
+        [
+          "1/2",
+          "1",
+          "1"
+        ],
+        [
+          "-1/2",
+          "1",
+          "1/2"
+        ],
+        [
+          "1",
+          "-1",
+          "0"
+        ],
+        [
+          "5/4",
+          "-1",
+          "0"
+        ],
+        [
+          "10",
+          "-1",
+          "5"
+        ],
+        [
+          "1",
+          "0",
+          "4/7"
+        ]
+      ]
+    },
+    "refined_critical_level_black_box": {
+      "h_max": "4/7",
+      "cutoff_exponent": "5/7",
+      "feasible_vertex_count": 1,
+      "rows_Ah_plus_Ba_le_C": [
+        [
+          "-1",
+          "0",
+          "0"
+        ],
+        [
+          "1",
+          "0",
+          "1"
+        ],
+        [
+          "0",
+          "-1",
+          "0"
+        ],
+        [
+          "1/2",
+          "1",
+          "1"
+        ],
+        [
+          "-1/2",
+          "1",
+          "1/2"
+        ],
+        [
+          "1",
+          "-1",
+          "0"
+        ],
+        [
+          "3",
+          "-1",
+          "1"
+        ],
+        [
+          "-5/3",
+          "-1",
+          "-5/3"
+        ],
+        [
+          "2",
+          "1",
+          "2"
+        ]
+      ]
+    }
+  },
+  "barrier_scope": "Failure of the displayed sufficient-inequality system, not an impossibility theorem for the actual mixed moment.",
+  "beyond_ceiling_negative_control": {
+    "h": "407/700",
+    "GM_cutoff_lower_minus_upper": "7/400",
+    "GM_mixed_lower_minus_upper": "21/200",
+    "refined_lower_minus_upper": "7/200"
+  },
+  "limits": [
+    "The analytic reduction and hypotheses require separate proof auditing.",
+    "A black-box ceiling is not a lower bound on an actual squarefree error or mixed moment.",
+    "Arithmetic was generated by a parent tool invocation, not by executing the child checker."
+  ]
+}

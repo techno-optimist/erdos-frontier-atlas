@@ -1,0 +1,67 @@
+[
+  {
+    "file": "gmrr-v2.pdf",
+    "bytes": 471375,
+    "sha256": "f59fafc77d44d9f78e34a234d716b9e5d7b38619f7f327b2c506c1e2a841ddab"
+  },
+  {
+    "file": "gmrr-v2-source.tar",
+    "bytes": 44713,
+    "sha256": "636d582a2372a74191806c2de06260e7f936bc44e2146021d5f4178928e2939f"
+  },
+  {
+    "file": "gmrr-source/squfv.tex",
+    "bytes": 131422,
+    "sha256": "2ecca25d89675cec8451978a9f7541e69c25d07d09a87023748ea061cb9b051e"
+  },
+  {
+    "file": "gmrr-source/squfv.bbl",
+    "bytes": 6946,
+    "sha256": "f1cab043a6126434083f635060cc54c54192d6fe15bbf29614e53c0b48cee573"
+  },
+  {
+    "file": "gm-v2.pdf",
+    "bytes": 656298,
+    "sha256": "915392cf7d0ecd108479814a9a1481e23423ef63415776471cec3975ae482cae"
+  },
+  {
+    "file": "gm-v2.html",
+    "bytes": 1388004,
+    "sha256": "bef63f09d561f24013e8d0c010f25179197c84ce8415d38c27fe6ec14e5dd811"
+  },
+  {
+    "file": "gm-v2-source.tar",
+    "bytes": 39943,
+    "sha256": "9d34ac093abcb8129f68ff86eaad65f09a09d832fe637ff84d50a69496046bdc"
+  },
+  {
+    "file": "gm-source/LargevaluesDirichlet17.tex",
+    "bytes": 140000,
+    "sha256": "36d64e4ec02f0cee8baccd6ee1dbf5ea73f0dfde55827e00ad2566a142ffa428"
+  },
+  {
+    "file": "gm-v1-source.gz",
+    "bytes": 35219,
+    "sha256": "b02fdd997c49cf0047c7ae91041505679434f1a5ff5e64e4e8da116bf0dceff3"
+  },
+  {
+    "file": "gm-v1-source/largevalues.tex",
+    "bytes": 124135,
+    "sha256": "47728dd827ebf58abb3389c1db72a73709ecfbae82b60562920d665086ad04ad"
+  },
+  {
+    "file": "annals-page.html",
+    "bytes": 76150,
+    "sha256": "0c528e1ad91e5341f71bbc3464c16550bbfcdae6234129ba7f5cb2dece9a09cf"
+  },
+  {
+    "file": "gm-abs.html",
+    "bytes": 39442,
+    "sha256": "00dcdd2f2d30e298e12537a519571a5eb08cef141a083b181da231eb2f4f3f3f"
+  },
+  {
+    "file": "gm-crossref.json",
+    "bytes": 1949,
+    "sha256": "f7d7ec8bc544c6072271cdcdcd7acaf301ad5506d0f767ef456b26b582cdaa59"
+  }
+]

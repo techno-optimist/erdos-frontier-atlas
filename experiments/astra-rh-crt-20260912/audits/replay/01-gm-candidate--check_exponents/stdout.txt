@@ -1,0 +1,233 @@
+{
+  "old_constraints": {
+    "max_h": "6/11",
+    "z_exponent": "8/11",
+    "vertices": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1/2"
+      ],
+      [
+        "1/2",
+        "3/4"
+      ],
+      [
+        "6/11",
+        "8/11"
+      ]
+    ],
+    "active": [
+      "Prop1 a<=1-h/2",
+      "Classical bulk a>=4h/3"
+    ]
+  },
+  "new_constraints": {
+    "max_h": "4/7",
+    "z_exponent": "5/7",
+    "vertices": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1/2"
+      ],
+      [
+        "1/2",
+        "3/4"
+      ],
+      [
+        "4/7",
+        "5/7"
+      ]
+    ],
+    "active": [
+      "Prop1 a<=1-h/2",
+      "Weyl term h<=4/7",
+      "GM T-term a>=5h/4",
+      "GM N^(18/5) term a>=10h-5"
+    ]
+  },
+  "refined_Prop12_1_without_Weyl": {
+    "max_h": "4/7",
+    "z_exponent": "5/7",
+    "vertices": [
+      [
+        "4/7",
+        "5/7"
+      ]
+    ],
+    "active": [
+      "Prop1 a<=1-h/2",
+      "GM Prop12.1 sigma=3/4 bulk a>=3h-1",
+      "Prop12.1 D>=T^(5/6)"
+    ]
+  },
+  "new_without_Weyl": {
+    "max_h": "4/7",
+    "z_exponent": "5/7",
+    "vertices": [
+      [
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "1/2"
+      ],
+      [
+        "1/2",
+        "3/4"
+      ],
+      [
+        "4/7",
+        "5/7"
+      ]
+    ],
+    "active": [
+      "Prop1 a<=1-h/2",
+      "GM T-term a>=5h/4",
+      "GM N^(18/5) term a>=10h-5"
+    ]
+  },
+  "old_endpoint": {
+    "h": "6/11",
+    "a": "8/11",
+    "d": "4/11",
+    "t": "5/11",
+    "d/t": "4/5",
+    "target": "3/11",
+    "terms": {
+      "small M": {
+        "power": "2/11",
+        "saving_vs_target": "1/11"
+      },
+      "Weyl": {
+        "power": "8/33",
+        "saving_vs_target": "1/33"
+      },
+      "GM middle": {
+        "power": "27/110",
+        "saving_vs_target": "3/110"
+      },
+      "GM T term": {
+        "power": "14/55",
+        "saving_vs_target": "1/55"
+      },
+      "classical bulk": {
+        "power": "3/11",
+        "saving_vs_target": "0"
+      },
+      "Prop1 off-diagonal zH/X": {
+        "power": "3/11",
+        "saving_vs_target": "0"
+      }
+    }
+  },
+  "new_endpoint": {
+    "h": "4/7",
+    "a": "5/7",
+    "d": "5/14",
+    "t": "3/7",
+    "d/t": "5/6",
+    "target": "2/7",
+    "terms": {
+      "small M": {
+        "power": "3/14",
+        "saving_vs_target": "1/14"
+      },
+      "Weyl": {
+        "power": "2/7",
+        "saving_vs_target": "0"
+      },
+      "GM middle": {
+        "power": "2/7",
+        "saving_vs_target": "0"
+      },
+      "GM T term": {
+        "power": "2/7",
+        "saving_vs_target": "0"
+      },
+      "classical bulk": {
+        "power": "17/56",
+        "saving_vs_target": "-1/56"
+      },
+      "Prop1 off-diagonal zH/X": {
+        "power": "2/7",
+        "saving_vs_target": "0"
+      }
+    }
+  },
+  "improvement_in_h": "2/77",
+  "normalized_GM_R": {
+    "N^2 U^-2": [
+      "0",
+      "-2",
+      "0"
+    ],
+    "N^(18/5) U^-4": [
+      "-2/5",
+      "-4",
+      "0"
+    ],
+    "T N^(12/5) U^-4": [
+      "-8/5",
+      "-4",
+      "1"
+    ]
+  },
+  "after_fourth_powers_D_V_T": {
+    "N^2 U^-2": [
+      "0",
+      "1",
+      "-1/2"
+    ],
+    "N^(18/5) U^-4": [
+      "-1/5",
+      "0",
+      "-1/2"
+    ],
+    "T N^(12/5) U^-4": [
+      "-4/5",
+      "0",
+      "0"
+    ]
+  },
+  "epsilon_overlap_slack_polynomials": {
+    "first": [
+      "0",
+      "17/28",
+      "2"
+    ],
+    "second": [
+      "1/14",
+      "-11/28",
+      "2"
+    ],
+    "height": [
+      "0",
+      "1/28",
+      "3"
+    ]
+  },
+  "epsilon_savings_in_H_before_losses": {
+    "Weyl": "2",
+    "GM middle": "8/5",
+    "GM T term": "2/5"
+  },
+  "negative_control": {
+    "h": "4007/7000",
+    "a": "9993/14000",
+    "violated": [
+      "Weyl term h<=4/7",
+      "GM T-term a>=5h/4",
+      "GM N^(18/5) term a>=10h-5"
+    ]
+  },
+  "all_assertions_passed": true
+}

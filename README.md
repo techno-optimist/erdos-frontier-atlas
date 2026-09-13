@@ -2,99 +2,196 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21443635.svg)](https://doi.org/10.5281/zenodo.21443635)
 
-**The prototype instrument of [frontier cartography](FRONTIER_CARTOGRAPHY.md) — a
-citable, machine-verifiable map of the computational frontier around Erdős's
-problems, worked around the clock by autonomous agents and checkable by anyone.**
+**A method substrate and strike map for mathematical research.**
 
-Start here, by appetite:
+The Atlas connects Erdős problems to reusable lemmas, explicit remaining
+obligations, source records, and evidence another researcher can check. A useful
+result can be a proof transfer, a conditional reduction, or a failed route that
+saves the next person from repeating it. Larger computational cutoffs are useful
+only when they answer a worthwhile mathematical question.
 
-| you want… | go to |
+The production attack graph and published certificates are preserved separately
+from active research. Adding a method does not change a problem's status, prove a
+conjecture, or turn a shared tag into an implication. The
+[campaign goal](experiments/astra-i3-20260911/GOAL.md) explains this direction;
+[frontier cartography](FRONTIER_CARTOGRAPHY.md) is the broader charter.
+
+## Start here
+
+| To… | Read or run |
 |---|---|
-| the story — what this is and why | 📖 [*Cartography of Numbers*](book/BOOK.md), the living book (regenerated from the data on every build) |
-| proof, in one command | ⚡ `make hello-frontier` — replays a nonexistence certificate + its negative control, verifies a witness, prints a ledger entry with its computed confidence class |
-| the current numbers | 📊 [State of the Frontier](views/state_of_frontier.md) (generated; `make check-views` keeps it honest) |
-| the strongest evidence | 🔒 [machine-checked Lean proofs](#machine-checked-formal-proofs) — sorry-free, kernel-checked |
-| the biggest live arc | 💥 [the 2026 Jacobian Conjecture crater](#the-2026-jacobian-conjecture-crater) — a falsification's blast radius, computed not asserted |
-| the field's law | 📜 [`FRONTIER_CARTOGRAPHY.md`](FRONTIER_CARTOGRAPHY.md) — tenets, workstreams, gates, and the outsider on-ramp (§8b) |
-| to cite the dataset | **EFA-DR1**, DOI [10.5281/zenodo.21443635](https://doi.org/10.5281/zenodo.21443635) · [`CITATION.cff`](CITATION.cff) |
+| Find a reusable method | [Method substrate](experiments/astra-substrate-20260911/README.md) · [generated method board](experiments/astra-substrate-20260911/BOARD.md) |
+| Read the RH / squarefree-counting work | [P969 progress map](experiments/astra-rh-969-20260912/REPOSITORY_STATUS.md), including derivations, audit evidence, verification and remaining obligations |
+| Choose a research direction | [Agent entry point](GRAPH.md) · [strike board](views/sorties.md) · [walls](atlas/walls.md), then check [source freshness](#source-freshness) |
+| Inspect the dataset | [State of the Frontier](views/state_of_frontier.md) · [source ledgers](#repository-inventory) |
+| Replay the work | [Quickstart and verification](#quickstart-and-verification) |
+| Contribute without clobbering another lane | [Coordination](COORDINATION.md) · [contribution rules](#contributing--humans-and-agents) |
+| Read the longer account | [*Cartography of Numbers*](book/BOOK.md) |
 
-## What this is
+## Current research
 
-Three layers, each machine-readable and each honestly labeled. The **hub**
-([`atlas/stubs.json`](atlas/stubs.json)) indexes all ~1217 Erdős problems — id,
-status, prize, OEIS and formalization links — as the computational annex to
-[erdosproblems.com](https://www.erdosproblems.com). The **deep tier**
-([`atlas/problems.json`](atlas/problems.json)) is the 51 problems audited to a
-pinned exact verifier, a sourced current record, and a recomputed board class.
-The **gap map** ([`atlas/gap_map.json`](atlas/gap_map.json)) is the field's
-ledger: 222 bounded quantities with their `[L, U]` brackets, what a
-machine-verifiable witness would be, and an `evidence[]` block from which each
-entry's **confidence class (C0–C3) is computed by the validator — never
-asserted**. The unit of progress here is the bracket, not the paper.
+These are research results and interfaces, not a list of solved conjectures.
+The [method registry](atlas/substrate.json) records each statement's hypotheses,
+artifacts, evidence level, and unresolved step.
 
-State the limits first: **almost every Erdős prize here attaches to an asymptotic
-statement, and is therefore not claimable by finite computation.** The exception
-is worth naming precisely, because an earlier version of this page claimed there
-was none. Upstream marks 43 problems with a state that is open *and* names a
-finite handle — `decidable` (resolved up to a finite check), `falsifiable` (a
-finite counterexample would settle it), `verifiable` (a finite check would settle
-it) — and **seven of those carry a prize**, including a **$1000** falsifiable
-(#64) and a **$500** decidable (#19). For a falsifiable conjecture, exhibiting one
-finite counterexample settles it. That is not a promise a counterexample exists or
-can be found; it is the difference between a wall and a target, and the atlas now
-records which is which (`upstream_finite_handle` in
-[`atlas/stubs.json`](atlas/stubs.json)). What finite computation *can* do is what
-this atlas maps: exact small-value tables,
-witness records, verified-up-to-N frontiers, certified nonexistence — and, just
-as loudly, the **walls** where compute is known to be wasted
-([`atlas/walls.md`](atlas/walls.md)). Most map entries are agent-mined and
-labeled exactly so (structurally validated, class C3 until in-project evidence
-exists). Corrections and retractions stay visible on the board below, on
-purpose.
+| Lane | What is available | What remains open |
+|---|---|---|
+| **RH / P969** | [Squarefree-energy equivalence and generic obstruction](experiments/astra-rh-969-20260912/README.md); CRT/centered-defect and Mellin transfers; the [GM/GMRR assembled variance deduction](experiments/astra-rh-crt-20260912/GM_TRANSFER.md) through `4/7-epsilon`; [sharp Type I and signed-diagonal interfaces](experiments/astra-rh-crt-20260912/ARITHMETIC_FRONTIER.md) | The RH-equivalent energy estimate and full signed mixed-moment saving are unproved. The variance deduction uses pinned external theorems and model audits; it is not a novelty, record, human-review, or formal-proof claim. |
+| **P327** | [Multiplier-sensitive smooth-fiber transfer](experiments/astra-327-fiber-20260912/README.md): retain multiplier divisibility information and prove an all-N deficit inequality, with a small independently checked demonstration | No solution or new best bound. The demonstration's bounds are weaker than the cited literature. Published for review in [PR #155](https://github.com/techno-optimist/erdos-frontier-atlas/pull/155). |
+| **P699** | [Formal binomial-gcd seeds](experiments/astra-lean-seed-20260904/README.md), [the i=2 case](experiments/astra-i2-complete-20260911/README.md), and [i=3 reductions and residuals](experiments/astra-i3-20260911/GOAL.md) | Each formal or conditional lemma has its own scope. The remaining i=3 obligations and higher-i cases are not closed by these artifacts. |
+| **P993 and CRT bridges** | [Tail compression, Laurent blocks and endpoint-safe transfers](experiments/astra-briefcase-20260904/README.md) | Block properties and candidate matches are not proofs of tree unimodality or an entire gap spectrum. |
+| **P376** | [Kummer/digit checks and bounded historical replay](experiments/astra-376-20260911/README.md) | The infinitude question needs a method, not another extension of a known sequence's cutoff. The [working goal](experiments/astra-i3-20260911/GOAL.md) records that correction. |
 
-**Complement, never mirror.** [erdosproblems.com](https://www.erdosproblems.com)
-(Thomas Bloom) is the canonical human index. This repository links to it, never
-crawls or copies its prose, compiles its machine index only from two Apache-2.0
-sources ([`teorth/erdosproblems`](https://github.com/teorth/erdosproblems),
-[`google-deepmind/formal-conjectures`](https://github.com/google-deepmind/formal-conjectures);
-attribution in [`NOTICE`](NOTICE)), and contributes verified records **back**
-upstream through the maintainers' channels.
+The RH update does not solve P969 or RH. Its [portable audit archive](experiments/astra-rh-crt-20260912/audits/README.md)
+separates exact arithmetic from numerical diagnostics, model review from human
+review, and replayed checkers from those needing excluded source files. The
+[progress map](experiments/astra-rh-969-20260912/REPOSITORY_STATUS.md) carries the
+integration record rather than a permanently hardcoded test total here.
 
-## The map — where everything lives
+To use the substrate from the repository root:
 
-| layer | files |
+```sh
+python3 tools/query_substrate.py methods
+python3 tools/query_substrate.py for 969
+python3 tools/query_substrate.py for 327
+python3 tools/query_substrate.py for 699
+python3 tools/query_substrate.py open
+```
+
+A `CANDIDATE` match is a search lead. A `discharges` entry applies only to the
+stated lemma or obligation; it does not mean the parent conjecture is solved.
+The substrate is an additive overlay, not a replacement for the production graph.
+
+## Repository inventory
+
+Counts below describe this checkout, not the current size of the upstream
+website. `tests/test_readme.py` checks them against the source ledgers.
+
+| Inventory | Count | Source of truth |
+|---|---:|---|
+| Hub records | 1,217 | [`atlas/stubs.json`](atlas/stubs.json), including its upstream commit pins |
+| Deep-tier records | 51 | [`atlas/problems.json`](atlas/problems.json), with per-record provenance and scope |
+| Bracketed quantities | 225 | [`atlas/gap_map.json`](atlas/gap_map.json); evidence determines the validator's C0–C3 class |
+| Registered methods | 29 | [`atlas/substrate.json`](atlas/substrate.json); formal, informal, conditional and candidate scopes remain distinct |
+
+The hub supplies problem identifiers and metadata. Deep records and bracketed
+quantities describe selected evidence and computational questions. The method
+registry adds transferable arguments and their remaining obligations. None of
+these inventories is a count of conjectures solved by this project.
+
+### The map — where everything lives
+
+| Area | Files |
 |---|---|
-| **The field** | [`FRONTIER_CARTOGRAPHY.md`](FRONTIER_CARTOGRAPHY.md) (charter) · [`book/`](book) (the living book; `make book`) · [`RELEASING.md`](RELEASING.md) (data releases) |
-| **The map** | [`atlas/stubs.json`](atlas/stubs.json) (1217-problem hub) · [`atlas/problems.json`](atlas/problems.json) (51 deep audits) · [`atlas/gap_map.json`](atlas/gap_map.json) (the 222-quantity ledger; validate with [`tools/validate_gap_map.py`](tools/validate_gap_map.py)) · [`atlas/jc-crater/`](atlas/jc-crater/) (the 2026 Jacobian-Conjecture blast radius: primary-sourced nodes, typed edges, **machine-propagated** statuses + newborn quantities) · [`atlas/walls.md`](atlas/walls.md) (the do-not-enter list) · [`atlas/effectivization_shortlist.json`](atlas/effectivization_shortlist.json) (fence targets, alive **and** dead) · [`atlas/lanes.md`](atlas/lanes.md) (solver lanes) |
-| **The evidence** | [`certificates/`](certificates) — 26 lanes, each shipping its own dependency-free verifier and replay command.<br>**Erdős cells:** [`erdos-366`](certificates/erdos-366) (no 2-full/3-full neighbour pair below `10²⁵`) · [`erdos-743`](certificates/erdos-743) (Gyárfás packing at `K₁₀`) · [`erdos-993`](certificates/erdos-993) (tree unimodality to `n=30`, incl. the first replication of `n≤29`) · [`erdos-552`](certificates/erdos-552) · [`erdos-552-f39`](certificates/erdos-552-f39) (the kept retraction) · [`erdos-13`](certificates/erdos-13) · [`erdos-979`](certificates/erdos-979) · [`erdos-1107`](certificates/erdos-1107) · [`erdos-142`](certificates/erdos-142) (construction no-go) · [`erdos-142-kerpi-refutation`](certificates/erdos-142-kerpi-refutation) (two lemmas refuted)<br>**Ramsey / nonexistence:** [`ramsey-3-3`](certificates/ramsey-3-3) · [`ramsey-3-4`](certificates/ramsey-3-4) · [`fk-square`](certificates/fk-square)<br>**The JC crater** (see [below](#the-2026-jacobian-conjecture-crater)): [`jacobian-conjecture`](certificates/jacobian-conjecture) (independent verification of Alpöge's 2026 counterexample — external construction, ours is the replay) · [`dixmier-conjecture`](certificates/dixmier-conjecture) · [`jc-anatomy`](certificates/jc-anatomy) · [`jc-family-fences`](certificates/jc-family-fences) · [`plane-jacobian-true`](certificates/plane-jacobian-true)<br>**[Independent verifications of others' results](#independent-verifications-of-other-peoples-results):** [`graffiti-284-refutation`](certificates/graffiti-284-refutation) · [`graffiti-290`](certificates/graffiti-290) · [`keller-power-weighted-lifts`](certificates/keller-power-weighted-lifts) (external authors — ours is the replay)<br>**Adjacent walls & residuals:** [`sendov-conjecture`](certificates/sendov-conjecture) (0 counterexamples — a wall) · [`ringel-nonstretchability`](certificates/ringel-nonstretchability) · [`fibonacci-macro-residual`](certificates/fibonacci-macro-residual)<br>plus [`observatory/`](observatory) (certificate-size measurements) and [`progress/`](progress) (append-only agent receipts) |
-| **The machinery** | [`tools/`](tools) (validators, generators, compilers) · [`views/`](views) (generated boards + the [operations annex](views/operations.md): campaigns, board classes, the packaged bounty boards) · [`tests/`](tests) |
-| **The graph** | [`GRAPH.md`](GRAPH.md) (agent entry point — read this first) · [`atlas/graph/graph.json`](atlas/graph/graph.json) (the attack graph: problems, branch-level surfaces, moves, walls, evidence, bridges; every edge tiered + sourced) · [`views/sorties.md`](views/sorties.md) (the Quartermaster board: do-not-spend first, then the strike list) · [`views/graph/`](views/graph/) (per-problem attack cards) — all generated; `make graph` / `make check-graph` |
+| Research methods | [`atlas/substrate.json`](atlas/substrate.json) · [`experiments/`](experiments) · [method board](experiments/astra-substrate-20260911/BOARD.md) |
+| Production attack graph | [`GRAPH.md`](GRAPH.md) · [`atlas/graph/`](atlas/graph) · [`views/graph/`](views/graph) · [`views/sorties.md`](views/sorties.md) |
+| Certificates and claim contracts | [`certificates/README.md`](certificates/README.md) · [`certificates/contracts.json`](certificates/contracts.json) |
+| Feasibility and source overlays | [`atlas/walls.md`](atlas/walls.md) · [`atlas/lanes.md`](atlas/lanes.md) · [`atlas/ai_claims.json`](atlas/ai_claims.json) · [`atlas/lean_lane.json`](atlas/lean_lane.json) |
+| Generated views and book | [`views/`](views) · [operations annex](views/operations.md) · [`book/`](book) |
+| Validators and tests | [`tools/`](tools) · [`tests/`](tests) · [`Makefile`](Makefile) · [CI workflow](.github/workflows/verify.yml) |
+| Project policy and releases | [`COORDINATION.md`](COORDINATION.md) · [`FRONTIER_CARTOGRAPHY.md`](FRONTIER_CARTOGRAPHY.md) · [`RELEASING.md`](RELEASING.md) · [`NOTICE`](NOTICE) |
 
-Install the pinned release-check dependency with
-`python3 -m pip install -r requirements-dev.lock`; before publishing a snapshot
-run `python3 tools/validate_atlas.py`.
+## Source freshness
 
-**The gates.** `make test` runs the fast suite; `make validate` checks the atlas
-and gap map; `make check-views`, `make check-book`, and `make check-graph` fail if a
-generated file has drifted from the data. `make check-receipts` is the slower
-([`tools/check_receipt_drift.py`](tools/check_receipt_drift.py), ~4 min)
-pre-merge check for a specific way evidence rots: most verifiers here both
-*check* a witness and *emit* their receipt, so a replay can silently overwrite a
-receipt that disagrees with it. That gate replays each verifier and fails when a
-committed receipt no longer matches the code that is supposed to certify it —
-it caught a receipt claiming `vertex_count: 117` whose own verifier produced
-`136`. It reports its own coverage honestly: it can only check receipts a
-verifier actually re-derives.
+**The generated graph is a pinned snapshot, not a live upstream feed.** A passing
+staleness gate means generated files agree with their source data; it does not
+mean every source has been checked against today's literature. Some production
+statuses are superseded by the dated research overlays, intentionally without
+silently rebuilding the graph.
+
+- The [September 11 Erdős update](experiments/astra-freshness-20260911/README.md)
+  records the checked changes for #477, #625 and #501, distinguishes mathematical
+  status changes from Lean-label changes, and preserves differences between the
+  website and YAML snapshots.
+- The [RH source review](experiments/astra-rh-969-20260912/FRESHNESS.md) and
+  [P327 review](experiments/astra-327-fiber-20260912/FRESHNESS.md) are dated
+  September 12, 2026. They are source snapshots, not continuing monitors.
+- The [AI-claim overlay](atlas/ai_claims.json) is a dated claims registry.
+  Recording an AI-assisted proof claim never changes a canonical status.
+- Before starting a new attack, check the official problem page, discussion,
+  separate proof-claim register, and cited manuscript versions. Consult
+  [erdosproblems.com](https://www.erdosproblems.com) for the human-maintained
+  index; do not infer current status from an old attack card or prize label.
+
+The repository is a computational and research annex to that index, not a copy
+of its prose. Machine metadata sources and licenses are recorded in
+[`NOTICE`](NOTICE) and the source ledgers.
+
+## Quickstart and verification
+
+From the repository root, these bounded method replays use Python's standard
+library:
+
+```sh
+python3 -I -B experiments/astra-substrate-20260911/verify.py
+python3 -I -B experiments/astra-327-fiber-20260912/verify.py --negative-controls
+python3 -I -B experiments/astra-rh-969-20260912/verify.py
+python3 -I -B experiments/astra-rh-crt-20260912/verify.py experiments/astra-rh-crt-20260912/receipt.json
+```
+
+For the full fast repository gate with the pinned dependencies:
+
+```sh
+uv run --python 3.11 --with-requirements requirements-dev.lock make audit-fast
+```
+
+Without `uv`, use a virtual environment:
+
+```sh
+python3 -m venv .venv
+. .venv/bin/activate
+python -m pip install -r requirements-dev.lock
+make audit-fast
+```
+
+`audit-fast` runs the atlas, gap-map and claim validators, checks generated views,
+book and graph, verifies claim contracts, runs their fast replay profile, and
+executes the repository tests. It does not recompile every Lean project, rerun
+large historical searches, or recheck every cited analytic theorem.
+
+The [CI workflow](.github/workflows/verify.yml) uses Python 3.12 for the fast gate.
+Its slower receipt-drift job runs on the schedule or manual dispatch, not on
+every PR. Run `make check-receipts` before merging certificate changes, following
+the frozen-certificate policy; read its coverage report rather than interpreting
+a pass as certification of every stored receipt. Slow claim replays have separate
+resource requirements documented in the [Makefile](Makefile).
+
+The [RH audit archive](experiments/astra-rh-crt-20260912/audits/README.md) has its
+own scratch-only replay command and explicit source-dependent exclusions.
+Default method verifiers read and recompute evidence without replacing it.
+Emission commands are separate and require a new output path.
+
+## Honest scope
+
+- A finite exact check proves only the stated finite claim. An asymptotic theorem
+  needs an argument covering its unbounded parameters.
+- A formal theorem is checked relative to its declared dependencies and axioms.
+  A passing Python gate does not establish a Lean rebuild or a human review.
+- Model audits, human peer review, formal kernel checks and official acceptance
+  are different kinds of evidence. None silently substitutes for another.
+- A generic-coefficient countermodel is not a Möbius counterexample. An unsigned
+  collision count is not a lower bound for a signed moment.
+- A shared tag, OEIS sequence or graph neighbor suggests a question; only a proved
+  or sourced implication supports a mathematical transfer.
+- A finite-counterexample handle is not a promise of a reachable search or a
+  claimable prize. Walls apply to stated branches, not automatically every
+  mathematical approach to a problem.
+- Corrections remain visible. New work does not silently upgrade historical
+  record, priority, publication, or solution claims.
 
 ## CHRONOS Frontier Board
 
-The running scoreboard of what the CHRONOS agent has actually **moved** on the
-Erdős frontier — the done-work companion to the *next-work* table above. Tiered
-by verification, and honest about ceiling: reachable impact for a movable finite
-target tops out at 4/10, no prize here is finite-claimable, and a corrected
-claim is **kept in place** so the next agent does not re-walk it.
+**Historical July 2026 record.** The table below preserves the recorded claims,
+qualifications and retractions. It is not a fresh literature or priority audit.
+Its rows also feed the generated book and State of the Frontier, so this README
+refresh preserves their contents rather than silently changing published data.
+For current research direction, use the [method index](#current-research).
 
-**Tier.** 🟢 proven / certified · 🟡 grounded or partial · ⚪ open / in progress · 🔴 corrected or retracted (kept on purpose)
+Tier: 🟢 recorded as proven/certified · 🟡 grounded or partial · ⚪ open/in progress
+· 🔴 corrected or retracted. Read the linked claim contract and artifact scope.
+
+<details>
+<summary>Recorded certificate movements and corrections</summary>
 
 | tier | problem | what CHRONOS contributed | certificate | when |
 |---|---|---|---|---|
@@ -112,233 +209,97 @@ claim is **kept in place** so the next agent does not re-walk it.
 | 🟢 | **#1029 / #77** `R(5,5)` | 42/42 DRAT-certified structural negatives (no witness; rigidity + prime-order orbit collapse), all consistent with `R(5,5) = 43` | [r55-rigidity-certificates](https://github.com/techno-optimist/r55-rigidity-certificates) · DOI [10.5281/zenodo.21305022](https://doi.org/10.5281/zenodo.21305022) | 2026-07-10 |
 | 🔴 | **#552** `R(C4,K1,39)` | the `=46` **new-value** claim was **retracted** — DS1 rev.18 lists `46 ≤ f(39) ≤ 47`, OPEN; the 45-vertex witness stands as a re-derivation of Wu–Sun–Radziszowski 2015 | [`certificates/erdos-552-f39`](certificates/erdos-552-f39) | 2026-07-17 |
 
-The board records **Erdős cells only**. Adjacent frontiers the same machinery
-works are kept out of it on purpose and live in their own lanes: the
-[Jacobian Conjecture crater](#the-2026-jacobian-conjecture-crater) and its
-Dixmier corollary, [Ringel nonstretchability](certificates/ringel-nonstretchability)
-(Lean 4, sorry-free), and the [Sendov wall ledger](certificates/sendov-conjecture)
-(a multi-lane counterexample hunt that found **nothing** — recorded as a wall, in
-[`atlas/walls.md`](atlas/walls.md), so the compute is not spent twice). The wider
-verifier-first program also contributes certificates from sister repositories
-(the min-overlap upper bound, antipodal kissing bounds, autoconvolution and PNT
-constants) — see [Provenance](#provenance-and-the-certificate-template).
+</details>
 
-**Maintenance.** Add a row whenever a certified witness settles or moves an Erdős
-cell, a survey cross-reference closes one, or a claim is corrected — the event
-this board exists to record. Each row must point at a **replayable** certificate
-(in-repo `certificates/`, a receipt, or a DOI'd sister repo) and state a claim
-narrow enough for a referee to check without trusting us. This is the
-at-a-glance index into that evidence.
+The historical board records Erdős cells; it is not the inventory of current
+research methods. The full certificate catalogue and caveats are in
+[`certificates/README.md`](certificates/README.md). Changes to a recorded claim
+need the corresponding evidence and publication-contract update, not just a
+README edit.
 
 ## The 2026 Jacobian Conjecture crater
 
-On 2026-07-19 Levent Alpöge presented an explicit dim-3 counterexample to the
-Jacobian Conjecture — *awaiting confirmation* (widely machine-verified within a
-day, not yet peer-reviewed). **The construction is not ours.** What is ours is
-the independent verification and the machine-propagated map of what it takes
-down, in [`atlas/jc-crater/`](atlas/jc-crater/):
+The repository preserves its independent verification of Alpöge's 2026 counterexample
+in [`certificates/jacobian-conjecture/`](certificates/jacobian-conjecture), with
+credit to the external construction. The associated
+[crater model](atlas/jc-crater/README.md) separates the exact object check from
+propagated mathematical consequences. Its
+[root-claim record](atlas/jc-crater/root_claim.json) retains the announcement's
+conditional status and source history.
 
-- **The object, verified** — [`certificates/jacobian-conjecture`](certificates/jacobian-conjecture)
-  re-derives `det JF ≡ −2` as an exact polynomial identity and the three-point
-  collision, dependency-free, in ~0.03 s; plus the Lean 4 refutation above.
-- **The blast radius, computed** — 37 primary-sourced nodes and 29 cited typed
-  edges. Every status is **derived from the certified root by modus tollens,
-  never asserted**, and the modality is dictated by each edge's dimension
-  semantics: a per-dimension edge carries the full `for all n ≥ 3` refutation, a
-  dimension-mixing reduction carries only the honest `in some finite dimension`.
-  Nine candidate names from the source listicle failed literature verification
-  and are quarantined in place, visible and edge-less.
-- **What fell, and what did not** — the [Dixmier conjecture](certificates/dixmier-conjecture)
-  for Weyl algebras is among the casualties; the **plane Jacobian Conjecture
-  (n = 2) is the surviving frontier**, and nothing here touches it.
-- **The rest of the cluster** — [`jc-anatomy`](certificates/jc-anatomy) (where
-  the map fails to be proper, its fibers, its Galois group),
-  [`jc-family-fences`](certificates/jc-family-fences) (probes and family fences,
-  explicitly *not* closed brackets), and [`plane-jacobian-true`](certificates/plane-jacobian-true)
-  (the TRUE-lane attack on n = 2).
-- **Conditionality is enforced, not promised** — every crater status is
-  conditional on an unrefereed announcement, so
-  [`tools/jc_root_tripwire.py`](tools/jc_root_tripwire.py) polls arXiv for
-  retraction/confirmation signals, and
-  [`atlas/jc-crater/root_claim.json`](atlas/jc-crater/root_claim.json) records the
-  archival policy: **no DOI until the root confirms**. Our object certificate is
-  unaffected by any retraction; the derived corollaries are not.
-
-The engine is reusable: [`tools/crater.py`](tools/crater.py) generalizes it into a
-polarity-aware crater tool, so the next falsification anywhere gets the same
-treatment.
-
-## The AI-claim overlay — 89 claims, 0 status changes
-
-Claimed AI-assisted resolutions of Erdős problems now appear faster than anyone
-can check them. [`atlas/ai_claims.json`](atlas/ai_claims.json) records **89** of
-them, transcribed from the public registry
-[*Open Math Problems Claimed to Be Solved with AI*](https://aimath.robertj1.com/)
-(retrieved 2026-07-26, page pinned by `sha256`), which carries 217 records in
-total. All 89 were already indexed in our 1217-problem hub; what was missing was
-the annotation.
-
-**Recording a claim changes no status, anywhere.** A status changes when the
-*upstream* record changes — not when a claim appears. That is not a policy
-statement, it is
-[`tools/validate_ai_claims.py`](tools/validate_ai_claims.py): every entry must
-carry `status_changed_by_this_claim: false`, every claim must cite a source, the
-overlay's copy of each status must agree with the hub it annotates, and any
-verdict of our own stronger than *"not independently checked"* must name a
-replayable certificate. This repo learned the rule the expensive way on **#552**,
-where its own new-value claim was retracted after publication, and applies it to
-**#421**, where a circulating solution left the upstream record open.
-
-The overlay's real use is triage — and the honest headline is calmer than the raw
-count suggests. **21 of the 89 are claims against problems this atlas still records
-as open** (one as a *wall*), but **12 of those 21 are scoped by the registry
-itself** as not resolving the problem, in its own words, now quoted in each entry.
-
-The clearest case is [**#138**](https://www.erdosproblems.com/138)
-(`lim (W(k))^{1/k} = ∞`, a $500 problem) which we list under
-[walls](atlas/walls.md). AlphaProof Nexus has a complete, sorry-free Lean proof
-there — but of `W(k+1) − W(k) → ∞`, the *gaps* between consecutive van der Waerden
-numbers, via `W(k+1) − W(k) ≥ k`. The registry says so plainly: *"The stronger
-parent question W(k)^{1/k}→∞ remains open"*, and *"not a full solution to Erdős
-#138"*. The artifact is even named `erdos_138.variants.difference.lean`. **Our wall
-stands**, and the gap bound is far weaker than the exponential lower bounds known
-since Berlekamp (1968).
-
-That leaves **9 claims against open problems that the registry does not itself
-scope down**: `306, 456, 477, 524, 539, 848, 1038, 1039, 1040`. Those are the ones
-worth a verification pass. **None of the 21 has been independently checked by us**,
-and every entry records `our_verdict: "not independently checked"` rather than
-leaving it to be assumed.
+This README refresh does not establish a new peer-review, acceptance or
+retraction status for that announcement. Read the dated root record and its
+sources before citing the propagation. The reusable
+[`crater` machinery](tools/crater.py) and quarantined claims remain available.
 
 ## Independent verifications of other people's results
 
-Claims arrive faster than anyone can check them. A replay a stranger can run in
-one command is the cheapest useful thing this repository can offer their author —
-so where a result is finite and checkable, we check it and publish the checker.
+The [Graffiti 284](certificates/graffiti-284-refutation),
+[Graffiti 290](certificates/graffiti-290), and
+[Keller-map family](certificates/keller-power-weighted-lifts) lanes credit their
+external authors and state what the local replay checks. The constructions and
+original results are not ours. In particular, the Graffiti 290 claim depends on
+the stated gravity convention; its README retains that distinction.
 
-**These are not our results.** Each lane states its author in the first lines, and
-our contribution is the replay and nothing else. All are self-published and
-unrefereed; each carries its own caveats at the claim, not in a footnote.
-
-| result | author | what our replay establishes |
-|---|---|---|
-| [`jacobian-conjecture`](certificates/jacobian-conjecture) — JC is false at `n = 3` | Alpöge (2026) | the counterexample is exact: `det ≡ −2`, dual-path collision, in exact rational arithmetic |
-| [`graffiti-284-refutation`](certificates/graffiti-284-refutation) — Graffiti 284 is false | Nathan Wilbanks and Annie, AGNT Labs | Hoffman–Singleton built from the Robertson construction, `λ_min(D) = −4` by integer algebra with **no eigensolver**, and minimum dual degree **computed** — the authors' own script types both numbers in as literals |
-| [`graffiti-290`](certificates/graffiti-290) — Graffiti 290 holds | Nathan Wilbanks and Annie, AGNT Labs | exhaustive over all 1360 girth-≥5 graphs of order ≤ 10, exact throughout — **under the Written-on-the-Wall gravity convention**, which is not the only one in the literature (see below) |
-| [`keller-power-weighted-lifts`](certificates/keller-power-weighted-lifts) — a 2-parameter family of non-injective Keller maps | Annie, AGNT Labs Technical Report III | all 27 published members rebuilt from the paper's prose: genuinely polynomial, `det ≡ −k/(k+1)` as a coefficient identity, and the fibre degree **counted** rather than restated |
-
-Two things a reader should know before citing any of this:
-
-**Graffiti 290's truth depends on a definition.** Under the "gravity" definition in
-Aouchiche–Hansen's 2010 survey the statement is refuted instantly; under the
-Written-on-the-Wall / Brewster et al. definition — the one the theorem is stated
-over, and the one our verifier implements — it survives. That is not us choosing a
-favourable reading: the authors who found the refutation are the ones who call the
-survey definition a misstatement and the Written-on-the-Wall definition "the
-correct definition" (Roucairol & Cazenave, [arXiv:2409.18626](https://arxiv.org/abs/2409.18626)
-§5.2). Both halves belong at the claim.
-
-**A verifier cannot check its own source.** Every lane here defends against
-corrupted *data* — poison the witness or the receipt and the replay fails. None can
-defend against an edit to itself: stub a gate, hardcode a verdict, and the file
-will print PASS. That gap is closed by the `sha256` pinned in
-[`certificates/contracts.json`](certificates/contracts.json), plus git history and
-review — and each lane says so in its own words rather than leaving a reader to
-assume otherwise.
+A checksum identifies code bytes; it does not prove that the checker is correct.
+Claim contracts, independent semantic replays and negative controls address
+separate parts of that trust boundary. Consult each lane's documented coverage.
 
 ## Machine-checked formal proofs
 
-The strongest evidence tier the atlas carries: a theorem whose truth reduces to a
-proof assistant's kernel and its named axioms. Two live in-repo, **sorry-free in
-Lean 4 + mathlib**, each with a `proof.json` manifest that
-[State of the Frontier](views/state_of_frontier.md) discovers mechanically:
+Formal artifacts include the [Jacobian](certificates/jacobian-conjecture/lean)
+and [Ringel nonstretchability](certificates/ringel-nonstretchability/lean)
+projects, plus the newer [binomial-gcd seeds](experiments/astra-lean-seed-20260904/README.md)
+and [P699 i=2 work](experiments/astra-i2-complete-20260911/README.md).
+Their exact statements, toolchains, dependency pins and axiom checks belong to
+the individual bundles. This README update does not claim a fresh build of all
+of them or extend a helper theorem to its parent conjecture.
 
-| theorem | kind | where |
-|---|---|---|
-| `jacobian_conjecture_false` — the Jacobian Conjecture is false at `n = 3` over ℚ | refutation | [`certificates/jacobian-conjecture/lean/`](certificates/jacobian-conjecture/lean) |
-| `ringel_not_stretchable` — Ringel's 9-element oriented matroid is not stretchable | theorem | [`certificates/ringel-nonstretchability/lean/`](certificates/ringel-nonstretchability/lean) |
+### Formal spine pins (external)
 
-These prove **theorems and refutations, not bracketed quantities**, so they sit
-beside the gap map rather than inside its C0 count. The one gap-map-style
-quantity that *has* reached **C0** is the crater's minimal-counterexample
-dimension (upper bound only, scoped by the validator — see below).
-
-## Formal spine pins (external)
-
-The atlas also records external Lean work in [`atlas/lean_lane.json`](atlas/lean_lane.json)
-without changing the canonical status of an Erdős problem. The registry pins a
-complete finite classification for **#593** and a deliberately partial checkpoint
-for **#625**, with exact entrypoints, toolchains, replay commands, attribution,
-and trust boundaries. In particular, the #593 record credits Eric Li's
-contemporaneous broader preprint as related work rather than treating it as a
-premise of the pinned formalization; the #625 record explicitly does not claim
-`Erdos625Statement`.
-
-**The records lane.** Beyond single-problem certificates, the frontier is
-systematically mapped: ~81 of the gap map's quantities have a witness-improvable
-side a single submitted construction can move. Most open problems can't be
-*solved* exactly by machine, but improving a bound is a first-class result and a
-witness is cheaply checked — the fleet works the top of that list continuously.
-Campaign-level detail (active frontiers, the board-class rule, the seven
-packaged bounty boards, and the q(6) recorded negative) lives in the
-[operations annex](views/operations.md).
+[`atlas/lean_lane.json`](atlas/lean_lane.json) preserves external formalization
+checkpoints, including #593 and a deliberately partial #625 checkpoint. A pinned
+formalization's scope is distinct from later progress on the underlying problem;
+consult the [source update](experiments/astra-freshness-20260911/README.md) rather
+than interpreting that older checkpoint as today's full mathematical status.
 
 ## Contributing — humans and agents
 
-**Anyone** (charter §8b): verify any certificate in one command · dispute any
-entry by issue, citing your source — corrections stay visible · submit a witness
-to any record board; if it passes the pinned verifier, the movement is yours ·
-prove anything labeled conjecture-grade and it's your theorem, linked here.
+1. Read [`GRAPH.md`](GRAPH.md), the relevant attack card, and the latest applicable
+   source overlay. Read walls before committing compute.
+2. Register a bounded lane in [`COORDINATION.md`](COORDINATION.md). Work on a
+   separate branch; reach `main` by reviewed PR. Do not force-push another lane.
+3. State the exact problem/surface, hypotheses, claim and remaining obligation.
+   Prefer an operator another problem can reuse over an unexplained larger run.
+4. Preserve proof objects and evidence in git. Supply a replay command, an
+   independent oracle where appropriate, and poisoned inputs that fail the same
+   acceptance gate. Keep third-party manuscripts outside the patch; cite their
+   versions and hashes instead.
+5. Add methods to the substrate with honest evidence labels and selector scope.
+   Never promote a candidate match to an implication or silently set a status.
+6. Keep merged certificates and the production graph frozen unless an explicit
+   versioned change is authorized. Do not regenerate evidence in place.
+7. Update this README's current-research links and inventory when relevant;
+   `tests/test_readme.py` checks counts and entry points. Run the pinned gate,
+   reconcile independent review, and verify the pushed branch and CI.
 
-**Agents** (charter §8): cold-start from [`GRAPH.md`](GRAPH.md) (protocol →
-[`views/sorties.md`](views/sorties.md) → one attack card → your lane) and
-register your lane in [`COORDINATION.md`](COORDINATION.md) before writing ·
-start from the pinned verifier — never reconstruct a
-weaker session-local checker; provisional work lands as schema-valid receipts on
-the `automation/frontier-scout` branch ([`progress/schema.json`](progress/schema.json));
-promotion to `main` requires the durable packet — witness or certificate,
-deterministic replay, hostile fixtures, provenance, and a claim worded narrowly
-enough that the replay proves it.
-
-## Honest scope
-
-- The hub indexes all ~1217 problems as machine records; the **51 deep audits**
-  are the earned tier (strongest of the 95 originally triaged). A stub is promoted
-  in place to a deep record when it earns a board class or a replayable
-  certificate — the deep layer grows by evidence, not by hand.
-- The hub's `status` reflects our compute triage; `upstream_status` is machine-
-  synced from erdosproblems.com via the teorth spine at each rebuild — and the
-  scout sinks anything marked solved-upstream, so it cannot grind a problem the
-  community has already closed (the failure that once left #552 showing an
-  already-closed cell as open). A daily upstream freshness poll is the next piece.
-- Record values and brackets were verified against primary sources on
-  2026-07-11; erdosproblems.com pages, OEIS entries and arXiv versions move —
-  re-verify before spending compute or money. One known trap is recorded
-  inline (A391599, deleted from OEIS as AI-generated).
-- Reachable impact for a movable target tops out at 4/10. Nothing here claims
-  otherwise. The single most valuable section is probably `walls.md`.
-- Board classifications at the READY/HEAVY line involve judgment calls
-  (documented per entry in `board_class_reason`); #165 is the recorded
-  near-miss.
+Human corrections, counterexamples and narrower statements are welcome. Open an
+issue with the exact claim, source or failing replay; preserve the correction
+where the next researcher will find it.
 
 ## Provenance and the certificate template
 
-This atlas is the seventh repository in a verifier-first program whose
-template — result-first README, exact pinned verifier, machine-checkable
-certificates, `make verify`, Zenodo DOI — it inherits verbatim:
+The dataset release **EFA-DR1** is citable at
+[10.5281/zenodo.21443635](https://doi.org/10.5281/zenodo.21443635).
+See [`CITATION.cff`](CITATION.cff), [`RELEASING.md`](RELEASING.md),
+[`LICENSE`](LICENSE) and [`NOTICE`](NOTICE). Cite the exact commit as well for
+research added after that release; a later branch is not silently a new DOI
+snapshot.
 
-- [r55-rigidity-certificates](https://github.com/techno-optimist/r55-rigidity-certificates)
-  — DOI [10.5281/zenodo.21305022](https://doi.org/10.5281/zenodo.21305022)
-  (42/42 DRAT-certified R(5,5) structural results; direct literature for #77/#1029)
-- [antipodal-kissing-bounds](https://github.com/techno-optimist/antipodal-kissing-bounds)
-  — DOI [10.5281/zenodo.21285878](https://doi.org/10.5281/zenodo.21285878)
-- erdos-minimum-overlap-bound — the min-overlap thread (its erdosproblems.com
-  page already cites machine records)
-- autoconvolution-inequality-certificates · minimum-autocorrelation-bound ·
-  pnt-ceiling-certificates
-
-Canon and credit: the problems, their history, and their prize status belong
-to [erdosproblems.com](https://www.erdosproblems.com); the audit source is
-`research_sessions/res_20260711_erdos_machinery_audit` (51 deep audits,
-2026-07-11). Quality over first. Walls named as loudly as targets. Every
-claim a referee can check without trusting us.
+The original deep-audit source and dates remain in
+[`atlas/problems.json`](atlas/problems.json). Related verifier-first work includes
+[r55-rigidity-certificates](https://github.com/techno-optimist/r55-rigidity-certificates)
+and [antipodal-kissing-bounds](https://github.com/techno-optimist/antipodal-kissing-bounds).
+Problem history and official status belong to
+[erdosproblems.com](https://www.erdosproblems.com), not to this repository's
+research labels.

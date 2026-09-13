@@ -1,0 +1,90 @@
+[
+  {
+    "title": "GM Theorem 1.1",
+    "input": "gm-candidate/gm-source/LargevaluesDirichlet17.tex",
+    "start": 68,
+    "end": 79,
+    "sha256": "36d64e4ec02f0cee8baccd6ee1dbf5ea73f0dfde55827e00ad2566a142ffa428",
+    "citation_id": "1"
+  },
+  {
+    "title": "GM uniform subpower convention",
+    "input": "gm-candidate/gm-source/LargevaluesDirichlet17.tex",
+    "start": 288,
+    "end": 290,
+    "sha256": "36d64e4ec02f0cee8baccd6ee1dbf5ea73f0dfde55827e00ad2566a142ffa428",
+    "citation_id": "1"
+  },
+  {
+    "title": "GM Proposition 12.1",
+    "input": "gm-candidate/gm-source/LargevaluesDirichlet17.tex",
+    "start": 2235,
+    "end": 2252,
+    "sha256": "36d64e4ec02f0cee8baccd6ee1dbf5ea73f0dfde55827e00ad2566a142ffa428",
+    "citation_id": "1"
+  },
+  {
+    "title": "GMRR Theorem 1 and constant",
+    "input": "gm-candidate/gmrr-source/squfv.tex",
+    "start": 88,
+    "end": 99,
+    "sha256": "2ecca25d89675cec8451978a9f7541e69c25d07d09a87023748ea061cb9b051e",
+    "citation_id": "2"
+  },
+  {
+    "title": "GMRR Proposition 1",
+    "input": "gm-candidate/gmrr-source/squfv.tex",
+    "start": 217,
+    "end": 223,
+    "sha256": "2ecca25d89675cec8451978a9f7541e69c25d07d09a87023748ea061cb9b051e",
+    "citation_id": "2"
+  },
+  {
+    "title": "GMRR Proposition 2 and limitations",
+    "input": "gm-candidate/gmrr-source/squfv.tex",
+    "start": 225,
+    "end": 238,
+    "sha256": "2ecca25d89675cec8451978a9f7541e69c25d07d09a87023748ea061cb9b051e",
+    "citation_id": "2"
+  },
+  {
+    "title": "GMRR recombination and centering",
+    "input": "gm-candidate/gmrr-source/squfv.tex",
+    "start": 240,
+    "end": 258,
+    "sha256": "2ecca25d89675cec8451978a9f7541e69c25d07d09a87023748ea061cb9b051e",
+    "citation_id": "2"
+  },
+  {
+    "title": "GMRR fourth moment",
+    "input": "gm-candidate/gmrr-source/squfv.tex",
+    "start": 339,
+    "end": 345,
+    "sha256": "2ecca25d89675cec8451978a9f7541e69c25d07d09a87023748ea061cb9b051e",
+    "citation_id": "2"
+  },
+  {
+    "title": "GMRR Weyl",
+    "input": "gm-candidate/gmrr-source/squfv.tex",
+    "start": 364,
+    "end": 370,
+    "sha256": "2ecca25d89675cec8451978a9f7541e69c25d07d09a87023748ea061cb9b051e",
+    "citation_id": "2"
+  },
+  {
+    "title": "GMRR Mellin reduction and time tail",
+    "input": "gm-candidate/gmrr-source/squfv.tex",
+    "start": 756,
+    "end": 816,
+    "sha256": "2ecca25d89675cec8451978a9f7541e69c25d07d09a87023748ea061cb9b051e",
+    "citation_id": "2"
+  },
+  {
+    "title": "GMRR low levels and unconditional proof",
+    "input": "gm-candidate/gmrr-source/squfv.tex",
+    "start": 831,
+    "end": 859,
+    "sha256": "2ecca25d89675cec8451978a9f7541e69c25d07d09a87023748ea061cb9b051e",
+    "citation_id": "2"
+  }
+]

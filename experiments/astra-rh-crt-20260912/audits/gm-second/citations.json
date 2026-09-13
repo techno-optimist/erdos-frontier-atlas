@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://arxiv.org/src/2405.20552v2",
+      "title": "Guth–Maynard pinned TeX v2",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "Suppose $(b_n)$ is a sequence of complex numbers with $|b_n| \\le 1$,  and $(t_r)_{r\\le R}$ is a sequence of $1$-separated points in $[0,T]$ such that",
+          "added": "2026-09-12"
+        },
+        {
+          "text": "for all $r\\le R$. Then we have\n\\[\nR\\le T^{o(1)}\\Bigl(N^2V^{-2}+N^{18/5}V^{-4}+TN^{12/5}V^{-4}\\Bigr).",
+          "added": "2026-09-12"
+        },
+        {
+          "text": "Suppose $(b_n)_{n\\sim N}$, $(t_r)_{r\\le R}$ are as in Theorem \\ref{thrm:LargeValues}, and that $T^{5/6}\\le N\\le T$ and $V=N^\\sigma$ with $\\sigma\\ge 7/10$. Then we have\n\n\\[\nR\\lessapprox N^{2-2\\sigma}+T^{1/2}N^{3-4\\sigma}+\\inf_{k\\in\\mathbb{N}}\\Bigl(T^{\\frac{k}{k+1}}N^{(4-6\\sigma)\\frac{k}{k+1}}+N^{(5-6\\sigma)\\frac{4k}{4k+3}}T^{\\frac{2}{4k+3}}\\Bigr).\n\\]\n\nIn particular, we have\n\n\\[\nR\\lessapprox N^{2-2\\sigma}+T^{1/2}N^{3-4\\sigma}+T^{(30\\sigma-21)/5}N^{(46-60\\sigma)/5}.",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "url": "https://arxiv.org/src/2006.04060v2",
+      "title": "GMRR pinned TeX v2",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "Let $X \\geq 1$ and $X^{\\varepsilon} \\leq H \\leq X^{2/3 - \\varepsilon}$. Let $H^{1+\\varepsilon} \\leq z \\leq \\min\\{X/H^{1/2+\\varepsilon}, H^{1/2-\\varepsilon}X^{1/2}\\}$. Then, as $X \\rightarrow \\infty$, \n  \\begin{equation} \\label{eq:prop1}  \\frac{1}{X} \\int_{X}^{2X} \\Big | \\sum_{\\substack{x < n d^2 \\leq x + H \\\\ d^2 \\le z}} \\mu(d) - H \\sum_{d^2 \\le z} \\frac{\\mu(d)}{d^2} \\Big |^2 \\, dx = C \\sqrt{H} + O(H^{1/2-\\varepsilon/10})",
+          "added": "2026-09-12"
+        },
+        {
+          "text": "& \\ll X \\int_{\\mathbb{R}} \\min\\Bigl\\{ \\Bigl(\\frac{H}{X}\\Bigr)^2, \\frac{1}{|t|^2}\\Bigr\\} \\cdot |\\zeta(\\tfrac 12 + it) M(1 + 2it)|^2 dt.\n\\end{split}\n\\end{equation}\nBy Lemma~\\ref{le:ZetaSC} the part with $|t| \\geq X^2$ contributes\n\\[\n\\ll X \\int_{X^2}^\\infty |t|^{-5/3+\\varepsilon} dt = O(1).",
+          "added": "2026-09-12"
+        },
+        {
+          "text": "Notice that the tail $H\\sum_{d^2 > 2X} \\mu(d)/d^2$ is $\\ll H/\\sqrt{X}$. Hence the claim reduces to showing that\n\\[\n\\frac{1}{X} \\int_{X}^{2X} \\Big | \\sum_{\\substack{x < n d^2 \\leq x + H}} \\mu(d) - H \\sum_{d^2 \\leq 2X} \\frac{\\mu(d)}{d^2} \\Big | \\cdot \\frac{H}{\\sqrt{X}} + \\Bigl(\\frac{H}{\\sqrt{X}}\\Bigr)^2 dx \\ll H^{1/2 - \\varepsilon / 16}.\n\\]\nApplying Cauchy-Schwarz and~\\eqref{eq:truncclaim} we see that the left hand side\n is $\\ll H^{1/4}(H/\\sqrt{X}) + H^2/X \\ll H^{1/2-\\varepsilon/16}$ since $H \\leq X^{2/3 - \\varepsilon}$.",
+          "added": "2026-09-12"
+        }
+      ]
+    }
+  ]
+}

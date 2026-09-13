@@ -1,0 +1,117 @@
+{
+  "scope": "Comparison of the displayed numerical majorants only; no lower bound and no genuine countermodel",
+  "parent_input": "./inputs/gm_parameter_check.json",
+  "parent_sha256": "0ba2355a52ab914b5482d222281a248de48b80eed8960b1dfe8d266004446387",
+  "parent_margin_checks": [
+    {
+      "name": "small-divisor upper cutoff 1",
+      "exact_coefficients_match": true,
+      "lower_bound": "17/28"
+    },
+    {
+      "name": "small-divisor upper cutoff 2",
+      "exact_coefficients_match": true,
+      "lower_bound": "27/400"
+    },
+    {
+      "name": "low-M level versus H^(1/2-eps/3)",
+      "exact_coefficients_match": true,
+      "lower_bound": "1/8"
+    },
+    {
+      "name": "Weyl contribution versus H^(1/2-eps/3)",
+      "exact_coefficients_match": true,
+      "lower_bound": "2561/2625"
+    },
+    {
+      "name": "mixed GM contribution versus H^(1/2-eps/3)",
+      "exact_coefficients_match": true,
+      "lower_bound": "15563/21000"
+    },
+    {
+      "name": "GM long-time contribution versus H^(1/2-eps/3)",
+      "exact_coefficients_match": true,
+      "lower_bound": "197/3000"
+    },
+    {
+      "name": "density cross error versus H^(1/2-eps/16)",
+      "exact_coefficients_match": true,
+      "lower_bound": "1/14"
+    },
+    {
+      "name": "density square error versus H^(1/2-eps/16)",
+      "exact_coefficients_match": true,
+      "lower_bound": "1/7"
+    }
+  ],
+  "parent_polytope_checks": [
+    {
+      "name": "original_black_box",
+      "verified_vertex_count": 4,
+      "verified_max_h": "6/11"
+    },
+    {
+      "name": "GM_theorem_1_1_black_box",
+      "verified_vertex_count": 4,
+      "verified_max_h": "4/7"
+    },
+    {
+      "name": "refined_critical_level_black_box",
+      "verified_vertex_count": 1,
+      "verified_max_h": "4/7"
+    }
+  ],
+  "parent_barrier_scope": "Failure of the displayed sufficient-inequality system, not an impossibility theorem for the actual mixed moment.",
+  "critical_range": "T^(5/6)<=D<=T, up to fixed-factor transition handling",
+  "critical_comparison": {
+    "GM_1_1": {
+      "measure_majorant_D_T": [
+        "3/5",
+        "0"
+      ],
+      "Weyl_E_over_H_D_T": [
+        "1/10",
+        "-2/3"
+      ],
+      "fourth_E_over_H_D_T": [
+        "-1/5",
+        "-1/2"
+      ],
+      "minimum_Weyl_minus_fourth_exponent_in_T": "1/12"
+    },
+    "Huxley_classical": {
+      "measure_majorant_D_T": [
+        "-1/2",
+        "1"
+      ],
+      "Weyl_E_over_H_D_T": [
+        "-1",
+        "1/3"
+      ],
+      "fourth_E_over_H_D_T": [
+        "-3/4",
+        "0"
+      ],
+      "minimum_Weyl_minus_fourth_exponent_in_T": "1/12"
+    },
+    "GM_12_1": {
+      "measure_majorant_D_T": [
+        "0",
+        "1/2"
+      ],
+      "Weyl_E_over_H_D_T": [
+        "-1/2",
+        "-1/6"
+      ],
+      "fourth_E_over_H_D_T": [
+        "-1/2",
+        "-1/4"
+      ],
+      "minimum_Weyl_minus_fourth_exponent_in_T": "1/12"
+    }
+  },
+  "original_bound_switch_alpha": "10/11",
+  "best_of_listed_cardinality_bounds": "T^(1/2+o(1))",
+  "best_of_listed_Weyl_and_fourth_treatments": "H D^(-1/2) T^(-1/4) X^o(1)",
+  "all_checks_passed": true
+}

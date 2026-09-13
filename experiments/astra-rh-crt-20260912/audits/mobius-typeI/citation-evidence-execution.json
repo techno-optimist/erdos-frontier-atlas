@@ -1,0 +1,63 @@
+[
+  {
+    "id": 1,
+    "returncode": 0,
+    "stdout": "[1] evidence attached (1 quote(s))\n",
+    "stderr": ""
+  },
+  {
+    "id": 2,
+    "returncode": 0,
+    "stdout": "[2] evidence attached (1 quote(s))\n",
+    "stderr": ""
+  },
+  {
+    "id": 3,
+    "returncode": 0,
+    "stdout": "[3] evidence attached (1 quote(s))\n",
+    "stderr": ""
+  },
+  {
+    "id": 3,
+    "returncode": 0,
+    "stdout": "[3] evidence attached (2 quote(s))\n",
+    "stderr": ""
+  },
+  {
+    "id": 4,
+    "returncode": 0,
+    "stdout": "[4] evidence attached (1 quote(s))\n",
+    "stderr": ""
+  },
+  {
+    "id": 4,
+    "returncode": 0,
+    "stdout": "[4] evidence attached (2 quote(s))\n",
+    "stderr": ""
+  },
+  {
+    "id": 3,
+    "returncode": 0,
+    "stdout": "[3] evidence attached (3 quote(s))\n",
+    "stderr": ""
+  },
+  {
+    "id": 3,
+    "returncode": 1,
+    "stdout": "",
+    "stderr": "error: quote too short \u2014 use at least 3 words of verbatim text\n"
+  },
+  {
+    "id": 4,
+    "returncode": 0,
+    "stdout": "[4] evidence attached (3 quote(s))\n",
+    "stderr": ""
+  },
+  {
+    "id": 3,
+    "returncode": 0,
+    "stdout": "[3] evidence attached (4 quote(s))\n",
+    "stderr": "",
+    "recovery": "included original surrounding words to meet quote-length minimum"
+  }
+]

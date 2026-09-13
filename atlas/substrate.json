@@ -223,6 +223,164 @@
       "discharges": [{"problem": 327, "note": "partial density-transfer lemma and exact small demonstration; not a solution, not a best bound, not a next-cell claim; human review/formalization remain"}],
       "selectors": {"tags_all": ["unit fractions"]},
       "remaining": ["human mathematical review/formalization", "best activation-state partition", "cross-fiber constraints", "no extremal density or novelty claim", "other unit-fraction problems need their own transfer proof"]
+    },
+    {
+      "id": "reciprocal-square-phase-obstruction",
+      "statement": "For bounded generic signed coefficients with square-root partial sums, the square-divisor error has optimal pointwise exponent 2/5; a fixed sequence also has cumulative mean square Omega(X^(8/5)). These coefficients are not Mobius.",
+      "status": "informal_proof_exact_checks",
+      "artifacts": ["experiments/astra-rh-969-20260912/RESULT.md", "experiments/astra-rh-969-20260912/receipt.json"],
+      "replay": ["python3 -I -B experiments/astra-rh-969-20260912/verify.py", "python3 -I -B -m unittest discover -s experiments/astra-rh-969-20260912 -p 'test_*.py'"],
+      "obstructions": [{"problem": 969, "note": "ordinary prefix cancellation alone cannot imply quarter-power or RH-scale mean-square error for generic coefficients; not an obstruction to RH or arithmetic methods"}],
+      "selectors": {"ids": [969]},
+      "remaining": ["Mobius-specific phase cancellation or a suitable arithmetic averaged substitute", "human mathematical review/formalization", "no new bound for squarefree numbers or RH"]
+    },
+    {
+      "id": "squarefree-energy-rh-bridge",
+      "statement": "RH iff integral_1^X |Q(x)-x/zeta(2)|^2 dx = O_epsilon(X^(3/2+epsilon)) for every epsilon>0; the proof uses classical analytic inputs and an explicit no-pole Mellin inversion argument.",
+      "status": "informal_proof_classical_inputs",
+      "artifacts": ["experiments/astra-rh-969-20260912/ANALYTIC_TARGET.md", "experiments/astra-rh-969-20260912/FRESHNESS.md"],
+      "replay": [],
+      "discharges": [{"problem": 969, "note": "equivalence only, not the unconditional energy estimate; does not solve P969 or RH; not human peer-reviewed or formalized; no novelty claim"}],
+      "selectors": {"ids": [969]},
+      "remaining": ["unconditional uniform weighted squarefree energy bound for every delta>0", "classical analytic inputs not formalized", "human mathematical review/formalization", "new zero proportions and zero-density bounds do not exclude every exceptional pole"]
+    },
+    {
+      "id": "squarefree-crt-defect-transfer",
+      "status": "informal_model_reviewed_exact_checks",
+      "statement": "Finite-prime squarefree variance has a positive divisor expansion and a uniform sqrt(H) phase bound. Density-normalized prime refinement is orthogonal. The real-interval cost is L*ceil(X/L)/X; for L<=X the actual squarefree increment bound is equivalent to a centered omitted-prime defect-energy obligation.",
+      "artifacts": [
+        "experiments/astra-rh-crt-20260912/RESULT.md",
+        "experiments/astra-rh-crt-20260912/receipt.json",
+        "experiments/astra-rh-crt-20260912/REVIEW_STATUS.json"
+      ],
+      "replay": [
+        "python3 -I -B experiments/astra-rh-crt-20260912/verify.py experiments/astra-rh-crt-20260912/receipt.json"
+      ],
+      "discharges": [
+        {
+          "problem": 969,
+          "note": "Phase operator and norm-transfer equivalence only, not the required actual arithmetic energy bound. Independent model audit only; not human peer review or formal verification; does not solve P969 or RH."
+        }
+      ],
+      "selectors": {
+        "ids": [
+          969
+        ]
+      },
+      "remaining": [
+        "unconditional actual centered-defect energy bound, uniform for 1<=H<=X^(1-epsilon)",
+        "fixed-H product-phase limits do not provide growing-H finite-interval uniformity",
+        "human mathematical review/formalization"
+      ]
+    },
+    {
+      "id": "increment-mellin-continuation",
+      "status": "informal_model_reviewed_conditional",
+      "statement": "For fixed 0<theta<1, integer-shift squarefree increment variance << H^(1/2+nu) for every nu>0 through H<=X^theta yields holomorphic continuation to Re(s)>1-3theta/4, not original integral convergence or global L2. The fixed-theta invariant zero strip is nonempty only for theta>8/9; a cofinal family theta->1 yields RH.",
+      "artifacts": [
+        "experiments/astra-rh-crt-20260912/MELLIN_TRANSFER.md",
+        "experiments/astra-rh-crt-20260912/mellin_arithmetic.json",
+        "experiments/astra-rh-crt-20260912/REVIEW_STATUS.json"
+      ],
+      "replay": [],
+      "discharges": [
+        {
+          "problem": 969,
+          "note": "Conditional analytic transfer; no new instance of the variance hypothesis or unconditional zero exclusion. Independent model audit only; not human peer review or formal verification; does not solve P969 or RH."
+        }
+      ],
+      "selectors": {
+        "ids": [
+          969
+        ]
+      },
+      "remaining": [
+        "required variance hypothesis at exponents cofinal in 1",
+        "fixed-theta cancellation only excludes its invariant open strip",
+        "human mathematical review/formalization; named analytic inputs not rebuilt"
+      ]
+    },
+    {
+      "id": "gm-gmrr-variance-transfer",
+      "status": "informal_model_reviewed_external_inputs",
+      "statement": "From pinned GMRR and Guth-Maynard large-value inputs, the assembled centered squarefree variance asymptotic has range 1<=H<=X^(4/7-epsilon), error O_epsilon(H^(1/2-epsilon/16)), 0<epsilon<1/100, and the GMRR main constant. This is a research deduction, not a novelty/current-record claim.",
+      "artifacts": [
+        "experiments/astra-rh-crt-20260912/GM_TRANSFER.md",
+        "experiments/astra-rh-crt-20260912/gm_parameter_check.json",
+        "experiments/astra-rh-crt-20260912/REVIEW_STATUS.json"
+      ],
+      "replay": [],
+      "discharges": [
+        {
+          "problem": 969,
+          "note": "Two model analytic audits of the full deduction, including localization, endpoints, centering and aggregate losses. Independent model audit only; not human peer review or formal verification; does not solve P969 or RH."
+        }
+      ],
+      "selectors": {
+        "ids": [
+          969
+        ]
+      },
+      "remaining": [
+        "expert verification of the deduction from the version-pinned external inputs",
+        "4/7 is a ceiling only of the checked sufficient majorants, not an impossibility theorem",
+        "full mixed-moment saving with height-length neighborhood, masks and tail uniformity",
+        "no additional zero exclusion from this variance range"
+      ]
+    },
+    {
+      "id": "mobius-long-factor-typeI",
+      "status": "informal_model_reviewed_partial",
+      "statement": "At D comparable to T^(5/6), the exact sharp Mobius split with fixed k=2, U^2=2D and D>2 isolates a coefficient-one factor c>=T^(7/12+eta). For fixed 0<eta<1/48 its marked family has zeta-weighted mixed energy << T^(1/3-eta), with common real imaginary-part shifts, fixed support widths and aggregate losses paid as specified in the note.",
+      "artifacts": [
+        "experiments/astra-rh-crt-20260912/ARITHMETIC_FRONTIER.md",
+        "experiments/astra-rh-crt-20260912/typeI_review.json"
+      ],
+      "replay": [],
+      "discharges": [
+        {
+          "problem": 969,
+          "note": "Controls the actual sharp long-factor part only, not a full Mobius mixed-moment saving. Independent model audit only; not human peer review or formal verification; does not solve P969 or RH."
+        }
+      ],
+      "selectors": {
+        "ids": [
+          969
+        ]
+      },
+      "remaining": [
+        "J-rem: fixed saving for the whole exact sharp complementary residual",
+        "open height-length neighborhood and all required masks, tails and heights",
+        "u=0 alone does not supply common-shift uniformity with zeta fixed",
+        "human mathematical review/formalization"
+      ]
+    },
+    {
+      "id": "sparse-square-signed-moment-interface",
+      "status": "informal_model_reviewed_partial",
+      "statement": "At D comparable to T^(5/6), a localized product AFE and gcd/Jordan Gram identity give the entire signed diagonal scale T*log(T)/D for a full Mobius block and fixed nonzero nonnegative smooth shell weight. This is not a lower bound for the full moment. The actual-cloud unsigned near-core count does not lower-bound signed cancellation.",
+      "artifacts": [
+        "experiments/astra-rh-crt-20260912/ARITHMETIC_FRONTIER.md",
+        "experiments/astra-rh-crt-20260912/diagonal_review.json"
+      ],
+      "replay": [],
+      "discharges": [
+        {
+          "problem": 969,
+          "note": "Full-diagonal calculation and signed residual interface only; the AFE weight can change sign. Independent model audit only; not human peer review or formal verification; does not solve P969 or RH."
+        }
+      ],
+      "selectors": {
+        "ids": [
+          969
+        ]
+      },
+      "remaining": [
+        "aggregate signed off-diagonal saving, not an unsigned absolute majorant",
+        "common-frequency square support has cutoff D^2 in an ordinary-index twisted theorem",
+        "uniformity over all needed dyadic partners, masks, heights and neighboring lengths",
+        "human mathematical review/formalization"
+      ]
     }
   ]
 }

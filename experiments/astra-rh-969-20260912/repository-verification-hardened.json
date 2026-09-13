@@ -1,0 +1,153 @@
+{
+  "schema": "rh-repository-integration-verification-v1",
+  "checked_at_utc": "2026-09-13T06:47:03.545242+00:00",
+  "base_commit": "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+  "scope": "Actual repository gates and bounded semantic replay, not a human or formal analytic proof audit. Stdout/stderr are checkout-path-sanitized only.",
+  "python": {
+    "command": [
+      "uv",
+      "run",
+      "--python",
+      "3.11",
+      "--with-requirements",
+      "requirements-dev.lock",
+      "python",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "Python 3.11.16\n",
+    "stderr": ""
+  },
+  "historical_whitespace_exception": {
+    "scope": "Only byte-pinned preserved historical Markdown reports/excerpts; no code or maintained documents exempted.",
+    "paths": [
+      "experiments/astra-rh-crt-20260912/audits/gm-candidate/source-excerpts.md",
+      "experiments/astra-rh-crt-20260912/audits/gm-second/source-excerpts.md",
+      "experiments/astra-rh-crt-20260912/audits/mobius-factorization/source-excerpts.md",
+      "experiments/astra-rh-crt-20260912/audits/twisted-square/audit-conclusion.md",
+      "experiments/astra-rh-crt-20260912/audits/twisted-square/audit-theorems.md",
+      "experiments/astra-rh-crt-20260912/audits/twisted-square/source-excerpts.md"
+    ],
+    "full_check_exit_code": 2,
+    "exempted_bytes_match_archive_manifest": true
+  },
+  "all_commands_passed": true,
+  "pytest_summary": {
+    "passed": 180,
+    "skipped": 2
+  },
+  "protected_tracked_paths_checked": 676,
+  "protected_bytes_unchanged": true,
+  "protected_paths_match_base_commit": true,
+  "rh_proved": false,
+  "full_mixed_moment_fixed_saving": false,
+  "human_peer_review": false,
+  "formal_kernel_verification": false,
+  "runs": [
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check",
+        "--",
+        ".",
+        ":(exclude)experiments/astra-rh-crt-20260912/audits/gm-candidate/source-excerpts.md",
+        ":(exclude)experiments/astra-rh-crt-20260912/audits/gm-second/source-excerpts.md",
+        ":(exclude)experiments/astra-rh-crt-20260912/audits/mobius-factorization/source-excerpts.md",
+        ":(exclude)experiments/astra-rh-crt-20260912/audits/twisted-square/audit-conclusion.md",
+        ":(exclude)experiments/astra-rh-crt-20260912/audits/twisted-square/audit-theorems.md",
+        ":(exclude)experiments/astra-rh-crt-20260912/audits/twisted-square/source-excerpts.md"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.11",
+        "--with-requirements",
+        "requirements-dev.lock",
+        "make",
+        "audit-fast"
+      ],
+      "exit_code": 0,
+      "stdout": "python3 tools/validate_gap_map.py\n  WARN: entry[145] (problem 743): oeis A000055 not among stub's refs (ok if better-sourced)\n  WARN: entry[187] (problem 993): oeis A000055 not among stub's refs (ok if better-sourced)\ngap_map VALID: 225 entries; witness_feasibility {'hard': 51, 'plausible': 42, 'none': 86, 'open-easy': 42, 'historic': 4}; confidence {'C2': 8, 'C3': 217}; 2 warn(s)\npython3 tools/validate_ai_claims.py\nai-claim overlay OK: 89 claims recorded, 21 against problems we still record open/wall; 0 statuses changed by a claim\npython3 tools/validate_atlas.py\natlas integrity: 51 entries, counts and routing invariants verified\npython3 tools/state_of_frontier.py --check\nOK: views/state_of_frontier.md is current with the data\npython3 book/build_book.py --check\nOK: book/BOOK.md is current with the data\npython3 tools/build_graph.py --check\ngraph up to date (299 files).\npython3 tools/validate_graph.py\nvalidate_graph: OK \u2014 2415 nodes, 4007 edges, 296 rendered files, 0 quarantined.\npython3 tools/check_certificate_contracts.py\ncertificate-contracts: 28 directories inventoried; 15 claims bound\ncertificate-contracts OK\npython3 tools/check_certificate_contracts.py --profile fast\ncertificate-contracts: 28 directories inventoried; 15 claims bound\ncontract replay erdos-552-n12-n16: PASS\ncontract replay erdos-552-f39-lower: PASS\ncontract replay erdos-13-table: PASS\ncontract replay erdos-142-foundation: PASS\ncontract replay erdos-979-a6-public: PASS\ncontract replay erdos-1107-public-table: PASS\ncontract replay graffiti-284-hoffman-singleton: PASS\ncontract replay jacobian-n3-counterexample: PASS\ncontract replay graffiti-290-finite-verification: PASS\ncontract replay keller-power-weighted-lifts-replay: PASS\ncontract replay erdos-142-cone-infeasible-objects: PASS\ncontract replay erdos-366-cubefull-sweep-1e25: PASS\ncontract replay erdos-743-k10-packing: PASS\ncontract replay erdos-993-unimodal-n30: PASS\ncontract replay erdos-699-rowsweep-1e8: PASS\ncertificate-contracts OK\npython3 -m pytest tests/ -q\n........................................................................ [ 39%]\n........................................................................ [ 79%]\n....................s..s..............                                   [100%]\n180 passed, 2 skipped in 55.89s\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.11",
+        "--with-requirements",
+        "requirements-dev.lock",
+        "python",
+        "-I",
+        "-B",
+        "experiments/astra-rh-969-20260912/verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"accepted\": true, \"bins_checked\": 24, \"families\": [{\"bins_checked\": 1, \"floor_sum\": 0, \"h\": 4, \"maximum_absolute_prefix\": 5, \"negative_error_lower_bound\": \"1/16\", \"nonzero_coefficients\": 10, \"pair_bound\": \"25/16\", \"prefix_positions_checked\": 32, \"x\": 1024}, {\"bins_checked\": 2, \"floor_sum\": 0, \"h\": 8, \"maximum_absolute_prefix\": 12, \"negative_error_lower_bound\": \"1/4\", \"nonzero_coefficients\": 38, \"pair_bound\": \"193/32\", \"prefix_positions_checked\": 128, \"x\": 32768}, {\"bins_checked\": 3, \"floor_sum\": 0, \"h\": 12, \"maximum_absolute_prefix\": 19, \"negative_error_lower_bound\": \"9/16\", \"nonzero_coefficients\": 84, \"pair_bound\": \"105/8\", \"prefix_positions_checked\": 288, \"x\": 248832}, {\"bins_checked\": 4, \"floor_sum\": 0, \"h\": 16, \"maximum_absolute_prefix\": 27, \"negative_error_lower_bound\": \"1\", \"nonzero_coefficients\": 146, \"pair_bound\": \"1459/64\", \"prefix_positions_checked\": 512, \"x\": 1048576}, {\"bins_checked\": 6, \"floor_sum\": 0, \"h\": 24, \"maximum_absolute_prefix\": 43, \"negative_error_lower_bound\": \"9/4\", \"nonzero_coefficients\": 336, \"pair_bound\": \"855/16\", \"prefix_positions_checked\": 1152, \"x\": 7962624}, {\"bins_checked\": 8, \"floor_sum\": 0, \"h\": 32, \"maximum_absolute_prefix\": 59, \"negative_error_lower_bound\": \"4\", \"nonzero_coefficients\": 596, \"pair_bound\": \"6075/64\", \"prefix_positions_checked\": 2048, \"x\": 33554432}], \"families_checked\": 6, \"scope\": {\"generic_coefficients\": true, \"mobius_coefficients\": false, \"new_mobius_bound\": false, \"rh_proved\": false}}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.11",
+        "--with-requirements",
+        "requirements-dev.lock",
+        "python",
+        "-I",
+        "-B",
+        "experiments/astra-rh-crt-20260912/verify.py",
+        "experiments/astra-rh-crt-20260912/receipt.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"adverse_phase_verified\": true, \"case_count\": 70, \"distinct_prime_sets\": 7, \"passed\": true, \"rh_proved\": false, \"sampled_phase_bounds_checked\": true, \"scope\": \"uniform-residue-phase-only\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.11",
+        "--with-requirements",
+        "requirements-dev.lock",
+        "python",
+        "-I",
+        "-B",
+        "experiments/astra-substrate-20260911/verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "verified: BOARD.md matches query_substrate.render_board()\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "HEAD",
+        "--",
+        "tools/build_graph.py",
+        "atlas/graph",
+        "views/graph",
+        "views/sorties.md",
+        "atlas/stubs.json",
+        "atlas/gap_map.json",
+        "certificates"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}
