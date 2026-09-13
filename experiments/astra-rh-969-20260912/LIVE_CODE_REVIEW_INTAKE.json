@@ -1,0 +1,159 @@
+{
+  "schema": "rh-live-code-review-intake-v1",
+  "checked_at_utc": "2026-09-13T07:31:23.309712+00:00",
+  "scope": "Parent authentication of a complete independent model software verdict, not a second analytic proof review or publication approval for the separate archive subset.",
+  "passed": true,
+  "base_commit": "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+  "review_manifest_sha256": "c5a4a0b87b2a26fcf022f1feae4e0ff783e5348a732c077eb3a4eb004d5b1df8",
+  "reviewed_files": [
+    {
+      "path": "experiments/astra-rh-969-20260912/floor_transfer.py",
+      "source_sha256": "8af97120b6e1a23e1605569d9477f8460f15743db36586b526689dc5bad207f5",
+      "diff_sha256": "4aa2dc49c2db131998b6f36e629375f9d370468ff7f1db1014bbe0ce798bfede",
+      "source_lines": 82
+    },
+    {
+      "path": "experiments/astra-rh-969-20260912/test_floor.py",
+      "source_sha256": "0a3fa5e8fd28a487e7639867864db91b7e01ac15d1260b1fbce677fe101de65c",
+      "diff_sha256": "63baf1b097c02e73a247cfed0ed91f66315798eb421738207dc136226bbf3e7f",
+      "source_lines": 114
+    },
+    {
+      "path": "experiments/astra-rh-969-20260912/test_persistence.py",
+      "source_sha256": "b5135118c61f5feb0aa8e6f0cabfb23088366b69219ec10f7d79749acfc6c876",
+      "diff_sha256": "e011170881def55bf4d148386da74a7417525cb123ca0792fe914cf380a5e057",
+      "source_lines": 37
+    },
+    {
+      "path": "experiments/astra-rh-969-20260912/test_receipt.py",
+      "source_sha256": "86ad957b6f39c4c6e43424eb3933e1e8cccdcbc1ca87ab89ef49cfab71c926e6",
+      "diff_sha256": "3d0e34c0f7f71f624fe5dc4e359abac2db2e87d2980aa2364dc730f3b2d3909b",
+      "source_lines": 162
+    },
+    {
+      "path": "experiments/astra-rh-969-20260912/verify.py",
+      "source_sha256": "e28bf251ea88bad0865a11d1ae2368dd2e14c499159a87297a7a5b0bfa786517",
+      "diff_sha256": "825df6993daf2adcaa0e7953f7323fe687e26d221c18debe85de867626cc9a9f",
+      "source_lines": 139
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/kernel.py",
+      "source_sha256": "b2bdb37c08ff54a9de164b28e5a6b994a6d79c06b862c4a5369e9a2778ce8ee9",
+      "diff_sha256": "4b96a566614201106a967a7fdd33d1e28327911288ff1e4531f87bc5d8e0ffe9",
+      "source_lines": 111
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/test_kernel.py",
+      "source_sha256": "3124ad7bbb26b6b7e7f0d3b129434c1bd1c4d2ba89589f0bd861802b7f331ba4",
+      "diff_sha256": "f43a48bbfbef8495f3ed91d8e00c1c99c6d0925d52a4bc0b9d09b6a18bc8a448",
+      "source_lines": 100
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/test_receipt.py",
+      "source_sha256": "1ae8aad201b22f9ee10a830bed2b3aa630cb882bc683f40c1605360994aa6a1e",
+      "diff_sha256": "bf5cf870af6d44a0ca2fb0fe89648ba9c92281c53e551bdb780312bf8d34e457",
+      "source_lines": 142
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/verify.py",
+      "source_sha256": "73c66dd1595d4cce52bf50e107fcec3759891c6b16babb25531347089c4c275c",
+      "diff_sha256": "84e67a7553a4e752fdd9546a4c6c7ad3d34e30eb55aa36208fb6aa052dfa0b3b",
+      "source_lines": 141
+    },
+    {
+      "path": "tests/test_readme.py",
+      "source_sha256": "62509a8ef2749ade0838a739c3a12ef70d4fd393601790ed0599e058c84e7703",
+      "diff_sha256": "cb40ff0b636b55a93be2a5afefaf9c3de137cb06bfd9168490de4af521ec033e",
+      "source_lines": 166
+    },
+    {
+      "path": "tests/test_rh969.py",
+      "source_sha256": "01f65ec9fa6069b8ab49bfe67805dfb9fba9eb64df1ef06f14f06cb1e764cdc4",
+      "diff_sha256": "8e71df452884ad3451bcc3054529cd0c532bd975834a5dc20399b09c9bc3cf3a",
+      "source_lines": 47
+    },
+    {
+      "path": "tests/test_rh_crt.py",
+      "source_sha256": "2dd4335c3531a78a87141140b9448257821a776cfa31068801bcd3c745e00f8a",
+      "diff_sha256": "bca1b843e47a97af1d2ef3b0a6a6c9160a4239e13abde7ba13888df878b008d2",
+      "source_lines": 121
+    },
+    {
+      "path": "tests/test_substrate.py",
+      "source_sha256": "9d6189ce072f6267ecb0cab737cc31d3b202764f12fd426c87c576eba3999845",
+      "diff_sha256": "460d3d9a0bb6ac365124103fbf6cdad768327b76a2d12b28610d26c8483461f3",
+      "source_lines": 175
+    }
+  ],
+  "covered_files": 13,
+  "covered_source_lines": 1537,
+  "all_current_sources_index_blobs_and_native_diffs_match_review": true,
+  "supporting_artifacts_authenticated": {
+    "authentication-start.json": {
+      "sha256": "6b5d06cd5b0b5bbac2394ceb04c261e410f2e49c3447ae25b25e1ed8beecdce8",
+      "bytes": 11607
+    },
+    "authentication-end.json": {
+      "sha256": "6b5d06cd5b0b5bbac2394ceb04c261e410f2e49c3447ae25b25e1ed8beecdce8",
+      "bytes": 11607
+    },
+    "support-fixtures.json": {
+      "sha256": "de362eda35efd3234d0da65b9a356a791ca3346fa7b4bed8d172bcc120631ecc",
+      "bytes": 4816
+    },
+    "retry-bounded-suite-results.json": {
+      "sha256": "360fa155bcaae397dac457ddcc32e6e6458346cc7702a54dc9f36c227b4f8505",
+      "bytes": 5129
+    },
+    "retry-pytest.xml": {
+      "sha256": "a5608ec5b25a1d5575dec4fc92d611d12436c67256166c5a6bed3c72d67b646a",
+      "bytes": 9438
+    },
+    "bounded-suite-results.json": {
+      "sha256": "7aba031572a391077618f23193d987a9fb29cb2692b9d76f18bf50272db53b83",
+      "bytes": 16817
+    },
+    "adverse-results.json": {
+      "sha256": "3d1374491d2b80d9606a483bf1633e6228905f933af0bf9a41491e4e4efe0c4b",
+      "bytes": 2963
+    },
+    "adverse-cli.json": {
+      "sha256": "0db3a840b323020e48f634866bdb9b0fa4593e7009ded5d72baeaf0dc1fc9645",
+      "bytes": 82210
+    },
+    "adverse_controls.py": {
+      "sha256": "da4c7029200946a9c9a083da5dc25ba447d53138ea2ede2977e512196c042565",
+      "bytes": 25630
+    }
+  },
+  "actual_junit_nodes_authenticated": 73,
+  "direct_supplied_test_nodes": 94,
+  "independent_adverse_control_groups": 10,
+  "portable_verdict": {
+    "path": "LIVE_CODE_REVIEW.json",
+    "original_sha256": "e7d52763a265f1e96124b2ac165d4ac4b81a214d9b78c08aff15f1ff35d33517",
+    "original_bytes": 25775,
+    "public_sha256": "e54f2c3ff9dd439a097ebcfde15fe8b4588daf5f739cb1b52e9972b82ac4ed18",
+    "public_bytes": 24673,
+    "path_edits": [
+      {
+        "exact_token_sha256": "2f3f3a89bbc970a47bf8897316a68ae8fd0649a93006e4b6309658abb1334bbf",
+        "replacement": "<independent-review-scratch>",
+        "occurrences": 17,
+        "encoding": "literal-utf8"
+      },
+      {
+        "exact_token_sha256": "4d4d4187f18bb382c2d3bd9baefc3340a9d43c648e12577cf458973f826390cd",
+        "replacement": "<repo>",
+        "occurrences": 1,
+        "encoding": "literal-utf8"
+      }
+    ]
+  },
+  "preservation": "Only the two exact filesystem roots above are replaced. All verdict fields, commands, test outputs, original artifact hashes and scratch permission-setup failure disclosure remain. Raw probes and supporting files stay in external review scratch and are not represented as bundled replay inputs.",
+  "remaining_archive_files_awaiting_verdict": 20,
+  "whole_branch_independent_review_complete": false,
+  "human_peer_review": false,
+  "formal_kernel_verification": false,
+  "rh_proved": false
+}

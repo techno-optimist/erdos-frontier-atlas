@@ -1,0 +1,93 @@
+[
+  {
+    "source_id": 1,
+    "file": "gmrr.tex",
+    "start_line": 339,
+    "end_line": 348,
+    "description": "GMRR Lemma 3: zeta fourth moment"
+  },
+  {
+    "source_id": 1,
+    "file": "gmrr.tex",
+    "start_line": 364,
+    "end_line": 371,
+    "description": "GMRR Lemma 5: Weyl bound"
+  },
+  {
+    "source_id": 1,
+    "file": "gmrr.tex",
+    "start_line": 392,
+    "end_line": 403,
+    "description": "GMRR Lemma 7: mean value, used at q=1"
+  },
+  {
+    "source_id": 1,
+    "file": "gmrr.tex",
+    "start_line": 518,
+    "end_line": 526,
+    "description": "GMRR Lemma 10: Saffari\u2013Vaughan locator correction"
+  },
+  {
+    "source_id": 1,
+    "file": "gmrr.tex",
+    "start_line": 292,
+    "end_line": 308,
+    "description": "GMRR explicitly labels its smooth-factor discussion as rough equivalences"
+  },
+  {
+    "source_id": 2,
+    "file": "gm.tex",
+    "start_line": 68,
+    "end_line": 79,
+    "description": "GM Theorem 1.1: coefficient, spacing, and bound"
+  },
+  {
+    "source_id": 3,
+    "file": "bcr.pdf.txt",
+    "start_line": 98,
+    "end_line": 131,
+    "description": "BCR Theorem 1 as rendered in the author PDF"
+  },
+  {
+    "source_id": 3,
+    "file": "bcr.pdf.txt",
+    "start_line": 359,
+    "end_line": 427,
+    "description": "BCR Theorem 4, support/smoothness/length conditions and surrounding comparison"
+  },
+  {
+    "source_id": 4,
+    "file": "ivic-watt.html.txt",
+    "start_line": 121,
+    "end_line": 126,
+    "description": "Ivic formula (2.2): quotation of Watt, not independently used as a primary saving input"
+  },
+  {
+    "source_id": 5,
+    "file": "ivic-zhai.html.txt",
+    "start_line": 143,
+    "end_line": 153,
+    "description": "Ivic\u2013Zhai Lemma 2.1: corroborating same-frequency quotation of Watt"
+  },
+  {
+    "source_id": 6,
+    "file": "dlmf-25.9.html.txt",
+    "start_line": 35,
+    "end_line": 40,
+    "description": "Sharp asymmetric AFE with all displayed hypotheses"
+  },
+  {
+    "source_id": 6,
+    "file": "dlmf-25.9.html.txt",
+    "start_line": 63,
+    "end_line": 66,
+    "description": "Gamma quotient defining chi"
+  },
+  {
+    "source_id": 7,
+    "file": "heath-brown-1982.pdf.txt",
+    "start_line": 97,
+    "end_line": 117,
+    "description": "HB page 1367: binomial mechanism and support cutoff (formula image is authoritative)"
+  }
+]

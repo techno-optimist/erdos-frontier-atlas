@@ -1,0 +1,220 @@
+{
+  "schema": "rh-archive-review-intake-v1",
+  "checked_at_utc": "2026-09-13T07:56:10.873590+00:00",
+  "passed": true,
+  "scope": "Parent authentication of the final independent model software review, not an analytic proof audit.",
+  "base_commit": "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+  "covered_files": 20,
+  "covered_source_lines": 2719,
+  "all_current_source_index_and_native_diff_pins_match": true,
+  "reviewed_files": [
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/crt-variance/audit.py",
+      "source_sha256": "f40ef90e83109d227b598237ef873d9db8f81baff1e59355fece47847c29186b",
+      "diff_sha256": "ae0fc84fe6251fa767020234c5b96290db3a35e2b511758fd67206bfb3723ed1",
+      "source_lines": 74,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/crt-variance/endpoints.py",
+      "source_sha256": "0f4242c4f49a48f1f4bacd5fb0304a43de7886f63a6ad4a64d77aecabb24a594",
+      "diff_sha256": "af23a626dc4deb95a0d4f33422a45d17ffceebcf682447d9b1a601be9d95753c",
+      "source_lines": 79,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/crt-variance/finalize.py",
+      "source_sha256": "3870a3ead3b9378ab1dfbf3f51ca5ad5e4e3029e0be56b41f674a3b132fa8543",
+      "diff_sha256": "072daf2290f4ae40fef73a22b50e17baabeb6d5dab66296e9998f8d1648333bf",
+      "source_lines": 57,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/crt-variance/r-free.py",
+      "source_sha256": "432978f7cb65a0f08ba5a5cfb150411f8f98bcfe7924ab01930303cdb39578d2",
+      "diff_sha256": "418129dbfccf716ab3238c23c7e6726c053b7238f0428844a7211f2209018723",
+      "source_lines": 54,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/gm-candidate/check_exponents.py",
+      "source_sha256": "0c9c28de1173719462695cb67fd650fcbeaa2dd9d76764e2d1b5bfebd42c5825",
+      "diff_sha256": "404d49dd5e74f78f80b50ca7e8233d6fe8f9880f384567a40271ed834c6cef25",
+      "source_lines": 98,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/gm-first/independent_checks.py",
+      "source_sha256": "750c6684f71e56e13adb8e6f290b0c9ff61fb2d057e91d7b965f8ff8b61fc3e0",
+      "diff_sha256": "1c103080f4df3fd11a9b29a84c667b53f563172f6246c5f9dcc936c8d8919ada",
+      "source_lines": 162,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/gm-first/original_check_exponents.py",
+      "source_sha256": "0c9c28de1173719462695cb67fd650fcbeaa2dd9d76764e2d1b5bfebd42c5825",
+      "diff_sha256": "53b3ddb120cd0f9c248cd5b62b5a63684e31af93075965b9475e83122b8985bd",
+      "source_lines": 98,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/gm-second/check_second_audit.py",
+      "source_sha256": "ced6ac2dee45d77ac4aa1142771d2320cb5647783d56d01f826fc09581eb3ac5",
+      "diff_sha256": "875945025a6b6a248bcad1c585c7b2e2c3c605f2f4ccaab193b36ea90f6d7623",
+      "source_lines": 202,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/gm-second/compare_critical_bounds.py",
+      "source_sha256": "078ce849142c6b702d07248d50d6bad83013a2b38e775729d7eee5587efd68ef",
+      "diff_sha256": "d793e9468048868aa1e0c8a656da960b15caa49bbe2e65b8de510c9e636653d0",
+      "source_lines": 126,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/mellin-transfer/verify_arithmetic.py",
+      "source_sha256": "6d72d01acbb93396196bf4456c7523d1537eb87bcef0f37452f13219376283a1",
+      "diff_sha256": "181c5fbce83a0ab2fb2319a61d24597423f69a003cd86a32ce87a4b68219aff0",
+      "source_lines": 88,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/mobius-factorization/check_ledger.py",
+      "source_sha256": "f27b81e5e2e9971522e6618706238d1cbf3fe8025cf5f0a5d27d6d79c5b4e41b",
+      "diff_sha256": "074039bd1e35f3397fae027cfdfbf328a087098f8c05985b26c6df2288089065",
+      "source_lines": 131,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/mobius-typeI/independent_checks.py",
+      "source_sha256": "217d0eae5144c338c288e4bfb60397d80f69a30e05cc52532d56bb48c282e269",
+      "diff_sha256": "cdb851b0c7aa69a9cf4f92bb3a74858b77c0a443b2794c0c2c7b950a841b141a",
+      "source_lines": 316,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/phase-transfer/check_actual_intervals.py",
+      "source_sha256": "497f3bd07733f2939dddb2242fed3064d13b823abd014b56d1efedb15e11b7fc",
+      "diff_sha256": "0feb35edf373da9a91f44ecb0080c2f800286794bceed25c8dd9150a0552993f",
+      "source_lines": 94,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/phase-transfer/check_arithmetic.py",
+      "source_sha256": "7bbee94bef5119ffb1d7cf1c2ff9fa8c56b7fba40e0894c912db9c4dd53f32cb",
+      "diff_sha256": "1cceccb98f44793a96a650eb4f7bda101b6871728df7697876cc1d47829e9555",
+      "source_lines": 182,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/replay.py",
+      "source_sha256": "294923e23504d6f2a85f99005a6d41f722dcc8eea2889c891af14d6f53f97b17",
+      "diff_sha256": "d38c429ac44a8d87cdeaeb6489fb5864246cee39a6cb7de62336fb46f7a53349",
+      "source_lines": 213,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/sparse-square/independent_checks.py",
+      "source_sha256": "3fb4a7d6634f30465fc127f909986f470ae652b9fd7b09fb2f18acb2b7f5f1ac",
+      "diff_sha256": "2c14aea94bfc76c06477bc6ab59aaa14ea1c3304ee9917ef0e09a7fd910a820c",
+      "source_lines": 253,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/sparse-square/replayed-original/check_algebra.py",
+      "source_sha256": "fbea9d1bfbf26048978857b6eb65ae0f3b607b38fa4efd54f2ef5def56d697ca",
+      "diff_sha256": "599074068b92307ce5c06d2194b003d7695bd34524d634113936a0edde0aafb6",
+      "source_lines": 95,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/test_replay.py",
+      "source_sha256": "150cd7c3a40d3d25fb0348522d0cf87fed411baa8ba2c6190b6456d817cba3bb",
+      "diff_sha256": "d9f72aa0bdb55e63098db5efbdd6d88bf4dc6fe5ddd131004fb5e81e7fd26d97",
+      "source_lines": 210,
+      "review_subset": "archive"
+    },
+    {
+      "path": "experiments/astra-rh-crt-20260912/audits/twisted-square/check_algebra.py",
+      "source_sha256": "fbea9d1bfbf26048978857b6eb65ae0f3b607b38fa4efd54f2ef5def56d697ca",
+      "diff_sha256": "d630d23e8444a2e9ec43c4f56faa43418e864fd8a52b2863fe3fdfef6c082536",
+      "source_lines": 95,
+      "review_subset": "archive"
+    },
+    {
+      "path": "tests/test_rh_audit_archive.py",
+      "source_sha256": "e722efb1f29e25e178ebbe19ed6dc3a68906e484310a31991b0b0553ab04690c",
+      "diff_sha256": "a3e7a98c011520cbdb19ff51fbb4c151fba4fed13affeb3191ea0f49cf0d77ba",
+      "source_lines": 92,
+      "review_subset": "archive"
+    }
+  ],
+  "artifact_pins_authenticated": {
+    "authentication-initial.json": "01e5551f4dbf89f818d4986a12738695999d6142928122512b0ae8e7ca0a0786",
+    "authentication-final.json": "cf29eea0ae722590474b0bf37980264873d4d53b11b36026fb5db6b0156a0f4b",
+    "manual-coverage.json": "8b3cbe5b7186ccf7b93f03b8e5f7ccaaded6fc1a40a9a6c34bdfc119e045af39",
+    "fresh-replay/REPLAY.json": "5764fd811453d68da332fefe1d1bd885abea0d0c723cc64ffea623b87a40663e",
+    "replay-authentication.json": "892feab1f1b07bedd02c9cc2f3f4f51768048d7f75ef955e2c6bfd27396187e4",
+    "adverse-controls.json": "4d91d9270d391cc83abf218500df667aff11c5b98a103906604f972fecb77b95",
+    "preservation-final.json": "8db199d4adc915e0cff5769ec8a727a8e41498276cd7575ac95bd6190bf15105",
+    "command-index.json": "d7f8c6ef76aa5f78667824bf73abba77f686093abbeeb47e7c485fd8d2f31d61"
+  },
+  "stream_files_authenticated": 184,
+  "bounded_commands_authenticated": 32,
+  "source_authentication_commands_authenticated": 60,
+  "adverse_control_groups": 10,
+  "fresh_replay_totals_recomputed": {
+    "selected_checker_files": 17,
+    "attempted": 13,
+    "passed": 13,
+    "failed": 0,
+    "timeouts": 0,
+    "input_integrity_failures": 0,
+    "not_replayed_excluded_dependencies": 4,
+    "duplicate_copy_executions": 2,
+    "distinct_original_checker_hashes_executed": 11
+  },
+  "fresh_replay_artifacts": {
+    "raw_outputs_authenticated": 42,
+    "public_outputs_authenticated": 40,
+    "full_arrays_match_historical_hashes": 2
+  },
+  "historical_public_rows_verified": 110,
+  "portable_verdict": {
+    "path": "ARCHIVE_CODE_REVIEW.json",
+    "original_sha256": "2f0ddb77af7d5c2062ddbcd4df0481a9c96ca0a013ac387198ffd22f74a06699",
+    "original_bytes": 147252,
+    "public_sha256": "a3535c962879d2953403852c2d586e84d8900b82ab522e87b7518bab77b88d32",
+    "public_bytes": 122601,
+    "path_edits": [
+      {
+        "exact_token_sha256": "0718c4b30506fb2d080ebe6d6fef37fcc0896e20796b225667e5bc97923e2bd1",
+        "replacement": "<independent-review-scratch>",
+        "occurrences": 371,
+        "encoding": "literal-utf8"
+      },
+      {
+        "exact_token_sha256": "5f3d4db2e7e7ad48eea59ff24eae09b6e64a90d1fce89bcd38938a2ef11c8b56",
+        "replacement": "<python3.11>",
+        "occurrences": 1,
+        "encoding": "literal-utf8"
+      },
+      {
+        "exact_token_sha256": "4d4d4187f18bb382c2d3bd9baefc3340a9d43c648e12577cf458973f826390cd",
+        "replacement": "<repo>",
+        "occurrences": 60,
+        "encoding": "literal-utf8"
+      },
+      {
+        "exact_token_sha256": "6eebd5699de7a0501d672d3c1b5fe292c244d6692467b72e632458a1a459e28a",
+        "replacement": "uv",
+        "occurrences": 3,
+        "encoding": "literal-utf8"
+      }
+    ]
+  },
+  "preservation": "Only exact filesystem-root/interpreter tokens were replaced. The complete verdict, embedded commands, outputs, hashes and limitations are retained. Additional raw probes remain external, not fictional bundled dependencies.",
+  "human_peer_review": false,
+  "formal_kernel_verification": false,
+  "rh_proved": false
+}

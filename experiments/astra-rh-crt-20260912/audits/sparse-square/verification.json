@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "verified_at_utc": "2026-09-13T01:37:34.743833+00:00",
+  "python": "3.9.6",
+  "counts": {
+    "full_block_Gram_checks": 11,
+    "masked_Gram_checks": 12,
+    "Jordan_divisor_identities": 200,
+    "direct_parametrized_collision_checks": 5,
+    "actual_finite_point_cloud_checks": 3,
+    "independent_exponent_entries": 21,
+    "source_payload_byte_checks": 3,
+    "replayed_original_finite_checks": 7,
+    "replayed_original_exponent_entries": 29,
+    "evidence_attachments": 6,
+    "unchanged_original_files": 83
+  },
+  "candidate_core_is_exact_report_prefix": true,
+  "originals_unchanged": true,
+  "changed_originals": [],
+  "source_provenance": [
+    {
+      "key": "bcr-v1",
+      "url": "https://arxiv.org/src/1411.7764v1",
+      "hash_and_size_match_original_manifest": true
+    },
+    {
+      "key": "bcr-deposited",
+      "url": "https://unige.iris.cineca.it/bitstream/11567/896399/3/bettin2015.pdf",
+      "hash_and_size_match_original_manifest": true
+    },
+    {
+      "key": "lr-v1",
+      "url": "https://arxiv.org/src/1208.2684v1",
+      "hash_and_size_match_original_manifest": true
+    },
+    {
+      "key": "gmrr-v2",
+      "url": "https://arxiv.org/src/2006.04060v2",
+      "hash_and_size_match_original_manifest": true
+    }
+  ],
+  "citation_gate": {
+    "exit_code": 0,
+    "output": "info: stats: 266 prose sentence(s), 6 with declared provenance (2%) \u2014 6 cited, 0 marked [unverified] (a sentence may be both); 4 distinct source(s) cited, 4 in ledger (4 with evidence quotes)\ncitations OK\n"
+  },
+  "report_sha256": "1c2079a0d45e8782541f9c0251af9aba1dbd13704108eff444685582cf2fdf18",
+  "report_bytes": 32862,
+  "scope": "Artifact/provenance/evidence and finite/algebraic checks. The analytic pass is the bounded independent deduction in report.md, not a computational proof of a new moment estimate.",
+  "resolved_tooling_issue": "Initial tar-only source check failed for single-gzip BCR source; scratch checker corrected and rerun successfully."
+}

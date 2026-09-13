@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://arxiv.org/src/2006.04060v2",
+      "title": "Gorodetsky–Matomäki–Radziwiłł–Rodgers, squarefree variance, pinned TeX v2",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "\\begin{lemma}[Fourth moment estimate]\n\\label{le:ZetaFourth}\n  Let $T \\geq 2$. Then\n  $$\n  \\int_{|t| \\leq T} |\\zeta(\\tfrac 12 + it)|^4 dt \\ll T (\\log T)^4. \n  $$\n\\end{lemma}\n\n\\begin{proof} \nSee e.g. \\cite[formula (7.6.1)]{Titchmarsh86}.",
+          "added": "2026-09-12"
+        },
+        {
+          "text": "\\begin{lemma}[Subconvexity estimate]\n\\label{le:ZetaSC}\nOne has, for $|t| \\geq 2$,\n\\[\n\\zeta(1/2 + it) \\ll |t|^{1/6} (\\log |t|)^2.\n\\]\n\\end{lemma}\n\\begin{proof} See e.g. \\cite[formula (8.22)]{iwaniec2004analytic}.",
+          "added": "2026-09-12"
+        },
+        {
+          "text": "\\begin{lemma}[Hybrid mean-value theorem] \\label{le:hmvt}\n  Let $a(n)$ be an arbitrary sequence of coefficients and $N, q \\geq 1$ be integers and $T \\geq 1$ real. Then, for any given $\\varepsilon > 0$, \n  $$\n  \\sum_{\\chi \\Mod{q}} \\int_{|t| \\leq T} \\Big | \\sum_{n \\leq N} a(n) \\chi^2(n) n^{it} \\Big |^2 dt \\ll q^{\\varepsilon} (q T + N) \\sum_{n \\leq N} |a(n)|^2. \n  $$\n\\end{lemma}\n\\begin{proof}\n  We notice that given a character $\\psi \\Mod{q}$ there are at most $\\ll q^{\\varepsilon}$ characters $\\chi$ such that $\\chi^2 = \\psi$. Therefore the left-hand side of the claim is bounded by\n  $$\n  \\ll q^{\\varepsilon} \\sum_{\\psi \\Mod{q}} \\int_{|t| \\leq T} \\Big | \\sum_{n \\leq N} a(n) \\psi(n) n^{it} \\Big |^2 dt \n  $$\n  and the result follows from the standard hybrid mean-value theorem, see e.g. \\cite[Theorem 6.4]{Montgomery71}.",
+          "added": "2026-09-12"
+        },
+        {
+          "text": "\\begin{lemma}\n\\label{le:SV}\n  If $F \\colon \\mathbb{R} \\rightarrow \\mathbb{C}$ is square-integrable and $H \\leq X$, then\n  $$\n  \\int_{X}^{2X} |F(x + H) - F(x)|^2 dx \\ll \\sup_{\\theta \\in [\\frac{H}{3X}, \\frac{3 H}{X}]} \\int_{X}^{3X} |F(u + \\theta u) - F(u)|^2 du\n  $$\n\\end{lemma}\n\n\\begin{proof} The proof can be found in a paper by Saffari and Vaughan~\\cite[Page 25]{SaffariVaughan77} but for the convenience of the reader we include the proof here.",
+          "added": "2026-09-12"
+        },
+        {
+          "text": "Finally let us make a few remarks on the bottleneck that prevents us from pushing our result further. Taking $H = X^{6/11}$, we are unable to show the following estimate,\n$$\n\\frac{1}{X} \\int_{X}^{2X} \\Big | \\sum_{\\substack{x \\leq n d^2 \\leq x + H \\\\ d^2 \\sim X^{8/11}}} \\mu(d) - H \\sum_{d^2 \\sim X^{8/11}} \\frac{\\mu(d)}{d^2}\\Big |^2 dx \\ll_{A} \\frac{\\sqrt{H}}{\\log^{A} X} \n$$\nSpecifically opening $\\mu(d)$ using Heath-Brown's identity (see \\cite{HBV}) the only situation that we are not able to estimate is the one in which $\\mu(d)$ is replaced by two smooth sums of equal length. Roughly speaking this corresponds to estimating,\n$$\n\\frac{1}{X} \\int_{X}^{2X} \\Big | \\sum_{\\substack{x \\leq n a^2 b^2 \\leq x + H \\\\ a, b \\sim X^{2/11}}} 1 - H \\sum_{a, b \\sim X^{2/11}} \\frac{1}{a^2 b^2} \\Big |^2 dx \\ll \\frac{\\sqrt{H}}{\\log^{A} X}\n$$\nOpening the above expression into Dirichlet polynomials this is roughly equivalent to\n$$\n\\int_{|t| \\leq X^{5/11}} \\Big | \\sum_{n \\sim X^{3/11}} \\frac{1}{n^{1/2 + it}} \\sum_{a \\sim X^{2/11}} \\frac{1}{a^{1/2 + 2 it}} \\sum_{b \\sim X^{2/11}} \\frac{1}{b^{1/2 + 2 it}} \\Big |^2 dt \\ll \\frac{X^{6/11}}{\\log^{A} X}\n$$\nApplying the functional equation on the Dirichlet polynomial over $n$, and setting $Y = X^{12/11}$ we then see that obtaining the above estimate is equivalent to showing that,\n$$\n\\int_{|t| \\leq Y^{5/12}} \\Big | \\sum_{n \\sim Y^{1/6}} \\frac{1}{n^{1/2 + it}} \\sum_{a \\sim Y^{1/6}} \\frac{1}{a^{1/2 + 2 it}} \\sum_{b \\sim Y^{1/6}} \\frac{1}{b^{1/2 + 2 it}} \\Big |^2 dt \\ll \\frac{Y^{1/2}}{\\log^{A} Y}. \n$$ \nIf the $2 i t$ in the Dirichlet polynomial over $a$ and $b$ were replaced by $i t$ then we would be facing exactly the same bottleneck as in the case of improving Huxley's prime number theorem in short intervals (by a variant of the computations in \\cite{HBV}, see also \\cite[Chapter 7]{Harman}). In particular to make further progress we either need to find a way to improve Huxley's estimate or find a way to exploit the fact that the phases in two of the Dirichlet polynomials are $2 it $ and not $it$. Unfortunately we do not see how to make progress on either of these questions.",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "url": "https://arxiv.org/src/2405.20552v2",
+      "title": "Guth–Maynard, New large value estimates for Dirichlet polynomials, pinned TeX v2",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "\\begin{thrm}[Large values estimate]\\label{thrm:LargeValues}\nSuppose $(b_n)$ is a sequence of complex numbers with $|b_n| \\le 1$,  and $(t_r)_{r\\le R}$ is a sequence of $1$-separated points in $[0,T]$ such that\n\\[\n\\Bigl|\\sum_{n= N}^{2N}b_n n^{it_r}\\Bigr|\\ge V\n\\]\n\nfor all $r\\le R$. Then we have\n\\[\nR\\le T^{o(1)}\\Bigl(N^2V^{-2}+N^{18/5}V^{-4}+TN^{12/5}V^{-4}\\Bigr).\n\\]\n\n\\end{thrm}",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "url": "https://www.math.mcgill.ca/radziwill/BCR.pdf",
+      "title": "Bettin–Chandee–Radziwiłł, author PDF dated January 15, 2015",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "Theorem 1. LetI and A(s) be as above. If θ <1\n2 +δ, with δ = 1\n66 then,\nI =\n∑\nd,e⩽Tθ\nadae\n[d,e ]·\n∫\nR\n(\nlog\n(t (d,e )2\n2πde\n)\n+ 2γ\n)\nφ\n(t\nT\n)\ndt +O\n(\nT\n3\n20 +εN\n33\n20 +T\n1\n3 +ε\n)\n,\nwhereN :=Tθ.\nWe notice that the oﬀ-diagonal terms contribute to the main term roughly those d",
+          "added": "2026-09-12"
+        },
+        {
+          "text": "Theorem 4. Let J,A (s) and B(s) be as deﬁned in (1.5) and (1.6). Let N ≪ T\n1\n2 +ε\nfor all ε > 0 and assume that αn = ψ(n) with ψ(x) a smooth function such that\nψ(j)(x)≪j x−j for all j > 0. Let K ≪ T\n1\n4 and βk ≪ kε for all ε > 0. Moreover\nassume αn is supported on [NT−ξ1, 2N] and βk is supported on [KT−ξ2, 2K], where\n0≤ξ1≤ 1\n5, 0≤ξ2≤ 1\n16. Then,\nJ =\n∑\nd,e⩽NK\nadae\n[d,e ]·\n∫\nR\n(\nlog\n(t(d,e )2\n2πde\n)\n+ 2γ\n)\nφ\n(t\nT\n)\ndt +\n+O\n(\nT\n1\n2 +εK2 +KN\n3\n4T\n3\n8 +ε + T\n39\n40 + 1\n8ξ1+ 2\n5ξ2+ε\n)\n,\nwheread =∑\nnk=dαnβk.\nRemark. Theorem 4 yields an asymptotic formula for 5ξ1 + 16ξ2 < 1 (and N≪ T\n1\n2 ,\nK≪T\n1\n2−ε). We remark that this range could be enlarged with a little more work.\nWe notice that Theorem 4 allows us to take θ < 3\n4 for Dirichlet polynomials of\nthe form A(s)B(s) with A(s) pretending to be ζ(s) and B(s) of length up to T 1/4−ε.\nThus, following the work of Radziwi l l [Rad12], Theorem 4 could be applied to give\na sharp upper bound for the 2 k-th moment of the Riemann zeta function for 2 k <\n5, conditionally on the Riemann hypothesis (however, we remark that this has been\nrecently proven for all k≥ 0 by Harper [Har]). It would be interesting to investigate if\nTheorem 4 has other applications, for example to the study of large gaps between the\nzeros of the Riemann zeta-function (see [Bre]).\nTheorem 4 reﬁnes upon Watt’s result, who uses his Kloosterman sum estimate to give\n(essentially) an upper bound of the form J≪ T 1+ε +T 1/2+εK2, for an,bn supported\non dyadic intervals. Theorem 4 should also be compared with the asymptotic formula\nfor the twisted fourth moment of Hughes and Young [HY10]. Their result allows to get\nan asymptotic formula for the second moment of ζ2(s)B(s) with B(s) of length up to\nT 1/11−ε.\nAcknowledgments",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "url": "https://arxiv.org/html/math/0305179",
+      "title": "Ivić, fourth-moment paper, inspected HTML identifies v3",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "The essential tool in our considerations is the following theorem for\nthe fourth moment of  $|\\zeta({\\textstyle{1\\over 2}}+it)|$ , weighted by a Dirichlet polynomial, due\nto N. Watt [9]. This is built on the works of J.-M. Deshouillers\nand H. Iwaniec [1], [2], involving the use of Kloosterman sums,\nbut it contains the following sharper result: Let  $a_{1},a_{2},\\ldots$  be complex numbers. Then, for  $\\varepsilon>0,M\\geq 1$  and  $T\\geq 1$ ,\n$\\int_{0}^{T}|\\sum_{m\\leq M}a_{m}m^{it}|^{2}|\\zeta({\\textstyle{1\\over 2}}+it)|^{4}\\,{\\roman{d}}t\\ll_{\\varepsilon}T^{1+\\varepsilon}M(1+M^{2}T^{-1/2})\\max_{m\\leq M}|a_{m}|^{2}.$",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "url": "https://ar5iv.labs.arxiv.org/html/1305.2685",
+      "title": "Ivić–Zhai, On a hybrid fourth moment involving the Riemann zeta-function",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "2 The necessary lemmas\nIn order to prove our results, we require some lemmas which will be given in this section.\nThe first lemma is the following\nupper bound for the fourth moment of $\\zeta(\\frac{1}{2}+it),$ weighted by a Dirichlet polynomial.\nLemma 2.1 . Let $a_{1},a_{2},\\ldots,a_{M}$ be complex numbers. Then we have,\nfor $\\varepsilon>0,M\\geqslant 1$ and $T\\geqslant 1$ ,\n(2.1)\n$\\int_{0}^{T}|\\zeta({\\textstyle{\\frac{1}{2}}}+it)|^{4}\\Bigl|\\sum_{m\\leqslant M}a_{m}m^{it}\\Bigr|^{2}dt\\ll_{\\varepsilon}T^{1+\\varepsilon}M(1+M^{2}T^{-1/2})\\max_{m\\leqslant M}|a_{m}|^{2}.$\nThis result is due to N. Watt [ 17 ] . It is founded on the earlier works of\nJ.-M. Deshouillers and H. Iwaniec [ 2 ] , which involved the use of Kloosterman sums, but\nWatt’s result is sharper.",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "url": "https://dlmf.nist.gov/25.9",
+      "title": "DLMF 25.9: sharp approximate functional equation, citing Titchmarsh (4.12.4)",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "If  $x\\geq 1$ ,  $y\\geq 1$ ,  $2\\pi xy=t$ , and  $0\\leq\\sigma\\leq 1$ , then as\n$t\\to\\infty$  with  $\\sigma$  fixed,\n25.9.1\n$\\zeta\\left(\\sigma+it\\right)=\\sum_{1\\leq n\\leq x}\\frac{1}{n^{s}}+\\chi(s)\\sum_{1%\n\\leq n\\leq y}\\frac{1}{n^{1-s}}+O\\left(x^{-\\sigma}\\right)+O\\left(y^{\\sigma-1}t^%\n{\\frac{1}{2}-\\sigma}\\right),$",
+          "added": "2026-09-12"
+        },
+        {
+          "text": "where  $s=\\sigma+it$  and\n25.9.2\n$\\chi(s)\\equiv\\pi^{s-\\frac{1}{2}}\\Gamma\\left(\\tfrac{1}{2}-\\tfrac{1}{2}s\\right)/%\n\\Gamma\\left(\\tfrac{1}{2}s\\right).$",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/D6C21FF61C1489E5856AA5ED276CB0A9/S0008414X00033307a.pdf/div-class-title-prime-numbers-in-short-intervals-and-a-generalized-vaughan-identity-div.pdf",
+      "title": "",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "We shall therefore use the following trivial identity (which is not, \nstrictly speaking, a generalization of Vaughan's). \nLEMMA 1. For any integer k ^ 1 we have \n(6) rwr(s)  = E (-iy-1(k)ns)i-Y(s)M(sy \nTo apply Lemma 1 to the sum \n5 = £ A(n)/(»), \nfor example, one chooses X k ^ x and picks out the relevant coefficients \nof n~ s. The last term on the right hand side of (6) therefore makes no \ncontribution, since \n(7) Ç(s)M(s)-l = Zc(n)n-\\ \nn>X \nwith c(n) as in (3). On splitting up each range of summation into inter­\nvals N < n S 2iV, one finds that 5 is a linear combination of O((log x) 2k) \nsums of the form \n(8) £ (log fli)/i(»*+i) • •  • V>(n2k)f(nin2. . . n 2*), \nwi€ Ii ,n\\ri2.. .nzk^-x \nin which I t = (N u 2N t]% YiNt < x } and 2N t ^ X if i > k. (Some of \nthe intervals I t may contain only the integer 1.) By choosing k to be \nlarge, and X to be a small power of x, one may bring the part of the sum \n(8) involving the 'unknown' coefficients  M(^0  as closely under control \nas one likes.",
+          "added": "2026-09-12"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "overall": "PASS for executed algebra/evidence/file checks; full Type II analytic gain remains unproved.",
+  "report": "mobius-factorization/report.md",
+  "report_sha256": "3c9b48fadae6501cae8418213fd281edd2cbc5f45d4acd016acb3115cce98e32",
+  "report_bytes": 33104,
+  "steps": [
+    {
+      "step": "exact_checks",
+      "exit_code": 0,
+      "log": "execution.log"
+    },
+    {
+      "step": "evidence_collection",
+      "exit_code": 0,
+      "log": "evidence-execution.log"
+    },
+    {
+      "step": "citation_verification",
+      "exit_code": 0,
+      "log": "citation-verification.log"
+    }
+  ],
+  "identity_case_count": 16,
+  "coefficient_checks": 1270,
+  "supplied_input_count_unchanged": 6,
+  "externally_updated_inputs": [
+    {
+      "original": "<repo>/experiments/astra-rh-crt-20260912/GM_TRANSFER.md",
+      "initial_sha256": "fccc3023e6fe7f5708a60f174cfc3bad3c7e8c55491f494fcf781f6190fa5fa9",
+      "observed_sha256": "52eae4d28b0ae78fc67a4f112fd099bb3b72b4d86b3bc78866fc7294f50f41f6",
+      "classification": "External append-only Sources block; mathematical body unchanged",
+      "archive_file": "consolidated-GM_TRANSFER-final-read.md",
+      "exact_append": "\n## Sources\n\n[3] https://arxiv.org/html/2006.04060v2\n[5] https://arxiv.org/pdf/2405.20552v2 \u2014 Guth\u2013Maynard, New large value estimates for Dirichlet polynomials, v2\n"
+    }
+  ],
+  "primary_and_reference_copy_count": 14,
+  "required_artifacts_verified": [
+    "report.md",
+    "checks.json",
+    "check_ledger.py",
+    "execution.log",
+    "collect_sources.py",
+    "source-manifest.json",
+    "citations.json",
+    "source-excerpts.md",
+    "collect_evidence.py",
+    "sources/hb-images/page003.png"
+  ],
+  "repository_changes_by_audit": false,
+  "other_changes": "Default-profile proof-transfer-audit and pdf procedural skills updated outside the supplied repository.",
+  "analytic_verification_scope": "Human-readable derivations checked by the writing agent; not a formal proof assistant and not independent human review."
+}

@@ -26,6 +26,13 @@ DISCHARGE / OBSTRUCTION (reviewed or kernel-checked on that problem)
   #854   DISCHARGE    crt-endpoint-safe  same operator; does not determine the missing-gap spectrum
   #854   DISCHARGE    wheel-gap-operator  wheel recurrence
   #854   OBSTRUCTION  wheel-gap-operator  at P=30030 a 22-gap exists but no 20-gap; endpoint-oblivious covers do not imply a 20-gap
+  #969   DISCHARGE    gm-gmrr-variance-transfer  Two model analytic audits of the full deduction, including localization, endpoints, centering and aggregate losses. Independent model audit only; not human peer review or formal verification; does not solve P969 or RH.
+  #969   DISCHARGE    increment-mellin-continuation  Conditional analytic transfer; no new instance of the variance hypothesis or unconditional zero exclusion. Independent model audit only; not human peer review or formal verification; does not solve P969 or RH.
+  #969   DISCHARGE    mobius-long-factor-typeI  Controls the actual sharp long-factor part only, not a full Mobius mixed-moment saving. Independent model audit only; not human peer review or formal verification; does not solve P969 or RH.
+  #969   OBSTRUCTION  reciprocal-square-phase-obstruction  ordinary prefix cancellation alone cannot imply quarter-power or RH-scale mean-square error for generic coefficients; not an obstruction to RH or arithmetic methods
+  #969   DISCHARGE    sparse-square-signed-moment-interface  Full-diagonal calculation and signed residual interface only; the AFE weight can change sign. Independent model audit only; not human peer review or formal verification; does not solve P969 or RH.
+  #969   DISCHARGE    squarefree-crt-defect-transfer  Phase operator and norm-transfer equivalence only, not the required actual arithmetic energy bound. Independent model audit only; not human peer review or formal verification; does not solve P969 or RH.
+  #969   DISCHARGE    squarefree-energy-rh-bridge  equivalence only, not the unconditional energy estimate; does not solve P969 or RH; not human peer-reviewed or formalized; no novelty claim
   #993   DISCHARGE    laurent-hub-block  algebraic block only; global tree partition missing
   #993   DISCHARGE    nonpath-lc-obstruction  not non-unimodality; not a tree theorem
   #993   DISCHARGE    tail-compression  exact tails, not a full polynomial
@@ -266,4 +273,4 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #1095  CANDIDATE    kummer-105-digits  tag/OEIS shape match only; not an implication
   #1095  CANDIDATE    p699-d2-line  tag/OEIS shape match only; not an implication
 
-23 discharge/obstruction rows, 234 candidate rows.
+30 discharge/obstruction rows, 234 candidate rows.

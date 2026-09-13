@@ -1,0 +1,610 @@
+{
+  "adverse_phase": {
+    "H": 3,
+    "count": 0,
+    "primes": [
+      2,
+      3,
+      5
+    ],
+    "squared_error": "2304/625",
+    "start": 547
+  },
+  "case_count": 70,
+  "cases": [
+    {
+      "H": 0,
+      "density": "1",
+      "primes": [],
+      "variance": "0"
+    },
+    {
+      "H": 1,
+      "density": "1",
+      "primes": [],
+      "variance": "0"
+    },
+    {
+      "H": 2,
+      "density": "1",
+      "primes": [],
+      "variance": "0"
+    },
+    {
+      "H": 3,
+      "density": "1",
+      "primes": [],
+      "variance": "0"
+    },
+    {
+      "H": 4,
+      "density": "1",
+      "primes": [],
+      "variance": "0"
+    },
+    {
+      "H": 9,
+      "density": "1",
+      "primes": [],
+      "variance": "0"
+    },
+    {
+      "H": 16,
+      "density": "1",
+      "primes": [],
+      "variance": "0"
+    },
+    {
+      "H": 36,
+      "density": "1",
+      "primes": [],
+      "variance": "0"
+    },
+    {
+      "H": 900,
+      "density": "1",
+      "primes": [],
+      "variance": "0"
+    },
+    {
+      "H": 1000000000000000000000000000002,
+      "density": "1",
+      "primes": [],
+      "variance": "0"
+    },
+    {
+      "H": 0,
+      "density": "3/4",
+      "primes": [
+        2
+      ],
+      "variance": "0"
+    },
+    {
+      "H": 1,
+      "density": "3/4",
+      "primes": [
+        2
+      ],
+      "variance": "3/16"
+    },
+    {
+      "H": 2,
+      "density": "3/4",
+      "primes": [
+        2
+      ],
+      "variance": "1/4"
+    },
+    {
+      "H": 3,
+      "density": "3/4",
+      "primes": [
+        2
+      ],
+      "variance": "3/16"
+    },
+    {
+      "H": 4,
+      "density": "3/4",
+      "primes": [
+        2
+      ],
+      "variance": "0"
+    },
+    {
+      "H": 9,
+      "density": "3/4",
+      "primes": [
+        2
+      ],
+      "variance": "3/16"
+    },
+    {
+      "H": 16,
+      "density": "3/4",
+      "primes": [
+        2
+      ],
+      "variance": "0"
+    },
+    {
+      "H": 36,
+      "density": "3/4",
+      "primes": [
+        2
+      ],
+      "variance": "0"
+    },
+    {
+      "H": 900,
+      "density": "3/4",
+      "primes": [
+        2
+      ],
+      "variance": "0"
+    },
+    {
+      "H": 1000000000000000000000000000002,
+      "density": "3/4",
+      "primes": [
+        2
+      ],
+      "variance": "1/4"
+    },
+    {
+      "H": 0,
+      "density": "2/3",
+      "primes": [
+        2,
+        3
+      ],
+      "variance": "0"
+    },
+    {
+      "H": 1,
+      "density": "2/3",
+      "primes": [
+        2,
+        3
+      ],
+      "variance": "2/9"
+    },
+    {
+      "H": 2,
+      "density": "2/3",
+      "primes": [
+        2,
+        3
+      ],
+      "variance": "1/3"
+    },
+    {
+      "H": 3,
+      "density": "2/3",
+      "primes": [
+        2,
+        3
+      ],
+      "variance": "1/3"
+    },
+    {
+      "H": 4,
+      "density": "2/3",
+      "primes": [
+        2,
+        3
+      ],
+      "variance": "2/9"
+    },
+    {
+      "H": 9,
+      "density": "2/3",
+      "primes": [
+        2,
+        3
+      ],
+      "variance": "1/3"
+    },
+    {
+      "H": 16,
+      "density": "2/3",
+      "primes": [
+        2,
+        3
+      ],
+      "variance": "1/3"
+    },
+    {
+      "H": 36,
+      "density": "2/3",
+      "primes": [
+        2,
+        3
+      ],
+      "variance": "0"
+    },
+    {
+      "H": 900,
+      "density": "2/3",
+      "primes": [
+        2,
+        3
+      ],
+      "variance": "0"
+    },
+    {
+      "H": 1000000000000000000000000000002,
+      "density": "2/3",
+      "primes": [
+        2,
+        3
+      ],
+      "variance": "4/9"
+    },
+    {
+      "H": 0,
+      "density": "16/25",
+      "primes": [
+        2,
+        3,
+        5
+      ],
+      "variance": "0"
+    },
+    {
+      "H": 1,
+      "density": "16/25",
+      "primes": [
+        2,
+        3,
+        5
+      ],
+      "variance": "144/625"
+    },
+    {
+      "H": 2,
+      "density": "16/25",
+      "primes": [
+        2,
+        3,
+        5
+      ],
+      "variance": "2009/5625"
+    },
+    {
+      "H": 3,
+      "density": "16/25",
+      "primes": [
+        2,
+        3,
+        5
+      ],
+      "variance": "713/1875"
+    },
+    {
+      "H": 4,
+      "density": "16/25",
+      "primes": [
+        2,
+        3,
+        5
+      ],
+      "variance": "562/1875"
+    },
+    {
+      "H": 9,
+      "density": "16/25",
+      "primes": [
+        2,
+        3,
+        5
+      ],
+      "variance": "917/1875"
+    },
+    {
+      "H": 16,
+      "density": "16/25",
+      "primes": [
+        2,
+        3,
+        5
+      ],
+      "variance": "3101/5625"
+    },
+    {
+      "H": 36,
+      "density": "16/25",
+      "primes": [
+        2,
+        3,
+        5
+      ],
+      "variance": "2141/5625"
+    },
+    {
+      "H": 900,
+      "density": "16/25",
+      "primes": [
+        2,
+        3,
+        5
+      ],
+      "variance": "0"
+    },
+    {
+      "H": 1000000000000000000000000000002,
+      "density": "16/25",
+      "primes": [
+        2,
+        3,
+        5
+      ],
+      "variance": "3809/5625"
+    },
+    {
+      "H": 0,
+      "density": "18/25",
+      "primes": [
+        2,
+        5
+      ],
+      "variance": "0"
+    },
+    {
+      "H": 1,
+      "density": "18/25",
+      "primes": [
+        2,
+        5
+      ],
+      "variance": "126/625"
+    },
+    {
+      "H": 2,
+      "density": "18/25",
+      "primes": [
+        2,
+        5
+      ],
+      "variance": "179/625"
+    },
+    {
+      "H": 3,
+      "density": "18/25",
+      "primes": [
+        2,
+        5
+      ],
+      "variance": "159/625"
+    },
+    {
+      "H": 4,
+      "density": "18/25",
+      "primes": [
+        2,
+        5
+      ],
+      "variance": "66/625"
+    },
+    {
+      "H": 9,
+      "density": "18/25",
+      "primes": [
+        2,
+        5
+      ],
+      "variance": "231/625"
+    },
+    {
+      "H": 16,
+      "density": "18/25",
+      "primes": [
+        2,
+        5
+      ],
+      "variance": "156/625"
+    },
+    {
+      "H": 36,
+      "density": "18/25",
+      "primes": [
+        2,
+        5
+      ],
+      "variance": "221/625"
+    },
+    {
+      "H": 900,
+      "density": "18/25",
+      "primes": [
+        2,
+        5
+      ],
+      "variance": "0"
+    },
+    {
+      "H": 1000000000000000000000000000002,
+      "density": "18/25",
+      "primes": [
+        2,
+        5
+      ],
+      "variance": "179/625"
+    },
+    {
+      "H": 0,
+      "density": "8/9",
+      "primes": [
+        3
+      ],
+      "variance": "0"
+    },
+    {
+      "H": 1,
+      "density": "8/9",
+      "primes": [
+        3
+      ],
+      "variance": "8/81"
+    },
+    {
+      "H": 2,
+      "density": "8/9",
+      "primes": [
+        3
+      ],
+      "variance": "14/81"
+    },
+    {
+      "H": 3,
+      "density": "8/9",
+      "primes": [
+        3
+      ],
+      "variance": "2/9"
+    },
+    {
+      "H": 4,
+      "density": "8/9",
+      "primes": [
+        3
+      ],
+      "variance": "20/81"
+    },
+    {
+      "H": 9,
+      "density": "8/9",
+      "primes": [
+        3
+      ],
+      "variance": "0"
+    },
+    {
+      "H": 16,
+      "density": "8/9",
+      "primes": [
+        3
+      ],
+      "variance": "14/81"
+    },
+    {
+      "H": 36,
+      "density": "8/9",
+      "primes": [
+        3
+      ],
+      "variance": "0"
+    },
+    {
+      "H": 900,
+      "density": "8/9",
+      "primes": [
+        3
+      ],
+      "variance": "0"
+    },
+    {
+      "H": 1000000000000000000000000000002,
+      "density": "8/9",
+      "primes": [
+        3
+      ],
+      "variance": "2/9"
+    },
+    {
+      "H": 0,
+      "density": "64/75",
+      "primes": [
+        3,
+        5
+      ],
+      "variance": "0"
+    },
+    {
+      "H": 1,
+      "density": "64/75",
+      "primes": [
+        3,
+        5
+      ],
+      "variance": "704/5625"
+    },
+    {
+      "H": 2,
+      "density": "64/75",
+      "primes": [
+        3,
+        5
+      ],
+      "variance": "422/1875"
+    },
+    {
+      "H": 3,
+      "density": "64/75",
+      "primes": [
+        3,
+        5
+      ],
+      "variance": "562/1875"
+    },
+    {
+      "H": 4,
+      "density": "64/75",
+      "primes": [
+        3,
+        5
+      ],
+      "variance": "1964/5625"
+    },
+    {
+      "H": 9,
+      "density": "64/75",
+      "primes": [
+        3,
+        5
+      ],
+      "variance": "136/625"
+    },
+    {
+      "H": 16,
+      "density": "64/75",
+      "primes": [
+        3,
+        5
+      ],
+      "variance": "758/1875"
+    },
+    {
+      "H": 36,
+      "density": "64/75",
+      "primes": [
+        3,
+        5
+      ],
+      "variance": "1834/5625"
+    },
+    {
+      "H": 900,
+      "density": "64/75",
+      "primes": [
+        3,
+        5
+      ],
+      "variance": "0"
+    },
+    {
+      "H": 1000000000000000000000000000002,
+      "density": "64/75",
+      "primes": [
+        3,
+        5
+      ],
+      "variance": "2866/5625"
+    }
+  ],
+  "problem": "P969",
+  "rh_proved": false,
+  "schema": "squarefree-crt-phase-v1",
+  "scope": "uniform-residue-phase-only"
+}

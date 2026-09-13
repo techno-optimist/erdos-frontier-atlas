@@ -1,0 +1,72 @@
+{
+  "schema": "rh-parser-fix-parent-replay-v1",
+  "checked_at_utc": "2026-09-13T06:28:15.230430+00:00",
+  "scope": "Parent authentication and standalone regression replay of the two-file parser repair. Not a complete code review, analytic proof review or publication approval.",
+  "python": "Python 3.11.16",
+  "source_sha256": {
+    "experiments/astra-rh-969-20260912/verify.py": "e28bf251ea88bad0865a11d1ae2368dd2e14c499159a87297a7a5b0bfa786517",
+    "experiments/astra-rh-969-20260912/test_receipt.py": "86ad957b6f39c4c6e43424eb3933e1e8cccdcbc1ca87ab89ef49cfab71c926e6"
+  },
+  "receipt_sha256": "3407f8d4dffcb862a03fd470ef544b5441909f152f71c6cae24f666390d18ced",
+  "source_and_receipt_unchanged_during_replay": true,
+  "semantic_domain_prefix_byte_identical_to_initial_review": true,
+  "initial_verifier_source_sha256": "67891437ac33a76a1699a93b19c0ad8354ab367f0bd10dbc4de626e530cc955e",
+  "tests_per_mode": 12,
+  "modes": [
+    "ordinary",
+    "optimized"
+  ],
+  "all_commands_passed": true,
+  "path_edits": "Only the checkout root in captured command output is replaced by <repo>; the uv executable path is labeled uv in recorded commands.",
+  "runs": [
+    {
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.11",
+        "--with-requirements",
+        "requirements-dev.lock",
+        "python",
+        "-I",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "experiments/astra-rh-969-20260912",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_balanced_cells_give_exact_countermodels (test_floor.FloorTransferTests.test_balanced_cells_give_exact_countermodels) ... ok\ntest_emitter_creates_explicit_receipt_without_overwriting (test_floor.FloorTransferTests.test_emitter_creates_explicit_receipt_without_overwriting) ... ok\ntest_family_parameters_are_validated_before_allocation (test_floor.FloorTransferTests.test_family_parameters_are_validated_before_allocation) ... ok\ntest_hyperbola_rejects_lossy_parameters (test_floor.FloorTransferTests.test_hyperbola_rejects_lossy_parameters) ... ok\ntest_hyperbola_split_matches_direct_definition (test_floor.FloorTransferTests.test_hyperbola_split_matches_direct_definition) ... ok\ntest_energy_and_persistence_constant_algebra (test_persistence.PersistenceTests.test_energy_and_persistence_constant_algebra) ... ok\ntest_interval_jump_bound_with_rational_offsets (test_persistence.PersistenceTests.test_interval_jump_bound_with_rational_offsets) ... ok\ntest_cli_rejects_deep_json (test_receipt.ReceiptTests.test_cli_rejects_deep_json) ... ok\ntest_cli_rejects_duplicate_json_keys (test_receipt.ReceiptTests.test_cli_rejects_duplicate_json_keys) ... ok\ntest_cli_replay_is_read_only_and_fails_under_optimization (test_receipt.ReceiptTests.test_cli_replay_is_read_only_and_fails_under_optimization) ... ok\ntest_corrupted_receipts_fail_the_real_gate (test_receipt.ReceiptTests.test_corrupted_receipts_fail_the_real_gate) ... ok\ntest_semantic_gate_replays_and_rejects_false_promotion (test_receipt.ReceiptTests.test_semantic_gate_replays_and_rejects_false_promotion) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 1.094s\n\nOK\n"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.11",
+        "--with-requirements",
+        "requirements-dev.lock",
+        "python",
+        "-I",
+        "-B",
+        "-O",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "experiments/astra-rh-969-20260912",
+        "-p",
+        "test_*.py",
+        "-v"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_balanced_cells_give_exact_countermodels (test_floor.FloorTransferTests.test_balanced_cells_give_exact_countermodels) ... ok\ntest_emitter_creates_explicit_receipt_without_overwriting (test_floor.FloorTransferTests.test_emitter_creates_explicit_receipt_without_overwriting) ... ok\ntest_family_parameters_are_validated_before_allocation (test_floor.FloorTransferTests.test_family_parameters_are_validated_before_allocation) ... ok\ntest_hyperbola_rejects_lossy_parameters (test_floor.FloorTransferTests.test_hyperbola_rejects_lossy_parameters) ... ok\ntest_hyperbola_split_matches_direct_definition (test_floor.FloorTransferTests.test_hyperbola_split_matches_direct_definition) ... ok\ntest_energy_and_persistence_constant_algebra (test_persistence.PersistenceTests.test_energy_and_persistence_constant_algebra) ... ok\ntest_interval_jump_bound_with_rational_offsets (test_persistence.PersistenceTests.test_interval_jump_bound_with_rational_offsets) ... ok\ntest_cli_rejects_deep_json (test_receipt.ReceiptTests.test_cli_rejects_deep_json) ... ok\ntest_cli_rejects_duplicate_json_keys (test_receipt.ReceiptTests.test_cli_rejects_duplicate_json_keys) ... ok\ntest_cli_replay_is_read_only_and_fails_under_optimization (test_receipt.ReceiptTests.test_cli_replay_is_read_only_and_fails_under_optimization) ... ok\ntest_corrupted_receipts_fail_the_real_gate (test_receipt.ReceiptTests.test_corrupted_receipts_fail_the_real_gate) ... ok\ntest_semantic_gate_replays_and_rejects_false_promotion (test_receipt.ReceiptTests.test_semantic_gate_replays_and_rejects_false_promotion) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 1.097s\n\nOK\n"
+    }
+  ]
+}

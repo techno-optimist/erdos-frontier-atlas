@@ -1,0 +1,1168 @@
+{
+  "schema": "rh-maintained-harness-repair-v1",
+  "checked_at_utc": "2026-09-13T07:18:47.446908+00:00",
+  "scope": "Maintained runner, regression tests and replay documentation only. Original historical checkers, reports, manifest and saved replay records are unchanged. Not analytic proof review or final publication approval.",
+  "issues_addressed": {
+    "RHA20-L1": "Override and record child PYTHONOPTIMIZE=0.",
+    "RHA20-S1": "Normalize exact literal and JSON-escaped scratch-root representations with edit receipts.",
+    "RHA20-NEW-L1": "Exclude pre-launch input-integrity failures from duplicate execution totals."
+  },
+  "maintained_file_updates": [
+    {
+      "path": "README.md",
+      "original_sha256": "0b6adaa4cd477a39b44c73bdcd1a52168cb228eae09eb67c4e623ca26f4b84a8",
+      "current_sha256": "9d3593dbd4d158154f987ccb23bdf862aea4b6cbcc1890e601c2f6c2049b2d73"
+    },
+    {
+      "path": "replay.py",
+      "original_sha256": "8a74e89bae15ceda985d5d156f97319c0a972ef4d7c90d4fb2065c4fb6ba3c1d",
+      "current_sha256": "294923e23504d6f2a85f99005a6d41f722dcc8eea2889c891af14d6f53f97b17"
+    },
+    {
+      "path": "test_replay.py",
+      "original_sha256": "8bb91a7aaa20466b5daa3236438c4361f32d71ceb990006eede5b83d966adbe5",
+      "current_sha256": "150cd7c3a40d3d25fb0348522d0cf87fed411baa8ba2c6190b6456d817cba3bb"
+    }
+  ],
+  "updates_since_prior_maintenance": [
+    {
+      "path": "replay.py",
+      "original_sha256": "685c8eeca2ac454fc66c1f98c96342810c6a3193a682713b4391d4d7fa458469",
+      "current_sha256": "294923e23504d6f2a85f99005a6d41f722dcc8eea2889c891af14d6f53f97b17"
+    },
+    {
+      "path": "test_replay.py",
+      "original_sha256": "23666420269f40a4d1a6ebea4bd281160c800d86da9f1d52f35e0f7333b2238a",
+      "current_sha256": "150cd7c3a40d3d25fb0348522d0cf87fed411baa8ba2c6190b6456d817cba3bb"
+    }
+  ],
+  "previous_maintenance_record": {
+    "path": "HARNESS_MAINTENANCE_INITIAL.json",
+    "sha256": "d8ddf5c8f84b2a51151e524fe0b0f7faec08c05a7d5a7ccd415497c4ecba1fa5",
+    "historical_snapshot": true
+  },
+  "fix_evidence_sha256": "72086fa2bb121cff229648870ae6e850f760aa7d341c2b31c29b1a7a6c6221e7",
+  "independent_negative_controls": [
+    {
+      "fixture": "missing",
+      "harness_exit_code": 1,
+      "totals": {
+        "selected_checker_files": 1,
+        "attempted": 0,
+        "passed": 0,
+        "failed": 0,
+        "timeouts": 0,
+        "input_integrity_failures": 1,
+        "not_replayed_excluded_dependencies": 0,
+        "duplicate_copy_executions": 0,
+        "distinct_original_checker_hashes_executed": 0
+      },
+      "counts_truthful": true
+    },
+    {
+      "fixture": "tampered",
+      "harness_exit_code": 1,
+      "totals": {
+        "selected_checker_files": 1,
+        "attempted": 0,
+        "passed": 0,
+        "failed": 0,
+        "timeouts": 0,
+        "input_integrity_failures": 1,
+        "not_replayed_excluded_dependencies": 0,
+        "duplicate_copy_executions": 0,
+        "distinct_original_checker_hashes_executed": 0
+      },
+      "counts_truthful": true
+    }
+  ],
+  "checksum_manifest": {
+    "path": "audits/SHA256SUMS",
+    "original_sha256": "e5010e0b333316e864992b7060367a5a430ce6792b098996fd2f468cdf112749",
+    "current_sha256": "073d3015c659f56ae535945f27df9299de21d0f1ab9fc631c4df37cc333f66fb",
+    "entries_verified": 157
+  },
+  "historical_inventory_manifest_sha256": "5c73d3d87e0e914e3c0df4a34713ba85019ba57be02bbcac4dde0545d320ef38",
+  "manifest_public_rows_verified": 110,
+  "historical_checkers_unchanged": 17,
+  "archive_files_unchanged_by_replay": 158,
+  "archive_files_unchanged_since_prior_maintenance": 155,
+  "archive_files_unchanged_from_packaging": 154,
+  "regression_tests_passed": 6,
+  "stress_conditions": {
+    "inherited_PYTHONOPTIMIZE": "2",
+    "output_name_contains": [
+      "Unicode",
+      "quote",
+      "backslash"
+    ]
+  },
+  "fresh_replay_sha256": "3a92870cb8874b4dc70d969b9a2af3edbb9c0d71f110d08c02d28ae0cdc23e0b",
+  "artifact_verification": {
+    "raw_artifacts_verified": 42,
+    "public_artifacts_verified": 40,
+    "large_arrays_matching_historical_bytes": 2,
+    "path_edits_reconstructed": 4
+  },
+  "commands": [
+    {
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.11",
+        "--with-requirements",
+        "<repo>/requirements-dev.lock",
+        "python",
+        "-I",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "<repo>/experiments/astra-rh-crt-20260912/audits",
+        "-p",
+        "test_replay.py",
+        "-v"
+      ],
+      "cwd": "<repo>",
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": "test_hash_mismatched_duplicate_source_is_not_an_execution (test_replay.ReplayHarnessTest.test_hash_mismatched_duplicate_source_is_not_an_execution) ... ok\ntest_inherited_optimization_cannot_bypass_historical_assertion (test_replay.ReplayHarnessTest.test_inherited_optimization_cannot_bypass_historical_assertion) ... ok\ntest_json_escaped_roots_are_normalized_in_real_checker_public_outputs (test_replay.ReplayHarnessTest.test_json_escaped_roots_are_normalized_in_real_checker_public_outputs) ... ok\ntest_missing_duplicate_source_is_not_an_execution (test_replay.ReplayHarnessTest.test_missing_duplicate_source_is_not_an_execution) ... ok\ntest_path_only_edits_preserve_other_bytes_across_literal_and_json_forms (test_replay.ReplayHarnessTest.test_path_only_edits_preserve_other_bytes_across_literal_and_json_forms) ... ok\ntest_real_checker_runs_in_fresh_scratch_and_saves_output (test_replay.ReplayHarnessTest.test_real_checker_runs_in_fresh_scratch_and_saves_output) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.724s\n\nOK\n"
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.11",
+        "--with-requirements",
+        "<repo>/requirements-dev.lock",
+        "python",
+        "-I",
+        "-B",
+        "<independent-review-scratch>/reproduce_duplicate_count.py",
+        "--checkout-copy",
+        "<repo>",
+        "--review-manifest",
+        "<verification-scratch>/current-reproducer-pins.json",
+        "--output",
+        "<verification-scratch>/negative-controls"
+      ],
+      "cwd": "<repo>",
+      "exit_code": 0,
+      "stdout": "[\n  {\n    \"fixture\": \"missing\",\n    \"command\": [\n      \"<python3.11>\",\n      \"-B\",\n      \"/private<verification-scratch>/negative-controls/missing/bundle/replay.py\",\n      \"--output\",\n      \"/private<verification-scratch>/negative-controls/missing/run\",\n      \"--only\",\n      \"gm-first/original_check_exponents.py\"\n    ],\n    \"returncode\": 1,\n    \"stdout\": \"{\\n  \\\"totals\\\": {\\n    \\\"selected_checker_files\\\": 1,\\n    \\\"attempted\\\": 0,\\n    \\\"passed\\\": 0,\\n    \\\"failed\\\": 0,\\n    \\\"timeouts\\\": 0,\\n    \\\"input_integrity_failures\\\": 1,\\n    \\\"not_replayed_excluded_dependencies\\\": 0,\\n    \\\"duplicate_copy_executions\\\": 0,\\n    \\\"distinct_original_checker_hashes_executed\\\": 0\\n  }\\n}\\n\",\n    \"stderr\": \"\",\n    \"expected_duplicate_executions\": 0,\n    \"reported_duplicate_executions\": 0,\n    \"count_is_truthful\": true,\n    \"record\": {\n      \"schema\": \"rh-audit-scratch-replay-v1\",\n      \"started_at_utc\": \"2026-09-13T07:18:36.224322+00:00\",\n      \"python_version\": \"3.11.16\",\n      \"python_executable_label\": \"python3 (the interpreter executing this runner)\",\n      \"runner_sha256\": \"294923e23504d6f2a85f99005a6d41f722dcc8eea2889c891af14d6f53f97b17\",\n      \"command\": [\n        \"python3\",\n        \"-B\",\n        \"replay.py\",\n        \"--output\",\n        \"<new-external-scratch>\",\n        \"--only\",\n        \"gm-first/original_check_exponents.py\"\n      ],\n      \"scope\": \"Finite checker process replays, not formal verification, analytic proof validation, literature freshness or an RH claim. Duplicate preserved checker copies count as separate executions, not independent methods.\",\n      \"isolation\": \"Each checker receives only its public source and explicitly listed real pinned dependencies in a new per-case directory. Historical result files are never seeded. Raw stdout/stderr and all generated files remain in external scratch; public logs replace only its root with a relative dot.\",\n      \"environment\": {\n        \"PYTHONDONTWRITEBYTECODE\": \"1\",\n        \"PYTHONNOUSERSITE\": \"1\",\n        \"PYTHONHASHSEED\": \"0\",\n        \"PYTHONOPTIMIZE\": \"0\"\n      },\n      \"runs\": [\n        {\n          \"checker\": \"gm-first/original_check_exponents.py\",\n          \"cwd\": \"01-gm-first--original_check_exponents\",\n          \"command\": [\n            \"python3\",\n            \"-B\",\n            \"gm-first/original_check_exponents.py\"\n          ],\n          \"timeout_seconds\": 180,\n          \"numeric_scope\": \"exact integer/Fraction calculations\",\n          \"original_checker_sha256\": \"0c9c28de1173719462695cb67fd650fcbeaa2dd9d76764e2d1b5bfebd42c5825\",\n          \"public_checker_sha256\": \"0c9c28de1173719462695cb67fd650fcbeaa2dd9d76764e2d1b5bfebd42c5825\",\n          \"copied_inputs\": [],\n          \"generated_outputs\": [],\n          \"duplicate_of\": \"gm-candidate/check_exponents.py\",\n          \"status\": \"input-integrity-failure\",\n          \"exit_code\": null,\n          \"error\": \"[Errno 2] No such file or directory: '/private<verification-scratch>/negative-controls/missing/bundle/gm-first/original_check_exponents.py'\"\n        }\n      ],\n      \"not_replayed\": [],\n      \"totals\": {\n        \"selected_checker_files\": 1,\n        \"attempted\": 0,\n        \"passed\": 0,\n        \"failed\": 0,\n        \"timeouts\": 0,\n        \"input_integrity_failures\": 1,\n        \"not_replayed_excluded_dependencies\": 0,\n        \"duplicate_copy_executions\": 0,\n        \"distinct_original_checker_hashes_executed\": 0\n      },\n      \"finished_at_utc\": \"2026-09-13T07:18:36.225353+00:00\"\n    }\n  },\n  {\n    \"fixture\": \"tampered\",\n    \"command\": [\n      \"<python3.11>\",\n      \"-B\",\n      \"/private<verification-scratch>/negative-controls/tampered/bundle/replay.py\",\n      \"--output\",\n      \"/private<verification-scratch>/negative-controls/tampered/run\",\n      \"--only\",\n      \"sparse-square/replayed-original/check_algebra.py\"\n    ],\n    \"returncode\": 1,\n    \"stdout\": \"{\\n  \\\"totals\\\": {\\n    \\\"selected_checker_files\\\": 1,\\n    \\\"attempted\\\": 0,\\n    \\\"passed\\\": 0,\\n    \\\"failed\\\": 0,\\n    \\\"timeouts\\\": 0,\\n    \\\"input_integrity_failures\\\": 1,\\n    \\\"not_replayed_excluded_dependencies\\\": 0,\\n    \\\"duplicate_copy_executions\\\": 0,\\n    \\\"distinct_original_checker_hashes_executed\\\": 0\\n  }\\n}\\n\",\n    \"stderr\": \"\",\n    \"expected_duplicate_executions\": 0,\n    \"reported_duplicate_executions\": 0,\n    \"count_is_truthful\": true,\n    \"record\": {\n      \"schema\": \"rh-audit-scratch-replay-v1\",\n      \"started_at_utc\": \"2026-09-13T07:18:36.256785+00:00\",\n      \"python_version\": \"3.11.16\",\n      \"python_executable_label\": \"python3 (the interpreter executing this runner)\",\n      \"runner_sha256\": \"294923e23504d6f2a85f99005a6d41f722dcc8eea2889c891af14d6f53f97b17\",\n      \"command\": [\n        \"python3\",\n        \"-B\",\n        \"replay.py\",\n        \"--output\",\n        \"<new-external-scratch>\",\n        \"--only\",\n        \"sparse-square/replayed-original/check_algebra.py\"\n      ],\n      \"scope\": \"Finite checker process replays, not formal verification, analytic proof validation, literature freshness or an RH claim. Duplicate preserved checker copies count as separate executions, not independent methods.\",\n      \"isolation\": \"Each checker receives only its public source and explicitly listed real pinned dependencies in a new per-case directory. Historical result files are never seeded. Raw stdout/stderr and all generated files remain in external scratch; public logs replace only its root with a relative dot.\",\n      \"environment\": {\n        \"PYTHONDONTWRITEBYTECODE\": \"1\",\n        \"PYTHONNOUSERSITE\": \"1\",\n        \"PYTHONHASHSEED\": \"0\",\n        \"PYTHONOPTIMIZE\": \"0\"\n      },\n      \"runs\": [\n        {\n          \"checker\": \"sparse-square/replayed-original/check_algebra.py\",\n          \"cwd\": \"01-sparse-square--replayed-original--check_algebra\",\n          \"command\": [\n            \"python3\",\n            \"-B\",\n            \"sparse-square/replayed-original/check_algebra.py\"\n          ],\n          \"timeout_seconds\": 180,\n          \"numeric_scope\": \"exact integer/Fraction assertions; float conversion is display-only\",\n          \"original_checker_sha256\": \"fbea9d1bfbf26048978857b6eb65ae0f3b607b38fa4efd54f2ef5def56d697ca\",\n          \"public_checker_sha256\": \"fbea9d1bfbf26048978857b6eb65ae0f3b607b38fa4efd54f2ef5def56d697ca\",\n          \"copied_inputs\": [],\n          \"generated_outputs\": [],\n          \"duplicate_of\": \"twisted-square/check_algebra.py\",\n          \"status\": \"input-integrity-failure\",\n          \"exit_code\": null,\n          \"error\": \"public input hash mismatch: sparse-square/replayed-original/check_algebra.py\"\n        }\n      ],\n      \"not_replayed\": [],\n      \"totals\": {\n        \"selected_checker_files\": 1,\n        \"attempted\": 0,\n        \"passed\": 0,\n        \"failed\": 0,\n        \"timeouts\": 0,\n        \"input_integrity_failures\": 1,\n        \"not_replayed_excluded_dependencies\": 0,\n        \"duplicate_copy_executions\": 0,\n        \"distinct_original_checker_hashes_executed\": 0\n      },\n      \"finished_at_utc\": \"2026-09-13T07:18:36.258024+00:00\"\n    }\n  }\n]\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.11",
+        "--with-requirements",
+        "<repo>/requirements-dev.lock",
+        "python",
+        "-B",
+        "<repo>/experiments/astra-rh-crt-20260912/audits/replay.py",
+        "--output",
+        "<verification-scratch>/stress-\u03c0\"\\"
+      ],
+      "cwd": "<repo>",
+      "exit_code": 0,
+      "stdout": "{\"checker\": \"gm-candidate/check_exponents.py\", \"status\": \"passed\", \"exit_code\": 0, \"elapsed_seconds\": 0.027749}\n{\"checker\": \"crt-variance/audit.py\", \"status\": \"passed\", \"exit_code\": 0, \"elapsed_seconds\": 5.330802}\n{\"checker\": \"crt-variance/endpoints.py\", \"status\": \"passed\", \"exit_code\": 0, \"elapsed_seconds\": 0.180357}\n{\"checker\": \"crt-variance/r-free.py\", \"status\": \"passed\", \"exit_code\": 0, \"elapsed_seconds\": 0.482639}\n{\"checker\": \"mellin-transfer/verify_arithmetic.py\", \"status\": \"passed\", \"exit_code\": 0, \"elapsed_seconds\": 0.042848}\n{\"checker\": \"phase-transfer/check_arithmetic.py\", \"status\": \"passed\", \"exit_code\": 0, \"elapsed_seconds\": 3.619424}\n{\"checker\": \"phase-transfer/check_actual_intervals.py\", \"status\": \"passed\", \"exit_code\": 0, \"elapsed_seconds\": 0.992087}\n{\"checker\": \"gm-first/original_check_exponents.py\", \"status\": \"passed\", \"exit_code\": 0, \"elapsed_seconds\": 0.027455}\n{\"checker\": \"gm-second/check_second_audit.py\", \"status\": \"passed\", \"exit_code\": 0, \"elapsed_seconds\": 0.030911}\n{\"checker\": \"gm-second/compare_critical_bounds.py\", \"status\": \"passed\", \"exit_code\": 0, \"elapsed_seconds\": 0.039856}\n{\"checker\": \"twisted-square/check_algebra.py\", \"status\": \"passed\", \"exit_code\": 0, \"elapsed_seconds\": 0.037129}\n{\"checker\": \"mobius-typeI/independent_checks.py\", \"status\": \"passed\", \"exit_code\": 0, \"elapsed_seconds\": 0.121335}\n{\"checker\": \"sparse-square/replayed-original/check_algebra.py\", \"status\": \"passed\", \"exit_code\": 0, \"elapsed_seconds\": 0.032609}\n{\n  \"totals\": {\n    \"selected_checker_files\": 17,\n    \"attempted\": 13,\n    \"passed\": 13,\n    \"failed\": 0,\n    \"timeouts\": 0,\n    \"input_integrity_failures\": 0,\n    \"not_replayed_excluded_dependencies\": 4,\n    \"duplicate_copy_executions\": 2,\n    \"distinct_original_checker_hashes_executed\": 11\n  }\n}\n",
+      "stderr": ""
+    }
+  ],
+  "fresh_replay": {
+    "schema": "rh-audit-scratch-replay-v1",
+    "started_at_utc": "2026-09-13T07:18:36.379992+00:00",
+    "python_version": "3.11.16",
+    "python_executable_label": "python3 (the interpreter executing this runner)",
+    "runner_sha256": "294923e23504d6f2a85f99005a6d41f722dcc8eea2889c891af14d6f53f97b17",
+    "command": [
+      "python3",
+      "-B",
+      "replay.py",
+      "--output",
+      "<new-external-scratch>"
+    ],
+    "scope": "Finite checker process replays, not formal verification, analytic proof validation, literature freshness or an RH claim. Duplicate preserved checker copies count as separate executions, not independent methods.",
+    "isolation": "Each checker receives only its public source and explicitly listed real pinned dependencies in a new per-case directory. Historical result files are never seeded. Raw stdout/stderr and all generated files remain in external scratch; public logs replace only its root with a relative dot.",
+    "environment": {
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "PYTHONNOUSERSITE": "1",
+      "PYTHONHASHSEED": "0",
+      "PYTHONOPTIMIZE": "0"
+    },
+    "runs": [
+      {
+        "checker": "gm-candidate/check_exponents.py",
+        "cwd": "01-gm-candidate--check_exponents",
+        "command": [
+          "python3",
+          "-B",
+          "gm-candidate/check_exponents.py"
+        ],
+        "timeout_seconds": 180,
+        "numeric_scope": "exact integer/Fraction calculations",
+        "original_checker_sha256": "0c9c28de1173719462695cb67fd650fcbeaa2dd9d76764e2d1b5bfebd42c5825",
+        "public_checker_sha256": "0c9c28de1173719462695cb67fd650fcbeaa2dd9d76764e2d1b5bfebd42c5825",
+        "copied_inputs": [
+          {
+            "path": "gm-candidate/check_exponents.py",
+            "sha256": "0c9c28de1173719462695cb67fd650fcbeaa2dd9d76764e2d1b5bfebd42c5825"
+          }
+        ],
+        "generated_outputs": [
+          {
+            "scratch_path": "scratch/01-gm-candidate--check_exponents/gm-candidate/exponent-results.json",
+            "output_locator": "gm-candidate/exponent-results.json",
+            "raw_sha256": "653984f09c73de39f3b6434f775d24930ccc600dc92fdf37157f891b7b48056b",
+            "raw_size_bytes": 3849,
+            "public_sha256": "653984f09c73de39f3b6434f775d24930ccc600dc92fdf37157f891b7b48056b",
+            "public_size_bytes": 3849,
+            "path_edits": [],
+            "historical_public_output_sha256": "653984f09c73de39f3b6434f775d24930ccc600dc92fdf37157f891b7b48056b",
+            "historical_json_difference_paths": [],
+            "public_path": "replay/01-gm-candidate--check_exponents/outputs/gm-candidate/exponent-results.json",
+            "disposition": "saved"
+          }
+        ],
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_seconds": 0.027749,
+        "stdout": {
+          "raw_path": "raw-logs/01-gm-candidate--check_exponents/stdout.txt",
+          "raw_sha256": "653984f09c73de39f3b6434f775d24930ccc600dc92fdf37157f891b7b48056b",
+          "raw_size_bytes": 3849,
+          "public_path": "replay/01-gm-candidate--check_exponents/stdout.txt",
+          "public_sha256": "653984f09c73de39f3b6434f775d24930ccc600dc92fdf37157f891b7b48056b",
+          "public_size_bytes": 3849,
+          "path_edits": []
+        },
+        "stderr": {
+          "raw_path": "raw-logs/01-gm-candidate--check_exponents/stderr.txt",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_size_bytes": 0,
+          "public_path": "replay/01-gm-candidate--check_exponents/stderr.txt",
+          "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "public_size_bytes": 0,
+          "path_edits": []
+        },
+        "inputs_unchanged": true,
+        "missing_outputs": [],
+        "status": "passed"
+      },
+      {
+        "checker": "crt-variance/audit.py",
+        "cwd": "02-crt-variance--audit",
+        "command": [
+          "python3",
+          "-B",
+          "crt-variance/audit.py"
+        ],
+        "timeout_seconds": 180,
+        "numeric_scope": "exact integer/Fraction calculations",
+        "original_checker_sha256": "f40ef90e83109d227b598237ef873d9db8f81baff1e59355fece47847c29186b",
+        "public_checker_sha256": "f40ef90e83109d227b598237ef873d9db8f81baff1e59355fece47847c29186b",
+        "copied_inputs": [
+          {
+            "path": "crt-variance/audit.py",
+            "sha256": "f40ef90e83109d227b598237ef873d9db8f81baff1e59355fece47847c29186b"
+          }
+        ],
+        "generated_outputs": [
+          {
+            "scratch_path": "scratch/02-crt-variance--audit/crt-variance/audit-results.json",
+            "output_locator": "crt-variance/audit-results.json",
+            "raw_sha256": "2d7900b8ffb9c0219ea6aee9462cc0307bc18722ab1c5502b900dd0faa39c675",
+            "raw_size_bytes": 1492,
+            "public_sha256": "2d7900b8ffb9c0219ea6aee9462cc0307bc18722ab1c5502b900dd0faa39c675",
+            "public_size_bytes": 1492,
+            "path_edits": [],
+            "historical_public_output_sha256": "2d7900b8ffb9c0219ea6aee9462cc0307bc18722ab1c5502b900dd0faa39c675",
+            "historical_json_difference_paths": [],
+            "public_path": "replay/02-crt-variance--audit/outputs/crt-variance/audit-results.json",
+            "disposition": "saved"
+          }
+        ],
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_seconds": 5.330802,
+        "stdout": {
+          "raw_path": "raw-logs/02-crt-variance--audit/stdout.txt",
+          "raw_sha256": "2d7900b8ffb9c0219ea6aee9462cc0307bc18722ab1c5502b900dd0faa39c675",
+          "raw_size_bytes": 1492,
+          "public_path": "replay/02-crt-variance--audit/stdout.txt",
+          "public_sha256": "2d7900b8ffb9c0219ea6aee9462cc0307bc18722ab1c5502b900dd0faa39c675",
+          "public_size_bytes": 1492,
+          "path_edits": []
+        },
+        "stderr": {
+          "raw_path": "raw-logs/02-crt-variance--audit/stderr.txt",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_size_bytes": 0,
+          "public_path": "replay/02-crt-variance--audit/stderr.txt",
+          "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "public_size_bytes": 0,
+          "path_edits": []
+        },
+        "inputs_unchanged": true,
+        "missing_outputs": [],
+        "status": "passed"
+      },
+      {
+        "checker": "crt-variance/endpoints.py",
+        "cwd": "03-crt-variance--endpoints",
+        "command": [
+          "python3",
+          "-B",
+          "crt-variance/endpoints.py"
+        ],
+        "timeout_seconds": 180,
+        "numeric_scope": "exact integer/Fraction calculations",
+        "original_checker_sha256": "0f4242c4f49a48f1f4bacd5fb0304a43de7886f63a6ad4a64d77aecabb24a594",
+        "public_checker_sha256": "0f4242c4f49a48f1f4bacd5fb0304a43de7886f63a6ad4a64d77aecabb24a594",
+        "copied_inputs": [
+          {
+            "path": "crt-variance/endpoints.py",
+            "sha256": "0f4242c4f49a48f1f4bacd5fb0304a43de7886f63a6ad4a64d77aecabb24a594"
+          },
+          {
+            "path": "crt-variance/audit.py",
+            "sha256": "f40ef90e83109d227b598237ef873d9db8f81baff1e59355fece47847c29186b"
+          }
+        ],
+        "generated_outputs": [
+          {
+            "scratch_path": "scratch/03-crt-variance--endpoints/crt-variance/endpoint-results.json",
+            "output_locator": "crt-variance/endpoint-results.json",
+            "raw_sha256": "1ca71b1a7cd64b908ad03cbf069e82a79c0533cc3d12417ff4b53d631d4a6c67",
+            "raw_size_bytes": 308,
+            "public_sha256": "1ca71b1a7cd64b908ad03cbf069e82a79c0533cc3d12417ff4b53d631d4a6c67",
+            "public_size_bytes": 308,
+            "path_edits": [],
+            "historical_public_output_sha256": "1ca71b1a7cd64b908ad03cbf069e82a79c0533cc3d12417ff4b53d631d4a6c67",
+            "historical_json_difference_paths": [],
+            "public_path": "replay/03-crt-variance--endpoints/outputs/crt-variance/endpoint-results.json",
+            "disposition": "saved"
+          }
+        ],
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_seconds": 0.180357,
+        "stdout": {
+          "raw_path": "raw-logs/03-crt-variance--endpoints/stdout.txt",
+          "raw_sha256": "1ca71b1a7cd64b908ad03cbf069e82a79c0533cc3d12417ff4b53d631d4a6c67",
+          "raw_size_bytes": 308,
+          "public_path": "replay/03-crt-variance--endpoints/stdout.txt",
+          "public_sha256": "1ca71b1a7cd64b908ad03cbf069e82a79c0533cc3d12417ff4b53d631d4a6c67",
+          "public_size_bytes": 308,
+          "path_edits": []
+        },
+        "stderr": {
+          "raw_path": "raw-logs/03-crt-variance--endpoints/stderr.txt",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_size_bytes": 0,
+          "public_path": "replay/03-crt-variance--endpoints/stderr.txt",
+          "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "public_size_bytes": 0,
+          "path_edits": []
+        },
+        "inputs_unchanged": true,
+        "missing_outputs": [],
+        "status": "passed"
+      },
+      {
+        "checker": "crt-variance/r-free.py",
+        "cwd": "04-crt-variance--r-free",
+        "command": [
+          "python3",
+          "-B",
+          "crt-variance/r-free.py"
+        ],
+        "timeout_seconds": 180,
+        "numeric_scope": "exact integer/Fraction calculations",
+        "original_checker_sha256": "432978f7cb65a0f08ba5a5cfb150411f8f98bcfe7924ab01930303cdb39578d2",
+        "public_checker_sha256": "432978f7cb65a0f08ba5a5cfb150411f8f98bcfe7924ab01930303cdb39578d2",
+        "copied_inputs": [
+          {
+            "path": "crt-variance/r-free.py",
+            "sha256": "432978f7cb65a0f08ba5a5cfb150411f8f98bcfe7924ab01930303cdb39578d2"
+          },
+          {
+            "path": "crt-variance/audit.py",
+            "sha256": "f40ef90e83109d227b598237ef873d9db8f81baff1e59355fece47847c29186b"
+          }
+        ],
+        "generated_outputs": [
+          {
+            "scratch_path": "scratch/04-crt-variance--r-free/crt-variance/r-free-results.json",
+            "output_locator": "crt-variance/r-free-results.json",
+            "raw_sha256": "9c52f96eea2458a21a9564ac814b07966bf6945baa9649e134a6ed65ad4f0a59",
+            "raw_size_bytes": 648,
+            "public_sha256": "9c52f96eea2458a21a9564ac814b07966bf6945baa9649e134a6ed65ad4f0a59",
+            "public_size_bytes": 648,
+            "path_edits": [],
+            "historical_public_output_sha256": "9c52f96eea2458a21a9564ac814b07966bf6945baa9649e134a6ed65ad4f0a59",
+            "historical_json_difference_paths": [],
+            "public_path": "replay/04-crt-variance--r-free/outputs/crt-variance/r-free-results.json",
+            "disposition": "saved"
+          }
+        ],
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_seconds": 0.482639,
+        "stdout": {
+          "raw_path": "raw-logs/04-crt-variance--r-free/stdout.txt",
+          "raw_sha256": "9c52f96eea2458a21a9564ac814b07966bf6945baa9649e134a6ed65ad4f0a59",
+          "raw_size_bytes": 648,
+          "public_path": "replay/04-crt-variance--r-free/stdout.txt",
+          "public_sha256": "9c52f96eea2458a21a9564ac814b07966bf6945baa9649e134a6ed65ad4f0a59",
+          "public_size_bytes": 648,
+          "path_edits": []
+        },
+        "stderr": {
+          "raw_path": "raw-logs/04-crt-variance--r-free/stderr.txt",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_size_bytes": 0,
+          "public_path": "replay/04-crt-variance--r-free/stderr.txt",
+          "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "public_size_bytes": 0,
+          "path_edits": []
+        },
+        "inputs_unchanged": true,
+        "missing_outputs": [],
+        "status": "passed"
+      },
+      {
+        "checker": "mellin-transfer/verify_arithmetic.py",
+        "cwd": "05-mellin-transfer--verify_arithmetic",
+        "command": [
+          "python3",
+          "-B",
+          "mellin-transfer/verify_arithmetic.py"
+        ],
+        "timeout_seconds": 180,
+        "numeric_scope": "exact integer/Fraction calculations",
+        "original_checker_sha256": "6d72d01acbb93396196bf4456c7523d1537eb87bcef0f37452f13219376283a1",
+        "public_checker_sha256": "6d72d01acbb93396196bf4456c7523d1537eb87bcef0f37452f13219376283a1",
+        "copied_inputs": [
+          {
+            "path": "mellin-transfer/verify_arithmetic.py",
+            "sha256": "6d72d01acbb93396196bf4456c7523d1537eb87bcef0f37452f13219376283a1"
+          }
+        ],
+        "generated_outputs": [
+          {
+            "scratch_path": "scratch/05-mellin-transfer--verify_arithmetic/mellin-transfer/verified_arithmetic.json",
+            "output_locator": "mellin-transfer/verified_arithmetic.json",
+            "raw_sha256": "9f07aa44ddd01612cbf65fd96f0345d388a0a609a9ee41e067894fea7c82083e",
+            "raw_size_bytes": 1662,
+            "public_sha256": "9f07aa44ddd01612cbf65fd96f0345d388a0a609a9ee41e067894fea7c82083e",
+            "public_size_bytes": 1662,
+            "path_edits": [],
+            "historical_public_output_sha256": "9f07aa44ddd01612cbf65fd96f0345d388a0a609a9ee41e067894fea7c82083e",
+            "historical_json_difference_paths": [],
+            "public_path": "replay/05-mellin-transfer--verify_arithmetic/outputs/mellin-transfer/verified_arithmetic.json",
+            "disposition": "saved"
+          }
+        ],
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_seconds": 0.042848,
+        "stdout": {
+          "raw_path": "raw-logs/05-mellin-transfer--verify_arithmetic/stdout.txt",
+          "raw_sha256": "cd9b889b9713b8d28c87bd1a7ee4111daf3d360b7f4343c90af561fae7249ce0",
+          "raw_size_bytes": 1663,
+          "public_path": "replay/05-mellin-transfer--verify_arithmetic/stdout.txt",
+          "public_sha256": "cd9b889b9713b8d28c87bd1a7ee4111daf3d360b7f4343c90af561fae7249ce0",
+          "public_size_bytes": 1663,
+          "path_edits": []
+        },
+        "stderr": {
+          "raw_path": "raw-logs/05-mellin-transfer--verify_arithmetic/stderr.txt",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_size_bytes": 0,
+          "public_path": "replay/05-mellin-transfer--verify_arithmetic/stderr.txt",
+          "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "public_size_bytes": 0,
+          "path_edits": []
+        },
+        "inputs_unchanged": true,
+        "missing_outputs": [],
+        "status": "passed"
+      },
+      {
+        "checker": "phase-transfer/check_arithmetic.py",
+        "cwd": "06-phase-transfer--check_arithmetic",
+        "command": [
+          "python3",
+          "-B",
+          "phase-transfer/check_arithmetic.py"
+        ],
+        "timeout_seconds": 180,
+        "numeric_scope": "exact integer/Fraction calculations",
+        "original_checker_sha256": "e05b85ccb9e68b9b16510deb451bf61609b84999c9c7b6f1111f06487c965fcf",
+        "public_checker_sha256": "7bbee94bef5119ffb1d7cf1c2ff9fa8c56b7fba40e0894c912db9c4dd53f32cb",
+        "copied_inputs": [
+          {
+            "path": "phase-transfer/check_arithmetic.py",
+            "sha256": "7bbee94bef5119ffb1d7cf1c2ff9fa8c56b7fba40e0894c912db9c4dd53f32cb"
+          },
+          {
+            "path": "inputs/RESULT.md",
+            "sha256": "74d4db708fbba083ebfd1632e591eda71a0e44ca1b7836367a7ab1bad63cc06a"
+          },
+          {
+            "path": "inputs/MELLIN_TRANSFER.md",
+            "sha256": "36cb34d860629b6476abafb10f66da98f0557e4422b2a33f9ce710774e11d671"
+          }
+        ],
+        "generated_outputs": [
+          {
+            "scratch_path": "scratch/06-phase-transfer--check_arithmetic/phase-transfer/check_summary.json",
+            "output_locator": "phase-transfer/check_summary.json",
+            "raw_sha256": "27bfb87b83fe98b5375eacd9382237ae2ef516f1fc291b75f47cb86ca99b6062",
+            "raw_size_bytes": 1336,
+            "public_sha256": "27bfb87b83fe98b5375eacd9382237ae2ef516f1fc291b75f47cb86ca99b6062",
+            "public_size_bytes": 1336,
+            "path_edits": [],
+            "historical_public_output_sha256": "1aa431ffde171254b54a7ac50c40ce6031b28df7c73f7429914539d01601e814",
+            "historical_json_difference_paths": [
+              "$.input_hashes.MELLIN_TRANSFER.md",
+              "$.input_hashes.RESULT.md"
+            ],
+            "public_path": "replay/06-phase-transfer--check_arithmetic/outputs/phase-transfer/check_summary.json",
+            "disposition": "saved"
+          },
+          {
+            "scratch_path": "scratch/06-phase-transfer--check_arithmetic/phase-transfer/check_records.json",
+            "output_locator": "phase-transfer/check_records.json",
+            "raw_sha256": "2935981f4d281554875f14ea97583e4b2988b20c7763903dc5f371fe6220d3b3",
+            "raw_size_bytes": 2204977,
+            "public_sha256": "2935981f4d281554875f14ea97583e4b2988b20c7763903dc5f371fe6220d3b3",
+            "public_size_bytes": 2204977,
+            "path_edits": [],
+            "record_count": 13151,
+            "counts_by_kind": {
+              "arbitrary_interval": 480,
+              "conditional_fiber": 12204,
+              "direct_phase": 317,
+              "norm_transfer_exact": 60,
+              "refinement_and_defect": 90
+            },
+            "historical_original_sha256": "2935981f4d281554875f14ea97583e4b2988b20c7763903dc5f371fe6220d3b3",
+            "matches_historical_original_bytes": true,
+            "public_path": null,
+            "disposition": "not-copied-to-compact-package; fresh complete records retained in external scratch"
+          }
+        ],
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_seconds": 3.619424,
+        "stdout": {
+          "raw_path": "raw-logs/06-phase-transfer--check_arithmetic/stdout.txt",
+          "raw_sha256": "27bfb87b83fe98b5375eacd9382237ae2ef516f1fc291b75f47cb86ca99b6062",
+          "raw_size_bytes": 1336,
+          "public_path": "replay/06-phase-transfer--check_arithmetic/stdout.txt",
+          "public_sha256": "27bfb87b83fe98b5375eacd9382237ae2ef516f1fc291b75f47cb86ca99b6062",
+          "public_size_bytes": 1336,
+          "path_edits": []
+        },
+        "stderr": {
+          "raw_path": "raw-logs/06-phase-transfer--check_arithmetic/stderr.txt",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_size_bytes": 0,
+          "public_path": "replay/06-phase-transfer--check_arithmetic/stderr.txt",
+          "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "public_size_bytes": 0,
+          "path_edits": []
+        },
+        "inputs_unchanged": true,
+        "missing_outputs": [],
+        "status": "passed"
+      },
+      {
+        "checker": "phase-transfer/check_actual_intervals.py",
+        "cwd": "07-phase-transfer--check_actual_intervals",
+        "command": [
+          "python3",
+          "-B",
+          "phase-transfer/check_actual_intervals.py"
+        ],
+        "timeout_seconds": 180,
+        "numeric_scope": "mixed: exact rational segmentation/exponents plus 70-digit Decimal squarefree-density and norm diagnostics with explicit tolerances; not wholly exact",
+        "original_checker_sha256": "8741f54606eed10552bfd44c27ebb4bef33c77dc2e292dea80d0225da9e1ad73",
+        "public_checker_sha256": "497f3bd07733f2939dddb2242fed3064d13b823abd014b56d1efedb15e11b7fc",
+        "copied_inputs": [
+          {
+            "path": "phase-transfer/check_actual_intervals.py",
+            "sha256": "497f3bd07733f2939dddb2242fed3064d13b823abd014b56d1efedb15e11b7fc"
+          },
+          {
+            "path": "inputs/RESULT.md",
+            "sha256": "74d4db708fbba083ebfd1632e591eda71a0e44ca1b7836367a7ab1bad63cc06a"
+          },
+          {
+            "path": "inputs/MELLIN_TRANSFER.md",
+            "sha256": "36cb34d860629b6476abafb10f66da98f0557e4422b2a33f9ce710774e11d671"
+          }
+        ],
+        "generated_outputs": [
+          {
+            "scratch_path": "scratch/07-phase-transfer--check_actual_intervals/phase-transfer/actual_interval_summary.json",
+            "output_locator": "phase-transfer/actual_interval_summary.json",
+            "raw_sha256": "23fb689bc1616274eedb5f1ba5f5c5b24a34a931a701ac101fdb69749bea5bc7",
+            "raw_size_bytes": 1140,
+            "public_sha256": "23fb689bc1616274eedb5f1ba5f5c5b24a34a931a701ac101fdb69749bea5bc7",
+            "public_size_bytes": 1140,
+            "path_edits": [],
+            "historical_public_output_sha256": "43c539da68230f8f00ed4f1f7df36c4a339fc6a94632fb76941bbc97317e0cea",
+            "historical_json_difference_paths": [
+              "$.input_hashes.MELLIN_TRANSFER.md",
+              "$.input_hashes.RESULT.md"
+            ],
+            "public_path": "replay/07-phase-transfer--check_actual_intervals/outputs/phase-transfer/actual_interval_summary.json",
+            "disposition": "saved"
+          },
+          {
+            "scratch_path": "scratch/07-phase-transfer--check_actual_intervals/phase-transfer/actual_interval_records.json",
+            "output_locator": "phase-transfer/actual_interval_records.json",
+            "raw_sha256": "87702ee5b55ca549cdf6a9425066ea70a096012a6e9f5cc9f56aec41b32424d8",
+            "raw_size_bytes": 91164,
+            "public_sha256": "87702ee5b55ca549cdf6a9425066ea70a096012a6e9f5cc9f56aec41b32424d8",
+            "public_size_bytes": 91164,
+            "path_edits": [],
+            "record_count": 396,
+            "historical_original_sha256": "87702ee5b55ca549cdf6a9425066ea70a096012a6e9f5cc9f56aec41b32424d8",
+            "matches_historical_original_bytes": true,
+            "public_path": null,
+            "disposition": "not-copied-to-compact-package; fresh complete records retained in external scratch"
+          }
+        ],
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_seconds": 0.992087,
+        "stdout": {
+          "raw_path": "raw-logs/07-phase-transfer--check_actual_intervals/stdout.txt",
+          "raw_sha256": "23fb689bc1616274eedb5f1ba5f5c5b24a34a931a701ac101fdb69749bea5bc7",
+          "raw_size_bytes": 1140,
+          "public_path": "replay/07-phase-transfer--check_actual_intervals/stdout.txt",
+          "public_sha256": "23fb689bc1616274eedb5f1ba5f5c5b24a34a931a701ac101fdb69749bea5bc7",
+          "public_size_bytes": 1140,
+          "path_edits": []
+        },
+        "stderr": {
+          "raw_path": "raw-logs/07-phase-transfer--check_actual_intervals/stderr.txt",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_size_bytes": 0,
+          "public_path": "replay/07-phase-transfer--check_actual_intervals/stderr.txt",
+          "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "public_size_bytes": 0,
+          "path_edits": []
+        },
+        "inputs_unchanged": true,
+        "missing_outputs": [],
+        "status": "passed"
+      },
+      {
+        "checker": "gm-first/original_check_exponents.py",
+        "cwd": "08-gm-first--original_check_exponents",
+        "command": [
+          "python3",
+          "-B",
+          "gm-first/original_check_exponents.py"
+        ],
+        "timeout_seconds": 180,
+        "numeric_scope": "exact integer/Fraction calculations",
+        "original_checker_sha256": "0c9c28de1173719462695cb67fd650fcbeaa2dd9d76764e2d1b5bfebd42c5825",
+        "public_checker_sha256": "0c9c28de1173719462695cb67fd650fcbeaa2dd9d76764e2d1b5bfebd42c5825",
+        "copied_inputs": [
+          {
+            "path": "gm-first/original_check_exponents.py",
+            "sha256": "0c9c28de1173719462695cb67fd650fcbeaa2dd9d76764e2d1b5bfebd42c5825"
+          }
+        ],
+        "generated_outputs": [
+          {
+            "scratch_path": "scratch/08-gm-first--original_check_exponents/gm-first/exponent-results.json",
+            "output_locator": "gm-first/exponent-results.json",
+            "raw_sha256": "653984f09c73de39f3b6434f775d24930ccc600dc92fdf37157f891b7b48056b",
+            "raw_size_bytes": 3849,
+            "public_sha256": "653984f09c73de39f3b6434f775d24930ccc600dc92fdf37157f891b7b48056b",
+            "public_size_bytes": 3849,
+            "path_edits": [],
+            "historical_public_output_sha256": "653984f09c73de39f3b6434f775d24930ccc600dc92fdf37157f891b7b48056b",
+            "historical_json_difference_paths": [],
+            "public_path": "replay/08-gm-first--original_check_exponents/outputs/gm-first/exponent-results.json",
+            "disposition": "saved"
+          }
+        ],
+        "duplicate_of": "gm-candidate/check_exponents.py",
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_seconds": 0.027455,
+        "stdout": {
+          "raw_path": "raw-logs/08-gm-first--original_check_exponents/stdout.txt",
+          "raw_sha256": "653984f09c73de39f3b6434f775d24930ccc600dc92fdf37157f891b7b48056b",
+          "raw_size_bytes": 3849,
+          "public_path": "replay/08-gm-first--original_check_exponents/stdout.txt",
+          "public_sha256": "653984f09c73de39f3b6434f775d24930ccc600dc92fdf37157f891b7b48056b",
+          "public_size_bytes": 3849,
+          "path_edits": []
+        },
+        "stderr": {
+          "raw_path": "raw-logs/08-gm-first--original_check_exponents/stderr.txt",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_size_bytes": 0,
+          "public_path": "replay/08-gm-first--original_check_exponents/stderr.txt",
+          "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "public_size_bytes": 0,
+          "path_edits": []
+        },
+        "inputs_unchanged": true,
+        "missing_outputs": [],
+        "status": "passed"
+      },
+      {
+        "checker": "gm-second/check_second_audit.py",
+        "cwd": "09-gm-second--check_second_audit",
+        "command": [
+          "python3",
+          "-B",
+          "gm-second/check_second_audit.py"
+        ],
+        "timeout_seconds": 180,
+        "numeric_scope": "exact integer/Fraction calculations",
+        "original_checker_sha256": "ced6ac2dee45d77ac4aa1142771d2320cb5647783d56d01f826fc09581eb3ac5",
+        "public_checker_sha256": "ced6ac2dee45d77ac4aa1142771d2320cb5647783d56d01f826fc09581eb3ac5",
+        "copied_inputs": [
+          {
+            "path": "gm-second/check_second_audit.py",
+            "sha256": "ced6ac2dee45d77ac4aa1142771d2320cb5647783d56d01f826fc09581eb3ac5"
+          }
+        ],
+        "generated_outputs": [
+          {
+            "scratch_path": "scratch/09-gm-second--check_second_audit/gm-second/results.json",
+            "output_locator": "gm-second/results.json",
+            "raw_sha256": "6db1eed7b1e9f6b52053ecefe8c5db0cc8f3e5146538dc4a33e3510f5fcbe318",
+            "raw_size_bytes": 9008,
+            "public_sha256": "6db1eed7b1e9f6b52053ecefe8c5db0cc8f3e5146538dc4a33e3510f5fcbe318",
+            "public_size_bytes": 9008,
+            "path_edits": [],
+            "historical_public_output_sha256": "6db1eed7b1e9f6b52053ecefe8c5db0cc8f3e5146538dc4a33e3510f5fcbe318",
+            "historical_json_difference_paths": [],
+            "public_path": "replay/09-gm-second--check_second_audit/outputs/gm-second/results.json",
+            "disposition": "saved"
+          }
+        ],
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_seconds": 0.030911,
+        "stdout": {
+          "raw_path": "raw-logs/09-gm-second--check_second_audit/stdout.txt",
+          "raw_sha256": "6db1eed7b1e9f6b52053ecefe8c5db0cc8f3e5146538dc4a33e3510f5fcbe318",
+          "raw_size_bytes": 9008,
+          "public_path": "replay/09-gm-second--check_second_audit/stdout.txt",
+          "public_sha256": "6db1eed7b1e9f6b52053ecefe8c5db0cc8f3e5146538dc4a33e3510f5fcbe318",
+          "public_size_bytes": 9008,
+          "path_edits": []
+        },
+        "stderr": {
+          "raw_path": "raw-logs/09-gm-second--check_second_audit/stderr.txt",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_size_bytes": 0,
+          "public_path": "replay/09-gm-second--check_second_audit/stderr.txt",
+          "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "public_size_bytes": 0,
+          "path_edits": []
+        },
+        "inputs_unchanged": true,
+        "missing_outputs": [],
+        "status": "passed"
+      },
+      {
+        "checker": "gm-second/compare_critical_bounds.py",
+        "cwd": "10-gm-second--compare_critical_bounds",
+        "command": [
+          "python3",
+          "-B",
+          "gm-second/compare_critical_bounds.py"
+        ],
+        "timeout_seconds": 180,
+        "numeric_scope": "exact integer/Fraction calculations",
+        "original_checker_sha256": "abc66a282119a62ae31f899f365935a5d28f3ea3fa2c3491502f45d3e57f295c",
+        "public_checker_sha256": "078ce849142c6b702d07248d50d6bad83013a2b38e775729d7eee5587efd68ef",
+        "copied_inputs": [
+          {
+            "path": "gm-second/compare_critical_bounds.py",
+            "sha256": "078ce849142c6b702d07248d50d6bad83013a2b38e775729d7eee5587efd68ef"
+          },
+          {
+            "path": "inputs/gm_parameter_check.json",
+            "sha256": "0ba2355a52ab914b5482d222281a248de48b80eed8960b1dfe8d266004446387"
+          }
+        ],
+        "generated_outputs": [
+          {
+            "scratch_path": "scratch/10-gm-second--compare_critical_bounds/gm-second/critical-comparison.json",
+            "output_locator": "gm-second/critical-comparison.json",
+            "raw_sha256": "e64e3ffb85b1000abea6691e6492aae4a0a638e0284ce9a4284712f9b2e8f5b2",
+            "raw_size_bytes": 3272,
+            "public_sha256": "833a63405efccf838e3b99056e2b6d5c8eff7fe51ec9baca07c7bb786ce6ef8d",
+            "public_size_bytes": 3107,
+            "path_edits": [
+              {
+                "kind": "runtime-path-only",
+                "token_encoding": "json-escaped-ascii",
+                "original_token_sha256": "3bdb0cb152ffc2fbad48340200d5a34c59a8ade8b0ab94ed1516d6765c8cb546",
+                "replacement": ".",
+                "count": 1
+              }
+            ],
+            "historical_public_output_sha256": "0cfa63c92b508dfa6aba24ccf5a78b952a9ae15b365d5530a81b177a7bee4338",
+            "historical_json_difference_paths": [
+              "$.parent_input"
+            ],
+            "public_path": "replay/10-gm-second--compare_critical_bounds/outputs/gm-second/critical-comparison.json",
+            "disposition": "saved"
+          }
+        ],
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_seconds": 0.039856,
+        "stdout": {
+          "raw_path": "raw-logs/10-gm-second--compare_critical_bounds/stdout.txt",
+          "raw_sha256": "e64e3ffb85b1000abea6691e6492aae4a0a638e0284ce9a4284712f9b2e8f5b2",
+          "raw_size_bytes": 3272,
+          "public_path": "replay/10-gm-second--compare_critical_bounds/stdout.txt",
+          "public_sha256": "833a63405efccf838e3b99056e2b6d5c8eff7fe51ec9baca07c7bb786ce6ef8d",
+          "public_size_bytes": 3107,
+          "path_edits": [
+            {
+              "kind": "runtime-path-only",
+              "token_encoding": "json-escaped-ascii",
+              "original_token_sha256": "3bdb0cb152ffc2fbad48340200d5a34c59a8ade8b0ab94ed1516d6765c8cb546",
+              "replacement": ".",
+              "count": 1
+            }
+          ]
+        },
+        "stderr": {
+          "raw_path": "raw-logs/10-gm-second--compare_critical_bounds/stderr.txt",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_size_bytes": 0,
+          "public_path": "replay/10-gm-second--compare_critical_bounds/stderr.txt",
+          "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "public_size_bytes": 0,
+          "path_edits": []
+        },
+        "inputs_unchanged": true,
+        "missing_outputs": [],
+        "status": "passed"
+      },
+      {
+        "checker": "twisted-square/check_algebra.py",
+        "cwd": "11-twisted-square--check_algebra",
+        "command": [
+          "python3",
+          "-B",
+          "twisted-square/check_algebra.py"
+        ],
+        "timeout_seconds": 180,
+        "numeric_scope": "exact integer/Fraction assertions; float conversion is display-only",
+        "original_checker_sha256": "fbea9d1bfbf26048978857b6eb65ae0f3b607b38fa4efd54f2ef5def56d697ca",
+        "public_checker_sha256": "fbea9d1bfbf26048978857b6eb65ae0f3b607b38fa4efd54f2ef5def56d697ca",
+        "copied_inputs": [
+          {
+            "path": "twisted-square/check_algebra.py",
+            "sha256": "fbea9d1bfbf26048978857b6eb65ae0f3b607b38fa4efd54f2ef5def56d697ca"
+          }
+        ],
+        "generated_outputs": [
+          {
+            "scratch_path": "scratch/11-twisted-square--check_algebra/twisted-square/checks.json",
+            "output_locator": "twisted-square/checks.json",
+            "raw_sha256": "833ff25e57c106a0c45fd1b07d9265826f1a4804128cbfad1092d8b40050ab40",
+            "raw_size_bytes": 3474,
+            "public_sha256": "833ff25e57c106a0c45fd1b07d9265826f1a4804128cbfad1092d8b40050ab40",
+            "public_size_bytes": 3474,
+            "path_edits": [],
+            "historical_public_output_sha256": "833ff25e57c106a0c45fd1b07d9265826f1a4804128cbfad1092d8b40050ab40",
+            "historical_json_difference_paths": [],
+            "public_path": "replay/11-twisted-square--check_algebra/outputs/twisted-square/checks.json",
+            "disposition": "saved"
+          }
+        ],
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_seconds": 0.037129,
+        "stdout": {
+          "raw_path": "raw-logs/11-twisted-square--check_algebra/stdout.txt",
+          "raw_sha256": "833ff25e57c106a0c45fd1b07d9265826f1a4804128cbfad1092d8b40050ab40",
+          "raw_size_bytes": 3474,
+          "public_path": "replay/11-twisted-square--check_algebra/stdout.txt",
+          "public_sha256": "833ff25e57c106a0c45fd1b07d9265826f1a4804128cbfad1092d8b40050ab40",
+          "public_size_bytes": 3474,
+          "path_edits": []
+        },
+        "stderr": {
+          "raw_path": "raw-logs/11-twisted-square--check_algebra/stderr.txt",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_size_bytes": 0,
+          "public_path": "replay/11-twisted-square--check_algebra/stderr.txt",
+          "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "public_size_bytes": 0,
+          "path_edits": []
+        },
+        "inputs_unchanged": true,
+        "missing_outputs": [],
+        "status": "passed"
+      },
+      {
+        "checker": "mobius-typeI/independent_checks.py",
+        "cwd": "12-mobius-typeI--independent_checks",
+        "command": [
+          "python3",
+          "-B",
+          "mobius-typeI/independent_checks.py"
+        ],
+        "timeout_seconds": 180,
+        "numeric_scope": "mixed: exact integer/Fraction identity/support/norm/exponent checks plus noncertifying cmath phase diagnostics at floating tolerances",
+        "original_checker_sha256": "217d0eae5144c338c288e4bfb60397d80f69a30e05cc52532d56bb48c282e269",
+        "public_checker_sha256": "217d0eae5144c338c288e4bfb60397d80f69a30e05cc52532d56bb48c282e269",
+        "copied_inputs": [
+          {
+            "path": "mobius-typeI/independent_checks.py",
+            "sha256": "217d0eae5144c338c288e4bfb60397d80f69a30e05cc52532d56bb48c282e269"
+          }
+        ],
+        "generated_outputs": [
+          {
+            "scratch_path": "scratch/12-mobius-typeI--independent_checks/mobius-typeI/checks.json",
+            "output_locator": "mobius-typeI/checks.json",
+            "raw_sha256": "0bdaf9cc751c18a9b717ab934679b89e61098dbe65827cbdec4625dedd75f1d4",
+            "raw_size_bytes": 25562,
+            "public_sha256": "0bdaf9cc751c18a9b717ab934679b89e61098dbe65827cbdec4625dedd75f1d4",
+            "public_size_bytes": 25562,
+            "path_edits": [],
+            "historical_public_output_sha256": "0bdaf9cc751c18a9b717ab934679b89e61098dbe65827cbdec4625dedd75f1d4",
+            "historical_json_difference_paths": [],
+            "public_path": "replay/12-mobius-typeI--independent_checks/outputs/mobius-typeI/checks.json",
+            "disposition": "saved"
+          },
+          {
+            "scratch_path": "scratch/12-mobius-typeI--independent_checks/mobius-typeI/checks-summary.json",
+            "output_locator": "mobius-typeI/checks-summary.json",
+            "raw_sha256": "bf549b6cac628520a6217dbaf05faacbbea459a62f320c3522fcc1637b6efd81",
+            "raw_size_bytes": 827,
+            "public_sha256": "20892da940db4296a9726f68335275ed3b205bcfe72629c98992259894584668",
+            "public_size_bytes": 664,
+            "path_edits": [
+              {
+                "kind": "runtime-path-only",
+                "token_encoding": "json-escaped-ascii",
+                "original_token_sha256": "d7a6b63bf1599ee389ff1c38199395d60c0361b73d2cb68200c354eefa4be30f",
+                "replacement": ".",
+                "count": 1
+              }
+            ],
+            "historical_public_output_sha256": "54e398c22f4d5ae415f28f724e7775d9ff60b49a90aa974f8b6ac43743376dd5",
+            "historical_json_difference_paths": [
+              "$.checks_path"
+            ],
+            "public_path": "replay/12-mobius-typeI--independent_checks/outputs/mobius-typeI/checks-summary.json",
+            "disposition": "saved"
+          }
+        ],
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_seconds": 0.121335,
+        "stdout": {
+          "raw_path": "raw-logs/12-mobius-typeI--independent_checks/stdout.txt",
+          "raw_sha256": "bf549b6cac628520a6217dbaf05faacbbea459a62f320c3522fcc1637b6efd81",
+          "raw_size_bytes": 827,
+          "public_path": "replay/12-mobius-typeI--independent_checks/stdout.txt",
+          "public_sha256": "20892da940db4296a9726f68335275ed3b205bcfe72629c98992259894584668",
+          "public_size_bytes": 664,
+          "path_edits": [
+            {
+              "kind": "runtime-path-only",
+              "token_encoding": "json-escaped-ascii",
+              "original_token_sha256": "d7a6b63bf1599ee389ff1c38199395d60c0361b73d2cb68200c354eefa4be30f",
+              "replacement": ".",
+              "count": 1
+            }
+          ]
+        },
+        "stderr": {
+          "raw_path": "raw-logs/12-mobius-typeI--independent_checks/stderr.txt",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_size_bytes": 0,
+          "public_path": "replay/12-mobius-typeI--independent_checks/stderr.txt",
+          "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "public_size_bytes": 0,
+          "path_edits": []
+        },
+        "inputs_unchanged": true,
+        "missing_outputs": [],
+        "status": "passed"
+      },
+      {
+        "checker": "sparse-square/replayed-original/check_algebra.py",
+        "cwd": "13-sparse-square--replayed-original--check_algebra",
+        "command": [
+          "python3",
+          "-B",
+          "sparse-square/replayed-original/check_algebra.py"
+        ],
+        "timeout_seconds": 180,
+        "numeric_scope": "exact integer/Fraction assertions; float conversion is display-only",
+        "original_checker_sha256": "fbea9d1bfbf26048978857b6eb65ae0f3b607b38fa4efd54f2ef5def56d697ca",
+        "public_checker_sha256": "fbea9d1bfbf26048978857b6eb65ae0f3b607b38fa4efd54f2ef5def56d697ca",
+        "copied_inputs": [
+          {
+            "path": "sparse-square/replayed-original/check_algebra.py",
+            "sha256": "fbea9d1bfbf26048978857b6eb65ae0f3b607b38fa4efd54f2ef5def56d697ca"
+          }
+        ],
+        "generated_outputs": [
+          {
+            "scratch_path": "scratch/13-sparse-square--replayed-original--check_algebra/sparse-square/replayed-original/checks.json",
+            "output_locator": "sparse-square/replayed-original/checks.json",
+            "raw_sha256": "833ff25e57c106a0c45fd1b07d9265826f1a4804128cbfad1092d8b40050ab40",
+            "raw_size_bytes": 3474,
+            "public_sha256": "833ff25e57c106a0c45fd1b07d9265826f1a4804128cbfad1092d8b40050ab40",
+            "public_size_bytes": 3474,
+            "path_edits": [],
+            "historical_public_output_sha256": "833ff25e57c106a0c45fd1b07d9265826f1a4804128cbfad1092d8b40050ab40",
+            "historical_json_difference_paths": [],
+            "public_path": "replay/13-sparse-square--replayed-original--check_algebra/outputs/sparse-square/replayed-original/checks.json",
+            "disposition": "saved"
+          }
+        ],
+        "duplicate_of": "twisted-square/check_algebra.py",
+        "exit_code": 0,
+        "timed_out": false,
+        "elapsed_seconds": 0.032609,
+        "stdout": {
+          "raw_path": "raw-logs/13-sparse-square--replayed-original--check_algebra/stdout.txt",
+          "raw_sha256": "833ff25e57c106a0c45fd1b07d9265826f1a4804128cbfad1092d8b40050ab40",
+          "raw_size_bytes": 3474,
+          "public_path": "replay/13-sparse-square--replayed-original--check_algebra/stdout.txt",
+          "public_sha256": "833ff25e57c106a0c45fd1b07d9265826f1a4804128cbfad1092d8b40050ab40",
+          "public_size_bytes": 3474,
+          "path_edits": []
+        },
+        "stderr": {
+          "raw_path": "raw-logs/13-sparse-square--replayed-original--check_algebra/stderr.txt",
+          "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "raw_size_bytes": 0,
+          "public_path": "replay/13-sparse-square--replayed-original--check_algebra/stderr.txt",
+          "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "public_size_bytes": 0,
+          "path_edits": []
+        },
+        "inputs_unchanged": true,
+        "missing_outputs": [],
+        "status": "passed"
+      }
+    ],
+    "not_replayed": [
+      {
+        "path": "crt-variance/finalize.py",
+        "original_sha256": "93bd02bbf64f45b9bbaedb42e59d26dbb378e79ece141ed747c25f4ee7083ef5",
+        "public_sha256": "3870a3ead3b9378ab1dfbf3f51ca5ad5e4e3029e0be56b41f674a3b132fa8543",
+        "timeout_seconds": 180,
+        "status": "not-replayed-excluded-dependencies",
+        "reason": "Historical weighted-covariance checker is interleaved with citation/source assembly. It first requires excluded browser-workspace JSON and the excluded citation tool; no arithmetic-only extraction or bypass was made.",
+        "missing_dependencies": [
+          "excluded-browser-workspace/rh-crt-primary-0.json",
+          "excluded-browser-workspace/rh-crt-primary-1.json",
+          "excluded-tool/sources.py"
+        ],
+        "historical_result": "crt-variance/verification-summary.json",
+        "historical_only_count": {
+          "weighted_covariance_checks": 8
+        }
+      },
+      {
+        "path": "gm-first/independent_checks.py",
+        "original_sha256": "d24322f1e7ddee343a8739b8966bcfc543b6c3024e39dd7c55bf600b2491bd1a",
+        "public_sha256": "750c6684f71e56e13adb8e6f290b0c9ff61fb2d057e91d7b965f8ff8b61fc3e0",
+        "timeout_seconds": 180,
+        "status": "not-replayed-excluded-dependencies",
+        "reason": "Exact arithmetic is followed by mandatory hashes of four excluded full primary manuscripts. The checker is preserved without removing or satisfying those gates synthetically.",
+        "missing_dependencies": [
+          "gm-candidate/gmrr-source/squfv.tex",
+          "gm-candidate/gm-source/LargevaluesDirichlet17.tex",
+          "gm-candidate/gmrr-v2.pdf",
+          "gm-candidate/gm-v2.pdf"
+        ],
+        "historical_result": "gm-first/independent-results.json"
+      },
+      {
+        "path": "mobius-factorization/check_ledger.py",
+        "original_sha256": "55c1934a23ff633e7da07b49d19471da48bea87129e6bac02b693edac15bf22f",
+        "public_sha256": "f27b81e5e2e9971522e6618706238d1cbf3fe8025cf5f0a5d27d6d79c5b4e41b",
+        "timeout_seconds": 180,
+        "status": "not-replayed-excluded-dependencies",
+        "reason": "Exact arithmetic is interleaved with original-source integrity and a fail-closed historical baseline append check. Excluded manuscript inputs and original reviewed report bytes are not reconstructed from path-edited public copies.",
+        "missing_dependencies": [
+          "gm-candidate/gmrr-source/squfv.tex",
+          "gm-candidate/gm-source/LargevaluesDirichlet17.tex",
+          "gm-candidate/gmrr-source/squfv.bbl",
+          "original-reviewed-report-bytes"
+        ],
+        "historical_result": "mobius-factorization/checks.json"
+      },
+      {
+        "path": "sparse-square/independent_checks.py",
+        "original_sha256": "0362f455d1ed6887fc8dde0b4ff1a11dfa4ba8b09a680a9520a9bec4c985b55c",
+        "public_sha256": "3fb4a7d6634f30465fc127f909986f470ae652b9fd7b09fb2f18acb2b7f5f1ac",
+        "timeout_seconds": 180,
+        "status": "not-replayed-excluded-dependencies",
+        "reason": "Finite arithmetic and noncertifying floating-point diagnostics are followed by mandatory primary archive/TeX membership checks. Six full primary files are excluded; no synthetic archive or partial execution was substituted.",
+        "missing_dependencies": [
+          "twisted-square/primary/bcr-v1.src",
+          "twisted-square/primary/bcr-v1/main.tex",
+          "twisted-square/primary/lr-v1.src",
+          "twisted-square/primary/lr-v1/draft.tex",
+          "twisted-square/primary/gmrr-v2.src",
+          "twisted-square/primary/gmrr-v2/squfv.tex"
+        ],
+        "historical_result": "sparse-square/independent-checks.json"
+      }
+    ],
+    "totals": {
+      "selected_checker_files": 17,
+      "attempted": 13,
+      "passed": 13,
+      "failed": 0,
+      "timeouts": 0,
+      "input_integrity_failures": 0,
+      "not_replayed_excluded_dependencies": 4,
+      "duplicate_copy_executions": 2,
+      "distinct_original_checker_hashes_executed": 11
+    },
+    "finished_at_utc": "2026-09-13T07:18:47.398626+00:00"
+  },
+  "deferred_nonblocking_suggestions": [
+    "RHA20-N1: lexical dangling-symlink policy",
+    "RHA20-N2: stronger CI inventory guards",
+    "RHA20-N3: concise malformed-input diagnostics"
+  ],
+  "external_evidence": "Raw commands and original maintained files remain in a separate parent scratch workspace; only relative paths and token hashes are published.",
+  "interpreter_path_portability": {
+    "scope": "Only the exact interpreter locator printed by the independent negative-control subprocess commands; all verdicts, counts and output text otherwise retained.",
+    "original_record_sha256": "84360e0b1a3cfb6ee4b67b5d40bc073efcb50f9c1a8df7f4cffc0db125ec863f",
+    "path_edited_payload_sha256_before_this_metadata": "d9285064f745dd6be2f8432e1e995fb66a137f6da865a4df160fe200835ee075",
+    "exact_token_sha256": "018245f826e0dd309525aeebc289d894c53476db32ee0180530a96fabe565e69",
+    "replacement": "<python3.11>",
+    "occurrences": 2,
+    "raw_record": "Preserved byte-for-byte in external parent verification scratch, not published."
+  }
+}

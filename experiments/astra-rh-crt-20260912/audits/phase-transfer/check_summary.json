@@ -1,0 +1,66 @@
+{
+  "passed": true,
+  "counts": {
+    "arbitrary_interval": 480,
+    "conditional_fiber": 12204,
+    "direct_phase": 317,
+    "norm_transfer_exact": 60,
+    "refinement_and_defect": 90
+  },
+  "total_records": 13151,
+  "negative_controls": {
+    "floor_only_noninteger": {
+      "correct": "1/4",
+      "incorrect_floor_only": "0"
+    },
+    "drop_fractional_conditioning": {
+      "P": [],
+      "Q": [
+        2
+      ],
+      "H": "1/2",
+      "u": "1/4",
+      "S_P": "-1/2",
+      "conditional_on_integer_phase_only": "0"
+    },
+    "unnormalized_variance_difference": {
+      "P": [
+        2
+      ],
+      "Q": [
+        2,
+        3
+      ],
+      "H": "1",
+      "correct": "11/144",
+      "incorrect_VQ_minus_VP": "5/144"
+    },
+    "pointwise_phase_bound": {
+      "P": [
+        2,
+        3,
+        5
+      ],
+      "x": "547",
+      "H": "3",
+      "squared_error": "2304/625",
+      "exceeds_sqrt_H": true
+    },
+    "remove_periodicity_cost": {
+      "P": [
+        2
+      ],
+      "H": "1",
+      "interval": [
+        "3",
+        "7/2"
+      ],
+      "energy": "9/16",
+      "phase_variance": "3/16"
+    }
+  },
+  "input_hashes": {
+    "RESULT.md": "1e0cdebf6e0a29a6e701a2c8d25fb7917931d3f1d630f1c1e8399e7de8bbee72",
+    "MELLIN_TRANSFER.md": "1687f608b0ab64a816e0739fdd463b6f2ac8fecc4502c78dd9208e500b305932"
+  }
+}

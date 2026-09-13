@@ -1,0 +1,193 @@
+{
+  "schema": "rh-repository-integration-verification-v1",
+  "checked_at_utc": "2026-09-13T07:26:44.263649+00:00",
+  "base_commit": "68f6d12cc172bf2fe40ebb4baa71836fcaf8bcdc",
+  "scope": "Actual repository gates and bounded semantic replay, not a human or formal analytic proof audit. Stdout/stderr are checkout-path-sanitized only.",
+  "python": {
+    "command": [
+      "uv",
+      "run",
+      "--python",
+      "3.11",
+      "--with-requirements",
+      "requirements-dev.lock",
+      "python",
+      "--version"
+    ],
+    "exit_code": 0,
+    "stdout": "Python 3.11.16\n",
+    "stderr": ""
+  },
+  "historical_whitespace_exception": {
+    "scope": "Only byte-pinned preserved historical Markdown reports/excerpts; no code or maintained documents exempted.",
+    "paths": [
+      "experiments/astra-rh-crt-20260912/audits/gm-candidate/source-excerpts.md",
+      "experiments/astra-rh-crt-20260912/audits/gm-second/source-excerpts.md",
+      "experiments/astra-rh-crt-20260912/audits/mobius-factorization/source-excerpts.md",
+      "experiments/astra-rh-crt-20260912/audits/twisted-square/audit-conclusion.md",
+      "experiments/astra-rh-crt-20260912/audits/twisted-square/audit-theorems.md",
+      "experiments/astra-rh-crt-20260912/audits/twisted-square/source-excerpts.md"
+    ],
+    "full_check_exit_code": 2,
+    "exempted_bytes_match_archive_manifest": true
+  },
+  "all_commands_passed": true,
+  "pytest_summary": {
+    "passed": 227,
+    "skipped": 2
+  },
+  "review_snapshot_manifest_sha256": "0b57c8a1abc0daf6f757be701056122e65f90f26eb0498eced0d82078c659ce7",
+  "covered_python_files_checked": 33,
+  "covered_python_sources_unchanged": true,
+  "covered_source_sha256": {
+    "experiments/astra-rh-969-20260912/floor_transfer.py": "8af97120b6e1a23e1605569d9477f8460f15743db36586b526689dc5bad207f5",
+    "experiments/astra-rh-969-20260912/test_floor.py": "0a3fa5e8fd28a487e7639867864db91b7e01ac15d1260b1fbce677fe101de65c",
+    "experiments/astra-rh-969-20260912/test_persistence.py": "b5135118c61f5feb0aa8e6f0cabfb23088366b69219ec10f7d79749acfc6c876",
+    "experiments/astra-rh-969-20260912/test_receipt.py": "86ad957b6f39c4c6e43424eb3933e1e8cccdcbc1ca87ab89ef49cfab71c926e6",
+    "experiments/astra-rh-969-20260912/verify.py": "e28bf251ea88bad0865a11d1ae2368dd2e14c499159a87297a7a5b0bfa786517",
+    "experiments/astra-rh-crt-20260912/audits/crt-variance/audit.py": "f40ef90e83109d227b598237ef873d9db8f81baff1e59355fece47847c29186b",
+    "experiments/astra-rh-crt-20260912/audits/crt-variance/endpoints.py": "0f4242c4f49a48f1f4bacd5fb0304a43de7886f63a6ad4a64d77aecabb24a594",
+    "experiments/astra-rh-crt-20260912/audits/crt-variance/finalize.py": "3870a3ead3b9378ab1dfbf3f51ca5ad5e4e3029e0be56b41f674a3b132fa8543",
+    "experiments/astra-rh-crt-20260912/audits/crt-variance/r-free.py": "432978f7cb65a0f08ba5a5cfb150411f8f98bcfe7924ab01930303cdb39578d2",
+    "experiments/astra-rh-crt-20260912/audits/gm-candidate/check_exponents.py": "0c9c28de1173719462695cb67fd650fcbeaa2dd9d76764e2d1b5bfebd42c5825",
+    "experiments/astra-rh-crt-20260912/audits/gm-first/independent_checks.py": "750c6684f71e56e13adb8e6f290b0c9ff61fb2d057e91d7b965f8ff8b61fc3e0",
+    "experiments/astra-rh-crt-20260912/audits/gm-first/original_check_exponents.py": "0c9c28de1173719462695cb67fd650fcbeaa2dd9d76764e2d1b5bfebd42c5825",
+    "experiments/astra-rh-crt-20260912/audits/gm-second/check_second_audit.py": "ced6ac2dee45d77ac4aa1142771d2320cb5647783d56d01f826fc09581eb3ac5",
+    "experiments/astra-rh-crt-20260912/audits/gm-second/compare_critical_bounds.py": "078ce849142c6b702d07248d50d6bad83013a2b38e775729d7eee5587efd68ef",
+    "experiments/astra-rh-crt-20260912/audits/mellin-transfer/verify_arithmetic.py": "6d72d01acbb93396196bf4456c7523d1537eb87bcef0f37452f13219376283a1",
+    "experiments/astra-rh-crt-20260912/audits/mobius-factorization/check_ledger.py": "f27b81e5e2e9971522e6618706238d1cbf3fe8025cf5f0a5d27d6d79c5b4e41b",
+    "experiments/astra-rh-crt-20260912/audits/mobius-typeI/independent_checks.py": "217d0eae5144c338c288e4bfb60397d80f69a30e05cc52532d56bb48c282e269",
+    "experiments/astra-rh-crt-20260912/audits/phase-transfer/check_actual_intervals.py": "497f3bd07733f2939dddb2242fed3064d13b823abd014b56d1efedb15e11b7fc",
+    "experiments/astra-rh-crt-20260912/audits/phase-transfer/check_arithmetic.py": "7bbee94bef5119ffb1d7cf1c2ff9fa8c56b7fba40e0894c912db9c4dd53f32cb",
+    "experiments/astra-rh-crt-20260912/audits/replay.py": "294923e23504d6f2a85f99005a6d41f722dcc8eea2889c891af14d6f53f97b17",
+    "experiments/astra-rh-crt-20260912/audits/sparse-square/independent_checks.py": "3fb4a7d6634f30465fc127f909986f470ae652b9fd7b09fb2f18acb2b7f5f1ac",
+    "experiments/astra-rh-crt-20260912/audits/sparse-square/replayed-original/check_algebra.py": "fbea9d1bfbf26048978857b6eb65ae0f3b607b38fa4efd54f2ef5def56d697ca",
+    "experiments/astra-rh-crt-20260912/audits/test_replay.py": "150cd7c3a40d3d25fb0348522d0cf87fed411baa8ba2c6190b6456d817cba3bb",
+    "experiments/astra-rh-crt-20260912/audits/twisted-square/check_algebra.py": "fbea9d1bfbf26048978857b6eb65ae0f3b607b38fa4efd54f2ef5def56d697ca",
+    "experiments/astra-rh-crt-20260912/kernel.py": "b2bdb37c08ff54a9de164b28e5a6b994a6d79c06b862c4a5369e9a2778ce8ee9",
+    "experiments/astra-rh-crt-20260912/test_kernel.py": "3124ad7bbb26b6b7e7f0d3b129434c1bd1c4d2ba89589f0bd861802b7f331ba4",
+    "experiments/astra-rh-crt-20260912/test_receipt.py": "1ae8aad201b22f9ee10a830bed2b3aa630cb882bc683f40c1605360994aa6a1e",
+    "experiments/astra-rh-crt-20260912/verify.py": "73c66dd1595d4cce52bf50e107fcec3759891c6b16babb25531347089c4c275c",
+    "tests/test_readme.py": "62509a8ef2749ade0838a739c3a12ef70d4fd393601790ed0599e058c84e7703",
+    "tests/test_rh969.py": "01f65ec9fa6069b8ab49bfe67805dfb9fba9eb64df1ef06f14f06cb1e764cdc4",
+    "tests/test_rh_audit_archive.py": "e722efb1f29e25e178ebbe19ed6dc3a68906e484310a31991b0b0553ab04690c",
+    "tests/test_rh_crt.py": "2dd4335c3531a78a87141140b9448257821a776cfa31068801bcd3c745e00f8a",
+    "tests/test_substrate.py": "9d6189ce072f6267ecb0cab737cc31d3b202764f12fd426c87c576eba3999845"
+  },
+  "independent_review_approval_in_scope": false,
+  "independent_review_note": "This gate authenticates the submitted snapshot; independent review verdicts are a separate publication prerequisite.",
+  "protected_tracked_paths_checked": 676,
+  "protected_bytes_unchanged": true,
+  "protected_paths_match_base_commit": true,
+  "rh_proved": false,
+  "full_mixed_moment_fixed_saving": false,
+  "human_peer_review": false,
+  "formal_kernel_verification": false,
+  "runs": [
+    {
+      "command": [
+        "git",
+        "diff",
+        "--cached",
+        "--check",
+        "--",
+        ".",
+        ":(exclude)experiments/astra-rh-crt-20260912/audits/gm-candidate/source-excerpts.md",
+        ":(exclude)experiments/astra-rh-crt-20260912/audits/gm-second/source-excerpts.md",
+        ":(exclude)experiments/astra-rh-crt-20260912/audits/mobius-factorization/source-excerpts.md",
+        ":(exclude)experiments/astra-rh-crt-20260912/audits/twisted-square/audit-conclusion.md",
+        ":(exclude)experiments/astra-rh-crt-20260912/audits/twisted-square/audit-theorems.md",
+        ":(exclude)experiments/astra-rh-crt-20260912/audits/twisted-square/source-excerpts.md"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.11",
+        "--with-requirements",
+        "requirements-dev.lock",
+        "make",
+        "audit-fast"
+      ],
+      "exit_code": 0,
+      "stdout": "python3 tools/validate_gap_map.py\n  WARN: entry[145] (problem 743): oeis A000055 not among stub's refs (ok if better-sourced)\n  WARN: entry[187] (problem 993): oeis A000055 not among stub's refs (ok if better-sourced)\ngap_map VALID: 225 entries; witness_feasibility {'hard': 51, 'plausible': 42, 'none': 86, 'open-easy': 42, 'historic': 4}; confidence {'C2': 8, 'C3': 217}; 2 warn(s)\npython3 tools/validate_ai_claims.py\nai-claim overlay OK: 89 claims recorded, 21 against problems we still record open/wall; 0 statuses changed by a claim\npython3 tools/validate_atlas.py\natlas integrity: 51 entries, counts and routing invariants verified\npython3 tools/state_of_frontier.py --check\nOK: views/state_of_frontier.md is current with the data\npython3 book/build_book.py --check\nOK: book/BOOK.md is current with the data\npython3 tools/build_graph.py --check\ngraph up to date (299 files).\npython3 tools/validate_graph.py\nvalidate_graph: OK \u2014 2415 nodes, 4007 edges, 296 rendered files, 0 quarantined.\npython3 tools/check_certificate_contracts.py\ncertificate-contracts: 28 directories inventoried; 15 claims bound\ncertificate-contracts OK\npython3 tools/check_certificate_contracts.py --profile fast\ncertificate-contracts: 28 directories inventoried; 15 claims bound\ncontract replay erdos-552-n12-n16: PASS\ncontract replay erdos-552-f39-lower: PASS\ncontract replay erdos-13-table: PASS\ncontract replay erdos-142-foundation: PASS\ncontract replay erdos-979-a6-public: PASS\ncontract replay erdos-1107-public-table: PASS\ncontract replay graffiti-284-hoffman-singleton: PASS\ncontract replay jacobian-n3-counterexample: PASS\ncontract replay graffiti-290-finite-verification: PASS\ncontract replay keller-power-weighted-lifts-replay: PASS\ncontract replay erdos-142-cone-infeasible-objects: PASS\ncontract replay erdos-366-cubefull-sweep-1e25: PASS\ncontract replay erdos-743-k10-packing: PASS\ncontract replay erdos-993-unimodal-n30: PASS\ncontract replay erdos-699-rowsweep-1e8: PASS\ncertificate-contracts OK\npython3 -m pytest tests/ -q\n........................................................................ [ 31%]\n........................................................................ [ 62%]\n...................................................................s..s. [ 94%]\n.............                                                            [100%]\n227 passed, 2 skipped in 56.22s\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.11",
+        "--with-requirements",
+        "requirements-dev.lock",
+        "python",
+        "-I",
+        "-B",
+        "experiments/astra-rh-969-20260912/verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"accepted\": true, \"bins_checked\": 24, \"families\": [{\"bins_checked\": 1, \"floor_sum\": 0, \"h\": 4, \"maximum_absolute_prefix\": 5, \"negative_error_lower_bound\": \"1/16\", \"nonzero_coefficients\": 10, \"pair_bound\": \"25/16\", \"prefix_positions_checked\": 32, \"x\": 1024}, {\"bins_checked\": 2, \"floor_sum\": 0, \"h\": 8, \"maximum_absolute_prefix\": 12, \"negative_error_lower_bound\": \"1/4\", \"nonzero_coefficients\": 38, \"pair_bound\": \"193/32\", \"prefix_positions_checked\": 128, \"x\": 32768}, {\"bins_checked\": 3, \"floor_sum\": 0, \"h\": 12, \"maximum_absolute_prefix\": 19, \"negative_error_lower_bound\": \"9/16\", \"nonzero_coefficients\": 84, \"pair_bound\": \"105/8\", \"prefix_positions_checked\": 288, \"x\": 248832}, {\"bins_checked\": 4, \"floor_sum\": 0, \"h\": 16, \"maximum_absolute_prefix\": 27, \"negative_error_lower_bound\": \"1\", \"nonzero_coefficients\": 146, \"pair_bound\": \"1459/64\", \"prefix_positions_checked\": 512, \"x\": 1048576}, {\"bins_checked\": 6, \"floor_sum\": 0, \"h\": 24, \"maximum_absolute_prefix\": 43, \"negative_error_lower_bound\": \"9/4\", \"nonzero_coefficients\": 336, \"pair_bound\": \"855/16\", \"prefix_positions_checked\": 1152, \"x\": 7962624}, {\"bins_checked\": 8, \"floor_sum\": 0, \"h\": 32, \"maximum_absolute_prefix\": 59, \"negative_error_lower_bound\": \"4\", \"nonzero_coefficients\": 596, \"pair_bound\": \"6075/64\", \"prefix_positions_checked\": 2048, \"x\": 33554432}], \"families_checked\": 6, \"scope\": {\"generic_coefficients\": true, \"mobius_coefficients\": false, \"new_mobius_bound\": false, \"rh_proved\": false}}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.11",
+        "--with-requirements",
+        "requirements-dev.lock",
+        "python",
+        "-I",
+        "-B",
+        "experiments/astra-rh-crt-20260912/verify.py",
+        "experiments/astra-rh-crt-20260912/receipt.json"
+      ],
+      "exit_code": 0,
+      "stdout": "{\"adverse_phase_verified\": true, \"case_count\": 70, \"distinct_prime_sets\": 7, \"passed\": true, \"rh_proved\": false, \"sampled_phase_bounds_checked\": true, \"scope\": \"uniform-residue-phase-only\"}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "uv",
+        "run",
+        "--python",
+        "3.11",
+        "--with-requirements",
+        "requirements-dev.lock",
+        "python",
+        "-I",
+        "-B",
+        "experiments/astra-substrate-20260911/verify.py"
+      ],
+      "exit_code": 0,
+      "stdout": "verified: BOARD.md matches query_substrate.render_board()\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--exit-code",
+        "HEAD",
+        "--",
+        "tools/build_graph.py",
+        "atlas/graph",
+        "views/graph",
+        "views/sorties.md",
+        "atlas/stubs.json",
+        "atlas/gap_map.json",
+        "certificates"
+      ],
+      "exit_code": 0,
+      "stdout": "",
+      "stderr": ""
+    }
+  ]
+}

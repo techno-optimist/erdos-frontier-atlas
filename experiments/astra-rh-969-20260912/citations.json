@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://www.claymath.org/millennium/riemann-hypothesis",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 2,
+      "url": "https://www.erdosproblems.com/969",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 3,
+      "url": "https://arxiv.org/abs/2609.02882",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 4,
+      "url": "https://arxiv.org/html/2609.02882v1",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 5,
+      "url": "https://arxiv.org/abs/2607.04632",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 6,
+      "url": "https://arxiv.org/abs/1912.04972",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 7,
+      "url": "https://www.erdosproblems.com/forum/discuss/969",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 8,
+      "url": "https://www.erdosproblems.com/forum/thread/969/proof-claims",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 9,
+      "url": "https://arxiv.org/html/2609.02882v2",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 10,
+      "url": "https://arxiv.org/html/2608.13637v2",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 11,
+      "url": "https://arxiv.org/abs/2609.07918",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 12,
+      "url": "https://annals.math.princeton.edu/2026/203-2/p06",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 13,
+      "url": "https://arxiv.org/pdf/2006.04060v2",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 14,
+      "url": "https://link.springer.com/article/10.1007/s00039-021-00557-5",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 15,
+      "url": "https://arxiv.org/html/1912.04972v2",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 16,
+      "url": "https://link.springer.com/content/pdf/10.1007/s00009-023-02289-2.pdf",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 17,
+      "url": "https://www.claymath.org/millennium-problems",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 18,
+      "url": "https://arxiv.org/abs/2609.02882v2",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 19,
+      "url": "https://arxiv.org/abs/2609.03961",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 20,
+      "url": "https://arxiv.org/html/2609.03961",
+      "title": "",
+      "accessed": "2026-09-12"
+    },
+    {
+      "id": 21,
+      "url": "https://github.com/teorth/erdosproblems/blob/3c68e941162f81d650fc886eed34e58bed3a6a01/data/problems.yaml",
+      "title": "",
+      "accessed": "2026-09-12"
+    }
+  ]
+}

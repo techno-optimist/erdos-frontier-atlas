@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://arxiv.org/html/1112.4691v2",
+      "title": "",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "We prove the following formula for  $\\sigma_{d}$ : Lemma 3.1. $\\sigma_{d}=\\frac{1}{d^{2}}\\prod_{p\\,\\nmid d}\\left(1-\\frac{2}{p^{2}}\\right).$",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "url": "https://arxiv.org/html/2112.12234v1",
+      "title": "",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "We now show that the exponent of the variance is determined by the index of  $\\langle B\\rangle$ .",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "url": "https://arxiv.org/html/2006.04060v2",
+      "title": "",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "Roughly speaking Proposition 1 depends only on “convex” inputs such as a Fourier expansion and a point-counting lemma, whereas Proposition 2 exploits large value estimates of Huxley and subconvexity and fourth moment estimates for the Riemann zeta-function.",
+          "added": "2026-09-12"
+        },
+        {
+          "text": "If $F \\colon \\mathbb{R} \\rightarrow \\mathbb{C}$ is square-integrable and $H \\leq X$, then",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "url": "https://annals.math.princeton.edu/2026/203-2/p06",
+      "title": "",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "We prove new bounds for how often Dirichlet polynomials can take large values.",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "url": "https://arxiv.org/pdf/2405.20552v2",
+      "title": "Guth–Maynard, New large value estimates for Dirichlet polynomials, v2",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "Suppose $(b_n)$ is a sequence of complex numbers with $|b_n| \\le 1$,  and $(t_r)_{r\\le R}$ is a sequence of $1$-separated points in $[0,T]$ such that\n\\[\n\\Bigl|\\sum_{n= N}^{2N}b_n n^{it_r}\\Bigr|\\ge V\n\\]\n\nfor all $r\\le R$. Then we have\n\\[\nR\\le T^{o(1)}\\Bigl(N^2V^{-2}+N^{18/5}V^{-4}+TN^{12/5}V^{-4}\\Bigr).\n\\]",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "url": "https://dlmf.nist.gov/25.9",
+      "title": "",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "If  $x\\geq 1$ ,  $y\\geq 1$ ,  $2\\pi xy=t$ , and  $0\\leq\\sigma\\leq 1$ , then as",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "url": "https://arxiv.org/pdf/1411.7764v1",
+      "title": "",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "Suppose $G(-w) = G(w), G(0) =1, G(1/2) = 0$.",
+          "added": "2026-09-12"
+        },
+        {
+          "text": "For $T < t < 2T,$ we have\n\\est{\n\\pmd{\\zeta\\pr{\\frac12+it}}^2= 2 \\sum_{m_1, m_2}\\frac{1}{(m_1m_2)^{\\frac12}}\\pr{\\frac{m_1}{m_2}}^{it}W\\pr{\\frac{2\\pi m_1m_2}t} + O\\left(T^{-2/3} \\right),\n}",
+          "added": "2026-09-12"
+        }
+      ]
+    }
+  ]
+}

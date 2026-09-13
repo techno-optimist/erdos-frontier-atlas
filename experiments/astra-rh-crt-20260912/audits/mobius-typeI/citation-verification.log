@@ -1,0 +1,25 @@
+[
+  {
+    "args": [
+      "render",
+      "--style",
+      "evidence",
+      "--replace-in",
+      "mobius-typeI/report.md"
+    ],
+    "returncode": 0,
+    "stdout": "Sources block rewritten in mobius-typeI/report.md\n",
+    "stderr": ""
+  },
+  {
+    "args": [
+      "verify",
+      "mobius-typeI/report.md",
+      "--strict",
+      "--evidence"
+    ],
+    "returncode": 0,
+    "stdout": "info: stats: 289 prose sentence(s), 11 with declared provenance (4%) \u2014 11 cited, 0 marked [unverified] (a sentence may be both); 4 distinct source(s) cited, 4 in ledger (4 with evidence quotes)\ncitations OK\n",
+    "stderr": ""
+  }
+]

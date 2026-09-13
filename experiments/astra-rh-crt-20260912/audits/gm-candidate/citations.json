@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": 1,
+      "url": "https://arxiv.org/pdf/2006.04060v2",
+      "title": "",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "Consider now the case that the second term dominates in (42).",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "url": "https://annals.math.princeton.edu/2026/203-2/p06",
+      "title": "",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "Pages 623-675 from Volume 203 (2026), Issue 2",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "url": "https://arxiv.org/pdf/2405.20552v2",
+      "title": "",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "\\begin{thrm}[Large values estimate]\\label{thrm:LargeValues}\nSuppose $(b_n)$ is a sequence of complex numbers with $|b_n| \\le 1$,  and $(t_r)_{r\\le R}$ is a sequence of $1$-separated points in $[0,T]$ such that\n\\[\n\\Bigl|\\sum_{n= N}^{2N}b_n n^{it_r}\\Bigr|\\ge V\n\\]\n\nfor all $r\\le R$. Then we have\n\\[\nR\\le T^{o(1)}\\Bigl(N^2V^{-2}+N^{18/5}V^{-4}+TN^{12/5}V^{-4}\\Bigr).\n\\]\n\n\\end{thrm}",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "url": "https://arxiv.org/html/2405.20552v2",
+      "title": "",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "Theorem 1.1 (Large values estimate).\n\n[S1.Thmthrm1.p1] \n\n[S1.Thmthrm1.p1.1] Suppose $(b_{n})$ is a sequence of complex numbers with $|b_{n}|\\leq 1$, and $(t_{r})_{r\\leq R}$ is a sequence of $1$-separated points in $[0,T]$ such that\n\n$\\Bigl|\\sum_{n=N}^{2N}b_{n}n^{it_{r}}\\Bigr|\\geq V$\n\n[S1.Thmthrm1.p2] \n\n[S1.Thmthrm1.p2.1] for all $r\\leq R$. Then we have\n\n$R\\leq T^{o(1)}\\Bigl(N^{2}V^{-2}+N^{18/5}V^{-4}+TN^{12/5}V^{-4}\\Bigr).$",
+          "added": "2026-09-12"
+        },
+        {
+          "text": "Our argument crucially relies on the stronger $\\ell^{\\infty}$ assumption to bound the additive energy $E(W)$ efficiently, and we do not know how to obtain Theorem 1.1 if we only have $\\ell^{2}$ bounds on the coefficients.",
+          "added": "2026-09-12"
+        },
+        {
+          "text": "[S12.Thmthrm1.p1.1] Suppose $(b_{n})_{n\\sim N}$, $(t_{r})_{r\\leq R}$ are as in Theorem 1.1, and that $T^{5/6}\\leq N\\leq T$ and $V=N^{\\sigma}$ with $\\sigma\\geq 7/10$. Then we have\n\n[S12.Thmthrm1.p2] \n\n$R\\lessapprox N^{2-2\\sigma}+T^{1/2}N^{3-4\\sigma}+\\inf_{k\\in\\mathbb{N}}\\Bigl(T^{\\frac{k}{k+1}}N^{(4-6\\sigma)\\frac{k}{k+1}}+N^{(5-6\\sigma)\\frac{4k}{4k+3}}T^{\\frac{2}{4k+3}}\\Bigr).$\n\n[S12.Thmthrm1.p3] \n\n[S12.Thmthrm1.p3.1] In particular, we have\n\n[S12.Thmthrm1.p4] \n\n$R\\lessapprox N^{2-2\\sigma}+T^{1/2}N^{3-4\\sigma}+T^{(30\\sigma-21)/5}N^{(46-60\\sigma)/5}.$",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "url": "https://arxiv.org/src/2006.04060v2",
+      "title": "",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "by dyadic splitting, it suffices to show that, for each $V \\in [D^{-1/2}, 1]$ and $T \\in [X/H, X^2]$, we have\n\\[\n\\frac{H}{T} V^2 \\int_{S(V)} |\\zeta(1/2+it)|^2 dt \\ll H^{1/2-\\varepsilon/3}.\n\\]\nNow by Lemma~\\ref{le:LVT} we have\n\\begin{equation}\n\\label{eq:S(V)bound}\n|S(V)| \\ll (V^{-2} + T\\min\\{D^{-1}V^{-2}, D^{-2} V^{-6}\\}) (\\log 2X)^6.\n\\end{equation}\n\nConsider first the case when the first term dominates here. Then by Lemma~\\ref{le:ZetaSC} we have\n\\[\n\\frac{H}{T} V^2 \\int_{S(V)} |\\zeta(1/2+it)|^2 dt \\ll \\frac{H}{T} T^{1/3+\\varepsilon/2} \\ll \\frac{H}{T^{2/3-\\varepsilon/2}} \\ll \\frac{H^{5/3}}{X^{2/3-\\varepsilon/2}} \\leq H^{1/2-\\varepsilon/3}\n\\] \nsince $H \\leq X^{4/7-\\varepsilon}$. \n\nConsider now the case that the second term dominates in~\\eqref{eq:S(V)bound}. Then, by Cauchy-Schwarz and the fourth moment estimate (Lemma~\\ref{le:ZetaFourth}),\n\\begin{align*}\n&\\frac{H}{T} V^2 \\int_{S(V)} |\\zeta(1/2+it)|^2 dt \\ll \\frac{H}{T} V^2 |S(V)|^{1/2} \\left(\\int_{|t| \\leq T} |\\zeta(\\tfrac 12 + it)|^4 dt \\right )^{1/2} \\\\\n& \\ll H V^2 \\min\\{D^{-1}V^{-2}, D^{-2} V^{-6}\\}^{1/2} (\\log 2X)^5 \\ll H\\min\\{D^{-1/2} V, D^{-1} V^{-1}\\} (\\log 2X)^5 \\\\\n&\\ll H (D^{-1/2} V)^{1/2} (D^{-1} V^{-1})^{1/2} (\\log 2X)^5 \\ll H D^{-3/4} (\\log 2X)^5 \\ll H z^{-3/8} (\\log 2X)^5 \\ll H^{1/2-\\varepsilon/3}",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "url": "https://arxiv.org/abs/2405.20552v2",
+      "title": "",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "last revised 7 Apr 2026 (this version, v2)",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "url": "https://arxiv.org/src/2405.20552v2",
+      "title": "",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "\\begin{thrm}[Large values estimate]\\label{thrm:LargeValues}\nSuppose $(b_n)$ is a sequence of complex numbers with $|b_n| \\le 1$,  and $(t_r)_{r\\le R}$ is a sequence of $1$-separated points in $[0,T]$ such that\n\\[\n\\Bigl|\\sum_{n= N}^{2N}b_n n^{it_r}\\Bigr|\\ge V\n\\]\n\nfor all $r\\le R$. Then we have\n\\[\nR\\le T^{o(1)}\\Bigl(N^2V^{-2}+N^{18/5}V^{-4}+TN^{12/5}V^{-4}\\Bigr).\n\\]\n\n\\end{thrm}",
+          "added": "2026-09-12"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "url": "https://arxiv.org/src/2405.20552v1",
+      "title": "",
+      "accessed": "2026-09-12",
+      "quotes": [
+        {
+          "text": "\\begin{thrm}[Large values estimate]\\label{thrm:LargeValues}\nSuppose $(b_n)$ is a sequence of complex numbers with $|b_n| \\le 1$,  and $(t_r)_{r\\le R}$ is a sequence of $1$-separated points in $[0,T]$ such that\n\\[\n\\Bigl|\\sum_{n= N}^{2N}b_n n^{it_r}\\Bigr|\\ge V\n\\]\n\nfor all $r\\le R$. Then we have\n\\[\nR\\le T^{o(1)}\\Bigl(N^2V^{-2}+N^{18/5}V^{-4}+TN^{12/5}V^{-4}\\Bigr).\n\\]\n\n\\end{thrm}",
+          "added": "2026-09-12"
+        }
+      ]
+    }
+  ]
+}
