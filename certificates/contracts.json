@@ -9,7 +9,7 @@
   {
    "path": "certificates/erdos-1016",
    "classification": "certified_local",
-   "boundary": "Exhaustive verified-search receipt: no graph C_n + 6 chords is pancyclic for any n >= 68 (t_6 = 67), and h(n) = m(n) - n is exact for 3 <= n <= 108 (h = 7 on 68..108). Replicates the published values below n = 68 (Griffin 2013; White and Claude 2026; Robinfxa 2026; Pinckard et al. 2026) and settles the levels 72..79, 81, 83, 84, 85 they left open. Two in-repo implementations, no formal proof; nothing about the asymptotic Erdos #1016 question; for n >= 109 only h(n) >= 7."
+   "boundary": "Exhaustive verified-search receipts: no graph C_n + 6 chords is pancyclic for any n >= 68 (t_6 = 67), no graph C_n + 7 chords is pancyclic for any n >= 115 (t_7 = 114), and h(n) = m(n) - n is exact for 3 <= n <= 186 (h = 7 on 68..114, h = 8 on 115..186). Replicates the published values below n = 68 (Griffin 2013; White and Claude 2026; Robinfxa 2026; Pinckard et al. 2026) and settles the levels 72..79, 81, 83, 84, 85 they left open. Python reference plus two C programs, no formal proof; the k = 7 levels 115..139 rest on one C port pinned node for node to the Python reference elsewhere; nothing about the asymptotic Erdos #1016 question; for n >= 187 only h(n) >= 8."
   },
   {
    "path": "certificates/erdos-1107",
@@ -1058,6 +1058,111 @@
      "failure_control": {
       "kind": "embedded",
       "evidence": "Every replay must refuse planted failures (the 6-chord family F_n at n = 68, which misses only length 33; each of the 105 committed witnesses with one chord deleted; a chord duplicating a cycle edge), must rediscover exactly the two known pancyclic 6-chord classes at n = 67, and must agree with brute-force enumeration of every arc-length vector on 240 instances with both verdicts represented. A search that always answered no, or always yes, fails these."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-1016-t7-114",
+   "status": "promoted",
+   "statement": "No graph C_n + 7 chords is pancyclic for any n >= 115, while some C_n + 7 chords is pancyclic for every 109 <= n <= 114; so t_7 = 114, h(n) = 7 for 109 <= n <= 114, and, with the 8-chord witnesses of witnesses_k7.json, h(n) = 8 for every 115 <= n <= 186.",
+   "scope": "Finite exhaustive search over the 496,875 dihedral classes of 7-chord skeletons at every 115 <= n <= 215 (no 7-chord skeleton has more than 213 distinct cycles, which settles n >= 216), run by pancyc.c, a C port of pancyclic.Search pinned node for node to the Python reference at every k = 6 level and, class by class, at 150 <= n <= 215 for k = 7. The independent xcheck.c agrees only at the levels it can reach (recorded in xcheck_k7_summary.txt), not at the boundary. A verified-search receipt, not a formal proof; the k <= 6 input is claim erdos-1016-h-table-t6-67. Says nothing about the asymptotic question of Erdos #1016; for n >= 187 only h(n) >= 8 is certified.",
+   "machine_verdict": "\"t7\":114",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-1016/README.md",
+     "contains": "**No graph Cₙ + 7 chords is pancyclic for any n ≥ 115.**"
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-1016/verify_k7.py",
+     "sha256": "c4e80795d74baaf97cd45f01363b014771e5046daed5d0aebb01f96a27d8457d"
+    },
+    {
+     "path": "certificates/erdos-1016/k7lib.py",
+     "sha256": "a381ee26b7920d8bffab79b189cbb31aace9e928fca417d8593022b8010a8bce"
+    },
+    {
+     "path": "certificates/erdos-1016/pancyc.c",
+     "sha256": "1eb303644635fa563a17f5d6774fa34ba16132bba1f259492bf549768f266043"
+    },
+    {
+     "path": "certificates/erdos-1016/pancyclic.py",
+     "sha256": "631a9b2548e0ccce2a940b5a0e1d5c02473424f8f1944dd0ae445dddd21dd250"
+    },
+    {
+     "path": "certificates/erdos-1016/RESULT_k7.json",
+     "sha256": "ff595a7cd818c46a75924d6a6f23e6f931303619032f593199591aa2f9a79b89"
+    },
+    {
+     "path": "certificates/erdos-1016/witnesses_k7.json",
+     "sha256": "7a82d680e974f0352664e48fabf0a781c350936d52c1218683b16b288ed62cc3"
+    },
+    {
+     "path": "certificates/erdos-1016/emit_result_k7.py",
+     "sha256": "874710c6bf9a0cab9ce1694ef18c0a1603c43b6fb40d9707ef44f690fa66eb6f"
+    },
+    {
+     "path": "certificates/erdos-1016/RESULT.json",
+     "sha256": "dd1799f53cb871b17958170da08161958a9fe802f34b2fd3a9d3939a935f39a3"
+    },
+    {
+     "path": "certificates/erdos-1016/xcheck.c",
+     "sha256": "fac975f0fafe3ef4076a6bc7d20692ff7b74d16318fe658ac0e466cb86997cab"
+    },
+    {
+     "path": "certificates/erdos-1016/xcheck_summary.txt",
+     "sha256": "d895e8cf5b572a7837b51371e8d556db0c21c71d9478760cf74ac468cd0b333a"
+    },
+    {
+     "path": "certificates/erdos-1016/xcheck_k7_summary.txt",
+     "sha256": "d8b1f2a8737bd0f0097625a0d545b3a5287de8ec30e2b8f5475b95947d3e3f1c"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "slow",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-1016/verify_k7.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-1016/verify_k7.py",
+      "--full"
+     ],
+     "timeout_seconds": 7200,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"t7\":114",
+      "\"verified\":true",
+      "receipt-checked: RESULT_k7.json",
+      "receipt-checked: witnesses_k7.json"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "Every replay must reproduce the Python reference node for node at all 45 six-chord levels (a port that pruned differently would take a different search tree), must rediscover a pancyclic 7-chord class at every 109 <= n <= 114 (each realised and re-checked by DFS) and refute those classes at n = 115, must match the Python reference class by class at 150 <= n <= 215, and must refuse planted failures: the 7-chord family G7(n) at n = 114, which misses only length 61; the 8-chord family S8(n) at n = 187, which misses only length 108; each witness with one chord deleted; a receipt with one node count altered. A search that always answered no fails the positive controls; one that always answered yes fails the exhaustion."
+     }
+    },
+    {
+     "profile": "fast",
+     "certifies_claim": false,
+     "entrypoint": "certificates/erdos-1016/verify_k7.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-1016/verify_k7.py"
+     ],
+     "timeout_seconds": 900,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"t7\":114",
+      "receipt-checked: witnesses_k7.json",
+      "all checks passed (quick mode: not a certification)"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "The quick replay runs the same controls and planted failures as the full one; it replays the exhaustion only at 150..215 and the Python class-by-class comparison only at 180..215, and says so."
      }
     }
    ]

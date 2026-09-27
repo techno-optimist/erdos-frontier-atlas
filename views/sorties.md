@@ -122,7 +122,7 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 | #961 | A213253(269) — first cell beyond Najman's computed range n=1..268; …[truncated; see source] | plausible | trial-divide each of the L integers by the 57 primes ≤ 269 …[truncated; see source] | C3 |
 | #970 | A048670(65) — Jacobsthal function g of the product of the first 65 …[truncated; see source] | plausible | L gcd computations against p_65#, or per-offset …[truncated; see source] | C3 |
 | #985 | largest N such that every prime 3 <= p <= N has a prime primitive …[truncated; see source] | plausible | per prime, verify the factorization of p-1 by …[truncated; see source] | C3 |
-| #1016 | m(109) — minimum number of edges of a pancyclic graph on 109 …[truncated; see source] | plausible | DFS over the simple cycles of C_109 + 7 chords …[truncated; see source] | C2 |
+| #1016 | m(187) — minimum number of edges of a pancyclic graph on 187 …[truncated; see source] | plausible | DFS over the simple cycles of C_187 + 8 chords …[truncated; see source] | C2 |
 | #1055 | A005113(20) - least prime in class 20 of the Erdos-Selfridge …[truncated; see source] | plausible | Recursively factor q+1 for every prime q in the tree (all …[truncated; see source] | C3 |
 | #1056 | A060427(15) - least prime p admitting 15 consecutive intervals of …[truncated; see source] | plausible | Compute b_i! mod p by sequential modular multiplication …[truncated; see source] | C3 |
 | #1057 | A006931(40) - least Carmichael number with exactly 40 prime factors | plausible | Given the factor list: primality of each p_i, distinctness, …[truncated; see source] | C3 |
@@ -160,6 +160,7 @@ Verification targets for `M:external-claim-replay` — a claim never sets a stat
 Every promoted claim replays in one command; the fastest way to learn the receipt contract is to run one and read its verifier:
 
 - `erdos-1016-h-table-t6-67`: `python3 -I certificates/erdos-1016/verify.py`
+- `erdos-1016-t7-114`: `python3 -I certificates/erdos-1016/verify_k7.py --full`
 - `erdos-1107-public-table`: `python3 -I certificates/erdos-1107/verify.py`
 - `erdos-13-table`: `python3 -I certificates/erdos-13/verify.py`
 - `erdos-142-cone-infeasible-objects`: `python3 -I certificates/erdos-142-cone-obstruction/verify.py`

@@ -1,0 +1,1189 @@
+{
+ "schema": "erdos-1016-pancyclic-k7-result-v1",
+ "engine": "pancyc.c (C port of pancyclic.Search; k = 6 agreement: verify_k7.py step 1)",
+ "census": {
+  "classes": 496875,
+  "labeled": 10398480,
+  "max_distinct_forms": 213
+ },
+ "k7_capacity_limit": 215,
+ "k7_sat": {
+  "109": {
+   "class": 485707,
+   "t": 13,
+   "skeleton": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     11
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     3,
+     8
+    ],
+    [
+     4,
+     10
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     7,
+     12
+    ]
+   ],
+   "arcs": [
+    1,
+    1,
+    1,
+    4,
+    26,
+    8,
+    1,
+    50,
+    2,
+    11,
+    1,
+    2,
+    1
+   ],
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     106
+    ],
+    [
+     1,
+     41
+    ],
+    [
+     3,
+     92
+    ],
+    [
+     7,
+     105
+    ],
+    [
+     33,
+     94
+    ],
+    [
+     42,
+     108
+    ]
+   ],
+   "nodes": 63559
+  },
+  "110": {
+   "class": 485707,
+   "t": 13,
+   "skeleton": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     11
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     3,
+     8
+    ],
+    [
+     4,
+     10
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     7,
+     12
+    ]
+   ],
+   "arcs": [
+    1,
+    1,
+    1,
+    4,
+    50,
+    8,
+    1,
+    13,
+    2,
+    25,
+    1,
+    2,
+    1
+   ],
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     107
+    ],
+    [
+     1,
+     65
+    ],
+    [
+     3,
+     79
+    ],
+    [
+     7,
+     106
+    ],
+    [
+     57,
+     81
+    ],
+    [
+     66,
+     109
+    ]
+   ],
+   "nodes": 53849
+  },
+  "111": {
+   "class": 485707,
+   "t": 13,
+   "skeleton": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     11
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     3,
+     8
+    ],
+    [
+     4,
+     10
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     7,
+     12
+    ]
+   ],
+   "arcs": [
+    1,
+    1,
+    1,
+    4,
+    51,
+    8,
+    1,
+    13,
+    2,
+    25,
+    1,
+    2,
+    1
+   ],
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     108
+    ],
+    [
+     1,
+     66
+    ],
+    [
+     3,
+     80
+    ],
+    [
+     7,
+     107
+    ],
+    [
+     58,
+     82
+    ],
+    [
+     67,
+     110
+    ]
+   ],
+   "nodes": 46633
+  },
+  "112": {
+   "class": 485707,
+   "t": 13,
+   "skeleton": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     11
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     3,
+     8
+    ],
+    [
+     4,
+     10
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     7,
+     12
+    ]
+   ],
+   "arcs": [
+    1,
+    1,
+    1,
+    4,
+    52,
+    8,
+    1,
+    13,
+    2,
+    25,
+    1,
+    2,
+    1
+   ],
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     109
+    ],
+    [
+     1,
+     67
+    ],
+    [
+     3,
+     81
+    ],
+    [
+     7,
+     108
+    ],
+    [
+     59,
+     83
+    ],
+    [
+     68,
+     111
+    ]
+   ],
+   "nodes": 37722
+  },
+  "113": {
+   "class": 485707,
+   "t": 13,
+   "skeleton": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     11
+    ],
+    [
+     1,
+     6
+    ],
+    [
+     3,
+     8
+    ],
+    [
+     4,
+     10
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     7,
+     12
+    ]
+   ],
+   "arcs": [
+    1,
+    1,
+    1,
+    4,
+    53,
+    8,
+    1,
+    13,
+    2,
+    25,
+    1,
+    2,
+    1
+   ],
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     110
+    ],
+    [
+     1,
+     68
+    ],
+    [
+     3,
+     82
+    ],
+    [
+     7,
+     109
+    ],
+    [
+     60,
+     84
+    ],
+    [
+     69,
+     112
+    ]
+   ],
+   "nodes": 32102
+  },
+  "114": {
+   "class": 485732,
+   "t": 13,
+   "skeleton": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     11
+    ],
+    [
+     1,
+     7
+    ],
+    [
+     3,
+     8
+    ],
+    [
+     4,
+     10
+    ],
+    [
+     5,
+     9
+    ],
+    [
+     6,
+     12
+    ]
+   ],
+   "arcs": [
+    1,
+    1,
+    1,
+    4,
+    26,
+    8,
+    1,
+    56,
+    1,
+    11,
+    1,
+    2,
+    1
+   ],
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     111
+    ],
+    [
+     1,
+     42
+    ],
+    [
+     3,
+     98
+    ],
+    [
+     7,
+     110
+    ],
+    [
+     33,
+     99
+    ],
+    [
+     41,
+     113
+    ]
+   ],
+   "nodes": 121748
+  }
+ },
+ "k7_exclusion": {
+  "115": {
+   "eligible_classes": 151157,
+   "eligible_labeled": 3404831,
+   "sat_classes": 0,
+   "nodes": 119519846
+  },
+  "116": {
+   "eligible_classes": 144799,
+   "eligible_labeled": 3269714,
+   "sat_classes": 0,
+   "nodes": 94434635
+  },
+  "117": {
+   "eligible_classes": 137568,
+   "eligible_labeled": 3112974,
+   "sat_classes": 0,
+   "nodes": 74063874
+  },
+  "118": {
+   "eligible_classes": 131378,
+   "eligible_labeled": 2980994,
+   "sat_classes": 0,
+   "nodes": 58384004
+  },
+  "119": {
+   "eligible_classes": 125098,
+   "eligible_labeled": 2843478,
+   "sat_classes": 0,
+   "nodes": 45720664
+  },
+  "120": {
+   "eligible_classes": 119514,
+   "eligible_labeled": 2724168,
+   "sat_classes": 0,
+   "nodes": 35837497
+  },
+  "121": {
+   "eligible_classes": 114122,
+   "eligible_labeled": 2605501,
+   "sat_classes": 0,
+   "nodes": 27915612
+  },
+  "122": {
+   "eligible_classes": 109359,
+   "eligible_labeled": 2502536,
+   "sat_classes": 0,
+   "nodes": 22049440
+  },
+  "123": {
+   "eligible_classes": 103776,
+   "eligible_labeled": 2380344,
+   "sat_classes": 0,
+   "nodes": 17146578
+  },
+  "124": {
+   "eligible_classes": 98638,
+   "eligible_labeled": 2267383,
+   "sat_classes": 0,
+   "nodes": 13432513
+  },
+  "125": {
+   "eligible_classes": 93890,
+   "eligible_labeled": 2163076,
+   "sat_classes": 0,
+   "nodes": 10437473
+  },
+  "126": {
+   "eligible_classes": 89179,
+   "eligible_labeled": 2059307,
+   "sat_classes": 0,
+   "nodes": 8222133
+  },
+  "127": {
+   "eligible_classes": 84005,
+   "eligible_labeled": 1944377,
+   "sat_classes": 0,
+   "nodes": 6417999
+  },
+  "128": {
+   "eligible_classes": 79327,
+   "eligible_labeled": 1840504,
+   "sat_classes": 0,
+   "nodes": 5040703
+  },
+  "129": {
+   "eligible_classes": 74773,
+   "eligible_labeled": 1738192,
+   "sat_classes": 0,
+   "nodes": 3910102
+  },
+  "130": {
+   "eligible_classes": 69962,
+   "eligible_labeled": 1631287,
+   "sat_classes": 0,
+   "nodes": 3110575
+  },
+  "131": {
+   "eligible_classes": 66562,
+   "eligible_labeled": 1555014,
+   "sat_classes": 0,
+   "nodes": 2508599
+  },
+  "132": {
+   "eligible_classes": 62867,
+   "eligible_labeled": 1471726,
+   "sat_classes": 0,
+   "nodes": 2034246
+  },
+  "133": {
+   "eligible_classes": 59073,
+   "eligible_labeled": 1386300,
+   "sat_classes": 0,
+   "nodes": 1649437
+  },
+  "134": {
+   "eligible_classes": 55869,
+   "eligible_labeled": 1313957,
+   "sat_classes": 0,
+   "nodes": 1406816
+  },
+  "135": {
+   "eligible_classes": 52640,
+   "eligible_labeled": 1240352,
+   "sat_classes": 0,
+   "nodes": 1164534
+  },
+  "136": {
+   "eligible_classes": 49388,
+   "eligible_labeled": 1166297,
+   "sat_classes": 0,
+   "nodes": 1011221
+  },
+  "137": {
+   "eligible_classes": 46684,
+   "eligible_labeled": 1105231,
+   "sat_classes": 0,
+   "nodes": 880262
+  },
+  "138": {
+   "eligible_classes": 43736,
+   "eligible_labeled": 1038149,
+   "sat_classes": 0,
+   "nodes": 769879
+  },
+  "139": {
+   "eligible_classes": 41106,
+   "eligible_labeled": 977525,
+   "sat_classes": 0,
+   "nodes": 654864
+  },
+  "140": {
+   "eligible_classes": 38197,
+   "eligible_labeled": 910733,
+   "sat_classes": 0,
+   "nodes": 553328
+  },
+  "141": {
+   "eligible_classes": 35732,
+   "eligible_labeled": 853555,
+   "sat_classes": 0,
+   "nodes": 462640
+  },
+  "142": {
+   "eligible_classes": 33258,
+   "eligible_labeled": 795957,
+   "sat_classes": 0,
+   "nodes": 389547
+  },
+  "143": {
+   "eligible_classes": 31033,
+   "eligible_labeled": 743744,
+   "sat_classes": 0,
+   "nodes": 330075
+  },
+  "144": {
+   "eligible_classes": 28729,
+   "eligible_labeled": 690232,
+   "sat_classes": 0,
+   "nodes": 284636
+  },
+  "145": {
+   "eligible_classes": 27049,
+   "eligible_labeled": 651640,
+   "sat_classes": 0,
+   "nodes": 247601
+  },
+  "146": {
+   "eligible_classes": 25067,
+   "eligible_labeled": 604618,
+   "sat_classes": 0,
+   "nodes": 213174
+  },
+  "147": {
+   "eligible_classes": 23352,
+   "eligible_labeled": 564308,
+   "sat_classes": 0,
+   "nodes": 181328
+  },
+  "148": {
+   "eligible_classes": 21484,
+   "eligible_labeled": 519944,
+   "sat_classes": 0,
+   "nodes": 153648
+  },
+  "149": {
+   "eligible_classes": 19974,
+   "eligible_labeled": 485241,
+   "sat_classes": 0,
+   "nodes": 133410
+  },
+  "150": {
+   "eligible_classes": 18248,
+   "eligible_labeled": 443998,
+   "sat_classes": 0,
+   "nodes": 114789
+  },
+  "151": {
+   "eligible_classes": 17025,
+   "eligible_labeled": 415098,
+   "sat_classes": 0,
+   "nodes": 99641
+  },
+  "152": {
+   "eligible_classes": 15674,
+   "eligible_labeled": 383243,
+   "sat_classes": 0,
+   "nodes": 85762
+  },
+  "153": {
+   "eligible_classes": 14736,
+   "eligible_labeled": 361203,
+   "sat_classes": 0,
+   "nodes": 77024
+  },
+  "154": {
+   "eligible_classes": 13533,
+   "eligible_labeled": 332130,
+   "sat_classes": 0,
+   "nodes": 67289
+  },
+  "155": {
+   "eligible_classes": 12746,
+   "eligible_labeled": 313575,
+   "sat_classes": 0,
+   "nodes": 60366
+  },
+  "156": {
+   "eligible_classes": 11762,
+   "eligible_labeled": 289677,
+   "sat_classes": 0,
+   "nodes": 53236
+  },
+  "157": {
+   "eligible_classes": 10935,
+   "eligible_labeled": 269879,
+   "sat_classes": 0,
+   "nodes": 46959
+  },
+  "158": {
+   "eligible_classes": 10084,
+   "eligible_labeled": 248910,
+   "sat_classes": 0,
+   "nodes": 41337
+  },
+  "159": {
+   "eligible_classes": 9265,
+   "eligible_labeled": 228749,
+   "sat_classes": 0,
+   "nodes": 35638
+  },
+  "160": {
+   "eligible_classes": 8313,
+   "eligible_labeled": 205356,
+   "sat_classes": 0,
+   "nodes": 29809
+  },
+  "161": {
+   "eligible_classes": 7700,
+   "eligible_labeled": 190589,
+   "sat_classes": 0,
+   "nodes": 27111
+  },
+  "162": {
+   "eligible_classes": 6813,
+   "eligible_labeled": 168660,
+   "sat_classes": 0,
+   "nodes": 22520
+  },
+  "163": {
+   "eligible_classes": 6241,
+   "eligible_labeled": 154847,
+   "sat_classes": 0,
+   "nodes": 19750
+  },
+  "164": {
+   "eligible_classes": 5544,
+   "eligible_labeled": 137877,
+   "sat_classes": 0,
+   "nodes": 16716
+  },
+  "165": {
+   "eligible_classes": 5161,
+   "eligible_labeled": 128505,
+   "sat_classes": 0,
+   "nodes": 15170
+  },
+  "166": {
+   "eligible_classes": 4592,
+   "eligible_labeled": 114672,
+   "sat_classes": 0,
+   "nodes": 12916
+  },
+  "167": {
+   "eligible_classes": 4240,
+   "eligible_labeled": 106225,
+   "sat_classes": 0,
+   "nodes": 11590
+  },
+  "168": {
+   "eligible_classes": 3789,
+   "eligible_labeled": 95080,
+   "sat_classes": 0,
+   "nodes": 9719
+  },
+  "169": {
+   "eligible_classes": 3535,
+   "eligible_labeled": 88678,
+   "sat_classes": 0,
+   "nodes": 8997
+  },
+  "170": {
+   "eligible_classes": 3231,
+   "eligible_labeled": 81123,
+   "sat_classes": 0,
+   "nodes": 7847
+  },
+  "171": {
+   "eligible_classes": 2999,
+   "eligible_labeled": 75245,
+   "sat_classes": 0,
+   "nodes": 7145
+  },
+  "172": {
+   "eligible_classes": 2721,
+   "eligible_labeled": 68165,
+   "sat_classes": 0,
+   "nodes": 5846
+  },
+  "173": {
+   "eligible_classes": 2508,
+   "eligible_labeled": 62768,
+   "sat_classes": 0,
+   "nodes": 5215
+  },
+  "174": {
+   "eligible_classes": 2261,
+   "eligible_labeled": 56492,
+   "sat_classes": 0,
+   "nodes": 4485
+  },
+  "175": {
+   "eligible_classes": 2104,
+   "eligible_labeled": 52571,
+   "sat_classes": 0,
+   "nodes": 4084
+  },
+  "176": {
+   "eligible_classes": 1881,
+   "eligible_labeled": 46882,
+   "sat_classes": 0,
+   "nodes": 3268
+  },
+  "177": {
+   "eligible_classes": 1688,
+   "eligible_labeled": 42013,
+   "sat_classes": 0,
+   "nodes": 2892
+  },
+  "178": {
+   "eligible_classes": 1477,
+   "eligible_labeled": 36579,
+   "sat_classes": 0,
+   "nodes": 2326
+  },
+  "179": {
+   "eligible_classes": 1355,
+   "eligible_labeled": 33520,
+   "sat_classes": 0,
+   "nodes": 2094
+  },
+  "180": {
+   "eligible_classes": 1160,
+   "eligible_labeled": 28426,
+   "sat_classes": 0,
+   "nodes": 1681
+  },
+  "181": {
+   "eligible_classes": 1036,
+   "eligible_labeled": 25318,
+   "sat_classes": 0,
+   "nodes": 1531
+  },
+  "182": {
+   "eligible_classes": 958,
+   "eligible_labeled": 23290,
+   "sat_classes": 0,
+   "nodes": 1377
+  },
+  "183": {
+   "eligible_classes": 856,
+   "eligible_labeled": 20783,
+   "sat_classes": 0,
+   "nodes": 1263
+  },
+  "184": {
+   "eligible_classes": 732,
+   "eligible_labeled": 17826,
+   "sat_classes": 0,
+   "nodes": 1115
+  },
+  "185": {
+   "eligible_classes": 623,
+   "eligible_labeled": 15063,
+   "sat_classes": 0,
+   "nodes": 919
+  },
+  "186": {
+   "eligible_classes": 522,
+   "eligible_labeled": 12436,
+   "sat_classes": 0,
+   "nodes": 686
+  },
+  "187": {
+   "eligible_classes": 483,
+   "eligible_labeled": 11423,
+   "sat_classes": 0,
+   "nodes": 645
+  },
+  "188": {
+   "eligible_classes": 419,
+   "eligible_labeled": 9697,
+   "sat_classes": 0,
+   "nodes": 471
+  },
+  "189": {
+   "eligible_classes": 385,
+   "eligible_labeled": 8940,
+   "sat_classes": 0,
+   "nodes": 419
+  },
+  "190": {
+   "eligible_classes": 355,
+   "eligible_labeled": 8232,
+   "sat_classes": 0,
+   "nodes": 368
+  },
+  "191": {
+   "eligible_classes": 334,
+   "eligible_labeled": 7644,
+   "sat_classes": 0,
+   "nodes": 347
+  },
+  "192": {
+   "eligible_classes": 311,
+   "eligible_labeled": 7177,
+   "sat_classes": 0,
+   "nodes": 324
+  },
+  "193": {
+   "eligible_classes": 270,
+   "eligible_labeled": 6113,
+   "sat_classes": 0,
+   "nodes": 272
+  },
+  "194": {
+   "eligible_classes": 254,
+   "eligible_labeled": 5826,
+   "sat_classes": 0,
+   "nodes": 254
+  },
+  "195": {
+   "eligible_classes": 231,
+   "eligible_labeled": 5238,
+   "sat_classes": 0,
+   "nodes": 231
+  },
+  "196": {
+   "eligible_classes": 201,
+   "eligible_labeled": 4587,
+   "sat_classes": 0,
+   "nodes": 201
+  },
+  "197": {
+   "eligible_classes": 182,
+   "eligible_labeled": 4153,
+   "sat_classes": 0,
+   "nodes": 182
+  },
+  "198": {
+   "eligible_classes": 182,
+   "eligible_labeled": 4153,
+   "sat_classes": 0,
+   "nodes": 182
+  },
+  "199": {
+   "eligible_classes": 142,
+   "eligible_labeled": 3117,
+   "sat_classes": 0,
+   "nodes": 142
+  },
+  "200": {
+   "eligible_classes": 113,
+   "eligible_labeled": 2417,
+   "sat_classes": 0,
+   "nodes": 113
+  },
+  "201": {
+   "eligible_classes": 111,
+   "eligible_labeled": 2396,
+   "sat_classes": 0,
+   "nodes": 111
+  },
+  "202": {
+   "eligible_classes": 82,
+   "eligible_labeled": 1745,
+   "sat_classes": 0,
+   "nodes": 82
+  },
+  "203": {
+   "eligible_classes": 58,
+   "eligible_labeled": 1262,
+   "sat_classes": 0,
+   "nodes": 58
+  },
+  "204": {
+   "eligible_classes": 41,
+   "eligible_labeled": 870,
+   "sat_classes": 0,
+   "nodes": 41
+  },
+  "205": {
+   "eligible_classes": 31,
+   "eligible_labeled": 590,
+   "sat_classes": 0,
+   "nodes": 31
+  },
+  "206": {
+   "eligible_classes": 31,
+   "eligible_labeled": 590,
+   "sat_classes": 0,
+   "nodes": 31
+  },
+  "207": {
+   "eligible_classes": 25,
+   "eligible_labeled": 485,
+   "sat_classes": 0,
+   "nodes": 25
+  },
+  "208": {
+   "eligible_classes": 12,
+   "eligible_labeled": 191,
+   "sat_classes": 0,
+   "nodes": 12
+  },
+  "209": {
+   "eligible_classes": 9,
+   "eligible_labeled": 156,
+   "sat_classes": 0,
+   "nodes": 9
+  },
+  "210": {
+   "eligible_classes": 4,
+   "eligible_labeled": 44,
+   "sat_classes": 0,
+   "nodes": 4
+  },
+  "211": {
+   "eligible_classes": 4,
+   "eligible_labeled": 44,
+   "sat_classes": 0,
+   "nodes": 4
+  },
+  "212": {
+   "eligible_classes": 1,
+   "eligible_labeled": 2,
+   "sat_classes": 0,
+   "nodes": 1
+  },
+  "213": {
+   "eligible_classes": 1,
+   "eligible_labeled": 2,
+   "sat_classes": 0,
+   "nodes": 1
+  },
+  "214": {
+   "eligible_classes": 1,
+   "eligible_labeled": 2,
+   "sat_classes": 0,
+   "nodes": 1
+  },
+  "215": {
+   "eligible_classes": 1,
+   "eligible_labeled": 2,
+   "sat_classes": 0,
+   "nodes": 1
+  }
+ },
+ "h": {
+  "109": 7,
+  "110": 7,
+  "111": 7,
+  "112": 7,
+  "113": 7,
+  "114": 7,
+  "115": 8,
+  "116": 8,
+  "117": 8,
+  "118": 8,
+  "119": 8,
+  "120": 8,
+  "121": 8,
+  "122": 8,
+  "123": 8,
+  "124": 8,
+  "125": 8,
+  "126": 8,
+  "127": 8,
+  "128": 8,
+  "129": 8,
+  "130": 8,
+  "131": 8,
+  "132": 8,
+  "133": 8,
+  "134": 8,
+  "135": 8,
+  "136": 8,
+  "137": 8,
+  "138": 8,
+  "139": 8,
+  "140": 8,
+  "141": 8,
+  "142": 8,
+  "143": 8,
+  "144": 8,
+  "145": 8,
+  "146": 8,
+  "147": 8,
+  "148": 8,
+  "149": 8,
+  "150": 8,
+  "151": 8,
+  "152": 8,
+  "153": 8,
+  "154": 8,
+  "155": 8,
+  "156": 8,
+  "157": 8,
+  "158": 8,
+  "159": 8,
+  "160": 8,
+  "161": 8,
+  "162": 8,
+  "163": 8,
+  "164": 8,
+  "165": 8,
+  "166": 8,
+  "167": 8,
+  "168": 8,
+  "169": 8,
+  "170": 8,
+  "171": 8,
+  "172": 8,
+  "173": 8,
+  "174": 8,
+  "175": 8,
+  "176": 8,
+  "177": 8,
+  "178": 8,
+  "179": 8,
+  "180": 8,
+  "181": 8,
+  "182": 8,
+  "183": 8,
+  "184": 8,
+  "185": 8,
+  "186": 8
+ },
+ "t7": 114,
+ "claims": {
+  "t7": 114,
+  "no_7_chord_pancyclic_for_n_at_least": 115,
+  "h_exact": [
+   3,
+   186
+  ]
+ }
+}

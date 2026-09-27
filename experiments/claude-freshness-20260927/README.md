@@ -65,7 +65,7 @@ were re-run in this session.
 
 | # | cell | finding | evidence level |
 |---|---|---|---|
-| 1016 | m(38) | settled (m(38) = 43, 2026-07-29); this lane now certifies h(n) for n ≤ 108 and t₆ = 67 | **replayed**: `certificates/erdos-1016` |
+| 1016 | m(38) | settled (m(38) = 43, 2026-07-29); this lane now certifies h(n) for n ≤ 186, t₆ = 67 and t₇ = 114 | **replayed**: `certificates/erdos-1016` |
 | 1062 | A038372(45) | = 30 (witness + DRAT refutation, MaliciousMusic/A038372-certificates, 2026-09-22; also a(46..68)) | **spot-checked**: its verifier passes |
 | 1057 | A006931(40) | an explicit 84-digit Carmichael number with 40 prime factors (jewebste/small-carmichael-numbers, 2026-09-06) gives an upper bound; minimality reported | **spot-checked**: Korselt holds |
 | 302 | A390395(732) | = 606 = a(731): {122,183,244,366,732} is an isolated component (VibeMathed, 2026-09-08) | **spot-checked** (conditional on the OEIS a(731)) |
