@@ -106,7 +106,31 @@ describe the snapshot as it stood when this check ran.
   two searches (see their summaries).
 - Sweep summaries quote their sources' claims. Only rows marked *replayed* or
   *spot-checked* carry this session's own verification.
-- Suggested ledger actions (for the curator, not done here): retire #106, #547
-  and #548 from the board's target and trap tables; re-point the T3 rows for
-  #156, #302, #376, #451, #1005, #1062 and #1095 at their next open cells after
-  reading the sources; mark #773 and #864 as externally reported.
+- The ledger actions this check suggested were carried out the same day: the
+  retirements in the snapshot refresh above, the gap-map rows in the next
+  section.
+
+## Curation into the gap map, same day
+
+Each source was read again, and what could be checked cheaply was re-checked
+with independent standard-library code:
+[`curation_checks.py`](curation_checks.py) runs offline in about 2 s (add
+`--census` for the 10^100 count, about 30 s). A row's evidence stays
+literature-grade (C3) unless a certificate backs it.
+
+| # | row now | why |
+|---|---|---|
+| 1062 | A038372(69) ∈ {46, 47} | a(45..68) have witnesses + DRAT refutations (MaliciousMusic/A038372-certificates); the 24 witnesses re-checked, the proofs not replayed |
+| 1095 | g(401) | g(378..400) in the OEIS b-file (Eastwood 2026); admissibility of g(376..400) re-checked by Kummer, minimality cited |
+| 156 | i(9) ∈ [188, 369] | Huber's i(8) = 144 and the counting bound force a(n) ≥ 9 past 175; 9-sets found here give A382397(184..188) = 9, so the table next moves at i(9) |
+| 451 | A386620(210) | b-file to 209 (Carney 2026); values not readable here (Git LFS), cited |
+| 1057 | A006931(64) | k = 3..63 tabulated (OEIS to 61, Butler table to 63); Korselt re-checked for all listed values, minimality cited |
+| 302 | A390395(735) ∈ [608, 609] | a(732) = a(731) (isolated component), 733 and 734 lie in no triple; all conditional on the OEIS a(731) = 606 |
+| 376 | closed | the successor iteration is exact and cheap: all 14,273 positive terms ≤ 10^100 in ~25 s; infinitude is the wall |
+| 1005 | closed | a(101) = 27 recomputed; parent solved upstream with a reported exact formula |
+| 20 | lower 39 → 40 | the Lean-checked 39-triple family re-checked (no 4-sunflower); the claimed upper 50 is noted, not recorded |
+| 458, 773, 864, 1100 | unchanged bounds | dated notes on the external claims, marked unverified |
+
+Two limits of this session: OEIS b-files sit in Git LFS on the data mirror and
+could not be read, and building a third-party DRAT checker (`drat-trim`) for
+the #1062 proofs was blocked, so those proofs are cited rather than replayed.

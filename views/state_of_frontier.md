@@ -14,7 +14,7 @@ the release-facing summary of its current state.
 ## The ledger at a glance
 
 - **225 bounded quantities** across the Erdős-hub problems.
-- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **7** lane-added, **206** agent-mined.
+- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **15** lane-added, **198** agent-mined.
 - Honest label: the agent-mined entries are structurally validated but **not yet
   independently number-re-verified** — they carry literature-grade evidence and
   therefore class C3 until a verification artifact exists (the WS1 release gate
@@ -37,14 +37,14 @@ validator fails any stored class the recorded evidence does not prove.
 
 | kind | meaning | entries | witness-workable |
 |---|---|---|---|
-| `value_gap` | both bounds known; the open `[L, U]` gap is the object | 30 | 5 |
-| `next_cell` | the next uncomputed term of a sequence or table | 81 | 56 |
+| `value_gap` | both bounds known; the open `[L, U]` gap is the object | 31 | 6 |
+| `next_cell` | the next uncomputed term of a sequence or table | 80 | 53 |
 | `verified_range` | a “no counterexample below N” frontier; `lower` records the verified-through value | 31 | 16 |
 | `bounded_below_only` | one-sided bracket: only a lower bound is known | 16 | 4 |
 | `bounded_above_only` | one-sided bracket: only an upper bound is known | 1 | 0 |
 | `not_gap_shaped` | on the map for completeness; the problem has no `[L, U]` shape to work | 66 | 0 |
 
-## Witness-workable quantities (81)
+## Witness-workable quantities (79)
 
 The mechanical filter: `status == "open"` **and** `witness_side != "none"`
 **and** `witness_feasibility` ∈ {`open-easy`, `plausible`} — quantities where a
@@ -56,11 +56,11 @@ truncated — the full values, sources, and verifier specs live in
 | problem | OEIS | quantity | side | feasibility | lower | upper |
 |---|---|---|---|---|---|---|
 | [#131](https://www.erdosproblems.com/131) | [A068063](https://oeis.org/A068063) | A068063(101) — maximum size of a nondividing subset of {1,...,101} (no element divides the sum of any nonempt… | lower | open-easy | 8 | 9 |
-| [#156](https://www.erdosproblems.com/156) | [A382397](https://oeis.org/A382397) | A382397(66) — minimum size of a maximal Sidon subset of {1..66} (first uncomputed cell; OEIS table computed t… | upper | open-easy | ? | ? |
+| [#156](https://www.erdosproblems.com/156) | [A382397](https://oeis.org/A382397) | i(9) — largest n such that {1..n} contains an inclusion-maximal Sidon set of size 9; A382397(n) = 9 exactly f… | lower | open-easy | 188 | 369 |
 | [#170](https://www.erdosproblems.com/170) | [A046693](https://oeis.org/A046693) | A046693(214) — minimal number of marks in a sparse ruler / restricted difference basis for {0..214} (first ce… | upper | open-easy | 22 | 26 |
 | [#295](https://www.erdosproblems.com/295) | [A192881](https://oeis.org/A192881) | A192881(17) — minimum number of terms in an Egyptian fraction decomposition of 1 with least denominator 17 (f… | upper | open-easy | 29 | ? |
 | [#301](https://www.erdosproblems.com/301) | [A390394](https://oeis.org/A390394) | A390394(39) — maximum size of A ⊆ {1..39} with no solution 1/a = 1/b_1 + ... + 1/b_k over distinct elements o… | lower | open-easy | 29 | 30 |
-| [#302](https://www.erdosproblems.com/302) | [A390395](https://oeis.org/A390395) | A390395(732) — maximum size of S ⊆ {1..732} with no solution 1/a = 1/b + 1/c over distinct a,b,c in S; first… | lower | open-easy | 606 | 607 |
+| [#302](https://www.erdosproblems.com/302) | [A390395](https://oeis.org/A390395) | A390395(735) — maximum size of S ⊆ {1..735} with no solution 1/a = 1/b + 1/c over distinct a,b,c in S; first… | lower | open-easy | 608 | 609 |
 | [#304](https://www.erdosproblems.com/304) | [A097849](https://oeis.org/A097849) | A097849(106) — max over 1<=k<=106 of the minimal number of unit fractions needed to write k/106 (row-106 maxi… | both | open-easy | ? | ? |
 | [#327](https://www.erdosproblems.com/327) | [A384927](https://oeis.org/A384927) | A384927(5001) — max size of S in {1..5001} with a+b never dividing ab for distinct a,b in S; monotonicity for… | both | open-easy | 3528 | 3529 |
 | [#357](https://www.erdosproblems.com/357) | [A364132](https://oeis.org/A364132) | A364132(23) — least n such that {1..n} contains an increasing 23-term sequence all of whose consecutive-segme… | upper | open-easy | 52 | ? |
@@ -88,8 +88,7 @@ truncated — the full values, sources, and verifier specs live in
 | [#936](https://www.erdosproblems.com/936) | [A146968](https://oeis.org/A146968) | Brocard sub-case search frontier: largest N such that no n in (7, N] has n!+1 a perfect square (A146968 = {4,… | lower | open-easy | 1e12 | ? |
 | [#938](https://www.erdosproblems.com/938) | [A001694](https://oeis.org/A001694) | 3-term arithmetic progressions of CONSECUTIVE powerful numbers n_k, n_{k+1}, n_{k+2} (A001694): complete tabl… | lower | open-easy | 1e12 (search limit; exactly 10 triples exist with all terms… | ? |
 | [#962](https://www.erdosproblems.com/962) | [A327909](https://oeis.org/A327909) | A327909(1000) — smallest start of a run of 1000 consecutive integers each having a prime factor > 1000 (first… | upper | open-easy | 22369305365 | ? |
-| [#1005](https://www.erdosproblems.com/1005) | [A386893](https://oeis.org/A386893) | A386893(101) — first OEIS-uncomputed value of f(n), the Mayer–Erdős run-length: largest m such that any two F… | both | open-easy | 2 | 30 |
-| [#1062](https://www.erdosproblems.com/1062) | [A038372](https://oeis.org/A038372) | A038372(45) - largest subset of {1,...,45} in which no element divides two other distinct elements (fork-free… | lower | open-easy | 30 | 31 |
+| [#1062](https://www.erdosproblems.com/1062) | [A038372](https://oeis.org/A038372) | A038372(69) - largest subset of {1,...,69} in which no element divides two other distinct elements (fork-free… | lower | open-easy | 46 | 47 |
 | [#1083](https://www.erdosproblems.com/1083) | [A186704](https://oeis.org/A186704) | A186704(14) — minimum number of distinct distances determined by 14 points in the plane (first uncomputed cel… | upper | open-easy | 7 | 7 |
 | [#1100](https://www.erdosproblems.com/1100) | [A325864](https://oeis.org/A325864) | g(k) = max over squarefree n with omega(n)=k of tau_perp(n), where tau_perp counts coprime consecutive-diviso… | lower | open-easy | (sqrt(2)+o(1))^k | (2-c)^k for some absolute c>0 |
 | [#1107](https://www.erdosproblems.com/1107) | [A392342](https://oeis.org/A392342) | A392342 — integers not the sum of at most 4 cubefull numbers (the r=3 case of: every large integer is a sum o… | lower | open-easy | 1e9 | ? |
@@ -97,7 +96,7 @@ truncated — the full values, sources, and verifier specs live in
 | [#1109](https://www.erdosproblems.com/1109) | [A392164](https://oeis.org/A392164) | A392165(40) — smallest N with f(N) >= 40, where f(N) = A392164(N) = size of the largest S ⊆ {1..N} such that… | lower | open-easy | 39 (f exactly computed through N = 1103; 39th record index… | ? |
 | [#3](https://www.erdosproblems.com/3) | [A003002](https://oeis.org/A003002) | A003002(212) = r_3(212) — maximum size of a subset of {1,...,212} containing no 3-term arithmetic progression | lower | plausible | 43 | 44 |
 | [#11](https://www.erdosproblems.com/11) | [A377587](https://oeis.org/A377587) | A377587(13) — smallest odd m such that m - 2^k is non-squarefree for every k = 1..13 | upper | plausible | > 1125899906842624 (= 2^50) | ? |
-| [#20](https://www.erdosproblems.com/20) | [A332077](https://oeis.org/A332077) | A332077 cell Sun(3,4) — minimal number of distinct sets of cardinality <= 3 forcing a 4-sunflower (first unco… | lower | plausible | 39 | 163 |
+| [#20](https://www.erdosproblems.com/20) | [A332077](https://oeis.org/A332077) | A332077 cell Sun(3,4) — minimal number of distinct sets of cardinality <= 3 forcing a 4-sunflower (first unco… | lower | plausible | 40 | 163 |
 | [#23](https://www.erdosproblems.com/23) | [A389646](https://oeis.org/A389646) | A389646(24) — maximum over triangle-free graphs on 24 vertices of the minimum number of edge deletions needed… | lower | plausible | 20 | 24 |
 | [#60](https://www.erdosproblems.com/60) | [A006855](https://oeis.org/A006855) | A006855(41) = ex(41; C4) — maximum edges in a C4-free graph on 41 vertices (first uncomputed term; exact valu… | lower | plausible | 132 | 133 |
 | [#104](https://www.erdosproblems.com/104) | [A003829](https://oeis.org/A003829) | A003829(9) — maximum number of distinct unit circles each passing through >= 3 of 9 points in the plane (firs… | lower | plausible | 16 | 24 |
@@ -110,13 +109,12 @@ truncated — the full values, sources, and verifier specs live in
 | [#334](https://www.erdosproblems.com/334) | [A062241](https://oeis.org/A062241) | A062241(30) — smallest integer >= 2 that is not a sum of two positive 113-smooth numbers (prime(30)=113); fir… | upper | plausible | > 2570169839 | <= 328878692999 |
 | [#340](https://www.erdosproblems.com/340) | [A080200](https://oeis.org/A080200) | Verification depth for '33 is never a difference of Mian-Chowla terms' (33 = A080200(1), the smallest integer… | lower | plausible | 100000 | ? |
 | [#342](https://www.erdosproblems.com/342) | [A002858](https://oeis.org/A002858) | Computation frontier for the Ulam sequence u(1)=1, u(2)=2: largest X with all Ulam numbers <= X computed, sup… | lower | plausible | 1000000000000 | ? |
-| [#376](https://www.erdosproblems.com/376) | [A030979](https://oeis.org/A030979) | A030979(1375) — least k > 10^70 with binomial(2k,k) coprime to 105 (equivalently: all base-3 digits <= 1, bas… | upper | plausible | 1e70 | ? |
 | [#385](https://www.erdosproblems.com/385) | [A322292](https://oeis.org/A322292) | Largest member of A322293 = {k : A322292(k) <= k}, where A322292(k) = max over composites c < k of (c + lpf(c… | lower | plausible | 267680 | ? |
 | [#410](https://www.erdosproblems.com/410) | [A007497](https://oeis.org/A007497) | A007497(1501) — next term of the iterated sum-of-divisors trajectory 2, σ(2), σ(σ(2)), … underlying the quest… | lower | plausible | 1500 terms known; a(1500) has 1393 digits | ? |
 | [#412](https://www.erdosproblems.com/412) | [A051572](https://oeis.org/A051572) | A051572(524) — next term of the iterated-σ trajectory of seed 5; the frontier of the (m,n) = (2,5) instance o… | lower | plausible | 523 terms known; a(523) has 437 digits; no common value wit… | ? |
 | [#422](https://www.erdosproblems.com/422) | [A005185](https://oeis.org/A005185) | W(422) = largest N such that Hofstadter's Q-sequence f (f(1)=f(2)=1, f(n)=f(n-f(n-1))+f(n-f(n-2))) is verifie… | lower | plausible | 3e10 | ? |
 | [#436](https://www.erdosproblems.com/436) | [A000445](https://oeis.org/A000445) | A000445(8) = Lambda(8,2) — latest possible first occurrence (limsup over primes p) of a pair of consecutive 8… | lower | plausible | 1499876 | 1508324 |
-| [#451](https://www.erdosproblems.com/451) | [A386620](https://oeis.org/A386620) | A386620(184) = n_184 — smallest k > 368 such that (k-1)(k-2)...(k-184) has no prime factor in (184, 368); fir… | upper | plausible | ? | ? |
+| [#451](https://www.erdosproblems.com/451) | [A386620](https://oeis.org/A386620) | A386620(210) = n_210 — smallest k > 420 such that (k-1)(k-2)...(k-210) has no prime factor in (210, 420); fir… | upper | plausible | ? | ? |
 | [#479](https://www.erdosproblems.com/479) | [A036236](https://oeis.org/A036236) | A036236(1119) — least n with 2^n ≡ 1119 (mod n); first of 93 unknown entries among k <= 10^4 (Graham's conjec… | upper | plausible | > 1e13 | ? |
 | [#528](https://www.erdosproblems.com/528) | [A387897](https://oeis.org/A387897) | C_2 — connective constant of the square lattice Z^2 (self-avoiding walk growth constant, A387897): rigorous b… | both | plausible | 2.625622 | 2.662343 |
 | [#588](https://www.erdosproblems.com/588) | [A006065](https://oeis.org/A006065) | A006065(19) — maximum number of lines containing exactly 4 points ('4-tree orchard rows') achievable with 19… | lower | plausible | 20 | 28 |
@@ -130,10 +128,10 @@ truncated — the full values, sources, and verifier specs live in
 | [#1016](https://www.erdosproblems.com/1016) | [A105206](https://oeis.org/A105206) | m(187) — minimum number of edges of a pancyclic graph on 187 vertices; first open cell after the exact table… | upper | plausible | 195 | 196 |
 | [#1055](https://www.erdosproblems.com/1055) | [A005113](https://oeis.org/A005113) | A005113(20) - least prime in class 20 of the Erdos-Selfridge classification (class via largest-class prime fa… | upper | plausible | 131988573220065 | 764276710625653 |
 | [#1056](https://www.erdosproblems.com/1056) | [A060427](https://oeis.org/A060427) | A060427(15) - least prime p admitting 15 consecutive intervals of integers each with product congruent to 1 m… | upper | plausible | ? | ? |
-| [#1057](https://www.erdosproblems.com/1057) | [A006931](https://oeis.org/A006931) | A006931(40) - least Carmichael number with exactly 40 prime factors | upper | plausible | 14909796388965607134586226733905214934462755608741300153203… | ? |
+| [#1057](https://www.erdosproblems.com/1057) | [A006931](https://oeis.org/A006931) | A006931(64) - least Carmichael number with exactly 64 prime factors (first unknown term: k = 3..63 are tabula… | upper | plausible | 30538464732966598049639471694498927575178071944119185744332… | ? |
 | [#1060](https://www.erdosproblems.com/1060) | [A327153](https://oeis.org/A327153) | A212490(6) - least m such that k*sigma(k) = m has exactly 6 solutions (the record ladder for f(n) = A327153,… | upper | plausible | > 5*10^14 | 7089671638182002688000 |
 | [#1063](https://www.erdosproblems.com/1063) | [A389360](https://oeis.org/A389360) | A389360(60) = n_60 — least n >= 120 such that n-i divides binomial(n,60) for all but exactly one i in 0<=i<60… | upper | plausible | 120 | 581442729886633902054768000 |
-| [#1095](https://www.erdosproblems.com/1095) | [A003458](https://oeis.org/A003458) | A003458(378) = g(378) — Erdős–Selfridge function: least n > 379 such that the least prime factor of binomial(… | upper | plausible | ? | ? |
+| [#1095](https://www.erdosproblems.com/1095) | [A003458](https://oeis.org/A003458) | A003458(401) = g(401) — Erdős–Selfridge function: least n > 402 such that the least prime factor of binomial(… | upper | plausible | ? | ? |
 | [#1106](https://www.erdosproblems.com/1106) | [A194260](https://oeis.org/A194260) | Conjecture F(n) > n for all n > 115, where F(n) = A194259(n) = number of distinct primes dividing p(1)·p(2)··… | lower | plausible | 10000 | ? |
 | [#1208](https://www.erdosproblems.com/1208) | [A193838](https://oeis.org/A193838) | A193838(15) — smallest k such that 15 points of the k x k lattice grid have pairwise distinct mutual distance… | upper | plausible | 18 | 20 |
 

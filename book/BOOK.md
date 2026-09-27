@@ -72,15 +72,15 @@ artifact exists. The map does not pretend its own entries are verified; the
 labeling *is* the release gate.
 
 - **225 bounded quantities** on the map ([`atlas/gap_map.json`](../atlas/gap_map.json)).
-- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **7** lane-added, **206** agent-mined.
+- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **15** lane-added, **198** agent-mined.
 - Confidence distribution (computed from `evidence[]`, never asserted): **C0** 0 · **C1** 0 · **C2** 9 · **C3** 216.
-- **81 witness-workable**: still open, with a side a single submitted
+- **79 witness-workable**: still open, with a side a single submitted
   construction — checked by the entry's stated verifier — can move.
 
 | kind | entries | witness-workable |
 |---|---|---|
-| `value_gap` | 30 | 5 |
-| `next_cell` | 81 | 56 |
+| `value_gap` | 31 | 6 |
+| `next_cell` | 80 | 53 |
 | `verified_range` | 31 | 16 |
 | `bounded_below_only` | 16 | 4 |
 | `bounded_above_only` | 1 | 0 |
@@ -306,12 +306,12 @@ Exact-value attack-state over the gap map's 225 quantities (field `exact_feasibi
 
 | attack-state | meaning | entries |
 |---|---|---|
-| `cell` | an uncomputed exact cell current exact tools can plausibly settle | 58 |
+| `cell` | an uncomputed exact cell current exact tools can plausibly settle | 59 |
 | `drat-candidate` | exact settlement looks reachable via a certified-UNSAT (DRAT) route | 7 |
-| `unknown` | attack-state not yet priced | 20 |
+| `unknown` | attack-state not yet priced | 19 |
 | `wall` | the exact value needs an infeasible nonexistence proof — do not spend search compute here | 140 |
 
-Against that: **81** quantities remain witness-workable — the
+Against that: **79** quantities remain witness-workable — the
 honest territory *around* the walls. The named do-not-enter list, with the
 specific reason and source for each wall, is
 [`atlas/walls.md`](../atlas/walls.md).
