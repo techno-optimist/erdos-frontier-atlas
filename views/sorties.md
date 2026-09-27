@@ -45,16 +45,16 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 - **#241** [movable / upstream Open] — lane `exact-backtracking`, board READY — card `views/graph/P241.md`
 - **#552** [movable / upstream Open] — lane `SAT+DRAT-nonexistence`, board READY — card `views/graph/P552.md`
 
-### T3 — witness-workable gap surfaces (81; predicate `workable`, imported from state_of_frontier)
+### T3 — witness-workable gap surfaces (79; predicate `workable`, imported from state_of_frontier)
 
 | # | quantity | feas | witness verifier | confidence |
 |---|---|---|---|---|
 | #131 | A068063(101) — maximum size of a nondividing subset of {1,...,101} …[truncated; see source] | open-easy | For each a in A run a subset-sum DP over A\{a} modulo a and …[truncated; see source] | C3 |
-| #156 | A382397(66) — minimum size of a maximal Sidon subset of {1..66} …[truncated; see source] | open-easy | Check C(\|S\|,2) differences distinct; then for each of the …[truncated; see source] | C3 |
+| #156 | i(9) — largest n such that {1..n} contains an inclusion-maximal Sidon …[truncated; see source] | open-easy | Check the C(9,2) differences are distinct; then for each of …[truncated; see source] | C3 |
 | #170 | A046693(214) — minimal number of marks in a sparse ruler / restricted …[truncated; see source] | open-easy | Compute all \|S\|^2 pairwise differences and check {1..214} …[truncated; see source] | C3 |
 | #295 | A192881(17) — minimum number of terms in an Egyptian fraction …[truncated; see source] | open-easy | Exact rational arithmetic (e.g. Python fractions): check …[truncated; see source] | C3 |
 | #301 | A390394(39) — maximum size of A ⊆ {1..39} with no solution 1/a = …[truncated; see source] | open-easy | For each a in A: subset-sum check over {1/b : b in A, b != …[truncated; see source] | C3 |
-| #302 | A390395(732) — maximum size of S ⊆ {1..732} with no solution 1/a = …[truncated; see source] | open-easy | Enumerate all harmonic triples a < b < c <= 732 with 1/a = …[truncated; see source] | C3 |
+| #302 | A390395(735) — maximum size of S ⊆ {1..735} with no solution 1/a = …[truncated; see source] | open-easy | Enumerate all harmonic triples a < b < c <= 735 with 1/a = …[truncated; see source] | C3 |
 | #304 | A097849(106) — max over 1<=k<=106 of the minimal number of unit …[truncated; see source] | open-easy | Exact-arithmetic check that each listed 1/n_1+...+1/n_t …[truncated; see source] | C3 |
 | #327 | A384927(5001) — max size of S in {1..5001} with a+b never dividing ab …[truncated; see source] | open-easy | Set check is O(k^2) ~ 6.2M integer divisibility tests …[truncated; see source] | C3 |
 | #357 | A364132(23) — least n such that {1..n} contains an increasing 23-term …[truncated; see source] | open-easy | Compute prefix sums and check all 276 pairwise differences …[truncated; see source] | C3 |
@@ -82,8 +82,7 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 | #936 | Brocard sub-case search frontier: largest N such that no n in (7, N] …[truncated; see source] | open-easy | (b) verifies in seconds: incremental r_p = n! mod p over …[truncated; see source] | C3 |
 | #938 | 3-term arithmetic progressions of CONSECUTIVE powerful numbers n_k, …[truncated; see source] | open-easy | powerfulness: factor each of the 3 numbers (Pollard rho, …[truncated; see source] | C3 |
 | #962 | A327909(1000) — smallest start of a run of 1000 consecutive integers …[truncated; see source] | open-easy | for each of the 1000 integers, divide out all primes ≤ 1000 …[truncated; see source] | C3 |
-| #1005 | A386893(101) — first OEIS-uncomputed value of f(n), the Mayer–Erdős …[truncated; see source] | open-easy | generate F_n by the mediant/next-term recurrence …[truncated; see source] | C3 |
-| #1062 | A038372(45) - largest subset of {1,...,45} in which no element …[truncated; see source] | open-easy | For each a in S count multiples of a among S \ {a}; require …[truncated; see source] | C3 |
+| #1062 | A038372(69) - largest subset of {1,...,69} in which no element …[truncated; see source] | open-easy | For each a in S count multiples of a among S \ {a}; require …[truncated; see source] | C3 |
 | #1083 | A186704(14) — minimum number of distinct distances determined by 14 …[truncated; see source] | open-easy | exact integer arithmetic: represent points as …[truncated; see source] | C3 |
 | #1100 | g(k) = max over squarefree n with omega(n)=k of tau_perp(n), where …[truncated; see source] | open-easy | dependency-free: enumerate all 2^k divisors as prime-subset …[truncated; see source] | C3 |
 | #1107 | A392342 — integers not the sum of at most 4 cubefull numbers (the r=3 …[truncated; see source] | open-easy | For a claimed new term n: enumerate cubefull numbers <= n …[truncated; see source] | C3 |
@@ -104,13 +103,12 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 | #334 | A062241(30) — smallest integer >= 2 that is not a sum of two positive …[truncated; see source] | plausible | Enumerate all 113-smooth numbers s <= m by exponent …[truncated; see source] | C3 |
 | #340 | Verification depth for '33 is never a difference of Mian-Chowla …[truncated; see source] | plausible | The greedy sequence is deterministic: recompute A005282 to …[truncated; see source] | C3 |
 | #342 | Computation frontier for the Ulam sequence u(1)=1, u(2)=2: largest X …[truncated; see source] | plausible | No compact certificate: the sequence is deterministic, so …[truncated; see source] | C3 |
-| #376 | A030979(1375) — least k > 10^70 with binomial(2k,k) coprime to 105 …[truncated; see source] | plausible | three base conversions + digit-range checks with any bignum …[truncated; see source] | C3 |
 | #385 | Largest member of A322293 = {k : A322292(k) <= k}, where A322292(k) = …[truncated; see source] | plausible | Only c in (k−sqrt(k), k) matter since lpf(c) <= sqrt(c): …[truncated; see source] | C3 |
 | #410 | A007497(1501) — next term of the iterated sum-of-divisors trajectory …[truncated; see source] | plausible | Re-multiply the claimed prime powers and check the product …[truncated; see source] | C3 |
 | #412 | A051572(524) — next term of the iterated-σ trajectory of seed 5; the …[truncated; see source] | plausible | Same scheme as A007497: re-multiply claimed prime powers to …[truncated; see source] | C3 |
 | #422 | W(422) = largest N such that Hofstadter's Q-sequence f (f(1)=f(2)=1, …[truncated; see source] | plausible | independent recomputation of the recurrence, checking n - …[truncated; see source] | C3 |
 | #436 | A000445(8) = Lambda(8,2) — latest possible first occurrence (limsup …[truncated; see source] | plausible | For an explicit prime p and claimed r: for t = 1..r-1 check …[truncated; see source] | C3 |
-| #451 | A386620(184) = n_184 — smallest k > 368 such that …[truncated; see source] | plausible | Candidate check is 31 modular reductions (primes 191..367) …[truncated; see source] | C3 |
+| #451 | A386620(210) = n_210 — smallest k > 420 such that …[truncated; see source] | plausible | Candidate check is 35 modular reductions (primes 211..419) …[truncated; see source] | C3 |
 | #479 | A036236(1119) — least n with 2^n ≡ 1119 (mod n); first of 93 unknown …[truncated; see source] | plausible | one modular exponentiation: square-and-multiply 2^n mod n, …[truncated; see source] | C3 |
 | #528 | C_2 — connective constant of the square lattice Z^2 (self-avoiding …[truncated; see source] | plausible | upper side: given automaton + v, verify Mv <= lambda*v by …[truncated; see source] | C3 |
 | #588 | A006065(19) — maximum number of lines containing exactly 4 points …[truncated; see source] | plausible | Exact-arithmetic collinearity: for each claimed line verify …[truncated; see source] | C3 |
@@ -124,10 +122,10 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 | #1016 | m(187) — minimum number of edges of a pancyclic graph on 187 …[truncated; see source] | plausible | DFS over the simple cycles of C_187 + 8 chords …[truncated; see source] | C2 |
 | #1055 | A005113(20) - least prime in class 20 of the Erdos-Selfridge …[truncated; see source] | plausible | Recursively factor q+1 for every prime q in the tree (all …[truncated; see source] | C3 |
 | #1056 | A060427(15) - least prime p admitting 15 consecutive intervals of …[truncated; see source] | plausible | Compute b_i! mod p by sequential modular multiplication …[truncated; see source] | C3 |
-| #1057 | A006931(40) - least Carmichael number with exactly 40 prime factors | plausible | Given the factor list: primality of each p_i, distinctness, …[truncated; see source] | C3 |
+| #1057 | A006931(64) - least Carmichael number with exactly 64 prime factors …[truncated; see source] | plausible | Given the factor list: primality of each p_i, distinctness, …[truncated; see source] | C3 |
 | #1060 | A212490(6) - least m such that k*sigma(k) = m has exactly 6 solutions …[truncated; see source] | plausible | At-least-6: factor each k_i, compute sigma, multiply - …[truncated; see source] | C3 |
 | #1063 | A389360(60) = n_60 — least n >= 120 such that n-i divides …[truncated; see source] | plausible | dependency-free Python: compute binomial(m,60) exactly (60 …[truncated; see source] | C3 |
-| #1095 | A003458(378) = g(378) — Erdős–Selfridge function: least n > 379 such …[truncated; see source] | plausible | Kummer's theorem, dependency-free: p \| binomial(n,k) iff …[truncated; see source] | C3 |
+| #1095 | A003458(401) = g(401) — Erdős–Selfridge function: least n > 402 such …[truncated; see source] | plausible | Kummer's theorem, dependency-free: p \| binomial(n,k) iff …[truncated; see source] | C3 |
 | #1106 | Conjecture F(n) > n for all n > 115, where F(n) = A194259(n) = number …[truncated; see source] | plausible | Recompute p(n) exactly (Euler pentagonal recurrence, exact …[truncated; see source] | C3 |
 | #1208 | A193838(15) — smallest k such that 15 points of the k x k lattice …[truncated; see source] | plausible | 5-line dependency-free Python: compute the 105 integer …[truncated; see source] | C3 |
 

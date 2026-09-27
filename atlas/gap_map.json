@@ -361,9 +361,9 @@
    "quantity": "A332077 cell Sun(3,4) — minimal number of distinct sets of cardinality <= 3 forcing a 4-sunflower (first uncomputed cell of the sunflower-number table, in OEIS antidiagonal reading order)",
    "kind": "next_cell",
    "lower": {
-    "value": "39",
-    "source": "Abbott–Exoo, 'On Set Systems Not Containing Delta Systems', Graphs and Combinatorics 8 (1992): a 38-triple family with no 4-sunflower, so Sun(3,4) >= 39; as audited in hub deep record atlas/problems.json#20 (2026-07-13; no 2023–2026 improvement found).",
-    "year": 1992
+    "value": "40",
+    "source": "an explicit 39-triple family on 13 points with no 4-sunflower (arXiv:2609.06175, Theorem 5.1; Lean kernel-checked in github.com/bogdan27182/sunflower-paper, lean/Sunflower/F34.lean, 2026-09-05), so f(3,4) >= 39 and Sun(3,4) >= 40; re-checked here from the construction (experiments/claude-freshness-20260927/curation_checks.py): no 4-sunflower among all 82,251 quadruples",
+    "year": 2026
    },
    "upper": {
     "value": "163",
@@ -376,13 +376,14 @@
    "witness_feasibility": "plausible",
    "exact_feasibility": "wall",
    "status": "open",
-   "notes": "Table state (OEIS example section): row m=1 and columns n<=2 trivial; row m=2 closed form (Abbott–Hanson–Sauer); Sun(3,3)=21 proven (Erdős–Rado; 20-set extremal family in the OEIS a-file); data stops exactly at Sun(3,4). Sibling open cells with 30–50-year-old construction records: Sun(4,3) >= 55 (Abbott–Hanson–Sauer 1972, 54-set family) and Sun(3,5) >= 89 (Abbott–Hanson 1974, 88 triples), both per hub deep audit atlas/problems.json#20. Witness search is SA-seeding + ILP/MaxSAT over a swept ground set (deep atlas: hours to seed, days–weeks for fixed-g optima); records are sticky structured Exoo-class constructions — plausible, not easy. Exact value graded wall: the ground set is unbounded, so certifying the upper side needs a ground-set-size theorem, not a fixed-vertex DRAT closure. The $1000 headline (f(n,k) < c_k^n) is asymptotic and untouched; recent progress (Rao; Bell–Chueluecha–Warnke (Cs log k)^k) is all on the asymptotic upper side. Keyword 'hard,more' on the OEIS entry confirms open table status.",
+   "notes": "LOWER BOUND MOVED 39 -> 40 (2026-09-27, verified witness, above). The same preprint claims f(3,4) <= 49, i.e. Sun(3,4) <= 50, by a computer-assisted proof (rooted blocks, routing covers and archived exhaustive cross-search ledgers; not Lean-checked; its Lean part proves f(3,4) <= 57 conditional on classical Chvátal–Hanson values). Not verified here, so the recorded upper bound stays the proven 163; if the claim holds, the bracket is [40, 50]. Table state (OEIS example section): row m=1 and columns n<=2 trivial; row m=2 closed form (Abbott–Hanson–Sauer); Sun(3,3)=21 proven (Erdős–Rado; 20-set extremal family in the OEIS a-file); data stops exactly at Sun(3,4). Sibling open cells with 30–50-year-old construction records: Sun(4,3) >= 55 (Abbott–Hanson–Sauer 1972, 54-set family) and Sun(3,5) >= 89 (Abbott–Hanson 1974, 88 triples), both per hub deep audit atlas/problems.json#20. Witness search is SA-seeding + ILP/MaxSAT over a swept ground set (deep atlas: hours to seed, days–weeks for fixed-g optima); records are sticky structured Exoo-class constructions — plausible, not easy. Exact value graded wall: the ground set is unbounded, so certifying the upper side needs a ground-set-size theorem, not a fixed-vertex DRAT closure. The $1000 headline (f(n,k) < c_k^n) is asymptotic and untouched; recent progress (Rao; Bell–Chueluecha–Warnke (Cs log k)^k) is all on the asymptotic upper side. Keyword 'hard,more' on the OEIS entry confirms open table status.",
    "provenance": {
     "added_by": "gap-map miner chunk 1-20",
     "date": "2026-07-18",
     "checked": [
      "OEIS A332077 (JSON: data, formula, example, keywords)",
-     "atlas/problems.json#20 (hub deep audit 2026-07-13, incl. AHS 1972 / Abbott–Exoo 1992 / Abbott–Hanson 1974 cell records and 2023–2026 no-change check)"
+     "atlas/problems.json#20 (hub deep audit 2026-07-13, incl. AHS 1972 / Abbott–Exoo 1992 / Abbott–Hanson 1974 cell records and 2023–2026 no-change check)",
+     "github.com/bogdan27182/sunflower-paper (lean/Sunflower/F34.lean, README), read 2026-09-27; family re-checked in experiments/claude-freshness-20260927/curation_checks.py"
     ]
    },
    "evidence": [
@@ -390,6 +391,11 @@
      "type": "literature",
      "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
      "date": "2026-07-18"
+    },
+    {
+     "type": "numeric_scan",
+     "artifact": "39-triple family re-checked for 4-sunflowers, experiments/claude-freshness-20260927/curation_checks.py",
+     "date": "2026-09-27"
     }
    ],
    "confidence": "C3"
@@ -1339,22 +1345,32 @@
   {
    "problem": 156,
    "oeis": "A382397",
-   "quantity": "A382397(66) — minimum size of a maximal Sidon subset of {1..66} (first uncomputed cell; OEIS table computed through n=65, added 2025)",
-   "kind": "next_cell",
-   "lower": null,
-   "upper": null,
-   "witness_side": "upper",
-   "witness_object": "A maximal Sidon set S in {1..66} of size 6 (or, surprisingly, smaller): all pairwise differences of S distinct, and for every x in {1..66}\\S the set S+{x} has a repeated difference; establishes a(66) <= |S|.",
-   "witness_verifier": "Check C(|S|,2) differences distinct; then for each of the <=65 non-members x verify S+{x} violates the Sidon condition. Under 10^4 integer operations, dependency-free.",
+   "quantity": "i(9) — largest n such that {1..n} contains an inclusion-maximal Sidon set of size 9; A382397(n) = 9 exactly for 145 <= n <= i(9), so i(9) is where the A382397 table next moves",
+   "kind": "value_gap",
+   "lower": {
+    "value": "188",
+    "source": "explicit maximal Sidon set {39, 43, 72, 78, 99, 100, 112, 119, 143} in {1..188}, found by local search and checked from the definition for this curation (experiments/claude-freshness-20260927/curation_checks.py)",
+    "year": 2026
+   },
+   "upper": {
+    "value": "369",
+    "source": "trivial: a Sidon k-set blocks at most (k^3 - k)/2 other points (the values a + b - c and (a + b)/2), so i(k) <= (k^3 + k)/2 = 369 for k = 9",
+    "year": null
+   },
+   "witness_side": "lower",
+   "witness_object": "A maximal Sidon set S of size 9 in {1..n} for n > the current lower bound: all pairwise differences of S distinct, and every x in {1..n}\\S makes a repeated difference. Pinning i(9) exactly needs an exhaustive proof that no maximal 9-set exists for any larger n up to 369 (F. Huber's k = 8 proof, i(8) = 144, is the model)",
+   "witness_verifier": "Check the C(9,2) differences are distinct; then for each of the n - 9 non-members x verify S+{x} has a repeated difference. Under 10^5 integer operations, dependency-free.",
    "witness_feasibility": "open-easy",
    "exact_feasibility": "cell",
    "status": "open",
-   "notes": "Data: a(n)=6 for all computed 43<=n<=65; monotonicity is empirically clean but unproven, so no rigorous lower/upper carried. Exhaustive closure of a(66) (and pushing to n~100) is a bounded search (C(66,6)~9e7 candidates with heavy Sidon pruning) — hours on one box; OEIS comment explicitly notes there are too few terms to pin the growth pattern, so new cells have real value. Asymptotic open content (Erdős-Sárközy-Sós 1994): greedy gives >> N^(1/3); Ruzsa 1998 (A small maximal Sidon set, Ramanujan J.) constructed maximal Sidon sets << (N log N)^(1/3); closing the N^(1/3) vs (N log N)^(1/3) factor is the prize. See also #340.",
+   "notes": "PREVIOUS CELL CLOSED EXTERNALLY, and the table moved past it: Felix Huber extended A382397 to n = 183 (b-file, OEIS 2026-08-22; a(n) = 6 for 43 <= n <= 67, a(68) = 7) and, in the preprint 'Saturated Sidon Sets in Consecutive Intervals: The Eight-Mark Threshold Is 144' (linked from OEIS A399118), proved that {1..n} has a maximal Sidon 8-set for n = 144 and for no n >= 145. The table only moves at the thresholds i(k): i(3..8) = 10, 22, 42, 67, 101, 144 (veljjanoski/erdos156, 2026-09-23, reproduces i(3..6) by an independent search). A k-set blocks at most (k^3 - k)/2 points, so sizes <= 7 are impossible for n >= 176 by counting alone; with Huber's theorem for size 8, a(n) >= 9 for all n >= 176 (and for n >= 145 given i(7) = 101 from the table). The 9-sets found for this curation then give A382397(n) = 9 for 184 <= n <= 188 (conditional on Huber's theorem), and the next cell is i(9). The ratio i(k)/k^3 falls from 0.37 to 0.28 over k = 3..8; the local search stalls near its lower bound, which is a hint, not a proof, that i(9) is close. Asymptotic open content (Erdős–Sárközy–Sós 1994): greedy gives >> N^(1/3); Ruzsa 1998 (A small maximal Sidon set, Ramanujan J.) constructed maximal Sidon sets << (N log N)^(1/3); closing the N^(1/3) vs (N log N)^(1/3) factor is the open question. See also #340.",
    "provenance": {
-    "added_by": "gap-map miner chunk 141-170",
-    "date": "2026-07-18",
+    "added_by": "claude, freshness curation (branch chronos/quirky-gates-dalhc4); row first mined 2026-07-18",
+    "date": "2026-09-27",
     "checked": [
-     "OEIS A382397 (full entry, data n=0..65)",
+     "OEIS A382397 and A399118 via github.com/oeis/oeisdata, 2026-09-27 (b-file n = 0..183, F. Huber; i(8) = 144 theorem statement in A399118)",
+     "github.com/veljjanoski/erdos156 at 40dc5c7 (threshold table i(3..8)), read 2026-09-27",
+     "own local search and definition check of the 9-set witnesses, experiments/claude-freshness-20260927/curation_checks.py",
      "erdosproblems.com/156 (paraphrased, accessed 2026-07-18)",
      "web search confirming Ruzsa 1998 Ramanujan J. paper"
     ]
@@ -1362,8 +1378,13 @@
    "evidence": [
     {
      "type": "literature",
-     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
-     "date": "2026-07-18"
+     "artifact": "F. Huber, i(8) = 144 (preprint via OEIS A399118) and the A382397 b-file",
+     "date": "2026-09-27"
+    },
+    {
+     "type": "numeric_scan",
+     "artifact": "maximal Sidon 9-set witnesses up to n = 188, experiments/claude-freshness-20260927/curation_checks.py",
+     "date": "2026-09-27"
     }
    ],
    "confidence": "C3"
@@ -2274,38 +2295,45 @@
   {
    "problem": 302,
    "oeis": "A390395",
-   "quantity": "A390395(732) — maximum size of S ⊆ {1..732} with no solution 1/a = 1/b + 1/c over distinct a,b,c in S; first cell beyond the b-file (a(1..731) known, a(731) = 606)",
+   "quantity": "A390395(735) — maximum size of S ⊆ {1..735} with no solution 1/a = 1/b + 1/c over distinct a,b,c in S; first cell past the b-file (a(1..731), a(731) = 606) that a local argument does not settle",
    "kind": "next_cell",
    "lower": {
-    "value": "606",
-    "source": "Monotonicity a(732) >= a(731) = 606 (OEIS b390395.txt, terms to 731 by Kesarwani, first 658 by Chai Wah Wu; retrieved 2026-07-18)",
-    "year": 2025
+    "value": "608",
+    "source": "a(734) = a(731) + 2 = 608 on the OEIS b-file value a(731) = 606 (Kesarwani): a(732) = a(731) by the isolated-component argument (VibeMathed, 2026-09-08; re-derived here), and 733 and 734 lie in no triple inside their range, so each adds one; monotonicity gives a(735) >= 608",
+    "year": 2026
    },
    "upper": {
-    "value": "607",
-    "source": "a(n+1) <= a(n) + 1 (delete element 732 from an optimal subset) with a(731) = 606 (OEIS b390395.txt, retrieved 2026-07-18)",
-    "year": 2025
+    "value": "609",
+    "source": "a(n+1) <= a(n) + 1 (delete element 735 from an optimal subset) with a(734) = 608 as above",
+    "year": 2026
    },
    "witness_side": "lower",
-   "witness_object": "A subset S ⊆ {1,...,732} with |S| = 607 containing no distinct triple with 1/a = 1/b + 1/c (pins a(732) = 607), or a search certificate that a(732) = 606",
-   "witness_verifier": "Enumerate all harmonic triples a < b < c <= 732 with 1/a = 1/b + 1/c (O(n^2) pair loop with exact rationals, ~270k pairs, milliseconds) and check none lies inside S",
+   "witness_object": "A subset S ⊆ {1,...,735} with |S| = 609 containing no distinct triple with 1/a = 1/b + 1/c (pins a(735) = 609), or an exact optimisation certificate that a(735) = 608. The only triples through 735 are (210, 294, 735) and (294, 490, 735).",
+   "witness_verifier": "Enumerate all harmonic triples a < b < c <= 735 with 1/a = 1/b + 1/c (a < b < 2a and c = ab/(b - a) integral; milliseconds) and check none lies inside S",
    "witness_feasibility": "open-easy",
    "exact_feasibility": "cell",
    "status": "open",
-   "notes": "Headline asymptotic gap (erdosproblems.com/302, retrieved 2026-07-18): (5/8 + o(1))N <= f(N) <= (9/10 + o(1))N. Lower: Cambie's construction — odd integers <= N/4 plus all of (N/2, N] (site-recorded). Upper: van Doorn note (PDF in github.com/Woett/Mathematical-shorts, site-linked; not refereed). If sound, the 5/8 lower bound already answers the specific sub-question 'is f(N) = (1/2+o(1))N?' negatively — flag for the curator; both bounds are site-recorded observations. Colouring version is #303, solved by Brown–Rödl 1991. Sequence created Nov 2025 (Raza), no 'hard' keyword — extending the table is routine; the frontier record is the asymptotic constants, which need proofs not witnesses. Cf. #301, #327.",
+   "notes": "PREVIOUS CELL CLOSED EXTERNALLY: a(732) = a(731), by the argument listed on VibeMathed (reviewed there 2026-09-08, Lean-checked with bv_decide): in {1..732} the numbers 122, 183, 244, 366, 732 meet only the triples {122,183,366}, {183,244,732}, {244,366,732}, and no element lies in all three, so this component contributes 3 both before and after 732 is added. Then a(733) = a(732) + 1 and a(734) = a(733) + 1, since neither lies in a triple inside its range; 735 is the first n past the b-file whose triples tie it to the rest. All re-derived in experiments/claude-freshness-20260927/curation_checks.py. OEIS A390395 is unchanged (b-file to 731), so every value here is conditional on a(731) = 606. Headline asymptotic gap (erdosproblems.com/302, retrieved 2026-07-18): (5/8 + o(1))N <= f(N) <= (9/10 + o(1))N. Lower: Cambie's construction — odd integers <= N/4 plus all of (N/2, N] (site-recorded). Upper: van Doorn note (PDF in github.com/Woett/Mathematical-shorts, site-linked; not refereed). If sound, the 5/8 lower bound already answers the specific sub-question 'is f(N) = (1/2+o(1))N?' negatively — flag for the curator; both bounds are site-recorded observations. Colouring version is #303, solved by Brown–Rödl 1991. Extending the table is routine; the frontier record is the asymptotic constants, which need proofs not witnesses. Cf. #301, #327.",
    "provenance": {
-    "added_by": "gap-map miner chunk 242-302",
-    "date": "2026-07-18",
+    "added_by": "claude, freshness curation (branch chronos/quirky-gates-dalhc4); row first mined 2026-07-18",
+    "date": "2026-09-27",
     "checked": [
-     "OEIS A390395 + b390395.txt (retrieved 2026-07-18)",
+     "OEIS A390395 via github.com/oeis/oeisdata, 2026-09-27 (b-file 1..731, unchanged)",
+     "vibemathed.com problem 'reciprocal-triple-free-sets-the-finite-plateau-at-732' (as reported by the 2026-09-27 freshness sweep)",
+     "own triple enumeration to 735, experiments/claude-freshness-20260927/curation_checks.py",
      "erdosproblems.com/302 (retrieved 2026-07-18)"
     ]
    },
    "evidence": [
     {
      "type": "literature",
-     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
-     "date": "2026-07-18"
+     "artifact": "OEIS b-file value a(731) = 606 (Kesarwani) and the VibeMathed isolated-component argument",
+     "date": "2026-09-27"
+    },
+    {
+     "type": "numeric_scan",
+     "artifact": "triple enumeration to 735 re-deriving a(732..734) from a(731), experiments/claude-freshness-20260927/curation_checks.py",
+     "date": "2026-09-27"
     }
    ],
    "confidence": "C3"
@@ -2960,31 +2988,43 @@
    "quantity": "A030979(1375) — least k > 10^70 with binomial(2k,k) coprime to 105 (equivalently: all base-3 digits <= 1, base-5 digits <= 2, base-7 digits <= 3)",
    "kind": "next_cell",
    "lower": {
-    "value": "1e70",
-    "source": "Christopher E. Thompson's complete enumeration to 10^70 (OEIS A030979 b-file, 1374 terms; extends Alekseyev's first 62 terms)",
-    "year": 2015
+    "value": "41793835224715561827991803724419285037533255120531924813793252461031887",
+    "source": "exact successor iteration from 10^70 (jump to the next integer with base-3 digits <= 1, then base-5 digits <= 2, then base-7 digits <= 3, until nothing moves): each jump never passes the least common member above the start, so the fixed point is a(1375); recomputed here with an independent implementation that reproduces all 1374 b-file terms",
+    "year": 2026
    },
-   "upper": null,
+   "upper": {
+    "value": "41793835224715561827991803724419285037533255120531924813793252461031887",
+    "source": "the value itself: base-3 digits <= 1, base-5 digits <= 2, base-7 digits <= 3 (checked)",
+    "year": 2026
+   },
    "witness_side": "upper",
-   "witness_object": "any k > 10^70 with base-3 digits in {0,1}, base-5 digits in {0,1,2}, base-7 digits in {0,1,2,3} (Kummer/Lucas: no carries in k+k in each base) — first new term since 2015, upper-bounds a(1375)",
+   "witness_object": "the least k > 10^70 with base-3 digits in {0,1}, base-5 digits in {0,1,2}, base-7 digits in {0,1,2,3} (Kummer/Lucas: no carries in k+k in each base); found, it is a(1375) as recorded in the bounds",
    "witness_verifier": "three base conversions + digit-range checks with any bignum library — microseconds; no factorial or binomial computation needed",
-   "witness_feasibility": "plausible",
-   "exact_feasibility": "unknown",
-   "status": "open",
-   "notes": "Graham's $1000 prize question is INFINITUDE of the sequence — that side is a wall (EGRS 1975 settles any two odd primes; three primes open; Bloom-Croot [BlCr25]: almost-all-digits version for large primes). Pomerance heuristic: ~x^0.02595 terms up to x, so new terms beyond 10^70 exist but are extremely sparse; naive digit-DFS explodes (2^147 base-3 strings to 10^70) — needs Thompson-style multi-base constraint propagation, hence plausible-not-easy, and exact-cell status beyond 10^70 is unproven at realistic scale. b-file unchanged as of OEIS rev 2026-06-28. Also note Graham expected 3160 to be the last term coprime to 3*5*7*11.",
+   "witness_feasibility": "open-easy",
+   "exact_feasibility": "cell",
+   "status": "closed",
+   "notes": "CELL CLOSED (2026-09-27), and it was never a hard cell: the least term above any bound follows from the exact successor iteration in the bound sources. jaredwilder/erdos376-successor-frontier (public 2026-09-11) uses it to find the least term above 10^1000 (1,006 digits). An independent implementation written for this curation (experiments/claude-freshness-20260927/curation_checks.py) reproduces all 1374 b-file terms in about a second of pure Python, gives a(1375) above, and counts 14,273 positive terms up to 10^100 in ~25 s, matching the count reported there. A finite census is therefore a matter of compute, not a frontier (the 2026-09-11 lane experiments/astra-376-20260911 reached the same verdict). The Erdős question — are there infinitely many n with binomial(2n,n) coprime to 105? — is a wall: EGRS 1975 settles any two odd primes; three primes open; Bloom–Croot [BlCr25]: almost-all-digits version for large primes. Pomerance heuristic: on the order of x^0.02595 terms up to x; between 10^70 (1374 terms) and 10^100 (14,274 with 0) the count grows 10.4-fold, a local exponent of about 0.034. Graham expected 3160 to be the last term coprime to 3*5*7*11.",
    "provenance": {
-    "added_by": "gap-map miner chunk 364-382",
-    "date": "2026-07-18",
+    "added_by": "claude, freshness curation (branch chronos/quirky-gates-dalhc4); row first mined 2026-07-18",
+    "date": "2026-09-27",
     "checked": [
-     "OEIS A030979 (rev 2026-06-28) + b-file header (1374 terms, complete to 10^70)",
+     "OEIS A030979 via github.com/oeis/oeisdata, 2026-09-27 (b-file 1..1374, complete to 10^70, unchanged since 2026-06-28)",
+     "github.com/jaredwilder/erdos376-successor-frontier at 9791c20 (README, successor-closure argument), read 2026-09-27",
+     "own successor census to 10^100, experiments/claude-freshness-20260927/curation_checks.py --census",
+     "experiments/astra-376-20260911 (2026-09-11 lane)",
      "erdosproblems.com/376 (page edited 2025-12-28)"
     ]
    },
    "evidence": [
     {
      "type": "literature",
-     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
-     "date": "2026-07-18"
+     "artifact": "Thompson b-file (complete to 10^70) and jaredwilder/erdos376-successor-frontier",
+     "date": "2026-09-27"
+    },
+    {
+     "type": "numeric_scan",
+     "artifact": "independent successor census: 1374 terms <= 10^70, a(1375), 14,273 positive terms <= 10^100 (experiments/claude-freshness-20260927/curation_checks.py)",
+     "date": "2026-09-27"
     }
    ],
    "confidence": "C3"
@@ -3774,22 +3814,23 @@
   {
    "problem": 451,
    "oeis": "A386620",
-   "quantity": "A386620(184) = n_184 — smallest k > 368 such that (k-1)(k-2)...(k-184) has no prime factor in (184, 368); first uncomputed cell (b-file complete through n=183)",
+   "quantity": "A386620(210) = n_210 — smallest k > 420 such that (k-1)(k-2)...(k-210) has no prime factor in (210, 420); first cell beyond the b-file (n = 1..209)",
    "kind": "next_cell",
    "lower": null,
    "upper": null,
    "witness_side": "upper",
-   "witness_object": "An integer k > 368 such that for each of the 31 primes p in (184,368), k mod p is NOT in {1,...,184} (equivalently k mod p is 0 or in {185 mod p,...,p-1}); any such k upper-bounds the cell, and a sieve exhaustion below k pins the exact value.",
-   "witness_verifier": "Candidate check is 31 modular reductions (primes 191..367) — trivially dependency-free and instant. Exactness additionally requires certifying no smaller k > 368 works: a residue-sieve scan up to k (heavy: a(183) = 167981058401851841 ~ 1.7e17, so a(184) likely needs a large wheeled sieve, but it is a bounded computation the b-file authors have repeatedly done).",
+   "witness_object": "An integer k > 420 such that for each of the 35 primes p in (210, 420), k mod p is NOT in {1,...,210} (equivalently k mod p is 0 or in {211 mod p,...,p-1}); any such k upper-bounds the cell, and an exhaustive residue-class search below k pins the exact value.",
+   "witness_verifier": "Candidate check is 35 modular reductions (primes 211..419) — dependency-free and instant. Exactness additionally requires certifying that no smaller k > 420 works, e.g. with W. A. Carney's exact residue-class search (C++, per-n minimality proof, linked from OEIS A386620).",
    "witness_feasibility": "plausible",
    "exact_feasibility": "cell",
    "status": "open",
-   "notes": "The open PROBLEM is the asymptotic estimate of n_k, which is a wall for machines: van Doorn-Tang (arXiv:2606.19863, June 2026, in OEIS formula section) prove n_k > exp(c (log k)^2/loglog k); trivial upper n_k < e^{O(k)} (PNT / product of primes in (k,2k), Adenwalla observation on erdosproblems.com); Erdos conjectured k^d-beating growth but e^{o(k)}. The RECORD lane is table extension: b-file has exactly 183 terms (Kalogeropoulos 1-70, Chai Wah Wu 71-92, Greathouse 93-183). Because each candidate k is admissible iff k avoids 184 residues mod each of 31 primes, admissible density is prod (p-184)/p over p in (191..367) ~ tiny — terms jump erratically (a(36)=579124 vs a(183)~1.7e17), so budget per new cell is uncertain; grade honest: days of sieve, not hours.",
+   "notes": "PREVIOUS CELL CLOSED EXTERNALLY: William Alexander Carney extended the OEIS b-file from n = 1..183 to n = 1..209 (OEIS revision of 2026-08-22), with a C++ exact residue-class search over the primes in (n, 2n) that proves minimality per n, and a Python driver that re-derives the published terms. The b-file values could not be read from this session (the OEIS data mirror keeps b-files in Git LFS), so a(184..209) are cited, not re-checked. The open PROBLEM is the asymptotic estimate of n_k, which is a wall for machines: van Doorn–Tang (arXiv:2606.19863, June 2026, in OEIS formula section) prove n_k > exp(c (log k)^2/loglog k); trivial upper n_k < e^{O(k)} (PNT / product of primes in (k,2k)); Erdős conjectured k^d-beating growth but e^{o(k)}. Terms jump erratically (a(183) ~ 1.7e17), so the budget per new cell is uncertain.",
    "provenance": {
-    "added_by": "gap-map miner chunk 424-472",
-    "date": "2026-07-18",
+    "added_by": "claude, freshness curation (branch chronos/quirky-gates-dalhc4); row first mined 2026-07-18",
+    "date": "2026-09-27",
     "checked": [
-     "OEIS A386620 (JSON + b-file, confirmed 183 terms, a(183)=167981058401851841)",
+     "OEIS A386620 via github.com/oeis/oeisdata, 2026-09-27 (%H: b-file n = 1..209, W. A. Carney; C++ program and Python driver links)",
+     "OEIS A386620 JSON + b-file as of 2026-07-18 (183 terms, a(183)=167981058401851841)",
      "erdosproblems.com/451 (paraphrased)",
      "arXiv:2606.19863 (van Doorn-Tang, existence + statement of lower bound confirmed via arXiv listing)"
     ]
@@ -3797,8 +3838,8 @@
    "evidence": [
     {
      "type": "literature",
-     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
-     "date": "2026-07-18"
+     "artifact": "OEIS A386620 b-file n = 1..209 (Carney 2026); values not read here",
+     "date": "2026-09-27"
     }
    ],
    "confidence": "C3"
@@ -3858,7 +3899,7 @@
    "witness_feasibility": "open-easy",
    "exact_feasibility": "wall",
    "status": "open",
-   "notes": "erdosproblems.com marks this FALSIFIABLE (single-k counterexample possible) and 'almost certainly true but proof beyond reach': ruling out two primes-squared in one prime gap is Legendre-conjecture strength. A counterexample needs a prime-free interval of length ~2*sqrt(p_k) — astronomically beyond all known gaps, so the falsification lane is dead; the honest record is the verified range. Cheap extension route to 4e18: all prime gaps below 4e18 are < 1476 (Oliveira e Silva-Herzog-Pardi maximal-gap verification, 2014), which kills double-square cohabitation for q > 737, leaving only a small square-cube/higher coincidence enumeration — an afternoon job for the rungs fleet. No published verified range was found in OEIS or on the problem page; this 1e12 record is ours.",
+   "notes": "CLAIMED EXTENSION, UNVERIFIED (2026-09-27 freshness sweep): RajveerKapoor/erdos-work (papers/erdos-458, 2026-08-14) claims the inequality for every p_{k+1} <= 1.10889e27, via the same reduction (a failure needs two prime squares in one prime gap), Sorenson–Webster's verification of Oppermann's conjecture to (3.33e13)^2, and an enumeration of all 52,963,734 prime powers q^a <= 1.10889e27 with a >= 3; the reduction also appears in the-omega-institute/trureturing#9524 (2026-09-23). Not replayed here, so the recorded range stays 1e12. erdosproblems.com marks this FALSIFIABLE (single-k counterexample possible) and 'almost certainly true but proof beyond reach': ruling out two primes-squared in one prime gap is Legendre-conjecture strength. A counterexample needs a prime-free interval of length ~2*sqrt(p_k) — astronomically beyond all known gaps, so the falsification lane is dead; the honest record is the verified range. Cheap extension route to 4e18: all prime gaps below 4e18 are < 1476 (Oliveira e Silva-Herzog-Pardi maximal-gap verification, 2014), which kills double-square cohabitation for q > 737, leaving only a small square-cube/higher coincidence enumeration — an afternoon job for the rungs fleet. No published verified range was found in OEIS or on the problem page; this 1e12 record is ours.",
    "provenance": {
     "added_by": "gap-map miner chunk 424-472",
     "date": "2026-07-18",
@@ -3866,7 +3907,8 @@
      "OEIS A056604 (JSON, b-file to 342 terms)",
      "erdosproblems.com/458 (paraphrased)",
      "own verified computation to 1e12 (script + identity sanity check, this session)",
-     "Oliveira e Silva et al. 2014 maximal prime gap bound (background for the 4e18 extension route, not used in the 1e12 claim)"
+     "Oliveira e Silva et al. 2014 maximal prime gap bound (background for the 4e18 extension route, not used in the 1e12 claim)",
+     "2026-09-27 freshness sweep: claimed range 1.10889e27 (RajveerKapoor/erdos-work), unverified"
     ]
    },
    "evidence": [
@@ -5438,13 +5480,14 @@
    "witness_feasibility": "open-easy",
    "exact_feasibility": "cell",
    "status": "open",
-   "notes": "The Erdős/Alon–Erdős 1985 question — is max Sidon subset of {1,4,...,N^2} of size N^(1-o(1))? — is an asymptotic wall: N^(2/3) lower (Lefmann–Thiele 1995) vs N^(1-c/loglog N) upper (Croot–Mao–Yip, posted in problem-page comments; page edited Apr 2026). The machine lane is the exact table: a(69) falls to bounded search (ILP / max-clique on the Sidon-conflict graph), and each new row is a small verified record. Sievers note: up to n=68 only n=32 fails to attain the max with a subset containing n^2.",
+   "notes": "EXTERNALLY REPORTED, UNVERIFIED (2026-09-27 freshness sweep): erdosproblemaday.com states that frozen exhaustive searches, conditional on the OEIS prefix through n = 68, give a(69) = 32, a(70) = 33 and a(71) = 33; the page was not reachable from the checking session, and OEIS A390813 is unchanged (data to n = 68, 2025-12-02). Confirming a(69) = 32 (refuting 33) is the cheap next step, before any new cell. The Erdős/Alon–Erdős 1985 question — is max Sidon subset of {1,4,...,N^2} of size N^(1-o(1))? — is an asymptotic wall: N^(2/3) lower (Lefmann–Thiele 1995) vs N^(1-c/loglog N) upper (Croot–Mao–Yip, posted in problem-page comments; page edited Apr 2026). The machine lane is the exact table: a(69) falls to bounded search (ILP / max-clique on the Sidon-conflict graph), and each new row is a small verified record. Sievers note: up to n=68 only n=32 fails to attain the max with a subset containing n^2.",
    "provenance": {
     "added_by": "gap-map miner chunk 730-812",
     "date": "2026-07-18",
     "checked": [
      "OEIS A390813 (data + b-file to 68)",
-     "erdosproblems.com/773 (paraphrased)"
+     "erdosproblems.com/773 (paraphrased)",
+     "2026-09-27 freshness sweep (experiments/claude-freshness-20260927): external report a(69..71) = 32, 33, 33, unverified; OEIS A390813 via github.com/oeis/oeisdata unchanged"
     ]
    },
    "evidence": [
@@ -5945,7 +5988,7 @@
    "kind": "next_cell",
    "lower": {
     "value": "16",
-    "source": "monotonicity from OEIS A389182 b-file a(100)=16 (David Spencer)",
+    "source": "monotonicity from the OEIS A389182 b-file, a(100) = 16 (n = 1..100, Alper Ferudun 2026; D. Spencer's extremizing sets cover n <= 69)",
     "year": 2025
    },
    "upper": {
@@ -5959,14 +6002,15 @@
    "witness_feasibility": "open-easy",
    "exact_feasibility": "cell",
    "status": "open",
-   "notes": "Sequence created Oct 2025 — everything past n=100 is fresh territory; branch-and-bound/ILP plausibly extends the table well past 150 in hours. Asymptotic layer (the actual Erdős question): Erdős–Freud [ErFr91] construction gives liminf a(N)/√N ≥ 2/√3 ≈ 1.1547 (Sidon set in [1,N/3] ∪ its reflection); conjectured tight. One-exception sets are quasi-Sidon (only one colliding sum ⇒ |A+A| ~ |A|²/2, containment derived here), so Pikhurko's #840 upper bound (1/4+1/(π+2)²)^{-1/2} ≈ 1.8626 applies [Pi06]; erdosproblems.com lists #864 as a weaker form of #840. Asymptotic gap [1.1547, 1.8626] on the constant is a wall; the table lane is the machine surface.",
+   "notes": "EXTERNALLY REPORTED, UNVERIFIED (2026-09-27 freshness sweep): an exact exhaustive computation attributed to erdosproblemaday.com gives a(101) = ... = a(106) = 16, a(107..116) = 17, a(117..134) = 18, a(135..152) = 19 and a(153) = 20, i.e. a(101) at the lower bracket; the page was not reachable from the checking session and no public copy was found. Confirming a(101) = 16 (refuting 17) is the cheap next step. Sequence created Oct 2025 — everything past n=100 is fresh territory; branch-and-bound/ILP plausibly extends the table well past 150 in hours. Asymptotic layer (the actual Erdős question): Erdős–Freud [ErFr91] construction gives liminf a(N)/√N ≥ 2/√3 ≈ 1.1547 (Sidon set in [1,N/3] ∪ its reflection); conjectured tight. One-exception sets are quasi-Sidon (only one colliding sum ⇒ |A+A| ~ |A|²/2, containment derived here), so Pikhurko's #840 upper bound (1/4+1/(π+2)²)^{-1/2} ≈ 1.8626 applies [Pi06]; erdosproblems.com lists #864 as a weaker form of #840. Asymptotic gap [1.1547, 1.8626] on the constant is a wall; the table lane is the machine surface.",
    "provenance": {
     "added_by": "gap-map miner chunk 864-935",
     "date": "2026-07-18",
     "checked": [
      "OEIS A389182 + b-file (n ≤ 100)",
      "erdosproblems.com/864 (fetched 2026-07-18)",
-     "erdosproblems.com/840 (Pikhurko [Pi06] quasi-Sidon upper bound)"
+     "erdosproblems.com/840 (Pikhurko [Pi06] quasi-Sidon upper bound)",
+     "2026-09-27 freshness sweep: external report a(101..153), unverified; OEIS A389182 via github.com/oeis/oeisdata (b-file n = 1..100, Alper Ferudun)"
     ]
    },
    "evidence": [
@@ -6872,37 +6916,37 @@
    "quantity": "A386893(101) — first OEIS-uncomputed value of f(n), the Mayer–Erdős run-length: largest m such that any two Farey fractions of order n at index distance <= m are similarly ordered (table currently ends at n=100)",
    "kind": "next_cell",
    "lower": {
-    "value": "2",
-    "source": "f(n) >= (n/12)(1 - 4/n^(1/3)) — van Doorn, arXiv:2509.00121 (via OEIS formula section)",
-    "year": 2025
+    "value": "27",
+    "source": "direct scan of the Farey sequence of order 101 (every pair at index distance <= 27 is similarly ordered): gap-map miner 2026-07-18, and again with independent code that reproduces OEIS a(4..100)",
+    "year": 2026
    },
    "upper": {
-    "value": "30",
-    "source": "f(n) < n/4 + 5 for all n >= 4 — van Doorn, arXiv:2509.00121 (via OEIS formula section)",
-    "year": 2025
+    "value": "27",
+    "source": "the same scan finds a pair at index distance 28 that is not similarly ordered",
+    "year": 2026
    },
    "witness_side": "both",
    "witness_object": "for claimed value v: the violating pair of Farey fractions at index distance v+1 (with (a_k - a_l)(b_k - b_l) < 0) plus a full sliding-window scan of F_n confirming no violation at distance <= v",
    "witness_verifier": "generate F_n by the mediant/next-term recurrence (integer-only), scan windowed pairs for the similarly-ordered predicate; O(|F_n| * f(n)) with |F_n| ~ 3n^2/pi^2. Verifier validated in this mining pass: reproduces a(4)..a(60) from the b-file exactly and computes a(101) in milliseconds",
    "witness_feasibility": "open-easy",
    "exact_feasibility": "cell",
-   "status": "open",
-   "notes": "MINER RESULT: a(101) = 27, computed and double-checked here, matching van Doorn's conjectured exact formula f(n) = floor(n/4) + d, d = (1,2,2,4) for n = (0,1,2,3) mod 4, n >= 92. The real lane is bulk: extend the table to n ~ 10^4-10^5 hunting a counterexample to the exact formula (any mismatch is publishable and would kill the conjectured c = 1/4 form), plus a free OEIS b-file extension beyond n=100. Headline asymptotic gap (proof-only): (1/12 - o(1))n <= f(n) <= n/4 + O(1) (van Doorn 2025; history: Mayer 1942 f -> infinity, Erdős 1943 f >> n). CAUTION: the problem page (accessed 2026-07-18) flags a claimed solution posted in comments, not yet incorporated — librarian should re-check status before major effort.",
+   "status": "closed",
+   "notes": "CELL CLOSED (2026-09-27): a(101) = 27, computed by the gap-map miner and recomputed independently here (experiments/claude-freshness-20260927/curation_checks.py: the scan reproduces all 97 OEIS terms a(4..100), and a(101..108) = 27, 27, 29, 27, 28, 28, 30, 28 follow van Doorn's conjectured formula floor(n/4) + (1, 2, 2, 4)[n mod 4]). The parent problem is solved upstream (atlas/stubs.json: solved-upstream at teorth 39cde0f): Cipollini (arXiv:2607.23302) proved f(n) = (1/4 + o(1))n, and Wang–Xie–Zhao (arXiv:2608.15681, 2026-08-16) report an exact formula for every n >= 4 (not read here: arXiv was unreachable from this session). With an exact formula, no finite cell is a frontier; comparing it with a long table is a sanity check, not a record.",
    "provenance": {
-    "added_by": "gap-map miner chunk 975-1030",
-    "date": "2026-07-18",
+    "added_by": "claude, freshness curation (branch chronos/quirky-gates-dalhc4); row first mined 2026-07-18",
+    "date": "2026-09-27",
     "checked": [
-     "OEIS A386893 + b-file (97 terms, n=4..100)",
-     "arXiv:2509.00121 (van Doorn bounds, via OEIS)",
-     "erdosproblems.com/1005 (context only)",
-     "own computation: verifier reproduces a(4..60); a(101)=27"
+     "OEIS A386893 via github.com/oeis/oeisdata, 2026-09-27 (data n = 4..100)",
+     "atlas/stubs.json (#1005 solved-upstream, teorth 39cde0f)",
+     "arXiv:2607.23302 and arXiv:2608.15681 (as reported by the 2026-09-27 freshness sweep; not read here)",
+     "own Farey scan, experiments/claude-freshness-20260927/curation_checks.py"
     ]
    },
    "evidence": [
     {
-     "type": "literature",
-     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
-     "date": "2026-07-18"
+     "type": "numeric_scan",
+     "artifact": "independent Farey scan reproducing a(4..100) and giving a(101) = 27, experiments/claude-freshness-20260927/curation_checks.py",
+     "date": "2026-09-27"
     }
    ],
    "confidence": "C3"
@@ -7239,36 +7283,37 @@
   {
    "problem": 1057,
    "oeis": "A006931",
-   "quantity": "A006931(40) - least Carmichael number with exactly 40 prime factors",
+   "quantity": "A006931(64) - least Carmichael number with exactly 64 prime factors (first unknown term: k = 3..63 are tabulated)",
    "kind": "next_cell",
    "lower": {
-    "value": "14909796388965607134586226733905214934462755608741300153203070717079045",
-    "source": "trivial: a Carmichael number is odd and squarefree, so one with 40 distinct prime factors is at least the product of the 40 smallest odd primes (3*5*...*179, ~1.49e70; computed locally 2026-07-18)",
+    "value": "30538464732966598049639471694498927575178071944119185744332748287405382286840121733591399582403281813261090655566479874265615105",
+    "source": "trivial: a Carmichael number is odd and squarefree, so one with 64 distinct prime factors is at least the product of the 64 smallest odd primes (3*5*...*313, 128 digits; computed locally 2026-09-27)",
     "year": null
    },
    "upper": null,
    "witness_side": "upper",
-   "witness_object": "A squarefree N = p_1*...*p_40 (40 distinct primes) satisfying Korselt's criterion p_i - 1 | N - 1 for all i, smaller than any previously tabulated 40-factor Carmichael number (explicit upper witnesses exist in Alford-Grantham-Hayman-Shallue 2014 data covering every factor count 3..19565220, but no specific value was verified here, so upper is left null)",
-   "witness_verifier": "Given the factor list: primality of each p_i, distinctness, product equals N, and (N-1) mod (p_i - 1) = 0 for all i. Bigint-only, milliseconds.",
+   "witness_object": "A squarefree N = p_1*...*p_64 (64 distinct primes) satisfying Korselt's criterion p_i - 1 | N - 1 for all i; the least such N is the cell. 64-factor Carmichael numbers exist (Alford–Grantham–Hayman–Shallue 2014 construct them for every factor count 3..19565220), but none is recorded here, so upper is left null",
+   "witness_verifier": "Given the factor list: primality of each p_i, distinctness, product equals N, and (N-1) mod (p_i - 1) = 0 for all i. Bigint-only, milliseconds. Minimality needs an exhaustive preproduct search below N.",
    "witness_feasibility": "plausible",
    "exact_feasibility": "cell",
    "status": "open",
-   "notes": "The linked Erdos problem 1057 is the counting asymptotic C(x) = x^(1-o(1)) for Carmichael numbers - an analytic wall, not witness-movable. Bounds per erdosproblems 1057 remarks (page edited 2026-01-16): C(x) > x^0.3389 (Lichtman 2022), improving x^0.33336704 (Harman 2008) and x^(2/7) (Alford-Granville-Pomerance 1994); C(x) < x*exp(-c log x * logloglog x / loglog x) (Erdos 1956), which Pomerance 1989 heuristically matches. The OEIS cell a(40) is the adjacent computable record only. Exact values a(36)-a(39) were computed by Shallue-Webster (arXiv:2506.09903, 2025-26; a(39) ~ 2.475e81 in b-file, found by Butler undergrads Johnson & Webster, added to OEIS Jan 2026) - the lane is ACTIVE; read that paper before spending compute, a(40) may already be in progress or listed there.",
+   "notes": "PREVIOUS CELL CLOSED EXTERNALLY: a(40) = 336344101674863882264460997162737741032660590208112263486472947389502099210991168001 (84 digits, 17*19*...*617*1409). OEIS A006931 now has J. Webster's b-file for n = 3..61, and the Butler University table (github.com/jewebste/small-carmichael-numbers, 2026-09-07) lists the least Carmichael number with k factors for k = 3..63 as independently verified, reports k = 64 not yet found (search ongoing) and gives an unverified k = 65 candidate. Checked here: all 62 listed values (k = 3..63 and the k = 65 candidate) are products of exactly k distinct primes satisfying Korselt's criterion (a(40) is replayed in experiments/claude-freshness-20260927/curation_checks.py); minimality is the table's claim. The lane is ACTIVE: read the Butler table before spending compute. The linked Erdős problem 1057 is the counting asymptotic C(x) = x^(1-o(1)) for Carmichael numbers - an analytic wall, not witness-movable. Bounds per erdosproblems 1057 remarks (page edited 2026-01-16): C(x) > x^0.3389 (Lichtman 2022), improving x^0.33336704 (Harman 2008) and x^(2/7) (Alford-Granville-Pomerance 1994); C(x) < x*exp(-c log x * logloglog x / loglog x) (Erdős 1956), which Pomerance 1989 heuristically matches.",
    "provenance": {
-    "added_by": "gap-map miner chunk 1052-1062",
-    "date": "2026-07-18",
+    "added_by": "claude, freshness curation (branch chronos/quirky-gates-dalhc4); row first mined 2026-07-18",
+    "date": "2026-09-27",
     "checked": [
-     "OEIS A006931 (JSON API) + b-file n=3..39",
+     "OEIS A006931 via github.com/oeis/oeisdata, 2026-09-27 (%H: b-file n = 3..61, J. Webster)",
+     "github.com/jewebste/small-carmichael-numbers at 3799389 (README table k = 3..63, k = 65 candidate), read 2026-09-27",
+     "own Korselt checks of all 62 listed values, 2026-09-27",
      "erdosproblems.com/1057 (accessed 2026-07-18, numeric facts paraphrased)",
-     "arXiv:2506.09903 (Shallue-Webster, cited via OEIS links; not read in full)",
-     "local computation: product of 40 smallest odd primes"
+     "local computation: product of the 64 smallest odd primes"
     ]
    },
    "evidence": [
     {
      "type": "literature",
-     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
-     "date": "2026-07-18"
+     "artifact": "OEIS A006931 b-file (to 61) and the Butler University table (to 63); Korselt re-checked here, minimality not replayed",
+     "date": "2026-09-27"
     }
    ],
    "confidence": "C3"
@@ -7381,30 +7426,32 @@
   {
    "problem": 1062,
    "oeis": "A038372",
-   "quantity": "A038372(45) - largest subset of {1,...,45} in which no element divides two other distinct elements (fork-free sets)",
+   "quantity": "A038372(69) - largest subset of {1,...,69} in which no element divides two other distinct elements (fork-free sets); first cell beyond the certified extension a(45..68)",
    "kind": "next_cell",
    "lower": {
-    "value": "30",
-    "source": "= a(44) = 30 (OEIS A038372 data, 44 terms); monotone since any valid subset for n is valid for n+1",
-    "year": null
+    "value": "46",
+    "source": "a(68) = 46 (MaliciousMusic/A038372-certificates, commit 36390fb, 2026-09-22: an explicit 46-element witness - the interval {23..68} - and a DRAT refutation of 47; not yet in OEIS) and monotonicity a(n+1) >= a(n)",
+    "year": 2026
    },
    "upper": {
-    "value": "31",
-    "source": "= a(44) + 1: deleting 45 from an optimal subset of [1..45] leaves a valid subset of [1..44], so a(45) <= a(44) + 1",
+    "value": "47",
+    "source": "= a(68) + 1: deleting 69 from an optimal subset of [1..69] leaves a valid subset of [1..68], so a(69) <= a(68) + 1",
     "year": null
    },
    "witness_side": "lower",
-   "witness_object": "A subset S of {1..45} with |S| = 31 such that no a in S divides two distinct other elements of S (pins a(45) = 31); if the exhaustive/ILP search proves none exists, a(45) = 30 - either way the cell closes",
-   "witness_verifier": "For each a in S count multiples of a among S \\ {a}; require count <= 1. O(|S|^2) integer divisibility checks, dependency-free, instant.",
+   "witness_object": "A subset S of {1..69} with |S| = 47 such that no a in S divides two distinct other elements of S (pins a(69) = 47); otherwise a checked refutation that no 47-element fork-free subset exists pins a(69) = 46",
+   "witness_verifier": "For each a in S count multiples of a among S \\ {a}; require count <= 1. O(|S|^2) integer divisibility checks, dependency-free, instant. The a(69) = 46 side needs an UNSAT proof checked by a DRAT checker, for a CNF whose fork clauses and cardinality constraint are regenerated independently.",
    "witness_feasibility": "open-easy",
    "exact_feasibility": "cell",
    "status": "open",
-   "notes": "a(45) is boxed into {30, 31}; a 45-variable ILP/SAT solves it in seconds, and the whole table (data stops at n=44, no b-file) extends by dozens of exact cells in hours - among the cheapest genuine table records in the hub. The underlying Erdos problem (Guy B24): how large is f(n), and is lim f(n)/n irrational? Interval (n/3, n] gives f(n) >= ceil(2n/3); Lebensold 1976: 0.6725 n <= f(n) <= 0.6736 n for large n (stated as a theorem in formal-conjectures 1062.lean and on the problem page) - tightening THAT density gap is a separate, analytic/LP-flavored lane; new exact cells sharpen the empirical density toward the irrationality question. erdosproblems 1062 has 13 comments with claimed partial results - check before attacking the density constants.",
+   "notes": "PREVIOUS CELL CLOSED EXTERNALLY: a(45) = 30, at the lower bracket, and a(46..68) = 31, 32, 32, 33, 34, 34, 35, 36, 37, 38, 39, 39, 40, 41, 41, 42, 43, 43, 43, 44, 44, 45, 46 (MaliciousMusic/A038372-certificates, commit 36390fb, 2026-09-22): each term has an explicit witness, a DRAT refutation of one more element (CaDiCaL via python-sat, Sinz counter), and a Lean kernel check of the witness; OEIS A038372 still stops at a(44) as of 2026-09-27. Checked here: all 24 witnesses are fork-free with the stated sizes (own code); the repository's own verifier passed at n = 45 in the 2026-09-27 freshness sweep; the other DRAT proofs were not replayed. a(n) - ceil(2n/3) is 0 on 45..53, 1 on 54..63 and 0 again on 64..68, so a(69) in {46, 47} asks whether the interval construction is beaten at 69. SAT effort grows steeply (the source's own DRAT check alone is ~15 min at n = 68), so this is minutes-to-hours of solver time, not seconds. The underlying Erdos problem (Guy B24): how large is f(n), and is lim f(n)/n irrational? Interval (n/3, n] gives f(n) >= ceil(2n/3); Lebensold 1976: 0.6725 n <= f(n) <= 0.6736 n for large n (stated as a theorem in formal-conjectures 1062.lean and on the problem page) - tightening THAT density gap is a separate, analytic/LP-flavored lane; new exact cells sharpen the empirical density toward the irrationality question.",
    "provenance": {
-    "added_by": "gap-map miner chunk 1052-1062",
-    "date": "2026-07-18",
+    "added_by": "claude, freshness curation (branch chronos/quirky-gates-dalhc4); row first mined 2026-07-18",
+    "date": "2026-09-27",
     "checked": [
-     "OEIS A038372 (JSON API; 44 data terms, Lebensold bounds in formula line)",
+     "github.com/MaliciousMusic/A038372-certificates at 36390fb (README, b038372_new_terms.txt, terms/n045..n068/witness.txt), read 2026-09-27",
+     "OEIS A038372 via github.com/oeis/oeisdata, 2026-09-27 (data a(1..44), no b-file)",
+     "own check of the 24 witnesses (fork-free, sizes as stated), 2026-09-27",
      "erdosproblems.com/1062 (accessed 2026-07-18, numeric facts paraphrased)",
      "formal-conjectures FormalConjectures/ErdosProblems/1062.lean (Apache-2.0; lower-bound and Lebensold theorems)"
     ]
@@ -7412,8 +7459,8 @@
    "evidence": [
     {
      "type": "literature",
-     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
-     "date": "2026-07-18"
+     "artifact": "MaliciousMusic/A038372-certificates (witness + DRAT refutation per term, a(45..68)); witnesses re-checked here, proofs not replayed",
+     "date": "2026-09-27"
     }
    ],
    "confidence": "C3"
@@ -7607,33 +7654,33 @@
   {
    "problem": 1095,
    "oeis": "A003458",
-   "quantity": "A003458(378) = g(378) — Erdős–Selfridge function: least n > 379 such that the least prime factor of binomial(n,378) exceeds 378 (first cell beyond the verified literature frontier k=377)",
+   "quantity": "A003458(401) = g(401) — Erdős–Selfridge function: least n > 402 such that the least prime factor of binomial(n,401) exceeds 401 (first cell beyond the OEIS b-file, which now runs through k = 400)",
    "kind": "next_cell",
    "lower": null,
    "upper": null,
    "witness_side": "upper",
-   "witness_object": "any integer n > 379 with lpf(binomial(n,378)) > 378 upper-bounds g(378); smaller qualifying n = better record; the exact value additionally needs the sieve certificate that no smaller n qualifies",
-   "witness_verifier": "Kummer's theorem, dependency-free: p | binomial(n,k) iff adding k and n-k in base p produces a carry; so for each of the 74 primes p <= 378 check every base-p digit of 378 is <= the corresponding digit of n (no carries). Pure integer arithmetic, instant even for n ~ 1e31",
+   "witness_object": "any integer n > 402 with lpf(binomial(n,401)) > 401 upper-bounds g(401); smaller qualifying n = better record; the exact value additionally needs the sieve certificate that no smaller n qualifies",
+   "witness_verifier": "Kummer's theorem, dependency-free: p | binomial(n,k) iff adding k and n-k in base p produces a carry; so for each of the 79 primes p <= 401 check that adding 401 and n - 401 in base p never carries. Pure integer arithmetic, instant even for n ~ 1e34",
    "witness_feasibility": "plausible",
    "exact_feasibility": "cell",
    "status": "open",
-   "notes": "FRESHNESS CATCH (verified in primary source): the OEIS b-file stops at k=375 (a(375)=12863999653788432184381680413559) but the Sorenson–Sorenson–Webster arXiv v3 addendum (arXiv:1907.08559v3, June 2021, supplementing their ANTS XIV paper, Open Book Ser. 4 (2020) 23) reports g(376)=7778804220120654420924631668091 (one week wall time) and g(377)=5973303871796437264595936954237 (~two weeks) — so a(378) is the true frontier and adding 376-377 to OEIS is a free librarian win. Expected magnitude ~1e31; SSW's sublinear-in-g(k) sieve is the tool (CRT/knapsack-constructed admissible residues + wheel), so exact a(378) is weeks-scale expert compute, and producing a non-minimal upper-bound witness via their residue construction is much cheaper. Asymptotics on the hub problem: k^{1+c} < g(k) <= exp((1+o(1))k) (Ecklund–Erdős–Selfridge 1974); record lower bound g(k) >> exp(c(log k)^2) (Konyagin 1999); ELS 1993 conjecture direction exp(ck/log k); SSW heuristic log g(k) ≍ k/log k; EES conjectured g(k) < lcm(1..k) for large k. See also hub #451, #1094.",
+   "notes": "PREVIOUS CELL CLOSED EXTERNALLY: g(378) = 11243132307156301763663607287294, and g(379..400) with it, computed by Alexander Eastwood with GPU wheel sieves, two differently built wheels per term (github.com/AlexanderEastwood/erdos-selfridge, release through g(400) dated 2026-09-24; doi:10.5281/zenodo.22057210). OEIS A003458 now carries his b-file for n = 1..400 (record edited 2026-09-18), which also takes in SSW's g(376), g(377). Checked here: admissibility of g(376..400) by an independent Kummer check (experiments/claude-freshness-20260927/curation_checks.py); the release's own CPU validator also passed in this session. Minimality rests on the recorded exhaustive block scans (GPU), not replayed. Values near k = 400 run from 1e30 to 1e34, so g(401) is GPU-weeks, not a CPU cell. Asymptotics on the hub problem: k^{1+c} < g(k) <= exp((1+o(1))k) (Ecklund–Erdős–Selfridge 1974); record lower bound g(k) >> exp(c(log k)^2) (Konyagin 1999); ELS 1993 conjecture direction exp(ck/log k); SSW heuristic log g(k) ≍ k/log k; EES conjectured g(k) < lcm(1..k) for large k. See also hub #451, #1094.",
    "provenance": {
-    "added_by": "gap-map miner chunk 1063-1100",
-    "date": "2026-07-18",
+    "added_by": "claude, freshness curation (branch chronos/quirky-gates-dalhc4); row first mined 2026-07-18",
+    "date": "2026-09-27",
     "checked": [
-     "OEIS A003458 (JSON entry + b-file n=1..375, verified gap-free)",
-     "SSW ANTS XIV published PDF (msp.org obs-v4-n1, limit g(375) confirmed)",
-     "arXiv:1907.08559v3 addendum full text (g(376), g(377) values read directly)",
-     "WCNT 2019 Sorenson slides (history: limit 357 at that date)",
+     "OEIS A003458 via github.com/oeis/oeisdata, 2026-09-27 (%H: b-file n = 1..400, A. Eastwood)",
+     "github.com/AlexanderEastwood/erdos-selfridge at c37b783 (README frontier table, data/b003458_1to400.txt), read 2026-09-27",
+     "own Kummer admissibility check of g(376..400), experiments/claude-freshness-20260927/curation_checks.py",
+     "arXiv:1907.08559v3 addendum (g(376), g(377); read 2026-07-18)",
      "erdosproblems.com/1095 (context only, paraphrased)"
     ]
    },
    "evidence": [
     {
      "type": "literature",
-     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
-     "date": "2026-07-18"
+     "artifact": "OEIS A003458 b-file (Eastwood 2026) and the erdos-selfridge release; admissibility re-checked here, minimality not replayed",
+     "date": "2026-09-27"
     }
    ],
    "confidence": "C3"
@@ -7659,13 +7706,14 @@
    "witness_feasibility": "open-easy",
    "exact_feasibility": "unknown",
    "status": "open",
-   "notes": "The bounds are asymptotic bases with unspecified o(1)/c — recorded as expressions, not numerics; nobody has published a finite-k g(k) table as far as checked. Finite-k values are suprema over infinitely many prime choices but depend only on the realizable order type of the 2^k subset-log-sums, so bounded search per k is plausible for small k (hyperplane-arrangement enumeration); grading exact as unknown. Other parts of hub 1100 are asymptotic and not witnessable: tau_perp(n)/omega(n) -> infinity for almost all n; tau_perp(n) < exp((log n)^{o(1)}); Erdős–Hall 1978 proved max_{n<x} tau_perp(n) > exp((loglog x)^{2-eps}). Trivial: tau_perp(n) >= omega(n), with equality infinitely often. OEIS link A325864 is marked 'possible' and counts sum-distinct subsets of {1..n} (b-file 0..150) — related machinery, not a g(k) ledger. Page flags unincorporated partial-result claims in comments — check before claiming novelty.",
+   "notes": "CLAIMED IMPROVEMENT, UNVERIFIED (2026-09-27 freshness sweep): M. M. Ross, 'An Unconditional Golden-Ratio Lower Bound for Coprime Adjacent Divisors of Squarefree Integers' (Zenodo, 2026-08-04, unrefereed) claims g(k) >> phi^k/sqrt(k), i.e. liminf g(k)^(1/k) >= phi ≈ 1.618 > sqrt(2). Not read here (Zenodo unreachable), so the recorded lower bound is unchanged. The bounds are asymptotic bases with unspecified o(1)/c — recorded as expressions, not numerics; nobody has published a finite-k g(k) table as far as checked. Finite-k values are suprema over infinitely many prime choices but depend only on the realizable order type of the 2^k subset-log-sums, so bounded search per k is plausible for small k (hyperplane-arrangement enumeration); grading exact as unknown. Other parts of hub 1100 are asymptotic and not witnessable: tau_perp(n)/omega(n) -> infinity for almost all n; tau_perp(n) < exp((log n)^{o(1)}); Erdős–Hall 1978 proved max_{n<x} tau_perp(n) > exp((loglog x)^{2-eps}). Trivial: tau_perp(n) >= omega(n), with equality infinitely often. OEIS link A325864 is marked 'possible' and counts sum-distinct subsets of {1..n} (b-file 0..150) — related machinery, not a g(k) ledger. Page flags unincorporated partial-result claims in comments — check before claiming novelty.",
    "provenance": {
     "added_by": "gap-map miner chunk 1063-1100",
     "date": "2026-07-18",
     "checked": [
      "OEIS A325864 (JSON entry + b-file extent 0..150)",
-     "erdosproblems.com/1100 (context only, paraphrased: [ErHa78], [Er81h])"
+     "erdosproblems.com/1100 (context only, paraphrased: [ErHa78], [Er81h])",
+     "2026-09-27 freshness sweep: Zenodo claim (records 21790847, 21541283, 21000026), not read"
     ]
    },
    "evidence": [
