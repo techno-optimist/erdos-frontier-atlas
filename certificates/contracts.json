@@ -760,7 +760,7 @@
     {
      "path": "certificates/erdos-366/README.md",
      "contains": "no such `n` exists for `n ≤ 10²⁵`",
-     "must_not_contain": [
+     "overclaim_guards": [
       "resolves Erdős #366",
       "proves there are none"
      ]
@@ -819,7 +819,7 @@
     {
      "path": "certificates/erdos-743/README.md",
      "contains": "YES for n = 10",
-     "must_not_contain": [
+     "overclaim_guards": [
       "proves the Gyárfás conjecture",
       "resolves Erdős #743"
      ]
@@ -882,7 +882,7 @@
     {
      "path": "certificates/erdos-993/README.md",
      "contains": "independent replication of the published frontier",
-     "must_not_contain": [
+     "overclaim_guards": [
       "proves the conjecture",
       "resolves Erdős #993"
      ]
@@ -942,9 +942,11 @@
      "path": "certificates/erdos-699/README.md",
      "contains": "first exhaustive general-row sweep past",
      "must_not_contain": [
-      "proves Erdős #699",
-      "resolves Erdős #699",
       "first computation past 10^8"
+     ],
+     "overclaim_guards": [
+      "proves Erdős #699",
+      "resolves Erdős #699"
      ]
     }
    ],
@@ -1001,7 +1003,7 @@
     {
      "path": "certificates/erdos-1016/README.md",
      "contains": "**No graph Cₙ + 6 chords is pancyclic for any n ≥ 68.**",
-     "must_not_contain": [
+     "overclaim_guards": [
       "resolves Erdős #1016",
       "proves the conjecture"
      ]
@@ -1071,7 +1073,11 @@
    "publication_bindings": [
     {
      "path": "certificates/erdos-1016/README.md",
-     "contains": "**No graph Cₙ + 7 chords is pancyclic for any n ≥ 115.**"
+     "contains": "**No graph Cₙ + 7 chords is pancyclic for any n ≥ 115.**",
+     "overclaim_guards": [
+      "resolves Erdős #1016",
+      "proves the conjecture"
+     ]
     }
    ],
    "artifacts": [

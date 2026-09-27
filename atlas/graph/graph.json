@@ -10,7 +10,7 @@
    "learned_from": 5,
    "measures": 223,
    "references": 479,
-   "retracts": 19,
+   "retracts": 9,
    "same_family": 114,
    "tagged": 1979,
    "trap": 7,
@@ -21,7 +21,7 @@
    "evidence_claim": 17,
    "evidence_container": 29,
    "external_claim": 91,
-   "incident": 27,
+   "incident": 18,
    "move": 7,
    "msc": 17,
    "oeis_seq": 403,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 3950,
-   "validator-enforced": 32
+   "validator-enforced": 22
   }
  },
  "edges": [
@@ -12501,65 +12501,9 @@
    "type": "retracts"
   },
   {
-   "dst": "E:claim:erdos-993-unimodal-n30",
-   "source": "certificates/contracts.json",
-   "src": "I:pin:0ace36de",
-   "tier": "validator-enforced",
-   "type": "retracts"
-  },
-  {
-   "dst": "E:claim:erdos-743-k10-packing",
-   "source": "certificates/contracts.json",
-   "src": "I:pin:10707414",
-   "tier": "validator-enforced",
-   "type": "retracts"
-  },
-  {
-   "dst": "E:claim:erdos-699-rowsweep-1e8",
-   "source": "certificates/contracts.json",
-   "src": "I:pin:323bc1be",
-   "tier": "validator-enforced",
-   "type": "retracts"
-  },
-  {
-   "dst": "E:claim:erdos-1016-h-table-t6-67",
-   "source": "certificates/contracts.json",
-   "src": "I:pin:5d2c1a12",
-   "tier": "validator-enforced",
-   "type": "retracts"
-  },
-  {
-   "dst": "E:claim:erdos-993-unimodal-n30",
-   "source": "certificates/contracts.json",
-   "src": "I:pin:5d2c1a12",
-   "tier": "validator-enforced",
-   "type": "retracts"
-  },
-  {
-   "dst": "E:claim:erdos-1016-h-table-t6-67",
-   "source": "certificates/contracts.json",
-   "src": "I:pin:679e6238",
-   "tier": "validator-enforced",
-   "type": "retracts"
-  },
-  {
-   "dst": "E:claim:erdos-699-rowsweep-1e8",
-   "source": "certificates/contracts.json",
-   "src": "I:pin:69919a0f",
-   "tier": "validator-enforced",
-   "type": "retracts"
-  },
-  {
    "dst": "E:claim:graffiti-290-finite-verification",
    "source": "certificates/contracts.json",
    "src": "I:pin:6eb47db7",
-   "tier": "validator-enforced",
-   "type": "retracts"
-  },
-  {
-   "dst": "E:claim:erdos-366-cubefull-sweep-1e25",
-   "source": "certificates/contracts.json",
-   "src": "I:pin:6f9f0d00",
    "tier": "validator-enforced",
    "type": "retracts"
   },
@@ -12599,13 +12543,6 @@
    "type": "retracts"
   },
   {
-   "dst": "E:claim:erdos-366-cubefull-sweep-1e25",
-   "source": "certificates/contracts.json",
-   "src": "I:pin:c55f8e31",
-   "tier": "validator-enforced",
-   "type": "retracts"
-  },
-  {
    "dst": "E:claim:erdos-979-a6-public",
    "source": "certificates/contracts.json",
    "src": "I:pin:d0112dbe",
@@ -12616,13 +12553,6 @@
    "dst": "E:claim:erdos-699-rowsweep-1e8",
    "source": "certificates/contracts.json",
    "src": "I:pin:dbfe44a6",
-   "tier": "validator-enforced",
-   "type": "retracts"
-  },
-  {
-   "dst": "E:claim:erdos-743-k10-packing",
-   "source": "certificates/contracts.json",
-   "src": "I:pin:f3fe3a6b",
    "tier": "validator-enforced",
    "type": "retracts"
   },
@@ -29255,6 +29185,7 @@
    ],
    "claim_id": "erdos-1016-h-table-t6-67",
    "id": "E:claim:erdos-1016-h-table-t6-67",
+   "overclaim_guards": 2,
    "replay": {
     "argv": [
      "python3",
@@ -29323,6 +29254,7 @@
    ],
    "claim_id": "erdos-1016-t7-114",
    "id": "E:claim:erdos-1016-t7-114",
+   "overclaim_guards": 2,
    "replay": {
     "argv": [
      "python3",
@@ -29489,6 +29421,7 @@
    ],
    "claim_id": "erdos-366-cubefull-sweep-1e25",
    "id": "E:claim:erdos-366-cubefull-sweep-1e25",
+   "overclaim_guards": 2,
    "replay": {
     "argv": [
      "python3",
@@ -29592,6 +29525,7 @@
    ],
    "claim_id": "erdos-699-rowsweep-1e8",
    "id": "E:claim:erdos-699-rowsweep-1e8",
+   "overclaim_guards": 2,
    "replay": {
     "argv": [
      "python3",
@@ -29636,6 +29570,7 @@
    ],
    "claim_id": "erdos-743-k10-packing",
    "id": "E:claim:erdos-743-k10-packing",
+   "overclaim_guards": 2,
    "replay": {
     "argv": [
      "python3",
@@ -29709,6 +29644,7 @@
    ],
    "claim_id": "erdos-993-unimodal-n30",
    "id": "E:claim:erdos-993-unimodal-n30",
+   "overclaim_guards": 2,
    "replay": {
     "argv": [
      "python3",
@@ -30153,57 +30089,8 @@
    "type": "incident"
   },
   {
-   "banned_string": "resolves Erdős #993",
-   "id": "I:pin:0ace36de",
-   "kind": "retraction_pin",
-   "source": "certificates/contracts.json must_not_contain",
-   "type": "incident"
-  },
-  {
-   "banned_string": "proves the Gyárfás conjecture",
-   "id": "I:pin:10707414",
-   "kind": "retraction_pin",
-   "source": "certificates/contracts.json must_not_contain",
-   "type": "incident"
-  },
-  {
-   "banned_string": "resolves Erdős #699",
-   "id": "I:pin:323bc1be",
-   "kind": "retraction_pin",
-   "source": "certificates/contracts.json must_not_contain",
-   "type": "incident"
-  },
-  {
-   "banned_string": "proves the conjecture",
-   "id": "I:pin:5d2c1a12",
-   "kind": "retraction_pin",
-   "source": "certificates/contracts.json must_not_contain",
-   "type": "incident"
-  },
-  {
-   "banned_string": "resolves Erdős #1016",
-   "id": "I:pin:679e6238",
-   "kind": "retraction_pin",
-   "source": "certificates/contracts.json must_not_contain",
-   "type": "incident"
-  },
-  {
-   "banned_string": "proves Erdős #699",
-   "id": "I:pin:69919a0f",
-   "kind": "retraction_pin",
-   "source": "certificates/contracts.json must_not_contain",
-   "type": "incident"
-  },
-  {
    "banned_string": "Planted-failure controls — 16 of them",
    "id": "I:pin:6eb47db7",
-   "kind": "retraction_pin",
-   "source": "certificates/contracts.json must_not_contain",
-   "type": "incident"
-  },
-  {
-   "banned_string": "resolves Erdős #366",
-   "id": "I:pin:6f9f0d00",
    "kind": "retraction_pin",
    "source": "certificates/contracts.json must_not_contain",
    "type": "incident"
@@ -30244,13 +30131,6 @@
    "type": "incident"
   },
   {
-   "banned_string": "proves there are none",
-   "id": "I:pin:c55f8e31",
-   "kind": "retraction_pin",
-   "source": "certificates/contracts.json must_not_contain",
-   "type": "incident"
-  },
-  {
    "banned_string": "\"value\": \"> 10^13\"",
    "id": "I:pin:d0112dbe",
    "kind": "retraction_pin",
@@ -30260,13 +30140,6 @@
   {
    "banned_string": "first computation past 10^8",
    "id": "I:pin:dbfe44a6",
-   "kind": "retraction_pin",
-   "source": "certificates/contracts.json must_not_contain",
-   "type": "incident"
-  },
-  {
-   "banned_string": "resolves Erdős #743",
-   "id": "I:pin:f3fe3a6b",
    "kind": "retraction_pin",
    "source": "certificates/contracts.json must_not_contain",
    "type": "incident"

@@ -102,17 +102,30 @@ def validate_data(root: Path, data: dict) -> list[str]:
                 errors.append(f"{bwhere}.path does not exist")
             elif not isinstance(needle, str) or needle not in path.read_text(errors="replace"):
                 errors.append(f"{bwhere}: bound text is absent from {binding.get('path')}")
+            # Two kinds of forbidden text, enforced identically. must_not_contain
+            # records RETRACTIONS: phrasings of an earlier statement that was
+            # withdrawn (an overclaim, a misattribution, a stale figure).
+            # overclaim_guards records PREVENTIVE guards: phrasings the lane never
+            # published but must not drift into ("resolves Erdős #N"). The graph
+            # renders only the first kind as a retraction pin.
             if path.is_file():
                 text = path.read_text(errors="replace")
-                forbidden = binding.get("must_not_contain", [])
-                if not isinstance(forbidden, list) or not all(
-                        isinstance(x, str) and x for x in forbidden):
-                    errors.append(f"{bwhere}.must_not_contain must be a string list")
-                else:
+                lists = {}
+                for field, what in (("must_not_contain", "quarantined/stale text is present"),
+                                    ("overclaim_guards", "overclaim-guard text is present")):
+                    forbidden = binding.get(field, [])
+                    if not isinstance(forbidden, list) or not all(
+                            isinstance(x, str) and x for x in forbidden):
+                        errors.append(f"{bwhere}.{field} must be a string list")
+                        continue
+                    lists[field] = forbidden
                     for stale in forbidden:
                         if stale in text:
-                            errors.append(
-                                f"{bwhere}: quarantined/stale text is present: {stale!r}")
+                            errors.append(f"{bwhere}: {what}: {stale!r}")
+                both = set(lists.get("must_not_contain", [])) & set(lists.get("overclaim_guards", []))
+                if both:
+                    errors.append(f"{bwhere}: text listed both as a retraction and as an "
+                                  f"overclaim guard: {sorted(both)!r}")
 
         artifacts = claim.get("artifacts", [])
         if claim.get("status") == "promoted" and not artifacts:

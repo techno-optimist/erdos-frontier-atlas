@@ -411,9 +411,14 @@ def build_graph():
                 replay = {"argv": r["argv"], "profile": r["profile"],
                           "stdout_contains": r.get("stdout_contains", [])}
                 break
+        # overclaim guards are preventive (nothing was withdrawn): the node
+        # records how many there are, never the strings themselves
+        guards = sum(len(b.get("overclaim_guards", []))
+                     for b in c.get("publication_bindings", []))
         add_node(cid, "evidence_claim", claim_id=c["id"], status=c["status"],
                  statement=c["statement"], scope=c.get("scope"),
-                 artifacts=c.get("artifacts", []), replay=replay)
+                 artifacts=c.get("artifacts", []), replay=replay,
+                 **({"overclaim_guards": guards} if guards else {}))
         # deterministic claim->problem link: erdos-<id>-... claim id prefix
         parts = c["id"].split("-")
         if parts[0] == "erdos" and parts[1].isdigit():
@@ -422,6 +427,7 @@ def build_graph():
                 add_edge("evidenced_by", f"P{eid}", cid,
                          "validator-enforced", "certificates/contracts.json",
                          rule="claim id prefix erdos-<id>")
+        # must_not_contain = retractions only: text of a withdrawn statement
         for b in c.get("publication_bindings", []):
             for pin in b.get("must_not_contain", []):
                 iid = f"I:pin:{h8(pin)}"
@@ -623,8 +629,10 @@ def _wall_lines(graph, pid):
                     f"reachable here (reasons in atlas/walls.md, finite-handle "
                     f"table). Decidable in principle is not reachable in "
                     f"practice.")
-    # Retraction pins: a stronger claim on this problem was withdrawn. Named by
-    # claim id and pin hash only — never the banned string itself.
+    # Retraction pins: an earlier statement on this problem was withdrawn (an
+    # overclaim, a misattribution, a stale figure). Named by claim id and pin
+    # hash only — never the banned string itself. Preventive overclaim guards
+    # are not pins; they render as a neutral line under EVIDENCE.
     claim_ids = {e["dst"] for e in graph["edges"]
                  if e["type"] == "evidenced_by" and e["src"] == pid}
     pins = sorted({(e["src"], e["dst"]) for e in graph["edges"]
@@ -632,7 +640,7 @@ def _wall_lines(graph, pid):
     for pin_id, claim_id in pins:
         lines.append(
             f"- **RETRACTION PIN** — claim `{nodes[claim_id]['claim_id']}` "
-            f"carries a banned phrasing (pin `{pin_id}`): a stronger earlier "
+            f"carries a banned phrasing (pin `{pin_id}`): an earlier "
             f"statement was withdrawn and must not be resurrected. Check "
             f"`certificates/contracts.json` publication_bindings before "
             f"publishing any prose about this problem.")
@@ -789,6 +797,12 @@ def render_card(graph, erdos_id):
           f"{c['statement']}")
             if c.get("replay"):
                 w(f"  - one-command replay: `{' '.join(c['replay']['argv'])}`")
+            if c.get("overclaim_guards"):
+                n = c["overclaim_guards"]
+                w(f"  - overclaim guard: its publication text is checked against "
+                  f"{n} forbidden phrasing{'s' if n != 1 else ''} "
+                  f"(`publication_bindings[].overclaim_guards`) — preventive; "
+                  f"nothing was withdrawn")
     else:
         w("- No promoted contract claim touches this problem "
           "(certificates/contracts.json).")

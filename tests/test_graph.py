@@ -10,8 +10,10 @@ These tests pin the properties that make it trustworthy:
 - branch scoping: #64 is simultaneously a $1000 trap (general branch) and a
   vetted TARGET (cubic branch) — collapsing that split is the graph's own
   #64 failure mode, so the split IS the fixture;
-- retraction pins: every string the contracts ban (must_not_contain) stays
-  banned in every generated view — the graph must not resurrect a retraction;
+- retraction pins: every string the contracts ban (must_not_contain for a
+  withdrawn statement, overclaim_guards for a preventive guard) stays banned in
+  every generated view — the graph must not resurrect a retraction; and only a
+  retraction renders as a pin, since a guard records nothing withdrawn;
 - licensing firewall: link-only problems render no statement text;
 - the documentation executes: every command GRAPH.md shows an agent works.
 """
@@ -149,7 +151,8 @@ def test_retraction_pins_stay_banned_in_every_view():
     banned = [pin
               for c in contracts["claims"]
               for b in c.get("publication_bindings", [])
-              for pin in b.get("must_not_contain", [])]
+              for field in ("must_not_contain", "overclaim_guards")
+              for pin in b.get(field, [])]
     assert banned, "expected at least one must_not_contain pin"
     views = [ROOT / "views" / "sorties.md"] \
         + sorted((ROOT / "views" / "graph").glob("*.md"))
@@ -217,13 +220,37 @@ def test_trap_lines_do_not_contradict_a_live_sub_branch():
     assert "does not make it reachable here" not in stop
 
 
+def _stop(eid):
+    card = (ROOT / "views" / "graph" / f"P{eid}.md").read_text(encoding="utf-8")
+    return card.split("## STOP")[1].split("## STATUS")[0]
+
+
 def test_retraction_pins_render_on_their_problems_cards():
-    """#979 and #1107 both carry withdrawn stronger claims."""
+    """#979 and #1107 both carry withdrawn stronger claims; #699 withdrew its
+    'first computation past 10^8' framing (and also carries two guards)."""
     for eid in (979, 1107):
-        card = (ROOT / "views" / "graph" / f"P{eid}.md").read_text(
-            encoding="utf-8")
-        stop = card.split("## STOP")[1].split("## STATUS")[0]
-        assert "RETRACTION PIN" in stop, eid
+        assert "RETRACTION PIN" in _stop(eid), eid
+    assert _stop(699).count("RETRACTION PIN") == 1
+
+
+def test_overclaim_guards_do_not_claim_a_withdrawal():
+    """A preventive guard ('resolves Erdős #N') records nothing withdrawn, so it
+    must not render as a retraction pin; it renders as a neutral evidence line."""
+    contracts = _load("certificates/contracts.json")
+    guarded = {int(c["id"].split("-")[1]) for c in contracts["claims"]
+               if c["id"].startswith("erdos-")
+               and any(b.get("overclaim_guards") for b in c["publication_bindings"])
+               and not any(b.get("must_not_contain") for b in c["publication_bindings"])}
+    assert {366, 743, 993, 1016} <= guarded
+    for eid in sorted(guarded):
+        card = (ROOT / "views" / "graph" / f"P{eid}.md").read_text(encoding="utf-8")
+        assert "RETRACTION PIN" not in _stop(eid), eid
+        assert "withdrawn" not in _stop(eid), eid
+        assert "overclaim guard:" in card.split("## EVIDENCE")[1], eid
+    guards = {g for c in contracts["claims"] for b in c["publication_bindings"]
+              for g in b.get("overclaim_guards", [])}
+    for n in _graph()["nodes"]:
+        assert n.get("banned_string") not in guards, n["id"]
 
 
 def test_deep_audit_walls_are_reified():
