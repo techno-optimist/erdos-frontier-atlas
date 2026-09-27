@@ -6947,7 +6947,7 @@
    "kind": "next_cell",
    "lower": {
     "value": "195",
-    "source": "OUR exhaustive search, certificates/erdos-1016/ (verify_k7.py --full): no graph C_n + 7 chords is pancyclic for any n >= 115 -- every one of the 496,875 seven-chord skeleton classes refuted at each 115 <= n <= 215, none with more than 213 distinct cycles (which settles n >= 216) -- while C_187 plus six or fewer chords has at most 127 cycles, so h(187) >= 8. The search runs in a C port pinned node for node to the Python reference at k = 6; the in-repo independent C program agrees where it can reach (same lane, so not counted as a second evidence class).",
+    "source": "OUR exhaustive search, certificates/erdos-1016/ (verify_k7.py --full): no graph C_n + 7 chords is pancyclic for any n >= 115 -- every one of the 496,875 seven-chord skeleton classes refuted at each 115 <= n <= 215, none with more than 213 distinct cycles (which settles n >= 216) -- while C_187 plus six or fewer chords has at most 127 cycles, so h(187) >= 8. The search runs in a C port pinned node for node to the Python reference (every k = 6 level; class by class at k = 7 on 150 <= n <= 215 in every replay, and once at the boundary n = 115); the in-repo independent C program agrees where it can reach, 140 <= n <= 215 (same lane, so not counted as a second evidence class).",
     "year": 2026
    },
    "upper": {

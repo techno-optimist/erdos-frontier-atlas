@@ -117,7 +117,7 @@ distinct forms any 6-chord skeleton has is 109, so n ≥ 112 needs no search.
 Adding a chord keeps a graph pancyclic, so excluding 6 chords excludes ≤ 6.
 
 **k = 7.** The same search over the 496,875 classes of 7-chord skeletons
-would take the Python reference about 12 CPU-hours, so it runs in `pancyc.c`,
+would take the Python reference about 10 CPU-hours, so it runs in `pancyc.c`,
 a C port of `pancyclic.Search` that keeps its class order, cycle forms, memo,
 target shortlist and branching order. Every replay first checks that the port
 reproduces `RESULT.json` **node for node** at all 45 k = 6 levels. The most
@@ -165,7 +165,10 @@ For the k = 7 exclusion, which rests on `pancyc.c`:
   `xcheck.c`. At k = 7 the Python reference re-decides every eligible class at
   150 ≤ n ≤ 215 (222,323 class–level pairs) and must match each verdict
   and node count. Node-for-node agreement means the two programs took the
-  same search tree, not merely the same verdict.
+  same search tree, not merely the same verdict. Once, outside the contract
+  replay (2026-09-27, `verify_k7.py --python-levels 115-115`, about 2.2
+  CPU-hours), the Python reference also re-decided the boundary level n = 115
+  that fixes t₇: all 151,157 classes, same verdicts, same 119,519,846 nodes.
 - **Census.** 496,875 classes whose orbit sizes sum to 10,398,480, the
   inclusion–exclusion count of labeled 7-chord skeletons.
 - **It finds what exists, up to the boundary.** At every 109 ≤ n ≤ 114 the
@@ -228,11 +231,12 @@ A passing `--full` replay ends with a verdict containing `"t7":114` and
   lengths on S8's skeleton at 187 ≤ n ≤ 190 (not packaged here), other 8-chord
   skeletons were not searched there, and an 8-chord exclusion was not
   attempted.
-- **The k = 7 exclusion has one implementation at 115 ≤ n ≤ 139.** There it
+- **The k = 7 exclusion has one implementation at 116 ≤ n ≤ 139.** There it
   rests on `pancyc.c`, which is checked node for node against the Python
   reference at every k = 6 level and, class by class, at 150 ≤ n ≤ 215 for
-  k = 7, but not at the boundary levels themselves (about 12 CPU-hours in
-  Python; `verify_k7.py --python-levels LO-HI` runs any range).
+  k = 7 in every full replay (and once at n = 115), but not at those levels
+  themselves (about 8 CPU-hours in Python; `verify_k7.py --python-levels
+  LO-HI` runs any range).
 - **A verified-search receipt, not a formal proof.** Two independent programs
   agree, and the oracles above test them, but neither is formalised. The
   reduction and the exclusion rules are the ones Robinfxa formalised in Lean
