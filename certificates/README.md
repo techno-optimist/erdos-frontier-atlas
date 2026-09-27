@@ -13,6 +13,16 @@ failure-control boundary. Merely naming two paths cannot produce an independent
 replication class. Private artifacts remain operational evidence until their
 runner and receipts are packaged here.
 
+A publication binding can also forbid text, in two lists that are enforced the
+same way (the text must be absent from the bound file) but mean different
+things. `must_not_contain` records **retractions**: the wording of an earlier
+statement that was withdrawn — an overclaim, a misattribution, a stale figure.
+The attack graph renders each one as a RETRACTION PIN on the problem's card.
+`overclaim_guards` records **preventive guards**: wording the lane never
+published but must not drift into, such as "resolves Erdős #N". Nothing was
+withdrawn, so a guard renders only as a neutral line under the card's
+evidence. A string belongs in one list or the other, never both.
+
 Every certificate advertises a one-liner. It must actually work, from the certificate's own directory:
 
 ```bash

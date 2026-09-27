@@ -62,3 +62,42 @@ def test_new_certificate_directory_cannot_bypass_inventory(tmp_path):
     (root / "certificates" / "unclassified-new-lane").mkdir()
     errors = contracts.validate_data(root, load())
     assert any("directory inventory mismatch" in error for error in errors)
+
+
+def _forbidding_the_bound_text(field):
+    """A manifest copy whose first binding forbids (in `field`) the very text it
+    binds, which is certainly present in the bound file."""
+    data = copy.deepcopy(load())
+    binding = data["claims"][0]["publication_bindings"][0]
+    binding.pop("must_not_contain", None)
+    binding.pop("overclaim_guards", None)
+    binding[field] = [binding["contains"]]
+    return data
+
+
+def test_retracted_text_in_the_publication_fails():
+    errors = contracts.validate_data(ROOT, _forbidding_the_bound_text("must_not_contain"))
+    assert any("quarantined/stale text is present" in error for error in errors)
+
+
+def test_overclaim_guard_text_in_the_publication_fails_with_its_own_message():
+    errors = contracts.validate_data(ROOT, _forbidding_the_bound_text("overclaim_guards"))
+    assert any("overclaim-guard text is present" in error for error in errors)
+    assert not any("quarantined/stale" in error for error in errors)
+
+
+def test_forbidden_text_lists_must_be_string_lists():
+    for field in ("must_not_contain", "overclaim_guards"):
+        data = copy.deepcopy(load())
+        data["claims"][0]["publication_bindings"][0][field] = "not a list"
+        errors = contracts.validate_data(ROOT, data)
+        assert any(f"{field} must be a string list" in error for error in errors), field
+
+
+def test_text_is_either_a_retraction_or_a_guard_not_both():
+    data = copy.deepcopy(load())
+    binding = data["claims"][0]["publication_bindings"][0]
+    binding["must_not_contain"] = ["zz never published zz"]
+    binding["overclaim_guards"] = ["zz never published zz"]
+    errors = contracts.validate_data(ROOT, data)
+    assert any("both as a retraction and as an overclaim guard" in error for error in errors)

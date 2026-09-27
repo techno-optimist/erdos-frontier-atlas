@@ -5,12 +5,12 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 379,
-   "evidenced_by": 11,
+   "evidenced_by": 13,
    "has_surface": 319,
    "learned_from": 5,
    "measures": 223,
    "references": 479,
-   "retracts": 17,
+   "retracts": 9,
    "same_family": 114,
    "tagged": 1979,
    "trap": 7,
@@ -18,10 +18,10 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 15,
-   "evidence_container": 28,
+   "evidence_claim": 17,
+   "evidence_container": 29,
    "external_claim": 91,
-   "incident": 26,
+   "incident": 18,
    "move": 7,
    "msc": 17,
    "oeis_seq": 403,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 3950,
-   "validator-enforced": 28
+   "validator-enforced": 22
   }
  },
  "edges": [
@@ -518,7 +518,7 @@
    "type": "applies"
   },
   {
-   "dst": "S:gap:1016:e03342cc",
+   "dst": "S:gap:1016:3329ee90",
    "predicate": "workable",
    "source": "atlas/gap_map.json",
    "src": "M:witness-local-search",
@@ -5208,6 +5208,22 @@
    "type": "classified"
   },
   {
+   "dst": "E:claim:erdos-1016-h-table-t6-67",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P1016",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-1016-t7-114",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P1016",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
    "dst": "E:claim:erdos-1107-public-table",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
@@ -5352,7 +5368,7 @@
    "type": "has_surface"
   },
   {
-   "dst": "S:gap:1016:e03342cc",
+   "dst": "S:gap:1016:3329ee90",
    "source": "atlas/gap_map.json",
    "src": "P1016",
    "tier": "deterministic-rule",
@@ -7587,7 +7603,7 @@
   {
    "dst": "O:A105206",
    "source": "atlas/gap_map.json",
-   "src": "S:gap:1016:e03342cc",
+   "src": "S:gap:1016:3329ee90",
    "tier": "deterministic-rule",
    "type": "measures"
   },
@@ -12485,51 +12501,9 @@
    "type": "retracts"
   },
   {
-   "dst": "E:claim:erdos-993-unimodal-n30",
-   "source": "certificates/contracts.json",
-   "src": "I:pin:0ace36de",
-   "tier": "validator-enforced",
-   "type": "retracts"
-  },
-  {
-   "dst": "E:claim:erdos-743-k10-packing",
-   "source": "certificates/contracts.json",
-   "src": "I:pin:10707414",
-   "tier": "validator-enforced",
-   "type": "retracts"
-  },
-  {
-   "dst": "E:claim:erdos-699-rowsweep-1e8",
-   "source": "certificates/contracts.json",
-   "src": "I:pin:323bc1be",
-   "tier": "validator-enforced",
-   "type": "retracts"
-  },
-  {
-   "dst": "E:claim:erdos-993-unimodal-n30",
-   "source": "certificates/contracts.json",
-   "src": "I:pin:5d2c1a12",
-   "tier": "validator-enforced",
-   "type": "retracts"
-  },
-  {
-   "dst": "E:claim:erdos-699-rowsweep-1e8",
-   "source": "certificates/contracts.json",
-   "src": "I:pin:69919a0f",
-   "tier": "validator-enforced",
-   "type": "retracts"
-  },
-  {
    "dst": "E:claim:graffiti-290-finite-verification",
    "source": "certificates/contracts.json",
    "src": "I:pin:6eb47db7",
-   "tier": "validator-enforced",
-   "type": "retracts"
-  },
-  {
-   "dst": "E:claim:erdos-366-cubefull-sweep-1e25",
-   "source": "certificates/contracts.json",
-   "src": "I:pin:6f9f0d00",
    "tier": "validator-enforced",
    "type": "retracts"
   },
@@ -12569,13 +12543,6 @@
    "type": "retracts"
   },
   {
-   "dst": "E:claim:erdos-366-cubefull-sweep-1e25",
-   "source": "certificates/contracts.json",
-   "src": "I:pin:c55f8e31",
-   "tier": "validator-enforced",
-   "type": "retracts"
-  },
-  {
    "dst": "E:claim:erdos-979-a6-public",
    "source": "certificates/contracts.json",
    "src": "I:pin:d0112dbe",
@@ -12586,13 +12553,6 @@
    "dst": "E:claim:erdos-699-rowsweep-1e8",
    "source": "certificates/contracts.json",
    "src": "I:pin:dbfe44a6",
-   "tier": "validator-enforced",
-   "type": "retracts"
-  },
-  {
-   "dst": "E:claim:erdos-743-k10-packing",
-   "source": "certificates/contracts.json",
-   "src": "I:pin:f3fe3a6b",
    "tier": "validator-enforced",
    "type": "retracts"
   },
@@ -29195,6 +29155,129 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-1016/verify.py",
+     "sha256": "945ff216062d90f9c9c4b9772f76b6d4246cdb0bd22b18296ae5ce3edc3f41db"
+    },
+    {
+     "path": "certificates/erdos-1016/pancyclic.py",
+     "sha256": "631a9b2548e0ccce2a940b5a0e1d5c02473424f8f1944dd0ae445dddd21dd250"
+    },
+    {
+     "path": "certificates/erdos-1016/RESULT.json",
+     "sha256": "dd1799f53cb871b17958170da08161958a9fe802f34b2fd3a9d3939a935f39a3"
+    },
+    {
+     "path": "certificates/erdos-1016/witnesses.json",
+     "sha256": "a779784b73c7dbda3e54e4f517f1f7c96e1512eae8e49e8394bf196d233366ff"
+    },
+    {
+     "path": "certificates/erdos-1016/emit_result.py",
+     "sha256": "a912a6f3d0f88bb85f69b552618a8b0bcabcb8de9adf5b9c3064b5f15f3c6008"
+    },
+    {
+     "path": "certificates/erdos-1016/xcheck.c",
+     "sha256": "fac975f0fafe3ef4076a6bc7d20692ff7b74d16318fe658ac0e466cb86997cab"
+    },
+    {
+     "path": "certificates/erdos-1016/xcheck_summary.txt",
+     "sha256": "d895e8cf5b572a7837b51371e8d556db0c21c71d9478760cf74ac468cd0b333a"
+    }
+   ],
+   "claim_id": "erdos-1016-h-table-t6-67",
+   "id": "E:claim:erdos-1016-h-table-t6-67",
+   "overclaim_guards": 2,
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-1016/verify.py"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "\"t6\":67",
+     "\"verified\":true",
+     "receipt-checked: RESULT.json",
+     "receipt-checked: witnesses.json"
+    ]
+   },
+   "scope": "Finite exhaustive search (skeleton reduction plus exact branch-and-bound), replayed in full; a verified-search receipt, not a formal proof. Values for n <= 67 replicate published work (Griffin 2013; White and Claude 2026; Robinfxa 2026; Pinckard et al. 2026). Says nothing about the asymptotic question of Erdos #1016; for n >= 109 only h(n) >= 7 is certified.",
+   "statement": "No graph C_n + 6 chords is pancyclic for any n >= 68, so t_6 = 67; and h(n), the least number of chords making C_n pancyclic, is exactly as tabulated in RESULT.json for every 3 <= n <= 108, with h(n) = 7 for 68 <= n <= 108.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
+     "path": "certificates/erdos-1016/verify_k7.py",
+     "sha256": "c4e80795d74baaf97cd45f01363b014771e5046daed5d0aebb01f96a27d8457d"
+    },
+    {
+     "path": "certificates/erdos-1016/k7lib.py",
+     "sha256": "a381ee26b7920d8bffab79b189cbb31aace9e928fca417d8593022b8010a8bce"
+    },
+    {
+     "path": "certificates/erdos-1016/pancyc.c",
+     "sha256": "1eb303644635fa563a17f5d6774fa34ba16132bba1f259492bf549768f266043"
+    },
+    {
+     "path": "certificates/erdos-1016/pancyclic.py",
+     "sha256": "631a9b2548e0ccce2a940b5a0e1d5c02473424f8f1944dd0ae445dddd21dd250"
+    },
+    {
+     "path": "certificates/erdos-1016/RESULT_k7.json",
+     "sha256": "ff595a7cd818c46a75924d6a6f23e6f931303619032f593199591aa2f9a79b89"
+    },
+    {
+     "path": "certificates/erdos-1016/witnesses_k7.json",
+     "sha256": "7a82d680e974f0352664e48fabf0a781c350936d52c1218683b16b288ed62cc3"
+    },
+    {
+     "path": "certificates/erdos-1016/emit_result_k7.py",
+     "sha256": "874710c6bf9a0cab9ce1694ef18c0a1603c43b6fb40d9707ef44f690fa66eb6f"
+    },
+    {
+     "path": "certificates/erdos-1016/RESULT.json",
+     "sha256": "dd1799f53cb871b17958170da08161958a9fe802f34b2fd3a9d3939a935f39a3"
+    },
+    {
+     "path": "certificates/erdos-1016/xcheck.c",
+     "sha256": "fac975f0fafe3ef4076a6bc7d20692ff7b74d16318fe658ac0e466cb86997cab"
+    },
+    {
+     "path": "certificates/erdos-1016/xcheck_summary.txt",
+     "sha256": "d895e8cf5b572a7837b51371e8d556db0c21c71d9478760cf74ac468cd0b333a"
+    },
+    {
+     "path": "certificates/erdos-1016/xcheck_k7_summary.txt",
+     "sha256": "d8b1f2a8737bd0f0097625a0d545b3a5287de8ec30e2b8f5475b95947d3e3f1c"
+    }
+   ],
+   "claim_id": "erdos-1016-t7-114",
+   "id": "E:claim:erdos-1016-t7-114",
+   "overclaim_guards": 2,
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-1016/verify_k7.py",
+     "--full"
+    ],
+    "profile": "slow",
+    "stdout_contains": [
+     "\"t7\":114",
+     "\"verified\":true",
+     "receipt-checked: RESULT_k7.json",
+     "receipt-checked: witnesses_k7.json"
+    ]
+   },
+   "scope": "Finite exhaustive search over the 496,875 dihedral classes of 7-chord skeletons at every 115 <= n <= 215 (no 7-chord skeleton has more than 213 distinct cycles, which settles n >= 216), run by pancyc.c, a C port of pancyclic.Search pinned node for node to the Python reference at every k = 6 level and, class by class, at 150 <= n <= 215 for k = 7. The independent xcheck.c agrees only at the levels it can reach (recorded in xcheck_k7_summary.txt), not at the boundary. A verified-search receipt, not a formal proof; the k <= 6 input is claim erdos-1016-h-table-t6-67. Says nothing about the asymptotic question of Erdos #1016; for n >= 187 only h(n) >= 8 is certified.",
+   "statement": "No graph C_n + 7 chords is pancyclic for any n >= 115, while some C_n + 7 chords is pancyclic for every 109 <= n <= 114; so t_7 = 114, h(n) = 7 for 109 <= n <= 114, and, with the 8-chord witnesses of witnesses_k7.json, h(n) = 8 for every 115 <= n <= 186.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-1107/verify.py",
      "sha256": "8b0c43a89a694b877360f456b525e756f8b6ae2d324d544709e82461c1dafd07"
     }
@@ -29338,6 +29421,7 @@
    ],
    "claim_id": "erdos-366-cubefull-sweep-1e25",
    "id": "E:claim:erdos-366-cubefull-sweep-1e25",
+   "overclaim_guards": 2,
    "replay": {
     "argv": [
      "python3",
@@ -29441,6 +29525,7 @@
    ],
    "claim_id": "erdos-699-rowsweep-1e8",
    "id": "E:claim:erdos-699-rowsweep-1e8",
+   "overclaim_guards": 2,
    "replay": {
     "argv": [
      "python3",
@@ -29485,6 +29570,7 @@
    ],
    "claim_id": "erdos-743-k10-packing",
    "id": "E:claim:erdos-743-k10-packing",
+   "overclaim_guards": 2,
    "replay": {
     "argv": [
      "python3",
@@ -29558,6 +29644,7 @@
    ],
    "claim_id": "erdos-993-unimodal-n30",
    "id": "E:claim:erdos-993-unimodal-n30",
+   "overclaim_guards": 2,
    "replay": {
     "argv": [
      "python3",
@@ -29724,6 +29811,13 @@
    "classification": "reference_only",
    "id": "E:dir:certificates:dixmier-conjecture",
    "path": "certificates/dixmier-conjecture",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "Exhaustive verified-search receipts: no graph C_n + 6 chords is pancyclic for any n >= 68 (t_6 = 67), no graph C_n + 7 chords is pancyclic for any n >= 115 (t_7 = 114), and h(n) = m(n) - n is exact for 3 <= n <= 186 (h = 7 on 68..114, h = 8 on 115..186). Replicates the published values below n = 68 (Griffin 2013; White and Claude 2026; Robinfxa 2026; Pinckard et al. 2026) and settles the levels 72..79, 81, 83, 84, 85 they left open. Python reference plus two C programs, no formal proof; the k = 7 levels 115..139 rest on one C port pinned node for node to the Python reference elsewhere; nothing about the asymptotic Erdos #1016 question; for n >= 187 only h(n) >= 8.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-1016",
+   "path": "certificates/erdos-1016",
    "type": "evidence_container"
   },
   {
@@ -29995,50 +30089,8 @@
    "type": "incident"
   },
   {
-   "banned_string": "resolves Erdős #993",
-   "id": "I:pin:0ace36de",
-   "kind": "retraction_pin",
-   "source": "certificates/contracts.json must_not_contain",
-   "type": "incident"
-  },
-  {
-   "banned_string": "proves the Gyárfás conjecture",
-   "id": "I:pin:10707414",
-   "kind": "retraction_pin",
-   "source": "certificates/contracts.json must_not_contain",
-   "type": "incident"
-  },
-  {
-   "banned_string": "resolves Erdős #699",
-   "id": "I:pin:323bc1be",
-   "kind": "retraction_pin",
-   "source": "certificates/contracts.json must_not_contain",
-   "type": "incident"
-  },
-  {
-   "banned_string": "proves the conjecture",
-   "id": "I:pin:5d2c1a12",
-   "kind": "retraction_pin",
-   "source": "certificates/contracts.json must_not_contain",
-   "type": "incident"
-  },
-  {
-   "banned_string": "proves Erdős #699",
-   "id": "I:pin:69919a0f",
-   "kind": "retraction_pin",
-   "source": "certificates/contracts.json must_not_contain",
-   "type": "incident"
-  },
-  {
    "banned_string": "Planted-failure controls — 16 of them",
    "id": "I:pin:6eb47db7",
-   "kind": "retraction_pin",
-   "source": "certificates/contracts.json must_not_contain",
-   "type": "incident"
-  },
-  {
-   "banned_string": "resolves Erdős #366",
-   "id": "I:pin:6f9f0d00",
    "kind": "retraction_pin",
    "source": "certificates/contracts.json must_not_contain",
    "type": "incident"
@@ -30079,13 +30131,6 @@
    "type": "incident"
   },
   {
-   "banned_string": "proves there are none",
-   "id": "I:pin:c55f8e31",
-   "kind": "retraction_pin",
-   "source": "certificates/contracts.json must_not_contain",
-   "type": "incident"
-  },
-  {
    "banned_string": "\"value\": \"> 10^13\"",
    "id": "I:pin:d0112dbe",
    "kind": "retraction_pin",
@@ -30095,13 +30140,6 @@
   {
    "banned_string": "first computation past 10^8",
    "id": "I:pin:dbfe44a6",
-   "kind": "retraction_pin",
-   "source": "certificates/contracts.json must_not_contain",
-   "type": "incident"
-  },
-  {
-   "banned_string": "resolves Erdős #743",
-   "id": "I:pin:f3fe3a6b",
    "kind": "retraction_pin",
    "source": "certificates/contracts.json must_not_contain",
    "type": "incident"
@@ -62074,38 +62112,39 @@
    "witness_verifier": "triangle-free in O(V·E); χ ≥ 6 via SAT-UNSAT certificate for 5-colorability; χ ≤ 6 via explicit coloring"
   },
   {
-   "confidence": "C3",
+   "confidence": "C2",
    "evidence": [
     {
-     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
-     "date": "2026-07-18",
-     "type": "literature"
+     "artifact": "certificates/erdos-1016/ -- exact branch-and-bound over arc lengths (Python reference, and its C port pancyc.c pinned to it node for node at k = 6); complete seven-chord census (496,875 classes) with exhaustion at every 115 <= n <= 215; h(n) witnesses for 3 <= n <= 186 re-checked by DFS",
+     "contract": "erdos-1016-t7-114",
+     "date": "2026-09-27",
+     "type": "implementation"
     }
    ],
    "exact_feasibility": "cell",
-   "id": "S:gap:1016:e03342cc",
+   "id": "S:gap:1016:3329ee90",
    "kind": "next_cell",
    "lower": {
-    "source": "4 chords admit at most 2^5 - 1 = 31 cycles (Shi, Discrete Math. 133, 1994) < 36 required lengths, so >= 5 chords, i.e. m(38) >= 38 + 5; argument as in Griffin, arXiv:1312.0274",
-    "value": "43",
-    "year": 2013
+    "source": "OUR exhaustive search, certificates/erdos-1016/ (verify_k7.py --full): no graph C_n + 7 chords is pancyclic for any n >= 115 -- every one of the 496,875 seven-chord skeleton classes refuted at each 115 <= n <= 215, none with more than 213 distinct cycles (which settles n >= 216) -- while C_187 plus six or fewer chords has at most 127 cycles, so h(187) >= 8. The search runs in a C port pinned node for node to the Python reference (every k = 6 level; class by class at k = 7 on 150 <= n <= 215 in every replay, and once at the boundary n = 115); the in-repo independent C program agrees where it can reach, 140 <= n <= 215 (same lane, so not counted as a second evidence class).",
+    "value": "195",
+    "year": 2026
    },
-   "notes": "A genuine two-value cell: m(38) is 43 or 44, decided either way by a bounded search (Griffin ran the analogous 5-chord exhaustion to 31 vertices on 2013 hardware; his Figure-1 construction with 5 chords tops out at exactly n=37, which is why the table stops there). Griffin 2013 gives m(n) exactly for all n <= 37: m(n) = n+5 for 25 <= n <= 37, agreeing with George–Marr–Wallis. OEIS A105206 is STALE — it ends at a(22) = 26 while exact values to n=37 have been published since 2013; the b-file extension n=23..37 (values 27,28,30,31,...,42) is a free micro-contribution. The hub's asymptotic question (is h(n) >= log_2 n + log_* n - O(1)? Bondy 1971 window log_2(n-1) - 1 <= h(n) <= log_2 n + log_* n + O(1)) is a wall, but every table cell is machine-decidable and each new cell probes which side of the window m(n) tracks. Sanity: h(38) in {5,6} vs log_2(37) - 1 ~ 4.2.",
+   "notes": "PREVIOUS CELLS CLOSED: m(38) = 43 (P. White and Claude, erdosproblemaday.com/report/1016, 2026-07-29), replicated in certificates/erdos-1016 together with the whole table n <= 67 (Griffin 2013; Robinfxa 2026, m(41) = 47 with a Lean proof; J. Pinckard and ToolsEnabled agents 2026-09-24, h = 6 on 41..67); then m(109) = 116, settled by the same certificate. That external campaign stopped with the six-chord levels n in {72..79, 81, 83, 84, 85} unfinished; certificates/erdos-1016 settles them (t_6 = 67), completes the seven-chord census (t_7 = 114: a 7-chord family G7(n) found by the search is pancyclic for every 61 <= n <= 113, one other class works at n = 114, nothing works at any n >= 115), and gives h(n) = 8 exactly on 115 <= n <= 186 by one explicit 8-chord family S8(n), pancyclic for every 108 <= n <= 186 and missing length 108 at n = 187 (its skeleton, a one-chord extension of the G7 skeleton, came from an exact search at n = 185). A development search (exact arc-length search, not packaged in the certificate) found no arc lengths on the S8 skeleton at 187 <= n <= 190, so this cell needs a different 8-chord skeleton (witness side) or an 8-chord exclusion (far larger than the k = 7 census; unattempted). t_8 >= 186 is certified; heuristic only: the ratios t_k / t_(k-1) have stayed within 1.6-1.75, and 1.75 x 114 is about 200. OEIS A105206 still ends at n = 22 (2026-09-27 data export) although exact values are now known far beyond. The hub's asymptotic question (is h(n) >= log_2 n + log_* n - O(1)?) is untouched by any finite cell; JWKNT/erdos1016 claims a Lean proof of h(n) = log_2 n + log_* n + O(1), not checked here and setting no status.",
    "oeis": "A105206",
    "overlay": "gap_map",
    "problem": 1016,
-   "quantity": "m(38) — minimum number of edges of a pancyclic graph on 38 vertices; first open cell after Griffin's exact table (hub quantity h(n) = m(n) - n)",
+   "quantity": "m(187) — minimum number of edges of a pancyclic graph on 187 vertices; first open cell after the exact table n <= 186 of certificates/erdos-1016 (hub quantity h(n) = m(n) - n; h(187) is 8 or 9)",
    "status": "open",
    "type": "surface",
    "upper": {
-    "source": "m(37) = 42 exact (Griffin, arXiv:1312.0274, Table 1) plus m(n+1) <= m(n) + 2 (Griffin, Prop. 2)",
-    "value": "44",
-    "year": 2013
+    "source": "m(186) = 194 (certificates/erdos-1016/witnesses_k7.json: the 8-chord family S8(186), re-checked by DFS) and m(n+1) <= m(n) + 2 (join a new vertex to both ends of one Hamilton-cycle edge; Griffin, arXiv:1312.0274, Prop. 2)",
+    "value": "196",
+    "year": 2026
    },
-   "witness_feasibility": "open-easy",
-   "witness_object": "a pancyclic graph on 38 vertices with 43 edges (Hamiltonian cycle + 5 chords), shipped with one explicit cycle per length 3..38",
+   "witness_feasibility": "plausible",
+   "witness_object": "a pancyclic graph on 187 vertices with 195 edges (C_187 + 8 chords), shipped with one explicit cycle per length 3..187",
    "witness_side": "upper",
-   "witness_verifier": "positive side is solver-free: check each of the 36 cycle certificates is a valid cycle of the stated length against the edge list, O(n) per cycle. Nonexistence side (m(38)=44): exhaustive 5-chord enumeration over chord-endpoint configurations up to dihedral symmetry (~10^8 configs), each checked via Shi's at-most-2-cycles-per-chord-subset enumeration (<= 63 cycles per graph)"
+   "witness_verifier": "DFS over the simple cycles of C_187 + 8 chords (graph_cycle_lengths in certificates/erdos-1016/pancyclic.py) or explicit per-length cycle certificates; milliseconds, dependency-free"
   },
   {
    "confidence": "C3",

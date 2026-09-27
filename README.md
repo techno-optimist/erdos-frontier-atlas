@@ -41,6 +41,7 @@ artifacts, evidence level, and unresolved step.
 | **P699** | [Formal binomial-gcd seeds](experiments/astra-lean-seed-20260904/README.md), [the i=2 case](experiments/astra-i2-complete-20260911/README.md), and [i=3 reductions and residuals](experiments/astra-i3-20260911/GOAL.md) | Each formal or conditional lemma has its own scope. The remaining i=3 obligations and higher-i cases are not closed by these artifacts. |
 | **P993 and CRT bridges** | [Tail compression, Laurent blocks and endpoint-safe transfers](experiments/astra-briefcase-20260904/README.md) | Block properties and candidate matches are not proofs of tree unimodality or an entire gap spectrum. |
 | **P376** | [Kummer/digit checks and bounded historical replay](experiments/astra-376-20260911/README.md) | The infinitude question needs a method, not another extension of a known sequence's cutoff. The [working goal](experiments/astra-i3-20260911/GOAL.md) records that correction. |
+| **P1016** | [Minimal pancyclic graphs](certificates/erdos-1016/README.md): h(n) = m(n) − n exactly for n ≤ 186; no Cₙ + 6 chords is pancyclic for n ≥ 68 and no Cₙ + 7 chords for n ≥ 115, so t₆ = 67 and t₇ = 114 — settling the six-chord levels an external 2026 campaign left open, the complete seven-chord census, and replicating everything below 68 | h(187) ∈ {8, 9} is the next cell. The asymptotic question (does h(n) − log₂ n → ∞?) is untouched by any finite table. |
 
 The RH update is published for review in
 [PR #156](https://github.com/techno-optimist/erdos-frontier-atlas/pull/156), stacked
@@ -106,6 +107,10 @@ silently rebuilding the graph.
   records the checked changes for #477, #625 and #501, distinguishes mathematical
   status changes from Lean-label changes, and preserves differences between the
   website and YAML snapshots.
+- The [September 27 strike-board check](experiments/claude-freshness-20260927/README.md)
+  compares every board surface with upstream at `af83692` and records T3 cells
+  settled elsewhere since the July mining (#1016, #1062, #1057, #302, #156 and
+  others), marking which findings were replayed and which are only reported.
 - The [RH source review](experiments/astra-rh-969-20260912/FRESHNESS.md) and
   [P327 review](experiments/astra-327-fiber-20260912/FRESHNESS.md) are dated
   September 12, 2026. They are source snapshots, not continuing monitors.

@@ -5,7 +5,7 @@
 > [Frontier Board](../README.md#chronos-frontier-board). Do not edit by hand —
 > regenerate with `make state-of-frontier`; `make check-views` fails if this file
 > is stale. Deterministic: no generation timestamp — every date below comes from
-> the data. **Data through 2026-07-27** (latest provenance/evidence date).
+> the data. **Data through 2026-09-27** (latest provenance/evidence date).
 
 The gap map is the versioned `[L, U]` ledger over bounded quantities of open
 problems (charter Tenet 2: the bracket is the unit of progress). This report is
@@ -14,7 +14,7 @@ the release-facing summary of its current state.
 ## The ledger at a glance
 
 - **225 bounded quantities** across the Erdős-hub problems.
-- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **5** lane-added, **208** agent-mined.
+- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **6** lane-added, **207** agent-mined.
 - Honest label: the agent-mined entries are structurally validated but **not yet
   independently number-re-verified** — they carry literature-grade evidence and
   therefore class C3 until a verification artifact exists (the WS1 release gate
@@ -30,8 +30,8 @@ validator fails any stored class the recorded evidence does not prove.
 |---|---|---|
 | C0 | contract-bound formal proof, machine-checked | 0 |
 | C1 | &ge;2 contract-bound independent replays at the claimed range | 0 |
-| C2 | exactly one contract-bound verified replay | 8 |
-| C3 | literature- or numerics-grade — no independent in-project verification artifact | 217 |
+| C2 | exactly one contract-bound verified replay | 9 |
+| C3 | literature- or numerics-grade — no independent in-project verification artifact | 216 |
 
 ## Entries by kind
 
@@ -89,7 +89,6 @@ truncated — the full values, sources, and verifier specs live in
 | [#938](https://www.erdosproblems.com/938) | [A001694](https://oeis.org/A001694) | 3-term arithmetic progressions of CONSECUTIVE powerful numbers n_k, n_{k+1}, n_{k+2} (A001694): complete tabl… | lower | open-easy | 1e12 (search limit; exactly 10 triples exist with all terms… | ? |
 | [#962](https://www.erdosproblems.com/962) | [A327909](https://oeis.org/A327909) | A327909(1000) — smallest start of a run of 1000 consecutive integers each having a prime factor > 1000 (first… | upper | open-easy | 22369305365 | ? |
 | [#1005](https://www.erdosproblems.com/1005) | [A386893](https://oeis.org/A386893) | A386893(101) — first OEIS-uncomputed value of f(n), the Mayer–Erdős run-length: largest m such that any two F… | both | open-easy | 2 | 30 |
-| [#1016](https://www.erdosproblems.com/1016) | [A105206](https://oeis.org/A105206) | m(38) — minimum number of edges of a pancyclic graph on 38 vertices; first open cell after Griffin's exact ta… | upper | open-easy | 43 | 44 |
 | [#1062](https://www.erdosproblems.com/1062) | [A038372](https://oeis.org/A038372) | A038372(45) - largest subset of {1,...,45} in which no element divides two other distinct elements (fork-free… | lower | open-easy | 30 | 31 |
 | [#1083](https://www.erdosproblems.com/1083) | [A186704](https://oeis.org/A186704) | A186704(14) — minimum number of distinct distances determined by 14 points in the plane (first uncomputed cel… | upper | open-easy | 7 | 7 |
 | [#1100](https://www.erdosproblems.com/1100) | [A325864](https://oeis.org/A325864) | g(k) = max over squarefree n with omega(n)=k of tau_perp(n), where tau_perp counts coprime consecutive-diviso… | lower | open-easy | (sqrt(2)+o(1))^k | (2-c)^k for some absolute c>0 |
@@ -128,6 +127,7 @@ truncated — the full values, sources, and verifier specs live in
 | [#961](https://www.erdosproblems.com/961) | [A213253](https://oeis.org/A213253) | A213253(269) — first cell beyond Najman's computed range n=1..268; f(n) = minimal L such that every L consecu… | lower | plausible | 16 | 269 |
 | [#970](https://www.erdosproblems.com/970) | [A048669](https://oeis.org/A048669) | A048670(65) — Jacobsthal function g of the product of the first 65 primes (first uncomputed primorial cell; t… | lower | plausible | 1110 | ? |
 | [#985](https://www.erdosproblems.com/985) | [A002233](https://oeis.org/A002233) | largest N such that every prime 3 <= p <= N has a prime primitive root q < p (verified range of the conjectur… | lower | plausible | 104729 | ? |
+| [#1016](https://www.erdosproblems.com/1016) | [A105206](https://oeis.org/A105206) | m(187) — minimum number of edges of a pancyclic graph on 187 vertices; first open cell after the exact table… | upper | plausible | 195 | 196 |
 | [#1055](https://www.erdosproblems.com/1055) | [A005113](https://oeis.org/A005113) | A005113(20) - least prime in class 20 of the Erdos-Selfridge classification (class via largest-class prime fa… | upper | plausible | 131988573220065 | 764276710625653 |
 | [#1056](https://www.erdosproblems.com/1056) | [A060427](https://oeis.org/A060427) | A060427(15) - least prime p admitting 15 consecutive intervals of integers each with product congruent to 1 m… | upper | plausible | ? | ? |
 | [#1057](https://www.erdosproblems.com/1057) | [A006931](https://oeis.org/A006931) | A006931(40) - least Carmichael number with exactly 40 prime factors | upper | plausible | 14909796388965607134586226733905214934462755608741300153203… | ? |

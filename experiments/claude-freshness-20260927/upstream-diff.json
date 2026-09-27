@@ -1,0 +1,191 @@
+{
+ "checked_at": "2026-09-27",
+ "atlas_repository": "https://github.com/techno-optimist/erdos-frontier-atlas",
+ "previous_overlay": "experiments/astra-freshness-20260911/upstream-diff.json",
+ "previous_upstream_pin": {
+  "sha": "3c68e941162f81d650fc886eed34e58bed3a6a01",
+  "date": "2026-09-09T17:51:07Z"
+ },
+ "current_upstream": {
+  "sha": "af83692edd2aee68d512e04fb7b9b9c175a29bb0",
+  "date": "2026-09-26T17:50:16Z"
+ },
+ "counts": {
+  "records_before": 1217,
+  "records_after": 1221,
+  "records_added": 4,
+  "informal_status_changes": 3,
+  "raw_status_only_changes": 19
+ },
+ "informal_status_changes": [
+  {
+   "number": 501,
+   "before": "independent",
+   "after": "not disprovable",
+   "yaml_last_update": "2026-09-03"
+  },
+  {
+   "number": 547,
+   "before": "decidable",
+   "after": "proved",
+   "yaml_last_update": "2026-09-03"
+  },
+  {
+   "number": 1171,
+   "before": "open",
+   "after": "not disprovable",
+   "yaml_last_update": "2026-09-05"
+  }
+ ],
+ "raw_status_only_changes": [
+  {
+   "number": 190,
+   "before": "solved",
+   "after": "solved (Lean)",
+   "yaml_last_update": "2026-09-15"
+  },
+  {
+   "number": 193,
+   "before": "disproved",
+   "after": "disproved (Lean)",
+   "yaml_last_update": "2026-09-04"
+  },
+  {
+   "number": 318,
+   "before": "solved",
+   "after": "solved (Lean)",
+   "yaml_last_update": "2026-09-16"
+  },
+  {
+   "number": 343,
+   "before": "proved",
+   "after": "proved (Lean)",
+   "yaml_last_update": "2026-09-16"
+  },
+  {
+   "number": 441,
+   "before": "disproved",
+   "after": "disproved (Lean)",
+   "yaml_last_update": "2026-09-16"
+  },
+  {
+   "number": 522,
+   "before": "open",
+   "after": "open (Lean)",
+   "yaml_last_update": "2026-09-25"
+  },
+  {
+   "number": 550,
+   "before": "open",
+   "after": "open (Lean)",
+   "yaml_last_update": "2026-09-11"
+  },
+  {
+   "number": 630,
+   "before": "proved",
+   "after": "proved (Lean)",
+   "yaml_last_update": "2026-09-16"
+  },
+  {
+   "number": 651,
+   "before": "disproved",
+   "after": "disproved (Lean)",
+   "yaml_last_update": "2026-09-16"
+  },
+  {
+   "number": 703,
+   "before": "proved",
+   "after": "proved (Lean)",
+   "yaml_last_update": "2026-09-16"
+  },
+  {
+   "number": 754,
+   "before": "proved",
+   "after": "proved (Lean)",
+   "yaml_last_update": "2026-09-16"
+  },
+  {
+   "number": 803,
+   "before": "disproved",
+   "after": "disproved (Lean)",
+   "yaml_last_update": "2026-09-16"
+  },
+  {
+   "number": 994,
+   "before": "disproved",
+   "after": "disproved (Lean)",
+   "yaml_last_update": "2026-09-16"
+  },
+  {
+   "number": 1018,
+   "before": "solved",
+   "after": "solved (Lean)",
+   "yaml_last_update": "2026-09-16"
+  },
+  {
+   "number": 1019,
+   "before": "proved",
+   "after": "proved (Lean)",
+   "yaml_last_update": "2026-09-16"
+  },
+  {
+   "number": 1025,
+   "before": "solved",
+   "after": "solved (Lean)",
+   "yaml_last_update": "2026-09-15"
+  },
+  {
+   "number": 1050,
+   "before": "proved",
+   "after": "proved (Lean)",
+   "yaml_last_update": "2026-09-12"
+  },
+  {
+   "number": 1129,
+   "before": "proved",
+   "after": "proved (Lean)",
+   "yaml_last_update": "2026-09-16"
+  },
+  {
+   "number": 1147,
+   "before": "disproved",
+   "after": "disproved (Lean)",
+   "yaml_last_update": "2026-09-16"
+  }
+ ],
+ "records_added": [
+  {
+   "number": 1218,
+   "status": "open",
+   "tags": [
+    "ramsey theory",
+    "set theory"
+   ]
+  },
+  {
+   "number": 1219,
+   "status": "proved",
+   "tags": [
+    "ramsey theory",
+    "set theory"
+   ]
+  },
+  {
+   "number": 1220,
+   "status": "open",
+   "tags": [
+    "ramsey theory",
+    "set theory"
+   ]
+  },
+  {
+   "number": 1221,
+   "status": "open",
+   "tags": [
+    "analysis",
+    "distribution"
+   ]
+  }
+ ],
+ "production_graph": "untouched by this overlay; the #1016 card changes only because its gap-map row gained certified evidence (certificates/erdos-1016)"
+}

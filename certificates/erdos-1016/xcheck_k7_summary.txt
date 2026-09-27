@@ -1,0 +1,86 @@
+LABELED t=5 120
+LABELED t=6 5715
+LABELED t=7 73755
+LABELED t=8 427260
+LABELED t=9 1351980
+LABELED t=10 2552130
+LABELED t=11 2962575
+LABELED t=12 2079000
+LABELED t=13 810810
+LABELED t=14 135135
+SUMMARY k=7 n=140 eligible_labeled=910733 sat_labeled=0 nodes=13263398
+SUMMARY k=7 n=141 eligible_labeled=853555 sat_labeled=0 nodes=11131410
+SUMMARY k=7 n=142 eligible_labeled=795957 sat_labeled=0 nodes=9418448
+SUMMARY k=7 n=143 eligible_labeled=743744 sat_labeled=0 nodes=7993558
+SUMMARY k=7 n=144 eligible_labeled=690232 sat_labeled=0 nodes=6928807
+SUMMARY k=7 n=145 eligible_labeled=651640 sat_labeled=0 nodes=6050533
+SUMMARY k=7 n=146 eligible_labeled=604618 sat_labeled=0 nodes=5207715
+SUMMARY k=7 n=147 eligible_labeled=564308 sat_labeled=0 nodes=4431102
+SUMMARY k=7 n=148 eligible_labeled=519944 sat_labeled=0 nodes=3764288
+SUMMARY k=7 n=149 eligible_labeled=485241 sat_labeled=0 nodes=3278135
+SUMMARY k=7 n=150 eligible_labeled=443998 sat_labeled=0 nodes=2819203
+SUMMARY k=7 n=151 eligible_labeled=415098 sat_labeled=0 nodes=2451563
+SUMMARY k=7 n=152 eligible_labeled=383243 sat_labeled=0 nodes=2116936
+SUMMARY k=7 n=153 eligible_labeled=361203 sat_labeled=0 nodes=1910495
+SUMMARY k=7 n=154 eligible_labeled=332130 sat_labeled=0 nodes=1670645
+SUMMARY k=7 n=155 eligible_labeled=313575 sat_labeled=0 nodes=1504096
+SUMMARY k=7 n=156 eligible_labeled=289677 sat_labeled=0 nodes=1325830
+SUMMARY k=7 n=157 eligible_labeled=269879 sat_labeled=0 nodes=1173426
+SUMMARY k=7 n=158 eligible_labeled=248910 sat_labeled=0 nodes=1032007
+SUMMARY k=7 n=159 eligible_labeled=228749 sat_labeled=0 nodes=891321
+SUMMARY k=7 n=160 eligible_labeled=205356 sat_labeled=0 nodes=744306
+SUMMARY k=7 n=161 eligible_labeled=190589 sat_labeled=0 nodes=677965
+SUMMARY k=7 n=162 eligible_labeled=168660 sat_labeled=0 nodes=562395
+SUMMARY k=7 n=163 eligible_labeled=154847 sat_labeled=0 nodes=494922
+SUMMARY k=7 n=164 eligible_labeled=137877 sat_labeled=0 nodes=418810
+SUMMARY k=7 n=165 eligible_labeled=128505 sat_labeled=0 nodes=380596
+SUMMARY k=7 n=166 eligible_labeled=114672 sat_labeled=0 nodes=324593
+SUMMARY k=7 n=167 eligible_labeled=106225 sat_labeled=0 nodes=293562
+SUMMARY k=7 n=168 eligible_labeled=95080 sat_labeled=0 nodes=246971
+SUMMARY k=7 n=169 eligible_labeled=88678 sat_labeled=0 nodes=228645
+SUMMARY k=7 n=170 eligible_labeled=81123 sat_labeled=0 nodes=198835
+SUMMARY k=7 n=171 eligible_labeled=75245 sat_labeled=0 nodes=180671
+SUMMARY k=7 n=172 eligible_labeled=68165 sat_labeled=0 nodes=148325
+SUMMARY k=7 n=173 eligible_labeled=62768 sat_labeled=0 nodes=132361
+SUMMARY k=7 n=174 eligible_labeled=56492 sat_labeled=0 nodes=113301
+SUMMARY k=7 n=175 eligible_labeled=52571 sat_labeled=0 nodes=104119
+SUMMARY k=7 n=176 eligible_labeled=46882 sat_labeled=0 nodes=83398
+SUMMARY k=7 n=177 eligible_labeled=42013 sat_labeled=0 nodes=73807
+SUMMARY k=7 n=178 eligible_labeled=36579 sat_labeled=0 nodes=58821
+SUMMARY k=7 n=179 eligible_labeled=33520 sat_labeled=0 nodes=53504
+SUMMARY k=7 n=180 eligible_labeled=28426 sat_labeled=0 nodes=42660
+SUMMARY k=7 n=181 eligible_labeled=25318 sat_labeled=0 nodes=38902
+SUMMARY k=7 n=182 eligible_labeled=23290 sat_labeled=0 nodes=34784
+SUMMARY k=7 n=183 eligible_labeled=20783 sat_labeled=0 nodes=31941
+SUMMARY k=7 n=184 eligible_labeled=17826 sat_labeled=0 nodes=28354
+SUMMARY k=7 n=185 eligible_labeled=15063 sat_labeled=0 nodes=23197
+SUMMARY k=7 n=186 eligible_labeled=12436 sat_labeled=0 nodes=16958
+SUMMARY k=7 n=187 eligible_labeled=11423 sat_labeled=0 nodes=15889
+SUMMARY k=7 n=188 eligible_labeled=9697 sat_labeled=0 nodes=11125
+SUMMARY k=7 n=189 eligible_labeled=8940 sat_labeled=0 nodes=9864
+SUMMARY k=7 n=190 eligible_labeled=8232 sat_labeled=0 nodes=8568
+SUMMARY k=7 n=191 eligible_labeled=7644 sat_labeled=0 nodes=7980
+SUMMARY k=7 n=192 eligible_labeled=7177 sat_labeled=0 nodes=7513
+SUMMARY k=7 n=193 eligible_labeled=6113 sat_labeled=0 nodes=6155
+SUMMARY k=7 n=194 eligible_labeled=5826 sat_labeled=0 nodes=5826
+SUMMARY k=7 n=195 eligible_labeled=5238 sat_labeled=0 nodes=5238
+SUMMARY k=7 n=196 eligible_labeled=4587 sat_labeled=0 nodes=4587
+SUMMARY k=7 n=197 eligible_labeled=4153 sat_labeled=0 nodes=4153
+SUMMARY k=7 n=198 eligible_labeled=4153 sat_labeled=0 nodes=4153
+SUMMARY k=7 n=199 eligible_labeled=3117 sat_labeled=0 nodes=3117
+SUMMARY k=7 n=200 eligible_labeled=2417 sat_labeled=0 nodes=2417
+SUMMARY k=7 n=201 eligible_labeled=2396 sat_labeled=0 nodes=2396
+SUMMARY k=7 n=202 eligible_labeled=1745 sat_labeled=0 nodes=1745
+SUMMARY k=7 n=203 eligible_labeled=1262 sat_labeled=0 nodes=1262
+SUMMARY k=7 n=204 eligible_labeled=870 sat_labeled=0 nodes=870
+SUMMARY k=7 n=205 eligible_labeled=590 sat_labeled=0 nodes=590
+SUMMARY k=7 n=206 eligible_labeled=590 sat_labeled=0 nodes=590
+SUMMARY k=7 n=207 eligible_labeled=485 sat_labeled=0 nodes=485
+SUMMARY k=7 n=208 eligible_labeled=191 sat_labeled=0 nodes=191
+SUMMARY k=7 n=209 eligible_labeled=156 sat_labeled=0 nodes=156
+SUMMARY k=7 n=210 eligible_labeled=44 sat_labeled=0 nodes=44
+SUMMARY k=7 n=211 eligible_labeled=44 sat_labeled=0 nodes=44
+SUMMARY k=7 n=212 eligible_labeled=2 sat_labeled=0 nodes=2
+SUMMARY k=7 n=213 eligible_labeled=2 sat_labeled=0 nodes=2
+SUMMARY k=7 n=214 eligible_labeled=2 sat_labeled=0 nodes=2
+SUMMARY k=7 n=215 eligible_labeled=2 sat_labeled=0 nodes=2
