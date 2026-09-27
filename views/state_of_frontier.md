@@ -14,7 +14,7 @@ the release-facing summary of its current state.
 ## The ledger at a glance
 
 - **225 bounded quantities** across the Erdős-hub problems.
-- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **15** lane-added, **198** agent-mined.
+- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **16** lane-added, **197** agent-mined.
 - Honest label: the agent-mined entries are structurally validated but **not yet
   independently number-re-verified** — they carry literature-grade evidence and
   therefore class C3 until a verification artifact exists (the WS1 release gate
@@ -30,8 +30,8 @@ validator fails any stored class the recorded evidence does not prove.
 |---|---|---|
 | C0 | contract-bound formal proof, machine-checked | 0 |
 | C1 | &ge;2 contract-bound independent replays at the claimed range | 0 |
-| C2 | exactly one contract-bound verified replay | 9 |
-| C3 | literature- or numerics-grade — no independent in-project verification artifact | 216 |
+| C2 | exactly one contract-bound verified replay | 10 |
+| C3 | literature- or numerics-grade — no independent in-project verification artifact | 215 |
 
 ## Entries by kind
 
@@ -87,7 +87,7 @@ truncated — the full values, sources, and verifier specs live in
 | [#932](https://www.erdosproblems.com/932) | [A387864](https://oeis.org/A387864) | A387864 verified frontier — largest verified r such that at least two integers strictly between p_r and p_{r+… | lower | open-easy | 6386830 | ? |
 | [#936](https://www.erdosproblems.com/936) | [A146968](https://oeis.org/A146968) | Brocard sub-case search frontier: largest N such that no n in (7, N] has n!+1 a perfect square (A146968 = {4,… | lower | open-easy | 1e12 | ? |
 | [#938](https://www.erdosproblems.com/938) | [A001694](https://oeis.org/A001694) | 3-term arithmetic progressions of CONSECUTIVE powerful numbers n_k, n_{k+1}, n_{k+2} (A001694): complete tabl… | lower | open-easy | 1e12 (search limit; exactly 10 triples exist with all terms… | ? |
-| [#962](https://www.erdosproblems.com/962) | [A327909](https://oeis.org/A327909) | A327909(1000) — smallest start of a run of 1000 consecutive integers each having a prime factor > 1000 (first… | upper | open-easy | 22369305365 | ? |
+| [#962](https://www.erdosproblems.com/962) | [A327909](https://oeis.org/A327909) | A327909(1103) — smallest start of a run of 1103 consecutive integers each having a prime factor > 1103 (first… | upper | open-easy | 41063158607 | ? |
 | [#1062](https://www.erdosproblems.com/1062) | [A038372](https://oeis.org/A038372) | A038372(69) - largest subset of {1,...,69} in which no element divides two other distinct elements (fork-free… | lower | open-easy | 46 | 47 |
 | [#1083](https://www.erdosproblems.com/1083) | [A186704](https://oeis.org/A186704) | A186704(14) — minimum number of distinct distances determined by 14 points in the plane (first uncomputed cel… | upper | open-easy | 7 | 7 |
 | [#1100](https://www.erdosproblems.com/1100) | [A325864](https://oeis.org/A325864) | g(k) = max over squarefree n with omega(n)=k of tau_perp(n), where tau_perp counts coprime consecutive-diviso… | lower | open-easy | (sqrt(2)+o(1))^k | (2-c)^k for some absolute c>0 |

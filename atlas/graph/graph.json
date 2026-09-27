@@ -5,7 +5,7 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 785,
-   "evidenced_by": 15,
+   "evidenced_by": 17,
    "has_surface": 316,
    "learned_from": 5,
    "measures": 223,
@@ -18,8 +18,8 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 19,
-   "evidence_container": 30,
+   "evidence_claim": 21,
+   "evidence_container": 31,
    "external_claim": 91,
    "incident": 18,
    "move": 7,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 4461,
-   "validator-enforced": 24
+   "validator-enforced": 26
   }
  },
  "edges": [
@@ -1086,7 +1086,7 @@
    "type": "applies"
   },
   {
-   "dst": "S:gap:962:28389538",
+   "dst": "S:gap:962:9b63ba36",
    "predicate": "workable",
    "source": "atlas/gap_map.json",
    "src": "M:witness-local-search",
@@ -8512,6 +8512,22 @@
    "type": "evidenced_by"
   },
   {
+   "dst": "E:claim:erdos-962-a327909-1-1102",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P962",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-962-a327909-1-400",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P962",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
    "dst": "E:claim:erdos-979-a6-public",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
@@ -10642,7 +10658,7 @@
    "type": "has_surface"
   },
   {
-   "dst": "S:gap:962:28389538",
+   "dst": "S:gap:962:9b63ba36",
    "source": "atlas/gap_map.json",
    "src": "P962",
    "tier": "deterministic-rule",
@@ -12261,7 +12277,7 @@
   {
    "dst": "O:A327909",
    "source": "atlas/gap_map.json",
-   "src": "S:gap:962:28389538",
+   "src": "S:gap:962:9b63ba36",
    "tier": "deterministic-rule",
    "type": "measures"
   },
@@ -33698,6 +33714,101 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-962/verify.py",
+     "sha256": "dae6c4c8b68f7364cb101b4c19c586ce23246540a2ed391f7e4fa50a797c157f"
+    },
+    {
+     "path": "certificates/erdos-962/smooth_runs.py",
+     "sha256": "c00f548616c0db57c5706907351da4ed347538644443d1c436fd8607af836a7d"
+    },
+    {
+     "path": "certificates/erdos-962/runs.c",
+     "sha256": "d365f244e5166863fe84b7c50514ad5bb9200cc17aa6f24edc83fd753e0611e9"
+    },
+    {
+     "path": "certificates/erdos-962/chunk.c",
+     "sha256": "3cbb4b3691016b244a2d04367649b71738223465005fe8bd6d6e1728b6ebe096"
+    },
+    {
+     "path": "certificates/erdos-962/RESULT.json",
+     "sha256": "e09688d8c7bd1e9a8c1da1f1edf89492a76c41c21182a888dbec0d644b2fb483"
+    },
+    {
+     "path": "certificates/erdos-962/emit_result.py",
+     "sha256": "313b710ac8eb56da87b8382086045d52ffaeb579eb7c1e57d6e93282e0904b37"
+    }
+   ],
+   "claim_id": "erdos-962-a327909-1-1102",
+   "id": "E:claim:erdos-962-a327909-1-1102",
+   "overclaim_guards": 2,
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-962/verify.py",
+     "--full"
+    ],
+    "profile": "slow",
+    "stdout_contains": [
+     "\"verified\":true",
+     "receipt-checked: RESULT.json"
+    ]
+   },
+   "scope": "Exact finite scan (every integer up to 4.2*10^10); a verified-search receipt, not a formal proof. a(1..999) replicate the OEIS b-file, whose last term a(999) = 22369305365 is matched; a(1000..1102) are new. Gives Erdos's k(n) = max{k : a(k) <= n + 1} exactly for n < 41063158606. Says nothing about the asymptotic question of Erdos #962.",
+   "statement": "A327909(n) for 1 <= n <= 1102, with a(1000..1003) = 22369305365, a(1004..1011) = 25446495399, a(1012) = 28119442098, ..., a(1097..1102) = 41063158607: each a(n) starts a maximal run of at least n consecutive integers each having a prime factor > n (checked by gcd), and an exact scan of [1, 4.2*10^10] finds no earlier such run.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
+     "path": "certificates/erdos-962/verify.py",
+     "sha256": "dae6c4c8b68f7364cb101b4c19c586ce23246540a2ed391f7e4fa50a797c157f"
+    },
+    {
+     "path": "certificates/erdos-962/smooth_runs.py",
+     "sha256": "c00f548616c0db57c5706907351da4ed347538644443d1c436fd8607af836a7d"
+    },
+    {
+     "path": "certificates/erdos-962/runs.c",
+     "sha256": "d365f244e5166863fe84b7c50514ad5bb9200cc17aa6f24edc83fd753e0611e9"
+    },
+    {
+     "path": "certificates/erdos-962/chunk.c",
+     "sha256": "3cbb4b3691016b244a2d04367649b71738223465005fe8bd6d6e1728b6ebe096"
+    },
+    {
+     "path": "certificates/erdos-962/RESULT.json",
+     "sha256": "e09688d8c7bd1e9a8c1da1f1edf89492a76c41c21182a888dbec0d644b2fb483"
+    },
+    {
+     "path": "certificates/erdos-962/emit_result.py",
+     "sha256": "313b710ac8eb56da87b8382086045d52ffaeb579eb7c1e57d6e93282e0904b37"
+    }
+   ],
+   "claim_id": "erdos-962-a327909-1-400",
+   "id": "E:claim:erdos-962-a327909-1-400",
+   "overclaim_guards": 2,
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-962/verify.py"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "\"verified_1_400\":true",
+     "all checks passed"
+    ]
+   },
+   "scope": "Exact finite scan; a verified-search receipt, not a formal proof. Replicates the published OEIS b-file (T. Garrison 1..369, D. Spencer 370..400): an independent recomputation, nothing new. Says nothing about the asymptotic question of Erdos #962.",
+   "statement": "A327909(n) for 1 <= n <= 400: for each n, a(n) starts a maximal run of at least n consecutive integers each having a prime factor > n (checked by gcd), and an exact scan of [1, 2*10^8] finds no earlier such run.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-979/verify.py",
      "sha256": "0aef06820a6d338274254cab24b99e39489e8b474c9beb745bce4d1a1db6525e"
     },
@@ -34014,6 +34125,13 @@
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-854",
    "path": "certificates/erdos-854",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "Exact smooth-number scan of [1, 4.2*10^10]: OEIS A327909(n) for 1 <= n <= 1102, each with its maximal run checked by gcd. Replicates the published b-file (a(1..999), including a(999) = 22369305365); a(1000..1102) are new. Two C engines (sequential and chunked) plus a Python sieve on small ranges; no formal proof; nothing about the asymptotic Erdos #962 question.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-962",
+   "path": "certificates/erdos-962",
    "type": "evidence_container"
   },
   {
@@ -76295,34 +76413,40 @@
    "witness_verifier": "trial-divide each of the L integers by the 57 primes ≤ 269 — microseconds, dependency-free"
   },
   {
-   "confidence": "C3",
+   "confidence": "C2",
    "evidence": [
     {
-     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
-     "date": "2026-07-18",
+     "artifact": "certificates/erdos-962: exact smooth-number scan of [1, 4.2e10] (runs.c, chunk.c, Python sieve)",
+     "contract": "erdos-962-a327909-1-1102",
+     "date": "2026-09-27",
+     "type": "implementation"
+    },
+    {
+     "artifact": "OEIS A327909 b-file (a(1..999)), reproduced by the scan",
+     "date": "2026-09-27",
      "type": "literature"
     }
    ],
    "exact_feasibility": "cell",
-   "id": "S:gap:962:28389538",
+   "id": "S:gap:962:9b63ba36",
    "kind": "next_cell",
    "lower": {
-    "source": "= A327909(999) (b-file, David Spencer ext of Thomas Garrison's 369 terms) + monotonicity: the first 999 integers of any valid 1000-run form a valid 999-run",
-    "value": "22369305365",
-    "year": null
+    "source": "= A327909(1102) (certificates/erdos-962, contract erdos-962-a327909-1-1102) + monotonicity: the first 1102 integers of any valid 1103-run form a valid 1102-run",
+    "value": "41063158607",
+    "year": 2026
    },
-   "notes": "a(999) ≈ 2.24e10 and the sequence grows slowly (long constant stretches), so a segmented 1000-smooth sieve to ~1e11 (≈ 2e11 division ops in C) settles a(1000) in hours on one box — among the easiest genuine cells in this chunk. Asymptotics for Erdős's k(n): log k(n) ≫ sqrt(log n loglog n) (Erdős 1976, per erdosproblems #962); constant improved to (1/sqrt(2) − o(1)) attributed to Tang in site remarks (2026) — primary arXiv source NOT located, treat as site attribution; upper: k(n) ≤ (1+o(1))sqrt(n) (Tao, site comment); Erdős reported exp(−(log n)^c)·sqrt(n). Extending the table gives data for the log k(n) = (log n)^{1/2+o(1)} question. b-file year unrecorded (entry rev 2025-10-28), hence year null.",
+   "notes": "PREVIOUS CELL CLOSED HERE (2026-09-27), and it needed no search: the run starting at a(999) = 22369305365 is 1003 integers long, and n = 997..1008 share the same run boundaries (no prime lies strictly between 997 and 1009), so a(1000..1003) = a(999). certificates/erdos-962 then recomputes A327909(1..1102) from scratch by one exact scan of every integer up to 4.2e10 (two C engines that agree, plus a Python sieve on small ranges); it matches the OEIS data and the b-file's a(999), and a(1000..1102) are new (a(1004) = 25446495399, a(1102) = 41063158607). 1103 is prime, so from n = 1103 on integers whose largest prime factor is 1103 also break runs. The certificate's chunked engine scans about 10^10 integers per 5 CPU-minutes, and a(n) roughly doubles every hundred n here, so each further hundred terms costs about twice the last. Erdős's k(n) = max{k : a(k) <= n + 1} (formal-conjectures ErdosProblems/962.lean definition), so the table gives k(n) exactly for n < 41063158606. Asymptotics for Erdős's k(n): log k(n) ≫ sqrt(log n loglog n) (Erdős 1976, per erdosproblems #962); constant improved to (1/sqrt(2) − o(1)) attributed to Tang in site remarks (2026) — primary arXiv source NOT located, treat as site attribution; upper: k(n) ≤ (1+o(1))sqrt(n) (Tao, site comment); Erdős reported exp(−(log n)^c)·sqrt(n). Extending the table gives data for the log k(n) = (log n)^{1/2+o(1)} question. b-file year unrecorded (entry rev 2025-10-28), hence year null.",
    "oeis": "A327909",
    "overlay": "gap_map",
    "problem": 962,
-   "quantity": "A327909(1000) — smallest start of a run of 1000 consecutive integers each having a prime factor > 1000 (first cell beyond the 999-term b-file; per-n table underlying Erdős's k(n))",
+   "quantity": "A327909(1103) — smallest start of a run of 1103 consecutive integers each having a prime factor > 1103 (first cell beyond the certified table a(1..1102); per-n table underlying Erdős's k(n))",
    "status": "open",
    "type": "surface",
    "upper": null,
    "witness_feasibility": "open-easy",
-   "witness_object": "a start s with each of s, s+1, ..., s+999 having a prime factor > 1000; for the exact cell, the least such s certified by exhaustive scan below it",
+   "witness_object": "a start s with each of s, s+1, ..., s+1102 having a prime factor > 1103; for the exact cell, the least such s certified by an exhaustive scan below it",
    "witness_side": "upper",
-   "witness_verifier": "for each of the 1000 integers, divide out all primes ≤ 1000 and check the cofactor exceeds 1 — milliseconds, dependency-free"
+   "witness_verifier": "for each of the 1103 integers, divide out all primes <= 1103 and check the cofactor exceeds 1 — milliseconds, dependency-free (certificates/erdos-962/smooth_runs.run_is_gap does it by gcd with the primorial)"
   },
   {
    "confidence": "C3",

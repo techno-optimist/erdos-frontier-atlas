@@ -81,7 +81,7 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 | #932 | A387864 verified frontier — largest verified r such that at least two …[truncated; see source] | open-easy | compute p_r, p_{r+1} (sieve; p_r ≈ 1.2e8 at the frontier); …[truncated; see source] | C3 |
 | #936 | Brocard sub-case search frontier: largest N such that no n in (7, N] …[truncated; see source] | open-easy | (b) verifies in seconds: incremental r_p = n! mod p over …[truncated; see source] | C3 |
 | #938 | 3-term arithmetic progressions of CONSECUTIVE powerful numbers n_k, …[truncated; see source] | open-easy | powerfulness: factor each of the 3 numbers (Pollard rho, …[truncated; see source] | C3 |
-| #962 | A327909(1000) — smallest start of a run of 1000 consecutive integers …[truncated; see source] | open-easy | for each of the 1000 integers, divide out all primes ≤ 1000 …[truncated; see source] | C3 |
+| #962 | A327909(1103) — smallest start of a run of 1103 consecutive integers …[truncated; see source] | open-easy | for each of the 1103 integers, divide out all primes <= …[truncated; see source] | C2 |
 | #1062 | A038372(69) - largest subset of {1,...,69} in which no element …[truncated; see source] | open-easy | For each a in S count multiples of a among S \ {a}; require …[truncated; see source] | C3 |
 | #1083 | A186704(14) — minimum number of distinct distances determined by 14 …[truncated; see source] | open-easy | exact integer arithmetic: represent points as …[truncated; see source] | C3 |
 | #1100 | g(k) = max over squarefree n with omega(n)=k of tau_perp(n), where …[truncated; see source] | open-easy | dependency-free: enumerate all 2^k divisors as prime-subset …[truncated; see source] | C3 |
@@ -167,6 +167,8 @@ Every promoted claim replays in one command; the fastest way to learn the receip
 - `erdos-743-k10-packing`: `python3 -I certificates/erdos-743/verify.py --quick`
 - `erdos-854-a389839-16`: `python3 -I certificates/erdos-854/verify.py --full`
 - `erdos-854-a389839-2-15`: `python3 -I certificates/erdos-854/verify.py`
+- `erdos-962-a327909-1-1102`: `python3 -I certificates/erdos-962/verify.py --full`
+- `erdos-962-a327909-1-400`: `python3 -I certificates/erdos-962/verify.py`
 - `erdos-979-a6-public`: `python3 -I certificates/erdos-979/verify.py --cutoff 1e12`
 - `erdos-993-unimodal-n30`: `python3 -I certificates/erdos-993/verify.py --quick`
 - `graffiti-284-hoffman-singleton`: `python3 -I certificates/graffiti-284-refutation/verify.py`
