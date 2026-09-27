@@ -72,6 +72,11 @@
    "boundary": "Exhaustive search: every one of the 45,376,056 tuples (T_2..T_10) decomposes K_10. Settles n=10 only; says nothing about n>=11 and is not a proof of the Gyarfas conjecture."
   },
   {
+   "path": "certificates/erdos-854",
+   "classification": "certified_local",
+   "boundary": "Exhaustive covering search: OEIS A389839(n) for 2 <= n <= 16 (a(13..16) = 76, 86, 98, 108), every occurring gap with an explicit gcd-checked witness. Replicates the published a(2..12); a(13..16) were already implied by OEIS A331118 (rows n <= 44). Python reference plus C port pinned node for node; no formal proof; nothing about the asymptotic Erdos #854 questions."
+  },
+  {
    "path": "certificates/erdos-979",
    "classification": "certified_local",
    "boundary": "Public package certifies a(6)>10^12; private 10^13 ledgers are not promoted here."
@@ -1169,6 +1174,129 @@
      "failure_control": {
       "kind": "embedded",
       "evidence": "The quick replay runs the same controls and planted failures as the full one; it replays the exhaustion only at 150..215 and the Python class-by-class comparison only at 180..215, and says so."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-854-a389839-2-15",
+   "status": "promoted",
+   "statement": "A389839(n) for 2 <= n <= 15 is 6, 8, 12, 16, 20, 28, 32, 42, 48, 60, 68, 76, 86, 98: for each n every even number below a(n) is the difference of two consecutive integers coprime to prime(n)# (explicit witness, checked by gcd) and a(n) is not (exhaustive covering search).",
+   "scope": "Finite exhaustive search; a verified-search receipt, not a formal proof. a(2..12) replicate the published OEIS terms. a(13..15) are new to A389839 but were already implied by OEIS A331118 (De Vlieger 2020, complete gap sets for n <= 44); this is an independent recomputation. Says nothing about the asymptotic questions of Erdos #854.",
+   "machine_verdict": "\"verified_2_15\":true",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-854/README.md",
+     "contains": "**A389839(13), …, A389839(16) = 76, 86, 98, 108.**",
+     "overclaim_guards": [
+      "resolves Erdős #854",
+      "proves the conjecture"
+     ]
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-854/verify.py",
+     "sha256": "d973b0f68bfe156d59d09ac8fedb24aa437a1a0c0aebdc2b68a0a305b73416bb"
+    },
+    {
+     "path": "certificates/erdos-854/coprime_gaps.py",
+     "sha256": "45055091630ff4aa0790b1f3f57c4dd8b7b239875b9cdc70722e02b6295791aa"
+    },
+    {
+     "path": "certificates/erdos-854/gapsc.c",
+     "sha256": "9f1174ca0949b7f8f4c161f2bc286f9a3ff7ff844c77f094b7c28693bf37d0e0"
+    },
+    {
+     "path": "certificates/erdos-854/RESULT.json",
+     "sha256": "e2466e1ec5c89cfa3307a88af4277799b9aa4d1f4cd6bd7bf08c57e473be368c"
+    },
+    {
+     "path": "certificates/erdos-854/emit_result.py",
+     "sha256": "2c3c4c1e670a52d3848650446cc608666d5ab0a1e13d076773ebf3f6b589c5ec"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-854/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-854/verify.py"
+     ],
+     "timeout_seconds": 900,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"verified_2_15\":true",
+      "all checks passed"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "Every replay must check each recorded witness by gcd alone (a shifted witness and a witness for the wrong gap are planted and must be rejected), must reproduce the engine's verdict, node count and witness for every gap, must show the engine does not stop at the first absent gap (13# misses 20 but has 22, the Lacampagne-Selfridge case), and must match the Python reference node for node on every (n, t) with n <= 12. A search that always answered 'absent' fails the witnesses; one that always answered 'occurs' fails the published terms a(2..12)."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-854-a389839-16",
+   "status": "promoted",
+   "statement": "A389839(16) = 108: every even number up to 106 is the difference of two consecutive integers coprime to 53#, and 108 is not.",
+   "scope": "Finite exhaustive search (7.9e8 search nodes for the absence of 108); a verified-search receipt, not a formal proof. Already implied by OEIS A331118 (De Vlieger 2020) together with A048670(16) = 106; this is an independent recomputation. Says nothing about the asymptotic questions of Erdos #854.",
+   "machine_verdict": "\"verified\":true",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-854/README.md",
+     "contains": "**A389839(13), …, A389839(16) = 76, 86, 98, 108.**",
+     "overclaim_guards": [
+      "resolves Erdős #854",
+      "proves the conjecture"
+     ]
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-854/verify.py",
+     "sha256": "d973b0f68bfe156d59d09ac8fedb24aa437a1a0c0aebdc2b68a0a305b73416bb"
+    },
+    {
+     "path": "certificates/erdos-854/coprime_gaps.py",
+     "sha256": "45055091630ff4aa0790b1f3f57c4dd8b7b239875b9cdc70722e02b6295791aa"
+    },
+    {
+     "path": "certificates/erdos-854/gapsc.c",
+     "sha256": "9f1174ca0949b7f8f4c161f2bc286f9a3ff7ff844c77f094b7c28693bf37d0e0"
+    },
+    {
+     "path": "certificates/erdos-854/RESULT.json",
+     "sha256": "e2466e1ec5c89cfa3307a88af4277799b9aa4d1f4cd6bd7bf08c57e473be368c"
+    },
+    {
+     "path": "certificates/erdos-854/emit_result.py",
+     "sha256": "2c3c4c1e670a52d3848650446cc608666d5ab0a1e13d076773ebf3f6b589c5ec"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "slow",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-854/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-854/verify.py",
+      "--full"
+     ],
+     "timeout_seconds": 3600,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"verified\":true",
+      "receipt-checked: RESULT.json"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "Every replay must check each recorded witness by gcd alone (a shifted witness and a witness for the wrong gap are planted and must be rejected), must reproduce the engine's verdict, node count and witness for every gap, must show the engine does not stop at the first absent gap (13# misses 20 but has 22, the Lacampagne-Selfridge case), and must match the Python reference node for node on every (n, t) with n <= 12. A search that always answered 'absent' fails the witnesses; one that always answered 'occurs' fails the published terms a(2..12)."
      }
     }
    ]

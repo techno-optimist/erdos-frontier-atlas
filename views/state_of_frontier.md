@@ -14,7 +14,7 @@ the release-facing summary of its current state.
 ## The ledger at a glance
 
 - **225 bounded quantities** across the Erdős-hub problems.
-- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **6** lane-added, **207** agent-mined.
+- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **7** lane-added, **206** agent-mined.
 - Honest label: the agent-mined entries are structurally validated but **not yet
   independently number-re-verified** — they carry literature-grade evidence and
   therefore class C3 until a verification artifact exists (the WS1 release gate
@@ -123,7 +123,7 @@ truncated — the full values, sources, and verifier specs live in
 | [#687](https://www.erdosproblems.com/687) | [A048670](https://oeis.org/A048670) | A048670(65) = j(p_65#) — Jacobsthal function of the product of the first 65 primes (first uncomputed cell; a(… | lower | plausible | >= 1110 | ? |
 | [#727](https://www.erdosproblems.com/727) | [A343507](https://oeis.org/A343507) | A343507(10) = smallest m with (m+10)!^2 \| (2m)! — first uncomputed cell (a(9) = 2935782889) | upper | plausible | >= 2935782889 | ? |
 | [#730](https://www.erdosproblems.com/730) | [A129515](https://oeis.org/A129515) | Largest gap k with a known pair (n, n+k) such that binomial(2n,n) and binomial(2(n+k),n+k) have identical pri… | lower | plausible | 2 | ? |
-| [#854](https://www.erdosproblems.com/854) | [A389839](https://oeis.org/A389839) | A389839(13) — smallest even integer that is not a difference of consecutive integers coprime to 41# = 3042502… | lower | plausible | a(12) = 68 is the last computed cell (for 37#) | ? |
+| [#854](https://www.erdosproblems.com/854) | [A389839](https://oeis.org/A389839) | A389839(45) — smallest even integer that is not a difference of consecutive integers coprime to 197# (the pro… | lower | plausible | 618 | 644 |
 | [#961](https://www.erdosproblems.com/961) | [A213253](https://oeis.org/A213253) | A213253(269) — first cell beyond Najman's computed range n=1..268; f(n) = minimal L such that every L consecu… | lower | plausible | 16 | 269 |
 | [#970](https://www.erdosproblems.com/970) | [A048669](https://oeis.org/A048669) | A048670(65) — Jacobsthal function g of the product of the first 65 primes (first uncomputed primorial cell; t… | lower | plausible | 1110 | ? |
 | [#985](https://www.erdosproblems.com/985) | [A002233](https://oeis.org/A002233) | largest N such that every prime 3 <= p <= N has a prime primitive root q < p (verified range of the conjectur… | lower | plausible | 104729 | ? |
