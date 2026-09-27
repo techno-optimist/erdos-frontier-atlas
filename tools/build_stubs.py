@@ -72,9 +72,17 @@ def _yaml_load(path: Path):
         raise SystemExit("PyYAML required: pip install pyyaml")
 
 
-def map_status(state: str):
+def base_state(state: str) -> str:
+    """The informal state without the "(Lean)" suffix. The suffix records that a
+    solution is formalized in Lean; it never changes the informal state. Upstream
+    keeps an undigested formal solution under its informal status, so "open
+    (Lean)" is still open (teorth/erdosproblems README)."""
     s = (state or "").strip()
-    if s in OPEN_STATES:
+    return s[:-len(" (Lean)")] if s.endswith(" (Lean)") else s
+
+
+def map_status(state: str):
+    if base_state(state) in OPEN_STATES:
         return "open", "Open"
     return "solved-upstream", "Solved"
 
@@ -140,7 +148,8 @@ def build():
             "oeis": [x for x in (e.get("oeis") or []) if re.fullmatch(r"A\d{6}", str(x))],
             "tags": e.get("tags") or [],
             "upstream_state_raw": state,
-            "upstream_finite_handle": (state if state in FINITE_HANDLE_STATES else None),
+            "upstream_finite_handle": (base_state(state) if base_state(state) in FINITE_HANDLE_STATES
+                                       else None),
             "upstream_status": upstream,
             "status": status,
             "statement_source": "link",
@@ -283,8 +292,12 @@ def main():
     args = ap.parse_args()
     doc = build()
     c = doc["counts"]
-    # invariants (the rebuild-artifact contract)
-    assert c["total"] == 1217, c["total"]
+    # invariants (the rebuild-artifact contract). Upstream numbers problems 1..N
+    # and only ever appends, so a partial or truncated load shows up as a gap
+    # or as fewer than the 1217 records of the first pinned snapshot.
+    ids = [r["id"] for r in doc["problems"]]
+    assert ids == list(range(1, len(ids) + 1)), "upstream ids must be 1..N with no gaps"
+    assert c["total"] >= 1217, c["total"]
     assert c["link_only"] + c["with_statement"] == c["total"]
     assert c["in_lean"] >= 400, c["in_lean"]
     print(json.dumps(c, indent=1))

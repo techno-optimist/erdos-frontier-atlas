@@ -4,7 +4,7 @@
 
 ## DO-NOT-SPEND — the traps, priced honestly
 
-7 problems carry an upstream finite handle (`decidable/falsifiable/verifiable`) AND our catalogued wall. The prize renders beside the trap because the prize is the lure:
+6 problems carry an upstream finite handle (`decidable/falsifiable/verifiable`) AND our catalogued wall. The prize renders beside the trap because the prize is the lure:
 
 | problem | prize | upstream handle | card |
 |---|---|---|---|
@@ -14,7 +14,6 @@
 | #107 | $500 | `falsifiable` | `views/graph/P107.md` |
 | #114 | $250 | `falsifiable` | `views/graph/P114.md` |
 | #128 | $250 | `falsifiable` | `views/graph/P128.md` |
-| #548 | — | `falsifiable` | `views/graph/P548.md` |
 
 Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render on each card's STOP section). `#64` is the standing lesson: its *general* branch is the $1000 trap above, its *cubic* branch is strike T1-a below — walls are per-branch, read the card.
 
@@ -37,7 +36,7 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 
 ### T2 — movable boards (stub `movable` ∪ deep `MOVABLE`)
 
-- **#1** [movable / upstream Open] — lane `exact-backtracking`, board READY — card `views/graph/P1.md`
+- **#1** [solved-upstream / upstream Solved] — lane `exact-backtracking`, board READY — card `views/graph/P1.md`
 - **#13** [solved-upstream / upstream Solved] — lane `exact-backtracking`, board HEAVY — card `views/graph/P13.md`
 - **#20** [movable / upstream Open] — lane `witness-local-search`, board HEAVY — card `views/graph/P20.md`
 - **#21** [solved-upstream / upstream Solved] — lane `exact-backtracking`, board READY — card `views/graph/P21.md`
@@ -135,10 +134,8 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 ### T4 — triage MAYBE branches
 
 - **#64** (`S:triage:64`) — RETARGETED 2026-07-27 from TARGET to MAYBE. #64 itself is still OPEN (erdosproblems.com/64, zero claimed proofs, last edited 2026-04-10), and the $1000 general-branch TRAP verdict stands and is reinforced: …[truncated; see source]
-- **#106** (`S:triage:106`) — The only one of the four where criteria 1 and 3 are cleanly met and the case is genuinely tiny. A refutation of the ENTIRE Erdos-Soifer table reduces (via Praton) to ten squares in a unit square, and a candidate is …[truncated; see source]
 - **#167** (`S:triage:167`) — The softest of the five, and the only one not previously triaged by us. Criteria 1 and 3 pass cleanly — the witness is a graph and both tau and nu are exact integer optimisations a dependency-free branch-and-bound can …[truncated; see source]
 - **#458** (`S:triage:458`) — The witness hunt is a WALL (needs a prime gap ~10^6 times longer than anything Cramer permits — it is Legendre in disguise). But this is the one entry where the NEGATIVE certificate is genuinely cheap, monotone and …[truncated; see source]
-- **#547** (`S:triage:547`) — The only one of the five that is not obviously dead, and I am flagging it as MAYBE rather than TARGET deliberately. In its favour: the witness is fully concrete, verification is cheap, exact and dependency-free (tree …[truncated; see source]
 - **#583** (`S:triage:583`) — Passes the rubric on the letter but the payoff is thin, so I am not calling it a TARGET. In its favour: the witness is concrete, a sweep to n ≤ 11 lands right at the ~10^12 op line, verifying a decomposition is trivial …[truncated; see source]
 - **#699** (`S:triage:699`) — RETARGETED 2026-07-27 from TARGET to MAYBE. The problem is NOT settled -- still Open/FALSIFIABLE, no full proof, the DeepMind Lean statement is still @[category research open] -- but the computation we specified is the …[truncated; see source]
 
@@ -146,14 +143,14 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 
 Where two registers disagree, the disagreement IS the product (uncomputed-table-cells niche):
 
-- solved-upstream × deep MOVABLE: #13, #21, #67 — upstream closed the headline; our finite table cell still moves.
-- upstream Open × our wall: the 27 catalogued walls (`atlas/walls.md`) — 'falsifiable upstream' is not 'reachable here'.
+- solved-upstream × deep MOVABLE: #1, #13, #21, #67 — upstream closed the headline; our finite table cell still moves.
+- upstream Open × our wall: the 24 catalogued walls (`atlas/walls.md`) — 'falsifiable upstream' is not 'reachable here'.
 
-## HOT CLAIMS — 21 external claims against problems we record unresolved
+## HOT CLAIMS — 19 external claims against problems we record unresolved
 
 Verification targets for `M:external-claim-replay` — a claim never sets a status (standing rule 1):
 
-#12, #124, #138, #176, #306, #451, #456, #477, #488, #501, #524, #539, #654, #848, #942, #1032, #1033, #1038, #1039, #1040, #1101
+#12, #124, #138, #176, #306, #451, #456, #488, #524, #539, #654, #848, #942, #1032, #1033, #1038, #1039, #1040, #1101
 
 ## REPLAY RECIPES — run a working verifier first, then adapt
 

@@ -86,6 +86,18 @@ and unexplained OEIS edits touching #588 and #779). Fifty-seven cells showed
 no public movement; that is absence of evidence, not a certificate that they
 are open.
 
+## Follow-up, same day: the production snapshot was refreshed
+
+After this check, `atlas/stubs.json` was rebuilt from teorth/erdosproblems
+`39cde0f` and google-deepmind/formal-conjectures `16e02e2` (both 2026-09-27),
+with `tools/build_stubs.py`. The rebuild at the old pins reproduces the old file
+byte for byte, so the diff is upstream's. It carries 21 genuine status moves
+(including #1, #106, #547 and #548 above), records 1218–1221, and 342 more Lean
+statements. The trap #548 and the MAYBE targets #106 and #547 left the board by
+the board's own rules; their triage entries moved to `retired` in
+`atlas/finite_handle_triage.json`, verdicts kept as history. The pins above
+describe the snapshot as it stood when this check ran.
+
 ## Limits of this check
 
 - The session could not open erdosproblems.com, erdosproblemaday.com or

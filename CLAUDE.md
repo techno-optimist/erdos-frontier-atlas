@@ -1,6 +1,6 @@
 # erdos-frontier-atlas — agent context
 
-This repo is a machine-readable annex to erdosproblems.com: 1,217 problem
+This repo is a machine-readable annex to erdosproblems.com: 1,221 problem
 records, replayable certificates, and feasibility overlays, maintained under
 strict provenance discipline.
 

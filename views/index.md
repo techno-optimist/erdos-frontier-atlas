@@ -10,7 +10,7 @@ The machine-readable **agent-coordination annex** to [erdosproblems.com](https:/
 
 | total | movable | wall | open | solved-upstream | formalized (Lean) | with statement | audited (deep) | cash-prize |
 |--:|--:|--:|--:|--:|--:|--:|--:|--:|
-| **1217** | 5 | 27 | 619 | 566 | 404 | 323 | 51 | 106 |
+| **1221** | 4 | 24 | 605 | 588 | 782 | 665 | 51 | 106 |
 
 ## Audited frontier (deep records)
 
@@ -18,7 +18,6 @@ The subset we have deep-audited — pinned verifier, current record, board class
 
 | # | problem | status | prize | upstream | links |
 |--:|---|---|---|---|---|
-| 1 | Erdős distinct subset sums (min largest element, A276661) | `movable` | $500 | Open | [erdos.com](https://www.erdosproblems.com/1) · P42:`distinct-subset-sums-a11` |
 | 20 | Erdős–Rado sunflower conjecture (f(n,k) < c_k^n) | `movable` | $1000 | Open | [erdos.com](https://www.erdosproblems.com/20) |
 | 41 | Distinct triple-sum (B_3) sets — infinite density liminf | `movable` | $500 | Open | [erdos.com](https://www.erdosproblems.com/41) · P42:`b3-ruler-11-marks` |
 | 241 | B_3 sets: max A⊆{1..N} with all triple sums a+b+c distinct; is f(N)~N^ | `movable` | $100 | Open | [erdos.com](https://www.erdosproblems.com/241) · P42:`b3-subset-first-jump-9` |
@@ -36,13 +35,10 @@ The subset we have deep-audited — pinned verifier, current record, board class
 | 128 | Erdős Sparse Half Conjecture (triangle-free) | `wall` | $250 | Open | [erdos.com](https://www.erdosproblems.com/128) |
 | 138 | van der Waerden numbers W(k) | `wall` | $500 | Open | [erdos.com](https://www.erdosproblems.com/138) |
 | 142 | Asymptotic formula for r_k(N), largest k-AP-free subset of [1,N] | `wall` | $10000 | Open | [erdos.com](https://www.erdosproblems.com/142) |
-| 146 | Erdős–Simonovits degenerate bipartite Turán conjecture | `wall` | $500 | Open | [erdos.com](https://www.erdosproblems.com/146) |
 | 159 | R(C4,Kn) sub-quadratic exponent | `wall` | — | Open | [erdos.com](https://www.erdosproblems.com/159) |
 | 161 | Continuity/jumps of hypergraph discrepancy function F^{(t)}(n,α) | `wall` | $500 | Open | [erdos.com](https://www.erdosproblems.com/161) |
 | 165 | Asymptotic formula for R(3,k) | `wall` | $250 | Open | [erdos.com](https://www.erdosproblems.com/165) |
-| 183 | Limit of multicolor triangle Ramsey R(3;k)^{1/k} | `wall` | $250 | Open | [erdos.com](https://www.erdosproblems.com/183) |
 | 500 | Turán tetrahedron K_4^3 extremal number | `wall` | $500 | Open | [erdos.com](https://www.erdosproblems.com/500) |
-| 548 | Erdős–Sós conjecture (trees in dense graphs) | `wall` | — | Open | [erdos.com](https://www.erdosproblems.com/548) |
 | 564 | Doubly-exp lower bound for 2-color 3-uniform Ramsey R_3(n) | `wall` | $500 | Open | [erdos.com](https://www.erdosproblems.com/564) |
 | 588 | Erdős #588 — f_k(n)=o(n²) for k≥4 (orchard-type k-rich lines) | `wall` | $100 | Open | [erdos.com](https://www.erdosproblems.com/588) |
 | 687 | Erdős #687 — estimates for Y(x), the primorial covering optimum | `wall` | $1000 | Open | [erdos.com](https://www.erdosproblems.com/687) |
@@ -51,6 +47,7 @@ The subset we have deep-audited — pinned verifier, current record, board class
 | 1029 | R(k)/(k·2^{k/2}) → ∞ (diagonal Ramsey growth) | `wall` | $100 | Open | [erdos.com](https://www.erdosproblems.com/1029) |
 | 1135 | Collatz (3n+1) convergence | `wall` | $500 | Open | [erdos.com](https://www.erdosproblems.com/1135) |
 | 86 | C4-free subgraphs of the hypercube (Turán density 1/2?) | `open` | $100 | Open | [erdos.com](https://www.erdosproblems.com/86) · P42:`hypercube-q7-c4-free` |
+| 1 | Erdős distinct subset sums (min largest element, A276661) | `solved-upstream` | $500 | Solved | [erdos.com](https://www.erdosproblems.com/1) · P42:`distinct-subset-sums-a11` |
 | 2 | Covering-system min-modulus record (>42) | `solved-upstream` | $1000 | Solved | [erdos.com](https://www.erdosproblems.com/2) |
 | 13 | Erdős–Sárközy no-term-divides-sum sets (\|A\|≤N/3+O(1)) | `solved-upstream` | $100 | Solved | [erdos.com](https://www.erdosproblems.com/13) |
 | 21 | q(6): min edges, 6-uniform intersecting hypergraph with τ=6 | `solved-upstream` | $500 | Solved | [erdos.com](https://www.erdosproblems.com/21) · P42:`q6-intersecting-hypergraph` |
@@ -62,9 +59,12 @@ The subset we have deep-audited — pinned verifier, current record, board class
 | 92 | Max-equidistance-count planar point sets (Erdős–Fishburn table) | `solved-upstream` | $500 | Solved | [erdos.com](https://www.erdosproblems.com/92) |
 | 139 | Exact r_k(N): largest AP-free subset table (Erdős–Turán / Szemerédi) | `solved-upstream` | $1000 | Solved | [erdos.com](https://www.erdosproblems.com/139) |
 | 140 | r_3(N) — 3-AP-free set records (A003002) | `solved-upstream` | $500 | Solved | [erdos.com](https://www.erdosproblems.com/140) |
+| 146 | Erdős–Simonovits degenerate bipartite Turán conjecture | `solved-upstream` | $500 | Solved | [erdos.com](https://www.erdosproblems.com/146) |
 | 166 | Erdős #166 — R(4,k) ≫ k³/polylog | `solved-upstream` | $250 | Solved | [erdos.com](https://www.erdosproblems.com/166) |
 | 182 | Max edges without a k-regular subgraph (Erdős–Sauer) | `solved-upstream` | — | Solved | [erdos.com](https://www.erdosproblems.com/182) |
+| 183 | Limit of multicolor triangle Ramsey R(3;k)^{1/k} | `solved-upstream` | $250 | Solved | [erdos.com](https://www.erdosproblems.com/183) |
 | 211 | Erdős #211 — Beck/Szemerédi-Trotter (finite residue: orchard 3-point l | `solved-upstream` | $100 | Solved | [erdos.com](https://www.erdosproblems.com/211) |
+| 548 | Erdős–Sós conjecture (trees in dense graphs) | `solved-upstream` | — | Solved | [erdos.com](https://www.erdosproblems.com/548) |
 | 582 | Folkman number Fe(3,3;4) | `solved-upstream` | $100 | Solved | [erdos.com](https://www.erdosproblems.com/582) |
 | 703 | Forbidden-intersection family T(n,r) (Erdős #703) | `solved-upstream` | $250 | Solved | [erdos.com](https://www.erdosproblems.com/703) |
 | 707 | Sidon set extends to a perfect difference set (Erdős #707) | `solved-upstream` | $1000 | Solved | [erdos.com](https://www.erdosproblems.com/707) |

@@ -145,7 +145,7 @@ table beyond #13.
 Gate: fence claims are verified-up-to-N certificates; the statement of what is proven
 (ineffective bound) vs. measured (fence in the computed range) is explicit — sporadic
 larger exceptions are never claimed excluded.
-Requires: this repo (the hub's 1217-problem index is the hunting ground).
+Requires: this repo (the hub's 1221-problem index is the hunting ground).
 
 ### The distinctive science
 
