@@ -128,6 +128,7 @@ literature-grade (C3) unless a certificate backs it.
 | 302 | A390395(735) ∈ [608, 609] | a(732) = a(731) (isolated component), 733 and 734 lie in no triple; all conditional on the OEIS a(731) = 606 |
 | 376 | closed | the successor iteration is exact and cheap: all 14,273 positive terms ≤ 10^100 in ~25 s; infinitude is the wall |
 | 1005 | closed | a(101) = 27 recomputed; parent solved upstream with a reported exact formula |
+| 791 | A001212(25) ∈ [227, 350] | the cell A066063(51) was never open: A066063(n) = 1 + min{k : A001212(k) ≥ n} for the classical postage-stamp table, known to k = 24, so a(51) = 12 and the table is determined to n = 212; a 25-element basis found here covers 1..227 |
 | 20 | lower 39 → 40 | the Lean-checked 39-triple family re-checked (no 4-sunflower); the claimed upper 50 is noted, not recorded |
 | 458, 773, 864, 1100 | unchanged bounds | dated notes on the external claims, marked unverified |
 

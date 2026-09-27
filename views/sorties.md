@@ -71,7 +71,7 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 | #695 | g(k) = minimal terminal prime q_k over ascending prime chains …[truncated; see source] | open-easy | k primality checks (deterministic Miller-Rabin below 2^64; …[truncated; see source] | C3 |
 | #773 | A390813(69) — size of the largest Sidon subset of the first 69 …[truncated; see source] | open-easy | O(k^2) integer check: form all k(k+1)/2 pairwise sums a+b …[truncated; see source] | C3 |
 | #779 | Verified range of Deaconescu's conjecture: for every n>1 with P = …[truncated; see source] | open-easy | gmpy2/PARI: rebuild primorial, assert p prime and p_n < p < …[truncated; see source] | C3 |
-| #791 | A066063(51) — minimal size of S ⊆ {0..51} with S+S ⊇ {0..51} (finite …[truncated; see source] | open-easy | O(\|S\|^2) sumset check: mark all a+b for a,b in S, assert …[truncated; see source] | C3 |
+| #791 | A001212(25) = n_2(25) — largest n such that some 25 positive integers …[truncated; see source] | open-easy | form the <= 350 sums a, a + b (a <= b in the set) and check …[truncated; see source] | C3 |
 | #820 | A263647 extension — integers n with gcd(2^n-1, 3^n-1) = 1 …[truncated; see source] | open-easy | one bignum gcd: math.gcd(2**n - 1, 3**n - 1) == 1 in …[truncated; see source] | C3 |
 | #852 | A079007(31) (records chain of A053597/A078515/A079889) — smallest …[truncated; see source] | open-easy | from p, iterate next_prime 31 times (deterministic …[truncated; see source] | C3 |
 | #853 | A390769 extension — r(n) = least even positive integer absent from …[truncated; see source] | open-easy | single segmented-sieve pass tracking the set of gaps seen …[truncated; see source] | C3 |
