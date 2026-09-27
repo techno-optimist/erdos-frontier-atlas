@@ -84,7 +84,6 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 | #938 | 3-term arithmetic progressions of CONSECUTIVE powerful numbers n_k, …[truncated; see source] | open-easy | powerfulness: factor each of the 3 numbers (Pollard rho, …[truncated; see source] | C3 |
 | #962 | A327909(1000) — smallest start of a run of 1000 consecutive integers …[truncated; see source] | open-easy | for each of the 1000 integers, divide out all primes ≤ 1000 …[truncated; see source] | C3 |
 | #1005 | A386893(101) — first OEIS-uncomputed value of f(n), the Mayer–Erdős …[truncated; see source] | open-easy | generate F_n by the mediant/next-term recurrence …[truncated; see source] | C3 |
-| #1016 | m(38) — minimum number of edges of a pancyclic graph on 38 vertices; …[truncated; see source] | open-easy | positive side is solver-free: check each of the 36 cycle …[truncated; see source] | C3 |
 | #1062 | A038372(45) - largest subset of {1,...,45} in which no element …[truncated; see source] | open-easy | For each a in S count multiples of a among S \ {a}; require …[truncated; see source] | C3 |
 | #1083 | A186704(14) — minimum number of distinct distances determined by 14 …[truncated; see source] | open-easy | exact integer arithmetic: represent points as …[truncated; see source] | C3 |
 | #1100 | g(k) = max over squarefree n with omega(n)=k of tau_perp(n), where …[truncated; see source] | open-easy | dependency-free: enumerate all 2^k divisors as prime-subset …[truncated; see source] | C3 |
@@ -123,6 +122,7 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 | #961 | A213253(269) — first cell beyond Najman's computed range n=1..268; …[truncated; see source] | plausible | trial-divide each of the L integers by the 57 primes ≤ 269 …[truncated; see source] | C3 |
 | #970 | A048670(65) — Jacobsthal function g of the product of the first 65 …[truncated; see source] | plausible | L gcd computations against p_65#, or per-offset …[truncated; see source] | C3 |
 | #985 | largest N such that every prime 3 <= p <= N has a prime primitive …[truncated; see source] | plausible | per prime, verify the factorization of p-1 by …[truncated; see source] | C3 |
+| #1016 | m(109) — minimum number of edges of a pancyclic graph on 109 …[truncated; see source] | plausible | DFS over the simple cycles of C_109 + 7 chords …[truncated; see source] | C2 |
 | #1055 | A005113(20) - least prime in class 20 of the Erdos-Selfridge …[truncated; see source] | plausible | Recursively factor q+1 for every prime q in the tree (all …[truncated; see source] | C3 |
 | #1056 | A060427(15) - least prime p admitting 15 consecutive intervals of …[truncated; see source] | plausible | Compute b_i! mod p by sequential modular multiplication …[truncated; see source] | C3 |
 | #1057 | A006931(40) - least Carmichael number with exactly 40 prime factors | plausible | Given the factor list: primality of each p_i, distinctness, …[truncated; see source] | C3 |
@@ -159,6 +159,7 @@ Verification targets for `M:external-claim-replay` — a claim never sets a stat
 
 Every promoted claim replays in one command; the fastest way to learn the receipt contract is to run one and read its verifier:
 
+- `erdos-1016-h-table-t6-67`: `python3 -I certificates/erdos-1016/verify.py`
 - `erdos-1107-public-table`: `python3 -I certificates/erdos-1107/verify.py`
 - `erdos-13-table`: `python3 -I certificates/erdos-13/verify.py`
 - `erdos-142-cone-infeasible-objects`: `python3 -I certificates/erdos-142-cone-obstruction/verify.py`

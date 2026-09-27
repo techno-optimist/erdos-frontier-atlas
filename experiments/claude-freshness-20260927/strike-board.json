@@ -1,0 +1,2321 @@
+{
+ "schema": "efa-strike-board-freshness-v1",
+ "checked_at": "2026-09-27",
+ "atlas_snapshot_upstream_pin": {
+  "repo": "teorth/erdosproblems",
+  "sha": "6bcfdca9682239918df81d35e4fb12da22c61aaf",
+  "source": "atlas/stubs.json sources[0]"
+ },
+ "upstream_now_pin": {
+  "repo": "teorth/erdosproblems",
+  "sha": "af83692edd2aee68d512e04fb7b9b9c175a29bb0",
+  "date": "2026-09-26T17:50:16Z"
+ },
+ "rule": "Overlay only. Nothing here sets a status: statuses come from atlas/stubs.json and replayable evidence. external_movement entries are leads to verify, not facts, unless checked_by says they were replayed.",
+ "surfaces": [
+  {
+   "tier": "trap",
+   "problem": 19,
+   "card": "views/graph/P19.md",
+   "atlas_snapshot_upstream": "decidable",
+   "upstream_now": "decidable",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "trap",
+   "problem": 64,
+   "card": "views/graph/P64.md",
+   "atlas_snapshot_upstream": "falsifiable",
+   "upstream_now": "falsifiable",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "trap",
+   "problem": 97,
+   "card": "views/graph/P97.md",
+   "atlas_snapshot_upstream": "falsifiable",
+   "upstream_now": "falsifiable",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "trap",
+   "problem": 107,
+   "card": "views/graph/P107.md",
+   "atlas_snapshot_upstream": "falsifiable",
+   "upstream_now": "falsifiable",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "trap",
+   "problem": 114,
+   "card": "views/graph/P114.md",
+   "atlas_snapshot_upstream": "falsifiable",
+   "upstream_now": "falsifiable",
+   "upstream_now_last_update": "2025-12-28"
+  },
+  {
+   "tier": "trap",
+   "problem": 128,
+   "card": "views/graph/P128.md",
+   "atlas_snapshot_upstream": "falsifiable",
+   "upstream_now": "falsifiable",
+   "upstream_now_last_update": "2025-10-31"
+  },
+  {
+   "tier": "trap",
+   "problem": 548,
+   "card": "views/graph/P548.md",
+   "atlas_snapshot_upstream": "falsifiable",
+   "upstream_now": "proved (Lean)",
+   "upstream_now_last_update": "2026-09-03"
+  },
+  {
+   "tier": "T1",
+   "problem": 366,
+   "card": "views/graph/P366.md",
+   "atlas_snapshot_upstream": "verifiable",
+   "upstream_now": "verifiable",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "T1",
+   "problem": 743,
+   "card": "views/graph/P743.md",
+   "atlas_snapshot_upstream": "falsifiable",
+   "upstream_now": "falsifiable",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "T1",
+   "problem": 993,
+   "card": "views/graph/P993.md",
+   "atlas_snapshot_upstream": "falsifiable",
+   "upstream_now": "falsifiable",
+   "upstream_now_last_update": "2025-09-07"
+  },
+  {
+   "tier": "T2",
+   "problem": 1,
+   "card": "views/graph/P1.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "disproved (Lean)",
+   "upstream_now_last_update": "2026-09-03"
+  },
+  {
+   "tier": "T2",
+   "problem": 13,
+   "card": "views/graph/P13.md",
+   "atlas_snapshot_upstream": "proved",
+   "upstream_now": "proved (Lean)",
+   "upstream_now_last_update": "2026-08-23"
+  },
+  {
+   "tier": "T2",
+   "problem": 20,
+   "card": "views/graph/P20.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "T2",
+   "problem": 21,
+   "card": "views/graph/P21.md",
+   "atlas_snapshot_upstream": "proved",
+   "upstream_now": "proved (Lean)",
+   "upstream_now_last_update": "2026-08-24"
+  },
+  {
+   "tier": "T2",
+   "problem": 41,
+   "card": "views/graph/P41.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "T2",
+   "problem": 67,
+   "card": "views/graph/P67.md",
+   "atlas_snapshot_upstream": "proved",
+   "upstream_now": "proved",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "T2",
+   "problem": 241,
+   "card": "views/graph/P241.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "T2",
+   "problem": 552,
+   "card": "views/graph/P552.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "T3",
+   "problem": 131,
+   "card": "views/graph/P131.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A068063(101) — maximum size of a nondividing subset of {1,...,101} (no element divides the sum of any nonempty subset of the others); first cell beyond the b-file, which ends at a(100)=8",
+   "external_movement": {
+    "verdict": "uncertain",
+    "summary": "No new terms: OEIS A068063 still ends at a(100) (b-file 0..100, last edited 2025-10-30), and no computation of a(101) was found. However, theofilxeff/erdos_131 (2026-07-24) claims a kernel-checked Lean 4 proof, modulo 8 declared literature axioms, that F(N) = N^(1/5+o(1)), which would settle the parent's growth question. The claim is not verified by the sweep and not reflected upstream: teorth still says 'open' at af83692, and the matching JSP catalog entry is still Open.",
+    "sources": [
+     "https://github.com/theofilxeff/erdos_131",
+     "https://oeis.org/A068063"
+    ],
+    "source_dates": [
+     "2026-07-24",
+     "2025-10-30"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 156,
+   "card": "views/graph/P156.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A382397(66) — minimum size of a maximal Sidon subset of {1..66} (first uncomputed cell; OEIS table computed through n=65, added 2025)",
+   "external_movement": {
+    "verdict": "cell-settled",
+    "summary": "Settled in OEIS: Felix Huber extended A382397 from a(66) onward on 2026-08-22 (b-file n=0..183, companion A399118 created 2026-08-20 with preprint 'Saturated Sidon Sets in Consecutive Intervals: The Eight-Mark Threshold Is 144'), giving A382397(66) = 6 (a(n)=6 for 43<=n<=67, a(68)=7). Independently, veljjanoski/erdos156 (2026-09-23) reproduces the interval threshold i(6)=67 by GPU search cross-checked against brute force.",
+    "sources": [
+     "https://oeis.org/A382397",
+     "https://oeis.org/A399118",
+     "https://github.com/veljjanoski/erdos156",
+     "https://github.com/oeis/oeisdata"
+    ],
+    "source_dates": [
+     "2026-08-22",
+     "2026-08-20",
+     "2026-09-23",
+     "2026-08-24"
+    ],
+    "confidence": "high",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 170,
+   "card": "views/graph/P170.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A046693(214) — minimal number of marks in a sparse ruler / restricted difference basis for {0..214} (first cell beyond Ed Pegg Jr's verified table n=0..213)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "No minimality proof at length 214 found; sources still say nothing above 213 is proven minimal. Two 2026 repos were cloned and neither touches n=214: jaredwilder/erdos170-sparse-rulers (last commit 2026-09-17) tabulates only N<=48, and Arnie016/erdos170 (2026-09-27) is heuristic annealing.",
+    "sources": [
+     "https://github.com/jaredwilder/erdos170-sparse-rulers",
+     "https://github.com/Arnie016/erdos170",
+     "https://blog.wolfram.com/2020/02/12/hitting-all-the-marks-exploring-new-bounds-for-sparse-rulers-and-a-wolfram-language-proof/"
+    ],
+    "source_dates": [
+     "2026-09-17",
+     "2026-09-27",
+     "2020-02-12"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 295,
+   "card": "views/graph/P295.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A192881(17) — minimum number of terms in an Egyptian fraction decomposition of 1 with least denominator 17 (finite proxy table for k(N) of #295); a(1..16) known, a(16) = 30",
+   "external_movement": {
+    "verdict": "uncertain",
+    "summary": "Sodelin/Egyptian-Fractions-Erdos-295 (2026-09-07) cites Patrick White & Claude's erdosproblemaday.com report of 2026-08-11. Its URL slug '295-k17-exact' suggests k(17) was determined exactly; the report also gives 33 <= k(18) <= 35 with a 35-term witness, which the repo Lean-checks. The repo explicitly calls this atlas's P295 card 'still targets 17; stale relative to White's report'. The value itself could not be read because erdosproblemaday.com is egress-blocked. Also, k(17) equals A192881(17) only if the optimum has least denominator 17; in general k(17) <= A192881(17). OEIS A192881 still ends at a(16)=30 (edited 2026-05-30).",
+    "sources": [
+     "https://erdosproblemaday.com/day/295-k17-exact",
+     "https://github.com/Sodelin/Egyptian-Fractions-Erdos-295",
+     "https://oeis.org/A192881"
+    ],
+    "source_dates": [
+     "2026-08-11",
+     "2026-09-07",
+     "2026-05-30"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 301,
+   "card": "views/graph/P301.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A390394(39) — maximum size of A ⊆ {1..39} with no solution 1/a = 1/b_1 + ... + 1/b_k over distinct elements of A; first uncomputed cell (a(1..38) known, a(38) = 29)",
+   "external_movement": {
+    "verdict": "uncertain",
+    "summary": "Nothing found on A390394(39). However, donalddellapietra/erdos-301-proof (last commit 2026-07-30, unrefereed; its README says the lower bound is Lean-formalized end to end, not built by the sweep) claims (1/2+eps)N <= f(N) <= (15437/19344+o(1))N ~ 0.798N, which would disprove f(N)=(1/2+o(1))N; reported, unverified, not yet in the atlas, and upstream still open.",
+    "sources": [
+     "https://github.com/donalddellapietra/erdos-301-proof",
+     "https://www.erdosproblems.com/forum/thread/301",
+     "https://oeis.org/A390394"
+    ],
+    "source_dates": [
+     "2026-07-30",
+     "unknown",
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 302,
+   "card": "views/graph/P302.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A390395(732) — maximum size of S ⊆ {1..732} with no solution 1/a = 1/b + 1/c over distinct a,b,c in S; first cell beyond the b-file (a(1..731) known, a(731) = 606)",
+   "external_movement": {
+    "verdict": "cell-settled",
+    "summary": "Reported settled: a(732) = a(731) = 606, because {122,183,244,366,732} is an isolated component meeting only the triples {122,183,366}, {183,244,732}, {244,366,732}. The result is listed on VibeMathed (approved in its 2026-09-08 review, Lean-checked via bv_decide, explicitly targeting this atlas's P302 cell); the sweep re-verified the isolation by direct enumeration over [1,732], but it is conditional on the OEIS b-file value a(731)=606, and OEIS A390395 itself is still unchanged.",
+    "sources": [
+     "https://vibemathed.com/problem/reciprocal-triple-free-sets-the-finite-plateau-at-732",
+     "https://github.com/mrconter1/vibemathed/blob/main/scripts/review-2026-09-08.ts",
+     "https://oeis.org/A390395"
+    ],
+    "source_dates": [
+     "2026-09-08",
+     "2026-09-08",
+     "2025-11-30"
+    ],
+    "confidence": "high",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)",
+    "spot_check": "Spot-checked in this session: the component {122,183,244,366,732} meets exactly the triples {122,183,366}, {183,244,732}, {244,366,732} and no others in [1,732], and every 4-subset of it contains a triple, so a(732) = a(731); the value 606 rests on the OEIS b-file."
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 304,
+   "card": "views/graph/P304.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A097849(106) — max over 1<=k<=106 of the minimal number of unit fractions needed to write k/106 (row-106 maximum of table A097847); finite proxy for N(b)=max_a N(a,b)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "No A097849 extension beyond n=105 found. The newer A396001 (maximum greedy-expansion length over coprime k/n) surfaced, but it measures a different quantity from the minimal-length row maximum.",
+    "sources": [
+     "https://oeis.org/A097847",
+     "https://oeis.org/A396001"
+    ],
+    "source_dates": [
+     "unknown",
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 327,
+   "card": "views/graph/P327.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A384927(5001) — max size of S in {1..5001} with a+b never dividing ab for distinct a,b in S; monotonicity forces the cell into {3528, 3529} (a(5000)=3528), so it is a single binary decision",
+   "external_movement": {
+    "verdict": "uncertain",
+    "summary": "No evidence on A384927(5001), which stays in {3528,3529}. At parent level, Sawin arXiv:2607.15419 claims a positive-density set with a+b not dividing 2ab (second question answered negatively), and donalddellapietra/erdos-327-proof (last commit 2026-07-29, unrefereed, Lean per its README) claims |A| >= (1/2+eps)N with a+b not dividing ab (first question); upstream is still open, and the atlas logs both only in experiments/astra-327-fiber-20260912.",
+    "sources": [
+     "https://github.com/donalddellapietra/erdos-327-proof",
+     "https://arxiv.org/abs/2607.15419",
+     "https://oeis.org/A384927"
+    ],
+    "source_dates": [
+     "2026-07-29",
+     "unknown",
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 357,
+   "card": "views/graph/P357.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A364132(23) — least n such that {1..n} contains an increasing 23-term sequence all of whose consecutive-segment sums are distinct (inverse of Erdős-Harzheim f(n); a(22)=52 is the last known term)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "No new A364132 term found (a(22)=52 is still the last known one), and the problem page was reportedly last edited 2026-01-12. A formal-conjectures PR (#4967, date unknown) marks three weak growth sub-targets as solved but leaves f(n)=o(n) open.",
+    "sources": [
+     "https://www.erdosproblems.com/357",
+     "https://github.com/google-deepmind/formal-conjectures/pull/4967",
+     "https://oeis.org/A364153"
+    ],
+    "source_dates": [
+     "2026-01-12",
+     "unknown",
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 365,
+   "card": "views/graph/P365.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-09-20",
+   "cell": "A060355(40) — smallest k > 10^22 with k and k+1 both powerful (next consecutive-powerful pair; the counting function N(x) feeds the open (log x)^{O(1)} question)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "OEIS A060355 is unchanged (b-file of 39 terms, all < 10^22; last edit 2025-11-06), and no new consecutive-powerful pair above 10^22 was found. Related Sep 2026 work (arXiv 2609.25011, a kernel-certified EMW check below 10^14) concerns #364 and still cites Johnson's 10^22 enumeration as the frontier.",
+    "sources": [
+     "https://oeis.org/A060355",
+     "https://arxiv.org/abs/2609.25011",
+     "https://github.com/oeis/oeisdata"
+    ],
+    "source_dates": [
+     "2025-11-06",
+     "unknown",
+     "2026-09-27"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 373,
+   "card": "views/graph/P373.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "solutions of n! = a_1! a_2! ... a_k! with n-1 > a_1 >= ... >= a_k >= 2; largest known n = 16, Hickerson list conjectured complete",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "No extension of the general-k exhaustive frontier (1e5) found; the recent items are a Lean formalization of Hickerson's four solutions (JSP PR #638) and Novakovic's abc-conditional finiteness paper (arXiv:2602.23838, before the cutoff). An undated raw.org note extends only the k=2 case A!B!=C! to B <= 10^(10^9) (previously 10^3000); that is a companion fact and does not move this cell.",
+    "sources": [
+     "https://raw.org/research/extending-the-verified-range-for-the-factorial-diophantine-equation/",
+     "https://arxiv.org/abs/2602.23838",
+     "https://github.com/TheJustinSunPrize/awards/pull/638"
+    ],
+    "source_dates": [
+     "unknown",
+     "2026-02-27",
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 382,
+   "card": "views/graph/P382.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A388850(9) — least start u of a maximal run of exactly 10 consecutive integers whose product has its largest prime factor appearing with exponent >= 2 ('bad interval' of width 9)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "No evidence that A388850(9) was settled below the 4928180396 candidate. The only hit after the check date, Yang arXiv:2607.16032 (2026-07-17), is about the density of P+(n)<P+(n+1) and has nothing to do with bad intervals.",
+    "sources": [
+     "https://arxiv.org/abs/2607.16032",
+     "https://terrytao.wordpress.com/2026/03/31/products-of-consecutive-integers-with-unusual-anatomy/"
+    ],
+    "source_dates": [
+     "2026-07-17",
+     "2026-03-31"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 393,
+   "card": "views/graph/P393.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A388302(80) — least spread b_t − b_1 over factorizations 80! = b_1···b_t into t >= 2 distinct increasing integer factors (first uncertified cell; table certified for n = 2..79 with witness tuples)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "Searches returned nothing at all on A388302 or f(80) (the sequence is poorly indexed), and the matching JSP catalog entry (JSP-000324) is still Open.",
+    "sources": [
+     "https://github.com/TheJustinSunPrize/awards/blob/main/problems/catalog-0301-0400.md"
+    ],
+    "source_dates": [
+     "unknown"
+    ],
+    "confidence": "low",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 409,
+   "card": "views/graph/P409.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A229487(n), n = 1..53 — per-cell greatest integer whose iteration x → phi(x)+1 reaches prime(n); every listed maximum is conjectural (max-type record surface for Finucane's problem)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "OEIS A229487 is unchanged since 2017-09-22, and nothing found revises any conjectured maximum. Post-July #409 work is about iteration counts F(n) (A039651). For example, ZackaryLoevseth/Erd-s-Problem-409 certifies F(400000287233629)=104 with terminal prime 27515203921, which is outside this table.",
+    "sources": [
+     "https://oeis.org/A229487",
+     "https://github.com/ZackaryLoevseth/Erd-s-Problem-409"
+    ],
+    "source_dates": [
+     "2017-09-22",
+     "2026-08-22"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 413,
+   "card": "views/graph/P413.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A005236(10001) — next barrier for ω (an n with m + ω(m) ≤ n for all m < n); current frontier a(10000) = 2054598",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "No A005236 b-file extension beyond 10000 terms found. The only substantive 2026 item is Lau's arXiv:2604.15042 (April 2026, already in the atlas notes); a GPT candidate write-up (neelsomani/gpt-erdos, Jan 2026) says the problem is still open.",
+    "sources": [
+     "https://arxiv.org/abs/2604.15042",
+     "https://github.com/neelsomani/gpt-erdos/blob/main/data/solutions/413/candidate_solution.md",
+     "https://oeis.org/A005236"
+    ],
+    "source_dates": [
+     "unknown",
+     "2026-01-25",
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 454,
+   "card": "views/graph/P454.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "limsup_n (f(n) - 2*prime(n)) where f(n) = min_{0<i<n}(prime(n-i)+prime(n+i)) — conjectured infinite (Erdos-Graham / Pomerance); scout proxy record: max_{2<=n<=N} A389677(n)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "A389676/A389677 were last modified 2026-06-29, before the cutoff. The only later item is a Lean formalization of Pomerance's limsup >= 2 (JSP-000368, issue #316, which a snippet says was submitted 2026-09-17); it moves neither L=2 nor the empirical record.",
+    "sources": [
+     "https://github.com/TheJustinSunPrize/awards/issues/316",
+     "https://oeis.org/A389677"
+    ],
+    "source_dates": [
+     "2026-09-17",
+     "2026-06-29"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 458,
+   "card": "views/graph/P458.md",
+   "atlas_snapshot_upstream": "falsifiable",
+   "upstream_now": "falsifiable",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "Falsifiable Erdos-Graham inequality: lcm(1..p_{k+1}-1) < p_k * lcm(1..p_k) for all k >= 1; record = largest X with the inequality verified for all k with p_{k+1} <= X",
+   "external_movement": {
+    "verdict": "cell-moved",
+    "summary": "RajveerKapoor/erdos-work (papers/erdos-458, 2026-08-14) claims the inequality holds for all p_{k+1} <= 1.10889e27, against the atlas L of 1e12. The argument has three parts: an exact reduction (a failure needs two prime squares in one prime gap), Sorenson-Webster's verification of Oppermann's conjecture for n <= 3.33e13 (squared), and an enumeration of all 52,963,734 prime powers q^a <= 1.10889e27 with a >= 3. This is reported and not verified by the sweep. The same reduction is noted independently in the-omega-institute/trureturing#9524 (2026-09-23), and #458 remains falsifiable upstream.",
+    "sources": [
+     "https://github.com/RajveerKapoor/erdos-work",
+     "https://github.com/the-omega-institute/trureturing/issues/9524"
+    ],
+    "source_dates": [
+     "2026-08-14",
+     "2026-09-23"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 468,
+   "card": "views/graph/P468.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "Sub-conjecture record for the f(N)=o(N) question: A167485(N) > 0 (every N is an initial-segment divisor sum of some m) for all N except 2 and 5 — verified through N = 20000",
+   "external_movement": {
+    "verdict": "uncertain",
+    "summary": "No cell movement found: no zero-check of A167485 beyond N=20000. An erdosproblems.com snippet (date unknown) states Tao disproved the strong claim f(n)=o(n) in the #468 comments, showing the upper density of {n: f(n) <= delta n} is << delta^2; the atlas card doesn't mention this and upstream still says open, so it needs a manual check.",
+    "sources": [
+     "https://www.erdosproblems.com/tags/divisors",
+     "https://www.erdosproblems.com/forum/thread/468?order=oldest"
+    ],
+    "source_dates": [
+     "unknown",
+     "unknown"
+    ],
+    "confidence": "low",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 472,
+   "card": "views/graph/P472.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "Survival length of the Ulam prime chain seeded (3,5): q_{n+1} = smallest prime of the form q_n + q_i - 1; verified alive through 10000 terms (a(10000) = 190669)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "OEIS A389713 is unchanged (b-file 1..10000, last edit 2026-01-10). The only related activity found is a JSP Lean formalization of the 3,5 -> 7,11,13,17 example (awards PR #643), not an extension of the chain.",
+    "sources": [
+     "https://oeis.org/A389713",
+     "https://github.com/TheJustinSunPrize/awards/pull/643",
+     "https://github.com/oeis/oeisdata"
+    ],
+    "source_dates": [
+     "2026-01-10",
+     "unknown",
+     "2026-09-27"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 695,
+   "card": "views/graph/P695.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "g(k) = minimal terminal prime q_k over ascending prime chains q_1<...<q_k with q_{i+1} ≡ 1 (mod q_i); greedy chain A061092 gives the known upper bounds",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "Only Lean formalizations of the greedy chain 2,3,7,29,59,709,2837,22697 turned up (JSP-000566, PRs #2591/#2628); they match A061092 and give no record below the greedy chain.",
+    "sources": [
+     "https://github.com/TheJustinSunPrize/awards/pull/2591",
+     "https://github.com/TheJustinSunPrize/awards/pull/2628",
+     "https://github.com/zjukop3/erdos566-prime-chain"
+    ],
+    "source_dates": [
+     "unknown",
+     "unknown",
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 773,
+   "card": "views/graph/P773.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A390813(69) — size of the largest Sidon subset of the first 69 positive perfect squares (first uncomputed cell; table verified to n=68)",
+   "external_movement": {
+    "verdict": "cell-settled",
+    "summary": "Reported, unverified: erdosproblemaday.com states that frozen exhaustive searches, conditional on the OEIS prefix through n=68, prove a(69)=32, a(70)=33 and a(71)=33 (a 114,296,406-state upper search at 71, plus an independent definition-level audit). The post date is unknown and the sweep could not open the page; OEIS A390813 is unchanged since 2025-12-02, and the vibemathing EP-773 repo (2026-09-07) is an empty candidate scaffold.",
+    "sources": [
+     "https://erdosproblemaday.com/",
+     "https://oeis.org/A390813",
+     "https://github.com/vibemathing/problem-um-ep-773-erd-s-problem-773-be7b8ae5"
+    ],
+    "source_dates": [
+     "unknown",
+     "2025-12-02",
+     "2026-09-07"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 779,
+   "card": "views/graph/P779.md",
+   "atlas_snapshot_upstream": "falsifiable",
+   "upstream_now": "falsifiable",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "Verified range of Deaconescu's conjecture: for every n>1 with P = primorial(n), some prime p with p_n < p < P has P + p prime (falsifiable; checked for all n <= lower.value)",
+   "external_movement": {
+    "verdict": "uncertain",
+    "summary": "A search snippet says OEIS A005235 (Fortunate numbers) was last modified 2026-08-16, after the atlas check, but the edit itself could not be read (OEIS is blocked); it needs a manual re-check. No evidence was found that Deaconescu's verified range (n <= 1000) moved, and the only prize activity is a Lean check for k=2..5 (JSP-000639, PR #1045).",
+    "sources": [
+     "https://oeis.org/A005235",
+     "https://github.com/TheJustinSunPrize/awards/pull/1045"
+    ],
+    "source_dates": [
+     "2026-08-16",
+     "unknown"
+    ],
+    "confidence": "low",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 791,
+   "card": "views/graph/P791.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A066063(51) — minimal size of S ⊆ {0..51} with S+S ⊇ {0..51} (finite additive 2-basis; first uncomputed cell, table + b-file end at n=50)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "OEIS A066063 was last edited 2026-05-31 (adding Nathanson's arXiv:2605.26425) and still ends at a(50) = 12; no a(51) was found. The only post-July activity is a Lean formalization of Mrose's asymptotic construction (baobingzhang/jsp-000650-erdos791-lean, 2026-09-17), which does not touch the cell.",
+    "sources": [
+     "https://oeis.org/A066063",
+     "https://github.com/baobingzhang/jsp-000650-erdos791-lean"
+    ],
+    "source_dates": [
+     "2026-05-31",
+     "2026-09-17"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 820,
+   "card": "views/graph/P820.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A263647 extension — integers n with gcd(2^n-1, 3^n-1) = 1 (equivalently H(n)=3 in Erdős' notation); b-file ends at a(10000) = 24898",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "No A263647 extension found; the b-file is still Robert Israel's first 10,000 terms. The only 2026 item (Justin Sun Prize PR #693) formalizes H(1..10) and does not extend the table.",
+    "sources": [
+     "https://oeis.org/A263647",
+     "https://github.com/TheJustinSunPrize/awards/pull/693"
+    ],
+    "source_dates": [
+     "unknown",
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 852,
+   "card": "views/graph/P852.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A079007(31) (records chain of A053597/A078515/A079889) — smallest prime starting a run of 31 pairwise-distinct consecutive prime gaps; current record run length is 30, at p = 196948778371",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "OEIS A079007, A078515 and A079889 are unchanged since 2012-2017 (the record run is still 30, at 196948778371), with no change in any 2026-07..09 export. No post-July claim was found.",
+    "sources": [
+     "https://oeis.org/A079007",
+     "https://oeis.org/A078515",
+     "https://github.com/oeis/oeisdata"
+    ],
+    "source_dates": [
+     "2017-10-19",
+     "2012-10-23",
+     "2026-09-27"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 853,
+   "card": "views/graph/P853.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A390769 extension — r(n) = least even positive integer absent from the first n prime gaps (Erdős' r(x)); b-file holds only 72 terms",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "No A390769 extension beyond 72 terms found; the only prize activity is a Lean proof that prime gaps after the first are even (JSP-000706, PR #594). Only 2 searches were possible because the session's web-search budget (200) ran out.",
+    "sources": [
+     "https://github.com/TheJustinSunPrize/awards/pull/594"
+    ],
+    "source_dates": [
+     "unknown"
+    ],
+    "confidence": "low",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 864,
+   "card": "views/graph/P864.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A389182(101) — max size of A ⊆ {1..101} such that at most one integer has ≥2 representations as a+b (a≤b∈A); first uncomputed table cell (table complete through n=100)",
+   "external_movement": {
+    "verdict": "cell-settled",
+    "summary": "Reported, unverified: an 'exact exhaustive computation' attributed to erdosproblemaday.com gives F(101)=...=F(106)=16, F(107..116)=17, F(117..134)=18, F(135..152)=19 and F(153)=20, which puts A389182(101)=16 at the lower bracket. the sweep could not open or date the page (egress blocked) and found no GitHub copy; SamuelSchlesinger/erdos-problems data stops at N=100.",
+    "sources": [
+     "https://erdosproblemaday.com/",
+     "https://oeis.org/A389182"
+    ],
+    "source_dates": [
+     "unknown",
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 879,
+   "card": "views/graph/P879.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A186736(2501) = G(2501) — maximum sum of a pairwise-coprime subset of {1..2501}; first uncomputed table cell (table complete through n=2500)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "OEIS A186736 is unchanged (b-file 1..2500, a(2500)=455192; last edit 2026-02-15). No post-July extension or claim was found.",
+    "sources": [
+     "https://oeis.org/A186736",
+     "https://github.com/oeis/oeisdata"
+    ],
+    "source_dates": [
+     "2026-02-15",
+     "2026-09-27"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 913,
+   "card": "views/graph/P913.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A359747 verified frontier — largest verified k such that k(k+1) has all-distinct exponents in its prime factorization (empirical support for the infinitude conjecture)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "No new A359747 terms beyond 32327407 found; the JSP-000758 activity is a Lean formalization of small cases only (PR #3424). Only 2 searches were possible because the session's web-search budget (200) ran out.",
+    "sources": [
+     "https://github.com/TheJustinSunPrize/awards/pull/3424",
+     "https://www.erdosproblems.com/forum/thread/913"
+    ],
+    "source_dates": [
+     "unknown",
+     "unknown"
+    ],
+    "confidence": "low",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 932,
+   "card": "views/graph/P932.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A387864 verified frontier — largest verified r such that at least two integers strictly between p_r and p_{r+1} are (p_{r+1}−p_r)-smooth (empirical support for the infinitude conjecture)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "OEIS A387864 is unchanged since 2025-09-15 (b-file n=1..10000 by Chai Wah Wu), and no verification frontier beyond the atlas's r = 6386830 was found.",
+    "sources": [
+     "https://oeis.org/A387864"
+    ],
+    "source_dates": [
+     "2025-09-15"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 936,
+   "card": "views/graph/P936.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "Brocard sub-case search frontier: largest N such that no n in (7, N] has n!+1 a perfect square (A146968 = {4,5,7}); the erdosproblems statement asks whether 2^n±1 and n!±1 are powerful only finitely often",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "No Brocard search frontier beyond ~1e12 (Matson) found. The 2026 items are a polynomial analogue (Takeda) and Justin Sun Prize Lean formalizations of the abc-conditional results (#541/#542), and the unconditional question is still open.",
+    "sources": [
+     "https://github.com/TheJustinSunPrize/awards/pull/541",
+     "https://en.wikipedia.org/wiki/Brocard's_problem"
+    ],
+    "source_dates": [
+     "unknown",
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 938,
+   "card": "views/graph/P938.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "3-term arithmetic progressions of CONSECUTIVE powerful numbers n_k, n_{k+1}, n_{k+2} (A001694): complete table up to search limit; largest known example",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "No post-July evidence: none of the 2,155 OEIS sequences added since 2026-07-18 covers consecutive-powerful 3-APs, and A001694's edits since July are references/formulas only. The pre-check paper by van Doorn (arXiv 2605.06697, 2026-05-04) proves infinitely many powerful 3-APs with d=2sqrt(N)+1 and conjectures that infinitely many are consecutive; the atlas card does not cite it, and the sweep did not check whether it lists consecutive examples above 10^12.",
+    "sources": [
+     "https://arxiv.org/abs/2605.06697",
+     "https://oeis.org/A001694",
+     "https://github.com/oeis/oeisdata"
+    ],
+    "source_dates": [
+     "2026-05-04",
+     "2026-09-18",
+     "2026-09-27"
+    ],
+    "confidence": "low",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 962,
+   "card": "views/graph/P962.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A327909(1000) — smallest start of a run of 1000 consecutive integers each having a prime factor > 1000 (first cell beyond the 999-term b-file; per-n table underlying Erdős's k(n))",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "The OEIS A327909 b-file still covers n=1..999 (David Spencer; last edited 2025-10-28), and no computation of a(1000) was found. Two recent preprints on consecutive integers (arXiv:2607.16032, arXiv:2609.15597) came up in searches, but the sweep did not check whether they bear on #962.",
+    "sources": [
+     "https://oeis.org/A327909"
+    ],
+    "source_dates": [
+     "2025-10-28"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 1005,
+   "card": "views/graph/P1005.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "solved",
+   "upstream_now_last_update": "2025-09-09",
+   "cell": "A386893(101) — first OEIS-uncomputed value of f(n), the Mayer–Erdős run-length: largest m such that any two Farey fractions of order n at index distance <= m are similarly ordered (table currently ends at n=100)",
+   "external_movement": {
+    "verdict": "cell-settled",
+    "summary": "Wang-Xie-Zhao (arXiv:2608.15681, submitted 2026-08-16) report an exact formula for f(n) for every n >= 4, building on Cipollini's arXiv:2607.23302 proof that f(n)=(1/4+o(1))n (JSP-000837 now reads 'Solved'), so A386893(101) is settled. The formula text was not visible, but an independent in-memory recomputation during the sweep gives A386893(101)=27, which matches the atlas miner's value and floor(n/4)+2 for n = 1 mod 4; the atlas bracket L=2 U=30 is stale.",
+    "sources": [
+     "https://arxiv.org/abs/2608.15681",
+     "https://arxiv.org/abs/2607.23302",
+     "https://github.com/TheJustinSunPrize/awards/blob/main/problems/catalog-0801-0900.md"
+    ],
+    "source_dates": [
+     "2026-08-16",
+     "unknown",
+     "unknown"
+    ],
+    "confidence": "high",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 1016,
+   "card": "views/graph/P1016.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-09-10",
+   "cell": "m(38) — minimum number of edges of a pancyclic graph on 38 vertices; first open cell after Griffin's exact table (hub quantity h(n) = m(n) - n)",
+   "external_movement": {
+    "verdict": "cell-settled",
+    "summary": "m(38) = 43 (White and Claude, 2026-07-29), and far more: this lane certifies h(n) exactly for n <= 108 and t_6 = 67 in certificates/erdos-1016 (contract erdos-1016-h-table-t6-67); the gap-map row now carries the next cell m(109) in {116, 117}.",
+    "sources": [
+     "certificates/erdos-1016/README.md",
+     "https://github.com/JoshuaPinckard/erdos-1016-pancyclic",
+     "https://github.com/Robinfxa/JSP-000846"
+    ],
+    "source_dates": [
+     "2026-09-27",
+     "2026-09-24",
+     "2026-09-24"
+    ],
+    "confidence": "high",
+    "checked_by": "replayed in this repository (python3 -I certificates/erdos-1016/verify.py)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 1062,
+   "card": "views/graph/P1062.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-09-28",
+   "cell": "A038372(45) - largest subset of {1,...,45} in which no element divides two other distinct elements (fork-free sets)",
+   "external_movement": {
+    "verdict": "cell-settled",
+    "summary": "A038372(45) = 30, settled at the lower bracket, by MaliciousMusic/A038372-certificates (commit 2026-09-22: a witness plus a DRAT refutation of size 31; it also gives a(46..68) = 31,32,32,33,34,34,35,36,37,38,39,39,40,41,41,42,43,43,43,44,44,45,46). the sweep replayed its standard-library verifier locally (witness fork-free, CNF regenerated and matched, DRAT PASS in 11 s) and checked the witness myself, but did not cross-check with drat-trim.",
+    "sources": [
+     "https://github.com/MaliciousMusic/A038372-certificates"
+    ],
+    "source_dates": [
+     "2026-09-22"
+    ],
+    "confidence": "high",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)",
+    "spot_check": "Spot-checked in this session: the repository's own verifier (tools/verify_term.py 45, standard library, commit 36390fb) passes: witness fork-free with 30 elements, CNF regenerated and equal, bundled DRAT checker unsat-verified in 11 s. Not cross-checked with drat-trim."
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 1083,
+   "card": "views/graph/P1083.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-10-17",
+   "cell": "A186704(14) — minimum number of distinct distances determined by 14 points in the plane (first uncomputed cell of the linked sequence; the hub problem itself asks for f_d(n) asymptotics in fixed dimension d >= 3)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "OEIS A186704 is still described as listing n=1..13, and g(7) (Erdos-Fishburn) is still open, so no outside publication of a(14) was found; the atlas's own L=U=7 closure has no external confirmation yet. Only 2 searches were possible because the session's web-search budget (200) ran out.",
+    "sources": [
+     "https://oeis.org/A186704"
+    ],
+    "source_dates": [
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 1100,
+   "card": "views/graph/P1100.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-10-19",
+   "cell": "g(k) = max over squarefree n with omega(n)=k of tau_perp(n), where tau_perp counts coprime consecutive-divisor pairs — exponential growth base",
+   "external_movement": {
+    "verdict": "cell-moved",
+    "summary": "Reported, unverified: M. M. Ross's Zenodo preprint 'An Unconditional Golden-Ratio Lower Bound for Coprime Adjacent Divisors of Squarefree Integers' (2026-08-04, unrefereed) claims g_sf(k) >> phi^k/sqrt(k), so liminf g(k)^(1/k) >= phi ~ 1.618. That would raise the atlas lower bracket above (sqrt(2)+o(1))^k; the upper bound (2-c)^k is unchanged, and the result is not in the atlas.",
+    "sources": [
+     "https://zenodo.org/records/21790847",
+     "https://zenodo.org/records/21541283",
+     "https://zenodo.org/records/21000026"
+    ],
+    "source_dates": [
+     "2026-08-04",
+     "unknown",
+     "unknown"
+    ],
+    "confidence": "low",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 1107,
+   "card": "views/graph/P1107.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-11-17",
+   "cell": "A392342 — integers not the sum of at most 4 cubefull numbers (the r=3 case of: every large integer is a sum of at most r+1 r-powerful numbers). Conjecturally finite with largest term 2039; record = verified search bound",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "No push of A392342's 1e9 search bound found (a seqfan thread shows an older 84000 bound). One search-summary snippet claimed dumbprime.com marks #1107 'Solved', but that claim is undated, could not be checked (egress blocked), and is contradicted by upstream (open) and JSP-000918 (Open).",
+    "sources": [
+     "https://groups.google.com/g/seqfan/c/CuGGGmq6qpw",
+     "https://www.dumbprime.com/erdos/",
+     "https://github.com/TheJustinSunPrize/awards/blob/main/problems/catalog-0901-1000.md"
+    ],
+    "source_dates": [
+     "unknown",
+     "unknown",
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 1108,
+   "card": "views/graph/P1108.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-11-17",
+   "cell": "A115645(27) — next powerful number (min prime exponent >= 2) expressible as a sum of distinct factorials; 26 terms known, largest = 1401602635449 = 1183893^2",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "OEIS A115645 is unchanged since 2024-02-24 (26 terms, largest 1401602635449), and no 27th term or search bound beyond the atlas's 1e18 was found. The only post-July #1108 activity found is formalization work: formal-conjectures issue #6460 / PR #6488, which restricts factorial indices to be positive.",
+    "sources": [
+     "https://oeis.org/A115645",
+     "https://github.com/google-deepmind/formal-conjectures/pull/6488"
+    ],
+    "source_dates": [
+     "2024-02-24",
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 1109,
+   "card": "views/graph/P1109.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-12-03",
+   "cell": "A392165(40) — smallest N with f(N) >= 40, where f(N) = A392164(N) = size of the largest S ⊆ {1..N} such that every element of S+S (pairwise sums, including 2a) is squarefree. Table exact through N = 1103 (f(1103) = 39)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "No new A392164/A392165 terms and no f(N) record beyond N=1103 found; searches show only the problem statement and the Erdos-Sarkozy/Konyagin asymptotics.",
+    "sources": [
+     "https://www.erdosproblems.com/1109"
+    ],
+    "source_dates": [
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 3,
+   "card": "views/graph/P3.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A003002(212) = r_3(212) — maximum size of a subset of {1,...,212} containing no 3-term arithmetic progression",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "No settlement: OEIS A003002 b-file still ends at n=211 and A065825 still ends at a(43)=209 (its 2026-07-30..08-15 edits were references only), so r_3(212) remains in {43,44}. A follow-up r_3(212) campaign (Zenodo 21413746 plus a cross-solver manuscript) reports only the certified conclusion r_3(212) in {43,44}, with DRAT/LRAT certificates for 20 hard-pocket chunks (reported, unverified).",
+    "sources": [
+     "https://zenodo.org/records/21413746",
+     "https://oeis.org/A003002",
+     "https://oeis.org/A065825",
+     "https://github.com/oeis/oeisdata"
+    ],
+    "source_dates": [
+     "unknown",
+     "2026-06-15",
+     "2026-07-31",
+     "2026-09-27"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 11,
+   "card": "views/graph/P11.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2026-03-14",
+   "cell": "A377587(13) — smallest odd m such that m - 2^k is non-squarefree for every k = 1..13",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "Nothing found after 2026-07-18: A377587 was last modified 2026-06-12, and no a(13) or verification beyond 2^50 turned up. Side note: formal-conjectures issue #6535 (undated) says erdosproblems.com/11 now asks only about sufficiently large odd integers, which is a statement change consistent with upstream's 2026-03-14 update, not a status change.",
+    "sources": [
+     "https://oeis.org/A377587",
+     "https://github.com/google-deepmind/formal-conjectures/issues/6535"
+    ],
+    "source_dates": [
+     "2026-06-12",
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 20,
+   "card": "views/graph/P20.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A332077 cell Sun(3,4) — minimal number of distinct sets of cardinality <= 3 forcing a 4-sunflower (first uncomputed cell of the sunflower-number table, in OEIS antidiagonal reading order)",
+   "external_movement": {
+    "verdict": "cell-moved",
+    "summary": "arXiv:2609.06175 (code: bogdan27182/sunflower-paper, commit 2026-09-05) gives a Lean-checked 39-triple family with no 4-sunflower, so f(3,4) >= 39 and Sun(3,4) >= 40. the sweep checked it independently: 39 distinct triples, 0 sunflowers among all 82,251 quadruples. It also gives a computer-assisted, non-Lean certificate for f(3,4) <= 49 (Sun(3,4) <= 50), which moves the atlas bracket [39,163] to [40,50]. The upper bound is reported, not verified by the sweep; the Lean development itself only proves f(3,4) <= 57, conditional on classical Chvatal-Hanson values. OEIS A332077 is unchanged since 2025-11-11. Sun(3,4) = f(3,4)+1 because padding makes the '<= 3' and '= 3' versions equivalent.",
+    "sources": [
+     "https://arxiv.org/abs/2609.06175",
+     "https://github.com/bogdan27182/sunflower-paper"
+    ],
+    "source_dates": [
+     "unknown",
+     "2026-09-05"
+    ],
+    "confidence": "high",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 23,
+   "card": "views/graph/P23.md",
+   "atlas_snapshot_upstream": "falsifiable",
+   "upstream_now": "falsifiable",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A389646(24) — maximum over triangle-free graphs on 24 vertices of the minimum number of edge deletions needed to make the graph bipartite (first uncomputed term; a(23)=20 is the last known value)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "No report of A389646(24) after 2026-07-18; the OEIS data still ends at a(23)=20 (McKay, Oct 2025). Related items (Ferudun arXiv:2606.28041, claiming a(5k)=k^2 for k<=40, which the atlas already cites; a Justin Sun Prize Lean PR on C5 blow-up tightness) do not touch n=24.",
+    "sources": [
+     "https://oeis.org/A389646",
+     "https://arxiv.org/abs/2606.28041",
+     "https://github.com/TheJustinSunPrize/awards/pull/305"
+    ],
+    "source_dates": [
+     "unknown",
+     "unknown",
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 60,
+   "card": "views/graph/P60.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A006855(41) = ex(41; C4) — maximum edges in a C4-free graph on 41 vertices (first uncomputed term; exact values end at a(40)=127)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "OEIS A006855 is unchanged (last edit 2026-03-03, no change in any OEIS export 2026-07-11..09-27), so 132 <= a(41) <= 133 still stands. Web searches found no post-July claim about ex(41;C4).",
+    "sources": [
+     "https://oeis.org/A006855",
+     "https://github.com/oeis/oeisdata"
+    ],
+    "source_dates": [
+     "2026-03-03",
+     "2026-09-27"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 104,
+   "card": "views/graph/P104.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A003829(9) — maximum number of distinct unit circles each passing through >= 3 of 9 points in the plane (first uncomputed cell; exact known through a(8)=16, Harborth-Mengersen 1986)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "No new value or bound for A003829(9) found. The Aug-2026 arXiv:2608.19844 (L. Wang, 'Circles determined by planar point sets') is about Erdos #506 (minimum number of circles), not #104, and the only prize activity is a Lean formalization of Elekes's n^(3/2) bound (JSP PR #325).",
+    "sources": [
+     "https://arxiv.org/abs/2608.19844",
+     "https://github.com/TheJustinSunPrize/awards/pull/325"
+    ],
+    "source_dates": [
+     "unknown",
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 142,
+   "card": "views/graph/P142.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A003002(212) — r_3(212), size of the largest subset of {1..212} with no 3-term arithmetic progression (first uncomputed cell; exact table verified to n=211)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "No closure of r_3(212) found. The only campaign (Ergezer, arXiv:2606.04016, plus a Zenodo 'Artifacts for the r_3(212) computational campaign' record the atlas does not yet cite) still certifies only r_3(212) in {43,44}: it has a 43-witness, but a residual 'hard pocket' blocks the upper bound. Same cell as #201.",
+    "sources": [
+     "https://arxiv.org/abs/2606.04016",
+     "https://zenodo.org/records/21413746",
+     "https://oeis.org/A003002"
+    ],
+    "source_dates": [
+     "2026-06-04",
+     "unknown",
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 193,
+   "card": "views/graph/P193.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "disproved (Lean)",
+   "upstream_now_last_update": "2026-09-04",
+   "cell": "A231255(7) — least t such that every t-step North-East lattice path (steps (0,1)/(1,0)) contains 7 collinear points (Gerver–Ramsey NE variant tracked by the hub; the hub statement itself is the Z^3 S-walk question)",
+   "external_movement": {
+    "verdict": "parent-status-changed",
+    "summary": "Upstream now marks the hub 'disproved (Lean)'. Cambie-Kalviainen (arXiv:2609.01766) build an infinite Z^3 walk with steps from a fixed 16-vector set and no three collinear vertices, formalized as Hilbert193.erdos193_unconditional in ekalvi/erdos-193. The tracked NE-path cell A231255(7) did not move: OEIS data is still 0,1,4,9,29,97 (last edited 2026-05-06), and Korsky's arXiv:2607.02832 and 2608.07906 give only asymptotic bounds. The atlas bound >= 328 stands.",
+    "sources": [
+     "https://github.com/teorth/erdosproblems/blob/af83692edd2aee68d512e04fb7b9b9c175a29bb0/data/problems.yaml",
+     "https://arxiv.org/abs/2609.01766",
+     "https://github.com/ekalvi/erdos-193",
+     "https://github.com/teorth/erdosproblems/pull/395",
+     "https://oeis.org/A231255"
+    ],
+    "source_dates": [
+     "2026-09-04",
+     "unknown",
+     "2026-09-02",
+     "unknown",
+     "2026-05-06"
+    ],
+    "confidence": "high",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 201,
+   "card": "views/graph/P201.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A003002(212) — maximum size of a subset of {1,...,212} containing no 3-term arithmetic progression",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "No closure of r_3(212) found. The only campaign (Ergezer, arXiv:2606.04016, plus a Zenodo artifacts record the atlas does not yet cite) still certifies only r_3(212) in {43,44}, with a 43-witness and an open upper bound. Same cell as #142.",
+    "sources": [
+     "https://arxiv.org/abs/2606.04016",
+     "https://zenodo.org/records/21413746",
+     "https://oeis.org/A003002"
+    ],
+    "source_dates": [
+     "2026-06-04",
+     "unknown",
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 222,
+   "card": "views/graph/P222.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A357018(44) — next record run of consecutive integers not expressible as a sum of two squares (current record: 106 consecutive, following A297350(43) = 99951600293)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "OEIS A357018 and A297350 are unchanged since 2022-09-09 (record run still 106, starting at 99951600293; A297350 b-file 1..43). The new A398088 (Pfoertner, 2026-07-27) only re-derives upper ends of already-known record gaps (a(n)=A297350(n)+A357018(n)+1, data through a(35)), with no new record.",
+    "sources": [
+     "https://oeis.org/A357018",
+     "https://oeis.org/A297350",
+     "https://oeis.org/A398088",
+     "https://github.com/oeis/oeisdata"
+    ],
+    "source_dates": [
+     "2022-09-09",
+     "2022-09-09",
+     "2026-07-27",
+     "2026-09-27"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 236,
+   "card": "views/graph/P236.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A109926(21) — least n whose number of representations n = p + 2^k (p prime, 2^k < n) is exactly 21; records-of-f lane for f = A109925, the quantity Erdős conjectured to be o(log n)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "No new A109926 terms and no search bound beyond 1e10 found. Only a Lean formalization PR (JSP-000209, #2599) and an empty 'vibemathing' scaffold repo (last commit 2026-09-07) turned up.",
+    "sources": [
+     "https://oeis.org/A109926",
+     "https://github.com/TheJustinSunPrize/awards/pull/2599",
+     "https://github.com/vibemathing/problem-um-ep-236-erd-s-problem-236-47be7ce6"
+    ],
+    "source_dates": [
+     "unknown",
+     "unknown",
+     "2026-09-07"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 322,
+   "card": "views/graph/P322.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A025418(35) — least integer that is a sum of 3 positive cubes in exactly 35 ways (first uncomputed cell; a(36)-a(39) and a(42) are known, so a(35), a(40), a(41) are the open cells)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "OEIS A025418 is unchanged since 2025-10-06, and no computation of a(35) (or a(40), a(41)) was found. The only post-July activity is a Lean formalization of Mahler's 1936 theorem for k=3 (JSP-000268; baobingzhang/jsp-000268-erdos322-lean, 2026-09-16). That is a known result and touches neither the cell nor the upstream status.",
+    "sources": [
+     "https://oeis.org/A025418",
+     "https://github.com/baobingzhang/jsp-000268-erdos322-lean",
+     "https://github.com/TheJustinSunPrize/awards/issues/292"
+    ],
+    "source_dates": [
+     "2025-10-06",
+     "2026-09-16",
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 334,
+   "card": "views/graph/P334.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A062241(30) — smallest integer >= 2 that is not a sum of two positive 113-smooth numbers (prime(30)=113); first uncomputed cell of the finite proxy for f(n) = best smoothness bound with n = a+b",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "OEIS A062241 is unchanged: it still says 'a(30) > 2570169839' (Johnson, 2010), last edited 2026-03-06. The new firesh/erdos334-smooth-summands-audit (JSP-000277 = #334, 2026-09-18) only re-certifies smaller cells (G(83)=508095719, G(89)>508095720) and does not touch a(30).",
+    "sources": [
+     "https://oeis.org/A062241",
+     "https://github.com/firesh/erdos334-smooth-summands-audit",
+     "https://github.com/TheJustinSunPrize/awards/pull/1036"
+    ],
+    "source_dates": [
+     "2026-03-06",
+     "2026-09-18",
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 340,
+   "card": "views/graph/P340.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "Verification depth for '33 is never a difference of Mian-Chowla terms' (33 = A080200(1), the smallest integer not known to lie in A-A for the greedy Sidon sequence A005282)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "Nothing newer than Reichert's check of the first 1e5 terms found; 33 is still described as the smallest integer not known to lie in A-A.",
+    "sources": [
+     "https://oeis.org/A080200",
+     "https://www.erdosproblems.com/340"
+    ],
+    "source_dates": [
+     "unknown",
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 342,
+   "card": "views/graph/P342.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "Computation frontier for the Ulam sequence u(1)=1, u(2)=2: largest X with all Ulam numbers <= X computed, supporting the empirical density ~0.073979 and quasi-period 21.6016 against Ulam's density-0 conjecture",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "OEIS A002858 was edited 2026-08-21 but still cites Gibbs-McCranie's 2017 computation to 10^12 as the largest, and no newer Ulam computation was found. A search summary mentioned a preprint dated 2026-03-10 (apparently arXiv:2007.02697v12) claiming density 0. It predates the window, is unverified, and is not reflected upstream.",
+    "sources": [
+     "https://oeis.org/A002858",
+     "https://arxiv.org/abs/2007.02697"
+    ],
+    "source_dates": [
+     "2026-08-21",
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 376,
+   "card": "views/graph/P376.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A030979(1375) — least k > 10^70 with binomial(2k,k) coprime to 105 (equivalently: all base-3 digits <= 1, base-5 digits <= 2, base-7 digits <= 3)",
+   "external_movement": {
+    "verdict": "cell-settled",
+    "summary": "A030979(1375) = 41793835224715561827991803724419285037533255120531924813793252461031887 (71 digits). the sweep computed it with the successor-closure method published in jaredwilder/erdos376-successor-frontier (public 2026-09-11) and cross-checked it with an independent implementation. Both reproduce the OEIS data and find exactly 1374 terms <= 10^70 (matching the b-file) and 14,273 positive terms <= 10^100. That count matches the 'July-2026 exhaustive cylinder-tree report proving A(10^100)=14273' that the repo cites; the original report was not located and its exact date is unknown. The same repo certifies the least term >= 10^1000 (1,006 digits). OEIS A030979 is unchanged since 2026-06-28.",
+    "sources": [
+     "https://github.com/jaredwilder/erdos376-successor-frontier",
+     "https://oeis.org/A030979"
+    ],
+    "source_dates": [
+     "2026-09-11",
+     "2026-06-28"
+    ],
+    "confidence": "high",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 385,
+   "card": "views/graph/P385.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "Largest member of A322293 = {k : A322292(k) <= k}, where A322292(k) = max over composites c < k of (c + lpf(c)) — the exceptional k where no composite c < k has c + lpf(c) > k; the set is conjectured finite (Erdős–Eggleton–Selfridge)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "OEIS A322293 is unchanged (100 terms, exhaustive <= 10^8, largest 267680; last edit 2025-08-09). An Aug 2026 preprint, 'On the sum of least prime factors in short intervals' (arXiv 2608.24930), surfaced in search, but the sweep did not verify whether it bears on #385.",
+    "sources": [
+     "https://oeis.org/A322293",
+     "https://arxiv.org/abs/2608.24930",
+     "https://github.com/oeis/oeisdata"
+    ],
+    "source_dates": [
+     "2025-08-09",
+     "unknown",
+     "2026-09-27"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 410,
+   "card": "views/graph/P410.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A007497(1501) — next term of the iterated sum-of-divisors trajectory 2, σ(2), σ(σ(2)), … underlying the question whether lim_k σ_k(n)^(1/k) = ∞",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "No extension of the 1500-term b-file (T. D. Noe / Charles R Greathouse IV) and no resolution of the parent problem found.",
+    "sources": [
+     "https://oeis.org/A007497"
+    ],
+    "source_dates": [
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 412,
+   "card": "views/graph/P412.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A051572(524) — next term of the iterated-σ trajectory of seed 5; the frontier of the (m,n) = (2,5) instance of the van Wijngaarden/Erdős merging conjecture (∃ i,j with σ_i(m) = σ_j(n))",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "OEIS A051572 (523 terms, last edit 2024-08-06) and A007497 (1500 terms) are unchanged through the 2026-09-27 export. No post-July computation or claim was found.",
+    "sources": [
+     "https://oeis.org/A051572",
+     "https://oeis.org/A007497",
+     "https://github.com/oeis/oeisdata"
+    ],
+    "source_dates": [
+     "2024-08-06",
+     "2025-09-10",
+     "2026-09-27"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 422,
+   "card": "views/graph/P422.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "W(422) = largest N such that Hofstadter's Q-sequence f (f(1)=f(2)=1, f(n)=f(n-f(n-1))+f(n-f(n-2))) is verified well-defined (both back-indices ≥ 1) for all n ≤ N",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "OEIS A005185 was edited 2026-07-27, but its existence frontier still reads 'a(n) exists for n <= 3*10^10' (M. Eric Carr, 2023), which equals the atlas L. No newer verification was found.",
+    "sources": [
+     "https://oeis.org/A005185"
+    ],
+    "source_dates": [
+     "2026-07-27"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 436,
+   "card": "views/graph/P436.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A000445(8) = Lambda(8,2) — latest possible first occurrence (limsup over primes p) of a pair of consecutive 8th-power residues mod p; first uncomputed cell of the Lehmer-Lehmer table",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "OEIS still shows only Don Reble's 1499876 <= a(8) <= 1508324, the same as the atlas bracket. A GitHub research issue opened 2026-09-25 (the-omega-institute/trureturing #9854) targets the odd-exponent Lambda(k,3) part and reports no solution.",
+    "sources": [
+     "https://oeis.org/A000445",
+     "https://github.com/the-omega-institute/trureturing/issues/9854"
+    ],
+    "source_dates": [
+     "unknown",
+     "2026-09-25"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 451,
+   "card": "views/graph/P451.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A386620(184) = n_184 — smallest k > 368 such that (k-1)(k-2)...(k-184) has no prime factor in (184, 368); first uncomputed cell (b-file complete through n=183)",
+   "external_movement": {
+    "verdict": "cell-settled",
+    "summary": "Cell computed: William Alexander Carney extended the OEIS A386620 b-file from n=1..183 to n=1..209 (OEIS revision #71, 2026-08-22; the 2026-07-23 export still showed 1..183), using a linked C++ exact residue-class search with a per-n minimality proof, so a(184) is now published. the sweep could not retrieve the exact value (the b-file is hosted on oeis.org, which egress blocks).",
+    "sources": [
+     "https://oeis.org/A386620",
+     "https://github.com/oeis/oeisdata/blob/main/seq/A386/A386620.seq"
+    ],
+    "source_dates": [
+     "2026-08-22",
+     "2026-08-23"
+    ],
+    "confidence": "high",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 479,
+   "card": "views/graph/P479.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A036236(1119) — least n with 2^n ≡ 1119 (mod n); first of 93 unknown entries among k <= 10^4 (Graham's conjecture: for every k ≠ 1 there are infinitely many such n)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "No value for k=1119 and no bound beyond 1e13 found. The only prize activity is a Lean proof of the already-known cases k=2^i, -1, 0 (JSP-000390, PR #272).",
+    "sources": [
+     "https://github.com/TheJustinSunPrize/awards/pull/272",
+     "https://oeis.org/A036236"
+    ],
+    "source_dates": [
+     "unknown",
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 528,
+   "card": "views/graph/P528.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "C_2 — connective constant of the square lattice Z^2 (self-avoiding walk growth constant, A387897): rigorous bracket vs 12-digit numerical estimate; #528 headline asks to determine C_k for all k",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "No post-July rigorous bound on mu(Z^2) was found. The best upper bound located is still Couronne's 2.662343 (arXiv:2211.16146), equal to the atlas U, and nothing newer than the atlas L of 2.625622 turned up. OEIS A387897 is unchanged since 2025-09-12.",
+    "sources": [
+     "https://arxiv.org/abs/2211.16146",
+     "https://oeis.org/A387897"
+    ],
+    "source_dates": [
+     "unknown",
+     "2025-09-12"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 588,
+   "card": "views/graph/P588.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A006065(19) — maximum number of lines containing exactly 4 points ('4-tree orchard rows') achievable with 19 points in the plane (first cell with a bounds gap in the linked record table)",
+   "external_movement": {
+    "verdict": "uncertain",
+    "summary": "No report found that settles or narrows a(19) in [20,28]. However, a search snippet says OEIS A006065 was last modified 2026-08-16, after the atlas check, and the sweep could not see what changed because OEIS is blocked, so it needs a manual look.",
+    "sources": [
+     "https://oeis.org/A006065"
+    ],
+    "source_dates": [
+     "2026-08-16"
+    ],
+    "confidence": "low",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 687,
+   "card": "views/graph/P687.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A048670(65) = j(p_65#) — Jacobsthal function of the product of the first 65 primes (first uncomputed cell; a(64)=1110)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "OEIS A048670 terms are unchanged (b-file 1..64, a(64)=1110); its July 2026 edits were only reference formatting, a Granville arXiv link, and keyword cleanup (2026-07-26). No new a(65) computation or covering-witness bound was found.",
+    "sources": [
+     "https://oeis.org/A048670",
+     "https://github.com/oeis/oeisdata"
+    ],
+    "source_dates": [
+     "2026-07-11",
+     "2026-09-27"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 727,
+   "card": "views/graph/P727.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A343507(10) = smallest m with (m+10)!^2 | (2m)! — first uncomputed cell (a(9) = 2935782889)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "OEIS A343507 is unchanged since 2021-05-07 (data ends at a(9) = 2935782889), and no computation of a(10) was found. Post-July there is an unreviewed k=2 candidate argument (Rexyysilent/erdos-727-k2-candidate, 2026-09-12). There is also a JSP-000595 'Open -> Solved' Lean PR whose file only checks the single instance (6!)^2 | 10! (zjukop3/erdos595-factorial-divisibility). Neither touches the cell, and the JSP catalog still lists the problem as Open.",
+    "sources": [
+     "https://oeis.org/A343507",
+     "https://github.com/Rexyysilent/erdos-727-k2-candidate",
+     "https://github.com/zjukop3/erdos595-factorial-divisibility",
+     "https://github.com/TheJustinSunPrize/awards/pull/2544"
+    ],
+    "source_dates": [
+     "2021-05-07",
+     "2026-09-12",
+     "2026-09-21",
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 730,
+   "card": "views/graph/P730.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "solved",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "Largest gap k with a known pair (n, n+k) such that binomial(2n,n) and binomial(2(n+k),n+k) have identical prime-divisor sets (sub-question of: are there infinitely many such pairs?)",
+   "external_movement": {
+    "verdict": "parent-status-changed",
+    "summary": "Upstream status is now 'solved' (the YAML last_update field was never bumped; the atlas's own 2026-09-04 upstream diff flagged open->solved), yet atlas/stubs.json still says open; per snippets (unverified), infinitely many consecutive pairs (n,n+1) were proved (Liam Price forum argument 2026-06-24, accepted 2026-07-15; Lean proof registered as PALOMAR-2026-08-22-000001). No known pair with gap k>=3 was found, so the cell's L=2 is unchanged.",
+    "sources": [
+     "https://github.com/google-deepmind/formal-conjectures/pull/5091",
+     "https://github.com/google-deepmind/formal-conjectures/issues/6077",
+     "https://github.com/teorth/erdosproblems"
+    ],
+    "source_dates": [
+     "unknown",
+     "unknown",
+     "2026-09-26"
+    ],
+    "confidence": "high",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 854,
+   "card": "views/graph/P854.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A389839(13) — smallest even integer that is not a difference of consecutive integers coprime to 41# = 304250263527210 (primorial of the first 13 primes); table known only for prime(2)#..prime(12)#",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "OEIS A389839 is unchanged since 2025-12-23 (data ends at a(12) = 68, for 37#), and no computation for 41# was found. The Justin Sun Prize catalog (snapshot 2026-09-24) still lists the matching problem JSP-000707 as Open. A JSP 'Lean formalization - primorial gaps' PR (#2632) exists but the sweep did not inspect it.",
+    "sources": [
+     "https://oeis.org/A389839",
+     "https://github.com/TheJustinSunPrize/awards/pull/2632"
+    ],
+    "source_dates": [
+     "2025-12-23",
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 961,
+   "card": "views/graph/P961.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A213253(269) — first cell beyond Najman's computed range n=1..268; f(n) = minimal L such that every L consecutive integers > n contain one with a prime factor > n (equivalently 1 + longest run of n-smooth integers > n)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "No extension of A213253 beyond Najman's n <= 268 found; the only prize activity is a Lean formalization (JSP-000555, PR #2725). A Sept-2026 preprint, 'Long runs of integers with small prime factors and the divisor function of n!' (arXiv:2609.15597), surfaced, but its content and relevance could not be checked.",
+    "sources": [
+     "https://oeis.org/A213253",
+     "https://arxiv.org/pdf/2609.15597",
+     "https://github.com/TheJustinSunPrize/awards/pull/2725"
+    ],
+    "source_dates": [
+     "unknown",
+     "unknown",
+     "unknown"
+    ],
+    "confidence": "low",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 970,
+   "card": "views/graph/P970.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "A048670(65) — Jacobsthal function g of the product of the first 65 primes (first uncomputed primorial cell; the lower-bound engine for Erdős's h(k) and the h(k) ≪ k^2 question)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "No computation of A048670(65) found; the table still ends at a(64) (Bozek's additions to Gerbicz's table).",
+    "sources": [
+     "https://oeis.org/A048670"
+    ],
+    "source_dates": [
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 985,
+   "card": "views/graph/P985.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31",
+   "cell": "largest N such that every prime 3 <= p <= N has a prime primitive root q < p (verified range of the conjecture)",
+   "external_movement": {
+    "verdict": "uncertain",
+    "summary": "OEIS A002233 is unchanged (10^4 primes, 2017). A search snippet, apparently from the undated erdosproblems.com #985 forum thread, asserts that Oliveira e Silva's least-prime-primitive-root tables to at least 10^14 contain no counterexample to G(p) < p; that would lift the literature-grade verified range far above the atlas's self-verified 104729, but it is unverified and not shown to be post-July.",
+    "sources": [
+     "https://www.erdosproblems.com/forum/thread/985",
+     "https://oeis.org/A002233"
+    ],
+    "source_dates": [
+     "unknown",
+     "2017-11-20"
+    ],
+    "confidence": "low",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 1055,
+   "card": "views/graph/P1055.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-09-28",
+   "cell": "A005113(20) - least prime in class 20 of the Erdos-Selfridge classification (class via largest-class prime factor of p+1)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "No new A005113 term; 764276710625653 appears only as the known upper bound for the least class-20 prime (Hasler 2007), and nothing newer came up.",
+    "sources": [
+     "https://oeis.org/A005113"
+    ],
+    "source_dates": [
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 1056,
+   "card": "views/graph/P1056.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-09-28",
+   "cell": "A060427(15) - least prime p admitting 15 consecutive intervals of integers each with product congruent to 1 mod p (also: existence frontier k=15 of the for-all-k conjecture)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "OEIS A060427 is unchanged since 2017 (a(14)=10428007, a(15) unknown). A JSP PR (#2801) claimed a 'complete solver' for JSP-000876 (= #1056) using non-contiguous intervals mod 5, which prompted correction issue #3263; the JSP catalog (2026-09-24) still lists the problem as Open, so the parent status is unchanged.",
+    "sources": [
+     "https://oeis.org/A060427",
+     "https://github.com/TheJustinSunPrize/awards/pull/2801",
+     "https://github.com/TheJustinSunPrize/awards/issues/3263",
+     "https://github.com/TheJustinSunPrize/awards/blob/main/problems/catalog-0801-0900.md"
+    ],
+    "source_dates": [
+     "2017-12-15",
+     "unknown",
+     "unknown",
+     "2026-09-24"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 1057,
+   "card": "views/graph/P1057.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-09-28",
+   "cell": "A006931(40) - least Carmichael number with exactly 40 prime factors",
+   "external_movement": {
+    "verdict": "cell-settled",
+    "summary": "Jonathan Webster's table (github.com/jewebste/small-carmichael-numbers; k=40 row added 2026-09-06; k=36-63 credited to Butler University as 'independently verified') gives A006931(40) = 336344101674863882264460997162737741032660590208112263486472947389502099210991168001 (84 digits, 17*19*...*617*1409). Checked during the sweep: the 40 primes are distinct, their product matches and Korselt's criterion holds, so this upper bound is certain; minimality is reported but not verified, and it is unconfirmed whether OEIS has added the term.",
+    "sources": [
+     "https://github.com/jewebste/small-carmichael-numbers",
+     "https://github.com/AlexanderEastwood/carmichael-frontier",
+     "https://oeis.org/A006931"
+    ],
+    "source_dates": [
+     "2026-09-06",
+     "2026-09-11",
+     "unknown"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)",
+    "spot_check": "Spot-checked in this session: the 84-digit value is the product of the 40 listed distinct primes and satisfies Korselt's criterion, so it is a Carmichael number with exactly 40 prime factors and A006931(40) is at most it. Minimality is the source's claim, not checked."
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 1060,
+   "card": "views/graph/P1060.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-09-28",
+   "cell": "A212490(6) - least m such that k*sigma(k) = m has exactly 6 solutions (the record ladder for f(n) = A327153, the count Erdos asked to bound)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "A212490 (data ends at a(5) = 1584858562560) is unchanged since 2024-09-03 and A327153 since 2019-09-18. trizen's search code still records a(6) <= 7089671638182002688000, the atlas U (repo last commit 2026-07-01). The only post-July #1060 item found sharpens the constant in the upper bound for f(n) (gyulev2718-arch/erdos1060, 2026-09-06) and does not touch the cell.",
+    "sources": [
+     "https://oeis.org/A212490",
+     "https://github.com/trizen/experimental-projects",
+     "https://github.com/gyulev2718-arch/erdos1060"
+    ],
+    "source_dates": [
+     "2024-09-03",
+     "2026-07-01",
+     "2026-09-06"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 1063,
+   "card": "views/graph/P1063.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-10-01",
+   "cell": "A389360(60) = n_60 — least n >= 120 such that n-i divides binomial(n,60) for all but exactly one i in 0<=i<60 (Erdős–Selfridge quantity n_k at the first uncomputed k)",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "OEIS A389360 is unchanged (b-file n=2..59, last edit 2025-10-24). The only related new artifact is a Lean formalization of Cambie's upper bound (pcycho/erdos1063-cambie), with no a(60).",
+    "sources": [
+     "https://oeis.org/A389360",
+     "https://github.com/pcycho/erdos1063-cambie",
+     "https://github.com/oeis/oeisdata"
+    ],
+    "source_dates": [
+     "2025-10-24",
+     "unknown",
+     "2026-09-27"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 1095,
+   "card": "views/graph/P1095.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-10-18",
+   "cell": "A003458(378) = g(378) — Erdős–Selfridge function: least n > 379 such that the least prime factor of binomial(n,378) exceeds 378 (first cell beyond the verified literature frontier k=377)",
+   "external_movement": {
+    "verdict": "cell-settled",
+    "summary": "g(378) = A003458(378) = 11243132307156301763663607287294, computed by Alexander Eastwood with a GPU wheel/sieve search. His k=378 primary run is logged 2026-08-21, and the repo release through g(400) is dated 2026-09-24. The value is now in OEIS: A003458 (edited 2026-09-18) carries his b-file for n=1..400. the sweep independently confirmed admissibility via Kummer: C(g,378) has no prime factor <= 378. Minimality rests on the reported exhaustive two-wheel scans, which the sweep did not re-run.",
+    "sources": [
+     "https://github.com/AlexanderEastwood/erdos-selfridge",
+     "https://oeis.org/A003458",
+     "https://doi.org/10.5281/zenodo.22057210"
+    ],
+    "source_dates": [
+     "2026-09-24",
+     "2026-09-18",
+     "unknown"
+    ],
+    "confidence": "high",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 1106,
+   "card": "views/graph/P1106.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-11-17",
+   "cell": "Conjecture F(n) > n for all n > 115, where F(n) = A194259(n) = number of distinct primes dividing p(1)·p(2)···p(n) (p = partition function); A194260(n) = F(n) - n",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "OEIS A194260 and A194259 terms are unchanged (b-files 1..10000); the only 2026-07 change was keyword housekeeping. No post-July extension of the verified range was found.",
+    "sources": [
+     "https://oeis.org/A194260",
+     "https://oeis.org/A194259",
+     "https://github.com/oeis/oeisdata"
+    ],
+    "source_dates": [
+     "2026-05-30",
+     "2026-06-28",
+     "2026-09-27"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T3",
+   "problem": 1208,
+   "card": "views/graph/P1208.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2026-04-04",
+   "cell": "A193838(15) — smallest k such that 15 points of the k x k lattice grid have pairwise distinct mutual distances (the Erdos-Guy 1970 finite grid shadow of problem 1208's asymptotic quantity F_d(n)); first uncomputed cell, a(14)=18 exact",
+   "external_movement": {
+    "verdict": "no-evidence-found",
+    "summary": "OEIS A193838 (a(14)=18) and A271490 (a(17)=13) terms are unchanged; the A271490 edits of 2026-07-13 and 07-28 were only a name tweak and keyword cleanup. No post-July claim about a(15) was found.",
+    "sources": [
+     "https://oeis.org/A193838",
+     "https://oeis.org/A271490",
+     "https://github.com/oeis/oeisdata"
+    ],
+    "source_dates": [
+     "2026-05-30",
+     "2026-07-13",
+     "2026-09-27"
+    ],
+    "confidence": "med",
+    "checked_by": "web-search and public-repository sweep, 2026-09-27 (reported, not replayed here unless the summary says so)"
+   }
+  },
+  {
+   "tier": "T4",
+   "problem": 64,
+   "card": "views/graph/P64.md",
+   "atlas_snapshot_upstream": "falsifiable",
+   "upstream_now": "falsifiable",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "T4",
+   "problem": 106,
+   "card": "views/graph/P106.md",
+   "atlas_snapshot_upstream": "falsifiable",
+   "upstream_now": "disproved (Lean)",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "T4",
+   "problem": 167,
+   "card": "views/graph/P167.md",
+   "atlas_snapshot_upstream": "falsifiable",
+   "upstream_now": "falsifiable",
+   "upstream_now_last_update": "2025-09-28"
+  },
+  {
+   "tier": "T4",
+   "problem": 458,
+   "card": "views/graph/P458.md",
+   "atlas_snapshot_upstream": "falsifiable",
+   "upstream_now": "falsifiable",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "T4",
+   "problem": 547,
+   "card": "views/graph/P547.md",
+   "atlas_snapshot_upstream": "decidable",
+   "upstream_now": "proved",
+   "upstream_now_last_update": "2026-09-03"
+  },
+  {
+   "tier": "T4",
+   "problem": 583,
+   "card": "views/graph/P583.md",
+   "atlas_snapshot_upstream": "falsifiable",
+   "upstream_now": "falsifiable",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "T4",
+   "problem": 699,
+   "card": "views/graph/P699.md",
+   "atlas_snapshot_upstream": "falsifiable",
+   "upstream_now": "falsifiable",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "hot-claim",
+   "problem": 12,
+   "card": "views/graph/P12.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "hot-claim",
+   "problem": 124,
+   "card": "views/graph/P124.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "hot-claim",
+   "problem": 138,
+   "card": "views/graph/P138.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "hot-claim",
+   "problem": 176,
+   "card": "views/graph/P176.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "hot-claim",
+   "problem": 306,
+   "card": "views/graph/P306.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "hot-claim",
+   "problem": 451,
+   "card": "views/graph/P451.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "hot-claim",
+   "problem": 456,
+   "card": "views/graph/P456.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "hot-claim",
+   "problem": 477,
+   "card": "views/graph/P477.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "solved",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "hot-claim",
+   "problem": 488,
+   "card": "views/graph/P488.md",
+   "atlas_snapshot_upstream": "falsifiable",
+   "upstream_now": "falsifiable",
+   "upstream_now_last_update": "2026-03-29"
+  },
+  {
+   "tier": "hot-claim",
+   "problem": 501,
+   "card": "views/graph/P501.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "not disprovable",
+   "upstream_now_last_update": "2026-09-03"
+  },
+  {
+   "tier": "hot-claim",
+   "problem": 524,
+   "card": "views/graph/P524.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "hot-claim",
+   "problem": 539,
+   "card": "views/graph/P539.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "hot-claim",
+   "problem": 654,
+   "card": "views/graph/P654.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "hot-claim",
+   "problem": 848,
+   "card": "views/graph/P848.md",
+   "atlas_snapshot_upstream": "decidable",
+   "upstream_now": "decidable",
+   "upstream_now_last_update": "2025-10-19"
+  },
+  {
+   "tier": "hot-claim",
+   "problem": 942,
+   "card": "views/graph/P942.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-08-31"
+  },
+  {
+   "tier": "hot-claim",
+   "problem": 1032,
+   "card": "views/graph/P1032.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-09-13"
+  },
+  {
+   "tier": "hot-claim",
+   "problem": 1033,
+   "card": "views/graph/P1033.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-12-12"
+  },
+  {
+   "tier": "hot-claim",
+   "problem": 1038,
+   "card": "views/graph/P1038.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-09-15"
+  },
+  {
+   "tier": "hot-claim",
+   "problem": 1039,
+   "card": "views/graph/P1039.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-09-15"
+  },
+  {
+   "tier": "hot-claim",
+   "problem": 1040,
+   "card": "views/graph/P1040.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-09-15"
+  },
+  {
+   "tier": "hot-claim",
+   "problem": 1101,
+   "card": "views/graph/P1101.md",
+   "atlas_snapshot_upstream": "open",
+   "upstream_now": "open",
+   "upstream_now_last_update": "2025-10-19"
+  }
+ ]
+}

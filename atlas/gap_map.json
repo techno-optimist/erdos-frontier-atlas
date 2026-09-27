@@ -6943,43 +6943,47 @@
   {
    "problem": 1016,
    "oeis": "A105206",
-   "quantity": "m(38) — minimum number of edges of a pancyclic graph on 38 vertices; first open cell after Griffin's exact table (hub quantity h(n) = m(n) - n)",
+   "quantity": "m(109) — minimum number of edges of a pancyclic graph on 109 vertices; first open cell after the exact table n <= 108 of certificates/erdos-1016 (hub quantity h(n) = m(n) - n; h(109) is 7 or 8)",
    "kind": "next_cell",
    "lower": {
-    "value": "43",
-    "source": "4 chords admit at most 2^5 - 1 = 31 cycles (Shi, Discrete Math. 133, 1994) < 36 required lengths, so >= 5 chords, i.e. m(38) >= 38 + 5; argument as in Griffin, arXiv:1312.0274",
-    "year": 2013
+    "value": "116",
+    "source": "OUR exhaustive search, certificates/erdos-1016/: no graph C_n + 6 chords is pancyclic for any n >= 68 (every one of the 21,878 six-chord skeleton classes refuted at each 68 <= n <= 111; none has more than 109 distinct cycles, which settles n >= 112), so h(109) >= 7. Independently re-run over all 384,668 labeled skeletons by the in-repo C implementation (same lane, so not counted as a second evidence class).",
+    "year": 2026
    },
    "upper": {
-    "value": "44",
-    "source": "m(37) = 42 exact (Griffin, arXiv:1312.0274, Table 1) plus m(n+1) <= m(n) + 2 (Griffin, Prop. 2)",
-    "year": 2013
+    "value": "117",
+    "source": "m(108) = 115 (certificates/erdos-1016/: explicit 7-chord witness, the Pinckard et al. family F_n plus one chord) and m(n+1) <= m(n) + 2 (join a new vertex to both ends of one Hamilton-cycle edge; Griffin, arXiv:1312.0274, Prop. 2)",
+    "year": 2026
    },
    "witness_side": "upper",
-   "witness_object": "a pancyclic graph on 38 vertices with 43 edges (Hamiltonian cycle + 5 chords), shipped with one explicit cycle per length 3..38",
-   "witness_verifier": "positive side is solver-free: check each of the 36 cycle certificates is a valid cycle of the stated length against the edge list, O(n) per cycle. Nonexistence side (m(38)=44): exhaustive 5-chord enumeration over chord-endpoint configurations up to dihedral symmetry (~10^8 configs), each checked via Shi's at-most-2-cycles-per-chord-subset enumeration (<= 63 cycles per graph)",
-   "witness_feasibility": "open-easy",
+   "witness_object": "a pancyclic graph on 109 vertices with 116 edges (C_109 + 7 chords), shipped with one explicit cycle per length 3..109",
+   "witness_verifier": "DFS over the simple cycles of C_109 + 7 chords (graph_cycle_lengths in certificates/erdos-1016/pancyclic.py) or explicit per-length cycle certificates; milliseconds, dependency-free",
+   "witness_feasibility": "plausible",
    "exact_feasibility": "cell",
    "status": "open",
-   "notes": "A genuine two-value cell: m(38) is 43 or 44, decided either way by a bounded search (Griffin ran the analogous 5-chord exhaustion to 31 vertices on 2013 hardware; his Figure-1 construction with 5 chords tops out at exactly n=37, which is why the table stops there). Griffin 2013 gives m(n) exactly for all n <= 37: m(n) = n+5 for 25 <= n <= 37, agreeing with George–Marr–Wallis. OEIS A105206 is STALE — it ends at a(22) = 26 while exact values to n=37 have been published since 2013; the b-file extension n=23..37 (values 27,28,30,31,...,42) is a free micro-contribution. The hub's asymptotic question (is h(n) >= log_2 n + log_* n - O(1)? Bondy 1971 window log_2(n-1) - 1 <= h(n) <= log_2 n + log_* n + O(1)) is a wall, but every table cell is machine-decidable and each new cell probes which side of the window m(n) tracks. Sanity: h(38) in {5,6} vs log_2(37) - 1 ~ 4.2.",
+   "notes": "PREVIOUS CELL CLOSED: m(38) = 43 (P. White and Claude, erdosproblemaday.com/report/1016, 2026-07-29), replicated in certificates/erdos-1016 together with the whole table n <= 67 (Griffin 2013; Robinfxa 2026, m(41) = 47 with a Lean proof; J. Pinckard and ToolsEnabled agents 2026-09-24, h = 6 on 41..67). That external campaign stopped with the six-chord levels n in {72..79, 81, 83, 84, 85} unfinished; certificates/erdos-1016 settles them, so t_1..t_6 = 5, 8, 14, 24, 40, 67 and h(n) = 7 exactly on 68 <= n <= 108. Adding one chord to F_n stops working at n = 109, so this cell needs a different 7-chord construction (witness side) or a 7-chord exclusion (10,398,480 labeled skeletons; unattempted). OEIS A105206 still ends at n = 22 (2026-09-27 data export) although exact values are now known far beyond. The hub's asymptotic question (is h(n) >= log_2 n + log_* n - O(1)?) is untouched by any finite cell; JWKNT/erdos1016 claims a Lean proof of h(n) = log_2 n + log_* n + O(1), not checked here and setting no status.",
    "provenance": {
-    "added_by": "gap-map miner chunk 975-1030",
-    "date": "2026-07-18",
+    "added_by": "claude, erdos-1016 lane (branch chronos/quirky-gates-dalhc4)",
+    "date": "2026-09-27",
     "checked": [
-     "arXiv:1312.0274 full PDF (Griffin, Table 1 read directly, m(20..37) transcribed)",
-     "OEIS A105206 + b-file (20 terms, matches Griffin for n<=22)",
-     "erdosproblems.com/1016 (Bondy/Griffin/GKW attribution paraphrased)",
-     "web search: no post-2013 extension of m(n) found (2025 papers are edge-pancyclic, a different quantity)"
+     "our exhaustive search and witnesses, certificates/erdos-1016/ (python3 -I certificates/erdos-1016/verify.py)",
+     "github.com/JoshuaPinckard/erdos-1016-pancyclic @ c986109 (2026-09-24): README lists levels 72..79, 81, 83, 84, 85 as unfinished",
+     "github.com/Robinfxa/JSP-000846 @ c48cd11 (2026-09-24): m(41) = 47",
+     "github.com/JWKNT/erdos1016 @ d1bf348 (2026-09-25): claimed asymptotic Lean proof, not checked",
+     "github.com/TheJustinSunPrize/awards @ 1d1db84 (2026-09-24): JSP-000846 listed Open",
+     "OEIS A105206 via github.com/oeis/oeisdata export 2026-09-27: terms n = 3..22 only",
+     "Griffin, arXiv:1312.0274 (as transcribed by the 2026-07-18 miner: m(n) for n <= 37)"
     ]
    },
    "evidence": [
     {
-     "type": "literature",
-     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
-     "date": "2026-07-18"
+     "type": "implementation",
+     "artifact": "certificates/erdos-1016/ -- skeleton reduction with exact branch-and-bound over arc lengths; complete six-chord census at n = 67 (exactly two pancyclic classes) and exhaustion at every 68 <= n <= 111; h(n) witnesses for 3 <= n <= 108 re-checked by DFS",
+     "date": "2026-09-27",
+     "contract": "erdos-1016-h-table-t6-67"
     }
    ],
-   "confidence": "C3"
+   "confidence": "C2"
   },
   {
    "problem": 1029,

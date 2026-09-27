@@ -1,0 +1,3020 @@
+{
+ "schema": "erdos-1016-witnesses-v1",
+ "witnesses": {
+  "3": {
+   "k": 0,
+   "chords": [],
+   "source": "C_3 itself"
+  },
+  "4": {
+   "k": 1,
+   "chords": [
+    [
+     0,
+     2
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "5": {
+   "k": 1,
+   "chords": [
+    [
+     0,
+     2
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "6": {
+   "k": 2,
+   "chords": [
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     4
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "7": {
+   "k": 2,
+   "chords": [
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     5
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "8": {
+   "k": 2,
+   "chords": [
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     6
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "9": {
+   "k": 3,
+   "chords": [
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     5,
+     7
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "10": {
+   "k": 3,
+   "chords": [
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     5,
+     8
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "11": {
+   "k": 3,
+   "chords": [
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     9
+    ],
+    [
+     6,
+     9
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "12": {
+   "k": 3,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     3
+    ],
+    [
+     2,
+     6
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "13": {
+   "k": 3,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     4,
+     7
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "14": {
+   "k": 3,
+   "chords": [
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     5,
+     7
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "15": {
+   "k": 4,
+   "chords": [
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     0,
+     13
+    ],
+    [
+     3,
+     8
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "16": {
+   "k": 4,
+   "chords": [
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     8
+    ],
+    [
+     0,
+     14
+    ],
+    [
+     3,
+     8
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "17": {
+   "k": 4,
+   "chords": [
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     11
+    ],
+    [
+     3,
+     5
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "18": {
+   "k": 4,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     15
+    ],
+    [
+     2,
+     10
+    ],
+    [
+     10,
+     15
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "19": {
+   "k": 4,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     16
+    ],
+    [
+     2,
+     11
+    ],
+    [
+     11,
+     16
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "20": {
+   "k": 4,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     10
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     5,
+     11
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "21": {
+   "k": 4,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     10
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     5,
+     11
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "22": {
+   "k": 4,
+   "chords": [
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     5,
+     7
+    ],
+    [
+     6,
+     15
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "23": {
+   "k": 4,
+   "chords": [
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     11
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     4,
+     21
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "24": {
+   "k": 4,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     21
+    ],
+    [
+     1,
+     19
+    ],
+    [
+     8,
+     23
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "25": {
+   "k": 5,
+   "chords": [
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     15
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     3,
+     20
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "26": {
+   "k": 5,
+   "chords": [
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     16
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     5,
+     11
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "27": {
+   "k": 5,
+   "chords": [
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     16
+    ],
+    [
+     3,
+     5
+    ],
+    [
+     5,
+     11
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "28": {
+   "k": 5,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     12
+    ],
+    [
+     0,
+     25
+    ],
+    [
+     2,
+     20
+    ],
+    [
+     20,
+     25
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "29": {
+   "k": 5,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     25
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     5,
+     18
+    ],
+    [
+     18,
+     25
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "30": {
+   "k": 5,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     26
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     5,
+     19
+    ],
+    [
+     19,
+     26
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "31": {
+   "k": 5,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     27
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     5,
+     19
+    ],
+    [
+     19,
+     27
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "32": {
+   "k": 5,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     28
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     5,
+     20
+    ],
+    [
+     20,
+     28
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "33": {
+   "k": 5,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     28
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     5,
+     20
+    ],
+    [
+     20,
+     28
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "34": {
+   "k": 5,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     29
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     5,
+     21
+    ],
+    [
+     21,
+     29
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "35": {
+   "k": 5,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     30
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     5,
+     21
+    ],
+    [
+     21,
+     30
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "36": {
+   "k": 5,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     31
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     5,
+     22
+    ],
+    [
+     22,
+     31
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "37": {
+   "k": 5,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     15
+    ],
+    [
+     2,
+     5
+    ],
+    [
+     5,
+     14
+    ],
+    [
+     14,
+     19
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "38": {
+   "k": 5,
+   "chords": [
+    [
+     0,
+     3
+    ],
+    [
+     0,
+     18
+    ],
+    [
+     3,
+     12
+    ],
+    [
+     12,
+     17
+    ],
+    [
+     17,
+     19
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "39": {
+   "k": 5,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     32
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     33
+    ],
+    [
+     31,
+     34
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "40": {
+   "k": 5,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     33
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     34
+    ],
+    [
+     32,
+     35
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "41": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     3,
+     24
+    ],
+    [
+     4,
+     29
+    ],
+    [
+     8,
+     30
+    ],
+    [
+     28,
+     31
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "42": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     3,
+     25
+    ],
+    [
+     4,
+     30
+    ],
+    [
+     8,
+     31
+    ],
+    [
+     29,
+     32
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "43": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     3,
+     26
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     8,
+     32
+    ],
+    [
+     30,
+     33
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "44": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     3,
+     27
+    ],
+    [
+     4,
+     32
+    ],
+    [
+     8,
+     33
+    ],
+    [
+     31,
+     34
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "45": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     3,
+     11
+    ],
+    [
+     4,
+     23
+    ],
+    [
+     9,
+     24
+    ],
+    [
+     22,
+     25
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "46": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     3,
+     11
+    ],
+    [
+     4,
+     23
+    ],
+    [
+     9,
+     24
+    ],
+    [
+     22,
+     25
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "47": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     3,
+     28
+    ],
+    [
+     4,
+     34
+    ],
+    [
+     6,
+     35
+    ],
+    [
+     33,
+     36
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "48": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     3,
+     29
+    ],
+    [
+     4,
+     35
+    ],
+    [
+     6,
+     36
+    ],
+    [
+     34,
+     37
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "49": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     3,
+     29
+    ],
+    [
+     4,
+     41
+    ],
+    [
+     6,
+     42
+    ],
+    [
+     40,
+     43
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "50": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     3,
+     30
+    ],
+    [
+     4,
+     42
+    ],
+    [
+     6,
+     43
+    ],
+    [
+     41,
+     44
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "51": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     3,
+     30
+    ],
+    [
+     4,
+     37
+    ],
+    [
+     6,
+     38
+    ],
+    [
+     36,
+     39
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "52": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     3,
+     31
+    ],
+    [
+     4,
+     38
+    ],
+    [
+     6,
+     39
+    ],
+    [
+     37,
+     40
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "53": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     3,
+     31
+    ],
+    [
+     4,
+     44
+    ],
+    [
+     6,
+     45
+    ],
+    [
+     43,
+     46
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "54": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     3,
+     32
+    ],
+    [
+     4,
+     45
+    ],
+    [
+     6,
+     46
+    ],
+    [
+     44,
+     47
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "55": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     41
+    ],
+    [
+     24,
+     51
+    ],
+    [
+     39,
+     42
+    ],
+    [
+     40,
+     53
+    ],
+    [
+     50,
+     54
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "56": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     3,
+     34
+    ],
+    [
+     4,
+     35
+    ],
+    [
+     9,
+     48
+    ],
+    [
+     10,
+     55
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "57": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     15
+    ],
+    [
+     3,
+     12
+    ],
+    [
+     4,
+     42
+    ],
+    [
+     6,
+     56
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "58": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     16
+    ],
+    [
+     3,
+     13
+    ],
+    [
+     4,
+     42
+    ],
+    [
+     6,
+     57
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "59": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     16
+    ],
+    [
+     3,
+     13
+    ],
+    [
+     4,
+     43
+    ],
+    [
+     6,
+     58
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "60": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     16
+    ],
+    [
+     3,
+     13
+    ],
+    [
+     4,
+     44
+    ],
+    [
+     6,
+     59
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "61": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     16
+    ],
+    [
+     3,
+     13
+    ],
+    [
+     4,
+     45
+    ],
+    [
+     6,
+     60
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "62": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     27
+    ],
+    [
+     1,
+     25
+    ],
+    [
+     10,
+     59
+    ],
+    [
+     23,
+     26
+    ],
+    [
+     24,
+     57
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "63": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     60
+    ],
+    [
+     1,
+     25
+    ],
+    [
+     3,
+     55
+    ],
+    [
+     10,
+     56
+    ],
+    [
+     26,
+     62
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "64": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     61
+    ],
+    [
+     1,
+     25
+    ],
+    [
+     3,
+     56
+    ],
+    [
+     10,
+     57
+    ],
+    [
+     26,
+     63
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "65": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     62
+    ],
+    [
+     1,
+     18
+    ],
+    [
+     3,
+     23
+    ],
+    [
+     16,
+     52
+    ],
+    [
+     17,
+     64
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "66": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     63
+    ],
+    [
+     1,
+     18
+    ],
+    [
+     3,
+     23
+    ],
+    [
+     16,
+     53
+    ],
+    [
+     17,
+     65
+    ]
+   ],
+   "source": "found by pancyclic.Search"
+  },
+  "67": {
+   "k": 6,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     60
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     61
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     59,
+     62
+    ]
+   ],
+   "source": "found by pancyclic.Search (full census at n=67)"
+  },
+  "68": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     4
+    ],
+    [
+     0,
+     61
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     62
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     60,
+     63
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "69": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     5
+    ],
+    [
+     0,
+     62
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     63
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     61,
+     64
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "70": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     6
+    ],
+    [
+     0,
+     63
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     64
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     62,
+     65
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "71": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     7
+    ],
+    [
+     0,
+     64
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     65
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     63,
+     66
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "72": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     34
+    ],
+    [
+     0,
+     65
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     66
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     64,
+     67
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "73": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     33
+    ],
+    [
+     0,
+     66
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     67
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     65,
+     68
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "74": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     38
+    ],
+    [
+     0,
+     67
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     68
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     66,
+     69
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "75": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     68
+    ],
+    [
+     1,
+     5
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     69
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     67,
+     70
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "76": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     69
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     1,
+     31
+    ],
+    [
+     3,
+     70
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     68,
+     71
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "77": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     70
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     1,
+     32
+    ],
+    [
+     3,
+     71
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     69,
+     72
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "78": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     71
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     1,
+     32
+    ],
+    [
+     3,
+     72
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     70,
+     73
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "79": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     72
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     1,
+     33
+    ],
+    [
+     3,
+     73
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     71,
+     74
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "80": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     73
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     1,
+     33
+    ],
+    [
+     3,
+     74
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     72,
+     75
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "81": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     74
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     2,
+     53
+    ],
+    [
+     3,
+     75
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     73,
+     76
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "82": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     75
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     39
+    ],
+    [
+     3,
+     76
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     74,
+     77
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "83": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     76
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     2,
+     54
+    ],
+    [
+     3,
+     77
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     75,
+     78
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "84": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     77
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     45
+    ],
+    [
+     3,
+     78
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     76,
+     79
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "85": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     78
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     2,
+     55
+    ],
+    [
+     3,
+     79
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     77,
+     80
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "86": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     79
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     46
+    ],
+    [
+     3,
+     80
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     78,
+     81
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "87": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     80
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     2,
+     56
+    ],
+    [
+     3,
+     81
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     79,
+     82
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "88": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     81
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     47
+    ],
+    [
+     3,
+     82
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     80,
+     83
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "89": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     82
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     2,
+     57
+    ],
+    [
+     3,
+     83
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     81,
+     84
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "90": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     83
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     48
+    ],
+    [
+     3,
+     84
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     82,
+     85
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "91": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     84
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     2,
+     58
+    ],
+    [
+     3,
+     85
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     83,
+     86
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "92": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     85
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     49
+    ],
+    [
+     3,
+     86
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     84,
+     87
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "93": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     86
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     2,
+     59
+    ],
+    [
+     3,
+     87
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     85,
+     88
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "94": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     87
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     57
+    ],
+    [
+     3,
+     88
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     86,
+     89
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "95": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     88
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     2,
+     60
+    ],
+    [
+     3,
+     89
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     87,
+     90
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "96": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     89
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     59
+    ],
+    [
+     3,
+     90
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     88,
+     91
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "97": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     90
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     91
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     5,
+     46
+    ],
+    [
+     89,
+     92
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "98": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     91
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     92
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     5,
+     47
+    ],
+    [
+     90,
+     93
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "99": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     92
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     93
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     5,
+     47
+    ],
+    [
+     91,
+     94
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "100": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     93
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     94
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     5,
+     48
+    ],
+    [
+     92,
+     95
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "101": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     94
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     95
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     5,
+     48
+    ],
+    [
+     93,
+     96
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "102": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     95
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     96
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     12,
+     57
+    ],
+    [
+     94,
+     97
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "103": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     96
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     97
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     12,
+     68
+    ],
+    [
+     95,
+     98
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "104": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     97
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     98
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     28,
+     72
+    ],
+    [
+     96,
+     99
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "105": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     98
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     99
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     29,
+     72
+    ],
+    [
+     97,
+     100
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "106": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     99
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     100
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     29,
+     73
+    ],
+    [
+     98,
+     101
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "107": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     100
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     101
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     30,
+     73
+    ],
+    [
+     99,
+     102
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  },
+  "108": {
+   "k": 7,
+   "chords": [
+    [
+     0,
+     2
+    ],
+    [
+     0,
+     101
+    ],
+    [
+     1,
+     13
+    ],
+    [
+     3,
+     102
+    ],
+    [
+     4,
+     31
+    ],
+    [
+     30,
+     74
+    ],
+    [
+     100,
+     103
+    ]
+   ],
+   "source": "family F_n of Pinckard et al. (2026) plus one chord found here"
+  }
+ }
+}
