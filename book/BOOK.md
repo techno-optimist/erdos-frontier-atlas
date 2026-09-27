@@ -72,7 +72,7 @@ artifact exists. The map does not pretend its own entries are verified; the
 labeling *is* the release gate.
 
 - **225 bounded quantities** on the map ([`atlas/gap_map.json`](../atlas/gap_map.json)).
-- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **6** lane-added, **207** agent-mined.
+- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **7** lane-added, **206** agent-mined.
 - Confidence distribution (computed from `evidence[]`, never asserted): **C0** 0 · **C1** 0 · **C2** 9 · **C3** 216.
 - **81 witness-workable**: still open, with a side a single submitted
   construction — checked by the entry's stated verifier — can move.

@@ -5816,35 +5816,42 @@
   {
    "problem": 854,
    "oeis": "A389839",
-   "quantity": "A389839(13) — smallest even integer that is not a difference of consecutive integers coprime to 41# = 304250263527210 (primorial of the first 13 primes); table known only for prime(2)#..prime(12)#",
+   "quantity": "A389839(45) — smallest even integer that is not a difference of consecutive integers coprime to 197# (the product of the first 45 primes); first cell beyond the complete gap table OEIS A331118 (rows n <= 44)",
    "kind": "next_cell",
    "lower": {
-    "value": "a(12) = 68 is the last computed cell (for 37#)",
-    "source": "OEIS A389839 b-file (a(2)..a(12) = 6,8,12,16,20,28,32,42,48,60,68; keyword 'more')",
-    "year": 2025
+    "value": "618",
+    "source": "a(44) = 618: by OEIS A329815(44) = 308 = A048670(44)/2 every even gap up to the largest, 616, occurs for p_44# (De Vlieger 2020, A331118 rows n <= 44); and a gap for p_n# survives for p_{n+1}# (the new prime takes a residue avoiding both ends), so every even gap up to 616 occurs for 197#",
+    "year": 2020
    },
-   "upper": null,
+   "upper": {
+    "value": "644",
+    "source": "A048670(45) = 642 is the largest gap for 197# (Hagedorn, Math. Comp. 78 (2009), n < 50), so no gap of 644 or more occurs",
+    "year": 2009
+   },
    "witness_side": "lower",
-   "witness_object": "occurrence certificates: for each even t < v, a pair of CONSECUTIVE 41#-coprime integers differing by t — proving a(13) >= v+2 cheaply; pinning a(13) exactly requires a full-period absence scan (the entry's symmetry remark halves the work)",
-   "witness_verifier": "per certificate (x, x+t): gcd(x, 41#) = gcd(x+t, 41#) = 1 and every x+1..x+t-1 shares a factor with 41# — O(t) word-sized gcds each; the exhaustive side is a wheel-based segmented scan of one period, ~4.4·10^13 coprime gaps",
+   "witness_object": "for each even t in 618..642 an integer x with x and x + t coprime to 197# and every integer strictly between them sharing a prime with 197#; all 13 found => a(45) = 644, otherwise the least missing t (with an exhaustive absence proof) is a(45)",
+   "witness_verifier": "per gap, O(t) gcds against 197# (certificates/erdos-854/coprime_gaps.is_gap); an absence needs an exhaustive covering search or a DRAT-checked UNSAT proof of the covering CNF",
    "witness_feasibility": "plausible",
    "exact_feasibility": "cell",
    "status": "open",
-   "notes": "Directly quantifies Erdős' #854: he first guessed every even t up to the maximal gap occurs, then reported doubts after Lacampagne–Selfridge computations showed failure at 13# = 30030 (paraphrased from erdosproblems.com/854, Ob1) — visible in the data as a(6)=20 missing while the Jacobsthal max gap A048670(6)=22 occurs. The max-gap side is far ahead of the spectrum side: A048670 known through k=64 (a(64)=1110; Bozek 2021, Google-Cloud-scale). a(13) is a genuine frontier cell: period 3.04·10^14, coprime density ~0.145 — days-scale on one strong box with a bitmap wheel + symmetry, GPU-friendly. Second Erdős question (are there >> maxgap many occurring even values?) remains open regardless.",
+   "notes": "PREVIOUS CELL CLOSED, and it was mis-set: the row pointed at A389839(13), but OEIS A331118 (De Vlieger 2020, with M. Ziller arXiv:2007.01808) already lists every gap for p_n#, n <= 44. certificates/erdos-854 recomputes a(2..16) independently by exhaustive covering search with gcd-checked witnesses: a(13..16) = 76, 86, 98, 108 (contracts erdos-854-a389839-2-15 and -16). By the A329815 counts, a(n) = A048670(n) + 2 exactly for n = 16, 17, 18, 23, 26, 29, 39, 41, 44 (e.g. a(44) = 618); for the other n <= 44 some gap below the largest is missing and the A331118 rows name it. a(45) is the first cell beyond public data. Its band 618..642 sits at the Jacobsthal extreme, where coverings are rare: a randomised covering DFS settles gaps near 200 at 197# in seconds but not this band, so it needs a SAT encoding (CaDiCaL agreed with the exhaustive search on 43# and 47#) or a structured construction from extremal intervals (Gerbicz's u(n) table). The Erdos questions themselves (does every even number up to the largest gap occur, asymptotically; are there >> max-gap many distinct gaps?) are asymptotic and untouched.",
    "provenance": {
-    "added_by": "gap-map miner chunk 820-860",
-    "date": "2026-07-18",
+    "added_by": "claude, erdos-854 lane (branch chronos/quirky-gates-dalhc4); row first mined 2026-07-18",
+    "date": "2026-09-27",
     "checked": [
-     "OEIS A389839 (entry + b-file, a(2)-a(12))",
-     "OEIS A048670 (entry + b-file to a(64))",
+     "OEIS A331118 record (b-file rows 1..44, De Vlieger 2020) via github.com/oeis/oeisdata, 2026-09-27",
+     "OEIS A329815 data n = 1..44 via github.com/oeis/oeisdata, 2026-09-27",
+     "OEIS A048670 data n = 1..58 (b-file to 64) via github.com/oeis/oeisdata, 2026-09-27",
+     "OEIS A389839 (data a(2..12), keyword more, last edited 2025-12-23)",
+     "our exhaustive recomputation of a(2..16), certificates/erdos-854/ (python3 -I certificates/erdos-854/verify.py [--full])",
      "erdosproblems.com/854 (numeric facts paraphrased; page edited 2025-11-04)"
     ]
    },
    "evidence": [
     {
      "type": "literature",
-     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
-     "date": "2026-07-18"
+     "artifact": "OEIS A331118 / A329815 (De Vlieger 2020) for the lower bound and A048670 (Hagedorn 2009) for the upper bound; the bracket is not replayed here",
+     "date": "2026-09-27"
     }
    ],
    "confidence": "C3"

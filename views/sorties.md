@@ -117,7 +117,7 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 | #687 | A048670(65) = j(p_65#) — Jacobsthal function of the product of the …[truncated; see source] | plausible | For each i < L, trial-divide u+i by the 65 primes up to 313 …[truncated; see source] | C3 |
 | #727 | A343507(10) = smallest m with (m+10)!^2 \| (2m)! — first uncomputed …[truncated; see source] | plausible | For each prime p <= 2m check Legendre valuations: sum_j …[truncated; see source] | C3 |
 | #730 | Largest gap k with a known pair (n, n+k) such that binomial(2n,n) and …[truncated; see source] | plausible | Kummer's theorem: p \| C(2n,n) iff adding n+n in base p …[truncated; see source] | C3 |
-| #854 | A389839(13) — smallest even integer that is not a difference of …[truncated; see source] | plausible | per certificate (x, x+t): gcd(x, 41#) = gcd(x+t, 41#) = 1 …[truncated; see source] | C3 |
+| #854 | A389839(45) — smallest even integer that is not a difference of …[truncated; see source] | plausible | per gap, O(t) gcds against 197# …[truncated; see source] | C3 |
 | #961 | A213253(269) — first cell beyond Najman's computed range n=1..268; …[truncated; see source] | plausible | trial-divide each of the L integers by the 57 primes ≤ 269 …[truncated; see source] | C3 |
 | #970 | A048670(65) — Jacobsthal function g of the product of the first 65 …[truncated; see source] | plausible | L gcd computations against p_65#, or per-offset …[truncated; see source] | C3 |
 | #985 | largest N such that every prime 3 <= p <= N has a prime primitive …[truncated; see source] | plausible | per prime, verify the factorization of p-1 by …[truncated; see source] | C3 |
@@ -167,6 +167,8 @@ Every promoted claim replays in one command; the fastest way to learn the receip
 - `erdos-552-n12-n16`: `python3 -I certificates/erdos-552/verify.py`
 - `erdos-699-rowsweep-1e8`: `python3 -I certificates/erdos-699/verify.py --quick`
 - `erdos-743-k10-packing`: `python3 -I certificates/erdos-743/verify.py --quick`
+- `erdos-854-a389839-16`: `python3 -I certificates/erdos-854/verify.py --full`
+- `erdos-854-a389839-2-15`: `python3 -I certificates/erdos-854/verify.py`
 - `erdos-979-a6-public`: `python3 -I certificates/erdos-979/verify.py --cutoff 1e12`
 - `erdos-993-unimodal-n30`: `python3 -I certificates/erdos-993/verify.py --quick`
 - `graffiti-284-hoffman-singleton`: `python3 -I certificates/graffiti-284-refutation/verify.py`
