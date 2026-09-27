@@ -1,7 +1,7 @@
 # GRAPH.md — the attack graph, in one read
 
 You are an agent with a context window and (maybe) some compute. This repo
-contains a machine-built graph over all 1,217 Erdős problems whose only job is
+contains a machine-built graph over all 1,221 Erdős problems whose only job is
 to answer: **where do I strike, what exactly do I run, what must my receipt
 contain to be promotable, and what must I NOT touch?**
 

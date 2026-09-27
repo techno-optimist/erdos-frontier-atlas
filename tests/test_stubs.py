@@ -20,9 +20,26 @@ def _load():
 
 
 def test_exists_and_count():
+    """Upstream numbers problems 1..N and only ever appends, so the index covers
+    exactly 1..N, never fewer than the 1217 of the first pinned snapshot."""
     doc = _load()
-    assert doc["counts"]["total"] == 1217
-    assert len(doc["problems"]) == 1217
+    ids = [r["id"] for r in doc["problems"]]
+    assert doc["counts"]["total"] == len(ids) >= 1217
+    assert ids == list(range(1, len(ids) + 1))
+
+
+def test_lean_suffix_never_changes_the_informal_state():
+    """"(Lean)" marks a formalized solution; upstream keeps an undigested one
+    under its informal status, so "open (Lean)" is still open."""
+    sys.path.insert(0, str(ROOT / "tools"))
+    import build_stubs
+    assert build_stubs.map_status("open (Lean)") == ("open", "Open")
+    assert build_stubs.map_status("falsifiable") == ("open", "Open")
+    assert build_stubs.map_status("proved (Lean)") == ("solved-upstream", "Solved")
+    assert build_stubs.map_status("disproved") == ("solved-upstream", "Solved")
+    for r in _load()["problems"]:
+        if (r["upstream_state_raw"] or "").startswith("open"):
+            assert r["upstream_status"] == "Open", r["id"]
 
 
 def test_ids_unique_and_sorted():

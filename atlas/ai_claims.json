@@ -14,9 +14,9 @@
   "counts": {
     "erdos_linked_claims": 89,
     "all_present_in_our_hub": true,
-    "claims_against_problems_we_record_open_or_wall": 21,
+    "claims_against_problems_we_record_open_or_wall": 19,
     "claims_the_registry_itself_scopes_as_not_a_resolution": 13,
-    "hot_claims_the_registry_itself_scopes_as_not_a_resolution": 13,
+    "hot_claims_the_registry_itself_scopes_as_not_a_resolution": 12,
     "claims_with_a_finite_handle_upstream": 2
   },
   "entries": [
@@ -507,13 +507,14 @@
         "https://www.erdosproblems.com/477",
         "https://github.com/Pengbinghui/pipeline-math"
       ],
-      "our_recorded_status": "open",
-      "upstream_status": "Open",
+      "our_recorded_status": "solved-upstream",
+      "upstream_status": "Solved",
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Author-checked manuscript; official record open",
       "registry_says_not_a_resolution": false,
-      "upstream_finite_handle": null
+      "upstream_finite_handle": null,
+      "status_note": "2026-09-27: the upstream record moved to 'solved' (teorth/erdosproblems 39cde0f, atlas snapshot refresh). Our status follows that record; this claim did not move it."
     },
     {
       "erdos_id": 480,
@@ -557,8 +558,8 @@
         "https://www.erdosproblems.com/501",
         "https://www.erdosproblems.com/forum/thread/501"
       ],
-      "our_recorded_status": "open",
-      "upstream_status": "Open",
+      "our_recorded_status": "solved-upstream",
+      "upstream_status": "Solved",
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Author checked; community screening",
@@ -566,7 +567,8 @@
         "The official problem page remains open."
       ],
       "registry_says_not_a_resolution": true,
-      "upstream_finite_handle": null
+      "upstream_finite_handle": null,
+      "status_note": "2026-09-27: the upstream record moved to 'not disprovable' (teorth/erdosproblems 39cde0f, atlas snapshot refresh). Our status follows that record; this claim did not move it."
     },
     {
       "erdos_id": 524,

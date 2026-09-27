@@ -92,7 +92,9 @@ def test_disagreement_cells_pinned():
 def test_trap_edges_pinned():
     traps = sorted(int(e["src"][1:]) for e in _graph()["edges"]
                    if e["type"] == "trap")
-    assert traps == [19, 64, 97, 107, 114, 128, 548]
+    # #548 left this list on 2026-09-27: upstream proved it (Lean), so it no
+    # longer carries a finite handle and cannot be a trap
+    assert traps == [19, 64, 97, 107, 114, 128]
     for e in _graph()["edges"]:
         if e["type"] == "trap":
             assert "prize" in e, "prize must ride ON the trap edge"

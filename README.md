@@ -73,7 +73,7 @@ website. `tests/test_readme.py` checks them against the source ledgers.
 
 | Inventory | Count | Source of truth |
 |---|---:|---|
-| Hub records | 1,217 | [`atlas/stubs.json`](atlas/stubs.json), including its upstream commit pins |
+| Hub records | 1,221 | [`atlas/stubs.json`](atlas/stubs.json), including its upstream commit pins |
 | Deep-tier records | 51 | [`atlas/problems.json`](atlas/problems.json), with per-record provenance and scope |
 | Bracketed quantities | 225 | [`atlas/gap_map.json`](atlas/gap_map.json); evidence determines the validator's C0–C3 class |
 | Registered methods | 29 | [`atlas/substrate.json`](atlas/substrate.json); formal, informal, conditional and candidate scopes remain distinct |

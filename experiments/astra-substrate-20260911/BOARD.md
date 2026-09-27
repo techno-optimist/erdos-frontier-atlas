@@ -180,21 +180,6 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #700   CANDIDATE    i3-typeB2b-struct  tag/OEIS shape match only; not an implication
   #700   CANDIDATE    kummer-105-digits  tag/OEIS shape match only; not an implication
   #700   CANDIDATE    p699-d2-line  tag/OEIS shape match only; not an implication
-  #730   CANDIDATE    adjacent-binomial-gcd  tag/OEIS shape match only; not an implication
-  #730   CANDIDATE    coprime-divisor-transfer  tag/OEIS shape match only; not an implication
-  #730   CANDIDATE    i2-complete-gcd  tag/OEIS shape match only; not an implication
-  #730   CANDIDATE    i2-d3-divisor  tag/OEIS shape match only; not an implication
-  #730   CANDIDATE    i3-cancel-coprime-fac  tag/OEIS shape match only; not an implication
-  #730   CANDIDATE    i3-coprime-six-cancel  tag/OEIS shape match only; not an implication
-  #730   CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
-  #730   CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
-  #730   CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
-  #730   CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
-  #730   CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
-  #730   CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
-  #730   CANDIDATE    i3-typeB2b-struct  tag/OEIS shape match only; not an implication
-  #730   CANDIDATE    kummer-105-digits  tag/OEIS shape match only; not an implication
-  #730   CANDIDATE    p699-d2-line  tag/OEIS shape match only; not an implication
   #731   CANDIDATE    adjacent-binomial-gcd  tag/OEIS shape match only; not an implication
   #731   CANDIDATE    coprime-divisor-transfer  tag/OEIS shape match only; not an implication
   #731   CANDIDATE    i2-complete-gcd  tag/OEIS shape match only; not an implication
@@ -227,6 +212,8 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #849   CANDIDATE    p699-d2-line  tag/OEIS shape match only; not an implication
   #860   CANDIDATE    crt-endpoint-safe  tag/OEIS shape match only; not an implication
   #860   CANDIDATE    wheel-gap-operator  tag/OEIS shape match only; not an implication
+  #929   CANDIDATE    crt-endpoint-safe  tag/OEIS shape match only; not an implication
+  #929   CANDIDATE    wheel-gap-operator  tag/OEIS shape match only; not an implication
   #1093  CANDIDATE    adjacent-binomial-gcd  tag/OEIS shape match only; not an implication
   #1093  CANDIDATE    coprime-divisor-transfer  tag/OEIS shape match only; not an implication
   #1093  CANDIDATE    i2-complete-gcd  tag/OEIS shape match only; not an implication
@@ -273,4 +260,4 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #1095  CANDIDATE    kummer-105-digits  tag/OEIS shape match only; not an implication
   #1095  CANDIDATE    p699-d2-line  tag/OEIS shape match only; not an implication
 
-30 discharge/obstruction rows, 234 candidate rows.
+30 discharge/obstruction rows, 221 candidate rows.

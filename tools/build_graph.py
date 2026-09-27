@@ -7,10 +7,10 @@ strike, what exactly do I run, what must my receipt contain to be promotable,
 and what must I NOT touch?" — routed through the repo's own honesty machinery.
 
 Inputs (committed artifacts only; this tool reads nothing else):
-  atlas/stubs.json                     1217 problem stubs (three-register status)
+  atlas/stubs.json                     one stub per upstream problem (three-register status)
   atlas/problems.json                  51 deep audited records
   atlas/gap_map.json                   222 bounded-quantity surfaces
-  atlas/finite_handle_triage.json      43 feasibility-triaged branches
+  atlas/finite_handle_triage.json      feasibility-triaged finite-handle branches
   atlas/ai_claims.json                 89 external AI claims (never set status)
   atlas/lean_lane.json                 external Lean formalization pins
   atlas/effectivization_shortlist.json plausible + dead_do_not_rehunt ledgers
