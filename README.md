@@ -21,6 +21,7 @@ conjecture, or turn a shared tag into an implication. The
 | To… | Read or run |
 |---|---|
 | Find a reusable method | [Method substrate](experiments/astra-substrate-20260911/README.md) · [generated method board](experiments/astra-substrate-20260911/BOARD.md) |
+| Decide one #699 row, or see what a reduction still leaves open | [The briefcase](tools/briefcase.py): `python3 tools/briefcase.py row N I` · [in-browser calculator](tools/briefcase.html) · [residual ledger](atlas/residuals.json) |
 | Read the RH / squarefree-counting work | [P969 progress map](experiments/astra-rh-969-20260912/REPOSITORY_STATUS.md), including derivations, audit evidence, verification and remaining obligations |
 | Choose a research direction | [Agent entry point](GRAPH.md) · [strike board](views/sorties.md) · [walls](atlas/walls.md), then check [source freshness](#source-freshness) |
 | Inspect the dataset | [State of the Frontier](views/state_of_frontier.md) · [source ledgers](#repository-inventory) |
@@ -38,7 +39,7 @@ artifacts, evidence level, and unresolved step.
 |---|---|---|
 | **RH / P969** | [Squarefree-energy equivalence and generic obstruction](experiments/astra-rh-969-20260912/README.md); CRT/centered-defect and Mellin transfers; the [GM/GMRR assembled variance deduction](experiments/astra-rh-crt-20260912/GM_TRANSFER.md) through `4/7-epsilon`; [sharp Type I and signed-diagonal interfaces](experiments/astra-rh-crt-20260912/ARITHMETIC_FRONTIER.md) | The RH-equivalent energy estimate and full signed mixed-moment saving are unproved. The variance deduction uses pinned external theorems and model audits; it is not a novelty, record, human-review, or formal-proof claim. |
 | **P327** | [Multiplier-sensitive smooth-fiber transfer](experiments/astra-327-fiber-20260912/README.md): retain multiplier divisibility information and prove an all-N deficit inequality, with a small independently checked demonstration | No solution or new best bound. The demonstration's bounds are weaker than the cited literature. Published for review in [PR #155](https://github.com/techno-optimist/erdos-frontier-atlas/pull/155). |
-| **P699** | [Formal binomial-gcd seeds](experiments/astra-lean-seed-20260904/README.md), [the i=2 case](experiments/astra-i2-complete-20260911/README.md), [i=3 reductions and residuals](experiments/astra-i3-20260911/GOAL.md), and [positional localization for i=3](experiments/claude-699-i3-position-20260928/README.md): no i=3 counterexample has n odd or n ≡ 2 (mod 4), any has 4 | n with odd part at most about 0.66·n^(1/3), and an exact search clears that family to 10¹⁸ | Each formal or conditional lemma has its own scope. The remaining i=3 obligation is that thin family above 10¹⁸; higher-i cases are not closed by these artifacts. |
+| **P699** | [Formal binomial-gcd seeds](experiments/astra-lean-seed-20260904/README.md), [the i=2 case](experiments/astra-i2-complete-20260911/README.md), [i=3 reductions and residuals](experiments/astra-i3-20260911/GOAL.md), [positional localization for i=3](experiments/claude-699-i3-position-20260928/README.md) (no i=3 counterexample has n odd or n ≡ 2 (mod 4); the rest is a thin family, searched to 10¹⁸), and [positional localization for every i ≥ 3](experiments/claude-699-general-i-20260928/README.md): for each fixed i at most O(X^(1/3) log^π(i) X) values n ≤ X can fail, and an exact search finds no counterexample for i = 4, 5 to 10¹⁸, i = 6, 7 to 10¹⁷, i = 8, 9, 10 to 10¹⁵ and i = 11, 12, 13 to 10¹² | Each formal or conditional lemma has its own scope. What remains for i = 3..13 is each thin residual above its searched bound, listed in the [residual ledger](atlas/residuals.json) with its first unsearched members; i ≥ 14 and uniformity in i are open. |
 | **P993 and CRT bridges** | [Tail compression, Laurent blocks and endpoint-safe transfers](experiments/astra-briefcase-20260904/README.md) | Block properties and candidate matches are not proofs of tree unimodality or an entire gap spectrum. |
 | **P376** | [Kummer/digit checks and bounded historical replay](experiments/astra-376-20260911/README.md) | The infinitude question needs a method, not another extension of a known sequence's cutoff. The [working goal](experiments/astra-i3-20260911/GOAL.md) records that correction. |
 | **P1016** | [Minimal pancyclic graphs](certificates/erdos-1016/README.md): h(n) = m(n) − n exactly for n ≤ 186; no Cₙ + 6 chords is pancyclic for n ≥ 68 and no Cₙ + 7 chords for n ≥ 115, so t₆ = 67 and t₇ = 114 — settling the six-chord levels an external 2026 campaign left open, the complete seven-chord census, and replicating everything below 68 | h(187) ∈ {8, 9} is the next cell. The asymptotic question (does h(n) − log₂ n → ∞?) is untouched by any finite table. |
@@ -82,7 +83,8 @@ website. `tests/test_readme.py` checks them against the source ledgers.
 | Hub records | 1,221 | [`atlas/stubs.json`](atlas/stubs.json), including its upstream commit pins |
 | Deep-tier records | 51 | [`atlas/problems.json`](atlas/problems.json), with per-record provenance and scope |
 | Bracketed quantities | 225 | [`atlas/gap_map.json`](atlas/gap_map.json); evidence determines the validator's C0–C3 class |
-| Registered methods | 30 | [`atlas/substrate.json`](atlas/substrate.json); formal, informal, conditional and candidate scopes remain distinct |
+| Registered methods | 31 | [`atlas/substrate.json`](atlas/substrate.json); formal, informal, conditional and candidate scopes remain distinct |
+| Residual records | 11 | [`atlas/residuals.json`](atlas/residuals.json); each names its reduction, its searched bound and a replay command |
 
 The hub supplies problem identifiers and metadata. Deep records and bracketed
 quantities describe selected evidence and computational questions. The method
@@ -94,6 +96,7 @@ these inventories is a count of conjectures solved by this project.
 | Area | Files |
 |---|---|
 | Research methods | [`atlas/substrate.json`](atlas/substrate.json) · [`experiments/`](experiments) · [method board](experiments/astra-substrate-20260911/BOARD.md) |
+| Executable reductions | [`tools/briefcase.py`](tools/briefcase.py) · [`tools/briefcaselib/`](tools/briefcaselib) · [`tools/briefcase.html`](tools/briefcase.html) · [`atlas/residuals.json`](atlas/residuals.json) |
 | Production attack graph | [`GRAPH.md`](GRAPH.md) · [`atlas/graph/`](atlas/graph) · [`views/graph/`](views/graph) · [`views/sorties.md`](views/sorties.md) |
 | Certificates and claim contracts | [`certificates/README.md`](certificates/README.md) · [`certificates/contracts.json`](certificates/contracts.json) |
 | Feasibility and source overlays | [`atlas/walls.md`](atlas/walls.md) · [`atlas/lanes.md`](atlas/lanes.md) · [`atlas/ai_claims.json`](atlas/ai_claims.json) · [`atlas/lean_lane.json`](atlas/lean_lane.json) |

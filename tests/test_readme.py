@@ -14,6 +14,7 @@ def test_readme_inventory_matches_the_source_ledgers():
         "Deep-tier records": ("atlas/problems.json", "problems"),
         "Bracketed quantities": ("atlas/gap_map.json", "entries"),
         "Registered methods": ("atlas/substrate.json", "methods"),
+        "Residual records": ("atlas/residuals.json", "residuals"),
     }
     readme = (ROOT / "README.md").read_text()
     for label, (path, key) in sources.items():

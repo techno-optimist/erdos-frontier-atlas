@@ -1,0 +1,509 @@
+<title>Briefcase 699</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=STIX+Two+Text:ital,wght@0,500;0,600;1,500&display=swap">
+<style>
+  :root {
+    --bg: #eef1f3;
+    --panel: #f8fafb;
+    --ink: #15212b;
+    --muted: #57646f;
+    --rule: #cbd4db;
+    --accent: #85570a;
+    --accent-soft: #f2e6cc;
+    --good: #23704a;
+    --good-soft: #dbeee2;
+    --bad: #a2271d;
+    --bad-soft: #f6dedb;
+    --warn: #7a5a00;
+    --warn-soft: #f4ecc9;
+    --code: #e5eaee;
+    --serif: "STIX Two Text", "STIX Two Math", Cambria, Georgia, serif;
+    --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #0f151b; --panel: #151d25; --ink: #e2e8ed; --muted: #95a3ae; --rule: #2a3642;
+      --accent: #dcaa50; --accent-soft: #3a2e17; --good: #6cc592; --good-soft: #163324;
+      --bad: #f08a7f; --bad-soft: #3d1c19; --warn: #e3c261; --warn-soft: #3a3113; --code: #1b252e;
+    }
+  }
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #0f151b; --panel: #151d25; --ink: #e2e8ed; --muted: #95a3ae; --rule: #2a3642;
+    --accent: #dcaa50; --accent-soft: #3a2e17; --good: #6cc592; --good-soft: #163324;
+    --bad: #f08a7f; --bad-soft: #3d1c19; --warn: #e3c261; --warn-soft: #3a3113; --code: #1b252e;
+  }
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg); color: var(--ink); font: 15px/1.55 var(--sans);
+    padding-inline: 18px; padding-block: 28px 56px;
+  }
+  .wrap { max-width: 1120px; margin: 0 auto; display: grid; gap: 28px; }
+  header { display: grid; gap: 8px; }
+  .mark { font: 600 13px/1 var(--sans); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+  h1 { font: 600 clamp(30px, 5vw, 44px)/1.08 var(--serif); margin: 0; text-wrap: balance; }
+  h1 i { font-weight: 500; }
+  .lede { max-width: 68ch; color: var(--muted); margin: 0; }
+  .lede b { color: var(--ink); font-weight: 500; }
+  h2 { font: 600 22px/1.2 var(--serif); margin: 0; text-wrap: balance; }
+  .num, code, .mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+  code { font-size: .92em; background: var(--code); padding: 1px 5px; border-radius: 4px; }
+
+  form.controls {
+    display: flex; flex-wrap: wrap; gap: 12px 16px; align-items: end;
+    background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; padding: 16px;
+  }
+  .field { display: grid; gap: 4px; }
+  .field label { font: 600 12px/1 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+  .field input {
+    font: 500 16px/1.2 var(--mono); color: var(--ink); background: var(--bg);
+    border: 1px solid var(--rule); border-radius: 6px; padding: 9px 10px;
+  }
+  #nIn { width: min(460px, 100%); }
+  .grow { flex: 1 1 280px; }
+  #iIn { width: 84px; }
+  button {
+    font: 600 14px/1 var(--sans); cursor: pointer; border-radius: 6px; padding: 11px 16px;
+    border: 1px solid var(--accent); background: var(--accent); color: var(--panel);
+  }
+  button.ghost { background: transparent; color: var(--accent); }
+  button:focus-visible, input:focus-visible, .chip:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; width: 100%; }
+  .chip {
+    font: 500 13px/1.2 var(--sans); background: transparent; color: var(--ink); cursor: pointer;
+    border: 1px solid var(--rule); border-radius: 999px; padding: 6px 11px;
+  }
+  .chip:hover { border-color: var(--accent); }
+  .chip small { color: var(--muted); font-weight: 400; }
+
+  .verdict {
+    display: grid; grid-template-columns: auto 1fr; gap: 14px 20px; align-items: center;
+    border-top: 2px solid var(--ink); border-bottom: 1px solid var(--rule); padding-block: 18px;
+  }
+  .pill { font: 600 13px/1 var(--sans); letter-spacing: .1em; text-transform: uppercase; padding: 9px 14px; border-radius: 999px; }
+  .pill.good { background: var(--good-soft); color: var(--good); }
+  .pill.bad { background: var(--bad-soft); color: var(--bad); }
+  .pill.warn { background: var(--warn-soft); color: var(--warn); }
+  .why { font: 500 19px/1.4 var(--serif); margin: 0; overflow-wrap: anywhere; }
+  .why .sub { display: block; font: 400 14px/1.5 var(--sans); color: var(--muted); margin-top: 4px; }
+
+  .cols { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr); gap: 28px; align-items: start; }
+  @media (max-width: 860px) { .cols { grid-template-columns: minmax(0, 1fr); } .verdict { grid-template-columns: 1fr; } }
+  section { display: grid; gap: 12px; min-width: 0; }
+  .hint { color: var(--muted); font-size: 13.5px; margin: 0; max-width: 70ch; }
+  .scroll { overflow-x: auto; border: 1px solid var(--rule); border-radius: 8px; background: var(--panel); }
+  table { border-collapse: collapse; width: 100%; font-size: 13.5px; }
+  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  tr:last-child td { border-bottom: 0; }
+  th { font: 600 11.5px/1.2 var(--sans); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+  td.num { white-space: nowrap; }
+  td.fac { font-family: var(--mono); font-size: 12.5px; overflow-wrap: anywhere; min-width: 16ch; }
+  .blk { display: inline-block; font: 500 12px/1.3 var(--mono); background: var(--accent-soft); color: var(--ink);
+    border-radius: 4px; padding: 2px 6px; margin: 0 4px 4px 0; white-space: nowrap; }
+  .blk em { font-style: normal; color: var(--accent); }
+  .dim { color: var(--muted); }
+  .unf { color: var(--warn); }
+
+  ol.trail { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; counter-reset: s; }
+  ol.trail li {
+    counter-increment: s; display: grid; grid-template-columns: 26px 1fr; gap: 10px;
+    background: var(--panel); border: 1px solid var(--rule); border-radius: 8px; padding: 10px 12px;
+  }
+  ol.trail li::before { content: counter(s); font: 600 13px/22px var(--mono); color: var(--accent); }
+  ol.trail b { font-weight: 600; }
+  ol.trail .math { font-family: var(--mono); font-size: 12.5px; overflow-wrap: anywhere; color: var(--muted); display: block; margin-top: 2px; }
+  .state { font: 600 11px/1 var(--sans); letter-spacing: .08em; text-transform: uppercase; margin-left: 6px; }
+  .state.good { color: var(--good); } .state.bad { color: var(--bad); } .state.warn { color: var(--warn); }
+
+  pre.cert {
+    margin: 0; max-height: 320px; overflow: auto; font: 12.5px/1.45 var(--mono);
+    background: var(--code); border-radius: 8px; padding: 12px; white-space: pre;
+  }
+  .row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; }
+  .ledger td:nth-child(n+3), .ledger th:nth-child(n+3) { text-align: right; }
+  .ledger td:last-child, .ledger th:last-child { text-align: left; }
+  .ledger .chip { font-size: 12px; }
+  .ok { color: var(--good); font-weight: 600; }
+  .theorem { border-left: 3px solid var(--accent); padding: 4px 0 4px 16px; display: grid; gap: 8px; max-width: 76ch; }
+  .theorem p { margin: 0; }
+  .theorem .t { font: 500 16px/1.5 var(--serif); }
+  footer { color: var(--muted); font-size: 13px; display: grid; gap: 6px; }
+  a { color: var(--accent); }
+  @media (prefers-reduced-motion: no-preference) { .verdict { transition: background-color .2s; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="mark">Briefcase · Erdős #699</div>
+    <h1>Decide a whole row from the <i>positions</i> of its primes</h1>
+    <p class="lede">#699 asks whether, for every i &lt; j ≤ n/2, some prime p ≥ i divides both C(n,i) and C(n,j).
+      Pick a row (n, i). The page factors n, n−1, …, n−i+1, marks every prime p ≥ i by the position it came from,
+      and runs the proved reduction. <b>Most rows are settled by three smooth parts and one inequality, with no factoring at all.</b>
+      Every number is exact (BigInt).</p>
+  </header>
+
+  <form class="controls" id="form" autocomplete="off">
+    <div class="field grow">
+      <label for="nIn">n (integer or expression: 2^64+1, 10^30+7)</label>
+      <input id="nIn" name="n" value="162" spellcheck="false">
+    </div>
+    <div class="field">
+      <label for="iIn">i (3–40)</label>
+      <input id="iIn" name="i" type="number" min="3" max="40" value="4">
+    </div>
+    <button type="submit" id="go">Decide the row</button>
+    <div class="chips" id="chips"></div>
+  </form>
+
+  <div class="verdict" id="verdict" aria-live="polite"></div>
+
+  <div class="cols">
+    <section>
+      <h2>The positional table</h2>
+      <p class="hint">Row t shows n − t = S<sub>t</sub>·R<sub>t</sub>. Every block M = p<sup>e</sup> in R<sub>t</sub> is a prime p ≥ i of C(n,i).
+        If p does not divide C(n,j), Kummer's theorem forces <span class="mono">j mod M ≤ t</span>.</p>
+      <div class="scroll"><table id="ptable"></table></div>
+    </section>
+    <section>
+      <h2>Decision trail</h2>
+      <ol class="trail" id="trail"></ol>
+    </section>
+  </div>
+
+  <section>
+    <div class="row">
+      <h2>Certificate</h2>
+      <button type="button" class="ghost" id="copy">Copy JSON</button>
+    </div>
+    <p class="hint">Same schema as <code>python3 tools/briefcase.py certify</code>. Save it and run
+      <code>python3 tools/briefcase.py verify FILE</code>. The verifier rechecks it with division, primality tests of the listed factors, and modular arithmetic.</p>
+    <pre class="cert" id="cert"></pre>
+  </section>
+
+  <section>
+    <h2>Residual ledger</h2>
+    <p class="hint">For each i, a counterexample can only live on a <em>special</em> n (bounds (c) and (d) below) or on an even n with n − 1 smooth.
+      The C engine walked every such n up to the bound. “Pairs past t ≤ 2” counts the (n, m) that survive the first two positions. No pair survived all of them.
+      The last column is the first special n above the bound, which no search has reached. Click it to decide that row here.</p>
+    <div class="scroll"><table class="ledger" id="ledger"></table></div>
+  </section>
+
+  <section>
+    <h2>Why this works</h2>
+    <div class="theorem">
+      <p class="t">Write n − t = S<sub>t</sub> R<sub>t</sub>. R<sub>t</sub> is the product of prime powers q<sup>e</sup> ∥ n − t with q &gt; i, or q = i and e ≥ 2.
+        If no prime p ≥ i divides both C(n,i) and C(n,j), then:</p>
+      <p>(a) R<sub>0</sub> | j. Write j = R<sub>0</sub>m with 1 ≤ m ≤ S<sub>0</sub>/2.<br>
+         (b) R<sub>t</sub> divides ∏<sub>r≤t</sub>(t m − r S<sub>0</sub>) for every 1 ≤ t &lt; i. This is exactly the positional condition.<br>
+         (c) 4(n−1) ≤ S<sub>0</sub>² S<sub>1</sub>.<br>
+         (d) If j &lt; n/2, then 6√3 (n−1)(n−2) ≤ S<sub>0</sub>³ S<sub>1</sub> S<sub>2</sub>.<br>
+         (e) If j = n/2, then R<sub>t</sub> = 1 at every odd t. In particular n − 1 is smooth.</p>
+      <p>So for each fixed i ≥ 3, at most O(X<sup>1/3</sup> log<sup>π(i)</sup>X) values n ≤ X can fail.</p>
+    </div>
+  </section>
+
+  <footer>
+    <div>Informal proof with exact computational checks. No novelty claim, not formalized, and not a solution of #699.
+      Primality is proven below 3.3·10<sup>24</sup>. Above that it is a strong probable-prime test, and the page says so.</div>
+    <div>Source: <a href="https://github.com/techno-optimist/erdos-frontier-atlas/blob/main/experiments/claude-699-general-i-20260928/README.md" target="_blank" rel="noopener">the note and proofs</a>,
+      <a href="https://github.com/techno-optimist/erdos-frontier-atlas/blob/main/tools/briefcase.py" target="_blank" rel="noopener">the command-line briefcase</a>,
+      <a href="https://github.com/techno-optimist/erdos-frontier-atlas/blob/main/atlas/residuals.json" target="_blank" rel="noopener">the residual ledger</a>.</div>
+  </footer>
+</div>
+
+<script>
+"use strict";
+// ---------------------------------------------------------------- data
+const LEDGER = [
+  // i, bound (display), special n, pairs past t<=2, central n, survivors
+  ["3", "10^15", 204256, 94, 0, 0],
+  ["4", "10^15", 1903607, 818, 30, 0],
+  ["5", "10^15", 3439525, 1569, 58, 0],
+  ["6", "10^15", 13373945, 6465, 360, 0],
+  ["7", "10^15", 24267369, 11978, 685, 0],
+  ["8", "10^15", 61580071, 33473, 2419, 0],
+];
+// the least special n above each searched bound (RESULT.json "frontier"): nobody has examined these
+const FRONTIER = {};
+const EXAMPLES = [
+  ["162", 4, "t = 3 does the work"],
+  ["2^40", 5, "a power of two"],
+  ["1000000105941565440", 4, "first special n above 10^18"],
+  ["4376", 8, "n − 1 smooth: central test"],
+  ["10^24+2", 7, "no factoring needed"],
+  ["10^40+12345", 5, "40 digits, odd"],
+];
+const PROVEN = 3317044064679887385961981n;
+
+// ---------------------------------------------------------------- arithmetic
+function sieve(n) { const s = new Uint8Array(n + 1), out = []; for (let p = 2; p <= n; p++) if (!s[p]) { out.push(p); for (let q = p * p; q <= n; q += p) s[q] = 1; } return out; }
+const SMALL = sieve(1000).map(BigInt);
+function modpow(a, e, m) { let r = 1n; a %= m; while (e > 0n) { if (e & 1n) r = r * a % m; a = a * a % m; e >>= 1n; } return r; }
+function gcd(a, b) { a = a < 0n ? -a : a; b = b < 0n ? -b : b; while (b) { [a, b] = [b, a % b]; } return a; }
+function modinv(a, m) { let [r0, r1, s0, s1] = [((a % m) + m) % m, m, 1n, 0n]; while (r1) { const q = r0 / r1; [r0, r1] = [r1, r0 - q * r1]; [s0, s1] = [s1, s0 - q * s1]; } return ((s0 % m) + m) % m; }
+function isPrime(n) {
+  if (n < 2n) return false;
+  for (const p of SMALL.slice(0, 25)) { if (n === p) return true; if (n % p === 0n) return false; }
+  let d = n - 1n, s = 0; while (!(d & 1n)) { d >>= 1n; s++; }
+  const bases = [2n, 3n, 5n, 7n, 11n, 13n, 17n, 19n, 23n, 29n, 31n, 37n, 41n];
+  if (n >= PROVEN) bases.push(43n, 47n, 53n, 59n, 61n, 67n, 71n, 73n, 79n, 83n, 89n, 97n);
+  outer: for (const a of bases) {
+    let x = modpow(a, d, n); if (x === 1n || x === n - 1n) continue;
+    for (let r = 1; r < s; r++) { x = x * x % n; if (x === n - 1n) continue outer; }
+    return false;
+  }
+  return true;
+}
+function isqrt(n) { if (n < 2n) return n; let x = BigInt(Math.floor(Math.sqrt(Number(n)))); while (x * x > n) x--; while ((x + 1n) * (x + 1n) <= n) x++; if (x * x > n || (x + 1n) * (x + 1n) <= n) { x = n; let y = (x + 1n) / 2n; while (y < x) { x = y; y = (x + n / x) / 2n; } } return x; }
+function brent(n, deadline) {
+  for (let c = 1n; c < 64n; c++) {
+    let y = 2n + c, m = 64n, g = 1n, r = 1n, q = 1n, x = y, ys = y;
+    while (g === 1n) {
+      x = y; for (let k = 0n; k < r; k++) y = (y * y + c) % n;
+      let k = 0n;
+      while (k < r && g === 1n) {
+        ys = y; const lim = m < r - k ? m : r - k;
+        for (let z = 0n; z < lim; z++) { y = (y * y + c) % n; q = q * (x > y ? x - y : y - x) % n; }
+        g = gcd(q, n); k += m;
+        if (Date.now() > deadline) return null;
+      }
+      r *= 2n;
+    }
+    if (g === n) { g = 1n; while (g === 1n) { ys = (ys * ys + c) % n; g = gcd(x > ys ? x - ys : ys - x, n); } }
+    if (g !== n && g !== 1n) return g;
+  }
+  return null;
+}
+// {fac: Map(prime -> exp), left: [unfactored composites]}
+function factor(n, budgetMs = 350) {
+  const fac = new Map(), left = [];
+  const add = (p, e = 1) => fac.set(p, (fac.get(p) || 0) + e);
+  for (const p of SMALL) { if (p * p > n) break; while (n % p === 0n) { add(p); n /= p; } }
+  const stack = n > 1n ? [n] : [], deadline = Date.now() + budgetMs;
+  while (stack.length) {
+    const x = stack.pop();
+    if (isPrime(x)) { add(x); continue; }
+    const r = isqrt(x); if (r * r === x) { stack.push(r, r); continue; }
+    const d = brent(x, deadline);
+    if (d === null) { left.push(x); continue; }
+    stack.push(d, x / d);
+  }
+  return { fac: new Map([...fac.entries()].sort((a, b) => (a[0] < b[0] ? -1 : 1))), left };
+}
+function split(x, i, primes) {
+  let s = 1n, y = x;
+  for (const p of primes) {
+    if (y % p === 0n) { let e = 0, pe = 1n; while (y % p === 0n) { y /= p; pe *= p; e++; } if (!(p === BigInt(i) && e >= 2)) s *= pe; }
+  }
+  return [s, x / s];
+}
+function carries(a, b, p) { let c = 0n, any = false; while (a || b || c) { const s = a % p + b % p + c; c = s >= p ? 1n : 0n; if (c) any = true; a /= p; b /= p; } return any; }
+function Pt(t, m, S0) { let out = 1n; const T = BigInt(t); for (let r = 0n; r <= T; r++) out *= T * m - r * S0; return out; }
+
+// ---------------------------------------------------------------- expression parser: integers, + - * ^ ** ( )
+function parseN(text) {
+  const src = text.replace(/\s+/g, "").replace(/\*\*/g, "^").replace(/[×·]/g, "*");
+  let pos = 0;
+  const peek = () => src[pos];
+  function atom() {
+    if (peek() === "(") { pos++; const v = expr(); if (peek() !== ")") throw new Error("missing )"); pos++; return v; }
+    if (peek() === "-") { pos++; return -atom(); }
+    const m = /^\d+/.exec(src.slice(pos)); if (!m) throw new Error("expected a number at position " + (pos + 1));
+    pos += m[0].length; return BigInt(m[0]);
+  }
+  function power() { const b = atom(); if (peek() === "^") { pos++; const e = power(); if (e < 0n || e > 4096n) throw new Error("exponent must be 0..4096"); return b ** e; } return b; }
+  function term() { let v = power(); while (peek() === "*") { pos++; v *= power(); } return v; }
+  function expr() { let v = term(); while (peek() === "+" || peek() === "-") { const op = src[pos++]; const w = term(); v = op === "+" ? v + w : v - w; } return v; }
+  const v = expr(); if (pos !== src.length) throw new Error("unexpected “" + src[pos] + "”");
+  if (v < 1n) throw new Error("n must be a positive integer");
+  if (v.toString(2).length > 3000) throw new Error("n is too large for this page (over 3000 bits)");
+  return v;
+}
+
+// ---------------------------------------------------------------- the reduction
+function residueOptions(M, t, S0) { const T = BigInt(t), inv = modinv(T, M), set = new Set(); for (let r = 0n; r <= T; r++) set.add(((r * S0 % M) * inv) % M); return [...set].sort((a, b) => (a < b ? -1 : 1)); }
+function mCandidates(S0, blocks12) {
+  const hi = (S0 - 1n) / 2n, use = [...blocks12].sort((a, b) => (a[0] > b[0] ? -1 : a[0] < b[0] ? 1 : 0));
+  let k = 0, W = 1n; while (k < use.length && W <= hi) { W *= use[k][0]; k++; }
+  const head = use.slice(0, k), tail = use.slice(k).map(([M, t]) => [M, new Set(residueOptions(M, t, S0))]);
+  const opts = head.map(([M, t]) => residueOptions(M, t, S0));
+  const out = new Set(); let work = 0;
+  const idx = new Array(head.length).fill(0);
+  for (;;) {
+    let r = 0n, mod = 1n;
+    head.forEach(([M], h) => { const v = opts[h][idx[h]]; const t = ((v - r) % M + M) % M * modinv(mod % M, M) % M; r += mod * t; mod *= M; });
+    for (let m = r > 0n ? r : mod; m <= hi; m += mod) {
+      if (++work > 200000) throw new Error("more than 200,000 candidate m; use the command-line briefcase");
+      if (tail.every(([M, ok]) => ok.has(m % M))) out.add(m);
+    }
+    let h = 0; while (h < head.length && ++idx[h] === opts[h].length) { idx[h] = 0; h++; }
+    if (h === head.length) break;
+  }
+  return [...out].sort((a, b) => (a < b ? -1 : 1));
+}
+
+function decide(n, i) {
+  const I = BigInt(i), primes = sieve(i).map(BigInt);
+  const res = { n, i, rows: [], trail: [], survivors: [], undecided: null, cert: { schema: "briefcase-p699-row-v1", n: n.toString(), i } };
+  const facCache = new Map();
+  const budget = Math.max(60, Math.floor(2400 / i));
+  const fac = (t) => { if (!facCache.has(t)) facCache.set(t, factor(n - BigInt(t), budget)); return facCache.get(t); };
+  const blocksAt = (t) => { const f = fac(t); return [...f.fac.entries()].filter(([p, e]) => p > I || (p === I && e >= 2)).map(([p, e]) => [p ** BigInt(e), t, p]); };
+  const allBlocks = () => { const out = []; for (let t = 0; t < i; t++) { if (fac(t).left.length) return null; out.push(...blocksAt(t)); } return out; };
+  const commonPrime = (j, blk) => { for (const p of blk.map((b) => b[2]).sort((a, b) => (a < b ? -1 : 1))) if (carries(j, n - j, p)) return p; return null; };
+  const passes = (j, blk) => blk.every(([M, t]) => j % M <= BigInt(t));
+
+  // the positional table (display): factor each n - t within a budget
+  const shown = Math.min(i, 40);
+  for (let t = 0; t < shown && n - BigInt(t) >= 1n; t++) {
+    const x = n - BigInt(t), f = fac(t), [S, R] = split(x, i, primes);
+    res.rows.push({ t, x, f, S, R, blocks: blocksAt(t) });
+  }
+  if (n < 2n * I + 2n) { res.kind = "vacuous"; res.cert.kind = "vacuous"; res.trail.push(["good", "No j fits", `n < 2i + 2, so there is no j with i < j ≤ n/2.`]); return finish(res); }
+
+  const S = [0, 1, 2].map((t) => split(n - BigInt(t), i, primes)[0]);
+  const R = [0, 1, 2].map((t) => (n - BigInt(t)) / S[t]);
+  res.S = S; res.R = R; res.cert.S = S.map(String);
+  res.trail.push(["", "Smooth parts", `S₀ = ${S[0]}, S₁ = ${S[1]}, S₂ = ${S[2]}. These need only trial division by the primes ≤ ${i}.`]);
+
+  // central j = n/2
+  if (n % 2n === 0n) {
+    if (R[1] !== 1n) {
+      res.trail.push(["good", "Central j = n/2 is settled", "n − 1 is not smooth (R₁ > 1). By (e) a failing central j needs R₁ = 1."]);
+      res.cert.central = { kind: "n-1 not smooth" };
+    } else {
+      const blk = allBlocks();
+      if (!blk) { res.undecided = "central j = n/2 needs every n − t factored"; res.cert.central = { kind: "tested", survivors: [] }; }
+      else {
+        const j = n / 2n; const surv = [];
+        if (passes(j, blk)) { const p = commonPrime(j, blk); res.survivors.push({ j, p }); surv.push({ j: j.toString(), p: p === null ? null : Number(p) }); res.trail.push([p ? "good" : "bad", "Central j = n/2 passes every position", p ? `The exact Kummer test finds the common prime ${p}.` : "No common prime: a counterexample."]); }
+        else res.trail.push(["good", "Central j = n/2 is settled", "n − 1 is smooth, but j = n/2 breaks (*) at some block."]);
+        res.cert.central = { kind: "tested", survivors: surv };
+      }
+    }
+  }
+  // non-central j
+  const lhsC = 4n * (n - 1n), rhsC = S[0] * S[0] * S[1];
+  const L = (n - 1n) * (n - 2n), W = S[0] ** 3n * S[1] * S[2];
+  if (S[0] < 2n) {
+    res.kind = "not special"; res.headline = ["S₀ = 1", "The only multiple of R₀ = n in (0, n] is n itself, so no j < n/2 can fail."];
+    res.trail.push(["good", "Every j < n/2 is settled", "S₀ = 1, so R₀ = n and (a) leaves no room for j."]);
+  } else if (lhsC > rhsC) {
+    res.kind = "not special"; res.headline = [`(c) fails: 4(n−1) > S₀²S₁`, `${lhsC} > ${rhsC}`];
+    res.trail.push(["good", "Every j is settled by (c)", `4(n−1) = ${lhsC} exceeds S₀²S₁ = ${rhsC}.`]);
+  } else if (108n * L * L > W * W) {
+    res.kind = "not special"; res.headline = [`(d) fails: 6√3(n−1)(n−2) > S₀³S₁S₂`, `108·((n−1)(n−2))² > (S₀³S₁S₂)², with S₀³S₁S₂ = ${W}`];
+    res.trail.push(["good", "(c) holds", `${lhsC} ≤ ${rhsC}.`]);
+    res.trail.push(["good", "Every j < n/2 is settled by (d)", `6√3·(n−1)(n−2) ≈ ${approx(L * 10392n / 1000n)} exceeds S₀³S₁S₂ = ${W}.`]);
+  } else {
+    res.kind = "special";
+    res.trail.push(["warn", "n is special", "Both (c) and (d) hold, so the positions have to be checked one by one."]);
+    const f1 = factor(R[1], 1500), f2 = factor(R[2], 1500);
+    if (f1.left.length || f2.left.length) { res.undecided = "factor R₁ and R₂ first (the page's time budget ran out)"; return finish(res); }
+    const blocks12 = [...[...f1.fac.entries()].map(([p, e]) => [p ** BigInt(e), 1]), ...[...f2.fac.entries()].map(([p, e]) => [p ** BigInt(e), 2])];
+    res.cert.factors = { "1": Object.fromEntries([...f1.fac.entries()].map(([p, e]) => [p.toString(), e])), "2": Object.fromEntries([...f2.fac.entries()].map(([p, e]) => [p.toString(), e])) };
+    let ms; try { ms = mCandidates(S[0], blocks12); } catch (err) { res.undecided = err.message; return finish(res); }
+    res.trail.push([ms.length ? "warn" : "good", `${ms.length} m pass positions 1 and 2`, ms.length ? `m ∈ {${ms.slice(0, 12).join(", ")}${ms.length > 12 ? ", …" : ""}}, found by Chinese remaindering over the blocks of R₁ and R₂.` : "Chinese remaindering over the blocks of R₁ and R₂ leaves no m < S₀/2."]);
+    const Rt = {}; for (let t = 3; t < i; t++) Rt[t] = split(n - BigInt(t), i, primes)[1];
+    res.cert.candidates = [];
+    let full = null;
+    for (const m of ms) {
+      const j = R[0] * m; let bad = null;
+      for (let t = 3; t < i; t++) if (Pt(t, m, S[0]) % Rt[t] !== 0n) { bad = t; break; }
+      if (bad !== null) { res.cert.candidates.push({ m: m.toString(), fails_at: bad }); res.trail.push(["good", `m = ${m} fails at position ${bad}`, `j = ${j}: R${sub(bad)} does not divide P${sub(bad)}(m).`]); continue; }
+      if (j <= I) { res.cert.candidates.push({ m: m.toString(), trivial: true }); res.trail.push(["good", `m = ${m} gives j = ${j} ≤ i`, "Outside the range i < j."]); continue; }
+      full = full || allBlocks();
+      if (!full) { res.undecided = `j = ${j} passes every position; the exact test needs every n − t factored`; return finish(res); }
+      const p = commonPrime(j, full); res.survivors.push({ j, p });
+      res.cert.candidates.push({ m: m.toString(), common_prime: p === null ? null : Number(p) });
+      res.trail.push([p ? "good" : "bad", `j = ${j} passes every position`, p ? `The exact Kummer test finds the common prime ${p}.` : "No common prime: a counterexample."]);
+    }
+  }
+  return finish(res);
+
+  function finish(r) {
+    r.holds = r.survivors.every((s) => s.p !== null);
+    if (r.undecided) r.state = "warn"; else r.state = r.holds ? "good" : "bad";
+    if (!r.cert.kind) r.cert.kind = r.kind || "vacuous";
+    // brute-force cross-check for small n
+    if (!r.undecided && n <= 4000n && n >= 2n * I + 2n) {
+      const blk = allBlocks();
+      const brute = []; for (let j = I + 1n; j <= n / 2n; j++) if (passes(j, blk)) brute.push(j);
+      const mine = r.survivors.map((s) => s.j).sort((a, b) => (a < b ? -1 : 1));
+      r.brute = brute.length === mine.length && brute.every((x, k) => x === mine[k]);
+    }
+    return r;
+  }
+}
+function sub(t) { return String(t).replace(/\d/g, (d) => "₀₁₂₃₄₅₆₇₈₉"[d]); }
+function approx(x) { const s = x.toString(); return s.length <= 6 ? s : `${s[0]}.${s.slice(1, 4)}·10^${s.length - 1}`; }
+
+// ---------------------------------------------------------------- rendering
+const $ = (id) => document.getElementById(id);
+function esc(s) { return String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c])); }
+function facText(f) {
+  const parts = [...f.fac.entries()].map(([p, e]) => (e > 1 ? `${p}^${e}` : `${p}`));
+  const left = f.left.map((c) => `<span class="unf" title="not factored within the page's time budget">[${c}]</span>`);
+  return parts.map(esc).concat(left).join(" · ") || "1";
+}
+function render(r) {
+  const v = $("verdict");
+  const label = r.state === "good" ? "Row holds" : r.state === "bad" ? "Counterexample" : "Undecided";
+  let why, subline;
+  if (r.undecided) { why = "Needs more factoring"; subline = r.undecided; }
+  else if (r.kind === "vacuous") { why = "No j lies in (i, n/2]"; subline = ""; }
+  else if (r.headline) { why = r.headline[0]; subline = r.headline[1] + (r.n % 2n === 0n ? " The central j = n/2 is settled separately (step 2)." : ""); }
+  else { why = `Special n: every candidate is eliminated`; subline = `${r.cert.candidates ? r.cert.candidates.length : 0} candidate m survive positions 1 and 2. The later positions or the exact Kummer test remove each one.`; }
+  if (r.state === "bad") why = "A pair with no common prime ≥ i";
+  if (r.brute !== undefined) subline += r.brute ? " Brute force over every j agrees." : " BRUTE FORCE DISAGREES — please report.";
+  v.innerHTML = `<span class="pill ${r.state}">${label}</span><p class="why">${esc(why)}<span class="sub">${esc(subline)}</span></p>`;
+
+  const I = BigInt(r.i);
+  let rows = `<thead><tr><th>t</th><th>n − t</th><th>S<sub>t</sub></th><th>blocks M (p ≥ ${r.i})</th></tr></thead><tbody>`;
+  for (const row of r.rows) {
+    const blks = row.blocks.map(([M, t, p]) => `<span class="blk">${esc(M === p ? `${p}` : `${p}^${log(M, p)}`)} <em>j mod M ≤ ${t}</em></span>`).join("");
+    const pending = row.f.left.length ? `<span class="unf">+ unfactored part</span>` : "";
+    rows += `<tr><td class="num">${row.t}</td><td class="fac">${facText(row.f)}</td><td class="num mono">${esc(row.S)}</td><td>${blks || (row.R === 1n ? '<span class="dim">none (smooth)</span>' : "")}${pending}</td></tr>`;
+  }
+  if (r.i > r.rows.length) rows += `<tr><td colspan="4" class="dim">Only the first ${r.rows.length} positions are shown.</td></tr>`;
+  $("ptable").innerHTML = rows + "</tbody>";
+
+  $("trail").innerHTML = r.trail.map(([st, head, body]) => `<li><div><b>${esc(head)}</b>${st ? `<span class="state ${st}">${st === "good" ? "settled" : st === "bad" ? "fails" : "open"}</span>` : ""}<span class="math">${esc(body)}</span></div></li>`).join("");
+  $("cert").textContent = r.undecided ? "No certificate: the row is not decided on this page." : JSON.stringify(r.cert, null, 1);
+}
+function log(M, p) { let e = 0; while (M > 1n) { M /= p; e++; } return e; }
+function renderLedger() {
+  let h = `<thead><tr><th>slice</th><th>searched through</th><th>special n</th><th>pairs past t ≤ 2</th><th>central n</th><th>survivors</th><th>first unsearched special n</th></tr></thead><tbody>`;
+  for (const [i, b, s, c, z, sv] of LEDGER) {
+    const next = FRONTIER[i] ? `<button type="button" class="chip mono" data-n="${FRONTIER[i]}" data-i="${i}">${FRONTIER[i]}</button>` : "";
+    h += `<tr><td>i = ${i}</td><td class="num">${b.replace(/\^(\d+)/, "<sup>$1</sup>")}</td><td class="num">${s.toLocaleString("en-US")}</td><td class="num">${c.toLocaleString("en-US")}</td><td class="num">${z.toLocaleString("en-US")}</td><td class="num ok">${sv}</td><td>${next}</td></tr>`;
+  }
+  $("ledger").innerHTML = h + "</tbody>";
+}
+function run() {
+  let n, i;
+  try { n = parseN($("nIn").value); i = parseInt($("iIn").value, 10); if (!(i >= 3 && i <= 40)) throw new Error("i must be between 3 and 40"); }
+  catch (err) { $("verdict").innerHTML = `<span class="pill warn">Check input</span><p class="why">${esc(err.message)}</p>`; return; }
+  $("go").textContent = "Deciding…";
+  setTimeout(() => { try { render(decide(n, i)); } catch (err) { $("verdict").innerHTML = `<span class="pill warn">Error</span><p class="why">${esc(err.message)}</p>`; } $("go").textContent = "Decide the row"; }, 10);
+}
+$("form").addEventListener("submit", (e) => { e.preventDefault(); run(); });
+$("chips").innerHTML = EXAMPLES.map(([n, i, what], k) => `<button type="button" class="chip" data-k="${k}">(${esc(n)}, ${i}) <small>${esc(what)}</small></button>`).join("");
+$("chips").addEventListener("click", (e) => { const b = e.target.closest(".chip"); if (!b) return; const [n, i] = EXAMPLES[+b.dataset.k]; $("nIn").value = n; $("iIn").value = i; run(); });
+$("ledger").addEventListener("click", (e) => {
+  const b = e.target.closest("button[data-n]"); if (!b) return;
+  $("nIn").value = b.dataset.n; $("iIn").value = b.dataset.i; run();
+  $("form").scrollIntoView({ behavior: "smooth", block: "start" });
+});
+$("copy").addEventListener("click", () => {
+  const text = $("cert").textContent;
+  const done = () => { $("copy").textContent = "Copied"; setTimeout(() => ($("copy").textContent = "Copy JSON"), 1500); };
+  const fallback = () => { const s = window.getSelection(), rg = document.createRange(); rg.selectNodeContents($("cert")); s.removeAllRanges(); s.addRange(rg); $("copy").textContent = "Selected: press Ctrl/Cmd+C"; };
+  try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
+});
+renderLedger();
+run();
+</script>
