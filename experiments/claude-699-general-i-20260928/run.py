@@ -56,6 +56,15 @@ def run(exe, i, X, J):
             "seconds": round(time.time() - t0, 1), "jobs": J}
 
 
+def window(exe, i, lo, hi, J):
+    """Every special n in (lo, hi], in J shards: (count, sorted list of n, survivors)."""
+    with ThreadPoolExecutor(max_workers=J) as ex:
+        parts = list(ex.map(lambda k: engine(exe, i, hi, "--from", lo, "--list", "--shard", f"{k}/{J}"), range(J)))
+    special = sorted(s[0] for p in parts for s in p[2])
+    assert len(special) == sum(p[0][0] for p in parts)
+    return len(special), special, sorted(s for p in parts for s in p[1])
+
+
 if __name__ == "__main__":
     args = [a for a in sys.argv[1:] if not a.startswith("--exe")]
     exe = next((a.split("=", 1)[1] for a in sys.argv[1:] if a.startswith("--exe=")), None) or build()

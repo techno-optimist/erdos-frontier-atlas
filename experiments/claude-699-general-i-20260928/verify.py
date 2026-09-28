@@ -80,9 +80,8 @@ def rows(exe, runs, label):
 
 def frontier(exe, res):
     for f in res["frontier"]:
-        st, surv, special = R.engine(exe, f["i"], f["to"], "--from", f["from"], "--list")
-        got = sorted(s[0] for s in special)[:len(f["least"])]
-        assert got == f["least"] and st[0] == f["special_in_window"] and surv == [], f
+        count, special, surv = R.window(exe, f["i"], f["from"], f["to"], 4)
+        assert special[:len(f["least"])] == f["least"] and count == f["special_in_window"] and surv == [], f
     print(f"frontier samples: the least special n above each searched bound match ({len(res['frontier'])} windows)")
 
 

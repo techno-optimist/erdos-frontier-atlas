@@ -44,9 +44,9 @@ def main():
         checkpoints = [R.run(exe, i, X, jobs) for i, X in CHECKPOINTS]
         frontier = []
         for i, X in CAMPAIGN:
-            st, surv, special = R.engine(exe, i, X + WINDOW, "--from", X, "--list")
-            frontier.append({"i": i, "from": X, "to": X + WINDOW, "special_in_window": st[0],
-                             "least": sorted(s[0] for s in special)[:LEAST], "survivors": surv})
+            count, special, surv = R.window(exe, i, X, X + WINDOW, jobs)
+            frontier.append({"i": i, "from": X, "to": X + WINDOW, "special_in_window": count,
+                             "least": special[:LEAST], "survivors": surv})
     src = (HERE / "search699.c").read_bytes()
     res = {"engine": "search699.c", "engine_sha256": hashlib.sha256(src).hexdigest(),
            "claim": "for each row, no pair (n, j) with n <= X passes (*) at every prime p >= i of "
