@@ -47,7 +47,7 @@ The state of this edition, generated from the data:
 
 | this edition | state |
 |---|---|
-| data through | **2026-09-27** (latest provenance/evidence date in the gap map) |
+| data through | **2026-09-28** (latest provenance/evidence date in the gap map) |
 | the ledger | **225** bounded quantities |
 | confidence | C0 0 · C1 0 · C2 10 · C3 215 |
 | movements on the board | **13** (🟢 9 · 🔴 2 · 🟡 2) — corrected claims kept visible |
@@ -72,7 +72,7 @@ artifact exists. The map does not pretend its own entries are verified; the
 labeling *is* the release gate.
 
 - **225 bounded quantities** on the map ([`atlas/gap_map.json`](../atlas/gap_map.json)).
-- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **17** lane-added, **196** agent-mined.
+- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **18** lane-added, **195** agent-mined.
 - Confidence distribution (computed from `evidence[]`, never asserted): **C0** 0 · **C1** 0 · **C2** 10 · **C3** 215.
 - **79 witness-workable**: still open, with a side a single submitted
   construction — checked by the entry's stated verifier — can move.

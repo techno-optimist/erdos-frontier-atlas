@@ -129,8 +129,11 @@ literature-grade (C3) unless a certificate backs it.
 | 376 | closed | the successor iteration is exact and cheap: all 14,273 positive terms ≤ 10^100 in ~25 s; infinitude is the wall |
 | 1005 | closed | a(101) = 27 recomputed; parent solved upstream with a reported exact formula |
 | 791 | A001212(25) ∈ [227, 350] | the cell A066063(51) was never open: A066063(n) = 1 + min{k : A001212(k) ≥ n} for the classical postage-stamp table, known to k = 24, so a(51) = 12 and the table is determined to n = 212; a 25-element basis found here covers 1..227 |
+| 301 | A390394(73) ∈ [53, 54] | a(39..72) are in OEIS (Carney, 2026-08-02); found by the checker |
 | 20 | lower 39 → 40 | the Lean-checked 39-triple family re-checked (no 4-sunflower); the claimed upper 50 is noted, not recorded |
 | 458, 773, 864, 1100 | unchanged bounds | dated notes on the external claims, marked unverified |
+
+**Re-running the OEIS part of this check.** `tools/oeis_cell_freshness.py --seq-dir DIR --fetch` compares every open gap-map cell of the form A######(N) with its OEIS record's data and b-file extent. It is read-only. Its first run (2026-09-28) added #301, whose A390394 data now reaches n = 72 (re-pointed to a(73)). It also found #588, where the OEIS data and Friedman's bounds table disagree about A006065(19) and A006065(20); rows #588 and #101 now carry a dated SOURCE CONFLICT note.
 
 Two limits of this session: OEIS b-files sit in Git LFS on the data mirror and
 could not be read, and building a third-party DRAT checker (`drat-trim`) for

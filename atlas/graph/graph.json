@@ -702,7 +702,7 @@
    "type": "applies"
   },
   {
-   "dst": "S:gap:301:b3e64916",
+   "dst": "S:gap:301:cedd6585",
    "predicate": "workable",
    "source": "atlas/gap_map.json",
    "src": "M:witness-local-search",
@@ -9391,7 +9391,7 @@
    "type": "has_surface"
   },
   {
-   "dst": "S:gap:301:b3e64916",
+   "dst": "S:gap:301:cedd6585",
    "source": "atlas/gap_map.json",
    "src": "P301",
    "tier": "deterministic-rule",
@@ -11353,7 +11353,7 @@
   {
    "dst": "O:A390394",
    "source": "atlas/gap_map.json",
-   "src": "S:gap:301:b3e64916",
+   "src": "S:gap:301:cedd6585",
    "tier": "deterministic-rule",
    "type": "measures"
   },
@@ -70093,7 +70093,7 @@
     "value": "23",
     "year": 2010
    },
-   "notes": "The $100 headline (number of 4-point lines is o(n^2) given no 5 collinear) is asymptotic and cannot be settled by one configuration. Finite surface: exact optima stuck at n=20 since ~2010; a(22) >= 28 (Du, OEIS illustration; also Pegg 2020 construction) but no verified a(21) lower bound better than monotone 23 was found. Hub deep record grades the exact direction WALL: order-type enumeration plus existsR-realizability (stretchability) — not SAT/DRAT-shaped; and lower-bound nudges must out-produce algebraic cubic-curve constructions. Integer-coordinate variant A172992 (known to n=27, Kamenetsky 2012) is provably below the real optimum for several n.",
+   "notes": "SOURCE CONFLICT (2026-09-28 curation): OEIS A006065 lists a(19) = 20 and a(20) = 23 as terms (extension lines credit Zhao Hui Du, 2009 and 2010), and row #101 treats a(20) = 23 as exact; row #588, from Erich Friedman's table as read on 2026-07-18, gives n = 19 as 20..28 and n = 20 as 23..30, and Du's linked list of proven optima covers 13..18 trees. Neither page could be re-read from the 2026-09-28 session (both hosts blocked). Until someone reads them, treat a(19) and a(20) as disputed: do not cite them as exact, and read both sources before spending compute on either cell. The $100 headline (number of 4-point lines is o(n^2) given no 5 collinear) is asymptotic and cannot be settled by one configuration. Finite surface: exact optima stuck at n=20 since ~2010; a(22) >= 28 (Du, OEIS illustration; also Pegg 2020 construction) but no verified a(21) lower bound better than monotone 23 was found. Hub deep record grades the exact direction WALL: order-type enumeration plus existsR-realizability (stretchability) — not SAT/DRAT-shaped; and lower-bound nudges must out-produce algebraic cubic-curve constructions. Integer-coordinate variant A172992 (known to n=27, Kamenetsky 2012) is provably below the real optimum for several n.",
    "oeis": "A006065",
    "overlay": "gap_map",
    "problem": 101,
@@ -72402,35 +72402,35 @@
    "confidence": "C3",
    "evidence": [
     {
-     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
-     "date": "2026-07-18",
+     "artifact": "OEIS A390394 data a(1..72) (Carney 2026 for a(39..72)); not replayed here",
+     "date": "2026-09-28",
      "type": "literature"
     }
    ],
    "exact_feasibility": "cell",
-   "id": "S:gap:301:b3e64916",
+   "id": "S:gap:301:cedd6585",
    "kind": "next_cell",
    "lower": {
-    "source": "Monotonicity a(39) >= a(38) = 29: any valid subset for n=38 remains valid for n=39 (OEIS A390394 data, retrieved 2026-07-18)",
-    "value": "29",
-    "year": 2025
+    "source": "Monotonicity a(73) >= a(72) = 53: any valid subset for n=72 remains valid for n=73 (OEIS A390394 data; a(39)-a(72) from W. A. Carney, 2026-08-02)",
+    "value": "53",
+    "year": 2026
    },
-   "notes": "Headline asymptotic gap (erdosproblems.com/301, edited 2026-01-16): N/2 <= f(N) — take A = (N/2, N] — and f(N) <= (25/28 + o(1))N ~ 0.8929N via an elementary disjoint-blocks argument S_a = {2a,3a,4a,6a,12a} credited to Wouter van Doorn (site-recorded observation, not refereed). Erdős conjectured f(N) = (1/2 + o(1))N. If b_i need not be distinct the threshold drops to N/2 exactly (Cambie–van Doorn, site-recorded). Sequence created Nov 2025 (Raza), 38 terms, keyword 'hard,more', published Python generator; each new exact cell is a record. Cf. #302, #327.",
+   "notes": "PREVIOUS CELL CLOSED EXTERNALLY (found 2026-09-28 by tools/oeis_cell_freshness.py): OEIS A390394 now lists a(39..72), from W. A. Carney (2026-08-02), by integer linear programming over lazily generated forbidden-set constraints with a complete separation oracle and exact arithmetic; a(39) = 30, the upper bracket of the old cell, and a(72) = 53. The record carries keyword 'hard', so the next cell is graded plausible rather than open-easy. Headline asymptotic gap (erdosproblems.com/301, edited 2026-01-16): N/2 <= f(N) — take A = (N/2, N] — and f(N) <= (25/28 + o(1))N ~ 0.8929N via an elementary disjoint-blocks argument S_a = {2a,3a,4a,6a,12a} credited to Wouter van Doorn (site-recorded observation, not refereed). Erdős conjectured f(N) = (1/2 + o(1))N. If b_i need not be distinct the threshold drops to N/2 exactly (Cambie–van Doorn, site-recorded). Sequence created Nov 2025 (Raza), 38 terms, keyword 'hard,more', published Python generator; each new exact cell is a record. Cf. #302, #327.",
    "oeis": "A390394",
    "overlay": "gap_map",
    "problem": 301,
-   "quantity": "A390394(39) — maximum size of A ⊆ {1..39} with no solution 1/a = 1/b_1 + ... + 1/b_k over distinct elements of A; first uncomputed cell (a(1..38) known, a(38) = 29)",
+   "quantity": "A390394(73) — maximum size of A ⊆ {1..73} with no solution 1/a = 1/b_1 + ... + 1/b_k over distinct elements of A; first cell beyond the OEIS data (a(1..72) known, a(72) = 53)",
    "status": "open",
    "type": "surface",
    "upper": {
-    "source": "a(n+1) <= a(n) + 1 (delete element 39 from an optimal subset) with a(38) = 29 (OEIS A390394 data, retrieved 2026-07-18)",
-    "value": "30",
-    "year": 2025
+    "source": "a(n+1) <= a(n) + 1 (delete element 73 from an optimal subset) with a(72) = 53 (OEIS A390394 data)",
+    "value": "54",
+    "year": 2026
    },
-   "witness_feasibility": "open-easy",
-   "witness_object": "A subset A ⊆ {1,...,39} with |A| = 30 such that no a in A equals a reciprocal-sum of a distinct subset of A \\ {a}; exhibiting one pins a(39) = 30 (gap is exactly {29,30}); otherwise exhaustive search certifies a(39) = 29",
+   "witness_feasibility": "plausible",
+   "witness_object": "A subset A ⊆ {1,...,73} with |A| = 54 such that no a in A equals a reciprocal-sum of a distinct subset of A \\ {a}; exhibiting one pins a(73) = 54 (the gap is exactly {53,54}); otherwise an exhaustive search or an ILP optimality proof certifies a(73) = 53",
    "witness_side": "lower",
-   "witness_verifier": "For each a in A: subset-sum check over {1/b : b in A, b != a} for target 1/a in exact rationals (meet-in-the-middle over <= 2^15 partial sums, or lcm-scaled integer DP); seconds, dependency-free"
+   "witness_verifier": "For each a in A: decide whether 1/a is a sum of distinct 1/b with b in A, b > a, in exact rationals. Prune on prime powers that divide only one candidate denominator, since such a term cannot cancel. This is the separation oracle of the OEIS computation. With |A| = 54 plain meet-in-the-middle is no longer cheap; seconds to minutes with pruning, dependency-free"
   },
   {
    "confidence": "C3",
@@ -74511,7 +74511,7 @@
     "value": "20",
     "year": null
    },
-   "notes": "Headline $100 problem is asymptotic — is f_k(n)=o(n^2) for k>=4 (no k+1 points collinear)? — explicitly not resolvable by finite computation. Known (paraphrased from problem page): Kárteszi 1963 f_k(n) >>_k n log n; Grünbaum 1976 f_k(n) >>_k n^{1+1/(k-2)}; Solymosi–Stojaković 2013 (arXiv:1107.0327) f_k(n) >>_k n^{2-O_k(1/sqrt(log n))} — so the answer is delicately between n^{2-o(1)} and o(n^2). The record lane is the linked orchard tables: A006065 exact through n=18 (a(18)=18; Zhao Hui Du verified a(13)-a(16) by code); Friedman gaps: n=19: 20-28, n=20: 23-30, n=21: 24-31, n=22: 26-38. Companion A008997 (exactly-5-point lines): first gap a(15) in [6,9], Berloquin a(21) >= 12. Lower-bound records in this family moved in 2005 (Lin, a(20)>=23) and 2018-2020 (Pegg, n=22 constructions via elliptic-curve/projective tricks) — hence plausible, not open-easy. Exact values are walled by continuous realizability (order-type enumeration stops near n=11). Hub status for this problem is 'wall' (exact side); witness lane is live.",
+   "notes": "SOURCE CONFLICT (2026-09-28 curation): OEIS A006065 lists a(19) = 20 and a(20) = 23 as terms (extension lines credit Zhao Hui Du, 2009 and 2010), and row #101 treats a(20) = 23 as exact; row #588, from Erich Friedman's table as read on 2026-07-18, gives n = 19 as 20..28 and n = 20 as 23..30, and Du's linked list of proven optima covers 13..18 trees. Neither page could be re-read from the 2026-09-28 session (both hosts blocked). Until someone reads them, treat a(19) and a(20) as disputed: do not cite them as exact, and read both sources before spending compute on either cell. Headline $100 problem is asymptotic — is f_k(n)=o(n^2) for k>=4 (no k+1 points collinear)? — explicitly not resolvable by finite computation. Known (paraphrased from problem page): Kárteszi 1963 f_k(n) >>_k n log n; Grünbaum 1976 f_k(n) >>_k n^{1+1/(k-2)}; Solymosi–Stojaković 2013 (arXiv:1107.0327) f_k(n) >>_k n^{2-O_k(1/sqrt(log n))} — so the answer is delicately between n^{2-o(1)} and o(n^2). The record lane is the linked orchard tables: A006065 exact through n=18 (a(18)=18; Zhao Hui Du verified a(13)-a(16) by code); Friedman gaps: n=19: 20-28, n=20: 23-30, n=21: 24-31, n=22: 26-38. Companion A008997 (exactly-5-point lines): first gap a(15) in [6,9], Berloquin a(21) >= 12. Lower-bound records in this family moved in 2005 (Lin, a(20)>=23) and 2018-2020 (Pegg, n=22 constructions via elliptic-curve/projective tricks) — hence plausible, not open-easy. Exact values are walled by continuous realizability (order-type enumeration stops near n=11). Hub status for this problem is 'wall' (exact side); witness lane is live.",
    "oeis": "A006065",
    "overlay": "gap_map",
    "problem": 588,
@@ -77580,7 +77580,7 @@
   },
   {
    "id": "W:gap:101:1a7e3810",
-   "reason": "The $100 headline (number of 4-point lines is o(n^2) given no 5 collinear) is asymptotic and cannot be settled by one configuration. Finite surface: exact optima stuck at n=20 since ~2010; a(22) >= 28 (Du, OEIS illustration; also Pegg 2020 construction) but no verified a(21) lower bound better than monotone 23 was found. Hub deep record grades the exact direction WALL: order-type enumeration plus existsR-realizability (stretchability) — not SAT/DRAT-shaped; and lower-bound nudges must …[truncated; see source]",
+   "reason": "SOURCE CONFLICT (2026-09-28 curation): OEIS A006065 lists a(19) = 20 and a(20) = 23 as terms (extension lines credit Zhao Hui Du, 2009 and 2010), and row #101 treats a(20) = 23 as exact; row #588, from Erich Friedman's table as read on 2026-07-18, gives n = 19 as 20..28 and n = 20 as 23..30, and Du's linked list of proven optima covers 13..18 trees. Neither page could be re-read from the 2026-09-28 session (both hosts blocked). Until someone reads them, treat a(19) and a(20) as disputed: do not …[truncated; see source]",
    "scope": "surface",
    "source": "atlas/gap_map.json exact_feasibility=wall",
    "type": "wall",
@@ -78284,7 +78284,7 @@
   },
   {
    "id": "W:gap:588:cfccdecb",
-   "reason": "Headline $100 problem is asymptotic — is f_k(n)=o(n^2) for k>=4 (no k+1 points collinear)? — explicitly not resolvable by finite computation. Known (paraphrased from problem page): Kárteszi 1963 f_k(n) >>_k n log n; Grünbaum 1976 f_k(n) >>_k n^{1+1/(k-2)}; Solymosi–Stojaković 2013 (arXiv:1107.0327) f_k(n) >>_k n^{2-O_k(1/sqrt(log n))} — so the answer is delicately between n^{2-o(1)} and o(n^2). The record lane is the linked orchard tables: A006065 exact through n=18 (a(18)=18; Zhao Hui Du …[truncated; see source]",
+   "reason": "SOURCE CONFLICT (2026-09-28 curation): OEIS A006065 lists a(19) = 20 and a(20) = 23 as terms (extension lines credit Zhao Hui Du, 2009 and 2010), and row #101 treats a(20) = 23 as exact; row #588, from Erich Friedman's table as read on 2026-07-18, gives n = 19 as 20..28 and n = 20 as 23..30, and Du's linked list of proven optima covers 13..18 trees. Neither page could be re-read from the 2026-09-28 session (both hosts blocked). Until someone reads them, treat a(19) and a(20) as disputed: do not …[truncated; see source]",
    "scope": "surface",
    "source": "atlas/gap_map.json exact_feasibility=wall",
    "type": "wall",
