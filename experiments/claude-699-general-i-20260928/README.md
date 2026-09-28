@@ -155,7 +155,7 @@ few (n, m) survive the first two positions, and none survives the third.
 ## Replay
 
 ```sh
-python3 -I experiments/claude-699-general-i-20260928/check_small.py    # ~1 min
+python3 -I experiments/claude-699-general-i-20260928/check_small.py    # ~1.5 min
 python3 -I experiments/claude-699-general-i-20260928/verify.py         # pins C to Python; ~2 min
 python3 -I experiments/claude-699-general-i-20260928/verify.py --full  # every row of RESULT.json
 ```
@@ -165,7 +165,7 @@ python3 -I experiments/claude-699-general-i-20260928/verify.py --full  # every r
 2. Checks every part of Theorem 2 on every pair that passes (*) at the first positions, for
    n ≤ 2500 and i ≤ 10.
 3. Checks that the CRT candidates equal direct enumeration on every special n ≤ 2·10⁵.
-4. Checks that (b) and (*) agree position by position in 39 million cases.
+4. Checks that (b) and (*) agree position by position in 20 million cases.
 5. Checks that no pair with n ≤ 3000 passes (*).
 6. Runs a **negative control.** With only the positions t ≤ 2 required, 401 pairs do pass for
    i = 4..10, and the search reproduces that brute-force list exactly.
