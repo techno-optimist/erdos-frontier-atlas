@@ -14,7 +14,7 @@ the release-facing summary of its current state.
 ## The ledger at a glance
 
 - **225 bounded quantities** across the Erdős-hub problems.
-- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **21** lane-added, **192** agent-mined.
+- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **22** lane-added, **191** agent-mined.
 - Honest label: the agent-mined entries are structurally validated but **not yet
   independently number-re-verified** — they carry literature-grade evidence and
   therefore class C3 until a verification artifact exists (the WS1 release gate
@@ -30,8 +30,8 @@ validator fails any stored class the recorded evidence does not prove.
 |---|---|---|
 | C0 | contract-bound formal proof, machine-checked | 0 |
 | C1 | &ge;2 contract-bound independent replays at the claimed range | 0 |
-| C2 | exactly one contract-bound verified replay | 13 |
-| C3 | literature- or numerics-grade — no independent in-project verification artifact | 212 |
+| C2 | exactly one contract-bound verified replay | 14 |
+| C3 | literature- or numerics-grade — no independent in-project verification artifact | 211 |
 
 ## Entries by kind
 
@@ -80,7 +80,7 @@ truncated — the full values, sources, and verifier specs live in
 | [#820](https://www.erdosproblems.com/820) | [A263647](https://oeis.org/A263647) | A263647 extension — integers n with gcd(2^n-1, 3^n-1) = 1 (equivalently H(n)=3 in Erdős' notation); b-file en… | lower | open-easy | 24898 | ? |
 | [#852](https://www.erdosproblems.com/852) | [A078515](https://oeis.org/A078515) | A079007(31) (records chain of A053597/A078515/A079889) — smallest prime starting a run of 31 pairwise-distinc… | upper | open-easy | >= 196948778371 | ? |
 | [#853](https://www.erdosproblems.com/853) | [A390769](https://oeis.org/A390769) | A390769 extension — r(n) = least even positive integer absent from the first n prime gaps (Erdős' r(x)); b-fi… | lower | open-easy | n = 72 (a(72) = 16) | ? |
-| [#864](https://www.erdosproblems.com/864) | [A389182](https://oeis.org/A389182) | A389182(101) — max size of A ⊆ {1..101} such that at most one integer has ≥2 representations as a+b (a≤b∈A);… | lower | open-easy | 16 | 17 |
+| [#864](https://www.erdosproblems.com/864) | [A389182](https://oeis.org/A389182) | A389182(118) — max size of A ⊆ {1..118} such that at most one integer has ≥2 representations as a+b (a≤b∈A);… | lower | open-easy | 18 | 19 |
 | [#879](https://www.erdosproblems.com/879) | [A186736](https://oeis.org/A186736) | A186736(2501) = G(2501) — maximum sum of a pairwise-coprime subset of {1..2501}; first uncomputed table cell… | lower | open-easy | 455192 | 457693 |
 | [#913](https://www.erdosproblems.com/913) | [A359747](https://oeis.org/A359747) | A359747 verified frontier — largest verified k such that k(k+1) has all-distinct exponents in its prime facto… | lower | open-easy | 32327407 | ? |
 | [#932](https://www.erdosproblems.com/932) | [A387864](https://oeis.org/A387864) | A387864 verified frontier — largest verified r such that at least two integers strictly between p_r and p_{r+… | lower | open-easy | 6386830 | ? |

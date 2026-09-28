@@ -5995,43 +5995,43 @@
   {
    "problem": 864,
    "oeis": "A389182",
-   "quantity": "A389182(101) — max size of A ⊆ {1..101} such that at most one integer has ≥2 representations as a+b (a≤b∈A); first uncomputed table cell (table complete through n=100)",
+   "quantity": "A389182(118) — max size of A ⊆ {1..118} such that at most one integer has ≥2 representations as a+b (a≤b∈A); first cell past certificates/erdos-864 (table certified through N = 117)",
    "kind": "next_cell",
    "lower": {
-    "value": "16",
-    "source": "monotonicity from the OEIS A389182 b-file, a(100) = 16 (n = 1..100, Alper Ferudun 2026; D. Spencer's extremizing sets cover n <= 69)",
-    "year": 2025
+    "value": "18",
+    "source": "A389182(117) = 18 (certificates/erdos-864, contract erdos-864-a389182-new) and monotonicity",
+    "year": 2026
    },
    "upper": {
-    "value": "17",
-    "source": "increment bound a(n+1) ≤ a(n)+1 (deleting the element n+1 preserves validity; derived here)",
-    "year": null
+    "value": "19",
+    "source": "increment bound a(n+1) ≤ a(n)+1 (deleting the element n+1 preserves validity)",
+    "year": 2026
    },
    "witness_side": "lower",
-   "witness_object": "a 17-element subset of {1..101} in which at most one sum value has multiple representations (pins a(101)=17; any exhaustive search closing the cell also counts)",
+   "witness_object": "a 19-element subset of {1..118} with at most one repeated sum pins a(118) = 19; otherwise an exhaustive search refutes it, as the certificate does for every smaller N",
    "witness_verifier": "O(|A|^2): build multiset {a+b : a≤b∈A}, count values with multiplicity ≥2, accept iff ≤1 such value; pure-python, milliseconds",
    "witness_feasibility": "open-easy",
    "exact_feasibility": "cell",
    "status": "open",
-   "notes": "EXTERNALLY REPORTED, UNVERIFIED (2026-09-27 freshness sweep): an exact exhaustive computation attributed to erdosproblemaday.com gives a(101) = ... = a(106) = 16, a(107..116) = 17, a(117..134) = 18, a(135..152) = 19 and a(153) = 20, i.e. a(101) at the lower bracket; the page was not reachable from the checking session and no public copy was found. Confirming a(101) = 16 (refuting 17) is the cheap next step. Sequence created Oct 2025 — everything past n=100 is fresh territory; branch-and-bound/ILP plausibly extends the table well past 150 in hours. Asymptotic layer (the actual Erdős question): Erdős–Freud [ErFr91] construction gives liminf a(N)/√N ≥ 2/√3 ≈ 1.1547 (Sidon set in [1,N/3] ∪ its reflection); conjectured tight. One-exception sets are quasi-Sidon (only one colliding sum ⇒ |A+A| ~ |A|²/2, containment derived here), so Pikhurko's #840 upper bound (1/4+1/(π+2)²)^{-1/2} ≈ 1.8626 applies [Pi06]; erdosproblems.com lists #864 as a weaker form of #840. Asymptotic gap [1.1547, 1.8626] on the constant is a wall; the table lane is the machine surface.",
+   "notes": "PREVIOUS CELL CLOSED HERE (2026-09-28): certificates/erdos-864 decides A389182(N) for every N ≤ 117 by one exhaustive search per N (1 and N fixed, reflection broken; C engine pinned node for node to a Python reference for N ≤ 70 and cross-checked by a second engine for N ≤ 80 and N = 101). a(101..106) = 16, a(107..116) = 17, a(117) = 18 — this CONFIRMS the external report attributed to erdosproblemaday.com (logged unverified on 2026-09-27; it continues a(117..134) = 18, a(135..152) = 19, a(153) = 20, of which only the part through N = 117 is certified here). Per-N cost grows about 1.17x per step at fixed size; the largest refutation (N = 116, size 18) took 3.2e9 nodes. Asymptotic layer (the actual Erdős question): Erdős–Freud [ErFr91] construction gives liminf a(N)/√N ≥ 2/√3 ≈ 1.1547 (Sidon set in [1,N/3] ∪ its reflection); conjectured tight. One-exception sets are quasi-Sidon (only one colliding sum ⇒ |A+A| ~ |A|²/2, containment derived here), so Pikhurko's #840 upper bound (1/4+1/(π+2)²)^{-1/2} ≈ 1.8626 applies [Pi06]; erdosproblems.com lists #864 as a weaker form of #840. Asymptotic gap [1.1547, 1.8626] on the constant is a wall; the table lane is the machine surface.",
    "provenance": {
-    "added_by": "gap-map miner chunk 864-935",
-    "date": "2026-07-18",
+    "added_by": "claude, erdos-864 lane (branch chronos/quirky-gates-dalhc4); row first mined 2026-07-18",
+    "date": "2026-09-28",
     "checked": [
-     "OEIS A389182 + b-file (n ≤ 100)",
-     "erdosproblems.com/864 (fetched 2026-07-18)",
-     "erdosproblems.com/840 (Pikhurko [Pi06] quasi-Sidon upper bound)",
-     "2026-09-27 freshness sweep: external report a(101..153), unverified; OEIS A389182 via github.com/oeis/oeisdata (b-file n = 1..100, Alper Ferudun)"
+     "OEIS A389182 via github.com/oeis/oeisdata, 2026-09-28 (data a(1..80); b-file n = 1..100, A. Ferudun, not readable from the mirror: a(100) = 16 as recorded by the 2026-07-18 mining)",
+     "our exhaustive search, certificates/erdos-864 (python3 -I certificates/erdos-864/verify.py [--full])",
+     "erdosproblems.com/864 and /840 (asymptotic bounds as transcribed by the 2026-07-18 mining, not re-verified)"
     ]
    },
    "evidence": [
     {
-     "type": "literature",
-     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
-     "date": "2026-07-18"
+     "type": "implementation",
+     "artifact": "certificates/erdos-864: one exhaustive search per N deciding A389182(1..117) (onesum.c, Python reference, onesum_naive.c)",
+     "date": "2026-09-28",
+     "contract": "erdos-864-a389182-new"
     }
    ],
-   "confidence": "C3"
+   "confidence": "C2"
   },
   {
    "problem": 878,
