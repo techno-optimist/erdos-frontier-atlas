@@ -5,7 +5,7 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 785,
-   "evidenced_by": 21,
+   "evidenced_by": 23,
    "has_surface": 316,
    "learned_from": 5,
    "measures": 223,
@@ -18,8 +18,8 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 25,
-   "evidence_container": 33,
+   "evidence_claim": 27,
+   "evidence_container": 34,
    "external_claim": 91,
    "incident": 18,
    "move": 7,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 4461,
-   "validator-enforced": 30
+   "validator-enforced": 32
   }
  },
  "edges": [
@@ -766,7 +766,7 @@
    "type": "applies"
   },
   {
-   "dst": "S:gap:357:0cca8486",
+   "dst": "S:gap:357:957c1739",
    "predicate": "workable",
    "source": "atlas/gap_map.json",
    "src": "M:witness-local-search",
@@ -8488,6 +8488,22 @@
    "type": "evidenced_by"
   },
   {
+   "dst": "E:claim:erdos-357-a364132-a364153-new",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P357",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-357-a364132-a364153-published",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P357",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
    "dst": "E:claim:erdos-366-cubefull-sweep-1e25",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
@@ -9500,7 +9516,7 @@
    "type": "has_surface"
   },
   {
-   "dst": "S:gap:357:0cca8486",
+   "dst": "S:gap:357:957c1739",
    "source": "atlas/gap_map.json",
    "src": "P357",
    "tier": "deterministic-rule",
@@ -11462,7 +11478,7 @@
   {
    "dst": "O:A364132",
    "source": "atlas/gap_map.json",
-   "src": "S:gap:357:0cca8486",
+   "src": "S:gap:357:957c1739",
    "tier": "deterministic-rule",
    "type": "measures"
   },
@@ -33659,6 +33675,101 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-357/verify.py",
+     "sha256": "e4353a309cb1bffd4fd7b7e2757264bed63a3d1e4b7bf7a9842a761a771d5237"
+    },
+    {
+     "path": "certificates/erdos-357/segment_sums.py",
+     "sha256": "0dfb2fcbb84ea9f6071437c3ac20b2d0a543a44abce7320f579d21b45998c1b3"
+    },
+    {
+     "path": "certificates/erdos-357/segsum.c",
+     "sha256": "b0228c31c7ac9ea83a9ba7793f614a1c7450b75592cb66bc7d831672f068d145"
+    },
+    {
+     "path": "certificates/erdos-357/segsum_naive.c",
+     "sha256": "57064d13479e134cfdcc321eb138d63052ff675fd27da837fdaad8da30b8db07"
+    },
+    {
+     "path": "certificates/erdos-357/RESULT.json",
+     "sha256": "3f599d7ee62aad3eb490a6a835fde0e3be4bef490c8a4d86f900bb8f0297ac35"
+    },
+    {
+     "path": "certificates/erdos-357/emit_result.py",
+     "sha256": "6c4b910f52eeb6d1d7692ed1ba37fad49f6fb0c1676456aef00d39a28008b574"
+    }
+   ],
+   "claim_id": "erdos-357-a364132-a364153-new",
+   "id": "E:claim:erdos-357-a364132-a364153-new",
+   "overclaim_guards": 2,
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-357/verify.py",
+     "--full"
+    ],
+    "profile": "slow",
+    "stdout_contains": [
+     "\"verified\":true",
+     "receipt-checked: RESULT.json"
+    ]
+   },
+   "scope": "Finite exhaustive search; a verified-search receipt, not a formal proof. New beyond the OEIS data (A364132 to n = 22, A364153 to n = 13, as of 2026-09-28). The Python reference re-decides the new searches through A364132 n = 24 and A364153 n = 15 node for node; the larger ones rest on the C engine alone. Says nothing about the asymptotic question of Erdos #357.",
+   "statement": "A364132(23..27) = 56, 60, 63, 67, 69 and A364153(14..16) = 20, 22, 24: for each n, no admissible n-sequence has every term at most a(n) - 1 (exhaustive search) and the explicit sequence in RESULT.json has maximum a(n).",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
+     "path": "certificates/erdos-357/verify.py",
+     "sha256": "e4353a309cb1bffd4fd7b7e2757264bed63a3d1e4b7bf7a9842a761a771d5237"
+    },
+    {
+     "path": "certificates/erdos-357/segment_sums.py",
+     "sha256": "0dfb2fcbb84ea9f6071437c3ac20b2d0a543a44abce7320f579d21b45998c1b3"
+    },
+    {
+     "path": "certificates/erdos-357/segsum.c",
+     "sha256": "b0228c31c7ac9ea83a9ba7793f614a1c7450b75592cb66bc7d831672f068d145"
+    },
+    {
+     "path": "certificates/erdos-357/segsum_naive.c",
+     "sha256": "57064d13479e134cfdcc321eb138d63052ff675fd27da837fdaad8da30b8db07"
+    },
+    {
+     "path": "certificates/erdos-357/RESULT.json",
+     "sha256": "3f599d7ee62aad3eb490a6a835fde0e3be4bef490c8a4d86f900bb8f0297ac35"
+    },
+    {
+     "path": "certificates/erdos-357/emit_result.py",
+     "sha256": "6c4b910f52eeb6d1d7692ed1ba37fad49f6fb0c1676456aef00d39a28008b574"
+    }
+   ],
+   "claim_id": "erdos-357-a364132-a364153-published",
+   "id": "E:claim:erdos-357-a364132-a364153-published",
+   "overclaim_guards": 2,
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-357/verify.py"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "\"verified_published\":true",
+     "all checks passed"
+    ]
+   },
+   "scope": "Finite exhaustive search; a verified-search receipt, not a formal proof. Replicates the published OEIS data: an independent recomputation, nothing new. Says nothing about the asymptotic question of Erdos #357.",
+   "statement": "A364132(1..22) and A364153(1..13) as published in OEIS: for each n, no admissible n-sequence has every term at most a(n) - 1 (exhaustive search) and an explicit one has maximum a(n).",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-366/verify.py",
      "sha256": "f40cf4b64d8563875bf3f0162bd490dd7e00f37a83d6390a4d79d34697fecc1e"
     },
@@ -34312,6 +34423,13 @@
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-142-pressure-ceiling",
    "path": "certificates/erdos-142-pressure-ceiling",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "Exhaustive searches deciding OEIS A364132(1..27) and A364153(1..16) (sequences with distinct segment sums), each term with an explicit sequence checked by brute force. Replicates the published A364132(1..22) and A364153(1..13); the rest is new. C engine pinned node for node to a Python reference and cross-checked by a second engine; no formal proof; nothing about the asymptotic Erdos #357 question.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-357",
+   "path": "certificates/erdos-357",
    "type": "evidence_container"
   },
   {
@@ -72980,34 +73098,39 @@
    "witness_verifier": "none cheap — non-representability requires a full subset-sum reachability DP (petabyte-scale at 9th powers)"
   },
   {
-   "confidence": "C3",
+   "confidence": "C2",
    "evidence": [
     {
-     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
-     "date": "2026-07-18",
-     "type": "literature"
+     "artifact": "certificates/erdos-357: exhaustive searches deciding A364132(1..27) and A364153(1..16) (segsum.c, Python reference, segsum_naive.c)",
+     "contract": "erdos-357-a364132-a364153-new",
+     "date": "2026-09-28",
+     "type": "implementation"
     }
    ],
-   "exact_feasibility": "drat-candidate",
-   "id": "S:gap:357:0cca8486",
+   "exact_feasibility": "cell",
+   "id": "S:gap:357:957c1739",
    "kind": "next_cell",
    "lower": {
-    "source": "a(22)=52, OEIS A364132 data (22 terms, keyword hard,more); a(23) >= a(22) by monotonicity (a valid 23-sequence contains a valid 22-sequence)",
-    "value": "52",
-    "year": 2023
+    "source": "A364132(27) = 69 (certificates/erdos-357, contract erdos-357-a364132-a364153-new) and a(n+1) > a(n): deleting the largest term of an increasing (n+1)-sequence leaves an n-sequence below it",
+    "value": "70",
+    "year": 2026
    },
-   "notes": "Open content: growth of f(n) — Weisenberg (via #874) gives f(n) >= (2+o(1)) sqrt(n); whether f(n) = o(n) is open; for the non-monotone variant g(n), Hegyvari 1986 proved (1/3+o(1))n <= g(n) and Coppersmith-Phillips (via #867) gives g(n) <= (2/3 - 1/512 + o(1))n — those asymptotics are walls (erdosproblems.com/357, edited Jan 2026). Companion cell: A364153(14) (non-monotone table, 13 terms known, a(13)=18) is an equally cheap SAT target. Erdős also asked whether sum 1/a_i converges for infinite versions.",
+   "notes": "PREVIOUS CELL CLOSED HERE (2026-09-28): certificates/erdos-357 decides A364132(1..27) and A364153(1..16) by exhaustive depth-first search on segment-sum bitsets (C engine pinned node for node to a Python reference; verdicts cross-checked by a second engine sharing no code). New: A364132(23..27) = 56, 60, 63, 67, 69 and A364153(14..16) = 20, 22, 24. Companion cell: A364153(17) >= 24, <= 26 by the explicit sequence in RESULT.json. The deciding refutation grows roughly 2-4x per term (8.4e9 nodes at A364132(27)). Open content: growth of f(n) — Weisenberg (via #874) gives f(n) >= (2+o(1)) sqrt(n); whether f(n) = o(n) is open; for the non-monotone variant g(n), Hegyvari 1986 proved (1/3+o(1))n <= g(n) and Coppersmith-Phillips (via #867) gives g(n) <= (2/3 - 1/512 + o(1))n — those asymptotics are walls (erdosproblems.com/357, edited Jan 2026). Erdős also asked whether sum 1/a_i converges for infinite versions.",
    "oeis": "A364132",
    "overlay": "gap_map",
    "problem": 357,
-   "quantity": "A364132(23) — least n such that {1..n} contains an increasing 23-term sequence all of whose consecutive-segment sums are distinct (inverse of Erdős-Harzheim f(n); a(22)=52 is the last known term)",
+   "quantity": "A364132(28) — least n such that {1..n} contains an increasing 28-term sequence all of whose consecutive-segment sums are distinct (inverse of the Erdős–Harzheim f(n)); a(27) = 69 (certificates/erdos-357)",
    "status": "open",
    "type": "surface",
-   "upper": null,
+   "upper": {
+    "source": "explicit increasing 28-sequence with maximum 76 in certificates/erdos-357/RESULT.json (next_bounds), segment sums checked by brute force in verify.py",
+    "value": "76",
+    "year": 2026
+   },
    "witness_feasibility": "open-easy",
-   "witness_object": "An increasing sequence a_1 < ... < a_23 <= n with all C(24,2)=276 segment sums sum_{u<=i<=v} a_i distinct (gives a(23) <= n); the exact cell additionally needs an exhaustive/UNSAT proof for n-1",
+   "witness_object": "an increasing sequence a_1 < ... < a_28 <= n with all 406 segment sums distinct gives a(28) <= n; the exact cell also needs every smaller n refuted, as the certificate does through n = 27",
    "witness_side": "upper",
-   "witness_verifier": "Compute prefix sums and check all 276 pairwise differences distinct — trivial integer check; the nonexistence side is a small SAT/CP instance (choose 23 of ~55 values, alldifferent on segment sums), certifiable by DRAT"
+   "witness_verifier": "compute prefix sums and check all 406 pairwise differences distinct — dependency-free, instant"
   },
   {
    "confidence": "C3",
