@@ -53,7 +53,6 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 | #156 | i(9) — largest n such that {1..n} contains an inclusion-maximal Sidon …[truncated; see source] | open-easy | Check the C(9,2) differences are distinct; then for each of …[truncated; see source] | C3 |
 | #170 | A046693(214) — minimal number of marks in a sparse ruler / restricted …[truncated; see source] | open-easy | Compute all \|S\|^2 pairwise differences and check {1..214} …[truncated; see source] | C3 |
 | #295 | A192881(17) — minimum number of terms in an Egyptian fraction …[truncated; see source] | open-easy | Exact rational arithmetic (e.g. Python fractions): check …[truncated; see source] | C3 |
-| #301 | A390394(39) — maximum size of A ⊆ {1..39} with no solution 1/a = …[truncated; see source] | open-easy | For each a in A: subset-sum check over {1/b : b in A, b != …[truncated; see source] | C3 |
 | #302 | A390395(735) — maximum size of S ⊆ {1..735} with no solution 1/a = …[truncated; see source] | open-easy | Enumerate all harmonic triples a < b < c <= 735 with 1/a = …[truncated; see source] | C3 |
 | #304 | A097849(106) — max over 1<=k<=106 of the minimal number of unit …[truncated; see source] | open-easy | Exact-arithmetic check that each listed 1/n_1+...+1/n_t …[truncated; see source] | C3 |
 | #327 | A384927(5001) — max size of S in {1..5001} with a+b never dividing ab …[truncated; see source] | open-easy | Set check is O(k^2) ~ 6.2M integer divisibility tests …[truncated; see source] | C3 |
@@ -99,6 +98,7 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 | #201 | A003002(212) — maximum size of a subset of {1,...,212} containing no …[truncated; see source] | plausible | For all C(44,2)=946 pairs (x,y) with x+y even, check …[truncated; see source] | C3 |
 | #222 | A357018(44) — next record run of consecutive integers not expressible …[truncated; see source] | plausible | Per-integer certificate: exhibit a prime p = 3 (mod 4) …[truncated; see source] | C3 |
 | #236 | A109926(21) — least n whose number of representations n = p + 2^k (p …[truncated; see source] | plausible | ~34 deterministic Miller–Rabin tests on n - 2^k and count …[truncated; see source] | C3 |
+| #301 | A390394(73) — maximum size of A ⊆ {1..73} with no solution 1/a = …[truncated; see source] | plausible | For each a in A: decide whether 1/a is a sum of distinct …[truncated; see source] | C3 |
 | #322 | A025418(35) — least integer that is a sum of 3 positive cubes in …[truncated; see source] | plausible | Representation count for a single m is a dependency-free …[truncated; see source] | C3 |
 | #334 | A062241(30) — smallest integer >= 2 that is not a sum of two positive …[truncated; see source] | plausible | Enumerate all 113-smooth numbers s <= m by exponent …[truncated; see source] | C3 |
 | #340 | Verification depth for '33 is never a difference of Mian-Chowla …[truncated; see source] | plausible | The greedy sequence is deterministic: recompute A005282 to …[truncated; see source] | C3 |

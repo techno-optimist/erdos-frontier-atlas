@@ -5,7 +5,7 @@
 > [Frontier Board](../README.md#chronos-frontier-board). Do not edit by hand —
 > regenerate with `make state-of-frontier`; `make check-views` fails if this file
 > is stale. Deterministic: no generation timestamp — every date below comes from
-> the data. **Data through 2026-09-27** (latest provenance/evidence date).
+> the data. **Data through 2026-09-28** (latest provenance/evidence date).
 
 The gap map is the versioned `[L, U]` ledger over bounded quantities of open
 problems (charter Tenet 2: the bracket is the unit of progress). This report is
@@ -14,7 +14,7 @@ the release-facing summary of its current state.
 ## The ledger at a glance
 
 - **225 bounded quantities** across the Erdős-hub problems.
-- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **17** lane-added, **196** agent-mined.
+- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **18** lane-added, **195** agent-mined.
 - Honest label: the agent-mined entries are structurally validated but **not yet
   independently number-re-verified** — they carry literature-grade evidence and
   therefore class C3 until a verification artifact exists (the WS1 release gate
@@ -59,7 +59,6 @@ truncated — the full values, sources, and verifier specs live in
 | [#156](https://www.erdosproblems.com/156) | [A382397](https://oeis.org/A382397) | i(9) — largest n such that {1..n} contains an inclusion-maximal Sidon set of size 9; A382397(n) = 9 exactly f… | lower | open-easy | 188 | 369 |
 | [#170](https://www.erdosproblems.com/170) | [A046693](https://oeis.org/A046693) | A046693(214) — minimal number of marks in a sparse ruler / restricted difference basis for {0..214} (first ce… | upper | open-easy | 22 | 26 |
 | [#295](https://www.erdosproblems.com/295) | [A192881](https://oeis.org/A192881) | A192881(17) — minimum number of terms in an Egyptian fraction decomposition of 1 with least denominator 17 (f… | upper | open-easy | 29 | ? |
-| [#301](https://www.erdosproblems.com/301) | [A390394](https://oeis.org/A390394) | A390394(39) — maximum size of A ⊆ {1..39} with no solution 1/a = 1/b_1 + ... + 1/b_k over distinct elements o… | lower | open-easy | 29 | 30 |
 | [#302](https://www.erdosproblems.com/302) | [A390395](https://oeis.org/A390395) | A390395(735) — maximum size of S ⊆ {1..735} with no solution 1/a = 1/b + 1/c over distinct a,b,c in S; first… | lower | open-easy | 608 | 609 |
 | [#304](https://www.erdosproblems.com/304) | [A097849](https://oeis.org/A097849) | A097849(106) — max over 1<=k<=106 of the minimal number of unit fractions needed to write k/106 (row-106 maxi… | both | open-easy | ? | ? |
 | [#327](https://www.erdosproblems.com/327) | [A384927](https://oeis.org/A384927) | A384927(5001) — max size of S in {1..5001} with a+b never dividing ab for distinct a,b in S; monotonicity for… | both | open-easy | 3528 | 3529 |
@@ -105,6 +104,7 @@ truncated — the full values, sources, and verifier specs live in
 | [#201](https://www.erdosproblems.com/201) | [A003002](https://oeis.org/A003002) | A003002(212) — maximum size of a subset of {1,...,212} containing no 3-term arithmetic progression | lower | plausible | 43 | 44 |
 | [#222](https://www.erdosproblems.com/222) | [A256435](https://oeis.org/A256435) | A357018(44) — next record run of consecutive integers not expressible as a sum of two squares (current record… | lower | plausible | 106 | ? |
 | [#236](https://www.erdosproblems.com/236) | [A109925](https://oeis.org/A109925) | A109926(21) — least n whose number of representations n = p + 2^k (p prime, 2^k < n) is exactly 21; records-o… | upper | plausible | > 1e10 | ? |
+| [#301](https://www.erdosproblems.com/301) | [A390394](https://oeis.org/A390394) | A390394(73) — maximum size of A ⊆ {1..73} with no solution 1/a = 1/b_1 + ... + 1/b_k over distinct elements o… | lower | plausible | 53 | 54 |
 | [#322](https://www.erdosproblems.com/322) | [A025418](https://oeis.org/A025418) | A025418(35) — least integer that is a sum of 3 positive cubes in exactly 35 ways (first uncomputed cell; a(36… | upper | plausible | ? | ? |
 | [#334](https://www.erdosproblems.com/334) | [A062241](https://oeis.org/A062241) | A062241(30) — smallest integer >= 2 that is not a sum of two positive 113-smooth numbers (prime(30)=113); fir… | upper | plausible | > 2570169839 | <= 328878692999 |
 | [#340](https://www.erdosproblems.com/340) | [A080200](https://oeis.org/A080200) | Verification depth for '33 is never a difference of Mian-Chowla terms' (33 = A080200(1), the smallest integer… | lower | plausible | 100000 | ? |
