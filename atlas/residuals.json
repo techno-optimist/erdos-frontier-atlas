@@ -1,0 +1,490 @@
+{
+ "schema": "erdos-frontier-atlas-residuals-v1",
+ "purpose": "Where a proved reduction cuts an open slice down to a thin residual, this ledger records the residual as an executable predicate (tools/briefcaselib), how far it has been searched, and the command that replays the search. The frontier sample lists the first members nobody has searched yet.",
+ "trust": "A residual is only as good as the reduction it comes from: each record links its proof note. 'searched_through' with zero survivors is replayable evidence, not a status. This ledger never sets or implies a problem status.",
+ "residuals": [
+  {
+   "id": "p699-i3",
+   "problem": 699,
+   "slice": "i = 3",
+   "reduction": "experiments/claude-699-i3-position-20260928/README.md",
+   "residual": "n = 2^a 3^eps A (eps = [3 || n], A odd) with 4 | n and (2KA-1)(2KA-2) <= (4/sqrt 3) K^3, K = 2^(a-1) 3^eps: the odd part of n is at most about 0.66 n^(1/3)",
+   "operator": {
+    "name": "p699.special_i3"
+   },
+   "decide": {
+    "name": "p699.row",
+    "args": {
+     "i": 3
+    }
+   },
+   "searched_through": "1e18",
+   "special_at_bound": 2061213,
+   "survivors": 0,
+   "evidence": "experiments/claude-699-i3-position-20260928/README.md",
+   "replay": "python3 -I experiments/claude-699-i3-position-20260928/structured.py 1e18 --jobs=3",
+   "cross_check": "experiments/claude-699-general-i-20260928/RESULT.json searches the general i = 3 residual to 1e18 (2063226 special n, no survivor)",
+   "remaining": "members above 1e18; the heuristic count of passes converges, but nothing proves it empty"
+  },
+  {
+   "id": "p699-i4",
+   "problem": 699,
+   "slice": "i = 4",
+   "reduction": "experiments/claude-699-general-i-20260928/README.md",
+   "residual": "special n: 4(n-1) <= S_0^2 S_1 and 6 sqrt3 (n-1)(n-2) <= S_0^3 S_1 S_2 (Theorem 2), or n even with n - 1 smooth; at most O(X^(1/3) log^pi(i) X) such n up to X",
+   "operator": {
+    "name": "p699.special",
+    "args": {
+     "i": 4
+    }
+   },
+   "decide": {
+    "name": "p699.row",
+    "args": {
+     "i": 4
+    }
+   },
+   "searched_through": "1e18",
+   "special_at_bound": 22535143,
+   "pairs_past_t2": 1172,
+   "central_at_bound": 36,
+   "survivors": 0,
+   "evidence": "experiments/claude-699-general-i-20260928/RESULT.json",
+   "replay": "python3 -I experiments/claude-699-general-i-20260928/run.py 4 1000000000000000000 4",
+   "frontier_sample": {
+    "window": [
+     "1000000000000000000",
+     "1000010000000000000"
+    ],
+    "special_in_window": 80,
+    "members": [
+     {
+      "n": "1000000105941565440"
+     },
+     {
+      "n": "1000000327904133120"
+     },
+     {
+      "n": "1000000393730330112"
+     }
+    ],
+    "replay": "cc -O2 -o search699 experiments/claude-699-general-i-20260928/search699.c -lm && ./search699 4 1000010000000000000 --from 1000000000000000000 --list"
+   },
+   "remaining": "members above 1e18"
+  },
+  {
+   "id": "p699-i5",
+   "problem": 699,
+   "slice": "i = 5",
+   "reduction": "experiments/claude-699-general-i-20260928/README.md",
+   "residual": "special n: 4(n-1) <= S_0^2 S_1 and 6 sqrt3 (n-1)(n-2) <= S_0^3 S_1 S_2 (Theorem 2), or n even with n - 1 smooth; at most O(X^(1/3) log^pi(i) X) such n up to X",
+   "operator": {
+    "name": "p699.special",
+    "args": {
+     "i": 5
+    }
+   },
+   "decide": {
+    "name": "p699.row",
+    "args": {
+     "i": 5
+    }
+   },
+   "searched_through": "1e18",
+   "special_at_bound": 40913705,
+   "pairs_past_t2": 2262,
+   "central_at_bound": 71,
+   "survivors": 0,
+   "evidence": "experiments/claude-699-general-i-20260928/RESULT.json",
+   "replay": "python3 -I experiments/claude-699-general-i-20260928/run.py 5 1000000000000000000 4",
+   "frontier_sample": {
+    "window": [
+     "1000000000000000000",
+     "1000010000000000000"
+    ],
+    "special_in_window": 147,
+    "members": [
+     {
+      "n": "1000000105941565440"
+     },
+     {
+      "n": "1000000142681853240"
+     },
+     {
+      "n": "1000000291693658112"
+     }
+    ],
+    "replay": "cc -O2 -o search699 experiments/claude-699-general-i-20260928/search699.c -lm && ./search699 5 1000010000000000000 --from 1000000000000000000 --list"
+   },
+   "remaining": "members above 1e18"
+  },
+  {
+   "id": "p699-i6",
+   "problem": 699,
+   "slice": "i = 6",
+   "reduction": "experiments/claude-699-general-i-20260928/README.md",
+   "residual": "special n: 4(n-1) <= S_0^2 S_1 and 6 sqrt3 (n-1)(n-2) <= S_0^3 S_1 S_2 (Theorem 2), or n even with n - 1 smooth; at most O(X^(1/3) log^pi(i) X) such n up to X",
+   "operator": {
+    "name": "p699.special",
+    "args": {
+     "i": 6
+    }
+   },
+   "decide": {
+    "name": "p699.row",
+    "args": {
+     "i": 6
+    }
+   },
+   "searched_through": "1e17",
+   "special_at_bound": 77313421,
+   "pairs_past_t2": 9258,
+   "central_at_bound": 459,
+   "survivors": 0,
+   "evidence": "experiments/claude-699-general-i-20260928/RESULT.json",
+   "replay": "python3 -I experiments/claude-699-general-i-20260928/run.py 6 100000000000000000 4",
+   "frontier_sample": {
+    "window": [
+     "100000000000000000",
+     "100001000000000000"
+    ],
+    "special_in_window": 301,
+    "members": [
+     {
+      "n": "100000005468750000"
+     },
+     {
+      "n": "100000006963200000"
+     },
+     {
+      "n": "100000008000000000"
+     }
+    ],
+    "replay": "cc -O2 -o search699 experiments/claude-699-general-i-20260928/search699.c -lm && ./search699 6 100001000000000000 --from 100000000000000000 --list"
+   },
+   "remaining": "members above 1e17"
+  },
+  {
+   "id": "p699-i7",
+   "problem": 699,
+   "slice": "i = 7",
+   "reduction": "experiments/claude-699-general-i-20260928/README.md",
+   "residual": "special n: 4(n-1) <= S_0^2 S_1 and 6 sqrt3 (n-1)(n-2) <= S_0^3 S_1 S_2 (Theorem 2), or n even with n - 1 smooth; at most O(X^(1/3) log^pi(i) X) such n up to X",
+   "operator": {
+    "name": "p699.special",
+    "args": {
+     "i": 7
+    }
+   },
+   "decide": {
+    "name": "p699.row",
+    "args": {
+     "i": 7
+    }
+   },
+   "searched_through": "1e17",
+   "special_at_bound": 141391038,
+   "pairs_past_t2": 17288,
+   "central_at_bound": 878,
+   "survivors": 0,
+   "evidence": "experiments/claude-699-general-i-20260928/RESULT.json",
+   "replay": "python3 -I experiments/claude-699-general-i-20260928/run.py 7 100000000000000000 4",
+   "frontier_sample": {
+    "window": [
+     "100000000000000000",
+     "100001000000000000"
+    ],
+    "special_in_window": 530,
+    "members": [
+     {
+      "n": "100000001887027200"
+     },
+     {
+      "n": "100000005468750000"
+     },
+     {
+      "n": "100000006963200000"
+     }
+    ],
+    "replay": "cc -O2 -o search699 experiments/claude-699-general-i-20260928/search699.c -lm && ./search699 7 100001000000000000 --from 100000000000000000 --list"
+   },
+   "remaining": "members above 1e17"
+  },
+  {
+   "id": "p699-i8",
+   "problem": 699,
+   "slice": "i = 8",
+   "reduction": "experiments/claude-699-general-i-20260928/README.md",
+   "residual": "special n: 4(n-1) <= S_0^2 S_1 and 6 sqrt3 (n-1)(n-2) <= S_0^3 S_1 S_2 (Theorem 2), or n even with n - 1 smooth; at most O(X^(1/3) log^pi(i) X) such n up to X",
+   "operator": {
+    "name": "p699.special",
+    "args": {
+     "i": 8
+    }
+   },
+   "decide": {
+    "name": "p699.row",
+    "args": {
+     "i": 8
+    }
+   },
+   "searched_through": "1e15",
+   "special_at_bound": 61580071,
+   "pairs_past_t2": 33473,
+   "central_at_bound": 2419,
+   "survivors": 0,
+   "evidence": "experiments/claude-699-general-i-20260928/RESULT.json",
+   "replay": "python3 -I experiments/claude-699-general-i-20260928/run.py 8 1000000000000000 4",
+   "frontier_sample": {
+    "window": [
+     "1000000000000000",
+     "1000010000000000"
+    ],
+    "special_in_window": 250,
+    "members": [
+     {
+      "n": "1000000008950040"
+     },
+     {
+      "n": "1000000080694575"
+     },
+     {
+      "n": "1000000124686080"
+     }
+    ],
+    "replay": "cc -O2 -o search699 experiments/claude-699-general-i-20260928/search699.c -lm && ./search699 8 1000010000000000 --from 1000000000000000 --list"
+   },
+   "remaining": "members above 1e15"
+  },
+  {
+   "id": "p699-i9",
+   "problem": 699,
+   "slice": "i = 9",
+   "reduction": "experiments/claude-699-general-i-20260928/README.md",
+   "residual": "special n: 4(n-1) <= S_0^2 S_1 and 6 sqrt3 (n-1)(n-2) <= S_0^3 S_1 S_2 (Theorem 2), or n even with n - 1 smooth; at most O(X^(1/3) log^pi(i) X) such n up to X",
+   "operator": {
+    "name": "p699.special",
+    "args": {
+     "i": 9
+    }
+   },
+   "decide": {
+    "name": "p699.row",
+    "args": {
+     "i": 9
+    }
+   },
+   "searched_through": "1e15",
+   "special_at_bound": 61580070,
+   "pairs_past_t2": 33472,
+   "central_at_bound": 2419,
+   "survivors": 0,
+   "evidence": "experiments/claude-699-general-i-20260928/RESULT.json",
+   "replay": "python3 -I experiments/claude-699-general-i-20260928/run.py 9 1000000000000000 4",
+   "frontier_sample": {
+    "window": [
+     "1000000000000000",
+     "1000010000000000"
+    ],
+    "special_in_window": 250,
+    "members": [
+     {
+      "n": "1000000008950040"
+     },
+     {
+      "n": "1000000080694575"
+     },
+     {
+      "n": "1000000124686080"
+     }
+    ],
+    "replay": "cc -O2 -o search699 experiments/claude-699-general-i-20260928/search699.c -lm && ./search699 9 1000010000000000 --from 1000000000000000 --list"
+   },
+   "remaining": "members above 1e15"
+  },
+  {
+   "id": "p699-i10",
+   "problem": 699,
+   "slice": "i = 10",
+   "reduction": "experiments/claude-699-general-i-20260928/README.md",
+   "residual": "special n: 4(n-1) <= S_0^2 S_1 and 6 sqrt3 (n-1)(n-2) <= S_0^3 S_1 S_2 (Theorem 2), or n even with n - 1 smooth; at most O(X^(1/3) log^pi(i) X) such n up to X",
+   "operator": {
+    "name": "p699.special",
+    "args": {
+     "i": 10
+    }
+   },
+   "decide": {
+    "name": "p699.row",
+    "args": {
+     "i": 10
+    }
+   },
+   "searched_through": "1e15",
+   "special_at_bound": 61580068,
+   "pairs_past_t2": 33469,
+   "central_at_bound": 2419,
+   "survivors": 0,
+   "evidence": "experiments/claude-699-general-i-20260928/RESULT.json",
+   "replay": "python3 -I experiments/claude-699-general-i-20260928/run.py 10 1000000000000000 4",
+   "frontier_sample": {
+    "window": [
+     "1000000000000000",
+     "1000010000000000"
+    ],
+    "special_in_window": 250,
+    "members": [
+     {
+      "n": "1000000008950040"
+     },
+     {
+      "n": "1000000080694575"
+     },
+     {
+      "n": "1000000124686080"
+     }
+    ],
+    "replay": "cc -O2 -o search699 experiments/claude-699-general-i-20260928/search699.c -lm && ./search699 10 1000010000000000 --from 1000000000000000 --list"
+   },
+   "remaining": "members above 1e15"
+  },
+  {
+   "id": "p699-i11",
+   "problem": 699,
+   "slice": "i = 11",
+   "reduction": "experiments/claude-699-general-i-20260928/README.md",
+   "residual": "special n: 4(n-1) <= S_0^2 S_1 and 6 sqrt3 (n-1)(n-2) <= S_0^3 S_1 S_2 (Theorem 2), or n even with n - 1 smooth; at most O(X^(1/3) log^pi(i) X) such n up to X",
+   "operator": {
+    "name": "p699.special",
+    "args": {
+     "i": 11
+    }
+   },
+   "decide": {
+    "name": "p699.row",
+    "args": {
+     "i": 11
+    }
+   },
+   "searched_through": "1e12",
+   "special_at_bound": 6177854,
+   "pairs_past_t2": 25420,
+   "central_at_bound": 2304,
+   "survivors": 0,
+   "evidence": "experiments/claude-699-general-i-20260928/RESULT.json",
+   "replay": "python3 -I experiments/claude-699-general-i-20260928/run.py 11 1000000000000 4",
+   "frontier_sample": {
+    "window": [
+     "1000000000000",
+     "1000010000000"
+    ],
+    "special_in_window": 24,
+    "members": [
+     {
+      "n": "1000000464750"
+     },
+     {
+      "n": "1000000512000"
+     },
+     {
+      "n": "1000001376000"
+     }
+    ],
+    "replay": "cc -O2 -o search699 experiments/claude-699-general-i-20260928/search699.c -lm && ./search699 11 1000010000000 --from 1000000000000 --list"
+   },
+   "remaining": "members above 1e12"
+  },
+  {
+   "id": "p699-i12",
+   "problem": 699,
+   "slice": "i = 12",
+   "reduction": "experiments/claude-699-general-i-20260928/README.md",
+   "residual": "special n: 4(n-1) <= S_0^2 S_1 and 6 sqrt3 (n-1)(n-2) <= S_0^3 S_1 S_2 (Theorem 2), or n even with n - 1 smooth; at most O(X^(1/3) log^pi(i) X) such n up to X",
+   "operator": {
+    "name": "p699.special",
+    "args": {
+     "i": 12
+    }
+   },
+   "decide": {
+    "name": "p699.row",
+    "args": {
+     "i": 12
+    }
+   },
+   "searched_through": "1e12",
+   "special_at_bound": 10103415,
+   "pairs_past_t2": 44940,
+   "central_at_bound": 4719,
+   "survivors": 0,
+   "evidence": "experiments/claude-699-general-i-20260928/RESULT.json",
+   "replay": "python3 -I experiments/claude-699-general-i-20260928/run.py 12 1000000000000 4",
+   "frontier_sample": {
+    "window": [
+     "1000000000000",
+     "1000010000000"
+    ],
+    "special_in_window": 39,
+    "members": [
+     {
+      "n": "1000000464750"
+     },
+     {
+      "n": "1000000512000"
+     },
+     {
+      "n": "1000000881495"
+     }
+    ],
+    "replay": "cc -O2 -o search699 experiments/claude-699-general-i-20260928/search699.c -lm && ./search699 12 1000010000000 --from 1000000000000 --list"
+   },
+   "remaining": "members above 1e12"
+  },
+  {
+   "id": "p699-i13",
+   "problem": 699,
+   "slice": "i = 13",
+   "reduction": "experiments/claude-699-general-i-20260928/README.md",
+   "residual": "special n: 4(n-1) <= S_0^2 S_1 and 6 sqrt3 (n-1)(n-2) <= S_0^3 S_1 S_2 (Theorem 2), or n even with n - 1 smooth; at most O(X^(1/3) log^pi(i) X) such n up to X",
+   "operator": {
+    "name": "p699.special",
+    "args": {
+     "i": 13
+    }
+   },
+   "decide": {
+    "name": "p699.row",
+    "args": {
+     "i": 13
+    }
+   },
+   "searched_through": "1e12",
+   "special_at_bound": 16792233,
+   "pairs_past_t2": 74608,
+   "central_at_bound": 8065,
+   "survivors": 0,
+   "evidence": "experiments/claude-699-general-i-20260928/RESULT.json",
+   "replay": "python3 -I experiments/claude-699-general-i-20260928/run.py 13 1000000000000 4",
+   "frontier_sample": {
+    "window": [
+     "1000000000000",
+     "1000010000000"
+    ],
+    "special_in_window": 68,
+    "members": [
+     {
+      "n": "1000000421875"
+     },
+     {
+      "n": "1000000446016"
+     },
+     {
+      "n": "1000000464750"
+     }
+    ],
+    "replay": "cc -O2 -o search699 experiments/claude-699-general-i-20260928/search699.c -lm && ./search699 13 1000010000000 --from 1000000000000 --list"
+   },
+   "remaining": "members above 1e12"
+  }
+ ]
+}

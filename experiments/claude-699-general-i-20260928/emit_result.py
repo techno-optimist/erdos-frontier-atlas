@@ -21,7 +21,7 @@ CAMPAIGN = [(3, 10 ** 18), (4, 10 ** 18), (5, 10 ** 18), (6, 10 ** 17), (7, 10 *
             (8, 10 ** 15), (9, 10 ** 15), (10, 10 ** 15),
             (11, 10 ** 12), (12, 10 ** 12), (13, 10 ** 12)]
 CHECKPOINTS = [(i, 10 ** 11) for i in range(3, 11)] + [(i, 10 ** 9) for i in range(11, 14)]
-WINDOW = 10 ** 13          # frontier window above each searched bound
+WINDOW = 10 ** 5           # the frontier window above a bound X is (X, X + X / WINDOW]
 LEAST = 3
 
 
@@ -44,8 +44,8 @@ def main():
         checkpoints = [R.run(exe, i, X, jobs) for i, X in CHECKPOINTS]
         frontier = []
         for i, X in CAMPAIGN:
-            count, special, surv = R.window(exe, i, X, X + WINDOW, jobs)
-            frontier.append({"i": i, "from": X, "to": X + WINDOW, "special_in_window": count,
+            count, special, surv = R.window(exe, i, X, X + X // WINDOW, jobs)
+            frontier.append({"i": i, "from": X, "to": X + X // WINDOW, "special_in_window": count,
                              "least": special[:LEAST], "survivors": surv})
     src = (HERE / "search699.c").read_bytes()
     res = {"engine": "search699.c", "engine_sha256": hashlib.sha256(src).hexdigest(),

@@ -78,11 +78,15 @@ def rows(exe, runs, label):
               f"{got['cand12']} pairs past t <= 2, {got['central']} central, 0 survivors ({got['seconds']} s)")
 
 
-def frontier(exe, res):
+def frontier(exe, res, full):
+    """The least special n above each bound. i >= 11 only with --full: their pair loops are slow."""
     for f in res["frontier"]:
+        if f["i"] > 10 and not full:
+            continue
         count, special, surv = R.window(exe, f["i"], f["from"], f["to"], 4)
         assert special[:len(f["least"])] == f["least"] and count == f["special_in_window"] and surv == [], f
-    print(f"frontier samples: the least special n above each searched bound match ({len(res['frontier'])} windows)")
+    print("frontier samples: the least special n above each searched bound match"
+          + ("" if full else " (i <= 10; i = 11..13 with --full)"))
 
 
 def main():
@@ -94,7 +98,7 @@ def main():
         control(exe)
         windows(exe)
         rows(exe, res["checkpoints"], "checkpoint")
-        frontier(exe, res)
+        frontier(exe, res, full)
         if full:
             rows(exe, res["runs"], "run")
     print("all checks passed")

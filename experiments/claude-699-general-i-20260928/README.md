@@ -134,15 +134,37 @@ A counterexample in the i-slice is one of two kinds:
 
 | i | X | special n | (n, m) passing t ≤ 2 | central n | survivors |
 |---:|---:|---:|---:|---:|---:|
-RESULTS_TABLE
+| 3 | 10¹⁸ | 2,063,226 | 114 | 0 | 0 |
+| 4 | 10¹⁸ | 22,535,143 | 1,172 | 36 | 0 |
+| 5 | 10¹⁸ | 40,913,705 | 2,262 | 71 | 0 |
+| 6 | 10¹⁷ | 77,313,421 | 9,258 | 459 | 0 |
+| 7 | 10¹⁷ | 141,391,038 | 17,288 | 878 | 0 |
+| 8 | 10¹⁵ | 61,580,071 | 33,473 | 2,419 | 0 |
+| 9 | 10¹⁵ | 61,580,070 | 33,472 | 2,419 | 0 |
+| 10 | 10¹⁵ | 61,580,068 | 33,469 | 2,419 | 0 |
+| 11 | 10¹² | 6,177,854 | 25,420 | 2,304 | 0 |
+| 12 | 10¹² | 10,103,415 | 44,940 | 4,719 | 0 |
+| 13 | 10¹² | 16,792,233 | 74,608 | 8,065 | 0 |
 
 No survivor appears, so **for each i in the table, no counterexample with that i has n ≤ X.**
 The i = 3 row repeats the i = 3 note's search to 10¹⁸ through the general bounds. That is a
-second route to the same conclusion.
+second route to the same conclusion. Its 114 pairs past t ≤ 2 are the note's 114 trivial passes
+with j = 1.
 
-The counts grow like X^(1/3) times a polylog, as Theorem 3 predicts. From 10⁶ to 10¹⁵ the i = 4
-count grows about 2.35× per decade and the i = 8 count about 2.7×, against 10^(1/3) ≈ 2.15. Very
-few (n, m) survive the first two positions, and none survives the third.
+`RESULT.json` records every row, with an order-independent checksum of its special n. It also
+records the first special n above each bound, which are the smallest cases no search has reached.
+The [residual ledger](../../atlas/residuals.json) repeats them.
+
+*Provenance.* The rows of the table were computed with earlier builds of `search699.c`. Those
+builds differ from the committed file only in argument parsing and the `--from`/`--list` options.
+The 10¹¹ checkpoints and the frontier windows were recomputed with the committed file. Both builds
+computed the 10¹¹ rows for i = 4, 6, 8 and 10, and they agree exactly. `verify.py --full` reruns
+every row with the committed file.
+
+The counts grow like X^(1/3) times a polylog, as Theorem 3 predicts. From the 10¹¹ checkpoints
+to the searched bounds, the i = 4 count grows about 2.3× per decade and the i = 8 count about 2.6×,
+against 10^(1/3) ≈ 2.15. Very few (n, m) survive the first two positions, and none survives all
+of them.
 
 ## What remains
 
@@ -156,8 +178,8 @@ few (n, m) survive the first two positions, and none survives the third.
 
 ```sh
 python3 -I experiments/claude-699-general-i-20260928/check_small.py    # ~1.5 min
-python3 -I experiments/claude-699-general-i-20260928/verify.py         # pins C to Python; ~2 min
-python3 -I experiments/claude-699-general-i-20260928/verify.py --full  # every row of RESULT.json
+python3 -I experiments/claude-699-general-i-20260928/verify.py         # pins C to Python; ~5 min
+python3 -I experiments/claude-699-general-i-20260928/verify.py --full  # every row of RESULT.json; about 2 hours on 4 cores
 ```
 
 **`check_small.py`**
