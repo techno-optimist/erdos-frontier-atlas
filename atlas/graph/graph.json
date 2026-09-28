@@ -5,7 +5,7 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 785,
-   "evidenced_by": 23,
+   "evidenced_by": 25,
    "has_surface": 316,
    "learned_from": 5,
    "measures": 223,
@@ -18,8 +18,8 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 27,
-   "evidence_container": 34,
+   "evidence_claim": 29,
+   "evidence_container": 35,
    "external_claim": 91,
    "incident": 18,
    "move": 7,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 4461,
-   "validator-enforced": 32
+   "validator-enforced": 34
   }
  },
  "edges": [
@@ -1030,7 +1030,7 @@
    "type": "applies"
   },
   {
-   "dst": "S:gap:864:b17f400c",
+   "dst": "S:gap:864:ca304526",
    "predicate": "workable",
    "source": "atlas/gap_map.json",
    "src": "M:witness-local-search",
@@ -8560,6 +8560,22 @@
    "type": "evidenced_by"
   },
   {
+   "dst": "E:claim:erdos-864-a389182-new",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P864",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-864-a389182-published",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P864",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
    "dst": "E:claim:erdos-962-a327909-1-1102",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
@@ -10559,7 +10575,7 @@
    "type": "has_surface"
   },
   {
-   "dst": "S:gap:864:b17f400c",
+   "dst": "S:gap:864:ca304526",
    "source": "atlas/gap_map.json",
    "src": "P864",
    "tier": "deterministic-rule",
@@ -12192,7 +12208,7 @@
   {
    "dst": "O:A389182",
    "source": "atlas/gap_map.json",
-   "src": "S:gap:864:b17f400c",
+   "src": "S:gap:864:ca304526",
    "tier": "deterministic-rule",
    "type": "measures"
   },
@@ -34047,6 +34063,101 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-864/verify.py",
+     "sha256": "9eb5a204de1e2acd6d81b7791b7b65ceca5c0a91bd1cdd88cf763e66640267e3"
+    },
+    {
+     "path": "certificates/erdos-864/one_exception.py",
+     "sha256": "93c682ab2d992048cecbd46bd68deebf3c824bfb36bf5b762b331dde29c363bf"
+    },
+    {
+     "path": "certificates/erdos-864/onesum.c",
+     "sha256": "64c771721f83ab9aaebc1a7a4cf4d5fec8979be48297df63b24200399ae3ff5c"
+    },
+    {
+     "path": "certificates/erdos-864/onesum_naive.c",
+     "sha256": "dc9f6c3f204952b6afcadd5709adbe4e852c31b72c684bf625015b09abb36b75"
+    },
+    {
+     "path": "certificates/erdos-864/RESULT.json",
+     "sha256": "fe524db93a46aa1468eef0ee6141e91f5f5a54bb0c2de487b7c1899f3e99f154"
+    },
+    {
+     "path": "certificates/erdos-864/emit_result.py",
+     "sha256": "b4357e09eb4be1e4784c29b49b32189c5b8dfcea3eb2ecf9ddbf874e5f6a2b24"
+    }
+   ],
+   "claim_id": "erdos-864-a389182-new",
+   "id": "E:claim:erdos-864-a389182-new",
+   "overclaim_guards": 2,
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-864/verify.py",
+     "--full"
+    ],
+    "profile": "slow",
+    "stdout_contains": [
+     "\"verified\":true",
+     "receipt-checked: RESULT.json"
+    ]
+   },
+   "scope": "Finite exhaustive search; a verified-search receipt, not a formal proof. New beyond the OEIS b-file (a(100) = 16); confirms the unverified external report for N <= 117. The Python reference pins N <= 70 and the second engine N <= 80 and N = 101; the cells past 101 rest on the C engine alone. Says nothing about the asymptotic question of Erdos #864.",
+   "statement": "A389182(N) for every N <= 117: a(100) = 16, a(101..106) = 16, a(107..116) = 17, a(117) = 18. For each N an exhaustive search decides whether a set of size a(N-1) + 1 containing 1 and N exists; each step comes with an explicit set.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
+     "path": "certificates/erdos-864/verify.py",
+     "sha256": "9eb5a204de1e2acd6d81b7791b7b65ceca5c0a91bd1cdd88cf763e66640267e3"
+    },
+    {
+     "path": "certificates/erdos-864/one_exception.py",
+     "sha256": "93c682ab2d992048cecbd46bd68deebf3c824bfb36bf5b762b331dde29c363bf"
+    },
+    {
+     "path": "certificates/erdos-864/onesum.c",
+     "sha256": "64c771721f83ab9aaebc1a7a4cf4d5fec8979be48297df63b24200399ae3ff5c"
+    },
+    {
+     "path": "certificates/erdos-864/onesum_naive.c",
+     "sha256": "dc9f6c3f204952b6afcadd5709adbe4e852c31b72c684bf625015b09abb36b75"
+    },
+    {
+     "path": "certificates/erdos-864/RESULT.json",
+     "sha256": "fe524db93a46aa1468eef0ee6141e91f5f5a54bb0c2de487b7c1899f3e99f154"
+    },
+    {
+     "path": "certificates/erdos-864/emit_result.py",
+     "sha256": "b4357e09eb4be1e4784c29b49b32189c5b8dfcea3eb2ecf9ddbf874e5f6a2b24"
+    }
+   ],
+   "claim_id": "erdos-864-a389182-published",
+   "id": "E:claim:erdos-864-a389182-published",
+   "overclaim_guards": 2,
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-864/verify.py"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "\"verified_published\":true",
+     "all checks passed"
+    ]
+   },
+   "scope": "Finite exhaustive search; a verified-search receipt, not a formal proof. Replicates the published OEIS data: an independent recomputation, nothing new. Says nothing about the asymptotic question of Erdos #864.",
+   "statement": "A389182(1..80) as published in OEIS: for each N, an exhaustive search decides whether a set of size a(N-1) + 1 containing 1 and N exists, and each step comes with an explicit set.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-962/verify.py",
      "sha256": "dae6c4c8b68f7364cb101b4c19c586ce23246540a2ed391f7e4fa50a797c157f"
     },
@@ -34479,6 +34590,13 @@
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-854",
    "path": "certificates/erdos-854",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "One exhaustive search per N deciding OEIS A389182(1..117) (sets with at most one repeated pairwise sum), each step with an explicit set checked by brute force. Replicates the published a(1..80) and the b-file's a(100) = 16; a(101..) are new and confirm an unverified external report. C engine pinned node for node to a Python reference and cross-checked by a second engine; no formal proof; nothing about the asymptotic Erdos #864 question.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-864",
+   "path": "certificates/erdos-864",
    "type": "evidence_container"
   },
   {
@@ -76205,36 +76323,37 @@
    "witness_verifier": "for fixed n, m, L: build the bipartite graph primes-p_i-vs-multiples in (m, m+L], run Hopcroft–Karp; absence of a perfect matching is a poly-time-checkable certificate that h(n) > L — dependency-free"
   },
   {
-   "confidence": "C3",
+   "confidence": "C2",
    "evidence": [
     {
-     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
-     "date": "2026-07-18",
-     "type": "literature"
+     "artifact": "certificates/erdos-864: one exhaustive search per N deciding A389182(1..117) (onesum.c, Python reference, onesum_naive.c)",
+     "contract": "erdos-864-a389182-new",
+     "date": "2026-09-28",
+     "type": "implementation"
     }
    ],
    "exact_feasibility": "cell",
-   "id": "S:gap:864:b17f400c",
+   "id": "S:gap:864:ca304526",
    "kind": "next_cell",
    "lower": {
-    "source": "monotonicity from the OEIS A389182 b-file, a(100) = 16 (n = 1..100, Alper Ferudun 2026; D. Spencer's extremizing sets cover n <= 69)",
-    "value": "16",
-    "year": 2025
+    "source": "A389182(117) = 18 (certificates/erdos-864, contract erdos-864-a389182-new) and monotonicity",
+    "value": "18",
+    "year": 2026
    },
-   "notes": "EXTERNALLY REPORTED, UNVERIFIED (2026-09-27 freshness sweep): an exact exhaustive computation attributed to erdosproblemaday.com gives a(101) = ... = a(106) = 16, a(107..116) = 17, a(117..134) = 18, a(135..152) = 19 and a(153) = 20, i.e. a(101) at the lower bracket; the page was not reachable from the checking session and no public copy was found. Confirming a(101) = 16 (refuting 17) is the cheap next step. Sequence created Oct 2025 — everything past n=100 is fresh territory; branch-and-bound/ILP plausibly extends the table well past 150 in hours. Asymptotic layer (the actual Erdős question): Erdős–Freud [ErFr91] construction gives liminf a(N)/√N ≥ 2/√3 ≈ 1.1547 (Sidon set in [1,N/3] ∪ its reflection); conjectured tight. One-exception sets are quasi-Sidon (only one colliding sum ⇒ |A+A| ~ |A|²/2, containment derived here), so Pikhurko's #840 upper bound (1/4+1/(π+2)²)^{-1/2} ≈ 1.8626 applies [Pi06]; erdosproblems.com lists #864 as a weaker form of #840. Asymptotic gap [1.1547, 1.8626] on the constant is a wall; the table lane is the machine surface.",
+   "notes": "PREVIOUS CELL CLOSED HERE (2026-09-28): certificates/erdos-864 decides A389182(N) for every N ≤ 117 by one exhaustive search per N (1 and N fixed, reflection broken; C engine pinned node for node to a Python reference for N ≤ 70 and cross-checked by a second engine for N ≤ 80 and N = 101). a(101..106) = 16, a(107..116) = 17, a(117) = 18 — this CONFIRMS the external report attributed to erdosproblemaday.com (logged unverified on 2026-09-27; it continues a(117..134) = 18, a(135..152) = 19, a(153) = 20, of which only the part through N = 117 is certified here). Per-N cost grows about 1.17x per step at fixed size; the largest refutation (N = 116, size 18) took 3.2e9 nodes. Asymptotic layer (the actual Erdős question): Erdős–Freud [ErFr91] construction gives liminf a(N)/√N ≥ 2/√3 ≈ 1.1547 (Sidon set in [1,N/3] ∪ its reflection); conjectured tight. One-exception sets are quasi-Sidon (only one colliding sum ⇒ |A+A| ~ |A|²/2, containment derived here), so Pikhurko's #840 upper bound (1/4+1/(π+2)²)^{-1/2} ≈ 1.8626 applies [Pi06]; erdosproblems.com lists #864 as a weaker form of #840. Asymptotic gap [1.1547, 1.8626] on the constant is a wall; the table lane is the machine surface.",
    "oeis": "A389182",
    "overlay": "gap_map",
    "problem": 864,
-   "quantity": "A389182(101) — max size of A ⊆ {1..101} such that at most one integer has ≥2 representations as a+b (a≤b∈A); first uncomputed table cell (table complete through n=100)",
+   "quantity": "A389182(118) — max size of A ⊆ {1..118} such that at most one integer has ≥2 representations as a+b (a≤b∈A); first cell past certificates/erdos-864 (table certified through N = 117)",
    "status": "open",
    "type": "surface",
    "upper": {
-    "source": "increment bound a(n+1) ≤ a(n)+1 (deleting the element n+1 preserves validity; derived here)",
-    "value": "17",
-    "year": null
+    "source": "increment bound a(n+1) ≤ a(n)+1 (deleting the element n+1 preserves validity)",
+    "value": "19",
+    "year": 2026
    },
    "witness_feasibility": "open-easy",
-   "witness_object": "a 17-element subset of {1..101} in which at most one sum value has multiple representations (pins a(101)=17; any exhaustive search closing the cell also counts)",
+   "witness_object": "a 19-element subset of {1..118} with at most one repeated sum pins a(118) = 19; otherwise an exhaustive search refutes it, as the certificate does for every smaller N",
    "witness_side": "lower",
    "witness_verifier": "O(|A|^2): build multiset {a+b : a≤b∈A}, count values with multiplicity ≥2, accept iff ≤1 such value; pure-python, milliseconds"
   },

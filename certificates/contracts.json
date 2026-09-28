@@ -170,6 +170,11 @@
    "path": "certificates/erdos-357",
    "classification": "certified_local",
    "boundary": "Exhaustive searches deciding OEIS A364132(1..27) and A364153(1..16) (sequences with distinct segment sums), each term with an explicit sequence checked by brute force. Replicates the published A364132(1..22) and A364153(1..13); the rest is new. C engine pinned node for node to a Python reference and cross-checked by a second engine; no formal proof; nothing about the asymptotic Erdos #357 question."
+  },
+  {
+   "path": "certificates/erdos-864",
+   "classification": "certified_local",
+   "boundary": "One exhaustive search per N deciding OEIS A389182(1..117) (sets with at most one repeated pairwise sum), each step with an explicit set checked by brute force. Replicates the published a(1..80) and the b-file's a(100) = 16; a(101..) are new and confirm an unverified external report. C engine pinned node for node to a Python reference and cross-checked by a second engine; no formal proof; nothing about the asymptotic Erdos #864 question."
   }
  ],
  "claims": [
@@ -1861,6 +1866,137 @@
      "failure_control": {
       "kind": "embedded",
       "evidence": "Every replay must check each witness by brute force alone (a last term equal to the sum of the two before it, and two swapped terms, are planted and must be rejected), must reproduce each deciding search's verdict, node count and sequence with the C engine, must match the Python reference node for node on the small searches, must get the same verdicts from a second engine that shares no code, and must reproduce the published OEIS terms. A search that missed sequences would fail the published terms or the second engine; one that invented them would fail the brute-force check."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-864-a389182-published",
+   "status": "promoted",
+   "statement": "A389182(1..80) as published in OEIS: for each N, an exhaustive search decides whether a set of size a(N-1) + 1 containing 1 and N exists, and each step comes with an explicit set.",
+   "scope": "Finite exhaustive search; a verified-search receipt, not a formal proof. Replicates the published OEIS data: an independent recomputation, nothing new. Says nothing about the asymptotic question of Erdos #864.",
+   "machine_verdict": "\"verified_published\":true",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-864/README.md",
+     "contains": "**A389182(N) for every N ≤ 117: a(101..106) = 16, a(107..116) = 17 and a(117) = 18; everything past N = 100 is new.**",
+     "overclaim_guards": [
+      "resolves Erdős #864",
+      "proves the conjecture"
+     ]
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-864/verify.py",
+     "sha256": "9eb5a204de1e2acd6d81b7791b7b65ceca5c0a91bd1cdd88cf763e66640267e3"
+    },
+    {
+     "path": "certificates/erdos-864/one_exception.py",
+     "sha256": "93c682ab2d992048cecbd46bd68deebf3c824bfb36bf5b762b331dde29c363bf"
+    },
+    {
+     "path": "certificates/erdos-864/onesum.c",
+     "sha256": "64c771721f83ab9aaebc1a7a4cf4d5fec8979be48297df63b24200399ae3ff5c"
+    },
+    {
+     "path": "certificates/erdos-864/onesum_naive.c",
+     "sha256": "dc9f6c3f204952b6afcadd5709adbe4e852c31b72c684bf625015b09abb36b75"
+    },
+    {
+     "path": "certificates/erdos-864/RESULT.json",
+     "sha256": "fe524db93a46aa1468eef0ee6141e91f5f5a54bb0c2de487b7c1899f3e99f154"
+    },
+    {
+     "path": "certificates/erdos-864/emit_result.py",
+     "sha256": "b4357e09eb4be1e4784c29b49b32189c5b8dfcea3eb2ecf9ddbf874e5f6a2b24"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-864/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-864/verify.py"
+     ],
+     "timeout_seconds": 600,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"verified_published\":true",
+      "all checks passed"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "Every replay must check each step's set by brute force alone (the last set plus an element creating a second repeated sum, and with an element doubled, are planted and must be rejected), must reproduce every search's verdict, node count and set with the C engine, must match the Python reference node for node on the small searches, must get the same verdicts from a second engine that shares no code, and must reproduce the published A389182(1..80). A search that missed sets would fail the published data or the second engine; one that invented them would fail the brute-force check."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-864-a389182-new",
+   "status": "promoted",
+   "statement": "A389182(N) for every N <= 117: a(100) = 16, a(101..106) = 16, a(107..116) = 17, a(117) = 18. For each N an exhaustive search decides whether a set of size a(N-1) + 1 containing 1 and N exists; each step comes with an explicit set.",
+   "scope": "Finite exhaustive search; a verified-search receipt, not a formal proof. New beyond the OEIS b-file (a(100) = 16); confirms the unverified external report for N <= 117. The Python reference pins N <= 70 and the second engine N <= 80 and N = 101; the cells past 101 rest on the C engine alone. Says nothing about the asymptotic question of Erdos #864.",
+   "machine_verdict": "\"verified\":true",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-864/README.md",
+     "contains": "**A389182(N) for every N ≤ 117: a(101..106) = 16, a(107..116) = 17 and a(117) = 18; everything past N = 100 is new.**",
+     "overclaim_guards": [
+      "resolves Erdős #864",
+      "proves the conjecture"
+     ]
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-864/verify.py",
+     "sha256": "9eb5a204de1e2acd6d81b7791b7b65ceca5c0a91bd1cdd88cf763e66640267e3"
+    },
+    {
+     "path": "certificates/erdos-864/one_exception.py",
+     "sha256": "93c682ab2d992048cecbd46bd68deebf3c824bfb36bf5b762b331dde29c363bf"
+    },
+    {
+     "path": "certificates/erdos-864/onesum.c",
+     "sha256": "64c771721f83ab9aaebc1a7a4cf4d5fec8979be48297df63b24200399ae3ff5c"
+    },
+    {
+     "path": "certificates/erdos-864/onesum_naive.c",
+     "sha256": "dc9f6c3f204952b6afcadd5709adbe4e852c31b72c684bf625015b09abb36b75"
+    },
+    {
+     "path": "certificates/erdos-864/RESULT.json",
+     "sha256": "fe524db93a46aa1468eef0ee6141e91f5f5a54bb0c2de487b7c1899f3e99f154"
+    },
+    {
+     "path": "certificates/erdos-864/emit_result.py",
+     "sha256": "b4357e09eb4be1e4784c29b49b32189c5b8dfcea3eb2ecf9ddbf874e5f6a2b24"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "slow",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-864/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-864/verify.py",
+      "--full"
+     ],
+     "timeout_seconds": 7200,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"verified\":true",
+      "receipt-checked: RESULT.json"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "Every replay must check each step's set by brute force alone (the last set plus an element creating a second repeated sum, and with an element doubled, are planted and must be rejected), must reproduce every search's verdict, node count and set with the C engine, must match the Python reference node for node on the small searches, must get the same verdicts from a second engine that shares no code, and must reproduce the published A389182(1..80). A search that missed sets would fail the published data or the second engine; one that invented them would fail the brute-force check."
      }
     }
    ]

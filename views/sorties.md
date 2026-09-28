@@ -74,7 +74,7 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 | #820 | A263647 extension — integers n with gcd(2^n-1, 3^n-1) = 1 …[truncated; see source] | open-easy | one bignum gcd: math.gcd(2**n - 1, 3**n - 1) == 1 in …[truncated; see source] | C3 |
 | #852 | A079007(31) (records chain of A053597/A078515/A079889) — smallest …[truncated; see source] | open-easy | from p, iterate next_prime 31 times (deterministic …[truncated; see source] | C3 |
 | #853 | A390769 extension — r(n) = least even positive integer absent from …[truncated; see source] | open-easy | single segmented-sieve pass tracking the set of gaps seen …[truncated; see source] | C3 |
-| #864 | A389182(101) — max size of A ⊆ {1..101} such that at most one integer …[truncated; see source] | open-easy | O(\|A\|^2): build multiset {a+b : a≤b∈A}, count values with …[truncated; see source] | C3 |
+| #864 | A389182(118) — max size of A ⊆ {1..118} such that at most one integer …[truncated; see source] | open-easy | O(\|A\|^2): build multiset {a+b : a≤b∈A}, count values with …[truncated; see source] | C2 |
 | #879 | A186736(2501) = G(2501) — maximum sum of a pairwise-coprime subset of …[truncated; see source] | open-easy | check gcd(a,b)=1 for all pairs (~\|S\|² ≈ 10^5 gcds) and sum …[truncated; see source] | C3 |
 | #913 | A359747 verified frontier — largest verified k such that k(k+1) has …[truncated; see source] | open-easy | factor k and k+1 (trial division + Pollard rho, trivial at …[truncated; see source] | C3 |
 | #932 | A387864 verified frontier — largest verified r such that at least two …[truncated; see source] | open-easy | compute p_r, p_{r+1} (sieve; p_r ≈ 1.2e8 at the frontier); …[truncated; see source] | C3 |
@@ -173,6 +173,8 @@ Every promoted claim replays in one command; the fastest way to learn the receip
 - `erdos-743-k10-packing`: `python3 -I certificates/erdos-743/verify.py --quick`
 - `erdos-854-a389839-16`: `python3 -I certificates/erdos-854/verify.py --full`
 - `erdos-854-a389839-2-15`: `python3 -I certificates/erdos-854/verify.py`
+- `erdos-864-a389182-new`: `python3 -I certificates/erdos-864/verify.py --full`
+- `erdos-864-a389182-published`: `python3 -I certificates/erdos-864/verify.py`
 - `erdos-962-a327909-1-1102`: `python3 -I certificates/erdos-962/verify.py --full`
 - `erdos-962-a327909-1-400`: `python3 -I certificates/erdos-962/verify.py`
 - `erdos-979-a6-public`: `python3 -I certificates/erdos-979/verify.py --cutoff 1e12`
