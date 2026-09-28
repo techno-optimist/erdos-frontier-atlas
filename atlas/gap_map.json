@@ -7965,39 +7965,39 @@
   {
    "problem": 1109,
    "oeis": "A392164",
-   "quantity": "A392165(40) — smallest N with f(N) >= 40, where f(N) = A392164(N) = size of the largest S ⊆ {1..N} such that every element of S+S (pairwise sums, including 2a) is squarefree. Table exact through N = 1103 (f(1103) = 39)",
-   "kind": "next_cell",
+   "quantity": "A392165(55) — smallest N with f(N) >= 55, where f(N) = A392164(N) = size of the largest S ⊆ {1..N} such that every element of S+S (pairwise sums, including 2a) is squarefree. Certified exact through N = 2000 (f(2000) = 54; certificates/erdos-1109)",
+   "kind": "bounded_below_only",
    "lower": {
-    "value": "39 (f exactly computed through N = 1103; 39th record index = 1103)",
-    "source": "OEIS A392164 + A392165 (Beregovsky Jan 2026; A392165 comment by Chai Wah Wu)",
+    "value": "2001",
+    "source": "f(N) <= 54 for every N <= 2000: exhaustive clique search over every candidate N (certificates/erdos-1109, contract erdos-1109-a392165-1-54)",
     "year": 2026
    },
    "upper": null,
-   "witness_side": "lower",
-   "witness_object": "A subset S ⊆ {1..N} with |S| = 40 and every pairwise sum a+a' (including a=a') squarefree — certifies f(N) >= 40 and brackets A392165(40); the exact record index additionally needs exhaustive max-clique confirmation for smaller N.",
+   "witness_side": "upper",
+   "witness_object": "a 55-element S ⊆ {1..N} with every element of S+S squarefree (upper-bounds A392165(55) by max S); the exact value needs every candidate N between 2000 and max S refuted, as the certificate does below 2000",
    "witness_verifier": "For each of the ~820 pairs (a,a') with a <= a' in S, trial-factor a+a' <= 2N to sqrt(2N) and check no square divisor. Milliseconds, fully dependency-free.",
    "witness_feasibility": "open-easy",
    "exact_feasibility": "cell",
    "status": "open",
-   "notes": "Erdős–Sárközy 1987 (Acta Math. Hungar.): log N << f(N) << N^(3/4) log N; best known asymptotics are Konyagin 2004: loglog N (log N)^2 << f(N) << N^(11/15+o(1)) (OEIS formula lines + erdosproblems.com/1109; van Doorn–Tao arXiv:2512.01087 revisits the problem family). Erdős–Sárközy guessed the lower bound is nearer the truth; the problem asks if f(N) <= N^o(1). Machine lane: build the compatibility graph on {1..N} (vertex a admissible iff 2a squarefree; edge iff a+a' squarefree) and run an exact max-clique solver (cliquer-class) — N in the low thousands is hours of compute, extending both A392164 (only 98 terms listed, no b-file) and A392165 (39 record indices, keyword 'more'). A392165 record indices are all odd squarefree (subsequence of A056911, per Wu). This finite table is also the machine surrogate for infinite-version problem #1103.",
+   "notes": "PREVIOUS CELL CLOSED HERE (2026-09-28): certificates/erdos-1109 decides every N <= 2000 (a record at N forces N odd squarefree, the set into one class mod 4, and a clique of size f(N-1) among a < N with a + N squarefree; greedy-colouring clique search, C port pinned node for node to a Python reference). It reproduces all 39 published records A392165(1..39) (C. Wu, to 1103) and finds A392165(40..54) = 1255, 1277, 1293, 1335, 1407, 1509, 1535, 1595, 1707, 1735, 1779, 1835, 1919, 1991, 1999; an independent Russian-doll clique search (rds.c) confirms the first new records. f(N) for N <= 2000 follows, extending A392164 (b-file to 700). Per-N cost grows from 10^5 to 10^8 nodes across 1100..2000, so pushing on is hours, not days. Erdős–Sárközy 1987 (Acta Math. Hungar.): log N << f(N) << N^(3/4) log N; best known asymptotics are Konyagin 2004: loglog N (log N)^2 << f(N) << N^(11/15+o(1)) (OEIS formula lines + erdosproblems.com/1109; van Doorn–Tao arXiv:2512.01087 revisits the problem family). Erdős–Sárközy guessed the lower bound is nearer the truth; the problem asks if f(N) <= N^o(1).",
    "provenance": {
-    "added_by": "gap-map miner chunk 1103-1142",
-    "date": "2026-07-18",
+    "added_by": "claude, erdos-1109 lane (branch chronos/quirky-gates-dalhc4); row first mined 2026-07-18",
+    "date": "2026-09-28",
     "checked": [
-     "OEIS A392164 (JSON)",
-     "OEIS A392165 (JSON)",
-     "erdosproblems.com/1109 (context only, paraphrased)",
-     "arXiv:2512.01087"
+     "OEIS A392164 (b-file n = 1..700, W. A. Carney) and A392165 (a(1..39), C. Wu) via github.com/oeis/oeisdata, 2026-09-28",
+     "our exhaustive search, certificates/erdos-1109 (python3 -I certificates/erdos-1109/verify.py [--full] [--rds])",
+     "erdosproblems.com/1109 (numeric facts paraphrased, via the 2026-07-18 mining)"
     ]
    },
    "evidence": [
     {
-     "type": "literature",
-     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
-     "date": "2026-07-18"
+     "type": "implementation",
+     "artifact": "certificates/erdos-1109: exhaustive clique search over every N <= 2000 (sqclique.c, Python reference, rds.c cross-check)",
+     "date": "2026-09-28",
+     "contract": "erdos-1109-a392165-1-54"
     }
    ],
-   "confidence": "C3"
+   "confidence": "C2"
   },
   {
    "problem": 1113,

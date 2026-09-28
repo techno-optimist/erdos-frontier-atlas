@@ -5,7 +5,7 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 785,
-   "evidenced_by": 17,
+   "evidenced_by": 19,
    "has_surface": 316,
    "learned_from": 5,
    "measures": 223,
@@ -18,8 +18,8 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 21,
-   "evidence_container": 31,
+   "evidence_claim": 23,
+   "evidence_container": 32,
    "external_claim": 91,
    "incident": 18,
    "move": 7,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 4461,
-   "validator-enforced": 26
+   "validator-enforced": 28
   }
  },
  "edges": [
@@ -590,7 +590,7 @@
    "type": "applies"
   },
   {
-   "dst": "S:gap:1109:8259c217",
+   "dst": "S:gap:1109:eb49810a",
    "predicate": "workable",
    "source": "atlas/gap_map.json",
    "src": "M:witness-local-search",
@@ -8432,6 +8432,22 @@
    "type": "evidenced_by"
   },
   {
+   "dst": "E:claim:erdos-1109-a392165-1-39",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P1109",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-1109-a392165-1-54",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P1109",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
    "dst": "E:claim:erdos-13-table",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
@@ -8845,7 +8861,7 @@
    "type": "has_surface"
   },
   {
-   "dst": "S:gap:1109:8259c217",
+   "dst": "S:gap:1109:eb49810a",
    "source": "atlas/gap_map.json",
    "src": "P1109",
    "tier": "deterministic-rule",
@@ -11024,7 +11040,7 @@
   {
    "dst": "O:A392164",
    "source": "atlas/gap_map.json",
-   "src": "S:gap:1109:8259c217",
+   "src": "S:gap:1109:eb49810a",
    "tier": "deterministic-rule",
    "type": "measures"
   },
@@ -33339,6 +33355,109 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-1109/verify.py",
+     "sha256": "8c69788efc5f92ba5026901566c8e399be1b0071ad8cddb70a7e56b30692614a"
+    },
+    {
+     "path": "certificates/erdos-1109/sqfree_sums.py",
+     "sha256": "87956cf273b924245ba4afce1f3ece11357b6729a0dcc5ca48ad02c2aefeaa4c"
+    },
+    {
+     "path": "certificates/erdos-1109/sqclique.c",
+     "sha256": "9c332cdea16123a2dffa38f48fb5e8ea60de6bef86f27344837d0df3a5522d65"
+    },
+    {
+     "path": "certificates/erdos-1109/rds.c",
+     "sha256": "525a09903529b938c42df6f299c1d39f5bb682f7e0b8b2ec7007b20991917964"
+    },
+    {
+     "path": "certificates/erdos-1109/RESULT.json",
+     "sha256": "3315fded2812f44c86e8ba11b0cab32c3a6d78ce57732c85bcb2b57078ea438f"
+    },
+    {
+     "path": "certificates/erdos-1109/rds_crosscheck.txt",
+     "sha256": "3ec48ed91448d92bb1b489365d7897cb36f2fdf483453ece51727100be6c1c7d"
+    },
+    {
+     "path": "certificates/erdos-1109/emit_result.py",
+     "sha256": "31c0d36b563b5835d4566789877165e717cff7e87139f348fe144ae532d28ab6"
+    }
+   ],
+   "claim_id": "erdos-1109-a392165-1-39",
+   "id": "E:claim:erdos-1109-a392165-1-39",
+   "overclaim_guards": 2,
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-1109/verify.py"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "\"verified_1103\":true",
+     "all checks passed"
+    ]
+   },
+   "scope": "Finite exhaustive search; a verified-search receipt, not a formal proof. Replicates the published terms (C. Wu): an independent recomputation, nothing new. Says nothing about the asymptotic questions of Erdos #1109.",
+   "statement": "A392165(1..39), the first 39 record indices of A392164 (1, 5, 19, ..., 1067, 1103): every N <= 1103 with 2N squarefree is decided by exhaustive clique search, and each record comes with an explicit set whose sumset is squarefree.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
+     "path": "certificates/erdos-1109/verify.py",
+     "sha256": "8c69788efc5f92ba5026901566c8e399be1b0071ad8cddb70a7e56b30692614a"
+    },
+    {
+     "path": "certificates/erdos-1109/sqfree_sums.py",
+     "sha256": "87956cf273b924245ba4afce1f3ece11357b6729a0dcc5ca48ad02c2aefeaa4c"
+    },
+    {
+     "path": "certificates/erdos-1109/sqclique.c",
+     "sha256": "9c332cdea16123a2dffa38f48fb5e8ea60de6bef86f27344837d0df3a5522d65"
+    },
+    {
+     "path": "certificates/erdos-1109/rds.c",
+     "sha256": "525a09903529b938c42df6f299c1d39f5bb682f7e0b8b2ec7007b20991917964"
+    },
+    {
+     "path": "certificates/erdos-1109/RESULT.json",
+     "sha256": "3315fded2812f44c86e8ba11b0cab32c3a6d78ce57732c85bcb2b57078ea438f"
+    },
+    {
+     "path": "certificates/erdos-1109/rds_crosscheck.txt",
+     "sha256": "3ec48ed91448d92bb1b489365d7897cb36f2fdf483453ece51727100be6c1c7d"
+    },
+    {
+     "path": "certificates/erdos-1109/emit_result.py",
+     "sha256": "31c0d36b563b5835d4566789877165e717cff7e87139f348fe144ae532d28ab6"
+    }
+   ],
+   "claim_id": "erdos-1109-a392165-1-54",
+   "id": "E:claim:erdos-1109-a392165-1-54",
+   "overclaim_guards": 2,
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-1109/verify.py",
+     "--full"
+    ],
+    "profile": "slow",
+    "stdout_contains": [
+     "\"verified\":true",
+     "receipt-checked: RESULT.json"
+    ]
+   },
+   "scope": "Finite exhaustive search over 811 candidates; a verified-search receipt, not a formal proof. A392165(1..39) replicate the published terms; A392165(40..54) are new. An independent Russian-doll clique search (rds.c) confirms the records and negatives for N in [1104, 1300]. Says nothing about the asymptotic questions of Erdos #1109.",
+   "statement": "A392165(1..54) with A392165(40..54) = 1255, 1277, 1293, 1335, 1407, 1509, 1535, 1595, 1707, 1735, 1779, 1835, 1919, 1991, 1999, and hence f(N) = A392164(N) for every N <= 2000 (f(2000) = 54): every N <= 2000 with 2N squarefree is decided by exhaustive clique search, and each record comes with an explicit set whose sumset is squarefree.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-13/verify.py",
      "sha256": "78905a2576d81347571f1f3872e04171b960cf71942d51fc41a0d8bfe394c07f"
     },
@@ -34041,6 +34160,13 @@
    "classification": "partial_local",
    "id": "E:dir:certificates:erdos-1107",
    "path": "certificates/erdos-1107",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "Exhaustive clique search over every N <= 2000: the record indices A392165(1..54) of A392164, hence f(N) for N <= 2000. Replicates the published A392165(1..39); A392165(40..54) are new. C engine pinned node for node to a Python reference; an independent Russian-doll search confirms N in [1104, 1300]; no formal proof; nothing about the asymptotic Erdos #1109 questions.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-1109",
+   "path": "certificates/erdos-1109",
    "type": "evidence_container"
   },
   {
@@ -70952,33 +71078,34 @@
    "witness_verifier": "Sum the claimed factorials (exact bigint); fully factor the sum (64–90 bit range: Pollard rho, trivial; up to ~10^25: ECM, still cheap); check every prime exponent >= 2. Dependency-free with any bigint + rho implementation."
   },
   {
-   "confidence": "C3",
+   "confidence": "C2",
    "evidence": [
     {
-     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
-     "date": "2026-07-18",
-     "type": "literature"
+     "artifact": "certificates/erdos-1109: exhaustive clique search over every N <= 2000 (sqclique.c, Python reference, rds.c cross-check)",
+     "contract": "erdos-1109-a392165-1-54",
+     "date": "2026-09-28",
+     "type": "implementation"
     }
    ],
    "exact_feasibility": "cell",
-   "id": "S:gap:1109:8259c217",
-   "kind": "next_cell",
+   "id": "S:gap:1109:eb49810a",
+   "kind": "bounded_below_only",
    "lower": {
-    "source": "OEIS A392164 + A392165 (Beregovsky Jan 2026; A392165 comment by Chai Wah Wu)",
-    "value": "39 (f exactly computed through N = 1103; 39th record index = 1103)",
+    "source": "f(N) <= 54 for every N <= 2000: exhaustive clique search over every candidate N (certificates/erdos-1109, contract erdos-1109-a392165-1-54)",
+    "value": "2001",
     "year": 2026
    },
-   "notes": "Erdős–Sárközy 1987 (Acta Math. Hungar.): log N << f(N) << N^(3/4) log N; best known asymptotics are Konyagin 2004: loglog N (log N)^2 << f(N) << N^(11/15+o(1)) (OEIS formula lines + erdosproblems.com/1109; van Doorn–Tao arXiv:2512.01087 revisits the problem family). Erdős–Sárközy guessed the lower bound is nearer the truth; the problem asks if f(N) <= N^o(1). Machine lane: build the compatibility graph on {1..N} (vertex a admissible iff 2a squarefree; edge iff a+a' squarefree) and run an exact max-clique solver (cliquer-class) — N in the low thousands is hours of compute, extending both A392164 (only 98 terms listed, no b-file) and A392165 (39 record indices, keyword 'more'). A392165 record indices are all odd squarefree (subsequence of A056911, per Wu). This finite table is also the machine surrogate for infinite-version problem #1103.",
+   "notes": "PREVIOUS CELL CLOSED HERE (2026-09-28): certificates/erdos-1109 decides every N <= 2000 (a record at N forces N odd squarefree, the set into one class mod 4, and a clique of size f(N-1) among a < N with a + N squarefree; greedy-colouring clique search, C port pinned node for node to a Python reference). It reproduces all 39 published records A392165(1..39) (C. Wu, to 1103) and finds A392165(40..54) = 1255, 1277, 1293, 1335, 1407, 1509, 1535, 1595, 1707, 1735, 1779, 1835, 1919, 1991, 1999; an independent Russian-doll clique search (rds.c) confirms the first new records. f(N) for N <= 2000 follows, extending A392164 (b-file to 700). Per-N cost grows from 10^5 to 10^8 nodes across 1100..2000, so pushing on is hours, not days. Erdős–Sárközy 1987 (Acta Math. Hungar.): log N << f(N) << N^(3/4) log N; best known asymptotics are Konyagin 2004: loglog N (log N)^2 << f(N) << N^(11/15+o(1)) (OEIS formula lines + erdosproblems.com/1109; van Doorn–Tao arXiv:2512.01087 revisits the problem family). Erdős–Sárközy guessed the lower bound is nearer the truth; the problem asks if f(N) <= N^o(1).",
    "oeis": "A392164",
    "overlay": "gap_map",
    "problem": 1109,
-   "quantity": "A392165(40) — smallest N with f(N) >= 40, where f(N) = A392164(N) = size of the largest S ⊆ {1..N} such that every element of S+S (pairwise sums, including 2a) is squarefree. Table exact through N = 1103 (f(1103) = 39)",
+   "quantity": "A392165(55) — smallest N with f(N) >= 55, where f(N) = A392164(N) = size of the largest S ⊆ {1..N} such that every element of S+S (pairwise sums, including 2a) is squarefree. Certified exact through N = 2000 (f(2000) = 54; certificates/erdos-1109)",
    "status": "open",
    "type": "surface",
    "upper": null,
    "witness_feasibility": "open-easy",
-   "witness_object": "A subset S ⊆ {1..N} with |S| = 40 and every pairwise sum a+a' (including a=a') squarefree — certifies f(N) >= 40 and brackets A392165(40); the exact record index additionally needs exhaustive max-clique confirmation for smaller N.",
-   "witness_side": "lower",
+   "witness_object": "a 55-element S ⊆ {1..N} with every element of S+S squarefree (upper-bounds A392165(55) by max S); the exact value needs every candidate N between 2000 and max S refuted, as the certificate does below 2000",
+   "witness_side": "upper",
    "witness_verifier": "For each of the ~820 pairs (a,a') with a <= a' in S, trial-factor a+a' <= 2N to sqrt(2N) and check no square divisor. Milliseconds, fully dependency-free."
   },
   {

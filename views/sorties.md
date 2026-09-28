@@ -86,7 +86,7 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 | #1100 | g(k) = max over squarefree n with omega(n)=k of tau_perp(n), where …[truncated; see source] | open-easy | dependency-free: enumerate all 2^k divisors as prime-subset …[truncated; see source] | C3 |
 | #1107 | A392342 — integers not the sum of at most 4 cubefull numbers (the r=3 …[truncated; see source] | open-easy | For a claimed new term n: enumerate cubefull numbers <= n …[truncated; see source] | C3 |
 | #1108 | A115645(27) — next powerful number (min prime exponent >= 2) …[truncated; see source] | open-easy | Sum the claimed factorials (exact bigint); fully factor the …[truncated; see source] | C3 |
-| #1109 | A392165(40) — smallest N with f(N) >= 40, where f(N) = A392164(N) = …[truncated; see source] | open-easy | For each of the ~820 pairs (a,a') with a <= a' in S, …[truncated; see source] | C3 |
+| #1109 | A392165(55) — smallest N with f(N) >= 55, where f(N) = A392164(N) = …[truncated; see source] | open-easy | For each of the ~820 pairs (a,a') with a <= a' in S, …[truncated; see source] | C2 |
 | #3 | A003002(212) = r_3(212) — maximum size of a subset of {1,...,212} …[truncated; see source] | plausible | Bitset over [1,212]; for each pair x<y test whether 2y-x is …[truncated; see source] | C3 |
 | #11 | A377587(13) — smallest odd m such that m - 2^k is non-squarefree for …[truncated; see source] | plausible | 13 modular divisibility checks p_k^2 \| (m - 2^k) plus one …[truncated; see source] | C3 |
 | #20 | A332077 cell Sun(3,4) — minimal number of distinct sets of …[truncated; see source] | plausible | For N sets enumerate all C(N,4) 4-subsets (N=39: 82251) and …[truncated; see source] | C3 |
@@ -157,6 +157,8 @@ Every promoted claim replays in one command; the fastest way to learn the receip
 - `erdos-1016-h-table-t6-67`: `python3 -I certificates/erdos-1016/verify.py`
 - `erdos-1016-t7-114`: `python3 -I certificates/erdos-1016/verify_k7.py --full`
 - `erdos-1107-public-table`: `python3 -I certificates/erdos-1107/verify.py`
+- `erdos-1109-a392165-1-39`: `python3 -I certificates/erdos-1109/verify.py`
+- `erdos-1109-a392165-1-54`: `python3 -I certificates/erdos-1109/verify.py --full`
 - `erdos-13-table`: `python3 -I certificates/erdos-13/verify.py`
 - `erdos-142-cone-infeasible-objects`: `python3 -I certificates/erdos-142-cone-obstruction/verify.py`
 - `erdos-142-foundation`: `python3 -I certificates/erdos-142/verify.py`

@@ -14,7 +14,7 @@ the release-facing summary of its current state.
 ## The ledger at a glance
 
 - **225 bounded quantities** across the Erdős-hub problems.
-- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **18** lane-added, **195** agent-mined.
+- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **19** lane-added, **194** agent-mined.
 - Honest label: the agent-mined entries are structurally validated but **not yet
   independently number-re-verified** — they carry literature-grade evidence and
   therefore class C3 until a verification artifact exists (the WS1 release gate
@@ -30,17 +30,17 @@ validator fails any stored class the recorded evidence does not prove.
 |---|---|---|
 | C0 | contract-bound formal proof, machine-checked | 0 |
 | C1 | &ge;2 contract-bound independent replays at the claimed range | 0 |
-| C2 | exactly one contract-bound verified replay | 10 |
-| C3 | literature- or numerics-grade — no independent in-project verification artifact | 215 |
+| C2 | exactly one contract-bound verified replay | 11 |
+| C3 | literature- or numerics-grade — no independent in-project verification artifact | 214 |
 
 ## Entries by kind
 
 | kind | meaning | entries | witness-workable |
 |---|---|---|---|
 | `value_gap` | both bounds known; the open `[L, U]` gap is the object | 32 | 7 |
-| `next_cell` | the next uncomputed term of a sequence or table | 79 | 52 |
+| `next_cell` | the next uncomputed term of a sequence or table | 78 | 51 |
 | `verified_range` | a “no counterexample below N” frontier; `lower` records the verified-through value | 31 | 16 |
-| `bounded_below_only` | one-sided bracket: only a lower bound is known | 16 | 4 |
+| `bounded_below_only` | one-sided bracket: only a lower bound is known | 17 | 5 |
 | `bounded_above_only` | one-sided bracket: only an upper bound is known | 1 | 0 |
 | `not_gap_shaped` | on the map for completeness; the problem has no `[L, U]` shape to work | 66 | 0 |
 
@@ -92,7 +92,7 @@ truncated — the full values, sources, and verifier specs live in
 | [#1100](https://www.erdosproblems.com/1100) | [A325864](https://oeis.org/A325864) | g(k) = max over squarefree n with omega(n)=k of tau_perp(n), where tau_perp counts coprime consecutive-diviso… | lower | open-easy | (sqrt(2)+o(1))^k | (2-c)^k for some absolute c>0 |
 | [#1107](https://www.erdosproblems.com/1107) | [A392342](https://oeis.org/A392342) | A392342 — integers not the sum of at most 4 cubefull numbers (the r=3 case of: every large integer is a sum o… | lower | open-easy | 1e9 | ? |
 | [#1108](https://www.erdosproblems.com/1108) | [A115645](https://oeis.org/A115645) | A115645(27) — next powerful number (min prime exponent >= 2) expressible as a sum of distinct factorials; 26… | lower | open-easy | 1e18 | ? |
-| [#1109](https://www.erdosproblems.com/1109) | [A392164](https://oeis.org/A392164) | A392165(40) — smallest N with f(N) >= 40, where f(N) = A392164(N) = size of the largest S ⊆ {1..N} such that… | lower | open-easy | 39 (f exactly computed through N = 1103; 39th record index… | ? |
+| [#1109](https://www.erdosproblems.com/1109) | [A392164](https://oeis.org/A392164) | A392165(55) — smallest N with f(N) >= 55, where f(N) = A392164(N) = size of the largest S ⊆ {1..N} such that… | upper | open-easy | 2001 | ? |
 | [#3](https://www.erdosproblems.com/3) | [A003002](https://oeis.org/A003002) | A003002(212) = r_3(212) — maximum size of a subset of {1,...,212} containing no 3-term arithmetic progression | lower | plausible | 43 | 44 |
 | [#11](https://www.erdosproblems.com/11) | [A377587](https://oeis.org/A377587) | A377587(13) — smallest odd m such that m - 2^k is non-squarefree for every k = 1..13 | upper | plausible | > 1125899906842624 (= 2^50) | ? |
 | [#20](https://www.erdosproblems.com/20) | [A332077](https://oeis.org/A332077) | A332077 cell Sun(3,4) — minimal number of distinct sets of cardinality <= 3 forcing a 4-sunflower (first unco… | lower | plausible | 40 | 163 |
