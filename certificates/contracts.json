@@ -160,6 +160,11 @@
    "path": "certificates/erdos-1109",
    "classification": "certified_local",
    "boundary": "Exhaustive clique search over every N <= 2000: the record indices A392165(1..54) of A392164, hence f(N) for N <= 2000. Replicates the published A392165(1..39); A392165(40..54) are new. C engine pinned node for node to a Python reference; an independent Russian-doll search confirms N in [1104, 1300]; no formal proof; nothing about the asymptotic Erdos #1109 questions."
+  },
+  {
+   "path": "certificates/erdos-131",
+   "classification": "certified_local",
+   "boundary": "Exhaustive threshold search: T_1..T_10 of OEIS A068063 (1, 3, 7, 10, 21, 31, 43, 65, 107, 155), each with an explicit nondividing set checked by brute force. Replicates the published T_1..T_8; T_9 and T_10 are new. C engine pinned node for node to a Python reference (k <= 8 and the new k = 9 range); no formal proof; nothing about the asymptotic Erdos #131 question."
   }
  ],
  "claims": [
@@ -1597,6 +1602,129 @@
      "failure_control": {
       "kind": "embedded",
       "evidence": "Every replay must check each record set by trial division alone (a set with its largest element moved into the other class mod 4, or with an even element, is planted and must be rejected), must reproduce every candidate's verdict, graph size, node count and record set with the C engine, must match the Python reference node for node on every N <= 400, and must reproduce the 39 published records A392165(1..39) and the published A392164 prefix. A search that missed cliques or invented them would shift a published record."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-131-a068063-t1-t8",
+   "status": "promoted",
+   "statement": "The A068063 thresholds T_1..T_8 = 1, 3, 7, 10, 21, 31, 43, 65: for each k, every N below T_k is refuted by exhaustive search and T_k comes with an explicit nondividing k-set of maximum T_k.",
+   "scope": "Finite exhaustive search; a verified-search receipt, not a formal proof. Replicates the published A068063 data: an independent recomputation, nothing new. Says nothing about the asymptotic question of Erdos #131.",
+   "machine_verdict": "\"verified_t8\":true",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-131/README.md",
+     "contains": "**T_1..T_10 = 1, 3, 7, 10, 21, 31, 43, 65, 107, 155; T_9 and T_10 are new.**",
+     "overclaim_guards": [
+      "resolves Erdős #131",
+      "proves the conjecture"
+     ]
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-131/verify.py",
+     "sha256": "b8d8339264031b2817d6c3b4242d3ead8dffa7c06606f8f5e03b4fd9d13ebb3d"
+    },
+    {
+     "path": "certificates/erdos-131/nondividing.py",
+     "sha256": "347c0f474e06de8123f20b0c4db4ea769fd9901c0931b0a49def8c7ae73cfcf9"
+    },
+    {
+     "path": "certificates/erdos-131/nondiv.c",
+     "sha256": "b6ed7dc7a7c8b9f4ca99d6510a71b2338733dccf04790feb1a6e425dd0d5abd3"
+    },
+    {
+     "path": "certificates/erdos-131/RESULT.json",
+     "sha256": "55d02ea2ca77136c379cb4818aa2ae65e4bca9ea7786ac168039181f861736d4"
+    },
+    {
+     "path": "certificates/erdos-131/emit_result.py",
+     "sha256": "a5cdb7089b55c696d9d7d67ba8fb8732eee860cde3a17a5a79e7f0aa61642589"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-131/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-131/verify.py"
+     ],
+     "timeout_seconds": 600,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"verified_t8\":true",
+      "all checks passed"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "Every replay must check each threshold set by brute force alone (a set extended by half or twice its smallest element is planted and must be rejected), must reproduce every (k, N) search's verdict, node count and set with the C engine, must match the Python reference node for node on every search for k <= 8, and must reproduce the published thresholds T_1..T_8 (where the OEIS data step up). A search that missed sets would fail the published thresholds; one that invented them would fail the brute-force check."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-131-a068063-t9-t10",
+   "status": "promoted",
+   "statement": "T_9 = 107 and T_10 = 155 for A068063: no nondividing 9-subset of {1..106} and none of size 10 in {1..154} (exhaustive search), with explicit nondividing sets {60, 70, 87, 90, 92, 100, 102, 105, 107} and {80, 95, 115, 120, 134, 139, 140, 149, 154, 155}. Hence A068063(n) = 8 on 65..106, 9 on 107..154, and 10 at 155.",
+   "scope": "Finite exhaustive search; a verified-search receipt, not a formal proof. New beyond the OEIS b-file (a(100) = 8). The k = 9 searches past the b-file are pinned node for node to the Python reference; the k = 10 negatives rest on the C engine alone. Says nothing about the asymptotic question of Erdos #131.",
+   "machine_verdict": "\"verified\":true",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-131/README.md",
+     "contains": "**T_1..T_10 = 1, 3, 7, 10, 21, 31, 43, 65, 107, 155; T_9 and T_10 are new.**",
+     "overclaim_guards": [
+      "resolves Erdős #131",
+      "proves the conjecture"
+     ]
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-131/verify.py",
+     "sha256": "b8d8339264031b2817d6c3b4242d3ead8dffa7c06606f8f5e03b4fd9d13ebb3d"
+    },
+    {
+     "path": "certificates/erdos-131/nondividing.py",
+     "sha256": "347c0f474e06de8123f20b0c4db4ea769fd9901c0931b0a49def8c7ae73cfcf9"
+    },
+    {
+     "path": "certificates/erdos-131/nondiv.c",
+     "sha256": "b6ed7dc7a7c8b9f4ca99d6510a71b2338733dccf04790feb1a6e425dd0d5abd3"
+    },
+    {
+     "path": "certificates/erdos-131/RESULT.json",
+     "sha256": "55d02ea2ca77136c379cb4818aa2ae65e4bca9ea7786ac168039181f861736d4"
+    },
+    {
+     "path": "certificates/erdos-131/emit_result.py",
+     "sha256": "a5cdb7089b55c696d9d7d67ba8fb8732eee860cde3a17a5a79e7f0aa61642589"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "slow",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-131/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-131/verify.py",
+      "--full"
+     ],
+     "timeout_seconds": 7200,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"verified\":true",
+      "receipt-checked: RESULT.json"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "Every replay must check each threshold set by brute force alone (a set extended by half or twice its smallest element is planted and must be rejected), must reproduce every (k, N) search's verdict, node count and set with the C engine, must match the Python reference node for node on every search for k <= 8, and must reproduce the published thresholds T_1..T_8 (where the OEIS data step up). A search that missed sets would fail the published thresholds; one that invented them would fail the brute-force check."
      }
     }
    ]

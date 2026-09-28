@@ -49,7 +49,7 @@ The state of this edition, generated from the data:
 |---|---|
 | data through | **2026-09-28** (latest provenance/evidence date in the gap map) |
 | the ledger | **225** bounded quantities |
-| confidence | C0 0 · C1 0 · C2 11 · C3 214 |
+| confidence | C0 0 · C1 0 · C2 12 · C3 213 |
 | movements on the board | **13** (🟢 9 · 🔴 2 · 🟡 2) — corrected claims kept visible |
 
 ---
@@ -72,17 +72,17 @@ artifact exists. The map does not pretend its own entries are verified; the
 labeling *is* the release gate.
 
 - **225 bounded quantities** on the map ([`atlas/gap_map.json`](../atlas/gap_map.json)).
-- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **19** lane-added, **194** agent-mined.
-- Confidence distribution (computed from `evidence[]`, never asserted): **C0** 0 · **C1** 0 · **C2** 11 · **C3** 214.
+- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **20** lane-added, **193** agent-mined.
+- Confidence distribution (computed from `evidence[]`, never asserted): **C0** 0 · **C1** 0 · **C2** 12 · **C3** 213.
 - **79 witness-workable**: still open, with a side a single submitted
   construction — checked by the entry's stated verifier — can move.
 
 | kind | entries | witness-workable |
 |---|---|---|
 | `value_gap` | 32 | 7 |
-| `next_cell` | 78 | 51 |
+| `next_cell` | 77 | 50 |
 | `verified_range` | 31 | 16 |
-| `bounded_below_only` | 17 | 5 |
+| `bounded_below_only` | 18 | 6 |
 | `bounded_above_only` | 1 | 0 |
 | `not_gap_shaped` | 66 | 0 |
 
@@ -357,8 +357,8 @@ fails any stored class the recorded evidence does not prove.
 |---|---|---|
 | C0 | contract-bound formal proof, machine-checked | 0 |
 | C1 | &ge;2 contract-bound independent replays at the claimed range | 0 |
-| C2 | exactly one contract-bound verified replay | 11 |
-| C3 | literature- or numerics-grade — no independent in-project verification artifact | 214 |
+| C2 | exactly one contract-bound verified replay | 12 |
+| C3 | literature- or numerics-grade — no independent in-project verification artifact | 213 |
 
 The remaining instruments are refusals. The **freshness gate**: no claim of
 "new" ships before a survey-literature check — this project's one retraction

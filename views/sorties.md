@@ -49,7 +49,7 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 
 | # | quantity | feas | witness verifier | confidence |
 |---|---|---|---|---|
-| #131 | A068063(101) — maximum size of a nondividing subset of {1,...,101} …[truncated; see source] | open-easy | For each a in A run a subset-sum DP over A\{a} modulo a and …[truncated; see source] | C3 |
+| #131 | T_11 for A068063 — least n such that {1..n} has a nondividing …[truncated; see source] | open-easy | for each element, test every nonempty subset sum of the …[truncated; see source] | C2 |
 | #156 | i(9) — largest n such that {1..n} contains an inclusion-maximal Sidon …[truncated; see source] | open-easy | Check the C(9,2) differences are distinct; then for each of …[truncated; see source] | C3 |
 | #170 | A046693(214) — minimal number of marks in a sparse ruler / restricted …[truncated; see source] | open-easy | Compute all \|S\|^2 pairwise differences and check {1..214} …[truncated; see source] | C3 |
 | #295 | A192881(17) — minimum number of terms in an Egyptian fraction …[truncated; see source] | open-easy | Exact rational arithmetic (e.g. Python fractions): check …[truncated; see source] | C3 |
@@ -160,6 +160,8 @@ Every promoted claim replays in one command; the fastest way to learn the receip
 - `erdos-1109-a392165-1-39`: `python3 -I certificates/erdos-1109/verify.py`
 - `erdos-1109-a392165-1-54`: `python3 -I certificates/erdos-1109/verify.py --full`
 - `erdos-13-table`: `python3 -I certificates/erdos-13/verify.py`
+- `erdos-131-a068063-t1-t8`: `python3 -I certificates/erdos-131/verify.py`
+- `erdos-131-a068063-t9-t10`: `python3 -I certificates/erdos-131/verify.py --full`
 - `erdos-142-cone-infeasible-objects`: `python3 -I certificates/erdos-142-cone-obstruction/verify.py`
 - `erdos-142-foundation`: `python3 -I certificates/erdos-142/verify.py`
 - `erdos-366-cubefull-sweep-1e25`: `python3 -I certificates/erdos-366/verify.py --quick`

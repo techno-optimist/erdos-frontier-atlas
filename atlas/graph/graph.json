@@ -5,7 +5,7 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 785,
-   "evidenced_by": 19,
+   "evidenced_by": 21,
    "has_surface": 316,
    "learned_from": 5,
    "measures": 223,
@@ -18,8 +18,8 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 23,
-   "evidence_container": 32,
+   "evidence_claim": 25,
+   "evidence_container": 33,
    "external_claim": 91,
    "incident": 18,
    "move": 7,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 4461,
-   "validator-enforced": 28
+   "validator-enforced": 30
   }
  },
  "edges": [
@@ -614,7 +614,7 @@
    "type": "applies"
   },
   {
-   "dst": "S:gap:131:e2ac51a8",
+   "dst": "S:gap:131:d3623451",
    "predicate": "workable",
    "source": "atlas/gap_map.json",
    "src": "M:witness-local-search",
@@ -8456,6 +8456,22 @@
    "type": "evidenced_by"
   },
   {
+   "dst": "E:claim:erdos-131-a068063-t1-t8",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P131",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-131-a068063-t9-t10",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P131",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
    "dst": "E:claim:erdos-142-cone-infeasible-objects",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
@@ -8966,7 +8982,7 @@
    "type": "has_surface"
   },
   {
-   "dst": "S:gap:131:e2ac51a8",
+   "dst": "S:gap:131:d3623451",
    "source": "atlas/gap_map.json",
    "src": "P131",
    "tier": "deterministic-rule",
@@ -11103,7 +11119,7 @@
   {
    "dst": "O:A068063",
    "source": "atlas/gap_map.json",
-   "src": "S:gap:131:e2ac51a8",
+   "src": "S:gap:131:d3623451",
    "tier": "deterministic-rule",
    "type": "measures"
   },
@@ -33488,6 +33504,93 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-131/verify.py",
+     "sha256": "b8d8339264031b2817d6c3b4242d3ead8dffa7c06606f8f5e03b4fd9d13ebb3d"
+    },
+    {
+     "path": "certificates/erdos-131/nondividing.py",
+     "sha256": "347c0f474e06de8123f20b0c4db4ea769fd9901c0931b0a49def8c7ae73cfcf9"
+    },
+    {
+     "path": "certificates/erdos-131/nondiv.c",
+     "sha256": "b6ed7dc7a7c8b9f4ca99d6510a71b2338733dccf04790feb1a6e425dd0d5abd3"
+    },
+    {
+     "path": "certificates/erdos-131/RESULT.json",
+     "sha256": "55d02ea2ca77136c379cb4818aa2ae65e4bca9ea7786ac168039181f861736d4"
+    },
+    {
+     "path": "certificates/erdos-131/emit_result.py",
+     "sha256": "a5cdb7089b55c696d9d7d67ba8fb8732eee860cde3a17a5a79e7f0aa61642589"
+    }
+   ],
+   "claim_id": "erdos-131-a068063-t1-t8",
+   "id": "E:claim:erdos-131-a068063-t1-t8",
+   "overclaim_guards": 2,
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-131/verify.py"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "\"verified_t8\":true",
+     "all checks passed"
+    ]
+   },
+   "scope": "Finite exhaustive search; a verified-search receipt, not a formal proof. Replicates the published A068063 data: an independent recomputation, nothing new. Says nothing about the asymptotic question of Erdos #131.",
+   "statement": "The A068063 thresholds T_1..T_8 = 1, 3, 7, 10, 21, 31, 43, 65: for each k, every N below T_k is refuted by exhaustive search and T_k comes with an explicit nondividing k-set of maximum T_k.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
+     "path": "certificates/erdos-131/verify.py",
+     "sha256": "b8d8339264031b2817d6c3b4242d3ead8dffa7c06606f8f5e03b4fd9d13ebb3d"
+    },
+    {
+     "path": "certificates/erdos-131/nondividing.py",
+     "sha256": "347c0f474e06de8123f20b0c4db4ea769fd9901c0931b0a49def8c7ae73cfcf9"
+    },
+    {
+     "path": "certificates/erdos-131/nondiv.c",
+     "sha256": "b6ed7dc7a7c8b9f4ca99d6510a71b2338733dccf04790feb1a6e425dd0d5abd3"
+    },
+    {
+     "path": "certificates/erdos-131/RESULT.json",
+     "sha256": "55d02ea2ca77136c379cb4818aa2ae65e4bca9ea7786ac168039181f861736d4"
+    },
+    {
+     "path": "certificates/erdos-131/emit_result.py",
+     "sha256": "a5cdb7089b55c696d9d7d67ba8fb8732eee860cde3a17a5a79e7f0aa61642589"
+    }
+   ],
+   "claim_id": "erdos-131-a068063-t9-t10",
+   "id": "E:claim:erdos-131-a068063-t9-t10",
+   "overclaim_guards": 2,
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-131/verify.py",
+     "--full"
+    ],
+    "profile": "slow",
+    "stdout_contains": [
+     "\"verified\":true",
+     "receipt-checked: RESULT.json"
+    ]
+   },
+   "scope": "Finite exhaustive search; a verified-search receipt, not a formal proof. New beyond the OEIS b-file (a(100) = 8). The k = 9 searches past the b-file are pinned node for node to the Python reference; the k = 10 negatives rest on the C engine alone. Says nothing about the asymptotic question of Erdos #131.",
+   "statement": "T_9 = 107 and T_10 = 155 for A068063: no nondividing 9-subset of {1..106} and none of size 10 in {1..154} (exhaustive search), with explicit nondividing sets {60, 70, 87, 90, 92, 100, 102, 105, 107} and {80, 95, 115, 120, 134, 139, 140, 149, 154, 155}. Hence A068063(n) = 8 on 65..106, 9 on 107..154, and 10 at 155.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-142-cone-obstruction/verify.py",
      "sha256": "bb4702028016d32206c1c3472a6c95b9833178cb2e5733be2338e8a7667acf1a"
     },
@@ -34174,6 +34277,13 @@
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-13",
    "path": "certificates/erdos-13",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "Exhaustive threshold search: T_1..T_10 of OEIS A068063 (1, 3, 7, 10, 21, 31, 43, 65, 107, 155), each with an explicit nondividing set checked by brute force. Replicates the published T_1..T_8; T_9 and T_10 are new. C engine pinned node for node to a Python reference (k <= 8 and the new k = 9 range); no formal proof; nothing about the asymptotic Erdos #131 question.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-131",
+   "path": "certificates/erdos-131",
    "type": "evidence_container"
   },
   {
@@ -71349,38 +71459,35 @@
    "witness_verifier": "5-line dependency-free Python: compute the 105 integer squared distances, assert len(set(...)) == 105 and all coordinates within the grid. Instant. A k=19 witness sets A193838(15) <= 19; a k=18 witness also lifts A271490(18) to >= 15."
   },
   {
-   "confidence": "C3",
+   "confidence": "C2",
    "evidence": [
     {
-     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
-     "date": "2026-07-18",
-     "type": "literature"
+     "artifact": "certificates/erdos-131: exhaustive threshold search through k = 10 (nondiv.c, Python reference)",
+     "contract": "erdos-131-a068063-t9-t10",
+     "date": "2026-09-28",
+     "type": "implementation"
     }
    ],
    "exact_feasibility": "cell",
-   "id": "S:gap:131:e2ac51a8",
-   "kind": "next_cell",
+   "id": "S:gap:131:d3623451",
+   "kind": "bounded_below_only",
    "lower": {
-    "source": "Monotonicity from A068063(100) = 8 (OEIS b-file b068063.txt by Christian Sievers, re-fetched and read 2026-07-18)",
-    "value": "8",
-    "year": null
+    "source": "T_10 = 155 (certificates/erdos-131, contract erdos-131-a068063-t9-t10) and T_{k+1} > T_k: a (k+1)-set with maximum N, minus N, is a nondividing k-set below N",
+    "value": "156",
+    "year": 2026
    },
-   "notes": "Headline #131 asks the growth of F(N): Erdos's original question (F(N) > N^{1/2-o(1)}?) is answered NO — F(N) <= N^{1/4+o(1)} via the non-averaging-set link (Pham-Zakharov 2024), against F(N) >> N^{1/5} (Csaba construction, in ELRSS99) and Straus's exp((sqrt(2/log 2)+o(1)) sqrt(log N)); correct exponent open (asymptotic, not machine-movable). The finite table is the scout surface: branch-and-bound over {1..N} extends A068063 cheaply (jumps to size 8 at n=65; size-9 threshold unknown — locating min{N : F(N)=9} is a clean, ownable record). Cross-ref Erdos #13 (Erdos-Sarkozy) and #186 (non-averaging), already worked in-project.",
+   "notes": "PREVIOUS CELL CLOSED HERE (2026-09-28): certificates/erdos-131 finds the thresholds T_1..T_10 = 1, 3, 7, 10, 21, 31, 43, 65, 107, 155 of A068063 by exhaustive search (decreasing-order search pruned by the smaller thresholds; C port pinned node for node to a Python reference for k <= 8 and on the new k = 9 range N = 101..107). T_9 = 107 and T_10 = 155 are new: A068063(n) = 8 for 65 <= n <= 106 (so the old cell a(101) = 8), 9 for 107 <= n <= 154, and 10 at 155. Per-N cost grows from 10^6 nodes (k = 9) to 6 * 10^7 (k = 10), so T_11 is hours-to-days of the same search. Headline #131 asks the growth of F(N): Erdos's original question (F(N) > N^{1/2-o(1)}?) is answered NO — F(N) <= N^{1/4+o(1)} via the non-averaging-set link (Pham-Zakharov 2024), against F(N) >> N^{1/5} (Csaba construction, in ELRSS99) and Straus's exp((sqrt(2/log 2)+o(1)) sqrt(log N)); correct exponent open (asymptotic, not machine-movable).",
    "oeis": "A068063",
    "overlay": "gap_map",
    "problem": 131,
-   "quantity": "A068063(101) — maximum size of a nondividing subset of {1,...,101} (no element divides the sum of any nonempty subset of the others); first cell beyond the b-file, which ends at a(100)=8",
+   "quantity": "T_11 for A068063 — least n such that {1..n} has a nondividing 11-subset (no element divides the sum of any nonempty subset of the others); A068063(n) = 10 from n = 155 until T_11",
    "status": "open",
    "type": "surface",
-   "upper": {
-    "source": "DERIVED deletion bound a(N+1) <= a(N)+1 (removing an element preserves the nondividing property) with a(100)=8; the explicit literature bound F(N) < 3*sqrt(N)+1 (Erdos-Lev-Rauzy-Sandor-Sarkozy 1999) gives only 31",
-    "value": "9",
-    "year": 1999
-   },
+   "upper": null,
    "witness_feasibility": "open-easy",
-   "witness_object": "A 9-element subset A of {1,...,101} such that for every a in A, no nonempty subset of A\\{a} has sum divisible by a. Existence pins a(101)=9; exhaustive refutation pins a(101)=8.",
-   "witness_side": "lower",
-   "witness_verifier": "For each a in A run a subset-sum DP over A\\{a} modulo a and assert residue 0 is unreachable by a nonempty subset (or brute-force all 2^8 = 256 subsets per element). Microseconds, dependency-free."
+   "witness_object": "an explicit nondividing 11-subset of {1..n} upper-bounds T_11 by its maximum; the exact value needs every n below it refuted, as the certificate does for k <= 10",
+   "witness_side": "upper",
+   "witness_verifier": "for each element, test every nonempty subset sum of the other 10 elements for divisibility (11 * (2^10 - 1) sums) — dependency-free, instant"
   },
   {
    "confidence": "C3",
