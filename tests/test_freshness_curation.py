@@ -53,6 +53,10 @@ def test_repointed_rows_match_the_checks():
     assert r1095["quantity"].startswith("A003458(401)") and max(mod.G) == 400
     (r20,) = rows(20)
     assert r20["lower"]["value"] == "40" and len(set(mod.f39())) == 39
+    (r791,) = rows(791)
+    assert r791["quantity"].startswith("A001212(25)")
+    assert int(r791["lower"]["value"]) == mod.stamp_reach(mod.BASIS_25)
+    assert [mod.from_stamps(n) for n in range(51)] == mod.A066063_DATA
     (r302,) = rows(302)
     assert r302["quantity"].startswith("A390395(735)")
     assert (r302["lower"]["value"], r302["upper"]["value"]) == ("608", "609")
@@ -60,6 +64,6 @@ def test_repointed_rows_match_the_checks():
 
 def test_curated_rows_stay_literature_grade():
     # no certificate backs these rows, so the computed class must stay C3
-    for p in (20, 156, 302, 376, 451, 1005, 1057, 1062, 1095):
+    for p in (20, 156, 302, 376, 451, 791, 1005, 1057, 1062, 1095):
         for e in rows(p):
             assert e["confidence"] == "C3", p

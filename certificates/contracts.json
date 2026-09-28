@@ -150,6 +150,11 @@
    "path": "certificates/sendov-conjecture",
    "classification": "research_fence",
    "boundary": "Checks bounded computational lemmas and sampled regions, not Sendov's conjecture."
+  },
+  {
+   "path": "certificates/erdos-962",
+   "classification": "certified_local",
+   "boundary": "Exact smooth-number scan of [1, 4.2*10^10]: OEIS A327909(n) for 1 <= n <= 1102, each with its maximal run checked by gcd. Replicates the published b-file (a(1..999), including a(999) = 22369305365); a(1000..1102) are new. Two C engines (sequential and chunked) plus a Python sieve on small ranges; no formal proof; nothing about the asymptotic Erdos #962 question."
   }
  ],
  "claims": [
@@ -1297,6 +1302,137 @@
      "failure_control": {
       "kind": "embedded",
       "evidence": "Every replay must check each recorded witness by gcd alone (a shifted witness and a witness for the wrong gap are planted and must be rejected), must reproduce the engine's verdict, node count and witness for every gap, must show the engine does not stop at the first absent gap (13# misses 20 but has 22, the Lacampagne-Selfridge case), and must match the Python reference node for node on every (n, t) with n <= 12. A search that always answered 'absent' fails the witnesses; one that always answered 'occurs' fails the published terms a(2..12)."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-962-a327909-1-400",
+   "status": "promoted",
+   "statement": "A327909(n) for 1 <= n <= 400: for each n, a(n) starts a maximal run of at least n consecutive integers each having a prime factor > n (checked by gcd), and an exact scan of [1, 2*10^8] finds no earlier such run.",
+   "scope": "Exact finite scan; a verified-search receipt, not a formal proof. Replicates the published OEIS b-file (T. Garrison 1..369, D. Spencer 370..400): an independent recomputation, nothing new. Says nothing about the asymptotic question of Erdos #962.",
+   "machine_verdict": "\"verified_1_400\":true",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-962/README.md",
+     "contains": "**A327909(n) for 1 ≤ n ≤ 1102; a(1000..1102) are new.**",
+     "overclaim_guards": [
+      "resolves Erdős #962",
+      "proves the conjecture"
+     ]
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-962/verify.py",
+     "sha256": "dae6c4c8b68f7364cb101b4c19c586ce23246540a2ed391f7e4fa50a797c157f"
+    },
+    {
+     "path": "certificates/erdos-962/smooth_runs.py",
+     "sha256": "c00f548616c0db57c5706907351da4ed347538644443d1c436fd8607af836a7d"
+    },
+    {
+     "path": "certificates/erdos-962/runs.c",
+     "sha256": "d365f244e5166863fe84b7c50514ad5bb9200cc17aa6f24edc83fd753e0611e9"
+    },
+    {
+     "path": "certificates/erdos-962/chunk.c",
+     "sha256": "3cbb4b3691016b244a2d04367649b71738223465005fe8bd6d6e1728b6ebe096"
+    },
+    {
+     "path": "certificates/erdos-962/RESULT.json",
+     "sha256": "e09688d8c7bd1e9a8c1da1f1edf89492a76c41c21182a888dbec0d644b2fb483"
+    },
+    {
+     "path": "certificates/erdos-962/emit_result.py",
+     "sha256": "313b710ac8eb56da87b8382086045d52ffaeb579eb7c1e57d6e93282e0904b37"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-962/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-962/verify.py"
+     ],
+     "timeout_seconds": 900,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"verified_1_400\":true",
+      "all checks passed"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "Every replay must check each recorded run by gcd alone (a run shifted back by one, claimed one longer, or started one late is planted and must be rejected), must reproduce a(n) and the run length with two engines that agree with each other (the sequential scan and the chunked scan, whose merge is also re-run on 7 uneven chunks), and must match an independent Python sieve on [1, 10^6] for n <= 120 and the OEIS data a(1..44). An engine that missed runs would fail the OEIS data and the b-file's a(999); one that invented runs would fail the gcd checks."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-962-a327909-1-1102",
+   "status": "promoted",
+   "statement": "A327909(n) for 1 <= n <= 1102, with a(1000..1003) = 22369305365, a(1004..1011) = 25446495399, a(1012) = 28119442098, ..., a(1097..1102) = 41063158607: each a(n) starts a maximal run of at least n consecutive integers each having a prime factor > n (checked by gcd), and an exact scan of [1, 4.2*10^10] finds no earlier such run.",
+   "scope": "Exact finite scan (every integer up to 4.2*10^10); a verified-search receipt, not a formal proof. a(1..999) replicate the OEIS b-file, whose last term a(999) = 22369305365 is matched; a(1000..1102) are new. Gives Erdos's k(n) = max{k : a(k) <= n + 1} exactly for n < 41063158606. Says nothing about the asymptotic question of Erdos #962.",
+   "machine_verdict": "\"verified\":true",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-962/README.md",
+     "contains": "**A327909(n) for 1 ≤ n ≤ 1102; a(1000..1102) are new.**",
+     "overclaim_guards": [
+      "resolves Erdős #962",
+      "proves the conjecture"
+     ]
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-962/verify.py",
+     "sha256": "dae6c4c8b68f7364cb101b4c19c586ce23246540a2ed391f7e4fa50a797c157f"
+    },
+    {
+     "path": "certificates/erdos-962/smooth_runs.py",
+     "sha256": "c00f548616c0db57c5706907351da4ed347538644443d1c436fd8607af836a7d"
+    },
+    {
+     "path": "certificates/erdos-962/runs.c",
+     "sha256": "d365f244e5166863fe84b7c50514ad5bb9200cc17aa6f24edc83fd753e0611e9"
+    },
+    {
+     "path": "certificates/erdos-962/chunk.c",
+     "sha256": "3cbb4b3691016b244a2d04367649b71738223465005fe8bd6d6e1728b6ebe096"
+    },
+    {
+     "path": "certificates/erdos-962/RESULT.json",
+     "sha256": "e09688d8c7bd1e9a8c1da1f1edf89492a76c41c21182a888dbec0d644b2fb483"
+    },
+    {
+     "path": "certificates/erdos-962/emit_result.py",
+     "sha256": "313b710ac8eb56da87b8382086045d52ffaeb579eb7c1e57d6e93282e0904b37"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "slow",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-962/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-962/verify.py",
+      "--full"
+     ],
+     "timeout_seconds": 3600,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"verified\":true",
+      "receipt-checked: RESULT.json"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "Every replay must check each recorded run by gcd alone (a run shifted back by one, claimed one longer, or started one late is planted and must be rejected), must reproduce a(n) and the run length with two engines that agree with each other (the sequential scan and the chunked scan, whose merge is also re-run on 7 uneven chunks), and must match an independent Python sieve on [1, 10^6] for n <= 120 and the OEIS data a(1..44). An engine that missed runs would fail the OEIS data and the b-file's a(999); one that invented runs would fail the gcd checks."
      }
     }
    ]

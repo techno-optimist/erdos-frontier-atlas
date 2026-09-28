@@ -5569,39 +5569,45 @@
   {
    "problem": 791,
    "oeis": "A066063",
-   "quantity": "A066063(51) — minimal size of S ⊆ {0..51} with S+S ⊇ {0..51} (finite additive 2-basis; first uncomputed cell, table + b-file end at n=50)",
-   "kind": "next_cell",
+   "quantity": "A001212(25) = n_2(25) — largest n such that some 25 positive integers give every 1..n as a sum of at most two of them (2-stamp postage-stamp problem). A066063(n) = 1 + min{k : A001212(k) >= n}, so A066063 is determined for n <= 212 and equals 26 exactly on 213 <= n <= n_2(25)",
+   "kind": "value_gap",
    "lower": {
-    "value": "12",
-    "source": "a(50)=12 (OEIS A066063 b-file) + trivial monotonicity (elements > t never appear in a sum equal to t, so an (n+1)-cover restricts to an n-cover)",
-    "year": 2001
+    "value": "227",
+    "source": "explicit 25-element basis {1, 3, 4, 6, 10, 13, 15, 21, 29, 37, 45, 53, 61, 69, 77, 85, 93, 101, 105, 106, 108, 110, 111, 112, 115} covering 1..227 with at most two summands, found by local search and checked for this curation (experiments/claude-freshness-20260927/curation_checks.py); the literature may hold better bases (Challis–Robinson tabulate bases beyond k = 24; not reachable here)",
+    "year": 2026
    },
    "upper": {
-    "value": "13",
-    "source": "trivial: 0 is forced into every cover, so appending 51 to an optimal cover of {0..50} gives a(51) <= a(50)+1 = 13",
-    "year": 2001
+    "value": "350",
+    "source": "trivial: 25 integers give at most 25 + C(26,2) = 350 distinct sums of at most two of them",
+    "year": null
    },
-   "witness_side": "upper",
-   "witness_object": "an explicit S ⊆ {0..51}, |S| = 12, with S+S ⊇ {0..51} (settles a(51)=12); min-type quantity, so the smaller cover is the witness — any extended verified row of A066063 is a record",
-   "witness_verifier": "O(|S|^2) sumset check: mark all a+b for a,b in S, assert 0..51 all marked — dependency-free; exactness of a new cell additionally needs the (tiny, n=51) exhaustive/ILP no-11-cover certificate",
+   "witness_side": "lower",
+   "witness_object": "25 positive integers whose sums of at most two cover 1..L for some L > 227 (raises the lower bound; A066063(n) = 26 then extends to n = L); pinning n_2(25) exactly needs an exhaustive search beyond the k = 24 computation",
+   "witness_verifier": "form the <= 350 sums a, a + b (a <= b in the set) and check 1..L are all present — dependency-free, instant",
    "witness_feasibility": "open-easy",
    "exact_feasibility": "cell",
    "status": "open",
-   "notes": "The Erdős/Rohrbach question itself is asymptotic: g(n) ~ 2 sqrt(n) was disproved (Mrose 1979, g(n)^2 <= 3.5n); current frontier g(n)^2/n in [2.181 (Yu 2015), 294/85 = 3.4588 (Kohonen 2017, arXiv:1606.04770-line of work)] — all paraphrased from problem page and cross-checked against arXiv search (no post-2017 h=2 improvement found; arXiv:2507.23627 (2025) improves large-h postage-stamp, not h=2). Beating Kohonen's construction constant would be a genuine record but is expert-search-defeated (grade hard); the honest hours-scale lane is table extension a(51), a(52), ... (keyword 'more' in OEIS).",
+   "notes": "PREVIOUS CELL WAS NEVER OPEN (2026-09-27 curation): every S in A066063 contains 0, and S \\ {0} is a set of denominations covering 1..n with at most two stamps, so A066063(n) = 1 + min{k : A001212(k) >= n} for the classical postage-stamp table A001212. That table is known for k <= 24 (Lunnon 1969; Challis 1993; Challis–Robinson 2010; Kohonen–Corander 2014; A001212(24) = 212), so A066063 is determined for every n <= 212: a(51) = 12 (a(47..54) = 12, a(55..64) = 13, ..., a(197..212) = 25). The relation reproduces all 51 OEIS terms a(0..50) (experiments/claude-freshness-20260927/curation_checks.py). Since A001212(24) = 212, a(213) >= 26, and the basis above gives a(n) = 26 for 213 <= n <= 227. The next open quantity is n_2(25) itself: exact values need an exhaustive search like the k = 24 one (a meet-in-the-middle computation); lower bounds need only a better basis. The Erdős/Rohrbach question itself is asymptotic: g(n) ~ 2 sqrt(n) was disproved (Mrose 1979, g(n)^2 <= 3.5n); current frontier g(n)^2/n in [2.181 (Yu 2015), 294/85 = 3.4588 (Kohonen 2017, arXiv:1606.04770-line of work)] — all paraphrased from problem page and cross-checked against arXiv search (no post-2017 h=2 improvement found; arXiv:2507.23627 (2025) improves large-h postage-stamp, not h=2)..",
    "provenance": {
-    "added_by": "gap-map miner chunk 730-812",
-    "date": "2026-07-18",
+    "added_by": "claude, freshness curation (branch chronos/quirky-gates-dalhc4); row first mined 2026-07-18",
+    "date": "2026-09-27",
     "checked": [
-     "OEIS A066063 (data + b-file to 50)",
-     "erdosproblems.com/791 (paraphrased)",
-     "arXiv search for post-2017 2-basis bounds (Yu limsup 0.4585 / Kohonen 85/294 confirmed)"
+     "OEIS A066063 via github.com/oeis/oeisdata, 2026-09-27 (data n = 0..50, keyword more)",
+     "OEIS A001212 via github.com/oeis/oeisdata, 2026-09-27 (data k = 1..24; Lunnon, Challis, Challis–Robinson, Kohonen–Corander)",
+     "own relation check and 25-basis witness, experiments/claude-freshness-20260927/curation_checks.py",
+     "arXiv search for post-2017 2-basis bounds (Yu limsup 0.4585 / Kohonen 85/294 confirmed; 2026-07-18)"
     ]
    },
    "evidence": [
     {
      "type": "literature",
-     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
-     "date": "2026-07-18"
+     "artifact": "OEIS A001212 (postage-stamp table k <= 24) and A066063 data",
+     "date": "2026-09-27"
+    },
+    {
+     "type": "numeric_scan",
+     "artifact": "relation check and explicit 25-basis covering 1..227, experiments/claude-freshness-20260927/curation_checks.py",
+     "date": "2026-09-27"
     }
    ],
    "confidence": "C3"
@@ -6522,38 +6528,45 @@
   {
    "problem": 962,
    "oeis": "A327909",
-   "quantity": "A327909(1000) — smallest start of a run of 1000 consecutive integers each having a prime factor > 1000 (first cell beyond the 999-term b-file; per-n table underlying Erdős's k(n))",
+   "quantity": "A327909(1103) — smallest start of a run of 1103 consecutive integers each having a prime factor > 1103 (first cell beyond the certified table a(1..1102); per-n table underlying Erdős's k(n))",
    "kind": "next_cell",
    "lower": {
-    "value": "22369305365",
-    "source": "= A327909(999) (b-file, David Spencer ext of Thomas Garrison's 369 terms) + monotonicity: the first 999 integers of any valid 1000-run form a valid 999-run",
-    "year": null
+    "value": "41063158607",
+    "source": "= A327909(1102) (certificates/erdos-962, contract erdos-962-a327909-1-1102) + monotonicity: the first 1102 integers of any valid 1103-run form a valid 1102-run",
+    "year": 2026
    },
    "upper": null,
    "witness_side": "upper",
-   "witness_object": "a start s with each of s, s+1, ..., s+999 having a prime factor > 1000; for the exact cell, the least such s certified by exhaustive scan below it",
-   "witness_verifier": "for each of the 1000 integers, divide out all primes ≤ 1000 and check the cofactor exceeds 1 — milliseconds, dependency-free",
+   "witness_object": "a start s with each of s, s+1, ..., s+1102 having a prime factor > 1103; for the exact cell, the least such s certified by an exhaustive scan below it",
+   "witness_verifier": "for each of the 1103 integers, divide out all primes <= 1103 and check the cofactor exceeds 1 — milliseconds, dependency-free (certificates/erdos-962/smooth_runs.run_is_gap does it by gcd with the primorial)",
    "witness_feasibility": "open-easy",
    "exact_feasibility": "cell",
    "status": "open",
-   "notes": "a(999) ≈ 2.24e10 and the sequence grows slowly (long constant stretches), so a segmented 1000-smooth sieve to ~1e11 (≈ 2e11 division ops in C) settles a(1000) in hours on one box — among the easiest genuine cells in this chunk. Asymptotics for Erdős's k(n): log k(n) ≫ sqrt(log n loglog n) (Erdős 1976, per erdosproblems #962); constant improved to (1/sqrt(2) − o(1)) attributed to Tang in site remarks (2026) — primary arXiv source NOT located, treat as site attribution; upper: k(n) ≤ (1+o(1))sqrt(n) (Tao, site comment); Erdős reported exp(−(log n)^c)·sqrt(n). Extending the table gives data for the log k(n) = (log n)^{1/2+o(1)} question. b-file year unrecorded (entry rev 2025-10-28), hence year null.",
+   "notes": "PREVIOUS CELL CLOSED HERE (2026-09-27), and it needed no search: the run starting at a(999) = 22369305365 is 1003 integers long, and n = 997..1008 share the same run boundaries (no prime lies strictly between 997 and 1009), so a(1000..1003) = a(999). certificates/erdos-962 then recomputes A327909(1..1102) from scratch by one exact scan of every integer up to 4.2e10 (two C engines that agree, plus a Python sieve on small ranges); it matches the OEIS data and the b-file's a(999), and a(1000..1102) are new (a(1004) = 25446495399, a(1102) = 41063158607). 1103 is prime, so from n = 1103 on integers whose largest prime factor is 1103 also break runs. The certificate's chunked engine scans about 10^10 integers per 5 CPU-minutes, and a(n) roughly doubles every hundred n here, so each further hundred terms costs about twice the last. Erdős's k(n) = max{k : a(k) <= n + 1} (formal-conjectures ErdosProblems/962.lean definition), so the table gives k(n) exactly for n < 41063158606. Asymptotics for Erdős's k(n): log k(n) ≫ sqrt(log n loglog n) (Erdős 1976, per erdosproblems #962); constant improved to (1/sqrt(2) − o(1)) attributed to Tang in site remarks (2026) — primary arXiv source NOT located, treat as site attribution; upper: k(n) ≤ (1+o(1))sqrt(n) (Tao, site comment); Erdős reported exp(−(log n)^c)·sqrt(n). Extending the table gives data for the log k(n) = (log n)^{1/2+o(1)} question. b-file year unrecorded (entry rev 2025-10-28), hence year null.",
    "provenance": {
-    "added_by": "gap-map miner chunk 936-971",
-    "date": "2026-07-18",
+    "added_by": "claude, erdos-962 lane (branch chronos/quirky-gates-dalhc4); row first mined 2026-07-18",
+    "date": "2026-09-27",
     "checked": [
-     "OEIS A327909 + b-file (999 terms; a(999)=22369305365)",
-     "erdosproblems.com/962 (read 2026-07-18, paraphrased only)",
-     "arXiv search for Tang bound (not located; site remark only)"
+     "OEIS A327909 via github.com/oeis/oeisdata, 2026-09-27 (data a(1..44); b-file n = 1..999, D. Spencer, terms 1..369 T. Garrison)",
+     "our exact scan, certificates/erdos-962 (python3 -I certificates/erdos-962/verify.py [--full])",
+     "formal-conjectures FormalConjectures/ErdosProblems/962.lean (definition of k(n); Apache-2.0)",
+     "erdosproblems.com/962 (numeric facts paraphrased, via the 2026-07-18 mining)"
     ]
    },
    "evidence": [
     {
+     "type": "implementation",
+     "artifact": "certificates/erdos-962: exact smooth-number scan of [1, 4.2e10] (runs.c, chunk.c, Python sieve)",
+     "date": "2026-09-27",
+     "contract": "erdos-962-a327909-1-1102"
+    },
+    {
      "type": "literature",
-     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
-     "date": "2026-07-18"
+     "artifact": "OEIS A327909 b-file (a(1..999)), reproduced by the scan",
+     "date": "2026-09-27"
     }
    ],
-   "confidence": "C3"
+   "confidence": "C2"
   },
   {
    "problem": 968,

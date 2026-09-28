@@ -283,6 +283,45 @@ def check_156():
                                    "(k^3 - k)/2 points, and (7^3 + 7)/2 = 175")
 
 
+# ---------------------------------------------------------------- #791 --
+# A001212(k), k = 1..24 (OEIS data): the 2-stamp postage-stamp problem, the largest n
+# such that some k positive integers give every 1..n as a sum of at most two of them.
+# A066063(n), n = 0..50 (OEIS data): the smallest S in {0..n} with S + S covering {0..n}.
+A001212_DATA = [2, 4, 8, 12, 16, 20, 26, 32, 40, 46, 54, 64, 72, 80, 92, 104, 116, 128, 140,
+                152, 164, 180, 196, 212]
+A066063_DATA = [1, 2, 2, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 8, 8,
+                9, 9, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 11, 11, 11, 11, 11, 11, 12,
+                12, 12, 12]
+BASIS_25 = (1, 3, 4, 6, 10, 13, 15, 21, 29, 37, 45, 53, 61, 69, 77, 85, 93, 101, 105, 106, 108, 110, 111, 112, 115)
+
+
+def from_stamps(n):
+    """1 + min{k : A001212(k) >= n}: S contains 0, and S minus 0 is a stamp set."""
+    return 1 + next(k for k, v in enumerate([0] + A001212_DATA) if v >= n)
+
+
+def stamp_reach(B):
+    """Largest L such that every 1..L is a sum of at most two elements of B."""
+    cov = set(B) | {a + b for i, a in enumerate(B) for b in B[i:]}
+    L = 0
+    while L + 1 in cov:
+        L += 1
+    return L
+
+
+def check_791():
+    print("#791  A066063 from the postage-stamp table A001212")
+    check([from_stamps(n) for n in range(51)] == A066063_DATA,
+          "1 + min{k : A001212(k) >= n} reproduces the 51 OEIS terms A066063(0..50)")
+    check([from_stamps(n) for n in (51, 54, 55, 212)] == [12, 12, 13, 25],
+          "so A066063(51..54) = 12, A066063(55) = 13, ..., A066063(212) = 25")
+    check(len(set(BASIS_25)) == 25 and stamp_reach(BASIS_25) >= 227,
+          "an explicit 25-element basis covers 1..227: A001212(25) >= 227, so "
+          "A066063(n) = 26 for 213 <= n <= 227")
+    check(stamp_reach(BASIS_25[:-1]) < 227,
+          "negative control: without its largest element the basis falls short")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--census", action="store_true", help="also count #376 terms to 10^100")
@@ -294,6 +333,7 @@ def main():
     check_1057()
     check_20()
     check_156()
+    check_791()
     if FAILURES:
         print(f"\nFAILED: {len(FAILURES)} check(s)")
         sys.exit(1)
