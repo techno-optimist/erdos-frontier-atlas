@@ -381,6 +381,16 @@
         "uniformity over all needed dyadic partners, masks, heights and neighboring lengths",
         "human mathematical review/formalization"
       ]
+    },
+    {
+      "id": "i3-positional-localization",
+      "statement": "Keep the position: if an odd prime q divides C(n,3) with q^e || n-t (t in {0,1,2}) and q does not divide C(n,j), then q^e divides j-r for some r <= t. For 3<j<=n/2 with no common prime p>=3 this forces 4|n and n=2^a*3^e*A (e=[3||n], A odd) with (2KA-1)(2KA-2) <= (4/sqrt3)*K^3, K=2^(a-1)*3^e: odd n and n=2 mod 4 never fail, and the odd part of n is at most about 0.66*n^(1/3).",
+      "status": "informal_proof_exact_checks",
+      "artifacts": ["experiments/claude-699-i3-position-20260928/README.md"],
+      "replay": ["python3 -I experiments/claude-699-i3-position-20260928/check_small.py", "python3 -I experiments/claude-699-i3-position-20260928/structured.py"],
+      "discharges": [{"problem": 699, "note": "i=3 slice: closes odd n and n=2 mod 4 (the n=1 mod 4 branch and half of n=4 mod 6 in i3-typeB2b-struct); exact CRT search over the remaining special n finds no pair up to 1e18; does not close P699"}],
+      "selectors": {"tags_all": ["binomial coefficients"]},
+      "remaining": ["special n > 1e18: 4|n with odd part at most about 0.66*n^(1/3)", "human review and formalization", "i>=4: positional bookkeeping for primes >= i is untried"]
     }
   ]
 }
