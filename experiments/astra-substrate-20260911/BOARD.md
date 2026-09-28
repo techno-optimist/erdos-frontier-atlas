@@ -17,6 +17,7 @@ DISCHARGE / OBSTRUCTION (reviewed or kernel-checked on that problem)
   #699   DISCHARGE    i3-gcd-of-size  i=3 transfer plus odd slice; size bound is elementary/Python; 2-adic residual open; does not close P699
   #699   DISCHARGE    i3-mod4-residual-empty  i=3 2-adic residual empty on n=3 mod 4; does not close P699
   #699   DISCHARGE    i3-p-band  reusable p-band scanner for the i=3 residual; P+<=n/10 open; does not close P699
+  #699   DISCHARGE    i3-positional-localization  i=3 slice: closes odd n and n=2 mod 4 (the n=1 mod 4 branch and half of n=4 mod 6 in i3-typeB2b-struct); exact CRT search over the remaining special n finds no pair up to 1e18; does not close P699
   #699   DISCHARGE    i3-typeA  Type A of the i=3 2-adic residual; Type B open; does not close P699
   #699   DISCHARGE    i3-typeB1  Type B1 of the i=3 2-adic residual; Type B2 P+<=n/6 open; does not close P699
   #699   DISCHARGE    i3-typeB2a  Type B2a of the i=3 2-adic residual; Type B2b P+<=n/8 open; does not close P699
@@ -66,6 +67,7 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #376   CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
   #376   CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
   #376   CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
+  #376   CANDIDATE    i3-positional-localization  tag/OEIS shape match only; not an implication
   #376   CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #376   CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #376   CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
@@ -80,6 +82,7 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #377   CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
   #377   CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
   #377   CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
+  #377   CANDIDATE    i3-positional-localization  tag/OEIS shape match only; not an implication
   #377   CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #377   CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #377   CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
@@ -95,6 +98,7 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #386   CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
   #386   CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
   #386   CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
+  #386   CANDIDATE    i3-positional-localization  tag/OEIS shape match only; not an implication
   #386   CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #386   CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #386   CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
@@ -110,6 +114,7 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #396   CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
   #396   CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
   #396   CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
+  #396   CANDIDATE    i3-positional-localization  tag/OEIS shape match only; not an implication
   #396   CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #396   CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #396   CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
@@ -125,6 +130,7 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #683   CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
   #683   CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
   #683   CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
+  #683   CANDIDATE    i3-positional-localization  tag/OEIS shape match only; not an implication
   #683   CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #683   CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #683   CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
@@ -141,6 +147,7 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #684   CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
   #684   CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
   #684   CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
+  #684   CANDIDATE    i3-positional-localization  tag/OEIS shape match only; not an implication
   #684   CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #684   CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #684   CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
@@ -157,6 +164,7 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #685   CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
   #685   CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
   #685   CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
+  #685   CANDIDATE    i3-positional-localization  tag/OEIS shape match only; not an implication
   #685   CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #685   CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #685   CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
@@ -174,6 +182,7 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #700   CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
   #700   CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
   #700   CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
+  #700   CANDIDATE    i3-positional-localization  tag/OEIS shape match only; not an implication
   #700   CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #700   CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #700   CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
@@ -189,6 +198,7 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #731   CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
   #731   CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
   #731   CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
+  #731   CANDIDATE    i3-positional-localization  tag/OEIS shape match only; not an implication
   #731   CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #731   CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #731   CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
@@ -204,6 +214,7 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #849   CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
   #849   CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
   #849   CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
+  #849   CANDIDATE    i3-positional-localization  tag/OEIS shape match only; not an implication
   #849   CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #849   CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #849   CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
@@ -223,6 +234,7 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #1093  CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
   #1093  CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
   #1093  CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
+  #1093  CANDIDATE    i3-positional-localization  tag/OEIS shape match only; not an implication
   #1093  CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #1093  CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #1093  CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
@@ -238,6 +250,7 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #1094  CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
   #1094  CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
   #1094  CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
+  #1094  CANDIDATE    i3-positional-localization  tag/OEIS shape match only; not an implication
   #1094  CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #1094  CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #1094  CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
@@ -253,6 +266,7 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #1095  CANDIDATE    i3-gcd-of-size  tag/OEIS shape match only; not an implication
   #1095  CANDIDATE    i3-mod4-residual-empty  tag/OEIS shape match only; not an implication
   #1095  CANDIDATE    i3-p-band  tag/OEIS shape match only; not an implication
+  #1095  CANDIDATE    i3-positional-localization  tag/OEIS shape match only; not an implication
   #1095  CANDIDATE    i3-typeA  tag/OEIS shape match only; not an implication
   #1095  CANDIDATE    i3-typeB1  tag/OEIS shape match only; not an implication
   #1095  CANDIDATE    i3-typeB2a  tag/OEIS shape match only; not an implication
@@ -260,4 +274,4 @@ CANDIDATE (tag/OEIS shape match only; not an implication)
   #1095  CANDIDATE    kummer-105-digits  tag/OEIS shape match only; not an implication
   #1095  CANDIDATE    p699-d2-line  tag/OEIS shape match only; not an implication
 
-30 discharge/obstruction rows, 221 candidate rows.
+31 discharge/obstruction rows, 234 candidate rows.
