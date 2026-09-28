@@ -165,6 +165,11 @@
    "path": "certificates/erdos-131",
    "classification": "certified_local",
    "boundary": "Exhaustive threshold search: T_1..T_10 of OEIS A068063 (1, 3, 7, 10, 21, 31, 43, 65, 107, 155), each with an explicit nondividing set checked by brute force. Replicates the published T_1..T_8; T_9 and T_10 are new. C engine pinned node for node to a Python reference (k <= 8 and the new k = 9 range); no formal proof; nothing about the asymptotic Erdos #131 question."
+  },
+  {
+   "path": "certificates/erdos-357",
+   "classification": "certified_local",
+   "boundary": "Exhaustive searches deciding OEIS A364132(1..27) and A364153(1..16) (sequences with distinct segment sums), each term with an explicit sequence checked by brute force. Replicates the published A364132(1..22) and A364153(1..13); the rest is new. C engine pinned node for node to a Python reference and cross-checked by a second engine; no formal proof; nothing about the asymptotic Erdos #357 question."
   }
  ],
  "claims": [
@@ -1725,6 +1730,137 @@
      "failure_control": {
       "kind": "embedded",
       "evidence": "Every replay must check each threshold set by brute force alone (a set extended by half or twice its smallest element is planted and must be rejected), must reproduce every (k, N) search's verdict, node count and set with the C engine, must match the Python reference node for node on every search for k <= 8, and must reproduce the published thresholds T_1..T_8 (where the OEIS data step up). A search that missed sets would fail the published thresholds; one that invented them would fail the brute-force check."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-357-a364132-a364153-published",
+   "status": "promoted",
+   "statement": "A364132(1..22) and A364153(1..13) as published in OEIS: for each n, no admissible n-sequence has every term at most a(n) - 1 (exhaustive search) and an explicit one has maximum a(n).",
+   "scope": "Finite exhaustive search; a verified-search receipt, not a formal proof. Replicates the published OEIS data: an independent recomputation, nothing new. Says nothing about the asymptotic question of Erdos #357.",
+   "machine_verdict": "\"verified_published\":true",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-357/README.md",
+     "contains": "**A364132(23..27) = 56, 60, 63, 67, 69 and A364153(14..16) = 20, 22, 24; all 8 terms are new.**",
+     "overclaim_guards": [
+      "resolves Erdős #357",
+      "proves the conjecture"
+     ]
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-357/verify.py",
+     "sha256": "e4353a309cb1bffd4fd7b7e2757264bed63a3d1e4b7bf7a9842a761a771d5237"
+    },
+    {
+     "path": "certificates/erdos-357/segment_sums.py",
+     "sha256": "0dfb2fcbb84ea9f6071437c3ac20b2d0a543a44abce7320f579d21b45998c1b3"
+    },
+    {
+     "path": "certificates/erdos-357/segsum.c",
+     "sha256": "b0228c31c7ac9ea83a9ba7793f614a1c7450b75592cb66bc7d831672f068d145"
+    },
+    {
+     "path": "certificates/erdos-357/segsum_naive.c",
+     "sha256": "57064d13479e134cfdcc321eb138d63052ff675fd27da837fdaad8da30b8db07"
+    },
+    {
+     "path": "certificates/erdos-357/RESULT.json",
+     "sha256": "3f599d7ee62aad3eb490a6a835fde0e3be4bef490c8a4d86f900bb8f0297ac35"
+    },
+    {
+     "path": "certificates/erdos-357/emit_result.py",
+     "sha256": "6c4b910f52eeb6d1d7692ed1ba37fad49f6fb0c1676456aef00d39a28008b574"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-357/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-357/verify.py"
+     ],
+     "timeout_seconds": 600,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"verified_published\":true",
+      "all checks passed"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "Every replay must check each witness by brute force alone (a last term equal to the sum of the two before it, and two swapped terms, are planted and must be rejected), must reproduce each deciding search's verdict, node count and sequence with the C engine, must match the Python reference node for node on the small searches, must get the same verdicts from a second engine that shares no code, and must reproduce the published OEIS terms. A search that missed sequences would fail the published terms or the second engine; one that invented them would fail the brute-force check."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-357-a364132-a364153-new",
+   "status": "promoted",
+   "statement": "A364132(23..27) = 56, 60, 63, 67, 69 and A364153(14..16) = 20, 22, 24: for each n, no admissible n-sequence has every term at most a(n) - 1 (exhaustive search) and the explicit sequence in RESULT.json has maximum a(n).",
+   "scope": "Finite exhaustive search; a verified-search receipt, not a formal proof. New beyond the OEIS data (A364132 to n = 22, A364153 to n = 13, as of 2026-09-28). The Python reference re-decides the new searches through A364132 n = 24 and A364153 n = 15 node for node; the larger ones rest on the C engine alone. Says nothing about the asymptotic question of Erdos #357.",
+   "machine_verdict": "\"verified\":true",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-357/README.md",
+     "contains": "**A364132(23..27) = 56, 60, 63, 67, 69 and A364153(14..16) = 20, 22, 24; all 8 terms are new.**",
+     "overclaim_guards": [
+      "resolves Erdős #357",
+      "proves the conjecture"
+     ]
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-357/verify.py",
+     "sha256": "e4353a309cb1bffd4fd7b7e2757264bed63a3d1e4b7bf7a9842a761a771d5237"
+    },
+    {
+     "path": "certificates/erdos-357/segment_sums.py",
+     "sha256": "0dfb2fcbb84ea9f6071437c3ac20b2d0a543a44abce7320f579d21b45998c1b3"
+    },
+    {
+     "path": "certificates/erdos-357/segsum.c",
+     "sha256": "b0228c31c7ac9ea83a9ba7793f614a1c7450b75592cb66bc7d831672f068d145"
+    },
+    {
+     "path": "certificates/erdos-357/segsum_naive.c",
+     "sha256": "57064d13479e134cfdcc321eb138d63052ff675fd27da837fdaad8da30b8db07"
+    },
+    {
+     "path": "certificates/erdos-357/RESULT.json",
+     "sha256": "3f599d7ee62aad3eb490a6a835fde0e3be4bef490c8a4d86f900bb8f0297ac35"
+    },
+    {
+     "path": "certificates/erdos-357/emit_result.py",
+     "sha256": "6c4b910f52eeb6d1d7692ed1ba37fad49f6fb0c1676456aef00d39a28008b574"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "slow",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-357/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-357/verify.py",
+      "--full"
+     ],
+     "timeout_seconds": 7200,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"verified\":true",
+      "receipt-checked: RESULT.json"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "Every replay must check each witness by brute force alone (a last term equal to the sum of the two before it, and two swapped terms, are planted and must be rejected), must reproduce each deciding search's verdict, node count and sequence with the C engine, must match the Python reference node for node on the small searches, must get the same verdicts from a second engine that shares no code, and must reproduce the published OEIS terms. A search that missed sequences would fail the published terms or the second engine; one that invented them would fail the brute-force check."
      }
     }
    ]
