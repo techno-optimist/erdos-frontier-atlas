@@ -14,7 +14,7 @@ the release-facing summary of its current state.
 ## The ledger at a glance
 
 - **225 bounded quantities** across the Erdős-hub problems.
-- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **19** lane-added, **194** agent-mined.
+- Provenance (mechanical, from `provenance.added_by`): **12** curated seed, **20** lane-added, **193** agent-mined.
 - Honest label: the agent-mined entries are structurally validated but **not yet
   independently number-re-verified** — they carry literature-grade evidence and
   therefore class C3 until a verification artifact exists (the WS1 release gate
@@ -30,17 +30,17 @@ validator fails any stored class the recorded evidence does not prove.
 |---|---|---|
 | C0 | contract-bound formal proof, machine-checked | 0 |
 | C1 | &ge;2 contract-bound independent replays at the claimed range | 0 |
-| C2 | exactly one contract-bound verified replay | 11 |
-| C3 | literature- or numerics-grade — no independent in-project verification artifact | 214 |
+| C2 | exactly one contract-bound verified replay | 12 |
+| C3 | literature- or numerics-grade — no independent in-project verification artifact | 213 |
 
 ## Entries by kind
 
 | kind | meaning | entries | witness-workable |
 |---|---|---|---|
 | `value_gap` | both bounds known; the open `[L, U]` gap is the object | 32 | 7 |
-| `next_cell` | the next uncomputed term of a sequence or table | 78 | 51 |
+| `next_cell` | the next uncomputed term of a sequence or table | 77 | 50 |
 | `verified_range` | a “no counterexample below N” frontier; `lower` records the verified-through value | 31 | 16 |
-| `bounded_below_only` | one-sided bracket: only a lower bound is known | 17 | 5 |
+| `bounded_below_only` | one-sided bracket: only a lower bound is known | 18 | 6 |
 | `bounded_above_only` | one-sided bracket: only an upper bound is known | 1 | 0 |
 | `not_gap_shaped` | on the map for completeness; the problem has no `[L, U]` shape to work | 66 | 0 |
 
@@ -55,7 +55,7 @@ truncated — the full values, sources, and verifier specs live in
 
 | problem | OEIS | quantity | side | feasibility | lower | upper |
 |---|---|---|---|---|---|---|
-| [#131](https://www.erdosproblems.com/131) | [A068063](https://oeis.org/A068063) | A068063(101) — maximum size of a nondividing subset of {1,...,101} (no element divides the sum of any nonempt… | lower | open-easy | 8 | 9 |
+| [#131](https://www.erdosproblems.com/131) | [A068063](https://oeis.org/A068063) | T_11 for A068063 — least n such that {1..n} has a nondividing 11-subset (no element divides the sum of any no… | upper | open-easy | 156 | ? |
 | [#156](https://www.erdosproblems.com/156) | [A382397](https://oeis.org/A382397) | i(9) — largest n such that {1..n} contains an inclusion-maximal Sidon set of size 9; A382397(n) = 9 exactly f… | lower | open-easy | 188 | 369 |
 | [#170](https://www.erdosproblems.com/170) | [A046693](https://oeis.org/A046693) | A046693(214) — minimal number of marks in a sparse ruler / restricted difference basis for {0..214} (first ce… | upper | open-easy | 22 | 26 |
 | [#295](https://www.erdosproblems.com/295) | [A192881](https://oeis.org/A192881) | A192881(17) — minimum number of terms in an Egyptian fraction decomposition of 1 with least denominator 17 (f… | upper | open-easy | 29 | ? |

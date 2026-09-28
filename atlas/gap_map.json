@@ -1086,41 +1086,39 @@
   {
    "problem": 131,
    "oeis": "A068063",
-   "quantity": "A068063(101) — maximum size of a nondividing subset of {1,...,101} (no element divides the sum of any nonempty subset of the others); first cell beyond the b-file, which ends at a(100)=8",
-   "kind": "next_cell",
+   "quantity": "T_11 for A068063 — least n such that {1..n} has a nondividing 11-subset (no element divides the sum of any nonempty subset of the others); A068063(n) = 10 from n = 155 until T_11",
+   "kind": "bounded_below_only",
    "lower": {
-    "value": "8",
-    "source": "Monotonicity from A068063(100) = 8 (OEIS b-file b068063.txt by Christian Sievers, re-fetched and read 2026-07-18)",
-    "year": null
+    "value": "156",
+    "source": "T_10 = 155 (certificates/erdos-131, contract erdos-131-a068063-t9-t10) and T_{k+1} > T_k: a (k+1)-set with maximum N, minus N, is a nondividing k-set below N",
+    "year": 2026
    },
-   "upper": {
-    "value": "9",
-    "source": "DERIVED deletion bound a(N+1) <= a(N)+1 (removing an element preserves the nondividing property) with a(100)=8; the explicit literature bound F(N) < 3*sqrt(N)+1 (Erdos-Lev-Rauzy-Sandor-Sarkozy 1999) gives only 31",
-    "year": 1999
-   },
-   "witness_side": "lower",
-   "witness_object": "A 9-element subset A of {1,...,101} such that for every a in A, no nonempty subset of A\\{a} has sum divisible by a. Existence pins a(101)=9; exhaustive refutation pins a(101)=8.",
-   "witness_verifier": "For each a in A run a subset-sum DP over A\\{a} modulo a and assert residue 0 is unreachable by a nonempty subset (or brute-force all 2^8 = 256 subsets per element). Microseconds, dependency-free.",
+   "upper": null,
+   "witness_side": "upper",
+   "witness_object": "an explicit nondividing 11-subset of {1..n} upper-bounds T_11 by its maximum; the exact value needs every n below it refuted, as the certificate does for k <= 10",
+   "witness_verifier": "for each element, test every nonempty subset sum of the other 10 elements for divisibility (11 * (2^10 - 1) sums) — dependency-free, instant",
    "witness_feasibility": "open-easy",
    "exact_feasibility": "cell",
    "status": "open",
-   "notes": "Headline #131 asks the growth of F(N): Erdos's original question (F(N) > N^{1/2-o(1)}?) is answered NO — F(N) <= N^{1/4+o(1)} via the non-averaging-set link (Pham-Zakharov 2024), against F(N) >> N^{1/5} (Csaba construction, in ELRSS99) and Straus's exp((sqrt(2/log 2)+o(1)) sqrt(log N)); correct exponent open (asymptotic, not machine-movable). The finite table is the scout surface: branch-and-bound over {1..N} extends A068063 cheaply (jumps to size 8 at n=65; size-9 threshold unknown — locating min{N : F(N)=9} is a clean, ownable record). Cross-ref Erdos #13 (Erdos-Sarkozy) and #186 (non-averaging), already worked in-project.",
+   "notes": "PREVIOUS CELL CLOSED HERE (2026-09-28): certificates/erdos-131 finds the thresholds T_1..T_10 = 1, 3, 7, 10, 21, 31, 43, 65, 107, 155 of A068063 by exhaustive search (decreasing-order search pruned by the smaller thresholds; C port pinned node for node to a Python reference for k <= 8 and on the new k = 9 range N = 101..107). T_9 = 107 and T_10 = 155 are new: A068063(n) = 8 for 65 <= n <= 106 (so the old cell a(101) = 8), 9 for 107 <= n <= 154, and 10 at 155. Per-N cost grows from 10^6 nodes (k = 9) to 6 * 10^7 (k = 10), so T_11 is hours-to-days of the same search. Headline #131 asks the growth of F(N): Erdos's original question (F(N) > N^{1/2-o(1)}?) is answered NO — F(N) <= N^{1/4+o(1)} via the non-averaging-set link (Pham-Zakharov 2024), against F(N) >> N^{1/5} (Csaba construction, in ELRSS99) and Straus's exp((sqrt(2/log 2)+o(1)) sqrt(log N)); correct exponent open (asymptotic, not machine-movable).",
    "provenance": {
-    "added_by": "gap-map miner chunk 85-138",
-    "date": "2026-07-18",
+    "added_by": "claude, erdos-131 lane (branch chronos/quirky-gates-dalhc4); row first mined 2026-07-18",
+    "date": "2026-09-28",
     "checked": [
-     "OEIS A068063 JSON + b-file to n=100 (fetched 2026-07-18)",
-     "erdosproblems.com/131 (paraphrase-only read 2026-07-18: ELRSS99 3sqrt(N)+1, Pham-Zakharov N^{1/4+o(1)}, Csaba N^{1/5}, Straus)"
+     "OEIS A068063 via github.com/oeis/oeisdata, 2026-09-28 (data a(0..86); b-file n = 0..100, C. Sievers)",
+     "our exhaustive search, certificates/erdos-131 (python3 -I certificates/erdos-131/verify.py [--full])",
+     "erdosproblems.com/131 (numeric facts paraphrased, via the 2026-07-18 mining)"
     ]
    },
    "evidence": [
     {
-     "type": "literature",
-     "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
-     "date": "2026-07-18"
+     "type": "implementation",
+     "artifact": "certificates/erdos-131: exhaustive threshold search through k = 10 (nondiv.c, Python reference)",
+     "date": "2026-09-28",
+     "contract": "erdos-131-a068063-t9-t10"
     }
    ],
-   "confidence": "C3"
+   "confidence": "C2"
   },
   {
    "problem": 138,
