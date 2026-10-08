@@ -1,0 +1,1176 @@
+{
+  "schema": "openai-math-number-theory-connections-v1",
+  "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+  "canonical_status_changes": false,
+  "external_proofs_executed": false,
+  "inspection_depth": "Scope and selected primary introduction/theorem statements; no full proof audit, Lean rebuild or Comparator run. Source pins are not a current literature-status verification.",
+  "edges": [
+    {
+      "source_family": "F011",
+      "target_id": "P821",
+      "relation": "external_statement_match",
+      "scope": "Weighted dilation graphs Theorem 1.1: infinitely many totient values v with multiplicity >v^(1-epsilon), for every epsilon>0; full atlas multiplicity-exponent question.",
+      "missing_hypotheses": [
+        "Independent proof audit; no Lean scope supplied for F011."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf"
+      ],
+      "surface_ids": [
+        "S:gap:821:329db01a"
+      ]
+    },
+    {
+      "source_family": "F013",
+      "target_id": "P431",
+      "relation": "external_statement_match",
+      "scope": "Ostmann Theorem 1.1 excludes any finite symmetric difference between primes and A+B with both summands having at least two elements; in particular excludes the atlas two-infinite-summands decomposition.",
+      "missing_hypotheses": [
+        "External proof/Lean dependency audit."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/the-additive-indecomposability-of-the-primes-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/013.md"
+      ]
+    },
+    {
+      "source_family": "F024",
+      "target_id": "P416",
+      "relation": "external_statement_match",
+      "scope": "Theorem 2.1: explicit asymptotic for number V(x) of distinct totients and V(cx)/V(x)->c for every fixed c>0, including c=2.",
+      "missing_hypotheses": [
+        "External proof/Lean dependency audit."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/An-asymptotic-formula-for-the-number-of-totients-September-25-2026/An-asymptotic-formula-for-the-number-of-totients-September-25-2026.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/024.md"
+      ],
+      "surface_ids": [
+        "S:gap:416:7dd01bdf"
+      ]
+    },
+    {
+      "source_family": "F026",
+      "target_id": "P968",
+      "relation": "external_statement_match",
+      "scope": "Corollary 1.2 and selected Lean scope: positive lower density of indices n with p_n/n<p_(n+1)/(n+1).",
+      "missing_hypotheses": [
+        "External proof/Lean dependency audit."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Positive-lower-density-of-large-prime-gaps-September-25-2026/main.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/026.md"
+      ],
+      "surface_ids": [
+        "S:gap:968:f0847933"
+      ]
+    },
+    {
+      "source_family": "F024",
+      "target_id": "P417",
+      "relation": "conditional_derivation",
+      "scope": "A strict gap from one: liminf V(x)/Vprime(x)>1, where Vprime counts distinct phi(m), m<=x. Not limit existence.",
+      "missing_hypotheses": [
+        "F024 Theorem 2.2; independent review of this short deduction."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/An-asymptotic-formula-for-the-number-of-totients-September-25-2026/An-asymptotic-formula-for-the-number-of-totients-September-25-2026.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/024.md"
+      ],
+      "derivation_or_obstruction": "N1(x) counts totients <=x with least preimage in (x,2x]. Theorem 2.2 gives N1(x)>=cV(x) eventually for some 0<c<1. Since N1<=V-Vprime, V/Vprime>=1/(1-c).",
+      "surface_ids": [
+        "S:gap:417:4f3fc7e6"
+      ]
+    },
+    {
+      "source_family": "F024",
+      "target_id": "P417",
+      "relation": "blocked_transfer",
+      "scope": "Existence of a limit of V/Vprime is not supplied by regular variation or the individual companion counts.",
+      "missing_hypotheses": [
+        "Control of all least-preimage tails; convergence or cancellation of phase dependence in coefficient ratios."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/An-asymptotic-formula-for-the-number-of-totients-September-25-2026/An-asymptotic-formula-for-the-number-of-totients-September-25-2026.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/024.md"
+      ],
+      "derivation_or_obstruction": "V uses a positive phase-dependent arithmetic coefficient. Fixed k counts alone do not justify an infinite sum or a limiting ratio.",
+      "surface_ids": [
+        "S:gap:417:4f3fc7e6"
+      ]
+    },
+    {
+      "source_family": "F024",
+      "target_id": "P51",
+      "relation": "blocked_transfer",
+      "scope": "Unbounded least-preimage ratio is explicitly left unresolved by F024.",
+      "missing_hypotheses": [
+        "Totient seeds d with least_preimage(d)/d arbitrarily large."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/An-asymptotic-formula-for-the-number-of-totients-September-25-2026/An-asymptotic-formula-for-the-number-of-totients-September-25-2026.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/024.md"
+      ],
+      "derivation_or_obstruction": "F024 Theorem 2.2 is conditional on such a seed for each k; positivity is only asserted automatically for k=1,2.",
+      "surface_ids": [
+        "S:gap:51:0b2ebbad"
+      ]
+    },
+    {
+      "source_family": "F011",
+      "target_id": "P51",
+      "relation": "blocked_transfer",
+      "scope": "Large fibers do not imply large least-preimage ratios.",
+      "missing_hypotheses": [
+        "Control of the minimum preimage, rather than only fiber cardinality."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf"
+      ],
+      "derivation_or_obstruction": "P821 and P51 share A014197, but even many preimages can coexist with one small preimage.",
+      "surface_ids": [
+        "S:gap:51:0b2ebbad"
+      ]
+    },
+    {
+      "source_family": "F024",
+      "target_id": "P1003",
+      "relation": "blocked_transfer",
+      "scope": "Distinct-value asymptotics do not force equal totients at consecutive arguments.",
+      "missing_hypotheses": [
+        "Shifted equality correlation phi(n)=phi(n+1)."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/An-asymptotic-formula-for-the-number-of-totients-September-25-2026/An-asymptotic-formula-for-the-number-of-totients-September-25-2026.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/024.md"
+      ],
+      "surface_ids": [
+        "S:gap:1003:7607af84"
+      ]
+    },
+    {
+      "source_family": "F011",
+      "target_id": "P1057",
+      "relation": "candidate",
+      "scope": "Improved reservoir of smooth prime predecessors may strengthen Carmichael constructions.",
+      "missing_hypotheses": [
+        "Primes in required progressions; subset-product congruence extraction; exact 64-factor witness and minimality for current finite cell."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf"
+      ],
+      "derivation_or_obstruction": "The F011 introduction itself identifies smooth predecessors as an ingredient in Carmichael construction, separate from progression-distribution input.",
+      "surface_ids": [
+        "S:gap:1057:17fe0f04"
+      ]
+    },
+    {
+      "source_family": "F011",
+      "target_id": "squarefree-crt-defect-transfer",
+      "relation": "candidate",
+      "scope": "Weighted dilation graphs compare integer divisibility samples with independent prime-label operators using CRT memories and signed high moments.",
+      "missing_hypotheses": [
+        "Prime-square moduli; actual squarefree variance weight; required growing scales; summable endpoint and tail losses."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf"
+      ],
+      "derivation_or_obstruction": "Inspect Sections 3 and ideal-kernel hypotheses before attempting to transfer the comparison mechanism."
+    },
+    {
+      "source_family": "F012",
+      "target_id": "P928",
+      "relation": "external_statement_match",
+      "scope": "Joint Dickman law for fixed smoothness exponents at n,n+1 in ordinary natural density.",
+      "missing_hypotheses": [
+        "External proof/Lean dependency audit."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/012.md"
+      ],
+      "surface_ids": [
+        "S:gap:928:463b5358"
+      ]
+    },
+    {
+      "source_family": "F012",
+      "target_id": "P371",
+      "relation": "external_statement_match",
+      "scope": "Each strict ordering of consecutive largest prime factors has density one half.",
+      "missing_hypotheses": [
+        "External proof/Lean dependency audit."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/012.md"
+      ],
+      "surface_ids": [
+        "S:gap:371:867996d7"
+      ]
+    },
+    {
+      "source_family": "F012",
+      "target_id": "P370",
+      "relation": "conditional_derivation",
+      "scope": "Strengthens already-solved infinitude of simultaneous square-root-smooth neighbors to density rho(2)^2=(1-log 2)^2.",
+      "missing_hypotheses": [
+        "F012 joint law; strict/non-strict threshold boundary has density zero."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/012.md"
+      ],
+      "derivation_or_obstruction": "Take a=b=1/2; equality n=p^2 contributes O(sqrt X), and analogous n+1 equality has density zero."
+    },
+    {
+      "source_family": "F012",
+      "target_id": "P369",
+      "relation": "conditional_derivation",
+      "scope": "For k=2 and every fixed epsilon>0, a positive proportion of pairs in each sufficiently large dyadic interval are n^epsilon-smooth; does not provide k>=3.",
+      "missing_hypotheses": [
+        "F012 at fixed smaller exponent; extension to k-point laws for longer runs."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/012.md"
+      ],
+      "derivation_or_obstruction": "Choose 0<a<min(epsilon,1); the count on (X/2,X] is (rho(1/a)^2/2+o(1))X by subtracting prefix asymptotics. Their prime factors are <=X^epsilon eventually."
+    },
+    {
+      "source_family": "F012",
+      "target_id": "P841",
+      "relation": "conditional_derivation",
+      "scope": "Joint law of consecutive square-product waiting times: dens{t_n<=n^a, t_(n+1)<=(n+1)^b}=rho(1/a)rho(1/b), 0<a,b<1.",
+      "missing_hypotheses": [
+        "F012 joint law; BPZ24 Theorem 1.1 marginal law; independent review of density-zero transfer."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/012.md",
+        "https://doi.org/10.1017/S0305004123000488",
+        "https://arxiv.org/abs/2211.12467"
+      ],
+      "derivation_or_obstruction": "Largest-prime-square exceptions have density zero. Outside them P+(n)<=t_n. Equal marginal densities imply threshold-event symmetric difference o(X); replacing both events in the joint law costs o(X). Full derivation in number-theory.md."
+    },
+    {
+      "source_family": "F012",
+      "target_id": "P368",
+      "relation": "blocked_transfer",
+      "scope": "Fixed positive-power smoothness law does not imply the logarithmic-scale smoothness conjecture for n(n+1).",
+      "missing_hypotheses": [
+        "Uniformity when a(X) is of size log log X/log X; a lower-envelope theorem for every n."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/012.md"
+      ],
+      "surface_ids": [
+        "S:gap:368:d9972a8a"
+      ]
+    },
+    {
+      "source_family": "F012",
+      "target_id": "P372",
+      "relation": "blocked_transfer",
+      "scope": "Two-coordinate laws do not determine three consecutive largest-prime-factor orderings.",
+      "missing_hypotheses": [
+        "A three-point joint law or separate ordering argument."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/012.md"
+      ]
+    },
+    {
+      "source_family": "F012",
+      "target_id": "P961",
+      "relation": "blocked_transfer",
+      "scope": "Positive-density power-smooth pairs do not bound the longest run for a fixed smoothness threshold.",
+      "missing_hypotheses": [
+        "Moving exponents log B/log X; arbitrary run length; exact extremal exclusion."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/012.md"
+      ],
+      "surface_ids": [
+        "S:gap:961:b748c745"
+      ]
+    },
+    {
+      "source_family": "F012",
+      "target_id": "P699",
+      "relation": "blocked_transfer",
+      "scope": "Density information does not remove the atlas sparse positional counterexample candidates.",
+      "missing_hypotheses": [
+        "Conditional law on actual smooth-part divisibilities or direct obstruction to positional equations."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/012.md"
+      ],
+      "surface_ids": [
+        "S:triage:699",
+        "S:gap:699:6362e233"
+      ]
+    },
+    {
+      "source_family": "F021",
+      "target_id": "P970",
+      "relation": "external_statement_match",
+      "scope": "h(k)<=C k^2/(log log(3k))^2 answers the quadratic subquestion, but not the full order of magnitude.",
+      "missing_hypotheses": [
+        "External proof/Lean dependency audit; full matching lower bound for order question."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/021.md"
+      ],
+      "surface_ids": [
+        "S:gap:970:b0beb988"
+      ]
+    },
+    {
+      "source_family": "F021",
+      "target_id": "P687",
+      "relation": "conditional_derivation",
+      "scope": "Primorial maximum coprime gap is O(z^2/((log z)^2(log log z)^2)).",
+      "missing_hypotheses": [
+        "F021 and prime number theorem; no explicit constant or finite next cell."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/021.md"
+      ],
+      "derivation_or_obstruction": "Set k=pi(z) and use h(k) for the product of primes <=z.",
+      "surface_ids": [
+        "S:deep:687",
+        "S:gap:687:0977b807"
+      ]
+    },
+    {
+      "source_family": "F021",
+      "target_id": "P854",
+      "relation": "conditional_derivation",
+      "scope": "Least missing even gap a(k)<=h(k)+2 for the first-k-prime primorial.",
+      "missing_hypotheses": [
+        "F021; numerical constants for a finite table improvement."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/021.md"
+      ],
+      "derivation_or_obstruction": "Every coprime gap is even and <=h(k), so the next even integer above h(k) is absent.",
+      "surface_ids": [
+        "S:gap:854:a013466e"
+      ]
+    },
+    {
+      "source_family": "F021",
+      "target_id": "P220",
+      "relation": "conditional_derivation",
+      "scope": "For fixed r>=1, sum of rth powers of consecutive reduced-residue gaps <= h(omega(m))^(r-1)*m. A coarse consequence; known sharper theorem already solves P220.",
+      "missing_hypotheses": [
+        "F021; no novelty claim versus Montgomery-Vaughan bounds."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/021.md"
+      ],
+      "derivation_or_obstruction": "Use d^r<=h^(r-1)d and sum d<=m."
+    },
+    {
+      "source_family": "F021",
+      "target_id": "P860",
+      "relation": "blocked_transfer",
+      "scope": "A guaranteed coprime integer per interval does not prove a system of distinct representatives.",
+      "missing_hypotheses": [
+        "Hall conditions or another matching theorem compatible with overlaps."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/021.md"
+      ],
+      "surface_ids": [
+        "S:gap:860:e88bfced"
+      ]
+    },
+    {
+      "source_family": "F025",
+      "target_id": "P304",
+      "relation": "external_statement_match",
+      "scope": "Worst minimum Egyptian length at denominator b is Theta(log log b); finite row-106 maximum is not evaluated.",
+      "missing_hypotheses": [
+        "External proof/Lean dependency audit; effective constants and exact enumeration for current finite cell."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Short-Egyptian-fractions-September-25-2026/Short-Egyptian-fractions-September-25-2026.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/025.md"
+      ],
+      "surface_ids": [
+        "S:gap:304:6ce3f51e"
+      ]
+    },
+    {
+      "source_family": "F025",
+      "target_id": "P293",
+      "relation": "external_statement_match",
+      "scope": "Least absent prescribed denominator v(k) has log log v(k)=Theta(k), with explicit asymptotic slopes; not an exact formula or limiting slope.",
+      "missing_hypotheses": [
+        "External proof/Lean dependency audit; exact values/limit if desired."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Short-Egyptian-fractions-September-25-2026/Short-Egyptian-fractions-September-25-2026.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/025.md"
+      ]
+    },
+    {
+      "source_family": "F025",
+      "target_id": "P242",
+      "relation": "blocked_transfer",
+      "scope": "O(log log b) terms for general rationals does not imply a three-term expansion of 4/n.",
+      "missing_hypotheses": [
+        "Exactly three terms for specified numerator four."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Short-Egyptian-fractions-September-25-2026/Short-Egyptian-fractions-September-25-2026.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/025.md"
+      ],
+      "surface_ids": [
+        "S:triage:242",
+        "S:gap:242:392ad9a3"
+      ]
+    },
+    {
+      "source_family": "F025",
+      "target_id": "P295",
+      "relation": "blocked_transfer",
+      "scope": "Preserving a specified denominator does not ensure it is the least denominator.",
+      "missing_hypotheses": [
+        "All denominators >=N and sharp linear length overhead."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Short-Egyptian-fractions-September-25-2026/Short-Egyptian-fractions-September-25-2026.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/025.md"
+      ],
+      "surface_ids": [
+        "S:gap:295:1aa70f31"
+      ]
+    },
+    {
+      "source_family": "F025",
+      "target_id": "P306",
+      "relation": "blocked_transfer",
+      "scope": "Unrestricted short expansions do not impose distinct-semiprime denominators.",
+      "missing_hypotheses": [
+        "Denominator factorization restriction."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Short-Egyptian-fractions-September-25-2026/Short-Egyptian-fractions-September-25-2026.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/025.md"
+      ],
+      "surface_ids": []
+    },
+    {
+      "source_family": "F025",
+      "target_id": "P327",
+      "relation": "blocked_transfer",
+      "scope": "Short expansions do not force two-term forbidden relations inside a fixed set.",
+      "missing_hypotheses": [
+        "Activated forbidden pair inside the same set or a cross-fiber deficit."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Short-Egyptian-fractions-September-25-2026/Short-Egyptian-fractions-September-25-2026.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/025.md"
+      ],
+      "surface_ids": [
+        "S:gap:327:c40419c7"
+      ]
+    },
+    {
+      "source_family": "F025",
+      "target_id": "multiplier-sensitive-fiber-deficit",
+      "relation": "candidate",
+      "scope": "Prime-factor splitting and factorial-divisor representations may furnish test distributions for smooth-fiber optimization.",
+      "missing_hypotheses": [
+        "An inequality for the actual forbidden-pair operator; multiplier compatibility; boundary loss control."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Short-Egyptian-fractions-September-25-2026/Short-Egyptian-fractions-September-25-2026.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/025.md"
+      ],
+      "derivation_or_obstruction": "The shared object is smooth divisor support, not the Egyptian-fraction conclusion itself."
+    },
+    {
+      "source_family": "F026",
+      "target_id": "P5",
+      "relation": "blocked_transfer",
+      "scope": "Positive lower density beyond every fixed gap threshold does not give every finite value as a normalized-gap limit point.",
+      "missing_hypotheses": [
+        "Control of gaps in arbitrarily small intervals around each prescribed normalized size."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Positive-lower-density-of-large-prime-gaps-September-25-2026/main.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/026.md"
+      ],
+      "surface_ids": [
+        "S:gap:5:a6b59f24"
+      ]
+    },
+    {
+      "source_family": "F026",
+      "target_id": "P233",
+      "relation": "blocked_transfer",
+      "scope": "Lower tail density alone does not establish the exact second-moment asymptotic.",
+      "missing_hypotheses": [
+        "Quantitative tail law and uniform integrability/upper tails."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Positive-lower-density-of-large-prime-gaps-September-25-2026/main.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/026.md"
+      ],
+      "surface_ids": [
+        "S:gap:233:2bd5ce64"
+      ]
+    },
+    {
+      "source_family": "F026",
+      "target_id": "P15",
+      "relation": "blocked_transfer",
+      "scope": "Positive-density increases of p_n/n do not decide convergence of the alternating series sum (-1)^n n/p_n.",
+      "missing_hypotheses": [
+        "Signed parity cancellation or summable variation."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Positive-lower-density-of-large-prime-gaps-September-25-2026/main.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/026.md"
+      ],
+      "derivation_or_obstruction": "The fact that monotonicity fails on positive density is not a convergence or divergence test."
+    },
+    {
+      "source_family": "F029",
+      "target_id": "P985",
+      "relation": "conditional_derivation",
+      "scope": "For every fixed positive prime q, infinitely many larger primes p have q as primitive root; quantitative dyadic lower bound c_q x/(log x)^2.",
+      "missing_hypotheses": [
+        "F029 Theorem 1.1 audit; full P985 requires every modulus p rather than infinitely many."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Primitive-roots-for-every-admissible-integer-base-October-4-2026/primitive-roots-all-integer-bases.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Simultaneous-primitive-roots-a-conditional-lower-bound-for-prime-bases-October-4-2026/simultaneous-primitive-roots-conditional-lower-bound-prime-bases.pdf"
+      ],
+      "derivation_or_obstruction": "Set the admissible base a=q; eventually p>q. This is a quantified subcase, not the universal modulus assertion.",
+      "surface_ids": [
+        "S:gap:985:e049360b"
+      ]
+    },
+    {
+      "source_family": "F029",
+      "target_id": "P985",
+      "relation": "blocked_transfer",
+      "scope": "A fixed-base infinitude theorem does not ensure every prime modulus has a small prime primitive root.",
+      "missing_hypotheses": [
+        "Uniform coverage of all moduli; interchange of fixed-base and every-modulus quantifiers."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Primitive-roots-for-every-admissible-integer-base-October-4-2026/primitive-roots-all-integer-bases.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Simultaneous-primitive-roots-a-conditional-lower-bound-for-prime-bases-October-4-2026/simultaneous-primitive-roots-conditional-lower-bound-prime-bases.pdf"
+      ],
+      "surface_ids": [
+        "S:gap:985:e049360b"
+      ]
+    },
+    {
+      "source_family": "F020",
+      "target_id": "P969",
+      "relation": "blocked_transfer",
+      "scope": "Polynomial power-free density does not supply moving-interval squarefree variance or quarter-power error.",
+      "missing_hypotheses": [
+        "Correct one-variable sequence, interval uniformity, quantitative signed moment saving."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Squarefree-values-of-quartics-and-power-free-values-of-polynomials-September-24-2026/manuscript.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/020.md"
+      ],
+      "surface_ids": [
+        "S:gap:969:c2325929"
+      ]
+    },
+    {
+      "source_family": "F020",
+      "target_id": "P1109",
+      "relation": "blocked_transfer",
+      "scope": "Squarefree values of one irreducible quartic do not control squarefree values of all pairwise sums in an extremal set.",
+      "missing_hypotheses": [
+        "Uniform simultaneous two-variable constraints and extremal cardinality estimates."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Squarefree-values-of-quartics-and-power-free-values-of-polynomials-September-24-2026/manuscript.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/020.md"
+      ],
+      "surface_ids": [
+        "S:gap:1109:eb49810a"
+      ]
+    },
+    {
+      "source_family": "F020",
+      "target_id": "P975",
+      "relation": "candidate",
+      "scope": "Large-prime-power tail estimates and number-field factorization may help divisor sums along irreducible polynomials.",
+      "missing_hypotheses": [
+        "Weighted divisor counts and all divisor-size ranges; squarefree density alone has no control of tau(f(n))."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Squarefree-values-of-quartics-and-power-free-values-of-polynomials-September-24-2026/manuscript.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/020.md"
+      ],
+      "surface_ids": [
+        "S:gap:975:3d3c8578"
+      ]
+    },
+    {
+      "source_family": "F022",
+      "target_id": "P999",
+      "relation": "candidate",
+      "scope": "Weak inhomogeneous metric approximation extends the setting of the already-solved homogeneous Duffin-Schaeffer problem.",
+      "missing_hypotheses": [
+        "Numerators in F022 are unrestricted; it is not a new proof of the coprime homogeneous equivalence."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-weak-inhomogeneous-Duffin-Schaeffer-conjecture-September-25-2026/paper.pdf"
+      ]
+    },
+    {
+      "source_family": "F022",
+      "target_id": "squarefree-crt-defect-transfer",
+      "relation": "candidate",
+      "scope": "Adaptive partitions and weighted least-common-multiple second-moment control may help arithmetic sample versus product-model comparisons.",
+      "missing_hypotheses": [
+        "Transfer of concrete kernel and weight hypotheses; prime-square structure; growing interval regime."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-weak-inhomogeneous-Duffin-Schaeffer-conjecture-September-25-2026/paper.pdf"
+      ]
+    },
+    {
+      "source_family": "F023",
+      "target_id": "sparse-square-signed-moment-interface",
+      "relation": "blocked_transfer",
+      "scope": "A fixed-mode first moment over Eisenstein primes does not imply the required weighted Mobius square-frequency second moment.",
+      "missing_hypotheses": [
+        "Different coefficient sequence and domain; second-moment estimate; uniformity in modes/masks."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/An-unconditional-first-moment-for-cubic-Gauss-sums-September-25-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/023.md"
+      ]
+    },
+    {
+      "source_family": "F017",
+      "target_id": "P68",
+      "relation": "blocked_transfer",
+      "scope": "Irrationality exponent of pi gives no irrationality conclusion for sum 1/(n!-1).",
+      "missing_hypotheses": [
+        "A representation or independently proved approximation construction for the actual target constant."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/017.md"
+      ],
+      "surface_ids": [
+        "S:gap:68:9c632ebb"
+      ]
+    },
+    {
+      "source_family": "F020",
+      "target_id": "P978",
+      "relation": "external_statement_match",
+      "scope": "Correctly unobstructed parts.ii: infinitely many (d-2)-power-free values for irreducible integer polynomials of degree d>3. F020 gives positive Euler-product density and also covers power-of-two degrees excluded by that atlas variant.",
+      "missing_hypotheses": [
+        "External theorem and formal dependency audit; exact local condition is no fixed prime (d-2)th power divisor."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/020.md",
+        "https://github.com/google-deepmind/formal-conjectures/blob/16e02e2c29752539b6889563c392bc05c68cddc5/FormalConjectures/ErdosProblems/978.lean"
+      ],
+      "derivation_or_obstruction": "Do not use the stub answer False for the separate allow_fixed_divisors variant as the status of parts.ii."
+    },
+    {
+      "source_family": "F020",
+      "target_id": "P978",
+      "relation": "conditional_derivation",
+      "scope": "Part.iii: n^4+2 is squarefree for a positive density of n, hence infinitely often.",
+      "missing_hypotheses": [
+        "F020 quartic theorem; independent review or formalization of the specialization."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/020.md",
+        "https://github.com/google-deepmind/formal-conjectures/blob/16e02e2c29752539b6889563c392bc05c68cddc5/FormalConjectures/ErdosProblems/978.lean"
+      ],
+      "derivation_or_obstruction": "x^4+2 is Eisenstein at 2. Values at 0 and 1 are 2 and 3, so no prime square divides every value. The F020 positive-density squarefree theorem applies."
+    },
+    {
+      "source_family": "F028",
+      "target_id": "P952",
+      "relation": "external_statement_match",
+      "scope": "No infinite injective bounded-step Gaussian-prime walk; scope states uniformly finite components for every fixed step bound.",
+      "missing_hypotheses": [
+        "External proof/Lean dependency audit; no explicit numerical component bound."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/028.md"
+      ]
+    }
+  ],
+  "sources": [
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/005.md",
+      "sha256": "37dc6d183e395184ebfb3bf0f570603ab06e6640e7bda9cac9fa02736089f764",
+      "bytes": 600,
+      "inspection": "Selected scope, introduction and theorem statements only; not full proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf",
+      "sha256": "351692885d112277e969901e75fe56eeee0d263d5d5847d0b980fe2c8c7744c0",
+      "bytes": 802390,
+      "inspection": "Selected scope, introduction and theorem statements only; not full proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/paper.pdf",
+      "sha256": "4b54d35506a1928022ac21e6d270d30f6533423ddc5990975270a1e39a87bce7",
+      "bytes": 795971,
+      "inspection": "Selected scope, introduction and theorem statements only; not full proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf",
+      "sha256": "8ee2d8f79198dd5f09c5fbf71e309a63493d1c089772499614ee58dc8575eae9",
+      "bytes": 599500,
+      "inspection": "Selected scope, introduction and theorem statements only; not full proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/012.md",
+      "sha256": "8d35d76e45f9ce263f96f9b8f5560330ca73f3eba93a08d7c6060dfed1758bcb",
+      "bytes": 933,
+      "inspection": "Selected scope, introduction and theorem statements only; not full proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/the-additive-indecomposability-of-the-primes-September-24-2026/paper.pdf",
+      "sha256": "2c4ec07457be59763b37d2197852341a7e6615e419982f9f3705c5f3a94c2c3f",
+      "bytes": 764239,
+      "inspection": "Selected scope, introduction and theorem statements only; not full proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/013.md",
+      "sha256": "989f16a964977adea6adc59698fa9db64b32bb1f6ace870314370cd16847f5a1",
+      "bytes": 1071,
+      "inspection": "Selected scope, introduction and theorem statements only; not full proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/paper.pdf",
+      "sha256": "26eec5de7ac9dc49d28183fdea458e0858bc3323b5ba93c3d41bb105d8e3eab6",
+      "bytes": 494460,
+      "inspection": "Selected scope, introduction and theorem statements only; not full proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/017.md",
+      "sha256": "a738f64b79494db1ed2deacb26a8c0a2c0babe85c8153f75bcba388bc46a534c",
+      "bytes": 893,
+      "inspection": "Selected scope, introduction and theorem statements only; not full proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Squarefree-values-of-quartics-and-power-free-values-of-polynomials-September-24-2026/manuscript.pdf",
+      "sha256": "c0320233615387079f999f6d955807230607689d7df0e6988893b2a947c06ba1",
+      "bytes": 676811,
+      "inspection": "Selected scope, introduction and theorem statements only; not full proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/020.md",
+      "sha256": "c8a12f6f4c351e1c5b9ab413acc7bb20afdbf3ba5ceaa354e2edc47dc6ac3bc7",
+      "bytes": 1048,
+      "inspection": "Selected scope, introduction and theorem statements only; not full proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/021.md",
+      "sha256": "506a0d11753aa56926eb456406fcf975c17c0e604c3248c2500485825860f7a6",
+      "bytes": 1051,
+      "inspection": "Selected scope, introduction and theorem statements only; not full proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-weak-inhomogeneous-Duffin-Schaeffer-conjecture-September-25-2026/paper.pdf",
+      "sha256": "d91ccb7b68c5b0e2e081710c3c9012d0d790992703fc3609853953c538bc7203",
+      "bytes": 837552,
+      "inspection": "Selected scope, introduction and theorem statements only; not full proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/023.md",
+      "sha256": "48a67baa24c21e0e5992470280925a9205c8776fd2d621732ba44aa9d34554be",
+      "bytes": 1020,
+      "inspection": "Selected scope, introduction and theorem statements only; not full proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/An-asymptotic-formula-for-the-number-of-totients-September-25-2026/An-asymptotic-formula-for-the-number-of-totients-September-25-2026.pdf",
+      "sha256": "5dda4f860a38357f5c4e3a912a422a13ed2886720fde18f54d97e2947f0e5669",
+      "bytes": 563178,
+      "inspection": "Selected scope, introduction and theorem statements only; not full proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/024.md",
+      "sha256": "13056416c388c8fac013d201ead954e5bcd521f542220b989d569b64eadbdd40",
+      "bytes": 1415,
+      "inspection": "Selected scope, introduction and theorem statements only; not full proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Short-Egyptian-fractions-September-25-2026/Short-Egyptian-fractions-September-25-2026.pdf",
+      "sha256": "25eebdc1f077f2451bada4d3f8301b59f8158dcdb9019425ce555c5e9c5a2646",
+      "bytes": 530973,
+      "inspection": "Selected scope, introduction and theorem statements only; not full proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/025.md",
+      "sha256": "4c394b2fa0e7a176e2f68dfc2c9fccf0f16327f0959b2f4a7aa25117aca0e550",
+      "bytes": 1443,
+      "inspection": "Selected scope, introduction and theorem statements only; not full proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Positive-lower-density-of-large-prime-gaps-September-25-2026/main.pdf",
+      "sha256": "7a4a37fa92b30f4e9749ed16a6e8d715eb98ab0c0332cc5061ac6b2a067009ed",
+      "bytes": 434255,
+      "inspection": "Selected scope, introduction and theorem statements only; not full proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/026.md",
+      "sha256": "f75ae21800250eb70265e6e2e77a59f6d54513b9494b9ad7488de2d3574b3959",
+      "bytes": 834,
+      "inspection": "Selected scope, introduction and theorem statements only; not full proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/028.md",
+      "sha256": "8c84833b7ad47c59ee7e5392858ee2a3d410f3e082af31d064654202b5105521",
+      "bytes": 955,
+      "inspection": "Selected scope, introduction and theorem statements only; not full proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Primitive-roots-for-every-admissible-integer-base-October-4-2026/primitive-roots-all-integer-bases.pdf",
+      "sha256": "671ac4b3ece879f614ed8f4b782e61a07805e533f385a694fe4d7afbda3c9365",
+      "bytes": 891737,
+      "inspection": "Selected scope, introduction and theorem statements only; not full proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Simultaneous-primitive-roots-a-conditional-lower-bound-for-prime-bases-October-4-2026/simultaneous-primitive-roots-conditional-lower-bound-prime-bases.pdf",
+      "sha256": "0f36acf08bd34758b209b05f11193c27df9da38173058c8f96731972d27e3716",
+      "bytes": 450863,
+      "inspection": "Selected scope, introduction and theorem statements only; not full proof audit."
+    },
+    {
+      "url": "https://github.com/google-deepmind/formal-conjectures/blob/16e02e2c29752539b6889563c392bc05c68cddc5/FormalConjectures/ErdosProblems/841.lean",
+      "sha256": "86f748c9dd42b0fce9f56f43fce71ab0163c3194ef2a30b3ee1d3612533f15ef",
+      "bytes": 5007,
+      "inspection": "Selected scope, introduction and theorem statements only; not full proof audit."
+    },
+    {
+      "url": "https://github.com/google-deepmind/formal-conjectures/blob/16e02e2c29752539b6889563c392bc05c68cddc5/FormalConjectures/ErdosProblems/978.lean",
+      "sha256": "0154632d49ee6479383eca09bcc48a1d78030f3929f453fb01a396e48b4f6024",
+      "bytes": 4570,
+      "inspection": "Entire 978.lean declaration file inspected; no linked proof execution."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026/main.pdf",
+      "sha256": "f9c3a77d59893f720a382e6dbf34fbb93adcdfd27af3dcdf4e4336157143defb",
+      "bytes": 701416,
+      "inspection": "abstract_and_intro only; no proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-September-23-2026/paper.pdf",
+      "sha256": "0548f28606fea1a4654626c7680805abd227419c5de2dd633f35a3ddd0e0aede",
+      "bytes": 1088074,
+      "inspection": "abstract_and_intro only; no proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/008.md",
+      "sha256": "45829bd7e8ea32a33fe881d5168307b2cd03dd50f4a5b34f0659f1211a6622e0",
+      "bytes": 953,
+      "inspection": "lean_scope only; no proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/009.md",
+      "sha256": "024d1fe5d1386214841b9fdca0ed9a3767bca2f854eaef187f3e5e0ea85cd30a",
+      "bytes": 1248,
+      "inspection": "lean_scope only; no proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Unrestricted-pro-modularity-at-the-prime-two-October-4-2026/two-adic-promodularity.pdf",
+      "sha256": "a91f1bbcc0af368d4e4fe31323cc5eab26429080c144ea5ba374f550a34f326c",
+      "bytes": 455046,
+      "inspection": "abstract_and_intro only; no proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/015.md",
+      "sha256": "2eb9097c27c5ff8603aab35c72e7dd5830e45f2d3b4ff7af224c55aabc3615a0",
+      "bytes": 1014,
+      "inspection": "lean_scope only; no proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/paper.pdf",
+      "sha256": "53e8f20495ac61681db3f19f43358f621c90f53ca6c18cc4d6f83f32e9959014",
+      "bytes": 623169,
+      "inspection": "abstract_and_intro only; no proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/margulis-platonov-global-function-fields.pdf",
+      "sha256": "7e90f88648f7bafcc58a6fa895e2b94c2e4ed81a5510c9237488e18416ccc498",
+      "bytes": 797463,
+      "inspection": "abstract_and_intro only; no proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Etale-covers-with-a-prescribed-exterior-sheet-September-24-2026/main.pdf",
+      "sha256": "713430a73f1530f5d89cd38050c45a6bc2ccc458878a191917bb37b451b2f26a",
+      "bytes": 319576,
+      "inspection": "abstract_and_intro only; no proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Integral-points-on-character-varieties-of-curves-September-25-2026/paper.pdf",
+      "sha256": "cacb926d1f09eeb701c5a98ff7f4b7849039a2cf838005d3687db122fe8c0e8c",
+      "bytes": 466173,
+      "inspection": "abstract_and_intro only; no proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Modularity-of-elliptic-curves-over-imaginary-quadratic-fields-October-4-2026/paper.pdf",
+      "sha256": "c74cc37755f500be0c22ccb4d08ce81df309404a7175a7fb6cf7321330b5187c",
+      "bytes": 519636,
+      "inspection": "abstract_and_intro only; no proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/open-homomorphisms-solvably-closed-galois-groups.pdf",
+      "sha256": "36a58d5f408acc3d5430e1da1397aaaa7900321c3322a2001dcf7e6fc4de7fc0",
+      "bytes": 456051,
+      "inspection": "abstract_and_intro only; no proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-rational-Hodge-conjecture-for-products-of-K3-surfaces-October-4-2026/hodge-conjecture-products-k3.pdf",
+      "sha256": "29df1aaedad72d55501e39c512e4d9c3d3bc8ac38d2fc147657dc7402567f900",
+      "bytes": 639139,
+      "inspection": "abstract_and_intro only; no proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/242.md",
+      "sha256": "c7759c6d6d1dc254a199367aa70e173e86b5c330fc9ac65e12a39bc047af8935",
+      "bytes": 1027,
+      "inspection": "lean_scope only; no proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/279.md",
+      "sha256": "70edc97191b737cec8ade36d26bd53cd0c75f9c0e33c8afa53e7ce32ee67a88d",
+      "bytes": 981,
+      "inspection": "lean_scope only; no proof audit."
+    }
+  ],
+  "additional_external_consequences": [
+    {
+      "source_family": "F017",
+      "result": "Flint-Hills series convergence; more generally sum n^(-a)|sin n|^(-b) converges iff a>max(1,b), a,b>0.",
+      "scope": "Manuscript Theorem 1.1 and Corollaries 1.2,5.2; these series consequences are outside selected Lean comparator.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/017.md"
+      ]
+    },
+    {
+      "source_family": "F011",
+      "result": "Full finite-dimensional Poisson-Dirichlet law for ranked prime factors of p-1 in ordinary prime counting; parity companion gives infinitely many p with mu(p-1)=1.",
+      "scope": "Separate manuscripts; smoothness theorem alone does not imply parity.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf"
+      ]
+    },
+    {
+      "source_family": "F025",
+      "result": "Number F(k) of exact k-term distinct unit-fraction expansions of 1 satisfies log log F(k)=Theta(k).",
+      "scope": "No exact matching atlas question was established in this scan; do not invent an ID.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Short-Egyptian-fractions-September-25-2026/Short-Egyptian-fractions-September-25-2026.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/025.md"
+      ]
+    }
+  ],
+  "second_wave_coverage": [
+    {
+      "source_family": "F001",
+      "inspection": "title_only",
+      "finding": "No scoped Erdős match established; rationality for abelian varieties needs a target-specific bridge.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/paper.pdf"
+      ]
+    },
+    {
+      "source_family": "F002",
+      "inspection": "title_only",
+      "finding": "Low Selmer corank BSD statements are not full BSD for arbitrary rank; no exact atlas target established.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-3-2026/exact-bsd-low-selmer-corank.pdf"
+      ]
+    },
+    {
+      "source_family": "F003",
+      "inspection": "delegated_existing_analysis",
+      "finding": "F003 and RH/P969 handled in CONNECTIONS.md and parent lane.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/paper.pdf"
+      ]
+    },
+    {
+      "source_family": "F004",
+      "inspection": "abstract_and_intro",
+      "finding": "General algorithmic undecidability over Q, with variable count part of input; does not decide an individual atlas Diophantine problem.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026/main.pdf"
+      ]
+    },
+    {
+      "source_family": "F005",
+      "inspection": "lean_scope",
+      "finding": "Catalan constant irrationality only; no identity with an open atlas constant established.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/005.md"
+      ]
+    },
+    {
+      "source_family": "F006",
+      "inspection": "abstract_and_intro",
+      "finding": "Fixed elliptic curve quadratic-twist analytic ranks zero/one each density one half; low-corank two-converse. No atlas elliptic-curve target located.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-September-23-2026/paper.pdf"
+      ]
+    },
+    {
+      "source_family": "F007",
+      "inspection": "delegated_existing_analysis",
+      "finding": "F007 affine correlations handled in CONNECTIONS.md and parent lane.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/final.pdf"
+      ]
+    },
+    {
+      "source_family": "F008",
+      "inspection": "lean_scope",
+      "finding": "Rational Grothendieck-Teichmuller Lie algebra freeness and weight completion. Regularized-transport proposition and graph-complex consequences excluded from selected statement; no Erdős graph implication.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/008.md"
+      ]
+    },
+    {
+      "source_family": "F009",
+      "inspection": "lean_scope",
+      "finding": "Only injectivity of Bogomolov-Pop correspondence modulo scaling/Frobenius; existence reconstruction is outside selected scope. Other October companions not audited.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/009.md"
+      ]
+    },
+    {
+      "source_family": "F010",
+      "inspection": "abstract_and_intro",
+      "finding": "Completed-Hecke occurrence for odd irreducible two-dimensional 2-adic representations; no de Rham assumption and not classical modularity. No atlas target match.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Unrestricted-pro-modularity-at-the-prime-two-October-4-2026/two-adic-promodularity.pdf"
+      ]
+    },
+    {
+      "source_family": "F014",
+      "inspection": "title_only",
+      "finding": "Langlands/Arthur enhancements not mapped to a precise atlas problem; no implication admitted.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Global-Arthur-Enhancements-of-Cuspidal-Excursion-Parameters-October-5-2026/manuscript.pdf"
+      ]
+    },
+    {
+      "source_family": "F015",
+      "inspection": "lean_scope",
+      "finding": "Totally real prime degree>=5 torus-packet equidistribution; scope does not certify quartic/sextic companion conclusions. No atlas target match.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/015.md"
+      ]
+    },
+    {
+      "source_family": "F016",
+      "inspection": "abstract_and_intro",
+      "finding": "Finitely many maximal atypical subvarieties in abelian varieties, measured in smallest torsion coset. No identified atlas reduction to this statement.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Abelian-Zilber-Pink-Conjecture-September-24-2026/paper.pdf"
+      ]
+    },
+    {
+      "source_family": "F018",
+      "inspection": "abstract_and_intro",
+      "finding": "Normal-subgroup structure for rational points of absolutely almost simple simply connected groups over global function fields; no atlas target match.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Margulis-Platonov-conjecture-over-global-function-fields-October-5-2026/margulis-platonov-global-function-fields.pdf"
+      ]
+    },
+    {
+      "source_family": "F019",
+      "inspection": "abstract_and_intro",
+      "finding": "First companion constructs an etale cover with prescribed exterior sheet over p-adic algebraic closure; main section-conjecture paper not inspected here. No atlas target match.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Etale-covers-with-a-prescribed-exterior-sheet-September-24-2026/main.pdf"
+      ]
+    },
+    {
+      "source_family": "F027",
+      "inspection": "abstract_and_intro",
+      "finding": "Potential integral density on character varieties after finite field extension with specified boundary monodromy; does not give arbitrary Diophantine integral-point existence.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Integral-points-on-character-varieties-of-curves-September-25-2026/paper.pdf"
+      ]
+    },
+    {
+      "source_family": "F030",
+      "inspection": "abstract_and_intro",
+      "finding": "Modularity for elliptic curves over imaginary quadratic fields with local matching; no exact atlas target identified.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Modularity-of-elliptic-curves-over-imaginary-quadratic-fields-October-4-2026/paper.pdf"
+      ]
+    },
+    {
+      "source_family": "F031",
+      "inspection": "abstract_and_intro",
+      "finding": "Open Galois-group homomorphisms reconstruct field embeddings for specified solvably closed extensions; no exact atlas target identified.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Open-Homomorphisms-of-Global-Solvably-Closed-Galois-Groups-October-5-2026/open-homomorphisms-solvably-closed-galois-groups.pdf"
+      ]
+    },
+    {
+      "source_family": "F032",
+      "inspection": "abstract_and_intro",
+      "finding": "First paper rational Hodge classes on finite products of projective complex K3 surfaces; no implication to arbitrary varieties or atlas point configurations established.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-rational-Hodge-conjecture-for-products-of-K3-surfaces-October-4-2026/hodge-conjecture-products-k3.pdf"
+      ]
+    },
+    {
+      "source_family": "F242",
+      "inspection": "lean_scope",
+      "finding": "Single-fold Diophantine representations for recursively enumerable subsets of N^n; selected scope does not separately formalize the at-most-one-solution undecidability corollary. No individual atlas undecidability reduction established.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/242.md"
+      ]
+    },
+    {
+      "source_family": "F279",
+      "inspection": "lean_scope",
+      "finding": "Uniform quantum circuits over fixed finite bounded-arity gate set factor every N with exact probability one, polynomial gates/qubits; no classical algorithm or available-hardware performance claim. No current finite certificate improved.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/279.md"
+      ]
+    }
+  ]
+}

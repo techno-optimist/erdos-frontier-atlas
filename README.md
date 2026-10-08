@@ -21,6 +21,8 @@ conjecture, or turn a shared tag into an implication. The
 | To… | Read or run |
 |---|---|
 | Find a reusable method | [Method substrate](experiments/astra-substrate-20260911/README.md) · [generated method board](experiments/astra-substrate-20260911/BOARD.md) |
+| Review the OpenAI mathematics release | [Source catalogue and 133 scoped connections](experiments/openai-math-20261006/README.md) · [current mathematical findings](experiments/openai-math-20261006/CURRENT_FINDINGS.md) · [dated upstream corrections](experiments/openai-math-20261006/upstream-update/README.md) |
+| Inspect the new local proof components | [P699 arithmetic and P841 transport](experiments/openai-math-20261006/research-sprint/README.md) · [positional block bridge](experiments/openai-math-20261006/research-next/formal-bridge/README.md) · [weighted P699 bridge](experiments/openai-math-20261006/lead-phase/weighted-formal/README.md) |
 | Decide one #699 row, or see what a reduction still leaves open | [The briefcase](tools/briefcase.py): `python3 tools/briefcase.py row N I` · [in-browser calculator](tools/briefcase.html) · [residual ledger](atlas/residuals.json) |
 | Read the RH / squarefree-counting work | [P969 progress map](experiments/astra-rh-969-20260912/REPOSITORY_STATUS.md), including derivations, audit evidence, verification and remaining obligations |
 | Choose a research direction | [Agent entry point](GRAPH.md) · [strike board](views/sorties.md) · [walls](atlas/walls.md), then check [source freshness](#source-freshness) |
@@ -30,6 +32,13 @@ conjecture, or turn a shared tag into an implication. The
 | Read the longer account | [*Cartography of Numbers*](book/BOOK.md) |
 
 ## Current research
+
+The [OpenAI release review](experiments/openai-math-20261006/README.md) retains
+its October 6 snapshot of 722 manuscripts in 372 families and a mathematical
+connection overlay. The [October 8 correction notice](experiments/openai-math-20261006/upstream-update/README.md)
+records 719 manuscripts after three withdrawals, revised editions and changed
+formalization scope. External reports do not establish local proof verification
+or change canonical problem statuses.
 
 These are research results and interfaces, not a list of solved conjectures.
 The [method registry](atlas/substrate.json) records each statement's hypotheses,
@@ -116,6 +125,11 @@ silently rebuilding the graph.
   records the checked changes for #477, #625 and #501, distinguishes mathematical
   status changes from Lean-label changes, and preserves differences between the
   website and YAML snapshots.
+- The [OpenAI source review](experiments/openai-math-20261006/README.md) and
+  [dated correction notice](experiments/openai-math-20261006/upstream-update/README.md)
+  distinguish historical catalogue claims, withdrawn proofs and selected Lean
+  scopes. The newly reported ideal all-length DFT statement does not supply
+  numerical error bounds or the missing P969 analytic estimate.
 - The [September 27 strike-board check](experiments/claude-freshness-20260927/README.md)
   compares every board surface with upstream at `af83692` and records T3 cells
   settled elsewhere since the July mining (#1016, #1062, #1057, #302, #156 and

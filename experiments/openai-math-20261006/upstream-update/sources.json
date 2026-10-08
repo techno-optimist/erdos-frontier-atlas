@@ -1,0 +1,136 @@
+{
+  "files": [
+    {
+      "bytes": 640371,
+      "path": "raw/old-contents.md.txt",
+      "sha256": "c492802b53fb4c4161e45fc678bb67bd526add72ca2635493a367ff7fb860bf9",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/CONTENTS.md"
+    },
+    {
+      "bytes": 638727,
+      "path": "raw/new-contents.md.txt",
+      "sha256": "cc7c0b8a1cdedd845a777e77cf682657308503daf8346c1349e06e9259d063c2",
+      "url": "https://raw.githubusercontent.com/openai/math/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/CONTENTS.md"
+    },
+    {
+      "bytes": 73925,
+      "path": "raw/old-formalization.yaml",
+      "sha256": "2dcbd0d6e6a22475f53d49bfdfcac9b6d2b470653c332a9f56522f5be166edb9",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/formalization.yaml"
+    },
+    {
+      "bytes": 79482,
+      "path": "raw/new-formalization.yaml",
+      "sha256": "5a8a164259591208886cd018416e61552665265ec9e20cff636f9d51117c2278",
+      "url": "https://raw.githubusercontent.com/openai/math/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/lean/formalization.yaml"
+    },
+    {
+      "bytes": 4190,
+      "path": "raw/new-readme.md.txt",
+      "sha256": "5e8878ee04866f52ec942852552b9c28db278f65691c7ab49a87c9e93a9199fd",
+      "url": "https://raw.githubusercontent.com/openai/math/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/README.md"
+    },
+    {
+      "bytes": 2281,
+      "path": "raw/history.md.txt",
+      "sha256": "41c2a2d470014b3628695c7aabf5fd0c93f6f687621fca172062f22b59ed6a1e",
+      "url": "https://raw.githubusercontent.com/openai/math/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/history.md"
+    },
+    {
+      "bytes": 11357,
+      "path": "raw/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "url": "https://raw.githubusercontent.com/openai/math/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/LICENSE"
+    },
+    {
+      "bytes": 1060,
+      "path": "raw/comparator-readme.md.txt",
+      "sha256": "2ed835b3c59709be6feffe0dec54fc9783fb26aa22d35517475a82ef5199c555",
+      "url": "https://raw.githubusercontent.com/openai/math/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/lean/ComparatorChallenges/README.md"
+    },
+    {
+      "bytes": 1026,
+      "path": "raw/old-scope-130.md.txt",
+      "sha256": "4d28a5c6645d2d1bb188a55b4ad01904ce15378f1d60b6cf46e49b475b18c7d5",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/130.md"
+    },
+    {
+      "bytes": 1952,
+      "path": "raw/new-scope-130.md.txt",
+      "sha256": "233cdd3c7fb22ee4cb8ba8d170a79dd3e3d4e30f513c940db55ec244a291c209",
+      "url": "https://raw.githubusercontent.com/openai/math/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/lean/docs/130.md"
+    },
+    {
+      "bytes": 2558,
+      "path": "raw/commit.json",
+      "sha256": "62d7808f6eb1a7a36859f00d4b9bf6a8f00eb78d1bba7fd37d86bbfeefdfcccd",
+      "url": "https://api.github.com/repos/openai/math/git/commits/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb"
+    },
+    {
+      "bytes": 1366,
+      "path": "raw/withdrawal-1.md.txt",
+      "sha256": "7fa6fca8ca50bf94f5124c498fd1515736eeb8586751ed0bc56c40992cc684d4",
+      "url": "https://raw.githubusercontent.com/openai/math/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/Algebraicity-of-Weil-classes-on-split-abelian-eightfolds-September-18-2026/README.md"
+    },
+    {
+      "bytes": 983,
+      "path": "raw/withdrawal-2.md.txt",
+      "sha256": "55198a6e18aac60fc4da27cb82058d8f8c7a5d2918185b7e4033a7bf9503f69a",
+      "url": "https://raw.githubusercontent.com/openai/math/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/Algebraicity-of-Kuga-Satake-Correspondences-for-K3-Surfaces-October-3-2026/README.md"
+    },
+    {
+      "bytes": 1056,
+      "path": "raw/withdrawal-3.md.txt",
+      "sha256": "0710a6b9184f98504073991cbbbadb5bda375fb31d68911f1ec27f7333eb738c",
+      "url": "https://raw.githubusercontent.com/openai/math/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/preprints/The-rational-Hodge-conjecture-for-products-of-K3-surfaces-October-4-2026/README.md"
+    },
+    {
+      "bytes": 1852,
+      "path": "raw/old-root-tree.json",
+      "sha256": "282785c45382e7478af985d206d8d5ecec3a2301b8a229a8c6fef14343c67dee",
+      "url": "https://api.github.com/repos/openai/math/git/trees/adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "bytes": 192756,
+      "path": "raw/old-preprints-tree.json",
+      "sha256": "39a1141451ec644371a3027e2c8a885ed8668476151d014d502b7516fbb2f1a4",
+      "url": "https://api.github.com/repos/openai/math/git/trees/272ca94583c1dca3188bbc3a1caa068cb7af4b55"
+    },
+    {
+      "bytes": 2065,
+      "path": "raw/new-root-tree.json",
+      "sha256": "2f330e38ac126b7f34604f6fc26f4b13cb497eec5fe66ba68de56b7ff7aef431",
+      "url": "https://api.github.com/repos/openai/math/git/trees/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb"
+    },
+    {
+      "bytes": 199940,
+      "path": "raw/new-preprints-tree.json",
+      "sha256": "12f292bcdfe49741c8324633043c2c24dc7e53d1552c1dba1d0034e7677216cd",
+      "url": "https://api.github.com/repos/openai/math/git/trees/df0564b2deaab87e07854b6344d8c2f037682e77"
+    },
+    {
+      "bytes": 822,
+      "path": "raw/old-commit.json",
+      "sha256": "2b6a00b5d314d099df6b0eb0fd38a86a103f76cda99548d638585efc0317d514",
+      "url": "https://api.github.com/repos/openai/math/git/commits/adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "bytes": 1852,
+      "path": "raw/old-tree.json",
+      "sha256": "5632813d9a2ad91ad7d57ef2e0d9bad755ebd58c8b8f824f6497dd80f647e873",
+      "url": "https://api.github.com/repos/openai/math/git/trees/a8e3481a92772ee311cdc9dd6409cd7b927a3fc1"
+    },
+    {
+      "bytes": 2065,
+      "path": "raw/new-tree.json",
+      "sha256": "b3f1e168dad37ed284014bb2c16e468965decd6b02764dbed32bcbf15c1c1615",
+      "url": "https://api.github.com/repos/openai/math/git/trees/08e6aaa9e4788dd81984b67a9cd97d952093ecd4"
+    }
+  ],
+  "new_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "old_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+  "repository": "https://github.com/openai/math",
+  "retrieved_utc": "2026-10-08T20:36:26.004006+00:00",
+  "schema": "openai-math-update-sources/v1",
+  "scope": "Public source metadata/notices only; no manuscripts, proof build, models, or private data."
+}

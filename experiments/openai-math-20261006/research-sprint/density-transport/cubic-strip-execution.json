@@ -1,0 +1,74 @@
+{
+  "schema": "efa-cubic-strip-lean-receipt-v1",
+  "verified_at_utc": "2026-10-07T03:56:09.136893+00:00",
+  "verification_scope": "integer polynomial and explicit quotient-hypothesis implications only; no Kummer or P699 arithmetic reduction formalized",
+  "external_openai_proofs_rebuilt": false,
+  "toolchain_version": "Lean (version 4.33.1, arm64-apple-darwin24.6.0, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "lean_executable": "/private/tmp/erdos-density-lean/lean-4.33.1-darwin_aarch64/bin/lean",
+  "lean_executable_sha256": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+  "compile_command": [
+    "/private/tmp/erdos-density-lean/lean-4.33.1-darwin_aarch64/bin/lean",
+    "-o",
+    ".build/CubicStrip.olean",
+    "CubicStrip.lean"
+  ],
+  "compile_exit_code": 0,
+  "source_sha256": "2aeb918e00adf8526ae56020894523ea041a2967253c058c2799c8b27b00a732",
+  "verifier_sha256": "98a2639cc196217e17d07970c45e409e4d66f9bc3a8b8954409ac80d894489e5",
+  "proof_olean_sha256": "5f920df658637b09f788284a4c6093c14f444a2e65e407cd831889c5a2c70cbd",
+  "axiom_audit": {
+    "obstruction_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "obstruction_positive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "quotient_negative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "growing_strip": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "quotient_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "parity_nonzero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "even_quotient_strip": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "four_quotient_strip": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "gcd_gap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "zero_quotient_control": []
+  },
+  "countermodel": {
+    "theorem": "zero_quotient_control",
+    "n": 6,
+    "d": 4,
+    "m": 0,
+    "purpose": "nonzero premise cannot be omitted from general quotient theorem"
+  }
+}

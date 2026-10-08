@@ -1,0 +1,12 @@
+# Independent review of the correlation barrier
+
+**Verdict: PASS as an informal existence proof**, with the scope stated in [the parent note](../correlation-barrier/README.md). This is model review, not formal verification or a novelty claim. No duplicate graph edge is added.
+
+- For each shifted product sum, changing one random coordinate affects at most two products by at most two each. At most 2N coordinates are involved, so the stated tail `2 exp(-t²/(16N))` follows from bounded differences. The union over h≤N and N is summable at t=N^(3/4).
+- For a fixed nonproportional affine pair, the forms agree at at most one input, so expectation is O(1); each coordinate again occurs in at most two product terms. Countably many integer form pairs can be intersected with the two strong-law events. No probability intersection over all real exponents is required.
+- The planted lengths increase fast enough that their sum through k is at most 2L_k. The function f(T)=T·2^(-sqrt(log_2 T)) is eventually increasing. Hence the stated count of the modified set holds even while T lies inside a planted interval, and its density decays faster than every negative logarithmic power.
+- For h≤N, at most twice the modified-set count through 2N products change, each by at most two. The factor four is valid uniformly in h. Injectivity of each fixed positive-slope affine form gives the corresponding estimate through C N+C. This also preserves the mean and square mean.
+- The contained-window starts are the integers from N_k-1 to N_k+L_k-H_k-1 inclusive, exactly L_k-H_k+1 values. They lie in [1,2N_k] for large k. For every fixed 0<theta<1, H_k/L_k→0 and the lower bound is asymptotic to H_k·2^(-2^k)/2→infinity.
+- One fixed realization works for all theta because the last calculation is deterministic for that realization and can be applied to any real theta in the stated interval. The fixed-H energy cH follows by expanding its finitely many terms, using the square-mean limit and fixed-shift cancellation; shifting the starting index causes only O(H) bounded endpoint errors for each fixed term.
+
+The theorem concerns uncentered energy of a bounded nonmultiplicative sequence whose Cesaro mean is zero. It does not refute an arithmetic theorem about Mobius/Liouville. The note states that limitation accurately. The finite SHA-256 example is correctly separated from the infinite probability-one realization; this review did not use its finite numerical success as proof of existence.

@@ -1,0 +1,93 @@
+{
+  "schema": "efa-density-transport-lean-receipt-v1",
+  "verified_at_utc": "2026-10-07T03:47:29.117169+00:00",
+  "verification_scope": "local explicit-hypothesis finite and natural-number-sublinear transport proofs only",
+  "external_openai_proofs_rebuilt": false,
+  "toolchain_version": "Lean (version 4.33.1, arm64-apple-darwin24.6.0, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "lean_executable": "/private/tmp/erdos-density-lean/lean-4.33.1-darwin_aarch64/bin/lean",
+  "lean_executable_sha256": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+  "official_release_url": "https://github.com/leanprover/lean4/releases/tag/v4.33.1",
+  "official_darwin_arm64_archive_sha256": "88c45aad985b5d2a8d925fe10bd1296bd35f66f408480ab182d3facccd065a9d",
+  "compile_command": [
+    "/private/tmp/erdos-density-lean/lean-4.33.1-darwin_aarch64/bin/lean",
+    "-o",
+    ".build/DensityTransport.olean",
+    "DensityTransport.lean"
+  ],
+  "compile_exit_code": 0,
+  "source_sha256": "c05772888c2339961b67435a73587dd28a89ef50aae73ea8a54e4feb6f1f78db",
+  "verifier_sha256": "09b66a63125c7dad699727abf78857306ff39c7cd125072c4c00dcd13259cdf7",
+  "axiom_audit": {
+    "discrepancy_balance": [
+      "propext",
+      "Quot.sound"
+    ],
+    "one_sided_transport": [
+      "propext",
+      "Quot.sound"
+    ],
+    "count_stability": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "intersection_stability": [
+      "propext",
+      "Quot.sound"
+    ],
+    "intersection_one_sided_transport": [
+      "propext",
+      "Quot.sound"
+    ],
+    "joint_event_stability": [
+      "propext",
+      "Quot.sound"
+    ],
+    "joint_one_sided_transport": [
+      "propext",
+      "Quot.sound"
+    ],
+    "joint_count_transport": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "sublinear_add": [
+      "propext",
+      "Quot.sound"
+    ],
+    "asymptotic_joint_transport": [
+      "propext",
+      "Quot.sound"
+    ],
+    "asymptotic_joint_from_marginals": [
+      "propext",
+      "Quot.sound"
+    ],
+    "count_gap_le_discrepancy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "asymptotic_joint_count_gap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "negative_controls": [
+    {
+      "path": "negative/OmitMarginal.lean",
+      "expected_rejection": true,
+      "exit_code": 1,
+      "source_sha256": "a20960d255ae26b1d6593e75387559d2e38ecbbc157090e52ee247a94ebf5498"
+    },
+    {
+      "path": "negative/OmitLeakage.lean",
+      "expected_rejection": true,
+      "exit_code": 1,
+      "source_sha256": "1a6a78a88c6a6d11f421947f54b394b83f43bdb320619365da5f863620bac964"
+    }
+  ],
+  "proof_olean_sha256": "470929bdd5fa37c456408465e7153104c4bd579280bbdc1791c781d0ef5c2d61"
+}

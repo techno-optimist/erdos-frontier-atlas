@@ -1,0 +1,64 @@
+{
+  "boundary": {
+    "axiom_export": false,
+    "comparator_run": false,
+    "dependency_download": false,
+    "lake_execution": false,
+    "lean_build": false,
+    "network_calls": 0,
+    "novelty_claim": false,
+    "offline": true,
+    "performance_measurement": false
+  },
+  "commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "controls": {
+    "positive_controls": 3,
+    "refusals": [
+      "changed_byte",
+      "boolean_length",
+      "path_escape",
+      "absolute_path",
+      "duplicate_json",
+      "nonfinite_json",
+      "missing_import",
+      "multiple_imports_on_line",
+      "unterminated_comment",
+      "unterminated_string",
+      "missing_definition"
+    ]
+  },
+  "external_proof_imports": [
+    "Mathlib"
+  ],
+  "license_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+  "local_proof_modules": 89,
+  "normalized_goal_definitions": {
+    "ConvGoal": true,
+    "ConvProgram": true,
+    "DFTGoal": true,
+    "DFTProgram": true,
+    "TimeBounds": true,
+    "conv": true,
+    "decimalExponent": true,
+    "decimalTime": true,
+    "dft": true,
+    "nlogn": true,
+    "paperDelta": true,
+    "paperM": true,
+    "paperMultiplier": true,
+    "paperTime": true,
+    "paperW": true,
+    "theta": true
+  },
+  "normalized_ram_match": true,
+  "original_snapshot_files": 104,
+  "original_static_receipt_exactly_replayed": true,
+  "schema": "f130-offline-packet-receipt/v1",
+  "snapshot_manifest_sha256": "7f667ac5a922bc867eefacf7115ef09393b1dd143c902e1543ff530b8ee0dee8",
+  "source_manifest_sha256": "190c84342ea257ffe254f2947d25af274e8a3f75ac85c707d2a616169f7dd68f",
+  "status": "passed",
+  "upstream_source_bytes": 645234,
+  "upstream_source_bytes_modified": false,
+  "upstream_source_files": 97,
+  "verifier_sha256": "6b1c4946974dad04b942d267836baa19e026691c7ef39a496a5f0bb1818d11e9"
+}

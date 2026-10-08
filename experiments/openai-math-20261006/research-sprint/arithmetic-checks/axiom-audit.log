@@ -1,0 +1,3 @@
+'DiagonalInequality.seven_diagonal_positive' depends on axioms: [propext, Quot.sound]
+'DiagonalInequality.seven_diagonal_no_weak_bound' depends on axioms: [propext, Quot.sound]
+'DiagonalInequality.seven_diagonal_no_gcd_bound' depends on axioms: [propext, Quot.sound]

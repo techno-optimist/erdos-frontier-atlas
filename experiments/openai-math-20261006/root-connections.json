@@ -1,0 +1,421 @@
+{
+  "schema": "efa-openai-connections-shard-v1",
+  "owner": "root",
+  "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+  "edges": [
+    {
+      "edge_id": "root-01",
+      "source_family": "159",
+      "target_id": "P3",
+      "relation": "external_statement_match",
+      "scope": "Divergent reciprocal-sum sets have arithmetic progressions of every finite length.",
+      "missing_hypotheses": [
+        "External proof verification."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/00-introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "edge_id": "root-02",
+      "source_family": "021",
+      "target_id": "P970",
+      "relation": "external_statement_match",
+      "scope": "Quadratic subquestion: h(k) = O(k^2/(loglog(3k))^2).",
+      "missing_hypotheses": [
+        "Full order, effective constants, external proof verification."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/build/sections/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "edge_id": "root-03",
+      "source_family": "025",
+      "target_id": "P304",
+      "relation": "external_statement_match",
+      "scope": "Worst shortest distinct-unit-fraction length is Theta(loglog b).",
+      "missing_hypotheses": [
+        "External proof verification; no exact finite length."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Short-Egyptian-fractions-September-25-2026/build/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "edge_id": "root-04",
+      "source_family": "025",
+      "target_id": "P293",
+      "relation": "external_statement_match",
+      "scope": "Prescribed-denominator threshold has loglog v(k) = Theta(k).",
+      "missing_hypotheses": [
+        "No exact limiting slope; external proof verification."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Short-Egyptian-fractions-September-25-2026/build/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "edge_id": "root-05",
+      "source_family": "012",
+      "target_id": "P928",
+      "relation": "external_statement_match",
+      "scope": "Ordinary joint fixed-parameter Dickman density for consecutive integers.",
+      "missing_hypotheses": [
+        "External proof verification; no moving-parameter uniformity."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/build/sections/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "edge_id": "root-06",
+      "source_family": "012",
+      "target_id": "P371",
+      "relation": "external_statement_match",
+      "scope": "Either ordering of consecutive largest prime factors has natural density 1/2.",
+      "missing_hypotheses": [
+        "External proof verification."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/build/sections/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "edge_id": "root-07",
+      "source_family": "028",
+      "target_id": "P952",
+      "relation": "external_statement_match",
+      "scope": "No infinite injective bounded-step Gaussian-prime walk; finite component bound for fixed step bound.",
+      "missing_hypotheses": [
+        "External proof verification; no explicit component-size function."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/028.md"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "edge_id": "root-08",
+      "source_family": "003",
+      "target_id": "method:squarefree-energy",
+      "relation": "conditional_derivation",
+      "scope": "V(X) = O_epsilon(X^(15/8+epsilon)); Mellin continuation Re(s)>7/16.",
+      "missing_hypotheses": [
+        "External F003 proof verification; local argument informal."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/build/paper.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [
+        "atlas Mellin no-pole identification",
+        "convexity and subpolynomial reciprocal growth",
+        "Mellin Plancherel"
+      ],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "edge_id": "root-09",
+      "source_family": "003",
+      "target_id": "method:variance-strip-completion",
+      "relation": "conditional_derivation",
+      "scope": "A variance input with theta>23/24 plus F003 fills the zero-free half-plane Re(s)>2-3theta/2. Theta=24/25 gives Re(s)>14/25.",
+      "missing_hypotheses": [
+        "Variance for every integer H<=X^theta, theta>23/24, currently unavailable.",
+        "External F003 proof verification."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/build/paper.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [
+        "MELLIN_TRANSFER.md strip (2a,2-4a), a=1-3theta/4",
+        "strict overlap 7/8<2-4a"
+      ],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "edge_id": "root-10",
+      "source_family": "007",
+      "target_id": "method:fixed-shift-mobius",
+      "relation": "conditional_derivation",
+      "scope": "For each fixed h>=1, sum_{n<=X} mu(n)mu(n+h)=o_h(X).",
+      "missing_hypotheses": [
+        "External F007 proof verification.",
+        "No quantitative rate or growing-h uniformity."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [
+        "bounded periodic squarefree masks; X to infinity before cutoff z"
+      ],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "edge_id": "root-11",
+      "source_family": "007",
+      "target_id": "method:fixed-window-mobius-variance",
+      "relation": "conditional_derivation",
+      "scope": "For fixed H, mean square of sum_{h=1}^H mu(n+h) tends to H/zeta(2).",
+      "missing_hypotheses": [
+        "External F007 proof verification.",
+        "H is fixed, not X^theta."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [
+        "fixed-shift Mobius cancellation",
+        "squarefree density"
+      ],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "edge_id": "root-12",
+      "source_family": "021",
+      "target_id": "P687",
+      "relation": "conditional_derivation",
+      "scope": "j(product_{p<=z}p) = O(z^2/(log(z)^2 loglog(z)^2)).",
+      "missing_hypotheses": [
+        "External F021 proof verification.",
+        "No effective constant or next exact gap cell."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/build/sections/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [
+        "prime number theorem"
+      ],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "edge_id": "root-13",
+      "source_family": "021",
+      "target_id": "P854",
+      "relation": "conditional_derivation",
+      "scope": "Least missing positive even primorial gap a(k)<=h(k)+2=O(k^2/loglog(3k)^2)+2.",
+      "missing_hypotheses": [
+        "External F021 proof verification.",
+        "No occurrence claim for all smaller gaps or finite cell."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/build/sections/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [
+        "gap parity and maximal-gap definition"
+      ],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "edge_id": "root-14",
+      "source_family": "159",
+      "target_id": "method:weighted-progression-divergence",
+      "relation": "conditional_derivation",
+      "scope": "Divergence of sum_{a in A} (log a)^B/a for any fixed B>=0 forces all finite AP lengths.",
+      "missing_hypotheses": [
+        "External quantitative F159 proof verification, beyond the selected reciprocal-sum Lean scope."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/00-introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [
+        "dyadic summability of exp(-c(log N)^epsilon) times any fixed log power"
+      ],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "edge_id": "root-15",
+      "source_family": "007",
+      "target_id": "P969",
+      "relation": "blocked_transfer",
+      "scope": "Fixed-form logarithmic Liouville cancellation does not imply the weighted Mobius Dirichlet-polynomial power saving.",
+      "missing_hypotheses": [
+        "Growing coefficients/shifts, zeta weights, square frequencies, uniform masks, fixed power saving and tails."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "edge_id": "root-16",
+      "source_family": "012",
+      "target_id": "P699",
+      "relation": "blocked_transfer",
+      "scope": "Density o(X) error can contain all O_i(X^(1/3)log(X)^pi(i)) exceptional candidates.",
+      "missing_hypotheses": [
+        "Conditioned smooth-part divisibility or failure amplification; density alone insufficient."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/build/sections/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "edge_id": "root-17",
+      "source_family": "025",
+      "target_id": "P327",
+      "relation": "blocked_transfer",
+      "scope": "Short many-term unrestricted Egyptian fractions do not force the forbidden two-term pair in a specified set.",
+      "missing_hypotheses": [
+        "Cross-fiber activated pair or a proved deficit transfer."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Short-Egyptian-fractions-September-25-2026/build/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "edge_id": "root-18",
+      "source_family": "170",
+      "target_id": "P165",
+      "relation": "blocked_transfer",
+      "scope": "Fixed s>=5 off-diagonal asymptotics do not apply to s=3 or finite R(3,10).",
+      "missing_hypotheses": [
+        "Correct clique parameter, explicit constants and effective finite threshold."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/170.md"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "edge_id": "root-19",
+      "source_family": "189",
+      "target_id": "P159",
+      "relation": "blocked_transfer",
+      "scope": "Cycle-clique formula requires m>=n, opposite to fixed C4 against growing K_n.",
+      "missing_hypotheses": [
+        "The missing m<n theorem."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/189.md"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "edge_id": "root-20",
+      "source_family": "159",
+      "target_id": "P142",
+      "relation": "blocked_transfer",
+      "scope": "Stretched-exponential upper bound does not give an asymptotic equivalent or exact finite AP-free maximum.",
+      "missing_hypotheses": [
+        "Matching asymptotics or replayable finite certificate."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/00-introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "edge_id": "root-21",
+      "source_family": "020",
+      "target_id": "P969",
+      "relation": "blocked_transfer",
+      "scope": "Quartic squarefree-value density does not imply short-interval squarefree integer variance.",
+      "missing_hypotheses": [
+        "Correct averaging variable, centered second moment, interval uniformity and tails."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/020.md"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "edge_id": "root-22",
+      "source_family": "021",
+      "target_id": "P860",
+      "relation": "blocked_transfer",
+      "scope": "Coprime survivors do not supply distinct representatives required by a matching problem.",
+      "missing_hypotheses": [
+        "Hall-type inequalities or explicit injective construction."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/build/sections/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "edge_id": "root-23",
+      "source_family": "021",
+      "target_id": "method:crt-defect",
+      "relation": "candidate",
+      "scope": "Compare the actual interval residue distribution with a reference sieve via inverse alignment, variance and stopping.",
+      "missing_hypotheses": [
+        "Prime-square moduli, centered second moments, growing-H uniformity, endpoint and tail summability."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/build/sections/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    }
+  ]
+}

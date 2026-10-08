@@ -1,0 +1,14 @@
+negative/OmitDefect.lean
+negative/OmitDefect.lean:5:2: error: Tactic `decide` proved that the proposition
+  210 ∣ FormalBridge.Q 7 16
+is false
+
+negative/OmitThreshold.lean
+negative/OmitThreshold.lean:5:2: error: Tactic `decide` proved that the proposition
+  4 * 9 - 15 * 2 ≤ -1
+is false
+
+negative/OmitParity.lean
+negative/OmitParity.lean:6:2: error: Tactic `decide` proved that the proposition
+  2 * (6 * 6) < 1 * 4 * 4 * 4
+is false

@@ -1,0 +1,136 @@
+{
+  "schema": "efa-formal-positional-bridge-receipt-v1",
+  "verified_at_utc": "2026-10-07T04:14:03.125926+00:00",
+  "scope": "explicit finite positional block hypotheses to reduced cubic divisibility, positive quotient construction, coefficient-two cubic strip, and gcd gap",
+  "not_formalized": [
+    "Kummer formula",
+    "extraction of prime-power blocks from P699 failure",
+    "automatic construction of stripped factorization and coprimality data"
+  ],
+  "external_openai_proofs_rebuilt": false,
+  "toolchain_version": "Lean (version 4.33.1, arm64-apple-darwin24.6.0, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "lean_executable": "/private/tmp/erdos-density-lean/lean-4.33.1-darwin_aarch64/bin/lean",
+  "lean_executable_sha256": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+  "build_path_base": "cwd is relative to the bundle root; command file arguments are relative to cwd",
+  "builds": [
+    {
+      "source": "research-sprint/density-transport/CubicStrip.lean",
+      "source_sha256": "2aeb918e00adf8526ae56020894523ea041a2967253c058c2799c8b27b00a732",
+      "command": [
+        "/private/tmp/erdos-density-lean/lean-4.33.1-darwin_aarch64/bin/lean",
+        "-o",
+        "../../research-next/formal-bridge/.build/CubicStrip.olean",
+        "CubicStrip.lean"
+      ],
+      "exit_code": 0,
+      "cwd": "research-sprint/density-transport",
+      "olean_sha256": "5f920df658637b09f788284a4c6093c14f444a2e65e407cd831889c5a2c70cbd"
+    },
+    {
+      "source": "research-next/formal-bridge/FormalBridge.lean",
+      "source_sha256": "2f33eba79f926020d7482d2782de45b5621857714ea1e7c7cdc2f4837f043b59",
+      "command": [
+        "/private/tmp/erdos-density-lean/lean-4.33.1-darwin_aarch64/bin/lean",
+        "-o",
+        ".build/FormalBridge.olean",
+        "FormalBridge.lean"
+      ],
+      "exit_code": 0,
+      "cwd": "research-next/formal-bridge",
+      "olean_sha256": "ec87d497609b8ee927668d27827a1c89edbde2b3bfd4bad2c231c808a84851b0"
+    }
+  ],
+  "verifier_sha256": "454e94306ca190d1f1614221d34901850f2da50d35a7143b17cafe87e4f8c432",
+  "axiom_audit": {
+    "cancel_coprime": [
+      "propext",
+      "Quot.sound"
+    ],
+    "coprime_product": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "q_even": [
+      "propext",
+      "Quot.sound"
+    ],
+    "q_three": [
+      "propext",
+      "Quot.sound"
+    ],
+    "restore_cubic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "local_linear": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "position_one": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "position_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "localAt_of_residues": [
+      "propext",
+      "Quot.sound"
+    ],
+    "blocks_product_dvd": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "positional_products": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "quotient_from_cubic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "strip_from_cubic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "strip_from_positional_products": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "strip_from_blocks": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "strip_from_blocks_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "negative_controls": [
+    {
+      "source": "negative/OmitCoprimality.lean",
+      "source_sha256": "b8a429fc69dbc4fdc5b0b1a0b6ad4f023498c524c7b23e87f7f3e45780803d26",
+      "exit_code": 1,
+      "expected_rejection": true
+    },
+    {
+      "source": "negative/OmitThreeCondition.lean",
+      "source_sha256": "66a4cb5537f5445c650978b6b10b306dd9df7f865ec2c62fc7676a8c8a3952c3",
+      "exit_code": 1,
+      "expected_rejection": true
+    }
+  ]
+}

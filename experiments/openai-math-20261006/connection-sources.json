@@ -1,0 +1,179 @@
+{
+  "schema": "efa-connection-sources-v1",
+  "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+  "external_proof_verification": "NOT_RUN",
+  "files": [
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/ComparatorChallenges/AsymptoticallyMinimalLittlewood.lean",
+      "path": "lean/ComparatorChallenges/AsymptoticallyMinimalLittlewood.lean",
+      "sha256": "045e02714ed642444b9257f20f1ce65d68f00e63e914cc3aa7335f6ed5648a71",
+      "bytes": 625,
+      "inspection": "Scope, challenge statement or selected introduction inspected by analytic reviewer; bytes independently retrieved for this receipt. No proof build."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/ComparatorChallenges/HeilbronnTriangle.lean",
+      "path": "lean/ComparatorChallenges/HeilbronnTriangle.lean",
+      "sha256": "9e12bbd748dff7adf89cabd85e9e1c5321415d6827ce125755d13b4e17dcafa3",
+      "bytes": 1999,
+      "inspection": "Scope, challenge statement or selected introduction inspected by analytic reviewer; bytes independently retrieved for this receipt. No proof build."
+    },
+    {
+      "repository": "openai/math",
+      "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "path": "lean/docs/020.md",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/020.md",
+      "sha256": "c8a12f6f4c351e1c5b9ab413acc7bb20afdbf3ba5ceaa354e2edc47dc6ac3bc7",
+      "bytes": 1048,
+      "inspection": "Scope document only; no Lean execution."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/028.md",
+      "path": "lean/docs/028.md",
+      "sha256": "8c84833b7ad47c59ee7e5392858ee2a3d410f3e082af31d064654202b5105521",
+      "bytes": 955,
+      "inspection": "Scope document only; no Lean execution."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/073.md",
+      "path": "lean/docs/073.md",
+      "sha256": "0ee505a263e39c8ac7064e89563187b88517f0d1b99ab98965f0012536ad0911",
+      "bytes": 965,
+      "inspection": "Scope, challenge statement or selected introduction inspected by analytic reviewer; bytes independently retrieved for this receipt. No proof build."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/076.md",
+      "path": "lean/docs/076.md",
+      "sha256": "7312cc588687637adba1db0343c62f03eece427bb61ddf90e1f100e3ed490cf5",
+      "bytes": 1316,
+      "inspection": "Scope, challenge statement or selected introduction inspected by analytic reviewer; bytes independently retrieved for this receipt. No proof build."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/089.md",
+      "path": "lean/docs/089.md",
+      "sha256": "d912e138ed89a21cbc0b38663001c5f0e540400b03878e12e601cfad97c49b09",
+      "bytes": 1761,
+      "inspection": "Scope, challenge statement or selected introduction inspected by analytic reviewer; bytes independently retrieved for this receipt. No proof build."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/090.md",
+      "path": "lean/docs/090.md",
+      "sha256": "d349dc455d0c4c6621153f61ca639dd4932f0bbcb8fc5508e2a1805b95f6de26",
+      "bytes": 2364,
+      "inspection": "Scope, challenge statement or selected introduction inspected by analytic reviewer; bytes independently retrieved for this receipt. No proof build."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/097.md",
+      "path": "lean/docs/097.md",
+      "sha256": "fe10f69f8fbd488593d1d9b15632ccb8e086caf4c02877e5f598806b6e6d1472",
+      "bytes": 1014,
+      "inspection": "Scope, challenge statement or selected introduction inspected by analytic reviewer; bytes independently retrieved for this receipt. No proof build."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/148.md",
+      "path": "lean/docs/148.md",
+      "sha256": "340f3919c849c2485886b3df087cbb840cc770408f84c3fbbad7a4a0de898e60",
+      "bytes": 1453,
+      "inspection": "Scope, challenge statement or selected introduction inspected by analytic reviewer; bytes independently retrieved for this receipt. No proof build."
+    },
+    {
+      "repository": "openai/math",
+      "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "path": "lean/docs/170.md",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/170.md",
+      "sha256": "ff3d74c0d4a490d2892bcf42530e7c0929b2c0f439b50d71bf6296f3505162c9",
+      "bytes": 1652,
+      "inspection": "Scope document only; no Lean execution."
+    },
+    {
+      "repository": "openai/math",
+      "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "path": "lean/docs/189.md",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/189.md",
+      "sha256": "89e8630c852f0408b0e0ad7be597e284d9a8936b1f4d3b398082fcfc3d9d219d",
+      "bytes": 833,
+      "inspection": "Scope document only; no Lean execution."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/191.md",
+      "path": "lean/docs/191.md",
+      "sha256": "e2250c3010963320569247febbc795f9412f06a90d1fc6a408abb2ba93dcf721",
+      "bytes": 1063,
+      "inspection": "Scope, challenge statement or selected introduction inspected by analytic reviewer; bytes independently retrieved for this receipt. No proof build."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-power-improvement-in-the-Heilbronn-triangle-lower-bound-September-25-2026/build/sections/01-introduction.tex",
+      "path": "preprints/A-power-improvement-in-the-Heilbronn-triangle-lower-bound-September-25-2026/build/sections/01-introduction.tex",
+      "sha256": "d1441934fee324ecb09e9ddfaecbdf8d28c082976b4a6b8cf9dec33ad70115fe",
+      "bytes": 8174,
+      "inspection": "Scope, challenge statement or selected introduction inspected by analytic reviewer; bytes independently retrieved for this receipt. No proof build."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/build/sections/introduction.tex",
+      "path": "preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/build/sections/introduction.tex",
+      "sha256": "94390edea0aecf1a55cca3cfc23fcb5e4b6c6002391085ce8ff99707f3ac8218",
+      "bytes": 13131,
+      "inspection": "Selected theorem statements, introductions and named analytic lemmas; not complete proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/build/sections/01-introduction.tex",
+      "path": "preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/build/sections/01-introduction.tex",
+      "sha256": "61ad5332e7a5cd166f99d1f01d0030be70bfc8161e37710f7b45665019011e1b",
+      "bytes": 10099,
+      "inspection": "Scope, challenge statement or selected introduction inspected by analytic reviewer; bytes independently retrieved for this receipt. No proof build."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Arithmetic-classification-and-non-Pisot-singularity-for-Bernoulli-convolutions-October-3-2026/build/main.tex",
+      "path": "preprints/Arithmetic-classification-and-non-Pisot-singularity-for-Bernoulli-convolutions-October-3-2026/build/main.tex",
+      "sha256": "99878062e61cd5bc299afcb5f20181e87044a95616d1147d203ad4bcbefa232e",
+      "bytes": 9147,
+      "inspection": "Scope, challenge statement or selected introduction inspected by analytic reviewer; bytes independently retrieved for this receipt. No proof build."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/introduction.tex",
+      "path": "preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/introduction.tex",
+      "sha256": "05f8ea23cd4d2f423e9a46dfc583813d30907159fb5a667dc2850740b7d32903",
+      "bytes": 14064,
+      "inspection": "Selected theorem statements, introductions and named analytic lemmas; not complete proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/00-introduction.tex",
+      "path": "preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/00-introduction.tex",
+      "sha256": "20254cf37d610fb72ee665eba6b82b8e182817796915b1a2d117f3ea622da5bd",
+      "bytes": 16672,
+      "inspection": "Selected theorem statements, introductions and named analytic lemmas; not complete proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Short-Egyptian-fractions-September-25-2026/build/introduction.tex",
+      "path": "preprints/Short-Egyptian-fractions-September-25-2026/build/introduction.tex",
+      "sha256": "1188995325006f7ccd3102cc94e8d45ae7f17141f9cbbf6486682726c5e05540",
+      "bytes": 11973,
+      "inspection": "Selected theorem statements, introductions and named analytic lemmas; not complete proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/build/sections/introduction.tex",
+      "path": "preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/build/sections/introduction.tex",
+      "sha256": "1f51166fb0e23467ffac556f0e2c434c16d53067a7ee378b509bbd02d9810fc5",
+      "bytes": 13019,
+      "inspection": "Scope, challenge statement or selected introduction inspected by analytic reviewer; bytes independently retrieved for this receipt. No proof build."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/build/paper.tex",
+      "path": "preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/build/paper.tex",
+      "sha256": "42a5ee0febca59fd1def55cfd6c6808c322ef4237d7726303ea52f711deac6a3",
+      "bytes": 766316,
+      "inspection": "Selected theorem statements, introductions and named analytic lemmas; not complete proof audit."
+    },
+    {
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/build/sections/introduction.tex",
+      "path": "preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/build/sections/introduction.tex",
+      "sha256": "325f5d0b8e99aa3c3c513765e8934d5d18b9c1c40c016b23ef11047e04824408",
+      "bytes": 15782,
+      "inspection": "Selected theorem statements, introductions and named analytic lemmas; not complete proof audit."
+    }
+  ],
+  "swarm_source_manifests": [
+    "swarm/number-theory.json",
+    "swarm/combinatorics.json",
+    "swarm/analytic-audit.json"
+  ]
+}

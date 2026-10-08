@@ -1,0 +1,4103 @@
+{
+  "schema": "efa-research-connection-overlay-v1",
+  "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+  "atlas_baseline_commit": "a21acb5",
+  "scope": "Scoped statement matches, conditional informal derivations, candidates and blocked transfers. Not a proof or canonical status ledger.",
+  "external_proof_verification": "NOT_RUN",
+  "canonical_status_changes": false,
+  "coverage": {
+    "catalogue_family_titles_scanned": 372,
+    "atlas_problem_records": 1221,
+    "atlas_records_with_statement": 665,
+    "limitation": "Targeted source inspection; not an exhaustive theorem audit. Link-only records and uninspected proofs limit recall. Edge count is not solved-problem count."
+  },
+  "counts": {
+    "nodes": 164,
+    "edges": 133,
+    "source_families": 55,
+    "atlas_problem_targets": 93,
+    "by_relation": {
+      "blocked_transfer": 59,
+      "candidate": 17,
+      "conditional_derivation": 29,
+      "declared_dependency": 1,
+      "external_statement_match": 27
+    }
+  },
+  "supporting_reviews_and_duplicate_mappings": [
+    {
+      "edge_id": "root-05",
+      "review_file": "swarm/number-theory.json",
+      "review_edge_index": 11,
+      "source_edge": {
+        "source_family": "F012",
+        "target_id": "P928",
+        "relation": "external_statement_match",
+        "scope": "Joint Dickman law for fixed smoothness exponents at n,n+1 in ordinary natural density.",
+        "missing_hypotheses": [
+          "External proof/Lean dependency audit."
+        ],
+        "source_urls": [
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf",
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/012.md"
+        ],
+        "surface_ids": [
+          "S:gap:928:463b5358"
+        ]
+      },
+      "scope": "Additional model review or overlapping statement mapping; not a new connection."
+    },
+    {
+      "edge_id": "root-06",
+      "review_file": "swarm/number-theory.json",
+      "review_edge_index": 12,
+      "source_edge": {
+        "source_family": "F012",
+        "target_id": "P371",
+        "relation": "external_statement_match",
+        "scope": "Each strict ordering of consecutive largest prime factors has density one half.",
+        "missing_hypotheses": [
+          "External proof/Lean dependency audit."
+        ],
+        "source_urls": [
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf",
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/012.md"
+        ],
+        "surface_ids": [
+          "S:gap:371:867996d7"
+        ]
+      },
+      "scope": "Additional model review or overlapping statement mapping; not a new connection."
+    },
+    {
+      "edge_id": "root-16",
+      "review_file": "swarm/number-theory.json",
+      "review_edge_index": 19,
+      "source_edge": {
+        "source_family": "F012",
+        "target_id": "P699",
+        "relation": "blocked_transfer",
+        "scope": "Density information does not remove the atlas sparse positional counterexample candidates.",
+        "missing_hypotheses": [
+          "Conditional law on actual smooth-part divisibilities or direct obstruction to positional equations."
+        ],
+        "source_urls": [
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf",
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/012.md"
+        ],
+        "surface_ids": [
+          "S:triage:699",
+          "S:gap:699:6362e233"
+        ]
+      },
+      "scope": "Additional model review or overlapping statement mapping; not a new connection."
+    },
+    {
+      "edge_id": "root-02",
+      "review_file": "swarm/number-theory.json",
+      "review_edge_index": 20,
+      "source_edge": {
+        "source_family": "F021",
+        "target_id": "P970",
+        "relation": "external_statement_match",
+        "scope": "h(k)<=C k^2/(log log(3k))^2 answers the quadratic subquestion, but not the full order of magnitude.",
+        "missing_hypotheses": [
+          "External proof/Lean dependency audit; full matching lower bound for order question."
+        ],
+        "source_urls": [
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/paper.pdf",
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/021.md"
+        ],
+        "surface_ids": [
+          "S:gap:970:b0beb988"
+        ]
+      },
+      "scope": "Additional model review or overlapping statement mapping; not a new connection."
+    },
+    {
+      "edge_id": "root-12",
+      "review_file": "swarm/number-theory.json",
+      "review_edge_index": 21,
+      "source_edge": {
+        "source_family": "F021",
+        "target_id": "P687",
+        "relation": "conditional_derivation",
+        "scope": "Primorial maximum coprime gap is O(z^2/((log z)^2(log log z)^2)).",
+        "missing_hypotheses": [
+          "F021 and prime number theorem; no explicit constant or finite next cell."
+        ],
+        "source_urls": [
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/paper.pdf",
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/021.md"
+        ],
+        "derivation_or_obstruction": "Set k=pi(z) and use h(k) for the product of primes <=z.",
+        "surface_ids": [
+          "S:deep:687",
+          "S:gap:687:0977b807"
+        ]
+      },
+      "scope": "Additional model review or overlapping statement mapping; not a new connection."
+    },
+    {
+      "edge_id": "root-13",
+      "review_file": "swarm/number-theory.json",
+      "review_edge_index": 22,
+      "source_edge": {
+        "source_family": "F021",
+        "target_id": "P854",
+        "relation": "conditional_derivation",
+        "scope": "Least missing even gap a(k)<=h(k)+2 for the first-k-prime primorial.",
+        "missing_hypotheses": [
+          "F021; numerical constants for a finite table improvement."
+        ],
+        "source_urls": [
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/paper.pdf",
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/021.md"
+        ],
+        "derivation_or_obstruction": "Every coprime gap is even and <=h(k), so the next even integer above h(k) is absent.",
+        "surface_ids": [
+          "S:gap:854:a013466e"
+        ]
+      },
+      "scope": "Additional model review or overlapping statement mapping; not a new connection."
+    },
+    {
+      "edge_id": "root-22",
+      "review_file": "swarm/number-theory.json",
+      "review_edge_index": 24,
+      "source_edge": {
+        "source_family": "F021",
+        "target_id": "P860",
+        "relation": "blocked_transfer",
+        "scope": "A guaranteed coprime integer per interval does not prove a system of distinct representatives.",
+        "missing_hypotheses": [
+          "Hall conditions or another matching theorem compatible with overlaps."
+        ],
+        "source_urls": [
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/paper.pdf",
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/021.md"
+        ],
+        "surface_ids": [
+          "S:gap:860:e88bfced"
+        ]
+      },
+      "scope": "Additional model review or overlapping statement mapping; not a new connection."
+    },
+    {
+      "edge_id": "root-03",
+      "review_file": "swarm/number-theory.json",
+      "review_edge_index": 25,
+      "source_edge": {
+        "source_family": "F025",
+        "target_id": "P304",
+        "relation": "external_statement_match",
+        "scope": "Worst minimum Egyptian length at denominator b is Theta(log log b); finite row-106 maximum is not evaluated.",
+        "missing_hypotheses": [
+          "External proof/Lean dependency audit; effective constants and exact enumeration for current finite cell."
+        ],
+        "source_urls": [
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Short-Egyptian-fractions-September-25-2026/Short-Egyptian-fractions-September-25-2026.pdf",
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/025.md"
+        ],
+        "surface_ids": [
+          "S:gap:304:6ce3f51e"
+        ]
+      },
+      "scope": "Additional model review or overlapping statement mapping; not a new connection."
+    },
+    {
+      "edge_id": "root-04",
+      "review_file": "swarm/number-theory.json",
+      "review_edge_index": 26,
+      "source_edge": {
+        "source_family": "F025",
+        "target_id": "P293",
+        "relation": "external_statement_match",
+        "scope": "Least absent prescribed denominator v(k) has log log v(k)=Theta(k), with explicit asymptotic slopes; not an exact formula or limiting slope.",
+        "missing_hypotheses": [
+          "External proof/Lean dependency audit; exact values/limit if desired."
+        ],
+        "source_urls": [
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Short-Egyptian-fractions-September-25-2026/Short-Egyptian-fractions-September-25-2026.pdf",
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/025.md"
+        ]
+      },
+      "scope": "Additional model review or overlapping statement mapping; not a new connection."
+    },
+    {
+      "edge_id": "root-17",
+      "review_file": "swarm/number-theory.json",
+      "review_edge_index": 30,
+      "source_edge": {
+        "source_family": "F025",
+        "target_id": "P327",
+        "relation": "blocked_transfer",
+        "scope": "Short expansions do not force two-term forbidden relations inside a fixed set.",
+        "missing_hypotheses": [
+          "Activated forbidden pair inside the same set or a cross-fiber deficit."
+        ],
+        "source_urls": [
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Short-Egyptian-fractions-September-25-2026/Short-Egyptian-fractions-September-25-2026.pdf",
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/025.md"
+        ],
+        "surface_ids": [
+          "S:gap:327:c40419c7"
+        ]
+      },
+      "scope": "Additional model review or overlapping statement mapping; not a new connection."
+    },
+    {
+      "edge_id": "root-21",
+      "review_file": "swarm/number-theory.json",
+      "review_edge_index": 37,
+      "source_edge": {
+        "source_family": "F020",
+        "target_id": "P969",
+        "relation": "blocked_transfer",
+        "scope": "Polynomial power-free density does not supply moving-interval squarefree variance or quarter-power error.",
+        "missing_hypotheses": [
+          "Correct one-variable sequence, interval uniformity, quantitative signed moment saving."
+        ],
+        "source_urls": [
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Squarefree-values-of-quartics-and-power-free-values-of-polynomials-September-24-2026/manuscript.pdf",
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/020.md"
+        ],
+        "surface_ids": [
+          "S:gap:969:c2325929"
+        ]
+      },
+      "scope": "Additional model review or overlapping statement mapping; not a new connection."
+    },
+    {
+      "edge_id": "root-07",
+      "review_file": "swarm/number-theory.json",
+      "review_edge_index": 46,
+      "source_edge": {
+        "source_family": "F028",
+        "target_id": "P952",
+        "relation": "external_statement_match",
+        "scope": "No infinite injective bounded-step Gaussian-prime walk; scope states uniformly finite components for every fixed step bound.",
+        "missing_hypotheses": [
+          "External proof/Lean dependency audit; no explicit numerical component bound."
+        ],
+        "source_urls": [
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/028.md"
+        ]
+      },
+      "scope": "Additional model review or overlapping statement mapping; not a new connection."
+    },
+    {
+      "edge_id": "root-01",
+      "review_file": "swarm/combinatorics.json",
+      "review_edge_index": 5,
+      "source_edge": {
+        "source_family": "F159",
+        "target_id": "P3",
+        "relation": "external_statement_match",
+        "scope": "Every positive-integer set with divergent reciprocal sum contains APs of every finite length.",
+        "missing_hypotheses": "Local theorem/proof audit.",
+        "source_urls": [
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/159.md"
+        ],
+        "verification": "external_statement_not_locally_rebuilt"
+      },
+      "scope": "Additional model review or overlapping statement mapping; not a new connection."
+    },
+    {
+      "edge_id": "root-20",
+      "review_file": "swarm/combinatorics.json",
+      "review_edge_index": 8,
+      "source_edge": {
+        "source_family": "F159",
+        "target_id": "P142",
+        "relation": "blocked_transfer",
+        "scope": "A one-sided progression-free upper bound does not provide the requested asymptotic equivalent.",
+        "missing_hypotheses": "Matching lower bound with ratio tending to one; effective constants before finite cells.",
+        "source_urls": [
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/159.md",
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/00-introduction.tex"
+        ],
+        "verification": "external_statement_not_locally_rebuilt"
+      },
+      "scope": "Additional model review or overlapping statement mapping; not a new connection."
+    },
+    {
+      "edge_id": "root-19",
+      "review_file": "swarm/combinatorics.json",
+      "review_edge_index": 46,
+      "source_edge": {
+        "source_family": "F189",
+        "target_id": "P159",
+        "relation": "blocked_transfer",
+        "scope": "The theorem requires cycle length m>=clique order n; P159 fixes m=4 and lets n grow.",
+        "missing_hypotheses": "A result for the reversed regime n>m, not the diagonal strip.",
+        "source_urls": [
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/189.md"
+        ],
+        "verification": "external_statement_not_locally_rebuilt"
+      },
+      "scope": "Additional model review or overlapping statement mapping; not a new connection."
+    },
+    {
+      "edge_id": "root-08",
+      "review_file": "swarm/analytic-audit.json",
+      "review_edge_index": 0,
+      "source_edge": {
+        "source_family": "F003",
+        "target_id": "P969",
+        "relation": "conditional_derivation",
+        "scope": "Global squarefree energy V(X)<<X^(15/8+epsilon), all positive epsilon.",
+        "missing_hypotheses": [
+          "External F003 proof acceptance; no claim of pointwise quarter-power or RH."
+        ],
+        "source_urls": [
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/build/paper.tex"
+        ]
+      },
+      "scope": "Additional model review or overlapping statement mapping; not a new connection."
+    },
+    {
+      "edge_id": "root-09",
+      "review_file": "swarm/analytic-audit.json",
+      "review_edge_index": 1,
+      "source_edge": {
+        "source_family": "F003",
+        "target_id": "P969",
+        "relation": "conditional_composition",
+        "scope": "Together with actual V_theta for theta=24/25, zero exclusion Re(s)>14/25.",
+        "missing_hypotheses": [
+          "Actual uniform squarefree increment variance through H<=X^(24/25), for every nu>0.",
+          "External F003 proof acceptance."
+        ],
+        "source_urls": [
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/build/paper.tex"
+        ]
+      },
+      "scope": "Additional model review or overlapping statement mapping; not a new connection."
+    },
+    {
+      "edge_id": "root-12",
+      "review_file": "swarm/analytic-audit.json",
+      "review_edge_index": 3,
+      "source_edge": {
+        "source_family": "F021",
+        "target_id": "P687",
+        "relation": "conditional_derivation",
+        "scope": "j(P(z))<<z^2/((log z)^2(log log z)^2).",
+        "missing_hypotheses": [
+          "External F021 proof acceptance; no explicit constant or exact finite cell."
+        ],
+        "source_urls": [
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/build/sections/introduction.tex"
+        ]
+      },
+      "scope": "Additional model review or overlapping statement mapping; not a new connection."
+    },
+    {
+      "edge_id": "root-13",
+      "review_file": "swarm/analytic-audit.json",
+      "review_edge_index": 4,
+      "source_edge": {
+        "source_family": "F021",
+        "target_id": "P854",
+        "relation": "conditional_derivation",
+        "scope": "Least missing positive even coprime gap a(k)<=h(k)+2.",
+        "missing_hypotheses": [
+          "External F021 proof acceptance; no exact gap-spectrum cell."
+        ],
+        "source_urls": [
+          "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/build/sections/introduction.tex"
+        ]
+      },
+      "scope": "Additional model review or overlapping statement mapping; not a new connection."
+    }
+  ],
+  "nodes": [
+    {
+      "id": "F003",
+      "kind": "external_family",
+      "title": "The quasi-Riemann hypothesis",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F007",
+      "kind": "external_family",
+      "title": "Ordinary two-point correlations and the corrected Elliott conjecture",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F011",
+      "kind": "external_family",
+      "title": "Prime-factor statistics of $`p-1`$",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F012",
+      "kind": "external_family",
+      "title": "Independent largest prime factors of consecutive integers",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F013",
+      "kind": "external_family",
+      "title": "Ostmann’s inverse Goldbach conjecture",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F017",
+      "kind": "external_family",
+      "title": "The irrationality exponent of π is 2",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F020",
+      "kind": "external_family",
+      "title": "Squarefree quartics and power-free polynomial values",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F021",
+      "kind": "external_family",
+      "title": "A quadratic bound for Jacobsthal’s function",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F022",
+      "kind": "external_family",
+      "title": "The weak inhomogeneous Duffin–Schaeffer conjecture",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F023",
+      "kind": "external_family",
+      "title": "Patterson's first moment for cubic Gauss sums",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F024",
+      "kind": "external_family",
+      "title": "An asymptotic formula for the number of totients",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F025",
+      "kind": "external_family",
+      "title": "Short Egyptian fractions",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F026",
+      "kind": "external_family",
+      "title": "Positive lower density of large prime gaps",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F028",
+      "kind": "external_family",
+      "title": "Uniformly bounded components of Gaussian-prime graphs",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F029",
+      "kind": "external_family",
+      "title": "Primitive roots for every admissible integer base",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F073",
+      "kind": "external_family",
+      "title": "The Falconer distance conjecture",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F074",
+      "kind": "external_family",
+      "title": "Kakeya in three and four dimensions",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F075",
+      "kind": "external_family",
+      "title": "The $`L\\log L`$ Fourier-convergence conjecture",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F076",
+      "kind": "external_family",
+      "title": "Real ultraflat Littlewood polynomials and unbounded binary merit factors",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F084",
+      "kind": "external_family",
+      "title": "The geometric case of the Erdős similarity conjecture",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F089",
+      "kind": "external_family",
+      "title": "Bounded-distortion L1 embeddings of planar and bounded-treewidth graphs",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F090",
+      "kind": "external_family",
+      "title": "Triangular-lattice optimality, long-range Riesz and Coulomb energies, and spherical logarithmic energy",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F097",
+      "kind": "external_family",
+      "title": "The Euclidean Steinitz–Bergström bound",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F102",
+      "kind": "external_family",
+      "title": "The Unique Games Conjecture and optimal approximation thresholds",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F103",
+      "kind": "external_family",
+      "title": "Exact derandomization of logarithmic space: $`\\mathsf L=\\mathsf{RL}=\\mathsf{BPL}`$",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F107",
+      "kind": "external_family",
+      "title": "Matrix multiplication with exponent at most 9/4",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F115",
+      "kind": "external_family",
+      "title": "Sampling and counting contingency tables with arbitrary margins",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F120",
+      "kind": "external_family",
+      "title": "Almost-linear-time exact matching and prescribed-degree factors in general graphs",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F130",
+      "kind": "external_family",
+      "title": "Exact Fourier transforms below $`n\\log n`$",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F131",
+      "kind": "external_family",
+      "title": "Rapid mixing of graph switches for every degree sequence",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F138",
+      "kind": "external_family",
+      "title": "Subset Sum in $`O(2^{0.49n})`$ time",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F142",
+      "kind": "external_family",
+      "title": "Deterministic polynomial factorization over prime fields",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F148",
+      "kind": "external_family",
+      "title": "The entropy-rate dimension formula for self-similar measures",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F153",
+      "kind": "external_family",
+      "title": "Arithmetic classification and non-Pisot singularity for Bernoulli convolutions",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F156",
+      "kind": "external_family",
+      "title": "Borsuk's conjecture fails in dimension nine",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F158",
+      "kind": "external_family",
+      "title": "The Euclidean plane cannot be colored with five colors",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F159",
+      "kind": "external_family",
+      "title": "Erdős’s reciprocal-sum conjecture and quasipolynomial Szemerédi bounds",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F160",
+      "kind": "external_family",
+      "title": "Superexponential van der Waerden numbers",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F162",
+      "kind": "external_family",
+      "title": "Counterexamples to Ryser’s covering conjecture",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F164",
+      "kind": "external_family",
+      "title": "Hindman’s finite sums and products conjecture",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F166",
+      "kind": "external_family",
+      "title": "The higher-dimensional Erdős distinct-distances conjecture",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F167",
+      "kind": "external_family",
+      "title": "Planar distinct distances and unit-distance bounds",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F169",
+      "kind": "external_family",
+      "title": "Shareshian–Wachs elementary positivity",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F170",
+      "kind": "external_family",
+      "title": "Sharp logarithmic exponents for off-diagonal Ramsey numbers",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F171",
+      "kind": "external_family",
+      "title": "The hypercube Ramsey conjecture",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F172",
+      "kind": "external_family",
+      "title": "Classification of finite Euclidean Ramsey configurations",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F174",
+      "kind": "external_family",
+      "title": "Deterministic construction of strong thin spanning trees",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F178",
+      "kind": "external_family",
+      "title": "Deterministic nonbipartite Ramanujan graphs in every fixed degree",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F180",
+      "kind": "external_family",
+      "title": "Barnette’s Hamiltonian-cycle conjecture",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F181",
+      "kind": "external_family",
+      "title": "The Erdős–Gallai cycle-decomposition conjecture",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F182",
+      "kind": "external_family",
+      "title": "Power savings for intersective polynomial differences and prime arguments",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F184",
+      "kind": "external_family",
+      "title": "Correspondence coloring with a fixed forbidden subgraph",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F188",
+      "kind": "external_family",
+      "title": "The sharp terminal leave in random triangle removal",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F189",
+      "kind": "external_family",
+      "title": "Cycle–clique Ramsey numbers",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F190",
+      "kind": "external_family",
+      "title": "Polynomial removal fails for ordered binary matrices",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F191",
+      "kind": "external_family",
+      "title": "A power improvement in the Heilbronn triangle lower bound",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "F235",
+      "kind": "external_family",
+      "title": "Limiting random SAT thresholds, sharp variance and computability",
+      "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a"
+    },
+    {
+      "id": "P1",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/1"
+    },
+    {
+      "id": "P1003",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/1003"
+    },
+    {
+      "id": "P1009",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/1009"
+    },
+    {
+      "id": "P1014",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/1014"
+    },
+    {
+      "id": "P1016",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/1016"
+    },
+    {
+      "id": "P1030",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/1030"
+    },
+    {
+      "id": "P1035",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/1035"
+    },
+    {
+      "id": "P1057",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/1057"
+    },
+    {
+      "id": "P1070",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/1070"
+    },
+    {
+      "id": "P1083",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/1083"
+    },
+    {
+      "id": "P1089",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/1089"
+    },
+    {
+      "id": "P1097",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/1097"
+    },
+    {
+      "id": "P1104",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/1104"
+    },
+    {
+      "id": "P1109",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/1109"
+    },
+    {
+      "id": "P1150",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/1150"
+    },
+    {
+      "id": "P120",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/120"
+    },
+    {
+      "id": "P138",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/138"
+    },
+    {
+      "id": "P140",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/140"
+    },
+    {
+      "id": "P142",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/142"
+    },
+    {
+      "id": "P15",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/15"
+    },
+    {
+      "id": "P150",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/150"
+    },
+    {
+      "id": "P159",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/159"
+    },
+    {
+      "id": "P165",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/165"
+    },
+    {
+      "id": "P166",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/166"
+    },
+    {
+      "id": "P169",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/169"
+    },
+    {
+      "id": "P172",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/172"
+    },
+    {
+      "id": "P173",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/173"
+    },
+    {
+      "id": "P174",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/174"
+    },
+    {
+      "id": "P178",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/178"
+    },
+    {
+      "id": "P181",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/181"
+    },
+    {
+      "id": "P184",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/184"
+    },
+    {
+      "id": "P187",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/187"
+    },
+    {
+      "id": "P21",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/21"
+    },
+    {
+      "id": "P219",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/219"
+    },
+    {
+      "id": "P220",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/220"
+    },
+    {
+      "id": "P233",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/233"
+    },
+    {
+      "id": "P242",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/242"
+    },
+    {
+      "id": "P293",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/293"
+    },
+    {
+      "id": "P295",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/295"
+    },
+    {
+      "id": "P3",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/3"
+    },
+    {
+      "id": "P304",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/304"
+    },
+    {
+      "id": "P306",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/306"
+    },
+    {
+      "id": "P327",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/327"
+    },
+    {
+      "id": "P368",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/368"
+    },
+    {
+      "id": "P369",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/369"
+    },
+    {
+      "id": "P370",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/370"
+    },
+    {
+      "id": "P371",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/371"
+    },
+    {
+      "id": "P372",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/372"
+    },
+    {
+      "id": "P416",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/416"
+    },
+    {
+      "id": "P417",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/417"
+    },
+    {
+      "id": "P431",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/431"
+    },
+    {
+      "id": "P5",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/5"
+    },
+    {
+      "id": "P505",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/505"
+    },
+    {
+      "id": "P507",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/507"
+    },
+    {
+      "id": "P508",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/508"
+    },
+    {
+      "id": "P51",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/51"
+    },
+    {
+      "id": "P524",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/524"
+    },
+    {
+      "id": "P532",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/532"
+    },
+    {
+      "id": "P544",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/544"
+    },
+    {
+      "id": "P551",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/551"
+    },
+    {
+      "id": "P57",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/57"
+    },
+    {
+      "id": "P581",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/581"
+    },
+    {
+      "id": "P583",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/583"
+    },
+    {
+      "id": "P660",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/660"
+    },
+    {
+      "id": "P68",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/68"
+    },
+    {
+      "id": "P687",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/687"
+    },
+    {
+      "id": "P699",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/699"
+    },
+    {
+      "id": "P710",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/710"
+    },
+    {
+      "id": "P743",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/743"
+    },
+    {
+      "id": "P77",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/77"
+    },
+    {
+      "id": "P78",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/78"
+    },
+    {
+      "id": "P802",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/802"
+    },
+    {
+      "id": "P821",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/821"
+    },
+    {
+      "id": "P841",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/841"
+    },
+    {
+      "id": "P854",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/854"
+    },
+    {
+      "id": "P860",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/860"
+    },
+    {
+      "id": "P89",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/89"
+    },
+    {
+      "id": "P90",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/90"
+    },
+    {
+      "id": "P928",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/928"
+    },
+    {
+      "id": "P952",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/952"
+    },
+    {
+      "id": "P959",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/959"
+    },
+    {
+      "id": "P96",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/96"
+    },
+    {
+      "id": "P961",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/961"
+    },
+    {
+      "id": "P968",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/968"
+    },
+    {
+      "id": "P969",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/969"
+    },
+    {
+      "id": "P970",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/970"
+    },
+    {
+      "id": "P975",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/975"
+    },
+    {
+      "id": "P978",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/978"
+    },
+    {
+      "id": "P985",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/985"
+    },
+    {
+      "id": "P986",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/986"
+    },
+    {
+      "id": "P993",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/993"
+    },
+    {
+      "id": "P996",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/996"
+    },
+    {
+      "id": "P999",
+      "kind": "atlas_problem",
+      "url": "https://www.erdosproblems.com/999"
+    },
+    {
+      "id": "lane:LP-SDP-autocorrelation",
+      "kind": "research_interface"
+    },
+    {
+      "id": "lane:LP-SDP-dual-certificates",
+      "kind": "research_interface"
+    },
+    {
+      "id": "method:CRT-actual-interval-transfer",
+      "kind": "research_interface"
+    },
+    {
+      "id": "method:crt-defect",
+      "kind": "research_interface"
+    },
+    {
+      "id": "method:fixed-shift-mobius",
+      "kind": "research_interface"
+    },
+    {
+      "id": "method:fixed-window-mobius-variance",
+      "kind": "research_interface"
+    },
+    {
+      "id": "method:r-free-phase-variance",
+      "kind": "research_interface"
+    },
+    {
+      "id": "method:selfsimilar-product-distance-set",
+      "kind": "research_interface"
+    },
+    {
+      "id": "method:squarefree-energy",
+      "kind": "research_interface"
+    },
+    {
+      "id": "method:variance-strip-completion",
+      "kind": "research_interface"
+    },
+    {
+      "id": "method:weighted-progression-divergence",
+      "kind": "research_interface"
+    },
+    {
+      "id": "multiplier-sensitive-fiber-deficit",
+      "kind": "research_interface"
+    },
+    {
+      "id": "sparse-square-signed-moment-interface",
+      "kind": "research_interface"
+    },
+    {
+      "id": "squarefree-crt-defect-transfer",
+      "kind": "research_interface"
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "root-01",
+      "source_family": "F159",
+      "target_id": "P3",
+      "relation": "external_statement_match",
+      "scope": "Divergent reciprocal-sum sets have arithmetic progressions of every finite length.",
+      "missing_hypotheses": [
+        "External proof verification."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/00-introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE",
+      "origin": {
+        "file": "root-connections.json",
+        "edge_index": 0
+      }
+    },
+    {
+      "edge_id": "root-02",
+      "source_family": "F021",
+      "target_id": "P970",
+      "relation": "external_statement_match",
+      "scope": "Quadratic subquestion: h(k) = O(k^2/(loglog(3k))^2).",
+      "missing_hypotheses": [
+        "Full order, effective constants, external proof verification."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/build/sections/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE",
+      "origin": {
+        "file": "root-connections.json",
+        "edge_index": 1
+      }
+    },
+    {
+      "edge_id": "root-03",
+      "source_family": "F025",
+      "target_id": "P304",
+      "relation": "external_statement_match",
+      "scope": "Worst shortest distinct-unit-fraction length is Theta(loglog b).",
+      "missing_hypotheses": [
+        "External proof verification; no exact finite length."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Short-Egyptian-fractions-September-25-2026/build/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE",
+      "origin": {
+        "file": "root-connections.json",
+        "edge_index": 2
+      }
+    },
+    {
+      "edge_id": "root-04",
+      "source_family": "F025",
+      "target_id": "P293",
+      "relation": "external_statement_match",
+      "scope": "Prescribed-denominator threshold has loglog v(k) = Theta(k).",
+      "missing_hypotheses": [
+        "No exact limiting slope; external proof verification."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Short-Egyptian-fractions-September-25-2026/build/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE",
+      "origin": {
+        "file": "root-connections.json",
+        "edge_index": 3
+      }
+    },
+    {
+      "edge_id": "root-05",
+      "source_family": "F012",
+      "target_id": "P928",
+      "relation": "external_statement_match",
+      "scope": "Ordinary joint fixed-parameter Dickman density for consecutive integers.",
+      "missing_hypotheses": [
+        "External proof verification; no moving-parameter uniformity."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/build/sections/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE",
+      "origin": {
+        "file": "root-connections.json",
+        "edge_index": 4
+      }
+    },
+    {
+      "edge_id": "root-06",
+      "source_family": "F012",
+      "target_id": "P371",
+      "relation": "external_statement_match",
+      "scope": "Either ordering of consecutive largest prime factors has natural density 1/2.",
+      "missing_hypotheses": [
+        "External proof verification."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/build/sections/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE",
+      "origin": {
+        "file": "root-connections.json",
+        "edge_index": 5
+      }
+    },
+    {
+      "edge_id": "root-07",
+      "source_family": "F028",
+      "target_id": "P952",
+      "relation": "external_statement_match",
+      "scope": "No infinite injective bounded-step Gaussian-prime walk; finite component bound for fixed step bound.",
+      "missing_hypotheses": [
+        "External proof verification; no explicit component-size function."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/028.md"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE",
+      "origin": {
+        "file": "root-connections.json",
+        "edge_index": 6
+      }
+    },
+    {
+      "edge_id": "root-08",
+      "source_family": "F003",
+      "target_id": "method:squarefree-energy",
+      "relation": "conditional_derivation",
+      "scope": "V(X) = O_epsilon(X^(15/8+epsilon)); Mellin continuation Re(s)>7/16.",
+      "missing_hypotheses": [
+        "External F003 proof verification; local argument informal."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/build/paper.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [
+        "atlas Mellin no-pole identification",
+        "convexity and subpolynomial reciprocal growth",
+        "Mellin Plancherel"
+      ],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE",
+      "origin": {
+        "file": "root-connections.json",
+        "edge_index": 7
+      },
+      "related_problem_ids": [
+        "P969"
+      ]
+    },
+    {
+      "edge_id": "root-09",
+      "source_family": "F003",
+      "target_id": "method:variance-strip-completion",
+      "relation": "conditional_derivation",
+      "scope": "A variance input with theta>23/24 plus F003 fills the zero-free half-plane Re(s)>2-3theta/2. Theta=24/25 gives Re(s)>14/25.",
+      "missing_hypotheses": [
+        "Variance for every integer H<=X^theta, theta>23/24, currently unavailable.",
+        "External F003 proof verification."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/build/paper.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [
+        "MELLIN_TRANSFER.md strip (2a,2-4a), a=1-3theta/4",
+        "strict overlap 7/8<2-4a"
+      ],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE",
+      "origin": {
+        "file": "root-connections.json",
+        "edge_index": 8
+      },
+      "related_problem_ids": [
+        "P969"
+      ]
+    },
+    {
+      "edge_id": "root-10",
+      "source_family": "F007",
+      "target_id": "method:fixed-shift-mobius",
+      "relation": "conditional_derivation",
+      "scope": "For each fixed h>=1, sum_{n<=X} mu(n)mu(n+h)=o_h(X).",
+      "missing_hypotheses": [
+        "External F007 proof verification.",
+        "No quantitative rate or growing-h uniformity."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [
+        "bounded periodic squarefree masks; X to infinity before cutoff z"
+      ],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE",
+      "origin": {
+        "file": "root-connections.json",
+        "edge_index": 9
+      },
+      "related_problem_ids": [
+        "P969"
+      ]
+    },
+    {
+      "edge_id": "root-11",
+      "source_family": "F007",
+      "target_id": "method:fixed-window-mobius-variance",
+      "relation": "conditional_derivation",
+      "scope": "For fixed H, mean square of sum_{h=1}^H mu(n+h) tends to H/zeta(2).",
+      "missing_hypotheses": [
+        "External F007 proof verification.",
+        "H is fixed, not X^theta."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [
+        "fixed-shift Mobius cancellation",
+        "squarefree density"
+      ],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE",
+      "origin": {
+        "file": "root-connections.json",
+        "edge_index": 10
+      },
+      "related_problem_ids": [
+        "P969"
+      ]
+    },
+    {
+      "edge_id": "root-12",
+      "source_family": "F021",
+      "target_id": "P687",
+      "relation": "conditional_derivation",
+      "scope": "j(product_{p<=z}p) = O(z^2/(log(z)^2 loglog(z)^2)).",
+      "missing_hypotheses": [
+        "External F021 proof verification.",
+        "No effective constant or next exact gap cell."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/build/sections/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [
+        "prime number theorem"
+      ],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE",
+      "origin": {
+        "file": "root-connections.json",
+        "edge_index": 11
+      }
+    },
+    {
+      "edge_id": "root-13",
+      "source_family": "F021",
+      "target_id": "P854",
+      "relation": "conditional_derivation",
+      "scope": "Least missing positive even primorial gap a(k)<=h(k)+2=O(k^2/loglog(3k)^2)+2.",
+      "missing_hypotheses": [
+        "External F021 proof verification.",
+        "No occurrence claim for all smaller gaps or finite cell."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/build/sections/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [
+        "gap parity and maximal-gap definition"
+      ],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE",
+      "origin": {
+        "file": "root-connections.json",
+        "edge_index": 12
+      }
+    },
+    {
+      "edge_id": "root-14",
+      "source_family": "F159",
+      "target_id": "method:weighted-progression-divergence",
+      "relation": "conditional_derivation",
+      "scope": "Divergence of sum_{a in A} (log a)^B/a for any fixed B>=0 forces all finite AP lengths.",
+      "missing_hypotheses": [
+        "External quantitative F159 proof verification, beyond the selected reciprocal-sum Lean scope."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/00-introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [
+        "dyadic summability of exp(-c(log N)^epsilon) times any fixed log power"
+      ],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE",
+      "origin": {
+        "file": "root-connections.json",
+        "edge_index": 13
+      },
+      "related_problem_ids": [
+        "P3",
+        "P142"
+      ]
+    },
+    {
+      "edge_id": "root-15",
+      "source_family": "F007",
+      "target_id": "P969",
+      "relation": "blocked_transfer",
+      "scope": "Fixed-form logarithmic Liouville cancellation does not imply the weighted Mobius Dirichlet-polynomial power saving.",
+      "missing_hypotheses": [
+        "Growing coefficients/shifts, zeta weights, square frequencies, uniform masks, fixed power saving and tails."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE",
+      "origin": {
+        "file": "root-connections.json",
+        "edge_index": 14
+      }
+    },
+    {
+      "edge_id": "root-16",
+      "source_family": "F012",
+      "target_id": "P699",
+      "relation": "blocked_transfer",
+      "scope": "Density o(X) error can contain all O_i(X^(1/3)log(X)^pi(i)) exceptional candidates.",
+      "missing_hypotheses": [
+        "Conditioned smooth-part divisibility or failure amplification; density alone insufficient."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/build/sections/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE",
+      "origin": {
+        "file": "root-connections.json",
+        "edge_index": 15
+      }
+    },
+    {
+      "edge_id": "root-17",
+      "source_family": "F025",
+      "target_id": "P327",
+      "relation": "blocked_transfer",
+      "scope": "Short many-term unrestricted Egyptian fractions do not force the forbidden two-term pair in a specified set.",
+      "missing_hypotheses": [
+        "Cross-fiber activated pair or a proved deficit transfer."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Short-Egyptian-fractions-September-25-2026/build/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE",
+      "origin": {
+        "file": "root-connections.json",
+        "edge_index": 16
+      }
+    },
+    {
+      "edge_id": "root-18",
+      "source_family": "F170",
+      "target_id": "P165",
+      "relation": "blocked_transfer",
+      "scope": "Fixed s>=5 off-diagonal asymptotics do not apply to s=3 or finite R(3,10).",
+      "missing_hypotheses": [
+        "Correct clique parameter, explicit constants and effective finite threshold."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/170.md"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE",
+      "origin": {
+        "file": "root-connections.json",
+        "edge_index": 17
+      }
+    },
+    {
+      "edge_id": "root-19",
+      "source_family": "F189",
+      "target_id": "P159",
+      "relation": "blocked_transfer",
+      "scope": "Cycle-clique formula requires m>=n, opposite to fixed C4 against growing K_n.",
+      "missing_hypotheses": [
+        "The missing m<n theorem."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/189.md"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE",
+      "origin": {
+        "file": "root-connections.json",
+        "edge_index": 18
+      }
+    },
+    {
+      "edge_id": "root-20",
+      "source_family": "F159",
+      "target_id": "P142",
+      "relation": "blocked_transfer",
+      "scope": "Stretched-exponential upper bound does not give an asymptotic equivalent or exact finite AP-free maximum.",
+      "missing_hypotheses": [
+        "Matching asymptotics or replayable finite certificate."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/00-introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE",
+      "origin": {
+        "file": "root-connections.json",
+        "edge_index": 19
+      }
+    },
+    {
+      "edge_id": "root-21",
+      "source_family": "F020",
+      "target_id": "P969",
+      "relation": "blocked_transfer",
+      "scope": "Quartic squarefree-value density does not imply short-interval squarefree integer variance.",
+      "missing_hypotheses": [
+        "Correct averaging variable, centered second moment, interval uniformity and tails."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/020.md"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE",
+      "origin": {
+        "file": "root-connections.json",
+        "edge_index": 20
+      }
+    },
+    {
+      "edge_id": "root-22",
+      "source_family": "F021",
+      "target_id": "P860",
+      "relation": "blocked_transfer",
+      "scope": "Coprime survivors do not supply distinct representatives required by a matching problem.",
+      "missing_hypotheses": [
+        "Hall-type inequalities or explicit injective construction."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/build/sections/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE",
+      "origin": {
+        "file": "root-connections.json",
+        "edge_index": 21
+      }
+    },
+    {
+      "edge_id": "root-23",
+      "source_family": "F021",
+      "target_id": "method:crt-defect",
+      "relation": "candidate",
+      "scope": "Compare the actual interval residue distribution with a reference sieve via inverse alignment, variance and stopping.",
+      "missing_hypotheses": [
+        "Prime-square moduli, centered second moments, growing-H uniformity, endpoint and tail summability."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/build/sections/introduction.tex"
+      ],
+      "local_argument": "CONNECTIONS.md",
+      "additional_inputs": [],
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE",
+      "origin": {
+        "file": "root-connections.json",
+        "edge_index": 22
+      },
+      "related_problem_ids": [
+        "P969"
+      ]
+    },
+    {
+      "source_family": "F011",
+      "target_id": "P821",
+      "relation": "external_statement_match",
+      "scope": "Weighted dilation graphs Theorem 1.1: infinitely many totient values v with multiplicity >v^(1-epsilon), for every epsilon>0; full atlas multiplicity-exponent question.",
+      "missing_hypotheses": [
+        "Independent proof audit; no Lean scope supplied for F011."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf"
+      ],
+      "surface_ids": [
+        "S:gap:821:329db01a"
+      ],
+      "edge_id": "number-theory-01",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 0
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F013",
+      "target_id": "P431",
+      "relation": "external_statement_match",
+      "scope": "Ostmann Theorem 1.1 excludes any finite symmetric difference between primes and A+B with both summands having at least two elements; in particular excludes the atlas two-infinite-summands decomposition.",
+      "missing_hypotheses": [
+        "External proof/Lean dependency audit."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/the-additive-indecomposability-of-the-primes-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/013.md"
+      ],
+      "edge_id": "number-theory-02",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 1
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F024",
+      "target_id": "P416",
+      "relation": "external_statement_match",
+      "scope": "Theorem 2.1: explicit asymptotic for number V(x) of distinct totients and V(cx)/V(x)->c for every fixed c>0, including c=2.",
+      "missing_hypotheses": [
+        "External proof/Lean dependency audit."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/An-asymptotic-formula-for-the-number-of-totients-September-25-2026/An-asymptotic-formula-for-the-number-of-totients-September-25-2026.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/024.md"
+      ],
+      "surface_ids": [
+        "S:gap:416:7dd01bdf"
+      ],
+      "edge_id": "number-theory-03",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 2
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F026",
+      "target_id": "P968",
+      "relation": "external_statement_match",
+      "scope": "Corollary 1.2 and selected Lean scope: positive lower density of indices n with p_n/n<p_(n+1)/(n+1).",
+      "missing_hypotheses": [
+        "External proof/Lean dependency audit."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Positive-lower-density-of-large-prime-gaps-September-25-2026/main.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/026.md"
+      ],
+      "surface_ids": [
+        "S:gap:968:f0847933"
+      ],
+      "edge_id": "number-theory-04",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 3
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F024",
+      "target_id": "P417",
+      "relation": "conditional_derivation",
+      "scope": "A strict gap from one: liminf V(x)/Vprime(x)>1, where Vprime counts distinct phi(m), m<=x. Not limit existence.",
+      "missing_hypotheses": [
+        "F024 Theorem 2.2; independent review of this short deduction."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/An-asymptotic-formula-for-the-number-of-totients-September-25-2026/An-asymptotic-formula-for-the-number-of-totients-September-25-2026.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/024.md"
+      ],
+      "derivation_or_obstruction": "N1(x) counts totients <=x with least preimage in (x,2x]. Theorem 2.2 gives N1(x)>=cV(x) eventually for some 0<c<1. Since N1<=V-Vprime, V/Vprime>=1/(1-c).",
+      "surface_ids": [
+        "S:gap:417:4f3fc7e6"
+      ],
+      "edge_id": "number-theory-05",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 4
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F024",
+      "target_id": "P417",
+      "relation": "blocked_transfer",
+      "scope": "Existence of a limit of V/Vprime is not supplied by regular variation or the individual companion counts.",
+      "missing_hypotheses": [
+        "Control of all least-preimage tails; convergence or cancellation of phase dependence in coefficient ratios."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/An-asymptotic-formula-for-the-number-of-totients-September-25-2026/An-asymptotic-formula-for-the-number-of-totients-September-25-2026.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/024.md"
+      ],
+      "derivation_or_obstruction": "V uses a positive phase-dependent arithmetic coefficient. Fixed k counts alone do not justify an infinite sum or a limiting ratio.",
+      "surface_ids": [
+        "S:gap:417:4f3fc7e6"
+      ],
+      "edge_id": "number-theory-06",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 5
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F024",
+      "target_id": "P51",
+      "relation": "blocked_transfer",
+      "scope": "Unbounded least-preimage ratio is explicitly left unresolved by F024.",
+      "missing_hypotheses": [
+        "Totient seeds d with least_preimage(d)/d arbitrarily large."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/An-asymptotic-formula-for-the-number-of-totients-September-25-2026/An-asymptotic-formula-for-the-number-of-totients-September-25-2026.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/024.md"
+      ],
+      "derivation_or_obstruction": "F024 Theorem 2.2 is conditional on such a seed for each k; positivity is only asserted automatically for k=1,2.",
+      "surface_ids": [
+        "S:gap:51:0b2ebbad"
+      ],
+      "edge_id": "number-theory-07",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 6
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F011",
+      "target_id": "P51",
+      "relation": "blocked_transfer",
+      "scope": "Large fibers do not imply large least-preimage ratios.",
+      "missing_hypotheses": [
+        "Control of the minimum preimage, rather than only fiber cardinality."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf"
+      ],
+      "derivation_or_obstruction": "P821 and P51 share A014197, but even many preimages can coexist with one small preimage.",
+      "surface_ids": [
+        "S:gap:51:0b2ebbad"
+      ],
+      "edge_id": "number-theory-08",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 7
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F024",
+      "target_id": "P1003",
+      "relation": "blocked_transfer",
+      "scope": "Distinct-value asymptotics do not force equal totients at consecutive arguments.",
+      "missing_hypotheses": [
+        "Shifted equality correlation phi(n)=phi(n+1)."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/An-asymptotic-formula-for-the-number-of-totients-September-25-2026/An-asymptotic-formula-for-the-number-of-totients-September-25-2026.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/024.md"
+      ],
+      "surface_ids": [
+        "S:gap:1003:7607af84"
+      ],
+      "edge_id": "number-theory-09",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 8
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F011",
+      "target_id": "P1057",
+      "relation": "candidate",
+      "scope": "Improved reservoir of smooth prime predecessors may strengthen Carmichael constructions.",
+      "missing_hypotheses": [
+        "Primes in required progressions; subset-product congruence extraction; exact 64-factor witness and minimality for current finite cell."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf"
+      ],
+      "derivation_or_obstruction": "The F011 introduction itself identifies smooth predecessors as an ingredient in Carmichael construction, separate from progression-distribution input.",
+      "surface_ids": [
+        "S:gap:1057:17fe0f04"
+      ],
+      "edge_id": "number-theory-10",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 9
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F011",
+      "target_id": "squarefree-crt-defect-transfer",
+      "relation": "candidate",
+      "scope": "Weighted dilation graphs compare integer divisibility samples with independent prime-label operators using CRT memories and signed high moments.",
+      "missing_hypotheses": [
+        "Prime-square moduli; actual squarefree variance weight; required growing scales; summable endpoint and tail losses."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf"
+      ],
+      "derivation_or_obstruction": "Inspect Sections 3 and ideal-kernel hypotheses before attempting to transfer the comparison mechanism.",
+      "edge_id": "number-theory-11",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 10
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F012",
+      "target_id": "P370",
+      "relation": "conditional_derivation",
+      "scope": "Strengthens already-solved infinitude of simultaneous square-root-smooth neighbors to density rho(2)^2=(1-log 2)^2.",
+      "missing_hypotheses": [
+        "F012 joint law; strict/non-strict threshold boundary has density zero."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/012.md"
+      ],
+      "derivation_or_obstruction": "Take a=b=1/2; equality n=p^2 contributes O(sqrt X), and analogous n+1 equality has density zero.",
+      "edge_id": "number-theory-14",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 13
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F012",
+      "target_id": "P369",
+      "relation": "conditional_derivation",
+      "scope": "For k=2 and every fixed epsilon>0, a positive proportion of pairs in each sufficiently large dyadic interval are n^epsilon-smooth; does not provide k>=3.",
+      "missing_hypotheses": [
+        "F012 at fixed smaller exponent; extension to k-point laws for longer runs."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/012.md"
+      ],
+      "derivation_or_obstruction": "Choose 0<a<min(epsilon,1); the count on (X/2,X] is (rho(1/a)^2/2+o(1))X by subtracting prefix asymptotics. Their prime factors are <=X^epsilon eventually.",
+      "edge_id": "number-theory-15",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 14
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F012",
+      "target_id": "P841",
+      "relation": "conditional_derivation",
+      "scope": "Joint law of consecutive square-product waiting times: dens{t_n<=n^a, t_(n+1)<=(n+1)^b}=rho(1/a)rho(1/b), 0<a,b<1.",
+      "missing_hypotheses": [
+        "F012 joint law; BPZ24 Theorem 1.1 marginal law; independent review of density-zero transfer."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/012.md",
+        "https://doi.org/10.1017/S0305004123000488",
+        "https://arxiv.org/abs/2211.12467"
+      ],
+      "derivation_or_obstruction": "Largest-prime-square exceptions have density zero. Outside them P+(n)<=t_n. Equal marginal densities imply threshold-event symmetric difference o(X); replacing both events in the joint law costs o(X). Full derivation in number-theory.md.",
+      "edge_id": "number-theory-16",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 15
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F012",
+      "target_id": "P368",
+      "relation": "blocked_transfer",
+      "scope": "Fixed positive-power smoothness law does not imply the logarithmic-scale smoothness conjecture for n(n+1).",
+      "missing_hypotheses": [
+        "Uniformity when a(X) is of size log log X/log X; a lower-envelope theorem for every n."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/012.md"
+      ],
+      "surface_ids": [
+        "S:gap:368:d9972a8a"
+      ],
+      "edge_id": "number-theory-17",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 16
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F012",
+      "target_id": "P372",
+      "relation": "blocked_transfer",
+      "scope": "Two-coordinate laws do not determine three consecutive largest-prime-factor orderings.",
+      "missing_hypotheses": [
+        "A three-point joint law or separate ordering argument."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/012.md"
+      ],
+      "edge_id": "number-theory-18",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 17
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F012",
+      "target_id": "P961",
+      "relation": "blocked_transfer",
+      "scope": "Positive-density power-smooth pairs do not bound the longest run for a fixed smoothness threshold.",
+      "missing_hypotheses": [
+        "Moving exponents log B/log X; arbitrary run length; exact extremal exclusion."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/012.md"
+      ],
+      "surface_ids": [
+        "S:gap:961:b748c745"
+      ],
+      "edge_id": "number-theory-19",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 18
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F021",
+      "target_id": "P220",
+      "relation": "conditional_derivation",
+      "scope": "For fixed r>=1, sum of rth powers of consecutive reduced-residue gaps <= h(omega(m))^(r-1)*m. A coarse consequence; known sharper theorem already solves P220.",
+      "missing_hypotheses": [
+        "F021; no novelty claim versus Montgomery-Vaughan bounds."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/021.md"
+      ],
+      "derivation_or_obstruction": "Use d^r<=h^(r-1)d and sum d<=m.",
+      "edge_id": "number-theory-24",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 23
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F025",
+      "target_id": "P242",
+      "relation": "blocked_transfer",
+      "scope": "O(log log b) terms for general rationals does not imply a three-term expansion of 4/n.",
+      "missing_hypotheses": [
+        "Exactly three terms for specified numerator four."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Short-Egyptian-fractions-September-25-2026/Short-Egyptian-fractions-September-25-2026.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/025.md"
+      ],
+      "surface_ids": [
+        "S:triage:242",
+        "S:gap:242:392ad9a3"
+      ],
+      "edge_id": "number-theory-28",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 27
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F025",
+      "target_id": "P295",
+      "relation": "blocked_transfer",
+      "scope": "Preserving a specified denominator does not ensure it is the least denominator.",
+      "missing_hypotheses": [
+        "All denominators >=N and sharp linear length overhead."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Short-Egyptian-fractions-September-25-2026/Short-Egyptian-fractions-September-25-2026.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/025.md"
+      ],
+      "surface_ids": [
+        "S:gap:295:1aa70f31"
+      ],
+      "edge_id": "number-theory-29",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 28
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F025",
+      "target_id": "P306",
+      "relation": "blocked_transfer",
+      "scope": "Unrestricted short expansions do not impose distinct-semiprime denominators.",
+      "missing_hypotheses": [
+        "Denominator factorization restriction."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Short-Egyptian-fractions-September-25-2026/Short-Egyptian-fractions-September-25-2026.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/025.md"
+      ],
+      "surface_ids": [],
+      "edge_id": "number-theory-30",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 29
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F025",
+      "target_id": "multiplier-sensitive-fiber-deficit",
+      "relation": "candidate",
+      "scope": "Prime-factor splitting and factorial-divisor representations may furnish test distributions for smooth-fiber optimization.",
+      "missing_hypotheses": [
+        "An inequality for the actual forbidden-pair operator; multiplier compatibility; boundary loss control."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Short-Egyptian-fractions-September-25-2026/Short-Egyptian-fractions-September-25-2026.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/025.md"
+      ],
+      "derivation_or_obstruction": "The shared object is smooth divisor support, not the Egyptian-fraction conclusion itself.",
+      "edge_id": "number-theory-32",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 31
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F026",
+      "target_id": "P5",
+      "relation": "blocked_transfer",
+      "scope": "Positive lower density beyond every fixed gap threshold does not give every finite value as a normalized-gap limit point.",
+      "missing_hypotheses": [
+        "Control of gaps in arbitrarily small intervals around each prescribed normalized size."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Positive-lower-density-of-large-prime-gaps-September-25-2026/main.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/026.md"
+      ],
+      "surface_ids": [
+        "S:gap:5:a6b59f24"
+      ],
+      "edge_id": "number-theory-33",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 32
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F026",
+      "target_id": "P233",
+      "relation": "blocked_transfer",
+      "scope": "Lower tail density alone does not establish the exact second-moment asymptotic.",
+      "missing_hypotheses": [
+        "Quantitative tail law and uniform integrability/upper tails."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Positive-lower-density-of-large-prime-gaps-September-25-2026/main.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/026.md"
+      ],
+      "surface_ids": [
+        "S:gap:233:2bd5ce64"
+      ],
+      "edge_id": "number-theory-34",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 33
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F026",
+      "target_id": "P15",
+      "relation": "blocked_transfer",
+      "scope": "Positive-density increases of p_n/n do not decide convergence of the alternating series sum (-1)^n n/p_n.",
+      "missing_hypotheses": [
+        "Signed parity cancellation or summable variation."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Positive-lower-density-of-large-prime-gaps-September-25-2026/main.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/026.md"
+      ],
+      "derivation_or_obstruction": "The fact that monotonicity fails on positive density is not a convergence or divergence test.",
+      "edge_id": "number-theory-35",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 34
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F029",
+      "target_id": "P985",
+      "relation": "conditional_derivation",
+      "scope": "For every fixed positive prime q, infinitely many larger primes p have q as primitive root; quantitative dyadic lower bound c_q x/(log x)^2.",
+      "missing_hypotheses": [
+        "F029 Theorem 1.1 audit; full P985 requires every modulus p rather than infinitely many."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Primitive-roots-for-every-admissible-integer-base-October-4-2026/primitive-roots-all-integer-bases.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Simultaneous-primitive-roots-a-conditional-lower-bound-for-prime-bases-October-4-2026/simultaneous-primitive-roots-conditional-lower-bound-prime-bases.pdf"
+      ],
+      "derivation_or_obstruction": "Set the admissible base a=q; eventually p>q. This is a quantified subcase, not the universal modulus assertion.",
+      "surface_ids": [
+        "S:gap:985:e049360b"
+      ],
+      "edge_id": "number-theory-36",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 35
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F029",
+      "target_id": "P985",
+      "relation": "blocked_transfer",
+      "scope": "A fixed-base infinitude theorem does not ensure every prime modulus has a small prime primitive root.",
+      "missing_hypotheses": [
+        "Uniform coverage of all moduli; interchange of fixed-base and every-modulus quantifiers."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Primitive-roots-for-every-admissible-integer-base-October-4-2026/primitive-roots-all-integer-bases.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Simultaneous-primitive-roots-a-conditional-lower-bound-for-prime-bases-October-4-2026/simultaneous-primitive-roots-conditional-lower-bound-prime-bases.pdf"
+      ],
+      "surface_ids": [
+        "S:gap:985:e049360b"
+      ],
+      "edge_id": "number-theory-37",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 36
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F020",
+      "target_id": "P1109",
+      "relation": "blocked_transfer",
+      "scope": "Squarefree values of one irreducible quartic do not control squarefree values of all pairwise sums in an extremal set.",
+      "missing_hypotheses": [
+        "Uniform simultaneous two-variable constraints and extremal cardinality estimates."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Squarefree-values-of-quartics-and-power-free-values-of-polynomials-September-24-2026/manuscript.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/020.md"
+      ],
+      "surface_ids": [
+        "S:gap:1109:eb49810a"
+      ],
+      "edge_id": "number-theory-39",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 38
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F020",
+      "target_id": "P975",
+      "relation": "candidate",
+      "scope": "Large-prime-power tail estimates and number-field factorization may help divisor sums along irreducible polynomials.",
+      "missing_hypotheses": [
+        "Weighted divisor counts and all divisor-size ranges; squarefree density alone has no control of tau(f(n))."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Squarefree-values-of-quartics-and-power-free-values-of-polynomials-September-24-2026/manuscript.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/020.md"
+      ],
+      "surface_ids": [
+        "S:gap:975:3d3c8578"
+      ],
+      "edge_id": "number-theory-40",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 39
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F022",
+      "target_id": "P999",
+      "relation": "candidate",
+      "scope": "Weak inhomogeneous metric approximation extends the setting of the already-solved homogeneous Duffin-Schaeffer problem.",
+      "missing_hypotheses": [
+        "Numerators in F022 are unrestricted; it is not a new proof of the coprime homogeneous equivalence."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-weak-inhomogeneous-Duffin-Schaeffer-conjecture-September-25-2026/paper.pdf"
+      ],
+      "edge_id": "number-theory-41",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 40
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F022",
+      "target_id": "squarefree-crt-defect-transfer",
+      "relation": "candidate",
+      "scope": "Adaptive partitions and weighted least-common-multiple second-moment control may help arithmetic sample versus product-model comparisons.",
+      "missing_hypotheses": [
+        "Transfer of concrete kernel and weight hypotheses; prime-square structure; growing interval regime."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-weak-inhomogeneous-Duffin-Schaeffer-conjecture-September-25-2026/paper.pdf"
+      ],
+      "edge_id": "number-theory-42",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 41
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F023",
+      "target_id": "sparse-square-signed-moment-interface",
+      "relation": "blocked_transfer",
+      "scope": "A fixed-mode first moment over Eisenstein primes does not imply the required weighted Mobius square-frequency second moment.",
+      "missing_hypotheses": [
+        "Different coefficient sequence and domain; second-moment estimate; uniformity in modes/masks."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/An-unconditional-first-moment-for-cubic-Gauss-sums-September-25-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/023.md"
+      ],
+      "edge_id": "number-theory-43",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 42
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F017",
+      "target_id": "P68",
+      "relation": "blocked_transfer",
+      "scope": "Irrationality exponent of pi gives no irrationality conclusion for sum 1/(n!-1).",
+      "missing_hypotheses": [
+        "A representation or independently proved approximation construction for the actual target constant."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-irrationality-exponent-of-pi-is-2-September-24-2026/paper.pdf",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/017.md"
+      ],
+      "surface_ids": [
+        "S:gap:68:9c632ebb"
+      ],
+      "edge_id": "number-theory-44",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 43
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F020",
+      "target_id": "P978",
+      "relation": "external_statement_match",
+      "scope": "Correctly unobstructed parts.ii: infinitely many (d-2)-power-free values for irreducible integer polynomials of degree d>3. F020 gives positive Euler-product density and also covers power-of-two degrees excluded by that atlas variant.",
+      "missing_hypotheses": [
+        "External theorem and formal dependency audit; exact local condition is no fixed prime (d-2)th power divisor."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/020.md",
+        "https://github.com/google-deepmind/formal-conjectures/blob/16e02e2c29752539b6889563c392bc05c68cddc5/FormalConjectures/ErdosProblems/978.lean"
+      ],
+      "derivation_or_obstruction": "Do not use the stub answer False for the separate allow_fixed_divisors variant as the status of parts.ii.",
+      "edge_id": "number-theory-45",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 44
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F020",
+      "target_id": "P978",
+      "relation": "conditional_derivation",
+      "scope": "Part.iii: n^4+2 is squarefree for a positive density of n, hence infinitely often.",
+      "missing_hypotheses": [
+        "F020 quartic theorem; independent review or formalization of the specialization."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/020.md",
+        "https://github.com/google-deepmind/formal-conjectures/blob/16e02e2c29752539b6889563c392bc05c68cddc5/FormalConjectures/ErdosProblems/978.lean"
+      ],
+      "derivation_or_obstruction": "x^4+2 is Eisenstein at 2. Values at 0 and 1 are 2 and 3, so no prime square divides every value. The F020 positive-density squarefree theorem applies.",
+      "edge_id": "number-theory-46",
+      "origin": {
+        "file": "swarm/number-theory.json",
+        "edge_index": 45
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F084",
+      "target_id": "P120",
+      "relation": "external_statement_match",
+      "scope": "Geometric-sequence subcase only: each fixed q in (0,1) has arbitrarily large-measure compact sets avoiding every affine copy of {q^n}; Lean scope covers q=1/2.",
+      "missing_hypotheses": [
+        "General infinite sets; simultaneous avoidance across q; geometric manuscript proof audit."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-geometric-case-of-the-Erdos-similarity-conjecture-October-5-2026/build/main.tex",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/084.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-01",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 0
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F084",
+      "target_id": "P120",
+      "relation": "conditional_derivation",
+      "scope": "Any infinite A containing an affine copy of a fixed geometric sequence inherits the avoidance conclusion, since an affine copy of A would contain an affine copy of that sequence.",
+      "missing_hypotheses": [
+        "This sufficient structural condition need not hold for arbitrary infinite A."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/084.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-02",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 1
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F156",
+      "target_id": "P505",
+      "relation": "external_statement_match",
+      "scope": "Nine-dimensional Borsuk counterexample; improves the dimension surface of an already-disproved conjecture.",
+      "missing_hypotheses": [
+        "Local audit of rank-one-projector compact-set construction; not a new resolution of the general existence claim."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/156.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-03",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 2
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F158",
+      "target_id": "P508",
+      "relation": "external_statement_match",
+      "scope": "No proper arbitrary five-coloring of the Euclidean plane and a seven-color upper bound, hence 6<=chi<=7.",
+      "missing_hypotheses": [
+        "Distinguishing 6 from 7; no explicit small finite six-chromatic unit-distance graph extracted."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/158.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-04",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 3
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F158",
+      "target_id": "P1070",
+      "relation": "blocked_transfer",
+      "scope": "A six-chromatic finite subgraph exists by graph-coloring compactness, but does not force independence ratio below 1/5.",
+      "missing_hypotheses": [
+        "An independence/fractional-coloring certificate, not merely a chromatic lower bound."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/158.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-05",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 4
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F159",
+      "target_id": "P57",
+      "relation": "conditional_derivation",
+      "scope": "Odd cycle lengths in an infinite-chromatic graph have divergent reciprocal sum by local P57; therefore they contain APs of every finite length, with positive even difference.",
+      "missing_hypotheses": [
+        "No common-vertex condition or finite graph bound; no novelty claim."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/159.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "additional_inputs": [
+        "P57"
+      ],
+      "edge_id": "combinatorics-07",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 6
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F159",
+      "target_id": "P169",
+      "relation": "conditional_derivation",
+      "scope": "The quantitative progression-free bound gives a uniform finite harmonic-mass bound for every fixed k, by dyadic summation.",
+      "missing_hypotheses": [
+        "Effective dependence on k and a numerical optimum; the reciprocal comparator alone is not a numeric f(k) bound."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/159.md",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/00-introduction.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-08",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 7
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F159",
+      "target_id": "P140",
+      "relation": "blocked_transfer",
+      "scope": "Asymptotic progression-free estimates do not decide the exact next finite r_3 cell.",
+      "missing_hypotheses": [
+        "Explicit finite bound tight at target N, or witness/nonexistence certificate."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/159.md",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/00-introduction.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-10",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 9
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F159",
+      "target_id": "P219",
+      "relation": "conditional_derivation",
+      "scope": "Divergence of the reciprocal sum of primes implies APs of arbitrary length via F159.",
+      "missing_hypotheses": [
+        "This reproves the ordinary AP conclusion, not consecutive-prime APs; novelty is not claimed."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/159.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-11",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 10
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F160",
+      "target_id": "P138",
+      "relation": "external_statement_match",
+      "scope": "For fixed r>=2, W(r,k)>k^{k floor(log2 r)/100000} eventually, so W(r,k)^(1/k) tends to infinity.",
+      "missing_hypotheses": [
+        "Unknown absolute threshold K and local proof audit; W(2,7) not determined."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/160.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-12",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 11
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F160",
+      "target_id": "P169",
+      "relation": "conditional_derivation",
+      "scope": "Combining the lower bound W(2,k)>k^{k/100000} with the atlas inequality f(k)>=0.5 log W(2,k) gives f(k)>=k log k/200000 eventually.",
+      "missing_hypotheses": [
+        "This recovers an already-known growth shape with weaker constant; not a new record."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/160.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "additional_inputs": [
+        "P169 gap-map inequality"
+      ],
+      "edge_id": "combinatorics-13",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 12
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F162",
+      "target_id": "P21",
+      "relation": "candidate",
+      "scope": "Ryser constructions are intersecting r-uniform families with covering number r, hence admissible objects for the f(r) minimization.",
+      "missing_hypotheses": [
+        "No O(r) edge count or explicit small-r witness is supplied; thresholds existential, and P21 already solved asymptotically."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/162.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-14",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 13
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F164",
+      "target_id": "P172",
+      "relation": "external_statement_match",
+      "scope": "For every finite coloring and finite k, a k-element positive-integer set has all nonempty subset sums and products in one color.",
+      "missing_hypotheses": [
+        "No Lean scope linked; manuscript proof audit."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Monochromatic-finite-sums-and-products-in-the-positive-integers-September-23-2026/build/main.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-15",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 14
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F164",
+      "target_id": "P532",
+      "relation": "blocked_transfer",
+      "scope": "Arbitrarily large finite sets with monochromatic sums and products do not automatically assemble into a single infinite set.",
+      "missing_hypotheses": [
+        "A compatible nested construction or additional compactness argument; finite sets can escape to infinity."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Monochromatic-finite-sums-and-products-in-the-positive-integers-September-23-2026/paper.pdf"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-16",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 15
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F166",
+      "target_id": "P1083",
+      "relation": "external_statement_match",
+      "scope": "For each fixed d>=3, every n-point subset of R^d determines >=c_d n^(2/d) distances, stronger than the requested exponent up to o(1).",
+      "missing_hypotheses": [
+        "No Lean scope; proof audit and constants depend on d."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-higher-dimensional-Erdos-distinct-distances-conjecture-September-23-2026/build/sections/introduction.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-17",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 16
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F166",
+      "target_id": "P660",
+      "relation": "blocked_transfer",
+      "scope": "The d=3 lower bound n^(2/3) applies to convex-polyhedron vertices but is weaker than the desired nearly n/2 bound.",
+      "missing_hypotheses": [
+        "Use convexity to obtain a linear lower bound."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-higher-dimensional-Erdos-distinct-distances-conjecture-September-23-2026/paper.pdf"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-18",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 17
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F166",
+      "target_id": "P1089",
+      "relation": "blocked_transfer",
+      "scope": "F166 fixes d and lets n grow; the few-distance problem fixes the number of distances and lets d grow.",
+      "missing_hypotheses": [
+        "Uniform control of c_d with d; asymptotic regimes cannot be interchanged."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-higher-dimensional-Erdos-distinct-distances-conjecture-September-23-2026/paper.pdf"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-19",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 18
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F167",
+      "target_id": "P90",
+      "relation": "external_statement_match",
+      "scope": "Uniform planar unit-distance upper bound C n^beta for an absolute beta<4/3 improves the upper-bound surface.",
+      "missing_hypotheses": [
+        "Does not reverse the already recorded disproof of n^(1+o(1)); numerical beta and C not extracted."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/167.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-20",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 19
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F167",
+      "target_id": "P89",
+      "relation": "blocked_transfer",
+      "scope": "Almost every pin has >=n^(1-epsilon) distances; this does not reach n/sqrt(log n).",
+      "missing_hypotheses": [
+        "Sharper logarithmic loss control at the planar distinct-distance scale."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/167.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-21",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 20
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F167",
+      "target_id": "P96",
+      "relation": "blocked_transfer",
+      "scope": "General planar O(n^beta), beta<4/3, applies to convex sets but need not imply O(n).",
+      "missing_hypotheses": [
+        "Convexity-specific linear bound."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/167.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-22",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 21
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F167",
+      "target_id": "P959",
+      "relation": "conditional_derivation",
+      "scope": "Rescaling any positive distance to one gives f(d)<=C n^beta uniformly in d; hence the largest-minus-second-largest multiplicity gap is also <=C n^beta.",
+      "missing_hypotheses": [
+        "No matching lower bound or novelty claim; beta<4/3 is existential."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/167.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-23",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 22
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F169",
+      "target_id": "P993",
+      "relation": "blocked_transfer",
+      "scope": "Elementary positivity for chromatic quasisymmetric functions of natural unit interval graphs does not imply unimodality of independence polynomials of arbitrary trees.",
+      "missing_hypotheses": [
+        "Different graph class and polynomial; an actual coefficient-preserving transform and unimodality theorem are required."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/169.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-24",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 23
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F170",
+      "target_id": "P986",
+      "relation": "external_statement_match",
+      "scope": "Sharp logarithmic exponent s-2 for every fixed s>=5 strengthens the polynomial lower-bound surface in the existing off-diagonal Ramsey problem.",
+      "missing_hypotheses": [
+        "Scope excludes s=3,4; fixed-s constants/thresholds and proof audit."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/170.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-25",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 24
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F170",
+      "target_id": "P77",
+      "relation": "blocked_transfer",
+      "scope": "Diagonal s=t growth is not a fixed-s regime.",
+      "missing_hypotheses": [
+        "A theorem in the target parameter regime with the target quantitative conclusion."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/170.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-26",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 25
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F170",
+      "target_id": "P78",
+      "relation": "blocked_transfer",
+      "scope": "Asymptotic existence bounds are not an explicit algorithmic construction.",
+      "missing_hypotheses": [
+        "A theorem in the target parameter regime with the target quantitative conclusion."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/170.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-27",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 26
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F170",
+      "target_id": "P166",
+      "relation": "blocked_transfer",
+      "scope": "The scope begins at s=5; P166 concerns s=4.",
+      "missing_hypotheses": [
+        "A theorem in the target parameter regime with the target quantitative conclusion."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/170.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-28",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 27
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F170",
+      "target_id": "P544",
+      "relation": "blocked_transfer",
+      "scope": "P544 concerns s=3 and consecutive gaps; neither follows.",
+      "missing_hypotheses": [
+        "A theorem in the target parameter regime with the target quantitative conclusion."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/170.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-29",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 28
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F170",
+      "target_id": "P1030",
+      "relation": "blocked_transfer",
+      "scope": "Near-diagonal t=s and t=s+1 are not fixed-s asymptotics.",
+      "missing_hypotheses": [
+        "A theorem in the target parameter regime with the target quantitative conclusion."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/170.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-30",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 29
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F170",
+      "target_id": "P1014",
+      "relation": "blocked_transfer",
+      "scope": "A logarithmic exponent with unspecified o(1) does not alone force ratios at consecutive t to tend to one.",
+      "missing_hypotheses": [
+        "A theorem in the target parameter regime with the target quantitative conclusion."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/170.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-31",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 30
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F171",
+      "target_id": "P181",
+      "relation": "external_statement_match",
+      "scope": "Absolute C gives R(Q_n)<=C 2^n.",
+      "missing_hypotheses": [
+        "No Lean scope linked; manuscript proof audit."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-hypercube-Ramsey-number-has-linear-order-September-23-2026/build/main.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-32",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 31
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F171",
+      "target_id": "P1035",
+      "relation": "blocked_transfer",
+      "scope": "A two-color host of C*2^n vertices may find a cube in either color; P1035 demands one in a specified dense graph on exactly 2^n vertices.",
+      "missing_hypotheses": [
+        "Remove host slack and force the designated color."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-hypercube-Ramsey-number-has-linear-order-September-23-2026/paper.pdf"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-33",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 32
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F172",
+      "target_id": "P174",
+      "relation": "external_statement_match",
+      "scope": "Tensor-field classification of Euclidean Ramsey configurations, with spherical non-Ramsey examples and sufficient criteria.",
+      "missing_hypotheses": [
+        "Comparator definition audit for affine-span reductions; no efficient decision algorithm inferred."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/172.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-34",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 33
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F172",
+      "target_id": "P173",
+      "relation": "blocked_transfer",
+      "scope": "Ramsey configurations are guaranteed in some sufficiently high ambient dimension, whereas P173 fixes the plane and two colors.",
+      "missing_hypotheses": [
+        "A dimension-two theorem with the required uniform triangle assertion."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/172.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-35",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 34
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F174",
+      "target_id": "P743",
+      "relation": "blocked_transfer",
+      "scope": "A thin spanning tree has no prescribed isomorphism type; Gyárfás packing asks for a perfect edge decomposition into every prescribed tree tuple.",
+      "missing_hypotheses": [
+        "Prescribed trees, exact edge usage, and simultaneous packing."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/174.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-36",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 35
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F178",
+      "target_id": "P78",
+      "relation": "blocked_transfer",
+      "scope": "Every fixed-degree d graph has independence number at least n/(d+1), so fixed-degree Ramanujan outputs cannot have independent sets O(log n).",
+      "missing_hypotheses": [
+        "A growing-degree transformation with jointly controlled algorithmic cost and clique/independence bounds; source exponent and threshold depend on fixed d."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Deterministic-nonbipartite-Ramanujan-graphs-in-every-fixed-degree-September-23-2026/build/sections/introduction.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-37",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 36
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F180",
+      "target_id": "P1016",
+      "relation": "blocked_transfer",
+      "scope": "Hamiltonicity for cubic bipartite planar 3-connected graphs neither ensures all cycle lengths nor applies to all candidate pancyclic graphs; bipartite graphs lack odd cycles.",
+      "missing_hypotheses": [
+        "Pancyclicity in the correct graph class, not Hamiltonicity alone."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/180.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-38",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 37
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F181",
+      "target_id": "P184",
+      "relation": "external_statement_match",
+      "scope": "Every finite simple graph has an edge partition into O(n) cycles and singleton edges.",
+      "missing_hypotheses": [
+        "Optimal absolute constant and local proof audit."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/181.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-39",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 38
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F181",
+      "target_id": "P583",
+      "relation": "blocked_transfer",
+      "scope": "Splitting each cycle gives O(n) paths, but does not achieve the target ceil(n/2); stronger linear path bounds already exist.",
+      "missing_hypotheses": [
+        "Sharp constant and edge-disjoint path organization."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/181.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-40",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 39
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F181",
+      "target_id": "P743",
+      "relation": "blocked_transfer",
+      "scope": "Cycles/singletons are not prescribed tree components.",
+      "missing_hypotheses": [
+        "Exact tree-shape packing; neither graph decomposability nor matching edge count suffices."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/181.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-41",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 40
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F182",
+      "target_id": "P57",
+      "relation": "conditional_derivation",
+      "scope": "A square-difference-free positive-integer set has finite harmonic mass by |A cap [N]|<=C N^(1-c). Thus odd cycle lengths in an infinite-chromatic graph contain two lengths differing by a positive square, necessarily an even square.",
+      "missing_hypotheses": [
+        "No constraints on shared vertices or a numerical bound."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/182.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "additional_inputs": [
+        "P57"
+      ],
+      "edge_id": "combinatorics-42",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 41
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F184",
+      "target_id": "P802",
+      "relation": "external_statement_match",
+      "scope": "Every fixed-K_r-free graph, r>=4, with average degree d>=2 has alpha>=c_r n log d/d; paper explicitly identifies P802.",
+      "missing_hypotheses": [
+        "Local proof audit; effective c_r not given."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/184.md",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-Logarithmic-Independence-Bound-for-Clique-Free-Graphs-September-25-2026/build/sections/introduction.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-43",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 42
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F184",
+      "target_id": "P1104",
+      "relation": "blocked_transfer",
+      "scope": "An independence bound depending on average degree is not the sharp triangle-free chromatic constant or a smallest six-chromatic graph certificate.",
+      "missing_hypotheses": [
+        "Sharp coloring transfer and explicit finite graph/nonexistence evidence."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/184.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-44",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 43
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F188",
+      "target_id": "P1009",
+      "relation": "blocked_transfer",
+      "scope": "Random triangle removal from K_n concerns a dense random process; near-Turan deterministic triangle packing needs a uniform theorem for arbitrary prescribed input G.",
+      "missing_hypotheses": [
+        "Correct initial graph, deterministic uniformity, and second-order packing count."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/188.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-45",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 44
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F189",
+      "target_id": "P551",
+      "relation": "external_statement_match",
+      "scope": "Exact R(C_m,K_n)=(m-1)(n-1)+1 for m>=n>=3 except (3,3); that exception equals 6.",
+      "missing_hypotheses": [
+        "Local proof audit; full stated parameter range matches P551."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/189.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-46",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 45
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F159",
+      "target_id": "P187",
+      "relation": "candidate",
+      "scope": "A quantitative van der Waerden upper bound can control AP length versus step; all-fixed-k Szemeredi estimates are a potential input.",
+      "missing_hypotheses": [
+        "Explicit uniform dependence on k and an argument yielding infinitely many distinct steps; fixed-k statements alone are insufficient."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/159.md",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/00-introduction.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-48",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 47
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F115",
+      "target_id": "P710",
+      "relation": "conditional_derivation",
+      "scope": "The number of systems of distinct representatives equals the number of 0/1 contingency tables: k rows of margin 1, one dummy row of margin ell-k, ell columns of margin 1; forbidden incidence cells have bound 0. F115 therefore supplies an FPRAS for assignment multiplicity.",
+      "missing_hypotheses": [
+        "Assume ell>=k, otherwise no injection exists. This estimates a fixed finite instance; a universal Hall theorem for all intervals is still absent."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/115.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-49",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 48
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F120",
+      "target_id": "P710",
+      "relation": "candidate",
+      "scope": "A faster maximum-matching algorithm may accelerate finite interval tests on the existing incidence graph.",
+      "missing_hypotheses": [
+        "The source algorithm has success probability >=2/3, not a guaranteed negative certificate; preserve independently verified assignments and Hall obstructions. No asymptotic universal existence theorem follows."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/build/sections/01-introduction.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-50",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 49
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F115",
+      "target_id": "P860",
+      "relation": "conditional_derivation",
+      "scope": "The number of systems of distinct representatives equals the number of 0/1 contingency tables: k rows of margin 1, one dummy row of margin ell-k, ell columns of margin 1; forbidden incidence cells have bound 0. F115 therefore supplies an FPRAS for assignment multiplicity.",
+      "missing_hypotheses": [
+        "Assume ell>=k, otherwise no injection exists. This estimates a fixed finite instance; a universal Hall theorem for all intervals is still absent."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/115.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-51",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 50
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F120",
+      "target_id": "P860",
+      "relation": "candidate",
+      "scope": "A faster maximum-matching algorithm may accelerate finite interval tests on the existing incidence graph.",
+      "missing_hypotheses": [
+        "The source algorithm has success probability >=2/3, not a guaranteed negative certificate; preserve independently verified assignments and Hall obstructions. No asymptotic universal existence theorem follows."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/build/sections/01-introduction.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-52",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 51
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F138",
+      "target_id": "P1",
+      "relation": "candidate",
+      "scope": "Worst-case subset-sum decision could support a finite sum-distinct candidate screen after an exact collision-search reduction is specified.",
+      "missing_hypotheses": [
+        "P1 concerns collisions between two subsets, not one specified target; algorithm has bounded error, no direct extremal bound, and practical crossover unknown. P1 is already marked solved-upstream locally."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Subset-Sum-in-Time-2-power-0-49n-October-4-2026/build/sections/introduction.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-53",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 52
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F131",
+      "target_id": "P993",
+      "relation": "candidate",
+      "scope": "Fast mixing within a fixed graphical degree sequence could diversify degree-controlled test inputs.",
+      "missing_hypotheses": [
+        "The chain samples all simple realizations, not only connected trees; conditioning may be inefficient. Sampling is not exhaustive and supplies no universal unimodality proof."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/131.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-54",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 53
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F131",
+      "target_id": "P1016",
+      "relation": "candidate",
+      "scope": "Fixed-degree graph sampling could supply diverse candidate graphs for an independent pancyclicity verifier.",
+      "missing_hypotheses": [
+        "Pancyclicity is not preserved by switches, and no lower bound on candidate success probability or optimality certificate follows."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/131.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-55",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 54
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F107",
+      "target_id": "P142",
+      "relation": "candidate",
+      "scope": "Exact field-arithmetic matrix multiplication may inform future rank-computation backends for carry-product certificates.",
+      "missing_hypotheses": [
+        "Arithmetic exponent is not bit complexity, and current matrices are small. It does not overcome certified cone infeasibility or create a working construction."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/107.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-56",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 55
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F130",
+      "target_id": "P969",
+      "relation": "blocked_transfer",
+      "scope": "Subsequential exact-complex DFT circuit savings are computational complexity statements, not cancellation bounds for the squarefree variance or signed mixed moment.",
+      "missing_hypotheses": [
+        "All-length usable algorithms, bit/error control, and the missing analytic estimate remain separate."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/130.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-57",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 56
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F103",
+      "target_id": "P78",
+      "relation": "blocked_transfer",
+      "scope": "Derandomization applies to bounded-error polynomial-time logarithmic-workspace machines.",
+      "missing_hypotheses": [
+        "An explicit Ramsey construction requires an appropriate log-space sampler/search reduction and quantitative clique/independence guarantee; these are not supplied."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/sections/introduction.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-58",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 57
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F142",
+      "target_id": "P699",
+      "relation": "blocked_transfer",
+      "scope": "Deterministic dense polynomial factorization over F_p is not integer factorization or a theorem excluding the P699 smooth-part residual.",
+      "missing_hypotheses": [
+        "An arithmetic obstruction connecting polynomial factors to actual positional divisibilities is absent."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Deterministic-Polynomial-Factorization-over-Prime-Fields-October-4-2026/build/main.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-59",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 58
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F235",
+      "target_id": "P142",
+      "relation": "blocked_transfer",
+      "scope": "Random k-SAT limiting thresholds concern independent random clauses with replacement, not structured AP-free-set CNFs at a specified finite N.",
+      "missing_hypotheses": [
+        "Correct instance distribution, a finite-size rate, and a deterministic proof object. Even a typical-case UNSAT probability is not an UNSAT certificate."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/235.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-60",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 59
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F102",
+      "target_id": "P581",
+      "relation": "blocked_transfer",
+      "scope": "Generic Max-Cut approximation hardness does not contradict a theorem guaranteeing a large bipartite subgraph of every triangle-free graph.",
+      "missing_hypotheses": [
+        "The reductions do not certify the triangle-free restriction or identify the extremal value of the target family; hardness and guaranteed bounds are different quantifiers."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/102.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-61",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 60
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F190",
+      "target_id": "P150",
+      "relation": "blocked_transfer",
+      "scope": "P150 is about counts of minimal vertex cuts; F190 concerns induced ordered binary-matrix pattern removal.",
+      "missing_hypotheses": [
+        "No reduction exists in this review; the shared word removal was a lexical false positive."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/190.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "edge_id": "combinatorics-62",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 61
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F029",
+      "relation": "declared_dependency",
+      "scope": "F142 manuscript declares use of the F029 uniform Hecke zero-free theorem; logical necessity not independently audited.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Deterministic-Polynomial-Factorization-over-Prime-Fields-October-4-2026/build/main.tex"
+      ],
+      "verification": "source_dependency_not_locally_rebuilt",
+      "premise": "Uniform Hecke zero-free theorem from the companion manuscript Primitive roots for every admissible integer base, invoked in F142 abstract.",
+      "target_id": "F142",
+      "missing_hypotheses": [
+        "Dependency proof and necessity not independently audited."
+      ],
+      "edge_id": "combinatorics-63",
+      "origin": {
+        "file": "swarm/combinatorics.json",
+        "edge_index": 62
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F007",
+      "target_id": "P969",
+      "relation": "conditional_derivation",
+      "scope": "Fixed-shift Mobius cancellation and every fixed finite weighted filter covariance c*sum|w|^2.",
+      "missing_hypotheses": [
+        "External F007 proof acceptance.",
+        "Growing shifts, square frequencies, zeta weights and power saving remain missing for residual."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/introduction.tex"
+      ],
+      "edge_id": "analytic-audit-03",
+      "origin": {
+        "file": "swarm/analytic-audit.json",
+        "edge_index": 2
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F076",
+      "target_id": "P1150",
+      "relation": "external_statement_match",
+      "scope": "Negative answer after converting source length N to atlas degree n=N-1.",
+      "missing_hypotheses": [
+        "Proof/solution-module audit and local Comparator rebuild not performed."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/076.md",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/ComparatorChallenges/AsymptoticallyMinimalLittlewood.lean"
+      ],
+      "edge_id": "analytic-audit-06",
+      "origin": {
+        "file": "swarm/analytic-audit.json",
+        "edge_index": 5
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F076",
+      "target_id": "lane:LP-SDP-autocorrelation",
+      "relation": "conditional_derivation",
+      "scope": "Unbounded binary merit factor by integral|P|^4=N^2+2sum C_h^2.",
+      "missing_hypotheses": [
+        "External F076 proof acceptance; no effective threshold, signing algorithm, or finite witness."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/076.md"
+      ],
+      "edge_id": "analytic-audit-07",
+      "origin": {
+        "file": "swarm/analytic-audit.json",
+        "edge_index": 6
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F076",
+      "target_id": "P524",
+      "relation": "blocked_transfer",
+      "scope": "Existence of flat real signings does not control random-polynomial maxima.",
+      "missing_hypotheses": [
+        "Probability/distributional theorem for uniformly random signs."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/076.md"
+      ],
+      "edge_id": "analytic-audit-08",
+      "origin": {
+        "file": "swarm/analytic-audit.json",
+        "edge_index": 7
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F003",
+      "target_id": "method:r-free-phase-variance",
+      "relation": "conditional_derivation",
+      "scope": "Global r-free counting energy exponent 1+7/(4r)+epsilon for fixed r>=2.",
+      "missing_hypotheses": [
+        "External F003 proof acceptance; actual short-interval transfer still missing."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/build/paper.tex"
+      ],
+      "edge_id": "analytic-audit-09",
+      "origin": {
+        "file": "swarm/analytic-audit.json",
+        "edge_index": 8
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F003",
+      "target_id": "method:CRT-actual-interval-transfer",
+      "relation": "conditional_derivation",
+      "scope": "Fixed coprime residue-class squarefree global L2 exponent15/8+epsilon, constant depending on modulus.",
+      "missing_hypotheses": [
+        "External F003 proof acceptance; growing-modulus estimates and actual short-interval variance missing."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/build/paper.tex"
+      ],
+      "edge_id": "analytic-audit-10",
+      "origin": {
+        "file": "swarm/analytic-audit.json",
+        "edge_index": 9
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F007",
+      "target_id": "F076",
+      "relation": "blocked_transfer",
+      "scope": "Fixed-lag Liouville cancellation does not bound the full growing-lag squared-autocorrelation sum or construct Littlewood-flat signings.",
+      "missing_hypotheses": [
+        "Uniform lag range and summable squared correlation errors; arithmetic identification of the constructed signs."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/introduction.tex",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/076.md"
+      ],
+      "edge_id": "analytic-audit-11",
+      "origin": {
+        "file": "swarm/analytic-audit.json",
+        "edge_index": 10
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F191",
+      "target_id": "P507",
+      "relation": "external_statement_match",
+      "scope": "Fixed positive power improvement in Heilbronn minimum-triangle lower bound. Comparator: unbounded subsequence. Manuscript: all sufficiently large cardinalities.",
+      "missing_hypotheses": [
+        "External proof acceptance. Exact optimal order and practical finite configurations not supplied."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/191.md",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/ComparatorChallenges/HeilbronnTriangle.lean",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-power-improvement-in-the-Heilbronn-triangle-lower-bound-September-25-2026/build/sections/01-introduction.tex"
+      ],
+      "relation_detail": "scoped_bound_improvement",
+      "edge_id": "analytic-audit-12",
+      "origin": {
+        "file": "swarm/analytic-audit.json",
+        "edge_index": 11
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F148",
+      "target_id": "method:selfsimilar-product-distance-set",
+      "relation": "conditional_derivation",
+      "scope": "Self-similar K with the source no-exact-overlap assumptions and similarity dimension>1/2 has K x K of dimension>1; F073 then gives a positive-measure distance set.",
+      "missing_hypotheses": [
+        "Both external proof inputs. Frostman product-measure argument. No critical endpoint or quantitative finite-scale bound."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/148.md",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/073.md"
+      ],
+      "additional_inputs": [
+        "F073",
+        "Frostman product measure"
+      ],
+      "relation_detail": "conditional_composition",
+      "edge_id": "analytic-audit-13",
+      "origin": {
+        "file": "swarm/analytic-audit.json",
+        "edge_index": 12
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F097",
+      "target_id": "P178",
+      "relation": "conditional_derivation",
+      "scope": "For each fixed d sets, one infinite signing with prefix discrepancies<=Cd.",
+      "missing_hypotheses": [
+        "External F097 proof acceptance. Does not provide a single signing simultaneously satisfying the bounds for all d."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/097.md"
+      ],
+      "edge_id": "analytic-audit-14",
+      "origin": {
+        "file": "swarm/analytic-audit.json",
+        "edge_index": 13
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F090",
+      "target_id": "lane:LP-SDP-dual-certificates",
+      "relation": "candidate",
+      "scope": "Fourier-positive radial minorants and sharp circle-packing auxiliary function.",
+      "missing_hypotheses": [
+        "Objective-specific duality and finite-boundary treatment. Auditable global function inequalities."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/090.md"
+      ],
+      "relation_detail": "method_candidate",
+      "edge_id": "analytic-audit-15",
+      "origin": {
+        "file": "swarm/analytic-audit.json",
+        "edge_index": 14
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F089",
+      "target_id": "lane:LP-SDP-dual-certificates",
+      "relation": "candidate",
+      "scope": "L1 embedding distances decompose into cut semimetrics for planar and bounded-treewidth shortest-path metrics.",
+      "missing_hypotheses": [
+        "Explicit cut decomposition and constants. Graph-class verification. Objective-preserving reduction."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/089.md"
+      ],
+      "relation_detail": "method_candidate",
+      "edge_id": "analytic-audit-16",
+      "origin": {
+        "file": "swarm/analytic-audit.json",
+        "edge_index": 15
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F074",
+      "target_id": "P1097",
+      "relation": "blocked_transfer",
+      "scope": "A Kakeya conclusion cannot reverse the historical sums-differences implication to determine the sums-differences exponent.",
+      "missing_hypotheses": [
+        "A new quantitative reverse implication for the exact finite graph-sumset object."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/build/sections/introduction.tex"
+      ],
+      "edge_id": "analytic-audit-17",
+      "origin": {
+        "file": "swarm/analytic-audit.json",
+        "edge_index": 16
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F075",
+      "target_id": "P996",
+      "relation": "blocked_transfer",
+      "scope": "Ordinary Fourier partial-sum convergence is a different operator from the required lacunary dilated ergodic averages.",
+      "missing_hypotheses": [
+        "An operator-specific maximal estimate/transfer for dilates; Fourier convergence alone is insufficient."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/build/sections/01-introduction.tex"
+      ],
+      "edge_id": "analytic-audit-18",
+      "origin": {
+        "file": "swarm/analytic-audit.json",
+        "edge_index": 17
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    },
+    {
+      "source_family": "F148",
+      "target_id": "F153",
+      "relation": "blocked_transfer",
+      "scope": "A Hausdorff dimension formula does not decide Bernoulli-convolution singularity or absolute continuity.",
+      "missing_hypotheses": [
+        "Measure-type criterion beyond dimension; F153 criterion is infinite approximation, not a finite algorithm."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/148.md",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Arithmetic-classification-and-non-Pisot-singularity-for-Bernoulli-convolutions-October-3-2026/build/main.tex"
+      ],
+      "edge_id": "analytic-audit-19",
+      "origin": {
+        "file": "swarm/analytic-audit.json",
+        "edge_index": 18
+      },
+      "external_proof_verification": "NOT_RUN",
+      "canonical_status_effect": "NONE"
+    }
+  ]
+}

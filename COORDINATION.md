@@ -34,6 +34,9 @@ others don't touch it.
 
 | Lane / branch | Angle | Owns (don't clobber) | Status |
 |---|---|---|---|
+| `openai-math/source-and-proofs` | Pinned release crosswalk and exact arithmetic/formal components | `experiments/openai-math-20261006/`; root discovery links | mathematical source package: historical catalogue and 133 scoped connections; P699/P841 local proof components and P969 obstruction; no canonical status change |
+| `openai-math/weighted-p699` | Explicit weighted positional blocks to a cubic strip | `experiments/openai-math-20261006/lead-phase/weighted-formal/` | retained Lean component: 13 algebraic declarations and two numerical controls; binomial-to-block extraction remains informal |
+| `openai-math/upstream-20261008` | Dated withdrawals, revised editions and formalization scope | `experiments/openai-math-20261006/upstream-update/` | metadata comparison: three withdrawals, 27 replacement editions, 11 formalization additions; F130 ideal all-length scope updated, numerical and analytic transfers remain blocked; no external proof replay |
 | `agent/harden-r3-search-semantics` | r₃(N) search semantics (Erdős #142) | *(register)* | *(register)* |
 | `codex/foundry-*` | foundry / atlas integration + gates | *(register)* | *(register)* |
 | `claude/erdos-142-certificate` | E142 orchestration · results registry · board certs | `certificates/erdos-142/`, `RESULTS_REGISTRY.md` | frozen E142 cert merged-pending |

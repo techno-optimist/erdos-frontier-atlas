@@ -1,0 +1,89 @@
+{
+  "schema": "efa-focused-research-results-v1",
+  "baseline_commit": "8fc35f5",
+  "external_openai_source_pin": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+  "canonical_status_changes": false,
+  "literature_novelty": "UNVERIFIED",
+  "results": [
+    {
+      "id": "i3-reduced-cubic-and-growing-strip",
+      "problem_id": "P699",
+      "surface_id": "S:triage:699",
+      "kind": "informal_theorem_with_formal_algebra_core",
+      "depends_on_new_openai_theorem": false,
+      "statement": "Any remaining i=3 failure with 4|n and d=n-2j>=4 satisfies d^3>=2n^2+(d-2)(3n-2)>2n^2. All families n=2j+d, j>3, d=4,8,...,32 hold.",
+      "key_lemma": "(n-1)(n-2) divides u(v-u)(v-2u) for j/n=u/v reduced under positional blocks1,2.",
+      "formal_scope": "Integer quotient positivity, parity, strip bounds, gcd gap; three separate seven-diagonal polynomial implications. Kummer and prime-power arithmetic reduction not formalized.",
+      "reviews": [
+        "source-audit/arithmetic-review.md",
+        "density-transport/arithmetic-review.md"
+      ],
+      "receipts": [
+        {
+          "path": "arithmetic/receipt.json",
+          "sha256": "9a3d32ee70f466149eaf83317e85f69b306c6cdab65903512da18e8e9d7fd94a"
+        },
+        {
+          "path": "arithmetic-checks/execution.json",
+          "sha256": "8c8ea84b96cb637fd0fe5692ddb569240de823bf5b1d210bc34f089c480d84ff"
+        },
+        {
+          "path": "density-transport/cubic-strip-execution.json",
+          "sha256": "46be27e063b494c48af7ad217b9bb2012ab3bb39fc727e927a7b962fb342fa02"
+        }
+      ],
+      "remaining": "Full i=3 residual outside this exclusion and all higher i; literature novelty; formal Kummer-to-cubic bridge."
+    },
+    {
+      "id": "finite-joint-density-transport",
+      "problem_id": "P841",
+      "kind": "lean_checked_explicit_hypothesis_theorem",
+      "depends_on_new_openai_theorem": false,
+      "statement": "Sublinear one-sided event leakage and marginal excess imply sublinear discrepancy for any Boolean event on a fixed finite coordinate list.",
+      "formal_scope": "Thirteen audited theorem declarations, natural-number Sublinear formulation, triangular event arrays allowed.",
+      "receipts": [
+        {
+          "path": "density-transport/execution.json",
+          "sha256": "c73398ef0c017be1e69e9d4b3c64f3dc245db22a3fd6661fbcf14e03f55fcf19"
+        }
+      ],
+      "remaining": "Arithmetic application hypotheses and external Dickman joint law remain separate."
+    },
+    {
+      "id": "quantitative-correlation-window-barrier",
+      "problem_id": "P969",
+      "kind": "informal_countermodel_with_finite_exact_illustration",
+      "depends_on_new_openai_theorem": false,
+      "statement": "There exist bounded sequences with any fixed mean-square c in (0,1], all fixed affine correlations O_A(X/log^A X), uniform shift correlations for h<=X, but unbounded energy/H along H=X^theta for every fixed 0<theta<1.",
+      "reviews": [
+        "source-audit/correlation-barrier-review.md"
+      ],
+      "receipts": [
+        {
+          "path": "correlation-barrier/receipt.json",
+          "sha256": "9689c8f6418e13b52b8ceae7383cd181fe76dc7bed2ead41280e0afac6572d3b"
+        }
+      ],
+      "remaining": "Not multiplicative; finite illustration does not certify infinite probabilistic construction; no Mobius counterexample claimed."
+    },
+    {
+      "id": "F003-source-prefix-audit",
+      "problem_id": "P969",
+      "source_family": "F003",
+      "kind": "source_trace_only",
+      "external_proof_build": "NOT_RUN",
+      "statement": "No immediate exported-premise or function-definition mismatch found in inspected chain; bounded lexical prefix: 2,000 OAI modules, 84 pending.",
+      "receipts": [
+        {
+          "path": "source-audit/audit.json",
+          "sha256": "707dd8e015e3c22963dad5df5e27fe87b0072f8b2d27856ffec73f4552dfdaba"
+        },
+        {
+          "path": "source-audit/source-prefix-manifest.json",
+          "sha256": "c511062ecfedc1dcba1dd1e6c285354ae3fde0807eddc36ef05627c588df7ef8"
+        }
+      ],
+      "remaining": "Executable compatibility patches to 23 packages, external module bodies, remaining internal modules, full kernel build and Comparator audit."
+    }
+  ]
+}

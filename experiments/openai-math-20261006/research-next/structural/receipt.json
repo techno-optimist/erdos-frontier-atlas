@@ -1,0 +1,84 @@
+{
+  "bounds": {
+    "i_max": 16,
+    "j_max": "floor(n/2)",
+    "j_min": 1,
+    "n_max": 640,
+    "n_step": 4
+  },
+  "canonical_status_changed": false,
+  "counts": {
+    "crt_residue_checks": 65184,
+    "eligible_quotient_checks": 1652,
+    "explicit_prime_witnesses": 61348,
+    "forbidden_region_pairs": 61348,
+    "localization_checks": 748240,
+    "nontrivial_positional_passes": 3747,
+    "pairs": 360234,
+    "positional_passes": 6451,
+    "retained_blocks": 4271,
+    "rows": 2177
+  },
+  "densities": [
+    {
+      "allowed_classes": 1,
+      "density": "1/12",
+      "i": 3,
+      "period": 12
+    },
+    {
+      "allowed_classes": 1,
+      "density": "1/12",
+      "i": 4,
+      "period": 12
+    },
+    {
+      "allowed_classes": 3,
+      "density": "1/20",
+      "i": 5,
+      "period": 60
+    },
+    {
+      "allowed_classes": 15,
+      "density": "1/28",
+      "i": 7,
+      "period": 420
+    },
+    {
+      "allowed_classes": 135,
+      "density": "9/308",
+      "i": 11,
+      "period": 4620
+    },
+    {
+      "allowed_classes": 1485,
+      "density": "9/364",
+      "i": 13,
+      "period": 60060
+    }
+  ],
+  "evidence": "bounded_exact_checks_of_an_informal_unbounded_proof",
+  "formalized": false,
+  "graph_nodes": [
+    "P699",
+    "S:triage:699"
+  ],
+  "literature_novelty_verified": false,
+  "negative_controls": {
+    "A": 15,
+    "P": 210,
+    "Q": 126,
+    "i": 6,
+    "j": 7,
+    "k": 9,
+    "m": 6,
+    "n": 16,
+    "omitted_defect": "rejected",
+    "omitted_threshold": "rejected"
+  },
+  "schema": "efa-smooth-defect-v1",
+  "source_sha256": {
+    "README.md": "baf97f084614abe9c22b87a234ffac25300d5163a272b2fbf5e03b3aabcc550f",
+    "verify.py": "de6eda716f33e3c44a172d07337e8ab9667acf2f774e638ec61901e924356dcb"
+  }
+}

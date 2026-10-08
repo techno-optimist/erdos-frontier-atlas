@@ -1,0 +1,212 @@
+{
+  "schema": "efa-weighted-positional-bridge-v1",
+  "verified_at_utc": "2026-10-07T05:00:01.793260+00:00",
+  "graph_nodes": [
+    "P699",
+    "S:triage:699"
+  ],
+  "scope": "explicit finite positional blocks to weighted divisor, positive quotient, coefficient-two and coefficient-four cubic bounds, and gcd gap",
+  "not_formalized": [
+    "binomial valuation localization",
+    "prime-power extraction from P699 failure",
+    "construction of the small-prime factor A and its block decomposition",
+    "defect-free boundary cases d=0 and d=2",
+    "full P699"
+  ],
+  "external_openai_proofs_rebuilt": false,
+  "canonical_status_changed": false,
+  "sources": {
+    "research-sprint/density-transport/CubicStrip.lean": "2aeb918e00adf8526ae56020894523ea041a2967253c058c2799c8b27b00a732",
+    "research-next/formal-bridge/FormalBridge.lean": "2f33eba79f926020d7482d2782de45b5621857714ea1e7c7cdc2f4837f043b59",
+    "lead-phase/weighted-formal/WeightedFormal.lean": "a82a1db76c87d48f1b25f5bd61b8294b8b0b44c7ca3e7caec846b6c813aedd46"
+  },
+  "verifier_sha256": "1f2bb5222a578cc50627f09ac5480e8d05ee46ec16d65cc31179591501eeac61",
+  "toolchain_version": "Lean (version 4.33.1, arm64-apple-darwin24.6.0, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "lean_executable_sha256": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+  "path_convention": "cwd and sources relative to bundle; command file arguments relative to cwd; <lean> is the supplied executable",
+  "builds": [
+    {
+      "source": "research-sprint/density-transport/CubicStrip.lean",
+      "cwd": "research-sprint/density-transport",
+      "command": [
+        "<lean>",
+        "-o",
+        "../../lead-phase/weighted-formal/.build/CubicStrip.olean",
+        "CubicStrip.lean"
+      ],
+      "exit_code": 0,
+      "olean_sha256": "5f920df658637b09f788284a4c6093c14f444a2e65e407cd831889c5a2c70cbd"
+    },
+    {
+      "source": "research-next/formal-bridge/FormalBridge.lean",
+      "cwd": "research-next/formal-bridge",
+      "command": [
+        "<lean>",
+        "-o",
+        "../../lead-phase/weighted-formal/.build/FormalBridge.olean",
+        "FormalBridge.lean"
+      ],
+      "exit_code": 0,
+      "olean_sha256": "ec87d497609b8ee927668d27827a1c89edbde2b3bfd4bad2c231c808a84851b0"
+    },
+    {
+      "source": "lead-phase/weighted-formal/WeightedFormal.lean",
+      "cwd": "lead-phase/weighted-formal",
+      "command": [
+        "<lean>",
+        "-o",
+        ".build/WeightedFormal.olean",
+        "WeightedFormal.lean"
+      ],
+      "exit_code": 0,
+      "olean_sha256": "eb36abeb2bc78860ea592f7a480b4c70c48fb9ba854ef5e24e4a242b4f71f223"
+    }
+  ],
+  "axiom_audit": {
+    "restore_weighted": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "obstruction_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "obstruction_positive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "quotient_negative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "quotient_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "even_quotient_strip": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "four_quotient_strip": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "quotient_from_weighted": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "normalized_positive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "strip_from_weighted": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "strip_from_products": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "strip_from_blocks": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "four_strip_from_weighted": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "defect_threshold_control": [
+      "propext"
+    ],
+    "parity_control": []
+  },
+  "negative_controls": [
+    {
+      "source": "negative/OmitDefect.lean",
+      "source_sha256": "fb0c004aa3e9782e282083bf8984e882bb4a359082d7eac5d7f85bc0466c7ec5",
+      "expected_rejection": true,
+      "exit_code": 1
+    },
+    {
+      "source": "negative/OmitThreshold.lean",
+      "source_sha256": "5998f93c5a4d4666669457a15f3f6a321b755d4eeb39b804821a55c92242be2c",
+      "expected_rejection": true,
+      "exit_code": 1
+    },
+    {
+      "source": "negative/OmitParity.lean",
+      "source_sha256": "40500007ae4a18ed990bd60030cd8e1b4b31596b916bcc531a2a9840c88f29c3",
+      "expected_rejection": true,
+      "exit_code": 1
+    }
+  ],
+  "optimized_python_rejected": true,
+  "finite_checks": {
+    "obstruction_grid": {
+      "A": [
+        1,
+        12
+      ],
+      "d": "4A through 4A+30",
+      "n": [
+        -50,
+        100
+      ],
+      "count": 56172
+    },
+    "normalized_rows": {
+      "n": "multiples of 4 from 8 through 400",
+      "j": "1 <= j < n/2",
+      "A": "1 through min(d//4,20)",
+      "weighted_divisor_passes": 1829,
+      "passes_where_P_does_not_divide_Q": 39,
+      "first_pass_where_P_does_not_divide_Q": {
+        "n": 56,
+        "j": 6,
+        "A": 9,
+        "g": 2,
+        "d": 44,
+        "Q": 1650,
+        "P": 2970,
+        "k": 5,
+        "m": -236
+      }
+    },
+    "restoration_grid": {
+      "B_C": "odd divisors from 1 through 25",
+      "passing_product_data": 22968
+    },
+    "exact_controls": {
+      "defect_and_threshold": {
+        "n": 16,
+        "j": 7,
+        "A": 15,
+        "B": 1,
+        "C": 7,
+        "Q": 126,
+        "P": 210,
+        "k": 9,
+        "m": 6
+      },
+      "zero_quotient": {
+        "n": 6,
+        "d": 4,
+        "A": 1,
+        "m": 0
+      }
+    }
+  }
+}

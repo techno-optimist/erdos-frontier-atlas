@@ -1,0 +1,10 @@
+'CubicStrip.obstruction_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubicStrip.obstruction_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubicStrip.quotient_negative' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubicStrip.growing_strip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubicStrip.quotient_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubicStrip.parity_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubicStrip.even_quotient_strip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubicStrip.four_quotient_strip' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubicStrip.gcd_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CubicStrip.zero_quotient_control' does not depend on any axioms

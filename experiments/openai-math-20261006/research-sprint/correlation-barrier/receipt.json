@@ -1,0 +1,142 @@
+{
+  "schema": "efa-finite-correlation-barrier-v1",
+  "problem_id": "P969",
+  "interface": "method:fixed-window-mobius-variance",
+  "claim_scope": "One exact finite sign sequence and its measurements; no infinite-probability or Mobius claim.",
+  "recipe": {
+    "seed_utf8": "efa-correlation-barrier-20261007-v1",
+    "hash": "sha256(seed || uint64_be(chunk)); bits LSB first per byte; 0 -> -1, 1 -> +1",
+    "X": 131072,
+    "planted_start": 65536,
+    "planted_length": 4096,
+    "computed_prefix_length": 393224
+  },
+  "modified_signed_byte_sha256": "7468a06286de730158b1d89b0ea4323d06385d3fcc3d150a63acfe9f480c2bb4",
+  "windows": [
+    {
+      "H": 1,
+      "background_energy_sum": 131072,
+      "modified_energy_sum": 131072,
+      "contained_windows": 4096,
+      "energy_lower_bound_sum": 4096,
+      "normalized_modified_energy": "1",
+      "normalized_lower_bound": "1/32"
+    },
+    {
+      "H": 16,
+      "background_energy_sum": 2066408,
+      "modified_energy_sum": 3054864,
+      "contained_windows": 4081,
+      "energy_lower_bound_sum": 1044736,
+      "normalized_modified_energy": "190929/131072",
+      "normalized_lower_bound": "4081/8192"
+    },
+    {
+      "H": 64,
+      "background_energy_sum": 8215992,
+      "modified_energy_sum": 24718496,
+      "contained_windows": 4033,
+      "energy_lower_bound_sum": 16519168,
+      "normalized_modified_energy": "772453/262144",
+      "normalized_lower_bound": "4033/2048"
+    },
+    {
+      "H": 256,
+      "background_energy_sum": 35227500,
+      "modified_energy_sum": 297498036,
+      "contained_windows": 3841,
+      "energy_lower_bound_sum": 251723776,
+      "normalized_modified_energy": "74374509/8388608",
+      "normalized_lower_bound": "3841/512"
+    },
+    {
+      "H": 1024,
+      "background_energy_sum": 169380500,
+      "modified_energy_sum": 4124090492,
+      "contained_windows": 3073,
+      "energy_lower_bound_sum": 3222274048,
+      "normalized_modified_energy": "1031022623/33554432",
+      "normalized_lower_bound": "3073/128"
+    }
+  ],
+  "shift_correlations": [
+    {
+      "shift": 1,
+      "background_sum": -292,
+      "modified_sum": 3832,
+      "changed_products": 4097
+    },
+    {
+      "shift": 2,
+      "background_sum": 246,
+      "modified_sum": 4426,
+      "changed_products": 4098
+    },
+    {
+      "shift": 3,
+      "background_sum": -778,
+      "modified_sum": 3270,
+      "changed_products": 4099
+    },
+    {
+      "shift": 4,
+      "background_sum": -234,
+      "modified_sum": 3986,
+      "changed_products": 4100
+    },
+    {
+      "shift": 8,
+      "background_sum": 24,
+      "modified_sum": 4084,
+      "changed_products": 4104
+    },
+    {
+      "shift": 16,
+      "background_sum": -60,
+      "modified_sum": 4112,
+      "changed_products": 4112
+    },
+    {
+      "shift": 32,
+      "background_sum": -188,
+      "modified_sum": 3844,
+      "changed_products": 4128
+    }
+  ],
+  "affine_correlations": [
+    {
+      "forms": [
+        1,
+        0,
+        2,
+        1
+      ],
+      "background_sum": 14,
+      "modified_sum": 66
+    },
+    {
+      "forms": [
+        2,
+        1,
+        3,
+        2
+      ],
+      "background_sum": 370,
+      "modified_sum": 228
+    },
+    {
+      "forms": [
+        3,
+        0,
+        1,
+        7
+      ],
+      "background_sum": 474,
+      "modified_sum": 440
+    }
+  ],
+  "controls": {
+    "small_direct_sum_crosscheck": "PASS",
+    "broken_constant_block_rejected": true
+  }
+}

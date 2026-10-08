@@ -1,0 +1,49 @@
+{
+  "schema": "efa-research-results-v1",
+  "canonical_status_changed": false,
+  "literature_novelty_verified": false,
+  "results": [
+    {
+      "id": "rational-position-gaps",
+      "evidence_level": "local_informal",
+      "graph_nodes": [
+        "P699",
+        "S:triage:699"
+      ],
+      "receipts": [
+        {
+          "path": "arithmetic/receipt.json",
+          "sha256": "6ec49016d707df36480035f38d705b52dcaebe5d8ff8d0b705fa7d344127e0f4"
+        }
+      ]
+    },
+    {
+      "id": "higher-i-smooth-defect",
+      "evidence_level": "local_informal",
+      "graph_nodes": [
+        "P699",
+        "S:triage:699"
+      ],
+      "receipts": [
+        {
+          "path": "structural/receipt.json",
+          "sha256": "cb542a7b092212f87c415d3881dc8a233c06228b613a407113d92cfc7156ca68"
+        }
+      ]
+    },
+    {
+      "id": "positional-block-formal-bridge",
+      "evidence_level": "formal_component",
+      "graph_nodes": [
+        "P699",
+        "S:triage:699"
+      ],
+      "receipts": [
+        {
+          "path": "formal-bridge/execution.json",
+          "sha256": "113f2b037eb7f3697ecfdf00705e6c1b2e506db59dc60bbb4dcf5954207d5f8c"
+        }
+      ]
+    }
+  ]
+}
