@@ -1,0 +1,176 @@
+{
+  "schema": "efa-external-source-review-v1",
+  "release_date": "2026-10-06",
+  "retrieved_at_utc": "2026-10-07T02:50:58.103943+00:00",
+  "openai_commit_time": "2026-10-06T21:58:50Z",
+  "erdos_commit_time": "2026-10-06T15:15:33Z",
+  "announcement": "https://openai.com/index/sharing-ai-progress-in-mathematics/",
+  "verification_scope": "Primary announcement, catalogue and selected Lean scope/configuration documents inspected; bibliographic metadata extracted. No manuscript proof audit, Lean build, Comparator execution or CI verification performed.",
+  "license": "openai/math: Apache-2.0; attribution OpenAI; source LICENSE linked and hashed below. No third-party manuscripts copied.",
+  "files": [
+    {
+      "repository": "openai/math",
+      "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "path": "CONTENTS.md",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/CONTENTS.md",
+      "sha256": "c492802b53fb4c4161e45fc678bb67bd526add72ca2635493a367ff7fb860bf9",
+      "bytes": 640371
+    },
+    {
+      "repository": "openai/math",
+      "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "path": "LICENSE",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    },
+    {
+      "repository": "openai/math",
+      "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "path": "README.md",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/README.md",
+      "sha256": "af984f110f6583ba57ec1af907dc989bfce86713161e9c8b0543b052a138ff64",
+      "bytes": 4131
+    },
+    {
+      "repository": "openai/math",
+      "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "path": "lean/ComparatorChallenges/QuasiRiemannHypothesis.json",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/ComparatorChallenges/QuasiRiemannHypothesis.json",
+      "sha256": "46ebb7edc11f69536210f502b4bcbd36bbaf3f0872c16748b6c8ce43991bf320",
+      "bytes": 353
+    },
+    {
+      "repository": "openai/math",
+      "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "path": "lean/ComparatorChallenges/QuasiRiemannHypothesis.lean",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/ComparatorChallenges/QuasiRiemannHypothesis.lean",
+      "sha256": "065f8c9a01d28db78c8b1bfc5083b535082a2d2aac2230d563f98b8caa812cc5",
+      "bytes": 169
+    },
+    {
+      "repository": "openai/math",
+      "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "path": "lean/ComparatorChallenges/README.md",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/ComparatorChallenges/README.md",
+      "sha256": "051459a45da1bedd1c0a6585a5b5e5425c7c40a369f2922d7b519e2fd02333b0",
+      "bytes": 287
+    },
+    {
+      "repository": "openai/math",
+      "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "path": "lean/README.md",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/README.md",
+      "sha256": "292ff9d539f494158dfbf68d989ba85a82782a4343b2fe43088f8fa62525bf1b",
+      "bytes": 650
+    },
+    {
+      "repository": "openai/math",
+      "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "path": "lean/docs/003.md",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/003.md",
+      "sha256": "41e52ed718260e6feb1db218f8e97287e703cb63c6f16e6c36f5563e6e2395ce",
+      "bytes": 1911
+    },
+    {
+      "repository": "openai/math",
+      "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "path": "lean/docs/007.md",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/007.md",
+      "sha256": "0ad2938aa412b0521890c05327e30567c815e781a9381b8c5ede9bf0553d3397",
+      "bytes": 1331
+    },
+    {
+      "repository": "openai/math",
+      "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "path": "lean/docs/012.md",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/012.md",
+      "sha256": "8d35d76e45f9ce263f96f9b8f5560330ca73f3eba93a08d7c6060dfed1758bcb",
+      "bytes": 933
+    },
+    {
+      "repository": "openai/math",
+      "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "path": "lean/docs/020.md",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/020.md",
+      "sha256": "c8a12f6f4c351e1c5b9ab413acc7bb20afdbf3ba5ceaa354e2edc47dc6ac3bc7",
+      "bytes": 1048
+    },
+    {
+      "repository": "openai/math",
+      "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "path": "lean/docs/021.md",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/021.md",
+      "sha256": "506a0d11753aa56926eb456406fcf975c17c0e604c3248c2500485825860f7a6",
+      "bytes": 1051
+    },
+    {
+      "repository": "openai/math",
+      "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "path": "lean/docs/025.md",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/025.md",
+      "sha256": "4c394b2fa0e7a176e2f68dfc2c9fccf0f16327f0959b2f4a7aa25117aca0e550",
+      "bytes": 1443
+    },
+    {
+      "repository": "openai/math",
+      "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "path": "lean/docs/026.md",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/026.md",
+      "sha256": "f75ae21800250eb70265e6e2e77a59f6d54513b9494b9ad7488de2d3574b3959",
+      "bytes": 834
+    },
+    {
+      "repository": "openai/math",
+      "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "path": "lean/docs/159.md",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/159.md",
+      "sha256": "747337764c8eddc074ba0400f11389a4678a38c63c4c608ccec72c347f1f2ab5",
+      "bytes": 1035
+    },
+    {
+      "repository": "openai/math",
+      "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "path": "lean/docs/170.md",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/170.md",
+      "sha256": "ff3d74c0d4a490d2892bcf42530e7c0929b2c0f439b50d71bf6296f3505162c9",
+      "bytes": 1652
+    },
+    {
+      "repository": "openai/math",
+      "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "path": "lean/docs/189.md",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/189.md",
+      "sha256": "89e8630c852f0408b0e0ad7be597e284d9a8936b1f4d3b398082fcfc3d9d219d",
+      "bytes": 833
+    },
+    {
+      "repository": "openai/math",
+      "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "path": "lean/formalization.yaml",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/formalization.yaml",
+      "sha256": "2dcbd0d6e6a22475f53d49bfdfcac9b6d2b470653c332a9f56522f5be166edb9",
+      "bytes": 73925
+    },
+    {
+      "repository": "openai/math",
+      "commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+      "path": "overview.tex",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/overview.tex",
+      "sha256": "98533a7bc976f44970153f036320932655d07488382e858c25bb6c9e1e029789",
+      "bytes": 322922
+    },
+    {
+      "repository": "teorth/erdosproblems",
+      "commit": "3ba988f70d72888b38972ee9bb2a466ac5319cb1",
+      "path": "data/problems.yaml",
+      "url": "https://github.com/teorth/erdosproblems/blob/3ba988f70d72888b38972ee9bb2a466ac5319cb1/data/problems.yaml",
+      "sha256": "cd3f949a23c6597078c4207987b30e817effaea43501406e49daf0c1c923dfeb",
+      "bytes": 416609
+    }
+  ],
+  "access_limits": [
+    "erdosproblems.com/3, /687 and /969 returned HTTP 403 in web retrieval; live banners and proof-claim registers not verified.",
+    "Recursive GitHub tree response was truncated and is not used as a completeness witness. Catalogue counts are extracted from pinned CONTENTS.md."
+  ]
+}

@@ -1,0 +1,214 @@
+{
+  "source_pin": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+  "verdict": "NO_IMMEDIATE_INTERFACE_PREMISE_OR_FUNCTION_MISMATCH_FOUND_SOURCE_ONLY",
+  "independent_review": "model_review_not_human_or_formal_verification",
+  "formal_build_performed": false,
+  "comparator_run_performed": false,
+  "axiom_print_performed": false,
+  "selected_theorem": "OAI.riemannZeta_ne_zero_of_seven_eighths_lt_re",
+  "permitted_axioms_configured": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "nanoda_configured": false,
+  "toolchain": "leanprover/lean4:v4.34.1",
+  "available_tools": {
+    "lean": null,
+    "lake": null,
+    "elan": null,
+    "comparator": null
+  },
+  "package_count": 42,
+  "mathlib": {
+    "url": "https://github.com/leanprover-community/mathlib4.git",
+    "type": "git",
+    "subDir": null,
+    "scope": "",
+    "rev": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+    "name": "mathlib",
+    "manifestFile": "lake-manifest.json",
+    "inputRev": "d13f23b723b8a846827a245b89c10fc7d3f11612",
+    "inherited": false,
+    "configFile": "lakefile.lean"
+  },
+  "bounded_scan": {
+    "files": 2000,
+    "bytes": 20015600,
+    "remaining_frontier": 84,
+    "complete": false,
+    "fetch_errors": 0,
+    "lexical_flags": 0,
+    "scope": "OAI module prefix only; excludes executable lakefile and external packages",
+    "manifest_sha256": "c511062ecfedc1dcba1dd1e6c285354ae3fde0807eddc36ef05627c588df7ef8"
+  },
+  "critical_build_observation": {
+    "file": "lean/lakefile.lean",
+    "pre_resolution_patch_packages": 11,
+    "post_update_additional_patch_packages": 12,
+    "executed": false,
+    "patch_contents_audited": false
+  },
+  "selected_source_receipts": [
+    {
+      "path": "lean/OAI/NumberTheory/DirichletL/Nonvanishing.lean",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/DirichletL/Nonvanishing.lean",
+      "bytes": 1247,
+      "sha256": "d98c4a7e074469b429890e1c21b8cc76c410026525a776895293cdc0f9e6ae89"
+    },
+    {
+      "path": "lean/OAI/NumberTheory/DirichletL/Foundation.lean",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/DirichletL/Foundation.lean",
+      "bytes": 18060,
+      "sha256": "ebfe6353a647f9e09bce1891343398e49094bc60f72b9b525f1e0fe97ee9e59d"
+    },
+    {
+      "path": "lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyUnconditional.lean",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyUnconditional.lean",
+      "bytes": 1607,
+      "sha256": "0f52159a2929e7b20646f8394589d25a1a637c2f78746ad9d1447871577af615"
+    },
+    {
+      "path": "lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyCertifiedBands.lean",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyCertifiedBands.lean",
+      "bytes": 8626,
+      "sha256": "d41f3d2a7fc675a1e72e02ff0be668a774120dc97ff007f04593d4a28c7e0675"
+    },
+    {
+      "path": "lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyChosenData.lean",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyChosenData.lean",
+      "bytes": 4514,
+      "sha256": "3bba00cc2d9fd6a48badfac7e69be7bb2785f887b3b0c689b6c3660b18ce9450"
+    },
+    {
+      "path": "lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyData.lean",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/DirichletL/Detector/FinalAssemblyData.lean",
+      "bytes": 3104,
+      "sha256": "40177414737797476aa62242da6bbe91bd42c505887517be6d1ab19a6cef1628"
+    },
+    {
+      "path": "lean/OAI/NumberTheory/DirichletL/Energy/CertifiedExistence.lean",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/DirichletL/Energy/CertifiedExistence.lean",
+      "bytes": 2698,
+      "sha256": "2d48b75fdd14ba8eabb428f79f98e0a6e532c28083075bacf16e1d57f020d7a9"
+    },
+    {
+      "path": "lean/OAI/NumberTheory/DirichletL/Energy/CappedAnalyticSuccessor.lean",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/DirichletL/Energy/CappedAnalyticSuccessor.lean",
+      "bytes": 9991,
+      "sha256": "d31d07bfa0645d729342c381158bceb84c48f37117f36ee2b47417cab3f62184"
+    },
+    {
+      "path": "lean/OAI/NumberTheory/DirichletL/Energy/CappedLowStage.lean",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/DirichletL/Energy/CappedLowStage.lean",
+      "bytes": 5927,
+      "sha256": "1a24267eff796151262544c4958bc243d290a782b2af0363c5d22b017e58011b"
+    },
+    {
+      "path": "lean/OAI/NumberTheory/DirichletL/Energy/NaturalHighStage.lean",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/DirichletL/Energy/NaturalHighStage.lean",
+      "bytes": 5830,
+      "sha256": "b166e54e362b6d22b507e488ed174781551b98ef13083e490090b3e87fe70732"
+    },
+    {
+      "path": "lean/OAI/NumberTheory/DirichletL/Energy/NaturalZeroStage.lean",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/DirichletL/Energy/NaturalZeroStage.lean",
+      "bytes": 8017,
+      "sha256": "f32ebf15c8e9faa8133cde1cdc7b7d849584cbe0847ee7127ef57a3fda1736c2"
+    },
+    {
+      "path": "lean/OAI/NumberTheory/DirichletL/Moments/DetectorPlainSlotProfile.lean",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/DirichletL/Moments/DetectorPlainSlotProfile.lean",
+      "bytes": 5369,
+      "sha256": "8dec7619e802c34454f7f0ffc14a94429712cbb0f15fb91baad2e6e0229f369d"
+    },
+    {
+      "path": "lean/OAI/NumberTheory/DirichletL/Hecke/CommonProbe.lean",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/DirichletL/Hecke/CommonProbe.lean",
+      "bytes": 3024,
+      "sha256": "db523b6b84d2464b34837d864e6d2811903e6085c2862eda85e1c8e2c7b839d4"
+    },
+    {
+      "path": "lean/OAI/NumberTheory/DirichletL/Hecke/ZeroSupremum.lean",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/DirichletL/Hecke/ZeroSupremum.lean",
+      "bytes": 2889,
+      "sha256": "3b3ca749fb669e5a278a5d956a61eec73bab919e0369f7d46d2abae2e0f0011e"
+    },
+    {
+      "path": "lean/OAI/NumberTheory/DirichletL/Hecke/Dirichlet.lean",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/DirichletL/Hecke/Dirichlet.lean",
+      "bytes": 8502,
+      "sha256": "8b33d23c18ec5b85a13043aa775841389903247645fc00536cc2b3286332ff7d"
+    },
+    {
+      "path": "lean/OAI/NumberTheory/DirichletL/Hecke/IdealBridge.lean",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/DirichletL/Hecke/IdealBridge.lean",
+      "bytes": 5193,
+      "sha256": "6c1fc33b7372108323bf3af3d4ab6f6e454ea9896b89e78964463a8e35df735f"
+    },
+    {
+      "path": "lean/OAI/NumberTheory/DirichletL/Hecke/Family.lean",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/DirichletL/Hecke/Family.lean",
+      "bytes": 3888,
+      "sha256": "9871d175749b34ec40cf66ccc14b4faa0a9ef08831cb3fa901c944e57c7b9ec6"
+    },
+    {
+      "path": "lean/OAI/NumberTheory/DirichletL/ParametersHighDataFine.lean",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/OAI/NumberTheory/DirichletL/ParametersHighDataFine.lean",
+      "bytes": 4426,
+      "sha256": "791fdccc40304508076fa534126f6bd52321411141e94faeff194081339adbd9"
+    },
+    {
+      "path": "lean/lakefile.lean",
+      "bytes": 15457,
+      "sha256": "4cca977ebece444b6c999d99755c1ad3c93119bafc127ea761f7f703c7279e74",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/lakefile.lean"
+    },
+    {
+      "path": "lean/lean-toolchain",
+      "bytes": 25,
+      "sha256": "d5edba4e4b8faad9c1baeadb265716d20d03be4d1a2647dc5e35b0c0325bea7b",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/lean-toolchain"
+    },
+    {
+      "path": "lean/lake-manifest.json",
+      "bytes": 14622,
+      "sha256": "cf6105a25d9dca2f166b241d9191bd12c7e13305890dc9c4d0952351cccc0794",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/lake-manifest.json"
+    },
+    {
+      "path": "lean/ComparatorChallenges/QuasiRiemannHypothesis.json",
+      "bytes": 353,
+      "sha256": "46ebb7edc11f69536210f502b4bcbd36bbaf3f0872c16748b6c8ce43991bf320",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/ComparatorChallenges/QuasiRiemannHypothesis.json"
+    },
+    {
+      "path": "lean/ComparatorChallenges/QuasiRiemannHypothesis.lean",
+      "bytes": 169,
+      "sha256": "065f8c9a01d28db78c8b1bfc5083b535082a2d2aac2230d563f98b8caa812cc5",
+      "url": "https://raw.githubusercontent.com/openai/math/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/ComparatorChallenges/QuasiRiemannHypothesis.lean"
+    }
+  ],
+  "limitations": [
+    "Incomplete transitive source closure",
+    "No external dependency source review",
+    "No compatibility patch content review",
+    "No elaborated proof or axiom check",
+    "Only selected interface and mathematical definition review; not full analytic argument audit"
+  ],
+  "cross_reviews": [
+    {
+      "target": "../correlation-barrier/README.md",
+      "verdict": "PASS_INFORMAL_EXISTENCE_PROOF",
+      "details": "correlation-barrier-review.md",
+      "reviewed_target_sha256": "8dd456bc8971e63a5e08e630a11507f60eee0edbd27f6446cb12a22ea5cf0486"
+    },
+    {
+      "target": "../arithmetic/README.md",
+      "verdict": "PASS_INFORMAL_CUBIC_GROWING_STRIP_AND_PARITY_REFINEMENT",
+      "details": "arithmetic-review.md",
+      "reviewed_target_sha256": "8cdc96d707e77accdccd3d2f23012af9469189b875d03415a7a782b4f63bb383",
+      "additional_deduction": "m is even, so d^3 >= 2n^2+(d-2)(3n-2); when 4 divides d, m is divisible by4 and d>4g^3>=32, adding the complete d32 diagonal."
+    }
+  ]
+}

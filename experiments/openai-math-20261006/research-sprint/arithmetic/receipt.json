@@ -1,0 +1,102 @@
+{
+  "bounds": {
+    "binomial_n_max": 400,
+    "diagonal_j_max": 500,
+    "diagonal_j_min": 4,
+    "positional_n_max": 1500
+  },
+  "counts": {
+    "binomial_pairs": 39988,
+    "cubic_divisibility_passes": 377,
+    "diagonal_binomial_pairs": 3976,
+    "individual_localizations": 13161,
+    "positional_pairs": 140625,
+    "positional_passes": 375
+  },
+  "diagonal_coefficients": [
+    {
+      "coefficients": [
+        28,
+        576,
+        3008
+      ],
+      "d": 4
+    },
+    {
+      "coefficients": [
+        24,
+        672,
+        5184
+      ],
+      "d": 8
+    },
+    {
+      "coefficients": [
+        20,
+        704,
+        7872
+      ],
+      "d": 12
+    },
+    {
+      "coefficients": [
+        16,
+        672,
+        11072
+      ],
+      "d": 16
+    },
+    {
+      "coefficients": [
+        12,
+        576,
+        14784
+      ],
+      "d": 20
+    },
+    {
+      "coefficients": [
+        8,
+        416,
+        19008
+      ],
+      "d": 24
+    },
+    {
+      "coefficients": [
+        4,
+        192,
+        23744
+      ],
+      "d": 28
+    }
+  ],
+  "distance_32_boundary": {
+    "Q": 120080,
+    "Q_remainder": 18,
+    "d": 32,
+    "g": 2,
+    "j": 158,
+    "n": 348,
+    "n_product": 120062,
+    "size_margin": -576
+  },
+  "negative_control": "False extra factor 3 rejected at (16,1); cubic sufficiency rejected at (496,171).",
+  "nontrivial_cubic_passes": [
+    [
+      496,
+      171
+    ],
+    [
+      1464,
+      561
+    ]
+  ],
+  "positional_passes": "Exactly (n,1) for n=4,8,...,1500 (t=1,2 only).",
+  "scope": "bounded exact checks; unbounded proof in README.md",
+  "source_sha256": {
+    "README.md": "5a4b3b3823baa35bc06c8b57637d1da757d9a4c3f24b4087cb34481fe68636fd",
+    "verify.py": "45c85a821e1ffdc3eb8e450107a7ac94c795a92bbe2d322601dca8024fbddedc"
+  },
+  "status": "passed"
+}

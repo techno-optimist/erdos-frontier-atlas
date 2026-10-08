@@ -1,0 +1,9 @@
+negative/OmitMarginal.lean
+negative/OmitMarginal.lean:7:2: error: Tactic `decide` proved that the proposition
+  (discrepancy [0] (fun x => false) fun x => true) ≤ 2 * leakage [0] (fun x => false) fun x => true
+is false
+
+negative/OmitLeakage.lean
+negative/OmitLeakage.lean:6:2: error: Tactic `decide` proved that the proposition
+  (discrepancy [0] (fun x => true) fun x => false) ≤ 0
+is false

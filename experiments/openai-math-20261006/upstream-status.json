@@ -1,0 +1,98 @@
+{
+  "schema": "efa-bounded-upstream-status-review-v1",
+  "scope": "Selected lane metadata only; not a full upstream refresh or a claim of catalog acceptance. The source commit predates the OpenAI release commit.",
+  "commit": "3ba988f70d72888b38972ee9bb2a466ac5319cb1",
+  "source_sha256": "cd3f949a23c6597078c4207987b30e817effaea43501406e49daf0c1c923dfeb",
+  "entries": [
+    {
+      "erdos_id": 3,
+      "atlas_status": "open",
+      "atlas_upstream_state_raw": "open",
+      "checked_upstream_informal_state": "open",
+      "checked_upstream_state_raw": "open",
+      "live_page_status": "UNVERIFIED_HTTP_403",
+      "status_changed_by_this_update": false
+    },
+    {
+      "erdos_id": 139,
+      "atlas_status": "solved-upstream",
+      "atlas_upstream_state_raw": "proved (Lean)",
+      "checked_upstream_informal_state": "proved",
+      "checked_upstream_state_raw": "proved (Lean)",
+      "live_page_status": "NOT_CHECKED",
+      "status_changed_by_this_update": false
+    },
+    {
+      "erdos_id": 142,
+      "atlas_status": "wall",
+      "atlas_upstream_state_raw": "open",
+      "checked_upstream_informal_state": "open",
+      "checked_upstream_state_raw": "open",
+      "live_page_status": "NOT_CHECKED",
+      "status_changed_by_this_update": false
+    },
+    {
+      "erdos_id": 327,
+      "atlas_status": "open",
+      "atlas_upstream_state_raw": "open",
+      "checked_upstream_informal_state": "open",
+      "checked_upstream_state_raw": "open",
+      "live_page_status": "NOT_CHECKED",
+      "status_changed_by_this_update": false
+    },
+    {
+      "erdos_id": 687,
+      "atlas_status": "wall",
+      "atlas_upstream_state_raw": "open",
+      "checked_upstream_informal_state": "open",
+      "checked_upstream_state_raw": "open",
+      "live_page_status": "UNVERIFIED_HTTP_403",
+      "status_changed_by_this_update": false
+    },
+    {
+      "erdos_id": 699,
+      "atlas_status": "open",
+      "atlas_upstream_state_raw": "falsifiable",
+      "checked_upstream_informal_state": "falsifiable",
+      "checked_upstream_state_raw": "falsifiable",
+      "live_page_status": "NOT_CHECKED",
+      "status_changed_by_this_update": false
+    },
+    {
+      "erdos_id": 854,
+      "atlas_status": "open",
+      "atlas_upstream_state_raw": "open",
+      "checked_upstream_informal_state": "open",
+      "checked_upstream_state_raw": "open",
+      "live_page_status": "NOT_CHECKED",
+      "status_changed_by_this_update": false
+    },
+    {
+      "erdos_id": 962,
+      "atlas_status": "open",
+      "atlas_upstream_state_raw": "open",
+      "checked_upstream_informal_state": "open",
+      "checked_upstream_state_raw": "open",
+      "live_page_status": "NOT_CHECKED",
+      "status_changed_by_this_update": false
+    },
+    {
+      "erdos_id": 969,
+      "atlas_status": "open",
+      "atlas_upstream_state_raw": "open",
+      "checked_upstream_informal_state": "open",
+      "checked_upstream_state_raw": "open",
+      "live_page_status": "UNVERIFIED_HTTP_403",
+      "status_changed_by_this_update": false
+    },
+    {
+      "erdos_id": 993,
+      "atlas_status": "open",
+      "atlas_upstream_state_raw": "falsifiable",
+      "checked_upstream_informal_state": "falsifiable",
+      "checked_upstream_state_raw": "falsifiable",
+      "live_page_status": "NOT_CHECKED",
+      "status_changed_by_this_update": false
+    }
+  ]
+}

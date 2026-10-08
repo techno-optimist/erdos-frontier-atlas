@@ -1,0 +1,352 @@
+{
+  "schema": "openai-math-independent-analytic-audit-v1",
+  "source_pin": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+  "review_type": "independent_model_review",
+  "external_proofs_verified": false,
+  "canonical_status_changes": false,
+  "verdicts": [
+    {
+      "deduction": "F003_squarefree_global_L2",
+      "verdict": "PASS_CONDITIONAL",
+      "qualification": "Every positive epsilon; original-error contour identity checked; not endpoint or pointwise."
+    },
+    {
+      "deduction": "F003_variance_overlap",
+      "verdict": "PASS_CONDITIONAL",
+      "qualification": "Strict theta>23/24; actual variance hypothesis remains missing."
+    },
+    {
+      "deduction": "F007_Mobius_fixed_shift",
+      "verdict": "PASS_CONDITIONAL",
+      "qualification": "Order X to infinity then truncation z to infinity; no quantitative Mobius rate."
+    },
+    {
+      "deduction": "F021_primorial_and_missing_gap",
+      "verdict": "PASS_CONDITIONAL",
+      "qualification": "Asymptotic constants unspecified; no finite cells computed."
+    }
+  ],
+  "edges": [
+    {
+      "source_family": "F003",
+      "target_id": "P969",
+      "relation": "conditional_derivation",
+      "scope": "Global squarefree energy V(X)<<X^(15/8+epsilon), all positive epsilon.",
+      "missing_hypotheses": [
+        "External F003 proof acceptance; no claim of pointwise quarter-power or RH."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/build/paper.tex"
+      ]
+    },
+    {
+      "source_family": "F003",
+      "target_id": "P969",
+      "relation": "conditional_composition",
+      "scope": "Together with actual V_theta for theta=24/25, zero exclusion Re(s)>14/25.",
+      "missing_hypotheses": [
+        "Actual uniform squarefree increment variance through H<=X^(24/25), for every nu>0.",
+        "External F003 proof acceptance."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/build/paper.tex"
+      ]
+    },
+    {
+      "source_family": "F007",
+      "target_id": "P969",
+      "relation": "conditional_derivation",
+      "scope": "Fixed-shift Mobius cancellation and every fixed finite weighted filter covariance c*sum|w|^2.",
+      "missing_hypotheses": [
+        "External F007 proof acceptance.",
+        "Growing shifts, square frequencies, zeta weights and power saving remain missing for residual."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/introduction.tex"
+      ]
+    },
+    {
+      "source_family": "F021",
+      "target_id": "P687",
+      "relation": "conditional_derivation",
+      "scope": "j(P(z))<<z^2/((log z)^2(log log z)^2).",
+      "missing_hypotheses": [
+        "External F021 proof acceptance; no explicit constant or exact finite cell."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/build/sections/introduction.tex"
+      ]
+    },
+    {
+      "source_family": "F021",
+      "target_id": "P854",
+      "relation": "conditional_derivation",
+      "scope": "Least missing positive even coprime gap a(k)<=h(k)+2.",
+      "missing_hypotheses": [
+        "External F021 proof acceptance; no exact gap-spectrum cell."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/build/sections/introduction.tex"
+      ]
+    },
+    {
+      "source_family": "F076",
+      "target_id": "P1150",
+      "relation": "external_statement_match",
+      "scope": "Negative answer after converting source length N to atlas degree n=N-1.",
+      "missing_hypotheses": [
+        "Proof/solution-module audit and local Comparator rebuild not performed."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/076.md",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/ComparatorChallenges/AsymptoticallyMinimalLittlewood.lean"
+      ]
+    },
+    {
+      "source_family": "F076",
+      "target_id": "lane:LP-SDP-autocorrelation",
+      "relation": "conditional_derivation",
+      "scope": "Unbounded binary merit factor by integral|P|^4=N^2+2sum C_h^2.",
+      "missing_hypotheses": [
+        "External F076 proof acceptance; no effective threshold, signing algorithm, or finite witness."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/076.md"
+      ]
+    },
+    {
+      "source_family": "F076",
+      "target_id": "P524",
+      "relation": "blocked_transfer",
+      "scope": "Existence of flat real signings does not control random-polynomial maxima.",
+      "missing_hypotheses": [
+        "Probability/distributional theorem for uniformly random signs."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/076.md"
+      ]
+    },
+    {
+      "source_family": "F003",
+      "target_id": "method:r-free-phase-variance",
+      "relation": "conditional_derivation",
+      "scope": "Global r-free counting energy exponent 1+7/(4r)+epsilon for fixed r>=2.",
+      "missing_hypotheses": [
+        "External F003 proof acceptance; actual short-interval transfer still missing."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/build/paper.tex"
+      ]
+    },
+    {
+      "source_family": "F003",
+      "target_id": "method:CRT-actual-interval-transfer",
+      "relation": "conditional_derivation",
+      "scope": "Fixed coprime residue-class squarefree global L2 exponent15/8+epsilon, constant depending on modulus.",
+      "missing_hypotheses": [
+        "External F003 proof acceptance; growing-modulus estimates and actual short-interval variance missing."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/build/paper.tex"
+      ]
+    },
+    {
+      "source_family": "F007",
+      "target_id": "F076",
+      "relation": "blocked_transfer",
+      "scope": "Fixed-lag Liouville cancellation does not bound the full growing-lag squared-autocorrelation sum or construct Littlewood-flat signings.",
+      "missing_hypotheses": [
+        "Uniform lag range and summable squared correlation errors; arithmetic identification of the constructed signs."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/introduction.tex",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/076.md"
+      ]
+    },
+    {
+      "source_family": "F191",
+      "target_id": "P507",
+      "relation": "scoped_bound_improvement",
+      "scope": "Fixed positive power improvement in Heilbronn minimum-triangle lower bound. Comparator: unbounded subsequence. Manuscript: all sufficiently large cardinalities.",
+      "missing_hypotheses": [
+        "External proof acceptance. Exact optimal order and practical finite configurations not supplied."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/191.md",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/ComparatorChallenges/HeilbronnTriangle.lean",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-power-improvement-in-the-Heilbronn-triangle-lower-bound-September-25-2026/build/sections/01-introduction.tex"
+      ]
+    },
+    {
+      "source_family": "F148",
+      "target_id": "method:selfsimilar-product-distance-set",
+      "relation": "conditional_composition",
+      "scope": "Self-similar K with the source no-exact-overlap assumptions and similarity dimension>1/2 has K x K of dimension>1; F073 then gives a positive-measure distance set.",
+      "missing_hypotheses": [
+        "Both external proof inputs. Frostman product-measure argument. No critical endpoint or quantitative finite-scale bound."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/148.md",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/073.md"
+      ],
+      "additional_inputs": [
+        "F073",
+        "Frostman product measure"
+      ]
+    },
+    {
+      "source_family": "F097",
+      "target_id": "P178",
+      "relation": "conditional_derivation",
+      "scope": "For each fixed d sets, one infinite signing with prefix discrepancies<=Cd.",
+      "missing_hypotheses": [
+        "External F097 proof acceptance. Does not provide a single signing simultaneously satisfying the bounds for all d."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/097.md"
+      ]
+    },
+    {
+      "source_family": "F090",
+      "target_id": "lane:LP-SDP-dual-certificates",
+      "relation": "method_candidate",
+      "scope": "Fourier-positive radial minorants and sharp circle-packing auxiliary function.",
+      "missing_hypotheses": [
+        "Objective-specific duality and finite-boundary treatment. Auditable global function inequalities."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/090.md"
+      ]
+    },
+    {
+      "source_family": "F089",
+      "target_id": "lane:LP-SDP-dual-certificates",
+      "relation": "method_candidate",
+      "scope": "L1 embedding distances decompose into cut semimetrics for planar and bounded-treewidth shortest-path metrics.",
+      "missing_hypotheses": [
+        "Explicit cut decomposition and constants. Graph-class verification. Objective-preserving reduction."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/089.md"
+      ]
+    },
+    {
+      "source_family": "F074",
+      "target_id": "P1097",
+      "relation": "blocked_transfer",
+      "scope": "A Kakeya conclusion cannot reverse the historical sums-differences implication to determine the sums-differences exponent.",
+      "missing_hypotheses": [
+        "A new quantitative reverse implication for the exact finite graph-sumset object."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Kakeya-maximal-conjecture-in-three-dimensions-September-23-2026/build/sections/introduction.tex"
+      ]
+    },
+    {
+      "source_family": "F075",
+      "target_id": "P996",
+      "relation": "blocked_transfer",
+      "scope": "Ordinary Fourier partial-sum convergence is a different operator from the required lacunary dilated ergodic averages.",
+      "missing_hypotheses": [
+        "An operator-specific maximal estimate/transfer for dilates; Fourier convergence alone is insufficient."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Almost-everywhere-Fourier-convergence-in-L-log-L-September-23-2026/build/sections/01-introduction.tex"
+      ]
+    },
+    {
+      "source_family": "F148",
+      "target_id": "F153",
+      "relation": "blocked_transfer",
+      "scope": "A Hausdorff dimension formula does not decide Bernoulli-convolution singularity or absolute continuity.",
+      "missing_hypotheses": [
+        "Measure-type criterion beyond dimension; F153 criterion is infinite approximation, not a finite algorithm."
+      ],
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/148.md",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Arithmetic-classification-and-non-Pisot-singularity-for-Bernoulli-convolutions-October-3-2026/build/main.tex"
+      ]
+    }
+  ],
+  "inspected_sources": [
+    "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-Quasi-Riemann-Hypothesis-September-30-2026/build/paper.tex",
+    "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Ordinary-two-point-correlations-of-multiplicative-functions-September-24-2026/build/introduction.tex",
+    "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/build/sections/introduction.tex",
+    "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/076.md",
+    "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/ComparatorChallenges/AsymptoticallyMinimalLittlewood.lean",
+    "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/ComparatorChallenges/LittlewoodFiniteFlatness.lean"
+  ],
+  "local_interfaces": [
+    "experiments/astra-rh-969-20260912/ANALYTIC_TARGET.md",
+    "experiments/astra-rh-crt-20260912/MELLIN_TRANSFER.md",
+    "experiments/astra-rh-crt-20260912/audits/inputs/RESULT.md",
+    "atlas/stubs.json",
+    "atlas/lanes.md"
+  ],
+  "second_wave_scan": {
+    "families": [
+      "073",
+      "074",
+      "075",
+      "088",
+      "089",
+      "090",
+      "092",
+      "097",
+      "100",
+      "148",
+      "153",
+      "191"
+    ],
+    "new_problem_contact": "P507",
+    "no_direct_match_established": [
+      "088",
+      "092",
+      "100",
+      "153"
+    ],
+    "scope_only_no_proof_audit": true
+  },
+  "cross_reviews": [
+    {
+      "deduction": "F012_BPZ24_consecutive_square_product_waiting_times",
+      "verdict": "PASS_CONDITIONAL_WITH_MINOR_CLARIFICATION",
+      "qualification": "Density-zero exception and marginal-to-joint transfer are sound. Explicitly squeeze F012 second threshold n^b against (n+1)^b using b+eta<1, then continuity as eta decreases to zero.",
+      "source_checks": [
+        "BPZ arXiv:2211.12467 Theorem1.1 and Lemmas3.4-3.5",
+        "Pinned F012 introduction thm:main",
+        "atlas/stubs.json P841"
+      ],
+      "external_proofs_audited": false
+    },
+    {
+      "deduction": "F024_P417_liminf_separation",
+      "verdict": "PASS_CONDITIONAL",
+      "qualification": "Theorems2.1-2.2 supply uniform positive phase coefficient and N1 asymp V; Vprime counts exactly least-preimage<=x. No convergence of the ratio is implied.",
+      "source_checks": [
+        "/tmp/openai-number-swarm/024-0.txt Theorems2.1-2.2"
+      ],
+      "external_proofs_audited": false
+    },
+    {
+      "deduction": "P57_F159_odd_cycle_length_APs",
+      "verdict": "PASS_CONDITIONAL",
+      "qualification": "P57 supplies exact divergent reciprocal-sum hypothesis; even common difference for k>=2. No extra cycle incidence structure.",
+      "source_checks": [
+        "atlas/stubs.json P57",
+        "Pinned F159 introduction ap:reciprocal"
+      ],
+      "external_proofs_audited": false
+    },
+    {
+      "deduction": "P57_F182_square_difference_odd_cycle_lengths",
+      "verdict": "PASS_CONDITIONAL",
+      "qualification": "h(t)=t^2 is intersective; square-difference-free power bound implies convergent harmonic sum by dyadic summation. Nonzero root must be even.",
+      "source_checks": [
+        "atlas/stubs.json P57",
+        "Pinned F182 manuscript abstract/main scope"
+      ],
+      "external_proofs_audited": false
+    }
+  ]
+}

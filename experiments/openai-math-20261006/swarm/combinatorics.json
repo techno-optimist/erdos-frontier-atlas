@@ -1,0 +1,1081 @@
+{
+  "schema": "efa-openai-swarm-connections-v1",
+  "lane": "combinatorics-geometry",
+  "source_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+  "canonical_status_changes": false,
+  "external_code_execution": false,
+  "lean_rebuild": "NOT_RUN",
+  "edges": [
+    {
+      "source_family": "F084",
+      "target_id": "P120",
+      "relation": "external_statement_match",
+      "scope": "Geometric-sequence subcase only: each fixed q in (0,1) has arbitrarily large-measure compact sets avoiding every affine copy of {q^n}; Lean scope covers q=1/2.",
+      "missing_hypotheses": "General infinite sets; simultaneous avoidance across q; geometric manuscript proof audit.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-geometric-case-of-the-Erdos-similarity-conjecture-October-5-2026/build/main.tex",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/084.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F084",
+      "target_id": "P120",
+      "relation": "conditional_derivation",
+      "scope": "Any infinite A containing an affine copy of a fixed geometric sequence inherits the avoidance conclusion, since an affine copy of A would contain an affine copy of that sequence.",
+      "missing_hypotheses": "This sufficient structural condition need not hold for arbitrary infinite A.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/084.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F156",
+      "target_id": "P505",
+      "relation": "external_statement_match",
+      "scope": "Nine-dimensional Borsuk counterexample; improves the dimension surface of an already-disproved conjecture.",
+      "missing_hypotheses": "Local audit of rank-one-projector compact-set construction; not a new resolution of the general existence claim.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/156.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F158",
+      "target_id": "P508",
+      "relation": "external_statement_match",
+      "scope": "No proper arbitrary five-coloring of the Euclidean plane and a seven-color upper bound, hence 6<=chi<=7.",
+      "missing_hypotheses": "Distinguishing 6 from 7; no explicit small finite six-chromatic unit-distance graph extracted.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/158.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F158",
+      "target_id": "P1070",
+      "relation": "blocked_transfer",
+      "scope": "A six-chromatic finite subgraph exists by graph-coloring compactness, but does not force independence ratio below 1/5.",
+      "missing_hypotheses": "An independence/fractional-coloring certificate, not merely a chromatic lower bound.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/158.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F159",
+      "target_id": "P3",
+      "relation": "external_statement_match",
+      "scope": "Every positive-integer set with divergent reciprocal sum contains APs of every finite length.",
+      "missing_hypotheses": "Local theorem/proof audit.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/159.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F159",
+      "target_id": "P57",
+      "relation": "conditional_derivation",
+      "scope": "Odd cycle lengths in an infinite-chromatic graph have divergent reciprocal sum by local P57; therefore they contain APs of every finite length, with positive even difference.",
+      "missing_hypotheses": "No common-vertex condition or finite graph bound; no novelty claim.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/159.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "additional_inputs": [
+        "P57"
+      ]
+    },
+    {
+      "source_family": "F159",
+      "target_id": "P169",
+      "relation": "conditional_derivation",
+      "scope": "The quantitative progression-free bound gives a uniform finite harmonic-mass bound for every fixed k, by dyadic summation.",
+      "missing_hypotheses": "Effective dependence on k and a numerical optimum; the reciprocal comparator alone is not a numeric f(k) bound.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/159.md",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/00-introduction.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F159",
+      "target_id": "P142",
+      "relation": "blocked_transfer",
+      "scope": "A one-sided progression-free upper bound does not provide the requested asymptotic equivalent.",
+      "missing_hypotheses": "Matching lower bound with ratio tending to one; effective constants before finite cells.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/159.md",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/00-introduction.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F159",
+      "target_id": "P140",
+      "relation": "blocked_transfer",
+      "scope": "Asymptotic progression-free estimates do not decide the exact next finite r_3 cell.",
+      "missing_hypotheses": "Explicit finite bound tight at target N, or witness/nonexistence certificate.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/159.md",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/00-introduction.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F159",
+      "target_id": "P219",
+      "relation": "conditional_derivation",
+      "scope": "Divergence of the reciprocal sum of primes implies APs of arbitrary length via F159.",
+      "missing_hypotheses": "This reproves the ordinary AP conclusion, not consecutive-prime APs; novelty is not claimed.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/159.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F160",
+      "target_id": "P138",
+      "relation": "external_statement_match",
+      "scope": "For fixed r>=2, W(r,k)>k^{k floor(log2 r)/100000} eventually, so W(r,k)^(1/k) tends to infinity.",
+      "missing_hypotheses": "Unknown absolute threshold K and local proof audit; W(2,7) not determined.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/160.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F160",
+      "target_id": "P169",
+      "relation": "conditional_derivation",
+      "scope": "Combining the lower bound W(2,k)>k^{k/100000} with the atlas inequality f(k)>=0.5 log W(2,k) gives f(k)>=k log k/200000 eventually.",
+      "missing_hypotheses": "This recovers an already-known growth shape with weaker constant; not a new record.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/160.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "additional_inputs": [
+        "P169 gap-map inequality"
+      ]
+    },
+    {
+      "source_family": "F162",
+      "target_id": "P21",
+      "relation": "candidate",
+      "scope": "Ryser constructions are intersecting r-uniform families with covering number r, hence admissible objects for the f(r) minimization.",
+      "missing_hypotheses": "No O(r) edge count or explicit small-r witness is supplied; thresholds existential, and P21 already solved asymptotically.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/162.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F164",
+      "target_id": "P172",
+      "relation": "external_statement_match",
+      "scope": "For every finite coloring and finite k, a k-element positive-integer set has all nonempty subset sums and products in one color.",
+      "missing_hypotheses": "No Lean scope linked; manuscript proof audit.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Monochromatic-finite-sums-and-products-in-the-positive-integers-September-23-2026/build/main.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F164",
+      "target_id": "P532",
+      "relation": "blocked_transfer",
+      "scope": "Arbitrarily large finite sets with monochromatic sums and products do not automatically assemble into a single infinite set.",
+      "missing_hypotheses": "A compatible nested construction or additional compactness argument; finite sets can escape to infinity.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Monochromatic-finite-sums-and-products-in-the-positive-integers-September-23-2026/paper.pdf"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F166",
+      "target_id": "P1083",
+      "relation": "external_statement_match",
+      "scope": "For each fixed d>=3, every n-point subset of R^d determines >=c_d n^(2/d) distances, stronger than the requested exponent up to o(1).",
+      "missing_hypotheses": "No Lean scope; proof audit and constants depend on d.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-higher-dimensional-Erdos-distinct-distances-conjecture-September-23-2026/build/sections/introduction.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F166",
+      "target_id": "P660",
+      "relation": "blocked_transfer",
+      "scope": "The d=3 lower bound n^(2/3) applies to convex-polyhedron vertices but is weaker than the desired nearly n/2 bound.",
+      "missing_hypotheses": "Use convexity to obtain a linear lower bound.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-higher-dimensional-Erdos-distinct-distances-conjecture-September-23-2026/paper.pdf"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F166",
+      "target_id": "P1089",
+      "relation": "blocked_transfer",
+      "scope": "F166 fixes d and lets n grow; the few-distance problem fixes the number of distances and lets d grow.",
+      "missing_hypotheses": "Uniform control of c_d with d; asymptotic regimes cannot be interchanged.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-higher-dimensional-Erdos-distinct-distances-conjecture-September-23-2026/paper.pdf"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F167",
+      "target_id": "P90",
+      "relation": "external_statement_match",
+      "scope": "Uniform planar unit-distance upper bound C n^beta for an absolute beta<4/3 improves the upper-bound surface.",
+      "missing_hypotheses": "Does not reverse the already recorded disproof of n^(1+o(1)); numerical beta and C not extracted.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/167.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F167",
+      "target_id": "P89",
+      "relation": "blocked_transfer",
+      "scope": "Almost every pin has >=n^(1-epsilon) distances; this does not reach n/sqrt(log n).",
+      "missing_hypotheses": "Sharper logarithmic loss control at the planar distinct-distance scale.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/167.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F167",
+      "target_id": "P96",
+      "relation": "blocked_transfer",
+      "scope": "General planar O(n^beta), beta<4/3, applies to convex sets but need not imply O(n).",
+      "missing_hypotheses": "Convexity-specific linear bound.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/167.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F167",
+      "target_id": "P959",
+      "relation": "conditional_derivation",
+      "scope": "Rescaling any positive distance to one gives f(d)<=C n^beta uniformly in d; hence the largest-minus-second-largest multiplicity gap is also <=C n^beta.",
+      "missing_hypotheses": "No matching lower bound or novelty claim; beta<4/3 is existential.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/167.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F169",
+      "target_id": "P993",
+      "relation": "blocked_transfer",
+      "scope": "Elementary positivity for chromatic quasisymmetric functions of natural unit interval graphs does not imply unimodality of independence polynomials of arbitrary trees.",
+      "missing_hypotheses": "Different graph class and polynomial; an actual coefficient-preserving transform and unimodality theorem are required.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/169.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F170",
+      "target_id": "P986",
+      "relation": "external_statement_match",
+      "scope": "Sharp logarithmic exponent s-2 for every fixed s>=5 strengthens the polynomial lower-bound surface in the existing off-diagonal Ramsey problem.",
+      "missing_hypotheses": "Scope excludes s=3,4; fixed-s constants/thresholds and proof audit.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/170.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F170",
+      "target_id": "P77",
+      "relation": "blocked_transfer",
+      "scope": "Diagonal s=t growth is not a fixed-s regime.",
+      "missing_hypotheses": "A theorem in the target parameter regime with the target quantitative conclusion.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/170.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F170",
+      "target_id": "P78",
+      "relation": "blocked_transfer",
+      "scope": "Asymptotic existence bounds are not an explicit algorithmic construction.",
+      "missing_hypotheses": "A theorem in the target parameter regime with the target quantitative conclusion.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/170.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F170",
+      "target_id": "P166",
+      "relation": "blocked_transfer",
+      "scope": "The scope begins at s=5; P166 concerns s=4.",
+      "missing_hypotheses": "A theorem in the target parameter regime with the target quantitative conclusion.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/170.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F170",
+      "target_id": "P544",
+      "relation": "blocked_transfer",
+      "scope": "P544 concerns s=3 and consecutive gaps; neither follows.",
+      "missing_hypotheses": "A theorem in the target parameter regime with the target quantitative conclusion.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/170.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F170",
+      "target_id": "P1030",
+      "relation": "blocked_transfer",
+      "scope": "Near-diagonal t=s and t=s+1 are not fixed-s asymptotics.",
+      "missing_hypotheses": "A theorem in the target parameter regime with the target quantitative conclusion.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/170.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F170",
+      "target_id": "P1014",
+      "relation": "blocked_transfer",
+      "scope": "A logarithmic exponent with unspecified o(1) does not alone force ratios at consecutive t to tend to one.",
+      "missing_hypotheses": "A theorem in the target parameter regime with the target quantitative conclusion.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/170.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F171",
+      "target_id": "P181",
+      "relation": "external_statement_match",
+      "scope": "Absolute C gives R(Q_n)<=C 2^n.",
+      "missing_hypotheses": "No Lean scope linked; manuscript proof audit.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-hypercube-Ramsey-number-has-linear-order-September-23-2026/build/main.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F171",
+      "target_id": "P1035",
+      "relation": "blocked_transfer",
+      "scope": "A two-color host of C*2^n vertices may find a cube in either color; P1035 demands one in a specified dense graph on exactly 2^n vertices.",
+      "missing_hypotheses": "Remove host slack and force the designated color.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-hypercube-Ramsey-number-has-linear-order-September-23-2026/paper.pdf"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F172",
+      "target_id": "P174",
+      "relation": "external_statement_match",
+      "scope": "Tensor-field classification of Euclidean Ramsey configurations, with spherical non-Ramsey examples and sufficient criteria.",
+      "missing_hypotheses": "Comparator definition audit for affine-span reductions; no efficient decision algorithm inferred.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/172.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F172",
+      "target_id": "P173",
+      "relation": "blocked_transfer",
+      "scope": "Ramsey configurations are guaranteed in some sufficiently high ambient dimension, whereas P173 fixes the plane and two colors.",
+      "missing_hypotheses": "A dimension-two theorem with the required uniform triangle assertion.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/172.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F174",
+      "target_id": "P743",
+      "relation": "blocked_transfer",
+      "scope": "A thin spanning tree has no prescribed isomorphism type; Gyárfás packing asks for a perfect edge decomposition into every prescribed tree tuple.",
+      "missing_hypotheses": "Prescribed trees, exact edge usage, and simultaneous packing.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/174.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F178",
+      "target_id": "P78",
+      "relation": "blocked_transfer",
+      "scope": "Every fixed-degree d graph has independence number at least n/(d+1), so fixed-degree Ramanujan outputs cannot have independent sets O(log n).",
+      "missing_hypotheses": "A growing-degree transformation with jointly controlled algorithmic cost and clique/independence bounds; source exponent and threshold depend on fixed d.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Deterministic-nonbipartite-Ramanujan-graphs-in-every-fixed-degree-September-23-2026/build/sections/introduction.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F180",
+      "target_id": "P1016",
+      "relation": "blocked_transfer",
+      "scope": "Hamiltonicity for cubic bipartite planar 3-connected graphs neither ensures all cycle lengths nor applies to all candidate pancyclic graphs; bipartite graphs lack odd cycles.",
+      "missing_hypotheses": "Pancyclicity in the correct graph class, not Hamiltonicity alone.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/180.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F181",
+      "target_id": "P184",
+      "relation": "external_statement_match",
+      "scope": "Every finite simple graph has an edge partition into O(n) cycles and singleton edges.",
+      "missing_hypotheses": "Optimal absolute constant and local proof audit.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/181.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F181",
+      "target_id": "P583",
+      "relation": "blocked_transfer",
+      "scope": "Splitting each cycle gives O(n) paths, but does not achieve the target ceil(n/2); stronger linear path bounds already exist.",
+      "missing_hypotheses": "Sharp constant and edge-disjoint path organization.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/181.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F181",
+      "target_id": "P743",
+      "relation": "blocked_transfer",
+      "scope": "Cycles/singletons are not prescribed tree components.",
+      "missing_hypotheses": "Exact tree-shape packing; neither graph decomposability nor matching edge count suffices.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/181.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F182",
+      "target_id": "P57",
+      "relation": "conditional_derivation",
+      "scope": "A square-difference-free positive-integer set has finite harmonic mass by |A cap [N]|<=C N^(1-c). Thus odd cycle lengths in an infinite-chromatic graph contain two lengths differing by a positive square, necessarily an even square.",
+      "missing_hypotheses": "No constraints on shared vertices or a numerical bound.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/182.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt",
+      "additional_inputs": [
+        "P57"
+      ]
+    },
+    {
+      "source_family": "F184",
+      "target_id": "P802",
+      "relation": "external_statement_match",
+      "scope": "Every fixed-K_r-free graph, r>=4, with average degree d>=2 has alpha>=c_r n log d/d; paper explicitly identifies P802.",
+      "missing_hypotheses": "Local proof audit; effective c_r not given.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/184.md",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-Logarithmic-Independence-Bound-for-Clique-Free-Graphs-September-25-2026/build/sections/introduction.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F184",
+      "target_id": "P1104",
+      "relation": "blocked_transfer",
+      "scope": "An independence bound depending on average degree is not the sharp triangle-free chromatic constant or a smallest six-chromatic graph certificate.",
+      "missing_hypotheses": "Sharp coloring transfer and explicit finite graph/nonexistence evidence.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/184.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F188",
+      "target_id": "P1009",
+      "relation": "blocked_transfer",
+      "scope": "Random triangle removal from K_n concerns a dense random process; near-Turan deterministic triangle packing needs a uniform theorem for arbitrary prescribed input G.",
+      "missing_hypotheses": "Correct initial graph, deterministic uniformity, and second-order packing count.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/188.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F189",
+      "target_id": "P551",
+      "relation": "external_statement_match",
+      "scope": "Exact R(C_m,K_n)=(m-1)(n-1)+1 for m>=n>=3 except (3,3); that exception equals 6.",
+      "missing_hypotheses": "Local proof audit; full stated parameter range matches P551.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/189.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F189",
+      "target_id": "P159",
+      "relation": "blocked_transfer",
+      "scope": "The theorem requires cycle length m>=clique order n; P159 fixes m=4 and lets n grow.",
+      "missing_hypotheses": "A result for the reversed regime n>m, not the diagonal strip.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/189.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F159",
+      "target_id": "P187",
+      "relation": "candidate",
+      "scope": "A quantitative van der Waerden upper bound can control AP length versus step; all-fixed-k Szemeredi estimates are a potential input.",
+      "missing_hypotheses": "Explicit uniform dependence on k and an argument yielding infinitely many distinct steps; fixed-k statements alone are insufficient.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/159.md",
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/00-introduction.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F115",
+      "target_id": "P710",
+      "relation": "conditional_derivation",
+      "scope": "The number of systems of distinct representatives equals the number of 0/1 contingency tables: k rows of margin 1, one dummy row of margin ell-k, ell columns of margin 1; forbidden incidence cells have bound 0. F115 therefore supplies an FPRAS for assignment multiplicity.",
+      "missing_hypotheses": "Assume ell>=k, otherwise no injection exists. This estimates a fixed finite instance; a universal Hall theorem for all intervals is still absent.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/115.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F120",
+      "target_id": "P710",
+      "relation": "candidate",
+      "scope": "A faster maximum-matching algorithm may accelerate finite interval tests on the existing incidence graph.",
+      "missing_hypotheses": "The source algorithm has success probability >=2/3, not a guaranteed negative certificate; preserve independently verified assignments and Hall obstructions. No asymptotic universal existence theorem follows.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/build/sections/01-introduction.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F115",
+      "target_id": "P860",
+      "relation": "conditional_derivation",
+      "scope": "The number of systems of distinct representatives equals the number of 0/1 contingency tables: k rows of margin 1, one dummy row of margin ell-k, ell columns of margin 1; forbidden incidence cells have bound 0. F115 therefore supplies an FPRAS for assignment multiplicity.",
+      "missing_hypotheses": "Assume ell>=k, otherwise no injection exists. This estimates a fixed finite instance; a universal Hall theorem for all intervals is still absent.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/115.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F120",
+      "target_id": "P860",
+      "relation": "candidate",
+      "scope": "A faster maximum-matching algorithm may accelerate finite interval tests on the existing incidence graph.",
+      "missing_hypotheses": "The source algorithm has success probability >=2/3, not a guaranteed negative certificate; preserve independently verified assignments and Hall obstructions. No asymptotic universal existence theorem follows.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/build/sections/01-introduction.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F138",
+      "target_id": "P1",
+      "relation": "candidate",
+      "scope": "Worst-case subset-sum decision could support a finite sum-distinct candidate screen after an exact collision-search reduction is specified.",
+      "missing_hypotheses": "P1 concerns collisions between two subsets, not one specified target; algorithm has bounded error, no direct extremal bound, and practical crossover unknown. P1 is already marked solved-upstream locally.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Subset-Sum-in-Time-2-power-0-49n-October-4-2026/build/sections/introduction.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F131",
+      "target_id": "P993",
+      "relation": "candidate",
+      "scope": "Fast mixing within a fixed graphical degree sequence could diversify degree-controlled test inputs.",
+      "missing_hypotheses": "The chain samples all simple realizations, not only connected trees; conditioning may be inefficient. Sampling is not exhaustive and supplies no universal unimodality proof.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/131.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F131",
+      "target_id": "P1016",
+      "relation": "candidate",
+      "scope": "Fixed-degree graph sampling could supply diverse candidate graphs for an independent pancyclicity verifier.",
+      "missing_hypotheses": "Pancyclicity is not preserved by switches, and no lower bound on candidate success probability or optimality certificate follows.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/131.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F107",
+      "target_id": "P142",
+      "relation": "candidate",
+      "scope": "Exact field-arithmetic matrix multiplication may inform future rank-computation backends for carry-product certificates.",
+      "missing_hypotheses": "Arithmetic exponent is not bit complexity, and current matrices are small. It does not overcome certified cone infeasibility or create a working construction.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/107.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F130",
+      "target_id": "P969",
+      "relation": "blocked_transfer",
+      "scope": "Subsequential exact-complex DFT circuit savings are computational complexity statements, not cancellation bounds for the squarefree variance or signed mixed moment.",
+      "missing_hypotheses": "All-length usable algorithms, bit/error control, and the missing analytic estimate remain separate.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/130.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F103",
+      "target_id": "P78",
+      "relation": "blocked_transfer",
+      "scope": "Derandomization applies to bounded-error polynomial-time logarithmic-workspace machines.",
+      "missing_hypotheses": "An explicit Ramsey construction requires an appropriate log-space sampler/search reduction and quantitative clique/independence guarantee; these are not supplied.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/sections/introduction.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F142",
+      "target_id": "P699",
+      "relation": "blocked_transfer",
+      "scope": "Deterministic dense polynomial factorization over F_p is not integer factorization or a theorem excluding the P699 smooth-part residual.",
+      "missing_hypotheses": "An arithmetic obstruction connecting polynomial factors to actual positional divisibilities is absent.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Deterministic-Polynomial-Factorization-over-Prime-Fields-October-4-2026/build/main.tex"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F235",
+      "target_id": "P142",
+      "relation": "blocked_transfer",
+      "scope": "Random k-SAT limiting thresholds concern independent random clauses with replacement, not structured AP-free-set CNFs at a specified finite N.",
+      "missing_hypotheses": "Correct instance distribution, a finite-size rate, and a deterministic proof object. Even a typical-case UNSAT probability is not an UNSAT certificate.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/235.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F102",
+      "target_id": "P581",
+      "relation": "blocked_transfer",
+      "scope": "Generic Max-Cut approximation hardness does not contradict a theorem guaranteeing a large bipartite subgraph of every triangle-free graph.",
+      "missing_hypotheses": "The reductions do not certify the triangle-free restriction or identify the extremal value of the target family; hardness and guaranteed bounds are different quantifiers.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/102.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    },
+    {
+      "source_family": "F190",
+      "target_id": "P150",
+      "relation": "blocked_transfer",
+      "scope": "P150 is about counts of minimal vertex cuts; F190 concerns induced ordered binary-matrix pattern removal.",
+      "missing_hypotheses": "No reduction exists in this review; the shared word removal was a lexical false positive.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/190.md"
+      ],
+      "verification": "external_statement_not_locally_rebuilt"
+    }
+  ],
+  "sources": [
+    {
+      "family_id": "F084",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/084.md",
+      "sha256": "f99894e7555f06b3f19195bc893e910884cd473755286e6006a6b96aae5ec01f",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F087",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/087.md",
+      "sha256": "85fdda35b4d2c609d330331cde9972b51dcda6127eef31d42e451c1bb644b0eb",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F155",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/155.md",
+      "sha256": "a4a8e34b1d3c463db615c2a1af9e8b78db28f6ffb1dbd0d7109d95fd0a5f6b82",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F156",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/156.md",
+      "sha256": "3734e435a27d9c0e206122088995fa6d6c9e4ad691e9aca27f07820ea3983341",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F157",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/157.md",
+      "sha256": "e8a838c232da4e50a0b2e8c859c020b62f35b243c7b4c9daea7dd563e18915b5",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F158",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/158.md",
+      "sha256": "f0b95c7c0bb3803202c634901c0f1dfc0d5a14234361f351ba3f9599b39729c0",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F159",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/159.md",
+      "sha256": "747337764c8eddc074ba0400f11389a4678a38c63c4c608ccec72c347f1f2ab5",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F160",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/160.md",
+      "sha256": "8189153b6a5747cbcbea25920f90ab907091d789586e39c8154a153ebe6fdb98",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F161",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/161.md",
+      "sha256": "a1da28a997a9a27cad57f0862cd18e7502aa3129730d3bc7fd7a45fde14d3b1d",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F162",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/162.md",
+      "sha256": "f9e326e1034087151388c22c6eb6047cddc576848042b1ccee926e1cba2f0e9d",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F165",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/165.md",
+      "sha256": "fd38e727e9e930ec2a98f66c111826cf2ced69a61e83473b881b0fc30ef37f49",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F167",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/167.md",
+      "sha256": "271b91f6541dbb56317d94bb6aa7bfcf64ee5c026ef1113fc6b8e762c790b80d",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F168",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/168.md",
+      "sha256": "63811f74c612ada8f65759b4fc37d18cc0119dc02d5db50232562f23509c3ebb",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F169",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/169.md",
+      "sha256": "cc93e64bb07cf14db5ee3895fb9057f0b230456bf79beb5de6016535fb3f3e39",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F170",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/170.md",
+      "sha256": "ff3d74c0d4a490d2892bcf42530e7c0929b2c0f439b50d71bf6296f3505162c9",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F172",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/172.md",
+      "sha256": "8e6450e976cda5c347c5eeeb6e2ddbf218bdd7586ce564b7a874120ce7f7b348",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F173",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/173.md",
+      "sha256": "c377bf61fe64db99f7edf87402ff402bed8c57ffed0a1663ee610e62a276e5a3",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F174",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/174.md",
+      "sha256": "1ee196bda877c2d0410187f3ea19543e4249f3b2e0e08cda1c1b29eca27a141d",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F175",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/175.md",
+      "sha256": "03f19c7994455cef409e5563915251c24411975c761760afc6a7b3941e010073",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F176",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/176.md",
+      "sha256": "7c73c040ee42d495c129267a4c98f37a1304264b67a000e6b5643a36dff72a1d",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F177",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/177.md",
+      "sha256": "f4aa26f5a32a1b6f9e62044b97ce22f29084d567c79f6f7606a2866c04dd618c",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F179",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/179.md",
+      "sha256": "47cf8bcf69c2cdf41b6b03051d8ae6cf998773c8fd85b83f1b15c130f166ce60",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F180",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/180.md",
+      "sha256": "e28de79463c5f9ded3cf6e0199749a7377f1d6b88317f7e7f55e66d2c602b4c8",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F181",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/181.md",
+      "sha256": "2e322b0000ff85fbb7c09603243df922d38e51b22799f44cddb40ec8f5165285",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F182",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/182.md",
+      "sha256": "7a8c0d6be5e30656602af80e2db041d9f495527194f4c8a319c583f4183a99a3",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F183",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/183.md",
+      "sha256": "276ae3ef3a58367090659f808dd246d819254fb4ab5da911713825f9f74f83b0",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F184",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/184.md",
+      "sha256": "a4b14c7c7faf6610f3fb04d89a3496b21ac38a1d4ed692077ff4a078c78af85a",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F185",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/185.md",
+      "sha256": "00d22dbd780928870fe1c9a9a63c31c202ef513df975d1f07bde4ffb2261a64d",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F186",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/186.md",
+      "sha256": "51f459fd17a7497d3285c2762835d2b8d7927e023b656b15b491ff4220c454cd",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F187",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/187.md",
+      "sha256": "4faf4c5d8fb5957cbe0b2c0b4728d99acefee79b05180e61354298fe9c8a3782",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F188",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/188.md",
+      "sha256": "358522408d1f04e0df83dad8d575a7d5a013f44716aec109a6744302fd02892d",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F189",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/189.md",
+      "sha256": "89e8630c852f0408b0e0ad7be597e284d9a8936b1f4d3b398082fcfc3d9d219d",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F190",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/190.md",
+      "sha256": "49953f7f760a262f20bf5b8876d42e0ce43f0d361505a05d51aa3d805a67595b",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F084",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-geometric-case-of-the-Erdos-similarity-conjecture-October-5-2026/build/main.tex",
+      "sha256": "2b2660c50a9f0fa7d4df0e572f581b47f2a1f584a9f5c456f8e5d0c54b63e398",
+      "inspection": "abstract, main theorem and introduction scope; not full proof"
+    },
+    {
+      "family_id": "F164",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Monochromatic-finite-sums-and-products-in-the-positive-integers-September-23-2026/build/main.tex",
+      "sha256": "b0ac7ff727b0062e71b986aed1607ab258b49e1f8d8f103123a0f8ffc4a41ac7",
+      "inspection": "abstract, main theorem and introduction scope; not full proof"
+    },
+    {
+      "family_id": "F166",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-higher-dimensional-Erdos-distinct-distances-conjecture-September-23-2026/build/sections/introduction.tex",
+      "sha256": "84350b2b2cbc44f892e63789768fe1bd4019c8b3f1428e1290405bf1f2c703a1",
+      "inspection": "abstract, main theorem and introduction scope; not full proof"
+    },
+    {
+      "family_id": "F171",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-hypercube-Ramsey-number-has-linear-order-September-23-2026/build/main.tex",
+      "sha256": "ee46384e927afdcc8d60c986d1ee0cc3013d0f8a3553153643130aa3613a7ce1",
+      "inspection": "abstract, main theorem and introduction scope; not full proof"
+    },
+    {
+      "family_id": "F178",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Deterministic-nonbipartite-Ramanujan-graphs-in-every-fixed-degree-September-23-2026/build/sections/introduction.tex",
+      "sha256": "1ba28efd51ec881f8d8b8f5af8b0b17a44ea65ed5a72dc8e7778de24acc6a6e9",
+      "inspection": "abstract, main theorem and introduction scope; not full proof"
+    },
+    {
+      "family_id": "F181",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-linear-cycle-and-edge-decomposition-of-every-graph-September-24-2026/build/main.tex",
+      "sha256": "4be805d7086ac702c41861ac3cc8cad418b38c41ab79eb1d5a21cbba542273ff",
+      "inspection": "abstract, main theorem and introduction scope; not full proof"
+    },
+    {
+      "family_id": "F182",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-power-saving-for-square-difference-free-sets-September-24-2026/build/sections/introduction.tex",
+      "sha256": "ab0e277a6aba1da9b654c29e3a6501587b4322485c04eaf4bf6bb985fde54850",
+      "inspection": "abstract, main theorem and introduction scope; not full proof"
+    },
+    {
+      "family_id": "F184",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/A-Logarithmic-Independence-Bound-for-Clique-Free-Graphs-September-25-2026/build/sections/introduction.tex",
+      "sha256": "8fc8936de587ee767f2fd1ebd9bcd4e9ad60b7a78502a2f63f0b48d467fc9501",
+      "inspection": "abstract, main theorem and introduction scope; not full proof"
+    },
+    {
+      "family_id": "F130",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/130.md",
+      "sha256": "4d28a5c6645d2d1bb188a55b4ad01904ce15378f1d60b6cf46e49b475b18c7d5",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F115",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/115.md",
+      "sha256": "7503f6655041af845dd16fb16746316e877356e75bcb3793ba68917585e02fb6",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F131",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/131.md",
+      "sha256": "95890a0433c375da400f600f581f1eb352416bc25f720c3483767022ce3fba4c",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F235",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/235.md",
+      "sha256": "9358e46cd9f3104ceaf11000d5afe3eac26c48bebb7329f1a19fc5d3c55e987b",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F126",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/126.md",
+      "sha256": "a26a6efcfa8666482560d9c6eafbd1364fbf2e61a131a6c7b7bd4c07f5c79e4b",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F102",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/102.md",
+      "sha256": "c3e96a746042bf5aeb2f0ef8cdc8e27360785a7da8ac37ed69d6fd8c132f572f",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F113",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/113.md",
+      "sha256": "988234abb376528ffa180cd07778d5349ed15190b9d21c961117dd9d011c7e00",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F107",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/lean/docs/107.md",
+      "sha256": "7c7263cfecc5a16d20165952ac3010598c3770b441d7d8fe2c5ceb8eda1c3347",
+      "inspection": "entire short scope document"
+    },
+    {
+      "family_id": "F103",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Exact-Derandomization-of-Logarithmic-Space-L-equals-RL-equals-BPL-September-23-2026/build/sections/introduction.tex",
+      "sha256": "21e5c9742800d38df65575b5577627046dd59d2f220e8987b7fca1d2cfb7a6bc",
+      "inspection": "abstract/main theorem and model restrictions, not proof"
+    },
+    {
+      "family_id": "F109",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Integer-multiplication-below-n-log-n-September-23-2026/build/main.tex",
+      "sha256": "42f0f506976bc2084374a71e97edc1549689a7accf35dda4db2a18af4f13c1aa",
+      "inspection": "abstract/main theorem and model restrictions, not proof"
+    },
+    {
+      "family_id": "F120",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Almost-Linear-Time-Maximum-Cardinality-Matching-in-Sparse-General-Graphs-September-24-2026/build/sections/01-introduction.tex",
+      "sha256": "26eceebaac6b2ad869c9aa7451c9d57c98e835703130edbefc45a1a637503c22",
+      "inspection": "abstract/main theorem and model restrictions, not proof"
+    },
+    {
+      "family_id": "F138",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Subset-Sum-in-Time-2-power-0-49n-October-4-2026/build/sections/introduction.tex",
+      "sha256": "583a20059e520cff2aa5d99c5c7a457da6d6deae83a664813cc2b474a1920376",
+      "inspection": "abstract/main theorem and model restrictions, not proof"
+    },
+    {
+      "family_id": "F142",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Deterministic-Polynomial-Factorization-over-Prime-Fields-October-4-2026/build/main.tex",
+      "sha256": "63f11345d68e1388434ab25559dc3d8c5acc2f5e32edc36e1da756ddac350a25",
+      "inspection": "abstract/main theorem and model restrictions, not proof"
+    },
+    {
+      "family_id": "F239",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/The-sharp-exponential-rate-of-singularity-for-symmetric-Bernoulli-matrices-October-3-2026/build/sections/01-introduction.tex",
+      "sha256": "dab571a2bae9bd8daa3541370be659d2a34e4e2ebbc27aab0e82cfa1b3151aa5",
+      "inspection": "abstract/main theorem and model restrictions, not proof"
+    },
+    {
+      "family_id": "F159",
+      "url": "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/build/sections/00-introduction.tex",
+      "sha256": "20254cf37d610fb72ee665eba6b82b8e182817796915b1a2d117f3ea622da5bd",
+      "inspection": "ap:main and ap:reciprocal plus dyadic summation proof"
+    }
+  ],
+  "reviewed_unmapped_families": [
+    "F087",
+    "F155",
+    "F157",
+    "F161",
+    "F165",
+    "F168",
+    "F173",
+    "F175",
+    "F176",
+    "F177",
+    "F179",
+    "F183",
+    "F185",
+    "F186",
+    "F187",
+    "F190",
+    "F109",
+    "F113",
+    "F126",
+    "F239"
+  ],
+  "scope": "Research overlay only. Each match names a statement/subquestion, not a verified canonical status. Blocked edges have zero propagation weight.",
+  "family_dependencies": [
+    {
+      "source_family": "F029",
+      "target_family": "F142",
+      "relation": "declared_dependency",
+      "scope": "F142 manuscript declares use of the F029 uniform Hecke zero-free theorem; logical necessity not independently audited.",
+      "source_urls": [
+        "https://github.com/openai/math/blob/adc7f1241b42e322a6451854ab7e4b4c146bf78a/preprints/Deterministic-Polynomial-Factorization-over-Prime-Fields-October-4-2026/build/main.tex"
+      ],
+      "verification": "source_dependency_not_locally_rebuilt",
+      "premise": "Uniform Hecke zero-free theorem from the companion manuscript Primitive roots for every admissible integer base, invoked in F142 abstract."
+    }
+  ]
+}

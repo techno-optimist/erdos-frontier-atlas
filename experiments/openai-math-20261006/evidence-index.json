@@ -1,0 +1,667 @@
+{
+  "schema": "efa-evidence-index-v1",
+  "authority": "navigation_and_replay_metadata_only",
+  "external_source_pin": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+  "findings": [
+    {
+      "id": "release",
+      "evidence_level": "externally_claimed",
+      "paths": [
+        "README.md",
+        "catalogue.json",
+        "sources.json",
+        "SCOPE.md"
+      ]
+    },
+    {
+      "id": "connections",
+      "evidence_level": "conditional_deduction",
+      "paths": [
+        "CONNECTIONS.md",
+        "connections.json",
+        "connection-sources.json"
+      ]
+    },
+    {
+      "id": "p699-arithmetic",
+      "evidence_level": "local_informal",
+      "paths": [
+        "research-sprint/arithmetic/README.md",
+        "research-sprint/source-audit/arithmetic-review.md"
+      ]
+    },
+    {
+      "id": "p699-cubic-algebra",
+      "evidence_level": "formal_component",
+      "paths": [
+        "research-sprint/density-transport/CUBIC_STRIP.md",
+        "research-sprint/density-transport/CubicStrip.lean",
+        "research-sprint/density-transport/cubic-strip-execution.json"
+      ]
+    },
+    {
+      "id": "p699-seven-diagonal-algebra",
+      "evidence_level": "formal_component",
+      "paths": [
+        "research-sprint/arithmetic-checks/README.md",
+        "research-sprint/arithmetic-checks/DiagonalInequality.lean",
+        "research-sprint/arithmetic-checks/execution.json"
+      ]
+    },
+    {
+      "id": "p841-density-transport",
+      "evidence_level": "formal_component",
+      "paths": [
+        "research-sprint/density-transport/README.md",
+        "research-sprint/density-transport/DensityTransport.lean",
+        "research-sprint/density-transport/execution.json"
+      ]
+    },
+    {
+      "id": "p969-correlation-barrier",
+      "evidence_level": "local_informal",
+      "paths": [
+        "research-sprint/correlation-barrier/README.md",
+        "research-sprint/source-audit/correlation-barrier-review.md"
+      ]
+    },
+    {
+      "id": "finite-arithmetic",
+      "evidence_level": "finite_evidence",
+      "paths": [
+        "research-sprint/arithmetic/verify.py",
+        "research-sprint/arithmetic/receipt.json"
+      ]
+    },
+    {
+      "id": "finite-window-example",
+      "evidence_level": "finite_evidence",
+      "paths": [
+        "research-sprint/correlation-barrier/finite_probe.py",
+        "research-sprint/correlation-barrier/receipt.json"
+      ]
+    },
+    {
+      "id": "f003-source-trace",
+      "evidence_level": "source_trace",
+      "paths": [
+        "research-sprint/source-audit/README.md",
+        "research-sprint/source-audit/audit.json",
+        "research-sprint/source-audit/source-prefix-manifest.json"
+      ]
+    },
+    {
+      "id": "remaining-obligations",
+      "evidence_level": "blocked",
+      "paths": [
+        "CURRENT_FINDINGS.md",
+        "research-sprint/results.json"
+      ]
+    },
+    {
+      "id": "p699-rational-offsets",
+      "evidence_level": "local_informal",
+      "paths": [
+        "research-next/arithmetic/README.md"
+      ]
+    },
+    {
+      "id": "p699-formal-positional-bridge",
+      "evidence_level": "formal_component",
+      "paths": [
+        "research-next/formal-bridge/README.md",
+        "research-next/formal-bridge/FormalBridge.lean",
+        "research-next/formal-bridge/execution.json"
+      ]
+    },
+    {
+      "id": "finite-rational-offsets",
+      "evidence_level": "finite_evidence",
+      "paths": [
+        "research-next/arithmetic/receipt.json",
+        "research-next/arithmetic/verify.py"
+      ]
+    },
+    {
+      "id": "p699-higher-i-small-prime-factor",
+      "evidence_level": "local_informal",
+      "paths": [
+        "research-next/structural/README.md"
+      ]
+    },
+    {
+      "id": "finite-higher-i-structure",
+      "evidence_level": "finite_evidence",
+      "paths": [
+        "research-next/structural/receipt.json",
+        "research-next/structural/verify.py"
+      ]
+    },
+    {
+      "id": "lead-weighted-positional-formal-bridge",
+      "evidence_level": "formal_component",
+      "paths": [
+        "lead-phase/weighted-formal/README.md",
+        "lead-phase/weighted-formal/WeightedFormal.lean",
+        "lead-phase/weighted-formal/verify.py",
+        "lead-phase/weighted-formal/negative/OmitDefect.lean",
+        "lead-phase/weighted-formal/negative/OmitThreshold.lean",
+        "lead-phase/weighted-formal/negative/OmitParity.lean",
+        "lead-phase/weighted-formal/execution.json"
+      ]
+    },
+    {
+      "id": "upstream-source-update-20261008",
+      "evidence_level": "source_trace",
+      "claim": "Pinned catalogue, edition, withdrawal and formalization metadata comparison; no external proof execution.",
+      "paths": [
+        "upstream-update/README.md",
+        "upstream-update/sources.json",
+        "upstream-update/update.json",
+        "upstream-update/verify.py",
+        "upstream-update/manifest.json"
+      ],
+      "canonical_status_changed": false
+    }
+  ],
+  "hash_checks": [
+    {
+      "receipt": "research-sprint/arithmetic/receipt.json",
+      "field": [
+        "source_sha256",
+        "README.md"
+      ],
+      "artifact": "research-sprint/arithmetic/README.md"
+    },
+    {
+      "receipt": "research-sprint/arithmetic/receipt.json",
+      "field": [
+        "source_sha256",
+        "verify.py"
+      ],
+      "artifact": "research-sprint/arithmetic/verify.py"
+    },
+    {
+      "receipt": "research-sprint/density-transport/execution.json",
+      "field": [
+        "source_sha256"
+      ],
+      "artifact": "research-sprint/density-transport/DensityTransport.lean"
+    },
+    {
+      "receipt": "research-sprint/density-transport/execution.json",
+      "field": [
+        "verifier_sha256"
+      ],
+      "artifact": "research-sprint/density-transport/verify.py"
+    },
+    {
+      "receipt": "research-sprint/density-transport/cubic-strip-execution.json",
+      "field": [
+        "source_sha256"
+      ],
+      "artifact": "research-sprint/density-transport/CubicStrip.lean"
+    },
+    {
+      "receipt": "research-sprint/density-transport/cubic-strip-execution.json",
+      "field": [
+        "verifier_sha256"
+      ],
+      "artifact": "research-sprint/density-transport/verify_cubic_strip.py"
+    },
+    {
+      "receipt": "research-sprint/arithmetic-checks/execution.json",
+      "field": [
+        "source_sha256"
+      ],
+      "artifact": "research-sprint/arithmetic-checks/DiagonalInequality.lean"
+    },
+    {
+      "receipt": "research-sprint/arithmetic-checks/execution.json",
+      "field": [
+        "verifier_sha256"
+      ],
+      "artifact": "research-sprint/arithmetic-checks/verify.py"
+    },
+    {
+      "receipt": "research-sprint/density-transport/execution.json",
+      "field": [
+        "negative_controls",
+        0,
+        "source_sha256"
+      ],
+      "artifact": "research-sprint/density-transport/negative/OmitMarginal.lean"
+    },
+    {
+      "receipt": "research-sprint/density-transport/execution.json",
+      "field": [
+        "negative_controls",
+        1,
+        "source_sha256"
+      ],
+      "artifact": "research-sprint/density-transport/negative/OmitLeakage.lean"
+    },
+    {
+      "receipt": "research-sprint/arithmetic-checks/execution.json",
+      "field": [
+        "negative_source_sha256"
+      ],
+      "artifact": "research-sprint/arithmetic-checks/negative/ExtendTo32.lean"
+    },
+    {
+      "receipt": "research-sprint/source-audit/audit.json",
+      "field": [
+        "bounded_scan",
+        "manifest_sha256"
+      ],
+      "artifact": "research-sprint/source-audit/source-prefix-manifest.json"
+    },
+    {
+      "receipt": "research-next/formal-bridge/execution.json",
+      "field": [
+        "builds",
+        0,
+        "source_sha256"
+      ],
+      "artifact": "research-sprint/density-transport/CubicStrip.lean"
+    },
+    {
+      "receipt": "research-next/formal-bridge/execution.json",
+      "field": [
+        "builds",
+        1,
+        "source_sha256"
+      ],
+      "artifact": "research-next/formal-bridge/FormalBridge.lean"
+    },
+    {
+      "receipt": "research-next/formal-bridge/execution.json",
+      "field": [
+        "verifier_sha256"
+      ],
+      "artifact": "research-next/formal-bridge/verify.py"
+    },
+    {
+      "receipt": "research-next/formal-bridge/execution.json",
+      "field": [
+        "negative_controls",
+        0,
+        "source_sha256"
+      ],
+      "artifact": "research-next/formal-bridge/negative/OmitCoprimality.lean"
+    },
+    {
+      "receipt": "research-next/formal-bridge/execution.json",
+      "field": [
+        "negative_controls",
+        1,
+        "source_sha256"
+      ],
+      "artifact": "research-next/formal-bridge/negative/OmitThreeCondition.lean"
+    },
+    {
+      "receipt": "research-next/arithmetic/receipt.json",
+      "field": [
+        "source_sha256",
+        "README.md"
+      ],
+      "artifact": "research-next/arithmetic/README.md"
+    },
+    {
+      "receipt": "research-next/arithmetic/receipt.json",
+      "field": [
+        "source_sha256",
+        "verify.py"
+      ],
+      "artifact": "research-next/arithmetic/verify.py"
+    },
+    {
+      "receipt": "research-next/structural/receipt.json",
+      "field": [
+        "source_sha256",
+        "README.md"
+      ],
+      "artifact": "research-next/structural/README.md"
+    },
+    {
+      "receipt": "research-next/structural/receipt.json",
+      "field": [
+        "source_sha256",
+        "verify.py"
+      ],
+      "artifact": "research-next/structural/verify.py"
+    },
+    {
+      "receipt": "lead-phase/weighted-formal/execution.json",
+      "field": [
+        "sources",
+        "research-sprint/density-transport/CubicStrip.lean"
+      ],
+      "artifact": "research-sprint/density-transport/CubicStrip.lean"
+    },
+    {
+      "receipt": "lead-phase/weighted-formal/execution.json",
+      "field": [
+        "sources",
+        "research-next/formal-bridge/FormalBridge.lean"
+      ],
+      "artifact": "research-next/formal-bridge/FormalBridge.lean"
+    },
+    {
+      "receipt": "lead-phase/weighted-formal/execution.json",
+      "field": [
+        "sources",
+        "lead-phase/weighted-formal/WeightedFormal.lean"
+      ],
+      "artifact": "lead-phase/weighted-formal/WeightedFormal.lean"
+    },
+    {
+      "receipt": "lead-phase/weighted-formal/execution.json",
+      "field": [
+        "verifier_sha256"
+      ],
+      "artifact": "lead-phase/weighted-formal/verify.py"
+    },
+    {
+      "receipt": "lead-phase/weighted-formal/execution.json",
+      "field": [
+        "negative_controls",
+        0,
+        "source_sha256"
+      ],
+      "artifact": "lead-phase/weighted-formal/negative/OmitDefect.lean"
+    },
+    {
+      "receipt": "lead-phase/weighted-formal/execution.json",
+      "field": [
+        "negative_controls",
+        1,
+        "source_sha256"
+      ],
+      "artifact": "lead-phase/weighted-formal/negative/OmitThreshold.lean"
+    },
+    {
+      "receipt": "lead-phase/weighted-formal/execution.json",
+      "field": [
+        "negative_controls",
+        2,
+        "source_sha256"
+      ],
+      "artifact": "lead-phase/weighted-formal/negative/OmitParity.lean"
+    },
+    {
+      "receipt": "upstream-update/manifest.json",
+      "field": [
+        "artifacts",
+        0,
+        "sha256"
+      ],
+      "artifact": "upstream-update/README.md"
+    },
+    {
+      "receipt": "upstream-update/manifest.json",
+      "field": [
+        "artifacts",
+        1,
+        "sha256"
+      ],
+      "artifact": "upstream-update/raw/LICENSE"
+    },
+    {
+      "receipt": "upstream-update/manifest.json",
+      "field": [
+        "artifacts",
+        2,
+        "sha256"
+      ],
+      "artifact": "upstream-update/raw/commit.json"
+    },
+    {
+      "receipt": "upstream-update/manifest.json",
+      "field": [
+        "artifacts",
+        3,
+        "sha256"
+      ],
+      "artifact": "upstream-update/raw/comparator-readme.md.txt"
+    },
+    {
+      "receipt": "upstream-update/manifest.json",
+      "field": [
+        "artifacts",
+        4,
+        "sha256"
+      ],
+      "artifact": "upstream-update/raw/history.md.txt"
+    },
+    {
+      "receipt": "upstream-update/manifest.json",
+      "field": [
+        "artifacts",
+        5,
+        "sha256"
+      ],
+      "artifact": "upstream-update/raw/new-contents.md.txt"
+    },
+    {
+      "receipt": "upstream-update/manifest.json",
+      "field": [
+        "artifacts",
+        6,
+        "sha256"
+      ],
+      "artifact": "upstream-update/raw/new-formalization.yaml"
+    },
+    {
+      "receipt": "upstream-update/manifest.json",
+      "field": [
+        "artifacts",
+        7,
+        "sha256"
+      ],
+      "artifact": "upstream-update/raw/new-preprints-tree.json"
+    },
+    {
+      "receipt": "upstream-update/manifest.json",
+      "field": [
+        "artifacts",
+        8,
+        "sha256"
+      ],
+      "artifact": "upstream-update/raw/new-readme.md.txt"
+    },
+    {
+      "receipt": "upstream-update/manifest.json",
+      "field": [
+        "artifacts",
+        9,
+        "sha256"
+      ],
+      "artifact": "upstream-update/raw/new-root-tree.json"
+    },
+    {
+      "receipt": "upstream-update/manifest.json",
+      "field": [
+        "artifacts",
+        10,
+        "sha256"
+      ],
+      "artifact": "upstream-update/raw/new-scope-130.md.txt"
+    },
+    {
+      "receipt": "upstream-update/manifest.json",
+      "field": [
+        "artifacts",
+        11,
+        "sha256"
+      ],
+      "artifact": "upstream-update/raw/new-tree.json"
+    },
+    {
+      "receipt": "upstream-update/manifest.json",
+      "field": [
+        "artifacts",
+        12,
+        "sha256"
+      ],
+      "artifact": "upstream-update/raw/old-commit.json"
+    },
+    {
+      "receipt": "upstream-update/manifest.json",
+      "field": [
+        "artifacts",
+        13,
+        "sha256"
+      ],
+      "artifact": "upstream-update/raw/old-contents.md.txt"
+    },
+    {
+      "receipt": "upstream-update/manifest.json",
+      "field": [
+        "artifacts",
+        14,
+        "sha256"
+      ],
+      "artifact": "upstream-update/raw/old-formalization.yaml"
+    },
+    {
+      "receipt": "upstream-update/manifest.json",
+      "field": [
+        "artifacts",
+        15,
+        "sha256"
+      ],
+      "artifact": "upstream-update/raw/old-preprints-tree.json"
+    },
+    {
+      "receipt": "upstream-update/manifest.json",
+      "field": [
+        "artifacts",
+        16,
+        "sha256"
+      ],
+      "artifact": "upstream-update/raw/old-root-tree.json"
+    },
+    {
+      "receipt": "upstream-update/manifest.json",
+      "field": [
+        "artifacts",
+        17,
+        "sha256"
+      ],
+      "artifact": "upstream-update/raw/old-scope-130.md.txt"
+    },
+    {
+      "receipt": "upstream-update/manifest.json",
+      "field": [
+        "artifacts",
+        18,
+        "sha256"
+      ],
+      "artifact": "upstream-update/raw/old-tree.json"
+    },
+    {
+      "receipt": "upstream-update/manifest.json",
+      "field": [
+        "artifacts",
+        19,
+        "sha256"
+      ],
+      "artifact": "upstream-update/raw/withdrawal-1.md.txt"
+    },
+    {
+      "receipt": "upstream-update/manifest.json",
+      "field": [
+        "artifacts",
+        20,
+        "sha256"
+      ],
+      "artifact": "upstream-update/raw/withdrawal-2.md.txt"
+    },
+    {
+      "receipt": "upstream-update/manifest.json",
+      "field": [
+        "artifacts",
+        21,
+        "sha256"
+      ],
+      "artifact": "upstream-update/raw/withdrawal-3.md.txt"
+    },
+    {
+      "receipt": "upstream-update/manifest.json",
+      "field": [
+        "artifacts",
+        22,
+        "sha256"
+      ],
+      "artifact": "upstream-update/sources.json"
+    },
+    {
+      "receipt": "upstream-update/manifest.json",
+      "field": [
+        "artifacts",
+        23,
+        "sha256"
+      ],
+      "artifact": "upstream-update/update.json"
+    },
+    {
+      "receipt": "upstream-update/manifest.json",
+      "field": [
+        "artifacts",
+        24,
+        "sha256"
+      ],
+      "artifact": "upstream-update/verify.py"
+    }
+  ],
+  "finite_replays": [
+    {
+      "id": "connection-overlay",
+      "script": "build_connections.py",
+      "args": [
+        "--check"
+      ]
+    },
+    {
+      "id": "arithmetic-exact-checks",
+      "script": "research-sprint/arithmetic/verify.py",
+      "compare_json": "research-sprint/arithmetic/receipt.json"
+    },
+    {
+      "id": "correlation-finite-example",
+      "script": "research-sprint/correlation-barrier/finite_probe.py",
+      "args": [
+        "--check",
+        "experiments/openai-math-20261006/research-sprint/correlation-barrier/receipt.json"
+      ]
+    },
+    {
+      "id": "rational-position-exact-checks",
+      "script": "research-next/arithmetic/verify.py",
+      "compare_json": "research-next/arithmetic/receipt.json"
+    },
+    {
+      "id": "higher-i-structural-exact-checks",
+      "script": "research-next/structural/verify.py",
+      "compare_json": "research-next/structural/receipt.json"
+    },
+    {
+      "id": "upstream-source-update-20261008",
+      "script": "upstream-update/verify.py",
+      "args": [
+        "--check"
+      ]
+    }
+  ],
+  "excluded_from_default_replay": [
+    "External OpenAI Lean solution and Comparator",
+    "Local Lean compiler runs; use each component verifier with the required toolchain",
+    "Network source retrieval"
+  ],
+  "historical_snapshot_policy": "Review target hash mismatches are reported as superseded snapshots; current result receipt and source mismatches fail.",
+  "result_manifests": [
+    "research-sprint/results.json",
+    "research-next/results.json"
+  ]
+}

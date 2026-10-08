@@ -1,0 +1,11 @@
+{
+  "name": "lean-4.33.1-darwin_aarch64.tar.zst",
+  "size": 556491708,
+  "digest": "sha256:88c45aad985b5d2a8d925fe10bd1296bd35f66f408480ab182d3facccd065a9d",
+  "browser_download_url": "https://github.com/leanprover/lean4/releases/download/v4.33.1/lean-4.33.1-darwin_aarch64.tar.zst",
+  "observed_archive_sha256": "88c45aad985b5d2a8d925fe10bd1296bd35f66f408480ab182d3facccd065a9d",
+  "digest_match": true,
+  "metadata_api_url": "https://api.github.com/repos/leanprover/lean4/releases/tags/v4.33.1",
+  "extracted_toolchain_path": "/tmp/erdos-density-lean/lean-4.33.1-darwin_aarch64",
+  "global_toolchain_configuration_changed": false
+}

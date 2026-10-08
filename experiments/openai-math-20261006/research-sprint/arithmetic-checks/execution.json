@@ -1,0 +1,27 @@
+{
+  "schema": "efa-seven-diagonal-algebra-lean-v1",
+  "problem_id": "P699",
+  "surface_id": "S:triage:699",
+  "scope": "Three algebraic implications only; prime-power localization, divisibility restoration and full P699 reduction are not formalized here.",
+  "toolchain": "Lean (version 4.33.1, arm64-apple-darwin24.6.0, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "source_sha256": "163628ca453cc23792d6d42f48e2b6ef27ffdd15fd9885638332fac215dde9d5",
+  "verifier_sha256": "58a43e00edef3a6c19638d71a1952dfb50ba38adffa86f63bd95508314a2b5ce",
+  "lean_executable_sha256": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+  "compile_exit_code": 0,
+  "axioms": {
+    "seven_diagonal_positive": [
+      "propext",
+      "Quot.sound"
+    ],
+    "seven_diagonal_no_weak_bound": [
+      "propext",
+      "Quot.sound"
+    ],
+    "seven_diagonal_no_gcd_bound": [
+      "propext",
+      "Quot.sound"
+    ]
+  },
+  "negative_control_rejected": true,
+  "negative_source_sha256": "caa25f2f6608ec6059ae522b04f21a6dc4374fb475cb367635e146e31b5ff410"
+}

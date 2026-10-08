@@ -1,0 +1,428 @@
+{
+  "affected_graph_edges": [
+    {
+      "current_annotation": "New scope separately reports all-length exact DFT/convolution in ideal complex arithmetic. The historical all-length-absence premise is superseded at that source-statement level. Finite-precision/error control and the P969 analytic bridge remain unestablished.",
+      "edge_id": "combinatorics-57",
+      "missing_hypotheses": [
+        "All-length usable algorithms, bit/error control, and the missing analytic estimate remain separate."
+      ],
+      "new_scope_path": "lean/docs/130.md",
+      "new_scope_sha256": "233cdd3c7fb22ee4cb8ba8d170a79dd3e3d4e30f513c940db55ec244a291c209",
+      "relation": "blocked_transfer",
+      "scope": "Subsequential exact-complex DFT circuit savings are computational complexity statements, not cancellation bounds for the squarefree variance or signed mixed moment.",
+      "source_family": "F130",
+      "target_id": "P969"
+    },
+    {
+      "current_annotation": "New formalization metadata does not discharge the separate transfer hypotheses; no local Comparator run.",
+      "edge_id": "combinatorics-58",
+      "missing_hypotheses": [
+        "An explicit Ramsey construction requires an appropriate log-space sampler/search reduction and quantitative clique/independence guarantee; these are not supplied."
+      ],
+      "relation": "blocked_transfer",
+      "scope": "Derandomization applies to bounded-error polynomial-time logarithmic-workspace machines.",
+      "source_family": "F103",
+      "target_id": "P78"
+    },
+    {
+      "current_annotation": "New formalization metadata does not discharge the separate transfer hypotheses; no local Comparator run.",
+      "edge_id": "analytic-audit-18",
+      "missing_hypotheses": [
+        "An operator-specific maximal estimate/transfer for dilates; Fourier convergence alone is insufficient."
+      ],
+      "relation": "blocked_transfer",
+      "scope": "Ordinary Fourier partial-sum convergence is a different operator from the required lacunary dilated ergodic averages.",
+      "source_family": "F075",
+      "target_id": "P996"
+    }
+  ],
+  "changed_catalogue_families": [
+    "001",
+    "002",
+    "004",
+    "006",
+    "010",
+    "019",
+    "027",
+    "032",
+    "034",
+    "036",
+    "056",
+    "066",
+    "075",
+    "103",
+    "137",
+    "195",
+    "232",
+    "233",
+    "301",
+    "341",
+    "342",
+    "376"
+  ],
+  "changed_family_titles": [
+    {
+      "family_id": "032",
+      "new": "The rational Hodge conjecture for CM abelian varieties",
+      "old": "Hodge and Kuga–Satake results for all projective K3 surfaces"
+    }
+  ],
+  "formalization_additions": [
+    {
+      "comparator_config": "lean/ComparatorChallenges/CartierChartCompactnessSupport.json",
+      "family_id": "066",
+      "local_comparator_run": false,
+      "publisher_scope": "supporting_result_only"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/CharacterVarietiesAllSeamsSupport.json",
+      "family_id": "027",
+      "local_comparator_run": false,
+      "publisher_scope": "supporting_result_only"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/FourierLLogL.json",
+      "family_id": "075",
+      "local_comparator_run": false,
+      "publisher_scope": "additional_main_result_formalization"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/HadwigerCounterexample.json",
+      "family_id": "157",
+      "local_comparator_run": false,
+      "publisher_scope": "additional_main_result_formalization"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/HoneycombBridgeMassSupport.json",
+      "family_id": "237",
+      "local_comparator_run": false,
+      "publisher_scope": "supporting_result_only"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/LogspaceEquality.json",
+      "family_id": "103",
+      "local_comparator_run": false,
+      "publisher_scope": "additional_main_result_formalization"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/OneTapeSpace.json",
+      "family_id": "137",
+      "local_comparator_run": false,
+      "publisher_scope": "additional_main_result_formalization"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/StableCoordinateFour.json",
+      "family_id": "049",
+      "local_comparator_run": false,
+      "publisher_scope": "additional_main_result_formalization"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/SurfaceConeCandidateSupport.json",
+      "family_id": "195",
+      "local_comparator_run": false,
+      "publisher_scope": "supporting_result_only"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/TraceIdealTransportSupport.json",
+      "family_id": "301",
+      "local_comparator_run": false,
+      "publisher_scope": "supporting_result_only"
+    },
+    {
+      "comparator_config": "lean/ComparatorChallenges/UniformFourier.json",
+      "family_id": "130",
+      "local_comparator_run": false,
+      "publisher_scope": "additional_main_result_formalization"
+    }
+  ],
+  "historical_local_artifacts_sha256": {
+    "catalogue.json": "b730c71c30eaeb6b337f0de7a384d0092cd0e0d830933bae128b362aedadc9ad",
+    "connections.json": "68c8261b0c539e4de52b1727f1d0a42cf6a414f732446f3048895947213db77e",
+    "swarm/number-theory.json": "b7b9996d6f795e3a5b6b1226b6e6bcb4cdaf3373d9248c7ca46564f11083b3ef"
+  },
+  "historical_withdrawn_paper_review": "swarm/number-theory.json: F032 abstract_and_intro record",
+  "history_heading_date": "2026-10-07",
+  "new_catalogue_counts": {
+    "families": 372,
+    "families_with_catalogue_lean_link": 242,
+    "manuscripts": 719
+  },
+  "new_commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "new_commit_utc": "2026-10-08T05:20:00Z",
+  "new_editions": [
+    {
+      "family_id": "001",
+      "new_path": "preprints/Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026/paper.pdf",
+      "old_path": "preprints/Milnes-rationality-conjecture-for-abelian-varieties-September-23-2026/paper.pdf",
+      "publisher_history_category": "reference_and_version_update",
+      "title": "Milne's rationality conjecture for abelian varieties"
+    },
+    {
+      "family_id": "002",
+      "new_path": "preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026/exact-bsd-low-selmer-corank.pdf",
+      "old_path": "preprints/Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-3-2026/exact-bsd-low-selmer-corank.pdf",
+      "publisher_history_category": "repair_or_correction",
+      "title": "Exact Birch–Swinnerton-Dyer Formula from Low Selmer Corank"
+    },
+    {
+      "family_id": "002",
+      "new_path": "preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026/main.pdf",
+      "old_path": "preprints/The-Selmer-converse-for-elliptic-curves-at-every-prime-September-24-2026/main.pdf",
+      "publisher_history_category": "reference_and_version_update",
+      "title": "The Selmer converse for elliptic curves at every prime"
+    },
+    {
+      "family_id": "002",
+      "new_path": "preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026/paper.pdf",
+      "old_path": "preprints/The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-September-24-2026/paper.pdf",
+      "publisher_history_category": "reference_and_version_update",
+      "title": "The two-primary Birch–Swinnerton-Dyer formula in Selmer corank at most one"
+    },
+    {
+      "family_id": "004",
+      "new_path": "preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf",
+      "old_path": "preprints/Hilberts-tenth-problem-over-the-rational-numbers-September-24-2026/main.pdf",
+      "publisher_history_category": "reference_and_version_update",
+      "title": "Hilbert’s tenth problem over the rational numbers"
+    },
+    {
+      "family_id": "004",
+      "new_path": "preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026/paper.pdf",
+      "old_path": "preprints/A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-September-24-2026/paper.pdf",
+      "publisher_history_category": "reference_and_version_update",
+      "title": "A pointwise 2-converse for elliptic curves with rational two-torsion"
+    },
+    {
+      "family_id": "006",
+      "new_path": "preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026/paper.pdf",
+      "old_path": "preprints/Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-September-23-2026/paper.pdf",
+      "publisher_history_category": "reference_and_version_update",
+      "title": "Goldfeld's analytic density conjecture and the 2-converse for elliptic curves"
+    },
+    {
+      "family_id": "006",
+      "new_path": "preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026/paper.pdf",
+      "old_path": "preprints/The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-September-23-2026/paper.pdf",
+      "publisher_history_category": "reference_and_version_update",
+      "title": "The mean analytic rank of quadratic twists of elliptic curves"
+    },
+    {
+      "family_id": "010",
+      "new_path": "preprints/Unrestricted-pro-modularity-at-the-prime-two-October-6-2026/two-adic-promodularity.pdf",
+      "old_path": "preprints/Unrestricted-pro-modularity-at-the-prime-two-October-4-2026/two-adic-promodularity.pdf",
+      "publisher_history_category": "reference_and_version_update",
+      "title": "Unrestricted pro-modularity at the prime two"
+    },
+    {
+      "family_id": "010",
+      "new_path": "preprints/Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026/paper.pdf",
+      "old_path": "preprints/Fontaine-Mazur-modularity-at-the-prime-2-September-23-2026/paper.pdf",
+      "publisher_history_category": "reference_and_version_update",
+      "title": "Fontaine–Mazur modularity at the prime 2"
+    },
+    {
+      "family_id": "019",
+      "new_path": "preprints/The-p-adic-section-conjecture-October-6-2026/main.pdf",
+      "old_path": "preprints/The-p-adic-section-conjecture-September-24-2026/main.pdf",
+      "publisher_history_category": "reference_and_version_update",
+      "title": "The p-adic section conjecture"
+    },
+    {
+      "family_id": "032",
+      "new_path": "preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026/paper.pdf",
+      "old_path": "preprints/The-rational-Hodge-conjecture-for-CM-abelian-varieties-September-30-2026/paper.pdf",
+      "publisher_history_category": "reference_and_version_update",
+      "title": "The rational Hodge conjecture for CM abelian varieties"
+    },
+    {
+      "family_id": "032",
+      "new_path": "preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026/paper.pdf",
+      "old_path": "preprints/Weil-classes-and-Hodge-classes-on-abelian-powers-September-30-2026/paper.pdf",
+      "publisher_history_category": "reference_and_version_update",
+      "title": "Weil classes and Hodge classes on abelian powers"
+    },
+    {
+      "family_id": "032",
+      "new_path": "preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026/paper.pdf",
+      "old_path": "preprints/Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-September-30-2026/paper.pdf",
+      "publisher_history_category": "reference_and_version_update",
+      "title": "Abelian covers, Gale correspondences, and the Hodge conjecture for powers"
+    },
+    {
+      "family_id": "034",
+      "new_path": "preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026/main.pdf",
+      "old_path": "preprints/Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-4-2026/main.pdf",
+      "publisher_history_category": "repair_or_correction",
+      "title": "Log abundance for compact Kähler spaces under logarithmic Iitaka subadditivity"
+    },
+    {
+      "family_id": "034",
+      "new_path": "preprints/Conditional-good-minimal-models-for-compact-Kahler-fourfolds-October-6-2026/paper.pdf",
+      "old_path": "preprints/Conditional-good-minimal-models-for-compact-Kahler-fourfolds-October-5-2026/paper.pdf",
+      "publisher_history_category": "repair_or_correction",
+      "title": "Conditional good minimal models for compact Kähler fourfolds"
+    },
+    {
+      "family_id": "036",
+      "new_path": "preprints/Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-6-2026/numerical-generalized-abundance.pdf",
+      "old_path": "preprints/Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-4-2026/numerical-generalized-abundance.pdf",
+      "publisher_history_category": "repair_or_correction",
+      "title": "Numerical semiampleness of nef adjoint classes on compact Kähler manifolds"
+    },
+    {
+      "family_id": "056",
+      "new_path": "preprints/Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026/termination-generalized-lc-kahler-fourfolds.pdf",
+      "old_path": "preprints/Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-5-2026/termination-generalized-lc-kahler-fourfolds.pdf",
+      "publisher_history_category": "repair_or_correction",
+      "title": "Termination of generalized log canonical flips on compact Kähler fourfolds"
+    },
+    {
+      "family_id": "056",
+      "new_path": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026/termination-generalized-terminal-flips-compact-kahler-fourfolds.pdf",
+      "old_path": "preprints/Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-5-2026/termination-generalized-terminal-flips-compact-kahler-fourfolds.pdf",
+      "publisher_history_category": "repair_or_correction",
+      "title": "Termination of generalized-canonical flips on compact Kähler fourfolds"
+    },
+    {
+      "family_id": "056",
+      "new_path": "preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-6-2026/paper.pdf",
+      "old_path": "preprints/Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-5-2026/paper.pdf",
+      "publisher_history_category": "repair_or_correction",
+      "title": "Finite ordinary minimal model programs on compact Kähler fourfolds"
+    },
+    {
+      "family_id": "232",
+      "new_path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026/paper.pdf",
+      "old_path": "preprints/Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-September-25-2026/paper.pdf",
+      "publisher_history_category": "repair_or_correction",
+      "title": "Gaussian free-field limits of weighted integer Lipschitz heights"
+    },
+    {
+      "family_id": "232",
+      "new_path": "preprints/The-Gaussian-free-field-limit-of-integer-Lipschitz-heights-with-two-arc-boundary-data-October-6-2026/paper.pdf",
+      "old_path": "preprints/The-Gaussian-free-field-limit-of-integer-Lipschitz-heights-with-two-arc-boundary-data-September-25-2026/paper.pdf",
+      "publisher_history_category": "repair_or_correction",
+      "title": "The Gaussian free field limit of integer Lipschitz heights with two-arc boundary data"
+    },
+    {
+      "family_id": "232",
+      "new_path": "preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026/paper.pdf",
+      "old_path": "preprints/Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-September-25-2026/paper.pdf",
+      "publisher_history_category": "repair_or_correction",
+      "title": "Uniform real Lipschitz surfaces on the triangular lattice"
+    },
+    {
+      "family_id": "233",
+      "new_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026/main.pdf",
+      "old_path": "preprints/The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-September-25-2026/main.pdf",
+      "publisher_history_category": "repair_or_correction",
+      "title": "The joint scaling limit of critical Ashkin-Teller currents"
+    },
+    {
+      "family_id": "341",
+      "new_path": "preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026/paper.pdf",
+      "old_path": "preprints/Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-September-23-2026/paper.pdf",
+      "publisher_history_category": "repair_or_correction",
+      "title": "Deforming hypersymplectic four-manifolds to hyperkähler triples"
+    },
+    {
+      "family_id": "342",
+      "new_path": "preprints/Taming-implies-compatibility-on-four-manifolds-October-6-2026/paper.pdf",
+      "old_path": "preprints/Taming-implies-compatibility-on-four-manifolds-September-23-2026/paper.pdf",
+      "publisher_history_category": "repair_or_correction",
+      "title": "Taming implies compatibility on four-manifolds"
+    },
+    {
+      "family_id": "376",
+      "new_path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-October-6-2026/manuscript.pdf",
+      "old_path": "preprints/Incompressible-Box-Transport-and-Finite-Computation-September-27-2026/manuscript.pdf",
+      "publisher_history_category": "repair_or_correction",
+      "title": "Incompressible Box Transport and Finite Computation"
+    }
+  ],
+  "old_catalogue_counts": {
+    "families": 372,
+    "families_with_catalogue_lean_link": 235,
+    "manuscripts": 722
+  },
+  "old_commit": "adc7f1241b42e322a6451854ab7e4b4c146bf78a",
+  "preprint_trees": {
+    "modified_withdrawn_directories": [
+      "Algebraicity-of-Kuga-Satake-Correspondences-for-K3-Surfaces-October-3-2026",
+      "Algebraicity-of-Weil-classes-on-split-abelian-eightfolds-September-18-2026",
+      "The-rational-Hodge-conjecture-for-products-of-K3-surfaces-October-4-2026"
+    ],
+    "new_directories": 749,
+    "new_edition_directories": [
+      "A-pointwise-2-converse-for-elliptic-curves-with-rational-two-torsion-October-7-2026",
+      "Abelian-covers-Gale-correspondences-and-the-Hodge-conjecture-for-powers-October-6-2026",
+      "Conditional-good-minimal-models-for-compact-Kahler-fourfolds-October-6-2026",
+      "Deforming-hypersymplectic-four-manifolds-to-hyperkahler-triples-October-7-2026",
+      "Exact-Birch-Swinnerton-Dyer-Formula-from-Low-Selmer-Corank-October-7-2026",
+      "Finite-ordinary-minimal-model-programs-on-compact-Kahler-fourfolds-October-6-2026",
+      "Fontaine-Mazur-modularity-at-the-prime-2-October-6-2026",
+      "Gaussian-free-field-limits-of-weighted-integer-Lipschitz-heights-October-6-2026",
+      "Goldfelds-analytic-density-conjecture-and-the-2-converse-for-elliptic-curves-October-7-2026",
+      "Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026",
+      "Incompressible-Box-Transport-and-Finite-Computation-October-6-2026",
+      "Log-abundance-for-compact-Kahler-spaces-under-logarithmic-Iitaka-subadditivity-October-6-2026",
+      "Milnes-rationality-conjecture-for-abelian-varieties-October-7-2026",
+      "Numerical-semiampleness-of-nef-adjoint-classes-on-compact-Kahler-manifolds-October-6-2026",
+      "Taming-implies-compatibility-on-four-manifolds-October-6-2026",
+      "Termination-of-generalized-canonical-flips-on-compact-Kahler-fourfolds-October-6-2026",
+      "Termination-of-generalized-log-canonical-flips-on-compact-Kahler-fourfolds-October-7-2026",
+      "The-Gaussian-free-field-limit-of-integer-Lipschitz-heights-with-two-arc-boundary-data-October-6-2026",
+      "The-Selmer-converse-for-elliptic-curves-at-every-prime-October-7-2026",
+      "The-joint-scaling-limit-of-critical-Ashkin-Teller-currents-October-6-2026",
+      "The-mean-analytic-rank-of-quadratic-twists-of-elliptic-curves-October-6-2026",
+      "The-p-adic-section-conjecture-October-6-2026",
+      "The-rational-Hodge-conjecture-for-CM-abelian-varieties-October-6-2026",
+      "The-two-primary-Birch-Swinnerton-Dyer-formula-in-Selmer-corank-at-most-one-October-6-2026",
+      "Uniform-real-Lipschitz-surfaces-on-the-triangular-lattice-October-6-2026",
+      "Unrestricted-pro-modularity-at-the-prime-two-October-6-2026",
+      "Weil-classes-and-Hodge-classes-on-abelian-powers-October-6-2026"
+    ],
+    "old_directories": 722,
+    "removed_old_directories": [],
+    "unchanged_old_directory_count": 719
+  },
+  "publisher_reported_reference_and_version_count": 13,
+  "publisher_reported_repair_or_correction_count": 14,
+  "publisher_reported_top_line_formalized": 300,
+  "publisher_reported_total_manuscripts": 719,
+  "schema": "openai-math-source-update/v2",
+  "scope": {
+    "all_theorems_or_transitive_proof_dependencies_audited": false,
+    "canonical_problem_status_changed": false,
+    "current_catalogue_is_not_local_proof_verification": true,
+    "edition_classification": "publisher history and metadata; no repaired proof independently adjudicated",
+    "external_lean_or_comparator_executed": false,
+    "historical_graph_changed": false,
+    "private_or_native_data_included": false
+  },
+  "withdrawal_notice_date": "2026-10-06",
+  "withdrawals": [
+    {
+      "family_id": "032",
+      "meaning": "withdrawn proof; mathematical statement not established false",
+      "notice": "raw/withdrawal-3.md.txt",
+      "old_path": "preprints/The-rational-Hodge-conjecture-for-products-of-K3-surfaces-October-4-2026/hodge-conjecture-products-k3.pdf",
+      "title": "The rational Hodge conjecture for products of K3 surfaces"
+    },
+    {
+      "family_id": "032",
+      "meaning": "withdrawn proof; mathematical statement not established false",
+      "notice": "raw/withdrawal-2.md.txt",
+      "old_path": "preprints/Algebraicity-of-Kuga-Satake-Correspondences-for-K3-Surfaces-October-3-2026/manuscript.pdf",
+      "title": "Algebraicity of Kuga–Satake Correspondences for K3 Surfaces"
+    },
+    {
+      "family_id": "032",
+      "meaning": "withdrawn proof; mathematical statement not established false",
+      "notice": "raw/withdrawal-1.md.txt",
+      "old_path": "preprints/Algebraicity-of-Weil-classes-on-split-abelian-eightfolds-September-18-2026/paper.pdf",
+      "title": "Algebraicity of Weil classes on split abelian eightfolds"
+    }
+  ],
+  "withdrawn_family_graph_edges": 0
+}

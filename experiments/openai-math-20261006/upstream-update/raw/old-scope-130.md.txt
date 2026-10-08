@@ -1,0 +1,15 @@
+# Exact Fourier transforms below $`n\log n`$
+
+The following describes the scope of the Lean formalization related to the following accompanying paper(s):
+
+- [Finite tensor savings and exact Fourier circuits](../../preprints/Finite-tensor-savings-and-exact-Fourier-circuits-September-25-2026/main.pdf)
+
+## Scope
+
+The formalized result gives exact discrete Fourier transforms with arbitrarily small normalized circuit cost along an unbounded sequence of lengths. For every $c>0$ and every cutoff $N_0\ge2$, some $n\ge N_0$ has a circuit computing the unnormalized DFT with fewer than $cn\log_2 n$ gates. Addition, subtraction, and multiplication by a predetermined complex scalar each cost one gate; diagonal scalings are charged. The result is subsequential, with no all-length, bounded-coefficient, conditioning, or bit-complexity claim.
+
+## Comparator links
+
+| Result | Comparator statement |
+| --- | --- |
+| Subsequential savings for exact Fourier circuits | [ExactFourier.lean](../ComparatorChallenges/ExactFourier.lean) |
