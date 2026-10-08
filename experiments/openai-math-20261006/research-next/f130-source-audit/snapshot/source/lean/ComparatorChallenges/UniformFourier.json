@@ -1,0 +1,15 @@
+{
+  "challenge_module": "ComparatorChallenges.UniformFourier",
+  "solution_module": "OAI.Computability.FourierTransform.Main",
+  "theorem_names": [
+    "OAI.PowerSaving.transform_main",
+    "OAI.PowerSaving.convolution_main"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ],
+  "enable_nanoda": false
+}

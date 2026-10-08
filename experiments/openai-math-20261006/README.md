@@ -27,6 +27,7 @@ source identities and mathematical crosswalk remain reproducible.
 | P969 correlation obstruction | [Proof and exact finite example](research-sprint/correlation-barrier/README.md) | Pair cancellation alone does not imply the required window-energy bound |
 | A selected external proof-source chain | [F003 source audit](research-sprint/source-audit/README.md) | Bounded source inspection, not a complete dependency audit or external build |
 | Withdrawals and changed formalization scope | [Source update](upstream-update/README.md) | Metadata replay; no repaired argument or external Lean proof independently verified |
+| All-length exact Fourier theorem scope | [F130 source audit](research-next/f130-source-audit/README.md) | Pinned source closure and static checks; Lean declaration and Comparator checks remain unrun |
 
 ## Reproduce the mathematical overlay
 
@@ -51,10 +52,11 @@ gates. No external OpenAI solution or Comparator is run by the bundle checker.
 
 ## The next source question
 
-F130 now has a separately reported **all-length exact DFT/convolution** result,
-in addition to the original subsequential circuit statement. Its model allows
-exact complex arithmetic, unrestricted coefficients and a supplied root of
-unity. Audit the [selected source statement](upstream-update/raw/new-scope-130.md.txt),
-its Comparator bindings and the charged operations before inferring a usable
-finite-precision algorithm. Neither exact computation nor its operation count
-supplies the missing P969 squarefree-variance or mixed-moment estimate.
+The [F130 source audit](research-next/f130-source-audit/snapshot/F130_SCOPE.md) traces the
+separately reported **all-positive-length exact DFT/convolution** statement,
+its fixed programs and charged operations. The model uses exact complex
+arithmetic, unrestricted coefficient size and a supplied canonical root of
+unity. The next check is an isolated declaration, axiom and Comparator audit;
+none has been run here. The source-level result establishes neither a usable
+finite-precision algorithm nor the missing P969 squarefree-variance or
+mixed-moment estimate.

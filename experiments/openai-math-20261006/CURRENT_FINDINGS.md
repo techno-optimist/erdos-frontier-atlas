@@ -39,6 +39,7 @@ and the P969 analytic bridge remain unestablished. The original graph is retaine
 | Finite evidence | [Arithmetic](research-sprint/arithmetic/receipt.json), [window](research-sprint/correlation-barrier/receipt.json), [rational](research-next/arithmetic/receipt.json) and [higher-i](research-next/structural/receipt.json) checks | Exact bounded controls corroborate only their tested finite assertions; infinite claims rest on proofs |
 | Source trace | [F003 selected Lean chain](research-sprint/source-audit/README.md) | A 2,000-module source prefix was scanned and 84 modules remain on its frontier; no complete external dependency build or Comparator run |
 | Source trace | [Upstream corrections](upstream-update/README.md) | Retained catalogue/notice/Git-tree bytes establish changes and source scope, not validity of corrected proofs |
+| Source trace | [F130 uniform Fourier audit](research-next/f130-source-audit/snapshot/F130_SCOPE.md) | Positive-length quantifiers, exact scalar/root model and bounded source checks; no Lean build, declaration axiom audit, Comparator run or practical speedup established |
 
 Separate agent reviews are recorded where available. They are not human
 acceptance or a substitute for the stated proof and replay boundary.
@@ -55,7 +56,9 @@ acceptance or a substitute for the stated proof and replay boundary.
   estimate. Pairwise cancellation or faster exact transforms alone do not imply it.
 - **F003 and F130 source verification:** retain distinctions among prose,
   Comparator challenge, selected declaration, full dependency build and audited
-  axioms. A source prefix or scope note is not a completed proof audit.
+  axioms. For F130, the [next-step specification](research-next/f130-source-audit/snapshot/F130_SCOPE.md)
+  isolates the two target declarations and pinned Mathlib closure from unrelated
+  repository setup hooks. Its static checks are not a completed proof audit.
 
 The [research-sprint result ledger](research-sprint/results.json) and
 [research-next result ledger](research-next/results.json) preserve original

@@ -20,3 +20,8 @@ Replay the two exact experiments with their `verify.py` scripts. The formal
 bridge README gives the pinned Lean command. [results.json](results.json)
 hashes the three receipts. The bundle-wide checker also replays the finite
 experiments and verifies their current source hashes.
+
+The later [F130 exact uniform Fourier source audit](f130-source-audit/README.md)
+records the all-positive-length theorem's hypotheses and computational model.
+It is a separate source-verification lane, with an unrun declaration audit as
+its next step. The original P699 result ledger above is unchanged.

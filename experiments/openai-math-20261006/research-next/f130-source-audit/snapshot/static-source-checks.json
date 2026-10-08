@@ -1,0 +1,32 @@
+{
+  "commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "comparator_performed": false,
+  "declaration_export_performed": false,
+  "dependency_packages_fetched": false,
+  "goal_definition_comment_whitespace_normalized_matches": {
+    "ConvGoal": true,
+    "ConvProgram": true,
+    "DFTGoal": true,
+    "DFTProgram": true,
+    "TimeBounds": true,
+    "conv": true,
+    "decimalExponent": true,
+    "decimalTime": true,
+    "dft": true,
+    "nlogn": true,
+    "paperDelta": true,
+    "paperM": true,
+    "paperMultiplier": true,
+    "paperTime": true,
+    "paperW": true,
+    "theta": true
+  },
+  "kernel_check_performed": false,
+  "lean_compilation_performed": false,
+  "local_proof_module_count": 89,
+  "local_proof_source_token_flags": {},
+  "ram_comment_whitespace_normalized_match": true,
+  "scan_kind": "Lexical only; removes nested comments and double-quoted strings. Not a parser or transitive Lean axiom audit.",
+  "schema": "uniform-fourier-static-source-checks/v1",
+  "source_snapshot_sha256": "190c84342ea257ffe254f2947d25af274e8a3f75ac85c707d2a616169f7dd68f"
+}

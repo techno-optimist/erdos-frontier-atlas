@@ -1,0 +1,22 @@
+F130 source audit: upstream attribution
+======================================
+
+The unchanged source/configuration files under snapshot/source/ are from:
+
+  OpenAI/math
+  https://github.com/OpenAI/math
+  commit fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb
+
+They are distributed under the Apache License, Version 2.0. The exact
+upstream root license is included as UPSTREAM_LICENSE. All original file
+contents, including their attribution notices, are preserved byte-for-byte.
+Raw upstream Markdown files have only a storage-name suffix .txt added;
+snapshot-storage.json records each original logical path and stored path.
+
+No root NOTICE file was present in the captured upstream root listing at
+that commit. This is a distributor-authored attribution notice, not an
+upstream NOTICE or a claim about directories outside the selected snapshot.
+
+The audit notes and offline verification code are separate additions.
+No theorem source has been modified, and no local Lean proof verification,
+executable extraction, or empirical performance result is asserted.

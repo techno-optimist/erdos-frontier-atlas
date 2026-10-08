@@ -162,6 +162,21 @@
         "upstream-update/manifest.json"
       ],
       "canonical_status_changed": false
+    },
+    {
+      "id": "f130-exact-uniform-source-audit",
+      "evidence_level": "source_trace",
+      "claim": "Pinned public Fourier source closure, exact-model scope and offline lexical checks; declaration/axiom/Comparator verification remains unrun.",
+      "paths": [
+        "research-next/f130-source-audit/README.md",
+        "research-next/f130-source-audit/snapshot/F130_SCOPE.md",
+        "research-next/f130-source-audit/snapshot/AuditUniformFourier.lean",
+        "research-next/f130-source-audit/verify.py",
+        "research-next/f130-source-audit/receipt.json",
+        "research-next/f130-source-audit/manifest.json",
+        "research-next/f130-source-audit/provenance.json"
+      ],
+      "canonical_status_changed": false
     }
   ],
   "hash_checks": [
@@ -613,6 +628,1014 @@
         "sha256"
       ],
       "artifact": "upstream-update/verify.py"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        0,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/NOTICE"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        1,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/README.md"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        2,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/UPSTREAM_LICENSE"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        3,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/provenance.json"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        4,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/receipt.json"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        5,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/AuditUniformFourier.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        6,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/F130_SCOPE.md"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        7,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/README.md"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        8,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/fetch_sources.py"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        9,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/manifest.json"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        10,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/ComparatorChallenges/README.md.txt"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        11,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/ComparatorChallenges/UniformFourier.json"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        12,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/ComparatorChallenges/UniformFourier.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        13,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierCircuit/Core.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        14,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/AddressTables.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        15,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/ArbitraryLength.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        16,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/Asymptotics.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        17,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/BinaryBasis.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        18,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/BinaryFFT.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        19,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/BinaryFrames.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        20,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/BitLayout.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        21,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/ChineseRemainder.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        22,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/ChirpConvolution.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        23,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/ChunkCompiler.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        24,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/ChunkPrograms.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        25,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/CirculantUpdates.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        26,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/ColumnAddresses.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        27,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/CompilerEnvironment.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        28,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/ConvolutionProgram.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        29,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/Cost.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        30,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/DirectionalWords.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        31,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/DisjointIntervals.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        32,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/FourierCompilation.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        33,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/FourierIdentities.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        34,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/FourierWords.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        35,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/FrameLifting.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        36,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/Goal.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        37,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/IntegerPrograms.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        38,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/IntervalEffects.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        39,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/IntervalPrograms.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        40,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/LayerCompilation.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        41,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/LayerPrograms.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        42,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/LayerWords.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        43,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/Layout.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        44,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/LayoutPrograms.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        45,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/LengthSelection.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        46,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/LocalCompiler.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        47,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/LocalPreparation.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        48,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/LoopBounds.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        49,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/Main.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        50,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/MeasuredFit.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        51,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/MeasuredPrograms.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        52,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/NetworkInvocation.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        53,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/NetworkLabels.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        54,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/NetworkRoles.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        55,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/NetworkStages.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        56,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/NewtonFactorization.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        57,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/PackingPrograms.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        58,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/ParameterPrograms.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        59,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/PolynomialBounds.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        60,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/PolynomialPrograms.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        61,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/PowerTables.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        62,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/PrefixTraversal.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        63,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/PrimeSelection.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        64,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/ProductMatrix.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        65,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/ProgramBounds.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        66,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/ProgramConstruction.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        67,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/RAM.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        68,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/RecursionBounds.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        69,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/RecursiveBatches.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        70,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/RecursiveContract.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        71,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/RegisterBounds.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        72,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/RoleArrays.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        73,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/RootPreparation.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        74,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/ScalarNetwork.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        75,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/ScalarPreparation.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        76,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/SectorAlgorithm.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        77,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/SectorIdentities.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        78,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/SectorPacking.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        79,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/SectorPrograms.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        80,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/SynchronizedAlgorithm.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        81,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/TensorAlgorithm.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        82,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/TensorCertificate.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        83,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/TensorFibers.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        84,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/TensorIndexing.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        85,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/TensorProgram.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        86,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/TensorRecursion.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        87,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/TensorSaving.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        88,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/ToeplitzCompiler.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        89,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/ToeplitzIdentities.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        90,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/ToeplitzLayers.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        91,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/ToeplitzPreparation.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        92,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/ToeplitzUpdates.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        93,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/TransformProgram.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        94,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/TraversalPrograms.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        95,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/UniformBounds.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        96,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/WordCompilation.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        97,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/WordPrograms.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        98,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/WorkBounds.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        99,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/WorkingCompiler.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        100,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/WorkingPreparation.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        101,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/OAI/Computability/FourierTransform/WorkingTransform.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        102,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/README.md.txt"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        103,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/docs/130.md.txt"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        104,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/lake-manifest.json"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        105,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/lakefile.lean"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        106,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source/lean/lean-toolchain"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        107,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/source-manifest.json"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        108,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot/static-source-checks.json"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        109,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/snapshot-storage.json"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        110,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/upstream-root-listing.json"
+    },
+    {
+      "receipt": "research-next/f130-source-audit/manifest.json",
+      "field": [
+        "files",
+        111,
+        "sha256"
+      ],
+      "artifact": "research-next/f130-source-audit/verify.py"
     }
   ],
   "finite_replays": [
@@ -649,6 +1672,13 @@
     {
       "id": "upstream-source-update-20261008",
       "script": "upstream-update/verify.py",
+      "args": [
+        "--check"
+      ]
+    },
+    {
+      "id": "f130-static-source-audit",
+      "script": "research-next/f130-source-audit/verify.py",
       "args": [
         "--check"
       ]

@@ -1,0 +1,23 @@
+{
+  "assets": [
+    {
+      "bytes": 7578,
+      "path": "upstream-root-listing.json",
+      "sha256": "66a85610cee86a38b3bf1f06a1b51593979c3fd52537885f853b9662fb427b15",
+      "url": "https://api.github.com/repos/OpenAI/math/contents?ref=fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb"
+    },
+    {
+      "bytes": 11357,
+      "path": "UPSTREAM_LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "url": "https://raw.githubusercontent.com/OpenAI/math/fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb/LICENSE"
+    }
+  ],
+  "commit": "fd4aeeb2ee4fc729c18d98444fed42fd0529eeeb",
+  "license_identifier": "Apache-2.0",
+  "repository": "https://github.com/OpenAI/math",
+  "root_listing_only_notice_claim": true,
+  "schema": "f130-public-provenance/v1",
+  "upstream_root_notice_present": false,
+  "upstream_source_bytes_modified": false
+}
