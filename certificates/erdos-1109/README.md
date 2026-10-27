@@ -7,9 +7,17 @@ squarefree. A392165(k) is the least N with f(N) ≥ k, the index of the k-th
 record. OEIS lists A392165(1..39), up to 1103 (C. Wu), and a b-file of
 A392164 to N = 700.
 
+**Update 2026-10-27 (OEIS has moved past this table).** OEIS A392165 now lists
+the data a(1..54), matching every term here, and a b-file a(1..65) by Leandre Jack
+(terms 55..65 = 2071, 2141, 2193, 2287, 2355, 2427, 2455, 2627, 2729, 2741, 2993),
+with an A392164 b-file to N = 3000 (f(3000) = 65). An offline cross-check found the
+certificate's f(N) equal to that b-file for every N ≤ 2000. This certificate does
+NOT verify terms 55..65 or f(N) for 2000 < N ≤ 3000, and who published 40..54 first
+was not determined. The atlas gap-map cell for #1109 now points at A392165(66).
+
 ## What this certificate establishes
 
-**A392165(1..54) and f(N) for every N ≤ 2000; A392165(40..54) are new.**
+**A392165(1..54) and f(N) for every N ≤ 2000; A392165(40..54) were not in OEIS when this was computed (2026-09-28).**
 
 | k | A392165(k) | vertices of G_N | nodes to find the set |
 |---:|---:|---:|---:|
@@ -29,7 +37,7 @@ A392164 to N = 700.
 | 53 | **1991** | 321 | 22 323 282 |
 | 54 | **1999** | 325 | 54 052 973 |
 
-So f(2000) = 54, A392165(55) > 2000, and A392164(N) for N ≤ 2000
+So f(2000) = 54, A392165(55) > 2000 (OEIS now gives A392165(55) = 2071, not checked here), and A392164(N) for N ≤ 2000
 follows from the table. For each record, the certificate records the set,
 checked by trial division, and an exhaustive search shows that no candidate N
 between records reaches the next size.

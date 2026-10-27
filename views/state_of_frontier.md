@@ -5,7 +5,7 @@
 > [Frontier Board](../README.md#chronos-frontier-board). Do not edit by hand —
 > regenerate with `make state-of-frontier`; `make check-views` fails if this file
 > is stale. Deterministic: no generation timestamp — every date below comes from
-> the data. **Data through 2026-09-28** (latest provenance/evidence date).
+> the data. **Data through 2026-10-27** (latest provenance/evidence date).
 
 The gap map is the versioned `[L, U]` ledger over bounded quantities of open
 problems (charter Tenet 2: the bracket is the unit of progress). This report is
@@ -30,8 +30,8 @@ validator fails any stored class the recorded evidence does not prove.
 |---|---|---|
 | C0 | contract-bound formal proof, machine-checked | 0 |
 | C1 | &ge;2 contract-bound independent replays at the claimed range | 0 |
-| C2 | exactly one contract-bound verified replay | 14 |
-| C3 | literature- or numerics-grade — no independent in-project verification artifact | 211 |
+| C2 | exactly one contract-bound verified replay | 13 |
+| C3 | literature- or numerics-grade — no independent in-project verification artifact | 212 |
 
 ## Entries by kind
 
@@ -92,7 +92,7 @@ truncated — the full values, sources, and verifier specs live in
 | [#1100](https://www.erdosproblems.com/1100) | [A325864](https://oeis.org/A325864) | g(k) = max over squarefree n with omega(n)=k of tau_perp(n), where tau_perp counts coprime consecutive-diviso… | lower | open-easy | (sqrt(2)+o(1))^k | (2-c)^k for some absolute c>0 |
 | [#1107](https://www.erdosproblems.com/1107) | [A392342](https://oeis.org/A392342) | A392342 — integers not the sum of at most 4 cubefull numbers (the r=3 case of: every large integer is a sum o… | lower | open-easy | 1e9 | ? |
 | [#1108](https://www.erdosproblems.com/1108) | [A115645](https://oeis.org/A115645) | A115645(27) — next powerful number (min prime exponent >= 2) expressible as a sum of distinct factorials; 26… | lower | open-easy | 1e18 | ? |
-| [#1109](https://www.erdosproblems.com/1109) | [A392164](https://oeis.org/A392164) | A392165(55) — smallest N with f(N) >= 55, where f(N) = A392164(N) = size of the largest S ⊆ {1..N} such that… | upper | open-easy | 2001 | ? |
+| [#1109](https://www.erdosproblems.com/1109) | [A392164](https://oeis.org/A392164) | A392165(66) — smallest N with f(N) >= 66, where f(N) = A392164(N) = size of the largest S ⊆ {1..N} such that… | upper | open-easy | 3001 | ? |
 | [#3](https://www.erdosproblems.com/3) | [A003002](https://oeis.org/A003002) | A003002(212) = r_3(212) — maximum size of a subset of {1,...,212} containing no 3-term arithmetic progression | lower | plausible | 43 | 44 |
 | [#11](https://www.erdosproblems.com/11) | [A377587](https://oeis.org/A377587) | A377587(13) — smallest odd m such that m - 2^k is non-squarefree for every k = 1..13 | upper | plausible | > 1125899906842624 (= 2^50) | ? |
 | [#20](https://www.erdosproblems.com/20) | [A332077](https://oeis.org/A332077) | A332077 cell Sun(3,4) — minimal number of distinct sets of cardinality <= 3 forcing a 4-sunflower (first unco… | lower | plausible | 40 | 163 |
