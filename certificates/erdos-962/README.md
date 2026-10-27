@@ -101,6 +101,9 @@ python3 -I certificates/erdos-962/verify.py --full   # a(1..1102): scan of [1, 4
 | `verify.py` | the replay; reads RESULT.json, never writes it |
 | `RESULT.json` | receipt: a(n) and the length of its run, for n = 1..1102 |
 | `emit_result.py` | regenerates RESULT.json into a *different* directory |
+| `RESULT_ford_1200.json` | extension receipt: a(n) and run length for n = 1..1200 (written by `emit_result.py --nmax 1200`) |
+| `runs_ford_1200.txt` | the sequential engine's output for NMAX 1200 over [1, 7.5*10^10], one line per n |
+| `verify_ford_1200.py` | the replay for the extension; reads, never writes |
 
 ## Scope — what is not certified
 
@@ -109,5 +112,46 @@ python3 -I certificates/erdos-962/verify.py --full   # a(1..1102): scan of [1, 4
 - **Minimality is only as good as the scan.** It rests on the two engines, which
   share the sieve design but not code, and on the reference over the small
   range. It is a verified-search receipt, not a formal proof.
-- **a(1103) is not computed.** 1103 is prime, so from n = 1103 on, integers whose
-  largest prime factor is 1103 also break runs.
+- **a(1201) is not computed.** a(1103..1200) are covered by the extension below;
+  1201 is prime, so from n = 1201 on, integers whose largest prime factor is 1201
+  also break runs. All that is known here is a(1201) ≥ a(1200) = 74759540976.
+
+## Extension to n = 1200 (2026-10-27)
+
+**A327909(n) for 1103 ≤ n ≤ 1200: a(1103..1108) = 41063158607, a(1109..1113) = 43204475623, a(1114..1152) = 53907372933, a(1153..1156) = 61103835710, a(1157..1200) = 74759540976; all 98 are new (the OEIS b-file ends at 999).**
+
+| n | a(n) | length of the run there |
+|---:|---:|---:|
+| 1103–1108 | 41063158607 | 1183 |
+| 1109–1113 | 43204475623 | 1113 |
+| 1114–1152 | 53907372933 | 1245 |
+| 1153–1156 | 61103835710 | 1156 |
+| 1157–1200 | 74759540976 | 1211 |
+
+The files above are frozen, so this extension adds new files and changes none.
+`RESULT_ford_1200.json` was written by the certificate's own `emit_result.py`
+(`--nmax 1200 --limit 75000000000`). That is one exact chunked scan of every
+integer up to 7.5 × 10^10. Its entries for n ≤ 1102 equal `RESULT.json`
+exactly. `runs_ford_1200.txt` is the sequential engine `runs.c`, run separately
+over the same range with NMAX 1200, and it agrees on every n ≤ 1200.
+
+- **a(1103..1108) needed no search.** The run starting at a(1102) = 41063158607
+  is 1183 integers long, and none of its integers has largest prime factor 1103,
+  so it has the same length in class 1103 (n = 1103..1108). Since a(n) is
+  nondecreasing, a(1103..1108) = a(1102).
+- Erdős's k(n) = max { k : a(k) ≤ n + 1 } is now exact for every
+  n < 74759540975, and k(n) ≥ 1200 beyond that.
+
+```sh
+python3 -I certificates/erdos-962/verify_ford_1200.py               # prefix, gcd witnesses, committed runs.c output, engines on [1, 2*10^8] (~10 s); does not certify
+python3 -I certificates/erdos-962/verify_ford_1200.py --full        # chunk.c rescans [1, 7.5*10^10] and certifies a(1..1200) (~15 CPU-minutes)
+python3 -I certificates/erdos-962/verify_ford_1200.py --full --runs # also re-runs runs.c over the same range (~12 min, one core)
+```
+
+The fast replay checks the receipt: the frozen prefix, every run by gcd, and
+agreement with the committed `runs.c` output. It does not re-establish
+minimality for n > 400, and only `--full` certifies the claim. Planted failures
+must be refused: a(1157) claimed one smaller, run(1200) claimed one longer, the
+a(1103) run started one late, and a(1050) altered in the prefix. The scope above
+still applies. This is a verified-search receipt, not a formal proof, and the
+two engines share the sieve design but not code.
