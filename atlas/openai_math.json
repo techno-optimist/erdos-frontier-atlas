@@ -79,7 +79,7 @@
    ],
    "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/025.md",
    "source_verification_level": "Lean formalization listed by source (scope per doc)",
-   "our_verdict": "Lean proof replayed and independently kernel-checked: standard axioms only; statement fidelity not checked",
+   "our_verdict": "Lean proof replayed and independently kernel-checked: standard axioms only; statement reviewed as faithful to #304 (Lean covers #304 only, not the #293/#148 corollaries)",
    "status_changed_by_this_entry": false,
    "certificate": {
     "kind": "lean_replay",
@@ -91,7 +91,7 @@
     "by": "Ford (ProjectForty2)",
     "published_in": "https://github.com/techno-optimist/observatory/pull/60",
     "result": "Build of the solution files succeeds; #print axioms lists only propext, Classical.choice, Quot.sound; a freshly retyped copy of the challenge statement is closed by the theorem; controls (misstated copy fails, planted sorry flagged) behave as expected.",
-    "scope": "Soundness only: OpenAI's own proof replayed in the standard Lean kernel and re-checked by an independent kernel (nanoda). Not checked: that the Lean statement faithfully formalizes the erdosproblems.com statement, or the manuscript prose. Does not change any status.",
+    "scope": "OpenAI's own proof replayed in the standard Lean kernel and re-checked by an independent kernel (nanoda); statement-fidelity review against #304 found it faithful (same N(a,b) and N(b), absolute constants, two-sided Θ(log log b) bound; Lean-checked bridge to the formal-conjectures Erdos304.upper_bound statement). The Lean covers Theorem 1.1 (#304) only; the paper's corollaries tied to #293 and #148 are not formalised. Constants not explicit. Not checked: the manuscript prose argument or any refereed review. Not P42's proof and not first to review it (erdosproblems.ai and formal-conjectures list it; Bloom and van Doorn's exposition is linked from the problem page). Does not change any status.",
     "additional_checks": [
      {
       "kind": "independent_kernel_check",
@@ -100,6 +100,14 @@
       "checked": "2026-10-27 (America/Denver)",
       "published_in": "https://github.com/techno-optimist/observatory/pull/63",
       "result": "lean4export of the challenge theorem's closure, checked by nanoda_lib: 45,753 declarations, no errors, only propext, Classical.choice, Quot.sound; planted sorry and tampered proof both rejected; bundled leanchecker 59/59 OK."
+     },
+     {
+      "kind": "fidelity_review",
+      "receipt": "https://projectforty2.ai/data/ford_receipts/oai025_fidelity_review.txt",
+      "receipt_sha256": "cadc6a6e870963f19ee61d20e48769d6f087205880c40dec3ca368bd7f017258",
+      "checked": "2026-10-27 (America/Denver)",
+      "published_in": "https://github.com/techno-optimist/observatory/pull/64",
+      "result": "No falsifier fired. Fidelity file (FordCheck/Fidelity304.lean) compiles with only propext, Classical.choice, Quot.sound: OpenAI's minLength/maxMinLength equal the formal-conjectures definitions; main implies Erdos304.upper_bound and variants.lower_1950; every a/b has an expansion and minLength ≥ 1 (no empty-sInf default); witness 2/15 = 1/10 + 1/30. Receipt time corrected in https://github.com/techno-optimist/observatory/pull/65."
      }
     ]
    }
@@ -298,7 +306,7 @@
   "replicated_by_us": 0,
   "lean_replayed_by_us": 2,
   "independent_kernel_checked_by_us": 2,
-  "fidelity_reviewed_by_us": 1
+  "fidelity_reviewed_by_us": 2
  },
- "counts_note": "replicated_by_us counts independent re-derivations of the mathematics (none). lean_replayed_by_us counts families whose published Lean proof P42 rebuilt and axiom-checked (025, 184). independent_kernel_checked_by_us counts families whose proof P42 also re-checked with a second, independent kernel (025, 184). fidelity_reviewed_by_us counts families whose Lean statement P42 reviewed against the erdosproblems.com statement (184)."
+ "counts_note": "replicated_by_us counts independent re-derivations of the mathematics (none). lean_replayed_by_us counts families whose published Lean proof P42 rebuilt and axiom-checked (025, 184). independent_kernel_checked_by_us counts families whose proof P42 also re-checked with a second, independent kernel (025, 184). fidelity_reviewed_by_us counts families whose Lean statement P42 reviewed against the erdosproblems.com statement (025, 184)."
 }
