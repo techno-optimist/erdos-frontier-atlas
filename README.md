@@ -99,7 +99,7 @@ these inventories is a count of conjectures solved by this project.
 | Executable reductions | [`tools/briefcase.py`](tools/briefcase.py) · [`tools/briefcaselib/`](tools/briefcaselib) · [`tools/briefcase.html`](tools/briefcase.html) · [`atlas/residuals.json`](atlas/residuals.json) |
 | Production attack graph | [`GRAPH.md`](GRAPH.md) · [`atlas/graph/`](atlas/graph) · [`views/graph/`](views/graph) · [`views/sorties.md`](views/sorties.md) |
 | Certificates and claim contracts | [`certificates/README.md`](certificates/README.md) · [`certificates/contracts.json`](certificates/contracts.json) |
-| Feasibility and source overlays | [`atlas/walls.md`](atlas/walls.md) · [`atlas/lanes.md`](atlas/lanes.md) · [`atlas/ai_claims.json`](atlas/ai_claims.json) · [`atlas/lean_lane.json`](atlas/lean_lane.json) |
+| Feasibility and source overlays | [`atlas/walls.md`](atlas/walls.md) · [`atlas/lanes.md`](atlas/lanes.md) · [`atlas/ai_claims.json`](atlas/ai_claims.json) · [`atlas/openai_math.json`](atlas/openai_math.json) · [`atlas/lean_lane.json`](atlas/lean_lane.json) |
 | Generated views and book | [`views/`](views) · [operations annex](views/operations.md) · [`book/`](book) |
 | Validators and tests | [`tools/`](tools) · [`tests/`](tests) · [`Makefile`](Makefile) · [CI workflow](.github/workflows/verify.yml) |
 | Project policy and releases | [`COORDINATION.md`](COORDINATION.md) · [`FRONTIER_CARTOGRAPHY.md`](FRONTIER_CARTOGRAPHY.md) · [`RELEASING.md`](RELEASING.md) · [`NOTICE`](NOTICE) |
@@ -124,6 +124,7 @@ silently rebuilding the graph.
   [P327 review](experiments/astra-327-fiber-20260912/FRESHNESS.md) are dated
   September 12, 2026. They are source snapshots, not continuing monitors.
 - The [AI-claim overlay](atlas/ai_claims.json) is a dated claims registry.
+- The [OpenAI manuscript index](atlas/openai_math.json) lists the 15 result families in [openai/math](https://github.com/openai/math) (Apache-2.0) that the source ties to Erdős problems, pinned to a commit. They are external, unreplicated results: no entry changes a status here.
   Recording an AI-assisted proof claim never changes a canonical status.
 - Before starting a new attack, check the official problem page, discussion,
   separate proof-claim register, and cited manuscript versions. Consult
