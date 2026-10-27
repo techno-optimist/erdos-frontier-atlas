@@ -124,7 +124,7 @@ silently rebuilding the graph.
   [P327 review](experiments/astra-327-fiber-20260912/FRESHNESS.md) are dated
   September 12, 2026. They are source snapshots, not continuing monitors.
 - The [AI-claim overlay](atlas/ai_claims.json) is a dated claims registry.
-- The [OpenAI manuscript index](atlas/openai_math.json) lists the 15 result families in [openai/math](https://github.com/openai/math) (Apache-2.0) that the source ties to Erdős problems, pinned to a commit. They are external, unreplicated results: no entry changes a status here.
+- The [OpenAI manuscript index](atlas/openai_math.json) lists the 15 result families in [openai/math](https://github.com/openai/math) (Apache-2.0) that the source ties to Erdős problems, pinned to a commit. They are external results. For two of them (025, Erdős #304; 184, Erdős #802) P42 rebuilt OpenAI's Lean proof and found it compiles with only the standard axioms; whether those Lean statements faithfully match the problems is not yet checked, and no entry changes a status here.
   Recording an AI-assisted proof claim never changes a canonical status.
 - Before starting a new attack, check the official problem page, discussion,
   separate proof-claim register, and cited manuscript versions. Consult
