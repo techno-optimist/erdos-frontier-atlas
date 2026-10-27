@@ -49,7 +49,8 @@ def test_report_end_to_end(tmp_path):
     seq.mkdir()
     (seq / "A999999.seq").write_text(FAKE, encoding="utf-8")
     rows = [("A999999(5) — x", "open"), ("A999999(60) — y", "open"),
-            ("A999999(95) — z", "open"), ("A999999(3) — w", "closed")]
+            ("A999999(95) — z", "open"), ("A999999(3) — w", "closed"),
+            ("A999999(4) — v", "record_in_progress")]
     gm = {"entries": [{"problem": i + 1, "oeis": "A999999", "quantity": q, "status": s}
                       for i, (q, s) in enumerate(rows)]}
     (tmp_path / "gap_map.json").write_text(json.dumps(gm), encoding="utf-8")
@@ -59,6 +60,7 @@ def test_report_end_to_end(tmp_path):
     assert out.returncode == 0, out.stderr
     assert "COVERED   #1     A999999(5)" in out.stdout
     assert "COVERED?  #2     A999999(60)" in out.stdout
-    assert "#3 " not in out.stdout and "#4 " not in out.stdout
-    assert "3 open cells checked: 1 covered, 1 covered only by a table with placeholders, 1 open" \
+    assert "COVERED   #5     A999999(4)" in out.stdout   # record_in_progress rows are checked
+    assert "#3 " not in out.stdout and "#4 " not in out.stdout   # closed rows are not
+    assert "4 non-closed cells checked: 2 covered, 1 covered only by a table with placeholders, 1 open" \
         in out.stdout
