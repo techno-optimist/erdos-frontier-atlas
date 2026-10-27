@@ -10,7 +10,7 @@
    "learned_from": 5,
    "measures": 223,
    "references": 538,
-   "retracts": 9,
+   "retracts": 10,
    "same_family": 122,
    "tagged": 2028,
    "trap": 6,
@@ -21,7 +21,7 @@
    "evidence_claim": 29,
    "evidence_container": 35,
    "external_claim": 91,
-   "incident": 18,
+   "incident": 19,
    "move": 7,
    "msc": 21,
    "oeis_seq": 454,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 4461,
-   "validator-enforced": 34
+   "validator-enforced": 35
   }
  },
  "edges": [
@@ -16206,6 +16206,13 @@
    "dst": "E:claim:erdos-1107-public-table",
    "source": "certificates/contracts.json",
    "src": "I:pin:865fbb12",
+   "tier": "validator-enforced",
+   "type": "retracts"
+  },
+  {
+   "dst": "E:claim:erdos-979-a6-public",
+   "source": "certificates/contracts.json",
+   "src": "I:pin:9975110c",
    "tier": "validator-enforced",
    "type": "retracts"
   },
@@ -34278,7 +34285,7 @@
      "a(5) = 10588881419  OK"
     ]
    },
-   "scope": "Exact finite lower bound only; does not bear on the asymptotic Erdős #979 limsup question. The private 10^13 sweep is quarantined from public promotion until packaged.",
+   "scope": "Exact finite lower bound only; does not bear on the asymptotic Erdős #979 limsup question. The private 10^13 sweep is quarantined from public promotion until packaged. OEIS A385316 reports a stronger a(6) > 3.166*10^14 (comment by Morfis Sallis, Oct 16 2026), so this certificate is not the best known bound.",
    "statement": "A385316(6) > 10^12.",
    "status": "promoted",
    "type": "evidence_claim"
@@ -34607,7 +34614,7 @@
    "type": "evidence_container"
   },
   {
-   "boundary": "Public package certifies a(6)>10^12; private 10^13 ledgers are not promoted here.",
+   "boundary": "Public package certifies a(6)>10^12; private 10^13 ledgers are not promoted here. Not the best known bound: OEIS A385316 reports a(6)>3.166*10^14 (Morfis Sallis, Oct 16 2026).",
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-979",
    "path": "certificates/erdos-979",
@@ -34807,6 +34814,13 @@
   {
    "banned_string": "\"value\": \"10^10\"",
    "id": "I:pin:865fbb12",
+   "kind": "retraction_pin",
+   "source": "certificates/contracts.json must_not_contain",
+   "type": "incident"
+  },
+  {
+   "banned_string": "past the published `4.99·10¹¹`",
+   "id": "I:pin:9975110c",
    "kind": "retraction_pin",
    "source": "certificates/contracts.json must_not_contain",
    "type": "incident"
@@ -77089,7 +77103,7 @@
     "value": "> 10^12",
     "year": 2026
    },
-   "notes": "PUBLIC BOUND: a(6) > 10^12, replayable from certificates/erdos-979/ (~11 GB). PRIVATE OPERATIONAL RESULT: the private streaming sweep and blind replica report gap-free agreement through 10^13, but their code and ledgers are not tracked in this repository, so that stronger result is quarantined from public promotion pending a self-contained replay packet. External OEIS submission is a separate human-sent step.",
+   "notes": "PUBLIC BOUND: a(6) > 10^12, replayable from certificates/erdos-979/ (~11 GB). This is not the best known bound: OEIS A385316 reports a(6) > 3.166*10^14 (comment by Morfis Sallis, Oct 16 2026; https://oeis.org/A385316). PRIVATE OPERATIONAL RESULT: the private streaming sweep and blind replica report gap-free agreement through 10^13, but their code and ledgers are not tracked in this repository, so that stronger result is quarantined from public promotion pending a self-contained replay packet. External OEIS submission is a separate human-sent step.",
    "oeis": "A385316",
    "overlay": "gap_map",
    "problem": 979,

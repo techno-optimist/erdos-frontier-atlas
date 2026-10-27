@@ -79,7 +79,7 @@
   {
    "path": "certificates/erdos-979",
    "classification": "certified_local",
-   "boundary": "Public package certifies a(6)>10^12; private 10^13 ledgers are not promoted here."
+   "boundary": "Public package certifies a(6)>10^12; private 10^13 ledgers are not promoted here. Not the best known bound: OEIS A385316 reports a(6)>3.166*10^14 (Morfis Sallis, Oct 16 2026)."
   },
   {
    "path": "certificates/erdos-993",
@@ -371,14 +371,15 @@
    "id": "erdos-979-a6-public",
    "status": "promoted",
    "statement": "A385316(6) > 10^12.",
-   "scope": "Exact finite lower bound only; does not bear on the asymptotic Erdős #979 limsup question. The private 10^13 sweep is quarantined from public promotion until packaged.",
+   "scope": "Exact finite lower bound only; does not bear on the asymptotic Erdős #979 limsup question. The private 10^13 sweep is quarantined from public promotion until packaged. OEIS A385316 reports a stronger a(6) > 3.166*10^14 (comment by Morfis Sallis, Oct 16 2026), so this certificate is not the best known bound.",
    "machine_verdict": "a(6) > 1000000000000",
    "publication_bindings": [
     {
      "path": "README.md",
      "contains": "**`a(6) > 10¹²` at C2**",
      "must_not_contain": [
-      "**`a(6) > 10¹³` at C1**"
+      "**`a(6) > 10¹³` at C1**",
+      "past the published `4.99·10¹¹`"
      ]
     },
     {
