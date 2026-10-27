@@ -79,7 +79,7 @@
    ],
    "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/025.md",
    "source_verification_level": "Lean formalization listed by source (scope per doc)",
-   "our_verdict": "Lean proof replayed: compiles, standard axioms only; statement fidelity not checked",
+   "our_verdict": "Lean proof replayed and independently kernel-checked: standard axioms only; statement fidelity not checked",
    "status_changed_by_this_entry": false,
    "certificate": {
     "kind": "lean_replay",
@@ -91,7 +91,17 @@
     "by": "Ford (ProjectForty2)",
     "published_in": "https://github.com/techno-optimist/observatory/pull/60",
     "result": "Build of the solution files succeeds; #print axioms lists only propext, Classical.choice, Quot.sound; a freshly retyped copy of the challenge statement is closed by the theorem; controls (misstated copy fails, planted sorry flagged) behave as expected.",
-    "scope": "Replay of OpenAI's own proof in the standard Lean kernel only. Not checked: that the Lean statement faithfully formalizes the erdosproblems.com statement, the manuscript prose, or an independent kernel replay. Does not change any status."
+    "scope": "Soundness only: OpenAI's own proof replayed in the standard Lean kernel and re-checked by an independent kernel (nanoda). Not checked: that the Lean statement faithfully formalizes the erdosproblems.com statement, or the manuscript prose. Does not change any status.",
+    "additional_checks": [
+     {
+      "kind": "independent_kernel_check",
+      "receipt": "https://projectforty2.ai/data/ford_receipts/oai025_independent_check.txt",
+      "receipt_sha256": "fda11266f7d96637ce99fb3bee28e168edcb016cea3c5bb53329b0c220b44ed2",
+      "checked": "2026-10-27 (America/Denver)",
+      "published_in": "https://github.com/techno-optimist/observatory/pull/63",
+      "result": "lean4export of the challenge theorem's closure, checked by nanoda_lib: 45,753 declarations, no errors, only propext, Classical.choice, Quot.sound; planted sorry and tampered proof both rejected; bundled leanchecker 59/59 OK."
+     }
+    ]
    }
   },
   {
@@ -241,7 +251,7 @@
    ],
    "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/184.md",
    "source_verification_level": "Lean formalization listed by source (scope per doc)",
-   "our_verdict": "Lean proof replayed: compiles, standard axioms only; statement fidelity not checked",
+   "our_verdict": "Lean proof replayed and independently kernel-checked: standard axioms only; statement reviewed as faithful to #802 (d ≥ 2 form)",
    "status_changed_by_this_entry": false,
    "certificate": {
     "kind": "lean_replay",
@@ -253,7 +263,17 @@
     "by": "Ford (ProjectForty2)",
     "published_in": "https://github.com/techno-optimist/observatory/pull/61",
     "result": "Build of the solution files succeeds; #print axioms lists only propext, Classical.choice, Quot.sound; a freshly retyped copy of the challenge statement is closed by the theorem; controls (misstated copy fails, planted sorry flagged) behave as expected.",
-    "scope": "Replay of OpenAI's own proof in the standard Lean kernel only. Not checked: that the Lean statement faithfully formalizes the erdosproblems.com statement, the manuscript prose, or an independent kernel replay. Does not change any status."
+    "scope": "OpenAI's own proof replayed in the standard Lean kernel and re-checked by an independent kernel (nanoda); statement-fidelity review against #802 found it faithful (direct for r ≥ 4, all r via a Lean-checked transfer; the d < 2 case follows from α ≥ n/(d+1) on paper and is not formalised). Not checked: the manuscript prose argument or any refereed review. Not P42's proof and not first to re-check it (erdosproblems.ai has its own build and fidelity audit). Does not change any status.",
+    "additional_checks": [
+     {
+      "kind": "independent_kernel_check_and_fidelity_review",
+      "receipt": "https://projectforty2.ai/data/ford_receipts/oai184_independent_check.txt",
+      "receipt_sha256": "571d4192de2a3e456572f7229addcad516a2992a7dccf7a192858577cc277f17",
+      "checked": "2026-10-27 (America/Denver)",
+      "published_in": "https://github.com/techno-optimist/observatory/pull/62",
+      "result": "lean4export closure checked by nanoda_lib: 46,880 declarations, no errors, only propext, Quot.sound, Classical.choice; planted sorry and tampered proof both rejected; bundled leanchecker 32/32 OK. Fidelity file (FordCheck/Fidelity.lean) compiles: formal-conjectures-style shape on Fin n for every r with d ≥ 2, and a K_{m,m} non-vacuity check."
+     }
+    ]
    }
   },
   {
@@ -276,7 +296,9 @@
   "with_erdosproblems_number": 2,
   "with_lean_scope_doc": 12,
   "replicated_by_us": 0,
-  "lean_replayed_by_us": 2
+  "lean_replayed_by_us": 2,
+  "independent_kernel_checked_by_us": 2,
+  "fidelity_reviewed_by_us": 1
  },
- "counts_note": "replicated_by_us counts independent re-derivations of the mathematics (none). lean_replayed_by_us counts families whose published Lean proof P42 rebuilt and axiom-checked (025, 184)."
+ "counts_note": "replicated_by_us counts independent re-derivations of the mathematics (none). lean_replayed_by_us counts families whose published Lean proof P42 rebuilt and axiom-checked (025, 184). independent_kernel_checked_by_us counts families whose proof P42 also re-checked with a second, independent kernel (025, 184). fidelity_reviewed_by_us counts families whose Lean statement P42 reviewed against the erdosproblems.com statement (184)."
 }
