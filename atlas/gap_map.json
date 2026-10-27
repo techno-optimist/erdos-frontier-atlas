@@ -1953,33 +1953,30 @@
   {
    "problem": 241,
    "oeis": "A387704",
-   "quantity": "A227358(11) — shortest 11-mark B3 ruler (11 integers 0 = m1 < ... < m11 with all triple sums, repetition allowed, distinct); equivalently the n where A387704 first reaches 11",
+   "quantity": "A227358(12) — shortest 12-mark B3 ruler (12 integers 0 = m1 < ... < m12 with all triple sums, repetition allowed, distinct); equivalently the n where A387704 first reaches 12",
    "kind": "next_cell",
    "lower": {
-    "value": ">= 310",
-    "source": "Strict monotonicity from A227358(10) = 309 (OEIS)",
-    "year": 2013
+    "value": ">= 446",
+    "source": "Strict monotonicity from A227358(11) = 445 (OEIS; exhaustive search by Paweł Kwaczyński, 2026, doi 10.5281/zenodo.23132452; external, not re-verified by P42)",
+    "year": 2026
    },
-   "upper": {
-    "value": "445",
-    "source": "Known 11-mark configuration of length 445; J. Tromp comment on A227358: a(11) = 445 or a(11) < 440 (lengths 440-444 exhaustively excluded)",
-    "year": 2013
-   },
+   "upper": null,
    "witness_side": "upper",
-   "witness_object": "11 integers 0 = m1 < ... < m11 <= 439 whose C(13,3) = 286 multiset triple sums are pairwise distinct",
-   "witness_verifier": "Compute all 286 triple sums with repetition, assert no duplicates; microseconds. Farm's validated B3 adapter (hub #41 lane) reproduces a(3..10).",
+   "witness_object": "12 integers 0 = m1 < ... < m12 whose C(14,3) = 364 multiset triple sums are pairwise distinct (upper-bounds the cell by m12)",
+   "witness_verifier": "Compute all 364 triple sums with repetition, assert no duplicates; microseconds.",
    "witness_feasibility": "hard",
    "exact_feasibility": "unknown",
-   "status": "record_in_progress",
-   "notes": "Hub #241's own conjecture (f(N) ~ N^{1/3}, Bose/Guy C11) is asymptotic and not machine-closable. Its stub sequence A387704 (b-file 0..150, max value 8) was closed as a pure crossref: A387704(n) = max{k : A227358(k) <= n-1}, 0/151 mismatches, first reaches 9 at n = 209 (hub librarian, PR #80). The only open computational content is A227358(11), which is farm-owned under hub #41 (witness search < 445 running). Tromp 2013 estimated many CPU-years to exhaust [310,439] with his C code; 13 years without improvement — grade hard despite trivial verification. O'Bryant arXiv:2308.12406 (2023) covers thick B_h constructions.",
+   "status": "open",
+   "notes": "PREVIOUS CELL CLOSED EXTERNALLY (found 2026-10-27 by Ford's OEIS sweep, receipt projectforty2.ai/data/ford_receipts/oeis_gap_sweep.txt): OEIS A227358 now lists a(11) = 445 (data extended by Paweł Kwaczyński, Oct 03 2026, linked 'Exhaustive search for a(11)', doi 10.5281/zenodo.23132452; approved revision, read 2026-10-27), which settles Tromp's 2013 '445 or < 440' alternative. Not re-verified by P42. The next cell is A227358(12); no published upper bound was found on the OEIS entry. Earlier notes: Hub #241's own conjecture (f(N) ~ N^{1/3}, Bose/Guy C11) is asymptotic and not machine-closable. Its stub sequence A387704 (b-file 0..150, max value 8) was closed as a pure crossref: A387704(n) = max{k : A227358(k) <= n-1}, 0/151 mismatches, first reaches 9 at n = 209 (hub librarian, PR #80). The only open computational content is A227358(11), which is farm-owned under hub #41 (witness search < 445 running). Tromp 2013 estimated many CPU-years to exhaust [310,439] with his C code; 13 years without improvement — grade hard despite trivial verification. O'Bryant arXiv:2308.12406 (2023) covers thick B_h constructions.",
    "provenance": {
     "added_by": "gap-map miner chunk 183-241",
-    "date": "2026-07-18",
+    "date": "2026-10-27",
     "checked": [
      "OEIS A387704 (JSON + b-file to 150)",
      "OEIS A227358",
      "stubs.json #241",
-     "project memory: #241 crossref closure PR #80 (2026-07-16), #41 B3 adapter"
+     "project memory: #241 crossref closure PR #80 (2026-07-16), #41 B3 adapter",
+     "OEIS A227358 (JSON + history, revision 57, read 2026-10-27)"
     ]
    },
    "evidence": [
@@ -1987,6 +1984,11 @@
      "type": "literature",
      "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
      "date": "2026-07-18"
+    },
+    {
+     "type": "literature",
+     "artifact": "OEIS A227358 a(11) = 445 (Kwaczyński 2026), read 2026-10-27",
+     "date": "2026-10-27"
     }
    ],
    "confidence": "C3"
@@ -2219,28 +2221,29 @@
   {
    "problem": 295,
    "oeis": "A192881",
-   "quantity": "A192881(17) — minimum number of terms in an Egyptian fraction decomposition of 1 with least denominator 17 (finite proxy table for k(N) of #295); a(1..16) known, a(16) = 30",
+   "quantity": "A192881(20) — minimum number of terms in an Egyptian fraction decomposition of 1 with least denominator 20 (finite proxy table for k(N) of #295); a(1..19) listed, a(19) = 36",
    "kind": "next_cell",
    "lower": {
-    "value": "29",
-    "source": "Trivial harmonic bound: k distinct denominators >= 17 give sum <= sum_{i=17}^{16+k} 1/i, which first reaches 1 at k = 29 — computed and exact-arithmetic-checked this session (sanity: same bound gives 27 at N=16 vs true a(16)=30)",
+    "value": "34",
+    "source": "Trivial harmonic bound: k distinct denominators >= 20 give sum <= sum_{i=20}^{19+k} 1/i, which first reaches 1 at k = 34 (exact rational arithmetic, Ford 2026-10-27; the same computation gives 29 at N = 17, matching the previous row)",
     "year": 2026
    },
    "upper": null,
    "witness_side": "upper",
-   "witness_object": "A list of k distinct integers 17 = n_1 < n_2 < ... < n_k with sum 1/n_i = 1; establishes a(17) <= k. Closing the cell additionally needs an exhaustive-search certificate that k-1 terms are impossible.",
-   "witness_verifier": "Exact rational arithmetic (e.g. Python fractions): check distinctness, minimum = 17, sum == 1. O(k), dependency-free, milliseconds.",
+   "witness_object": "A list of k distinct integers 20 = n_1 < n_2 < ... < n_k with sum 1/n_i = 1; establishes a(20) <= k. Closing the cell additionally needs an exhaustive-search certificate that k-1 terms are impossible.",
+   "witness_verifier": "Exact rational arithmetic (e.g. Python fractions): check distinctness, minimum = 20, sum == 1. O(k), dependency-free, milliseconds.",
    "witness_feasibility": "open-easy",
    "exact_feasibility": "cell",
    "status": "open",
-   "notes": "Problem #295 asks whether k(N) - (e-1)N -> infinity; Erdős–Straus 1971 [ErSt71b] proved -c < k(N) - (e-1)N << N/log N (per erdosproblems.com/295, edited 2025-10-01). (e-1)*17 ~ 29.2, consistent with the harmonic lower bound 29. Table is live: Alekseyev added a(11)-a(15) with explicit decompositions Oct 2025 (in OEIS Example section); a(16)=30; keyword 'hard,more'. Caveat: k(N) allows n_1 > N while A192881 fixes n_1 = n; they coincide in all known cases but this equivalence is not proven here — new cells sharpen the finite picture yet cannot settle the limit question (asymptotic side is a wall). Múgica's OEIS a-file has decompositions achieving the published terms.",
+   "notes": "PREVIOUS CELL CLOSED EXTERNALLY (found 2026-10-27 by Ford's OEIS sweep, receipt projectforty2.ai/data/ford_receipts/oeis_gap_sweep.txt): OEIS A192881 now lists a(17..19) = 32, 34, 36 (a(17) from Patrick White, added by Max Alekseyev, Oct 11 2026, linked erdosproblemaday '#295: k(17) = 32'; a(18), a(19) from Max Alekseyev, Oct 2026; Kyunghan Bae comment and certificate a(18) <= 34, Oct 12 2026; revision 68, approved 2026-10-27). Not re-verified by P42. The next cell is A192881(20). Earlier notes: Problem #295 asks whether k(N) - (e-1)N -> infinity; Erdős–Straus 1971 [ErSt71b] proved -c < k(N) - (e-1)N << N/log N (per erdosproblems.com/295, edited 2025-10-01). (e-1)*17 ~ 29.2, consistent with the harmonic lower bound 29. Table is live: Alekseyev added a(11)-a(15) with explicit decompositions Oct 2025 (in OEIS Example section); a(16)=30; keyword 'hard,more'. Caveat: k(N) allows n_1 > N while A192881 fixes n_1 = n; they coincide in all known cases but this equivalence is not proven here — new cells sharpen the finite picture yet cannot settle the limit question (asymptotic side is a wall). Múgica's OEIS a-file has decompositions achieving the published terms.",
    "provenance": {
     "added_by": "gap-map miner chunk 242-302",
-    "date": "2026-07-18",
+    "date": "2026-10-27",
     "checked": [
      "OEIS A192881 (JSON, retrieved 2026-07-18)",
      "erdosproblems.com/295 (retrieved 2026-07-18)",
-     "session computation: exact harmonic bound"
+     "session computation: exact harmonic bound",
+     "OEIS A192881 (JSON + history, revision 68, read 2026-10-27)"
     ]
    },
    "evidence": [
@@ -2248,6 +2251,11 @@
      "type": "literature",
      "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
      "date": "2026-07-18"
+    },
+    {
+     "type": "literature",
+     "artifact": "OEIS A192881 a(17..19) = 32, 34, 36, read 2026-10-27",
+     "date": "2026-10-27"
     }
    ],
    "confidence": "C3"
@@ -3036,27 +3044,24 @@
   {
    "problem": 382,
    "oeis": "A388850",
-   "quantity": "A388850(9) — least start u of a maximal run of exactly 10 consecutive integers whose product has its largest prime factor appearing with exponent >= 2 ('bad interval' of width 9)",
+   "quantity": "A388850(14) — least start u of a maximal run of exactly 15 consecutive integers whose product has its largest prime factor appearing with exponent >= 2 ('bad interval' of width 14), or 0 if none exists",
    "kind": "next_cell",
    "lower": null,
-   "upper": {
-    "value": "4928180396",
-    "source": "candidate interval found by Touch Sungkawichai (OEIS A388850 comment, Jan 2026)",
-    "year": 2026
-   },
+   "upper": null,
    "witness_side": "upper",
-   "witness_object": "a maximal bad interval [u, u+9] with u < 4928180396 (largest prime of the product to exponent >= 2; neither one-step extension keeps the property); exact value via exhaustive scan below the candidate",
-   "witness_verifier": "factor the <= 12 integers involved (~5e9 scale — trivial), take the largest prime p dividing the product, check its total exponent >= 2, and check both one-step extensions [u-1, u+9] and [u, u+10] break the property — dependency-free, milliseconds per interval",
+   "witness_object": "a maximal bad interval [u, u+14] (largest prime of the product to exponent >= 2; neither one-step extension keeps the property); per the OEIS comment any such u exceeds 2*10^14, and the value may be 0",
+   "witness_verifier": "factor the <= 17 integers involved, take the largest prime p dividing the product, check its total exponent >= 2, and check both one-step extensions break the property — dependency-free, milliseconds per interval",
    "witness_feasibility": "open-easy",
    "exact_feasibility": "cell",
    "status": "open",
-   "notes": "a(0..8) = 4, 8, 48, 1680, 76725, 332925, 7474752, 4541154, 75047565 known exact (von Bromssen, Sep 2025; note non-monotone, so no clean lower bracket published — exhaustive frontier is at least ~7.5e7 implied by exactness of a(8), exact frontier unstated). Open candidates: a(9) <= 4928180396, a(10) <= 40533366231, a(11) <= 111460496439, a(12) <= 436502026483 (Sungkawichai, Jan 2026), a(13) <= 17952448643078 (StijnC, per OEIS). A segmented largest-prime-factor sieve to 4.93e9 + sliding-window check settles a(9) in hours on one box, and the same infrastructure attacks a(10)-a(12). Each newly confirmed larger width is also a direct witness for Erdos's 'can v-u be arbitrarily large?' (Cambie heuristic: yes; Cramer would force v-u = v^{o(1)}; Ramachandra gives v-u <= v^{1/2+o(1)}). Best actionable cell in this chunk alongside #365.",
+   "notes": "PREVIOUS CELL CLOSED EXTERNALLY (found 2026-10-27 by Ford's OEIS sweep, receipt projectforty2.ai/data/ford_receipts/oeis_gap_sweep.txt): OEIS A388850 data now lists a(9..13) = 4928180396, 40533366231, 111460496439, 436502026483, 17952448643078 (added by Leandre Jack, approved Oct 12 2026, revision 22), and a comment by Leandre Jack (Oct 12 2026) says a(15) = 52629641927627 while a(14) is unknown: a(14) = 0 or a(14) > 2*10^14. The older comments '0 < a(9) <= 4928180396' etc. are still on the entry, so the record's own text is not yet fully consistent. Not re-verified by P42. The next cell is A388850(14). Earlier notes: a(0..8) = 4, 8, 48, 1680, 76725, 332925, 7474752, 4541154, 75047565 known exact (von Bromssen, Sep 2025; note non-monotone, so no clean lower bracket published — exhaustive frontier is at least ~7.5e7 implied by exactness of a(8), exact frontier unstated). Open candidates: a(9) <= 4928180396, a(10) <= 40533366231, a(11) <= 111460496439, a(12) <= 436502026483 (Sungkawichai, Jan 2026), a(13) <= 17952448643078 (StijnC, per OEIS). A segmented largest-prime-factor sieve to 4.93e9 + sliding-window check settles a(9) in hours on one box, and the same infrastructure attacks a(10)-a(12). Each newly confirmed larger width is also a direct witness for Erdos's 'can v-u be arbitrarily large?' (Cambie heuristic: yes; Cramer would force v-u = v^{o(1)}; Ramachandra gives v-u <= v^{1/2+o(1)}). Best actionable cell in this chunk alongside #365.",
    "provenance": {
     "added_by": "gap-map miner chunk 364-382",
-    "date": "2026-07-18",
+    "date": "2026-10-27",
     "checked": [
      "OEIS A388850 (rev 2026-01-07)",
-     "erdosproblems.com/382"
+     "erdosproblems.com/382",
+     "OEIS A388850 (JSON + history, revision 22, read 2026-10-27)"
     ]
    },
    "evidence": [
@@ -3064,6 +3069,11 @@
      "type": "literature",
      "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
      "date": "2026-07-18"
+    },
+    {
+     "type": "literature",
+     "artifact": "OEIS A388850 a(9..13) listed, a(14) open, read 2026-10-27",
+     "date": "2026-10-27"
     }
    ],
    "confidence": "C3"
@@ -3142,24 +3152,25 @@
   {
    "problem": 389,
    "oeis": "A375071",
-   "quantity": "A375071(27) — least k >= 1 such that 27·28···(26+k) divides (27+k)···(26+2k) (first uncomputed cell; a(0)–a(26) known, a(26) = 5048891644620)",
+   "quantity": "A375071(29) — least k >= 1 such that 29·30···(28+k) divides (29+k)···(28+2k) (first cell beyond the OEIS data; a(0)–a(28) listed, a(28) = 18253129921814)",
    "kind": "next_cell",
    "lower": null,
    "upper": null,
    "witness_side": "upper",
-   "witness_object": "A pair (n=27, k) with 27·28···(26+k) | (27+k)···(26+2k). Unverified candidate: k = 18253129921815 = A375077(13) − 27, from the empirical cross-map A375071(n) = A375077((n−1)/2) − n which holds at every known odd cell (checked n=21,23,25)",
+   "witness_object": "A pair (n=29, k) with 29·30···(28+k) | (29+k)···(28+2k). Unverified candidate: k = 359503904702161 = A375077(14) − 29, from the empirical cross-map A375071(n) = A375077((n−1)/2) − n, which also matches the now-listed a(27) = 18253129921815",
    "witness_verifier": "Divisibility ⟺ v_p(C(26+2k, k)) >= v_p(C(26+k, k)) for all primes p (Kummer carry counts). For p > 26 a failing p requires k mod p ∈ (p−27, p), so verification = sieve-scan of k mod p over primes p <= 26+2k (~5e11 primes at k ≈ 1.8e13; a GPU-day). Needs only a prime sieve + modular arithmetic.",
    "witness_feasibility": "plausible",
    "exact_feasibility": "cell",
    "status": "record_in_progress",
-   "notes": "Erdős–Straus: does such k exist for every n? (Open; existence for each computed n is witnessed.) Mehta computed n <= 18; OEIS extended to a(26) with active work Mar 2026 (Kesarwani comment; SharkyKesa listed as currently working on erdosproblems.com — coordinate, don't race). The (n,k) → (n+k−1, n) transform ties this to A375077/problem 396: transform preserves validity but NOT minimality (a(7) = 8171 is much smaller than the transform predicts), so the candidate a(27) above is an upper-bound witness at best and must be verified before recording. Exhaustive minimality sweeps at the ~1e13 scale are demonstrated feasible by the A375077 project → exact cell.",
+   "notes": "PREVIOUS CELL CLOSED EXTERNALLY (found 2026-10-27 by Ford's OEIS sweep, receipt projectforty2.ai/data/ford_receipts/oeis_gap_sweep.txt): OEIS A375071 data now runs to a(28), with a(27) = 18253129921815 (equal to the cross-map candidate below for n = 27) and a(28) = 18253129921814; it links Leandre Jack, 'Erdős Problem 389: the least k for n = 28 and n = 29' (GitHub, revision 91, approved Oct 06 2026). a(29) is not in the OEIS data; that link's n = 29 claim was not read or checked here. Not re-verified by P42. The next cell is A375071(29). Earlier notes: Erdős–Straus: does such k exist for every n? (Open; existence for each computed n is witnessed.) Mehta computed n <= 18; OEIS extended to a(26) with active work Mar 2026 (Kesarwani comment; SharkyKesa listed as currently working on erdosproblems.com — coordinate, don't race). The (n,k) → (n+k−1, n) transform ties this to A375077/problem 396: transform preserves validity but NOT minimality (a(7) = 8171 is much smaller than the transform predicts), so the candidate a(27) above is an upper-bound witness at best and must be verified before recording. Exhaustive minimality sweeps at the ~1e13 scale are demonstrated feasible by the A375077 project → exact cell.",
    "provenance": {
     "added_by": "gap-map miner chunk 385-409",
-    "date": "2026-07-18",
+    "date": "2026-10-27",
     "checked": [
      "OEIS A375071 (JSON; Kesarwani Mar 2026 comment)",
      "OEIS A375077 (JSON; cross-map verified numerically at n=21,23,25)",
-     "erdosproblems.com/389 (context only, paraphrased)"
+     "erdosproblems.com/389 (context only, paraphrased)",
+     "OEIS A375071 (JSON + history, revision 91, read 2026-10-27)"
     ]
    },
    "evidence": [
@@ -3167,6 +3178,11 @@
      "type": "literature",
      "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
      "date": "2026-07-18"
+    },
+    {
+     "type": "literature",
+     "artifact": "OEIS A375071 a(27), a(28) listed, read 2026-10-27",
+     "date": "2026-10-27"
     }
    ],
    "confidence": "C3"
@@ -3271,28 +3287,29 @@
   {
    "problem": 396,
    "oeis": "A375077",
-   "quantity": "A375077(16) — least k such that k(k−1)···(k−16) divides C(2k,k) (first uncomputed cell; a(1)–a(15) listed, a(15) = 2394789405254721)",
+   "quantity": "A375077(17) — least k such that k(k−1)···(k−17) divides C(2k,k) (first uncomputed cell; a(1)–a(16) listed, a(16) = 20021368432952099)",
    "kind": "next_cell",
    "lower": {
-    "value": ">= 18253129921842",
-    "source": "Monotonicity (the n=15 product divides the n=16 product, so a(n) is nondecreasing) chained to certified-minimal a(13) (Dehorty exhaustive search + Lean 4 Small Prime Barrier sieve, OEIS A375077 comment)",
+    "value": ">= 20021368432952099",
+    "source": "Monotonicity (the n=16 product divides the n=17 product, so a(n) is nondecreasing) applied to the listed a(16) (OEIS A375077, Justin Dehorty, Jul 28 2026); valid only if that a(16) is minimal, which the OEIS comment does not state (its certification covers a(8)–a(13)); otherwise the certified floor is a(13) = 18253129921842",
     "year": 2026
    },
    "upper": null,
    "witness_side": "upper",
-   "witness_object": "An integer k with k(k−1)···(k−16) | C(2k,k); existence guaranteed for every window length (Pomerance 2014: the valid-n set has density 1). Minimal such k is the cell value",
+   "witness_object": "An integer k with k(k−1)···(k−17) | C(2k,k); minimal such k is the cell value",
    "witness_verifier": "Factor the 17 consecutive integers k−16..k (Pollard rho at ~1e17 scale, trivial); for each prime p dividing the product check v_p(product) <= number of carries when adding k + k in base p (Kummer); explicitly include all primes p < 2·16+3. Seconds, dependency-free beyond big-int + rho.",
    "witness_feasibility": "plausible",
    "exact_feasibility": "cell",
    "status": "record_in_progress",
-   "notes": "Flagship machine-shaped cell in this chunk, but ACTIVELY OWNED: minimality of a(8)–a(13) is certified by exhaustive search plus a small-prime sieve whose completeness ('Small Prime Barrier Theorem') is formally verified in Lean 4 + Mathlib (Justin Dehorty, Mar 2026; repo github.com/jdehorty/erdos396 with validation certificates — linked from OEIS, not independently audited here). Certification status of listed a(14), a(15) is not stated in the OEIS comment; presuming them minimal would lift the floor for a(16) to >= 2394789405254721. Expected a(16) ~ 1e16–1e17 by growth pattern → days-to-weeks with the published optimizations. Dehorty and SharkyKesa are listed as currently working on erdosproblems.com/396 — coordinate rather than race; certifying a(14)/a(15) minimality is a complementary sub-record. Solutions transform to problem 389 upper bounds via (n,k) → (n+k−1, n). Context: n+1 | C(2n,n) always (Catalan); Pomerance [Po14] also shows the set of n with n | C(2n,n) has upper density < 1/3.",
+   "notes": "PREVIOUS CELL CLOSED EXTERNALLY (found 2026-10-27 by Ford's OEIS sweep, receipt projectforty2.ai/data/ford_receipts/oeis_gap_sweep.txt): OEIS A375077 has listed a(16) = 20021368432952099 since revision 70 (Justin Dehorty, approved Jul 28 2026) — ten days after this row was mined, so the row was stale from the start. Not re-verified by P42. The next cell is A375077(17). Earlier notes: Flagship machine-shaped cell in this chunk, but ACTIVELY OWNED: minimality of a(8)–a(13) is certified by exhaustive search plus a small-prime sieve whose completeness ('Small Prime Barrier Theorem') is formally verified in Lean 4 + Mathlib (Justin Dehorty, Mar 2026; repo github.com/jdehorty/erdos396 with validation certificates — linked from OEIS, not independently audited here). Certification status of listed a(14), a(15) is not stated in the OEIS comment; presuming them minimal would lift the floor for a(16) to >= 2394789405254721. Expected a(16) ~ 1e16–1e17 by growth pattern → days-to-weeks with the published optimizations. Dehorty and SharkyKesa are listed as currently working on erdosproblems.com/396 — coordinate rather than race; certifying a(14)/a(15) minimality is a complementary sub-record. Solutions transform to problem 389 upper bounds via (n,k) → (n+k−1, n). Context: n+1 | C(2n,n) always (Catalan); Pomerance [Po14] also shows the set of n with n | C(2n,n) has upper density < 1/3.",
    "provenance": {
     "added_by": "gap-map miner chunk 385-409",
-    "date": "2026-07-18",
+    "date": "2026-10-27",
     "checked": [
      "OEIS A375077 (JSON; Dehorty Mar 2026 certification comment + repo links)",
      "erdosproblems.com/396 (context only, paraphrased; Po14 citation)",
-     "WebSearch cross-check for newer work (none found beyond Mar 2026 state)"
+     "WebSearch cross-check for newer work (none found beyond Mar 2026 state)",
+     "OEIS A375077 (JSON + history, revision 70, read 2026-10-27)"
     ]
    },
    "evidence": [
@@ -3300,6 +3317,11 @@
      "type": "literature",
      "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
      "date": "2026-07-18"
+    },
+    {
+     "type": "literature",
+     "artifact": "OEIS A375077 a(16) = 20021368432952099, read 2026-10-27",
+     "date": "2026-10-27"
     }
    ],
    "confidence": "C3"
@@ -4738,32 +4760,33 @@
   {
    "problem": 669,
    "oeis": "A003035",
-   "quantity": "A003035(15) — maximum number of lines containing exactly 3 of 15 points in the plane (classical orchard problem; first uncomputed cell)",
+   "quantity": "A003035(17) — maximum number of lines containing exactly 3 of 17 points in the plane (classical orchard problem; first cell not in the OEIS data)",
    "kind": "next_cell",
    "lower": {
-    "value": "31",
-    "source": "OEIS A003035: Sloane comment (Feb 11 2013) 'a(15) is 31 or 32'; Pegg construction illustrations on the entry give explicit 31-line 15-point configurations",
+    "value": "40",
+    "source": "OEIS A003035: Sloane comment (Feb 11 2013) 'a(17) is 40, 41 or 42'; the Green–Tao formula floor(n(n-3)/6)+1 also gives 40 at n = 17 (proved only for sufficiently large n)",
     "year": 2013
    },
    "upper": {
-    "value": "32",
-    "source": "OEIS A003035: Sloane comment (Feb 11 2013); cell open since Burr–Grünbaum–Sloane, Geometriae Dedicata 1974",
+    "value": "42",
+    "source": "OEIS A003035: Sloane comment (Feb 11 2013)",
     "year": 2013
    },
    "witness_side": "lower",
-   "witness_object": "15 points with exact algebraic/projective coordinates determining 32 lines that each contain exactly 3 of the points",
-   "witness_verifier": "Exact-arithmetic collinearity via 3x3 determinants; count lines with exactly 3 incident points and confirm 32. Dependency-free.",
+   "witness_object": "17 points with exact algebraic/projective coordinates determining 41 lines that each contain exactly 3 of the points",
+   "witness_verifier": "Exact-arithmetic collinearity via 3x3 determinants; count lines with exactly 3 incident points and confirm 41. Dependency-free.",
    "witness_feasibility": "hard",
    "exact_feasibility": "wall",
    "status": "open",
-   "notes": "Problem 669 as posed asks to estimate f_k(n) (exactly k) and F_k(n) (at least k) and determine lim F_k(n)/n^2, lim f_k(n)/n^2 — asymptotic, not machine-closable; the linked orchard cell is the record lane. Burr–Grünbaum–Sloane 1974: f_3(n) = n^2/6 - O(n); trivially lim F_k(n)/n^2 <= 1/(k(k-1)). Green–Tao 2013 (arXiv:1208.4714): a(n) = floor(n(n-3)/6)+1 for all sufficiently large n, which gives 31 at n=15 — so the 32-line witness likely does NOT exist, and closing the cell probably needs a nonexistence proof over R (abstract 3-configuration enumeration is bounded, but realizability has defeated tools for ~52 years) — hence witness=hard, exact=wall. Also known: a(16)=37, a(17) in {40,41,42}. Discrepancy note: Friedman's maintained table shows ranges 22-24 / 26-27 at n=13,14 where OEIS lists exact 22 / 26; OEIS (Sloane 2013) treated as authoritative here. Cross-links: 4- and 5-point-line versions A006065/A008997 are recorded under problem 588; problem 101 is the k=4 special case.",
+   "notes": "PREVIOUS CELL CLOSED EXTERNALLY (found 2026-10-27 by Ford's OEIS sweep, receipt projectforty2.ai/data/ford_receipts/oeis_gap_sweep.txt): OEIS A003035 data now includes a(15) = 31 (EXTENSIONS 'a(15) from Zhao Hui Du, Sep 29 2026', who wrote in the edit discussion that it is a proven result; approved revision 132, Oct 04 2026). That matches the Green–Tao value below. Sloane's 2013 comment 'a(15) is 31 or 32' is still on the entry. The proof was not read or checked by P42. The next cell is A003035(17); a(16) = 37. Earlier notes: Problem 669 as posed asks to estimate f_k(n) (exactly k) and F_k(n) (at least k) and determine lim F_k(n)/n^2, lim f_k(n)/n^2 — asymptotic, not machine-closable; the linked orchard cell is the record lane. Burr–Grünbaum–Sloane 1974: f_3(n) = n^2/6 - O(n); trivially lim F_k(n)/n^2 <= 1/(k(k-1)). Green–Tao 2013 (arXiv:1208.4714): a(n) = floor(n(n-3)/6)+1 for all sufficiently large n, which gives 31 at n=15 — so the 32-line witness likely does NOT exist, and closing the cell probably needs a nonexistence proof over R (abstract 3-configuration enumeration is bounded, but realizability has defeated tools for ~52 years) — hence witness=hard, exact=wall. Also known: a(16)=37, a(17) in {40,41,42}. Discrepancy note: Friedman's maintained table shows ranges 22-24 / 26-27 at n=13,14 where OEIS lists exact 22 / 26; OEIS (Sloane 2013) treated as authoritative here. Cross-links: 4- and 5-point-line versions A006065/A008997 are recorded under problem 588; problem 101 is the k=4 special case.",
    "provenance": {
     "added_by": "gap-map miner chunk 555-681",
-    "date": "2026-07-18",
+    "date": "2026-10-27",
     "checked": [
      "OEIS A003035 (JSON)",
      "erich-friedman.github.io/packing/trees/ (accessed 2026-07-18)",
-     "erdosproblems.com/669 (numeric facts paraphrased only)"
+     "erdosproblems.com/669 (numeric facts paraphrased only)",
+     "OEIS A003035 (JSON + history, revision 132, read 2026-10-27)"
     ]
    },
    "evidence": [
@@ -4771,6 +4794,11 @@
      "type": "literature",
      "artifact": "bound sources as transcribed by the mining agent (not independently re-verified)",
      "date": "2026-07-18"
+    },
+    {
+     "type": "literature",
+     "artifact": "OEIS A003035 a(15) = 31 (Zhao Hui Du 2026), read 2026-10-27",
+     "date": "2026-10-27"
     }
    ],
    "confidence": "C3"
