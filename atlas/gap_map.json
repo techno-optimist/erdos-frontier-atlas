@@ -6760,7 +6760,7 @@
    "witness_feasibility": "none",
    "exact_feasibility": "cell",
    "status": "record_in_progress",
-   "notes": "PUBLIC BOUND: a(6) > 10^12, replayable from certificates/erdos-979/ (~11 GB). PRIVATE OPERATIONAL RESULT: the private streaming sweep and blind replica report gap-free agreement through 10^13, but their code and ledgers are not tracked in this repository, so that stronger result is quarantined from public promotion pending a self-contained replay packet. External OEIS submission is a separate human-sent step.",
+   "notes": "PUBLIC BOUND: a(6) > 10^12, replayable from certificates/erdos-979/ (~11 GB). This is not the best known bound: OEIS A385316 reports a(6) > 3.166*10^14 (comment by Morfis Sallis, Oct 16 2026; https://oeis.org/A385316). PRIVATE OPERATIONAL RESULT: the private streaming sweep and blind replica report gap-free agreement through 10^13, but their code and ledgers are not tracked in this repository, so that stronger result is quarantined from public promotion pending a self-contained replay packet. External OEIS submission is a separate human-sent step.",
    "provenance": {
     "added_by": "claude-lead, 12-candidate triage",
     "date": "2026-07-18",
