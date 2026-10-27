@@ -1467,7 +1467,7 @@
    "publication_bindings": [
     {
      "path": "certificates/erdos-1109/README.md",
-     "contains": "**A392165(1..54) and f(N) for every N ≤ 2000; A392165(40..54) are new.**",
+     "contains": "**A392165(1..54) and f(N) for every N ≤ 2000; A392165(40..54) were not in OEIS when this was computed (2026-09-28).**",
      "overclaim_guards": [
       "resolves Erdős #1109",
       "proves the conjecture"
@@ -1531,12 +1531,12 @@
    "id": "erdos-1109-a392165-1-54",
    "status": "promoted",
    "statement": "A392165(1..54) with A392165(40..54) = 1255, 1277, 1293, 1335, 1407, 1509, 1535, 1595, 1707, 1735, 1779, 1835, 1919, 1991, 1999, and hence f(N) = A392164(N) for every N <= 2000 (f(2000) = 54): every N <= 2000 with 2N squarefree is decided by exhaustive clique search, and each record comes with an explicit set whose sumset is squarefree.",
-   "scope": "Finite exhaustive search over 811 candidates; a verified-search receipt, not a formal proof. A392165(1..39) replicate the published terms; A392165(40..54) are new. An independent Russian-doll clique search (rds.c) confirms the records and negatives for N in [1104, 1300]. Says nothing about the asymptotic questions of Erdos #1109.",
+   "scope": "Finite exhaustive search over 811 candidates; a verified-search receipt, not a formal proof. A392165(1..39) replicate the published terms; A392165(40..54) were not in OEIS when computed (2026-09-28) and now match OEIS (data a(1..54); b-file by Leandre Jack to a(65), cross-checked 2026-10-27). An independent Russian-doll clique search (rds.c) confirms the records and negatives for N in [1104, 1300]. Says nothing about the asymptotic questions of Erdos #1109.",
    "machine_verdict": "\"verified\":true",
    "publication_bindings": [
     {
      "path": "certificates/erdos-1109/README.md",
-     "contains": "**A392165(1..54) and f(N) for every N ≤ 2000; A392165(40..54) are new.**",
+     "contains": "**A392165(1..54) and f(N) for every N ≤ 2000; A392165(40..54) were not in OEIS when this was computed (2026-09-28).**",
      "overclaim_guards": [
       "resolves Erdős #1109",
       "proves the conjecture"

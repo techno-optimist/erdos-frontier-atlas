@@ -590,7 +590,7 @@
    "type": "applies"
   },
   {
-   "dst": "S:gap:1109:eb49810a",
+   "dst": "S:gap:1109:c7c22092",
    "predicate": "workable",
    "source": "atlas/gap_map.json",
    "src": "M:witness-local-search",
@@ -8909,7 +8909,7 @@
    "type": "has_surface"
   },
   {
-   "dst": "S:gap:1109:eb49810a",
+   "dst": "S:gap:1109:c7c22092",
    "source": "atlas/gap_map.json",
    "src": "P1109",
    "tier": "deterministic-rule",
@@ -11088,7 +11088,7 @@
   {
    "dst": "O:A392164",
    "source": "atlas/gap_map.json",
-   "src": "S:gap:1109:eb49810a",
+   "src": "S:gap:1109:c7c22092",
    "tier": "deterministic-rule",
    "type": "measures"
   },
@@ -33505,7 +33505,7 @@
      "receipt-checked: RESULT.json"
     ]
    },
-   "scope": "Finite exhaustive search over 811 candidates; a verified-search receipt, not a formal proof. A392165(1..39) replicate the published terms; A392165(40..54) are new. An independent Russian-doll clique search (rds.c) confirms the records and negatives for N in [1104, 1300]. Says nothing about the asymptotic questions of Erdos #1109.",
+   "scope": "Finite exhaustive search over 811 candidates; a verified-search receipt, not a formal proof. A392165(1..39) replicate the published terms; A392165(40..54) were not in OEIS when computed (2026-09-28) and now match OEIS (data a(1..54); b-file by Leandre Jack to a(65), cross-checked 2026-10-27). An independent Russian-doll clique search (rds.c) confirms the records and negatives for N in [1104, 1300]. Says nothing about the asymptotic questions of Erdos #1109.",
    "statement": "A392165(1..54) with A392165(40..54) = 1255, 1277, 1293, 1335, 1407, 1509, 1535, 1595, 1707, 1735, 1779, 1835, 1919, 1991, 1999, and hence f(N) = A392164(N) for every N <= 2000 (f(2000) = 54): every N <= 2000 with 2N squarefree is decided by exhaustive clique search, and each record comes with an explicit set whose sumset is squarefree.",
    "status": "promoted",
    "type": "evidence_claim"
@@ -71438,35 +71438,39 @@
    "witness_verifier": "Sum the claimed factorials (exact bigint); fully factor the sum (64–90 bit range: Pollard rho, trivial; up to ~10^25: ECM, still cheap); check every prime exponent >= 2. Dependency-free with any bigint + rho implementation."
   },
   {
-   "confidence": "C2",
+   "confidence": "C3",
    "evidence": [
     {
-     "artifact": "certificates/erdos-1109: exhaustive clique search over every N <= 2000 (sqclique.c, Python reference, rds.c cross-check)",
-     "contract": "erdos-1109-a392165-1-54",
-     "date": "2026-09-28",
-     "type": "implementation"
+     "artifact": "OEIS A392165 b-file a(1..65) and A392164 b-file N = 1..3000 (Leandre Jack), read 2026-10-27",
+     "date": "2026-10-27",
+     "type": "literature"
+    },
+    {
+     "artifact": "Ford offline cross-check of certificates/erdos-1109 RESULT.json against those b-files for N <= 2000 (projectforty2.ai/data/ford_receipts/oeis_1109_crosscheck.txt); certificates/erdos-1109 (contract erdos-1109-a392165-1-54) still certifies everything through N = 2000",
+     "date": "2026-10-27",
+     "type": "numeric_scan"
     }
    ],
    "exact_feasibility": "cell",
-   "id": "S:gap:1109:eb49810a",
+   "id": "S:gap:1109:c7c22092",
    "kind": "bounded_below_only",
    "lower": {
-    "source": "f(N) <= 54 for every N <= 2000: exhaustive clique search over every candidate N (certificates/erdos-1109, contract erdos-1109-a392165-1-54)",
-    "value": "2001",
+    "source": "f(N) <= 65 for every N <= 3000 per the OEIS A392164 b-file (Leandre Jack; first 700 terms W. A. Carney), consistent with A392165(1..65) in the A392165 b-file; external, not re-verified by P42 above N = 2000 (our certificate covers N <= 2000, contract erdos-1109-a392165-1-54)",
+    "value": "3001",
     "year": 2026
    },
-   "notes": "PREVIOUS CELL CLOSED HERE (2026-09-28): certificates/erdos-1109 decides every N <= 2000 (a record at N forces N odd squarefree, the set into one class mod 4, and a clique of size f(N-1) among a < N with a + N squarefree; greedy-colouring clique search, C port pinned node for node to a Python reference). It reproduces all 39 published records A392165(1..39) (C. Wu, to 1103) and finds A392165(40..54) = 1255, 1277, 1293, 1335, 1407, 1509, 1535, 1595, 1707, 1735, 1779, 1835, 1919, 1991, 1999; an independent Russian-doll clique search (rds.c) confirms the first new records. f(N) for N <= 2000 follows, extending A392164 (b-file to 700). Per-N cost grows from 10^5 to 10^8 nodes across 1100..2000, so pushing on is hours, not days. Erdős–Sárközy 1987 (Acta Math. Hungar.): log N << f(N) << N^(3/4) log N; best known asymptotics are Konyagin 2004: loglog N (log N)^2 << f(N) << N^(11/15+o(1)) (OEIS formula lines + erdosproblems.com/1109; van Doorn–Tao arXiv:2512.01087 revisits the problem family). Erdős–Sárközy guessed the lower bound is nearer the truth; the problem asks if f(N) <= N^o(1).",
+   "notes": "PREVIOUS CELL CLOSED EXTERNALLY (found 2026-10-27): OEIS A392165 now has a b-file a(1..65) by Leandre Jack (a(55..65) = 2071, 2141, 2193, 2287, 2355, 2427, 2455, 2627, 2729, 2741, 2993; method at github.com/leandrejack-afk/erdos-computations/e1109) and an A392164 b-file to N = 3000, so the next cell is A392165(66). Offline cross-check (Ford, 2026-10-27): our f(N) equals that b-file for every N <= 2000 and A392165(1..54) equal the OEIS data; terms 55..65 are NOT verified by us, and priority for 40..54 was not determined. EARLIER CELL CLOSED HERE (2026-09-28): certificates/erdos-1109 decides every N <= 2000 (a record at N forces N odd squarefree, the set into one class mod 4, and a clique of size f(N-1) among a < N with a + N squarefree; greedy-colouring clique search, C port pinned node for node to a Python reference). It reproduces all 39 published records A392165(1..39) (C. Wu, to 1103) and finds A392165(40..54) = 1255, 1277, 1293, 1335, 1407, 1509, 1535, 1595, 1707, 1735, 1779, 1835, 1919, 1991, 1999; an independent Russian-doll clique search (rds.c) confirms the first new records. f(N) for N <= 2000 follows, extending A392164 (b-file to 700). Per-N cost grows from 10^5 to 10^8 nodes across 1100..2000, so pushing on is hours, not days. Erdős–Sárközy 1987 (Acta Math. Hungar.): log N << f(N) << N^(3/4) log N; best known asymptotics are Konyagin 2004: loglog N (log N)^2 << f(N) << N^(11/15+o(1)) (OEIS formula lines + erdosproblems.com/1109; van Doorn–Tao arXiv:2512.01087 revisits the problem family). Erdős–Sárközy guessed the lower bound is nearer the truth; the problem asks if f(N) <= N^o(1).",
    "oeis": "A392164",
    "overlay": "gap_map",
    "problem": 1109,
-   "quantity": "A392165(55) — smallest N with f(N) >= 55, where f(N) = A392164(N) = size of the largest S ⊆ {1..N} such that every element of S+S (pairwise sums, including 2a) is squarefree. Certified exact through N = 2000 (f(2000) = 54; certificates/erdos-1109)",
+   "quantity": "A392165(66) — smallest N with f(N) >= 66, where f(N) = A392164(N) = size of the largest S ⊆ {1..N} such that every element of S+S (pairwise sums, including 2a) is squarefree. Certified by us through N = 2000 (f(2000) = 54; certificates/erdos-1109); OEIS b-files (Leandre Jack) extend it to N = 3000 (f(3000) = 65), not re-verified by us",
    "status": "open",
    "type": "surface",
    "upper": null,
    "witness_feasibility": "open-easy",
-   "witness_object": "a 55-element S ⊆ {1..N} with every element of S+S squarefree (upper-bounds A392165(55) by max S); the exact value needs every candidate N between 2000 and max S refuted, as the certificate does below 2000",
+   "witness_object": "a 66-element S ⊆ {1..N} with every element of S+S squarefree (upper-bounds A392165(66) by max S); the exact value needs every candidate N between 3000 and max S refuted",
    "witness_side": "upper",
-   "witness_verifier": "For each of the ~820 pairs (a,a') with a <= a' in S, trial-factor a+a' <= 2N to sqrt(2N) and check no square divisor. Milliseconds, fully dependency-free."
+   "witness_verifier": "For each of the ~2,200 pairs (a,a') with a <= a' in S, trial-factor a+a' <= 2N to sqrt(2N) and check no square divisor. Milliseconds, fully dependency-free."
   },
   {
    "confidence": "C3",
