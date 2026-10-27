@@ -52,14 +52,14 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 | #131 | T_11 for A068063 — least n such that {1..n} has a nondividing …[truncated; see source] | open-easy | for each element, test every nonempty subset sum of the …[truncated; see source] | C2 |
 | #156 | i(9) — largest n such that {1..n} contains an inclusion-maximal Sidon …[truncated; see source] | open-easy | Check the C(9,2) differences are distinct; then for each of …[truncated; see source] | C3 |
 | #170 | A046693(214) — minimal number of marks in a sparse ruler / restricted …[truncated; see source] | open-easy | Compute all \|S\|^2 pairwise differences and check {1..214} …[truncated; see source] | C3 |
-| #295 | A192881(17) — minimum number of terms in an Egyptian fraction …[truncated; see source] | open-easy | Exact rational arithmetic (e.g. Python fractions): check …[truncated; see source] | C3 |
+| #295 | A192881(20) — minimum number of terms in an Egyptian fraction …[truncated; see source] | open-easy | Exact rational arithmetic (e.g. Python fractions): check …[truncated; see source] | C3 |
 | #302 | A390395(735) — maximum size of S ⊆ {1..735} with no solution 1/a = …[truncated; see source] | open-easy | Enumerate all harmonic triples a < b < c <= 735 with 1/a = …[truncated; see source] | C3 |
 | #304 | A097849(106) — max over 1<=k<=106 of the minimal number of unit …[truncated; see source] | open-easy | Exact-arithmetic check that each listed 1/n_1+...+1/n_t …[truncated; see source] | C3 |
 | #327 | A384927(5001) — max size of S in {1..5001} with a+b never dividing ab …[truncated; see source] | open-easy | Set check is O(k^2) ~ 6.2M integer divisibility tests …[truncated; see source] | C3 |
 | #357 | A364132(28) — least n such that {1..n} contains an increasing 28-term …[truncated; see source] | open-easy | compute prefix sums and check all 406 pairwise differences …[truncated; see source] | C2 |
 | #365 | A060355(40) — smallest k > 10^22 with k and k+1 both powerful (next …[truncated; see source] | open-easy | factor k and k+1, check all prime exponents >= 2 on both — …[truncated; see source] | C3 |
 | #373 | solutions of n! = a_1! a_2! ... a_k! with n-1 > a_1 >= ... >= a_k >= …[truncated; see source] | open-easy | prime-valuation comparison: v_p(n!) = sum floor(n/p^i) must …[truncated; see source] | C3 |
-| #382 | A388850(9) — least start u of a maximal run of exactly 10 consecutive …[truncated; see source] | open-easy | factor the <= 12 integers involved (~5e9 scale — trivial), …[truncated; see source] | C3 |
+| #382 | A388850(14) — least start u of a maximal run of exactly 15 …[truncated; see source] | open-easy | factor the <= 17 integers involved, take the largest prime …[truncated; see source] | C3 |
 | #393 | A388302(80) — least spread b_t − b_1 over factorizations 80! = …[truncated; see source] | open-easy | Multiply the b_i with big-int arithmetic, compare to 80!, …[truncated; see source] | C3 |
 | #409 | A229487(n), n = 1..53 — per-cell greatest integer whose iteration x → …[truncated; see source] | open-easy | Iterate x → phi(x)+1: strictly decreasing on composites …[truncated; see source] | C3 |
 | #413 | A005236(10001) — next barrier for ω (an n with m + ω(m) ≤ n for all m …[truncated; see source] | open-easy | Segmented smallest-prime-factor sieve computing ω(m) for …[truncated; see source] | C3 |
