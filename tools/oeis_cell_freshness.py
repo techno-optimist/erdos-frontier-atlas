@@ -4,12 +4,15 @@
   python3 tools/oeis_cell_freshness.py --seq-dir DIR            # read DIR/A######.seq
   python3 tools/oeis_cell_freshness.py --seq-dir DIR --fetch    # download missing records first
 
-For every open atlas/gap_map.json row whose quantity starts with "A######(N)",
+For every atlas/gap_map.json row that is not closed (status "open" or
+"record_in_progress") whose quantity starts with "A######(N)",
 compare the cell index N with the OEIS record's extent: its data (offset plus
 the number of terms, minus one) and any "Table of n, a(n) for n = X..Y" link.
 A row whose N falls inside that extent is reported COVERED: the cell may have
 been settled upstream since the row was written (the 2026-09-27 curation found
-four such rows by hand: #156, #451, #1057, #1095).
+four such rows by hand: #156, #451, #1057, #1095). Rows marked
+"record_in_progress" are checked too: the 2026-10-27 sweep found OEIS had moved
+past #389 and #396 while the open-only filter skipped them.
 
 Read-only: it prints a report and never edits the atlas. A flag is a lead, not
 a verdict. Tables can carry placeholders for unknown entries (reported as
@@ -84,7 +87,7 @@ def main():
     report, missing = [], []
     for e in entries:
         a = e.get("oeis")
-        if e.get("status") != "open" or not a:
+        if e.get("status") == "closed" or not a:
             continue
         n = cell_index(e["quantity"], a)
         if n is None:
@@ -103,7 +106,7 @@ def main():
         if verdict != "open":
             print(f"{verdict:<9} #{p:<5} {cell:<16} {ext}")
     counts = {k: sum(r[0] == k for r in report) for k in order}
-    print(f"\n{len(report)} open cells checked: {counts['COVERED']} covered, "
+    print(f"\n{len(report)} non-closed cells checked: {counts['COVERED']} covered, "
           f"{counts['COVERED?']} covered only by a table with placeholders, {counts['open']} open"
           + (f"; {len(missing)} record(s) missing (use --fetch)" if missing else ""))
     return 0
