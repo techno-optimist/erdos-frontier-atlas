@@ -30,8 +30,8 @@ validator fails any stored class the recorded evidence does not prove.
 |---|---|---|
 | C0 | contract-bound formal proof, machine-checked | 0 |
 | C1 | &ge;2 contract-bound independent replays at the claimed range | 0 |
-| C2 | exactly one contract-bound verified replay | 13 |
-| C3 | literature- or numerics-grade — no independent in-project verification artifact | 212 |
+| C2 | exactly one contract-bound verified replay | 14 |
+| C3 | literature- or numerics-grade — no independent in-project verification artifact | 211 |
 
 ## Entries by kind
 

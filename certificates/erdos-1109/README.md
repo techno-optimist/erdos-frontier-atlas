@@ -11,9 +11,11 @@ A392164 to N = 700.
 the data a(1..54), matching every term here, and a b-file a(1..65) by Leandre Jack
 (terms 55..65 = 2071, 2141, 2193, 2287, 2355, 2427, 2455, 2627, 2729, 2741, 2993),
 with an A392164 b-file to N = 3000 (f(3000) = 65). An offline cross-check found the
-certificate's f(N) equal to that b-file for every N ≤ 2000. This certificate does
-NOT verify terms 55..65 or f(N) for 2000 < N ≤ 3000, and who published 40..54 first
+certificate's f(N) equal to that b-file for every N ≤ 2000. Who published 40..54 first
 was not determined. The atlas gap-map cell for #1109 now points at A392165(66).
+Terms 55..65 and f(N) for 2000 < N ≤ 3000 are covered by a second, separately written
+search (below, contract `erdos-1109-a392165-55-65`); they confirm Leandre Jack's
+terms and add nothing new.
 
 ## What this certificate establishes
 
@@ -37,7 +39,7 @@ was not determined. The atlas gap-map cell for #1109 now points at A392165(66).
 | 53 | **1991** | 321 | 22 323 282 |
 | 54 | **1999** | 325 | 54 052 973 |
 
-So f(2000) = 54, A392165(55) > 2000 (OEIS now gives A392165(55) = 2071, not checked here), and A392164(N) for N ≤ 2000
+So f(2000) = 54, A392165(55) > 2000 (A392165(55) = 2071 is covered by the second search below), and A392164(N) for N ≤ 2000
 follows from the table. For each record, the certificate records the set,
 checked by trial division, and an exhaustive search shows that no candidate N
 between records reaches the next size.
@@ -93,6 +95,38 @@ python3 -I certificates/erdos-1109/verify.py --rds    # the independent Russian-
 | `RESULT.json` | receipt: per candidate N the verdict, graph size and node count; each record's set |
 | `rds_crosscheck.txt` | the Russian-doll log over [1104, 1300] |
 | `emit_result.py` | regenerates RESULT.json into a *different* directory |
+| `sqc_ford.c` | the second, separately written search engine (N ≤ 3000) |
+| `ford_searches_2_3000.txt` | its 1,213 committed answers, one line per N |
+| `verify_ford_3000.py` | the replay for the second search; reads, never writes |
+
+## Second search to N = 3000 (2026-10-27)
+
+**A392165(55..65) = 2071, 2141, 2193, 2287, 2355, 2427, 2455, 2627, 2729, 2741, 2993 and f(N) for every N ≤ 3000 (f(3000) = 65), from a separately written search; this confirms Leandre Jack's OEIS b-files and is not new.**
+
+`sqc_ford.c` was written from the definition alone, without reading the code
+above. It decides "is there an S of size t + 1 with max S = N?" by a bitset
+branch and bound over the same graph V_N, ordering vertices by degree
+(highest first) with a greedy-colouring bound and no mod-4 reduction. That is the
+same family of method as `sqclique.c`, so the two are independent code, not
+independent mathematics. It was asked one question per N ≤ 3000 with 2N
+squarefree, 1,213 searches and about 1.05 × 10^11 nodes in all. Each answer is one
+line of `ford_searches_2_3000.txt`.
+
+Because f(N) ≤ f(N − 1) + 1, the replay chains those answers from f(1) = 1 with
+no outside input. Each target must equal f(N − 1), and each FOUND set is checked
+by trial division. The chain must reproduce A392165(1..54) from `RESULT.json`
+exactly, and it yields 55..65 above.
+
+```sh
+python3 -I certificates/erdos-1109/verify_ford_3000.py                  # chain, witnesses, controls, re-runs the 692 cheap searches (~10 s)
+python3 -I certificates/erdos-1109/verify_ford_3000.py --full --jobs K  # re-runs all 1,213 searches byte for byte (~40+ core-hours)
+```
+
+The fast replay re-runs only the searches with at most 10^6 nodes, so it checks
+the receipt without certifying the expensive NONE answers. Only `--full`
+certifies the claim. Planted controls (a bad witness, a flipped verdict and a
+non-squarefree pair) must be rejected, and the C engine must agree with a pure
+Python clique search for every N ≤ 60.
 
 ## Scope — what is not certified
 
@@ -101,5 +135,5 @@ python3 -I certificates/erdos-1109/verify.py --rds    # the independent Russian-
   - Konyagin (2004): (log log N)(log N)² ≪ f(N) ≪ N^{11/15 + o(1)}.
   - Whether f(N) ≤ N^{o(1)} is open.
 
-  A table to 2000 only illustrates them.
+  A table to 3000 only illustrates them.
 - **A verified-search receipt, not a formal proof.**
