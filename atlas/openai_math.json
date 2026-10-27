@@ -79,8 +79,20 @@
    ],
    "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/025.md",
    "source_verification_level": "Lean formalization listed by source (scope per doc)",
-   "our_verdict": "not independently checked",
-   "status_changed_by_this_entry": false
+   "our_verdict": "Lean proof replayed: compiles, standard axioms only; statement fidelity not checked",
+   "status_changed_by_this_entry": false,
+   "certificate": {
+    "kind": "lean_replay",
+    "receipt": "https://projectforty2.ai/data/ford_receipts/oai025_lean_check.txt",
+    "receipt_sha256": "9eca8b6d0cc9145eb5eb5e54c57ef2032c304160aefbc9aae351215227e8f376",
+    "theorem": "OAI.ShortEgyptian.main",
+    "toolchain": "Lean v4.34.1, Mathlib d13f23b723b8a846827a245b89c10fc7d3f11612 (pins from upstream lean/lake-manifest.json)",
+    "checked": "2026-10-26 (America/Denver)",
+    "by": "Ford (ProjectForty2)",
+    "published_in": "https://github.com/techno-optimist/observatory/pull/60",
+    "result": "Build of the solution files succeeds; #print axioms lists only propext, Classical.choice, Quot.sound; a freshly retyped copy of the challenge statement is closed by the theorem; controls (misstated copy fails, planted sorry flagged) behave as expected.",
+    "scope": "Replay of OpenAI's own proof in the standard Lean kernel only. Not checked: that the Lean statement faithfully formalizes the erdosproblems.com statement, the manuscript prose, or an independent kernel replay. Does not change any status."
+   }
   },
   {
    "family": "026",
@@ -229,8 +241,20 @@
    ],
    "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/184.md",
    "source_verification_level": "Lean formalization listed by source (scope per doc)",
-   "our_verdict": "not independently checked",
-   "status_changed_by_this_entry": false
+   "our_verdict": "Lean proof replayed: compiles, standard axioms only; statement fidelity not checked",
+   "status_changed_by_this_entry": false,
+   "certificate": {
+    "kind": "lean_replay",
+    "receipt": "https://projectforty2.ai/data/ford_receipts/oai184_lean_check.txt",
+    "receipt_sha256": "317f82880efabce5153addc7d9722ec2c62789a9afb0300844da4dbb8ede58d2",
+    "theorem": "OAI.CliqueFreeLog.logarithmic_independence_bound",
+    "toolchain": "Lean v4.34.1, Mathlib d13f23b723b8a846827a245b89c10fc7d3f11612 (pins from upstream lean/lake-manifest.json)",
+    "checked": "2026-10-26 (America/Denver)",
+    "by": "Ford (ProjectForty2)",
+    "published_in": "https://github.com/techno-optimist/observatory/pull/61",
+    "result": "Build of the solution files succeeds; #print axioms lists only propext, Classical.choice, Quot.sound; a freshly retyped copy of the challenge statement is closed by the theorem; controls (misstated copy fails, planted sorry flagged) behave as expected.",
+    "scope": "Replay of OpenAI's own proof in the standard Lean kernel only. Not checked: that the Lean statement faithfully formalizes the erdosproblems.com statement, the manuscript prose, or an independent kernel replay. Does not change any status."
+   }
   },
   {
    "family": "189",
@@ -251,6 +275,8 @@
   "families": 15,
   "with_erdosproblems_number": 2,
   "with_lean_scope_doc": 12,
-  "replicated_by_us": 0
- }
+  "replicated_by_us": 0,
+  "lean_replayed_by_us": 2
+ },
+ "counts_note": "replicated_by_us counts independent re-derivations of the mathematics (none). lean_replayed_by_us counts families whose published Lean proof P42 rebuilt and axiom-checked (025, 184)."
 }
