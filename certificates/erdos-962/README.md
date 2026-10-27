@@ -104,6 +104,9 @@ python3 -I certificates/erdos-962/verify.py --full   # a(1..1102): scan of [1, 4
 | `RESULT_ford_1200.json` | extension receipt: a(n) and run length for n = 1..1200 (written by `emit_result.py --nmax 1200`) |
 | `runs_ford_1200.txt` | the sequential engine's output for NMAX 1200 over [1, 7.5*10^10], one line per n |
 | `verify_ford_1200.py` | the replay for the extension; reads, never writes |
+| `RESULT_ford_1300.json` | second extension receipt: a(n) and run length for n = 1..1300 (written by `emit_result.py --nmax 1300`) |
+| `runs_ford_1300.txt` | the sequential engine's output for NMAX 1300 over [1, 10^11], one line per n |
+| `verify_ford_1300.py` | the replay for the second extension; reads, never writes |
 
 ## Scope — what is not certified
 
@@ -112,9 +115,9 @@ python3 -I certificates/erdos-962/verify.py --full   # a(1..1102): scan of [1, 4
 - **Minimality is only as good as the scan.** It rests on the two engines, which
   share the sieve design but not code, and on the reference over the small
   range. It is a verified-search receipt, not a formal proof.
-- **a(1201) is not computed.** a(1103..1200) are covered by the extension below;
-  1201 is prime, so from n = 1201 on, integers whose largest prime factor is 1201
-  also break runs. All that is known here is a(1201) ≥ a(1200) = 74759540976.
+- **a(1301) is not computed.** a(1103..1300) are covered by the two extensions below;
+  1301 is prime, so from n = 1301 on, integers whose largest prime factor is 1301
+  also break runs. All that is claimed here is a(1301) ≥ a(1300) = 99182650021.
 
 ## Extension to n = 1200 (2026-10-27)
 
@@ -155,3 +158,43 @@ must be refused: a(1157) claimed one smaller, run(1200) claimed one longer, the
 a(1103) run started one late, and a(1050) altered in the prefix. The scope above
 still applies. This is a verified-search receipt, not a formal proof, and the
 two engines share the sieve design but not code.
+
+## Extension to n = 1300 (2026-10-27)
+
+**A327909(n) for 1201 ≤ n ≤ 1300: a(1201..1211) = 74759540976, a(1212..1250) = 80437383604, a(1251..1268) = 98440709185, a(1269..1290) = 99182650001, a(1291..1300) = 99182650021; all 100 are new (the OEIS b-file ends at 999).**
+
+| n | a(n) | length of the run there |
+|---:|---:|---:|
+| 1201–1211 | 74759540976 | 1211 |
+| 1212–1250 | 80437383604 | 1250 |
+| 1251–1268 | 98440709185 | 1268 |
+| 1269–1278 | 99182650001 | 1391 |
+| 1279–1290 | 99182650001 | 1369 |
+| 1291–1300 | 99182650021 | 1349 |
+
+This second extension again adds new files and changes none (the first
+extension's files are frozen too). `RESULT_ford_1300.json` was written by the
+certificate's own `emit_result.py` (`--nmax 1300 --limit 100000000000`): one
+exact chunked scan of every integer up to 10^11. Its entries for n ≤ 1102 equal
+`RESULT.json` and its entries for n ≤ 1200 equal `RESULT_ford_1200.json`
+exactly. `runs_ford_1300.txt` is the sequential engine `runs.c`, run separately
+over [1, 10^11] with NMAX 1300, and it agrees on every n ≤ 1300.
+
+- **a(1201..1211) needed no search.** The run starting at a(1200) = 74759540976
+  is 1211 integers long in class 1193, and none of its integers has largest prime
+  factor 1201, so a(1201..1211) = a(1200).
+- Erdős's k(n) = max { k : a(k) ≤ n + 1 } is now exact for every
+  n < 99182650020, and k(n) ≥ 1300 beyond that.
+
+```sh
+python3 -I certificates/erdos-962/verify_ford_1300.py               # prefixes, gcd witnesses, committed runs.c output, engines on [1, 2*10^8]; does not certify
+python3 -I certificates/erdos-962/verify_ford_1300.py --full        # chunk.c rescans [1, 10^11] and certifies a(1..1300) (~20 CPU-minutes)
+python3 -I certificates/erdos-962/verify_ford_1300.py --full --runs # also re-runs runs.c over the same range (~17 min, one core)
+```
+
+The fast replay checks the receipt: both frozen prefixes, every run by gcd, and
+agreement with the committed `runs.c` output. Only `--full` certifies the claim.
+Planted failures must be refused: a(1212) claimed one smaller, run(1300) claimed
+one longer, the a(1201) run started one late, and a(1150) altered in the
+a(1..1200) prefix. The scope above still applies: a verified-search receipt, not
+a formal proof; the two engines share the sieve design but not code.

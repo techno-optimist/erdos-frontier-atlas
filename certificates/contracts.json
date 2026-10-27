@@ -154,7 +154,7 @@
   {
    "path": "certificates/erdos-962",
    "classification": "certified_local",
-   "boundary": "Exact smooth-number scan of [1, 4.2*10^10]: OEIS A327909(n) for 1 <= n <= 1102, each with its maximal run checked by gcd. Replicates the published b-file (a(1..999), including a(999) = 22369305365); a(1000..1102) are new. Extended (2026-10-27, new files only) by a scan of [1, 7.5*10^10] to n <= 1200; a(1103..1200) are new. Two C engines (sequential and chunked) plus a Python sieve on small ranges; no formal proof; nothing about the asymptotic Erdos #962 question."
+   "boundary": "Exact smooth-number scan of [1, 4.2*10^10]: OEIS A327909(n) for 1 <= n <= 1102, each with its maximal run checked by gcd. Replicates the published b-file (a(1..999), including a(999) = 22369305365); a(1000..1102) are new. Extended (2026-10-27, new files only) by a scan of [1, 7.5*10^10] to n <= 1200; a(1103..1200) are new. Extended again (2026-10-27, new files only) by a scan of [1, 10^11] to n <= 1300; a(1201..1300) are new. Two C engines (sequential and chunked) plus a Python sieve on small ranges; no formal proof; nothing about the asymptotic Erdos #962 question."
   },
   {
    "path": "certificates/erdos-1109",
@@ -1552,6 +1552,116 @@
      "failure_control": {
       "kind": "embedded",
       "evidence": "Every replay must reproduce the frozen RESULT.json a(1..1102) exactly inside the extension receipt, check each of the 242 distinct recorded runs by gcd alone, match the committed runs.c output for every n <= 1200, reproduce a(1..400) with both engines on [1, 2*10^8], and match the OEIS data a(1..44) and the b-file's a(999). Planted failures must be refused: a(1157) claimed one smaller, run(1200) claimed one longer, the a(1103) run started one late, and a(1050) altered in the prefix. An engine that missed runs would fail the OEIS data and the b-file's a(999); one that invented runs would fail the gcd checks."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-962-a327909-1201-1300",
+   "status": "promoted",
+   "statement": "A327909(n) for 1 <= n <= 1300, with a(1201..1211) = 74759540976, a(1212..1250) = 80437383604, a(1251..1268) = 98440709185, a(1269..1290) = 99182650001, a(1291..1300) = 99182650021: each a(n) starts a maximal run of at least n consecutive integers each having a prime factor > n (checked by gcd), and an exact scan of [1, 10^11] finds no earlier such run; a(1..1102) equal the frozen receipt RESULT.json and a(1..1200) equal the extension receipt RESULT_ford_1200.json.",
+   "scope": "Exact finite scan (every integer up to 10^11, chunk.c via emit_result.py, and separately runs.c); a verified-search receipt, not a formal proof. The two engines share the sieve design but not code. a(1201..1300) are new: the OEIS b-file ends at 999 (revision 37) and the earlier receipts at 1102 and 1200. Gives Erdos's k(n) = max{k : a(k) <= n + 1} exactly for n < 99182650020. a(1301) is not claimed (only a(1301) >= 99182650021). The fast replay checks the receipt and does not certify; --full certifies. Says nothing about the asymptotic question of Erdos #962.",
+   "machine_verdict": "\"verified_1300\":true",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-962/README.md",
+     "contains": "**A327909(n) for 1201 ≤ n ≤ 1300: a(1201..1211) = 74759540976, a(1212..1250) = 80437383604, a(1251..1268) = 98440709185, a(1269..1290) = 99182650001, a(1291..1300) = 99182650021; all 100 are new (the OEIS b-file ends at 999).**",
+     "overclaim_guards": [
+      "resolves Erdős #962",
+      "proves the conjecture"
+     ]
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-962/verify_ford_1300.py",
+     "sha256": "97cfed761273e3e3e2623bc342e75f3b8c8ca508b27ae98a56b7915081701f29"
+    },
+    {
+     "path": "certificates/erdos-962/RESULT_ford_1300.json",
+     "sha256": "ff093db7ddaaaf56e62ad9cb8455bbc09d2128c7df6b40ed6e46a32c40b69c9e"
+    },
+    {
+     "path": "certificates/erdos-962/runs_ford_1300.txt",
+     "sha256": "3e7a11c6a438dcf556df153cd9912ddf513d79e9ecdcaea55074a86d0c78e69e"
+    },
+    {
+     "path": "certificates/erdos-962/verify_ford_1200.py",
+     "sha256": "76617ac6e741dfecf9b24698bf5d60d3460b2d64e7f3c6c4436c0c412fe3b398"
+    },
+    {
+     "path": "certificates/erdos-962/RESULT_ford_1200.json",
+     "sha256": "d8c252e57ee2bb7d9dc3b8290f4d9c416a3323d86c4a4a8165474c7a31de6387"
+    },
+    {
+     "path": "certificates/erdos-962/runs_ford_1200.txt",
+     "sha256": "0fe24415ced2da120693ecea0e7b7489f9c9a7e3a7f1ce25c783f332bfdf6075"
+    },
+    {
+     "path": "certificates/erdos-962/verify.py",
+     "sha256": "dae6c4c8b68f7364cb101b4c19c586ce23246540a2ed391f7e4fa50a797c157f"
+    },
+    {
+     "path": "certificates/erdos-962/smooth_runs.py",
+     "sha256": "c00f548616c0db57c5706907351da4ed347538644443d1c436fd8607af836a7d"
+    },
+    {
+     "path": "certificates/erdos-962/runs.c",
+     "sha256": "d365f244e5166863fe84b7c50514ad5bb9200cc17aa6f24edc83fd753e0611e9"
+    },
+    {
+     "path": "certificates/erdos-962/chunk.c",
+     "sha256": "3cbb4b3691016b244a2d04367649b71738223465005fe8bd6d6e1728b6ebe096"
+    },
+    {
+     "path": "certificates/erdos-962/emit_result.py",
+     "sha256": "313b710ac8eb56da87b8382086045d52ffaeb579eb7c1e57d6e93282e0904b37"
+    },
+    {
+     "path": "certificates/erdos-962/RESULT.json",
+     "sha256": "e09688d8c7bd1e9a8c1da1f1edf89492a76c41c21182a888dbec0d644b2fb483"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": false,
+     "entrypoint": "certificates/erdos-962/verify_ford_1300.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-962/verify_ford_1300.py"
+     ],
+     "timeout_seconds": 900,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"receipt_consistent_1300\":true",
+      "all checks passed"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "Every replay must reproduce the frozen RESULT.json a(1..1102) and the extension receipt RESULT_ford_1200.json a(1..1200) exactly inside the new receipt, check each of the 260 distinct recorded runs by gcd alone, match the committed runs.c output for every n <= 1300, reproduce a(1..400) with both engines on [1, 2*10^8], and match the OEIS data a(1..44) and the b-file's a(999). Planted failures must be refused: a(1212) claimed one smaller, run(1300) claimed one longer, the a(1201) run started one late, and a(1150) altered in the prefix. An engine that missed runs would fail the OEIS data and the b-file's a(999); one that invented runs would fail the gcd checks."
+     }
+    },
+    {
+     "profile": "slow",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-962/verify_ford_1300.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-962/verify_ford_1300.py",
+      "--full"
+     ],
+     "timeout_seconds": 7200,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"verified_1300\":true",
+      "all checks passed"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "Every replay must reproduce the frozen RESULT.json a(1..1102) and the extension receipt RESULT_ford_1200.json a(1..1200) exactly inside the new receipt, check each of the 260 distinct recorded runs by gcd alone, match the committed runs.c output for every n <= 1300, reproduce a(1..400) with both engines on [1, 2*10^8], and match the OEIS data a(1..44) and the b-file's a(999). Planted failures must be refused: a(1212) claimed one smaller, run(1300) claimed one longer, the a(1201) run started one late, and a(1150) altered in the prefix. An engine that missed runs would fail the OEIS data and the b-file's a(999); one that invented runs would fail the gcd checks."
      }
     }
    ]
