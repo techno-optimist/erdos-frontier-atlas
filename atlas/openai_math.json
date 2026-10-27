@@ -1,0 +1,256 @@
+{
+ "schema": "efa-external-corpus-v1",
+ "purpose": "Index of results in OpenAI's public mathematics manuscript collection that the source itself connects to Erdős problems or named Erdős conjectures. External results, not ours. Like atlas/ai_claims.json, this is a claim feed: an entry NEVER changes a problem's status in this atlas.",
+ "source": {
+  "repo": "https://github.com/openai/math",
+  "commit": "7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a",
+  "license": "Apache-2.0 (repo LICENSE; lean/ has its own LICENSE)",
+  "attribution": "Manuscripts produced by an unnamed internal OpenAI model, per the source README; authorship line on manuscripts reads 'OpenAI'. The source defers to the math community on credit and precedence.",
+  "retrieved": "2026-10-26",
+  "catalogue_size": {
+   "manuscripts": 721,
+   "families": 373
+  },
+  "selection": "Families whose CONTENTS.md entry mentions Erdős (15 of 373). Erdős problem numbers are recorded only where a manuscript PDF explicitly cites an erdosproblems.com number (full-text scan of all 751 PDFs).",
+  "copying": "Links and short paraphrased/quoted summaries only; no code or manuscripts copied."
+ },
+ "entries": [
+  {
+   "family": "011",
+   "title": "Prime-factor statistics of $p-1$",
+   "source_summary": "Proves that the normalized ordered logarithms of the prime factors of $`p-1`$, counted with multiplicity, converge jointly to the Poisson–Dirichlet law $`\\mathrm{PD}(1)`$ as p ranges uniformly over primes up to x and $`x\\to\\infty`$. This resolves the Ford–Konyagin–Luca conjecture. It also proves that infinitely many integers n have more than $`n^{1-\\varepsilon}`$ totient preimages, for every ε &gt; 0.",
+   "erdosproblems_links": [],
+   "erdos_number_note": "Source names an Erdős conjecture but does not cite an erdosproblems.com number; no mapping asserted here.",
+   "manuscripts": [
+    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf",
+    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/paper.pdf",
+    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf"
+   ],
+   "lean_scope_doc": null,
+   "source_verification_level": "manuscript only; source warns unformalized results could have issues",
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false
+  },
+  {
+   "family": "012",
+   "title": "Independent largest prime factors of consecutive integers",
+   "source_summary": "Resolves the Erdős–Pomerance joint Dickman conjecture: the logarithmic sizes of the largest prime factors of n and $`n+1`$ are asymptotically independent in ordinary natural density. In particular, the integers satisfying $`P^+(n)\\lt P^+(n+1)`$ have density 1/2.",
+   "erdosproblems_links": [],
+   "erdos_number_note": "Source names an Erdős conjecture but does not cite an erdosproblems.com number; no mapping asserted here.",
+   "manuscripts": [
+    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf"
+   ],
+   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/012.md",
+   "source_verification_level": "Lean formalization listed by source (scope per doc)",
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false
+  },
+  {
+   "family": "024",
+   "title": "An asymptotic formula for the number of totients",
+   "source_summary": "Gives an asymptotic equivalent for the number $`V(x)`$ of distinct totient values up to x, with a positive bounded phase-dependent factor determined by convergent arithmetic approximations. In particular, $`V(cx)/V(x)\\to c`$ for every fixed c &gt; 0, answering Erdős and Hall’s scaling question.",
+   "erdosproblems_links": [],
+   "erdos_number_note": "Source names an Erdős conjecture but does not cite an erdosproblems.com number; no mapping asserted here.",
+   "manuscripts": [
+    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/An-asymptotic-formula-for-the-number-of-totients-September-25-2026/An-asymptotic-formula-for-the-number-of-totients-September-25-2026.pdf"
+   ],
+   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/024.md",
+   "source_verification_level": "Lean formalization listed by source (scope per doc)",
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false
+  },
+  {
+   "family": "025",
+   "title": "Short Egyptian fractions",
+   "source_summary": "Every rational $`a/b`$ with $`1\\le a\\lt b`$ is a sum of $`O(\\log\\log b)`$ distinct positive unit fractions. The worst-case minimum number of terms has the same order, resolving Erdős’s conjecture on short Egyptian fractions.",
+   "erdosproblems_links": [
+    {
+     "erdos_id": 304,
+     "relation": "source states it proves this conjecture (\"Theorem 1.1 proves Erdős's conjecture affirmatively\"; \"recorded as Erdős Problem 304\")"
+    },
+    {
+     "erdos_id": 293,
+     "relation": "source proves bounds on the related prescribed-denominator quantity v(k) and cites Problem 293; source does not claim to resolve #293"
+    }
+   ],
+   "erdos_number_note": null,
+   "manuscripts": [
+    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/Short-Egyptian-fractions-September-25-2026/Short-Egyptian-fractions-September-25-2026.pdf"
+   ],
+   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/025.md",
+   "source_verification_level": "Lean formalization listed by source (scope per doc)",
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false
+  },
+  {
+   "family": "026",
+   "title": "Positive lower density of large prime gaps",
+   "source_summary": "For every fixed C &gt; 0, a positive proportion of consecutive prime gaps exceed $`C\\log p_n`$, throughout every sufficiently large initial segment of the primes. The proportion may depend on C. Consequently, the indices where $`p_n/n`$ increases have positive lower density, answering Erdős and Prachar.",
+   "erdosproblems_links": [],
+   "erdos_number_note": "Source names an Erdős conjecture but does not cite an erdosproblems.com number; no mapping asserted here.",
+   "manuscripts": [
+    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/Positive-lower-density-of-large-prime-gaps-September-25-2026/main.pdf"
+   ],
+   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/026.md",
+   "source_verification_level": "Lean formalization listed by source (scope per doc)",
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false
+  },
+  {
+   "family": "076",
+   "title": "Real ultraflat Littlewood polynomials and unbounded binary merit factors",
+   "source_summary": "Constructs polynomials with N consecutive coefficients in $`\\{-1,1\\}`$ whose modulus is $`(1+o(1))\\sqrt N`$ uniformly on the entire unit circle, for every sufficiently large integer length N. Thus real Littlewood polynomials are ultraflat, including at the real endpoints. Their binary merit factors tend to infinity, disproving Turyn's bounded-merit-factor conjecture.",
+   "erdosproblems_links": [],
+   "erdos_number_note": "Source names an Erdős conjecture but does not cite an erdosproblems.com number; no mapping asserted here.",
+   "manuscripts": [
+    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/Asymptotically-minimal-maxima-of-real-Littlewood-polynomials-September-23-2026/paper.pdf",
+    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/Nearly-minimal-maxima-and-positive-minima-of-Littlewood-polynomials-October-5-2026/littlewood-lower-envelope.pdf",
+    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/Ultraflat-real-Littlewood-polynomials-October-5-2026/ultraflat-real-littlewood-polynomials.pdf"
+   ],
+   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/076.md",
+   "source_verification_level": "Lean formalization listed by source (scope per doc)",
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false
+  },
+  {
+   "family": "084",
+   "title": "The geometric case of the Erdős similarity conjecture",
+   "source_summary": "For every fixed $`q\\in(0,1)`$, constructs compact subsets of $`[0,1]`$ with measure arbitrarily close to one containing no translated and nontrivially dilated copy of $`\\{q^n:n\\ge1\\}`$, with dilations of either sign. This resolves the geometric-progression case of the Erdős similarity conjecture for every ratio.",
+   "erdosproblems_links": [],
+   "erdos_number_note": "Source names an Erdős conjecture but does not cite an erdosproblems.com number; no mapping asserted here.",
+   "manuscripts": [
+    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/The-dyadic-case-of-the-Erdos-similarity-conjecture-September-25-2026/paper.pdf",
+    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/The-geometric-case-of-the-Erdos-similarity-conjecture-October-5-2026/geometric-erdos-similarity.pdf"
+   ],
+   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/084.md",
+   "source_verification_level": "Lean formalization listed by source (scope per doc)",
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false
+  },
+  {
+   "family": "159",
+   "title": "Erdős’s reciprocal-sum conjecture and quasipolynomial Szemerédi bounds",
+   "source_summary": "Proves Erdős's conjecture that every set of positive integers with divergent reciprocal sum contains arithmetic progressions of every finite length. Quantitatively, for each fixed k ≥ 3, every subset of $`\\{1,\\ldots,N\\}`$ with no nonconstant k-term progression has size at most $`C_kN\\exp[-c_k(\\log N)^{\\varepsilon_k}]`$, with positive constants depending only on k.",
+   "erdosproblems_links": [],
+   "erdos_number_note": "Source names an Erdős conjecture but does not cite an erdosproblems.com number; no mapping asserted here.",
+   "manuscripts": [
+    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/paper.pdf"
+   ],
+   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/159.md",
+   "source_verification_level": "Lean formalization listed by source (scope per doc)",
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false
+  },
+  {
+   "family": "160",
+   "title": "Superexponential van der Waerden numbers",
+   "source_summary": "Resolves Erdős's superexponential-growth question for van der Waerden numbers. If $`W_r(k)`$ is the least interval length forcing a monochromatic k-term progression in every r-coloring, then $`W_r(k)\\gt k^{ck\\lfloor\\log_2 r\\rfloor}`$ for an absolute c &gt; 0, all r ≥ 2 and sufficiently large k, uniformly in r. In particular, $`W_r(k)^{1/k}\\to\\infty`$ for each fixed r.",
+   "erdosproblems_links": [],
+   "erdos_number_note": "Source names an Erdős conjecture but does not cite an erdosproblems.com number; no mapping asserted here.",
+   "manuscripts": [
+    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/Quantitative-Superexponential-Bounds-for-van-der-Waerden-Numbers-September-23-2026/paper.pdf"
+   ],
+   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/160.md",
+   "source_verification_level": "Lean formalization listed by source (scope per doc)",
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false
+  },
+  {
+   "family": "166",
+   "title": "The higher-dimensional Erdős distinct-distances conjecture",
+   "source_summary": "For every fixed d ≥ 3, any n ≥ 2 distinct points in ℝd determine at least $`c_dn^{2/d}`$ distinct distances, with $`c_d\\gt 0`$ depending only on dimension. This matches the integer-grid order and resolves the higher-dimensional Erdős distinct-distances conjecture with a constant-factor bound.",
+   "erdosproblems_links": [],
+   "erdos_number_note": "Source names an Erdős conjecture but does not cite an erdosproblems.com number; no mapping asserted here.",
+   "manuscripts": [
+    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/The-higher-dimensional-Erdos-distinct-distances-conjecture-September-23-2026/paper.pdf"
+   ],
+   "lean_scope_doc": null,
+   "source_verification_level": "manuscript only; source warns unformalized results could have issues",
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false
+  },
+  {
+   "family": "167",
+   "title": "Planar distinct distances and unit-distance bounds",
+   "source_summary": "Proves the weak pinned Erdős distance conjecture: for every fixed ε &gt; 0, all but $`o(n)`$ points of any n-point planar set determine at least $`n^{1-\\varepsilon}`$ distinct nonzero distances. A complementary theorem bounds the number of unit-distance pairs by $`O(n^{4/3-\\delta})`$ for an absolute δ &gt; 0.",
+   "erdosproblems_links": [],
+   "erdos_number_note": "Source names an Erdős conjecture but does not cite an erdosproblems.com number; no mapping asserted here.",
+   "manuscripts": [
+    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/A-power-saving-for-planar-unit-distances-September-23-2026/paper.pdf",
+    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/The-weak-pinned-planar-distance-theorem-September-23-2026/paper.pdf"
+   ],
+   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/167.md",
+   "source_verification_level": "Lean formalization listed by source (scope per doc)",
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false
+  },
+  {
+   "family": "171",
+   "title": "The hypercube Ramsey conjecture",
+   "source_summary": "Resolves the Burr–Erdős hypercube Ramsey conjecture: the two-color Ramsey number of the n-dimensional cube is $`\\Theta(2^n)`$. Thus every red-blue coloring of a complete graph on a universal constant times the cube's number of vertices contains a monochromatic copy of the cube.",
+   "erdosproblems_links": [],
+   "erdos_number_note": "Source names an Erdős conjecture but does not cite an erdosproblems.com number; no mapping asserted here.",
+   "manuscripts": [
+    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/The-hypercube-Ramsey-number-has-linear-order-September-23-2026/paper.pdf"
+   ],
+   "lean_scope_doc": null,
+   "source_verification_level": "manuscript only; source warns unformalized results could have issues",
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false
+  },
+  {
+   "family": "181",
+   "title": "The Erdős–Gallai cycle-decomposition conjecture",
+   "source_summary": "Proves that the edges of every finite simple undirected graph on n vertices can be partitioned into at most $`Cn`$ simple cycles and single edges, for an absolute constant C. This resolves the Erdős–Gallai cycle-decomposition conjecture, bounding the number of pieces linearly even for dense graphs.",
+   "erdosproblems_links": [],
+   "erdos_number_note": "Source names an Erdős conjecture but does not cite an erdosproblems.com number; no mapping asserted here.",
+   "manuscripts": [
+    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/A-linear-cycle-and-edge-decomposition-of-every-graph-September-24-2026/main.pdf"
+   ],
+   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/181.md",
+   "source_verification_level": "Lean formalization listed by source (scope per doc)",
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false
+  },
+  {
+   "family": "184",
+   "title": "Correspondence coloring with a fixed forbidden subgraph",
+   "source_summary": "Proves the Alon–Krivelevich–Sudakov coloring conjecture in correspondence-coloring form: graphs avoiding any fixed subgraph F need $`O_F(\\Delta/\\log\\Delta)`$ colors when their maximum degree Δ is sufficiently large. Also proves the Ajtai–Erdős–Komlós–Szemerédi independence conjecture: for fixed r ≥ 4, every n-vertex Kr-free graph of average degree d ≥ 2 has an independent set of size $`\\Omega_r(n\\log d/d)`$.",
+   "erdosproblems_links": [
+    {
+     "erdos_id": 802,
+     "relation": "source states a positive answer to the Ajtai–Erdős–Komlós–Szemerédi fixed-clique-size independence conjecture, \"also recorded as Erdős Problem 802\""
+    }
+   ],
+   "erdos_number_note": null,
+   "manuscripts": [
+    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/A-Logarithmic-Independence-Bound-for-Clique-Free-Graphs-September-25-2026/paper.pdf",
+    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/Correspondence-Coloring-Graphs-with-a-Forbidden-Clique-October-5-2026/correspondence-coloring-forbidden-clique.pdf"
+   ],
+   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/184.md",
+   "source_verification_level": "Lean formalization listed by source (scope per doc)",
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false
+  },
+  {
+   "family": "189",
+   "title": "Cycle–clique Ramsey numbers",
+   "source_summary": "Proves the Erdős–Faudree–Rousseau–Schelp conjecture: $`R(C_m,K_n)=(m-1)(n-1)+1`$ for every $`m\\ge n\\ge3`$, except $`R(C_3,K_3)=6`$. This is the exact threshold forcing a red m-cycle or a blue n-clique in every red–blue coloring of a complete graph.",
+   "erdosproblems_links": [],
+   "erdos_number_note": "Source names an Erdős conjecture but does not cite an erdosproblems.com number; no mapping asserted here.",
+   "manuscripts": [
+    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/Cycle-clique-Ramsey-numbers-September-25-2026/Cycle-clique-Ramsey-numbers-September-25-2026.pdf"
+   ],
+   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/189.md",
+   "source_verification_level": "Lean formalization listed by source (scope per doc)",
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false
+  }
+ ],
+ "counts": {
+  "families": 15,
+  "with_erdosproblems_number": 2,
+  "with_lean_scope_doc": 12,
+  "replicated_by_us": 0
+ }
+}
