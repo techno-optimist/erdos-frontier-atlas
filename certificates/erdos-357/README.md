@@ -1,4 +1,4 @@
-# Erdős #357 — distinct segment sums: A364132 through n = 27, A364153 through n = 16
+# Erdős #357 — distinct segment sums: A364132 through n = 27, A364153 through n = 17
 
 **Problem node `P357`; OEIS [A364132](https://oeis.org/A364132) and
 [A364153](https://oeis.org/A364153).** A *segment* of a sequence
@@ -31,6 +31,8 @@ Erdős asked for f(N), the most terms an increasing sequence in {1..N} with
 distinct segment sums can have. Since f(N) = max{n : A364132(n) ≤ N}, the
 table gives f(N) for every N ≤ 69; for instance f(69) = 27.
 The next cells: A364132(28) lies in [70, 76] and A364153(17) in [24, 26], the upper ends by explicit sequences recorded in RESULT.json and checked like the witnesses.
+Update 2026-10-28: A364153(17) = 26 is now decided by a separate search (next section), so the any-order companion cell is A364153(18) ≥ 26;
+A364132(28) ∈ [70, 76] is unchanged.
 
 ## Method
 
@@ -93,6 +95,54 @@ python3 -I certificates/erdos-357/verify.py --full   # every term, new ones incl
 | `verify.py` | the replay; reads RESULT.json, never writes it |
 | `RESULT.json` | receipt: the deciding searches with node counts, a witness per term, next-cell bounds |
 | `emit_result.py` | regenerates RESULT.json into a *different* directory |
+
+## Addendum (2026-10-28, Ford): A364153(17) = 26
+
+**A364153(17) = 26: new, since OEIS lists A364153(1..13); an exhaustive computer search by two independent engines, not a proof.**
+
+| n | A364153(n) | an n-sequence in {1..A364153(n)} with distinct segment sums |
+|---:|---:|---|
+| 17 | **26** | 1, 2, 12, 16, 18, 23, 17, 20, 22, 25, 26, 10, 19, 24, 11, 21, 6 |
+
+This sequence is the one already recorded in RESULT.json as the upper end of the
+A364153(17) cell. What is new is the lower end: no 17-sequence of distinct values
+from {1..25}, in any order, has all 153 segment sums distinct.
+
+- **Engine.** `ss_cleanroom.c` was written by Ford from the OEIS definition alone,
+  without reading or reusing atlas code. It uses the same left-to-right bitset state
+  as `segsum.c` (T and D above) and the room pruning, but no symmetry breaking: both
+  orientations of every sequence are searched. The search at N is split into 19
+  parts by dealing the admissible second terms round-robin; every part sees the same
+  sequence of choices, so together the parts cover the whole search.
+- **Searches** (`ford_searches_a364153_17.txt`, 40 lines): all 19 parts NONE at
+  N = 24 and at N = 25 (about 2.1 × 10^10 and 5.6 × 10^10 nodes), FOUND at N = 26
+  with the sequence above (2.3 × 10^8 nodes), and the control a16@23 part 0/14
+  (NONE). NONE at 25 alone gives A364153(17) ≥ 26; the sequence gives ≤ 26.
+- **Second engine** (`g4_crosscheck_a364153_17.txt`): the unchanged `segsum.c`
+  answers none at 24 and 25 (2.1 × 10^10 and 5.6 × 10^10 nodes), and its a16@23
+  node count equals the one pinned in RESULT.json. The two engines are independent
+  code using the same method, not independent mathematics.
+- **Checks** (`verify_ford_a17.py`): completeness of the parts, the sequence checked
+  by brute force alone, agreement of the two engines, `ss_cleanroom.c` reproducing
+  A364153(1..12) of RESULT.json, and five planted failures (a witness whose last
+  term is s_1 + s_2, a flipped part, a dropped part, an engine disagreement, the
+  collision 1 + 2 = 3), each rejected.
+
+```sh
+python3 -I certificates/erdos-357/verify_ford_a17.py          # consistency + the FOUND search (~2 min; not certifying)
+python3 -I certificates/erdos-357/verify_ford_a17.py --full   # re-runs all 40 + 3 searches (about 1.6e11 nodes; hours)
+```
+
+| file | role |
+|---|---|
+| `ss_cleanroom.c` | Ford's clean-room engine (any order, no symmetry breaking, split into parts) |
+| `ford_searches_a364153_17.txt` | its 40 committed answers |
+| `g4_crosscheck_a364153_17.txt` | `segsum.c` on a16@23, a17@24 and a17@25 |
+| `verify_ford_a17.py` | the replay; reads the files above and RESULT.json, never writes them |
+
+RESULT.json, `verify.py` and the other files above are unchanged. Not submitted to
+OEIS here. Nothing in this addendum bears on A364132(28) or on the asymptotic
+question.
 
 ## Scope — what is not certified
 

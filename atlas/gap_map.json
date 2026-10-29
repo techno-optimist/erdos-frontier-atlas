@@ -2654,14 +2654,15 @@
    "witness_feasibility": "open-easy",
    "exact_feasibility": "cell",
    "status": "open",
-   "notes": "PREVIOUS CELL CLOSED HERE (2026-09-28): certificates/erdos-357 decides A364132(1..27) and A364153(1..16) by exhaustive depth-first search on segment-sum bitsets (C engine pinned node for node to a Python reference; verdicts cross-checked by a second engine sharing no code). New: A364132(23..27) = 56, 60, 63, 67, 69 and A364153(14..16) = 20, 22, 24. Companion cell: A364153(17) >= 24, <= 26 by the explicit sequence in RESULT.json. The deciding refutation grows roughly 2-4x per term (8.4e9 nodes at A364132(27)). Open content: growth of f(n) — Weisenberg (via #874) gives f(n) >= (2+o(1)) sqrt(n); whether f(n) = o(n) is open; for the non-monotone variant g(n), Hegyvari 1986 proved (1/3+o(1))n <= g(n) and Coppersmith-Phillips (via #867) gives g(n) <= (2/3 - 1/512 + o(1))n — those asymptotics are walls (erdosproblems.com/357, edited Jan 2026). Erdős also asked whether sum 1/a_i converges for infinite versions.",
+   "notes": "COMPANION CELL CLOSED HERE (2026-10-28, Ford): A364153(17) = 26, new (OEIS lists A364153(1..13)). Ford's separately written engine ss_cleanroom.c answers NONE on all 19 parts of the any-order search with every term <= 25 and FOUND at 26 with 1, 2, 12, 16, 18, 23, 17, 20, 22, 25, 26, 10, 19, 24, 11, 21, 6 (all 153 segment sums distinct by brute force); segsum.c repeated the refutations at 24 and 25 (new files ss_cleanroom.c, ford_searches_a364153_17.txt, g4_crosscheck_a364153_17.txt, verify_ford_a17.py; contract erdos-357-a364153-17). An exhaustive computer search by two independent engines, not a proof; same segment-sum bitset method, so independent code, not independent mathematics. Next companion cell: A364153(18) >= 26 (monotone: deleting an end term), no upper bound recorded. This row's cell A364132(28) is unchanged. PREVIOUS CELL CLOSED HERE (2026-09-28): certificates/erdos-357 decides A364132(1..27) and A364153(1..16) by exhaustive depth-first search on segment-sum bitsets (C engine pinned node for node to a Python reference; verdicts cross-checked by a second engine sharing no code). New: A364132(23..27) = 56, 60, 63, 67, 69 and A364153(14..16) = 20, 22, 24. Companion cell then: A364153(17) in [24, 26]. The deciding refutation grows roughly 2-4x per term (8.4e9 nodes at A364132(27)). Open content: growth of f(n) — Weisenberg (via #874) gives f(n) >= (2+o(1)) sqrt(n); whether f(n) = o(n) is open; for the non-monotone variant g(n), Hegyvari 1986 proved (1/3+o(1))n <= g(n) and Coppersmith-Phillips (via #867) gives g(n) <= (2/3 - 1/512 + o(1))n — those asymptotics are walls (erdosproblems.com/357, edited Jan 2026). Erdős also asked whether sum 1/a_i converges for infinite versions.",
    "provenance": {
     "added_by": "claude, erdos-357 lane (branch chronos/quirky-gates-dalhc4); row first mined 2026-07-18",
-    "date": "2026-09-28",
+    "date": "2026-10-28",
     "checked": [
      "OEIS A364132 and A364153 via github.com/oeis/oeisdata, 2026-09-28 (A364132: 22 terms, a(14..22) J. Wang 2023; A364153: 13 terms, a(10..13) J. Wang 2023)",
      "our exhaustive search, certificates/erdos-357 (python3 -I certificates/erdos-357/verify.py [--full])",
-     "erdosproblems.com/357 (asymptotic bounds as transcribed by the 2026-07-18 mining, not re-verified)"
+     "erdosproblems.com/357 (asymptotic bounds as transcribed by the 2026-07-18 mining, not re-verified)",
+     "Ford's clean-room search for A364153(17), certificates/erdos-357 (python3 -I certificates/erdos-357/verify_ford_a17.py [--full]); run 2026-10-28, every answer at 24 and 25 repeated by segsum.c; OEIS A364153 re-checked 2026-10-28 to list a(1..13)"
     ]
    },
    "evidence": [
