@@ -1,4 +1,4 @@
-# Erdős #357 — distinct segment sums: A364132 through n = 27, A364153 through n = 17
+# Erdős #357 — distinct segment sums: A364132 through n = 28, A364153 through n = 17
 
 **Problem node `P357`; OEIS [A364132](https://oeis.org/A364132) and
 [A364153](https://oeis.org/A364153).** A *segment* of a sequence
@@ -33,6 +33,7 @@ table gives f(N) for every N ≤ 69; for instance f(69) = 27.
 The next cells: A364132(28) lies in [70, 76] and A364153(17) in [24, 26], the upper ends by explicit sequences recorded in RESULT.json and checked like the witnesses.
 Update 2026-10-28: A364153(17) = 26 is now decided by a separate search (next section), so the any-order companion cell is A364153(18) ≥ 26;
 A364132(28) ∈ [70, 76] is unchanged.
+Update 2026-10-29: A364132(28) = 75 is now decided by the same separate engine (addendum below), so the next cell is A364132(29) ≥ 76.
 
 ## Method
 
@@ -143,6 +144,55 @@ python3 -I certificates/erdos-357/verify_ford_a17.py --full   # re-runs all 40 +
 RESULT.json, `verify.py` and the other files above are unchanged. Not submitted to
 OEIS here. Nothing in this addendum bears on A364132(28) or on the asymptotic
 question.
+
+## Addendum (2026-10-29, Ford): A364132(28) = 75
+
+**A364132(28) = 75: new, since OEIS lists A364132(1..22); an exhaustive computer search by two independent engines, not a proof.**
+
+| n | A364132(n) | an increasing n-sequence in {1..A364132(n)} with distinct segment sums |
+|---:|---:|---|
+| 28 | **75** | 2, 3, 4, 6, 11, 25, 38, 40, 41, 47, 52, 54, 56, 57, 58, 60, 61, 62, 64, 66, 67, 68, 69, 70, 71, 72, 73, 75 |
+
+This closes the cell A364132(28) ∈ [70, 76] recorded in RESULT.json: no increasing
+28-sequence with every term at most 74 has all 406 segment sums distinct, and the
+sequence above (maximum 75) does. A second 28-sequence with maximum 75 also turned up
+(4, 5, 10, 12, 18, 39, 47, 50, 51, 52, 53, 54, 55, 56, 58, 59, 61, 62, 63, 64, 66, 68, 70, 71, 72, 73, 74, 75); both are checked by brute force.
+
+- **Engine.** The same `ss_cleanroom.c` as the A364153(17) addendum, in mode m
+  (increasing sequences). The search at N is split into 38 parts by dealing the
+  admissible second terms round-robin; together the parts cover the whole search.
+- **Searches** (`ford_searches_a364132_28.txt`, 229 lines): all 38 parts NONE at
+  each N = 70, 71, 72, 73 and 74 (about 3.9 × 10^10, 6.0 × 10^10, 9.5 × 10^10,
+  1.5 × 10^11 and 2.3 × 10^11 nodes), and at N = 75 36 parts NONE and 2 FOUND
+  (parts 29 and 36, the two sequences above), plus the control m27@68 part 6/14
+  (NONE, the same node count in all four runs). NONE at 74 alone gives
+  A364132(28) ≥ 75; the sequence gives ≤ 75.
+- **Second engine** (`g4_crosscheck_a364132_28.txt`): the unchanged `segsum.c`,
+  unpartitioned, answers none at 70, 71, 72, 73 and 74 and found at 75 (the first
+  sequence above, brute-checked), and its m27@68 node count equals the one pinned in
+  RESULT.json. The two engines are independent code using the same method, not
+  independent mathematics.
+- **Checks** (`verify_ford_a28.py`): completeness of the parts, every FOUND sequence
+  checked by brute force alone, agreement of the two engines at every N, `ss_cleanroom.c`
+  reproducing A364132(1..20) of RESULT.json, and six planted failures (a witness whose
+  last term is 11 + 25 + 38, a flipped part, a dropped part, an engine disagreement,
+  the collision 1 + 2 = 3, a non-increasing sequence), each rejected.
+
+```sh
+python3 -I certificates/erdos-357/verify_ford_a28.py          # consistency + one FOUND search (~30 s; not certifying)
+python3 -I certificates/erdos-357/verify_ford_a28.py --full   # re-runs all 229 + 7 searches (about 1.1e12 nodes; many hours)
+```
+
+| file | role |
+|---|---|
+| `ford_searches_a364132_28.txt` | its 229 committed answers |
+| `g4_crosscheck_a364132_28.txt` | `segsum.c` on m27@68 and m28@70..75 |
+| `verify_ford_a28.py` | the replay; reads the files above and RESULT.json, never writes them |
+
+The raw searches ran on 2026-10-28 and 2026-10-29; the segsum m27@68 control line
+was re-run separately on 2026-10-29. RESULT.json, `verify.py`,
+`ss_cleanroom.c` and the other files above are unchanged. Not submitted to OEIS here.
+Nothing in this addendum bears on the asymptotic question.
 
 ## Scope — what is not certified
 
