@@ -98,6 +98,9 @@ python3 -I certificates/erdos-1109/verify.py --rds    # the independent Russian-
 | `sqc_ford.c` | the second, separately written search engine (N ≤ 3000) |
 | `ford_searches_2_3000.txt` | its 1,213 committed answers, one line per N |
 | `verify_ford_3000.py` | the replay for the second search; reads, never writes |
+| `ford_searches_3001_3065.txt` | the second search's 29 answers for 3001 ≤ N ≤ 3065 |
+| `g4_crosscheck_3001_3065.txt` | `sqclique.c` repeating those 29 answers (C = no clique, R = record with its set) |
+| `verify_ford_3065.py` | the replay to N = 3065; reads, never writes |
 
 ## Second search to N = 3000 (2026-10-27)
 
@@ -128,6 +131,39 @@ certifies the claim. Planted controls (a bad witness, a flipped verdict and a
 non-squarefree pair) must be rejected, and the C engine must agree with a pure
 Python clique search for every N ≤ 60.
 
+## Extension to N = 3065: A392165(66) (2026-10-28)
+
+**A392165(66) = 3065 and f(N) for every N ≤ 3065 (f(3064) = 65, f(3065) = 66): new, since the OEIS b-file ends at a(65) = 2993; each of the 29 new answers is matched by a second engine.**
+
+`sqc_ford.c` (unchanged) was asked the next question for every N in 3001..3065
+with 2N squarefree: is there a 66-element S with max S = N? Chained from
+f(3000) = 65, the answer is NONE at all 28 such N up to 3063 and FOUND at
+N = 3065. The other 36 N in 3001..3064 have 2N not squarefree, so they cannot be
+records. The 29 searches took about 5.58 × 10^10 nodes; the largest NONE, at
+N = 3047, took 4.73 × 10^9. They are the lines of `ford_searches_3001_3065.txt`.
+
+Each answer was then repeated by `sqclique.c`, the original engine, in
+`g4_crosscheck_3001_3065.txt`: no clique (C) at all 28 NONE N and a record (R) at
+3065, with equal graph sizes on all 29. Both engines returned the same 66-element
+set. They are independent code in the same colouring branch-and-bound family, not
+independent mathematics.
+
+When this was computed, the OEIS A392165 b-file (Leandre Jack) ended at
+a(65) = 2993 and the A392164 b-file at N = 3000; his e1109 code repository lists
+nothing beyond them (re-checked 2026-10-28).
+
+```sh
+python3 -I certificates/erdos-1109/verify_ford_3065.py                 # chain to 3065, witnesses, engine agreement, controls, cheap re-runs (~10 s)
+python3 -I certificates/erdos-1109/verify_ford_3065.py --new --jobs K  # also re-runs the 29 searches in 3001..3065 byte for byte (~5.6 × 10^10 nodes)
+python3 -I certificates/erdos-1109/verify_ford_3065.py --full --jobs K # re-runs all 1,242 searches byte for byte
+```
+
+The fast replay checks the receipt without certifying the expensive NONE answers.
+`--new` certifies the 29 new answers given the 1,213 before them, and `--full`
+certifies the whole chain. Planted controls must be rejected: a bad witness at
+3065, the largest NONE flipped, a dropped search, an engine disagreement and a
+non-squarefree pair.
+
 ## Scope — what is not certified
 
 - **Not Erdős #1109.** The questions are asymptotic: how f(N) grows.
@@ -135,5 +171,5 @@ Python clique search for every N ≤ 60.
   - Konyagin (2004): (log log N)(log N)² ≪ f(N) ≪ N^{11/15 + o(1)}.
   - Whether f(N) ≤ N^{o(1)} is open.
 
-  A table to 3000 only illustrates them.
+  A table to 3065 only illustrates them.
 - **A verified-search receipt, not a formal proof.**

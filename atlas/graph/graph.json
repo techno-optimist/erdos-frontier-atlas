@@ -5,7 +5,7 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 785,
-   "evidenced_by": 30,
+   "evidenced_by": 31,
    "has_surface": 316,
    "learned_from": 5,
    "measures": 223,
@@ -18,7 +18,7 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 34,
+   "evidence_claim": 35,
    "evidence_container": 35,
    "external_claim": 91,
    "incident": 19,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 4461,
-   "validator-enforced": 40
+   "validator-enforced": 41
   }
  },
  "edges": [
@@ -590,7 +590,7 @@
    "type": "applies"
   },
   {
-   "dst": "S:gap:1109:ee9afa55",
+   "dst": "S:gap:1109:0c2f89f0",
    "predicate": "workable",
    "source": "atlas/gap_map.json",
    "src": "M:witness-local-search",
@@ -8456,6 +8456,14 @@
    "type": "evidenced_by"
   },
   {
+   "dst": "E:claim:erdos-1109-a392165-66",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P1109",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
    "dst": "E:claim:erdos-13-table",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
@@ -8949,7 +8957,7 @@
    "type": "has_surface"
   },
   {
-   "dst": "S:gap:1109:ee9afa55",
+   "dst": "S:gap:1109:0c2f89f0",
    "source": "atlas/gap_map.json",
    "src": "P1109",
    "tier": "deterministic-rule",
@@ -11128,7 +11136,7 @@
   {
    "dst": "O:A392164",
    "source": "atlas/gap_map.json",
-   "src": "S:gap:1109:ee9afa55",
+   "src": "S:gap:1109:0c2f89f0",
    "tier": "deterministic-rule",
    "type": "measures"
   },
@@ -33593,6 +33601,58 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-1109/verify_ford_3065.py",
+     "sha256": "6332aedd507c77e1281dc6a67d28d167880e0e9c648d7c78492fa91c6b36586d"
+    },
+    {
+     "path": "certificates/erdos-1109/sqc_ford.c",
+     "sha256": "2a43b0090b1387dfe782914ddf80e8f9e27db8f3e8bf5ebcab324a21430822c6"
+    },
+    {
+     "path": "certificates/erdos-1109/ford_searches_2_3000.txt",
+     "sha256": "7869f9e00772d4f0ca4ca034025122f36fd540d6b84ae2c2ce7433704e3f3fe2"
+    },
+    {
+     "path": "certificates/erdos-1109/ford_searches_3001_3065.txt",
+     "sha256": "f6071dd028cc94e4a38764fbfdd08518086509bcbed4ee579bb7d1582ffadedb"
+    },
+    {
+     "path": "certificates/erdos-1109/g4_crosscheck_3001_3065.txt",
+     "sha256": "00e19fd55899398b004b38335f97cd2142775b542ee5fa8066e2301f9d2efac8"
+    },
+    {
+     "path": "certificates/erdos-1109/sqclique.c",
+     "sha256": "9c332cdea16123a2dffa38f48fb5e8ea60de6bef86f27344837d0df3a5522d65"
+    },
+    {
+     "path": "certificates/erdos-1109/RESULT.json",
+     "sha256": "3315fded2812f44c86e8ba11b0cab32c3a6d78ce57732c85bcb2b57078ea438f"
+    }
+   ],
+   "claim_id": "erdos-1109-a392165-66",
+   "id": "E:claim:erdos-1109-a392165-66",
+   "overclaim_guards": 2,
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-1109/verify_ford_3065.py",
+     "--full"
+    ],
+    "profile": "slow",
+    "stdout_contains": [
+     "\"verified_ford_3065\":true",
+     "all checks passed"
+    ]
+   },
+   "scope": "Finite exhaustive search; a verified-search receipt, not a formal proof. A392165(66) = 3065 is new: the OEIS A392165 b-file (Leandre Jack) ends at a(65) = 2993 and the A392164 b-file at N = 3000 (both re-checked 2026-10-28). The 29 new answers (about 5.58e10 nodes) were each repeated by sqclique.c, the original engine (28 C, 1 R with the same 66-element set and equal graph sizes); the two are independent code in the same colouring branch-and-bound family, not independent mathematics. The fast replay re-runs only the searches with <= 10^6 nodes and does not certify; --new re-runs the 29 searches in 3001..3065 byte for byte; --full re-runs all 1,242. Says nothing about the asymptotic questions of Erdos #1109.",
+   "statement": "A392165(66) = 3065 and f(N) = A392164(N) for every N <= 3065 (f(3064) = 65, f(3065) = 66): the second search sqc_ford.c, chained from f(3000) = 65 (contract erdos-1109-a392165-55-65), answers NONE for target 65 at each of the 28 N in 3001..3063 with 2N squarefree and FOUND at N = 3065 with a 66-element set whose sumset is squarefree (checked by trial division); the other 36 N in 3001..3064 have 2N not squarefree and cannot be records.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-13/verify.py",
      "sha256": "78905a2576d81347571f1f3872e04171b960cf71942d51fc41a0d8bfe394c07f"
     },
@@ -34887,7 +34947,7 @@
    "type": "evidence_container"
   },
   {
-   "boundary": "Exhaustive clique search over every N <= 2000: the record indices A392165(1..54) of A392164, hence f(N) for N <= 2000. Replicates the published A392165(1..39); A392165(40..54) were new when computed (2026-09-28) and now match OEIS. A separately written decision search (sqc_ford.c) extends f(N) to N <= 3000, confirming A392165(55..65) from the OEIS b-files (nothing new). C engine pinned node for node to a Python reference; an independent Russian-doll search confirms N in [1104, 1300]; no formal proof; nothing about the asymptotic Erdos #1109 questions.",
+   "boundary": "Exhaustive clique search over every N <= 2000: the record indices A392165(1..54) of A392164, hence f(N) for N <= 2000. Replicates the published A392165(1..39); A392165(40..54) were new when computed (2026-09-28) and now match OEIS. A separately written decision search (sqc_ford.c) extends f(N) to N <= 3000, confirming A392165(55..65) from the OEIS b-files (nothing new), and then to N <= 3065, giving A392165(66) = 3065 (new: the OEIS b-file ends at a(65) = 2993), with each of the 29 new answers matched by sqclique.c. C engine pinned node for node to a Python reference; an independent Russian-doll search confirms N in [1104, 1300]; no formal proof; nothing about the asymptotic Erdos #1109 questions.",
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-1109",
    "path": "certificates/erdos-1109",
@@ -71843,32 +71903,32 @@
      "type": "numeric_scan"
     },
     {
-     "artifact": "certificates/erdos-1109/verify_ford_3000.py --full (sqc_ford.c, ford_searches_2_3000.txt): f(N) for every N <= 3000 chained from f(1) = 1, A392165(55..65) reproduced",
-     "contract": "erdos-1109-a392165-55-65",
-     "date": "2026-10-27",
+     "artifact": "certificates/erdos-1109/verify_ford_3065.py (sqc_ford.c; ford_searches_2_3000.txt to N = 3000, ford_searches_3001_3065.txt for 3001..3065, each new answer repeated by sqclique.c in g4_crosscheck_3001_3065.txt): f(N) for every N <= 3065 chained from f(1) = 1, A392165(55..65) reproduced, A392165(66) = 3065",
+     "contract": "erdos-1109-a392165-66",
+     "date": "2026-10-28",
      "type": "implementation"
     }
    ],
    "exact_feasibility": "cell",
-   "id": "S:gap:1109:ee9afa55",
+   "id": "S:gap:1109:0c2f89f0",
    "kind": "bounded_below_only",
    "lower": {
-    "source": "f(N) <= 65 for every N <= 3000: our second search, sqc_ford.c (contract erdos-1109-a392165-55-65; 1,213 decision searches chained from f(1) = 1, full replay verify_ford_3000.py --full), agreeing with the OEIS A392164 b-file (Leandre Jack; first 700 terms W. A. Carney) and A392165(1..65)",
-    "value": "3001",
+    "source": "f(N) <= 66 for every N <= 3065 and f(3065) = 66, so A392165(67) > 3065: our second search, sqc_ford.c (contract erdos-1109-a392165-66; 29 decision searches in 3001..3065 chained from f(3000) = 65 of contract erdos-1109-a392165-55-65, each repeated by sqclique.c; replay verify_ford_3065.py [--new | --full])",
+    "value": "3066",
     "year": 2026
    },
-   "notes": "PREVIOUS CELL CLOSED EXTERNALLY (found 2026-10-27): OEIS A392165 now has a b-file a(1..65) by Leandre Jack (a(55..65) = 2071, 2141, 2193, 2287, 2355, 2427, 2455, 2627, 2729, 2741, 2993; method at github.com/leandrejack-afk/erdos-computations/e1109) and an A392164 b-file to N = 3000, so the next cell is A392165(66). Offline cross-check (Ford, 2026-10-27): our f(N) equals that b-file for every N <= 2000 and A392165(1..54) equal the OEIS data; priority for 40..54 was not determined. UPDATE 2026-10-27: terms 55..65 and f(N) for N <= 3000 are now reproduced by a separately written decision search (certificates/erdos-1109/sqc_ford.c, contract erdos-1109-a392165-55-65; same colouring branch-and-bound family as sqclique.c, so independent code, not independent mathematics). That confirms Leandre Jack's terms; it adds nothing new. EARLIER CELL CLOSED HERE (2026-09-28): certificates/erdos-1109 decides every N <= 2000 (a record at N forces N odd squarefree, the set into one class mod 4, and a clique of size f(N-1) among a < N with a + N squarefree; greedy-colouring clique search, C port pinned node for node to a Python reference). It reproduces all 39 published records A392165(1..39) (C. Wu, to 1103) and finds A392165(40..54) = 1255, 1277, 1293, 1335, 1407, 1509, 1535, 1595, 1707, 1735, 1779, 1835, 1919, 1991, 1999; an independent Russian-doll clique search (rds.c) confirms the first new records. f(N) for N <= 2000 follows, extending A392164 (b-file to 700). Per-N cost grows from 10^5 to 10^8 nodes across 1100..2000, so pushing on is hours, not days. Erdős–Sárközy 1987 (Acta Math. Hungar.): log N << f(N) << N^(3/4) log N; best known asymptotics are Konyagin 2004: loglog N (log N)^2 << f(N) << N^(11/15+o(1)) (OEIS formula lines + erdosproblems.com/1109; van Doorn–Tao arXiv:2512.01087 revisits the problem family). Erdős–Sárközy guessed the lower bound is nearer the truth; the problem asks if f(N) <= N^o(1).",
+   "notes": "PREVIOUS CELL CLOSED HERE (2026-10-28, Ford): A392165(66) = 3065. The separately written search sqc_ford.c, chained from f(3000) = 65 (contract erdos-1109-a392165-55-65), answers NONE for target 65 at every N in 3001..3063 with 2N squarefree (28 searches; the other 36 N up to 3064 have 2N not squarefree and cannot be records) and FOUND at N = 3065 with a 66-element set whose sumset is squarefree (new files ford_searches_3001_3065.txt, g4_crosscheck_3001_3065.txt, verify_ford_3065.py; contract erdos-1109-a392165-66). Each of the 29 answers was repeated by sqclique.c (28 C, 1 R with the same set, equal graph sizes); same colouring branch-and-bound family, so independent code, not independent mathematics. New: the OEIS A392165 b-file (Leandre Jack) ends at a(65) = 2993 and his e1109 repo lists nothing beyond it (both re-checked 2026-10-28). Next cell is A392165(67). EARLIER (2026-10-27): OEIS A392165 gained a b-file a(1..65) by Leandre Jack (a(55..65) = 2071, 2141, 2193, 2287, 2355, 2427, 2455, 2627, 2729, 2741, 2993; method at github.com/leandrejack-afk/erdos-computations/e1109) and an A392164 b-file to N = 3000; our f(N) equals that b-file for every N <= 2000, A392165(1..54) equal the OEIS data (priority for 40..54 not determined), and terms 55..65 are reproduced by sqc_ford.c (contract erdos-1109-a392165-55-65), confirming Leandre Jack's terms and adding nothing new. EARLIER CELL CLOSED HERE (2026-09-28): certificates/erdos-1109 decides every N <= 2000 (a record at N forces N odd squarefree, the set into one class mod 4, and a clique of size f(N-1) among a < N with a + N squarefree; greedy-colouring clique search, C port pinned node for node to a Python reference). It reproduces all 39 published records A392165(1..39) (C. Wu, to 1103) and finds A392165(40..54) = 1255, 1277, 1293, 1335, 1407, 1509, 1535, 1595, 1707, 1735, 1779, 1835, 1919, 1991, 1999; an independent Russian-doll clique search (rds.c) confirms the first new records. Per-N cost in 3001..3065 is 5.4 × 10^8 to 4.7 × 10^9 nodes. Erdős–Sárközy 1987 (Acta Math. Hungar.): log N << f(N) << N^(3/4) log N; best known asymptotics are Konyagin 2004: loglog N (log N)^2 << f(N) << N^(11/15+o(1)) (OEIS formula lines + erdosproblems.com/1109; van Doorn–Tao arXiv:2512.01087 revisits the problem family). Erdős–Sárközy guessed the lower bound is nearer the truth; the problem asks if f(N) <= N^o(1).",
    "oeis": "A392164",
    "overlay": "gap_map",
    "problem": 1109,
-   "quantity": "A392165(66) — smallest N with f(N) >= 66, where f(N) = A392164(N) = size of the largest S ⊆ {1..N} such that every element of S+S (pairwise sums, including 2a) is squarefree. Certified by us through N = 3000 (f(3000) = 65): certificates/erdos-1109 to N = 2000 and a separately written search to N = 3000 (contract erdos-1109-a392165-55-65), which confirms the OEIS b-files (Leandre Jack)",
+   "quantity": "A392165(67) — smallest N with f(N) >= 67, where f(N) = A392164(N) = size of the largest S ⊆ {1..N} such that every element of S+S (pairwise sums, including 2a) is squarefree. Certified by us through N = 3065 (f(3065) = 66): certificates/erdos-1109 to N = 2000 and a separately written search to N = 3065 (contracts erdos-1109-a392165-55-65 and erdos-1109-a392165-66); a(1..65) confirm the OEIS b-files (Leandre Jack), a(66) = 3065 is new",
    "status": "open",
    "type": "surface",
    "upper": null,
    "witness_feasibility": "open-easy",
-   "witness_object": "a 66-element S ⊆ {1..N} with every element of S+S squarefree (upper-bounds A392165(66) by max S); the exact value needs every candidate N between 3000 and max S refuted",
+   "witness_object": "a 67-element S ⊆ {1..N} with every element of S+S squarefree (upper-bounds A392165(67) by max S); the exact value needs every candidate N between 3065 and max S refuted",
    "witness_side": "upper",
-   "witness_verifier": "For each of the ~2,200 pairs (a,a') with a <= a' in S, trial-factor a+a' <= 2N to sqrt(2N) and check no square divisor. Milliseconds, fully dependency-free."
+   "witness_verifier": "For each of the ~2,280 pairs (a,a') with a <= a' in S, trial-factor a+a' <= 2N to sqrt(2N) and check no square divisor. Milliseconds, fully dependency-free."
   },
   {
    "confidence": "C3",
