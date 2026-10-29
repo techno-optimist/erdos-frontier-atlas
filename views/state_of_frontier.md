@@ -5,7 +5,7 @@
 > [Frontier Board](../README.md#chronos-frontier-board). Do not edit by hand —
 > regenerate with `make state-of-frontier`; `make check-views` fails if this file
 > is stale. Deterministic: no generation timestamp — every date below comes from
-> the data. **Data through 2026-10-28** (latest provenance/evidence date).
+> the data. **Data through 2026-10-29** (latest provenance/evidence date).
 
 The gap map is the versioned `[L, U]` ledger over bounded quantities of open
 problems (charter Tenet 2: the bracket is the unit of progress). This report is
@@ -29,8 +29,8 @@ validator fails any stored class the recorded evidence does not prove.
 | class | meaning | entries |
 |---|---|---|
 | C0 | contract-bound formal proof, machine-checked | 0 |
-| C1 | &ge;2 contract-bound independent replays at the claimed range | 0 |
-| C2 | exactly one contract-bound verified replay | 14 |
+| C1 | &ge;2 contract-bound independent replays at the claimed range | 1 |
+| C2 | exactly one contract-bound verified replay | 13 |
 | C3 | literature- or numerics-grade — no independent in-project verification artifact | 211 |
 
 ## Entries by kind
@@ -62,7 +62,7 @@ truncated — the full values, sources, and verifier specs live in
 | [#302](https://www.erdosproblems.com/302) | [A390395](https://oeis.org/A390395) | A390395(735) — maximum size of S ⊆ {1..735} with no solution 1/a = 1/b + 1/c over distinct a,b,c in S; first… | lower | open-easy | 608 | 609 |
 | [#304](https://www.erdosproblems.com/304) | [A097849](https://oeis.org/A097849) | A097849(106) — max over 1<=k<=106 of the minimal number of unit fractions needed to write k/106 (row-106 maxi… | both | open-easy | ? | ? |
 | [#327](https://www.erdosproblems.com/327) | [A384927](https://oeis.org/A384927) | A384927(5001) — max size of S in {1..5001} with a+b never dividing ab for distinct a,b in S; monotonicity for… | both | open-easy | 3528 | 3529 |
-| [#357](https://www.erdosproblems.com/357) | [A364132](https://oeis.org/A364132) | A364132(28) — least n such that {1..n} contains an increasing 28-term sequence all of whose consecutive-segme… | upper | open-easy | 70 | 76 |
+| [#357](https://www.erdosproblems.com/357) | [A364132](https://oeis.org/A364132) | A364132(29) — least n such that {1..n} contains an increasing 29-term sequence all of whose consecutive-segme… | upper | open-easy | 76 | ? |
 | [#365](https://www.erdosproblems.com/365) | [A060355](https://oeis.org/A060355) | A060355(40) — smallest k > 10^22 with k and k+1 both powerful (next consecutive-powerful pair; the counting f… | upper | open-easy | 1e22 | 23146276081390728245000 |
 | [#373](https://www.erdosproblems.com/373) | [A003135](https://oeis.org/A003135) | solutions of n! = a_1! a_2! ... a_k! with n-1 > a_1 >= ... >= a_k >= 2; largest known n = 16, Hickerson list… | lower | open-easy | 100000 | ? |
 | [#382](https://www.erdosproblems.com/382) | [A388850](https://oeis.org/A388850) | A388850(14) — least start u of a maximal run of exactly 15 consecutive integers whose product has its largest… | upper | open-easy | ? | ? |
