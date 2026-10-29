@@ -5,7 +5,7 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 785,
-   "evidenced_by": 31,
+   "evidenced_by": 32,
    "has_surface": 316,
    "learned_from": 5,
    "measures": 223,
@@ -18,7 +18,7 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 35,
+   "evidence_claim": 36,
    "evidence_container": 35,
    "external_claim": 91,
    "incident": 19,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 4461,
-   "validator-enforced": 41
+   "validator-enforced": 42
   }
  },
  "edges": [
@@ -8513,6 +8513,14 @@
   },
   {
    "dst": "E:claim:erdos-357-a364132-a364153-published",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P357",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-357-a364153-17",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
    "src": "P357",
@@ -33933,6 +33941,54 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-357/verify_ford_a17.py",
+     "sha256": "693fb87f19b910e2332331723990e22e965db35d6587997b6d7766e96e9e5201"
+    },
+    {
+     "path": "certificates/erdos-357/ss_cleanroom.c",
+     "sha256": "cc5d0992e8856f440c1fb851b3498eb09bcf23e84fdd9e20df6a6c28ff77d514"
+    },
+    {
+     "path": "certificates/erdos-357/ford_searches_a364153_17.txt",
+     "sha256": "700780bdd3491d2c2edd30df4714a766800e70000978c93b86fa6173da118415"
+    },
+    {
+     "path": "certificates/erdos-357/g4_crosscheck_a364153_17.txt",
+     "sha256": "ee70683575a2d863b60467e97b848b05bafd7ff4c953611f11f326647503ee69"
+    },
+    {
+     "path": "certificates/erdos-357/segsum.c",
+     "sha256": "b0228c31c7ac9ea83a9ba7793f614a1c7450b75592cb66bc7d831672f068d145"
+    },
+    {
+     "path": "certificates/erdos-357/RESULT.json",
+     "sha256": "3f599d7ee62aad3eb490a6a835fde0e3be4bef490c8a4d86f900bb8f0297ac35"
+    }
+   ],
+   "claim_id": "erdos-357-a364153-17",
+   "id": "E:claim:erdos-357-a364153-17",
+   "overclaim_guards": 2,
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-357/verify_ford_a17.py",
+     "--full"
+    ],
+    "profile": "slow",
+    "stdout_contains": [
+     "\"verified_ford_a364153_17\":true",
+     "all checks passed"
+    ]
+   },
+   "scope": "Finite exhaustive search: an exhaustive computer search by two independent engines, not a proof. A364153(17) = 26 is new: OEIS A364153 lists a(1..13) (re-checked 2026-10-28; A364153(14..16) are new in contract erdos-357-a364132-a364153-new). ss_cleanroom.c was written from the OEIS definition alone and has no symmetry breaking; segsum.c (the atlas engine, unchanged) repeated the refutations at 24 and 25 (none; about 7.8e10 and 8.5e10 nodes in the two engines). The two are independent code using the same left-to-right segment-sum bitset method, not independent mathematics. The fast replay re-runs only the FOUND search and does not certify; --full re-runs all 40 ss searches and the 3 segsum searches byte for byte. Says nothing about A364132(28) or the asymptotic question of Erdos #357.",
+   "statement": "A364153(17) = 26: Ford's separately written engine ss_cleanroom.c answers NONE on all 19 parts of the search for a 17-sequence of distinct values in {1..25}, in any order, with all 153 segment sums distinct, so no such sequence exists and A364153(17) >= 26; it answers FOUND at 26 with the sequence 1, 2, 12, 16, 18, 23, 17, 20, 22, 25, 26, 10, 19, 24, 11, 21, 6, whose segment sums are checked distinct by brute force, so A364153(17) <= 26.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-366/verify.py",
      "sha256": "f40cf4b64d8563875bf3f0162bd490dd7e00f37a83d6390a4d79d34697fecc1e"
     },
@@ -34996,7 +35052,7 @@
    "type": "evidence_container"
   },
   {
-   "boundary": "Exhaustive searches deciding OEIS A364132(1..27) and A364153(1..16) (sequences with distinct segment sums), each term with an explicit sequence checked by brute force. Replicates the published A364132(1..22) and A364153(1..13); the rest is new. C engine pinned node for node to a Python reference and cross-checked by a second engine; no formal proof; nothing about the asymptotic Erdos #357 question.",
+   "boundary": "Exhaustive searches deciding OEIS A364132(1..27) and A364153(1..17) (sequences with distinct segment sums), each term with an explicit sequence checked by brute force. Replicates the published A364132(1..22) and A364153(1..13); the rest is new. C engine pinned node for node to a Python reference and cross-checked by a second engine; A364153(17) = 26 rests on a separately written clean-room engine (ss_cleanroom.c) with every answer repeated by segsum.c: an exhaustive computer search by two independent engines; no formal proof; nothing about the asymptotic Erdos #357 question.",
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-357",
    "path": "certificates/erdos-357",
@@ -73715,7 +73771,7 @@
     "value": "70",
     "year": 2026
    },
-   "notes": "PREVIOUS CELL CLOSED HERE (2026-09-28): certificates/erdos-357 decides A364132(1..27) and A364153(1..16) by exhaustive depth-first search on segment-sum bitsets (C engine pinned node for node to a Python reference; verdicts cross-checked by a second engine sharing no code). New: A364132(23..27) = 56, 60, 63, 67, 69 and A364153(14..16) = 20, 22, 24. Companion cell: A364153(17) >= 24, <= 26 by the explicit sequence in RESULT.json. The deciding refutation grows roughly 2-4x per term (8.4e9 nodes at A364132(27)). Open content: growth of f(n) — Weisenberg (via #874) gives f(n) >= (2+o(1)) sqrt(n); whether f(n) = o(n) is open; for the non-monotone variant g(n), Hegyvari 1986 proved (1/3+o(1))n <= g(n) and Coppersmith-Phillips (via #867) gives g(n) <= (2/3 - 1/512 + o(1))n — those asymptotics are walls (erdosproblems.com/357, edited Jan 2026). Erdős also asked whether sum 1/a_i converges for infinite versions.",
+   "notes": "COMPANION CELL CLOSED HERE (2026-10-28, Ford): A364153(17) = 26, new (OEIS lists A364153(1..13)). Ford's separately written engine ss_cleanroom.c answers NONE on all 19 parts of the any-order search with every term <= 25 and FOUND at 26 with 1, 2, 12, 16, 18, 23, 17, 20, 22, 25, 26, 10, 19, 24, 11, 21, 6 (all 153 segment sums distinct by brute force); segsum.c repeated the refutations at 24 and 25 (new files ss_cleanroom.c, ford_searches_a364153_17.txt, g4_crosscheck_a364153_17.txt, verify_ford_a17.py; contract erdos-357-a364153-17). An exhaustive computer search by two independent engines, not a proof; same segment-sum bitset method, so independent code, not independent mathematics. Next companion cell: A364153(18) >= 26 (monotone: deleting an end term), no upper bound recorded. This row's cell A364132(28) is unchanged. PREVIOUS CELL CLOSED HERE (2026-09-28): certificates/erdos-357 decides A364132(1..27) and A364153(1..16) by exhaustive depth-first search on segment-sum bitsets (C engine pinned node for node to a Python reference; verdicts cross-checked by a second engine sharing no code). New: A364132(23..27) = 56, 60, 63, 67, 69 and A364153(14..16) = 20, 22, 24. Companion cell then: A364153(17) in [24, 26]. The deciding refutation grows roughly 2-4x per term (8.4e9 nodes at A364132(27)). Open content: growth of f(n) — Weisenberg (via #874) gives f(n) >= (2+o(1)) sqrt(n); whether f(n) = o(n) is open; for the non-monotone variant g(n), Hegyvari 1986 proved (1/3+o(1))n <= g(n) and Coppersmith-Phillips (via #867) gives g(n) <= (2/3 - 1/512 + o(1))n — those asymptotics are walls (erdosproblems.com/357, edited Jan 2026). Erdős also asked whether sum 1/a_i converges for infinite versions.",
    "oeis": "A364132",
    "overlay": "gap_map",
    "problem": 357,
