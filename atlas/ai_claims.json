@@ -558,8 +558,8 @@
         "https://www.erdosproblems.com/501",
         "https://www.erdosproblems.com/forum/thread/501"
       ],
-      "our_recorded_status": "solved-upstream",
-      "upstream_status": "Solved",
+      "our_recorded_status": "one-sided-upstream",
+      "upstream_status": "One-sided",
       "our_verdict": "not independently checked",
       "status_changed_by_this_claim": false,
       "registry_verification": "Author checked; community screening",
@@ -568,7 +568,7 @@
       ],
       "registry_says_not_a_resolution": true,
       "upstream_finite_handle": null,
-      "status_note": "2026-09-27: the upstream record moved to 'not disprovable' (teorth/erdosproblems 39cde0f, atlas snapshot refresh). Our status follows that record; this claim did not move it."
+      "status_note": "2026-09-27: the upstream record moved to 'not disprovable' (teorth/erdosproblems 39cde0f, atlas snapshot refresh). Our status follows that record; this claim did not move it. 2026-10-29: tools/build_stubs.py now maps one-sided labels to one-sided-upstream instead of solved-upstream (builder fix, not this claim)."
     },
     {
       "erdos_id": 524,

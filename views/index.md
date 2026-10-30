@@ -8,9 +8,9 @@ The machine-readable **agent-coordination annex** to [erdosproblems.com](https:/
 
 ## Coverage
 
-| total | movable | wall | open | solved-upstream | formalized (Lean) | with statement | audited (deep) | cash-prize |
-|--:|--:|--:|--:|--:|--:|--:|--:|--:|
-| **1221** | 4 | 24 | 605 | 588 | 782 | 665 | 51 | 106 |
+| total | movable | wall | open | solved-upstream | one-sided-upstream | independent-upstream | formalized (Lean) | with statement | audited (deep) | cash-prize |
+|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|
+| **1221** | 4 | 24 | 605 | 576 | 9 | 3 | 782 | 665 | 51 | 106 |
 
 ## Audited frontier (deep records)
 
