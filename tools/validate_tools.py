@@ -56,6 +56,9 @@ def results_counts(d):
     if c["entries"] != len(E): out.append("counts.entries stale")
     for s in ("confirmed", "unconfirmed"):
         if c[f"ai_involvement_{s}"] != sum(e["ai_involvement"]["status"] == s for e in E): out.append(f"counts.ai_involvement_{s} stale")
+    if c.get("unvetted", 0) != sum(e.get("vetting") == "unvetted" for e in E): out.append("counts.unvetted stale")
+    for e in E:
+        if e.get("vetting") == "unvetted" and e["attribution"] != "claimed": out.append(f"{e['id']}: unvetted entries must be attributed 'claimed'")
     return out
 
 def main():

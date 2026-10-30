@@ -1,11 +1,12 @@
 {
  "schema": "efa-ai-results-v1",
- "purpose": "Quantitative results outside the Erdős set that sources report or claim with AI assistance. Values are copied from the cited source; nothing here is independently checked and no atlas status changes.",
+ "purpose": "Results that sources report or claim with AI assistance, mostly outside the Erdős set; entries on Erdős problems link their erdos:<n> node. Entries marked vetting=unvetted are extraordinary claims recorded only because a primary source exists. Values are copied from the cited source; nothing here is independently checked and no atlas status changes.",
  "retrieved": "2026-10-30",
  "counts": {
-  "entries": 12,
-  "ai_involvement_confirmed": 10,
-  "ai_involvement_unconfirmed": 2
+  "entries": 21,
+  "ai_involvement_confirmed": 19,
+  "ai_involvement_unconfirmed": 2,
+  "unvetted": 5
  },
  "entries": [
   {
@@ -318,6 +319,258 @@
    "our_verdict": "not independently checked",
    "status_changed_by_this_entry": false,
    "atlas_nodes": []
+  },
+  {
+   "id": "C-13",
+   "quantity": "Erdős #188: least blue progression length K* in a red/blue unit-distance colouring of the plane",
+   "prior": {
+    "value": "6 ≤ K* ≤ 6330",
+    "source": "previously published bounds as cited by the repository (Tsaturian 2017; Currier–Mody–Xie–Zhang, arXiv 2606.17194)"
+   },
+   "new": {
+    "value": "8 ≤ K* ≤ 42, with a Lean development"
+   },
+   "source_urls": [
+    "https://github.com/plasma-ai/erdos-188/tree/e48d20e03233f59794de44dcf2fa850820f40608",
+    "https://github.com/plasma-ai/erdos-188/blob/e48d20e03233f59794de44dcf2fa850820f40608/formalization.yaml"
+   ],
+   "authors": "Jacob Parish (Plasma AI)",
+   "date": "2026-10-29",
+   "date_basis": "repository creation date (UTC)",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "formalization.yaml lists Claude (Claude Code) and OpenAI (Codex) agents producing the Lean formalisation and certificate generators under human direction."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "erdos:188",
+    "atlas/stubs.json#problem=188"
+   ],
+   "note": "The repository reports that Carson Crocker independently posted 7 ≤ K* ≤ 60 (Zenodo 10.5281/zenodo.23405962, published 2026-10-15). Its formalization.yaml says Comparator has not yet been run. The exact value of K* stays open; upstream status unchanged."
+  },
+  {
+   "id": "C-14",
+   "quantity": "Erdős #519: Turán pure power sum R_n, certified upper bounds at fixed n",
+   "prior": {
+    "value": "limsup R_n < 0.69368; rigorous values known for n ≤ 55",
+    "source": "Harcos (reported in Biró 2000) and Cheer–Goldston (1996), as cited by the repository"
+   },
+   "new": {
+    "value": "R_300 ≤ 0.691018908239; R_1000 ≤ 0.688245154929; R_10000 ≤ 0.686673342516; R_1000000 ≤ 0.686368028005 (13 values of n from 300 to 1000000)"
+   },
+   "source_urls": [
+    "https://github.com/Bakeas/turan-power-sum-certificates/tree/bfc0cc7672ca3f6b6264119c75fa2ae6e61917e0"
+   ],
+   "authors": "Vasileios Bakeas",
+   "date": "2026-10-30",
+   "date_basis": "repository creation date (UTC)",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "README states the work was carried out with substantial help from Claude Opus 5.5 and Claude Sonnet 5.5."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "erdos:519",
+    "atlas/stubs.json#problem=519"
+   ],
+   "note": "Not peer reviewed, per the README. Finite-n bounds only; the README says they do not bound limsup R_n (constant C42). Upstream status of #519 is unchanged."
+  },
+  {
+   "id": "C-15",
+   "quantity": "maximum size of a Sidon set in {1,…,N} (upper bound; Erdős #30)",
+   "prior": {
+    "value": "diam(A) ≥ k² − 1.98183 k^(3/2) − O(k)",
+    "source": "previous bound as cited by the paper; the paper also cites concurrent work of Hou–Zhao with constant 0.9435"
+   },
+   "new": {
+    "value": "diam(A) ≥ k² − 1.89 k^(3/2), giving |A| ≤ N^(1/2) + 0.945 N^(1/4) + 0.447; diam(A) ≥ k² − 1.88607 k^(3/2) for k ≥ 483"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2610.36207"
+   ],
+   "authors": "Carter, O'Bryant, Tao",
+   "date": "2026-10-26",
+   "date_basis": "arXiv v1 date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The paper's disclosure says AlphaEvolve shaped the framework and Claude Opus 4.8 wrote a Julia reimplementation; the final code is human-written."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "erdos:30"
+   ],
+   "note": "The atlas gap map entry for problem 30 tracks a Golomb-ruler cell, not this constant; nothing there changes."
+  },
+  {
+   "id": "C-16",
+   "quantity": "classification of finite simple groups (Lean formalisation)",
+   "prior": {
+    "value": "informal proof spread across the literature",
+    "source": "as described by Axiom"
+   },
+   "new": {
+    "value": "a reported Lean formalisation of about 43.1 million lines, built in 24 days"
+   },
+   "source_urls": [
+    "https://axiommath.ai/research/the-enormous-theorem-formalized/"
+   ],
+   "date": "2026-10-26",
+   "date_basis": "announcement page date",
+   "attribution": "reported",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "Axiom states the formalisation was produced by AxiomProver agent swarms."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Axiom also reports a new 'preservation of simple tops' theorem and 34 noteworthy deviations found in the literature. A formalisation of a known theorem, not a new bound."
+  },
+  {
+   "id": "C-17",
+   "quantity": "Exponential Time Hypothesis (3-SAT in 2^o(n) time), Anthropic item",
+   "prior": {
+    "value": "conjecture (ETH, Impagliazzo–Paturi)",
+    "source": "standard statement"
+   },
+   "new": {
+    "value": "a claimed deterministic 2^o(n) algorithm for 3-SAT (counting version 2^O(n log log n / √log n)), with a Lean formalisation"
+   },
+   "source_urls": [
+    "https://github.com/anthropics/formal-math/tree/16a5ce41304fcdaea4e0be7c132e1c361dc26da5/eth"
+   ],
+   "date": "2026-10-27",
+   "date_basis": "commit date (UTC) of the eth folder",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "README states the result was found by an internal Claude model and the Lean formalisation was written by AI models."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Claimed, unvetted. Extraordinary claim; no independent review cited. The README notes that no machine checks that the Lean statement file matches the paper.",
+   "vetting": "unvetted"
+  },
+  {
+   "id": "C-18",
+   "quantity": "Exponential Time Hypothesis (k-CNF counting algorithm), OpenAI family 378",
+   "prior": {
+    "value": "conjecture (ETH, Impagliazzo–Paturi)",
+    "source": "standard statement"
+   },
+   "new": {
+    "value": "a claimed deterministic counting algorithm for k-CNF in time (n+m)^O_k(1) 2^(n/(log n)^(1/2+o(1))), with a Lean development"
+   },
+   "source_urls": [
+    "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf",
+    "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/378.md",
+    "https://openai.com/index/building-scientific-understanding-with-academic-communities"
+   ],
+   "date": "2026-10-26",
+   "date_basis": "OpenAI announcement date; files first committed 2026-10-26 (UTC)",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "OpenAI states its system found the argument and it was then formalised in Lean."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Claimed, unvetted. OpenAI names a shepherding group (Impagliazzo, Paturi, Williams) to verify it; no outcome yet. Independent of C-17.",
+   "vetting": "unvetted"
+  },
+  {
+   "id": "C-19",
+   "quantity": "Sogge's local smoothing conjecture in every dimension n ≥ 2 (with Kakeya and Nikodym maximal conjectures), OpenAI family 079",
+   "prior": {
+    "value": "known for n = 2 (Guth–Wang–Zhang 2019); Kakeya in dimension 3 (Wang–Zahl 2025)",
+    "source": "as cited by OpenAI's announcement"
+   },
+   "new": {
+    "value": "a claimed proof in every dimension, with a Lean development"
+   },
+   "source_urls": [
+    "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf",
+    "https://github.com/openai/math/blob/4eaee87548250b2682affda7d05d947c05554bae/lean/docs/079.md",
+    "https://openai.com/index/building-scientific-understanding-with-academic-communities"
+   ],
+   "date": "2026-10-26",
+   "date_basis": "OpenAI announcement date; files first committed 2026-10-26 (UTC)",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "OpenAI states its models produced the argument on 2026-10-18 and it was formalised in Lean the next day."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Claimed, unvetted. Extraordinary claim; no expert review cited.",
+   "vetting": "unvetted"
+  },
+  {
+   "id": "C-20",
+   "quantity": "existence of four-dimensional quantum Yang–Mills theory (and QCD), OpenAI item",
+   "prior": {
+    "value": "open (part of a Clay Millennium Prize problem)",
+    "source": "standard statement"
+   },
+   "new": {
+    "value": "a claimed existence proof; the AI-produced materials are not public"
+   },
+   "source_urls": [
+    "https://openai.com/index/building-scientific-understanding-with-academic-communities",
+    "https://www.kitp.ucsb.edu/sites/default/files/YM_working_group.pdf"
+   ],
+   "date": "2026-10-26",
+   "date_basis": "OpenAI announcement date; KITP working-group statement dated October 2026",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "OpenAI states its models produced the argument and a Lean formalisation of the Yang–Mills existence part."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Claimed, unvetted. The shepherding group (Gross, chair; Douglas, Jaffe, Klebanov, Nekrasov) chose to hold back the AI artifacts and write it up themselves; nothing can be checked yet.",
+   "vetting": "unvetted"
+  },
+  {
+   "id": "C-21",
+   "quantity": "cycle double cover conjecture (Szekeres 1973; Seymour 1979)",
+   "prior": {
+    "value": "open; reduced to snarks (Jaeger) and settled for graphs with no Petersen minor (Alspach–Goddyn–Zhang)",
+    "source": "as summarised by the Grace17 write-up"
+   },
+   "new": {
+    "value": "a claimed proof by an OpenAI model with a Lean development, an expert exposition, and a ZFC proof in Grace17"
+   },
+   "source_urls": [
+    "https://github.com/openai/cdc-lean",
+    "https://arxiv.org/abs/2607.16356",
+    "https://grace17.org/docs/cycle-double-cover.html"
+   ],
+   "authors": "OpenAI model; exposition by Sang-il Oum; ZFC proof by Grant Passmore",
+   "date": "2026-06-24",
+   "date_basis": "creation date (UTC) of openai/cdc-lean; Grace17 write-up 2026-10-30",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The Grace17 write-up credits the proof to an OpenAI model (first version 2026-06-24, unconditional version 2026-07-09)."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "atlas/tools.json#B-27"
+   ],
+   "note": "Claimed, unvetted by the atlas. Two independent machine checks (Lean, Grace17) are reported, but the atlas has not reviewed them.",
+   "vetting": "unvetted"
   }
  ]
 }

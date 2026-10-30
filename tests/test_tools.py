@@ -26,3 +26,14 @@ def test_banned_words_caught_outside_urls():
     flagged = [p for p, s in m.strings({"u": "https://zenodo.org/records/1", "n": "fine"})
                if not s.startswith("https://") and m.BANNED.search(s)]
     assert flagged == []
+
+def test_unvetted_entries_are_claims_and_counted():
+    d = json.loads((ROOT / "atlas" / "ai_results.json").read_text(encoding="utf-8"))
+    unvetted = [e for e in d["entries"] if e.get("vetting") == "unvetted"]
+    assert d["counts"]["unvetted"] == len(unvetted)
+    for e in unvetted:
+        assert e["attribution"] == "claimed"
+        assert "unvetted" in e.get("note", "").lower()
+    m = _load()
+    bad = dict(d, entries=[dict(unvetted[0], attribution="reported")] if unvetted else [])
+    assert any("must be attributed 'claimed'" in x for x in m.results_counts(bad)) or not unvetted
