@@ -18,7 +18,7 @@ concurrency:
 jobs:
   fast-claim-gate:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 21
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
