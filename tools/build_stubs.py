@@ -81,9 +81,24 @@ def base_state(state: str) -> str:
     return s[:-len(" (Lean)")] if s.endswith(" (Lean)") else s
 
 
+# One-sided upstream labels settle only ONE direction of the problem, so they
+# are not "solved": "not provable" = the statement cannot be proved (e.g. it is
+# unprovable in ZFC or the proof direction is refuted) but has not been disproved;
+# "not disprovable" = the converse. "independent" = shown independent of the
+# axioms: neither direction will ever be settled, so it is not "solved" either.
+# Collapsing these into solved-upstream wrongly showed e.g. #736/#1154 as solved.
+ONE_SIDED_STATES = {"not provable", "not disprovable"}
+INDEPENDENT_STATES = {"independent"}
+
+
 def map_status(state: str):
-    if base_state(state) in OPEN_STATES:
+    b = base_state(state)
+    if b in OPEN_STATES:
         return "open", "Open"
+    if b in ONE_SIDED_STATES:
+        return "one-sided-upstream", "One-sided"
+    if b in INDEPENDENT_STATES:
+        return "independent-upstream", "Independent"
     return "solved-upstream", "Solved"
 
 
@@ -245,7 +260,7 @@ def write_view(doc):
     for p in atlas.get("problems", atlas):
         titles[p["id"]] = p.get("title", "")
     deep = [r for r in doc["problems"] if r["deep_ref"]]
-    order = {"movable": 0, "in-progress": 1, "wall": 2, "solved": 3, "open": 4, "solved-upstream": 5, "stub": 6}
+    order = {"movable": 0, "in-progress": 1, "wall": 2, "solved": 3, "open": 4, "solved-upstream": 5, "one-sided-upstream": 6, "independent-upstream": 7, "stub": 8}
     deep.sort(key=lambda r: (order.get(r["status"], 9), r["id"]))
     L = []
     L.append("# The Erdős Frontier Atlas — hub index\n")
@@ -262,11 +277,11 @@ def write_view(doc):
              f"`teorth/erdosproblems` (Bloom + Tao) · `google-deepmind/formal-conjectures`. "
              f"Full machine index: [`atlas/stubs.json`](../atlas/stubs.json).\n")
     L.append("## Coverage\n")
-    L.append(f"| total | movable | wall | open | solved-upstream | formalized (Lean) | with statement | audited (deep) | cash-prize |")
-    L.append(f"|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
+    L.append(f"| total | movable | wall | open | solved-upstream | one-sided-upstream | independent-upstream | formalized (Lean) | with statement | audited (deep) | cash-prize |")
+    L.append(f"|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|")
     bs = c["by_status"]
     L.append(f"| **{c['total']}** | {bs.get('movable',0)} | {bs.get('wall',0)} | {bs.get('open',0)} "
-             f"| {bs.get('solved-upstream',0)} | {c['in_lean']} | {c['with_statement']} | {c['deep_records']} | {c['cash_prize']} |\n")
+             f"| {bs.get('solved-upstream',0)} | {bs.get('one-sided-upstream',0)} | {bs.get('independent-upstream',0)} | {c['in_lean']} | {c['with_statement']} | {c['deep_records']} | {c['cash_prize']} |\n")
     L.append("## Audited frontier (deep records)\n")
     L.append("The subset we have deep-audited — pinned verifier, current record, board class. "
              "Everything else is a machine stub in `stubs.json` linking to the canonical entry.\n")

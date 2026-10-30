@@ -42725,7 +42725,7 @@
    "prize": "no",
    "statement": "Let $\\mathfrak{m}$ be an infinite cardinal with $\\aleph_0 < \\mathfrak{m} < \\mathfrak{c} = 2^{\\aleph_0}$. Let $\\{f_\\alpha\\}$ be a family of entire functions such that, for every $z_0 \\in \\mathbb{C}$, there are at most $\\mathfrak{m}$ distinct values of $f_\\alpha(z_0)$. Must $\\{f_\\alpha\\}$ have cardinality at most $\\mathfrak{m}$? This is Problem 2.46 in [Ha74], where it is attributed to Erdős. The question is **independent of ZFC**, so the headline statement carries `answer(sorry)`: it is neither provable nor refutable from the usual axioms of set theory. The answer is yes if $\\mathfrak{m}^+ < \\mathfrak{c}$ (see `erdos_1119.variants.easy_case`), so the question reduces to the case $\\mathfrak{m}^+ = \\mathfrak{c}$, where it is undecidable: Kumar and Shelah [KuSh17] produced a model of $\\mathfrak{c} = \\aleph_2$ in which the answer is yes (with $\\mathfrak{m} = \\aleph_1$), while Schilhan and Weinert [ScWe24] produced a different model of $\\mathfrak{c} = \\aleph_2$ in which the answer is no.",
    "statement_source": "lean",
-   "status": "solved-upstream",
+   "status": "independent-upstream",
    "tags": [
     "analysis",
     "set theory"
@@ -42733,7 +42733,7 @@
    "type": "problem",
    "upstream_finite_handle": null,
    "upstream_state_raw": "independent",
-   "upstream_status": "Solved"
+   "upstream_status": "Independent"
   },
   {
    "erdos_id": 112,
@@ -42825,14 +42825,14 @@
    "oeis_stub_only": [],
    "prize": "$100",
    "statement_source": "link",
-   "status": "solved-upstream",
+   "status": "independent-upstream",
    "tags": [
     "algebra"
    ],
    "type": "problem",
    "upstream_finite_handle": null,
    "upstream_state_raw": "independent",
-   "upstream_status": "Solved"
+   "upstream_status": "Independent"
   },
   {
    "erdos_id": 1124,
@@ -42914,7 +42914,7 @@
    "oeis_stub_only": [],
    "prize": "no",
    "statement_source": "link",
-   "status": "solved-upstream",
+   "status": "independent-upstream",
    "tags": [
     "geometry",
     "distances",
@@ -42923,7 +42923,7 @@
    "type": "problem",
    "upstream_finite_handle": null,
    "upstream_state_raw": "independent",
-   "upstream_status": "Solved"
+   "upstream_status": "Independent"
   },
   {
    "erdos_id": 1128,
@@ -43676,14 +43676,14 @@
    "oeis_stub_only": [],
    "prize": "no",
    "statement_source": "link",
-   "status": "solved-upstream",
+   "status": "one-sided-upstream",
    "tags": [
     "analysis"
    ],
    "type": "problem",
    "upstream_finite_handle": null,
    "upstream_state_raw": "not disprovable",
-   "upstream_status": "Solved"
+   "upstream_status": "One-sided"
   },
   {
    "erdos_id": 1155,
@@ -44007,7 +44007,7 @@
    "oeis_stub_only": [],
    "prize": "no",
    "statement_source": "link",
-   "status": "solved-upstream",
+   "status": "one-sided-upstream",
    "tags": [
     "set theory",
     "ramsey theory"
@@ -44015,7 +44015,7 @@
    "type": "problem",
    "upstream_finite_handle": null,
    "upstream_state_raw": "not disprovable",
-   "upstream_status": "Solved"
+   "upstream_status": "One-sided"
   },
   {
    "erdos_id": 117,
@@ -44063,7 +44063,7 @@
    "oeis_stub_only": [],
    "prize": "no",
    "statement_source": "link",
-   "status": "solved-upstream",
+   "status": "one-sided-upstream",
    "tags": [
     "set theory",
     "ramsey theory"
@@ -44071,7 +44071,7 @@
    "type": "problem",
    "upstream_finite_handle": null,
    "upstream_state_raw": "not disprovable",
-   "upstream_status": "Solved"
+   "upstream_status": "One-sided"
   },
   {
    "erdos_id": 1172,
@@ -44120,7 +44120,7 @@
    "oeis_stub_only": [],
    "prize": "no",
    "statement_source": "link",
-   "status": "solved-upstream",
+   "status": "one-sided-upstream",
    "tags": [
     "set theory",
     "ramsey theory"
@@ -44128,7 +44128,7 @@
    "type": "problem",
    "upstream_finite_handle": null,
    "upstream_state_raw": "not disprovable",
-   "upstream_status": "Solved"
+   "upstream_status": "One-sided"
   },
   {
    "erdos_id": 1175,
@@ -44175,7 +44175,7 @@
    "prize": "no",
    "statement": "Let $G$ be a graph with chromatic number $\\aleph_1$. Is it true that there is a colouring of the edges with $\\aleph_1$ many colours such that, in any countable colouring of the vertices, there exists a vertex colour containing all edge colours? A problem of Erdős, Galvin, and Hajnal. The consistency of this was proved by Hajnal and Komjáth.",
    "statement_source": "lean",
-   "status": "solved-upstream",
+   "status": "one-sided-upstream",
    "tags": [
     "set theory",
     "ramsey theory"
@@ -44183,7 +44183,7 @@
    "type": "problem",
    "upstream_finite_handle": null,
    "upstream_state_raw": "not disprovable",
-   "upstream_status": "Solved"
+   "upstream_status": "One-sided"
   },
   {
    "erdos_id": 1177,
@@ -55876,7 +55876,7 @@
    "oeis_stub_only": [],
    "prize": "$100",
    "statement_source": "link",
-   "status": "solved-upstream",
+   "status": "one-sided-upstream",
    "tags": [
     "set theory",
     "ramsey theory"
@@ -55884,7 +55884,7 @@
    "type": "problem",
    "upstream_finite_handle": null,
    "upstream_state_raw": "not provable",
-   "upstream_status": "Solved"
+   "upstream_status": "One-sided"
   },
   {
    "erdos_id": 475,
@@ -56707,7 +56707,7 @@
    "prize": "no",
    "statement": "For every $x \\in \\mathbb{R}$ let $A_x \\subset \\mathbb{R}$ be a bounded set with outer measure $< 1$. Must there exist an infinite independent set, that is, some infinite $X \\subseteq \\mathbb{R}$ such that $x \\notin A_y$ for all $x \\neq y \\in X$? If the sets $A_x$ are closed and have measure $< 1$, then must there exist an independent set of size $3$? Known results: Erdős–Hajnal [ErHa60] proved the existence of arbitrarily large finite independent sets. Hechler [He72] showed the answer is **no** assuming the continuum hypothesis.",
    "statement_source": "lean",
-   "status": "solved-upstream",
+   "status": "one-sided-upstream",
    "tags": [
     "combinatorics",
     "set theory"
@@ -56715,7 +56715,7 @@
    "type": "problem",
    "upstream_finite_handle": null,
    "upstream_state_raw": "not disprovable",
-   "upstream_status": "Solved"
+   "upstream_status": "One-sided"
   },
   {
    "erdos_id": 502,
@@ -63025,7 +63025,7 @@
    "oeis_stub_only": [],
    "prize": "no",
    "statement_source": "link",
-   "status": "solved-upstream",
+   "status": "one-sided-upstream",
    "tags": [
     "graph theory",
     "chromatic number"
@@ -63033,7 +63033,7 @@
    "type": "problem",
    "upstream_finite_handle": null,
    "upstream_state_raw": "not provable",
-   "upstream_status": "Solved"
+   "upstream_status": "One-sided"
   },
   {
    "erdos_id": 737,
@@ -63082,7 +63082,7 @@
    "oeis_stub_only": [],
    "prize": "no",
    "statement_source": "link",
-   "status": "solved-upstream",
+   "status": "one-sided-upstream",
    "tags": [
     "graph theory",
     "chromatic number"
@@ -63090,7 +63090,7 @@
    "type": "problem",
    "upstream_finite_handle": null,
    "upstream_state_raw": "not provable",
-   "upstream_status": "Solved"
+   "upstream_status": "One-sided"
   },
   {
    "erdos_id": 74,
@@ -80911,7 +80911,7 @@
    "hot": false,
    "id": "X:ai:501:3ed4052d",
    "origin": "ai_claims",
-   "our_recorded_status": "solved-upstream",
+   "our_recorded_status": "one-sided-upstream",
    "our_verdict": "not independently checked",
    "registry_says_not_a_resolution": true,
    "status_changed_by_this_claim": false,
