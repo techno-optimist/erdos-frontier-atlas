@@ -46,6 +46,7 @@ validate:
 	python3 tools/validate_ai_claims.py
 	python3 tools/validate_openai_math.py
 	python3 tools/validate_plasma_claims.py
+	python3 tools/validate_tools.py
 	python3 tools/validate_atlas.py
 
 # The sub-10-second certificate replays. certificates/erdos-979 is excluded here

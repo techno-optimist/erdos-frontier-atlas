@@ -99,7 +99,7 @@ these inventories is a count of conjectures solved by this project.
 | Executable reductions | [`tools/briefcase.py`](tools/briefcase.py) · [`tools/briefcaselib/`](tools/briefcaselib) · [`tools/briefcase.html`](tools/briefcase.html) · [`atlas/residuals.json`](atlas/residuals.json) |
 | Production attack graph | [`GRAPH.md`](GRAPH.md) · [`atlas/graph/`](atlas/graph) · [`views/graph/`](views/graph) · [`views/sorties.md`](views/sorties.md) |
 | Certificates and claim contracts | [`certificates/README.md`](certificates/README.md) · [`certificates/contracts.json`](certificates/contracts.json) |
-| Feasibility and source overlays | [`atlas/walls.md`](atlas/walls.md) · [`atlas/lanes.md`](atlas/lanes.md) · [`atlas/ai_claims.json`](atlas/ai_claims.json) · [`atlas/openai_math.json`](atlas/openai_math.json) · [`atlas/lean_lane.json`](atlas/lean_lane.json) |
+| Feasibility and source overlays | [`atlas/walls.md`](atlas/walls.md) · [`atlas/lanes.md`](atlas/lanes.md) · [`atlas/ai_claims.json`](atlas/ai_claims.json) · [`atlas/openai_math.json`](atlas/openai_math.json) · [`atlas/plasma_claims.json`](atlas/plasma_claims.json) · [`atlas/tools.json`](atlas/tools.json) · [`atlas/ai_results.json`](atlas/ai_results.json) · [`atlas/lean_lane.json`](atlas/lean_lane.json) |
 | Generated views and book | [`views/`](views) · [operations annex](views/operations.md) · [`book/`](book) |
 | Validators and tests | [`tools/`](tools) · [`tests/`](tests) · [`Makefile`](Makefile) · [CI workflow](.github/workflows/verify.yml) |
 | Project policy and releases | [`COORDINATION.md`](COORDINATION.md) · [`FRONTIER_CARTOGRAPHY.md`](FRONTIER_CARTOGRAPHY.md) · [`RELEASING.md`](RELEASING.md) · [`NOTICE`](NOTICE) |
@@ -124,8 +124,14 @@ silently rebuilding the graph.
   [P327 review](experiments/astra-327-fiber-20260912/FRESHNESS.md) are dated
   September 12, 2026. They are source snapshots, not continuing monitors.
 - The [AI-claim overlay](atlas/ai_claims.json) is a dated claims registry.
-- The [OpenAI manuscript index](atlas/openai_math.json) lists the 15 result families in [openai/math](https://github.com/openai/math) (Apache-2.0) that the source ties to Erdős problems, pinned to a commit. They are external results. For two of them (025, Erdős #304; 184, Erdős #802) P42 rebuilt OpenAI's Lean proof, found it compiles with only the standard axioms, and re-checked it with an independent kernel (nanoda). For 184 a statement review found the Lean statement faithful to #802; for 025 that review is not done yet. These are checks of OpenAI's proofs, not P42 results, and no entry changes a status here.
+- The [OpenAI manuscript index](atlas/openai_math.json) lists 22 result families in [openai/math](https://github.com/openai/math) (Apache-2.0), pinned to a commit: 15 whose own contents entry mentions Erdős, plus 7 that the erdosproblems.com maintainer's [2026-10-08 index of OpenAI's claims](https://www.erdosproblems.com/forum/thread/blog:10) ties to Erdős problems. Together they link 25 Erdős problems; each link says whether it comes from the manuscript or from that index (cited as a link only). They are external claims. For two of them (025, Erdős #304; 184, Erdős #802) P42 rebuilt OpenAI's Lean proof, found it compiles with only the standard axioms, re-checked it with an independent kernel (nanoda), and reviewed the Lean statement as faithful (025 covers #304 only, not #293 or #148). These are checks of OpenAI's proofs, not P42 results, and no entry changes a status here. Many of the same problems are also annotated in the [Plasma overlay](atlas/plasma_claims.json).
+- The [tool index](atlas/tools.json) lists 24 AI-assisted discovery systems, registries, datasets and benchmarks with primary links and first-public dates, and the [results file](atlas/ai_results.json) lists 12 quantitative results outside the Erdős set (prior value, new value, source) that their authors report or claim with AI assistance, marking where AI involvement is not stated. Both are dated 2026-10-30 and checked by `tools/validate_tools.py`.
   Recording an AI-assisted proof claim never changes a canonical status.
+- **2026-10-30 note on upstream status.** From 2026-10-06 erdosproblems.com no longer
+  displays problem statuses ([blog:9](https://www.erdosproblems.com/forum/thread/blog:9);
+  see also [blog:8](https://www.erdosproblems.com/forum/thread/blog:8)). Atlas statuses follow
+  [teorth/erdosproblems](https://github.com/teorth/erdosproblems) `data/problems.yaml`, pinned in
+  `atlas/stubs.json` (currently `bcd2fbd`), and are not updated by later claims.
 - Before starting a new attack, check the official problem page, discussion,
   separate proof-claim register, and cited manuscript versions. Consult
   [erdosproblems.com](https://www.erdosproblems.com) for the human-maintained

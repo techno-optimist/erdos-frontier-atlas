@@ -10,7 +10,7 @@ The machine-readable **agent-coordination annex** to [erdosproblems.com](https:/
 
 | total | movable | wall | open | solved-upstream | one-sided-upstream | independent-upstream | formalized (Lean) | with statement | audited (deep) | cash-prize |
 |--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|--:|
-| **1221** | 4 | 24 | 605 | 576 | 9 | 3 | 782 | 665 | 51 | 106 |
+| **1221** | 4 | 24 | 605 | 576 | 9 | 3 | 782 | 665 | 51 | 107 |
 
 ## Audited frontier (deep records)
 
@@ -21,7 +21,7 @@ The subset we have deep-audited — pinned verifier, current record, board class
 | 20 | Erdős–Rado sunflower conjecture (f(n,k) < c_k^n) | `movable` | $1000 | Open | [erdos.com](https://www.erdosproblems.com/20) |
 | 41 | Distinct triple-sum (B_3) sets — infinite density liminf | `movable` | $500 | Open | [erdos.com](https://www.erdosproblems.com/41) · P42:`b3-ruler-11-marks` |
 | 241 | B_3 sets: max A⊆{1..N} with all triple sums a+b+c distinct; is f(N)~N^ | `movable` | $100 | Open | [erdos.com](https://www.erdosproblems.com/241) · P42:`b3-subset-first-jump-9` |
-| 552 | R(C_4, S_n): C4-vs-star Ramsey | `movable` | — | Open | [erdos.com](https://www.erdosproblems.com/552) · P42:`c4-star-ramsey-a17` |
+| 552 | R(C_4, S_n): C4-vs-star Ramsey | `movable` | $100 | Open | [erdos.com](https://www.erdosproblems.com/552) · P42:`c4-star-ramsey-a17` |
 | 19 | Erdős–Faber–Lovász conjecture | `wall` | $500 | Open | [erdos.com](https://www.erdosproblems.com/19) |
 | 30 | Erdős #30 — max Sidon set h(N) | `wall` | $1000 | Open | [erdos.com](https://www.erdosproblems.com/30) |
 | 39 | Infinite near-maximal-density Sidon set | `wall` | $500 | Open | [erdos.com](https://www.erdosproblems.com/39) |

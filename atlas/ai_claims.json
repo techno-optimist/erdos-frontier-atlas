@@ -26,7 +26,10 @@
       "claim_sources": [
         "https://www.erdosproblems.com/12",
         "https://arxiv.org/abs/2605.22763",
-        "https://github.com/google-deepmind/alphaproof-nexus-results/tree/main/APNOutputs/ErdosProblems"
+        "https://github.com/google-deepmind/alphaproof-nexus-results/tree/main/APNOutputs/ErdosProblems",
+        "https://doi.org/10.1126/science.aej2213",
+        "https://github.com/google-deepmind/alphaproof-nexus-results/blob/0647711a71183c1ea492ad60860776617ce1ea88/APNOutputs/ErdosProblems/erdos_12.parts.i.lean",
+        "https://github.com/google-deepmind/alphaproof-nexus-results/blob/0647711a71183c1ea492ad60860776617ce1ea88/APNOutputs/ErdosProblems/erdos_12.parts.ii.lean"
       ],
       "our_recorded_status": "open",
       "upstream_status": "Open",
@@ -37,7 +40,19 @@
         "This answers part (i) positively and disproves part (ii); the reciprocal-sum part remains open."
       ],
       "registry_says_not_a_resolution": true,
-      "upstream_finite_handle": null
+      "upstream_finite_handle": null,
+      "nexus": {
+        "system": "AlphaProof Nexus (Google DeepMind)",
+        "paper": "Tsoukalas et al., \"Advancing mathematics research with AI-driven formal proof search\", Science 394:234-239, published 2026-10-08",
+        "paper_doi": "https://doi.org/10.1126/science.aej2213",
+        "preprint": "https://arxiv.org/abs/2605.22763",
+        "lean_files": [
+          "https://github.com/google-deepmind/alphaproof-nexus-results/blob/0647711a71183c1ea492ad60860776617ce1ea88/APNOutputs/ErdosProblems/erdos_12.parts.i.lean",
+          "https://github.com/google-deepmind/alphaproof-nexus-results/blob/0647711a71183c1ea492ad60860776617ce1ea88/APNOutputs/ErdosProblems/erdos_12.parts.ii.lean"
+        ],
+        "lean_files_pinned_to": "0647711a71183c1ea492ad60860776617ce1ea88",
+        "added": "2026-10-30"
+      }
     },
     {
       "erdos_id": 26,
@@ -46,7 +61,9 @@
         "https://www.erdosproblems.com/26",
         "https://www.erdosproblems.com/forum/thread/26",
         "https://vibemathed.com/problem/erdos-26",
-        "https://github.com/teorth/erdosproblems/wiki/AI-contributions-to-Erd%C5%91s-problems"
+        "https://github.com/teorth/erdosproblems/wiki/AI-contributions-to-Erd%C5%91s-problems",
+        "https://doi.org/10.1126/science.aej2213",
+        "https://github.com/google-deepmind/alphaproof-nexus-results/blob/0647711a71183c1ea492ad60860776617ce1ea88/APNOutputs/ErdosProblems/erdos_26.variants.tenenbaum.lean"
       ],
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
@@ -54,7 +71,18 @@
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
       "registry_says_not_a_resolution": false,
-      "upstream_finite_handle": null
+      "upstream_finite_handle": null,
+      "nexus": {
+        "system": "AlphaProof Nexus (Google DeepMind)",
+        "paper": "Tsoukalas et al., \"Advancing mathematics research with AI-driven formal proof search\", Science 394:234-239, published 2026-10-08",
+        "paper_doi": "https://doi.org/10.1126/science.aej2213",
+        "preprint": "https://arxiv.org/abs/2605.22763",
+        "lean_files": [
+          "https://github.com/google-deepmind/alphaproof-nexus-results/blob/0647711a71183c1ea492ad60860776617ce1ea88/APNOutputs/ErdosProblems/erdos_26.variants.tenenbaum.lean"
+        ],
+        "lean_files_pinned_to": "0647711a71183c1ea492ad60860776617ce1ea88",
+        "added": "2026-10-30"
+      }
     },
     {
       "erdos_id": 38,
@@ -147,7 +175,9 @@
         "https://www.erdosproblems.com/125",
         "https://www.erdosproblems.com/forum/thread/125",
         "https://vibemathed.com/problem/erdos-125",
-        "https://github.com/teorth/erdosproblems/wiki/AI-contributions-to-Erd%C5%91s-problems"
+        "https://github.com/teorth/erdosproblems/wiki/AI-contributions-to-Erd%C5%91s-problems",
+        "https://doi.org/10.1126/science.aej2213",
+        "https://github.com/google-deepmind/alphaproof-nexus-results/blob/0647711a71183c1ea492ad60860776617ce1ea88/APNOutputs/ErdosProblems/erdos_125.variants.positive_lower_density.lean"
       ],
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
@@ -155,7 +185,18 @@
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
       "registry_says_not_a_resolution": false,
-      "upstream_finite_handle": null
+      "upstream_finite_handle": null,
+      "nexus": {
+        "system": "AlphaProof Nexus (Google DeepMind)",
+        "paper": "Tsoukalas et al., \"Advancing mathematics research with AI-driven formal proof search\", Science 394:234-239, published 2026-10-08",
+        "paper_doi": "https://doi.org/10.1126/science.aej2213",
+        "preprint": "https://arxiv.org/abs/2605.22763",
+        "lean_files": [
+          "https://github.com/google-deepmind/alphaproof-nexus-results/blob/0647711a71183c1ea492ad60860776617ce1ea88/APNOutputs/ErdosProblems/erdos_125.variants.positive_lower_density.lean"
+        ],
+        "lean_files_pinned_to": "0647711a71183c1ea492ad60860776617ce1ea88",
+        "added": "2026-10-30"
+      }
     },
     {
       "erdos_id": 138,
@@ -163,7 +204,9 @@
       "claim_sources": [
         "https://www.erdosproblems.com/138",
         "https://firsching.ch/formal-conjectures/src/FormalConjectures/ErdosProblems/%C2%AB138%C2%BB/",
-        "https://github.com/google-deepmind/alphaproof-nexus-results/blob/main/APNOutputs/ErdosProblems/erdos_138.variants.difference.lean"
+        "https://github.com/google-deepmind/alphaproof-nexus-results/blob/main/APNOutputs/ErdosProblems/erdos_138.variants.difference.lean",
+        "https://doi.org/10.1126/science.aej2213",
+        "https://github.com/google-deepmind/alphaproof-nexus-results/blob/0647711a71183c1ea492ad60860776617ce1ea88/APNOutputs/ErdosProblems/erdos_138.variants.difference.lean"
       ],
       "our_recorded_status": "wall",
       "upstream_status": "Open",
@@ -175,7 +218,18 @@
         "The theorem is a separately recorded difference variant on the official problem page, not a full solution to Erdős #138."
       ],
       "registry_says_not_a_resolution": true,
-      "upstream_finite_handle": null
+      "upstream_finite_handle": null,
+      "nexus": {
+        "system": "AlphaProof Nexus (Google DeepMind)",
+        "paper": "Tsoukalas et al., \"Advancing mathematics research with AI-driven formal proof search\", Science 394:234-239, published 2026-10-08",
+        "paper_doi": "https://doi.org/10.1126/science.aej2213",
+        "preprint": "https://arxiv.org/abs/2605.22763",
+        "lean_files": [
+          "https://github.com/google-deepmind/alphaproof-nexus-results/blob/0647711a71183c1ea492ad60860776617ce1ea88/APNOutputs/ErdosProblems/erdos_138.variants.difference.lean"
+        ],
+        "lean_files_pinned_to": "0647711a71183c1ea492ad60860776617ce1ea88",
+        "added": "2026-10-30"
+      }
     },
     {
       "erdos_id": 152,
@@ -184,7 +238,9 @@
         "https://www.erdosproblems.com/152",
         "https://www.erdosproblems.com/forum/thread/152",
         "https://vibemathed.com/problem/erdos-152",
-        "https://github.com/teorth/erdosproblems/wiki/AI-contributions-to-Erd%C5%91s-problems"
+        "https://github.com/teorth/erdosproblems/wiki/AI-contributions-to-Erd%C5%91s-problems",
+        "https://doi.org/10.1126/science.aej2213",
+        "https://github.com/google-deepmind/alphaproof-nexus-results/blob/0647711a71183c1ea492ad60860776617ce1ea88/APNOutputs/ErdosProblems/erdos_152.lean"
       ],
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
@@ -192,7 +248,18 @@
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
       "registry_says_not_a_resolution": false,
-      "upstream_finite_handle": null
+      "upstream_finite_handle": null,
+      "nexus": {
+        "system": "AlphaProof Nexus (Google DeepMind)",
+        "paper": "Tsoukalas et al., \"Advancing mathematics research with AI-driven formal proof search\", Science 394:234-239, published 2026-10-08",
+        "paper_doi": "https://doi.org/10.1126/science.aej2213",
+        "preprint": "https://arxiv.org/abs/2605.22763",
+        "lean_files": [
+          "https://github.com/google-deepmind/alphaproof-nexus-results/blob/0647711a71183c1ea492ad60860776617ce1ea88/APNOutputs/ErdosProblems/erdos_152.lean"
+        ],
+        "lean_files_pinned_to": "0647711a71183c1ea492ad60860776617ce1ea88",
+        "added": "2026-10-30"
+      }
     },
     {
       "erdos_id": 176,
@@ -831,7 +898,10 @@
         "https://www.erdosproblems.com/741",
         "https://www.erdosproblems.com/forum/thread/741",
         "https://vibemathed.com/problem/erdos-741",
-        "https://github.com/teorth/erdosproblems/wiki/AI-contributions-to-Erd%C5%91s-problems"
+        "https://github.com/teorth/erdosproblems/wiki/AI-contributions-to-Erd%C5%91s-problems",
+        "https://doi.org/10.1126/science.aej2213",
+        "https://github.com/google-deepmind/alphaproof-nexus-results/blob/0647711a71183c1ea492ad60860776617ce1ea88/APNOutputs/ErdosProblems/erdos_741.parts.i.lean",
+        "https://github.com/google-deepmind/alphaproof-nexus-results/blob/0647711a71183c1ea492ad60860776617ce1ea88/APNOutputs/ErdosProblems/erdos_741.parts.ii.lean"
       ],
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
@@ -839,7 +909,20 @@
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked",
       "registry_says_not_a_resolution": false,
-      "upstream_finite_handle": null
+      "upstream_finite_handle": null,
+      "nexus": {
+        "system": "AlphaProof Nexus (Google DeepMind)",
+        "paper": "Tsoukalas et al., \"Advancing mathematics research with AI-driven formal proof search\", Science 394:234-239, published 2026-10-08",
+        "paper_doi": "https://doi.org/10.1126/science.aej2213",
+        "preprint": "https://arxiv.org/abs/2605.22763",
+        "lean_files": [
+          "https://github.com/google-deepmind/alphaproof-nexus-results/blob/0647711a71183c1ea492ad60860776617ce1ea88/APNOutputs/ErdosProblems/erdos_741.parts.i.lean",
+          "https://github.com/google-deepmind/alphaproof-nexus-results/blob/0647711a71183c1ea492ad60860776617ce1ea88/APNOutputs/ErdosProblems/erdos_741.parts.ii.lean"
+        ],
+        "lean_files_pinned_to": "0647711a71183c1ea492ad60860776617ce1ea88",
+        "added": "2026-10-30",
+        "scope_note": "Scope differs between sources. The Nexus file named erdos_741.parts.i targets the reading in which A+A, A1+A1 and A2+A2 have positive natural density (HasPosDensity), with answer False. At formal-conjectures 16e02e2 that reading is recorded as erdos_741.variants.exact_density, while erdos_741.parts.i is stated with positive upper density, and a lower-density variant (erdos_741.variants.lower) is listed as open. The Nexus parts.ii file targets the basis-of-order-2 / syndetic form. Read each result against its own statement; this note does not change the recorded status."
+      }
     },
     {
       "erdos_id": 750,
@@ -863,7 +946,9 @@
       "claim_title": "Erdős Problem #846",
       "claim_sources": [
         "https://www.erdosproblems.com/846",
-        "https://github.com/teorth/erdosproblems/wiki/AI-contributions-to-Erd%C5%91s-problems"
+        "https://github.com/teorth/erdosproblems/wiki/AI-contributions-to-Erd%C5%91s-problems",
+        "https://doi.org/10.1126/science.aej2213",
+        "https://github.com/google-deepmind/alphaproof-nexus-results/blob/0647711a71183c1ea492ad60860776617ce1ea88/APNOutputs/ErdosProblems/erdos_846.lean"
       ],
       "our_recorded_status": "solved-upstream",
       "upstream_status": "Solved",
@@ -871,7 +956,18 @@
       "status_changed_by_this_claim": false,
       "registry_verification": "Lean checked + independent derivation",
       "registry_says_not_a_resolution": false,
-      "upstream_finite_handle": null
+      "upstream_finite_handle": null,
+      "nexus": {
+        "system": "AlphaProof Nexus (Google DeepMind)",
+        "paper": "Tsoukalas et al., \"Advancing mathematics research with AI-driven formal proof search\", Science 394:234-239, published 2026-10-08",
+        "paper_doi": "https://doi.org/10.1126/science.aej2213",
+        "preprint": "https://arxiv.org/abs/2605.22763",
+        "lean_files": [
+          "https://github.com/google-deepmind/alphaproof-nexus-results/blob/0647711a71183c1ea492ad60860776617ce1ea88/APNOutputs/ErdosProblems/erdos_846.lean"
+        ],
+        "lean_files_pinned_to": "0647711a71183c1ea492ad60860776617ce1ea88",
+        "added": "2026-10-30"
+      }
     },
     {
       "erdos_id": 848,

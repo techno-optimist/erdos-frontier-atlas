@@ -9,9 +9,9 @@
    "has_surface": 316,
    "learned_from": 5,
    "measures": 223,
-   "references": 538,
+   "references": 563,
    "retracts": 10,
-   "same_family": 122,
+   "same_family": 123,
    "tagged": 2028,
    "trap": 6,
    "walled": 213
@@ -24,7 +24,7 @@
    "incident": 19,
    "move": 7,
    "msc": 21,
-   "oeis_seq": 454,
+   "oeis_seq": 478,
    "problem": 1221,
    "surface": 316,
    "tag": 43,
@@ -32,7 +32,7 @@
   },
   "tiers": {
    "cited-implication": 29,
-   "deterministic-rule": 4461,
+   "deterministic-rule": 4487,
    "validator-enforced": 45
   }
  },
@@ -12524,6 +12524,13 @@
    "type": "references"
   },
   {
+   "dst": "O:A079008",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
+   "src": "P1004",
+   "tier": "deterministic-rule",
+   "type": "references"
+  },
+  {
    "dst": "O:A386893",
    "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P1005",
@@ -12791,6 +12798,13 @@
   },
   {
    "dst": "O:A045945",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
+   "src": "P1084",
+   "tier": "deterministic-rule",
+   "type": "references"
+  },
+  {
+   "dst": "O:A047932",
    "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P1084",
    "tier": "deterministic-rule",
@@ -13084,6 +13098,13 @@
    "type": "references"
   },
   {
+   "dst": "O:A121385",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
+   "src": "P1186",
+   "tier": "deterministic-rule",
+   "type": "references"
+  },
+  {
    "dst": "O:A008407",
    "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P1204",
@@ -13171,6 +13192,20 @@
    "dst": "O:A373319",
    "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P121",
+   "tier": "deterministic-rule",
+   "type": "references"
+  },
+  {
+   "dst": "O:A122026",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
+   "src": "P1216",
+   "tier": "deterministic-rule",
+   "type": "references"
+  },
+  {
+   "dst": "O:A122027",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
+   "src": "P1216",
    "tier": "deterministic-rule",
    "type": "references"
   },
@@ -13416,6 +13451,27 @@
    "dst": "O:A156989",
    "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P171",
+   "tier": "deterministic-rule",
+   "type": "references"
+  },
+  {
+   "dst": "O:A292441",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
+   "src": "P175",
+   "tier": "deterministic-rule",
+   "type": "references"
+  },
+  {
+   "dst": "O:A292442",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
+   "src": "P175",
+   "tier": "deterministic-rule",
+   "type": "references"
+  },
+  {
+   "dst": "O:A398541",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
+   "src": "P176",
    "tier": "deterministic-rule",
    "type": "references"
   },
@@ -13812,6 +13868,13 @@
    "type": "references"
   },
   {
+   "dst": "O:A400352",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
+   "src": "P293",
+   "tier": "deterministic-rule",
+   "type": "references"
+  },
+  {
    "dst": "O:A192881",
    "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P295",
@@ -14148,6 +14211,13 @@
    "type": "references"
   },
   {
+   "dst": "O:A400867",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
+   "src": "P342",
+   "tier": "deterministic-rule",
+   "type": "references"
+  },
+  {
    "dst": "O:A001661",
    "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P345",
@@ -14302,6 +14372,13 @@
    "type": "references"
   },
   {
+   "dst": "O:A400962",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
+   "src": "P379",
+   "tier": "deterministic-rule",
+   "type": "references"
+  },
+  {
    "dst": "O:A070003",
    "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P380",
@@ -14361,6 +14438,20 @@
    "dst": "O:A280992",
    "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P386",
+   "tier": "deterministic-rule",
+   "type": "references"
+  },
+  {
+   "dst": "O:A401107",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
+   "src": "P387",
+   "tier": "deterministic-rule",
+   "type": "references"
+  },
+  {
+   "dst": "O:A401108",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
+   "src": "P387",
    "tier": "deterministic-rule",
    "type": "references"
   },
@@ -14438,6 +14529,20 @@
    "dst": "O:A002386",
    "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P4",
+   "tier": "deterministic-rule",
+   "type": "references"
+  },
+  {
+   "dst": "O:A400979",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
+   "src": "P400",
+   "tier": "deterministic-rule",
+   "type": "references"
+  },
+  {
+   "dst": "O:A400981",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
+   "src": "P400",
    "tier": "deterministic-rule",
    "type": "references"
   },
@@ -14645,6 +14750,13 @@
    "type": "references"
   },
   {
+   "dst": "O:A401140",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
+   "src": "P443",
+   "tier": "deterministic-rule",
+   "type": "references"
+  },
+  {
    "dst": "O:A074738",
    "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P446",
@@ -14753,6 +14865,13 @@
    "dst": "O:A032742",
    "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P462",
+   "tier": "deterministic-rule",
+   "type": "references"
+  },
+  {
+   "dst": "O:A401176",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
+   "src": "P463",
    "tier": "deterministic-rule",
    "type": "references"
   },
@@ -15303,6 +15422,27 @@
    "type": "references"
   },
   {
+   "dst": "O:A399769",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
+   "src": "P696",
+   "tier": "deterministic-rule",
+   "type": "references"
+  },
+  {
+   "dst": "O:A400930",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
+   "src": "P696",
+   "tier": "deterministic-rule",
+   "type": "references"
+  },
+  {
+   "dst": "O:A400908",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
+   "src": "P698",
+   "tier": "deterministic-rule",
+   "type": "references"
+  },
+  {
    "dst": "O:A091963",
    "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P700",
@@ -15320,6 +15460,13 @@
    "dst": "O:A390246",
    "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P710",
+   "tier": "deterministic-rule",
+   "type": "references"
+  },
+  {
+   "dst": "O:A390246",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
+   "src": "P711",
    "tier": "deterministic-rule",
    "type": "references"
   },
@@ -15898,6 +16045,20 @@
    "type": "references"
   },
   {
+   "dst": "O:A401013",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
+   "src": "P889",
+   "tier": "deterministic-rule",
+   "type": "references"
+  },
+  {
+   "dst": "O:A401014",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
+   "src": "P889",
+   "tier": "deterministic-rule",
+   "type": "references"
+  },
+  {
    "dst": "O:A131628",
    "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P89",
@@ -15936,6 +16097,13 @@
    "dst": "O:A186705",
    "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P90",
+   "tier": "deterministic-rule",
+   "type": "references"
+  },
+  {
+   "dst": "O:A392185",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
+   "src": "P901",
    "tier": "deterministic-rule",
    "type": "references"
   },
@@ -15999,6 +16167,13 @@
    "dst": "O:A387864",
    "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P932",
+   "tier": "deterministic-rule",
+   "type": "references"
+  },
+  {
+   "dst": "O:A401022",
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
+   "src": "P933",
    "tier": "deterministic-rule",
    "type": "references"
   },
@@ -17183,6 +17358,16 @@
    ],
    "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
    "src": "P687",
+   "tier": "deterministic-rule",
+   "type": "same_family"
+  },
+  {
+   "dst": "P711",
+   "shared": [
+    "A390246"
+   ],
+   "source": "atlas/stubs.json oeis UNION problems.json links.oeis",
+   "src": "P710",
    "tier": "deterministic-rule",
    "type": "same_family"
   },
@@ -36820,6 +37005,14 @@
    "type": "oeis_seq"
   },
   {
+   "a_number": "A047932",
+   "id": "O:A047932",
+   "problems": [
+    1084
+   ],
+   "type": "oeis_seq"
+  },
+  {
    "a_number": "A048279",
    "id": "O:A048279",
    "problems": [
@@ -37439,6 +37632,14 @@
    "type": "oeis_seq"
   },
   {
+   "a_number": "A079008",
+   "id": "O:A079008",
+   "problems": [
+    1004
+   ],
+   "type": "oeis_seq"
+  },
+  {
    "a_number": "A080200",
    "id": "O:A080200",
    "problems": [
@@ -37700,6 +37901,30 @@
    "id": "O:A121359",
    "problems": [
     683
+   ],
+   "type": "oeis_seq"
+  },
+  {
+   "a_number": "A121385",
+   "id": "O:A121385",
+   "problems": [
+    1186
+   ],
+   "type": "oeis_seq"
+  },
+  {
+   "a_number": "A122026",
+   "id": "O:A122026",
+   "problems": [
+    1216
+   ],
+   "type": "oeis_seq"
+  },
+  {
+   "a_number": "A122027",
+   "id": "O:A122027",
+   "problems": [
+    1216
    ],
    "type": "oeis_seq"
   },
@@ -38237,6 +38462,22 @@
    "id": "O:A289280",
    "problems": [
     459
+   ],
+   "type": "oeis_seq"
+  },
+  {
+   "a_number": "A292441",
+   "id": "O:A292441",
+   "problems": [
+    175
+   ],
+   "type": "oeis_seq"
+  },
+  {
+   "a_number": "A292442",
+   "id": "O:A292442",
+   "problems": [
+    175
    ],
    "type": "oeis_seq"
   },
@@ -39015,7 +39256,8 @@
    "a_number": "A390246",
    "id": "O:A390246",
    "problems": [
-    710
+    710,
+    711
    ],
    "type": "oeis_seq"
   },
@@ -39198,6 +39440,14 @@
    "type": "oeis_seq"
   },
   {
+   "a_number": "A392185",
+   "id": "O:A392185",
+   "problems": [
+    901
+   ],
+   "type": "oeis_seq"
+  },
+  {
    "a_number": "A392342",
    "id": "O:A392342",
    "problems": [
@@ -39326,6 +39576,14 @@
    "type": "oeis_seq"
   },
   {
+   "a_number": "A398541",
+   "id": "O:A398541",
+   "problems": [
+    176
+   ],
+   "type": "oeis_seq"
+  },
+  {
    "a_number": "A399440",
    "id": "O:A399440",
    "problems": [
@@ -39398,10 +39656,130 @@
    "type": "oeis_seq"
   },
   {
+   "a_number": "A399769",
+   "id": "O:A399769",
+   "problems": [
+    696
+   ],
+   "type": "oeis_seq"
+  },
+  {
    "a_number": "A399779",
    "id": "O:A399779",
    "problems": [
     793
+   ],
+   "type": "oeis_seq"
+  },
+  {
+   "a_number": "A400352",
+   "id": "O:A400352",
+   "problems": [
+    293
+   ],
+   "type": "oeis_seq"
+  },
+  {
+   "a_number": "A400867",
+   "id": "O:A400867",
+   "problems": [
+    342
+   ],
+   "type": "oeis_seq"
+  },
+  {
+   "a_number": "A400908",
+   "id": "O:A400908",
+   "problems": [
+    698
+   ],
+   "type": "oeis_seq"
+  },
+  {
+   "a_number": "A400930",
+   "id": "O:A400930",
+   "problems": [
+    696
+   ],
+   "type": "oeis_seq"
+  },
+  {
+   "a_number": "A400962",
+   "id": "O:A400962",
+   "problems": [
+    379
+   ],
+   "type": "oeis_seq"
+  },
+  {
+   "a_number": "A400979",
+   "id": "O:A400979",
+   "problems": [
+    400
+   ],
+   "type": "oeis_seq"
+  },
+  {
+   "a_number": "A400981",
+   "id": "O:A400981",
+   "problems": [
+    400
+   ],
+   "type": "oeis_seq"
+  },
+  {
+   "a_number": "A401013",
+   "id": "O:A401013",
+   "problems": [
+    889
+   ],
+   "type": "oeis_seq"
+  },
+  {
+   "a_number": "A401014",
+   "id": "O:A401014",
+   "problems": [
+    889
+   ],
+   "type": "oeis_seq"
+  },
+  {
+   "a_number": "A401022",
+   "id": "O:A401022",
+   "problems": [
+    933
+   ],
+   "type": "oeis_seq"
+  },
+  {
+   "a_number": "A401107",
+   "id": "O:A401107",
+   "problems": [
+    387
+   ],
+   "type": "oeis_seq"
+  },
+  {
+   "a_number": "A401108",
+   "id": "O:A401108",
+   "problems": [
+    387
+   ],
+   "type": "oeis_seq"
+  },
+  {
+   "a_number": "A401140",
+   "id": "O:A401140",
+   "problems": [
+    443
+   ],
+   "type": "oeis_seq"
+  },
+  {
+   "a_number": "A401176",
+   "id": "O:A401176",
+   "problems": [
+    463
    ],
    "type": "oeis_seq"
   },
@@ -39621,8 +39999,12 @@
    "msc": [
     "11"
    ],
-   "oeis": [],
-   "oeis_stub_only": [],
+   "oeis": [
+    "A079008"
+   ],
+   "oeis_stub_only": [
+    "A079008"
+   ],
    "prize": "no",
    "statement": "For any fixed c > 0, if x is sufficiently large then there exists n ≤ x such that the values of φ(n+k) are all distinct for 1 ≤ k ≤ (log x)^c. This is an open problem.",
    "statement_source": "lean",
@@ -41863,10 +42245,12 @@
    },
    "msc": [],
    "oeis": [
-    "A045945"
+    "A045945",
+    "A047932"
    ],
    "oeis_stub_only": [
-    "A045945"
+    "A045945",
+    "A047932"
    ],
    "prize": "no",
    "statement_source": "link",
@@ -44521,8 +44905,12 @@
    "erdos_url": "https://www.erdosproblems.com/1186",
    "id": "P1186",
    "msc": [],
-   "oeis": [],
-   "oeis_stub_only": [],
+   "oeis": [
+    "A121385"
+   ],
+   "oeis_stub_only": [
+    "A121385"
+   ],
    "prize": "no",
    "statement_source": "link",
    "status": "open",
@@ -45343,8 +45731,14 @@
    "erdos_url": "https://www.erdosproblems.com/1216",
    "id": "P1216",
    "msc": [],
-   "oeis": [],
-   "oeis_stub_only": [],
+   "oeis": [
+    "A122026",
+    "A122027"
+   ],
+   "oeis_stub_only": [
+    "A122026",
+    "A122027"
+   ],
    "prize": "no",
    "statement_source": "link",
    "status": "solved-upstream",
@@ -47058,8 +47452,14 @@
    "msc": [
     "11"
    ],
-   "oeis": [],
-   "oeis_stub_only": [],
+   "oeis": [
+    "A292441",
+    "A292442"
+   ],
+   "oeis_stub_only": [
+    "A292441",
+    "A292442"
+   ],
    "prize": "no",
    "statement": "Show that, for any $n\\geq 5$, the binomial coefficient $\\binom{2n}{n}$ is not squarefree.",
    "statement_source": "lean",
@@ -47078,8 +47478,12 @@
    "erdos_url": "https://www.erdosproblems.com/176",
    "id": "P176",
    "msc": [],
-   "oeis": [],
-   "oeis_stub_only": [],
+   "oeis": [
+    "A398541"
+   ],
+   "oeis_stub_only": [
+    "A398541"
+   ],
    "prize": "no",
    "statement_source": "link",
    "status": "open",
@@ -50561,8 +50965,12 @@
    "erdos_url": "https://www.erdosproblems.com/293",
    "id": "P293",
    "msc": [],
-   "oeis": [],
-   "oeis_stub_only": [],
+   "oeis": [
+    "A400352"
+   ],
+   "oeis_stub_only": [
+    "A400352"
+   ],
    "prize": "no",
    "statement_source": "link",
    "status": "open",
@@ -52093,10 +52501,12 @@
    },
    "msc": [],
    "oeis": [
-    "A002858"
+    "A002858",
+    "A400867"
    ],
    "oeis_stub_only": [
-    "A002858"
+    "A002858",
+    "A400867"
    ],
    "prize": "no",
    "statement_source": "link",
@@ -53140,10 +53550,12 @@
     "11"
    ],
    "oeis": [
-    "A048279"
+    "A048279",
+    "A400962"
    ],
    "oeis_stub_only": [
-    "A048279"
+    "A048279",
+    "A400962"
    ],
    "prize": "no",
    "statement": "Let $S(n)$ denote the largest integer such that, for all $1 ≤ k < n$, the binomial coefficient $\\binom{n}{k}$ is divisible by $p^S(n)$ for some prime $p$ (depending on $k$).Then $\\limsup S(n) = \\infty$. This was formalized in Lean by Tao.",
@@ -53382,8 +53794,14 @@
    "msc": [
     "11"
    ],
-   "oeis": [],
-   "oeis_stub_only": [],
+   "oeis": [
+    "A401107",
+    "A401108"
+   ],
+   "oeis_stub_only": [
+    "A401107",
+    "A401108"
+   ],
    "prize": "no",
    "statement": "Is there an absolute constant $c > 0$ such that, for all $1 \\leq k < n$, the binomial coefficient $\\binom{n}{k}$ has a divisor in $(cn, n]$? Bui, Naprienko, Pratt, and Zaharescu [BNPZ26] answered this negatively.",
    "statement_source": "lean",
@@ -53837,8 +54255,14 @@
     "path": "formal-conjectures/FormalConjectures/ErdosProblems/400.lean"
    },
    "msc": [],
-   "oeis": [],
-   "oeis_stub_only": [],
+   "oeis": [
+    "A400979",
+    "A400981"
+   ],
+   "oeis_stub_only": [
+    "A400979",
+    "A400981"
+   ],
    "prize": "no",
    "statement_source": "link",
    "status": "open",
@@ -55102,8 +55526,12 @@
     "path": "formal-conjectures/FormalConjectures/ErdosProblems/443.lean"
    },
    "msc": [],
-   "oeis": [],
-   "oeis_stub_only": [],
+   "oeis": [
+    "A401140"
+   ],
+   "oeis_stub_only": [
+    "A401140"
+   ],
    "prize": "no",
    "statement_source": "link",
    "status": "solved-upstream",
@@ -55687,8 +56115,12 @@
    "msc": [
     "11"
    ],
-   "oeis": [],
-   "oeis_stub_only": [],
+   "oeis": [
+    "A401176"
+   ],
+   "oeis_stub_only": [
+    "A401176"
+   ],
    "prize": "no",
    "statement": "Is there a function $f$ with $f(n)\\to\\infty$ as $n\\to\\infty$ such that, for all large $n$, there is a composite number $m$ such that $$ n + f(n) < m < n + p(m) $$ Here $p(m)$ is the least prime factor of $m$.",
    "statement_source": "lean",
@@ -58246,7 +58678,7 @@
    "oeis_stub_only": [
     "A006672"
    ],
-   "prize": "no",
+   "prize": "$100",
    "statement_source": "link",
    "status": "movable",
    "tags": [
@@ -62044,8 +62476,14 @@
    "erdos_url": "https://www.erdosproblems.com/696",
    "id": "P696",
    "msc": [],
-   "oeis": [],
-   "oeis_stub_only": [],
+   "oeis": [
+    "A399769",
+    "A400930"
+   ],
+   "oeis_stub_only": [
+    "A399769",
+    "A400930"
+   ],
    "prize": "no",
    "statement_source": "link",
    "status": "solved-upstream",
@@ -62095,8 +62533,12 @@
     "05",
     "11"
    ],
-   "oeis": [],
-   "oeis_stub_only": [],
+   "oeis": [
+    "A400908"
+   ],
+   "oeis_stub_only": [
+    "A400908"
+   ],
    "prize": "no",
    "statement": "Is there some $h(n)\\to \\infty$ such that for all $2\\leq i<j\\leq n/2$ $$\\textrm{gcd}\\left( \\binom{n}{i},\\binom{n}{j}\\right) \\geq h(n)?$$ This was resolved by Bergman [Be11], who proved that for any $2\\leq i<j\\leq n/2$ $$\\textrm{gcd}\\left( \\binom{n}{i},\\binom{n}{j}\\right) \\gg n^{1/2}\\frac{2^i}{i^{3/2}},$$ where the implied constant is absolute. The linked formal proof (van Doorn and Aristotle, see `erdos_698.variants.bergman`) gives the explicit bound $\\gcd > \\frac{2^i \\sqrt n}{4 i \\sqrt{i - 1}}$, so $h(n) = \\lfloor \\sqrt n / 4 \\rfloor$ works since $i \\sqrt{i - 1} \\le 2^i$ for $i \\ge 2$.",
    "statement_source": "lean",
@@ -62503,8 +62945,12 @@
    "erdos_url": "https://www.erdosproblems.com/711",
    "id": "P711",
    "msc": [],
-   "oeis": [],
-   "oeis_stub_only": [],
+   "oeis": [
+    "A390246"
+   ],
+   "oeis_stub_only": [
+    "A390246"
+   ],
    "prize": "₹1000",
    "statement_source": "link",
    "status": "open",
@@ -67251,8 +67697,14 @@
    "msc": [
     "11"
    ],
-   "oeis": [],
-   "oeis_stub_only": [],
+   "oeis": [
+    "A401013",
+    "A401014"
+   ],
+   "oeis_stub_only": [
+    "A401013",
+    "A401014"
+   ],
    "prize": "no",
    "statement": "Let $v(n,k)$ count the prime factors of $n+k$ which do not divide $n+i$ for $0\\leq i < k$. Is it true that $v_0(n)=\\max_{k\\geq 0}v(n,k)\\to \\infty$ as $n\\to \\infty$?",
    "statement_source": "lean",
@@ -67645,8 +68097,12 @@
    "erdos_url": "https://www.erdosproblems.com/901",
    "id": "P901",
    "msc": [],
-   "oeis": [],
-   "oeis_stub_only": [],
+   "oeis": [
+    "A392185"
+   ],
+   "oeis_stub_only": [
+    "A392185"
+   ],
    "prize": "no",
    "statement_source": "link",
    "status": "open",
@@ -68505,8 +68961,12 @@
    "msc": [
     "11"
    ],
-   "oeis": [],
-   "oeis_stub_only": [],
+   "oeis": [
+    "A401022"
+   ],
+   "oeis_stub_only": [
+    "A401022"
+   ],
    "prize": "no",
    "statement": "If $n(n+1)=2^k3^lm$, where $(m,6)=1$, then is it true that $\\limsup_{n\\to \\infty} \\frac{2^k3^l}{n\\log n}=\\infty$?",
    "statement_source": "lean",
@@ -69696,7 +70156,7 @@
    ],
    "type": "problem",
    "upstream_finite_handle": null,
-   "upstream_state_raw": "open",
+   "upstream_state_raw": "open (Lean)",
    "upstream_status": "Open"
   },
   {
