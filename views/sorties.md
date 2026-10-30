@@ -56,7 +56,7 @@ Full wall registry with reasons: `atlas/walls.md` (surface-scoped walls render o
 | #302 | A390395(735) — maximum size of S ⊆ {1..735} with no solution 1/a = …[truncated; see source] | open-easy | Enumerate all harmonic triples a < b < c <= 735 with 1/a = …[truncated; see source] | C3 |
 | #304 | A097849(106) — max over 1<=k<=106 of the minimal number of unit …[truncated; see source] | open-easy | Exact-arithmetic check that each listed 1/n_1+...+1/n_t …[truncated; see source] | C3 |
 | #327 | A384927(5001) — max size of S in {1..5001} with a+b never dividing ab …[truncated; see source] | open-easy | Set check is O(k^2) ~ 6.2M integer divisibility tests …[truncated; see source] | C3 |
-| #357 | A364132(29) — least n such that {1..n} contains an increasing 29-term …[truncated; see source] | open-easy | compute prefix sums and check all 435 pairwise differences …[truncated; see source] | C1 |
+| #357 | A364132(30) — least n such that {1..n} contains an increasing 30-term …[truncated; see source] | open-easy | compute prefix sums and check all 465 pairwise differences …[truncated; see source] | C1 |
 | #365 | A060355(40) — smallest k > 10^22 with k and k+1 both powerful (next …[truncated; see source] | open-easy | factor k and k+1, check all prime exponents >= 2 on both — …[truncated; see source] | C3 |
 | #373 | solutions of n! = a_1! a_2! ... a_k! with n-1 > a_1 >= ... >= a_k >= …[truncated; see source] | open-easy | prime-valuation comparison: v_p(n!) = sum floor(n/p^i) must …[truncated; see source] | C3 |
 | #382 | A388850(14) — least start u of a maximal run of exactly 15 …[truncated; see source] | open-easy | factor the <= 17 integers involved, take the largest prime …[truncated; see source] | C3 |
@@ -168,6 +168,7 @@ Every promoted claim replays in one command; the fastest way to learn the receip
 - `erdos-142-cone-infeasible-objects`: `python3 -I certificates/erdos-142-cone-obstruction/verify.py`
 - `erdos-142-foundation`: `python3 -I certificates/erdos-142/verify.py`
 - `erdos-357-a364132-28`: `python3 -I certificates/erdos-357/verify_ford_a28.py --full`
+- `erdos-357-a364132-29`: `python3 -I certificates/erdos-357/verify_ford_a29.py --full`
 - `erdos-357-a364132-a364153-new`: `python3 -I certificates/erdos-357/verify.py --full`
 - `erdos-357-a364132-a364153-published`: `python3 -I certificates/erdos-357/verify.py`
 - `erdos-357-a364153-17`: `python3 -I certificates/erdos-357/verify_ford_a17.py --full`

@@ -2767,6 +2767,96 @@
    ]
   },
   {
+   "id": "erdos-357-a364132-29",
+   "status": "promoted",
+   "statement": "A364132(29) = 79: Ford's separately written engine ss_cleanroom.c answers NONE on all 38 parts of the search for an increasing 29-sequence in {1..78} with all 435 segment sums distinct, so no such sequence exists and A364132(29) >= 79; it answers FOUND at 79 with the sequence 7, 25, 26, 31, 34, 41, 43, 45, 49, 50, 52, 53, 54, 55, 56, 61, 63, 64, 66, 67, 69, 70, 71, 72, 73, 74, 76, 77, 79, whose segment sums are checked distinct by brute force, so A364132(29) <= 79.",
+   "scope": "Finite exhaustive search: an exhaustive computer search by two independent engines, not a proof. A364132(29) = 79 is new: OEIS A364132 lists a(1..22) (re-checked 2026-10-30; A364132(23..28) are new in contracts erdos-357-a364132-a364153-new and erdos-357-a364132-28). ss_cleanroom.c was written from the OEIS definition alone; segsum.c (the atlas engine, unchanged) repeated the refutations at N = 76, 77 and 78 (about 1.6e12 and 4.8e11 nodes in the two engines). The two are independent code using the same left-to-right segment-sum bitset method, not independent mathematics. The fast replay re-runs no search at 76..79 and does not certify; --full re-runs all 116 ss searches and the 3 segsum searches byte for byte. Says nothing about the asymptotic question of Erdos #357.",
+   "machine_verdict": "\"verified_ford_a364132_29\":true",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-357/README.md",
+     "contains": "**A364132(29) = 79: new, since OEIS lists A364132(1..22); an exhaustive computer search by two independent engines, not a proof.**",
+     "overclaim_guards": [
+      "resolves Erdős #357",
+      "proves the conjecture"
+     ]
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-357/verify_ford_a29.py",
+     "sha256": "9fab20d77582abff68543e32122d5c754f079dbbfd8cabfd0ce29b2aa091bafd"
+    },
+    {
+     "path": "certificates/erdos-357/ss_cleanroom.c",
+     "sha256": "cc5d0992e8856f440c1fb851b3498eb09bcf23e84fdd9e20df6a6c28ff77d514"
+    },
+    {
+     "path": "certificates/erdos-357/ford_searches_a364132_29.txt",
+     "sha256": "edf1fbea2839bcbbc7817a73512b632104cc06bd5bb600e3b82cfe9f42f26360"
+    },
+    {
+     "path": "certificates/erdos-357/g4_crosscheck_a364132_29.txt",
+     "sha256": "eab6cdb72027b07c05ccbc5d8363423e395dcb857774a373c98d72692d8604c3"
+    },
+    {
+     "path": "certificates/erdos-357/ford_searches_a364132_28.txt",
+     "sha256": "6670a13cd18933778e404522c11453ce4ac55b27b1f5a65e7a0560211ffff143"
+    },
+    {
+     "path": "certificates/erdos-357/segsum.c",
+     "sha256": "b0228c31c7ac9ea83a9ba7793f614a1c7450b75592cb66bc7d831672f068d145"
+    },
+    {
+     "path": "certificates/erdos-357/RESULT.json",
+     "sha256": "3f599d7ee62aad3eb490a6a835fde0e3be4bef490c8a4d86f900bb8f0297ac35"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": false,
+     "entrypoint": "certificates/erdos-357/verify_ford_a29.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-357/verify_ford_a29.py"
+     ],
+     "timeout_seconds": 600,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"receipt_consistent_a364132_29\":true",
+      "all checks passed"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "Every replay must find, in the committed answers alone, all 38 parts of the m29@N search present and NONE at every N = 76, 77 and 78 and the FOUND part 14/38 at 79, check the FOUND 29-sequence by brute force alone (strictly increasing in 1..79, maximum 79, all 435 segment sums distinct), require the second engine (segsum.c, g4_crosscheck_a364132_29.txt) to answer none at 76, 77 and 78, take A364132(28) = 75 from a brute-checked FOUND line in ford_searches_a364132_28.txt, reproduce A364132(1..20) of RESULT.json with ss_cleanroom.c (NONE at a(n) - 1, FOUND at a(n)), and reject six planted failures (a witness whose last term is 25 + 26 + 31 = 82, a witness starting 1, 2, 3, part 37 of m29@78 flipped to FOUND, part 11 of m29@78 dropped, the second engine flipped to found at 78, a non-increasing sequence). A search that missed sequences would disagree with the second engine; one that invented them would fail the brute-force check."
+     }
+    },
+    {
+     "profile": "slow",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-357/verify_ford_a29.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-357/verify_ford_a29.py",
+      "--full"
+     ],
+     "timeout_seconds": 604800,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"verified_ford_a364132_29\":true",
+      "all checks passed"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "Every replay must find, in the committed answers alone, all 38 parts of the m29@N search present and NONE at every N = 76, 77 and 78 and the FOUND part 14/38 at 79, check the FOUND 29-sequence by brute force alone (strictly increasing in 1..79, maximum 79, all 435 segment sums distinct), require the second engine (segsum.c, g4_crosscheck_a364132_29.txt) to answer none at 76, 77 and 78, take A364132(28) = 75 from a brute-checked FOUND line in ford_searches_a364132_28.txt, reproduce A364132(1..20) of RESULT.json with ss_cleanroom.c (NONE at a(n) - 1, FOUND at a(n)), and reject six planted failures (a witness whose last term is 25 + 26 + 31 = 82, a witness starting 1, 2, 3, part 37 of m29@78 flipped to FOUND, part 11 of m29@78 dropped, the second engine flipped to found at 78, a non-increasing sequence). A search that missed sequences would disagree with the second engine; one that invented them would fail the brute-force check."
+     }
+    }
+   ]
+  },
+  {
    "id": "erdos-864-a389182-published",
    "status": "promoted",
    "statement": "A389182(1..80) as published in OEIS: for each N, an exhaustive search decides whether a set of size a(N-1) + 1 containing 1 and N exists, and each step comes with an explicit set.",
