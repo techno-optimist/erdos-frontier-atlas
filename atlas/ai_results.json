@@ -1,0 +1,323 @@
+{
+ "schema": "efa-ai-results-v1",
+ "purpose": "Quantitative results outside the Erdős set that sources report or claim with AI assistance. Values are copied from the cited source; nothing here is independently checked and no atlas status changes.",
+ "retrieved": "2026-10-30",
+ "counts": {
+  "entries": 12,
+  "ai_involvement_confirmed": 10,
+  "ai_involvement_unconfirmed": 2
+ },
+ "entries": [
+  {
+   "id": "C-1",
+   "quantity": "matrix multiplication exponent ω (upper bound)",
+   "prior": {
+    "value": "ω < 2.371339",
+    "source": "previous best bound as cited by the paper (combination-loss line: Duan et al. 2022; Williams et al. 2024; Alman et al. 2025)"
+   },
+   "new": {
+    "value": "ω < 2.371177"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2608.16884"
+   ],
+   "authors": "Dupont, Eisenberger, Kozlovskii, Mehrabian, et al.",
+   "date": "2026-08-17",
+   "date_basis": "arXiv v1 date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "Abstract states the optimisation algorithm was refined with AlphaEvolve."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": []
+  },
+  {
+   "id": "C-2",
+   "quantity": "kissing-number lower bounds K(n) in 19 dimensions (selected values)",
+   "prior": {
+    "value": "K(25) ≥ 197579; K(27) ≥ 201566; K(38) ≥ 591612; K(43) ≥ 2545056; K(45) ≥ 7379838; K(55) ≥ 53299730",
+    "source": "previous constructions as cited by the paper (including Kravatskiy and others)"
+   },
+   "new": {
+    "value": "K(25) ≥ 197580; K(27) ≥ 201567; K(38) ≥ 591900; K(43) ≥ 2553792; K(45) ≥ 7380090; K(55) ≥ 53301140"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2609.35051"
+   ],
+   "authors": "Yang, Zhao, Wu, Wang, et al.",
+   "date": "2026-09-28",
+   "date_basis": "arXiv v1 date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "Paper states the constructions came from the Qiushi Engine, an autonomous multi-agent system."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Only six of the 19 dimensions are listed here; see the paper for the full table."
+  },
+  {
+   "id": "C-3",
+   "quantity": "kissing-number lower bounds τ_n, dimensions 25–31",
+   "prior": {
+    "value": "τ_25 ≥ 197056 (Leech-lattice lifting)",
+    "source": "as cited by the paper"
+   },
+   "new": {
+    "value": "τ_25 ≥ 197058; τ_26 ≥ 198552; τ_27 ≥ 200046; τ_28 ≥ 204522; τ_29 ≥ 209497; τ_30 ≥ 220442; τ_31 ≥ 238354"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2609.21591"
+   ],
+   "authors": "Takhanov, Yun",
+   "date": "2026-09-18",
+   "date_basis": "arXiv v1 date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "unconfirmed",
+    "detail": "The paper does not state AI involvement."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "C-2 (posted later) reports K(25) ≥ 197580, above this τ_25 value; read each bound against its source."
+  },
+  {
+   "id": "C-4",
+   "quantity": "Erdős minimum-overlap constant μ (lower bound)",
+   "prior": {
+    "value": "μ ≥ 0.37912",
+    "source": "Kim–Pilanci, as cited by the paper"
+   },
+   "new": {
+    "value": "μ ≥ 0.380552"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2608.23691"
+   ],
+   "authors": "Chung, Du, Wesley",
+   "date": "2026-08-24",
+   "date_basis": "arXiv v1 date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "Paper states the bound came from The Station, an open-world multi-agent AI environment."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "erdos:36",
+    "atlas/gap_map.json#problem=36"
+   ],
+   "note": "The paper compares against a published upper bound of 0.380868 and reports closing about 82% of the gap. The atlas gap map (problem 36) still lists White's 0.379005 as its lower value and this project's 0.38085942… as its upper value; that entry is not changed here and is flagged for review."
+  },
+  {
+   "id": "C-5",
+   "quantity": "nine two-colour Ramsey lower bounds",
+   "prior": {
+    "value": "R(3,13) ≥ 60; R(3,18) ≥ 99; R(4,13) ≥ 138; R(4,14) ≥ 147; R(4,15) ≥ 158; R(4,16) ≥ 170; R(4,18) ≥ 205; R(4,19) ≥ 213; R(4,20) ≥ 234",
+    "source": "previous lower bounds as cited by the paper"
+   },
+   "new": {
+    "value": "R(3,13) ≥ 61; R(3,18) ≥ 100; R(4,13) ≥ 139; R(4,14) ≥ 148; R(4,15) ≥ 159; R(4,16) ≥ 174; R(4,18) ≥ 209; R(4,19) ≥ 219; R(4,20) ≥ 237"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2603.09172"
+   ],
+   "authors": "Nagda, Raghavan, Thakurta",
+   "date": "2026-03-10",
+   "date_basis": "arXiv v1 date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "Abstract states the constructions were found with AlphaEvolve."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": []
+  },
+  {
+   "id": "C-6",
+   "quantity": "cap-set capacity constant C (lower bound)",
+   "prior": {
+    "value": "C ≥ 2.2202",
+    "source": "FunSearch (2023), as cited by the paper"
+   },
+   "new": {
+    "value": "C ≥ 2.2203"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2508.07932"
+   ],
+   "authors": "Zhai, Wei, Li, Pan, et al.",
+   "date": "2025-08-11",
+   "date_basis": "arXiv v1 date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "Paper states the construction came from X-evolve, an LLM-driven evolutionary search."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": []
+  },
+  {
+   "id": "C-7",
+   "quantity": "Lehmer's problem: small Mahler measure at high degree",
+   "prior": {
+    "value": "previously published smallest Mahler measures at six degrees",
+    "source": "as cited by the paper"
+   },
+   "new": {
+    "value": "a generalised Boyd construction with Mahler measure below 1.255434 at every even degree up to 2000; six previously published values improved"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2610.30277"
+   ],
+   "authors": "Chervonyi, Gukov, Luong",
+   "date": "2026-10-21",
+   "date_basis": "arXiv v1 date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "Paper states a human–AI discovery loop."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": []
+  },
+  {
+   "id": "C-8",
+   "quantity": "sixth Schur number S(6) (lower bound)",
+   "prior": {
+    "value": "S(6) ≥ 536",
+    "source": "Fredricksen–Sweet (2000)"
+   },
+   "new": {
+    "value": "S(6) ≥ 537; the paper derives S(8) ≥ 5372, S(11) ≥ 204208, S(13) ≥ 2042082 and R_6(3) ≥ 539"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2610.31362"
+   ],
+   "authors": "Chen, Zhu, Long",
+   "date": "2026-10-22",
+   "date_basis": "arXiv v1 date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "unconfirmed",
+    "detail": "The paper does not state AI involvement."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": []
+  },
+  {
+   "id": "C-9",
+   "quantity": "Jacobian conjecture, dimension 3",
+   "prior": {
+    "value": "open",
+    "source": "formal-conjectures statement prior to PR #4474"
+   },
+   "new": {
+    "value": "a reported counterexample in dimension 3, with a Lean development"
+   },
+   "source_urls": [
+    "https://doi.org/10.5281/zenodo.21507801",
+    "https://zenodo.org/records/21514514",
+    "https://github.com/google-deepmind/formal-conjectures/pull/4474"
+   ],
+   "date": "2026-07-19",
+   "date_basis": "announcement date per the atlas jc-crater root claim; Zenodo deposits dated 2026-07-23; formal-conjectures PR merged 2026-07-26",
+   "attribution": "reported",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "Construction credited to Claude Fable (assistance), per the Zenodo notes and the atlas jc-crater root claim."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "atlas/jc-crater/root_claim.json"
+   ],
+   "note": "Already tracked in atlas/jc-crater; this entry adds no status."
+  },
+  {
+   "id": "C-10",
+   "quantity": "Fel's conjecture (numerical semigroups)",
+   "prior": {
+    "value": "conjecture",
+    "source": "as cited by the paper"
+   },
+   "new": {
+    "value": "a reported Lean-checked proof"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2602.03716",
+    "https://github.com/AxiomMath/fel-polynomial"
+   ],
+   "date": "2026-02-03",
+   "date_basis": "arXiv v1 date",
+   "attribution": "reported",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "Paper states AxiomProver produced the Lean proof."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": []
+  },
+  {
+   "id": "C-11",
+   "quantity": "sphere packing in dimensions 8 and 24 (formalisation)",
+   "prior": {
+    "value": "informal proofs (Viazovska 2016; Cohn–Kumar–Miller–Radchenko–Viazovska 2017)",
+    "source": "as cited by Math Inc"
+   },
+   "new": {
+    "value": "a reported Lean formalisation of about 200,000 lines"
+   },
+   "source_urls": [
+    "https://www.math.inc/sphere-packing",
+    "https://github.com/math-inc/Sphere-Packing-Lean"
+   ],
+   "date": "2026-02-23",
+   "date_basis": "repository creation date (UTC)",
+   "attribution": "reported",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "Math Inc states the formalisation was produced with its Gauss autoformalisation agent."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "A formalisation of known theorems, not a new bound."
+  },
+  {
+   "id": "C-12",
+   "quantity": "recursive-line Zarankiewicz numbers zr(m,4)",
+   "prior": {
+    "value": "values for most m open",
+    "source": "as cited by the paper"
+   },
+   "new": {
+    "value": "zr(m,4) = ⌊(5m+6)/2⌋ for m ≥ 15; 18 of 19 small values; 37 ≤ zr(14,4) ≤ 38"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2609.11093"
+   ],
+   "authors": "Chen, Chen",
+   "date": "2026-09-10",
+   "date_basis": "arXiv v1 date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "Abstract describes the work as AI-assisted discovery."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": []
+  }
+ ]
+}

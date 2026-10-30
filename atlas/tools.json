@@ -1,0 +1,476 @@
+{
+ "schema": "efa-tools-v1",
+ "purpose": "Index of AI-assisted discovery tools, systems, registries, datasets and benchmarks that touch the atlas. Each item cites primary URLs. Listing an item is not an endorsement and does not change any status.",
+ "retrieved": "2026-10-30",
+ "counts": {
+  "items": 24,
+  "by_kind": {
+   "benchmark": 6,
+   "dataset": 4,
+   "registry": 3,
+   "system": 11
+  }
+ },
+ "items": [
+  {
+   "id": "B-1",
+   "name": "Palomar",
+   "kind": "registry",
+   "org": "Palomar (announced on Terence Tao's blog)",
+   "first_public_date": "2026-08-18",
+   "date_basis": "announcement post date",
+   "primary_urls": [
+    "https://terrytao.wordpress.com/2026/08/18/palomar-a-registry-of-lean-verified-mathematics/",
+    "https://palomar-registry.org/statement",
+    "https://data.palomar-registry.org/api/v1/results"
+   ],
+   "areas": [
+    "formal verification",
+    "registries"
+   ],
+   "verification_mode": "Lean (kernel check plus comparator)",
+   "atlas_nodes_touched": [
+    "atlas/ai_claims.json"
+   ],
+   "note": "Registry of Lean-verified results with a public CC0 JSON API."
+  },
+  {
+   "id": "B-2",
+   "name": "AlphaProof Nexus",
+   "kind": "system",
+   "org": "Google DeepMind",
+   "first_public_date": "2026-05-21",
+   "date_basis": "arXiv v1 date; Science version published 2026-10-08",
+   "primary_urls": [
+    "https://doi.org/10.1126/science.aej2213",
+    "https://arxiv.org/abs/2605.22763",
+    "https://github.com/google-deepmind/alphaproof-nexus-results"
+   ],
+   "areas": [
+    "Erdős problems",
+    "OEIS conjectures",
+    "formal proof search"
+   ],
+   "verification_mode": "Lean",
+   "atlas_nodes_touched": [
+    "atlas/ai_claims.json"
+   ],
+   "note": "Paper reports 9 of 353 open Erdős problems and 44 of 492 OEIS conjectures addressed by its agent (reported)."
+  },
+  {
+   "id": "B-3",
+   "name": "AlphaEvolve (mathematics paper and results)",
+   "kind": "system",
+   "org": "Google DeepMind",
+   "first_public_date": "2026-09-30",
+   "date_basis": "PNAS publication date (Crossref); results repo created 2025-05-13",
+   "primary_urls": [
+    "https://doi.org/10.1073/pnas.2536158123",
+    "https://github.com/google-deepmind/alphaevolve_results"
+   ],
+   "areas": [
+    "combinatorics",
+    "analysis",
+    "geometry",
+    "optimisation constants"
+   ],
+   "verification_mode": "numerical or exact constructions checked by scripts",
+   "atlas_nodes_touched": [
+    "atlas/gap_map.json"
+   ]
+  },
+  {
+   "id": "B-4",
+   "name": "openai/math manuscript corpus",
+   "kind": "dataset",
+   "org": "OpenAI",
+   "first_public_date": "2026-10-06",
+   "date_basis": "repository creation date",
+   "primary_urls": [
+    "https://github.com/openai/math"
+   ],
+   "areas": [
+    "number theory",
+    "combinatorics",
+    "geometry",
+    "analysis"
+   ],
+   "verification_mode": "manuscripts; Lean for a subset",
+   "atlas_nodes_touched": [
+    "atlas/openai_math.json"
+   ],
+   "note": "The atlas indexes 22 families (atlas/openai_math.json)."
+  },
+  {
+   "id": "B-5",
+   "name": "FrontierMath: Open Problems",
+   "kind": "benchmark",
+   "org": "Epoch AI",
+   "first_public_date": "2026",
+   "date_basis": "page undated; year only",
+   "primary_urls": [
+    "https://epoch.ai/frontiermath/open-problems"
+   ],
+   "areas": [
+    "research-level open problems"
+   ],
+   "verification_mode": "expert review",
+   "atlas_nodes_touched": []
+  },
+  {
+   "id": "B-6",
+   "name": "LeanOpenProblems harness and results",
+   "kind": "benchmark",
+   "org": "Epoch AI",
+   "first_public_date": "2026-06-01",
+   "date_basis": "harness repository creation date; results repo created 2026-08-10",
+   "primary_urls": [
+    "https://github.com/epoch-research/LeanOpenProblems",
+    "https://github.com/epoch-research/LeanOpenProblems-results"
+   ],
+   "areas": [
+    "OEIS conjectures",
+    "Erdős problems"
+   ],
+   "verification_mode": "Lean",
+   "atlas_nodes_touched": [
+    "atlas/stubs.json"
+   ]
+  },
+  {
+   "id": "B-7",
+   "name": "OEIS Open",
+   "kind": "benchmark",
+   "org": "Tom Adamczewski",
+   "first_public_date": "2026-08-12",
+   "date_basis": "arXiv v1 date",
+   "primary_urls": [
+    "https://arxiv.org/abs/2608.11941"
+   ],
+   "areas": [
+    "OEIS conjectures"
+   ],
+   "verification_mode": "Lean",
+   "atlas_nodes_touched": [
+    "atlas/stubs.json"
+   ],
+   "note": "Paper reports 147 of 492 Lean-formalised OEIS conjectures resolved by tool-using language models at $50 per attempt."
+  },
+  {
+   "id": "B-8",
+   "name": "First Proof (second batch)",
+   "kind": "benchmark",
+   "org": "Abouzaid, Srivastava, Ward, Williams",
+   "first_public_date": "2026-06-16",
+   "date_basis": "arXiv v1 date",
+   "primary_urls": [
+    "https://arxiv.org/abs/2606.18119",
+    "https://1stproof.org"
+   ],
+   "areas": [
+    "research-level problems"
+   ],
+   "verification_mode": "expert refereeing",
+   "atlas_nodes_touched": []
+  },
+  {
+   "id": "B-9",
+   "name": "optimizationproblems",
+   "kind": "dataset",
+   "org": "Tao, Davis, Ivanisvili (teorth)",
+   "first_public_date": "2026-01-22",
+   "date_basis": "announcement post date; repository created 2026-01-23 (UTC)",
+   "primary_urls": [
+    "https://teorth.github.io/optimizationproblems/",
+    "https://github.com/teorth/optimizationproblems",
+    "https://terrytao.wordpress.com/2026/01/22/"
+   ],
+   "areas": [
+    "optimisation constants"
+   ],
+   "verification_mode": "community-maintained bounds with sources",
+   "atlas_nodes_touched": [
+    "atlas/gap_map.json"
+   ]
+  },
+  {
+   "id": "B-10",
+   "name": "SAIR Mathematics Distillation Challenge: Equational Theories (stage 2)",
+   "kind": "benchmark",
+   "org": "SAIR",
+   "first_public_date": "2026-03-13",
+   "date_basis": "announcement post date; certificate-cascade solver paper 2026-09-01",
+   "primary_urls": [
+    "https://terrytao.wordpress.com/2026/03/13/",
+    "https://github.com/SAIRcompetition/equational-theories-lean-stage2",
+    "https://arxiv.org/abs/2609.00706"
+   ],
+   "areas": [
+    "universal algebra"
+   ],
+   "verification_mode": "Lean judge",
+   "atlas_nodes_touched": []
+  },
+  {
+   "id": "B-11",
+   "name": "The Station",
+   "kind": "system",
+   "org": "Chung, Du, Wesley",
+   "first_public_date": "2026-08-24",
+   "date_basis": "arXiv v1 date",
+   "primary_urls": [
+    "https://arxiv.org/abs/2608.23691"
+   ],
+   "areas": [
+    "combinatorics",
+    "geometry",
+    "analysis"
+   ],
+   "verification_mode": "exact constructions or Lean",
+   "atlas_nodes_touched": [
+    "atlas/ai_results.json"
+   ]
+  },
+  {
+   "id": "B-12",
+   "name": "Qiushi Engine",
+   "kind": "system",
+   "org": "Yang et al.",
+   "first_public_date": "2026-09-28",
+   "date_basis": "arXiv v1 date of the kissing-number paper",
+   "primary_urls": [
+    "https://arxiv.org/abs/2609.35051"
+   ],
+   "areas": [
+    "discrete geometry"
+   ],
+   "verification_mode": "finite certificates",
+   "atlas_nodes_touched": [
+    "atlas/ai_results.json"
+   ]
+  },
+  {
+   "id": "B-13",
+   "name": "ExpEvolve",
+   "kind": "system",
+   "org": "Chen et al.",
+   "first_public_date": "2026-10-21",
+   "date_basis": "arXiv v1 date",
+   "primary_urls": [
+    "https://arxiv.org/abs/2610.29303"
+   ],
+   "areas": [
+    "evolutionary program search"
+   ],
+   "verification_mode": "task scoring functions",
+   "atlas_nodes_touched": []
+  },
+  {
+   "id": "B-14",
+   "name": "X-evolve",
+   "kind": "system",
+   "org": "Zhai et al.",
+   "first_public_date": "2025-08-11",
+   "date_basis": "arXiv v1 date",
+   "primary_urls": [
+    "https://arxiv.org/abs/2508.07932"
+   ],
+   "areas": [
+    "combinatorics",
+    "information theory"
+   ],
+   "verification_mode": "explicit constructions",
+   "atlas_nodes_touched": [
+    "atlas/ai_results.json"
+   ]
+  },
+  {
+   "id": "B-15",
+   "name": "PackingStar",
+   "kind": "system",
+   "org": "Ma et al.",
+   "first_public_date": "2025-11-17",
+   "date_basis": "arXiv v1 date",
+   "primary_urls": [
+    "https://arxiv.org/abs/2511.13391"
+   ],
+   "areas": [
+    "discrete geometry"
+   ],
+   "verification_mode": "explicit configurations",
+   "atlas_nodes_touched": []
+  },
+  {
+   "id": "B-16",
+   "name": "Aletheia",
+   "kind": "system",
+   "org": "Google DeepMind",
+   "first_public_date": "2026-01-29",
+   "date_basis": "arXiv v1 date of the Erdős case study; FirstProof report 2026-02-24",
+   "primary_urls": [
+    "https://arxiv.org/abs/2601.22401",
+    "https://arxiv.org/abs/2602.21201"
+   ],
+   "areas": [
+    "Erdős problems",
+    "research-level problems"
+   ],
+   "verification_mode": "expert review",
+   "atlas_nodes_touched": [
+    "atlas/ai_claims.json"
+   ]
+  },
+  {
+   "id": "B-17",
+   "name": "Aristotle",
+   "kind": "system",
+   "org": "Harmonic",
+   "first_public_date": "2026-01-12",
+   "date_basis": "arXiv v1 date of the earliest linked writeup (Erdős #728)",
+   "primary_urls": [
+    "https://arxiv.org/abs/2601.07421",
+    "https://arxiv.org/abs/2605.20120"
+   ],
+   "areas": [
+    "Erdős problems",
+    "olympiad problems"
+   ],
+   "verification_mode": "Lean",
+   "atlas_nodes_touched": [
+    "atlas/ai_claims.json"
+   ]
+  },
+  {
+   "id": "B-18",
+   "name": "AxiomProver",
+   "kind": "system",
+   "org": "Axiom Math",
+   "first_public_date": "2026-02-03",
+   "date_basis": "arXiv v1 date of the Fel's conjecture paper",
+   "primary_urls": [
+    "https://arxiv.org/abs/2602.03716",
+    "https://github.com/AxiomMath/fel-polynomial"
+   ],
+   "areas": [
+    "commutative algebra"
+   ],
+   "verification_mode": "Lean",
+   "atlas_nodes_touched": [
+    "atlas/ai_results.json"
+   ]
+  },
+  {
+   "id": "B-19",
+   "name": "Gauss",
+   "kind": "system",
+   "org": "Math Inc",
+   "first_public_date": "2026-02-23",
+   "date_basis": "creation date (UTC) of the Sphere-Packing-Lean repository",
+   "primary_urls": [
+    "https://www.math.inc/sphere-packing",
+    "https://github.com/math-inc/Sphere-Packing-Lean"
+   ],
+   "areas": [
+    "autoformalisation",
+    "discrete geometry"
+   ],
+   "verification_mode": "Lean",
+   "atlas_nodes_touched": [
+    "atlas/ai_results.json"
+   ]
+  },
+  {
+   "id": "B-20",
+   "name": "PutnamBench leaderboard",
+   "kind": "benchmark",
+   "org": "trishullab",
+   "first_public_date": "2024-04-26",
+   "date_basis": "repository creation date (UTC)",
+   "primary_urls": [
+    "https://trishullab.github.io/PutnamBench/leaderboard",
+    "https://github.com/trishullab/PutnamBench"
+   ],
+   "areas": [
+    "competition mathematics"
+   ],
+   "verification_mode": "Lean, Isabelle, Coq",
+   "atlas_nodes_touched": [],
+   "note": "Leaderboard snapshot not copied; read the live page for current entries."
+  },
+  {
+   "id": "B-21",
+   "name": "whataifound.org",
+   "kind": "registry",
+   "org": "Yigit Isik",
+   "first_public_date": "2026-07-23",
+   "date_basis": "repository creation date (UTC)",
+   "primary_urls": [
+    "https://whataifound.org",
+    "https://github.com/yigitisik/whataifound"
+   ],
+   "areas": [
+    "AI-found results across mathematics"
+   ],
+   "verification_mode": "links to sources",
+   "atlas_nodes_touched": []
+  },
+  {
+   "id": "B-22",
+   "name": "ai-discovery-data",
+   "kind": "dataset",
+   "org": "Tom Cunningham",
+   "first_public_date": "2026-08-10",
+   "date_basis": "repository creation date (UTC)",
+   "primary_urls": [
+    "https://tecunningham.github.io/ai-discovery-data/",
+    "https://github.com/tecunningham/ai-discovery-data"
+   ],
+   "areas": [
+    "measurement of AI contributions to discovery"
+   ],
+   "verification_mode": "public-source datasets",
+   "atlas_nodes_touched": []
+  },
+  {
+   "id": "B-23",
+   "name": "Bounds Ledger",
+   "kind": "registry",
+   "org": "u00dxk2 (maintainer identity not stated)",
+   "first_public_date": "2026-07-22",
+   "date_basis": "repository creation date (UTC)",
+   "primary_urls": [
+    "https://u00dxk2.github.io/bounds-ledger/",
+    "https://github.com/u00dxk2/bounds-ledger"
+   ],
+   "areas": [
+    "published bounds and constants"
+   ],
+   "verification_mode": "continuous re-verification (per its repository description)",
+   "atlas_nodes_touched": [
+    "atlas/gap_map.json"
+   ],
+   "note": "Provenance of the maintainer is unconfirmed."
+  },
+  {
+   "id": "B-24",
+   "name": "Erdosproblems LLM hunter; What the Machine Invented",
+   "kind": "dataset",
+   "org": "mehmetmars7 (community database); Ying Xie (survey)",
+   "first_public_date": "2026-01-17",
+   "date_basis": "hunter repository creation date (UTC); survey arXiv v1 2026-10-12",
+   "primary_urls": [
+    "https://mehmetmars7.github.io/Erdosproblems-llm-hunter/",
+    "https://github.com/mehmetmars7/Erdosproblems-llm-hunter",
+    "https://arxiv.org/abs/2610.17090"
+   ],
+   "areas": [
+    "Erdős problems",
+    "OpenAI manuscript corpus"
+   ],
+   "verification_mode": "community curation; literature survey",
+   "atlas_nodes_touched": [
+    "atlas/openai_math.json"
+   ]
+  }
+ ]
+}

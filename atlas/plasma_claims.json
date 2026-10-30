@@ -6799,7 +6799,7 @@
    "plasma_status": "claimed (unverified by atlas)",
    "our_recorded_status": "open",
    "upstream_status": "Open",
-   "upstream_state_raw": "open",
+   "upstream_state_raw": "open (Lean)",
    "status_changed_by_this_entry": false,
    "source": {
     "repo": "plasma-ai/erdos",
