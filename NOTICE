@@ -2,8 +2,9 @@ The Erdős Frontier Atlas — hub index (atlas/stubs.json)
 =======================================================
 
 The machine-readable hub index (atlas/stubs.json) is compiled by
-tools/build_stubs.py from the following Apache-2.0 licensed sources. Their
-content is used under the terms of the Apache License, Version 2.0. Each stub
+tools/build_stubs.py from the following Apache-2.0 licensed sources (1, 2). Their
+content is used under the terms of the Apache License, Version 2.0. A
+separate claim overlay draws metadata from a CC BY 4.0 source (3). Each stub
 record carries per-source provenance (repo, file, commit SHA, SPDX license).
 
 1. teorth/erdosproblems  (https://github.com/teorth/erdosproblems)
@@ -17,6 +18,16 @@ record carries per-source provenance (repo, file, commit SHA, SPDX license).
    Used: FormalConjectures/ErdosProblems/*.lean — informal problem statements
    (docstrings) and formalization metadata for the formalized subset.
    Licensed under Apache-2.0.
+
+3. plasma-ai/erdos  (https://github.com/plasma-ai/erdos)
+   Plasma AI. Wiki content licensed under CC BY 4.0
+   (https://creativecommons.org/licenses/by/4.0/); code under Apache-2.0.
+   Used: atlas/plasma_claims.json — METADATA ONLY (wiki standing labels, claim
+   status, scope, dates, authors, links and bound values), re-keyed per Erdős
+   number and annotated with this atlas's own review. No problem statements,
+   claim descriptions or erdosproblems.com prose are copied. Each record carries
+   its source file and commit and the attribution
+   "Plasma AI, github.com/plasma-ai/erdos, CC BY 4.0".
 
 erdosproblems.com (Thomas Bloom) is the canonical HUMAN index of the Erdős
 problems. This repository is its computational annex: it LINKS to each problem
