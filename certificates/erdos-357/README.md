@@ -34,6 +34,7 @@ The next cells: A364132(28) lies in [70, 76] and A364153(17) in [24, 26], the up
 Update 2026-10-28: A364153(17) = 26 is now decided by a separate search (next section), so the any-order companion cell is A364153(18) ≥ 26;
 A364132(28) ∈ [70, 76] is unchanged.
 Update 2026-10-29: A364132(28) = 75 is now decided by the same separate engine (addendum below), so the next cell is A364132(29) ≥ 76.
+Update 2026-10-30: A364153(18) = 28 is now decided by the same separate engine (addendum below), so the any-order companion cell is A364153(19) ≥ 29.
 
 ## Method
 
@@ -193,6 +194,57 @@ The raw searches ran on 2026-10-28 and 2026-10-29; the segsum m27@68 control lin
 was re-run separately on 2026-10-29. RESULT.json, `verify.py`,
 `ss_cleanroom.c` and the other files above are unchanged. Not submitted to OEIS here.
 Nothing in this addendum bears on the asymptotic question.
+
+## Addendum (2026-10-30, Ford): A364153(18) = 28
+
+**A364153(18) = 28: new, since OEIS lists A364153(1..13); an exhaustive computer search by two independent engines, not a proof.**
+
+| n | A364153(n) | an n-sequence in {1..A364153(n)} with distinct segment sums |
+|---:|---:|---|
+| 18 | **28** | 1, 3, 2, 7, 22, 25, 28, 21, 27, 18, 24, 20, 23, 14, 26, 15, 17, 19 |
+
+No 18-sequence of distinct values from {1..27}, in any order, has all 171 segment
+sums distinct, and the sequence above (maximum 28) does. Two more 18-sequences with
+maximum 28 turned up in the same search (1, 6, 2, 28, 27, 16, 26, 23, 17, 21, 24, 22, 10, 19, 25, 14, 20, 13; and 1, 8, 4, 26, 7, 25, 24, 28, 27, 20, 21, 22, 18, 17, 19, 15, 14, 2); all three are checked by
+brute force.
+
+- **Engine.** The same `ss_cleanroom.c` as the A364153(17) addendum, in mode a (any
+  order, no symmetry breaking), split into 19 parts by dealing the admissible second
+  terms round-robin; together the parts cover the whole search.
+- **Searches** (`ford_searches_a364153_18.txt`, 42 lines): the control a16@23 part
+  0/14 (NONE, the same node count as before), all 19 parts NONE at N = 26 and at
+  N = 27 (about 1.5 × 10^11 and 3.9 × 10^11 nodes), and three FOUND lines at N = 28
+  (parts 1, 4 and 6 of 19, the three sequences above). The N = 28 run was stopped once
+  these were found, so its other parts were not run to the end; they are not needed. NONE at
+  27 alone gives A364153(18) ≥ 28; any one of the sequences gives ≤ 28.
+- **Second engine** (`g4_crosscheck_a364153_18.txt`): the unchanged `segsum.c`,
+  unpartitioned, answers none at 26 (148,693,548,809 nodes) and at 27
+  (388,784,217,499 nodes), and its a16@23 node count equals the one pinned in
+  RESULT.json. The two engines are independent code using the same method, not
+  independent mathematics.
+- **Checks** (`verify_ford_a18.py`): completeness of the parts, each sequence checked
+  by brute force alone, agreement of the two engines at 26 and 27, `ss_cleanroom.c`
+  reproducing A364153(1..12) of RESULT.json, a byte-for-byte re-run of the three FOUND
+  searches, and five planted failures (a witness whose last term is s_1 + s_2, a
+  flipped part, a dropped part, an engine disagreement, the collision 1 + 2 = 3), each
+  rejected.
+
+```sh
+python3 -I certificates/erdos-357/verify_ford_a18.py          # consistency + the 3 FOUND searches (~3 min; not certifying)
+python3 -I certificates/erdos-357/verify_ford_a18.py --full   # re-runs all 42 + 3 searches (about 1.1e12 nodes; many hours)
+```
+
+| file | role |
+|---|---|
+| `ford_searches_a364153_18.txt` | its 42 committed answers |
+| `g4_crosscheck_a364153_18.txt` | `segsum.c` on a16@23, a18@26 and a18@27 |
+| `verify_ford_a18.py` | the replay; reads the files above and RESULT.json, never writes them |
+
+The ss searches ran 2026-10-29; the segsum runs finished 2026-10-30 (the a16@23
+control line is the one from the A364153(17) cross-check, same binary). RESULT.json,
+`verify.py`, `ss_cleanroom.c` and the other files above are unchanged. Not submitted to
+OEIS here. Nothing in this addendum bears on A364132(29) or on the asymptotic
+question; Erdős #357 itself remains open.
 
 ## Scope — what is not certified
 
