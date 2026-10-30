@@ -146,6 +146,12 @@
      },
      "note": {
       "type": "string"
+     },
+     "vetting": {
+      "enum": [
+       "unvetted"
+      ],
+      "description": "Set on extraordinary claims recorded only because a primary source exists; such entries must have attribution 'claimed'."
      }
     }
    }
