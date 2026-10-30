@@ -5,7 +5,7 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 785,
-   "evidenced_by": 35,
+   "evidenced_by": 36,
    "has_surface": 316,
    "learned_from": 5,
    "measures": 223,
@@ -18,7 +18,7 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 39,
+   "evidence_claim": 40,
    "evidence_container": 36,
    "external_claim": 91,
    "incident": 19,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 4487,
-   "validator-enforced": 45
+   "validator-enforced": 46
   }
  },
  "edges": [
@@ -766,7 +766,7 @@
    "type": "applies"
   },
   {
-   "dst": "S:gap:357:1b3bc18c",
+   "dst": "S:gap:357:058d761c",
    "predicate": "workable",
    "source": "atlas/gap_map.json",
    "src": "M:witness-local-search",
@@ -8520,6 +8520,14 @@
    "type": "evidenced_by"
   },
   {
+   "dst": "E:claim:erdos-357-a364132-29",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P357",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
    "dst": "E:claim:erdos-357-a364132-a364153-new",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
@@ -9612,7 +9620,7 @@
    "type": "has_surface"
   },
   {
-   "dst": "S:gap:357:1b3bc18c",
+   "dst": "S:gap:357:058d761c",
    "source": "atlas/gap_map.json",
    "src": "P357",
    "tier": "deterministic-rule",
@@ -11574,7 +11582,7 @@
   {
    "dst": "O:A364132",
    "source": "atlas/gap_map.json",
-   "src": "S:gap:357:1b3bc18c",
+   "src": "S:gap:357:058d761c",
    "tier": "deterministic-rule",
    "type": "measures"
   },
@@ -34137,6 +34145,58 @@
    },
    "scope": "Finite exhaustive search: an exhaustive computer search by two independent engines, not a proof. A364132(28) = 75 is new: OEIS A364132 lists a(1..22) (re-checked 2026-10-29; A364132(23..27) are new in contract erdos-357-a364132-a364153-new). ss_cleanroom.c was written from the OEIS definition alone; segsum.c (the atlas engine, unchanged) repeated the verdicts at every N = 70..75 (none at 70..74, found at 75; about 8.8e11 and 2e11 nodes in the two engines). The two are independent code using the same left-to-right segment-sum bitset method, not independent mathematics. The fast replay re-runs only one FOUND search and does not certify; --full re-runs all 229 ss searches and the 7 segsum searches byte for byte. Says nothing about the asymptotic question of Erdos #357.",
    "statement": "A364132(28) = 75: Ford's separately written engine ss_cleanroom.c answers NONE on all 38 parts of the search for an increasing 28-sequence in {1..74} with all 406 segment sums distinct, so no such sequence exists and A364132(28) >= 75; it answers FOUND at 75 with the sequence 2, 3, 4, 6, 11, 25, 38, 40, 41, 47, 52, 54, 56, 57, 58, 60, 61, 62, 64, 66, 67, 68, 69, 70, 71, 72, 73, 75, whose segment sums are checked distinct by brute force, so A364132(28) <= 75.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
+     "path": "certificates/erdos-357/verify_ford_a29.py",
+     "sha256": "9fab20d77582abff68543e32122d5c754f079dbbfd8cabfd0ce29b2aa091bafd"
+    },
+    {
+     "path": "certificates/erdos-357/ss_cleanroom.c",
+     "sha256": "cc5d0992e8856f440c1fb851b3498eb09bcf23e84fdd9e20df6a6c28ff77d514"
+    },
+    {
+     "path": "certificates/erdos-357/ford_searches_a364132_29.txt",
+     "sha256": "edf1fbea2839bcbbc7817a73512b632104cc06bd5bb600e3b82cfe9f42f26360"
+    },
+    {
+     "path": "certificates/erdos-357/g4_crosscheck_a364132_29.txt",
+     "sha256": "eab6cdb72027b07c05ccbc5d8363423e395dcb857774a373c98d72692d8604c3"
+    },
+    {
+     "path": "certificates/erdos-357/ford_searches_a364132_28.txt",
+     "sha256": "6670a13cd18933778e404522c11453ce4ac55b27b1f5a65e7a0560211ffff143"
+    },
+    {
+     "path": "certificates/erdos-357/segsum.c",
+     "sha256": "b0228c31c7ac9ea83a9ba7793f614a1c7450b75592cb66bc7d831672f068d145"
+    },
+    {
+     "path": "certificates/erdos-357/RESULT.json",
+     "sha256": "3f599d7ee62aad3eb490a6a835fde0e3be4bef490c8a4d86f900bb8f0297ac35"
+    }
+   ],
+   "claim_id": "erdos-357-a364132-29",
+   "id": "E:claim:erdos-357-a364132-29",
+   "overclaim_guards": 2,
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-357/verify_ford_a29.py",
+     "--full"
+    ],
+    "profile": "slow",
+    "stdout_contains": [
+     "\"verified_ford_a364132_29\":true",
+     "all checks passed"
+    ]
+   },
+   "scope": "Finite exhaustive search: an exhaustive computer search by two independent engines, not a proof. A364132(29) = 79 is new: OEIS A364132 lists a(1..22) (re-checked 2026-10-30; A364132(23..28) are new in contracts erdos-357-a364132-a364153-new and erdos-357-a364132-28). ss_cleanroom.c was written from the OEIS definition alone; segsum.c (the atlas engine, unchanged) repeated the refutations at N = 76, 77 and 78 (about 1.6e12 and 4.8e11 nodes in the two engines). The two are independent code using the same left-to-right segment-sum bitset method, not independent mathematics. The fast replay re-runs no search at 76..79 and does not certify; --full re-runs all 116 ss searches and the 3 segsum searches byte for byte. Says nothing about the asymptotic question of Erdos #357.",
+   "statement": "A364132(29) = 79: Ford's separately written engine ss_cleanroom.c answers NONE on all 38 parts of the search for an increasing 29-sequence in {1..78} with all 435 segment sums distinct, so no such sequence exists and A364132(29) >= 79; it answers FOUND at 79 with the sequence 7, 25, 26, 31, 34, 41, 43, 45, 49, 50, 52, 53, 54, 55, 56, 61, 63, 64, 66, 67, 69, 70, 71, 72, 73, 74, 76, 77, 79, whose segment sums are checked distinct by brute force, so A364132(29) <= 79.",
    "status": "promoted",
    "type": "evidence_claim"
   },
@@ -74400,28 +74460,34 @@
      "contract": "erdos-357-a364153-18",
      "date": "2026-10-30",
      "type": "implementation"
+    },
+    {
+     "artifact": "certificates/erdos-357/verify_ford_a29.py (ss_cleanroom.c, ford_searches_a364132_29.txt; second engine segsum.c in g4_crosscheck_a364132_29.txt): A364132(29) = 79",
+     "contract": "erdos-357-a364132-29",
+     "date": "2026-10-30",
+     "type": "implementation"
     }
    ],
    "exact_feasibility": "cell",
-   "id": "S:gap:357:1b3bc18c",
+   "id": "S:gap:357:058d761c",
    "kind": "next_cell",
    "lower": {
-    "source": "A364132(28) = 75 (certificates/erdos-357, contract erdos-357-a364132-28) and a(n+1) > a(n): deleting the largest term of an increasing (n+1)-sequence leaves an n-sequence below it",
-    "value": "76",
+    "source": "A364132(29) = 79 (certificates/erdos-357, contract erdos-357-a364132-29) and a(n+1) > a(n): deleting the largest term of an increasing (n+1)-sequence leaves an n-sequence below it",
+    "value": "80",
     "year": 2026
    },
-   "notes": "COMPANION CELL CLOSED HERE (2026-10-30, Ford): A364153(18) = 28, new (OEIS lists A364153(1..13)). ss_cleanroom.c (mode a) answers NONE on all 19 parts of the any-order search with every term <= 27 (and <= 26) and FOUND at 28 on parts 1, 4 and 6 of 19, e.g. 1, 3, 2, 7, 22, 25, 28, 21, 27, 18, 24, 20, 23, 14, 26, 15, 17, 19 (all 171 segment sums distinct by brute force); segsum.c, unpartitioned, repeated the refutations at 26 and 27 (new files ford_searches_a364153_18.txt, g4_crosscheck_a364153_18.txt, verify_ford_a18.py; contract erdos-357-a364153-18). An exhaustive computer search by two independent engines, not a proof; same segment-sum bitset method. Next companion cell: A364153(19) >= 29 (monotone), no upper bound known here. This row's cell A364132(29) is unchanged. PREVIOUS CELL CLOSED HERE (2026-10-29, Ford): A364132(28) = 75, new (OEIS lists A364132(1..22)). Ford's separately written engine ss_cleanroom.c (mode m) answers NONE on all 38 parts of the increasing search at every N = 70..74 and FOUND at 75 on 2 of 38 parts, with 2, 3, 4, 6, 11, 25, 38, 40, 41, 47, 52, 54, 56, 57, 58, 60, 61, 62, 64, 66, 67, 68, 69, 70, 71, 72, 73, 75 (all 406 segment sums distinct by brute force); segsum.c, unpartitioned, repeated every verdict (none at 70..74, found at 75) (new files ford_searches_a364132_28.txt, g4_crosscheck_a364132_28.txt, verify_ford_a28.py; contract erdos-357-a364132-28). An exhaustive computer search by two independent engines, not a proof; same segment-sum bitset method, so independent code, not independent mathematics. The deciding refutation at 74 took about 2.3e11 nodes. Next cell: A364132(29) >= 76, no upper bound recorded. COMPANION CELL CLOSED HERE (2026-10-28, Ford): A364153(17) = 26, new (OEIS lists A364153(1..13)). Ford's separately written engine ss_cleanroom.c answers NONE on all 19 parts of the any-order search with every term <= 25 and FOUND at 26 with 1, 2, 12, 16, 18, 23, 17, 20, 22, 25, 26, 10, 19, 24, 11, 21, 6 (all 153 segment sums distinct by brute force); segsum.c repeated the refutations at 24 and 25 (new files ss_cleanroom.c, ford_searches_a364153_17.txt, g4_crosscheck_a364153_17.txt, verify_ford_a17.py; contract erdos-357-a364153-17). An exhaustive computer search by two independent engines, not a proof; same segment-sum bitset method, so independent code, not independent mathematics. Companion cell then: A364153(18) >= 26 (monotone: deleting an end term), no upper bound recorded. This row's cell A364132(28) was then unchanged. PREVIOUS CELL CLOSED HERE (2026-09-28): certificates/erdos-357 decides A364132(1..27) and A364153(1..16) by exhaustive depth-first search on segment-sum bitsets (C engine pinned node for node to a Python reference; verdicts cross-checked by a second engine sharing no code). New: A364132(23..27) = 56, 60, 63, 67, 69 and A364153(14..16) = 20, 22, 24. Companion cell then: A364153(17) in [24, 26]. The deciding refutation grows roughly 2-4x per term (8.4e9 nodes at A364132(27)). Open content: growth of f(n) — Weisenberg (via #874) gives f(n) >= (2+o(1)) sqrt(n); whether f(n) = o(n) is open; for the non-monotone variant g(n), Hegyvari 1986 proved (1/3+o(1))n <= g(n) and Coppersmith-Phillips (via #867) gives g(n) <= (2/3 - 1/512 + o(1))n — those asymptotics are walls (erdosproblems.com/357, edited Jan 2026). Erdős also asked whether sum 1/a_i converges for infinite versions.",
+   "notes": "PREVIOUS CELL CLOSED HERE (2026-10-30, Ford): A364132(29) = 79, new (OEIS lists A364132(1..22), re-checked 2026-10-30). Ford's separately written engine ss_cleanroom.c (mode m) answers NONE on all 38 parts of the increasing search at every N = 76, 77 and 78 and FOUND at 79 on part 14 of 38 with 7, 25, 26, 31, 34, 41, 43, 45, 49, 50, 52, 53, 54, 55, 56, 61, 63, 64, 66, 67, 69, 70, 71, 72, 73, 74, 76, 77, 79 (all 435 segment sums distinct by brute force; the other m29@79 parts were stopped once it was found); segsum.c, unpartitioned, repeated the refutations (none at 76, 77 and 78) (new files ford_searches_a364132_29.txt, g4_crosscheck_a364132_29.txt, verify_ford_a29.py; contract erdos-357-a364132-29). An exhaustive computer search by two independent engines, not a proof; same segment-sum bitset method, so independent code, not independent mathematics. The deciding refutation at 78 took about 7.5e11 nodes (ss, summed over 38 parts) and 2.3e11 (segsum). Next cell: A364132(30) >= 80, no upper bound recorded. This row's companion cell A364153(19) is unchanged. COMPANION CELL CLOSED HERE (2026-10-30, Ford): A364153(18) = 28, new (OEIS lists A364153(1..13)). ss_cleanroom.c (mode a) answers NONE on all 19 parts of the any-order search with every term <= 27 (and <= 26) and FOUND at 28 on parts 1, 4 and 6 of 19, e.g. 1, 3, 2, 7, 22, 25, 28, 21, 27, 18, 24, 20, 23, 14, 26, 15, 17, 19 (all 171 segment sums distinct by brute force); segsum.c, unpartitioned, repeated the refutations at 26 and 27 (new files ford_searches_a364153_18.txt, g4_crosscheck_a364153_18.txt, verify_ford_a18.py; contract erdos-357-a364153-18). An exhaustive computer search by two independent engines, not a proof; same segment-sum bitset method. Next companion cell: A364153(19) >= 29 (monotone), no upper bound known here. This row's cell A364132(29) is unchanged. PREVIOUS CELL CLOSED HERE (2026-10-29, Ford): A364132(28) = 75, new (OEIS lists A364132(1..22)). Ford's separately written engine ss_cleanroom.c (mode m) answers NONE on all 38 parts of the increasing search at every N = 70..74 and FOUND at 75 on 2 of 38 parts, with 2, 3, 4, 6, 11, 25, 38, 40, 41, 47, 52, 54, 56, 57, 58, 60, 61, 62, 64, 66, 67, 68, 69, 70, 71, 72, 73, 75 (all 406 segment sums distinct by brute force); segsum.c, unpartitioned, repeated every verdict (none at 70..74, found at 75) (new files ford_searches_a364132_28.txt, g4_crosscheck_a364132_28.txt, verify_ford_a28.py; contract erdos-357-a364132-28). An exhaustive computer search by two independent engines, not a proof; same segment-sum bitset method, so independent code, not independent mathematics. The deciding refutation at 74 took about 2.3e11 nodes. Next cell: A364132(29) >= 76, no upper bound recorded. COMPANION CELL CLOSED HERE (2026-10-28, Ford): A364153(17) = 26, new (OEIS lists A364153(1..13)). Ford's separately written engine ss_cleanroom.c answers NONE on all 19 parts of the any-order search with every term <= 25 and FOUND at 26 with 1, 2, 12, 16, 18, 23, 17, 20, 22, 25, 26, 10, 19, 24, 11, 21, 6 (all 153 segment sums distinct by brute force); segsum.c repeated the refutations at 24 and 25 (new files ss_cleanroom.c, ford_searches_a364153_17.txt, g4_crosscheck_a364153_17.txt, verify_ford_a17.py; contract erdos-357-a364153-17). An exhaustive computer search by two independent engines, not a proof; same segment-sum bitset method, so independent code, not independent mathematics. Companion cell then: A364153(18) >= 26 (monotone: deleting an end term), no upper bound recorded. This row's cell A364132(28) was then unchanged. PREVIOUS CELL CLOSED HERE (2026-09-28): certificates/erdos-357 decides A364132(1..27) and A364153(1..16) by exhaustive depth-first search on segment-sum bitsets (C engine pinned node for node to a Python reference; verdicts cross-checked by a second engine sharing no code). New: A364132(23..27) = 56, 60, 63, 67, 69 and A364153(14..16) = 20, 22, 24. Companion cell then: A364153(17) in [24, 26]. The deciding refutation grows roughly 2-4x per term (8.4e9 nodes at A364132(27)). Open content: growth of f(n) — Weisenberg (via #874) gives f(n) >= (2+o(1)) sqrt(n); whether f(n) = o(n) is open; for the non-monotone variant g(n), Hegyvari 1986 proved (1/3+o(1))n <= g(n) and Coppersmith-Phillips (via #867) gives g(n) <= (2/3 - 1/512 + o(1))n — those asymptotics are walls (erdosproblems.com/357, edited Jan 2026). Erdős also asked whether sum 1/a_i converges for infinite versions.",
    "oeis": "A364132",
    "overlay": "gap_map",
    "problem": 357,
-   "quantity": "A364132(29) — least n such that {1..n} contains an increasing 29-term sequence all of whose consecutive-segment sums are distinct (inverse of the Erdős–Harzheim f(n)); a(28) = 75 (certificates/erdos-357)",
+   "quantity": "A364132(30) — least n such that {1..n} contains an increasing 30-term sequence all of whose consecutive-segment sums are distinct (inverse of the Erdős–Harzheim f(n)); a(29) = 79 (certificates/erdos-357)",
    "status": "open",
    "type": "surface",
    "upper": null,
    "witness_feasibility": "open-easy",
-   "witness_object": "an increasing sequence a_1 < ... < a_29 <= n with all 435 segment sums distinct gives a(29) <= n; the exact cell also needs every smaller n refuted, as the certificates do through n = 28",
+   "witness_object": "an increasing sequence a_1 < ... < a_30 <= n with all 465 segment sums distinct gives a(30) <= n; the exact cell also needs every smaller n refuted, as the certificates do through n = 29",
    "witness_side": "upper",
-   "witness_verifier": "compute prefix sums and check all 435 pairwise differences distinct — dependency-free, instant"
+   "witness_verifier": "compute prefix sums and check all 465 pairwise differences distinct — dependency-free, instant"
   },
   {
    "confidence": "C3",

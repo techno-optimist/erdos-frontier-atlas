@@ -1,4 +1,4 @@
-# Erdős #357 — distinct segment sums: A364132 through n = 28, A364153 through n = 17
+# Erdős #357 — distinct segment sums: A364132 through n = 29, A364153 through n = 18
 
 **Problem node `P357`; OEIS [A364132](https://oeis.org/A364132) and
 [A364153](https://oeis.org/A364153).** A *segment* of a sequence
@@ -35,6 +35,7 @@ Update 2026-10-28: A364153(17) = 26 is now decided by a separate search (next se
 A364132(28) ∈ [70, 76] is unchanged.
 Update 2026-10-29: A364132(28) = 75 is now decided by the same separate engine (addendum below), so the next cell is A364132(29) ≥ 76.
 Update 2026-10-30: A364153(18) = 28 is now decided by the same separate engine (addendum below), so the any-order companion cell is A364153(19) ≥ 29.
+Update 2026-10-30: A364132(29) = 79 is now decided by the same separate engine (addendum below), so the next cell is A364132(30) ≥ 80.
 
 ## Method
 
@@ -245,6 +246,54 @@ control line is the one from the A364153(17) cross-check, same binary). RESULT.j
 `verify.py`, `ss_cleanroom.c` and the other files above are unchanged. Not submitted to
 OEIS here. Nothing in this addendum bears on A364132(29) or on the asymptotic
 question; Erdős #357 itself remains open.
+
+## Addendum (2026-10-30, Ford): A364132(29) = 79
+
+**A364132(29) = 79: new, since OEIS lists A364132(1..22); an exhaustive computer search by two independent engines, not a proof.**
+
+| n | A364132(n) | an increasing n-sequence in {1..A364132(n)} with distinct segment sums |
+|---:|---:|---|
+| 29 | **79** | 7, 25, 26, 31, 34, 41, 43, 45, 49, 50, 52, 53, 54, 55, 56, 61, 63, 64, 66, 67, 69, 70, 71, 72, 73, 74, 76, 77, 79 |
+
+This closes the cell A364132(29) ≥ 76 left by the A364132(28) addendum: no increasing
+29-sequence with every term at most 78 has all 435 segment sums distinct, and the
+sequence above (maximum 79) does. A364132(29) ≥ 76 already follows from A364132(28) = 75
+by deleting the largest term.
+
+- **Engine.** The same `ss_cleanroom.c` (sha256 cc5d0992…d514), mode m, each search
+  split into 38 parts by dealing the admissible second terms round-robin.
+- **Searches** (`ford_searches_a364132_29.txt`, 116 lines): the control m27@68 part 6/14
+  (NONE, the same node count as before), all 38 parts NONE at each N = 76, 77 and 78
+  (about 3.2 × 10^11, 4.9 × 10^11 and 7.5 × 10^11 nodes, summed over the parts),
+  and at N = 79 the FOUND line for part 14/38 (1.26 × 10^10 nodes); the other m29@79
+  parts were stopped once it was found, since one brute-checked sequence settles the
+  upper side. NONE at 78 alone gives A364132(29) ≥ 79; the sequence gives ≤ 79.
+- **Second engine** (`g4_crosscheck_a364132_29.txt`): the unchanged `segsum.c`,
+  unpartitioned, answers none at 76, 77 and 78 (about 9.8 × 10^10, 1.5 × 10^11 and
+  2.3 × 10^11 nodes). The two engines are independent code using the same method, not
+  independent mathematics.
+- **Checks** (`verify_ford_a29.py`): completeness of the parts, the FOUND sequence checked
+  by brute force alone, agreement of the two engines at 76..78, A364132(28) = 75 taken
+  from a brute-checked line of `ford_searches_a364132_28.txt`, `ss_cleanroom.c`
+  reproducing A364132(1..20) of RESULT.json, and six planted failures (a witness whose
+  last term is 25 + 26 + 31 = 82, a witness starting 1, 2, 3, a flipped part, a dropped
+  part, an engine disagreement, a non-increasing sequence), each rejected.
+
+```sh
+python3 -I certificates/erdos-357/verify_ford_a29.py          # consistency, ~10 s; not certifying
+python3 -I certificates/erdos-357/verify_ford_a29.py --full   # re-runs all 116 + 3 searches (about 2.0e12 nodes; many hours)
+```
+
+| file | role |
+|---|---|
+| `ford_searches_a364132_29.txt` | its 116 committed answers |
+| `g4_crosscheck_a364132_29.txt` | `segsum.c` on m29@76, 77 and 78 |
+| `verify_ford_a29.py` | the replay; reads the files above, `ford_searches_a364132_28.txt` and RESULT.json, never writes them |
+
+The searches ran on 2026-10-30. RESULT.json, `verify.py`, `ss_cleanroom.c`, `segsum.c`
+and the other files above are unchanged. Not submitted to OEIS here. Nothing in this
+addendum bears on A364153(19) or on the asymptotic question; Erdős #357 itself remains
+open.
 
 ## Scope — what is not certified
 
