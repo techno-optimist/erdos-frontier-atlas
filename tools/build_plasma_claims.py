@@ -82,10 +82,11 @@ REVIEW_1 = {
 }
 
 REVIEW_2_COMMON = (
-    "Upstream's label is a one-sided consistency result ('{raw}'). The atlas's map_status in "
-    "tools/build_stubs.py maps every non-open upstream state to solved-upstream, which overstates "
-    "a one-sided label; Plasma's 'open' reading looks right here. Not changed in this PR: flagged "
-    "for a separate decision on the status mapping.")
+    "Upstream's label is a one-sided consistency result ('{raw}'). When this overlay was first "
+    "built, tools/build_stubs.py mapped every non-open upstream state to solved-upstream; since "
+    "PR #190 the atlas records this label as one-sided-upstream, so the status copy here follows "
+    "it. Plasma reads the problem as 'open'. Kept as flagged: whether one-sided-upstream and "
+    "Plasma's 'open' should be reconciled is a separate decision.")
 REVIEW_2 = {
     910: "Upstream's label is 'disproved', resting on Rudin's counterexamples under the continuum "
          "hypothesis; Plasma argues the cited paper does not establish the first question's step and "

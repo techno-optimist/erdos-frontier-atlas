@@ -2476,8 +2476,8 @@
    "plasma_wiki_status": "open",
    "plasma_wiki_claim": "none",
    "plasma_status": "open",
-   "our_recorded_status": "solved-upstream",
-   "upstream_status": "Solved",
+   "our_recorded_status": "one-sided-upstream",
+   "upstream_status": "One-sided",
    "upstream_state_raw": "not provable",
    "status_changed_by_this_entry": false,
    "source": {
@@ -2488,7 +2488,7 @@
     "attribution": "Plasma AI, github.com/plasma-ai/erdos, CC BY 4.0"
    },
    "atlas_review": "flagged",
-   "atlas_review_note": "Upstream's label is a one-sided consistency result ('not provable'). The atlas's map_status in tools/build_stubs.py maps every non-open upstream state to solved-upstream, which overstates a one-sided label; Plasma's 'open' reading looks right here. Not changed in this PR: flagged for a separate decision on the status mapping.",
+   "atlas_review_note": "Upstream's label is a one-sided consistency result ('not provable'). When this overlay was first built, tools/build_stubs.py mapped every non-open upstream state to solved-upstream; since PR #190 the atlas records this label as one-sided-upstream, so the status copy here follows it. Plasma reads the problem as 'open'. Kept as flagged: whether one-sided-upstream and Plasma's 'open' should be reconciled is a separate decision.",
    "claims": [
     {
      "file": "wiki/problems/graph_coloring/E0736/claims/2002_12_04_komjath_shelah.md",
@@ -2515,8 +2515,8 @@
    "plasma_wiki_status": "open",
    "plasma_wiki_claim": "none",
    "plasma_status": "open",
-   "our_recorded_status": "solved-upstream",
-   "upstream_status": "Solved",
+   "our_recorded_status": "one-sided-upstream",
+   "upstream_status": "One-sided",
    "upstream_state_raw": "not provable",
    "status_changed_by_this_entry": false,
    "source": {
@@ -2527,7 +2527,7 @@
     "attribution": "Plasma AI, github.com/plasma-ai/erdos, CC BY 4.0"
    },
    "atlas_review": "flagged",
-   "atlas_review_note": "Upstream's label is a one-sided consistency result ('not provable'). The atlas's map_status in tools/build_stubs.py maps every non-open upstream state to solved-upstream, which overstates a one-sided label; Plasma's 'open' reading looks right here. Not changed in this PR: flagged for a separate decision on the status mapping.",
+   "atlas_review_note": "Upstream's label is a one-sided consistency result ('not provable'). When this overlay was first built, tools/build_stubs.py mapped every non-open upstream state to solved-upstream; since PR #190 the atlas records this label as one-sided-upstream, so the status copy here follows it. Plasma reads the problem as 'open'. Kept as flagged: whether one-sided-upstream and Plasma's 'open' should be reconciled is a separate decision.",
    "claims": [
     {
      "file": "wiki/problems/graph_coloring/E0739/claims/1988_10_01_komjath.md",
@@ -2589,8 +2589,8 @@
    "plasma_wiki_status": "open",
    "plasma_wiki_claim": "none",
    "plasma_status": "open",
-   "our_recorded_status": "solved-upstream",
-   "upstream_status": "Solved",
+   "our_recorded_status": "one-sided-upstream",
+   "upstream_status": "One-sided",
    "upstream_state_raw": "not disprovable",
    "status_changed_by_this_entry": false,
    "source": {
@@ -2601,7 +2601,7 @@
     "attribution": "Plasma AI, github.com/plasma-ai/erdos, CC BY 4.0"
    },
    "atlas_review": "flagged",
-   "atlas_review_note": "Upstream's label is a one-sided consistency result ('not disprovable'). The atlas's map_status in tools/build_stubs.py maps every non-open upstream state to solved-upstream, which overstates a one-sided label; Plasma's 'open' reading looks right here. Not changed in this PR: flagged for a separate decision on the status mapping.",
+   "atlas_review_note": "Upstream's label is a one-sided consistency result ('not disprovable'). When this overlay was first built, tools/build_stubs.py mapped every non-open upstream state to solved-upstream; since PR #190 the atlas records this label as one-sided-upstream, so the status copy here follows it. Plasma reads the problem as 'open'. Kept as flagged: whether one-sided-upstream and Plasma's 'open' should be reconciled is a separate decision.",
    "claims": [
     {
      "file": "wiki/problems/analysis/E1154/claims/2016_03_31_mauldin.md",
@@ -2627,8 +2627,8 @@
    "plasma_wiki_status": "open",
    "plasma_wiki_claim": "none",
    "plasma_status": "open",
-   "our_recorded_status": "solved-upstream",
-   "upstream_status": "Solved",
+   "our_recorded_status": "one-sided-upstream",
+   "upstream_status": "One-sided",
    "upstream_state_raw": "not disprovable",
    "status_changed_by_this_entry": false,
    "source": {
@@ -2639,7 +2639,7 @@
     "attribution": "Plasma AI, github.com/plasma-ai/erdos, CC BY 4.0"
    },
    "atlas_review": "flagged",
-   "atlas_review_note": "Upstream's label is a one-sided consistency result ('not disprovable'). The atlas's map_status in tools/build_stubs.py maps every non-open upstream state to solved-upstream, which overstates a one-sided label; Plasma's 'open' reading looks right here. Not changed in this PR: flagged for a separate decision on the status mapping.",
+   "atlas_review_note": "Upstream's label is a one-sided consistency result ('not disprovable'). When this overlay was first built, tools/build_stubs.py mapped every non-open upstream state to solved-upstream; since PR #190 the atlas records this label as one-sided-upstream, so the status copy here follows it. Plasma reads the problem as 'open'. Kept as flagged: whether one-sided-upstream and Plasma's 'open' should be reconciled is a separate decision.",
    "claims": [
     {
      "file": "wiki/problems/set_theory/E1169/claims/1971_01_01_hajnal.md",
@@ -2720,8 +2720,8 @@
    "plasma_wiki_status": "open",
    "plasma_wiki_claim": "none",
    "plasma_status": "open",
-   "our_recorded_status": "solved-upstream",
-   "upstream_status": "Solved",
+   "our_recorded_status": "one-sided-upstream",
+   "upstream_status": "One-sided",
    "upstream_state_raw": "not disprovable",
    "status_changed_by_this_entry": false,
    "source": {
@@ -2732,7 +2732,7 @@
     "attribution": "Plasma AI, github.com/plasma-ai/erdos, CC BY 4.0"
    },
    "atlas_review": "flagged",
-   "atlas_review_note": "Upstream's label is a one-sided consistency result ('not disprovable'). The atlas's map_status in tools/build_stubs.py maps every non-open upstream state to solved-upstream, which overstates a one-sided label; Plasma's 'open' reading looks right here. Not changed in this PR: flagged for a separate decision on the status mapping.",
+   "atlas_review_note": "Upstream's label is a one-sided consistency result ('not disprovable'). When this overlay was first built, tools/build_stubs.py mapped every non-open upstream state to solved-upstream; since PR #190 the atlas records this label as one-sided-upstream, so the status copy here follows it. Plasma reads the problem as 'open'. Kept as flagged: whether one-sided-upstream and Plasma's 'open' should be reconciled is a separate decision.",
    "claims": [
     {
      "file": "wiki/problems/set_theory/E1171/claims/1971_09_01_erdos_hajnal.md",
@@ -2806,8 +2806,8 @@
    "plasma_wiki_status": "open",
    "plasma_wiki_claim": "none",
    "plasma_status": "open",
-   "our_recorded_status": "solved-upstream",
-   "upstream_status": "Solved",
+   "our_recorded_status": "one-sided-upstream",
+   "upstream_status": "One-sided",
    "upstream_state_raw": "not disprovable",
    "status_changed_by_this_entry": false,
    "source": {
@@ -2818,7 +2818,7 @@
     "attribution": "Plasma AI, github.com/plasma-ai/erdos, CC BY 4.0"
    },
    "atlas_review": "flagged",
-   "atlas_review_note": "Upstream's label is a one-sided consistency result ('not disprovable'). The atlas's map_status in tools/build_stubs.py maps every non-open upstream state to solved-upstream, which overstates a one-sided label; Plasma's 'open' reading looks right here. Not changed in this PR: flagged for a separate decision on the status mapping.",
+   "atlas_review_note": "Upstream's label is a one-sided consistency result ('not disprovable'). When this overlay was first built, tools/build_stubs.py mapped every non-open upstream state to solved-upstream; since PR #190 the atlas records this label as one-sided-upstream, so the status copy here follows it. Plasma reads the problem as 'open'. Kept as flagged: whether one-sided-upstream and Plasma's 'open' should be reconciled is a separate decision.",
    "claims": [
     {
      "file": "wiki/problems/set_theory/E1174/claims/1989_01_01_shelah.md",
@@ -2861,8 +2861,8 @@
    "plasma_wiki_status": "open",
    "plasma_wiki_claim": "none",
    "plasma_status": "open",
-   "our_recorded_status": "solved-upstream",
-   "upstream_status": "Solved",
+   "our_recorded_status": "one-sided-upstream",
+   "upstream_status": "One-sided",
    "upstream_state_raw": "not disprovable",
    "status_changed_by_this_entry": false,
    "source": {
@@ -2873,7 +2873,7 @@
     "attribution": "Plasma AI, github.com/plasma-ai/erdos, CC BY 4.0"
    },
    "atlas_review": "flagged",
-   "atlas_review_note": "Upstream's label is a one-sided consistency result ('not disprovable'). The atlas's map_status in tools/build_stubs.py maps every non-open upstream state to solved-upstream, which overstates a one-sided label; Plasma's 'open' reading looks right here. Not changed in this PR: flagged for a separate decision on the status mapping.",
+   "atlas_review_note": "Upstream's label is a one-sided consistency result ('not disprovable'). When this overlay was first built, tools/build_stubs.py mapped every non-open upstream state to solved-upstream; since PR #190 the atlas records this label as one-sided-upstream, so the status copy here follows it. Plasma reads the problem as 'open'. Kept as flagged: whether one-sided-upstream and Plasma's 'open' should be reconciled is a separate decision.",
    "claims": [
     {
      "file": "wiki/problems/set_theory/E1176/claims/2003_01_01_hajnal_komjath.md",
