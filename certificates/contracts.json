@@ -32,6 +32,11 @@
    "boundary": "Per-object refutations of the strict symmetric CONE on three q=1 closed carry-triple products, by an explicit non-negative edge functional orthogonal to the zero-tag circulation space. Settles exactly the three listed objects; explicitly NOT a theorem that every q=1 product has an infeasible cone, and NOT an r_3(N) bound. claim_boundary erdos142_solved=false, new_r3_bound=false."
   },
   {
+   "path": "certificates/erdos-142-complete-sos",
+   "classification": "certified_local",
+   "boundary": "Exact Farkas no-gos for additive piece-local potentials and the order-two pair-context affine lift on the fixed erdos-142 geometry; not an r_3(N) bound; #142 remains open."
+  },
+  {
    "path": "certificates/erdos-142-kerpi-refutation",
    "classification": "certified_local",
    "boundary": "Refutes two lemmas (`ker pi cap D = 0`, `q >= dim ker pi`) and proves Theorem A in their place. Explicitly NOT an r_3(N) bound and not a solution of #142; the claim boundary is stated in the certificate README as erdos142_solved=false, new_r3_bound=false."
@@ -2802,6 +2807,61 @@
      "failure_control": {
       "kind": "embedded",
       "evidence": "Every replay must check each step's set by brute force alone (the last set plus an element creating a second repeated sum, and with an element doubled, are planted and must be rejected), must reproduce every search's verdict, node count and set with the C engine, must match the Python reference node for node on the small searches, must get the same verdicts from a second engine that shares no code, and must reproduce the published A389182(1..80). A search that missed sets would fail the published data or the second engine; one that invented them would fail the brute-force check."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-142-additive-local-nogo",
+   "status": "promoted",
+   "statement": "Additive piece-local potentials and the order-two pair-context affine lift cannot realize the target rate on the fixed erdos-142 geometry.",
+   "scope": "No-go on two construction families on one geometry; not an r_3(N) bound and not a global no-go.",
+   "machine_verdict": "RESULT: BOTH NO-GO CERTIFICATES VALID",
+   "publication_bindings": [
+    {
+     "path": "README.md",
+     "contains": "recovered additive piece-local and pair-context affine lift no-gos"
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-142-complete-sos/verify.py",
+     "sha256": "a2d6b21f02e64e8772831690068ca71c77c80894835adbdc7e302c2825c8414b"
+    },
+    {
+     "path": "certificates/erdos-142-complete-sos/complete_sos/artifacts/full_vertex_farkas_exact_4term.json",
+     "sha256": "451fea0d12e2c7a9e613d4426450bd83baf3eb737be9e6c4bf94ca9be6261d8c"
+    },
+    {
+     "path": "certificates/erdos-142-complete-sos/complete_sos/artifacts/context_pair_affine_farkas_exact_2767term_flintbasis.json",
+     "sha256": "ed0e6c903c5b0f338490da95cfc2a505de62132ff0e9a90adfd85a8f6282a926"
+    },
+    {
+     "path": "certificates/erdos-142-complete-sos/complete_enum/geometry.json",
+     "sha256": "607841330978360a10b3440598a034f6ade903b8afe872c1cbe7bdf441e92ada"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-142-complete-sos/verify.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-142-complete-sos/verify.py"
+     ],
+     "timeout_seconds": 90,
+     "exit_code": 0,
+     "stdout_contains": [
+      "RESULT: BOTH NO-GO CERTIFICATES VALID",
+      "UNIVERSAL LOCAL-POTENTIAL NO-GO VERIFIER PASS",
+      "ORDER-TWO PAIR-AFFINE FARKAS VERIFIER PASS",
+      "NOT an r_3(N) bound"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "sha256 pins, geometry hash, and mutation kill tests in the base verifier are fail-closed gates."
      }
     }
    ]

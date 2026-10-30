@@ -60,11 +60,12 @@ Dependency-free. Exit 0 iff both certificates verify.
   metadata disclaims a continuum construction (`continuum_claim = false`).
 - **What this certificate deliberately does *not* claim.** A stronger result — that
   *no* per-piece potential of any kind (a full quadratic "additive-local" family)
-  works on this geometry — was explored in the same campaign, but its specific
-  proof artifacts were not preserved (they lived untracked in a working tree and
-  were overwritten as the work moved to a context-dependent lift). This
-  certificate therefore certifies only what is independently re-verifiable today:
-  the enumeration lock and the affine-family no-go. The genuinely-quadratic and
+  works on this geometry — was explored in the same campaign. Its artifacts were
+  later recovered and are now certified separately in
+  [`certificates/erdos-142-complete-sos`](../erdos-142-complete-sos), together
+  with the order-two pair-context affine lift no-go. *(Corrected 2026-10-29: this
+  line used to say those artifacts were not preserved.)* This certificate itself
+  certifies the enumeration lock and the affine-family no-go. The genuinely-quadratic and
   context-lift questions remain open lines, not settled here.
 - **Method, for reuse.** Exact enumeration of a construction's constraint class
   into self-certifying cells, plus exact Farkas no-gos on parameter sub-families,

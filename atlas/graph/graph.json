@@ -5,7 +5,7 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 785,
-   "evidenced_by": 33,
+   "evidenced_by": 34,
    "has_surface": 316,
    "learned_from": 5,
    "measures": 223,
@@ -18,8 +18,8 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 37,
-   "evidence_container": 35,
+   "evidence_claim": 38,
+   "evidence_container": 36,
    "external_claim": 91,
    "incident": 19,
    "move": 7,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 4461,
-   "validator-enforced": 43
+   "validator-enforced": 44
   }
  },
  "edges": [
@@ -8484,6 +8484,14 @@
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
    "src": "P131",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
+   "dst": "E:claim:erdos-142-additive-local-nogo",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P142",
    "tier": "validator-enforced",
    "type": "evidenced_by"
   },
@@ -33786,6 +33794,46 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-142-complete-sos/verify.py",
+     "sha256": "a2d6b21f02e64e8772831690068ca71c77c80894835adbdc7e302c2825c8414b"
+    },
+    {
+     "path": "certificates/erdos-142-complete-sos/complete_sos/artifacts/full_vertex_farkas_exact_4term.json",
+     "sha256": "451fea0d12e2c7a9e613d4426450bd83baf3eb737be9e6c4bf94ca9be6261d8c"
+    },
+    {
+     "path": "certificates/erdos-142-complete-sos/complete_sos/artifacts/context_pair_affine_farkas_exact_2767term_flintbasis.json",
+     "sha256": "ed0e6c903c5b0f338490da95cfc2a505de62132ff0e9a90adfd85a8f6282a926"
+    },
+    {
+     "path": "certificates/erdos-142-complete-sos/complete_enum/geometry.json",
+     "sha256": "607841330978360a10b3440598a034f6ade903b8afe872c1cbe7bdf441e92ada"
+    }
+   ],
+   "claim_id": "erdos-142-additive-local-nogo",
+   "id": "E:claim:erdos-142-additive-local-nogo",
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-142-complete-sos/verify.py"
+    ],
+    "profile": "fast",
+    "stdout_contains": [
+     "RESULT: BOTH NO-GO CERTIFICATES VALID",
+     "UNIVERSAL LOCAL-POTENTIAL NO-GO VERIFIER PASS",
+     "ORDER-TWO PAIR-AFFINE FARKAS VERIFIER PASS",
+     "NOT an r_3(N) bound"
+    ]
+   },
+   "scope": "No-go on two construction families on one geometry; not an r_3(N) bound and not a global no-go.",
+   "statement": "Additive piece-local potentials and the order-two pair-context affine lift cannot realize the target rate on the fixed erdos-142 geometry.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-142-cone-obstruction/verify.py",
      "sha256": "bb4702028016d32206c1c3472a6c95b9833178cb2e5733be2338e8a7667acf1a"
     },
@@ -35084,6 +35132,13 @@
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-142",
    "path": "certificates/erdos-142",
+   "type": "evidence_container"
+  },
+  {
+   "boundary": "Exact Farkas no-gos for additive piece-local potentials and the order-two pair-context affine lift on the fixed erdos-142 geometry; not an r_3(N) bound; #142 remains open.",
+   "classification": "certified_local",
+   "id": "E:dir:certificates:erdos-142-complete-sos",
+   "path": "certificates/erdos-142-complete-sos",
    "type": "evidence_container"
   },
   {

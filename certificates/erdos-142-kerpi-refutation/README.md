@@ -34,7 +34,9 @@ successor carry `(carry + a + c − 2b)/3 ∈ {−1,0,1}`.
 - `π = (π₀,π₁,π₂) : Z₁(P) → Z₁(B)³` — the three single-role projections.
 
 The lane's open question is whether a closed product with **`q = 1`** exists
-(0 occurrences in >1.18M closed products; the unique absent value in 0..24).
+(at the time: 0 occurrences in >1.18M closed products. *Retracted 2026-07-26 in
+8ab9f9a / PR #120: 298 verified `q = 1` objects exist; see
+`certificates/erdos-142-cone-obstruction`.*)
 Two lemmas were being used as a route to prove `q ≠ 1`. Both are false.
 
 ---
@@ -198,9 +200,11 @@ against at build time, but `verify.py` does not import them.
 ## What this does *not* claim
 
 - No `r₃(N)` bound, no progress on the constant, no survivor certificate.
-- The **`q = 1` hole is untouched**: still 0 occurrences in >1.18M closed
-  products, still the unique absent value in 0..24. What is closed is one
-  *route* to excluding it.
+- The `q = 1` question is not settled here; what is closed is one *route* to
+  excluding it. *(Corrected 2026-10-29: this line used to say `q = 1` had 0
+  occurrences in >1.18M closed products. That was retracted in 8ab9f9a / PR #120;
+  298 verified `q = 1` objects exist, and `certificates/erdos-142-cone-obstruction`
+  certifies the cone is infeasible on three of them.)*
 - Census figures quoted above (31,548 / 873,264 / 0 Theorem A violations) come
   from the referee sweep and are **reported, not re-derived** by this
   certificate. Everything the certificate *asserts* it recomputes.

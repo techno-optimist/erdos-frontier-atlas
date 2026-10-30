@@ -130,9 +130,10 @@ edges: milliseconds).
 **Any per-object use of `q ≥ dim ker π` now requires BOTH** a `ker π ∩ D = 0`
 certificate **AND** counting slack `3·dim Z₁(B) − dim D ≥ 0`.
 
-**Untouched:** the `q = 1` hole itself — still 0 occurrences in >1.18M closed
-products, still the unique absent value in 0..24. What is closed is one route
-to excluding it; `q` must now be attacked directly.
+**Untouched:** the `q = 1` question itself; what is closed is one route to
+excluding it. *(Corrected 2026-10-29: this entry used to say `q = 1` had 0
+occurrences in >1.18M closed products. Retracted in 8ab9f9a / PR #120; see the
+2026-07-26 entry below.)*
 
 `erdos142_solved: false`. `new_r3_bound: false`.
 
@@ -178,5 +179,24 @@ nothing more. It is **not** a theorem that every `q=1` product has an
 infeasible cone; none is offered. Separately measured but NOT certified here:
 collar-LP infeasibility across all 298 known `q=1` objects with the sealed
 engine agreeing 298/298 - a measurement over objects found so far.
+
+`erdos142_solved: false`. `new_r3_bound: false`.
+
+## 2026-10-29 - Erdos 142: recovered no-go certificates; status summary
+
+Certificate: `certificates/erdos-142-complete-sos/` (`python3 -I verify.py`,
+~5 s, stdlib only, wired into `make verify-certs`).
+
+**Status of #142: open.** Our contribution is certified no-go results showing
+that families of constructions on the fixed `certificates/erdos-142` geometry
+cannot beat `7/24`: the affine family (`erdos-142`), every additive piece-local
+potential (`451fea0d…`, 4-term Farkas) and the order-two pair-context affine
+lift (`ed0e6c90…`, 2767-term Farkas). **No new bound** on `r_3(N)`.
+
+The two recovered artifacts are the ones the `erdos-142` README had described
+as not kept. No earlier hash for them was written down in this file or the README,
+so there was nothing to compare against; the committed pins are
+`451fea0d12e2c7a9e613d4426450bd83baf3eb737be9e6c4bf94ca9be6261d8c` and
+`ed0e6c903c5b0f338490da95cfc2a505de62132ff0e9a90adfd85a8f6282a926`.
 
 `erdos142_solved: false`. `new_r3_bound: false`.

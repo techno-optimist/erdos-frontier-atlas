@@ -164,6 +164,7 @@ Every promoted claim replays in one command; the fastest way to learn the receip
 - `erdos-13-table`: `python3 -I certificates/erdos-13/verify.py`
 - `erdos-131-a068063-t1-t8`: `python3 -I certificates/erdos-131/verify.py`
 - `erdos-131-a068063-t9-t10`: `python3 -I certificates/erdos-131/verify.py --full`
+- `erdos-142-additive-local-nogo`: `python3 -I certificates/erdos-142-complete-sos/verify.py`
 - `erdos-142-cone-infeasible-objects`: `python3 -I certificates/erdos-142-cone-obstruction/verify.py`
 - `erdos-142-foundation`: `python3 -I certificates/erdos-142/verify.py`
 - `erdos-357-a364132-28`: `python3 -I certificates/erdos-357/verify_ford_a28.py --full`
