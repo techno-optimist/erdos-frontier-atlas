@@ -10,16 +10,38 @@ ROOT = Path(__file__).resolve().parent.parent
 
 def test_readme_inventory_matches_the_source_ledgers():
     sources = {
-        "Hub records": ("atlas/stubs.json", "problems"),
-        "Deep-tier records": ("atlas/problems.json", "problems"),
+        "AI-assisted discovery tools": ("atlas/tools.json", "items"),
+        "AI-assisted results": ("atlas/ai_results.json", "entries"),
+        "Erdős-linked AI claims": ("atlas/ai_claims.json", "entries"),
+        "OpenAI manuscript families": ("atlas/openai_math.json", "entries"),
+        "Plasma overlay entries": ("atlas/plasma_claims.json", "entries"),
+        "Claim contracts": ("certificates/contracts.json", "claims"),
+        "Hub entries": ("atlas/stubs.json", "problems"),
+        "Deep-tier audits": ("atlas/problems.json", "problems"),
         "Bracketed quantities": ("atlas/gap_map.json", "entries"),
         "Registered methods": ("atlas/substrate.json", "methods"),
-        "Residual records": ("atlas/residuals.json", "residuals"),
+        "Residual families": ("atlas/residuals.json", "residuals"),
     }
     readme = (ROOT / "README.md").read_text()
     for label, (path, key) in sources.items():
         count = len(json.loads((ROOT / path).read_text())[key])
         assert f"| {label} | {count:,} |" in readme, (label, count)
+
+
+def test_readme_breakdowns_match_the_source_ledgers():
+    """The prose breakdowns beside the counts come from the ledgers' own tallies."""
+    readme = (ROOT / "README.md").read_text()
+    tools = json.loads((ROOT / "atlas/tools.json").read_text())
+    kinds = tools["counts"]["by_kind"]
+    assert len(tools["items"]) == tools["counts"]["items"]
+    assert (f"{kinds['system']} systems, {kinds['benchmark']} benchmarks, "
+            f"{kinds['dataset']} datasets and {kinds['registry']} registries") in readme
+    results = json.loads((ROOT / "atlas/ai_results.json").read_text())
+    unvetted = sum(1 for e in results["entries"] if e.get("vetting") == "unvetted")
+    assert unvetted == results["counts"]["unvetted"]
+    assert f"{unvetted} are extraordinary claims marked `unvetted`" in readme
+    unconfirmed = results["counts"]["ai_involvement_unconfirmed"]
+    assert f"{unconfirmed} don't state AI involvement" in readme
 
 
 def test_readme_points_to_current_method_and_freshness_records():
