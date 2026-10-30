@@ -174,7 +174,7 @@
   {
    "path": "certificates/erdos-357",
    "classification": "certified_local",
-   "boundary": "Exhaustive searches deciding OEIS A364132(1..28) and A364153(1..17) (sequences with distinct segment sums), each term with an explicit sequence checked by brute force. Replicates the published A364132(1..22) and A364153(1..13); the rest is new. C engine pinned node for node to a Python reference and cross-checked by a second engine; A364153(17) = 26 and A364132(28) = 75 rest on a separately written clean-room engine (ss_cleanroom.c) with every verdict repeated by segsum.c: an exhaustive computer search by two independent engines; no formal proof; nothing about the asymptotic Erdos #357 question."
+   "boundary": "Exhaustive searches deciding OEIS A364132(1..28) and A364153(1..18) (sequences with distinct segment sums), each term with an explicit sequence checked by brute force. Replicates the published A364132(1..22) and A364153(1..13); the rest is new. C engine pinned node for node to a Python reference and cross-checked by a second engine; A364153(17) = 26 and A364132(28) = 75 rest on a separately written clean-room engine (ss_cleanroom.c) with every verdict repeated by segsum.c: an exhaustive computer search by two independent engines; no formal proof; nothing about the asymptotic Erdos #357 question."
   },
   {
    "path": "certificates/erdos-864",
@@ -2590,6 +2590,92 @@
      "failure_control": {
       "kind": "embedded",
       "evidence": "Every replay must find, in the committed answers alone, all 19 parts of the a17@25 search and all 19 of a17@24 present and NONE and the a17@26 line FOUND, check the 17-term sequence at 26 by brute force alone (17 distinct terms in 1..26, all 153 segment sums distinct, equal to the RESULT.json next_bounds sequence), require the second engine (segsum.c, g4_crosscheck_a364153_17.txt) to answer none at 24 and 25 and to match the a16@23 node count pinned in RESULT.json, reproduce A364153(1..12) of RESULT.json with ss_cleanroom.c (NONE at a(n) - 1, FOUND at a(n)), re-run the FOUND search a17@26 byte for byte, and reject five planted failures (a witness whose last term is s1 + s2, part 18 of a17@25 flipped to FOUND, part 7 of a17@25 dropped, the second engine flipped to found at 25, the collision 1 + 2 = 3). A search that missed sequences would disagree with the second engine or the published terms; one that invented them would fail the brute-force check."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-357-a364153-18",
+   "status": "promoted",
+   "statement": "A364153(18) = 28: Ford's separately written engine ss_cleanroom.c answers NONE on all 19 parts of the search for an 18-sequence of distinct values in {1..27}, in any order, with all 171 segment sums distinct, so no such sequence exists and A364153(18) >= 28; it answers FOUND at 28 with the sequence 1, 3, 2, 7, 22, 25, 28, 21, 27, 18, 24, 20, 23, 14, 26, 15, 17, 19 (and two more), whose segment sums are checked distinct by brute force, so A364153(18) <= 28.",
+   "scope": "Finite exhaustive search: an exhaustive computer search by two independent engines, not a proof. A364153(18) = 28 is new: OEIS A364153 lists a(1..13) (re-checked 2026-10-30). ss_cleanroom.c (unchanged) has no symmetry breaking; segsum.c (the atlas engine, unchanged) repeated the refutations at 26 and 27 unpartitioned (none; about 5.4e11 and 5.4e11 nodes in the two engines). The two are independent code using the same left-to-right segment-sum bitset method, not independent mathematics. The fast replay re-runs only the three FOUND searches and does not certify; --full re-runs all 42 ss searches and the 3 segsum searches byte for byte. Says nothing about A364132(29) or the asymptotic question of Erdos #357, which remains open.",
+   "machine_verdict": "\"verified_ford_a364153_18\":true",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-357/README.md",
+     "contains": "**A364153(18) = 28: new, since OEIS lists A364153(1..13); an exhaustive computer search by two independent engines, not a proof.**",
+     "overclaim_guards": [
+      "resolves Erdős #357",
+      "proves the conjecture"
+     ]
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-357/verify_ford_a18.py",
+     "sha256": "eb27108068dac6345d98d4b495365057bef03df9f71a39ede22aac3d6c9b3c89"
+    },
+    {
+     "path": "certificates/erdos-357/ss_cleanroom.c",
+     "sha256": "cc5d0992e8856f440c1fb851b3498eb09bcf23e84fdd9e20df6a6c28ff77d514"
+    },
+    {
+     "path": "certificates/erdos-357/ford_searches_a364153_18.txt",
+     "sha256": "8916ac1e2b5c505f9922a332e54a45ef53ffee6df0e4049bfa7c58f3200f1fb6"
+    },
+    {
+     "path": "certificates/erdos-357/g4_crosscheck_a364153_18.txt",
+     "sha256": "efebb81176449f73c3171800e16422920c1405cd4bf4d68ecb4929ecc15012d1"
+    },
+    {
+     "path": "certificates/erdos-357/segsum.c",
+     "sha256": "b0228c31c7ac9ea83a9ba7793f614a1c7450b75592cb66bc7d831672f068d145"
+    },
+    {
+     "path": "certificates/erdos-357/RESULT.json",
+     "sha256": "3f599d7ee62aad3eb490a6a835fde0e3be4bef490c8a4d86f900bb8f0297ac35"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": false,
+     "entrypoint": "certificates/erdos-357/verify_ford_a18.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-357/verify_ford_a18.py"
+     ],
+     "timeout_seconds": 600,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"receipt_consistent_a364153_18\":true",
+      "all checks passed"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "Every replay must find, in the committed answers alone, the control a16@23, all 19 parts of the a18@27 search and all 19 of a18@26 present and NONE and three a18@28 lines FOUND (parts 1, 4, 6 of 19), check each 18-term sequence at 28 by brute force alone (18 distinct terms in 1..28, all 171 segment sums distinct), require the second engine (segsum.c, g4_crosscheck_a364153_18.txt) to answer none at 26 and 27 and to match the a16@23 node count pinned in RESULT.json, reproduce A364153(1..12) of RESULT.json with ss_cleanroom.c (NONE at a(n) - 1, FOUND at a(n)), re-run the three FOUND searches byte for byte, and reject five planted failures (a witness whose last term is s1 + s2, part 18 of a18@27 flipped to FOUND, part 7 of a18@27 dropped, the second engine flipped to found at 27, the collision 1 + 2 = 3). A search that missed sequences would disagree with the second engine or the published terms; one that invented them would fail the brute-force check."
+     }
+    },
+    {
+     "profile": "slow",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-357/verify_ford_a18.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-357/verify_ford_a18.py",
+      "--full"
+     ],
+     "timeout_seconds": 259200,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"verified_ford_a364153_18\":true",
+      "all checks passed"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "Every replay must find, in the committed answers alone, the control a16@23, all 19 parts of the a18@27 search and all 19 of a18@26 present and NONE and three a18@28 lines FOUND (parts 1, 4, 6 of 19), check each 18-term sequence at 28 by brute force alone (18 distinct terms in 1..28, all 171 segment sums distinct), require the second engine (segsum.c, g4_crosscheck_a364153_18.txt) to answer none at 26 and 27 and to match the a16@23 node count pinned in RESULT.json, reproduce A364153(1..12) of RESULT.json with ss_cleanroom.c (NONE at a(n) - 1, FOUND at a(n)), re-run the three FOUND searches byte for byte, and reject five planted failures (a witness whose last term is s1 + s2, part 18 of a18@27 flipped to FOUND, part 7 of a18@27 dropped, the second engine flipped to found at 27, the collision 1 + 2 = 3). A search that missed sequences would disagree with the second engine or the published terms; one that invented them would fail the brute-force check."
      }
     }
    ]

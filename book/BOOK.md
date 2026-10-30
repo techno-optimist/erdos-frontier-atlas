@@ -47,7 +47,7 @@ The state of this edition, generated from the data:
 
 | this edition | state |
 |---|---|
-| data through | **2026-10-29** (latest provenance/evidence date in the gap map) |
+| data through | **2026-10-30** (latest provenance/evidence date in the gap map) |
 | the ledger | **225** bounded quantities |
 | confidence | C0 0 · C1 1 · C2 13 · C3 211 |
 | movements on the board | **14** (🟢 10 · 🔴 2 · 🟡 2) — corrected claims kept visible |
