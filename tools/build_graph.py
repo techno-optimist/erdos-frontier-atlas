@@ -44,6 +44,7 @@ never reads `prize` — and is pinned by a test over the rendered order:
 """
 import hashlib
 import json
+import re
 import sys
 from pathlib import Path
 
@@ -659,6 +660,55 @@ def _wall_lines(graph, pid):
     return lines
 
 
+# A nested chain: promoted claims on one card whose statements all open
+# "<SEQ>(n) for 1 <= n <= N" with the same SEQ and status. The claim with the
+# largest N states every earlier range, so the card prints its statement in
+# full and lists the earlier claim ids (status, range, replay) on one short
+# line each. Every claim id still appears; certificates/contracts.json keeps
+# every full statement. Claims that do not match the pattern render as before.
+_RANGE_RE = re.compile(r"^([A-Z]\d{6})\(n\) for 1 <= n <= (\d+)\b")
+
+
+def _range_key(c, upper=False):
+    m = _RANGE_RE.match(c.get("statement") or "")
+    if not m:
+        return None
+    return int(m.group(2)) if upper else (m.group(1), c["status"])
+
+
+def _nested_chains(claims):
+    groups = {}
+    for c in claims:
+        k = _range_key(c)
+        if k is not None:
+            groups.setdefault(k, []).append(c)
+    newest, older = {}, {}
+    for k, cs in groups.items():
+        if len(cs) < 2:
+            continue
+        top = max(cs, key=lambda c: _range_key(c, upper=True))
+        if sum(_range_key(c, upper=True) == _range_key(top, upper=True)
+               for c in cs) > 1:
+            continue  # tie on the top range: no unique newest, print all
+        newest[k] = top
+        older[k] = sorted((c for c in cs if c is not top),
+                          key=lambda c: _range_key(c, upper=True))
+    return newest, older
+
+
+def _render_claim(w, c):
+    w(f"- contract claim `{c['claim_id']}` [{c['status']}]: "
+      f"{c['statement']}")
+    if c.get("replay"):
+        w(f"  - one-command replay: `{' '.join(c['replay']['argv'])}`")
+    if c.get("overclaim_guards"):
+        n = c["overclaim_guards"]
+        w(f"  - overclaim guard: its publication text is checked against "
+          f"{n} forbidden phrasing{'s' if n != 1 else ''} "
+          f"(`publication_bindings[].overclaim_guards`) — preventive; "
+          f"nothing was withdrawn")
+
+
 def render_card(graph, erdos_id):
     nodes = {n["id"]: n for n in graph["nodes"]}
     pid = f"P{erdos_id}"
@@ -792,17 +842,32 @@ def render_card(graph, erdos_id):
     w("## EVIDENCE — replayable, or it does not count")
     w("")
     if claims:
+        newest, older = _nested_chains(claims)
+        done = set()
         for c in claims:
-            w(f"- contract claim `{c['claim_id']}` [{c['status']}]: "
-          f"{c['statement']}")
-            if c.get("replay"):
-                w(f"  - one-command replay: `{' '.join(c['replay']['argv'])}`")
-            if c.get("overclaim_guards"):
-                n = c["overclaim_guards"]
-                w(f"  - overclaim guard: its publication text is checked against "
-                  f"{n} forbidden phrasing{'s' if n != 1 else ''} "
-                  f"(`publication_bindings[].overclaim_guards`) — preventive; "
-                  f"nothing was withdrawn")
+            key = _range_key(c)
+            if c["claim_id"] in done:
+                continue
+            if key not in newest:
+                _render_claim(w, c)
+                continue
+            top = newest[key]
+            _render_claim(w, top)
+            done.add(top["claim_id"])
+            seq, status = key
+            w(f"  - {len(older[key])} earlier {seq} claim"
+              f"{'s' if len(older[key]) != 1 else ''} [{status}] cover a "
+              f"sub-range 1 <= n <= N of this statement (subsumed; full "
+              f"text and receipts stay in `certificates/contracts.json`):")
+            for o in older[key]:
+                done.add(o["claim_id"])
+                line = (f"    - `{o['claim_id']}` [{o['status']}] "
+                        f"1 <= n <= {_range_key(o, upper=True)}")
+                if o.get("replay"):
+                    line += f" · replay `{' '.join(o['replay']['argv'])}`"
+                if o.get("overclaim_guards"):
+                    line += f" · {o['overclaim_guards']} overclaim guards"
+                w(line)
     else:
         w("- No promoted contract claim touches this problem "
           "(certificates/contracts.json).")
