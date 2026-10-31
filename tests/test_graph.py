@@ -349,3 +349,40 @@ def test_cold_start_probe_graph_md_commands_run():
                            timeout=60)
         assert p.returncode == 0, (cmd, p.stdout + p.stderr)
         assert p.stdout.strip(), cmd
+
+
+def test_card_lists_every_promoted_claim_id():
+    """Compact rendering of nested claim chains must never drop a receipt:
+    every contract claim linked to a carded problem (claim id prefix
+    erdos-<id>) appears by id in that card's EVIDENCE section."""
+    contracts = _load("certificates/contracts.json")
+    for c in contracts["claims"]:
+        parts = c["id"].split("-")
+        if parts[0] != "erdos" or not parts[1].isdigit():
+            continue
+        path = ROOT / "views" / "graph" / f"P{int(parts[1])}.md"
+        if not path.exists():
+            continue
+        ev = path.read_text(encoding="utf-8").split("## EVIDENCE")[1] \
+            .split("\n## ")[0]
+        assert f"`{c['id']}`" in ev, (path.name, c["id"])
+
+
+def test_nested_claim_chain_prints_only_newest_statement_in_full():
+    """#962's A327909 chain: the claim with the largest range keeps its full
+    statement; earlier sub-range claims are one line each with their replay."""
+    contracts = _load("certificates/contracts.json")
+    chain = [c for c in contracts["claims"]
+             if c["id"].startswith("erdos-962-a327909-")]
+    assert len(chain) >= 2
+    top = max(chain, key=lambda c: int(c["id"].rsplit("-", 1)[1]))
+    ev = (ROOT / "views" / "graph" / "P962.md").read_text(encoding="utf-8") \
+        .split("## EVIDENCE")[1].split("\n## ")[0]
+    assert top["statement"] in ev
+    for c in chain:
+        if c is not top:
+            assert c["statement"] not in ev, c["id"]
+            argv = next((" ".join(r["argv"]) for r in c.get("replays", [])
+                         if r.get("certifies_claim")), None)
+            if argv:
+                assert argv in ev, c["id"]
