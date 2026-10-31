@@ -5,7 +5,7 @@
    "cascades_to": 29,
    "claims_about": 91,
    "classified": 785,
-   "evidenced_by": 39,
+   "evidenced_by": 40,
    "has_surface": 316,
    "learned_from": 5,
    "measures": 223,
@@ -18,7 +18,7 @@
   },
   "nodes": {
    "crater_node": 37,
-   "evidence_claim": 43,
+   "evidence_claim": 44,
    "evidence_container": 36,
    "external_claim": 91,
    "incident": 19,
@@ -33,7 +33,7 @@
   "tiers": {
    "cited-implication": 29,
    "deterministic-rule": 4487,
-   "validator-enforced": 49
+   "validator-enforced": 50
   }
  },
  "edges": [
@@ -1086,7 +1086,7 @@
    "type": "applies"
   },
   {
-   "dst": "S:gap:962:f955abb6",
+   "dst": "S:gap:962:76cd3438",
    "predicate": "workable",
    "source": "atlas/gap_map.json",
    "src": "M:witness-local-search",
@@ -8704,6 +8704,14 @@
    "type": "evidenced_by"
   },
   {
+   "dst": "E:claim:erdos-962-a327909-1801-1900",
+   "rule": "claim id prefix erdos-<id>",
+   "source": "certificates/contracts.json",
+   "src": "P962",
+   "tier": "validator-enforced",
+   "type": "evidenced_by"
+  },
+  {
    "dst": "E:claim:erdos-979-a6-public",
    "rule": "claim id prefix erdos-<id>",
    "source": "certificates/contracts.json",
@@ -10834,7 +10842,7 @@
    "type": "has_surface"
   },
   {
-   "dst": "S:gap:962:f955abb6",
+   "dst": "S:gap:962:76cd3438",
    "source": "atlas/gap_map.json",
    "src": "P962",
    "tier": "deterministic-rule",
@@ -12453,7 +12461,7 @@
   {
    "dst": "O:A327909",
    "source": "atlas/gap_map.json",
-   "src": "S:gap:962:f955abb6",
+   "src": "S:gap:962:76cd3438",
    "tier": "deterministic-rule",
    "type": "measures"
   },
@@ -35557,6 +35565,150 @@
   {
    "artifacts": [
     {
+     "path": "certificates/erdos-962/verify_ford_1900.py",
+     "sha256": "7a70fa890daf6178ce870506d5f62faeeb4c47c143eb2d9d946909b78eaa57b4"
+    },
+    {
+     "path": "certificates/erdos-962/RESULT_ford_1900.json",
+     "sha256": "1c366a8db2a0337b292814dc810c60ae2c7b338dfb94a08cf0ecf6e193dd7e0d"
+    },
+    {
+     "path": "certificates/erdos-962/runs_ford_1900.txt",
+     "sha256": "dfe858bd17167a1e5e0dd4f636a2914a8c8710c68f29d9205a18545948e112f1"
+    },
+    {
+     "path": "certificates/erdos-962/verify_ford_1800.py",
+     "sha256": "db539ac7334ec0deeeb1b0fddf7df96592153719d308532626d1ca8178c0af6f"
+    },
+    {
+     "path": "certificates/erdos-962/RESULT_ford_1800.json",
+     "sha256": "866cc8c916cb5045362c9868437791f2c51a9d6e2f39404e0b137ce23981d752"
+    },
+    {
+     "path": "certificates/erdos-962/runs_ford_1800.txt",
+     "sha256": "2bdb12a2f651ca7aedc94f02f0655ba5b1909d5848706c67fd94bd144e4b44fb"
+    },
+    {
+     "path": "certificates/erdos-962/verify_ford_1700.py",
+     "sha256": "52b53f56a12888c62e26b4d7831a4baf647450cca19a0b8497752c94225bbe4c"
+    },
+    {
+     "path": "certificates/erdos-962/RESULT_ford_1700.json",
+     "sha256": "b2d72cb540a863e3415c8b4526b112e4e8f66205c06ba165861af2af246d3072"
+    },
+    {
+     "path": "certificates/erdos-962/runs_ford_1700.txt",
+     "sha256": "f227362473cb887bcc1d24a0211baa0ee7ee1a74bb54bf17e64a4892d9d49435"
+    },
+    {
+     "path": "certificates/erdos-962/verify_ford_1600.py",
+     "sha256": "47dcec2769231fe2479a139258350f8c1568a9d1be1e5ad9f771d40d58896416"
+    },
+    {
+     "path": "certificates/erdos-962/RESULT_ford_1600.json",
+     "sha256": "5c808af3db21acf004e9f783f924ebce36b073e97d6a6bc21a22853e23ca2110"
+    },
+    {
+     "path": "certificates/erdos-962/runs_ford_1600.txt",
+     "sha256": "bac1519b4e35adbe8cdda5e55894b7418866c71655099729c58c7cd2468ee0ed"
+    },
+    {
+     "path": "certificates/erdos-962/verify_ford_1500.py",
+     "sha256": "6d69c00577742521fe9a1ea62bfb54f1dea96d9eb2df62330e97c9849a4dbce5"
+    },
+    {
+     "path": "certificates/erdos-962/RESULT_ford_1500.json",
+     "sha256": "50c379cda24cf0c0d958f3a2409010821560f7dd993d2a6264d3d34c7ba65d34"
+    },
+    {
+     "path": "certificates/erdos-962/runs_ford_1500.txt",
+     "sha256": "9d4cac010c037f10111102278837b3b9458ec5f2ef8945e02c2c14d640732445"
+    },
+    {
+     "path": "certificates/erdos-962/verify_ford_1400.py",
+     "sha256": "34dd126e179f1be437b26adf25fe746edc90d96afa5a1689a18d7b6c284136a6"
+    },
+    {
+     "path": "certificates/erdos-962/RESULT_ford_1400.json",
+     "sha256": "0591048ad6eca18bb84bdbb8b6d2a0f14156a06016cc083b5e4876534601b0b7"
+    },
+    {
+     "path": "certificates/erdos-962/runs_ford_1400.txt",
+     "sha256": "cd873cbc4584e70872dc9cb3106b1a066a92b76d8dfc4fda91729732045790d2"
+    },
+    {
+     "path": "certificates/erdos-962/verify_ford_1300.py",
+     "sha256": "97cfed761273e3e3e2623bc342e75f3b8c8ca508b27ae98a56b7915081701f29"
+    },
+    {
+     "path": "certificates/erdos-962/RESULT_ford_1300.json",
+     "sha256": "ff093db7ddaaaf56e62ad9cb8455bbc09d2128c7df6b40ed6e46a32c40b69c9e"
+    },
+    {
+     "path": "certificates/erdos-962/runs_ford_1300.txt",
+     "sha256": "3e7a11c6a438dcf556df153cd9912ddf513d79e9ecdcaea55074a86d0c78e69e"
+    },
+    {
+     "path": "certificates/erdos-962/verify_ford_1200.py",
+     "sha256": "76617ac6e741dfecf9b24698bf5d60d3460b2d64e7f3c6c4436c0c412fe3b398"
+    },
+    {
+     "path": "certificates/erdos-962/RESULT_ford_1200.json",
+     "sha256": "d8c252e57ee2bb7d9dc3b8290f4d9c416a3323d86c4a4a8165474c7a31de6387"
+    },
+    {
+     "path": "certificates/erdos-962/runs_ford_1200.txt",
+     "sha256": "0fe24415ced2da120693ecea0e7b7489f9c9a7e3a7f1ce25c783f332bfdf6075"
+    },
+    {
+     "path": "certificates/erdos-962/verify.py",
+     "sha256": "dae6c4c8b68f7364cb101b4c19c586ce23246540a2ed391f7e4fa50a797c157f"
+    },
+    {
+     "path": "certificates/erdos-962/smooth_runs.py",
+     "sha256": "c00f548616c0db57c5706907351da4ed347538644443d1c436fd8607af836a7d"
+    },
+    {
+     "path": "certificates/erdos-962/runs.c",
+     "sha256": "d365f244e5166863fe84b7c50514ad5bb9200cc17aa6f24edc83fd753e0611e9"
+    },
+    {
+     "path": "certificates/erdos-962/chunk.c",
+     "sha256": "3cbb4b3691016b244a2d04367649b71738223465005fe8bd6d6e1728b6ebe096"
+    },
+    {
+     "path": "certificates/erdos-962/emit_result.py",
+     "sha256": "313b710ac8eb56da87b8382086045d52ffaeb579eb7c1e57d6e93282e0904b37"
+    },
+    {
+     "path": "certificates/erdos-962/RESULT.json",
+     "sha256": "e09688d8c7bd1e9a8c1da1f1edf89492a76c41c21182a888dbec0d644b2fb483"
+    }
+   ],
+   "claim_id": "erdos-962-a327909-1801-1900",
+   "id": "E:claim:erdos-962-a327909-1801-1900",
+   "overclaim_guards": 2,
+   "replay": {
+    "argv": [
+     "python3",
+     "-I",
+     "certificates/erdos-962/verify_ford_1900.py",
+     "--full"
+    ],
+    "profile": "slow",
+    "stdout_contains": [
+     "\"verified_1900\":true",
+     "all checks passed"
+    ]
+   },
+   "scope": "Exact finite scan (every integer up to 949555600000, chunk.c via emit_result.py, and separately runs.c); a verified-search receipt, not a formal proof. The two engines share the sieve design but not code. a(1801..1900) are new: the OEIS b-file ends at 999 (revision 37, re-checked 2026-10-31) and the earlier receipts at 1102, 1200, 1300, 1400, 1500, 1600, 1700 and 1800. Gives Erdos's k(n) = max{k : a(k) <= n + 1} exactly for n < 949555592338. a(1901) is not claimed (only a(1901) >= 949555592339). The fast replay checks the receipt and does not certify; --full certifies. Says nothing about the asymptotic question of Erdos #962.",
+   "statement": "A327909(n) for 1 <= n <= 1900, with a(1801..1858) = 712311265810, a(1859..1884) = 783274569646, a(1885..1900) = 949555592339: each a(n) starts a maximal run of at least n consecutive integers each having a prime factor > n (checked by gcd), and an exact scan of [1, 949555600000] finds no earlier such run; a(1..1102) equal the frozen receipt RESULT.json, a(1..1200) equal RESULT_ford_1200.json, a(1..1300) equal RESULT_ford_1300.json, a(1..1400) equal RESULT_ford_1400.json, a(1..1500) equal RESULT_ford_1500.json, a(1..1600) equal RESULT_ford_1600.json, a(1..1700) equal RESULT_ford_1700.json and a(1..1800) equal RESULT_ford_1800.json.",
+   "status": "promoted",
+   "type": "evidence_claim"
+  },
+  {
+   "artifacts": [
+    {
      "path": "certificates/erdos-979/verify.py",
      "sha256": "0aef06820a6d338274254cab24b99e39489e8b474c9beb745bce4d1a1db6525e"
     },
@@ -35911,7 +36063,7 @@
    "type": "evidence_container"
   },
   {
-   "boundary": "Exact smooth-number scan of [1, 4.2*10^10]: OEIS A327909(n) for 1 <= n <= 1102, each with its maximal run checked by gcd. Replicates the published b-file (a(1..999), including a(999) = 22369305365); a(1000..1102) are new. Extended (2026-10-27, new files only) by a scan of [1, 7.5*10^10] to n <= 1200; a(1103..1200) are new. Extended again (2026-10-27, new files only) by a scan of [1, 10^11] to n <= 1300; a(1201..1300) are new. Extended a third time (2026-10-27, new files only) by a scan of [1, 4*10^11] to n <= 1400; a(1301..1400) are new. Extended a fourth time (2026-10-27, new files only) by a scan of [1, 3.2*10^11] to n <= 1500; a(1401..1500) are new. Extended a fifth time (2026-10-30, new files only) by a scan of [1, 344421235993] to n <= 1600; a(1501..1600) are new. Extended a sixth time (2026-10-30, new files only) by a scan of [1, 453273053620] to n <= 1700; a(1601..1700) are new. Extended a seventh time (2026-10-30, new files only) by a scan of [1, 712311270000] to n <= 1800; a(1701..1800) are new. Two C engines (sequential and chunked) plus a Python sieve on small ranges; no formal proof; nothing about the asymptotic Erdos #962 question.",
+   "boundary": "Exact smooth-number scan of [1, 4.2*10^10]: OEIS A327909(n) for 1 <= n <= 1102, each with its maximal run checked by gcd. Replicates the published b-file (a(1..999), including a(999) = 22369305365); a(1000..1102) are new. Extended (2026-10-27, new files only) by a scan of [1, 7.5*10^10] to n <= 1200; a(1103..1200) are new. Extended again (2026-10-27, new files only) by a scan of [1, 10^11] to n <= 1300; a(1201..1300) are new. Extended a third time (2026-10-27, new files only) by a scan of [1, 4*10^11] to n <= 1400; a(1301..1400) are new. Extended a fourth time (2026-10-27, new files only) by a scan of [1, 3.2*10^11] to n <= 1500; a(1401..1500) are new. Extended a fifth time (2026-10-30, new files only) by a scan of [1, 344421235993] to n <= 1600; a(1501..1600) are new. Extended a sixth time (2026-10-30, new files only) by a scan of [1, 453273053620] to n <= 1700; a(1601..1700) are new. Extended a seventh time (2026-10-30, new files only) by a scan of [1, 712311270000] to n <= 1800; a(1701..1800) are new. Extended an eighth time (2026-10-31, new files only) by a scan of [1, 949555600000] to n <= 1900; a(1801..1900) are new. Two C engines (sequential and chunked) plus a Python sieve on small ranges; no formal proof; nothing about the asymptotic Erdos #962 question.",
    "classification": "certified_local",
    "id": "E:dir:certificates:erdos-962",
    "path": "certificates/erdos-962",
@@ -78536,9 +78688,9 @@
    "confidence": "C2",
    "evidence": [
     {
-     "artifact": "certificates/erdos-962: exact smooth-number scan of [1, 712311270000] (runs.c, chunk.c, Python sieve); a(1..1102) frozen in RESULT.json, a(1..1200) in RESULT_ford_1200.json, a(1..1300) in RESULT_ford_1300.json, a(1..1400) in RESULT_ford_1400.json, a(1..1500) in RESULT_ford_1500.json (scan of [1, 3.2e11]), a(1..1600) in RESULT_ford_1600.json (scan of [1, 344421235993]), a(1..1700) in RESULT_ford_1700.json (scan of [1, 453273053620]), a(1..1800) in RESULT_ford_1800.json (scan of [1, 712311270000])",
-     "contract": "erdos-962-a327909-1701-1800",
-     "date": "2026-10-30",
+     "artifact": "certificates/erdos-962: exact smooth-number scan of [1, 949555600000] (runs.c, chunk.c, Python sieve); a(1..1102) frozen in RESULT.json, a(1..1200) in RESULT_ford_1200.json, a(1..1300) in RESULT_ford_1300.json, a(1..1400) in RESULT_ford_1400.json, a(1..1500) in RESULT_ford_1500.json (scan of [1, 3.2e11]), a(1..1600) in RESULT_ford_1600.json (scan of [1, 344421235993]), a(1..1700) in RESULT_ford_1700.json (scan of [1, 453273053620]), a(1..1800) in RESULT_ford_1800.json (scan of [1, 712311270000]), a(1..1900) in RESULT_ford_1900.json (scan of [1, 949555600000])",
+     "contract": "erdos-962-a327909-1801-1900",
+     "date": "2026-10-31",
      "type": "implementation"
     },
     {
@@ -78548,25 +78700,25 @@
     }
    ],
    "exact_feasibility": "cell",
-   "id": "S:gap:962:f955abb6",
+   "id": "S:gap:962:76cd3438",
    "kind": "next_cell",
    "lower": {
-    "source": "= A327909(1800) (certificates/erdos-962 extension, contract erdos-962-a327909-1701-1800) + monotonicity: the first 1800 integers of any valid 1801-run form a valid 1800-run",
-    "value": "712311265810",
+    "source": "= A327909(1900) (certificates/erdos-962 extension, contract erdos-962-a327909-1801-1900) + monotonicity: the first 1900 integers of any valid 1901-run form a valid 1900-run",
+    "value": "949555592339",
     "year": 2026
    },
-   "notes": "PREVIOUS CELL CLOSED HERE (2026-10-30, Ford, seventh extension): certificates/erdos-962 is extended again with new files only (RESULT_ford_1800.json from the certificate's own emit_result.py --nmax 1800 --limit 712311270000, runs_ford_1800.txt from runs.c over the same range, verify_ford_1800.py; contract erdos-962-a327909-1701-1800). One exact scan of every integer up to 712311270000 gives a(1701..1708) = 453273051862, a(1709..1746) = 652614218763, a(1747..1800) = 712311265810; its a(1..1102), a(1..1200), a(1..1300), a(1..1400), a(1..1500), a(1..1600) and a(1..1700) equal RESULT.json, RESULT_ford_1200.json, RESULT_ford_1300.json, RESULT_ford_1400.json, RESULT_ford_1500.json, RESULT_ford_1600.json and RESULT_ford_1700.json exactly, and runs.c agrees on every n <= 1800. This confirms the lead recorded with the sixth extension: a(1701..1708) = a(1700), since 1700..1708 are not prime and the 1757-long run at a(1700) covers them. All 100 are new (OEIS b-file ends at 999, revision 37, re-checked 2026-10-30). The chunked engine scanned [1, 712311270000] in 1157 s wall on 8 jobs. Nothing beyond a(1801) >= a(1800) is claimed here (1801 is prime, so the class prime changes at n = 1801 and a new run may be needed). Erdős's k(n) is now exact for n < 712311265809. SIXTH EXTENSION: certificates/erdos-962 is extended again with new files only (RESULT_ford_1700.json from the certificate's own emit_result.py --nmax 1700 --limit 453273053620, runs_ford_1700.txt from runs.c over the same range, verify_ford_1700.py; contract erdos-962-a327909-1601-1700). One exact scan of every integer up to 453273053620 gives a(1601..1612) = 418346872165, a(1613..1636) = 445969722294, a(1637..1700) = 453273051862; its a(1..1102), a(1..1200), a(1..1300), a(1..1400), a(1..1500) and a(1..1600) equal RESULT.json, RESULT_ford_1200.json, RESULT_ford_1300.json, RESULT_ford_1400.json, RESULT_ford_1500.json and RESULT_ford_1600.json exactly, and runs.c agrees on every n <= 1700. This confirms the lead recorded with the fifth extension: a(1601) > a(1600). All 100 are new (OEIS b-file ends at 999, revision 37, re-checked 2026-10-30). The chunked engine scanned [1, 453273053620] in 783 s wall on 8 jobs. Nothing beyond a(1701) >= a(1700) is claimed here (lead, not part of this contract: 1700..1708 are not prime, so for n = 1701..1708 the class prime stays 1699, and the 1757-long run at a(1700) would give a(1701..1708) = a(1700); it needs its own receipt from an NMAX >= 1708 scan). Erdős's k(n) is now exact for n < 453273051861. FIFTH EXTENSION: certificates/erdos-962 is extended again with new files only (RESULT_ford_1600.json from the certificate's own emit_result.py --nmax 1600 --limit 344421235993, runs_ford_1600.txt from runs.c over the same range, verify_ford_1600.py; contract erdos-962-a327909-1501-1600). One exact scan of every integer up to 344421235993 gives a(1501..1510) = 310735124719, a(1511..1520) = 314314563525, a(1521..1562) = 320450471479, a(1563..1567) = 335391702797, a(1568..1600) = 344421234376; its a(1..1102), a(1..1200), a(1..1300), a(1..1400) and a(1..1500) equal RESULT.json, RESULT_ford_1200.json, RESULT_ford_1300.json, RESULT_ford_1400.json and RESULT_ford_1500.json exactly, and runs.c agrees on every n <= 1600. This confirms the lead recorded with the fourth extension: a(1501..1510) = a(1500) = 310735124719 (run length 1681 in class 1499). All 100 are new (OEIS b-file ends at 999, revision 37, re-checked 2026-10-30). The chunked engine scanned [1, 344421235993] in 890 s wall on 8 jobs. 1601 is prime, so from n = 1601 on integers whose largest prime factor is 1601 also break runs; nothing beyond a(1601) >= a(1600) is claimed here (lead, not part of this contract: the 1616-long run at a(1600) contains 344421234416 = 2^4 x 7^2 x 331 x 829 x 1601, which splits it into pieces of 40 and 1575 in class 1601, so a(1601) > a(1600); it needs its own receipt from an NMAX >= 1700 scan). Erdős's k(n) is now exact for n < 344421234375. FOURTH EXTENSION: certificates/erdos-962 is extended again with new files only (RESULT_ford_1500.json from the certificate's own emit_result.py --nmax 1500 --limit 3.2e11, runs_ford_1500.txt from runs.c over the same range, verify_ford_1500.py; contract erdos-962-a327909-1401-1500). One exact scan of every integer up to 3.2e11 gives a(1401..1409) = 162799483945, a(1410..1438) = 174613219434, a(1439..1446) = 200683383896, a(1447..1485) = 201615234946, a(1486) = 234633350771, a(1487..1488) = 234633350816, a(1489..1498) = 273855996947, a(1499..1500) = 310735124719; its a(1..1102), a(1..1200), a(1..1300) and a(1..1400) equal RESULT.json, RESULT_ford_1200.json, RESULT_ford_1300.json and RESULT_ford_1400.json exactly, and runs.c agrees on every n <= 1500. This confirms the lead recorded with the third extension: a(1401..1408) = a(1400) = 162799483945 (the scan gives a(1401..1409), run length 1409). All 100 are new (OEIS b-file ends at 999, revision 37, re-checked 2026-10-27). The chunked engine scanned [1, 3.2e11] in 475 s wall on 8 jobs. 1501 is not prime (19 x 79), so the class prime stays 1499 and a(1501) is the least start of a 1501-long run with every integer having a prime factor > 1499; nothing beyond a(1501) >= a(1500) is claimed here (lead, not part of this contract: the run at a(1500) is 1681 long in class 1499 and no prime lies strictly between 1499 and 1511, so the same argument would give a(1501..1510) = a(1500); it needs its own receipt). Erdős's k(n) is now exact for n < 310735124718. THIRD EXTENSION: certificates/erdos-962 is extended again with new files only (RESULT_ford_1400.json from the certificate's own emit_result.py --nmax 1400 --limit 4e11, runs_ford_1400.txt from runs.c over the same range, verify_ford_1400.py; contract erdos-962-a327909-1301-1400). One exact scan of every integer up to 4e11 gives a(1301..1306) = 99182650021, a(1307..1308) = 105735468441, a(1309..1310) = 127604829142, a(1311..1360) = 134086311082, a(1361..1400) = 162799483945; its a(1..1102) equal the frozen RESULT.json, its a(1..1200) equal RESULT_ford_1200.json and its a(1..1300) equal RESULT_ford_1300.json exactly, and runs.c agrees on every n <= 1400. This confirms the lead recorded with the second extension: a(1301) = a(1300) = 99182650021 (the scan gives a(1301..1306) = 99182650021, run length 1349). All 100 are new (OEIS b-file ends at 999, revision 37, re-checked 2026-10-27). The chunked engine scanned [1, 4e11] in 589 s wall on 8 jobs. 1401 is not prime (3 x 467), so the class prime stays 1399 and a(1401) is the least start of a 1401-long run with every integer having a prime factor > 1399; nothing beyond a(1401) >= a(1400) is claimed here (lead, not part of this contract: the run at a(1400) is 1409 long in class 1399 and no prime lies strictly between 1399 and 1409, so the argument that gave a(1000..1003) = a(999) would give a(1401..1408) = a(1400); it needs its own receipt). Erdős's k(n) is now exact for n < 162799483944. SECOND EXTENSION: certificates/erdos-962 is extended again with new files only (RESULT_ford_1300.json from the certificate's own emit_result.py --nmax 1300 --limit 1e11, runs_ford_1300.txt from runs.c over the same range, verify_ford_1300.py; contract erdos-962-a327909-1201-1300). One exact scan of every integer up to 1e11 gives a(1201..1211) = 74759540976 (= a(1200): the 1211-long run there contains no integer with largest prime factor 1201), a(1212..1250) = 80437383604, a(1251..1268) = 98440709185, a(1269..1290) = 99182650001, a(1291..1300) = 99182650021; its a(1..1102) equal the frozen RESULT.json and its a(1..1200) equal RESULT_ford_1200.json exactly, and runs.c agrees on every n <= 1300. All 100 are new (OEIS b-file ends at 999, revision 37). The chunked engine scanned [1, 1e11] in 162 s wall on 8 jobs. 1301 is prime; nothing beyond a(1301) >= a(1300) is claimed here. Lead, not part of this contract: a quick gcd check finds that the 1349-long run at a(1300) also contains no integer with largest prime factor 1301, which would make a(1301) = a(1300); it needs its own receipt. Erdős's k(n) is now exact for n < 99182650020. FIRST EXTENSION: certificates/erdos-962 is extended with new files only (RESULT_ford_1200.json from the certificate's own emit_result.py --nmax 1200 --limit 7.5e10, runs_ford_1200.txt from runs.c over the same range, verify_ford_1200.py; contract erdos-962-a327909-1103-1200). One exact scan of every integer up to 7.5e10 gives a(1103..1108) = 41063158607 (= a(1102): the 1183-long run there contains no integer with largest prime factor 1103), a(1109..1113) = 43204475623, a(1114..1152) = 53907372933, a(1153..1156) = 61103835710, a(1157..1200) = 74759540976; its a(1..1102) equal the frozen RESULT.json exactly, and the sequential engine runs.c agrees on every n <= 1200. All 98 are new (OEIS b-file ends at 999, revision 37). 1201 is prime, so from n = 1201 on integers whose largest prime factor is 1201 also break runs; nothing beyond a(1201) >= a(1200) is claimed (an earlier chunk.c scan of [4.1e10, 4e11] ran with NMAX 1200 and so says nothing about class 1201). EARLIER CELL CLOSED HERE (2026-09-27), and it needed no search: the run starting at a(999) = 22369305365 is 1003 integers long, and n = 997..1008 share the same run boundaries (no prime lies strictly between 997 and 1009), so a(1000..1003) = a(999). certificates/erdos-962 then recomputes A327909(1..1102) from scratch by one exact scan of every integer up to 4.2e10 (two C engines that agree, plus a Python sieve on small ranges); it matches the OEIS data and the b-file's a(999), and a(1000..1102) are new (a(1004) = 25446495399, a(1102) = 41063158607). The certificate's chunked engine scans 7.5e10 integers in about 15 CPU-minutes, and a(n) roughly doubles every hundred n here, so each further hundred terms costs about twice the last. Erdős's k(n) = max{k : a(k) <= n + 1} (formal-conjectures ErdosProblems/962.lean definition), so the table gives k(n) exactly for n < 74759540975. Asymptotics for Erdős's k(n): log k(n) ≫ sqrt(log n loglog n) (Erdős 1976, per erdosproblems #962); constant improved to (1/sqrt(2) − o(1)) attributed to Tang in site remarks (2026) — primary arXiv source NOT located, treat as site attribution; upper: k(n) ≤ (1+o(1))sqrt(n) (Tao, site comment); Erdős reported exp(−(log n)^c)·sqrt(n). Extending the table gives data for the log k(n) = (log n)^{1/2+o(1)} question. b-file year unrecorded (entry rev 2025-10-28), hence year null.",
+   "notes": "PREVIOUS CELL CLOSED HERE (2026-10-31, Ford, eighth extension): certificates/erdos-962 is extended again with new files only (RESULT_ford_1900.json from the certificate's own emit_result.py --nmax 1900 --limit 949555600000, runs_ford_1900.txt from runs.c over the same range, verify_ford_1900.py; contract erdos-962-a327909-1801-1900). One exact scan of every integer up to 949555600000 gives a(1801..1858) = 712311265810, a(1859..1884) = 783274569646, a(1885..1900) = 949555592339; its a(1..1102), a(1..1200), a(1..1300), a(1..1400), a(1..1500), a(1..1600), a(1..1700) and a(1..1800) equal RESULT.json, RESULT_ford_1200.json, RESULT_ford_1300.json, RESULT_ford_1400.json, RESULT_ford_1500.json, RESULT_ford_1600.json, RESULT_ford_1700.json and RESULT_ford_1800.json exactly, and runs.c agrees on every n <= 1900. Although 1801 is prime, the 1858-long run at a(1800) carries over: every integer in it has a prime factor >= 1879, so a(1801..1858) = a(1800). All 100 are new (OEIS b-file ends at 999, revision 37, re-checked 2026-10-31). The chunked engine scanned [1, 949555600000] in 1498 s wall on 8 jobs. Nothing beyond a(1901) >= a(1900) is claimed here (1901 is prime, so the class prime changes at n = 1901). Erdős's k(n) is now exact for n < 949555592338. SEVENTH EXTENSION: certificates/erdos-962 is extended again with new files only (RESULT_ford_1800.json from the certificate's own emit_result.py --nmax 1800 --limit 712311270000, runs_ford_1800.txt from runs.c over the same range, verify_ford_1800.py; contract erdos-962-a327909-1701-1800). One exact scan of every integer up to 712311270000 gives a(1701..1708) = 453273051862, a(1709..1746) = 652614218763, a(1747..1800) = 712311265810; its a(1..1102), a(1..1200), a(1..1300), a(1..1400), a(1..1500), a(1..1600) and a(1..1700) equal RESULT.json, RESULT_ford_1200.json, RESULT_ford_1300.json, RESULT_ford_1400.json, RESULT_ford_1500.json, RESULT_ford_1600.json and RESULT_ford_1700.json exactly, and runs.c agrees on every n <= 1800. This confirms the lead recorded with the sixth extension: a(1701..1708) = a(1700), since 1700..1708 are not prime and the 1757-long run at a(1700) covers them. All 100 are new (OEIS b-file ends at 999, revision 37, re-checked 2026-10-30). The chunked engine scanned [1, 712311270000] in 1157 s wall on 8 jobs. Nothing beyond a(1801) >= a(1800) is claimed here (1801 is prime, so the class prime changes at n = 1801 and a new run may be needed). Erdős's k(n) is now exact for n < 712311265809. SIXTH EXTENSION: certificates/erdos-962 is extended again with new files only (RESULT_ford_1700.json from the certificate's own emit_result.py --nmax 1700 --limit 453273053620, runs_ford_1700.txt from runs.c over the same range, verify_ford_1700.py; contract erdos-962-a327909-1601-1700). One exact scan of every integer up to 453273053620 gives a(1601..1612) = 418346872165, a(1613..1636) = 445969722294, a(1637..1700) = 453273051862; its a(1..1102), a(1..1200), a(1..1300), a(1..1400), a(1..1500) and a(1..1600) equal RESULT.json, RESULT_ford_1200.json, RESULT_ford_1300.json, RESULT_ford_1400.json, RESULT_ford_1500.json and RESULT_ford_1600.json exactly, and runs.c agrees on every n <= 1700. This confirms the lead recorded with the fifth extension: a(1601) > a(1600). All 100 are new (OEIS b-file ends at 999, revision 37, re-checked 2026-10-30). The chunked engine scanned [1, 453273053620] in 783 s wall on 8 jobs. Nothing beyond a(1701) >= a(1700) is claimed here (lead, not part of this contract: 1700..1708 are not prime, so for n = 1701..1708 the class prime stays 1699, and the 1757-long run at a(1700) would give a(1701..1708) = a(1700); it needs its own receipt from an NMAX >= 1708 scan). Erdős's k(n) is now exact for n < 453273051861. FIFTH EXTENSION: certificates/erdos-962 is extended again with new files only (RESULT_ford_1600.json from the certificate's own emit_result.py --nmax 1600 --limit 344421235993, runs_ford_1600.txt from runs.c over the same range, verify_ford_1600.py; contract erdos-962-a327909-1501-1600). One exact scan of every integer up to 344421235993 gives a(1501..1510) = 310735124719, a(1511..1520) = 314314563525, a(1521..1562) = 320450471479, a(1563..1567) = 335391702797, a(1568..1600) = 344421234376; its a(1..1102), a(1..1200), a(1..1300), a(1..1400) and a(1..1500) equal RESULT.json, RESULT_ford_1200.json, RESULT_ford_1300.json, RESULT_ford_1400.json and RESULT_ford_1500.json exactly, and runs.c agrees on every n <= 1600. This confirms the lead recorded with the fourth extension: a(1501..1510) = a(1500) = 310735124719 (run length 1681 in class 1499). All 100 are new (OEIS b-file ends at 999, revision 37, re-checked 2026-10-30). The chunked engine scanned [1, 344421235993] in 890 s wall on 8 jobs. 1601 is prime, so from n = 1601 on integers whose largest prime factor is 1601 also break runs; nothing beyond a(1601) >= a(1600) is claimed here (lead, not part of this contract: the 1616-long run at a(1600) contains 344421234416 = 2^4 x 7^2 x 331 x 829 x 1601, which splits it into pieces of 40 and 1575 in class 1601, so a(1601) > a(1600); it needs its own receipt from an NMAX >= 1700 scan). Erdős's k(n) is now exact for n < 344421234375. FOURTH EXTENSION: certificates/erdos-962 is extended again with new files only (RESULT_ford_1500.json from the certificate's own emit_result.py --nmax 1500 --limit 3.2e11, runs_ford_1500.txt from runs.c over the same range, verify_ford_1500.py; contract erdos-962-a327909-1401-1500). One exact scan of every integer up to 3.2e11 gives a(1401..1409) = 162799483945, a(1410..1438) = 174613219434, a(1439..1446) = 200683383896, a(1447..1485) = 201615234946, a(1486) = 234633350771, a(1487..1488) = 234633350816, a(1489..1498) = 273855996947, a(1499..1500) = 310735124719; its a(1..1102), a(1..1200), a(1..1300) and a(1..1400) equal RESULT.json, RESULT_ford_1200.json, RESULT_ford_1300.json and RESULT_ford_1400.json exactly, and runs.c agrees on every n <= 1500. This confirms the lead recorded with the third extension: a(1401..1408) = a(1400) = 162799483945 (the scan gives a(1401..1409), run length 1409). All 100 are new (OEIS b-file ends at 999, revision 37, re-checked 2026-10-27). The chunked engine scanned [1, 3.2e11] in 475 s wall on 8 jobs. 1501 is not prime (19 x 79), so the class prime stays 1499 and a(1501) is the least start of a 1501-long run with every integer having a prime factor > 1499; nothing beyond a(1501) >= a(1500) is claimed here (lead, not part of this contract: the run at a(1500) is 1681 long in class 1499 and no prime lies strictly between 1499 and 1511, so the same argument would give a(1501..1510) = a(1500); it needs its own receipt). Erdős's k(n) is now exact for n < 310735124718. THIRD EXTENSION: certificates/erdos-962 is extended again with new files only (RESULT_ford_1400.json from the certificate's own emit_result.py --nmax 1400 --limit 4e11, runs_ford_1400.txt from runs.c over the same range, verify_ford_1400.py; contract erdos-962-a327909-1301-1400). One exact scan of every integer up to 4e11 gives a(1301..1306) = 99182650021, a(1307..1308) = 105735468441, a(1309..1310) = 127604829142, a(1311..1360) = 134086311082, a(1361..1400) = 162799483945; its a(1..1102) equal the frozen RESULT.json, its a(1..1200) equal RESULT_ford_1200.json and its a(1..1300) equal RESULT_ford_1300.json exactly, and runs.c agrees on every n <= 1400. This confirms the lead recorded with the second extension: a(1301) = a(1300) = 99182650021 (the scan gives a(1301..1306) = 99182650021, run length 1349). All 100 are new (OEIS b-file ends at 999, revision 37, re-checked 2026-10-27). The chunked engine scanned [1, 4e11] in 589 s wall on 8 jobs. 1401 is not prime (3 x 467), so the class prime stays 1399 and a(1401) is the least start of a 1401-long run with every integer having a prime factor > 1399; nothing beyond a(1401) >= a(1400) is claimed here (lead, not part of this contract: the run at a(1400) is 1409 long in class 1399 and no prime lies strictly between 1399 and 1409, so the argument that gave a(1000..1003) = a(999) would give a(1401..1408) = a(1400); it needs its own receipt). Erdős's k(n) is now exact for n < 162799483944. SECOND EXTENSION: certificates/erdos-962 is extended again with new files only (RESULT_ford_1300.json from the certificate's own emit_result.py --nmax 1300 --limit 1e11, runs_ford_1300.txt from runs.c over the same range, verify_ford_1300.py; contract erdos-962-a327909-1201-1300). One exact scan of every integer up to 1e11 gives a(1201..1211) = 74759540976 (= a(1200): the 1211-long run there contains no integer with largest prime factor 1201), a(1212..1250) = 80437383604, a(1251..1268) = 98440709185, a(1269..1290) = 99182650001, a(1291..1300) = 99182650021; its a(1..1102) equal the frozen RESULT.json and its a(1..1200) equal RESULT_ford_1200.json exactly, and runs.c agrees on every n <= 1300. All 100 are new (OEIS b-file ends at 999, revision 37). The chunked engine scanned [1, 1e11] in 162 s wall on 8 jobs. 1301 is prime; nothing beyond a(1301) >= a(1300) is claimed here. Lead, not part of this contract: a quick gcd check finds that the 1349-long run at a(1300) also contains no integer with largest prime factor 1301, which would make a(1301) = a(1300); it needs its own receipt. Erdős's k(n) is now exact for n < 99182650020. FIRST EXTENSION: certificates/erdos-962 is extended with new files only (RESULT_ford_1200.json from the certificate's own emit_result.py --nmax 1200 --limit 7.5e10, runs_ford_1200.txt from runs.c over the same range, verify_ford_1200.py; contract erdos-962-a327909-1103-1200). One exact scan of every integer up to 7.5e10 gives a(1103..1108) = 41063158607 (= a(1102): the 1183-long run there contains no integer with largest prime factor 1103), a(1109..1113) = 43204475623, a(1114..1152) = 53907372933, a(1153..1156) = 61103835710, a(1157..1200) = 74759540976; its a(1..1102) equal the frozen RESULT.json exactly, and the sequential engine runs.c agrees on every n <= 1200. All 98 are new (OEIS b-file ends at 999, revision 37). 1201 is prime, so from n = 1201 on integers whose largest prime factor is 1201 also break runs; nothing beyond a(1201) >= a(1200) is claimed (an earlier chunk.c scan of [4.1e10, 4e11] ran with NMAX 1200 and so says nothing about class 1201). EARLIER CELL CLOSED HERE (2026-09-27), and it needed no search: the run starting at a(999) = 22369305365 is 1003 integers long, and n = 997..1008 share the same run boundaries (no prime lies strictly between 997 and 1009), so a(1000..1003) = a(999). certificates/erdos-962 then recomputes A327909(1..1102) from scratch by one exact scan of every integer up to 4.2e10 (two C engines that agree, plus a Python sieve on small ranges); it matches the OEIS data and the b-file's a(999), and a(1000..1102) are new (a(1004) = 25446495399, a(1102) = 41063158607). The certificate's chunked engine scans 7.5e10 integers in about 15 CPU-minutes, and a(n) roughly doubles every hundred n here, so each further hundred terms costs about twice the last. Erdős's k(n) = max{k : a(k) <= n + 1} (formal-conjectures ErdosProblems/962.lean definition), so the table gives k(n) exactly for n < 74759540975. Asymptotics for Erdős's k(n): log k(n) ≫ sqrt(log n loglog n) (Erdős 1976, per erdosproblems #962); constant improved to (1/sqrt(2) − o(1)) attributed to Tang in site remarks (2026) — primary arXiv source NOT located, treat as site attribution; upper: k(n) ≤ (1+o(1))sqrt(n) (Tao, site comment); Erdős reported exp(−(log n)^c)·sqrt(n). Extending the table gives data for the log k(n) = (log n)^{1/2+o(1)} question. b-file year unrecorded (entry rev 2025-10-28), hence year null.",
    "oeis": "A327909",
    "overlay": "gap_map",
    "problem": 962,
-   "quantity": "A327909(1801) — smallest start of a run of 1801 consecutive integers each having a prime factor > 1801 (first cell beyond the certified table a(1..1800); per-n table underlying Erdős's k(n))",
+   "quantity": "A327909(1901) — smallest start of a run of 1901 consecutive integers each having a prime factor > 1901 (first cell beyond the certified table a(1..1900); per-n table underlying Erdős's k(n))",
    "status": "open",
    "type": "surface",
    "upper": null,
    "witness_feasibility": "open-easy",
-   "witness_object": "a start s with each of s, s+1, ..., s+1800 having a prime factor > 1801; for the exact cell, the least such s certified by an exhaustive scan below it",
+   "witness_object": "a start s with each of s, s+1, ..., s+1900 having a prime factor > 1901; for the exact cell, the least such s certified by an exhaustive scan below it",
    "witness_side": "upper",
-   "witness_verifier": "for each of the 1801 integers, divide out all primes <= 1801 and check the cofactor exceeds 1 — milliseconds, dependency-free (certificates/erdos-962/smooth_runs.run_is_gap does it by gcd with the primorial)"
+   "witness_verifier": "for each of the 1901 integers, divide out all primes <= 1901 and check the cofactor exceeds 1 — milliseconds, dependency-free (certificates/erdos-962/smooth_runs.run_is_gap does it by gcd with the primorial)"
   },
   {
    "confidence": "C3",
