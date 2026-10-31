@@ -122,6 +122,9 @@ python3 -I certificates/erdos-962/verify.py --full   # a(1..1102): scan of [1, 4
 | `RESULT_ford_1800.json` | seventh extension receipt: a(n) and run length for n = 1..1800 (written by `emit_result.py --nmax 1800`) |
 | `runs_ford_1800.txt` | the sequential engine's output for NMAX 1800 over [1, 712311270000], one line per n |
 | `verify_ford_1800.py` | the replay for the seventh extension; reads, never writes |
+| `RESULT_ford_1900.json` | eighth extension receipt: a(n) and run length for n = 1..1900 (written by `emit_result.py --nmax 1900`) |
+| `runs_ford_1900.txt` | the sequential engine's output for NMAX 1900 over [1, 949555600000], one line per n |
+| `verify_ford_1900.py` | the replay for the eighth extension; reads, never writes |
 
 ## Scope — what is not certified
 
@@ -130,8 +133,8 @@ python3 -I certificates/erdos-962/verify.py --full   # a(1..1102): scan of [1, 4
 - **Minimality is only as good as the scan.** It rests on the two engines, which
   share the sieve design but not code, and on the reference over the small
   range. It is a verified-search receipt, not a formal proof.
-- **a(1801) is not computed.** a(1103..1800) are covered by the seven extensions below.
-  All that is claimed here is a(1801) ≥ a(1800) = 712311265810.
+- **a(1901) is not computed.** a(1103..1900) are covered by the eight extensions below.
+  All that is claimed here is a(1901) ≥ a(1900) = 949555592339.
 
 ## Extension to n = 1200 (2026-10-27)
 
@@ -425,4 +428,47 @@ and agreement with the committed `runs.c` output. Only `--full` certifies the
 claim. Planted failures must be refused: a(1747) claimed one smaller, run(1800)
 claimed one longer, the a(1709) run started one late, and a(1650) altered in the
 a(1..1700) prefix. The scope above still applies: a verified-search receipt, not
+a formal proof; the two engines share the sieve design but not code.
+
+## Extension to n = 1900 (2026-10-31)
+
+**A327909(n) for 1801 ≤ n ≤ 1900: a(1801..1858) = 712311265810, a(1859..1884) = 783274569646, a(1885..1900) = 949555592339; all 100 are new (the OEIS b-file ends at 999).**
+
+| n | a(n) | length of the run there |
+|---:|---:|---:|
+| 1801–1858 | 712311265810 | 1858 |
+| 1859–1884 | 783274569646 | 1884 |
+| 1885–1900 | 949555592339 | 1945 |
+
+This eighth extension again adds new files and changes none (the earlier
+extensions' files are frozen too). `RESULT_ford_1900.json` was written by the
+certificate's own `emit_result.py` (`--nmax 1900 --limit 949555600000`): one
+exact chunked scan of every integer up to 949555600000 (1498 s wall on 8 jobs). Its
+entries for n ≤ 1102, 1200, 1300, 1400, 1500, 1600, 1700 and 1800 equal `RESULT.json`,
+`RESULT_ford_1200.json`, `RESULT_ford_1300.json`, `RESULT_ford_1400.json`,
+`RESULT_ford_1500.json`, `RESULT_ford_1600.json`, `RESULT_ford_1700.json` and
+`RESULT_ford_1800.json` exactly. `runs_ford_1900.txt` is the sequential engine `runs.c`,
+run separately over [1, 949555600000] with NMAX 1900, and it agrees on every n ≤ 1900.
+The scan limit sits just above the end of the last run needed (the run at a(1900) ends at 949555594283).
+
+- **The run at a(1800) carries over.** 1801 is prime, so the class prime changes at
+  n = 1801, but every integer in the 1858-long run at a(1800) has a prime factor of at
+  least 1879, and both of its neighbours are 1151-smooth. So a(1801..1858) = a(1800) =
+  712311265810. Then a(1859) = 783274569646 (run 1884) and a(1885) = 949555592339 (run 1945).
+- Erdős's k(n) = max { k : a(k) ≤ n + 1 } is now exact for every
+  n < 949555592338, and k(n) ≥ 1900 beyond that.
+- Next cell, not claimed here: 1901 is prime, so a(1901) may need a new run;
+  only a(1901) ≥ a(1900) is known.
+
+```sh
+python3 -I certificates/erdos-962/verify_ford_1900.py               # prefixes, gcd witnesses, committed runs.c output, engines on [1, 2*10^8]; does not certify
+python3 -I certificates/erdos-962/verify_ford_1900.py --full        # chunk.c rescans [1, 949555600000] and certifies a(1..1900)
+python3 -I certificates/erdos-962/verify_ford_1900.py --full --runs # also re-runs runs.c over the same range (~269 min, one core)
+```
+
+The fast replay checks the receipt: all eight frozen prefixes, every run by gcd,
+and agreement with the committed `runs.c` output. Only `--full` certifies the
+claim. Planted failures must be refused: a(1859) claimed one smaller, run(1900)
+claimed one longer, the a(1885) run started one late, and a(1750) altered in the
+a(1..1800) prefix. The scope above still applies: a verified-search receipt, not
 a formal proof; the two engines share the sieve design but not code.
