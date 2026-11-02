@@ -1,0 +1,23 @@
+{
+  "source_commit": "a1d06748b5507a62a9d3c068b55b202875354684",
+  "clean_git_clone": true,
+  "dependency_cache_reused": true,
+  "project_build_objects_reused": false,
+  "build_command": "lake build",
+  "build_exit_code": 0,
+  "source_audit_matches": true,
+  "axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "axiom_guard_passed": true,
+  "lean_version": "Lean (version 4.33.1, arm64-apple-darwin24.6.0, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "elapsed_seconds": 242.73,
+  "repository_checks": {
+    "make check-graph": "passed",
+    "uv run --python 3.11 --with-requirements requirements-dev.lock make test": "275 passed, 2 skipped"
+  },
+  "source_audit_sha256": "e495081df86fa100982840bcfb1c5cf326797afeab891c9c25a1d74435b59351"
+}

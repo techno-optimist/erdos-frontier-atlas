@@ -351,6 +351,26 @@ A364153(17) cross-check, same binary). RESULT.json, `verify.py`, `ss_cleanroom.c
 Nothing in this addendum bears on A364132(30) or on the asymptotic question; Erdős #357
 itself remains open.
 
+## Addendum (2026-11-02, Ford): any order, a(k) > (3/2 + 10⁻¹⁰)k for k ≥ 10²²
+
+**A Lean-checked lower bound for A364153 past 3/2, AI-written and with AI-only review,
+not refereed.** For every k ≥ 10²², a(k) > (3/2 + 10⁻¹⁰)k, where a(k) = A364153(k) is the
+any-order quantity; previously the cited lower bound was (3/2 − o(1))k (Hegyvári 1986).
+The argument and the Lean formalization are by Kevin Russell with GPT Astra; Ford
+audited both (Lean 4.33.1, Mathlib 0df444a3, theorem `erdos357_any_order_improvement`,
+standard three axioms, accepted by nanoda, con-ron and `leanchecker --fresh`). The gain
+is 10⁻¹⁰ in the constant and applies only for k ≥ 10²². Everything is in the new folder
+[`anyorder/`](anyorder/README.md) (contract `erdos-357-any-order-lower-bound`); no file
+above is changed.
+
+Scope: increasing-order results (the 2026 claims of Lenthall-Cleary and of
+Pickhardt / Paratelligent, and Coppersmith–Phillips's 2/3 − 1/512) are about increasing
+sequences and do not transfer to A364153 or the any-order g. The erdosproblems.com page
+for #357 currently attributes Coppersmith–Phillips to the any-order g, and a forum
+comment ([post #5308](https://www.erdosproblems.com/forum/thread/357#post-5308))
+questions this; see [`anyorder/README.md`](anyorder/README.md#scope-note-increasing-order-versus-any-order).
+Erdős #357 itself remains open.
+
 ## Scope — what is not certified
 
 - **Not Erdős #357.** The question is how f(N) grows, for instance whether

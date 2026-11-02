@@ -1,0 +1,17 @@
+Fresh Git clone of a1d06748b5507a62a9d3c068b55b202875354684
+Pinned dependency cache reused; no project build objects reused.
+Command: lake build
+✔ [8706/8718] Built Erdos357.Basic (71s)
+✔ [8707/8718] Built Erdos357.Packing (71s)
+✔ [8708/8718] Built Erdos357.Transport (106s)
+✔ [8709/8718] Built Erdos357.Span (107s)
+✔ [8710/8718] Built Erdos357.SmallEntries (16s)
+✔ [8711/8718] Built Erdos357.Stability (6.5s)
+✔ [8712/8718] Built Erdos357.Empirical (6.6s)
+✔ [8713/8718] Built Erdos357.Correlation (4.5s)
+✔ [8714/8718] Built Erdos357.Gram (4.8s)
+ℹ [8715/8718] Built Solution (3.0s)
+info: Solution.lean:20:0: 'erdos357_any_order_improvement' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [8717/8718] Built AxiomAudit (3.8s)
+Build completed successfully (8718 jobs).
+Exit code: 0

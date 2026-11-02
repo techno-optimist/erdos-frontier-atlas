@@ -1,0 +1,28 @@
+PASS A1 eps+2/sqrtK+1/(2K)<=2eps
+PASS A2 eta-2/sqrtK-1/(2K)>=eta/2
+PASS A3 28/K+36/250000<=1/6000
+PASS A4 36eps+8eta+17/12000+22/K<=9/4000
+PASS A5 90/4000+2/6000+2/10000+82/K<=1/40
+PASS q bound: 2*(2eps k^2)/(eta k) = 4eps/eta k = k/250000
+PASS (8+1/2)/6000 == 17/12000
+PASS (T+h)/2 =22 for h=8
+PASS 2eta == 2/10000
+PASS 3*pi<10 (pi<355/113)
+PASS 2/(3pi)>1/5 (pi<355/113)
+PASS -1/5+1/20 == -3/20
+PASS sum(9-r)=36
+PASS sum(9-r)(8-r)=168
+PASS -63+2*168 == 273
+PASS 9-72*3/20 == -9/5
+PASS -9/5 K + 273 < 0
+Monotonicity: each constraint has the form const +/- (positive)*k^{-1/2} or k^{-1}; the k-dependent terms only shrink as k grows,
+ so validity at K implies validity for all k>=K. Spot-check at k=K*10^j:
+  k=1e22 True
+  k=1e24 True
+  k=1e26 True
+  k=1e28 True
+  k=1e30 True
+  k=1e32 True
+PASS Step1 S-bound exact for k<=20000 and two huge k
+PASS Corollary slack at k=K: eps*K<=10*sqrtK+1/2
+ALL PASS

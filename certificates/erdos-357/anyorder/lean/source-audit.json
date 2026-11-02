@@ -1,0 +1,39 @@
+{
+  "line_counts": {
+    "AxiomAudit.lean": 5,
+    "Challenge.lean": 14,
+    "Erdos357/Basic.lean": 141,
+    "Erdos357/Correlation.lean": 101,
+    "Erdos357/Empirical.lean": 146,
+    "Erdos357/Gram.lean": 132,
+    "Erdos357/Packing.lean": 132,
+    "Erdos357/SmallEntries.lean": 95,
+    "Erdos357/Span.lean": 129,
+    "Erdos357/Stability.lean": 143,
+    "Erdos357/Transport.lean": 114,
+    "Solution.lean": 20
+  },
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "only_challenge_contains_sorry": true,
+  "proof_lines_excluding_challenge_and_audit": 1153,
+  "sha256": {
+    "AxiomAudit.lean": "1ab2004a310e4c497e7239b7d50a0a87b9f69eed296bba39894fecbbc682aded",
+    "Challenge.lean": "3456f4e8e33878029fd6a274316adab9833f6d6e23f625a4e58bbe1e0aa2595e",
+    "Erdos357/Basic.lean": "5485c818bd3420b65dc3c8be339d7b846ff6c520bd16271729023eeb178ed90f",
+    "Erdos357/Correlation.lean": "6a0df472aec38d2731b6bbf3980ed115fd2a13bafb4b7630b88ba116e23a8a8c",
+    "Erdos357/Empirical.lean": "92c50c932b286e2f24fb0fdc61c133e9d074045e458297ab14c44b3e02831c75",
+    "Erdos357/Gram.lean": "db50478fbbd1a3f93e7e17dc67fee8b8c2d7bfb55dcd76606d9f355e78000d2f",
+    "Erdos357/Packing.lean": "7ce57b97a8d8ec27c3c2863f0cb578835684d17c319516a8aae44f9000004189",
+    "Erdos357/SmallEntries.lean": "e1d6dc0274f12e46432ba733c16c9320c6912967f144a1a8de5d58a2b072d934",
+    "Erdos357/Span.lean": "295cb1e9ca518c7c1d632f1bab5b6a7d0d069c064fb6adbfb38b1525693234f9",
+    "Erdos357/Stability.lean": "8131fc70085064cb619ded2b9b77b3de60eb32a608b88db5dafdc2db9523c6de",
+    "Erdos357/Transport.lean": "6d0675c9a13d95ab0410d7862cc12183a15d75e42c43e18f10f60cf8ebc93fe3",
+    "Solution.lean": "e1233d9dfcf398be3a016d8089a62f1715ad530b384483f2e616d210af4d79a7",
+    "lake-manifest.json": "54f290a3337c2e291315c4ef360f4274e6cbf6590619989754d536f3c7927c0e",
+    "lakefile.toml": "c0a6eedb53b29127b24552aaaff4cb8e06162359c5997713f9a229665ef76d16",
+    "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+  },
+  "target_headers_identical": true,
+  "toolchain": "leanprover/lean4:v4.33.1",
+  "total_lean_lines": 1172
+}

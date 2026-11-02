@@ -1,0 +1,12 @@
+Witness k=19:
+ k=19 N=29 admissible=True
+ Q=78.7020603269646  |Q-(9(k-7)+2cross)|=3.25e-48
+ max_{r,a} [partial - (C_r+8-r)] = 0.0 (must be <=0)
+ Q <= 9k+2sum(9-r)C_r+273 = 390.302285232 : True
+ C_r/k: ['-0.141', '-0.1874', '0.1426', '0.1037', '-0.04116', '-0.1679', '0.1549', '0.0105']
+ all: (True, True, True)
+k=9 N=12 rows checked=74 (cap 3000) identity ok=True partial-bound ok=True Q-bound ok=True
+k=10 N=13 rows checked=6 (cap 3000) identity ok=True partial-bound ok=True Q-bound ok=True
+k=11 N=14 rows checked=2 (cap 3000) identity ok=True partial-bound ok=True Q-bound ok=True
+k=12 N=17 rows checked=94 (cap 3000) identity ok=True partial-bound ok=True Q-bound ok=True
+random admissible rows (k>=9) checked=400 all identities/bounds ok=True
