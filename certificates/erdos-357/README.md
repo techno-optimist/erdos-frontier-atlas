@@ -1,4 +1,4 @@
-# Erdős #357 — distinct segment sums: A364132 through n = 29, A364153 through n = 18
+# Erdős #357 — distinct segment sums: A364132 through n = 29, A364153 through n = 19
 
 **Problem node `P357`; OEIS [A364132](https://oeis.org/A364132) and
 [A364153](https://oeis.org/A364153).** A *segment* of a sequence
@@ -36,6 +36,7 @@ A364132(28) ∈ [70, 76] is unchanged.
 Update 2026-10-29: A364132(28) = 75 is now decided by the same separate engine (addendum below), so the next cell is A364132(29) ≥ 76.
 Update 2026-10-30: A364153(18) = 28 is now decided by the same separate engine (addendum below), so the any-order companion cell is A364153(19) ≥ 29.
 Update 2026-10-30: A364132(29) = 79 is now decided by the same separate engine (addendum below), so the next cell is A364132(30) ≥ 80.
+Update 2026-11-02: A364153(19) = 29 is now decided by the same separate engine (addendum below), so the any-order companion cell is A364153(20) ≥ 29. (The 2026-10-30 line above gave A364153(19) ≥ 29; for any order, deleting the last term only gives A364153(19) ≥ 28, so N = 28 was searched too.)
 
 ## Method
 
@@ -294,6 +295,61 @@ The searches ran on 2026-10-30. RESULT.json, `verify.py`, `ss_cleanroom.c`, `seg
 and the other files above are unchanged. Not submitted to OEIS here. Nothing in this
 addendum bears on A364153(19) or on the asymptotic question; Erdős #357 itself remains
 open.
+
+## Addendum (2026-11-02, Ford): A364153(19) = 29
+
+**A364153(19) = 29: new, since OEIS lists A364153(1..13); an exhaustive computer search by two independent engines, not a proof.**
+
+| n | A364153(n) | an n-sequence in {1..A364153(n)} with distinct segment sums |
+|---:|---:|---|
+| 19 | **29** | 4, 1, 2, 10, 22, 15, 21, 24, 28, 29, 27, 16, 26, 20, 18, 23, 25, 19, 11 |
+
+No 19-sequence of distinct values from {1..28}, in any order, has all 190 segment
+sums distinct, and the sequence above (maximum 29) does; it is checked by brute force.
+
+A correction first. The A364153(18) addendum left the companion cell as
+A364153(19) ≥ 29. That does not follow. For sequences in any order, deleting the last
+term of a good 19-sequence leaves a good 18-sequence with the same maximum or less, so
+it only gives A364153(19) ≥ A364153(18) = 28. ("Delete the largest term" works for the
+increasing A364132, not here.) So N = 28 had to be searched, and it is refuted below.
+
+- **Engine.** The same `ss_cleanroom.c` (sha256 cc5d0992…d514), mode a (any order, no
+  symmetry breaking), each search split into 38 parts by dealing the admissible second
+  terms round-robin; together the parts cover the whole search.
+- **Searches** (`ford_searches_a364153_19.txt`, 41 lines): two controls, a16@23 part
+  0/14 (NONE, the same node count as before) and a18@28 part 1/19 (FOUND, the same line
+  and sequence as in the A364153(18) addendum); all 38 parts NONE at N = 28 (about
+  1.02 × 10^12 nodes, summed over the parts); and at N = 29 the FOUND line for part
+  8/38 (8.8 × 10^9 nodes). The other a19@29 parts are not needed, since one
+  brute-checked sequence settles the upper side. NONE at 28 alone gives
+  A364153(19) ≥ 29; the sequence gives ≤ 29.
+- **Second engine** (`g4_crosscheck_a364153_19.txt`): the unchanged `segsum.c`,
+  unpartitioned, answers none at 28 (1,023,848,893,903 nodes; it ran from 2026-10-31 to
+  2026-11-02), and its a16@23 node count equals the one pinned in RESULT.json. The two
+  engines are independent code using the same method, not independent mathematics.
+- **Checks** (`verify_ford_a19.py`): completeness of the parts, the sequence checked by
+  brute force alone, agreement of the two engines at 28, `ss_cleanroom.c` reproducing
+  A364153(1..12) of RESULT.json, a byte-for-byte re-run of the a18@28 control, and six
+  planted failures (a witness whose last term is s_1 + s_2, a witness with a repeated
+  term, a flipped part, a dropped part, an engine disagreement, the collision
+  1 + 2 = 3), each rejected.
+
+```sh
+python3 -I certificates/erdos-357/verify_ford_a19.py          # consistency + the a18@28 control (~10 s; not certifying)
+python3 -I certificates/erdos-357/verify_ford_a19.py --full   # re-runs all 41 + 2 searches (about 2.1e12 nodes; days)
+```
+
+| file | role |
+|---|---|
+| `ford_searches_a364153_19.txt` | its 41 committed answers |
+| `g4_crosscheck_a364153_19.txt` | `segsum.c` on a16@23 and a19@28 |
+| `verify_ford_a19.py` | the replay; reads the files above and RESULT.json, never writes them |
+
+The searches ran 2026-10-31 to 2026-11-02 (the a16@23 segsum line is the one from the
+A364153(17) cross-check, same binary). RESULT.json, `verify.py`, `ss_cleanroom.c`,
+`segsum.c` and the other files above are unchanged. Not submitted to OEIS here.
+Nothing in this addendum bears on A364132(30) or on the asymptotic question; Erdős #357
+itself remains open.
 
 ## Scope — what is not certified
 

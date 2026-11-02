@@ -47,7 +47,7 @@ The state of this edition, generated from the data:
 
 | this edition | state |
 |---|---|
-| data through | **2026-10-31** (latest provenance/evidence date in the gap map) |
+| data through | **2026-11-02** (latest provenance/evidence date in the gap map) |
 | the ledger | **225** bounded quantities |
 | confidence | C0 0 · C1 1 · C2 13 · C3 211 |
 | movements on the board | **14** (🟢 10 · 🔴 2 · 🟡 2) — corrected claims kept visible |
@@ -109,7 +109,7 @@ Corrected claims stay on the board by design (charter Tenet 5).
 | 🔴 | **#142** / D15 lemmas | **refuted** `ker π ∩ D = 0` and `q ≥ dim ker π` (two lemmas a bridge attempt rested on) and proved Theorem A in their place — a dead path closed so the next agent does not re-walk it; explicitly **not** an `r₃(N)` bound | [`certificates/erdos-142-kerpi-refutation`](../certificates/erdos-142-kerpi-refutation) · PR #101, #102 | 2026-07-24 |
 | 🟢 | **#1029 / #77** `R(5,5)` | 42/42 DRAT-certified structural negatives (no witness; rigidity + prime-order orbit collapse), all consistent with `R(5,5) = 43` | [r55-rigidity-certificates](https://github.com/techno-optimist/r55-rigidity-certificates) · DOI [10.5281/zenodo.21305022](https://doi.org/10.5281/zenodo.21305022) | 2026-07-10 |
 | 🔴 | **#552** `R(C4,K1,39)` | the `=46` **new-value** claim was **retracted** — DS1 rev.18 lists `46 ≤ f(39) ≤ 47`, OPEN; the 45-vertex witness stands as a re-derivation of Wu–Sun–Radziszowski 2015 | [`certificates/erdos-552-f39`](../certificates/erdos-552-f39) | 2026-07-17 |
-| 🟢 | **#357** segment-sum sequences (A364132 / A364153) | new sequence terms **A364132(28) = 75**, **A364132(29) = 79**, **A364153(17) = 26** and **A364153(18) = 28**, from exhaustive computer search confirmed by a second independent program — a computer search, not a proof; problem #357 stays open. Kevin's comment: https://erdosproblems.ai/problems/357#discussion | [certificates/erdos-357](https://github.com/techno-optimist/erdos-frontier-atlas/tree/main/certificates/erdos-357) (https://github.com/techno-optimist/erdos-frontier-atlas/tree/main/certificates/erdos-357) · PR #186, PR #187, PR #192, PR #198 | 2026-10-30 |
+| 🟢 | **#357** segment-sum sequences (A364132 / A364153) | new sequence terms **A364132(28) = 75**, **A364132(29) = 79**, **A364153(17) = 26**, **A364153(18) = 28** and **A364153(19) = 29**, from exhaustive computer search confirmed by a second independent program — a computer search, not a proof; problem #357 stays open. Kevin's comment: https://erdosproblems.ai/problems/357#discussion | [certificates/erdos-357](https://github.com/techno-optimist/erdos-frontier-atlas/tree/main/certificates/erdos-357) (https://github.com/techno-optimist/erdos-frontier-atlas/tree/main/certificates/erdos-357) · PR #186, PR #187, PR #192, PR #198, PR #205 | 2026-11-02 |
 
 (Certificate links in this table are relative to the repository root,
 as on the board itself.)
