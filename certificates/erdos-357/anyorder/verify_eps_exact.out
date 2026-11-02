@@ -1,0 +1,15 @@
+3pi/ones9 eps=1/10000000000 eta=1/10000  Q/k bound=-5.799376561669848  -> CONTRADICTION (valid)
+   also k=1e24: True
+   also k=1e30: True
+3pi/ones9 eps=1/25000000 eta=749894209/1000000000000  Q/k bound=-0.11806668142540877  -> CONTRADICTION (valid)
+   also k=1e24: True
+   also k=1e30: True
+alpha=8.9: sigma >= 0.217027654072 (rigorous)
+alpha=8.9/n=10 sine weights ['141/500', '541/1000', '189/250', '91/100', '99/100', '99/100', '91/100', '189/250', '541/1000', '141/500'] eps=6e-8 eta=420697571/500000000000 Q/k bound=-0.21322182310746354 -> CONTRADICTION (valid)
+eps=1e-10, K=1e10: does not close
+eps=1e-10, K=1e12: does not close
+eps=1e-10, K=1e14: does not close
+eps=1e-10, K=1e16: closes, eta=111936057/500000000000
+eps=1e-10, K=1e18: closes, eta=19952623/1000000000000
+eps=1e-10, K=1e20: closes, eta=2818383/1000000000000
+eps=1e-10, K=1e22: closes, eta=561009/500000000000

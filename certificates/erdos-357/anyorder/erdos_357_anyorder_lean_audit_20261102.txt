@@ -1,0 +1,164 @@
+INDEPENDENT REBUILD AUDIT: Lean formalization of a candidate any-order improvement for Erdős #357 (OEIS A364153)
+================================================================================================================
+
+Status: FINAL (audit complete). A candidate result, not refereed, with AI-only review.
+The argument (PROOF.md) and the Lean formalization were written by GPT Astra, with Kevin Russell asking the questions and pushing for them.
+Ford (P42) audited it. This receipt only lists what one machine checked. It is not a referee report.
+
+Auditor: Ford (P42), on a redacted research machine, Mon Nov 2 2026, 12:35 PM - 1:19 PM MST (UTC-7).
+Heavy jobs ran at nice 19 on cores 12-19 (taskset), inside ~/ford/astra357lean, with the export on /data/ford/astra357lean.
+The audited sources were not modified. The audit files sit beside them in ~/ford/astra357lean/audit.
+
+0. FALSIFIERS (fixed by the task brief before the build started)
+  F1  A clean `lake build` fails with the zip's own toolchain and Mathlib pin.
+  F2  `#print axioms erdos357_any_order_improvement`, run by the auditor, shows anything besides
+      propext / Classical.choice / Quot.sound (for example sorryAx, Lean.ofReduceBool, or a custom axiom).
+  F3  An escape hatch appears in the sources: sorry/admit outside Challenge.lean, axiom, native_decide,
+      implemented_by, unsafe, opaque, @[csimp], extern, ofReduceBool, custom macro/elab/syntax,
+      debug or skipKernelTC options, or a local instance overriding Mathlib.
+  F4  Challenge.lean and Solution.lean elaborate to different statements.
+  F5  An independent kernel (not Lean's own), or Lean's own kernel replaying from scratch, rejects the proof.
+  S   (Statement audit) The target does not faithfully say the any-order #357 statement, or its hypotheses are
+      contradictory or vacuous, or the definitions are trivialized.
+  Result: F1-F5 and S did not fire.
+
+1. PINNED SOURCE
+  Zip:        a.zip, sha256 52a688a1a16a7b0c9e133cd1f61a3562e8c101740d440dbcd8b795410aa7602f (24 KB, pasted by Kevin from GPT Astra).
+  Claimed:    proof commit a1d06748b5507a62a9d3c068b55b202875354684; zip/verification commit
+              e5e5e75c1d7d8bdca9888f47aad97aefa89fa77b. The zip has no git metadata, so I could NOT verify these
+              hashes. This audit pins the zip's sha256 and the file hashes below instead.
+  Toolchain:  leanprover/lean4:v4.33.1 (Lean 4.33.1, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6), a stable release.
+  Mathlib:    0df444a360eaa60ab8c11dca51a86af692955474 (lake-manifest.json). After `lake exe cache get`, the checkout was at
+              exactly this commit with a clean `git status` (0 lines). Transitive pins were also checked: aesop 3448c0b,
+              batteries 4488d40, Cli 6130a47, importGraph 16f02aa, LeanSearchClient 5f4d51b, plausible b7eb330,
+              proofwidgets 4be2e3d, Qq 92c15be. All match the manifest.
+  Size:       12 .lean files, 1,172 lines (matches the claim). Erdos357/: Basic 141, Packing 132, Span 129,
+              SmallEntries 95, Stability 143, Transport 114, Empirical 146, Correlation 101, Gram 132;
+              Solution 20, Challenge 14, AxiomAudit 5.
+  sha256:     Challenge.lean  3456f4e8e33878029fd6a274316adab9833f6d6e23f625a4e58bbe1e0aa2595e
+              Solution.lean   e1233d9dfcf398be3a016d8089a62f1715ad530b384483f2e616d210af4d79a7
+              AxiomAudit.lean 1ab2004a310e4c497e7239b7d50a0a87b9f69eed296bba39894fecbbc682aded
+              Basic.lean      5485c818bd3420b65dc3c8be339d7b846ff6c520bd16271729023eeb178ed90f
+              Packing.lean    7ce57b97a8d8ec27c3c2863f0cb578835684d17c319516a8aae44f9000004189
+              Span.lean       295cb1e9ca518c7c1d632f1bab5b6a7d0d069c064fb6adbfb38b1525693234f9
+              SmallEntries    e1d6dc0274f12e46432ba733c16c9320c6912967f144a1a8de5d58a2b072d934
+              Stability.lean  8131fc70085064cb619ded2b9b77b3de60eb32a608b88db5dafdc2db9523c6de
+              Transport.lean  6d0675c9a13d95ab0410d7862cc12183a15d75e42c43e18f10f60cf8ebc93fe3
+              Empirical.lean  92c50c932b286e2f24fb0fdc61c133e9d074045e458297ab14c44b3e02831c75
+              Correlation     6a0df472aec38d2731b6bbf3980ed115fd2a13bafb4b7630b88ba116e23a8a8c
+              Gram.lean       db50478fbbd1a3f93e7e17dc67fee8b8c2d7bfb55dcd76606d9f355e78000d2f
+              lakefile.toml   c0a6eedb53b29127b24552aaaff4cb8e06162359c5997713f9a229665ef76d16
+              lake-manifest   54f290a3337c2e291315c4ef360f4274e6cbf6590619989754d536f3c7927c0e
+              lean-toolchain  3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71
+
+2. BUILD  (F1: did not fire)
+  The zip shipped no .lake directory. `.lake/build` was deleted anyway, before and after the cache step.
+  elan installed v4.33.1 (rc 0). `lake exe cache get`: 8,690 Mathlib files, rc 0.
+  `lake build` (default targets Solution and AxiomAudit): rc 0, "Build completed successfully (8718 jobs)."
+  All 9 Erdos357 modules, Solution and AxiomAudit were rebuilt from source (12:36:44 - 12:37:30 PM MST, 46 s).
+  The log has no error, warning or `sorry` lines. Challenge.lean is not a build target, as the README says.
+  Log ~/ford/astra357lean/build_full.log (sha256 ec39aa983a8e2ea915dd00dc941f953a37879db3d3cb723a63697f27f89afa1c).
+
+3. AXIOMS  (F2: did not fire)   [audit/AuditAxioms.lean, `lake env lean`, rc 0]
+  'erdos357_any_order_improvement'          : [propext, Classical.choice, Quot.sound]
+  'Erdos357.admissible_extend'              : [propext, Classical.choice, Quot.sound]
+  'Erdos357.step1_span'                     : [propext, Classical.choice, Quot.sound]
+  'Erdos357.step2_few_small'                : [propext, Classical.choice, Quot.sound]
+  'Erdos357.step3_packing_stability'        : [propext, Classical.choice, Quot.sound]
+  'Erdos357.step4_test_function'            : [propext, Classical.choice, Quot.sound]
+  'Erdos357.step5_negative_correlations'    : [propext, Classical.choice, Quot.sound]
+  'Erdos357.step6_nine_term_contradiction'  : [propext, Classical.choice, Quot.sound]
+  This is my own file. It does not rely on the shipped AxiomAudit's #guard_msgs, though that also passed in the build.
+
+4. ESCAPE-HATCH GREP over all 12 .lean files  (F3: did not fire)
+  - `sorry`: 1 hit, Challenge.lean line 14 (the statement-only file, which nothing imports). `admit`: 0.
+  - 0 hits each for: axiom declarations, native_decide, implemented_by, unsafe, opaque, @[csimp], extern,
+    ofReduceBool, run_cmd, #eval, `Lean.` (no metaprogramming imports), elab, macro, syntax, notation,
+    set_option (none at all, so no debug or skipKernelTC options), instance, attribute, local, unseal, irreducible_def.
+  - The only attribute is @[simp] on Erdos357.mem_indices (Basic.lean:100), which is benign.
+  - Imports: only Mathlib and the project's own Erdos357.* modules.
+  - Definitions (all in namespace Erdos357): block, span, Admissible, extend, BlockIndex, indices, blockValue,
+    entries, cutoff, badEntries, sums, goodSums, displacement, empirical, wave, correlation, prefixSum, phase.
+    None of them appears in the target statement except through the proof. The target uses only Mathlib notions.
+
+5. STATEMENT MATCH  (F4: did not fire)
+  - pp.all `#check @erdos357_any_order_improvement`: audit/IdChallenge.lean (Challenge.lean verbatim plus the
+    check) vs audit/IdSolution.lean (`import Solution` plus the check). Both rc 0. The outputs are identical
+    except for the expected "declaration uses sorry" line in the Challenge run and the timing lines.
+  - Cross-elaboration (audit/CrossCheck.lean): Challenge's theorem header, copied verbatim under a new name, is closed by
+    the term `erdos357_any_order_improvement k N x hinj hrange hblocks hk`. rc 0, axioms [propext, Classical.choice, Quot.sound].
+
+6. STATEMENT AUDIT  (S: did not fire)   (most important)
+  The target, in plain words:
+    k, N natural numbers; x : Fin k -> N is a row x_0, ..., x_{k-1} in this fixed order (any order allowed, no monotonicity);
+    hinj:    the entries are distinct;
+    hrange:  each entry lies in 1..N;
+    hblocks: for u <= v and u' <= v', if sum_{i in [u, v]} x_i = sum_{i in [u', v']} x_i, then (u, v) = (u', v').
+             So every consecutive block (all lengths together) is determined by its sum, which is exactly "all
+             consecutive-block sums are distinct". Finset.Icc u v on Fin k is the closed index interval, nonempty when u <= v.
+    hk:      10^22 <= k;
+    conclusion: (3/2 + 1/10^10) * k < N, in the reals.
+  Judgment: the statement faithfully says "if k distinct integers from 1..N, in this order, have all consecutive block sums
+  distinct, and k >= 10^22, then N > (3/2 + 10^-10) k". That is a(k) > (3/2 + 10^-10)k for A364153 when k >= 10^22.
+  (hinj is implied by hblocks via length-1 blocks, so including it is harmless.)
+  Non-vacuity, machine-checked (audit/Witness.lean, rc 0, 19.5 s, kernel `decide`, no native_decide; axioms standard three):
+  - witness_satisfies_hypotheses: x = 4 1 2 10 22 15 21 24 28 29 27 16 26 20 18 23 25 19 11 (k = 19, N = 29) satisfies
+    hinj, hrange and hblocks exactly as written in the target. Only hk fails, as it must at k = 19.
+  - hblocks_rejects_bad_row: the row 1,2,3 (where [1,2] and [3] both sum to 3) fails hblocks, so the hypothesis has teeth.
+  - For every k the hypotheses can hold (argued, not formalized): x_i = 2^i with N = 2^k gives block sums 2^(v+1) - 2^u,
+    which are all distinct. So the theorem is not vacuous at k >= 10^22. It genuinely rules out every row with N <= (3/2 + 10^-10)k.
+  Definitions in Basic.lean are not trivialized:
+  - block a r i = sum_{j<r} a(i+j).
+  - extend x is x on indices below k and 0 elsewhere.
+  - Admissible keeps positivity, bounds, injectivity and full block-sum injectivity (any lengths r, s with i+r <= k, j+s <= k).
+  - admissible_extend derives Admissible from exactly the target's hypotheses, through block_as_fin_Icc (the range-sum
+    equals the Fin Icc sum). This bridge is checked in Lean, not assumed. The final theorem uses only `Admissible`, hk and the
+    by_contra assumption N <= (3/2 + 10^-10)k.
+
+7. INDEPENDENT KERNELS  (F5: did not fire)
+  Export: lean4export (tag v4.33.0, commit 15f6055, built locally against toolchain v4.33.1, format 3.1.0),
+  `lean4export Solution -- erdos357_any_order_improvement`: rc 0, 10.6 s. 252,921,459 bytes, sha256
+  f7c9b1d163ddcb7abffaa906e43fbfbfbcde79dfff6b1100d7b5b2f87a07cf0d (/data/ford/astra357lean/solution_export.ndjson).
+  The header reports Lean 4.33.1, githash 819816b2.
+  - nanoda (independent Rust kernel), permitted_axioms = [propext, Classical.choice, Quot.sound],
+    unpermitted_axiom_hard_error = true, Nat/String extensions on: ACCEPTED. rc 0,
+    "Checked 42184 declarations with no errors", 18.1 s. The pretty-printed target matches the statement in section 6.
+    The only axioms printed are propext, Quot.sound and Classical.choice.
+  - con-ron --verified --jobs=4: ACCEPTED. rc 0, "accepted 40350 declarations (--verified)", 19.9 s.
+  - leanchecker --fresh Solution (Lean's own kernel replaying the whole import closure, Mathlib included):
+    ACCEPTED. Exit status 0, no error lines, 12:38:12 PM - 1:13:38 PM MST (wall 35:26, max RSS 8.7 GiB).
+  Logs: ~/ford/astra357lean/{nanoda.out, conron.out, leanchecker.out, post.out}
+    nanoda.out      f1a3d8a3f6610f6c21936271b08efd00fded62d9a669ab54cc91506aa8c4ae0a
+    conron.out      192d68e0065f387fc6a14dbdbf8becd075d4b0106a1c67eacb5d2a54b5260275
+    leanchecker.out fa3a6355135fc162ea80c96522f0c4d22fff64f68ff56fe44cc99b51b2ec2df2
+  Audit files (~/ford/astra357lean/audit) sha256:
+    AuditAxioms.lean 0100b630cd837e1e97901207f41eaaecc9f7705eb18ebb173310d34c70eced99
+    CrossCheck.lean  92657f1905d882ae89e95ef62eb35b7dbb9c704e395704ca4622af52c8d940ed
+    IdChallenge.lean 3df6900f7ef1d87738e3a269901ab761c0b1ad1ab5494549ef476b45d889b503
+    IdSolution.lean  78f2f95e84ea06c0c83d9a396fcdaab7b5a9b137e879da31fbbb17287444fb91
+    Witness.lean     be6615933ac80817ba7182e68e27d45531bf71ab97d6b92eb1529e5547c45acd
+
+8. VERDICT
+  PASS. The project builds cleanly from source at the pinned toolchain and Mathlib. The main theorem and all six
+  step lemmas depend only on the standard three axioms. There are no escape hatches, and the Challenge and Solution
+  statements are identical. The statement faithfully expresses the any-order bound a(k) > (3/2 + 10^-10)k for k >= 10^22,
+  and its hypotheses are satisfiable (kernel-checked on the k = 19, N = 29 row). Two independent kernels (nanoda, con-ron)
+  accepted the exported proof, and Lean's own kernel re-checked the whole closure from scratch.
+  None of F1-F5 or S fired.
+
+9. CAVEATS / OPEN ITEMS
+  - The argument and the formalization are both AI-written (GPT Astra, prompted by Kevin Russell). Review so far is
+    AI-only: Ford's audit plus one outside model reading. No human expert has reviewed it, and it is not refereed.
+  - A clean kernel check means the Lean theorem follows from Mathlib's axioms. It does not tell us whether the
+    result is new. The novelty search found no earlier any-order improvement on Hegyvári (1986), but the search is not
+    exhaustive. The erdosproblems.ai page states a larger any-order bound that appears to come from an increasing-order
+    paper. Any write-up has to handle that respectfully.
+  - The gain is tiny (10^-10 in the constant) and applies only for k >= 10^22. It says nothing about any computed
+    value of A364153; all 19 known values lie far outside its range.
+  - Trust base: Lean 4.33.1, Mathlib 0df444a3 and their axioms. The commit hashes a1d0674 / e5e5e75 are as claimed but
+    unverified (no git metadata in the zip); the zip sha256 is the pin.
+  - The independent-kernel export covers erdos357_any_order_improvement and its dependency closure. The audit-only
+    files (Witness, CrossCheck) were checked by Lean's elaborator and kernel, not by nanoda or con-ron.
+  - nanoda and con-ron binaries are the same builds used for the Paper II audit. lean4export was rebuilt at tag v4.33.0
+    with the toolchain set to v4.33.1, so it reads these .olean files.
+  - Nothing was published, posted or opened as a PR.

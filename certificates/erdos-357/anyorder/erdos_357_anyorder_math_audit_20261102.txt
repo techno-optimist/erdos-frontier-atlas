@@ -1,0 +1,61 @@
+Erdős Problem #357, any-order variant (OEIS A364153): lower bound a(k) > (3/2 + 10^-10)k for k >= 10^22
+Math audit receipt
+Status: FINAL math audit (2026-11-02, America/Denver). Not refereed; AI-only review so far.
+
+Statement under review
+  For k >= 10^22, a(k) > (3/2 + 10^-10) k, where a(k) is the least N such that some
+  k distinct integers in {1..N}, in some order, have all consecutive-block sums distinct.
+  All-k form: a(k) >= max{k, ceil((3/2 + 10^-10)k - 12 sqrt k)}.
+  The previously cited lower bound is (3/2 - o(1))k (Hegyvári 1986).
+
+Credit
+  Argument and Lean formalization: Kevin Russell with GPT Astra.
+  Audit, exact-arithmetic checks, numerics, literature check and Lean audit: Ford (ProjectForty2).
+
+Idea (one paragraph)
+  If N is close to 3k/2, short-block sums are forced to pack almost perfectly into an
+  interval. That makes the lag-r correlations of u_j = exp(3 pi i (s_j/k - j)) all close to
+  -2/(3 pi), for r = 1..8. A nine-term window sum of squares is non-negative, but those
+  correlations would make it negative. So N must exceed (3/2 + eps)k.
+
+What was checked
+  - Line-by-line re-derivation of all six steps: no gap found. The checks covered set vs
+    multiset, off-by-ones, discarded-block and Riemann errors, L > 0, signs, the window and
+    omitted terms, and the corollary slack.
+  - All numeric constraints verified in exact rational arithmetic at K = 10^22, and
+    monotone in k.
+  - The window identity and partial-sum bounds checked numerically:
+      * on the k=19, N=29 witness;
+      * on every admissible row at N = a(k) for k = 9..12;
+      * on 400 random admissible rows.
+  - Independent model reviews: NVIDIA Nemotron-3 Ultra returned VALID after a full re-derivation.
+    GLM-5.3 and DeepSeek-V4.1 runs were truncated before a verdict. The concerns they raised
+    on the way (a '260k vs 22k' term, a '-9k/5' factor) were each traced and resolved; see audit.md.
+
+Lean formalization (machine check)
+  GPT Astra formalized the argument in Lean 4 (Lean 4.33.1, Mathlib 0df444a3), theorem
+  erdos357_any_order_improvement. Ford rebuilt it independently from the pinned source, confirmed it
+  uses only the standard three axioms (propext, Classical.choice, Quot.sound), judged the statement
+  faithful and non-vacuous, and three kernels accepted it (nanoda, con-ron, leanchecker --fresh).
+  See the Lean audit receipt in this folder: erdos_357_anyorder_lean_audit_20261102.txt.
+
+Literature context (as of 2026-11-02)
+  - We found no published any-order improvement over 3/2.
+  - The erdosproblems.com page for #357 currently says that Coppersmith–Phillips [867] implies
+    an any-order bound, g(n) <= (2/3 - 1/512 + o(1))n. Adenwalla's forum post #5308 (2026-04-09,
+    https://www.erdosproblems.com/forum/thread/357#post-5308) notes that this bound should only
+    apply to the increasing version f(n). The Coppersmith–Phillips abstract
+    (https://research.ibm.com/publications/on-a-question-of-erdos-on-subsequence-sums) describes
+    an increasing sequence. We believe the any-order case was still at Hegyvári's constant,
+    but we would welcome correction.
+
+Caveats
+  - The gain over 3/2 is very small, and it applies only for k >= 10^22.
+  - The argument and the formalization are AI-written, and review so far is AI-only. It is not
+    refereed and still needs independent expert review before anyone relies on it.
+  - A tightened bookkeeping appears to allow eps around 4e-8 to 6e-8 (exactly checked in the
+    same framework). It has had no separate review and is not part of the Lean proof.
+
+Files: audit.md, check_constants.py/.out, numerics.py/.out, verify_eps_exact.py/.out,
+       check_delta_symbolic.py/.out, proof_for_review.md, review_nvidia_nemotron-3-ultra-550b-a55b.txt,
+       erdos_357_anyorder_lean_audit_20261102.txt, erdos357_anyorder_lean_a1d0674.zip (sha256 52a688a1a16a7b0c9e133cd1f61a3562e8c101740d440dbcd8b795410aa7602f)

@@ -174,7 +174,7 @@
   {
    "path": "certificates/erdos-357",
    "classification": "certified_local",
-   "boundary": "Exhaustive searches deciding OEIS A364132(1..29) and A364153(1..19) (sequences with distinct segment sums), each term with an explicit sequence checked by brute force. Replicates the published A364132(1..22) and A364153(1..13); the rest is new. C engine pinned node for node to a Python reference and cross-checked by a second engine; A364153(17..19) = 26, 28, 29 and A364132(28..29) = 75, 79 rest on a separately written clean-room engine (ss_cleanroom.c) with every verdict repeated by segsum.c: an exhaustive computer search by two independent engines; no formal proof; nothing about the asymptotic Erdos #357 question."
+   "boundary": "Exhaustive searches deciding OEIS A364132(1..29) and A364153(1..19) (sequences with distinct segment sums), each term with an explicit sequence checked by brute force. Replicates the published A364132(1..22) and A364153(1..13); the rest is new. C engine pinned node for node to a Python reference and cross-checked by a second engine; A364153(17..19) = 26, 28, 29 and A364132(28..29) = 75, 79 rest on a separately written clean-room engine (ss_cleanroom.c) with every verdict repeated by segsum.c: an exhaustive computer search by two independent engines; no formal proof of those terms. Separately, anyorder/ holds a Lean-checked any-order lower bound a(k) > (3/2 + 10^-10)k for k >= 10^22 (A364153; argument and formalization by Kevin Russell with GPT Astra, audited by Ford; AI-only review, not refereed); it does not resolve the asymptotic Erdos #357 question, and nothing here concerns the increasing-order asymptotics."
   },
   {
    "path": "certificates/erdos-864",
@@ -3788,6 +3788,127 @@
      "failure_control": {
       "kind": "embedded",
       "evidence": "Every replay must find, in the committed answers alone, the controls a16@23 (NONE) and a18@28 part 1/19 (FOUND, a brute-checked A364153(18) sequence), all 38 parts of the a19@28 search present and NONE and the a19@29 line FOUND (part 8 of 38), check the 19-term sequence at 29 by brute force alone (19 distinct terms in 1..29, all 190 segment sums distinct), require the second engine (segsum.c, g4_crosscheck_a364153_19.txt) to answer none at 28 and to match the a16@23 node count pinned in RESULT.json, reproduce A364153(1..12) of RESULT.json with ss_cleanroom.c (NONE at a(n) - 1, FOUND at a(n)), re-run the a18@28 control byte for byte, and reject six planted failures (a witness whose last term is s1 + s2, a witness with a repeated term, part 37 of a19@28 flipped to FOUND, part 17 of a19@28 dropped, the second engine flipped to found at 28, the collision 1 + 2 = 3). A search that missed sequences would disagree with the second engine or the published terms; one that invented them would fail the brute-force check."
+     }
+    }
+   ]
+  },
+  {
+   "id": "erdos-357-any-order-lower-bound",
+   "status": "promoted",
+   "statement": "For every k >= 10^22, A364153(k) > (3/2 + 10^-10)k: if k distinct integers from 1..N, in some order, have all consecutive-block sums distinct and k >= 10^22, then N > (3/2 + 10^-10)k. Lean 4.33.1, Mathlib 0df444a360eaa60ab8c11dca51a86af692955474, theorem erdos357_any_order_improvement, depending only on propext, Classical.choice and Quot.sound. The argument and the Lean formalization are by Kevin Russell with GPT Astra; Ford audited both and rebuilt the proof, and three kernels accepted it (nanoda, con-ron, leanchecker --fresh).",
+   "scope": "A Lean-checked asymptotic lower bound for the any-order version only (OEIS A364153), AI-written and with AI-only review, not refereed; it needs independent expert review. The gain is 10^-10 in the constant and applies only for k >= 10^22; it says nothing about any computed term of A364153. The previously cited lower bound is (3/2 - o(1))k (Hegyvari 1986); the novelty search was not exhaustive. Increasing-order results (the 2026 claims of Lenthall-Cleary and of Pickhardt / Paratelligent, and Coppersmith-Phillips 2/3 - 1/512) concern increasing sequences and do not transfer to A364153; erdosproblems.com/357 currently attributes Coppersmith-Phillips to the any-order g and forum post #5308 questions this. The fast replay is a static audit of the pinned sources and does not certify; --full rebuilds and checks axioms; the independent-kernel runs are recorded in the Lean receipt and not re-run. Does not resolve Erdos #357, which remains open.",
+   "machine_verdict": "\"verified_erdos357_anyorder_lean\":true",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-357/anyorder/README.md",
+     "contains": "**For every k ≥ 10²², a(k) > (3/2 + 10⁻¹⁰)k: a Lean-checked lower bound for the\nany-order version, AI-written and with AI-only review, not refereed.**",
+     "overclaim_guards": [
+      "resolves Erdős #357",
+      "proves the conjecture",
+      "solves Erdős #357",
+      "Erdős #357 is solved",
+      "a breakthrough on Erdős #357"
+     ]
+    },
+    {
+     "path": "certificates/erdos-357/README.md",
+     "contains": "**A Lean-checked lower bound for A364153 past 3/2, AI-written and with AI-only review,\nnot refereed.**",
+     "overclaim_guards": [
+      "resolves Erdős #357",
+      "proves the conjecture",
+      "solves Erdős #357",
+      "Erdős #357 is solved",
+      "a breakthrough on Erdős #357"
+     ]
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-357/anyorder/verify_anyorder_lean.py",
+     "sha256": "6ef299042c3ef483a544173e2dc2c4e3f2e18c72912b68dd5b90f77469281125"
+    },
+    {
+     "path": "certificates/erdos-357/anyorder/erdos357_anyorder_lean_a1d0674.zip",
+     "sha256": "52a688a1a16a7b0c9e133cd1f61a3562e8c101740d440dbcd8b795410aa7602f"
+    },
+    {
+     "path": "certificates/erdos-357/anyorder/erdos_357_anyorder_lean_audit_20261102.txt",
+     "sha256": "e0eba9c3fbbd1f6da854199db3460f6bbc6bb17034253f3f2eb4d259a804348a"
+    },
+    {
+     "path": "certificates/erdos-357/anyorder/erdos_357_anyorder_math_audit_20261102.txt",
+     "sha256": "900a89c59875e0bb2e15c731689203eb10276bf9fdf9a2dc16a54ec2f055a0b4"
+    },
+    {
+     "path": "certificates/erdos-357/anyorder/lean/Challenge.lean",
+     "sha256": "3456f4e8e33878029fd6a274316adab9833f6d6e23f625a4e58bbe1e0aa2595e"
+    },
+    {
+     "path": "certificates/erdos-357/anyorder/lean/Solution.lean",
+     "sha256": "e1233d9dfcf398be3a016d8089a62f1715ad530b384483f2e616d210af4d79a7"
+    },
+    {
+     "path": "certificates/erdos-357/anyorder/lean_audit/AuditAxioms.lean",
+     "sha256": "0100b630cd837e1e97901207f41eaaecc9f7705eb18ebb173310d34c70eced99"
+    },
+    {
+     "path": "certificates/erdos-357/anyorder/lean_audit/CrossCheck.lean",
+     "sha256": "92657f1905d882ae89e95ef62eb35b7dbb9c704e395704ca4622af52c8d940ed"
+    },
+    {
+     "path": "certificates/erdos-357/anyorder/lean_audit/IdChallenge.lean",
+     "sha256": "3df6900f7ef1d87738e3a269901ab761c0b1ad1ab5494549ef476b45d889b503"
+    },
+    {
+     "path": "certificates/erdos-357/anyorder/lean_audit/IdSolution.lean",
+     "sha256": "78f2f95e84ea06c0c83d9a396fcdaab7b5a9b137e879da31fbbb17287444fb91"
+    },
+    {
+     "path": "certificates/erdos-357/anyorder/lean_audit/Witness.lean",
+     "sha256": "be6615933ac80817ba7182e68e27d45531bf71ab97d6b92eb1529e5547c45acd"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": false,
+     "entrypoint": "certificates/erdos-357/anyorder/verify_anyorder_lean.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-357/anyorder/verify_anyorder_lean.py"
+     ],
+     "timeout_seconds": 120,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"receipt_consistent_erdos357_anyorder\":true",
+      "planted failures rejected: 8",
+      "all checks passed"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "Every replay must find the pinned sha256 of the Lean zip, the Lean audit receipt and the five audit files; lean/ equal to the zip byte for byte; the 15 source hashes printed in section 1 of the Lean receipt equal to lean/; identical theorem headers in Challenge.lean and Solution.lean; no escape hatch (sorry or admit outside Challenge.lean, axiom, native_decide, implemented_by, unsafe, opaque, extern, ofReduceBool, set_option, macro, elab, syntax, notation, instance, run_cmd, unseal, an attribute other than @[simp], #eval); the v4.33.1 toolchain and Mathlib 0df444a3 pins; and it must reject eight planted failures (a flipped bit in the zip, sorry in Solution.lean, an axiom declared in Basic.lean, the Challenge bound weakened to 10 ^ 2, native_decide in Gram.lean, and the axiom lists [propext, sorryAx, Quot.sound], the standard three plus Erdos357.cheat, and a missing declaration)."
+     }
+    },
+    {
+     "profile": "slow",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-357/anyorder/verify_anyorder_lean.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-357/anyorder/verify_anyorder_lean.py",
+      "--full"
+     ],
+     "timeout_seconds": 43200,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"verified_erdos357_anyorder_lean\":true",
+      "all checks passed"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "Every replay must find the pinned sha256 of the Lean zip, the Lean audit receipt and the five audit files; lean/ equal to the zip byte for byte; the 15 source hashes printed in section 1 of the Lean receipt equal to lean/; identical theorem headers in Challenge.lean and Solution.lean; no escape hatch (sorry or admit outside Challenge.lean, axiom, native_decide, implemented_by, unsafe, opaque, extern, ofReduceBool, set_option, macro, elab, syntax, notation, instance, run_cmd, unseal, an attribute other than @[simp], #eval); the v4.33.1 toolchain and Mathlib 0df444a3 pins; and it must reject eight planted failures (a flipped bit in the zip, sorry in Solution.lean, an axiom declared in Basic.lean, the Challenge bound weakened to 10 ^ 2, native_decide in Gram.lean, and the axiom lists [propext, sorryAx, Quot.sound], the standard three plus Erdos357.cheat, and a missing declaration). The --full replay additionally builds the pinned project from a copy outside the repository (lake exe cache get, lake build, failing on any error, warning or sorry line), then requires the printed axioms of erdos357_any_order_improvement, its six step lemmas, admissible_extend and the CrossCheck copy of the Challenge header to be within [propext, Classical.choice, Quot.sound], the kernel-decide witness file to elaborate, and the pp.all statements of Challenge and Solution to agree. A proof that used sorry or a custom axiom, or a Solution statement weaker than the Challenge, would fail one of these."
      }
     }
    ]

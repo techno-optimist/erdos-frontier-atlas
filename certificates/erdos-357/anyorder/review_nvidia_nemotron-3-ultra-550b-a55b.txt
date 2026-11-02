@@ -1,0 +1,46 @@
+MODEL nvidia/nemotron-3-ultra-550b-a55b
+
+The proof is carefully structured and all inequalities, block counts, error bounds, and algebraic manipulations check out. The constants are chosen appropriately (eps=1e-10, eta=1e-4, K=1e22) and every step holds for k ≥ 1e22. The overall strategy—forcing near-uniform distribution of block sums on intervals [(r-1/2)k, (r+1/2)k] and then deriving a contradiction via a positive-definite quadratic form—is sound and correctly executed.
+
+VERDICT: VALID
+
+--- reasoning (tail) ---
+r: 90/4000 = 0.0225. 2/6000 ≈ 0.0003333. 2/10000 = 0.0002. 82/k negligible. Sum = 0.0230333 < 0.025. Good.
+
+In step 5, -2/(3pi) + 1/20 = -0.2122066 + 0.05 = -0.1622066 <= -0.15. Good.
+
+In step 6, Q <= -9k/5 + 273. For k=1e22, negative.
+
+All steps are correct. The proof is valid.
+
+One more nuance: In step 3, they say "Retained sums z_1<..<z_M are distinct integers each >= L". But is it guaranteed that the retained sums are all >= L? A retained block has no bad entries, so all its entries are >= L. Since entries are positive integers, the sum is at least L (if length 1) or more. So yes, >= L.
+
+In step 3, "Delta = sum(z_j - (L+j-1)) >= 0". Since z_j are distinct integers >= L, the smallest they can be is L, L+1, ..., L+M-1. So z_j >= L+j-1. Good.
+
+In step 3, "Total of all block sums of length<=h is <= T S". This is because each x_i appears in at most T blocks. The total sum of block sums = sum_i x_i * (number of blocks containing i) <= T * sum_i x_i = T S. Good.
+
+In step 3, the bound Delta <= T S - M L - M(M-1)/2. Since sum z_j <= total sum <= T S, and sum z_j = M L + M(M-1)/2 + Delta, we get Delta <= T S - M L - M(M-1)/2. Good.
+
+The algebraic simplification to get Delta/k^2 <= ... we verified.
+
+In step 4, the lemma's proof: "moving z_j to L+j-1 <= 10 Delta/k^2". Since |f(z_j/k) - f((L+j-1)/k)| <= 10 |z_j - (L+j-1)|/k = 10 delta_j/k. Sum over j gives 10 Delta/k. Then divided by k? Wait: F_h(f) = (1/k) sum_{b in B_h} f(b/k). The sum over retained blocks is (1/k) sum_{j=1}^M f(z_j/k). The difference from (1/k) sum f((L+j-1)/k) is at most (1/k) * 10 Delta/k = 10 Delta/k^2. Good.
+
+"Riemann sum over [L/k,(L+M)/k] <= 10 M/k^2". The Riemann sum is (1/k) sum_{j=1}^M f((L+j-1)/k). The integral is int_{L/k}^{(L+M)/k} f(t) dt. The error of the left Riemann sum for a Lipschitz function with constant 10 is at most 10 * (1/k) * (M/k) = 10 M/k^2. Good.
+
+"changing interval to [1/2,h+1/2] <= 2|L/k-1/2|+|M/k-h|". The integral over [L/k, (L+M)/k] vs [1/2, h+1/2]. The difference is at most the measure of the symmetric difference times max|f| (which is 1). The symmetric difference length is at most |L/k - 1/2| + |(L+M)/k - (h+1/2)|. But (L+M)/k - (h+1/2) = (L/k - 1/2) + (M/k - h). So the sum of absolute values is at most 2|L/k - 1/2| + |M/k - h|. Good.
+
+Then |L/k - 1/2| <= eta + 1/k? L = ceil((1/2 - eta)k). So L/k >= 1/2 - eta, and L/k < 1/2 - eta + 1/k. So |L/k - 1/2| <= max(eta, eta - 1/k?) Actually if L/k = 1/2 - eta + delta, with 0 <= delta < 1/k, then |L/k - 1/2| = | -eta + delta| <= eta + delta <= eta + 1/k. Good. |M/k - h| = d/k. So bound <= 2eta + 2/k + d/k. Good.
+
+Total error = d/k (discarding) + 10 Delta/k^2 (moving) + 10 M/k^2 (Riemann) + 2eta + 2/k + d/k (interval) = 10 Delta/k^2 + 10 M/k^2 + 2eta + 2/k + 2d/k. They bounded 10 Delta/k^2 <= 90/4000, 10 M/k^2 <= 80/k, 2eta = 2/10000, 2d/k <= 2/6000, 2/k <= 2/k. So total <= 90/4000 + 2/6000 + 2/10000 + 82/k. Good.
+
+In step 5, C_r/k = F_r(f_r) - F_{r-1}(f_r). The lemma gives F_r(f_r) <= int_{1/2}^{r+1/2} f_r + 1/40, and F_{r-1}(f_r) >= int_{1/2}^{r-1/2} f_r - 1/40. So F_r - F_{r-1} <= int_{r-1/2}^{r+1/2} f_r + 1/20. Good.
+
+In step 6, the sum Q is over i=0 to k-8. The number of windows is k-7. The diagonal sum is 9(k-7). The cross terms: for each r=1..8, there are 9-r pairs per window. The sum over all windows for a fixed r is sum_{a=0}^{8-r} sum_{i=0}^{k-8} cos(...). For fixed a, the inner sum is over i, which corresponds to a subset of the terms in C_r missing exactly 8-r terms. Since each missing cos >= -1, the inner sum <= C_r + (8-r). Summing over a gives <= (9-r)(C_r + 8-r). Then total cross contribution = 2 sum_{r=1}^8 (9-r)(C_r + 8-r). So Q <= 9(k-7) + 2 sum (9-r)C_r + 2 sum (9-r)(8-r). Good.
+
+Then using C_r <= -3k/20, sum (9-r) = 36, so 2*36*(-3k/20) = -216k/20 = -54k/5. 9(k-7) = 9k - 63. 2 sum (9-r)(8-r) = 336. So Q <= 9k - 63 - 54k/5 + 336 = (45k/5 - 54k/5) + 273 = -9k/5 + 273. For k >= 1e22, negative. Contradiction.
+
+Everything is airtight.
+
+Thus the proof is valid.
+
+VERDICT: VALID
