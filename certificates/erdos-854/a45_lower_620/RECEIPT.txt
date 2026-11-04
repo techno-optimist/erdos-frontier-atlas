@@ -1,0 +1,12 @@
+P854 / OEIS A389839(45): lower bound raised 618 -> 620. Ford hourly rotation, 2026-11-04 ~14:15 MST.
+A389839(n) = smallest even number that is not a difference of consecutive integers coprime to prime(n)#. Bracket before: [618,644] (atlas gap_map; 2..616 occur at 197# via A331118/A329815, 642 is max by A048670/Hagedorn).
+Method: CRT-lift the published A048670 n=44 maximal-gap witness (gap 616 at 193#, OEIS attachment a048670_6.txt) through all 197 residues of 197; also the n=43 witness (600 at 191#) through all 193*197 = 38021 residue pairs. List every gap >= 618 between consecutive 197#-coprime integers in a +-700 window.
+Found (gcd-verified by lift.py and by independent verify2.py with its own prime sieve, x reduced mod 197# too, planted x+2 and t-2 rejected):
+  gap 618 at x = 4187490031468636811376281325827914336433867976450182896893867463550608585639019
+  gap 622 at x = 33235996984655520130876908051439546762433090773836057395875647973481039529190441
+  (x and x+t coprime to 197#, every integer strictly between shares a prime with 197#)
+n=43 lifts gave no gap >= 618. Falsifier F1 (gap > 642) did not fire.
+Consequence: 618 occurs at 197#, so A389839(45) >= 620. Present in 618..642 now: 618, 622, 642. Still unwitnessed: 620, 624, 626, ..., 640 (10 values). a(45) = 620 iff 620 is absent, which needs an exhaustive/UNSAT proof.
+Caveat: this is a witness, not checked against unpublished tables (Gerbicz u(n), Ziller); OEIS A389839 rev 32 showed no a(45) as of 06:04 MST today.
+Files: FALSIFIER.txt 950b5911…3654a, lift.py cd1bb489…b557, result.txt 8a3130e9…b8ee, verify2.py d4e32398…55d1, verify2.txt ac13b402…e8c7.
+Not published. Next: observatory/atlas PR (branch, per docs/public_site_publishing.md) moving gap_map lower to 620; then hunt 620 via deeper lifts (n=42 through 191,193,197) or SAT at t=620 with the 618 neighbourhood as seed.

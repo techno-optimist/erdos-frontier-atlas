@@ -1,0 +1,7 @@
+P854 / A389839(45) lane, 2026-11-04 14:15 MST (Ford hourly rotation). Structured lift step (named next in the 06:04 entry).
+Method: take the published A048670 maximal-gap witnesses at 191# (n=43, gap 600) and 193# (n=44, gap 616) from a048670_6.txt and lift them to 197# by CRT,
+trying every residue class of the missing primes (197 for n=44: 197 lifts; 193 and 197 for n=43: 38021 lifts). For each lift, list every gap between
+consecutive integers coprime to 197# in a window around the witness, and record which even gap lengths in 618..642 appear.
+Falsifier F1 (tool or table wrong): a lift shows a gap > 642 at 197#, which would contradict A048670(45)=642. Every reported gap must be re-checked by direct gcd with 197#.
+Result R: any new gcd-verified gap length t in 618..640 is a witness for t at 197#; t=618 raises a(45) to >= 620 (assuming 2..616 known present, as in the atlas bracket).
+Misses prove nothing about a(45) (lifts of two witnesses are a tiny slice of 197#).
