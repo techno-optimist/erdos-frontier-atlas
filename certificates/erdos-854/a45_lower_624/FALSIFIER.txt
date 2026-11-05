@@ -1,0 +1,6 @@
+P854 A389839(45) step 3 (2026-11-05 ~03:05 MST). Question: does gap 620 occur between consecutive integers coprime to 197#?
+Method: simulated annealing over residue classes r_p (p<=197, 45 primes) covering interior 1..t-1 with endpoints 0,t uncovered.
+Controls: same search at t=618 and t=622 (both known witnessed, certificates/erdos-854/a45_lower_620) must succeed; every reported witness is CRT-rebuilt and gcd-verified at 197# in Python.
+Outcome A: 620 witness found and verified -> a(45) >= 624 (because 618 and 622 already occur; bracket moves from [620,644] to [624,644]).
+Outcome B: controls succeed, 620 not found -> heuristic null only; NOT evidence a(45)=620.
+Falsifier of the method: controls fail -> search too weak, result void. Falsifier F1 (tool or table wrong): a reported gap > 642 at 197#, contradicting A048670(45)=642.
