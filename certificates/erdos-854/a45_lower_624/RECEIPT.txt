@@ -1,0 +1,9 @@
+P854 / OEIS A389839(45): lower bound raised 620 -> 624. Ford hourly rotation, 2026-11-05 ~03:15 MST.
+A389839(n) = smallest even number that is not a difference of consecutive integers coprime to prime(n)#. Bracket before: [620,644] (atlas gap_map after a45_lower_620; 618 and 622 witnessed at 197#; 642 is max by A048670/Hagedorn).
+Method: simulated annealing (ann.c, box nice 19, 8 parallel ~100 s runs) over residues r_p for the 45 primes <=197, covering interior 1..t-1 with 0 and t left uncovered, seeded from the residue vector of the known 622 witness.
+Witness (t=620): x = 21324538953688689386201692152877021532742357109890761003674083154109358235557941 (0 < x < 197#).
+  x and x+620 are coprime to 197#, and every x+i, 1<=i<=619, shares a prime <=197 with 197#.
+Checks: verify.py (CRT rebuild + gcd with 197#, own sieve) ok=True; planted controls (t-2, t+2, x+2) all rejected; verify2.py (independent trial division / gcd by each prime<=197) gap_ok True, planted wrongs rejected. Same search independently produced two new t=618 witnesses (verified ok) from the 622 seed. Falsifier outcome A fired.
+Consequence: 618, 620, 622 all occur at 197#, so A389839(45) >= 624. Present in 618..642 now: 618, 620, 622, 642. Still unwitnessed: 624, 626, ..., 640 (9 values). Upper bound 644 unchanged (642 is the maximal gap). A lower-bound step only, not the value of a(45).
+Caveat: witness only, not checked against unpublished tables (Gerbicz/Ziller); OEIS A389839 data lists only 11 terms, no a(45).
+Files: see SHA256SUMS. Not submitted to OEIS.
