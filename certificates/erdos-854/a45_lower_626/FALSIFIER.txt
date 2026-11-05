@@ -1,0 +1,6 @@
+P854 A389839(45) step 4 (2026-11-05 ~11:15 MST). Question: does gap 624 occur between consecutive integers coprime to 197#?
+Method: simulated annealing over residue classes r_p (p<=197, 45 primes) covering interior 1..t-1 with endpoints 0,t uncovered; seeds from known 622 and 620 witnesses.
+Controls: same search at t=622 (already witnessed) must succeed; every reported witness is CRT-rebuilt and gcd-verified at 197# in Python; planted t±2 / x+2 must reject.
+Outcome A: 624 witness found and verified -> a(45) >= 626 (bracket moves).
+Outcome B: controls succeed, 624 not found -> heuristic null only; NOT evidence a(45)=624.
+NOT published until verified. Search, not a proof.
