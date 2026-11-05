@@ -1,0 +1,12 @@
+P854 / OEIS A389839(45) step 4. Ford hourly rotation, 2026-11-05 ~11:40 MST. FINDING: gap 624 occurs at 197#, so a(45) >= 626.
+A389839(n) = smallest even number not a difference of two consecutive integers coprime to prime(n)#; n=45 -> 197#.
+Before: bracket [624,644] (618/620/622 witnessed; ford/p854_lift_1104/, ford/p854_anneal_1105/).
+Method: simulated annealing (ann.c, box nice 19, 16 parallel ~2e8-iter runs) over residues r_p for the 45 primes <=197, covering interior 1..t-1 with 0 and t left uncovered; seeds from s622.res / s620.res / bare random; T in {3.0,4.0}.
+Controls: t=622 from s622.res, seeds 1..4, all 4 WITNESS immediately (batch_ctrl.txt). FALSIFIER control requirement held.
+Witnesses (t=624): 10 distinct residue vectors found (batch.txt); first verified x = 3555155923304286400743553058952003425931002006480365103818928470764905612981393 (0 < x < 197#).
+  x and x+624 are coprime to 197#, and every x+i, 1<=i<=623, shares a prime <=197 with 197#.
+Checks: verify.py (CRT rebuild + gcd with 197#, own sieve) ok=True for all 10; planted controls (t-2, t+2, x+2) all rejected for each; verify2 trial-division on first witness: 0 uncovered interior, endpoints coprime.
+Non-witness runs: 6 finished with best>=1 (heuristic null for those seeds only).
+Consequence: 618, 620, 622, 624 all occur at 197#, so A389839(45) >= 626. Still unwitnessed: 626..640 (8 even values). Upper bound 644 unchanged.
+Caveat: witness only, not checked against unpublished tables (Gerbicz/Ziller); OEIS A389839 lists only short terms, no a(45).
+Files: see SHA256SUMS. FALSIFIER.txt sha256 999fc14a…9986. NOT published. Next: observatory/atlas PR moving gap_map lower bound to 626 (and blog if rated), then annealer at t=626 (control 624).
