@@ -1,0 +1,16 @@
+P854 A389839(45) annealer t=632 (control t=630). Ford hourly 2026-11-05 ~19:20 MST.
+Question: does gap 632 occur between consecutive integers coprime to 197#?
+
+Method: simulated annealing (ann.c) over residue classes r_p (p<=197, 45 primes)
+covering interior 1..t-1 with endpoints 0,t uncovered; seeds from known 630
+witnesses (s630*.res) and prior 628/626/624/622/620; T in {3.0,4.0}; ~2e8 iters; box nice 19.
+
+FALSIFIER / controls:
+- Control t=630 from s630_*.res must still WITNESS (best=0) — else engine broken.
+- Every reported t=632 witness: CRT-rebuild + gcd-verify vs 197# (verify.py);
+  planted t-2 / t+2 / x+2 must reject.
+Outcome A: verified 632 witness -> a(45)>=634 (bracket moves).
+Outcome B: controls succeed, 632 not found -> heuristic null only; NOT evidence
+that a(45)=632. LB stays 632 / bracket [632,644].
+
+NOT published until verified. Search, not a proof.
