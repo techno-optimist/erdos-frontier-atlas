@@ -1,0 +1,17 @@
+#962 / OEIS A327909 a(2003) — falsifier (named BEFORE search output).
+Ford hourly rotation, 2026-11-05 ~01:10 MST. NOT published.
+
+Definition: a(n) = smallest start of a run of n consecutive integers each having a prime factor > n.
+Prior: s0 = a(2000) = a(2001) = a(2002) = 1550254764943 (atlas a(2000); Ford p962_2001_1104 extension).
+L(2003)=2002 at s0 so a(2003) > s0 (open).
+
+Falsifier fires if any of:
+(A) a claimed witness start W > s0 of a length-2003 run fails independent gpf check
+    (own trial division by primes <= 2200 AND sympy.factorint) — some W+i is 2003-smooth;
+(B) a planted broken witness (one position forced 2003-smooth) is accepted by the checker;
+(C) search reports a start W <= s0 (impossible by prior: L(2003)=2002 at s0 and monotonicity);
+(D) control fails: reproduce L(2000)=2002 and a(2001)=a(2002)=s0 from prior receipt
+    (s0..s0+2001 all have gpf > 2000; s0+2002 has gpf <= 2002; s0-1 is 2000-smooth).
+
+Timeout / window-exhausted without a witness is NOT a falsifier fire; it only raises the
+verified open lower bound to s0 + window (with checker proof that no start in the window works).

@@ -1,0 +1,44 @@
+#!/usr/bin/env python3
+"""Independent witness checker: trial smoothness + sympy gpf. Exit 0 iff all gpf > n."""
+from __future__ import annotations
+import argparse, sys
+from libsmooth import primes_upto, is_m_smooth, gpf_trial
+
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--start", type=int, required=True)
+    ap.add_argument("--n", type=int, default=2003)
+    ap.add_argument("--plant-offset", type=int, default=None,
+                    help="force that offset to fail (planted broken witness)")
+    ap.add_argument("--sympy", action="store_true", default=True)
+    ap.add_argument("--no-sympy", action="store_true")
+    args = ap.parse_args()
+    use_sympy = not args.no_sympy
+    P = primes_upto(max(args.n + 200, 2200))
+    bad = []
+    for i in range(args.n):
+        m = args.start + i
+        smooth = is_m_smooth(m, P, args.n)  # True => gpf <= n
+        g_trial_approx = gpf_trial(m, P)  # may be composite cofactor; diagnostic only
+        g = g_trial_approx
+        if use_sympy:
+            from sympy import factorint
+            gs = max(factorint(m)) if m > 1 else 1
+            g = gs
+            # consistency: smooth iff gs <= n
+            if smooth != (gs <= args.n):
+                bad.append((i, m, f"smooth_disagree trial_smooth={smooth} sympy_gpf={gs}"))
+                continue
+        if args.plant_offset is not None and i == args.plant_offset:
+            bad.append((i, m, f"planted gpf={g}"))
+            continue
+        if smooth or g <= args.n:
+            bad.append((i, m, f"gpf={g}"))
+    if bad:
+        print("FAIL", len(bad), "violations; first", bad[0])
+        sys.exit(1)
+    print("OK", "start", args.start, "n", args.n, "all gpf >", args.n, "sympy", use_sympy)
+    sys.exit(0)
+
+if __name__ == "__main__":
+    main()

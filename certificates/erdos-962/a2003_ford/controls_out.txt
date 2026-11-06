@@ -1,0 +1,9 @@
+s0-1 is 2000-smooth: True
+gpf(s0-1) trial: 293
+L(2000)= 2002
+L(2003)= 2002
+a(2001)=s0? True
+a(2002)=s0? True
+a(2003)>s0? True
+CONTROL_D PASS
+elapsed_s=0.101

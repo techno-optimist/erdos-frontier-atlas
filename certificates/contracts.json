@@ -159,7 +159,7 @@
   {
    "path": "certificates/erdos-962",
    "classification": "certified_local",
-   "boundary": "Exact smooth-number scan of [1, 4.2*10^10]: OEIS A327909(n) for 1 <= n <= 1102, each with its maximal run checked by gcd. Replicates the published b-file (a(1..999), including a(999) = 22369305365); a(1000..1102) are new. Extended (2026-10-27, new files only) by a scan of [1, 7.5*10^10] to n <= 1200; a(1103..1200) are new. Extended again (2026-10-27, new files only) by a scan of [1, 10^11] to n <= 1300; a(1201..1300) are new. Extended a third time (2026-10-27, new files only) by a scan of [1, 4*10^11] to n <= 1400; a(1301..1400) are new. Extended a fourth time (2026-10-27, new files only) by a scan of [1, 3.2*10^11] to n <= 1500; a(1401..1500) are new. Extended a fifth time (2026-10-30, new files only) by a scan of [1, 344421235993] to n <= 1600; a(1501..1600) are new. Extended a sixth time (2026-10-30, new files only) by a scan of [1, 453273053620] to n <= 1700; a(1601..1700) are new. Extended a seventh time (2026-10-30, new files only) by a scan of [1, 712311270000] to n <= 1800; a(1701..1800) are new. Extended an eighth time (2026-10-31, new files only) by a scan of [1, 949555600000] to n <= 1900; a(1801..1900) are new. Extended a ninth time (2026-10-31, new files only) by a scan of [1, 1550254770000] to n <= 2000; a(1901..2000) are new. Two C engines (sequential and chunked) plus a Python sieve on small ranges; no formal proof; nothing about the asymptotic Erdos #962 question."
+   "boundary": "Exact smooth-number scan of [1, 4.2*10^10]: OEIS A327909(n) for 1 <= n <= 1102, each with its maximal run checked by gcd. Replicates the published b-file (a(1..999), including a(999) = 22369305365); a(1000..1102) are new. Extended (2026-10-27, new files only) by a scan of [1, 7.5*10^10] to n <= 1200; a(1103..1200) are new. Extended again (2026-10-27, new files only) by a scan of [1, 10^11] to n <= 1300; a(1201..1300) are new. Extended a third time (2026-10-27, new files only) by a scan of [1, 4*10^11] to n <= 1400; a(1301..1400) are new. Extended a fourth time (2026-10-27, new files only) by a scan of [1, 3.2*10^11] to n <= 1500; a(1401..1500) are new. Extended a fifth time (2026-10-30, new files only) by a scan of [1, 344421235993] to n <= 1600; a(1501..1600) are new. Extended a sixth time (2026-10-30, new files only) by a scan of [1, 453273053620] to n <= 1700; a(1601..1700) are new. Extended a seventh time (2026-10-30, new files only) by a scan of [1, 712311270000] to n <= 1800; a(1701..1800) are new. Extended an eighth time (2026-10-31, new files only) by a scan of [1, 949555600000] to n <= 1900; a(1801..1900) are new. Extended a ninth time (2026-10-31, new files only) by a scan of [1, 1550254770000] to n <= 2000; a(1901..2000) are new. Single-cell 2026-11-06 extension in a2003_ford/: a(2001..2002)=1550254764943 (from the frozen a(2000) run + monotonicity) and a(2003)=1575356265925 by an ordered exact 2003-smoothness probe from that plateau, with gcd/sympy witness checks, not a full [1,X] table; the fast replay checks witnesses/receipt integrity and the optional slow replay establishes its closed search verdict. Two C engines (sequential and chunked) plus a Python sieve on small ranges; no formal proof; nothing about the asymptotic Erdos #962 question."
   },
   {
    "path": "certificates/erdos-1109",
@@ -4098,6 +4098,145 @@
      }
     }
    ]
+  },
+  {
+   "id": "erdos-962-a327909-2001-2003",
+   "status": "promoted",
+   "statement": "A327909(2001) = A327909(2002) = 1550254764943 and A327909(2003) = 1575356265925. The new witness has 2203 consecutive integers with greatest prime factor > 2003, bounded by 2003-smooth neighbours. Its exact minimality is the first-start result of the archived ordered 2003-smoothness probe on (1550254764943,1550254764943+10^11]; the 2001 and 2002 plateau follows from the frozen a(2000) receipt and monotonicity.",
+   "scope": "Single-cell ordered-search receipts for OEIS A327909, not a formal proof and not a new full [1,X] table. The standalone stdlib fast replay checks every witness and boundary by gcd, the prior plateau and all evidence hashes, plus genuine broken-input controls. It does not replay minimality. The explicit --replay-search mode reruns the multi-hour ordered probe and is required to reproduce the closed machine verdict; it was not invoked while packaging. This finite OEIS-cell update says nothing about the asymptotic Erdos #962 question.",
+   "machine_verdict": "\"verified_2003\":true",
+   "publication_bindings": [
+    {
+     "path": "certificates/erdos-962/a2003_ford/README.md",
+     "contains": "**A327909(2001) = A327909(2002) = 1550254764943, and A327909(2003) = 1575356265925.**",
+     "overclaim_guards": [
+      "resolves Erdős #962",
+      "proves the conjecture",
+      "solved Erdős #962"
+     ]
+    },
+    {
+     "path": "README.md",
+     "contains": "A327909(2001..2002) = 1550254764943 and A327909(2003) = 1575356265925 follow from the existing a(2000) run and an ordered 2003-smoothness probe with an independent gcd/factorization check",
+     "overclaim_guards": [
+      "resolves Erdős #962",
+      "proves the conjecture",
+      "solved Erdős #962"
+     ]
+    }
+   ],
+   "artifacts": [
+    {
+     "path": "certificates/erdos-962/a2003_ford/FALSIFIER.txt",
+     "sha256": "5944c1bed0da4dd372b66da8626ddf8dcda2b35830bc5f39abfce9ee4be85457"
+    },
+    {
+     "path": "certificates/erdos-962/a2003_ford/README.md",
+     "sha256": "3f8e8c1242ed09136e96423f16e00b3d69ba314cfef97c42916f3d3e19095e04"
+    },
+    {
+     "path": "certificates/erdos-962/a2003_ford/RECEIPT_collect_W1e11_1106.txt",
+     "sha256": "384af3ee37b9aee04a3780a0398da06d5bed353ea753020a7013bd0b9427c245"
+    },
+    {
+     "path": "certificates/erdos-962/a2003_ford/RECEIPT_prior_2001_2002.txt",
+     "sha256": "fb5d7a4138f2ca831630325fbd8033a6cd66838e59645d9f333c4f1e7992031b"
+    },
+    {
+     "path": "certificates/erdos-962/a2003_ford/RESULT_ford_2003.json",
+     "sha256": "896f0929c82abf817e6d993ce7c4c37fae0f1eedc63e718c88588a081ec45483"
+    },
+    {
+     "path": "certificates/erdos-962/a2003_ford/VERIFY.txt",
+     "sha256": "f17858576c5bdd799992fc8c067d5115a9eca80b60d7d3353d077679a6e4a4ae"
+    },
+    {
+     "path": "certificates/erdos-962/a2003_ford/check.py.src.txt",
+     "sha256": "aaa8a7c191fb1ff007a02c99500cc45eb1acbf0eae1e3b5bcce87b943185f2b0"
+    },
+    {
+     "path": "certificates/erdos-962/a2003_ford/check_ford_2003.py",
+     "sha256": "0815baf3c90519e8af99477c82e3e45fc80770fba69976115830250877893b54"
+    },
+    {
+     "path": "certificates/erdos-962/a2003_ford/controls_out.txt",
+     "sha256": "c1d0ee3be8f403f6ae49d8eeb0f3a318bc63f3488d5f91b2ae3c8c592abbd23d"
+    },
+    {
+     "path": "certificates/erdos-962/a2003_ford/libsmooth.py",
+     "sha256": "eb46a375fff6946a98700cf49b2c0c97841a4cca455c0ec3025ce54f938f104a"
+    },
+    {
+     "path": "certificates/erdos-962/a2003_ford/probe.py.src.txt",
+     "sha256": "d332dffc84268811e1d33d2440f883271b6d9f99c8d8e1b3ee62f25c994c9c62"
+    },
+    {
+     "path": "certificates/erdos-962/a2003_ford/probe_W1e11_tail.txt",
+     "sha256": "dbc8bf0496613d452ce50f26f4089a91bbffe83e560c9bba9c48b31f6960d1fd"
+    },
+    {
+     "path": "certificates/erdos-962/a2003_ford/probe_ford_2003.py",
+     "sha256": "e89ac92dd899af84e4fa599b371451fccb7033fd2311ccc7bc0347eea883b55a"
+    },
+    {
+     "path": "certificates/erdos-962/a2003_ford/verify_FOUND_1575356265925.txt",
+     "sha256": "c1163eb1ef86b8579c3eb08e67eb08c9795b4e2e18e50a32ad1de278a5d54e14"
+    },
+    {
+     "path": "certificates/erdos-962/a2003_ford/verify_ford_2003.py",
+     "sha256": "91f80dac4714b5d988c0f81ea9d6e70a70875b96790f769bce9b78a3dd9f67e3"
+    },
+    {
+     "path": "certificates/erdos-962/a2003_ford/verify_planted.txt",
+     "sha256": "b07256eeed4317128865109349034830c0870b1c934143e3405dafabb33d252b"
+    }
+   ],
+   "replays": [
+    {
+     "profile": "fast",
+     "certifies_claim": false,
+     "entrypoint": "certificates/erdos-962/a2003_ford/verify_ford_2003.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-962/a2003_ford/verify_ford_2003.py"
+     ],
+     "timeout_seconds": 90,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"witness_and_boundaries_2003\":true",
+      "\"prior_plateau_2001_2002\":true",
+      "\"minimality_replayed\":false",
+      "all witness-and-receipt checks passed; minimality not replayed"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "Direct gcd verification covers all 2203 witness integers and both smooth endpoints. The frozen a(2000) prefix and monotonicity check the 2001..2002 plateau. Shifted starts one earlier and one later are rejected; the prior plateau fails at n=2003; a valid compact control passes and its offset-0 damaged copy is rejected. The original independent checker used sympy factorization with its own planted failure. These are witness/receipt checks, not the expensive ordered-absence replay."
+     }
+    },
+    {
+     "profile": "slow",
+     "certifies_claim": true,
+     "entrypoint": "certificates/erdos-962/a2003_ford/verify_ford_2003.py",
+     "argv": [
+      "python3",
+      "-I",
+      "certificates/erdos-962/a2003_ford/verify_ford_2003.py",
+      "--replay-search"
+     ],
+     "timeout_seconds": 43200,
+     "exit_code": 0,
+     "stdout_contains": [
+      "\"verified_2003\":true",
+      "all checks passed"
+     ],
+     "failure_control": {
+      "kind": "embedded",
+      "evidence": "Besides the fast gcd/receipt controls, the expensive replay invokes the unchanged pinned ordered probe with W=10^11 from s0. It passes only when the first FOUND start equals 1575356265925 and its reported smooth boundaries equal the gcd-checked witness endpoints. The publishing pass did not rerun the probe."
+     }
+    }
+   ],
+   "extends": "erdos-962-a327909-1901-2000"
   }
  ]
 }

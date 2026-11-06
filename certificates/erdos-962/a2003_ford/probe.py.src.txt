@@ -1,0 +1,65 @@
+#!/usr/bin/env python3
+"""Bounded search for a(2003) in (s0, s0+W]. Streams 2003-smooth marks; reports FOUND or OPEN."""
+from __future__ import annotations
+import argparse, time, sys
+from libsmooth import primes_upto, mark_smooth_segment
+
+S0 = 1550254764943
+N = 2003  # run length needed
+# need gap between consecutive smooths >= N+1 = 2004
+
+def main() -> None:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--W", type=int, default=1_000_000, help="starts checked in (s0, s0+W]")
+    ap.add_argument("--chunk", type=int, default=2_000_000, help="segment size for marking")
+    args = ap.parse_args()
+    W = args.W
+    P = primes_upto(N)
+    # Cover integers s0 .. s0+W+N so we see smooths that bound starts up to s0+W
+    # Starts of interest: s0+1 .. s0+W. A start s fails if some s+i (i<N) is smooth.
+    # Equiv: find consecutive smooths a<b with b-a >= N+1 and a+1 in (s0, s0+W].
+    L = S0  # include s0 itself / s0-1 neighborhood: start mark at s0-1
+    R = S0 + W + N + 1
+    t0 = time.time()
+    prev_smooth = None
+    # We know from controls that s0-1 is 2000-smooth hence 2003-smooth; seed it.
+    prev_smooth = S0 - 1
+    found = None
+    pos = L
+    while pos < R:
+        seg_r = min(pos + args.chunk, R)
+        marks = mark_smooth_segment(pos, seg_r, P, N)
+        for i, sm in enumerate(marks):
+            if not sm:
+                continue
+            cur = pos + i
+            if prev_smooth is not None:
+                gap = cur - prev_smooth  # b - a
+                run = gap - 1
+                start = prev_smooth + 1
+                if run >= N and start > S0 and start <= S0 + W:
+                    found = (start, run, prev_smooth, cur)
+                    break
+            prev_smooth = cur
+        if found:
+            break
+        pos = seg_r
+        # progress
+        done = pos - L
+        total = R - L
+        if done % (args.chunk) == 0 or pos >= R:
+            print(f"progress marked={done}/{total} elapsed={time.time()-t0:.2f}s last_smooth={prev_smooth}", flush=True)
+    elapsed = time.time() - t0
+    if found:
+        start, run, a, b = found
+        print(f"FOUND start={start} run>={run} prev_smooth={a} next_smooth={b} elapsed_s={elapsed:.3f}")
+        print(f"NOTE: first in window (s0,s0+W]; verify with check.py before claiming a(2003)")
+        sys.exit(0)
+    else:
+        # No qualifying gap with start in (s0, s0+W]
+        print(f"OPEN a(2003) > s0+W = {S0 + W}  (W={W}) elapsed_s={elapsed:.3f}")
+        print(f"last_smooth_seen={prev_smooth}")
+        sys.exit(0)
+
+if __name__ == "__main__":
+    main()

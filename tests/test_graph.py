@@ -376,6 +376,13 @@ def test_nested_claim_chain_prints_only_newest_statement_in_full():
              if c["id"].startswith("erdos-962-a327909-")]
     assert len(chain) >= 2
     top = max(chain, key=lambda c: int(c["id"].rsplit("-", 1)[1]))
+    # A cell receipt extends a full-table prefix without pretending to be a new
+    # full table. The explicit extension edge determines the current frontier.
+    continuations = [c for c in chain if c.get("extends")]
+    if continuations:
+        assert len(continuations) == 1
+        top = continuations[0]
+        assert top["extends"] in {c["id"] for c in chain}
     ev = (ROOT / "views" / "graph" / "P962.md").read_text(encoding="utf-8") \
         .split("## EVIDENCE")[1].split("\n## ")[0]
     assert top["statement"] in ev

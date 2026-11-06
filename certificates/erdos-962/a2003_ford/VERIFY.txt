@@ -1,0 +1,42 @@
+Erdős #962 — exact OEIS A327909 terms a(2001), a(2002), a(2003)
+
+1. prior a(2001) = a(2002) = s0
+  [PASS] frozen a(2000) receipt has start s0, run 2002, class prime 1999
+  [PASS] gcd alone: s0 has a maximal 2002-run in the n=2000, 2001, 2002 class
+  With a(2000)=s0 and monotonicity a(n+1)>=a(n), that run gives a(2001)=a(2002)=s0.
+
+2. the new a(2003) witness and its blocking smooth integers
+  [PASS] 1575356265925..1575356268127 have gpf > 2003; both neighbours are 2003-smooth
+
+3. genuine broken witnesses must be rejected
+  [PASS] shifted start one earlier contains the blocking integer at s-1
+  [PASS] shifted start one later contains the blocking integer at s+2203
+  [PASS] prior plateau cannot be falsely extended to a 2003-run
+  [PASS] prior plateau cannot be falsely extended to a 2003-run in the old 1999-class
+  [PASS] one-division gcd shortcut rejects the invalid too-coarse witness test
+  [PASS] compact valid/nonzero control passes; planted offset-0 witness is rejected
+
+4. pinned search scripts, output and receipt
+  [PASS] exact evidence digest: FALSIFIER.txt
+  [PASS] exact evidence digest: RECEIPT_collect_W1e11_1106.txt
+  [PASS] exact evidence digest: RECEIPT_prior_2001_2002.txt
+  [PASS] exact evidence digest: probe_ford_2003.py
+  [PASS] exact evidence digest: check_ford_2003.py
+  [PASS] exact evidence digest: probe.py.src.txt
+  [PASS] exact evidence digest: check.py.src.txt
+  [PASS] exact evidence digest: libsmooth.py
+  [PASS] exact evidence digest: probe_W1e11_tail.txt
+  [PASS] exact evidence digest: verify_FOUND_1575356265925.txt
+  [PASS] exact evidence digest: verify_planted.txt
+  [PASS] exact evidence digest: controls_out.txt
+  [PASS] ordered W=10^11 probe tail reports this first FOUND witness
+  [PASS] collect receipt states the exact term, s0 window and planted-check outcome
+  [PASS] independent sympy checker output agrees with the 2003-run
+  [PASS] the original planted checker fails as required
+
+5. minimality NOT replayed
+  The exact term is a receipted ordered-search result, not a compact absence proof.
+  The W=10^11 probe is archived, not rerun by this fast verification.
+
+{"witness_and_boundaries_2003":true,"prior_plateau_2001_2002":true,"minimality_replayed":false}
+all witness-and-receipt checks passed; minimality not replayed

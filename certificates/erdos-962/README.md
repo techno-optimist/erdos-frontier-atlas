@@ -136,8 +136,7 @@ python3 -I certificates/erdos-962/verify.py --full   # a(1..1102): scan of [1, 4
 - **Minimality is only as good as the scan.** It rests on the two engines, which
   share the sieve design but not code, and on the reference over the small
   range. It is a verified-search receipt, not a formal proof.
-- **a(2001) is not computed.** a(1103..2000) are covered by the nine extensions below.
-  All that is claimed here is a(2001) ≥ a(2000) = 1550254764943.
+- **a(2001..2003) are covered separately.** a(1103..2000) are covered by the nine extensions below. The 2026-11-06 `a2003_ford/` single-cell receipt gives the three next exact cells; it is a separate ordered probe, not a full scan of this certificate.
 
 ## Extension to n = 1200 (2026-10-27)
 
@@ -520,3 +519,7 @@ claim. Planted failures must be refused: a(1946) claimed one smaller, run(2000)
 claimed one longer, the a(1997) run started one late, and a(1850) altered in the
 a(1..1900) prefix. The scope above still applies: a verified-search receipt, not
 a formal proof; the two engines share the sieve design but not code.
+
+## Extension to n = 2003 — three single-cell receipts (2026-11-06)
+
+**A327909(2001) = A327909(2002) = 1550254764943, and A327909(2003) = 1575356265925.** For n=2001..2002 the still-open run above carries over; for n=2003 the separate `a2003_ford/` ordered probe found the first start in a W=10^11 window. Its 2203-integer witness and both endpoints, the prior plateau, and all pinned files passed the new standalone gcd/receipt checks. This is an exact OEIS-term verified-search receipt, not a formal certificate, and it does not alter the frozen RESULT_ford_2000.json or its verifier. See [the single-cell receipt](a2003_ford/README.md) and contract `erdos-962-a327909-2001-2003` for the complete scope and search-replay command.

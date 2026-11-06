@@ -1,0 +1,12 @@
+# Public excerpt of prior Ford receipt: the original internal compute name is removed.
+# Original source receipt sha256 76cf0cb783a8eaa04b35c42170127fba2e3d22a67cdbc1405e8ac9f83692d404.
+#962 / OEIS A327909 a(2001), a(2002) — Ford receipt, 2026-11-04 ~18:15 MST. NOT published.
+Definition (OEIS): a(n) = smallest start of a run of n or more integers each having a prime factor > n.
+Input (not re-derived here): a(2000)=s0=1550254764943 from atlas certificates/erdos-962/runs_ford_2000.txt (e41735b).
+Lemma: a(n+1) >= a(n) (a qualifying (n+1)-run contains a qualifying n-run). So if the run from s0 qualifies for n, a(n)=s0.
+Result: every integer in s0..s0+2001 has gpf >= 2111 (min at offset 1073); s0+2002 has gpf 1531; s0-1 has gpf 293.
+Hence a(2001) = a(2002) = 1550254764943, and a(2003) > 1550254764943 (open).
+Checkers: run.py (own trial division by primes<=2200) and xcheck2.py (sympy.factorint, full run) agree.
+Caveat: conditional on the atlas a(2000) value (its own exhaustive search); this step only extends the run.
+Falsifier (FALSIFIER.txt) did not fire. Files: FALSIFIER.txt 313a086e…53b7, run.py dee91a8b…de8, out.txt 689fad28…cf, xcheck.py b67018c5…c1, xcheck.txt 4432447c…3e, xcheck2.py 6eb5b8bc…f8, xcheck2.txt 9a8235e9…77.
+Next: a(2003) needs a search above s0 (private compute; nice 19; plan first).

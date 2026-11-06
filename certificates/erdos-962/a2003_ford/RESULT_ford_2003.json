@@ -1,0 +1,30 @@
+{
+  "schema": "efa-single-cell-receipt-v1",
+  "problem": 962,
+  "oeis": "A327909",
+  "date": "2026-11-06",
+  "prior": {
+    "a(2000)": 1550254764943,
+    "a(2001)": 1550254764943,
+    "a(2002)": 1550254764943
+  },
+  "term": {
+    "n": 2003,
+    "a": 1575356265925,
+    "run": 2203,
+    "class_prime": 2003,
+    "start_minus_one": 1575356265924,
+    "start_plus_run": 1575356268128
+  },
+  "method": "Ordered exact 2003-smoothness probe of starts in (s0,s0+10^11] from s0=1550254764943, followed by independent full factorization and gcd witness checks.",
+  "scope": "Single-term exact receipt, not a full [1,X] runs.c table. The fast verifier rechecks witnesses and receipt integrity but does not replay minimality; the original ordered probe certifies the first reported start. Optional --replay-search is a multi-hour search audit and was not invoked during packaging.",
+  "receipt": "RECEIPT_collect_W1e11_1106.txt",
+  "receipt_sha256": "384af3ee37b9aee04a3780a0398da06d5bed353ea753020a7013bd0b9427c245",
+  "next_cell": {
+    "quantity": "A327909(2004)",
+    "lower": 1575356265925,
+    "upper": null,
+    "status": "open"
+  },
+  "rating": "about 7/10; ordered search + independent witness verification; no formal certificate"
+}
