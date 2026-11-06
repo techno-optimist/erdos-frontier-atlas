@@ -1,0 +1,11 @@
+P854 / OEIS A389839(45) step 6. Ford hourly rotation, 2026-11-05 ~18:05 MST. FINDING: gap 628 occurs at 197#, so a(45) >= 630.
+A389839(n) = smallest even number not a difference of two consecutive integers coprime to prime(n)#; n=45 -> 197#.
+Before: bracket [628,644] (618/620/622/624/626 witnessed; ford/p854_t626_1105/, atlas PR #210).
+Method: simulated annealing (ann.c, box nice 19) over residues r_p for the 45 primes <=197, covering interior 1..t-1 with 0 and t left uncovered; seeds from s626*.res / s624.res / s622.res / s620.res; T in {3.0,4.0}; target 2e8 iters.
+Controls: t=626 from s626_*.res / s626.res, seeds 1..4, all 4 WITNESS immediately (batch_ctrl.txt). FALSIFIER control requirement held.
+Witnesses (t=628): 5 distinct residue vectors found (batch.txt; truncated batch — 5/14 finished, remaining jobs stopped after first verified witnesses); first verified x = 23079472406892890483660349494991158190163050258898539770491003834332523423361161 (0 < x < 197#).
+  x and x+628 are coprime to 197#, and every x+i, 1<=i<=627, shares a prime <=197 with 197#.
+Checks: verify.py (CRT rebuild + gcd with 197#) ok=True for all 5; planted controls (t-2, t+2, x+2) all rejected for each; verify2 trial-division: 0 uncovered interior for all 5.
+Consequence: 618, 620, 622, 624, 626, 628 all occur at 197#, so A389839(45) >= 630. Still unwitnessed: 630..640 (6 even values). Upper bound 644 unchanged.
+Caveat: witness only, not checked against unpublished tables (Gerbicz/Ziller); OEIS A389839 lists only short terms, no a(45). Truncated batch — claim rests on verified witnesses only.
+Files: see SHA256SUMS. Workspace receipt sha256 04e9e6d0…e90f. NOT published. Next: observatory/atlas PR moving gap_map lower bound to 630, then annealer at t=630 (control 628).
