@@ -1,0 +1,24 @@
+#962 / OEIS A327909 a(2003) — W=1e11 COLLECT + VERIFY, 2026-11-06 ~00:31 MST.
+Side poll during 7h research rotation (lane step was #1109 chunk3). NOT published yet.
+
+Falsifier (named first, unchanged): FALSIFIER.txt sha256 5944c1bed0da4dd372b66da8626ddf8dcda2b35830bc5f39abfce9ee4be85457
+Prior OPEN LB (W=1e10): a(2003) > 1560254764943 (s0=1550254764943).
+
+W=1e11 probe EXITED (~00:26 MST): PID 1402496 gone; FOUND start=1575356265925 run>=2203
+  prev_smooth=1575356265924 next_smooth=1575356268128 elapsed_s=19328.662 (~5h22m)
+  gap_exclusive=2203; first in window (s0, s0+W] per probe.py (S0 hardcoded 1550254764943, W=1e11).
+  Log sha256 ee9c93d5d6ba3c9844e92231426d9b41c715cb127413647fee5a316831c5c10a
+  probe.py sha256 d332dffc84268811e1d33d2440f883271b6d9f99c8d8e1b3ee62f25c994c9c62
+  libsmooth.py sha256 eb46a375fff6946a98700cf49b2c0c97841a4cca455c0ec3025ce54f938f104a
+
+Independent verify (check.py, sympy gpf):
+  OK start 1575356265925 n 2003 all gpf > 2003 sympy True
+  verify sha256 c1163eb1ef86b8579c3eb08e67eb08c9795b4e2e18e50a32ad1de278a5d54e14
+  check.py sha256 aaa8a7c191fb1ff007a02c99500cc45eb1acbf0eae1e3b5bcce87b943185f2b0
+Planted control (--plant-offset 0): FAIL 1 violation (control BITES) sha256 b07256eeed4317128865109349034830c0870b1c934143e3405dafabb33d252b
+
+Claim (receipted, NOT published): a(2003) = 1575356265925.
+Reason: W=1e10 already showed no qualifying start in (s0, s0+1e10]; W=1e11 reports this as first start in (s0, s0+1e11]; check.py+sympy confirms the 2003-run; planted rejects.
+Bracket collapses from open LB-only to exact value.
+Rating ~7/10 (exact OEIS term; search+independent gpf verify; not a formal proof certificate beyond the checkers).
+Next = observatory/atlas PR for a(2003)=1575356265925 (branch+PR only). Do NOT relaunch W probe.

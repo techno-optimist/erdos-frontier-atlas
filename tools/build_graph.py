@@ -419,6 +419,7 @@ def build_graph():
         add_node(cid, "evidence_claim", claim_id=c["id"], status=c["status"],
                  statement=c["statement"], scope=c.get("scope"),
                  artifacts=c.get("artifacts", []), replay=replay,
+                 **({"extends": c["extends"]} if c.get("extends") else {}),
                  **({"overclaim_guards": guards} if guards else {}))
         # deterministic claim->problem link: erdos-<id>-... claim id prefix
         parts = c["id"].split("-")
@@ -693,6 +694,23 @@ def _nested_chains(claims):
         newest[k] = top
         older[k] = sorted((c for c in cs if c is not top),
                           key=lambda c: _range_key(c, upper=True))
+    # A table-prefix statement's max-n is not the right sort key for a receipt
+    # that only appends the next few cells. Such a claim may declare the exact
+    # contract it extends; render that frontier in full and compact the earlier
+    # nested claims, without pretending the new receipt is a fresh full table.
+    for continuation in claims:
+        if "extends" not in continuation:
+            continue
+        for k, top in list(newest.items()):
+            if continuation["extends"] == top["claim_id"]:
+                if newest[k].get("extends"):
+                    raise ValueError("ambiguous multiple continuations of " + top["claim_id"])
+                prior = older[k] + [top]
+                newest[k] = continuation
+                older[k] = sorted(
+                    prior,
+                    key=lambda c: (_range_key(c, upper=True) is not None,
+                                   _range_key(c, upper=True) or 0))
     return newest, older
 
 
@@ -848,21 +866,38 @@ def render_card(graph, erdos_id):
             key = _range_key(c)
             if c["claim_id"] in done:
                 continue
-            if key not in newest:
+            own_chain = [(k, v) for k, v in newest.items()
+                         if v is c and c.get("extends")]
+            if key not in newest and not own_chain:
                 _render_claim(w, c)
                 continue
-            top = newest[key]
+            if own_chain:
+                key, top = own_chain[0]
+                assert len(own_chain) == 1, "a continuation may lead only one chain"
+            else:
+                top = newest[key]
+                if top is not c:
+                    continue
             _render_claim(w, top)
             done.add(top["claim_id"])
+            prior = older.get(key, [])
+            if not prior:
+                continue
             seq, status = key
-            w(f"  - {len(older[key])} earlier {seq} claim"
-              f"{'s' if len(older[key]) != 1 else ''} [{status}] cover a "
-              f"sub-range 1 <= n <= N of this statement (subsumed; full "
+            w(f"  - {len(prior)} earlier {seq} claim"
+              f"{'s' if len(prior) != 1 else ''} [{status}] cover the "
+              f"earlier prefix (subsumed in this compact card; full "
               f"text and receipts stay in `certificates/contracts.json`):")
-            for o in older[key]:
+            for o in prior:
                 done.add(o["claim_id"])
+                bound = _range_key(o, upper=True)
+                if bound is None and o.get("extends"):
+                    parent = next((p for p in claims if p["claim_id"] == o["extends"]), None)
+                    bound = _range_key(parent or {}, upper=True)
+                if bound is None:
+                    raise ValueError("compacted contract needs a parsed bound or explicit extension: " + o["claim_id"])
                 line = (f"    - `{o['claim_id']}` [{o['status']}] "
-                        f"1 <= n <= {_range_key(o, upper=True)}")
+                        f"1 <= n <= {bound}")
                 if o.get("replay"):
                     line += f" · replay `{' '.join(o['replay']['argv'])}`"
                 if o.get("overclaim_guards"):

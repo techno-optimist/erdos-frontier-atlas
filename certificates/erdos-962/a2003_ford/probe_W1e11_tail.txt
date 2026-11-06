@@ -1,0 +1,5 @@
+progress marked=25096000000/100000002004 elapsed=19322.68s last_smooth=1575350764527
+progress marked=25098000000/100000002004 elapsed=19324.66s last_smooth=1575352764744
+progress marked=25100000000/100000002004 elapsed=19326.67s last_smooth=1575354764930
+FOUND start=1575356265925 run>=2203 prev_smooth=1575356265924 next_smooth=1575356268128 elapsed_s=19328.662
+NOTE: first in window (s0,s0+W]; verify with check.py before claiming a(2003)
