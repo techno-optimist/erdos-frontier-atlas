@@ -5,7 +5,7 @@
 > [Frontier Board](../README.md#chronos-frontier-board). Do not edit by hand —
 > regenerate with `make state-of-frontier`; `make check-views` fails if this file
 > is stale. Deterministic: no generation timestamp — every date below comes from
-> the data. **Data through 2026-11-06** (latest provenance/evidence date).
+> the data. **Data through 2026-11-10** (latest provenance/evidence date).
 
 The gap map is the versioned `[L, U]` ledger over bounded quantities of open
 problems (charter Tenet 2: the bracket is the unit of progress). This report is
@@ -38,9 +38,9 @@ validator fails any stored class the recorded evidence does not prove.
 | kind | meaning | entries | witness-workable |
 |---|---|---|---|
 | `value_gap` | both bounds known; the open `[L, U]` gap is the object | 32 | 7 |
-| `next_cell` | the next uncomputed term of a sequence or table | 77 | 50 |
+| `next_cell` | the next uncomputed term of a sequence or table | 78 | 51 |
 | `verified_range` | a “no counterexample below N” frontier; `lower` records the verified-through value | 31 | 16 |
-| `bounded_below_only` | one-sided bracket: only a lower bound is known | 18 | 6 |
+| `bounded_below_only` | one-sided bracket: only a lower bound is known | 17 | 5 |
 | `bounded_above_only` | one-sided bracket: only an upper bound is known | 1 | 0 |
 | `not_gap_shaped` | on the map for completeness; the problem has no `[L, U]` shape to work | 66 | 0 |
 
@@ -55,7 +55,7 @@ truncated — the full values, sources, and verifier specs live in
 
 | problem | OEIS | quantity | side | feasibility | lower | upper |
 |---|---|---|---|---|---|---|
-| [#131](https://www.erdosproblems.com/131) | [A068063](https://oeis.org/A068063) | T_11 for A068063 — least n such that {1..n} has a nondividing 11-subset (no element divides the sum of any no… | upper | open-easy | 156 | ? |
+| [#131](https://www.erdosproblems.com/131) | [A068063](https://oeis.org/A068063) | T_11 for A068063 — least n such that {1..n} has a nondividing 11-subset (no element divides the sum of any no… | upper | open-easy | 156 | 250 |
 | [#156](https://www.erdosproblems.com/156) | [A382397](https://oeis.org/A382397) | i(9) — largest n such that {1..n} contains an inclusion-maximal Sidon set of size 9; A382397(n) = 9 exactly f… | lower | open-easy | 188 | 369 |
 | [#170](https://www.erdosproblems.com/170) | [A046693](https://oeis.org/A046693) | A046693(214) — minimal number of marks in a sparse ruler / restricted difference basis for {0..214} (first ce… | upper | open-easy | 22 | 26 |
 | [#295](https://www.erdosproblems.com/295) | [A192881](https://oeis.org/A192881) | A192881(20) — minimum number of terms in an Egyptian fraction decomposition of 1 with least denominator 20 (f… | upper | open-easy | 34 | ? |

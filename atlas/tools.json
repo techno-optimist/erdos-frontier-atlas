@@ -1,14 +1,14 @@
 {
  "schema": "efa-tools-v1",
  "purpose": "Index of AI-assisted discovery tools, systems, registries, datasets and benchmarks that touch the atlas. Each item cites primary URLs. Listing an item is not an endorsement and does not change any status.",
- "retrieved": "2026-10-30",
+ "retrieved": "2026-11-10",
  "counts": {
-  "items": 30,
+  "items": 36,
   "by_kind": {
-   "benchmark": 8,
+   "benchmark": 10,
    "dataset": 6,
    "registry": 3,
-   "system": 13
+   "system": 17
   }
  },
  "items": [
@@ -584,6 +584,118 @@
     "atlas/ai_results.json"
    ],
    "note": "Research artifacts with Lean formalisations written by AI models; includes the ETH item in C-17."
+  },
+  {
+   "id": "B-31",
+   "name": "AlphaProof Code (code-verification)",
+   "kind": "system",
+   "org": "Google DeepMind",
+   "first_public_date": "2026-11-10",
+   "date_basis": "DeepMind blog date; repository initial commit 2026-11-10 08:14 UTC",
+   "primary_urls": [
+    "https://deepmind.google/blog/introducing-alphaproof-code/",
+    "https://github.com/google-deepmind/code-verification",
+    "https://google-deepmind.github.io/code-verification/"
+   ],
+   "areas": [
+    "formal verification",
+    "cryptographic protocols",
+    "Lean"
+   ],
+   "verification_mode": "Lean developments (computational and symbolic) with axiom-audit and trusted-closure scripts; the atlas has not rebuilt the kernel check",
+   "atlas_nodes_touched": [],
+   "note": "The blog (2026-11-10) says Gemini Carbon agents wrote over six million lines of Lean about Signal's compiled code. The README describes two AI-generated proofs for an AArch64 Linux libsignal-cli build in a CLI harness with hooked cryptographic primitives (libsignal v0.105.4). A static line count on commit 808b4b7 found 7,528,293 physical newlines across 11,323 Lean files, consistent with 'over six million' and not with secondary 'three million' figures. DeepMind's paper says 37 hooked routines (23 cryptographic) are replaced by contracts that 'are not proved against the real routines,' and that the results concern the CLI build, not Signal's own applications. Carry-over to Android and iOS is an extra trust assumption. The atlas has not run lake build."
+  },
+  {
+   "id": "B-32",
+   "name": "OpenFrontiers",
+   "kind": "benchmark",
+   "org": "Yao, Wang, Zhang",
+   "first_public_date": "2026-10-27",
+   "date_basis": "arXiv v1 date",
+   "primary_urls": [
+    "https://arxiv.org/abs/2610.37739",
+    "https://huggingface.co/datasets/FlippyDora/OpenFrontiers-Bench"
+   ],
+   "areas": [
+    "research-level problem solving",
+    "Lean"
+   ],
+   "verification_mode": "Lean 4 statements with automated probes; formal proofs graded by two checkers in a sandbox, as described by the paper",
+   "atlas_nodes_touched": [],
+   "note": "The paper describes a corpus of 12,151 open research problems and a retrospective benchmark of 200 problems (110 resolved in 2026 and 90 still open), with a HQ-50 subset. Reported closed-book rediscovery on HQ-50 is at most 7 of 40 already-resolved problems under the authors' protocol. Not rechecked by the atlas."
+  },
+  {
+   "id": "B-33",
+   "name": "Science-Last-Exam",
+   "kind": "benchmark",
+   "org": "Gen-Verse",
+   "first_public_date": "2026-10-28",
+   "date_basis": "GitHub repository creation date (UTC)",
+   "primary_urls": [
+    "https://github.com/Gen-Verse/Science-Last-Exam",
+    "https://huggingface.co/datasets/Gen-Verse/Science-Last-Exam"
+   ],
+   "areas": [
+    "science examination"
+   ],
+   "verification_mode": "public dataset and repository, as released by the maintainers",
+   "atlas_nodes_touched": [],
+   "note": "A science-exam benchmark with a public dataset and repository. The atlas has not rechecked any leaderboard figures."
+  },
+  {
+   "id": "B-34",
+   "name": "FlashProve",
+   "kind": "system",
+   "org": "Anthropic",
+   "first_public_date": "2026-10-30",
+   "date_basis": "repository creation date (UTC)",
+   "primary_urls": [
+    "https://github.com/anthropics/FlashProve"
+   ],
+   "areas": [
+    "zero-knowledge proofs",
+    "AI inference",
+    "Lean"
+   ],
+   "verification_mode": "protocol soundness formalised in Lean 4 (lean/THEOREM.md), as stated by the README; the atlas has not rebuilt it",
+   "atlas_nodes_touched": [],
+   "note": "A research prototype (explicitly not maintained) for zero-knowledge proofs that a reply came from a committed model (Llama 4 Maverick, one H100). The README says protocol soundness is formalised in Lean 4. Tool context only; no mathematical discovery is recorded here."
+  },
+  {
+   "id": "B-35",
+   "name": "&Truth",
+   "kind": "system",
+   "org": "&Truth (public benefit corporation)",
+   "first_public_date": "2026-10-29",
+   "date_basis": "press-release date",
+   "primary_urls": [
+    "https://andtruth.com/press/andtruth-emerges-from-stealth/"
+   ],
+   "areas": [
+    "software formal verification"
+   ],
+   "verification_mode": "company announcement of a verification product; no public math artifact is cited here",
+   "atlas_nodes_touched": [],
+   "note": "Press release dated 2026-10-29 announcing a public-benefit company building a universal verification machine for software, with $70 million of seed funding. This closes a Scout gap from 2026-10-31 (primary was not found in the 2026-10-30 fold). No mathematical result is recorded here."
+  },
+  {
+   "id": "B-36",
+   "name": "ProofStudio",
+   "kind": "system",
+   "org": "Yutaka Nagashima",
+   "first_public_date": "2026-11-03",
+   "date_basis": "arXiv v1 date",
+   "primary_urls": [
+    "https://arxiv.org/abs/2611.05540"
+   ],
+   "areas": [
+    "proof assistants",
+    "formal specification"
+   ],
+   "verification_mode": "browser environment bundling Isabelle/HOL, Lean, Rocq, HOL4 and HOL Light with contextual AI assistance, as described by the paper",
+   "atlas_nodes_touched": [],
+   "note": "A browser-based environment for five proof assistants, with worked examples and contextual AI assistance. Tool only."
   }
  ]
 }

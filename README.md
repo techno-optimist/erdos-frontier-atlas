@@ -45,8 +45,8 @@ in this table against its source file, so the table can't drift from the data.
 
 | Inventory | Count | Source of truth |
 |---|---:|---|
-| AI-assisted discovery tools | 30 | [`atlas/tools.json`](atlas/tools.json): 13 systems, 8 benchmarks, 6 datasets and 3 registries, each with primary links and a first-public date |
-| AI-assisted results | 21 | [`atlas/ai_results.json`](atlas/ai_results.json): prior value, new value and source, as the authors report them. 5 are extraordinary claims marked `unvetted`, and 2 don't state AI involvement |
+| AI-assisted discovery tools | 36 | [`atlas/tools.json`](atlas/tools.json): 17 systems, 10 benchmarks, 6 datasets and 3 registries, each with primary links and a first-public date |
+| AI-assisted results | 31 | [`atlas/ai_results.json`](atlas/ai_results.json): prior value, new value and source, as the authors report them. 8 are extraordinary claims marked `unvetted`, and 2 don't state AI involvement |
 | Erdős-linked AI claims | 89 | [`atlas/ai_claims.json`](atlas/ai_claims.json): a dated claim registry used for triage; it never sets a status |
 | OpenAI manuscript families | 22 | [`atlas/openai_math.json`](atlas/openai_math.json): pinned to a commit of [openai/math](https://github.com/openai/math) |
 | Plasma overlay entries | 155 | [`atlas/plasma_claims.json`](atlas/plasma_claims.json): where Plasma AI's [erdosproblems.ai](https://erdosproblems.ai) wiki differs from this atlas, with our review of each difference |
@@ -127,7 +127,7 @@ problems.
 |---|---|---|
 | **P357** | [Distinct segment sums](certificates/erdos-357/README.md): A364132(n), the least N such that {1..N} holds an increasing n-term sequence whose segment sums are all distinct, and its any-order companion A364153, decided by exhaustive search through n = 29 and n = 19; A364132(23..29) = 56, 60, 63, 67, 69, 75, 79 and A364153(14..19) = 20, 22, 24, 26, 28, 29 are new (OEIS stopped at 22 and 13 terms; A364132(28) = 75, A364132(29) = 79, A364153(17) = 26, A364153(18) = 28 and A364153(19) = 29 by exhaustive computer searches by two independent engines, not proofs), and every published term is reproduced | A364132(30) ≥ 80 is the next cell (A364153(20) ≥ 29 the companion); whether Erdős's f(N) is o(N) is untouched by any finite table. |
 | **P1109** | [Sets with squarefree sumsets](certificates/erdos-1109/README.md): the indices A392165 where f(N) = A392164(N) reaches each new value, recomputed by exhaustive clique search over every N ≤ 2000; A392165(40..54) = 1255, 1277, …, 1991, 1999 were not in OEIS when computed (it stopped at 1103 then; OEIS now lists them, matching, plus a(55..65) to N = 3000 from Leandre Jack's b-file, which a second, separately written search of ours confirms term for term), all 39 earlier published terms are reproduced, and an independent Russian-doll search confirms the first three of 40..54; that second search then gives A392165(66) = 3065, new (the OEIS b-file ends at a(65) = 2993), with each of its 29 new answers repeated by the original engine | A392165(67) > 3065 is the next cell; the growth of f(N) (is it N^{o(1)}?) is untouched by any finite table. |
-| **P131** | [Nondividing sets](certificates/erdos-131/README.md): the thresholds T_k of A068063 (least n with a nondividing k-subset of {1..n}) by exhaustive search through k = 10: T_9 = 107 and T_10 = 155 are new (OEIS stopped at a(100) = 8), so A068063(n) = 9 on 107..154 and 10 at 155 | T_11 > 155 is the next cell; the growth exponent of the maximum nondividing set is untouched by any finite table. |
+| **P131** | [Nondividing sets](certificates/erdos-131/README.md): the thresholds T_k of A068063 (least n with a nondividing k-subset of {1..n}) by exhaustive search through k = 10: T_9 = 107 and T_10 = 155 are new (OEIS stopped at a(100) = 8), so A068063(n) = 9 on 107..154 and 10 at 155 | T_11 lies in [156, 250]: a constructive 11-element witness with maximum 250 was independently rechecked (a search upper bound, not an exhaustive determination of the least n, and not part of the k ≤ 10 certificate); the growth exponent of the maximum nondividing set is untouched by any finite table. |
 | **P962** | [Long runs of integers with a large prime factor](certificates/erdos-962/README.md): OEIS A327909 scan certificates cover n = 2000; A327909(2001..2002) = 1550254764943 and A327909(2003) = 1575356265925 follow from the existing a(2000) run and an ordered 2003-smoothness probe with an independent gcd/factorization check. The new [single-cell receipt](certificates/erdos-962/a2003_ford/README.md) pins the scripts and logs and rechecks the witnesses by gcd. | a(2004) is the next cell, with lower bound a(2003); this is a verified-search receipt, not a formal proof, and the growth question for log k(n) is untouched by any finite table. |
 | **P864** | [Sets with one repeated sum](certificates/erdos-864/README.md): A389182(N), the largest A ⊆ {1..N} in which at most one pairwise sum repeats, decided for every N ≤ 117 by one exhaustive search per N; a(101..106) = 16, a(107..116) = 17 and a(117) = 18 are new to OEIS (the b-file ended at a(100) = 16) and confirm an unverified external report, and a(1..80) as published are reproduced | a(118) ∈ {18, 19} is the next cell; the constant in a(N) ~ c√N is untouched by any finite table. |
 | **P854** | [Gaps between integers coprime to a primorial](certificates/erdos-854/README.md): OEIS A389839 recomputed exhaustively through n = 16, a(13..16) = 76, 86, 98, 108 (every smaller gap with a gcd-checked witness) — new to A389839 but already implied by the 2020 gap table A331118, which also showed the atlas cell a(13) had been mis-set | a(45) ∈ [634, 644] is the first cell beyond public data. The asymptotic Erdős questions are untouched. |
@@ -176,18 +176,19 @@ stated lemma or obligation, not to the parent conjecture.
 This part of the atlas maps other people's work. Listing something here is not
 an endorsement, and it never changes a status.
 
-- The [tool index](atlas/tools.json) lists 30 AI-assisted discovery systems,
+- The [tool index](atlas/tools.json) lists 36 AI-assisted discovery systems,
   registries, datasets and benchmarks, from AlphaEvolve, AlphaProof Nexus,
-  Aristotle, AxiomProver and Gauss to FrontierMath: Open Problems, OEIS Open,
-  First Proof and PutnamBench, plus community registries. Each one has primary
+  AlphaProof Code, Aristotle, AxiomProver and Gauss to FrontierMath: Open Problems, OEIS Open,
+  First Proof, PutnamBench, OpenFrontiers and Science-Last-Exam, plus community registries. Each one has primary
   links and a first-public date.
-- The [results file](atlas/ai_results.json) lists 21 results whose authors
+- The [results file](atlas/ai_results.json) lists 31 results whose authors
   report or claim AI assistance, including matrix multiplication, kissing
-  numbers, cap sets, Ramsey and Schur lower bounds, and Erdős #30, #36, #188 and
-  #519. Most lie outside the Erdős set. Five extraordinary claims are marked
+  numbers, cap sets, Ramsey and Schur lower bounds, and Erdős #30, #36, #188,
+  #519 and #650. Most lie outside the Erdős set. Eight extraordinary claims are marked
   `vetting: unvetted`: two ETH refutations, local smoothing with Kakeya,
-  Yang–Mills existence, and cycle double cover. They are listed only because a
-  primary source exists. Both files are dated 2026-10-30 and checked by
+  Yang–Mills existence, cycle double cover, and three Claude Fable 5.2 claims
+  (MIPLIB, black-hole physics, and a Fermat formalisation). They are listed only because a
+  primary source exists. Both files are dated 2026-11-10 and checked by
   `tools/validate_tools.py`.
 - The [AI-claim overlay](atlas/ai_claims.json) is a dated registry of 89
   Erdős-linked claims of AI-assisted resolutions. It exists so effort isn't
