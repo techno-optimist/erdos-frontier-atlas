@@ -1,12 +1,12 @@
 {
  "schema": "efa-ai-results-v1",
  "purpose": "Results that sources report or claim with AI assistance, mostly outside the Erdős set; entries on Erdős problems link their erdos:<n> node. Entries marked vetting=unvetted are extraordinary claims recorded only because a primary source exists. Values are copied from the cited source; nothing here is independently checked and no atlas status changes.",
- "retrieved": "2026-10-30",
+ "retrieved": "2026-11-10",
  "counts": {
-  "entries": 21,
-  "ai_involvement_confirmed": 19,
+  "entries": 31,
+  "ai_involvement_confirmed": 29,
   "ai_involvement_unconfirmed": 2,
-  "unvetted": 5
+  "unvetted": 8
  },
  "entries": [
   {
@@ -526,7 +526,8 @@
    },
    "source_urls": [
     "https://openai.com/index/building-scientific-understanding-with-academic-communities",
-    "https://www.kitp.ucsb.edu/sites/default/files/YM_working_group.pdf"
+    "https://www.kitp.ucsb.edu/sites/default/files/YM_working_group.pdf",
+    "https://www.kitp.ucsb.edu/sites/default/files/3rd-Statement-About-Quantum-YangMills-Theory_Nov-9.pdf"
    ],
    "date": "2026-10-26",
    "date_basis": "OpenAI announcement date; KITP working-group statement dated October 2026",
@@ -538,7 +539,7 @@
    "our_verdict": "not independently checked",
    "status_changed_by_this_entry": false,
    "atlas_nodes": [],
-   "note": "Claimed, unvetted. The shepherding group (Gross, chair; Douglas, Jaffe, Klebanov, Nekrasov) chose to hold back the AI artifacts and write it up themselves; nothing can be checked yet.",
+   "note": "Claimed, unvetted. The shepherding group (Gross, chair; Douglas, Jaffe, Klebanov, Nekrasov) chose to hold back the AI artifacts and write it up themselves. Their 3rd statement, dated 2026-11-09, said that on 2026-11-10 they would publish the Lean code OpenAI submitted on 2026-10-28 and a validation assessment. As of this retrieval (2026-11-10) the announced links https://github.com/yang-mills-group/OpenAI-YM-20261028 and https://github.com/yang-mills-group/YM/blob/main/docs/assessment-1.pdf still returned 404; the yang-mills-group organisation existed and did not yet host those repositories.",
    "vetting": "unvetted"
   },
   {
@@ -571,6 +572,281 @@
    ],
    "note": "Claimed, unvetted by the atlas. Two independent machine checks (Lean, Grace17) are reported, but the atlas has not reviewed them.",
    "vetting": "unvetted"
+  },
+  {
+   "id": "C-22",
+   "quantity": "Erdős #650: f(m), the guaranteed number of distinct A-multiples in an interval of length twice the largest element of an m-set A",
+   "prior": {
+    "value": "√m ≤ f(m) ≤ 2⌈√m⌉",
+    "source": "Erdős–Surányi lower bound and Erdős–Selfridge upper bound, as cited on erdosproblems.com/650"
+   },
+   "new": {
+    "value": "f(m) = min(m, ⌈2√m⌉) for every positive integer m, with a Lean formalisation"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2603.28636",
+    "https://www.erdosproblems.com/650",
+    "https://github.com/TheJustinSunPrize/awards/blob/main/awards/README.md",
+    "https://github.com/Woett/Lean-files/blob/17d88dc1f122640d4a0101d1bcf04cb8682f7935/ErdosProblem650.lean"
+   ],
+   "authors": "Wouter van Doorn, Yanyang Li, Quanyu Tang (paper); Lean role credited to van Doorn on the prize register and to Aristotle in the Lean header and paper",
+   "date": "2026-03-30",
+   "date_basis": "arXiv v1 date; Justin Sun Prize first award announced 2026-11-02 (JSP-000526)",
+   "attribution": "reported",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The paper, the Bloom page, and the Lean file header all say the strategy was first proposed by ChatGPT (GPT 5.4 Pro on the Bloom page) and the detailed argument was made rigorous and formally checked in Lean by Aristotle; the exposition and final proofs in the paper are human-written."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "erdos:650",
+    "atlas/stubs.json#problem=650"
+   ],
+   "note": "Upstream status on erdosproblems.com/650 already lists the exact formula via [VLT26] (page last edited 02 April 2026); this entry indexes the AI-assisted paper, the pinned Lean file, and the 2026-11-02 prize announcement. The atlas has not rebuilt the Lean file, so this is not a kernel check."
+  },
+  {
+   "id": "C-23",
+   "quantity": "OEIS A060841: integrality of 1/det of the n × n matrix with entries 1/lcm(i,j)",
+   "prior": {
+    "value": "conjecture: the reciprocal is an integer iff n is in {1,…,34, 36, 38}",
+    "source": "R. G. Wilson v, OEIS A060841 (2015), as cited by the Palomar entry and formal-conjectures PR #7885"
+   },
+   "new": {
+    "value": "a claimed Lean proof of that biconditional, registered as Palomar PALOMAR-2026-11-10-000008"
+   },
+   "source_urls": [
+    "https://github.com/google-deepmind/formal-conjectures/pull/7885",
+    "https://github.com/veljjanoski/oeis60841-palomar",
+    "https://palomar-registry.org/entry.html?id=PALOMAR-2026-11-10-000008",
+    "https://data.palomar-registry.org/recent.json"
+   ],
+   "authors": "Daniel Veljjanoski",
+   "date": "2026-11-10",
+   "date_basis": "Palomar published_at 2026-11-10 13:25:46 UTC; formal-conjectures PR #7885 opened the same day and was still open at retrieval",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "PR #7885 discloses that Claude (Anthropic) was used as assistant."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "atlas/tools.json#B-1"
+   ],
+   "note": "The Palomar entry is registered (status registered, trust level high) at commit 72400d30058c0a95e6c4c1c1e55557039f2daec7 of veljjanoski/oeis60841-palomar. formal-conjectures PR #7885 was still open as of this retrieval; it links that Palomar entry and changes the formal-conjectures status field for OeisA60841.conjecture1. The atlas has not rebuilt the Lean."
+  },
+  {
+   "id": "C-24",
+   "quantity": "existence of a regular icosahedron in R^3 with a rational point on every face",
+   "prior": {
+    "value": "open question of I. Bogdanov on MathOverflow",
+    "source": "as cited by the paper"
+   },
+   "new": {
+    "value": "a claimed proof that no regular icosahedron has a rational point on each of its twenty closed faces, in every position, size and orientation, with a Lean 4 formalisation"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2611.11577"
+   ],
+   "authors": "Mikhail Levit",
+   "date": "2026-11-08",
+   "date_basis": "arXiv v1 date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The abstract says the mathematical argument and the formalisation were produced by AI systems (OpenAI Codex and Anthropic Claude) under the direction of the author."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "The paper says the Lean development, including 48 certificates, was checked by the Lean kernel and that the main theorem depends only on the standard axioms. The atlas has not rebuilt it."
+  },
+  {
+   "id": "C-25",
+   "quantity": "anisotropic Calderón uniqueness, a special case of OpenAI's 2026-10-06 theorem, as a Lean 4 formalisation",
+   "prior": {
+    "value": "OpenAI announced a uniqueness theorem on 2026-10-06 without a Lean formalisation of that result",
+    "source": "as stated by this paper"
+   },
+   "new": {
+    "value": "a claimed Lean 4 formalisation of a special case: smooth Riemannian metrics on the three-dimensional unit ball, with full boundary measurements and Euclidean extensions outside the ball"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2611.10537"
+   ],
+   "authors": "Cătălin I. Cârstea, Lauri Oksanen",
+   "date": "2026-11-07",
+   "date_basis": "arXiv v1 date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The acknowledgements say OpenAI Codex and, to a lesser extent, Claude Code were used in developing the Lean proof."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "This is a special case, not a formalisation of the full OpenAI manuscript (the paper says it is not a line-by-line translation). It is offered as a Lean comparator challenge permitting only the standard axioms. The atlas has not rebuilt it."
+  },
+  {
+   "id": "C-26",
+   "quantity": "analytic constants: Grothendieck's K_G (upper bound) and Korenblum's K_K (lower bound)",
+   "prior": {
+    "value": "K_G ≤ π / (2 log(1+√2)) (Krivine 1977); K_K ≥ 0.3554 (Wang 2025)",
+    "source": "as cited by the paper"
+   },
+   "new": {
+    "value": "K_G ≤ π / (2 log(1+√2)) − 10^{-17}; K_K ≥ 0.356565"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2611.10961"
+   ],
+   "authors": "Rahul Saha, Alan Li, Anton Xue, Swarat Chaudhuri, Adam Klivans, Pravesh K. Kothari, Raghu Meka",
+   "date": "2026-11-07",
+   "date_basis": "arXiv v1 date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The paper describes an interpretable AI-guided Lean proof-refinement loop that tightens intermediate lemmas in existing arguments."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Values are copied from the abstract. The atlas has not rebuilt the Lean or rechecked the numerical claims."
+  },
+  {
+   "id": "C-27",
+   "quantity": "open MIPLIB mixed-integer programming instances improved or shown optimal by Claude Fable 5.2",
+   "prior": {
+    "value": "203 open MIPLIB problems, with a listed mathematical solution on each",
+    "source": "as stated by the official @claudeai post"
+   },
+   "new": {
+    "value": "a claim that Claude beat the listed mathematical solution in 72 of 203 open problems, and in 45 cases showed a solution was optimal"
+   },
+   "source_urls": [
+    "https://x.com/claudeai/status/2119899477855379913",
+    "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+   ],
+   "authors": "Anthropic (Claude Fable 5.2)",
+   "date": "2026-11-09",
+   "date_basis": "official @claudeai post; Anthropic Fable 5.2 blog dated 2026-11-09 (the blog page itself does not state the MIPLIB figures)",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The figures are stated as work by Claude on the official Anthropic account."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Claimed, unvetted. The 72 / 45 / 203 figures appear in the official @claudeai post; they do not appear on the 2026-11-09 product blog. The atlas has not checked any MIPLIB submission or certificate.",
+   "vetting": "unvetted"
+  },
+  {
+   "id": "C-28",
+   "quantity": "two open questions in black-hole theoretical physics (holographic duality), claimed by Claude Fable 5.2",
+   "prior": {
+    "value": "open questions, as described on the product blog",
+    "source": "Anthropic blog, 2026-11-09"
+   },
+   "new": {
+    "value": "a claim that Fable 5.2 obtained results on two open questions in black-hole physics, both using holographic duality"
+   },
+   "source_urls": [
+    "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+   ],
+   "authors": "Anthropic (Claude Fable 5.2)",
+   "date": "2026-11-09",
+   "date_basis": "Anthropic blog date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The product blog attributes the work to Claude Fable 5.2."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Claimed, unvetted. The blog gives a prose sketch and does not cite a paper, repository, or other checkable artifact.",
+   "vetting": "unvetted"
+  },
+  {
+   "id": "C-29",
+   "quantity": "formalisation of the proof of Fermat's Last Theorem in Lean, by a Fable 5.2 agent team",
+   "prior": {
+    "value": "an earlier formalisation by an unreleased research version of Claude, said to have taken 11 days",
+    "source": "as stated on the Anthropic blog"
+   },
+   "new": {
+    "value": "a claim that a team of about 1,000 Fable 5.2 agents fully formalized the theorem in Lean in 30 hours, with minimal human guidance"
+   },
+   "source_urls": [
+    "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+   ],
+   "authors": "Anthropic (Claude Fable 5.2)",
+   "date": "2026-11-09",
+   "date_basis": "Anthropic blog date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The product blog attributes the run to a team of about 1,000 Fable 5.2 agents."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Claimed, unvetted. The blog compares the run with Opus 5.5 under the same setup but does not cite a public Lean repository. The atlas has no artifact to rebuild.",
+   "vetting": "unvetted"
+  },
+  {
+   "id": "C-30",
+   "quantity": "Murty–Simon conjecture on the number of edges in an n-vertex diameter-2-critical graph",
+   "prior": {
+    "value": "the bound ⌊n²/4⌋, with uniqueness of the balanced complete bipartite graph, was known for all sufficiently large n (Füredi; n greater than a tower of 2's of height roughly 10^14)",
+    "source": "as cited by the paper"
+   },
+   "new": {
+    "value": "a claimed proof of the bound and the uniqueness statement for every n"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2610.39032"
+   ],
+   "authors": "Sanjana Das, Jacob Fox",
+   "date": "2026-10-28",
+   "date_basis": "arXiv v1 date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The abstract says a proof of the ⌊n²/4⌋ bound was originally found by AI; the authors simplified that proof and extended its ideas to obtain a proof of the full conjecture."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Scout's feed (2026-10-31) also mentions that the bound was mostly found by GPT-5.6 Sol; that model name is not in the arXiv abstract, so it is not repeated here as a fact. The atlas has not checked the paper beyond the abstract."
+  },
+  {
+   "id": "C-31",
+   "quantity": "formally verified quantum programs found by AI agents (selected cost improvements)",
+   "prior": {
+    "value": "prior baseline programs for parallel search, quantum arithmetic, and several scientific simulations, as cited by the paper",
+    "source": "as summarised in the abstract"
+   },
+   "new": {
+    "value": "claimed improvements of up to 2.55× (parallel search), 290× (quantum arithmetic), 11× (fusion simulation), 8× (photochemistry) and 2.5× (drug-metabolism), with Lean proofs of correctness and cost"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2611.09822"
+   ],
+   "authors": "Shirobokov, Jaderberg, Hristova, Tsoukalas, Bausch, Wieser, Heras, Rubin, Low, Racanière, Tomašev, Zhang, Watson, Khattar, Albarghouthi, Jain, Khan, Sarra, Senior, Broughton, Masoom, Boixo, Babbush, Chaudhuri, Kohli",
+   "date": "2026-11-06",
+   "date_basis": "arXiv v1 date (v2 updated 2026-11-09)",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The abstract says Gemini 4 agents synthesise programs against formal specifications in a Lean library and verify correctness and cost."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Values are copied from the abstract. The atlas has not rebuilt the Lean or rechecked the cost ratios. A secondary figure of '~290×' circulated with the announcement; the abstract itself gives '290x' for quantum arithmetic."
   }
  ]
 }

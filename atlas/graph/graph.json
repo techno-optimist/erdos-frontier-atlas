@@ -73854,20 +73854,24 @@
    ],
    "exact_feasibility": "cell",
    "id": "S:gap:131:d3623451",
-   "kind": "bounded_below_only",
+   "kind": "next_cell",
    "lower": {
     "source": "T_10 = 155 (certificates/erdos-131, contract erdos-131-a068063-t9-t10) and T_{k+1} > T_k: a (k+1)-set with maximum N, minus N, is a nondividing k-set below N",
     "value": "156",
     "year": 2026
    },
-   "notes": "PREVIOUS CELL CLOSED HERE (2026-09-28): certificates/erdos-131 finds the thresholds T_1..T_10 = 1, 3, 7, 10, 21, 31, 43, 65, 107, 155 of A068063 by exhaustive search (decreasing-order search pruned by the smaller thresholds; C port pinned node for node to a Python reference for k <= 8 and on the new k = 9 range N = 101..107). T_9 = 107 and T_10 = 155 are new: A068063(n) = 8 for 65 <= n <= 106 (so the old cell a(101) = 8), 9 for 107 <= n <= 154, and 10 at 155. Per-N cost grows from 10^6 nodes (k = 9) to 6 * 10^7 (k = 10), so T_11 is hours-to-days of the same search. Headline #131 asks the growth of F(N): Erdos's original question (F(N) > N^{1/2-o(1)}?) is answered NO — F(N) <= N^{1/4+o(1)} via the non-averaging-set link (Pham-Zakharov 2024), against F(N) >> N^{1/5} (Csaba construction, in ELRSS99) and Straus's exp((sqrt(2/log 2)+o(1)) sqrt(log N)); correct exponent open (asymptotic, not machine-movable).",
+   "notes": "2026-11-10 (Ford): a constructive upper bound T_11 ≤ 250 from the explicit 11-element nondividing set {203, 204, 206, 210, 212, 213, 238, 241, 245, 246, 250}, independently rechecked by a subset-sum divisibility test. This is a search upper bound, not an exhaustive determination of T_11, and it is not added to the k ≤ 10 certificate. The exact value remains open; the previous exhaustive result is still T_11 > 155. PREVIOUS CELL CLOSED HERE (2026-09-28): certificates/erdos-131 finds the thresholds T_1..T_10 = 1, 3, 7, 10, 21, 31, 43, 65, 107, 155 of A068063 by exhaustive search (decreasing-order search pruned by the smaller thresholds; C port pinned node for node to a Python reference for k <= 8 and on the new k = 9 range N = 101..107). T_9 = 107 and T_10 = 155 are new: A068063(n) = 8 for 65 <= n <= 106 (so the old cell a(101) = 8), 9 for 107 <= n <= 154, and 10 at 155. Per-N cost grows from 10^6 nodes (k = 9) to 6 * 10^7 (k = 10), so T_11 is hours-to-days of the same search. Headline #131 asks the growth of F(N): Erdos's original question (F(N) > N^{1/2-o(1)}?) is answered NO — F(N) <= N^{1/4+o(1)} via the non-averaging-set link (Pham-Zakharov 2024), against F(N) >> N^{1/5} (Csaba construction, in ELRSS99) and Straus's exp((sqrt(2/log 2)+o(1)) sqrt(log N)); correct exponent open (asymptotic, not machine-movable).",
    "oeis": "A068063",
    "overlay": "gap_map",
    "problem": 131,
    "quantity": "T_11 for A068063 — least n such that {1..n} has a nondividing 11-subset (no element divides the sum of any nonempty subset of the others); A068063(n) = 10 from n = 155 until T_11",
    "status": "open",
    "type": "surface",
-   "upper": null,
+   "upper": {
+    "source": "Constructive 11-element nondividing set with maximum 250: {203, 204, 206, 210, 212, 213, 238, 241, 245, 246, 250}, found by a Ford search on 2026-11-10 that shrank a prior witness of maximum 278. Independently rechecked the same day by a clean-room test: for each element, every nonempty subset sum of the other ten elements is not divisible by that element (0 violations). This is a search upper bound on T_11, not an exhaustive determination of the least such n, and it is not part of certificates/erdos-131 (which covers k ≤ 10 only).",
+    "value": "250",
+    "year": 2026
+   },
    "witness_feasibility": "open-easy",
    "witness_object": "an explicit nondividing 11-subset of {1..n} upper-bounds T_11 by its maximum; the exact value needs every n below it refuted, as the certificate does for k <= 10",
    "witness_side": "upper",

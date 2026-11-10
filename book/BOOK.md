@@ -47,7 +47,7 @@ The state of this edition, generated from the data:
 
 | this edition | state |
 |---|---|
-| data through | **2026-11-06** (latest provenance/evidence date in the gap map) |
+| data through | **2026-11-10** (latest provenance/evidence date in the gap map) |
 | the ledger | **225** bounded quantities |
 | confidence | C0 0 · C1 2 · C2 12 · C3 211 |
 | movements on the board | **14** (🟢 10 · 🔴 2 · 🟡 2) — corrected claims kept visible |
@@ -80,9 +80,9 @@ labeling *is* the release gate.
 | kind | entries | witness-workable |
 |---|---|---|
 | `value_gap` | 32 | 7 |
-| `next_cell` | 77 | 50 |
+| `next_cell` | 78 | 51 |
 | `verified_range` | 31 | 16 |
-| `bounded_below_only` | 18 | 6 |
+| `bounded_below_only` | 17 | 5 |
 | `bounded_above_only` | 1 | 0 |
 | `not_gap_shaped` | 66 | 0 |
 
