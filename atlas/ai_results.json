@@ -1,7 +1,7 @@
 {
  "schema": "efa-ai-results-v1",
  "purpose": "Results that sources report or claim with AI assistance, mostly outside the Erdős set; entries on Erdős problems link their erdos:<n> node. Entries marked vetting=unvetted are extraordinary claims recorded only because a primary source exists. Values are copied from the cited source; nothing here is independently checked and no atlas status changes.",
- "retrieved": "2026-11-10",
+ "retrieved": "2026-11-11",
  "counts": {
   "entries": 31,
   "ai_involvement_confirmed": 29,
@@ -522,12 +522,14 @@
     "source": "standard statement"
    },
    "new": {
-    "value": "a claimed existence proof; the AI-produced materials are not public"
+    "value": "a claimed existence proof; OpenAI's submitted Lean code and the shepherding group's first assessment were published on 2026-11-10"
    },
    "source_urls": [
     "https://openai.com/index/building-scientific-understanding-with-academic-communities",
     "https://www.kitp.ucsb.edu/sites/default/files/YM_working_group.pdf",
-    "https://www.kitp.ucsb.edu/sites/default/files/3rd-Statement-About-Quantum-YangMills-Theory_Nov-9.pdf"
+    "https://www.kitp.ucsb.edu/sites/default/files/3rd-Statement-About-Quantum-YangMills-Theory_Nov-9.pdf",
+    "https://github.com/yang-mills-group/OpenAI-YM-20261028",
+    "https://github.com/yang-mills-group/YM/blob/main/docs/assessment-1.pdf"
    ],
    "date": "2026-10-26",
    "date_basis": "OpenAI announcement date; KITP working-group statement dated October 2026",
@@ -539,7 +541,7 @@
    "our_verdict": "not independently checked",
    "status_changed_by_this_entry": false,
    "atlas_nodes": [],
-   "note": "Claimed, unvetted. The shepherding group (Gross, chair; Douglas, Jaffe, Klebanov, Nekrasov) chose to hold back the AI artifacts and write it up themselves. Their 3rd statement, dated 2026-11-09, said that on 2026-11-10 they would publish the Lean code OpenAI submitted on 2026-10-28 and a validation assessment. As of this retrieval (2026-11-10) the announced links https://github.com/yang-mills-group/OpenAI-YM-20261028 and https://github.com/yang-mills-group/YM/blob/main/docs/assessment-1.pdf still returned 404; the yang-mills-group organisation existed and did not yet host those repositories.",
+   "note": "Claimed, unvetted. The shepherding group (Gross, chair; Douglas, Jaffe, Klebanov, Nekrasov) chose to hold back the AI artifacts and write it up themselves. Their 3rd statement, dated 2026-11-09, said that on 2026-11-10 they would publish the Lean code OpenAI submitted on 2026-10-28 and a validation assessment. Both went public on the evening of 2026-11-10 (America/Denver): https://github.com/yang-mills-group/OpenAI-YM-20261028 at commit 3456e5e75cf8d4cd558955a5c7638fba2d68f464, and docs/assessment-1.pdf in https://github.com/yang-mills-group/YM (repository HEAD 55ba9fc36293b3f4d52c6b1f813169a0be76ee98 at retrieval 2026-11-11). Publication of the artifacts does not change this entry's attribution: the assessment is the shepherding group's own, and this index gives no independent verdict on the Millennium-problem claim.",
    "vetting": "unvetted"
   },
   {
