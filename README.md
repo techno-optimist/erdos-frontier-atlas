@@ -46,7 +46,7 @@ in this table against its source file, so the table can't drift from the data.
 | Inventory | Count | Source of truth |
 |---|---:|---|
 | AI-assisted discovery tools | 36 | [`atlas/tools.json`](atlas/tools.json): 17 systems, 10 benchmarks, 6 datasets and 3 registries, each with primary links and a first-public date |
-| AI-assisted results | 31 | [`atlas/ai_results.json`](atlas/ai_results.json): prior value, new value and source, as the authors report them. 8 are extraordinary claims marked `unvetted`, and 2 don't state AI involvement |
+| AI-assisted results | 33 | [`atlas/ai_results.json`](atlas/ai_results.json): prior value, new value and source, as the authors report them. 10 are extraordinary claims marked `unvetted`, and 2 don't state AI involvement |
 | Erdős-linked AI claims | 89 | [`atlas/ai_claims.json`](atlas/ai_claims.json): a dated claim registry used for triage; it never sets a status |
 | OpenAI manuscript families | 22 | [`atlas/openai_math.json`](atlas/openai_math.json): pinned to a commit of [openai/math](https://github.com/openai/math) |
 | Plasma overlay entries | 155 | [`atlas/plasma_claims.json`](atlas/plasma_claims.json): where Plasma AI's [erdosproblems.ai](https://erdosproblems.ai) wiki differs from this atlas, with our review of each difference |
@@ -181,14 +181,15 @@ an endorsement, and it never changes a status.
   AlphaProof Code, Aristotle, AxiomProver and Gauss to FrontierMath: Open Problems, OEIS Open,
   First Proof, PutnamBench, OpenFrontiers and Science-Last-Exam, plus community registries. Each one has primary
   links and a first-public date.
-- The [results file](atlas/ai_results.json) lists 31 results whose authors
+- The [results file](atlas/ai_results.json) lists 33 results whose authors
   report or claim AI assistance, including matrix multiplication, kissing
   numbers, cap sets, Ramsey and Schur lower bounds, and Erdős #30, #36, #188,
-  #519 and #650. Most lie outside the Erdős set. Eight extraordinary claims are marked
+  #519 and #650. Most lie outside the Erdős set. Ten claims are marked
   `vetting: unvetted`: two ETH refutations, local smoothing with Kakeya,
-  Yang–Mills existence, cycle double cover, and three Claude Fable 5.2 claims
-  (MIPLIB, black-hole physics, and a Fermat formalisation). They are listed only because a
-  primary source exists. Both files are dated 2026-11-10 and checked by
+  Yang–Mills existence, cycle double cover, three Claude Fable 5.2 claims
+  (MIPLIB, black-hole physics, and a Fermat formalisation), and two new
+  Lean-backed claims on Erdős #670 and #676. They are listed only because a
+  primary source exists. Both files are dated 2026-11-12 and checked by
   `tools/validate_tools.py`.
 - The [AI-claim overlay](atlas/ai_claims.json) is a dated registry of 89
   Erdős-linked claims of AI-assisted resolutions. It exists so effort isn't

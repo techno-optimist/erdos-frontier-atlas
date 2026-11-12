@@ -1,12 +1,12 @@
 {
  "schema": "efa-ai-results-v1",
  "purpose": "Results that sources report or claim with AI assistance, mostly outside the Erdős set; entries on Erdős problems link their erdos:<n> node. Entries marked vetting=unvetted are extraordinary claims recorded only because a primary source exists. Values are copied from the cited source; nothing here is independently checked and no atlas status changes.",
- "retrieved": "2026-11-11",
+ "retrieved": "2026-11-12",
  "counts": {
-  "entries": 31,
-  "ai_involvement_confirmed": 29,
+  "entries": 33,
+  "ai_involvement_confirmed": 31,
   "ai_involvement_unconfirmed": 2,
-  "unvetted": 8
+  "unvetted": 10
  },
  "entries": [
   {
@@ -782,7 +782,8 @@
     "value": "a claim that a team of about 1,000 Fable 5.2 agents fully formalized the theorem in Lean in 30 hours, with minimal human guidance"
    },
    "source_urls": [
-    "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+    "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+    "https://claude.dev/blog/safely-scaling-multi-agent-teams-with-fable-5-2/"
    ],
    "authors": "Anthropic (Claude Fable 5.2)",
    "date": "2026-11-09",
@@ -795,7 +796,7 @@
    "our_verdict": "not independently checked",
    "status_changed_by_this_entry": false,
    "atlas_nodes": [],
-   "note": "Claimed, unvetted. The blog compares the run with Opus 5.5 under the same setup but does not cite a public Lean repository. The atlas has no artifact to rebuild.",
+   "note": "Claimed, unvetted. The blog compares the run with Opus 5.5 under the same setup but does not cite a public Lean repository. The atlas has no artifact to rebuild. Update 2026-11-12: Anthropic's engineering post (dated 2026-11-09 per Scout; retrieved 2026-11-12) calls the run 'a new toy experiment' in which 1,000 agents on an early version of Claude Fable 5.2 reproduced the proof in 28.7 hours, with one-third as many output tokens and a proof one-seventh the length of the original. No new proof is released: github.com/anthropics/fermats-last-theorem was last pushed 2026-09-24, so the statement, axioms and length claim remain uncheckable from outside.",
    "vetting": "unvetted"
   },
   {
@@ -849,6 +850,72 @@
    "status_changed_by_this_entry": false,
    "atlas_nodes": [],
    "note": "Values are copied from the abstract. The atlas has not rebuilt the Lean or rechecked the cost ratios. A secondary figure of '~290×' circulated with the announcement; the abstract itself gives '290x' for quantum arithmetic."
+  },
+  {
+   "id": "C-32",
+   "quantity": "Erdős #670 (separated distances, fixed-dimension reading): diameter of separated n-point sets in a fixed R^d",
+   "prior": {
+    "value": "open under the fixed-dimension reading used by Formal Conjectures; B. S. Ho (arXiv:2604.15305) gives counterexamples only in dimension n^2 - n, and Ho's Remark 9 states the fixed-dimension question is open",
+    "source": "as cited by the jjtripodo-lgtm/erdos-670-r29 README"
+   },
+   "new": {
+    "value": "a claimed Lean negation of the Formal Conjectures fixed-dimension statement (commit 2f91d25): for unboundedly many n, separated n-point sets in R^29 with diameter < (499/500) n^2, registered as Palomar PALOMAR-2026-11-11-000002"
+   },
+   "source_urls": [
+    "https://github.com/jjtripodo-lgtm/erdos-670-r29",
+    "https://palomar-registry.org/entry.html?id=PALOMAR-2026-11-11-000002",
+    "https://data.palomar-registry.org/recent.json",
+    "https://github.com/google-deepmind/formal-conjectures/pull/7919",
+    "https://www.erdosproblems.com/670"
+   ],
+   "authors": "John Tripodo",
+   "date": "2026-11-11",
+   "date_basis": "Palomar published_at 2026-11-11 04:33:38 UTC; formal-conjectures PR #7919 (would update the formal-conjectures status of erdos_670 to the negated statement) was still open at retrieval 2026-11-12",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The repository README says the construction, the proof and the formalization were developed with AI assistance (ChatGPT/Codex and Claude), directed by John Tripodo, and that no independent human mathematical review has taken place."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "erdos:670"
+   ],
+   "note": "Claimed, unvetted. Palomar entry status registered, trust level high, at source commit 6d629227b1e8d21ab9f09d8a3a667015e78e468a. The negation is of one formal reading (d fixed, o(1) allowed to depend on d); the original quantifiers are not fixed by the source. erdosproblems.com/670 was still last edited 17 April 2026 at retrieval. The atlas has not rebuilt the Lean or checked statement fidelity.",
+   "vetting": "unvetted"
+  },
+  {
+   "id": "C-33",
+   "quantity": "Erdős #676 / JSP-000549: is every sufficiently large n of the form a*p^2 + b with p prime, a >= 1, 0 <= b < p?",
+   "prior": {
+    "value": "open; Erdős (1979) thought it 'rather unlikely' that all large integers are representable, and sieve methods bound the exceptions up to x by << x/(log x)^c",
+    "source": "erdosproblems.com/676 and the atlas gap map (wall)"
+   },
+   "new": {
+    "value": "a claimed complete negative answer with a Lean proof: infinitely many exceptions, and at least c X / log X exceptions in every sufficiently large dyadic interval (X, 2X]; the paper also claims the matching upper order"
+   },
+   "source_urls": [
+    "https://github.com/Ghuffy1/erdos676",
+    "https://github.com/Ghuffy1/erdos676/blob/main/paper/erdos676.pdf",
+    "https://github.com/Ghuffy1/erdos676/blob/main/AUTHORS.md",
+    "https://www.erdosproblems.com/676"
+   ],
+   "authors": "Will Howe, Grant Huffman, Jensen Kohlmeyer, Liam Kruer",
+   "date": "2026-11-12",
+   "date_basis": "repository created 2026-11-12 04:13:50 UTC; its 'Verify proof' GitHub Actions run on fce3480 concluded success",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "AUTHORS.md says OpenAI's ChatGPT/Codex assisted with developing the proof, checking intermediate arguments, producing the formalization, preparing the paper and assembling the repository."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "erdos:676",
+    "atlas/gap_map.json#problem=676"
+   ],
+   "note": "Claimed, unvetted. Toolchain Lean 4.34.0, mathlib 5ed2965; the README says target axioms are only propext, Classical.choice and Quot.sound, and TRUST.md notes the vendored LeanArchitect package defines sorry_using and a debug.skipKernelTC helper that the proof is said not to invoke. The atlas gap map marks #676 as a wall for finite computation; this claim is analytic (sieve) and does not change that overlay. erdosproblems.com/676 was still last edited 07 April 2026 at retrieval. The atlas has not rebuilt the Lean or checked statement fidelity.",
+   "vetting": "unvetted"
   }
  ]
 }
