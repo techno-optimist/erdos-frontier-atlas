@@ -1,14 +1,14 @@
 {
  "schema": "efa-tools-v1",
  "purpose": "Index of AI-assisted discovery tools, systems, registries, datasets and benchmarks that touch the atlas. Each item cites primary URLs. Listing an item is not an endorsement and does not change any status.",
- "retrieved": "2026-11-12",
+ "retrieved": "2026-11-13",
  "counts": {
-  "items": 36,
+  "items": 38,
   "by_kind": {
-   "benchmark": 10,
+   "benchmark": 11,
    "dataset": 6,
    "registry": 3,
-   "system": 17
+   "system": 18
   }
  },
  "items": [
@@ -696,6 +696,46 @@
    "verification_mode": "browser environment bundling Isabelle/HOL, Lean, Rocq, HOL4 and HOL Light with contextual AI assistance, as described by the paper",
    "atlas_nodes_touched": [],
    "note": "A browser-based environment for five proof assistants, with worked examples and contextual AI assistance. Tool only."
+  },
+  {
+   "id": "B-37",
+   "name": "LongTails",
+   "kind": "system",
+   "org": "Tyurin, Pham, Khrulkov, Oseledets",
+   "first_public_date": "2026-11-10",
+   "date_basis": "arXiv v1 date",
+   "primary_urls": [
+    "https://arxiv.org/abs/2611.13872"
+   ],
+   "areas": [
+    "optimization theory",
+    "oracle complexity",
+    "Lean"
+   ],
+   "verification_mode": "agent-proposed algorithms and convergence proofs checked in Lean 4 against a fixed Setup and Complexity, as described by the paper",
+   "atlas_nodes_touched": [],
+   "note": "An agentic framework for oracle-complexity bounds in optimization; the abstract reports more than 100 new results. Not rechecked by the atlas. Tool only."
+  },
+  {
+   "id": "B-38",
+   "name": "ErdosBench",
+   "kind": "benchmark",
+   "org": "ulam.ai (Przemek Chojecki)",
+   "first_public_date": "2026-06-08",
+   "date_basis": "white paper date and public smoke-test repository creation",
+   "primary_urls": [
+    "https://www.ulam.ai/erdosbench",
+    "https://www.ulam.ai/research/ErdosBench.pdf",
+    "https://github.com/ulamai/erdosbench",
+    "https://x.com/prz_chojecki/status/2121180334939164870"
+   ],
+   "areas": [
+    "research-level problem solving",
+    "Erdős-style problems"
+   ],
+   "verification_mode": "external judge grades (A/B/C/D/F/M) with model-specific proof audits on a mostly private set, as described by ulam.ai; not formal theorem certification",
+   "atlas_nodes_touched": [],
+   "note": "226 synthetic Erdős-style candidate problems, not erdosproblems.com entries and not certified open problems; 14 are public. The leaderboard (retrieved 2026-11-13) ranks Claude Fable 5.2 first (judge average 3.30), ahead of Fable 5.1 and Opus 5.5, with GPT-6 Astra fourth. Not rechecked by the atlas."
   }
  ]
 }

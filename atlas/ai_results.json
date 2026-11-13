@@ -1,12 +1,12 @@
 {
  "schema": "efa-ai-results-v1",
  "purpose": "Results that sources report or claim with AI assistance, mostly outside the Erdős set; entries on Erdős problems link their erdos:<n> node. Entries marked vetting=unvetted are extraordinary claims recorded only because a primary source exists. Values are copied from the cited source; nothing here is independently checked and no atlas status changes.",
- "retrieved": "2026-11-12",
+ "retrieved": "2026-11-13",
  "counts": {
-  "entries": 33,
-  "ai_involvement_confirmed": 31,
+  "entries": 39,
+  "ai_involvement_confirmed": 37,
   "ai_involvement_unconfirmed": 2,
-  "unvetted": 10
+  "unvetted": 15
  },
  "entries": [
   {
@@ -418,7 +418,8 @@
     "value": "a reported Lean formalisation of about 43.1 million lines, built in 24 days"
    },
    "source_urls": [
-    "https://axiommath.ai/research/the-enormous-theorem-formalized/"
+    "https://axiommath.ai/research/the-enormous-theorem-formalized/",
+    "https://github.com/AxiomMath/CFSG"
    ],
    "date": "2026-10-26",
    "date_basis": "announcement page date",
@@ -430,7 +431,7 @@
    "our_verdict": "not independently checked",
    "status_changed_by_this_entry": false,
    "atlas_nodes": [],
-   "note": "Axiom also reports a new 'preservation of simple tops' theorem and 34 noteworthy deviations found in the literature. A formalisation of a known theorem, not a new bound."
+   "note": "Axiom also reports a new 'preservation of simple tops' theorem and 34 noteworthy deviations found in the literature. A formalisation of a known theorem, not a new bound. Update 2026-11-13: the Lean source is public at github.com/AxiomMath/CFSG (created 2026-10-27, last pushed 2026-11-10)."
   },
   {
    "id": "C-17",
@@ -881,7 +882,7 @@
    "atlas_nodes": [
     "erdos:670"
    ],
-   "note": "Claimed, unvetted. Palomar entry status registered, trust level high, at source commit 6d629227b1e8d21ab9f09d8a3a667015e78e468a. The negation is of one formal reading (d fixed, o(1) allowed to depend on d); the original quantifiers are not fixed by the source. erdosproblems.com/670 was still last edited 17 April 2026 at retrieval. The atlas has not rebuilt the Lean or checked statement fidelity.",
+   "note": "Claimed, unvetted. Palomar entry status registered, trust level high, at source commit 6d629227b1e8d21ab9f09d8a3a667015e78e468a. The negation is of one formal reading (d fixed, o(1) allowed to depend on d); the original quantifiers are not fixed by the source. erdosproblems.com/670 was still last edited 17 April 2026 at retrieval. The atlas has not rebuilt the Lean or checked statement fidelity. Update 2026-11-13: formal-conjectures PR #7919 was approved by reviewer bocowgill on 2026-11-12 but was still open (not merged) at retrieval 2026-11-13.",
    "vetting": "unvetted"
   },
   {
@@ -916,6 +917,195 @@
    ],
    "note": "Claimed, unvetted. Toolchain Lean 4.34.0, mathlib 5ed2965; the README says target axioms are only propext, Classical.choice and Quot.sound, and TRUST.md notes the vendored LeanArchitect package defines sorry_using and a debug.skipKernelTC helper that the proof is said not to invoke. The atlas gap map marks #676 as a wall for finite computation; this claim is analytic (sieve) and does not change that overlay. erdosproblems.com/676 was still last edited 07 April 2026 at retrieval. The atlas has not rebuilt the Lean or checked statement fidelity.",
    "vetting": "unvetted"
+  },
+  {
+   "id": "C-34",
+   "quantity": "Erdős #790 / JSP-000649: l(n), the largest sum-free subset (no a_1 = a_2 + ... + a_r with distinct a_i) guaranteed in every n-element set of integers",
+   "prior": {
+    "value": "open; Choi, Komlós and Szemerédi (1975) give (n log n / log log n)^{1/2} << l(n) << n / log n, and Korsky (2026, with a bisection idea the repository credits to GPT Astra) gives the lower order n/(log n)^2",
+    "source": "erdosproblems.com/790 and the Ghuffy1/erdos790-jsp CREDITS.md"
+   },
+   "new": {
+    "value": "a claimed matching upper bound l(n) << n/(log n)^2, giving l(n) = Θ(n/(log n)^2), with a Lean development that also restates both subsidiary questions (l(n)/√n → ∞; no fixed power saving)"
+   },
+   "source_urls": [
+    "https://github.com/Ghuffy1/erdos790-jsp",
+    "https://github.com/Ghuffy1/erdos790-jsp/blob/main/CREDITS.md",
+    "https://github.com/Ghuffy1/erdos790-jsp/blob/main/verification/REPORT.md",
+    "https://github.com/TheJustinSunPrize/awards/pull/5573",
+    "https://www.erdosproblems.com/790"
+   ],
+   "authors": "Will Howe, Grant Huffman, Jensen Kohlmeyer, Liam Kruer",
+   "date": "2026-11-12",
+   "date_basis": "repository created 2026-11-12 23:43:15 UTC (head 7c3d195); JSP pull request 5573 opened the same day; the repository has no GitHub Actions runs",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "CREDITS.md says the new upper argument originated in a private multi-agent research session and was formalized with Codex assistance; the imported lower-bound Lean was prepared with Claude assistance, and Korsky's lower bound credits its main idea to GPT Astra."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "erdos:790"
+   ],
+   "note": "Claimed, unvetted. Lean 4.34.1; the Lean route vendors 4,136 files of openai/math (rev 4eaee87) for the quantitative three-term-progression input. The repository's own verification report says the local build and 18 target axiom checks passed but the fresh whole-closure kernel replay timed out at 1,200 s (exit 124) and an isolated reproduction is outstanding; reviews are described as team-internal and machine-assisted. erdosproblems.com/790 was still last edited 23 January 2026 at retrieval. The atlas has not rebuilt the Lean or checked statement fidelity.",
+   "vetting": "unvetted"
+  },
+  {
+   "id": "C-35",
+   "quantity": "Erdős #624 / JSP-000505 (Erdős–Hajnal set mapping): does H(n) - log_2 n → ∞?",
+   "prior": {
+    "value": "open; Erdős and Hajnal proved log_2 n <= H(n) < log_2 n + (3+o(1)) log_2 log_2 n",
+    "source": "erdosproblems.com/624"
+   },
+   "new": {
+    "value": "a claimed negative answer (constant-gap counterexample) with a Lean proof: H(2^(100k)) <= 100k + 1218 for k >= 2000, and H(n) <= log_2 n + 1318 for all sufficiently large n; the Lean also refutes the current Formal Conjectures proposition"
+   },
+   "source_urls": [
+    "https://github.com/Ghuffy1/erdos624-jsp-submission",
+    "https://github.com/Ghuffy1/erdos624-jsp-submission/blob/main/AUTHORS.md",
+    "https://github.com/Ghuffy1/erdos624-jsp-submission/actions",
+    "https://www.erdosproblems.com/624"
+   ],
+   "authors": "Will Howe, Grant Huffman, Jensen Kohlmeyer, Liam Kruer",
+   "date": "2026-11-13",
+   "date_basis": "repository created 2026-11-13 01:41:23 UTC; its 'Lean verification' GitHub Actions run on a162353 concluded success",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "README and AUTHORS.md say the work was developed with OpenAI's AI systems, which assisted in developing the argument, checking estimates, preparing the manuscript and producing the formal proof."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "erdos:624"
+   ],
+   "note": "Claimed, unvetted. Toolchain Lean 4.35.0-rc2, mathlib 0653561; the README says the target axioms are contained in propext, Classical.choice and Quot.sound, and names a selected proof commit 1d8e417 with a separate evidence commit. erdosproblems.com/624 was still last edited 27 October 2025 at retrieval. The atlas has not rebuilt the Lean or checked statement fidelity.",
+   "vetting": "unvetted"
+  },
+  {
+   "id": "C-36",
+   "quantity": "Erdős #597 / JSP-000484: for G on at most aleph_1 vertices with no K_4 and no K_{aleph_0,aleph_0}, does omega_1^2 -> (omega_1 omega, G)^2, and what about finite G?",
+   "prior": {
+    "value": "open; Erdős and Hajnal proved omega_1^2 -> (omega_1 omega, 3)^2, and Baumgartner showed the K_{aleph_0,aleph_0} exclusion is needed",
+    "source": "erdosproblems.com/597"
+   },
+   "new": {
+    "value": "a claimed answer to both clauses with a Lean development: the unrestricted graph-target assertion is false in ZFC (a connected bipartite counterexample target of size aleph_1 and diameter at most 3), and the finite K_4-free target assertion is claimed independent of ZFC relative to consistency, via Boolean-valued models"
+   },
+   "source_urls": [
+    "https://github.com/Ghuffy1/erdos-597",
+    "https://github.com/Ghuffy1/erdos-597/blob/main/AUTHORS.md",
+    "https://github.com/Ghuffy1/erdos-597/blob/main/paper/Erdos_597_Proof.pdf",
+    "https://www.erdosproblems.com/597"
+   ],
+   "authors": "Will Howe, Grant Huffman, Jensen Kohlmeyer, Liam Kruer",
+   "date": "2026-11-12",
+   "date_basis": "repository created 2026-11-12 21:02:04 UTC (head 9fdcefa); the repository has no GitHub Actions runs",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "README and AUTHORS.md say OpenAI's ChatGPT assisted with mathematical exploration, proof development, verification and exposition."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "erdos:597"
+   ],
+   "note": "Claimed, unvetted. The independence clause is formalised through an object-language encoding of first-order unprovability, which makes statement fidelity especially important to check. erdosproblems.com/597 was still last edited 23 January 2026 at retrieval. The atlas has not rebuilt the Lean or checked statement fidelity.",
+   "vetting": "unvetted"
+  },
+  {
+   "id": "C-37",
+   "quantity": "Erdős #335 / JSP-000278: characterise A, B ⊆ N of positive density with d(A+B) = d(A) + d(B)",
+   "prior": {
+    "value": "open; Ackelsberg and Richter (2026) answer it when one set meets every residue class, and the erdosproblems.com page calls a full characterisation without that assumption 'hopeless'",
+    "source": "erdosproblems.com/335"
+   },
+   "new": {
+    "value": "a claimed full characterisation (an if-and-only-if over arbitrary positive-density subsets, with a modular boundary case and three structural alternatives) plus a stronger periodic-summand refinement, with a Lean development of 892 files"
+   },
+   "source_urls": [
+    "https://github.com/Ghuffy1/erdos-335",
+    "https://github.com/Ghuffy1/erdos-335/blob/main/ATTRIBUTION.md",
+    "https://github.com/Ghuffy1/erdos-335/blob/main/AUTHORS.json",
+    "https://www.erdosproblems.com/335"
+   ],
+   "authors": "Will Howe, Grant Huffman, Jensen Kohlmeyer, Liam Kruer",
+   "date": "2026-11-12",
+   "date_basis": "repository created 2026-11-12 23:45:25 UTC (single commit 29e64ce); the repository has no GitHub Actions runs",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "ATTRIBUTION.md says the project used OpenAI Codex for mathematical research, proof review, Lean development and preparation of the submission; AUTHORS.json lists ai_assistance OpenAI Codex."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "erdos:335"
+   ],
+   "note": "Claimed, unvetted. Lean 4.34.0, mathlib 5ed2965; the README reports 2,602 audited declarations and only the standard axioms. Because the upstream page says a full characterisation 'seems hopeless', whether the claimed alternatives answer the problem as intended (rather than restating it) is the key statement-fidelity question. erdosproblems.com/335 was still last edited 15 April 2026 at retrieval. The atlas has not rebuilt the Lean or checked statement fidelity.",
+   "vetting": "unvetted"
+  },
+  {
+   "id": "C-38",
+   "quantity": "Erdős #573: is ex(n; {C_3, C_4}) ~ (n/2)^{3/2}?",
+   "prior": {
+    "value": "open; Erdős and Simonovits proved ex(n; {C_4, C_5}) = (n/2)^{3/2} + O(n)",
+    "source": "erdosproblems.com/573"
+   },
+   "new": {
+    "value": "a claimed counterexample with a Lean proof: an infinite family of {C_3, C_4}-free graphs whose edge count has limiting ratio about 1.0000452 to (n/2)^{3/2}, building on the Lv–Lu–Fang affine construction"
+   },
+   "source_urls": [
+    "https://github.com/Ghuffy1/erdos-573",
+    "https://github.com/Ghuffy1/erdos-573/blob/main/AUTHORS.md",
+    "https://github.com/Ghuffy1/erdos-573/blob/main/manuscript/Erdos573-Counterexample.pdf",
+    "https://www.erdosproblems.com/573"
+   ],
+   "authors": "Will Howe, Grant Huffman, Jensen Kohlmeyer, Liam Kruer",
+   "date": "2026-11-13",
+   "date_basis": "repository created 2026-11-13 00:57:53 UTC (head 1b16540); the repository has no GitHub Actions runs",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "README and AUTHORS.md say the manuscript and formalization were developed with OpenAI Codex assistance, including construction search, proof development, formal proof generation, computational checks and exposition."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "erdos:573"
+   ],
+   "note": "Claimed, unvetted. Lean 4.34.0, mathlib 5ed2965; final declaration Erdos573.erdos_573_disproved. The claimed margin over (n/2)^{3/2} is about 0.005 percent. erdosproblems.com/573 was still last edited 18 January 2026 at retrieval. The atlas has not rebuilt the Lean or checked statement fidelity.",
+   "vetting": "unvetted"
+  },
+  {
+   "id": "C-39",
+   "quantity": "Faltings' theorem (the Mordell conjecture), Lean formalisation via Bombieri–Vojta",
+   "prior": {
+    "value": "informal proofs by Faltings (1983) and by Vojta and Bombieri (1990–91)",
+    "source": "as described by the AxiomMath/Mordell README"
+   },
+   "new": {
+    "value": "a reported Lean 4 formalisation of about 430 modules, built on Mathlib and Axiom's Stacks Project in Lean, which also proves the LeanEval 'faltings' statement verbatim"
+   },
+   "source_urls": [
+    "https://github.com/AxiomMath/Mordell",
+    "https://x.com/axiommathai/status/2120940440988074007",
+    "https://lean-lang.org/eval/problems/faltings/"
+   ],
+   "authors": "Axiom Math",
+   "date": "2026-11-10",
+   "date_basis": "repository created 2026-11-11 02:42:47 UTC (2026-11-10 MST); announced on X 2026-11-12",
+   "attribution": "reported",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The README says the library's modules were written by AI agents and that the code has not yet been reviewed by humans."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "The README says there is no sorry, no native_decide and no added axiom, and that #print axioms gives only propext, Classical.choice and Quot.sound. A formalisation of a known theorem, not a new bound. The atlas has not rebuilt it."
   }
  ]
 }
