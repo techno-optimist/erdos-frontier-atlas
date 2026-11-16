@@ -1,14 +1,14 @@
 {
  "schema": "efa-tools-v1",
  "purpose": "Index of AI-assisted discovery tools, systems, registries, datasets and benchmarks that touch the atlas. Each item cites primary URLs. Listing an item is not an endorsement and does not change any status.",
- "retrieved": "2026-11-13",
+ "retrieved": "2026-11-16",
  "counts": {
-  "items": 38,
+  "items": 39,
   "by_kind": {
    "benchmark": 11,
    "dataset": 6,
    "registry": 3,
-   "system": 18
+   "system": 19
   }
  },
  "items": [
@@ -735,7 +735,29 @@
    ],
    "verification_mode": "external judge grades (A/B/C/D/F/M) with model-specific proof audits on a mostly private set, as described by ulam.ai; not formal theorem certification",
    "atlas_nodes_touched": [],
-   "note": "226 synthetic Erdős-style candidate problems, not erdosproblems.com entries and not certified open problems; 14 are public. The leaderboard (retrieved 2026-11-13) ranks Claude Fable 5.2 first (judge average 3.30), ahead of Fable 5.1 and Opus 5.5, with GPT-6 Astra fourth. Not rechecked by the atlas."
+   "note": "226 synthetic Erdős-style candidate problems, not erdosproblems.com entries and not certified open problems; 14 are public. The leaderboard (retrieved 2026-11-16) ranks Claude Fable 5.2 first (judge average 3.30) and Fable 5.1 second (3.25), then a near tie of Gemini 4 Carbon (3.24), Claude Opus 5.5 (3.24) and GPT-6 Astra (3.23). Not rechecked by the atlas."
+  },
+  {
+   "id": "B-39",
+   "name": "LEAP (with Antigravity /teamwork)",
+   "kind": "system",
+   "org": "Google (Kung, Song, Hwang, Yoon, Li, Severini and colleagues)",
+   "first_public_date": "2026-06-02",
+   "date_basis": "arXiv v1 date (v3 2026-11-12); /teamwork results post 2026-11-13",
+   "primary_urls": [
+    "https://arxiv.org/abs/2606.03303",
+    "https://research.google/blog/advancing-science-engineering-with-antigravitys-teamwork-feature/"
+   ],
+   "areas": [
+    "formal theorem proving",
+    "Lean",
+    "autoformalization"
+   ],
+   "verification_mode": "agentic decomposition into units checked by continuous interaction with the Lean compiler, as described by the paper",
+   "atlas_nodes_touched": [
+    "erdos:1063"
+   ],
+   "note": "Google Research reports /teamwork-LEAP formalizations including the Weil conjectures (about 1.8M Lean lines), Hilbert's tenth problem over rings of integers and 3D Bochner–Riesz, and a Lean verification of an improved Erdős #1063 bound (C-44). The Weil and other large Lean artifacts had no public repository at retrieval. Not rechecked by the atlas."
   }
  ]
 }
