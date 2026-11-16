@@ -1,12 +1,12 @@
 {
  "schema": "efa-ai-results-v1",
  "purpose": "Results that sources report or claim with AI assistance, mostly outside the Erdős set; entries on Erdős problems link their erdos:<n> node. Entries marked vetting=unvetted are extraordinary claims recorded only because a primary source exists. Values are copied from the cited source; nothing here is independently checked and no atlas status changes.",
- "retrieved": "2026-11-13",
+ "retrieved": "2026-11-16",
  "counts": {
-  "entries": 39,
-  "ai_involvement_confirmed": 37,
+  "entries": 48,
+  "ai_involvement_confirmed": 46,
   "ai_involvement_unconfirmed": 2,
-  "unvetted": 15
+  "unvetted": 18
  },
  "entries": [
   {
@@ -1106,6 +1106,270 @@
    "status_changed_by_this_entry": false,
    "atlas_nodes": [],
    "note": "The README says there is no sorry, no native_decide and no added axiom, and that #print axioms gives only propext, Classical.choice and Quot.sound. A formalisation of a known theorem, not a new bound. The atlas has not rebuilt it."
+  },
+  {
+   "id": "C-40",
+   "quantity": "Erdős #96 and #97: unit distances among the vertices of a convex polygon (#96: is the number of unit-distance pairs O(n)? #97: does every convex polygon have a vertex with no 4 other vertices equidistant from it?)",
+   "prior": {
+    "value": "#96: n log2 n + 4n upper bound (Aggarwal) and 2n − 7 construction (Edelsbrunner–Hajnal); #97: three equidistant vertices at every vertex achieved (Danzer 9-gon, Fishburn–Reeds 20-gon), four open",
+    "source": "erdosproblems.com/96 and /97"
+   },
+   "new": {
+    "value": "negative answers to both, and to the general fixed-k conjecture: for all large n a strictly convex n-point set in which every vertex has at least (1/4)log2 log2 n − 7 log2 log2 log2 n unit-distance neighbours, so Ω(n log log n) unit distances; single-file Lean 4 formalization"
+   },
+   "source_urls": [
+    "https://github.com/lkruer/erdos-96-97-proof",
+    "https://github.com/lkruer/erdos-96-97-proof/blob/main/96-97.pdf",
+    "https://www.erdosproblems.com/97",
+    "https://www.erdosproblems.com/96",
+    "https://x.com/JustinSunPrize/status/2121509689003278478"
+   ],
+   "authors": "Liam Kruer, Jensen Kohlmeyer, Liam Price",
+   "date": "2026-09-13",
+   "date_basis": "README says the proof was checked locally on 13 September 2026; repository republished 2026-09-28 (Verify Lean proof CI passed on 0e98f5f and 90fd28e); Justin Sun Prize register post 2026-11-14",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The README says the manuscript's AI disclosure describes the role of GPT 6 Astra in the construction, subsequent development and exposition; the authors retain responsibility."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "erdos:96",
+    "erdos:97"
+   ],
+   "note": "erdosproblems.com/96 and /97 (both last edited 16 October 2026) now describe the original conjectures as false and link this repository as the formalised proof. The community database (teorth/erdosproblems, HEAD 641a78e) still lists #97 as falsifiable and #96 as open, so the atlas status, which mirrors the database, is held (#97 stays a wall in problems.json, #96 open). The README says the axiom audit of 33 results allows only propext, Classical.choice and Quot.sound. Same group as the Ghuffy1 repositories. The atlas has not rebuilt the Lean."
+  },
+  {
+   "id": "C-41",
+   "quantity": "Erdős #112: the Erdős–Rado number k(6,3) (least k such that every oriented graph on k vertices has 6 independent vertices or a transitive triangle)",
+   "prior": {
+    "value": "29 ≤ k(6,3) ≤ 33 (Kirtchakov 2026 lower bound; Ihringer, Rajendraprasad and Weinert 2021 upper bound)",
+    "source": "Tyorden/erdos-112-lean README"
+   },
+   "new": {
+    "value": "a claimed 30 ≤ k(6,3) ≤ 32, kernel-checked in Lean 4 (decide +kernel, no native_decide, standard axioms only)"
+   },
+   "source_urls": [
+    "https://github.com/Tyorden/erdos-112-lean",
+    "https://doi.org/10.5281/zenodo.24241452",
+    "https://www.erdosproblems.com/112"
+   ],
+   "authors": "Tyler Satchel Orden",
+   "date": "2026-11-14",
+   "date_basis": "README dates the proof 14 November 2026 (v1.0 and v1.1 on Zenodo); repository created 2026-11-15 01:22 UTC, last pushed 2026-11-16 06:50 UTC (head f306b3d); no GitHub Actions runs",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The README's Use of AI section says Claude (Anthropic) wrote and checked the Lean code, ran the builds and reviewed the formal statement against the paper, under the author's direction."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "erdos:112"
+   ],
+   "vetting": "unvetted",
+   "note": "Claimed, unvetted. Paper submitted to the Electronic Journal of Combinatorics. A narrowing of a finite gap, not a resolution of #112, which asks for k(n,m) in general. erdosproblems.com/112 shows no new edit and 0 proof claims at retrieval. The atlas has not rebuilt the Lean. Small finite gap, so a possible compute target."
+  },
+  {
+   "id": "C-42",
+   "quantity": "Erdős #36: minimum-overlap constant μ (lower bound)",
+   "prior": {
+    "value": "0.379005 < μ (White), as listed on erdosproblems.com; a public claim of 0.380627425 by Justin Wetch, on which this work builds",
+    "source": "erdosproblems.com/36 and the unktok/erdos-36-lower-bound ATTRIBUTION.md"
+   },
+   "new": {
+    "value": "a claimed μ ≥ L > 0.38062762 with an exact rational certificate and an analytic argument for every admissible measurable density"
+   },
+   "source_urls": [
+    "https://github.com/unktok/erdos-36-lower-bound",
+    "https://github.com/plasma-ai/erdos/issues/67",
+    "https://www.erdosproblems.com/36"
+   ],
+   "authors": "unktok research project",
+   "date": "2026-11-15",
+   "date_basis": "repository created 2026-11-15 06:01 UTC (head 3b5eec9); filed as plasma-ai/erdos issue 67",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The README says the research, analytic argument, numerical discovery, code and write-up were prepared with an OpenAI Codex AI agent."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "erdos:36"
+   ],
+   "vetting": "unvetted",
+   "note": "Claimed, unvetted. The authors call it a partial result, submitted not accepted, with no independent human review and no proof-assistant formalization; an extension of Wetch's certificates, not an independent rediscovery. Distinct from C-4. erdosproblems.com/36 still lists White's 0.379005 at retrieval."
+  },
+  {
+   "id": "C-43",
+   "quantity": "Erdős #1068 / JSP-000887: must every graph with chromatic number ℵ1 contain a countable infinitely vertex-connected subgraph?",
+   "prior": {
+    "value": "open; Soukup and Bowler–Pitz constructions for the uncountable-set version",
+    "source": "erdosproblems.com/1068"
+   },
+   "new": {
+    "value": "a claimed negative answer: a graph on continuum many vertices with chromatic number ℵ1 in which every infinite subgraph has a finite vertex cut, with a Lean formalization and a paper"
+   },
+   "source_urls": [
+    "https://github.com/Ghuffy1/erdos1068-jsp-submission",
+    "https://github.com/Ghuffy1/erdos1068-jsp-submission/blob/main/AUTHORS.md",
+    "https://www.erdosproblems.com/1068"
+   ],
+   "authors": "Will Howe, Grant Huffman, Jensen Kohlmeyer, Liam Kruer",
+   "date": "2026-11-15",
+   "date_basis": "repository created 2026-11-15 03:42 UTC (2026-11-14 MST), head 77b2ad0; no GitHub Actions runs",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "AUTHORS.md says the manuscript acknowledges OpenAI's AI systems for assistance in developing the work."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "erdos:1068"
+   ],
+   "vetting": "unvetted",
+   "note": "Claimed, unvetted. Same group as C-33 to C-38 and C-40. The repository ships StatementAudit.lean and AxiomAudit.lean; the atlas has rebuilt neither. erdosproblems.com/1068 was still last edited 23 January 2026 with 0 proof claims at retrieval."
+  },
+  {
+   "id": "C-44",
+   "quantity": "Erdős #1063: n_k, the least n with n − i dividing C(n,k) for all but one 0 ≤ i < k (upper bound)",
+   "prior": {
+    "value": "n_k ≤ k·lcm(2,…,k−1) ≤ e^{(1+o(1))k} (Cambie)",
+    "source": "erdosproblems.com/1063"
+   },
+   "new": {
+    "value": "n_k = O(exp((k/log k)(log log k + log log log k + log 2))), a Lean 4 theorem of about 5,500 lines"
+   },
+   "source_urls": [
+    "https://research.google/blog/advancing-science-engineering-with-antigravitys-teamwork-feature/",
+    "https://erdosproblems.ai/wiki/problems/integer_sequences/E1063/claims/2026_10_01_leap",
+    "https://github.com/google-deepmind/formal-conjectures/pull/6781",
+    "https://arxiv.org/abs/2606.03303",
+    "https://www.erdosproblems.com/1063"
+   ],
+   "authors": "LEAP (Kung, Song and coauthors, Google), verifying a UCLA group's informal proof per Google Research",
+   "date": "2026-10-01",
+   "date_basis": "Lean file committed and proposed in formal-conjectures PR 6781 on 2026-10-01, merged 2026-10-07; named in the Google Research /teamwork post of 2026-11-13",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "PR 6781 credits the proof to the LEAP prover agent; the Google Research post says /teamwork-LEAP verified a UCLA group's informal proof of the improved bound."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "erdos:1063"
+   ],
+   "note": "formal-conjectures added erdos_1063.variants.subexponential_upper_bound with this file as its formal proof and kept the main question open. erdosproblems.com/1063 still shows Cambie's bound (last edited 1 February 2026) and the database lists it open. The UCLA informal write-up has no public URL yet. The atlas has not rebuilt the Lean."
+  },
+  {
+   "id": "C-45",
+   "quantity": "Ulam sequence (OEIS A002858): growth of the n-th term",
+   "prior": {
+    "value": "exponential upper bounds in n",
+    "source": "arXiv:2611.17584 abstract"
+   },
+   "new": {
+    "value": "the n-th term is e^{O(√n)}, via an additive-combinatorial lemma on covering finite difference sets with multiplicatively short intervals"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2611.17584"
+   ],
+   "authors": "Noah Kravitz",
+   "date": "2026-11-12",
+   "date_basis": "arXiv v1 submission date (listed 2026-11-16)",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The abstract says: \"The proofs are due to ChatGPT.\""
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Not an Erdős problem in the hub. A human-authored arXiv paper with no formalization stated. Not rechecked by the atlas."
+  },
+  {
+   "id": "C-46",
+   "quantity": "MOLS: lower bounds on N(n), the maximum number of mutually orthogonal Latin squares of order n",
+   "prior": {
+    "value": "previously known lower bounds at 33 orders between 22 and 494; N(n) ≥ 4 not known for every n > 10",
+    "source": "arXiv:2611.16299 abstract"
+   },
+   "new": {
+    "value": "improved lower bounds at 33 orders between 22 and 494, including 4 MOLS of order 22, which with earlier results gives N(n) ≥ 4 for all n > 10"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2611.16299"
+   ],
+   "authors": "Christopher D. Rosin",
+   "date": "2026-11-12",
+   "date_basis": "arXiv v1 submission date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The abstract says the constructions (difference matrices, quasi-difference matrices, orthogonal arrays, projective planes) were found by GPT-6 Astra."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Explicit, checkable constructions; a possible verification target. Not rechecked by the atlas."
+  },
+  {
+   "id": "C-47",
+   "quantity": "Contiguity of unions of r random perfect matchings of the complete s-uniform hypergraph with random r-regular s-uniform hypergraphs",
+   "prior": {
+    "value": "not stated in the abstract",
+    "source": "arXiv:2611.16160 abstract"
+   },
+   "new": {
+    "value": "mutual contiguity for fixed s ≥ 3 and r with log(r!) > (r(s−1)/s) log r; in particular r = ⌈e^s⌉ suffices"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2611.16160"
+   ],
+   "authors": "Alan Frieze, Xavier Pérez-Giménez",
+   "date": "2026-11-12",
+   "date_basis": "arXiv v1 submission date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The abstract says: \"This is an expanded version of a proof provided by ChatGPT-Astra.\""
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Not an Erdős problem in the hub. Not rechecked by the atlas."
+  },
+  {
+   "id": "C-48",
+   "quantity": "Courtade–Kumar (most informative Boolean function) conjecture: I(g(X);Y) ≤ 1 − H2(p) for Boolean g",
+   "prior": {
+    "value": "open since 2013 in full generality",
+    "source": "arXiv:2609.24931 and the Google Research /teamwork post"
+   },
+   "new": {
+    "value": "a computer-assisted proof in full generality, with the entire proof and its numerical certificates formalized end to end in Lean 4 (about 50 million lines per Google Research)"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2609.24931",
+    "https://github.com/dpwoodru/general-courtade-kumar-lean",
+    "https://research.google/blog/advancing-science-engineering-with-antigravitys-teamwork-feature/"
+   ],
+   "authors": "Zijie Chen, Amin Gohari, Adel Javanmard, Honghao Lin, Vahab Mirrokni, Chandra Nair, David P. Woodruff",
+   "date": "2026-09-21",
+   "date_basis": "arXiv v1 submission date (v2 2026-09-24 added the Lean links); Lean repository created 2026-09-24; Google Research post 2026-11-13",
+   "attribution": "reported",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The Google Research post says Gemini 4 Argon and earlier Gemini models developed most of the new analytical bounds and interval-arithmetic certificates via /teamwork's Long Proof pattern, and extended the proof to unbalanced functions without human input."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Not an Erdős problem. The arXiv abstract itself calls the proof computer-assisted and does not name the AI system; AI involvement comes from the Google post. The atlas has not rebuilt the Lean."
   }
  ]
 }
