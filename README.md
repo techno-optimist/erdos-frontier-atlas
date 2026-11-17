@@ -193,7 +193,7 @@ an endorsement, and it never changes a status.
   (MIPLIB, black-hole physics, and a Fermat formalisation), ten new
   Lean-backed claims on Erdős #12, #112, #335, #573, #597, #624, #670, #676, #790 and #1068,
   and a certificate-backed claim on Erdős #36. They are listed only because a
-  primary source exists. The results file is dated 2026-11-17 and the tool index 2026-11-16; both are checked by
+  primary source exists. Both files are dated 2026-11-17 and checked by
   `tools/validate_tools.py`.
 - The [AI-claim overlay](atlas/ai_claims.json) is a dated registry of 89
   Erdős-linked claims of AI-assisted resolutions. It exists so effort isn't
