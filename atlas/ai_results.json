@@ -1,10 +1,10 @@
 {
  "schema": "efa-ai-results-v1",
  "purpose": "Results that sources report or claim with AI assistance, mostly outside the Erdős set; entries on Erdős problems link their erdos:<n> node. Entries marked vetting=unvetted are extraordinary claims recorded only because a primary source exists. Values are copied from the cited source; nothing here is independently checked and no atlas status changes.",
- "retrieved": "2026-11-17",
+ "retrieved": "2026-11-18",
  "counts": {
-  "entries": 51,
-  "ai_involvement_confirmed": 49,
+  "entries": 52,
+  "ai_involvement_confirmed": 50,
   "ai_involvement_unconfirmed": 2,
   "unvetted": 19
  },
@@ -1455,6 +1455,32 @@
    ],
    "vetting": "unvetted",
    "note": "Claimed, unvetted. The conjectures.io result page shows the Lean proof of its formal statement passed its verifier and a human review, with an independent replay; that is a bounty decision, not journal review. Submitted under JSP-000051. Same group as C-33 to C-38, C-40 and C-43. erdosproblems.com/12 (last edited 8 April 2026) still treats the reciprocal-sum question as unknown and the database lists #12 open, so the atlas status is held. The atlas has not rebuilt the Lean or compared the formal statement with part (iii)."
+  },
+  {
+   "id": "C-52",
+   "quantity": "Small and Large Quasi-kernel Conjectures (digraphs): equivalence of sublinear bounds, and the general bounds for both",
+   "prior": {
+    "value": "Small Quasi-kernel Conjecture (P. L. Erdős and Székely, 1976): every n-vertex source-free digraph has a quasi-kernel Q with |Q| ≤ n/2; Large Quasi-kernel Conjecture (Spiro): every n-vertex digraph has a quasi-kernel Q with |N+[Q]| ≥ n/2. Equivalence known only for linear bounds (Spiro; Ai, Gutin, Liu and Meng arXiv:2610.23487). Best general bounds |N+[Q]| ≥ n^{2/3−o(1)} and |Q| ≤ n − n^{2/3−o(1)} (Rutschmann, arXiv:2610.29659)",
+    "source": "arXiv:2611.22881, introduction"
+   },
+   "new": {
+    "value": "for every 1/2 < β < 1, 'every n-vertex source-free digraph has a quasi-kernel with |Q| ≤ n − Ω(n^β)' is equivalent to 'every n-vertex digraph has a quasi-kernel with |N+[Q]| ≥ Ω(n^{2−1/β})'; with a refinement of Rutschmann's argument this gives |N+[Q]| ≥ n^{2/3}/64 and |Q| ≤ n − n^{3/4}/768. An equivalence (reduction) plus improved bounds; neither conjecture is resolved"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2611.22881"
+   ],
+   "authors": "Sam Spiro",
+   "date": "2026-11-17",
+   "date_basis": "arXiv v1 submission date (2026-11-17 14:54 UTC)",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The abstract says: \"Our proofs are due to ChatGPT's Astra 6; the writing is all our own.\" The paper's AI declaration says every proof is due to ChatGPT's Astra 6, that most of its ideas appeared earlier in human papers, that Astra did not get past Ω(n^{1/2}) for the Large conjecture until Rutschmann's paper appeared, and that the main ideas originate with Rutschmann. Access came through the ChatGPT for Academic Researchers program."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Not an Erdős problem on erdosproblems.com: the Small Quasi-kernel Conjecture is due to Péter L. Erdős and Székely, and no erdosproblems.com entry or atlas stub maps to it. A human-written 11-page arXiv paper (math.CO) with no formalization stated. Not rechecked by the atlas."
   }
  ]
 }

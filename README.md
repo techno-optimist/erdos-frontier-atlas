@@ -46,7 +46,7 @@ in this table against its source file, so the table can't drift from the data.
 | Inventory | Count | Source of truth |
 |---|---:|---|
 | AI-assisted discovery tools | 39 | [`atlas/tools.json`](atlas/tools.json): 19 systems, 11 benchmarks, 6 datasets and 3 registries, each with primary links and a first-public date |
-| AI-assisted results | 51 | [`atlas/ai_results.json`](atlas/ai_results.json): prior value, new value and source, as the authors report them. 19 are extraordinary claims marked `unvetted`, and 2 don't state AI involvement |
+| AI-assisted results | 52 | [`atlas/ai_results.json`](atlas/ai_results.json): prior value, new value and source, as the authors report them. 19 are extraordinary claims marked `unvetted`, and 2 don't state AI involvement |
 | Erdős-linked AI claims | 89 | [`atlas/ai_claims.json`](atlas/ai_claims.json): a dated claim registry used for triage; it never sets a status |
 | OpenAI manuscript families | 22 | [`atlas/openai_math.json`](atlas/openai_math.json): pinned to a commit of [openai/math](https://github.com/openai/math) |
 | Plasma overlay entries | 155 | [`atlas/plasma_claims.json`](atlas/plasma_claims.json): where Plasma AI's [erdosproblems.ai](https://erdosproblems.ai) wiki differs from this atlas, with our review of each difference |
@@ -181,9 +181,9 @@ an endorsement, and it never changes a status.
   AlphaProof Code, Aristotle, AxiomProver, Gauss and LEAP to FrontierMath: Open Problems, OEIS Open,
   First Proof, PutnamBench, OpenFrontiers, Science-Last-Exam and ErdosBench, plus community registries. Each one has primary
   links and a first-public date.
-- The [results file](atlas/ai_results.json) lists 51 results whose authors
+- The [results file](atlas/ai_results.json) lists 52 results whose authors
   report or claim AI assistance, including matrix multiplication, kissing
-  numbers, cap sets, MOLS, Ramsey and Schur lower bounds, the Ulam sequence, the
+  numbers, cap sets, MOLS, Ramsey and Schur lower bounds, the Ulam sequence, quasi-kernels in digraphs, the
   Courtade–Kumar conjecture, the Katz–Tao sum-difference exponent, toric Fano
   Picard ranks, and Erdős #12, #30, #36, #96/#97, #188, #519, #650 and
   #1063, and Lean formalisations of the classification of finite simple
@@ -193,7 +193,7 @@ an endorsement, and it never changes a status.
   (MIPLIB, black-hole physics, and a Fermat formalisation), ten new
   Lean-backed claims on Erdős #12, #112, #335, #573, #597, #624, #670, #676, #790 and #1068,
   and a certificate-backed claim on Erdős #36. They are listed only because a
-  primary source exists. Both files are dated 2026-11-17 and checked by
+  primary source exists. Both files are dated 2026-11-18 and checked by
   `tools/validate_tools.py`.
 - The [AI-claim overlay](atlas/ai_claims.json) is a dated registry of 89
   Erdős-linked claims of AI-assisted resolutions. It exists so effort isn't
