@@ -1,10 +1,10 @@
 {
  "schema": "efa-ai-results-v1",
  "purpose": "Results that sources report or claim with AI assistance, mostly outside the Erdős set; entries on Erdős problems link their erdos:<n> node. Entries marked vetting=unvetted are extraordinary claims recorded only because a primary source exists. Values are copied from the cited source; nothing here is independently checked and no atlas status changes.",
- "retrieved": "2026-11-18",
+ "retrieved": "2026-11-19",
  "counts": {
-  "entries": 52,
-  "ai_involvement_confirmed": 50,
+  "entries": 53,
+  "ai_involvement_confirmed": 51,
   "ai_involvement_unconfirmed": 2,
   "unvetted": 19
  },
@@ -756,7 +756,10 @@
     "value": "a claim that Fable 5.2 obtained results on two open questions in black-hole physics, both using holographic duality"
    },
    "source_urls": [
-    "https://www.anthropic.com/claude-fable-and-mythos-5-2"
+    "https://www.anthropic.com/claude-fable-and-mythos-5-2",
+    "https://www.anthropic.com/research/claude-black-hole-physics",
+    "https://hexagonmath.org/2611.00174v1",
+    "https://hexagonmath.org/2611.00175v1"
    ],
    "authors": "Anthropic (Claude Fable 5.2)",
    "date": "2026-11-09",
@@ -769,7 +772,7 @@
    "our_verdict": "not independently checked",
    "status_changed_by_this_entry": false,
    "atlas_nodes": [],
-   "note": "Claimed, unvetted. The blog gives a prose sketch and does not cite a paper, repository, or other checkable artifact.",
+   "note": "Claimed, unvetted. The blog gives a prose sketch and does not cite a paper, repository, or other checkable artifact. Update 2026-11-19: Anthropic's research post 'Claude solves two open problems in the physics of black holes' (dated 2026-11-17) links two Hexagon preprints dated 2026-11-07, contributed by Anthropic and labelled 'Primarily AI-generated': 'The spinless modular bootstrap at large central charge' (hexagon 2611.00174, slope Λ_V = 12π²/(π²+4 arcsinh² 1) ≈ 9.1266) and 'The Hawking-Page transition at weak coupling' (hexagon 2611.00175, quartic coefficient b = −1.48×10⁻³ λ², first-order transition). The post says the modular bootstrap results were formally verified in Lean in September and a physicist checked every main result; neither preprint page links a Lean artifact. The preprints' provenance statements credit 'an internal Claude research model' (with Claude Opus 5.5 later reaching the bootstrap result independently) rather than naming Fable 5.2. These Hexagon ids are not arXiv ids. Still claimed and unvetted; the atlas has not checked the physics or any Lean.",
    "vetting": "unvetted"
   },
   {
@@ -1481,6 +1484,33 @@
    "status_changed_by_this_entry": false,
    "atlas_nodes": [],
    "note": "Not an Erdős problem on erdosproblems.com: the Small Quasi-kernel Conjecture is due to Péter L. Erdős and Székely, and no erdosproblems.com entry or atlas stub maps to it. A human-written 11-page arXiv paper (math.CO) with no formalization stated. Not rechecked by the atlas."
+  },
+  {
+   "id": "C-53",
+   "quantity": "Smoktunowicz's gap theorem (no graded domain has GK dimension strictly between 2 and 3): Lean formalisation",
+   "prior": {
+    "value": "informal proof (A. Smoktunowicz, 'There are no graded domains with GK dimension strictly between 2 and 3', Invent. Math. 164 (2006) 635–640, building on Artin and Stafford 1995); no prior formalisation known to Vals AI",
+    "source": "Vals AI blog, 2026-11-18"
+   },
+   "new": {
+    "value": "a reported Lean proof of the theorem's statement (Theorem 1 of the 2006 paper, as written and audited for Meta FAIR's AutoformBench), produced by GPT-6.2 Astra on Vals AI's Autoform-Hard benchmark: 1,794 lines, 94 minutes, 146 agent turns, $21.58, no human involvement. After a shared opening it takes a different route from the published proof (a 'capacity' argument in place of Bergman's gap theorem, Small–Warfield and Riemann–Roch). A formal proof of the theorem, not a formalisation of Smoktunowicz's proof"
+   },
+   "source_urls": [
+    "https://www.vals.ai/blogs/smoktunowicz-gap-theorem",
+    "https://www.vals.ai/blogs/2026-11-18-smoktunowicz-gap-theorem/proof/index.html"
+   ],
+   "authors": "Vals AI (Jacob Stavrianos); proof by GPT-6.2 Astra",
+   "date": "2026-11-18",
+   "date_basis": "Vals AI blog date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "Vals AI says GPT-6.2 Astra worked alone in a sandbox with Lean, Mathlib and a shell, under Autoform-Hard's limits of three hours and a $200 budget, and that no human touched the run. A first partial submission with a sorry in the general case was rejected by the grader; the full proof was accepted 39 minutes after the model's 'unsolved' report."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Not an Erdős problem; a formalisation of a known 2006 theorem, not a new bound. Vals AI states the benchmark grader rebuilt the theorem from a trusted copy of the task, required an exact statement match and only the standard axioms (propext, Quot.sound, Classical.choice), and replayed the proof with an independent kernel; its own hand review reports no sorry, no warnings, no native_decide, new axioms or unsafe code, and byte-identical task files. The Lean source is public only as the annotated proof page (no repository or downloadable project at retrieval). On Autoform-Hard (56 tasks) GPT-6.2 Sol and Claude Fable 5.2 each pass the same 48 and Astra passes 49, this task being the only difference. The atlas has not rebuilt the Lean or checked statement fidelity."
   }
  ]
 }
