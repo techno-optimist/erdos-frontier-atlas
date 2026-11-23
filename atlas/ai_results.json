@@ -1,12 +1,12 @@
 {
  "schema": "efa-ai-results-v1",
  "purpose": "Results that sources report or claim with AI assistance, mostly outside the Erdős set; entries on Erdős problems link their erdos:<n> node. Entries marked vetting=unvetted are extraordinary claims recorded only because a primary source exists. Values are copied from the cited source; nothing here is independently checked and no atlas status changes.",
- "retrieved": "2026-11-19",
+ "retrieved": "2026-11-23",
  "counts": {
-  "entries": 53,
-  "ai_involvement_confirmed": 51,
+  "entries": 60,
+  "ai_involvement_confirmed": 58,
   "ai_involvement_unconfirmed": 2,
-  "unvetted": 19
+  "unvetted": 21
  },
  "entries": [
   {
@@ -1511,6 +1511,194 @@
    "status_changed_by_this_entry": false,
    "atlas_nodes": [],
    "note": "Not an Erdős problem; a formalisation of a known 2006 theorem, not a new bound. Vals AI states the benchmark grader rebuilt the theorem from a trusted copy of the task, required an exact statement match and only the standard axioms (propext, Quot.sound, Classical.choice), and replayed the proof with an independent kernel; its own hand review reports no sorry, no warnings, no native_decide, new axioms or unsafe code, and byte-identical task files. The Lean source is public only as the annotated proof page (no repository or downloadable project at retrieval). On Autoform-Hard (56 tasks) GPT-6.2 Sol and Claude Fable 5.2 each pass the same 48 and Astra passes 49, this task being the only difference. The atlas has not rebuilt the Lean or checked statement fidelity."
+  },
+  {
+   "id": "C-54",
+   "quantity": "Riemann Hypothesis, and the Generalized Riemann Hypothesis for Dirichlet L-functions (Lean proof)",
+   "prior": {
+    "value": "open (Riemann 1859); GRH for Dirichlet L-functions open",
+    "source": "standard; Mathlib's own RiemannHypothesis definition"
+   },
+   "new": {
+    "value": "a Lean 4 library of about 17 million lines (Lean and Mathlib v4.33.1) proving Mathlib's RiemannHypothesis and, for every modulus and every Dirichlet character, that the zeros of L(χ, s) in the critical strip lie on the line Re s = 1/2. On 2026-11-21 the Lean FRO and the Mathlib Initiative issued a joint statement certifying that both the statement and the proof are correct. No human-readable proof has been released"
+   },
+   "source_urls": [
+    "https://alpo.ge/remark.pdf",
+    "https://leanprover-community.github.io/blog/posts/riemann-hypothesis/",
+    "https://math.mit.edu/~drew/grh/"
+   ],
+   "authors": "Levent Alpöge, working with Claude",
+   "date": "2026-11-20",
+   "date_basis": "release date stated in the Lean FRO and Mathlib Initiative joint statement (alpo.ge/remark.pdf)",
+   "attribution": "reported",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "Alpöge's remark says he discovered the proof 'working with Claude' and that 'Claude and I have also formalized the arguments'; it describes Claude as doing much of the technical work near the end. It does not name a Claude model version."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Not an Erdős problem. Checks are by the Lean community, not by the atlas. The joint statement (Lean FRO and Mathlib Initiative, 2026-11-21) says dozens of people compiled the library and reproduced the same raw proof export; that a challenge file importing only Mathlib was matched to the proved theorem by comparator and by con-leche --compare; and that the inert export was accepted by Lean's kernel, by con-leche and con-ron (which come with formal soundness proofs relative to set theory) and by other independent checkers. Andrew Sutherland's verification log (MIT, checks run with Claude Code; page last updated 2026-11-23 14:35 UTC) reports all 175,187 modules compiling with zero errors; #print axioms on the five headline theorems giving only propext, Classical.choice and Quot.sound; no axioms declared outside Lean core; leanchecker replay of every module; nanoda, con-leche, con-ron and lean4lean accepting; an independent sandboxed build reproducing the export byte for byte; Lean's default kernel accepting the full export; and Comparator v4.33.0 end to end passing. At that update the lake comparator (v4.36.0) end-to-end run and one paranoid-kernel replay of the export with default settings were still running (a paranoid-kernel replay with one allocator setting changed had accepted). GRH here means Dirichlet L-functions only; Dedekind, Hecke and general automorphic L-functions are not among the checked statements. Alpöge chose to release only the Lean, so there is no readable proof yet. ProjectForty2's own rebuild did not complete (it stopped on missing compiled build files, not on a proof error), so the atlas relies on the community checks above."
+  },
+  {
+   "id": "C-55",
+   "quantity": "topological overlap constants c_d^top and c_d^aff (Bukh–Matoušek–Nivasch conjecture), every dimension d",
+   "prior": {
+    "value": "upper bound c_d^aff ≤ (d+1)!/(d+1)^{d+1} (Bukh, Matoušek and Nivasch), with equality conjectured",
+    "source": "arXiv:2611.26229 abstract"
+   },
+   "new": {
+    "value": "c_d^top = c_d^aff = (d+1)!/(d+1)^{d+1} for every positive integer d, confirming the Bukh–Matoušek–Nivasch conjecture"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2611.26229"
+   ],
+   "authors": "Sergey Norin",
+   "date": "2026-11-19",
+   "date_basis": "arXiv v1 submission date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The abstract says: 'The proof was found by GPT-6 Astra, following the directions of the author.'"
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Not an Erdős problem (topological combinatorics). Single-author arXiv preprint, not refereed at retrieval; no formalisation is cited. The atlas has not checked the proof."
+  },
+  {
+   "id": "C-56",
+   "quantity": "Németh–Seberry–Shu conjecture (Minc's Conjecture 27): number V(p) of distinct permanents of p×p (0,1)-circulants, p prime",
+   "prior": {
+    "value": "conjectured V(p) = O(p) (Németh, Seberry and Shu 1979); at most (2^p − 2)/p + 2 values from translation",
+    "source": "Yair Lavi, Minc's list, Conjecture 27"
+   },
+   "new": {
+    "value": "a disproof: V(p)/p → ∞ along the primes, refined the same day to V(p) ≥ c·p² for an absolute c > 0 and all large primes p"
+   },
+   "source_urls": [
+    "https://github.com/1337isnot1337/solved-conjectures/tree/bb62d1124107d15f87ad147a3256c569ab045944/results/nemeth-seberry-shu",
+    "https://yair-lavi.com/mincs-list/conjecture-27/index.html"
+   ],
+   "authors": "Cinna Davis and GPT-6.2 Astra",
+   "date": "2026-11-20",
+   "date_basis": "posting date stated on Yair Lavi's Conjecture 27 page",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "Both the repository entry and Yair Lavi's page credit the proof to 'C. Davis and GPT-6.2 Astra'."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Not an Erdős problem. Written proof only, with no Lean formalisation; the repository's finite sanity checks are not part of the asymptotic argument. One independent audit: Yair Lavi's Minc's-list page lists the conjecture as disproved and says 'We audited the argument independently and found no gap'; the repository calls this an external mathematical check, not journal peer review. The construction uses circulants with between p/3 and 2p/3 ones per row, so it does not settle the Resta–Sburlati conjecture for a fixed number of ones per row. Only this one item from the same repository is indexed here; its other claims have no outside check at retrieval. The atlas has not checked the proof."
+  },
+  {
+   "id": "C-57",
+   "quantity": "monochromatic quantum graphs for N-photon, D-dimensional GHZ states (photonic GHZ generation with pair sources)",
+   "prior": {
+    "value": "existence for even N ≥ 4 and D ≥ N not ruled out in general",
+    "source": "arXiv:2611.26300"
+   },
+   "new": {
+    "value": "a no-go theorem: no complex-weighted monochromatic quantum graph exists for any even N ≥ 4 when D ≥ N, via a weighted sum of amplitudes whose coefficients factor vertex by vertex"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2611.26300"
+   ],
+   "authors": "Mario Krenn, Moritz Firsching, George Tsoukalas, Rishikesh Gajjala, Xuemei Gu, Swarat Chaudhuri",
+   "date": "2026-11-19",
+   "date_basis": "arXiv v1 submission date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The abstract says the proof was 'discovered through AI-assisted formal proof search in Lean using AlphaProof Nexus'; the title says the theorem was discovered with AlphaProof Nexus."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Not an Erdős problem (quantum optics, combinatorics). The comments field lists 'Lean examples'; no Lean repository is linked from the abstract page, and the atlas has not rebuilt any Lean. AlphaProof Nexus is tool B-2."
+  },
+  {
+   "id": "C-58",
+   "quantity": "finite-time singularity for the 3D incompressible Euler equations from smooth periodic data (no forcing)",
+   "prior": {
+    "value": "open for smooth data without forcing or boundary, as framed by the authors",
+    "source": "arXiv:2611.26772"
+   },
+   "new": {
+    "value": "a claimed construction of smooth periodic initial data whose Euler solution blows up in finite time, with bounded velocity and vorticity at the origin tending to infinity, built from localized Craik–Criminale waves; the authors say the paper is Lean formalized"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2611.26772",
+    "https://github.com/mcoiculescu/EulerBlowupPublic"
+   ],
+   "authors": "Levent Alpöge, Tristan Buckmaster, Matei P. Coiculescu",
+   "date": "2026-11-19",
+   "date_basis": "arXiv v1 submission date",
+   "attribution": "claimed",
+   "vetting": "unvetted",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The arXiv comments say 'LLM-assisted and Lean formalized'. The paper's AI statement (§1.7) says Claude and Codex were used throughout, that the first proof without force was written by Anthropic models from the authors' earlier drafts, and that the authors then rewrote it with Claude and Codex under their direction."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Claimed, unvetted. Not an Erdős problem. The repository README says the formalization (Lean v4.34.0-rc2) is in one-to-one correspondence with the arXiv proof, checked by a citation ledger (spine.json, VerifySpine.lean), that the main theorems depend only on propext, Classical.choice and Quot.sound, and that the sources contain no sorry. Stated exceptions: the periodic Beale–Kato–Majda criterion cited by Corollary 8.3 is not formalized, and the auxiliary terminal-smoothness note is formalized outside the correspondence. The paper's provenance section (§1.6) discusses an earlier OpenAI paper on the unforced Euler equations using the same amplification mechanism. The atlas has not rebuilt the Lean or checked statement fidelity, and no independent check is cited."
+  },
+  {
+   "id": "C-59",
+   "quantity": "finite-time blow-up for the unforced 3D Navier–Stokes equations on R³ and T³",
+   "prior": {
+    "value": "open (Clay Millennium Prize problem)",
+    "source": "standard"
+   },
+   "new": {
+    "value": "a claimed construction of finite-time blow-up from smooth data on R³ and T³, via a discretely self-similar profile; the existence of the profile rests on a computer-assisted certificate that is not yet released"
+   },
+   "source_urls": [
+    "https://github.com/tristanbuckmaster/navier-stokes"
+   ],
+   "authors": "Levent Alpöge, Tristan Buckmaster",
+   "date": "2026-11-20",
+   "date_basis": "paper version date and repository commit date (ad53419, 2026-11-20)",
+   "attribution": "claimed",
+   "vetting": "unvetted",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The paper's AI statement (§1.6) says: 'We used Anthropic models (Claude) throughout this work, and no others.' The repository commits carry Co-Authored-By trailers for Claude Fable 5.2."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Claimed, unvetted, and conditional as released. Not an Erdős problem. The certificate whose SHA-256 the paper gives is not in the repository (the authors say it will be released), and the interval-arithmetic computation (Arb through FLINT, 128 bits) showing it meets the conditions of Appendix B is not part of the formalization. The Lean package (Lean v4.33.1, about 2,270 files) therefore proves the blow-up conclusions from certificate or profile hypotheses, not unconditionally; the README also says a patch of 2026-11-20 was applied and 'the patched package was not rebuilt when this repository was assembled'. A ProjectForty2 build of commit ad53419 on 2026-11-20 finished without errors and #print axioms showed only propext, Classical.choice and Quot.sound on the stated theorems; that receipt is not in this repository and does not touch the missing certificate. Open repository issues question parts of Appendix B. No independent check is cited."
+  },
+  {
+   "id": "C-60",
+   "quantity": "contact-process threshold λ_c(G) versus bond-percolation threshold p_c(G) on infinite, locally finite, connected graphs",
+   "prior": {
+    "value": "whether p_c(G) = 0 forces λ_c(G) = 0 in this generality, as framed by the authors",
+    "source": "arXiv:2611.27354"
+   },
+   "new": {
+    "value": "for p ∈ (0, 1/2] and λ ≥ 20p the contact process survives with probability at least 3/4 times the bond-percolation probability; hence λ_c(G) ≤ 20 p_c(G) whenever p_c(G) < 1/2, and p_c(G) = 0 implies λ_c(G) = 0"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2611.27354"
+   ],
+   "authors": "Benedikt Jahnel, Lukas Lüchtrath, Christian Mönch",
+   "date": "2026-11-20",
+   "date_basis": "arXiv v1 submission date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The comments say the note 'was produced with substantial assistance from the AI systems Claude (Anthropic) and ChatGPT/Codex (OpenAI)' and that the authors checked all statements and proofs."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Not an Erdős problem (probability). The authors say the note is not intended for journal publication. No formalisation. The atlas has not checked the proof."
   }
  ]
 }

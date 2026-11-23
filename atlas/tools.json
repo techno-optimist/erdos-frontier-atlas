@@ -1,7 +1,7 @@
 {
  "schema": "efa-tools-v1",
  "purpose": "Index of AI-assisted discovery tools, systems, registries, datasets and benchmarks that touch the atlas. Each item cites primary URLs. Listing an item is not an endorsement and does not change any status.",
- "retrieved": "2026-11-19",
+ "retrieved": "2026-11-23",
  "counts": {
   "items": 39,
   "by_kind": {
