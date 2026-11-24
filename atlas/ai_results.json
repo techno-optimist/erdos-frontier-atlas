@@ -1,12 +1,12 @@
 {
  "schema": "efa-ai-results-v1",
  "purpose": "Results that sources report or claim with AI assistance, mostly outside the Erdős set; entries on Erdős problems link their erdos:<n> node. Entries marked vetting=unvetted are extraordinary claims recorded only because a primary source exists. Values are copied from the cited source; nothing here is independently checked and no atlas status changes.",
- "retrieved": "2026-11-23",
+ "retrieved": "2026-11-24",
  "counts": {
-  "entries": 60,
-  "ai_involvement_confirmed": 58,
+  "entries": 68,
+  "ai_involvement_confirmed": 66,
   "ai_involvement_unconfirmed": 2,
-  "unvetted": 21
+  "unvetted": 22
  },
  "entries": [
   {
@@ -1699,6 +1699,223 @@
    "status_changed_by_this_entry": false,
    "atlas_nodes": [],
    "note": "Not an Erdős problem (probability). The authors say the note is not intended for journal publication. No formalisation. The atlas has not checked the proof."
+  },
+  {
+   "id": "C-61",
+   "quantity": "VP versus VNP (Valiant's algebraic P versus NP) over every field: arithmetic circuit lower bounds for the permanent and the Hamiltonian cycle polynomial",
+   "prior": {
+    "value": "open (Valiant 1979); no superpolynomial lower bound for general arithmetic circuits computing the permanent was known",
+    "source": "standard; framing of the paper in anthropics/formal-math vp-vnp"
+   },
+   "new": {
+    "value": "a claimed proof that, over every field, every arithmetic circuit for the m-variable Hamiltonian cycle polynomial, and for the m×m permanent outside characteristic 2, has more than m^(c (log m)^(1/3)) gates for all large m, and that the same holds for approximating circuits; hence VP is a proper subset of VNP and VNP is not contained in the closure of VP over every field. The authors say this does not settle P vs NP"
+   },
+   "source_urls": [
+    "https://github.com/anthropics/formal-math/tree/918c8e2778aee18b0283dc5a33ed39ab3cd63a96/vp-vnp",
+    "https://github.com/anthropics/formal-math/pull/51"
+   ],
+   "authors": "Claude (Anthropic)",
+   "date": "2026-11-23",
+   "date_basis": "repository commit date (918c8e2, merged in PR #51 the same day)",
+   "attribution": "claimed",
+   "vetting": "unvetted",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The README says: 'The result was discovered by an internal research Claude model. This folder holds the paper and its Lean 4 formalization. Both were written by AI models, and no human mathematician has checked the proof.' The paper (paper.pdf, 70 pages) is credited to 'Claude, Anthropic'."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "atlas/tools.json#B-30"
+   ],
+   "note": "Claimed, unvetted. Not an Erdős problem (algebraic complexity). The folder has a Lean 4 formalization (lean-toolchain v4.33.1; Statement.lean imports only Mathlib, with proofs in Solution.lean). The README says: 'Lean checks the proofs, but no machine checks that this file says what is claimed', and points to Appendix Q of the paper (Table 3) for the Lean counterparts of the numbered statements and where they differ. The README's expected check is lake build plus scripts/PrintAxioms.lean naming no axioms beyond propext, Classical.choice and Quot.sound, and the repository CI runs Comparator against Challenge.lean with the nanoda second kernel. The atlas has not rebuilt the Lean, run the comparator, or checked that Statement.lean's definitions of VP, VNP and the closure of VP match the usual ones. No human check of the proof is cited. Repository dataset B-30."
+  },
+  {
+   "id": "C-62",
+   "quantity": "Erdős–Szekeres 'Happy Ending' function ES(n) = f(n), upper bound (Erdős #107)",
+   "prior": {
+    "value": "f(n) ≤ 2^{n+O(√(n log n))} (Holmsen, Mojarrad, Pach and Tardos 2020), after Suk's 2^{n+O(n^{2/3} log n)} (2017); conjecture f(n) = 2^{n-2}+1",
+    "source": "https://www.erdosproblems.com/107"
+   },
+   "new": {
+    "value": "ES(n) ≤ 2^{n+O(n^{1/3})}"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2611.29344",
+    "https://www.erdosproblems.com/107"
+   ],
+   "authors": "Yifan Hu, Guokuan Shao, Guozhen Shen",
+   "date": "2026-11-22",
+   "date_basis": "arXiv v1 submission date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The paper's title-page note says: 'The central mathematical ideas are due to the authors. The authors developed the technical approaches with the assistance of OpenAI's ChatGPT. ChatGPT was also used for proofreading.'"
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "erdos:107",
+    "atlas/stubs.json#problem=107"
+   ],
+   "note": "A new asymptotic upper bound for Erdős #107, not a resolution: the conjecture f(n) = 2^{n-2}+1 stays open and the atlas status of #107 is unchanged. The abstract compares the result with Suk's bound; the body also cites the Holmsen–Mojarrad–Pach–Tardos bound. At retrieval (2026-11-24) erdosproblems.com/107 still names Holmsen–Mojarrad–Pach–Tardos as the current best, with 0 proof claims (last edited 11 April 2026). arXiv preprint, not refereed at retrieval; no formalisation. The atlas has not checked the proof."
+  },
+  {
+   "id": "C-63",
+   "quantity": "termination of the Kähler minimal model program with scaling (strongly Q-factorial compact Kähler klt pairs)",
+   "prior": {
+    "value": "termination of klt flips with scaling open in this compact Kähler setting, as framed by the authors",
+    "source": "arXiv:2611.29683"
+   },
+   "new": {
+    "value": "termination of klt flips with scaling for strongly Q-factorial compact Kähler klt pairs (X, B) with effective Q-boundary; hence such pairs have minimal models when K_X + B is pseudo-effective and Mori fibre space models otherwise"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2611.29683"
+   ],
+   "authors": "Christopher Hacon, Pengchao Wang",
+   "date": "2026-11-22",
+   "date_basis": "arXiv v1 submission date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The comments say: 'The main result of this paper is based on the AI generated papers [OAI1] and [OAI2] and was obtained with the aid of ChatGPT.' [OAI1] and [OAI2] are OpenAI preprints of 24 September and 6 October 2026 on minimal models."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Not an Erdős problem (algebraic geometry). The corollaries also cite further OpenAI preprints ([OAI3], [OAI4]). arXiv preprint, not refereed at retrieval; no formalisation. The atlas has not checked the proof."
+  },
+  {
+   "id": "C-64",
+   "quantity": "binary Chowla conjecture: Σ_{n≤x} μ(n)μ(n+1)",
+   "prior": {
+    "value": "≪ x/(log x)^c for a tiny absolute constant c > 0 (OpenAI)",
+    "source": "arXiv:2611.28392 abstract"
+   },
+   "new": {
+    "value": "≪_ε x/(log x)^{1−ε} for every fixed 0 < ε < 1; also Σ_{p≤x} μ(p+2) ≪_ε π(x)/(log x)^{1/2−ε}"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2611.28392"
+   ],
+   "authors": "Jared Duker Lichtman",
+   "date": "2026-11-20",
+   "date_basis": "arXiv v1 submission date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The AI statement says: 'The author used ChatGPT-6 Astra for assistance writing up the article, checking, and transcribing routine adaptations of arguments. The author takes full responsibility for the correctness of the proof.' It also says the author found it helpful to discuss the earlier papers extensively with ChatGPT-6."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Not an Erdős problem (number theory). Improves an OpenAI bound that the atlas does not index separately. arXiv preprint, not refereed at retrieval; no formalisation. The atlas has not checked the proof."
+  },
+  {
+   "id": "C-65",
+   "quantity": "limit cycles in three-dimensional competitive Lotka–Volterra systems (Gyllenberg–Yan conjecture: at least five)",
+   "prior": {
+    "value": "conjectured that at least five limit cycles can coexist (Gyllenberg and Yan)",
+    "source": "arXiv:2611.29524"
+   },
+   "new": {
+    "value": "a strictly competitive system with eight distinct limit cycles near one positive equilibrium, proving the conjecture; for each m = 5, 6, 7, 8 a rigorous computer-assisted proof that an explicit rational interaction matrix yields at least m hyperbolic limit cycles"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2611.29524"
+   ],
+   "authors": "Haoyu Albert Wang, Yuxiu Shao, Wei P. Dai",
+   "date": "2026-11-22",
+   "date_basis": "arXiv v1 submission date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The abstract says: 'We thank GPT-6 Astra for helping us compare earlier constructions, identify the main obstacle to extending them, and develop the present approach.'"
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Not an Erdős problem (dynamical systems). The proof is computer-assisted (interval checks), not formalised. arXiv preprint, not refereed at retrieval. The atlas has not rerun the computations."
+  },
+  {
+   "id": "C-66",
+   "quantity": "polychromatic colouring of hereditary hypergraph families: m_3 versus m_2",
+   "prior": {
+    "value": "m_3 ≥ 2m_2 (preceding notes in the series)",
+    "source": "arXiv:2611.28664 abstract"
+   },
+   "new": {
+    "value": "for every h ≥ 4 a hereditary family with m_2 = h and m_3 ≥ 2(h−1) + 2⌊(h−1)/3⌋ + 1 ≈ (8/3)m_2; the worst-case integrality gap of weighted transversals for m_2 ≤ h lies between h−1 and 5000h, so such families admit strong ε-nets of size at most 5000h/ε"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2611.28664"
+   ],
+   "authors": "Dömötör Pálvölgyi",
+   "date": "2026-11-21",
+   "date_basis": "arXiv v1 submission date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The comments say: 'This paper was written by ChatGPT with very limited feedback from me.'"
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Not an Erdős problem (combinatorics). Short note, not refereed at retrieval; no formalisation. The atlas has not checked the proof."
+  },
+  {
+   "id": "C-67",
+   "quantity": "linear forms in logarithms of rational numbers: ineffective measure with best-possible exponent",
+   "prior": {
+    "value": "case n = 1 (irrationality exponent of log a is 2) known (Liu, Jiang and Zhang, arXiv:2610.10192)",
+    "source": "arXiv:2611.30820"
+   },
+   "new": {
+    "value": "for multiplicatively independent positive rationals a_1, …, a_n and every ε > 0, |h_0 + h_1 log a_1 + … + h_n log a_n| ≥ C max(1, |h_i|)^{−n−ε} with an ineffective C > 0; the exponent n is best possible"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2611.30820"
+   ],
+   "authors": "Gregory V. Chudnovsky",
+   "date": "2026-11-23",
+   "date_basis": "arXiv v1 submission date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The title-page note says: 'Developed with Claude (Anthropic), including mathematical exposition and formalization.' The paper says the investigation, proof development, formalization and exposition 'were carried out by Gregory V. Chudnovsky with Claude (Anthropic)', and that the method is the interpolation and determinant method of OpenAI's preprint on the irrationality exponent of π."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Not an Erdős problem (Diophantine approximation). The abstract says the theorem and its corollary are verified in Lean 4 with Mathlib, with sources in the arXiv ancillary files built on the Lean supplement of arXiv:2610.28079; Appendix A states the formalization scope. The atlas has not rebuilt the Lean or checked statement fidelity."
+  },
+  {
+   "id": "C-68",
+   "quantity": "sup over laws μ on [0,∞) of P[X1+X2+X3 < 2X4] for iid X_i (Bellec–Fritz four-roll game; AlphaEvolve collection Problem 6.39)",
+   "prior": {
+    "value": "lower bound 0.4006953723… (construction), conjectured exact by Bellec and Fritz; upper bounds from exchangeability only",
+    "source": "arXiv:2611.29223"
+   },
+   "new": {
+    "value": "the supremum equals 0.4006953723…, proving the Bellec–Fritz conjecture via a flag-algebra semidefinite certificate with ratio cutoffs on four sample points; exact values of S_2(c), S_3(c) on several intervals and an answer to Bellec–Fritz Problem 5.3"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2611.29223",
+    "https://github.com/antalez/flag-algebras-iid"
+   ],
+   "authors": "Anton Zaytsev, Pierre C. Bellec",
+   "date": "2026-11-22",
+   "date_basis": "arXiv v1 submission date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "Section 2 ('AI usage and verification') says: 'Under human guidance and supervision, frontier AI models have been used extensively to derive the results of this paper, including theorem statements, proofs, and numerical code for finding useful SDP certificates.' No model is named."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Not an Erdős problem (probability). The paper says Theorem 1.1 (the exact value) is formalized in Lean 4, covering the probability argument and the finite certificate checks; the other bounds rest on the written proofs and exact certificate checks. Certificates, verifiers and the Lean proof are in github.com/antalez/flag-algebras-iid (MIT, created 2026-11-24) and the arXiv ancillary files. The atlas has not rebuilt the Lean or rerun the certificates."
   }
  ]
 }
