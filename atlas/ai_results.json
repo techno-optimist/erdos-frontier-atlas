@@ -1,12 +1,12 @@
 {
  "schema": "efa-ai-results-v1",
  "purpose": "Results that sources report or claim with AI assistance, mostly outside the Erdős set; entries on Erdős problems link their erdos:<n> node. Entries marked vetting=unvetted are extraordinary claims recorded only because a primary source exists. Values are copied from the cited source; nothing here is independently checked and no atlas status changes.",
- "retrieved": "2026-11-24",
+ "retrieved": "2026-11-25",
  "counts": {
-  "entries": 68,
-  "ai_involvement_confirmed": 66,
-  "ai_involvement_unconfirmed": 2,
-  "unvetted": 22
+  "entries": 82,
+  "ai_involvement_confirmed": 77,
+  "ai_involvement_unconfirmed": 5,
+  "unvetted": 31
  },
  "entries": [
   {
@@ -1916,6 +1916,432 @@
    "status_changed_by_this_entry": false,
    "atlas_nodes": [],
    "note": "Not an Erdős problem (probability). The paper says Theorem 1.1 (the exact value) is formalized in Lean 4, covering the probability argument and the finite certificate checks; the other bounds rest on the written proofs and exact certificate checks. Certificates, verifiers and the Lean proof are in github.com/antalez/flag-algebras-iid (MIT, created 2026-11-24) and the arXiv ancillary files. The atlas has not rebuilt the Lean or rerun the certificates."
+  },
+  {
+   "id": "C-69",
+   "quantity": "Erdős–Rado sunflower conjecture (Erdős #20): existence of a base C_r, depending only on the number of petals r, such that any family of more than C_r^k distinct k-sets contains an r-sunflower",
+   "prior": {
+    "value": "the conjecture open; best published upper bound of the form f(n,k) < (C k log n)^n (Alweiss–Lovett–Wu–Zhang, refined by Rao, Frankston–Kahn–Narayanan–Park, and Bell–Chueluecha–Warnke), so the base still depends on the uniformity n",
+    "source": "https://www.erdosproblems.com/20 (retrieved 2026-11-25)"
+   },
+   "new": {
+    "value": "a claimed proof of the fixed-petal (fixed-base) conjecture: for every r ≥ 3 a family of more than B_r^k distinct sets of size at most k contains an r-sunflower, with log B_r = O((log r)^4 (log log(2r))^{5/2})"
+   },
+   "source_urls": [
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/An-exponential-bound-for-sunflowers-November-24-2026/paper.pdf",
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/docs/379.md",
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/ComparatorChallenges/Sunflower.lean",
+    "https://www.erdosproblems.com/20",
+    "https://github.com/openai/math/commit/92b516ef8e2abf66c3db7aa31438d3010bc7956f"
+   ],
+   "date": "2026-11-24",
+   "date_basis": "openai/math commit 92b516ef (PR #6), author date 2026-11-24; manuscript dated November 24, 2026",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The manuscript is in the openai/math collection; authorship line reads OpenAI. The source README states that manuscripts are produced by an unnamed internal OpenAI model."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "erdos:20",
+    "atlas/stubs.json#problem=20",
+    "atlas/openai_math.json",
+    "atlas/tools.json#B-4"
+   ],
+   "note": "Claimed, unvetted. The paper's abstract states a proof of the fixed-petal sunflower conjecture of Erdős and Rado, which is the statement recorded as Erdős Problem 20 (the manuscript does not cite the problem number). At retrieval (2026-11-25) erdosproblems.com/20 still shows 0 proof claims and 13 comments, last edited 20 October 2026, and the atlas status of #20 is unchanged. Lean (ComparatorChallenges/Sunflower.lean L13–17, labelled 'Erdős–Rado sunflower statement' and 'Fixed-base bound' in lean/docs/379.md) states the existential fixed-base form: for each r ≥ 3 there is some C depending only on r such that more than C^k distinct k-sets contain an r-sunflower. The paper's explicit bound on log B_r is listed by lean/docs/379.md as unformalized. The atlas has not rebuilt the Lean or checked statement fidelity beyond a static read of those lines against the classical statement and the EP #20 page. No public kernel CI is cited.",
+   "vetting": "unvetted"
+  },
+  {
+   "id": "C-70",
+   "quantity": "matrix multiplication exponent ω over every field (exact value)",
+   "prior": {
+    "value": "best published upper bound about 2.371 (see C-1 for a 2026 claimed improvement to ω < 2.371177); the conjecture ω = 2 remains open in the established literature",
+    "source": "standard survey bounds; C-1 (arXiv:2608.16884) for the August 2026 claimed upper bound"
+   },
+   "new": {
+    "value": "a claimed proof that ω = 9/4 over every field in the division-free model, together with a matching lower bound; the paper also states a dual exponent α = 1/2 and a rectangular formula"
+   },
+   "source_urls": [
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/The-matrix-multiplication-exponent-is-nine-fourths-November-24-2026/paper.pdf",
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/docs/379.md",
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/ComparatorChallenges/MatrixExponent.lean",
+    "https://github.com/openai/math/commit/92b516ef8e2abf66c3db7aa31438d3010bc7956f"
+   ],
+   "date": "2026-11-24",
+   "date_basis": "openai/math commit 92b516ef (PR #6); manuscript dated November 24, 2026. An earlier OpenAI preprint 'Matrix Multiplication Nine Fourths' is dated October 2, 2026",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The manuscript is in the openai/math collection; authorship line reads OpenAI. The source README states that manuscripts are produced by an unnamed internal OpenAI model."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "atlas/tools.json#B-4"
+   ],
+   "note": "Claimed, unvetted. Not an Erdős problem (algebraic complexity). The November 24 paper calls the 9/4 upper bound already known, pointing at OpenAI's own October 2 preprint and recent arXiv items; the established published upper bound remains about 2.37, so both directions of ω = 9/4 are new relative to the refereed literature and have not been independently checked. lean/docs/379.md states the Lean formalization of the exact square, dual and rectangular exponents in the division-free model, and says the headline finite gate count ⌈n^{9/4}/2⌉ remains unformalized. The atlas has not rebuilt the Lean. Independent of C-1, which is a different, slightly tighter conventional upper bound.",
+   "vetting": "unvetted"
+  },
+  {
+   "id": "C-71",
+   "quantity": "strongly polynomial linear programming (Smale's ninth problem)",
+   "prior": {
+    "value": "open whether linear programming admits a strongly polynomial algorithm (Smale's ninth problem of the 18th century problems for the 21st century)",
+    "source": "Smale 1998; framing of the openai/math family 380 manuscript"
+   },
+   "new": {
+    "value": "a claimed deterministic algorithm that solves linear programs with arbitrary real coefficients in a number of steps polynomial in the numbers of variables and constraints"
+   },
+   "source_urls": [
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/Strongly-polynomial-linear-programming-November-24-2026/paper.pdf",
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/docs/380.md",
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/ComparatorChallenges/LinearProgramming.lean",
+    "https://github.com/openai/math/commit/92b516ef8e2abf66c3db7aa31438d3010bc7956f"
+   ],
+   "date": "2026-11-24",
+   "date_basis": "openai/math commit 92b516ef (PR #6); manuscript dated November 24, 2026",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The manuscript is in the openai/math collection; authorship line reads OpenAI. The source README states that manuscripts are produced by an unnamed internal OpenAI model."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "atlas/tools.json#B-4"
+   ],
+   "note": "Claimed, unvetted. Not an Erdős problem (optimization / complexity). lean/docs/380.md lists Comparator statements for instruction-count and rational bit-length bounds and for strongly polynomial feasibility and optimization of rational linear programs. The atlas has not rebuilt the Lean. No public kernel CI is cited.",
+   "vetting": "unvetted"
+  },
+  {
+   "id": "C-72",
+   "quantity": "polynomial Hirsch conjecture (graph diameter of simple polytopes)",
+   "prior": {
+    "value": "the polynomial Hirsch conjecture (that the graph diameter of a simple polytope is bounded by a polynomial in the number of facets) was open",
+    "source": "framing of the openai/math family 380 manuscript Superpolynomial-graph-diameter-of-simple-polytopes-November-24-2026"
+   },
+   "new": {
+    "value": "a claimed construction of bounded simple rational polytopes whose graph diameter is superpolynomial in the facet count, and further variants allowing moves across low-dimensional faces"
+   },
+   "source_urls": [
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/Superpolynomial-graph-diameter-of-simple-polytopes-November-24-2026/paper.pdf",
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/docs/380.md",
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/ComparatorChallenges/Hirsch.lean",
+    "https://github.com/openai/math/commit/92b516ef8e2abf66c3db7aa31438d3010bc7956f"
+   ],
+   "date": "2026-11-24",
+   "date_basis": "openai/math commit 92b516ef (PR #6); manuscript dated November 24, 2026",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The manuscript is in the openai/math collection; authorship line reads OpenAI. The source README states that manuscripts are produced by an unnamed internal OpenAI model."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "atlas/tools.json#B-4"
+   ],
+   "note": "Claimed, unvetted. Not an Erdős problem (polytope theory). The CONTENTS entry for family 380 states a disproof of the polynomial Hirsch conjecture; lean/docs/380.md lists Comparator statements for the negation and for several superpolynomial-diameter variants. The atlas has not rebuilt the Lean. No public kernel CI is cited.",
+   "vetting": "unvetted"
+  },
+  {
+   "id": "C-73",
+   "quantity": "logarithmic exponent of finite abelian Fourier transforms (binary linear circuit size)",
+   "prior": {
+    "value": "the FFT uses O(N log N) gates; the exact leading logarithmic exponent for the minimum number of binary linear gates was not known",
+    "source": "framing of the openai/math manuscript The-logarithmic-exponent-of-finite-Fourier-transforms-November-24-2026"
+   },
+   "new": {
+    "value": "a claimed determination that the minimum number of binary linear gates for a finite abelian Fourier transform of order N is N (log N)^{1/2+o(1)}, over every field in which N is invertible and which contains the required roots of unity"
+   },
+   "source_urls": [
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/The-logarithmic-exponent-of-finite-Fourier-transforms-November-24-2026/paper.pdf",
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/docs/379.md",
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/ComparatorChallenges/ExactFourier.lean",
+    "https://github.com/openai/math/commit/92b516ef8e2abf66c3db7aa31438d3010bc7956f"
+   ],
+   "date": "2026-11-24",
+   "date_basis": "openai/math commit 92b516ef (PR #6); manuscript dated November 24, 2026",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The manuscript is in the openai/math collection; authorship line reads OpenAI. The source README states that manuscripts are produced by an unnamed internal OpenAI model."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "atlas/tools.json#B-4"
+   ],
+   "note": "Not an Erdős problem (algebraic complexity). lean/docs/379.md describes formalized upper and lower bounds of the form Ω(N √(log N)) and O_ε(N (log N)^{1/2+ε}); a matching lower bound for formal polynomial multiplication is listed as unformalized. The atlas has not rebuilt the Lean. Companion family-379 manuscripts on tape integer multiplication and Euclidean tensor geometry are not given separate entries."
+  },
+  {
+   "id": "C-74",
+   "quantity": "VP versus VNP over every field, via state sums on paths, trees and grids",
+   "prior": {
+    "value": "open (Valiant 1979). An Anthropic claim is recorded as C-61. A November 23 OpenAI manuscript 'VP and VNP are different' (commit e07100d) claimed a border-circuit bound exp(Ω((log n)^{5/4})) for an explicit VNP family; that manuscript was later unlisted from CONTENTS.md (see the note)",
+    "source": "C-61; openai/math commit e07100d36b22bcf8bb759f2f1abc7976ba472e47 and the November 24 CONTENTS.md rewrite of family 379"
+   },
+   "new": {
+    "value": "a claimed proof that VP ≠ VNP over every field, with the n×n grid state sum in VNP and requiring arithmetic circuits of size n^{Ω((log n)^{1/12})}; also claimed separations of formulas, algebraic branching programs and circuits on paths and binary trees, including in degree-component border complexity"
+   },
+   "source_urls": [
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/Paths-trees-and-grids-separate-Valiants-hierarchy-November-24-2026/paper.pdf",
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/docs/379.md",
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/ComparatorChallenges/VPVNP.lean",
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/ComparatorChallenges/ArithmeticHierarchy.lean",
+    "https://github.com/openai/math/commit/92b516ef8e2abf66c3db7aa31438d3010bc7956f"
+   ],
+   "date": "2026-11-24",
+   "date_basis": "openai/math commit 92b516ef (PR #6); manuscript dated November 24, 2026",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The manuscript is in the openai/math collection; authorship line reads OpenAI. The source README states that manuscripts are produced by an unnamed internal OpenAI model."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "atlas/tools.json#B-4"
+   ],
+   "note": "Claimed, unvetted. Not an Erdős problem (algebraic complexity). Independent of C-61 (Anthropic). The November 23 OpenAI manuscript remains reachable at commit e07100d and at HEAD (preprints/VP-and-VNP-are-different-November-23-2026/, paper.pdf unchanged) but is no longer listed in CONTENTS.md; its README at 92b516ef says the November 24 family-379 preprints subsume its results. The Comparator file VPVNP.lean (exact VP ≠ VNP over every field) is byte-identical to the e07100d copy, as are the class-definition and statement files ClassSeparation.lean, Classes.lean, Separation.lean, FamilyResult.lean and PairedFamily.lean. lean/docs/379.md says Lean establishes the three strict hierarchy inclusions using path, tree and grid state sums, and lists the paper's explicit n^{Ω((log n)^{1/12})} grid bound as unformalized. A companion manuscript on Hamiltonian-cycle and permanent circuit bounds is not given a separate entry. The atlas has not rebuilt the Lean.",
+   "vetting": "unvetted"
+  },
+  {
+   "id": "C-75",
+   "quantity": "Hadwiger's covering conjecture in three dimensions (number of smaller positive homothets needed to cover a convex body)",
+   "prior": {
+    "value": "every convex body in R^d can be covered by 2^d smaller positive homothetic copies (Hadwiger); confirmed in dimensions 1 and 2; open in dimension 3, where the bound would be 8",
+    "source": "arXiv:2611.32334, framing of Hadwiger's conjecture"
+   },
+   "new": {
+    "value": "a claimed proof that every compact convex set K ⊂ R^3 with nonempty interior can be covered by eight smaller positive homothetic copies of itself (a single ratio λ ∈ (0,1))"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2611.32334",
+    "https://arxiv.org/src/2611.32334"
+   ],
+   "authors": "Dror Aiger, Sariel Har-Peled, Goran Žužić",
+   "date": "2026-11-24",
+   "date_basis": "arXiv v1 submission date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "Section 1.3 (AI Disclosure) says: 'An experimental harness at Google on top of Gemini 4 Carbon discovered the proof with minimal human steering from Dror Aiger and Goran Žužić, and an agentic harness on Gemini 4 Carbon produced the formal verification in Lean 4. Dror Aiger, Sariel Har-Peled, and Goran Žužić verified the mathematics and prepared the presentation of the paper.'"
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Claimed, unvetted. Not an Erdős problem (convex geometry). The paper says Theorem 1.1 and its proof were formalized in Lean 4 (v4.27.0 / Mathlib, 13,663 lines across 34 files), checked with comparator via lean4export replay, and accompanied by a statement-faithfulness audit (ChallengeAudit.lean and a mutation suite). The Lean sources are in the arXiv ancillary tree (anc/lean/, including Challenge.lean printed in Appendix A). The atlas has not rebuilt the Lean or rerun the comparator. arXiv preprint, not refereed at retrieval.",
+   "vetting": "unvetted"
+  },
+  {
+   "id": "C-76",
+   "quantity": "blow-ups of uniform hypergraphs, and the jumps of the hypergraph Ramsey–discrepancy function F^{(k)}(n,α) (Erdős #161)",
+   "prior": {
+    "value": "Rödl–Schacht asked whether a blow-up of size (log n)^{1/(k−1)} holds for every fixed k-uniform H; Bollobás–Erdős–Simonovits (1976) conjectured a related dense blow-up statement. For #161, Conlon–Fox–Sudakov showed that for t=3 and fixed α>0 one has F^{(3)}(n,α) = Θ_α(√(log n)), hence only one jump, at α=0, when t=3; the analogous jump question for k≥4 was open",
+    "source": "https://www.erdosproblems.com/161 (retrieved 2026-11-25); arXiv:2611.33108"
+   },
+   "new": {
+    "value": "a claimed proof that every sufficiently large n-vertex k-uniform hypergraph with at least a n^h copies of a fixed k-uniform H contains a blow-up of H with at least b(log n)^{1/(k−1)} vertices in each part. A corollary states F_2^{(k)}(n,α) = Θ_{k,α}((log n)^{1/(k−1)}) for each fixed 0<α<1/2, and that for k≥4 the value α=0 is the only jump in the asymptotic order on 0≤α<1/2"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2611.33108",
+    "https://www.erdosproblems.com/161"
+   ],
+   "authors": "Dhruv Mubayi",
+   "date": "2026-11-24",
+   "date_basis": "arXiv v1 submission date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The paper's AI Disclosure says: 'AI tools (GPT 6.2 Astra) generated the main proof ideas in this project. Through repeated discussions with the AI, I obtained simplifications of the proof. I then revised the proofs based on my understanding and simplified and changed them further. AI also helped write and revise the manuscript and produced Figure 1. I have independently checked all proofs and take full responsibility for the content of this paper.'"
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "erdos:161",
+    "atlas/stubs.json#problem=161"
+   ],
+   "note": "The paper presents Corollary 3 as answering a 1990 question of Erdős (a $500 prize; this is Erdős #161). That is a claimed account of the jump in the growth rate of F, not a change of status in this atlas: erdosproblems.com/161 at retrieval (2026-11-25) still shows 0 proof claims and 3 comments, last edited 16 January 2026, and the atlas status of #161 is unchanged. No formalisation. arXiv preprint, not refereed at retrieval. The atlas has not checked the proof."
+  },
+  {
+   "id": "C-77",
+   "quantity": "existence of a hereditarily atomic integral domain that fails the ascending chain condition on principal ideals (ACCP)",
+   "prior": {
+    "value": "every hereditarily atomic cancellative commutative monoid satisfies ACCP; it was open whether every hereditarily atomic domain does",
+    "source": "arXiv:2611.31549"
+   },
+   "new": {
+    "value": "a claimed construction of a hereditarily atomic overring of Int(Z) that does not satisfy ACCP; the subrings that fail ACCP are precisely those of finite additive index"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2611.31549",
+    "https://github.com/mtoenisk/hereditary-atomicity-and-accp",
+    "https://github.com/mtoenisk/conditional-hereditarily-atomic-without-accp"
+   ],
+   "authors": "Matthew Toeniskoetter",
+   "date": "2026-11-23",
+   "date_basis": "arXiv v1 submission date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The acknowledgments say that under the author's direction, GPT-6.2 Astra discovered the counterexample in Theorem 1.1, building on a six-month investigation with GPT-5.6 Sol, GPT-6 Astra, Claude Opus 5.5 and Claude Fable 5.2, and that AI tools were also used to draft and revise the manuscript."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Not an Erdős problem (commutative algebra). The paper cites a companion Lean 4 formalization, version 1.0.0, at github.com/mtoenisk/hereditary-atomicity-and-accp, and an earlier AI-authored conditional development at github.com/mtoenisk/conditional-hereditarily-atomic-without-accp. The atlas has not rebuilt the Lean. arXiv preprint, not refereed at retrieval."
+  },
+  {
+   "id": "C-78",
+   "quantity": "existence of a polar Carleson set on the circle that prevents cyclicity of Hölder Dirichlet functions",
+   "prior": {
+    "value": "Chen, Fang and Guo gave a counterexample to the Brown–Shields conjecture; this note seeks a polar Carleson zero set with a Hölder-cyclicity obstruction",
+    "source": "arXiv:2611.32235, citing Chen–Fang–Guo"
+   },
+   "new": {
+    "value": "a claimed construction of a polar Carleson set E ⊂ T such that every Hölder continuous function in the Dirichlet space vanishing on E is non-cyclic"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2611.32235"
+   ],
+   "authors": "Bartosz Malman",
+   "date": "2026-11-24",
+   "date_basis": "arXiv v1 submission date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "A footnote says: 'All substantive results in this note have been given by the Oracle, in this case the ChatGPT 6.0 Astra model.'"
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Not an Erdős problem (function theory). Short note, not refereed at retrieval; no formalisation. The atlas has not checked the argument."
+  },
+  {
+   "id": "C-79",
+   "quantity": "three spline-related conjectures (Scherer–Shadrin; Lebesgue function of an orthoprojector; Schumaker lacunary interpolation)",
+   "prior": {
+    "value": "Scherer–Shadrin (mirroring sign patterns of polynomial derivatives) open; the author's Lebesgue-function conjectures open; Schumaker's conjecture on interpolation with lacunary bivariate Bernstein polynomials open in general",
+    "source": "arXiv:2611.31314"
+   },
+   "new": {
+    "value": "a claimed counterexample to the Scherer–Shadrin conjecture; claimed proofs of the author's Lebesgue-function conjectures; and claimed partial results on Schumaker's conjecture, which the paper says remains open in general"
+   },
+   "source_urls": [
+    "https://arxiv.org/abs/2611.31314"
+   ],
+   "authors": "Simon Foucart",
+   "date": "2026-11-23",
+   "date_basis": "arXiv v1 submission date",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "confirmed",
+    "detail": "The abstract calls the article AI-assisted. The body describes work with ChatGPT, including a counterexample search and some proofs, and frames the paper as AI-assisted rather than AI-created. The author takes responsibility for the content."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [],
+   "note": "Not an Erdős problem (approximation theory). The paper says Schumaker's conjecture remains open in general and gives only partial results there. arXiv preprint, not refereed at retrieval; no formalisation. The atlas has not checked the arguments."
+  },
+  {
+   "id": "C-80",
+   "quantity": "Erdős #1033, three-halves variant of the triangle degree-sum bound h(n)",
+   "prior": {
+    "value": "Bollobás–Erdős asked for estimates of h(n), including whether h(n) ≥ (3/2)n; published bounds 21/16 n ≤ h(n) ≤ 2(√3−1)n + O(1) already place the 3/2 form below the known upper bound of about 1.464 n",
+    "source": "https://www.erdosproblems.com/1033 (retrieved 2026-11-25)"
+   },
+   "new": {
+    "value": "a self-reported Lean development said to show that the three-halves variant is false, via a 23-vertex graph"
+   },
+   "source_urls": [
+    "https://github.com/pullboard-dev/pullboard/issues/46",
+    "https://github.com/coreyolson/erdos-1033",
+    "https://github.com/google-deepmind/formal-conjectures/issues/8271",
+    "https://www.erdosproblems.com/1033"
+   ],
+   "authors": "coreyolson (Pullboard issue #46, Result 2)",
+   "date": "2026-11-24",
+   "date_basis": "GitHub comment timestamp 2026-11-24 21:21:13 UTC = 2:21:13 PM MST",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "unconfirmed",
+    "detail": "The comments themselves do not name a model. They were posted on a Pullboard issue whose author writes that agents and compute are in use on a separate discovery; that is not a stated attribution for this graph."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "erdos:1033",
+    "atlas/stubs.json#problem=1033"
+   ],
+   "note": "Claimed, unvetted, low confidence: a self-reported comment and repository, not a paper, and not independently checked. The comment says the three-halves variant is false on a 23-vertex graph, with Lean in github.com/coreyolson/erdos-1033 and a formal-conjectures issue #8271. The 3/2 form is the older question on the #1033 page; the page already cites an upper bound of about 1.464 n, so this may formalize a known conclusion rather than a new bound. At retrieval, erdosproblems.com/1033 has 0 proof claims (last edited 3 April 2026). The atlas status of #1033 is unchanged. The atlas has not rebuilt the Lean or checked the graph.",
+   "vetting": "unvetted"
+  },
+  {
+   "id": "C-81",
+   "quantity": "Erdős #124, special cases of the Burr–Erdős–Graham–Li complete-sequence questions (k=1 and some higher levels)",
+   "prior": {
+    "value": "the first question on the #124 page already has a short positive argument, formalized in Lean by Aristotle (as the page already states); the second question (P(d_i,k) with a gcd condition) remains the intended Burr–Erdős–Graham–Li form, with some small cases previously treated",
+    "source": "https://www.erdosproblems.com/124 (retrieved 2026-11-25)"
+   },
+   "new": {
+    "value": "self-reported Lean developments claiming: at k=1, every three- or four-base set with Σ 1/(d−1)>1 represents every large integer; further five-base cases; and some higher-level cases, with tail bounds in one claim taken from outside Lean"
+   },
+   "source_urls": [
+    "https://github.com/pullboard-dev/pullboard/issues/46",
+    "https://github.com/coreyolson/erdos-124",
+    "https://github.com/google-deepmind/formal-conjectures/issues/8270",
+    "https://www.erdosproblems.com/124"
+   ],
+   "authors": "coreyolson (Pullboard issue #46, Results 1, 4 and 9)",
+   "date": "2026-11-24",
+   "date_basis": "GitHub comment timestamps from 2026-11-24 20:19:57 UTC to 2026-11-25 04:00:55 UTC",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "unconfirmed",
+    "detail": "The comments themselves do not name a model. They were posted on a Pullboard issue whose author writes that agents and compute are in use on a separate discovery; that is not a stated attribution for these Lean files."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "erdos:124",
+    "atlas/stubs.json#problem=124"
+   ],
+   "note": "Claimed, unvetted, low confidence: self-reported comments and a repository, not a paper, and not independently checked. The #124 page already states a Lean formalization of a positive answer to the first question (Aristotle). These comments claim further special cases, including some with hypotheses left outside Lean. At retrieval, erdosproblems.com/124 has 0 proof claims (last edited 1 December 2025). The atlas status of #124 is unchanged. The atlas has not rebuilt the Lean or compared the statements with the intended conjectures.",
+   "vetting": "unvetted"
+  },
+  {
+   "id": "C-82",
+   "quantity": "formal-conjectures statement of the Erdős–Nešetřil question on Erdős #150 (a claimed misformalization, not a new bound on c(n))",
+   "prior": {
+    "value": "the question whether c(n)^{1/n} tends to some α<2 is already answered in the negative in the literature (Gaspers–Mackenzie lower bound); the atlas lists #150 under its existing upstream-closed status",
+    "source": "https://www.erdosproblems.com/150 (retrieved 2026-11-25); atlas/stubs.json#problem=150"
+   },
+   "new": {
+    "value": "a self-reported note that the formal-conjectures statement erdos_150.variants.erdos_nesetril is satisfied by the 5-cycle at m=1, and is not the bound its docstring cites; a corrected statement is claimed in Lean"
+   },
+   "source_urls": [
+    "https://github.com/pullboard-dev/pullboard/issues/46",
+    "https://github.com/google-deepmind/formal-conjectures/issues/8272",
+    "https://www.erdosproblems.com/150"
+   ],
+   "authors": "coreyolson (Pullboard issue #46, Result 3)",
+   "date": "2026-11-24",
+   "date_basis": "GitHub comment timestamp 2026-11-24 21:28:38 UTC = 2:28:38 PM MST",
+   "attribution": "claimed",
+   "ai_involvement": {
+    "status": "unconfirmed",
+    "detail": "The comment does not name a model. It was posted on a Pullboard issue whose author writes that agents and compute are in use on a separate discovery; that is not a stated attribution for this note."
+   },
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "atlas_nodes": [
+    "erdos:150",
+    "atlas/stubs.json#problem=150"
+   ],
+   "note": "Claimed, unvetted, low confidence: a self-reported formal-conjectures issue about statement fidelity, not a new mathematical bound, and not independently checked. The atlas already lists #150 under its existing upstream-closed status; this entry does not change that status. At retrieval, erdosproblems.com/150 has 0 proof claims (last edited 21 June 2026). The atlas has not rebuilt any Lean or checked the claimed misformalization.",
+   "vetting": "unvetted"
   }
  ]
 }
