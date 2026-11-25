@@ -46,9 +46,9 @@ in this table against its source file, so the table can't drift from the data.
 | Inventory | Count | Source of truth |
 |---|---:|---|
 | AI-assisted discovery tools | 39 | [`atlas/tools.json`](atlas/tools.json): 19 systems, 11 benchmarks, 6 datasets and 3 registries, each with primary links and a first-public date |
-| AI-assisted results | 68 | [`atlas/ai_results.json`](atlas/ai_results.json): prior value, new value and source, as the authors report them. 22 are extraordinary claims marked `unvetted`, and 2 don't state AI involvement |
+| AI-assisted results | 82 | [`atlas/ai_results.json`](atlas/ai_results.json): prior value, new value and source, as the authors report them. 31 are extraordinary claims marked `unvetted`, and 5 don't state AI involvement |
 | Erdős-linked AI claims | 89 | [`atlas/ai_claims.json`](atlas/ai_claims.json): a dated claim registry used for triage; it never sets a status |
-| OpenAI manuscript families | 22 | [`atlas/openai_math.json`](atlas/openai_math.json): pinned to a commit of [openai/math](https://github.com/openai/math) |
+| OpenAI manuscript families | 23 | [`atlas/openai_math.json`](atlas/openai_math.json): pinned to a commit of [openai/math](https://github.com/openai/math) |
 | Plasma overlay entries | 155 | [`atlas/plasma_claims.json`](atlas/plasma_claims.json): where Plasma AI's [erdosproblems.ai](https://erdosproblems.ai) wiki differs from this atlas, with our review of each difference |
 | Claim contracts | 48 | [`certificates/contracts.json`](certificates/contracts.json): each statement of ours tied to exact artifact bytes, a replay command and a failure boundary |
 | Hub entries | 1,221 | [`atlas/stubs.json`](atlas/stubs.json): every Erdős problem, with its upstream commit pins |
@@ -181,7 +181,7 @@ an endorsement, and it never changes a status.
   AlphaProof Code, Aristotle, AxiomProver, Gauss and LEAP to FrontierMath: Open Problems, OEIS Open,
   First Proof, PutnamBench, OpenFrontiers, Science-Last-Exam and ErdosBench, plus community registries. Each one has primary
   links and a first-public date.
-- The [results file](atlas/ai_results.json) lists 68 results whose authors
+- The [results file](atlas/ai_results.json) lists 82 results whose authors
   report or claim AI assistance, including matrix multiplication, kissing
   numbers, cap sets, MOLS, Ramsey and Schur lower bounds, the Ulam sequence, quasi-kernels in digraphs, the
   Courtade–Kumar conjecture, the Riemann Hypothesis (a Lean proof the Lean FRO and Mathlib Initiative
@@ -189,22 +189,23 @@ an endorsement, and it never changes a status.
   no-go theorem, contact-process thresholds, the binary Chowla conjecture, termination of the Kähler MMP
   with scaling, linear forms in logarithms, limit cycles in Lotka–Volterra systems, an iid probability
   supremum, polychromatic colourings, the Katz–Tao sum-difference exponent, toric Fano
-  Picard ranks, and Erdős #12, #30, #36, #96/#97, #107 (a new upper bound; the conjecture stays open), #188, #519, #650 and
+  Picard ranks, Hadwiger's covering conjecture in three dimensions, strongly polynomial linear programming,
+  and Erdős #12, #20 (a claimed fixed-base sunflower bound; the conjecture stays open here), #30, #36, #96/#97, #107 (a new upper bound; the conjecture stays open), #124, #150, #161 (a claimed account of the only jump for k≥4; status unchanged), #188, #519, #650, #1033 and
   #1063, and Lean formalisations of the classification of finite simple
-  groups, of Faltings' theorem and of Smoktunowicz's gap theorem. Most lie outside the Erdős set. Twenty-two claims are marked
+  groups, of Faltings' theorem and of Smoktunowicz's gap theorem. Most lie outside the Erdős set. Thirty-one claims are marked
   `vetting: unvetted`: two ETH refutations, local smoothing with Kakeya,
   Yang–Mills existence, cycle double cover, VP ≠ VNP over every field (an AI-written paper
-  and Lean proof that, per its README, no human mathematician has checked), finite-time blow-up for the 3D Euler and
+  and Lean proof that, per its README, no human mathematician has checked, plus a later OpenAI grid-state-sum manuscript), finite-time blow-up for the 3D Euler and
   Navier–Stokes equations, three Claude Fable 5.2 claims
   (MIPLIB, black-hole physics, and a Fermat formalisation), ten new
   Lean-backed claims on Erdős #12, #112, #335, #573, #597, #624, #670, #676, #790 and #1068,
-  and a certificate-backed claim on Erdős #36. They are listed only because a
-  primary source exists. Both files are dated 2026-11-24 and checked by
+  a certificate-backed claim on Erdős #36, OpenAI claims on the Erdős–Rado sunflower conjecture (#20), on the matrix-multiplication exponent ω = 9/4, on strongly polynomial linear programming, and on a claimed disproof of the polynomial Hirsch conjecture, Hadwiger's covering conjecture in three dimensions, and three low-confidence Pullboard claims on Erdős #1033, #124 and #150. They are listed only because a
+  primary source exists. Both files are dated 2026-11-25 and checked by
   `tools/validate_tools.py`.
 - The [AI-claim overlay](atlas/ai_claims.json) is a dated registry of 89
   Erdős-linked claims of AI-assisted resolutions. It exists so effort isn't
   duplicated, and it flags which claims are worth checking.
-- The [OpenAI manuscript index](atlas/openai_math.json) lists 22 result families in [openai/math](https://github.com/openai/math) (Apache-2.0), pinned to a commit: 15 whose own contents entry mentions Erdős, plus 7 that the erdosproblems.com maintainer's [2026-10-08 index of OpenAI's claims](https://www.erdosproblems.com/forum/thread/blog:10) ties to Erdős problems. Together they link 25 Erdős problems; each link says whether it comes from the manuscript or from that index (cited as a link only). They are external claims. For two of them (025, Erdős #304; 184, Erdős #802) P42 rebuilt OpenAI's Lean proof, found it compiles with only the standard axioms, re-checked it with an independent kernel (nanoda), and reviewed the Lean statement as faithful (025 covers #304 only, not #293 or #148). These are checks of OpenAI's proofs, not P42 results, and no entry changes a status here.
+- The [OpenAI manuscript index](atlas/openai_math.json) lists 23 result families in [openai/math](https://github.com/openai/math) (Apache-2.0), pinned to a commit: 15 whose own contents entry mentions Erdős, plus 7 that the erdosproblems.com maintainer's [2026-10-08 index of OpenAI's claims](https://www.erdosproblems.com/forum/thread/blog:10) ties to Erdős problems, plus family 379, added from the November 24 sunflower manuscript that states it addresses the Erdős–Rado fixed-petal conjecture (Erdős #20; the manuscript does not cite the number). Together they link 26 Erdős problems; each link says whether it comes from the manuscript, from that index (cited as a link only), or from the named conjecture. They are external claims. For two of them (025, Erdős #304; 184, Erdős #802) P42 rebuilt OpenAI's Lean proof, found it compiles with only the standard axioms, re-checked it with an independent kernel (nanoda), and reviewed the Lean statement as faithful (025 covers #304 only, not #293 or #148). These are checks of OpenAI's proofs, not P42 results, and no entry changes a status here.
 - The [Plasma overlay](atlas/plasma_claims.json) lists 155 places where
   Plasma AI's erdosproblems.ai wiki differs from this atlas, each with our
   review. It uses metadata only, with attribution, under CC BY 4.0.
