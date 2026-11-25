@@ -3,15 +3,15 @@
  "purpose": "Index of results in OpenAI's public mathematics manuscript collection that the source itself connects to Erdős problems or named Erdős conjectures. External results, not ours. Like atlas/ai_claims.json, this is a claim feed: an entry NEVER changes a problem's status in this atlas.",
  "source": {
   "repo": "https://github.com/openai/math",
-  "commit": "7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a",
+  "commit": "92b516ef8e2abf66c3db7aa31438d3010bc7956f",
   "license": "Apache-2.0 (repo LICENSE; lean/ has its own LICENSE)",
   "attribution": "Manuscripts produced by an unnamed internal OpenAI model, per the source README; authorship line on manuscripts reads 'OpenAI'. The source defers to the math community on credit and precedence.",
-  "retrieved": "2026-10-26",
+  "retrieved": "2026-11-25",
   "catalogue_size": {
-   "manuscripts": 721,
-   "families": 373
+   "manuscripts": 730,
+   "families": 380
   },
-  "selection": "Families whose CONTENTS.md entry mentions Erdős (15 of 373), plus 7 families (013, 021, 028, 158, 164, 170, 172) that the erdosproblems.com maintainer's 2026-10-08 index of OpenAI's claims (https://www.erdosproblems.com/forum/thread/blog:10) ties to Erdős problems. Erdős numbers come from a manuscript's own erdosproblems.com citation (full-text scan of all 751 PDFs) or from that index; each link says which. Index-derived links were matched by manuscript path to CONTENTS.md at the pinned commit.",
+  "selection": "The original 22 families are those whose CONTENTS.md entry mentioned Erdős (15 of 373) at the October 2026 pin, plus 7 families (013, 021, 028, 158, 164, 170, 172) that the erdosproblems.com maintainer's 2026-10-08 index of OpenAI's claims (https://www.erdosproblems.com/forum/thread/blog:10) ties to Erdős problems. Family 379 was added on 2026-11-25 from the November 24 sunflower manuscript, which states it addresses the fixed-petal sunflower conjecture of Erdős and Rado (identified here with Erdős Problem 20; the manuscript does not cite the number, and the CONTENTS.md family-379 blurb does not use the word Erdős). Existing manuscript and lean-doc links were retargeted to commit 92b516ef after a local check that all 48 previously pinned paths still exist there. Erdős numbers come from a manuscript's own erdosproblems.com citation, from that blog:10 index, or, for family 379, from the named Erdős–Rado conjecture as recorded on erdosproblems.com/20.",
   "copying": "Links and short paraphrased/quoted summaries only; no code or manuscripts copied."
  },
  "entries": [
@@ -29,9 +29,9 @@
    ],
    "erdos_number_note": "Manuscript does not cite an erdosproblems.com number; the Erdős number link(s) above come from the maintainer's blog:10 index (2026-10-08).",
    "manuscripts": [
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf",
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/paper.pdf",
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf"
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/Prime-Predecessors-with-an-Even-Number-of-Prime-Factors-September-17-2026/paper.pdf",
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/The-Poisson-Dirichlet-Law-for-Prime-Predecessors-September-24-2026/paper.pdf",
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/Weighted-Dilation-Graphs-Smooth-Shifted-Primes-and-Totient-Fibers-September-24-2026/paper.pdf"
    ],
    "lean_scope_doc": null,
    "source_verification_level": "manuscript only; source warns unformalized results could have issues",
@@ -52,9 +52,9 @@
    ],
    "erdos_number_note": "Manuscript does not cite an erdosproblems.com number; the Erdős number link(s) above come from the maintainer's blog:10 index (2026-10-08).",
    "manuscripts": [
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf"
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/The-joint-Dickman-law-for-consecutive-integers-September-24-2026/paper.pdf"
    ],
-   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/012.md",
+   "lean_scope_doc": "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/docs/012.md",
    "source_verification_level": "Lean formalization listed by source (scope per doc)",
    "our_verdict": "not independently checked",
    "status_changed_by_this_entry": false
@@ -73,9 +73,9 @@
    ],
    "erdos_number_note": "Manuscript does not cite an erdosproblems.com number; the link comes from the maintainer's blog:10 index (2026-10-08).",
    "manuscripts": [
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/the-additive-indecomposability-of-the-primes-September-24-2026/paper.pdf"
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/the-additive-indecomposability-of-the-primes-September-24-2026/paper.pdf"
    ],
-   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/013.md",
+   "lean_scope_doc": "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/docs/013.md",
    "source_verification_level": "Lean formalization listed by source (scope per doc)",
    "our_verdict": "not independently checked",
    "status_changed_by_this_entry": false,
@@ -95,9 +95,9 @@
    ],
    "erdos_number_note": "Manuscript does not cite an erdosproblems.com number; the link comes from the maintainer's blog:10 index (2026-10-08).",
    "manuscripts": [
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/paper.pdf"
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/A-quadratic-bound-for-Jacobsthals-function-September-25-2026/paper.pdf"
    ],
-   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/021.md",
+   "lean_scope_doc": "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/docs/021.md",
    "source_verification_level": "Lean formalization listed by source (scope per doc)",
    "our_verdict": "not independently checked",
    "status_changed_by_this_entry": false,
@@ -117,9 +117,9 @@
    ],
    "erdos_number_note": "Manuscript does not cite an erdosproblems.com number; the Erdős number link(s) above come from the maintainer's blog:10 index (2026-10-08).",
    "manuscripts": [
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/An-asymptotic-formula-for-the-number-of-totients-September-25-2026/An-asymptotic-formula-for-the-number-of-totients-September-25-2026.pdf"
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/An-asymptotic-formula-for-the-number-of-totients-September-25-2026/An-asymptotic-formula-for-the-number-of-totients-September-25-2026.pdf"
    ],
-   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/024.md",
+   "lean_scope_doc": "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/docs/024.md",
    "source_verification_level": "Lean formalization listed by source (scope per doc)",
    "our_verdict": "not independently checked",
    "status_changed_by_this_entry": false
@@ -146,9 +146,9 @@
    ],
    "erdos_number_note": null,
    "manuscripts": [
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/Short-Egyptian-fractions-September-25-2026/Short-Egyptian-fractions-September-25-2026.pdf"
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/Short-Egyptian-fractions-September-25-2026/Short-Egyptian-fractions-September-25-2026.pdf"
    ],
-   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/025.md",
+   "lean_scope_doc": "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/docs/025.md",
    "source_verification_level": "Lean formalization listed by source (scope per doc)",
    "our_verdict": "Lean proof replayed and independently kernel-checked: standard axioms only; statement reviewed as faithful to #304 (Lean covers #304 only, not the #293/#148 corollaries)",
    "status_changed_by_this_entry": false,
@@ -197,9 +197,9 @@
    ],
    "erdos_number_note": "Manuscript does not cite an erdosproblems.com number; the Erdős number link(s) above come from the maintainer's blog:10 index (2026-10-08).",
    "manuscripts": [
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/Positive-lower-density-of-large-prime-gaps-September-25-2026/main.pdf"
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/Positive-lower-density-of-large-prime-gaps-September-25-2026/main.pdf"
    ],
-   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/026.md",
+   "lean_scope_doc": "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/docs/026.md",
    "source_verification_level": "Lean formalization listed by source (scope per doc)",
    "our_verdict": "not independently checked",
    "status_changed_by_this_entry": false
@@ -218,9 +218,9 @@
    ],
    "erdos_number_note": "Manuscript does not cite an erdosproblems.com number; the link comes from the maintainer's blog:10 index (2026-10-08).",
    "manuscripts": [
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/Bounded-Step-Walks-on-Gaussian-Primes-September-26-2026/paper.pdf"
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/Bounded-Step-Walks-on-Gaussian-Primes-September-26-2026/paper.pdf"
    ],
-   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/028.md",
+   "lean_scope_doc": "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/docs/028.md",
    "source_verification_level": "Lean formalization listed by source (scope per doc)",
    "our_verdict": "not independently checked",
    "status_changed_by_this_entry": false,
@@ -240,11 +240,11 @@
    ],
    "erdos_number_note": "Manuscript does not cite an erdosproblems.com number; the Erdős number link(s) above come from the maintainer's blog:10 index (2026-10-08).",
    "manuscripts": [
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/Asymptotically-minimal-maxima-of-real-Littlewood-polynomials-September-23-2026/paper.pdf",
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/Nearly-minimal-maxima-and-positive-minima-of-Littlewood-polynomials-October-5-2026/littlewood-lower-envelope.pdf",
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/Ultraflat-real-Littlewood-polynomials-October-5-2026/ultraflat-real-littlewood-polynomials.pdf"
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/Asymptotically-minimal-maxima-of-real-Littlewood-polynomials-September-23-2026/paper.pdf",
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/Nearly-minimal-maxima-and-positive-minima-of-Littlewood-polynomials-October-5-2026/littlewood-lower-envelope.pdf",
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/Ultraflat-real-Littlewood-polynomials-October-5-2026/ultraflat-real-littlewood-polynomials.pdf"
    ],
-   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/076.md",
+   "lean_scope_doc": "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/docs/076.md",
    "source_verification_level": "Lean formalization listed by source (scope per doc)",
    "our_verdict": "not independently checked",
    "status_changed_by_this_entry": false
@@ -263,10 +263,10 @@
    ],
    "erdos_number_note": "Manuscript does not cite an erdosproblems.com number; the Erdős number link(s) above come from the maintainer's blog:10 index (2026-10-08).",
    "manuscripts": [
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/The-dyadic-case-of-the-Erdos-similarity-conjecture-September-25-2026/paper.pdf",
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/The-geometric-case-of-the-Erdos-similarity-conjecture-October-5-2026/geometric-erdos-similarity.pdf"
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/The-dyadic-case-of-the-Erdos-similarity-conjecture-September-25-2026/paper.pdf",
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/The-geometric-case-of-the-Erdos-similarity-conjecture-October-5-2026/geometric-erdos-similarity.pdf"
    ],
-   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/084.md",
+   "lean_scope_doc": "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/docs/084.md",
    "source_verification_level": "Lean formalization listed by source (scope per doc)",
    "our_verdict": "not independently checked",
    "status_changed_by_this_entry": false
@@ -285,9 +285,9 @@
    ],
    "erdos_number_note": "Manuscript does not cite an erdosproblems.com number; the link comes from the maintainer's blog:10 index (2026-10-08).",
    "manuscripts": [
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/The-Euclidean-plane-is-not-five-colorable-September-23-2026/paper.pdf"
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/The-Euclidean-plane-is-not-five-colorable-September-23-2026/paper.pdf"
    ],
-   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/158.md",
+   "lean_scope_doc": "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/docs/158.md",
    "source_verification_level": "Lean formalization listed by source (scope per doc)",
    "our_verdict": "not independently checked",
    "status_changed_by_this_entry": false,
@@ -307,9 +307,9 @@
    ],
    "erdos_number_note": "Manuscript does not cite an erdosproblems.com number; the Erdős number link(s) above come from the maintainer's blog:10 index (2026-10-08).",
    "manuscripts": [
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/paper.pdf"
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/Quasipolynomial-Bounds-for-Arithmetic-Progressions-September-23-2026/paper.pdf"
    ],
-   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/159.md",
+   "lean_scope_doc": "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/docs/159.md",
    "source_verification_level": "Lean formalization listed by source (scope per doc)",
    "our_verdict": "not independently checked",
    "status_changed_by_this_entry": false
@@ -328,9 +328,9 @@
    ],
    "erdos_number_note": "Manuscript does not cite an erdosproblems.com number; the Erdős number link(s) above come from the maintainer's blog:10 index (2026-10-08).",
    "manuscripts": [
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/Quantitative-Superexponential-Bounds-for-van-der-Waerden-Numbers-September-23-2026/paper.pdf"
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/Quantitative-Superexponential-Bounds-for-van-der-Waerden-Numbers-September-23-2026/paper.pdf"
    ],
-   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/160.md",
+   "lean_scope_doc": "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/docs/160.md",
    "source_verification_level": "Lean formalization listed by source (scope per doc)",
    "our_verdict": "not independently checked",
    "status_changed_by_this_entry": false
@@ -349,7 +349,7 @@
    ],
    "erdos_number_note": "Manuscript does not cite an erdosproblems.com number; the link comes from the maintainer's blog:10 index (2026-10-08).",
    "manuscripts": [
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/Monochromatic-finite-sums-and-products-in-the-positive-integers-September-23-2026/paper.pdf"
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/Monochromatic-finite-sums-and-products-in-the-positive-integers-September-23-2026/paper.pdf"
    ],
    "lean_scope_doc": null,
    "source_verification_level": "manuscript only; source warns unformalized results could have issues",
@@ -371,7 +371,7 @@
    ],
    "erdos_number_note": "Manuscript does not cite an erdosproblems.com number; the Erdős number link(s) above come from the maintainer's blog:10 index (2026-10-08).",
    "manuscripts": [
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/The-higher-dimensional-Erdos-distinct-distances-conjecture-September-23-2026/paper.pdf"
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/The-higher-dimensional-Erdos-distinct-distances-conjecture-September-23-2026/paper.pdf"
    ],
    "lean_scope_doc": null,
    "source_verification_level": "manuscript only; source warns unformalized results could have issues",
@@ -398,10 +398,10 @@
    ],
    "erdos_number_note": "Manuscript does not cite an erdosproblems.com number; the Erdős number link(s) above come from the maintainer's blog:10 index (2026-10-08).",
    "manuscripts": [
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/A-power-saving-for-planar-unit-distances-September-23-2026/paper.pdf",
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/The-weak-pinned-planar-distance-theorem-September-23-2026/paper.pdf"
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/A-power-saving-for-planar-unit-distances-September-23-2026/paper.pdf",
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/The-weak-pinned-planar-distance-theorem-September-23-2026/paper.pdf"
    ],
-   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/167.md",
+   "lean_scope_doc": "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/docs/167.md",
    "source_verification_level": "Lean formalization listed by source (scope per doc)",
    "our_verdict": "not independently checked",
    "status_changed_by_this_entry": false
@@ -420,10 +420,10 @@
    ],
    "erdos_number_note": "Manuscript does not cite an erdosproblems.com number; the link comes from the maintainer's blog:10 index (2026-10-08).",
    "manuscripts": [
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/The-Sharp-Logarithmic-Exponent-of-r-5-t-September-24-2026/paper.pdf",
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/Sharp-Logarithmic-Exponents-for-Fixed-Off-Diagonal-Ramsey-Numbers-September-24-2026/paper.pdf"
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/The-Sharp-Logarithmic-Exponent-of-r-5-t-September-24-2026/paper.pdf",
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/Sharp-Logarithmic-Exponents-for-Fixed-Off-Diagonal-Ramsey-Numbers-September-24-2026/paper.pdf"
    ],
-   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/170.md",
+   "lean_scope_doc": "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/docs/170.md",
    "source_verification_level": "Lean formalization listed by source (scope per doc)",
    "our_verdict": "not independently checked",
    "status_changed_by_this_entry": false,
@@ -443,7 +443,7 @@
    ],
    "erdos_number_note": "Manuscript does not cite an erdosproblems.com number; the Erdős number link(s) above come from the maintainer's blog:10 index (2026-10-08).",
    "manuscripts": [
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/The-hypercube-Ramsey-number-has-linear-order-September-23-2026/paper.pdf"
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/The-hypercube-Ramsey-number-has-linear-order-September-23-2026/paper.pdf"
    ],
    "lean_scope_doc": null,
    "source_verification_level": "manuscript only; source warns unformalized results could have issues",
@@ -464,9 +464,9 @@
    ],
    "erdos_number_note": "Manuscript does not cite an erdosproblems.com number; the link comes from the maintainer's blog:10 index (2026-10-08).",
    "manuscripts": [
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/A-classification-of-finite-Euclidean-Ramsey-configurations-September-23-2026/paper.pdf"
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/A-classification-of-finite-Euclidean-Ramsey-configurations-September-23-2026/paper.pdf"
    ],
-   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/172.md",
+   "lean_scope_doc": "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/docs/172.md",
    "source_verification_level": "Lean formalization listed by source (scope per doc)",
    "our_verdict": "not independently checked",
    "status_changed_by_this_entry": false,
@@ -486,9 +486,9 @@
    ],
    "erdos_number_note": "Manuscript does not cite an erdosproblems.com number; the Erdős number link(s) above come from the maintainer's blog:10 index (2026-10-08).",
    "manuscripts": [
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/A-linear-cycle-and-edge-decomposition-of-every-graph-September-24-2026/main.pdf"
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/A-linear-cycle-and-edge-decomposition-of-every-graph-September-24-2026/main.pdf"
    ],
-   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/181.md",
+   "lean_scope_doc": "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/docs/181.md",
    "source_verification_level": "Lean formalization listed by source (scope per doc)",
    "our_verdict": "not independently checked",
    "status_changed_by_this_entry": false
@@ -505,10 +505,10 @@
    ],
    "erdos_number_note": null,
    "manuscripts": [
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/A-Logarithmic-Independence-Bound-for-Clique-Free-Graphs-September-25-2026/paper.pdf",
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/Correspondence-Coloring-Graphs-with-a-Forbidden-Clique-October-5-2026/correspondence-coloring-forbidden-clique.pdf"
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/A-Logarithmic-Independence-Bound-for-Clique-Free-Graphs-September-25-2026/paper.pdf",
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/Correspondence-Coloring-Graphs-with-a-Forbidden-Clique-October-5-2026/correspondence-coloring-forbidden-clique.pdf"
    ],
-   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/184.md",
+   "lean_scope_doc": "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/docs/184.md",
    "source_verification_level": "Lean formalization listed by source (scope per doc)",
    "our_verdict": "Lean proof replayed and independently kernel-checked: standard axioms only; statement reviewed as faithful to #802 (d ≥ 2 form)",
    "status_changed_by_this_entry": false,
@@ -549,23 +549,45 @@
    ],
    "erdos_number_note": "Manuscript does not cite an erdosproblems.com number; the Erdős number link(s) above come from the maintainer's blog:10 index (2026-10-08).",
    "manuscripts": [
-    "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/preprints/Cycle-clique-Ramsey-numbers-September-25-2026/Cycle-clique-Ramsey-numbers-September-25-2026.pdf"
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/Cycle-clique-Ramsey-numbers-September-25-2026/Cycle-clique-Ramsey-numbers-September-25-2026.pdf"
    ],
-   "lean_scope_doc": "https://github.com/openai/math/blob/7ef5c0cc5ca4b0e072b7a050fca09ab24bc6fa3a/lean/docs/189.md",
+   "lean_scope_doc": "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/docs/189.md",
    "source_verification_level": "Lean formalization listed by source (scope per doc)",
    "our_verdict": "not independently checked",
    "status_changed_by_this_entry": false
+  },
+  {
+   "family": "379",
+   "title": "Euclidean tensor geometry and its applications to complexity and combinatorics (sunflower manuscript)",
+   "source_summary": "The November 24 manuscript 'An exponential bound for sunflowers' claims a proof of the fixed-petal sunflower conjecture of Erdős and Rado: for every r ≥ 3, a family of more than B_r^k distinct sets of size at most k contains an r-sunflower, with log B_r = O((log r)^4 (log log(2r))^{5/2}). Family 379 also contains companion manuscripts on the matrix-multiplication exponent, VP versus VNP, Fourier-transform size, and related complexity claims; those are indexed in atlas/ai_results.json and are not Erdős-linked.",
+   "erdosproblems_links": [
+    {
+     "erdos_id": 20,
+     "relation": "the manuscript's abstract states it addresses the fixed-petal sunflower conjecture of Erdős and Rado; that is the statement recorded as Erdős Problem 20 (the manuscript does not cite the problem number). lean/docs/379.md labels the Comparator statement the 'Erdős–Rado sunflower statement'. A claim, not a status",
+     "source": "https://www.erdosproblems.com/20",
+     "added": "2026-11-25"
+    }
+   ],
+   "erdos_number_note": "Manuscript does not cite an erdosproblems.com number; the link is our identification of the named Erdős–Rado fixed-petal conjecture with problem 20.",
+   "manuscripts": [
+    "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/preprints/An-exponential-bound-for-sunflowers-November-24-2026/paper.pdf"
+   ],
+   "lean_scope_doc": "https://github.com/openai/math/blob/92b516ef8e2abf66c3db7aa31438d3010bc7956f/lean/docs/379.md",
+   "source_verification_level": "Lean formalization listed by source (scope per doc)",
+   "our_verdict": "not independently checked",
+   "status_changed_by_this_entry": false,
+   "added": "2026-11-25"
   }
  ],
  "counts": {
-  "families": 22,
-  "with_erdosproblems_number": 22,
-  "with_lean_scope_doc": 18,
+  "families": 23,
+  "with_erdosproblems_number": 23,
+  "with_lean_scope_doc": 19,
   "replicated_by_us": 0,
   "lean_replayed_by_us": 2,
   "independent_kernel_checked_by_us": 2,
   "fidelity_reviewed_by_us": 2,
-  "erdos_problems_linked": 25,
+  "erdos_problems_linked": 26,
   "links_from_blog10_index": 22
  },
  "counts_note": "replicated_by_us counts independent re-derivations of the mathematics (none). lean_replayed_by_us counts families whose published Lean proof P42 rebuilt and axiom-checked (025, 184). independent_kernel_checked_by_us counts families whose proof P42 also re-checked with a second, independent kernel (025, 184). fidelity_reviewed_by_us counts families whose Lean statement P42 reviewed against the erdosproblems.com statement (025, 184)."
